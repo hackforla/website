@@ -1,0 +1,23 @@
+{
+  "name": "hackforla",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Jon Jandoc <jon@joymode.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint-autofix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "{assets,components,layouts,middleware,pages,plugins,static,store}/**/*.{js,json,css,scss,vue}": [
+      "npm run lint-autofix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
