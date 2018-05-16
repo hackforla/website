@@ -1,0 +1,23 @@
+/**
+ * This combination of styles pushes the footer to the botto of the page even
+ * when the content is short.
+ */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+
+  .main-content {
+    flex-grow: 1;
+  }
+}
+
+.page-contain {
+  margin: 0 auto;
+  max-width: $max-content-width;
+}
+
+.content-section {
+  padding: 32px 16px;
+}

@@ -1,0 +1,18 @@
+/**
+ * Breakpoints
+ */
+$screen-desktop: 960px;
+$screen-tablet: 768px;
+$screen-mobile: 480px;
+
+$bp-desktop-up: '(min-width: #{$screen-desktop})';
+$bp-below-desktop: '(max-width: #{$screen-desktop - 1})';
+$bp-tablet-up: '(min-width: #{$screen-tablet})';
+$bp-below-tablet: '(max-width: #{$screen-tablet - 1})';
+$bp-mobile-up: '(min-width: #{$screen-mobile})';
+$bp-below-mobile: '(max-width: #{$screen-mobile - 1})';
+
+/**
+ * Magic Numbers
+ */
+$max-content-width: 800px;

@@ -1,0 +1,9 @@
+.social-links {
+  .icon {
+    @include size(24px);
+  }
+
+  .icon-meetup {
+    @include size(89px, 32px);
+  }
+}

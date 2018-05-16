@@ -1,0 +1,49 @@
+@media print {
+  html,
+  body {
+    font-size: #{map-get($font-size-base, print)};
+    line-height: #{map-get($line-height-base, print)};
+    overflow: visible;
+  }
+
+  // sass-lint:disable no-vendor-prefixes no-universal-selectors
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+  // sass-lint:enable no-vendor-prefixes no-universal-selectors
+
+  h1,
+  .type-h1 {
+    font-size: #{map-get($font-size-h1, print)};
+    line-height: #{map-get($line-height-h1, print)};
+  }
+
+  h2,
+  .type-h2 {
+    font-size: #{map-get($font-size-h2, print)};
+    line-height: #{map-get($line-height-h2, print)};
+  }
+
+  h3,
+  .type-h3 {
+    font-size: #{map-get($font-size-h3, print)};
+    line-height: #{map-get($line-height-h3, print)};
+  }
+
+  h4,
+  .type-h4 {
+    font-size: #{map-get($font-size-h4, print)};
+    line-height: #{map-get($line-height-h4, print)};
+  }
+
+  blockquote p,
+  .type-featured {
+    font-size: #{map-get($font-size-blockquote, print)};
+    line-height: #{map-get($line-height-blockquote, print)};
+  }
+
+  small {
+    font-size: map-get($font-size-small, print);
+    line-height: map-get($line-height-small, print);
+  }
+}

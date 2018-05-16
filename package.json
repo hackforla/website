@@ -14,10 +14,30 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "{assets,components,layouts,middleware,pages,plugins,static,store}/**/*.{js,json,css,scss,vue}": [
-      "npm run lint-autofix",
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,vue}": ["npm run lint-autofix"],
+    "*.{js,json,css,scss,vue}": ["prettier --write", "git add"]
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "normalize.scss": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-vue": "^2.0.2",
+    "bourbon": "^5.0.0",
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-vue": "^4.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.12.1",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.0.1"
   }
 }

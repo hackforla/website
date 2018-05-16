@@ -1,0 +1,17 @@
+.impact-stats {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media #{$bp-mobile-up} {
+    grid-gap: 24px;
+  }
+}
+
+.impact-stat {
+  font-weight: map-get($font-weight, bold);
+}
+
+.impact-large {
+  display: block;
+}
