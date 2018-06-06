@@ -9,34 +9,28 @@
         nav.header-nav
           ul.inline-list
             li
-              a(href='#hack-nights').js-smooth-scroll
-                svg.icon.icon-hack-nights.nav-icon
-                  use(xlink:href=`#icon-hack-nights`)
+              a(href='#hack-nights', v-smooth-scroll)
+                img(src='~/assets/images/icon-hack-nights.svg').icon.icon-hack-nights.nav-icon
                 | Hack Nights
             li
-              a(href='#projects').js-smooth-scroll
-                svg.icon.icon-projects.nav-icon
-                  use(xlink:href=`#icon-projects`)
+              a(href='#projects', v-smooth-scroll)
+                img(src='~/assets/images/icon-projects.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon
                 | Projects
             li
-              a(href='#press').js-smooth-scroll
-                svg.icon.icon-press.nav-icon
-                  use(xlink:href=`#icon-press`)
+              a(href='#press', v-smooth-scroll)
+                img(src='~/assets/images/icon-press.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-press.nav-icon
                 | Press
             li
-              a(href='#about').js-smooth-scroll
-                svg.icon.icon-about.nav-icon
-                  use(xlink:href=`#icon-about`)
+              a(href='#about', v-smooth-scroll)
+                img(src='~/assets/images/icon-about.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-about.nav-icon
                 | About
             li.hide-mobile
-              a(href='#contact').js-smooth-scroll Contact Us
+              a(href='#contact', v-smooth-scroll) Contact Us
         .social-links
           ul.inline-list.social-list
             li(v-for='item in headerSocial')
               a(:href='item.link', target='_blank').js-social-link
-                .icon
-                //- svg.icon(class=`icon-${item.name.toLowerCase()}`)
-                //-   use(xlink:href=`#icon-${item.name.toLowerCase()}`)
+                img(:src='require(`~/assets/images/icon-${item.name.toLowerCase()}.svg`)', :class='`icon-${item.name.toLowerCase()}`').icon
                 span.sr-only {item.name}
     main
       nuxt
@@ -50,8 +44,7 @@
                 li(v-for='item in social')
                   a(:href='item.link', target='_blank').js-social-link
                     .icon
-                    //- svg.icon(class=`icon-${item.name.toLowerCase()}`)
-                    //-   use(xlink:href=`#icon-${item.name.toLowerCase()}`)
+                    img(:src='require(`~/assets/images/icon-${item.name.toLowerCase()}.svg`)', :class='`icon-${item.name.toLowerCase()}`').icon
                     span.sr-only {item.name}
 
     script.
@@ -79,6 +72,28 @@ export default {
         {
           name: 'Facebook',
           link: 'https://hackforla-slack.herokuapp.com/'
+        }
+      ],
+      social: [
+        {
+          name: 'Meetup',
+          link: 'https://www.meetup.com/hackforla/'
+        },
+        {
+          name: 'Slack',
+          link: 'https://hackforla-slack.herokuapp.com/'
+        },
+        {
+          name: 'Github',
+          link: 'https://github.com/hackforla'
+        },
+        {
+          name: 'Facebook',
+          link: 'https://www.facebook.com/hackforla'
+        },
+        {
+          name: 'Twitter',
+          link: 'https://twitter.com/HackForLA'
         }
       ]
     };

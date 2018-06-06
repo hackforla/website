@@ -29,6 +29,7 @@ module.exports = {
     ]
   },
   css: ['~/assets/styles/main.scss'],
+  plugins: ['~/plugins/vue-smooth-scroll'],
   /*
   ** Customize the progress bar color
   */

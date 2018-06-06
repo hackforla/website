@@ -14,12 +14,13 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": ["npm run lint-autofix"],
-    "*.{js,json,css,scss,vue}": ["prettier --write", "git add"]
+    "*.{js,vue}": ["npm run lint-autofix", "prettier --write", "git add"],
+    "*.{json,css,scss}": ["prettier --write", "git add"]
   },
   "dependencies": {
+    "normalize.scss": "^0.1.0",
     "nuxt": "^1.0.0",
-    "normalize.scss": "^0.1.0"
+    "vue-smooth-scroll": "^1.0.13"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
