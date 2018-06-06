@@ -1,25 +1,126 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        hackforla
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+<template lang="pug">
+div
+  header.hero
+    .hero-inner
+      h1 contents.hero.title
+      p.type-featured  contents.hero.dek
+      form.js-ajax-form.hero-signup(name='Quick Signup Form')
+        .form-input
+          label(for='hero-signup').sr-only Enter your email address
+          input(type='email',
+            name='email',
+            placeholder='Enter your email address', required)#hero-signup
+        button(type='submit').btn.btn-primary Sign up for updates
+        .form-confirmation.hidden
+          strong Thanks! You'll hear from us soon.
+  section#hack-nights.content-section.section-hack-nights
+    .page-contain
+      h2 contents.location.title
+      div contents.location.dek
+      .locations
+        //- each location in contents.location.locations
+        //-   .location
+        //-     .location-img(style=`background-image: url("${location.image}")`)
+        //-     .location-details
+        //-         h3.location-header
+        //-           strong= location.title
+        //-           |  #{location.date}
+        //-         address.
+        //-           #{location.address1}#[br]
+        //-           #{location.address2}, #{location.city}, #{location.state} #{location.zip}
+      p
+        a(href='https://www.meetup.com/hackforla/',
+          target='_blank').btn.btn-primary RSVP on Meetup
+        a(href='http://hackforla-slack.herokuapp.com/',
+          target='_blank').btn.btn-primary Join our Slack
+
+  section#projects.content-section.projects
+    .page-contain.projects-inner
+      h2.project-header Current Projects
+      ul.project-list.unstyled-list
+        //- each item in contents.projects
+        //-   li.project-card
+        //-     .project-card-inner
+        //-       .project-tmb
+        //-         img(src=item.image).project-tmb-img
+        //-       .project-body
+        //-         h4.project-title= item.title
+        //-         p.project-description= item.dek
+        //-         if item.links
+        //-           .project-links
+        //-             strong Links:
+        //-             - let i = 0;
+        //-             each link, key in item.links
+        //-               - i++;
+        //-               |  #[a(href=link.url, target='_blank')= link.name]
+        //-               if (Object.keys(item.links).length !== i)
+        //-                 | ,
+        //-         if item.partner
+        //-           .project.partner
+        //-             strong Partner:
+        //-             if item.partnerLink
+        //-               |  #[a(href=item.partnerLink, target='_blank')= item.partner]
+        //-             else
+        //-               |  #{item.partner}
+        //-         if item.looking
+        //-           .project-needs
+        //-             strong Looking for:
+        //-             |  #{item.looking}
+        //-         if item.location
+        //-           .project-location
+        //-             strong Location:
+        //-             |  #{item.location}
+      p.project-pitch.
+        Have an idea? #[a(href='#contact').js-smooth-scroll.btn.btn-primary Submit your pitch]
+
+  section#press.content-section.press
+    .page-contain
+      blockquote.quote
+        p contents.testimonial.quote
+        cite.type-h4 contents.testimonial.source
+        img(src=`contents.testimonial.image`).quote-tmb
+      h2 Press
+      ul.news-cards.unstyled-list
+        //- each item in contents.press
+        //-   li.news-card
+        //-     .news-card-inner
+        //-       .news-body
+        //-         h4.news-title
+        //-           a(href=item.url) item.title
+        //-         p item.source
+
+  section#about.content-section.about
+    .page-contain
+      h2 contents.about.title
+      | contents.about.dek
+      #contact
+        h3 Contact Us
+        p.
+          Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
+        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify, netlify-honeypot='bot-field')
+          textarea(placeholder='Send us a message', name='message', required)
+          .form-controls
+            .form-input
+              label(for='contact-email').sr-only Enter your email address
+              input(type='email',
+                name='email',
+                placeholder='Enter your email address', required)#contact-email
+            .sr-only
+              label Don't fill this out if you're human:
+                input(name='bot-field')
+            button(type='submit').btn.btn-primary Send message
+          p.form-confirmation.hidden
+            strong Thanks! You'll hear from us soon.
+  section#sponsors.content-section
+    .section-inner.page-contain
+      .section-body-full
+        h2 Sponsors
+        .logo-garden
+          ul.unstyled-list
+            //- each item in contents.sponsors
+            //-   li.logo
+            //-     a(href=item.url, target='_blank')
+            //-       img(src=item.image, alt=item.name)
 </template>
 
 <script>
