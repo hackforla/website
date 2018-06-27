@@ -50,6 +50,11 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['json-loader', 'yaml-frontmatter-loader']
+      });
     }
   }
 };
