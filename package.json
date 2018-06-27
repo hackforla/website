@@ -18,6 +18,7 @@
     "*.{json,css,scss}": ["prettier --write", "git add"]
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.1",
     "normalize.scss": "^0.1.0",
     "nuxt": "^1.0.0",
     "vue-smooth-scroll": "^1.0.13"
@@ -39,6 +40,7 @@
     "prettier": "^1.12.1",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^7.0.1",
+    "yaml-frontmatter-loader": "^0.1.0"
   }
 }

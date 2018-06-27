@@ -2,8 +2,8 @@
 div
   header.hero
     .hero-inner
-      h1 contents.hero.title
-      p.type-featured  contents.hero.dek
+      h1 {{ contents.hero.title }}
+      p.type-featured  {{ contents.hero.dek }}
       form.js-ajax-form.hero-signup(name='Quick Signup Form')
         .form-input
           label(for='hero-signup').sr-only Enter your email address
@@ -15,19 +15,18 @@ div
           strong Thanks! You'll hear from us soon.
   section#hack-nights.content-section.section-hack-nights
     .page-contain
-      h2 contents.location.title
-      div contents.location.dek
+      h2 {{ contents.location.title }}
+      div {{ contents.location.dek }}
       .locations
-        //- each location in contents.location.locations
-        //-   .location
-        //-     .location-img(style=`background-image: url("${location.image}")`)
-        //-     .location-details
-        //-         h3.location-header
-        //-           strong= location.title
-        //-           |  #{location.date}
-        //-         address.
-        //-           #{location.address1}#[br]
-        //-           #{location.address2}, #{location.city}, #{location.state} #{location.zip}
+        .location(v-for='location in contents.location.locations')
+          .location-img(:style='{ "background-image": `url(${location.image})` }')
+          .location-details
+            h3.location-header
+            strong {{ location.title }}
+            |  {{ location.date }}
+            address.
+              {{ location.address1 }}#[br]
+              {{ location.address2 }}, {{ location.city }}, {{ location.state }} {{ location.zip }}
       p
         a(href='https://www.meetup.com/hackforla/',
           target='_blank').btn.btn-primary RSVP on Meetup
@@ -76,9 +75,9 @@ div
   section#press.content-section.press
     .page-contain
       blockquote.quote
-        p contents.testimonial.quote
-        cite.type-h4 contents.testimonial.source
-        img(src=`contents.testimonial.image`).quote-tmb
+        p {{ contents.testimonial.quote }}
+        cite.type-h4 {{ contents.testimonial.source }}
+        img(:src='contents.testimonial.image').quote-tmb
       h2 Press
       ul.news-cards.unstyled-list
         //- each item in contents.press
@@ -91,8 +90,8 @@ div
 
   section#about.content-section.about
     .page-contain
-      h2 contents.about.title
-      | contents.about.dek
+      h2 {{ contents.about.title }}
+      | {{ contents.about.dek }}
       #contact
         h3 Contact Us
         p.
@@ -124,11 +123,12 @@ div
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue';
+import content from '~/static/content/index.md';
 
 export default {
-  components: {
-    AppLogo
+  components: {},
+  data: function() {
+    return { contents: content.attributes };
   }
 };
 </script>
