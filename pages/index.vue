@@ -16,7 +16,7 @@ div
   section#hack-nights.content-section.section-hack-nights
     .page-contain
       h2 {{ contents.location.title }}
-      div {{ contents.location.dek }}
+      p {{ contents.location.dek }}
       .locations
         .location(v-for='location in contents.location.locations')
           .location-img(:style='{ "background-image": `url(${location.image})` }')
@@ -37,38 +37,34 @@ div
     .page-contain.projects-inner
       h2.project-header Current Projects
       ul.project-list.unstyled-list
-        //- each item in contents.projects
-        //-   li.project-card
-        //-     .project-card-inner
-        //-       .project-tmb
-        //-         img(src=item.image).project-tmb-img
-        //-       .project-body
-        //-         h4.project-title= item.title
-        //-         p.project-description= item.dek
-        //-         if item.links
-        //-           .project-links
-        //-             strong Links:
-        //-             - let i = 0;
-        //-             each link, key in item.links
-        //-               - i++;
-        //-               |  #[a(href=link.url, target='_blank')= link.name]
-        //-               if (Object.keys(item.links).length !== i)
-        //-                 | ,
-        //-         if item.partner
-        //-           .project.partner
-        //-             strong Partner:
-        //-             if item.partnerLink
-        //-               |  #[a(href=item.partnerLink, target='_blank')= item.partner]
-        //-             else
-        //-               |  #{item.partner}
-        //-         if item.looking
-        //-           .project-needs
-        //-             strong Looking for:
-        //-             |  #{item.looking}
-        //-         if item.location
-        //-           .project-location
-        //-             strong Location:
-        //-             |  #{item.location}
+        li.project-card(v-for='item in contents.projects')
+          .project-card-inner
+            .project-tmb
+               img(:src='item.image').project-tmb-img
+            .project-body
+              h4.project-title {{ item.title }}
+              p.project-description {{ item.dek }}
+              .project-links(v-if='item.links')
+                strong 
+                  |  Links:
+                  |
+                template(v-for='link, index in item.links')
+                  a(:href='link.url', target='_blank') {{ link.name }}
+                  template(v-if='Object.keys(item.links).length > index + 1')
+                    | ,
+                    |
+              .project.partner(v-if='item.partner')
+                strong
+                  | Partner:
+                  |
+                a(v-if='item.partnerLink', :href='item.partnerLink', target='_blank') {{ item.partner }}
+                span(v-else) {{ item.partner }}
+              .project-needs(v-if='item.looking')
+                strong Looking for:
+                |  {{ item.looking }}
+              .project-location(v-if='item.location')
+                strong Location:
+                |  {{ item.location }}
       p.project-pitch.
         Have an idea? #[a(href='#contact').js-smooth-scroll.btn.btn-primary Submit your pitch]
 
@@ -80,13 +76,13 @@ div
         img(:src='contents.testimonial.image').quote-tmb
       h2 Press
       ul.news-cards.unstyled-list
-        //- each item in contents.press
-        //-   li.news-card
-        //-     .news-card-inner
-        //-       .news-body
-        //-         h4.news-title
-        //-           a(href=item.url) item.title
-        //-         p item.source
+        li(v-for='item in contents.press') 
+          .news-card
+            .news-card-inner
+              .news-body
+                h4.news-title
+                  a(:href='item.url') {{ item.title }}
+                p {{ item.source }}
 
   section#about.content-section.about
     .page-contain
@@ -116,10 +112,10 @@ div
         h2 Sponsors
         .logo-garden
           ul.unstyled-list
-            //- each item in contents.sponsors
-            //-   li.logo
-            //-     a(href=item.url, target='_blank')
-            //-       img(src=item.image, alt=item.name)
+            li(v-for='item in contents.sponsors')
+              .logo
+                a(:href='item.url', target='_blank')
+                  img(:src='item.image', :alt='item.name')
 </template>
 
 <script>

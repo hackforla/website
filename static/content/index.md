@@ -69,6 +69,7 @@ projects:
     location: ''
     looking: ''
     partner: Youth Policy Institute
+    partnerLink: 'http://www.ypi.org/'
     title: Food Oasis
   - dek: >-
       There are thousands of works of public art scattered around the city.
