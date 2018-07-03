@@ -33,6 +33,9 @@ div
         a(href='http://hackforla-slack.herokuapp.com/',
           target='_blank').btn.btn-primary Join our Slack
 
+    .page-contain
+      h2.cal-title More Upcoming Events
+      Calendar
   section#projects.content-section.projects
     .page-contain.projects-inner
       h2.project-header Current Projects
@@ -120,9 +123,12 @@ div
 
 <script>
 import content from '~/static/content/index.md';
+import Calendar from '@/components/Calendar';
 
 export default {
-  components: {},
+  components: {
+    Calendar
+  },
   data: function() {
     return { contents: content.attributes };
   }
