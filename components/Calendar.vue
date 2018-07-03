@@ -12,8 +12,17 @@
         button(v-else-if="item.showMore" @click="closeInfo(item)") Less Info
 </template>
 <script>
-import content from '~/static/content/index.md';
 export default {
+  props: {
+    calId: {
+      type: String,
+      required: true
+    },
+    apiKey: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       calendar: []
@@ -24,12 +33,12 @@ export default {
   },
   methods: {
     getCal() {
-      const calendarId = content.attributes.calendar.calId;
+      const CAL_ID = this.$props.calId;
       // this API key is secured for access only from hackforla.org and localhost
-      const API_KEY = content.attributes.calendar.apiKey;
+      const API_KEY = this.$props.apiKey;
       let url =
         'https://www.googleapis.com/calendar/v3/calendars/' +
-        encodeURI(calendarId) +
+        encodeURI(CAL_ID) +
         '/events?maxItems=100&orderBy=startTime&singleEvents=true&timeMin=' +
         // min date is set to start of current day
         new Date(new Date().setHours(0, 0, 0, 0)).toISOString() +

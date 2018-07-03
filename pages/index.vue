@@ -35,7 +35,7 @@ div
 
     .page-contain
       h2.cal-title More Upcoming Events
-      Calendar
+      Calendar(:calId='contents.calendar.calId', :apiKey='contents.calendar.apiKey')
   section#projects.content-section.projects
     .page-contain.projects-inner
       h2.project-header Current Projects
