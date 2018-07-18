@@ -35,7 +35,7 @@ div
 
     .page-contain
       h2.cal-title More Upcoming Events
-      Calendar(:calId='contents.calendar.calId', :apiKey='contents.calendar.apiKey')
+      Calendar
   section#projects.content-section.projects
     .page-contain.projects-inner
       h2.project-header Current Projects
@@ -48,7 +48,7 @@ div
               h4.project-title {{ item.title }}
               p.project-description {{ item.dek }}
               .project-links(v-if='item.links')
-                strong 
+                strong
                   |  Links:
                   |
                 template(v-for='link, index in item.links')
@@ -79,7 +79,7 @@ div
         img(:src='contents.testimonial.image').quote-tmb
       h2 Press
       ul.news-cards.unstyled-list
-        li(v-for='item in contents.press') 
+        li(v-for='item in contents.press')
           .news-card
             .news-card-inner
               .news-body

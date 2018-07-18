@@ -33,9 +33,6 @@ location:
       title: Downtown
       zip: '90013'
   title: Hack Nights - Every Monday & Tuesday
-calendar:
-  calId: rt7upiraveki91ackkut994pds@group.calendar.google.com
-  apiKey: AIzaSyDYFeOpGG5KZ20hxmswJzZh3snZpGtfga4
 projects:
   - dek: ''
     image: /images/uploads/light-the-way.jpg
