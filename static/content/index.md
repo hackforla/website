@@ -33,6 +33,9 @@ location:
       title: Downtown
       zip: '90013'
   title: Hack Nights - Every Monday & Tuesday
+calendar:
+  calId: rt7upiraveki91ackkut994pds@group.calendar.google.com
+  apiKey: AIzaSyDYFeOpGG5KZ20hxmswJzZh3snZpGtfga4
 projects:
   - dek: ''
     image: /images/uploads/light-the-way.jpg
@@ -69,6 +72,7 @@ projects:
     location: ''
     looking: ''
     partner: Youth Policy Institute
+    partnerLink: 'http://www.ypi.org/'
     title: Food Oasis
   - dek: >-
       There are thousands of works of public art scattered around the city.

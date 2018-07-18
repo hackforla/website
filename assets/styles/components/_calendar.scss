@@ -1,0 +1,60 @@
+.cal-title {
+  color: $color-red;
+}
+.cal-container {
+  padding: 5px;
+  @media #{$bp-mobile-up} {
+    padding: 10px;
+  }
+  border-radius: 16px;
+  background-color: $color-white;
+}
+.cal {
+  padding: 5px;
+  @media #{$bp-mobile-up} {
+    padding: 10px;
+  }
+  width: 100%;
+  margin: 0 auto;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.cal-item {
+  background: $color-white;
+  padding: 10px;
+  margin: 0;
+  border-top: 1px solid $color-grey-med;
+  color: $color-black;
+  @media #{$bp-mobile-up} {
+    padding: 20px;
+  }
+  &--title {
+    color: $color-red;
+    font-size: #{map-get($font-size-h4, mobile)};
+    @media #{$bp-tablet-up} {
+      font-size: #{map-get($font-size-h3, print)};
+    }
+  }
+  &--description {
+    margin: 5px 0;
+  }
+  &--details {
+    font-size: #{map-get($font-size-base, print)};
+    font-weight: #{map-get($font-weight, light)};
+    font-style: normal;
+  }
+}
+button {
+  margin: 5px 0;
+  background: $color-white;
+  border: 2px solid $color-red;
+  color: $color-red;
+  cursor: pointer;
+  font-size: #{map-get($font-size-small, print)};
+}
+@media #{$bp-desktop-up} {
+  button:hover {
+    background: $color-red;
+    color: $color-white;
+  }
+}
