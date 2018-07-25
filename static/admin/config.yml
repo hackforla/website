@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: "hackforla/website" # Gulp will replace this with your GitHub repository
-  branch: "master" # Branch to update (master by default)
+  name: git-gateway
+  branch: master
 
 media_folder: "static/images/uploads" # Folder where user uploaded files should go
 public_folder: "images/uploads"
