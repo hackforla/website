@@ -5,24 +5,24 @@
       .main-header-content
         .branding
           .sr-only Hack for LA
-          img(src='~/assets/images/logo-hfla.svg').logo
+          HflaLogo.logo
         nav.header-nav
           ul.inline-list
             li
               a(href='#hack-nights', v-smooth-scroll)
-                img(src='~/assets/images/icon-hack-nights.svg').icon.icon-hack-nights.nav-icon
+                IconHackNights.icon.icon-hack-nights.nav-icon
                 | Hack Nights
             li
               a(href='#projects', v-smooth-scroll)
-                img(src='~/assets/images/icon-projects.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon
+                IconProjects.icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon
                 | Projects
             li
               a(href='#press', v-smooth-scroll)
-                img(src='~/assets/images/icon-press.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-press.nav-icon
+                IconPress.icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-press.nav-icon
                 | Press
             li
               a(href='#about', v-smooth-scroll)
-                img(src='~/assets/images/icon-about.svg').icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-about.nav-icon
+                IconAbout.icon.icon-hack-nights.nav-icon.icon.icon-projects.nav-icon.icon.icon-about.nav-icon
                 | About
             li.hide-mobile
               a(href='#contact', v-smooth-scroll) Contact Us
@@ -30,7 +30,7 @@
           ul.inline-list.social-list
             li(v-for='item in headerSocial')
               a(:href='item.link', target='_blank').js-social-link
-                img(:src='require(`~/assets/images/icon-${item.name.toLowerCase()}.svg`)', :class='`icon-${item.name.toLowerCase()}`').icon
+                component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                 span.sr-only {item.name}
     main
       nuxt
@@ -43,8 +43,7 @@
               ul.inline-list.social-list
                 li(v-for='item in social')
                   a(:href='item.link', target='_blank').js-social-link
-                    .icon
-                    img(:src='require(`~/assets/images/icon-${item.name.toLowerCase()}.svg`)', :class='`icon-${item.name.toLowerCase()}`').icon
+                    component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                     span.sr-only {item.name}
 
     script.
@@ -57,43 +56,69 @@
 </template>
 
 <script>
+import HflaLogo from '~/assets/images/logo-hfla.svg';
+import IconAbout from '~/assets/images/icon-about.svg';
+import IconHackNights from '~/assets/images/icon-hack-nights.svg';
+import IconPress from '~/assets/images/icon-press.svg';
+import IconProjects from '~/assets/images/icon-projects.svg';
+import LogoFacebook from '~/assets/images/icon-facebook.svg';
+import LogoGithub from '~/assets/images/icon-github.svg';
+import LogoMeetup from '~/assets/images/icon-meetup.svg';
+import LogoSlack from '~/assets/images/icon-slack.svg';
+import LogoTwitter from '~/assets/images/icon-twitter.svg';
+
 export default {
+  components: {
+    HflaLogo,
+    IconAbout,
+    IconHackNights,
+    IconPress,
+    IconProjects
+  },
   data: function() {
     return {
       headerSocial: [
         {
           name: 'Github',
-          link: 'https://github.com/hackforla'
+          link: 'https://github.com/hackforla',
+          icon: LogoGithub
         },
         {
           name: 'Slack',
-          link: 'https://hackforla-slack.herokuapp.com/'
+          link: 'https://hackforla-slack.herokuapp.com/',
+          icon: LogoSlack
         },
         {
           name: 'Facebook',
-          link: 'https://hackforla-slack.herokuapp.com/'
+          link: 'https://hackforla-slack.herokuapp.com/',
+          icon: LogoFacebook
         }
       ],
       social: [
         {
           name: 'Meetup',
-          link: 'https://www.meetup.com/hackforla/'
+          link: 'https://www.meetup.com/hackforla/',
+          icon: LogoMeetup
         },
         {
           name: 'Slack',
-          link: 'https://hackforla-slack.herokuapp.com/'
+          link: 'https://hackforla-slack.herokuapp.com/',
+          icon: LogoSlack
         },
         {
           name: 'Github',
-          link: 'https://github.com/hackforla'
+          link: 'https://github.com/hackforla',
+          icon: LogoGithub
         },
         {
           name: 'Facebook',
-          link: 'https://www.facebook.com/hackforla'
+          link: 'https://www.facebook.com/hackforla',
+          icon: LogoFacebook
         },
         {
           name: 'Twitter',
-          link: 'https://twitter.com/HackForLA'
+          link: 'https://twitter.com/HackForLA',
+          icon: LogoTwitter
         }
       ]
     };

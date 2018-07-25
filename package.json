@@ -14,8 +14,15 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": ["npm run lint-autofix", "prettier --write", "git add"],
-    "*.{json,css,scss}": ["prettier --write", "git add"]
+    "*.{js,vue}": [
+      "npm run lint-autofix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,css,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.1",
@@ -42,6 +49,7 @@
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "sass-loader": "^7.0.1",
+    "vue-svg-loader": "^0.5.0",
     "yaml-frontmatter-loader": "^0.1.0"
   }
 }

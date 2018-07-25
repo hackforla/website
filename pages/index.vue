@@ -4,14 +4,17 @@ div
     .hero-inner
       h1 {{ contents.hero.title }}
       p.type-featured  {{ contents.hero.dek }}
-      form.js-ajax-form.hero-signup(name='Quick Signup Form')
+      form.hero-signup(
+          name='Quick Signup Form',
+          @submit.prevent='submitQuickSignup')
         .form-input
           label(for='hero-signup').sr-only Enter your email address
           input(type='email',
             name='email',
+            v-model='quickSignupEmail',
             placeholder='Enter your email address', required)#hero-signup
         button(type='submit').btn.btn-primary Sign up for updates
-        .form-confirmation.hidden
+        .form-confirmation(v-if='quickSignupSubmitted')
           strong Thanks! You'll hear from us soon.
   section#hack-nights.content-section.section-hack-nights
     .page-contain
@@ -60,7 +63,9 @@ div
                 strong
                   | Partner:
                   |
-                a(v-if='item.partnerLink', :href='item.partnerLink', target='_blank') {{ item.partner }}
+                a(v-if='item.partnerLink',
+                    :href='item.partnerLink',
+                    target='_blank') {{ item.partner }}
                 span(v-else) {{ item.partner }}
               .project-needs(v-if='item.looking')
                 strong Looking for:
@@ -69,7 +74,7 @@ div
                 strong Location:
                 |  {{ item.location }}
       p.project-pitch.
-        Have an idea? #[a(href='#contact').js-smooth-scroll.btn.btn-primary Submit your pitch]
+        Have an idea? #[a(href='#contact' v-smooth-scroll).btn.btn-primary Submit your pitch]
 
   section#press.content-section.press
     .page-contain
@@ -90,24 +95,38 @@ div
   section#about.content-section.about
     .page-contain
       h2 {{ contents.about.title }}
-      | {{ contents.about.dek }}
+      p {{ contents.about.dek }}
       #contact
         h3 Contact Us
         p.
-          Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
-        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify, netlify-honeypot='bot-field')
-          textarea(placeholder='Send us a message', name='message', required)
+          Are you press and want to get in touch? Are you interested in
+          becoming a sponsor? Want to just
+          #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]?
+          Looking to volunteer?
+        form.contact-form(
+            action='thank-you',
+            method='post',
+            name='Contact Form',
+            netlify,
+            netlify-honeypot='bot-field',
+            @submit.prevent='submitFeedback')
+          textarea(placeholder='Send us a message',
+              name='message',
+              v-model='feedbackText',
+              required)
           .form-controls
             .form-input
               label(for='contact-email').sr-only Enter your email address
               input(type='email',
                 name='email',
-                placeholder='Enter your email address', required)#contact-email
+                placeholder='Enter your email address',
+                v-model='feedbackEmail'
+                required)#contact-email
             .sr-only
               label Don't fill this out if you're human:
                 input(name='bot-field')
             button(type='submit').btn.btn-primary Send message
-          p.form-confirmation.hidden
+          p.form-confirmation(v-if='feedbackSubmitted')
             strong Thanks! You'll hear from us soon.
   section#sponsors.content-section
     .section-inner.page-contain
@@ -122,15 +141,80 @@ div
 </template>
 
 <script>
-import content from '~/static/content/index.md';
 import Calendar from '@/components/Calendar';
+import axios from 'axios';
+import content from '~/static/content/index.md';
+import { ACTION_NETWORK_API } from '~/constants/action-network';
 
 export default {
   components: {
     Calendar
   },
-  data: function() {
-    return { contents: content.attributes };
+  data() {
+    return {
+      contents: content.attributes,
+      quickSignupEmail: '',
+      quickSignupLoading: false,
+      quickSignupSubmitted: false,
+      feedbackEmail: '',
+      feedbackText: '',
+      feedbackLoading: false,
+      feedbackSubmitted: false
+    };
+  },
+  methods: {
+    submitQuickSignup() {
+      if (this.quickSignupLoading) {
+        return;
+      }
+      this.quickSignupLoading = true;
+      this.quickSignupSubmitted = false;
+      this.submitEmail(this.quickSignupEmail).then(() => {
+        this.quickSignupLoading = false;
+        this.quickSignupSubmitted = true;
+        this.quickSignupEmail = '';
+      });
+    },
+    submitFeedback() {
+      if (this.feedbackLoading) {
+        return;
+      }
+      this.feedbackLoading = true;
+      this.feedbackSubmitted = false;
+      return this.submitEmail(this.feedbackEmail)
+        .then(() => {
+          return axios.post('/thank-you', {
+            message: this.feedbackText,
+            email: this.feedbackEmail
+          });
+        })
+        .then(() => {
+          this.feedbackLoading = false;
+          this.feedbackSubmitted = true;
+          this.feedbackEmail = '';
+          this.feedbackText = '';
+        });
+    },
+    submitEmail(email) {
+      return axios.post(
+        'https://actionnetwork.org/api/v2/people/',
+        {
+          person: {
+            email_addresses: [
+              {
+                address: email
+              }
+            ]
+          }
+        },
+        {
+          headers: {
+            'OSDI-API-Token': ACTION_NETWORK_API,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+    }
   }
 };
 </script>

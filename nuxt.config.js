@@ -41,15 +41,17 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
-      }
+    extend(config) {
+      const svgRule = config.module.rules.find(
+        rule => rule.loader === 'url-loader'
+      );
+
+      svgRule.test = /\.(png|jpe?g|gif)$/;
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'vue-svg-loader'
+      });
 
       config.module.rules.push({
         test: /\.md$/,
