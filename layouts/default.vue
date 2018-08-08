@@ -45,7 +45,17 @@
                   a(:href='item.link', target='_blank').js-social-link
                     component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                     span.sr-only {item.name}
-
+    script(src='https://identity.netlify.com/v1/netlify-identity-widget.js')
+    script.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function() {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
