@@ -31,7 +31,7 @@
             li(v-for='item in headerSocial')
               a(:href='item.link', target='_blank').js-social-link
                 component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
-                span.sr-only {item.name}
+                span.sr-only {{ item.name }}
     main
       nuxt
     footer.main-footer
@@ -44,7 +44,7 @@
                 li(v-for='item in social')
                   a(:href='item.link', target='_blank').js-social-link
                     component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
-                    span.sr-only {item.name}
+                    span.sr-only {{ item.name }}
     script(src='https://identity.netlify.com/v1/netlify-identity-widget.js')
     script.
       if (window.netlifyIdentity) {
