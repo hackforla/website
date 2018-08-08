@@ -41,9 +41,9 @@ projects:
         url: 'https://github.com/light-the-way'
       - name: Site
         url: 'https://lighttheway.herokuapp.com/'
-    location: Downtown
     looking: 'Front-end Developers, UX Designers'
     title: Project Light The Way
+    location: Downtown
   - dek: >-
       Applying for work should be simple—but the application process for the
       City of LA is confusing and cumbersome. We’re going to make it easier to
@@ -52,10 +52,10 @@ projects:
     links:
       - name: Site
         url: 'http://www.workfor.la/'
-    location: Downtown
     looking: 'UX, Writers, Designers'
     partner: Department of Personnel
     title: Work for LA
+    location: Downtown
   - dek: >-
       Everyone deserves access to healthy food. Help us make it easier for
       Angelenos to find the best places to buy or grow healthy food in their
@@ -66,10 +66,10 @@ projects:
         url: 'https://github.com/foodoasisla'
       - name: Site
         url: 'https://foodoasis.la/'
-    location: ''
     looking: ''
     partner: Youth Policy Institute
     title: Food Oasis
+    location: ''
   - dek: >-
       There are thousands of works of public art scattered around the city.
       There should be one place to see where they are and how they’re doing.
@@ -78,10 +78,10 @@ projects:
     links:
       - name: Github
         url: 'https://github.com/hackforla/adopt-civic-art'
-    location: ''
     looking: ''
     partner: County of Los Angeles
     title: ArtWatcher
+    location: ''
   - dek: >-
       We are building a platform to engage the community to map and update the
       city's parking restrictions. Simultaneously we want to create an app that
@@ -134,7 +134,7 @@ press:
       http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html
 about:
   dek: "Hack for LA is a project group of [Hacker Fund](https://www.hacker.fund)\_and the official Los Angeles chapter of [Code for America](https://www.codeforamerica.com). We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest challenges."
-  title: Want to know more about Hack for LA?
+  title: Do you want to know more about Hack for LA?
 sponsors:
   - image: /images/uploads/logo-cfa.svg
     name: Code for America
@@ -148,5 +148,5 @@ sponsors:
   - image: /images/uploads/logo-hacker-fund.svg
     name: Hacker Fund
     url: 'https://www.hacker.fund'
-template: _templates/_home.pug
 ---
+
