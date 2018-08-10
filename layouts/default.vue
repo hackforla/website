@@ -1,5 +1,5 @@
 <template lang='pug'>
-  div#app
+  div#app.app
     a#skip-link.sr-only-focusable(href='#content') Skip to main content.
     header.main-header
       .main-header-content
