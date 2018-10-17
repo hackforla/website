@@ -2,6 +2,7 @@
 # /path   /destination                                                                        Response code
 
 /slack    http://hackforla-slack.herokuapp.com/                                               301
-/donate   https://donorbox.org/hackforla   301
+/donate   https://donorbox.org/hackforla                                                      301
+/conduct  https://github.com/hackforla/codeofconduct                                          301
 /calendar https://calendar.google.com/calendar?cid=cnQ3dXBpcmF2ZWtpOTFhY2trdXQ5OTRwZHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ 301
 /coffee   https://www.eventbrite.com/e/make-trash-history-the-los-angeles-coffee-community-leads-the-way-tickets-51337704456 301
