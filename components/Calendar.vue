@@ -38,10 +38,7 @@ export default {
         )
         .then(({ data }) => {
           this.calendar = data.items.filter(
-            item =>
-              item.summary &&
-              item.summary !== 'Westside Hack Night' &&
-              item.summary !== 'DTLA Hack Night'
+            item => item.summary && item.summary.indexOf('Hack Night') < 0
           );
         });
     },
