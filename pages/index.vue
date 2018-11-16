@@ -27,9 +27,10 @@ div
             h3.location-header
             strong {{ location.title }}
             |  {{ location.date }}
-            address.
-              {{ location.address1 }}#[br]
-              {{ location.address2 }}, {{ location.city }}, {{ location.state }} {{ location.zip }}
+            address
+              a(:href='location.map', target='_blank').
+                {{ location.address1 }}#[br]
+                {{ location.address2 }}, {{ location.city }}, {{ location.state }} {{ location.zip }}
       p
         a(href='https://www.meetup.com/hackforla/',
           target='_blank').btn.btn-primary RSVP on Meetup
