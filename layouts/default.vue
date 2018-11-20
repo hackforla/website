@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
   div#app.app
     a#skip-link.sr-only-focusable(href='#content') Skip to main content.
     header.main-header
@@ -29,7 +29,7 @@
         .social-links
           ul.inline-list.social-list
             li(v-for='item in headerSocial')
-              a(:href='item.link', target='_blank').js-social-link
+              a(:href='item.link', target='_blank', :class='`js-social-link js-social-link-${item.name.toLowerCase()}`')
                 component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                 span.sr-only {{ item.name }}
     main
@@ -42,7 +42,7 @@
               h2.social-header Follow us&mdash;
               ul.inline-list.social-list
                 li(v-for='item in social')
-                  a(:href='item.link', target='_blank').js-social-link
+                  a(:href='item.link', target='_blank', :class='`js-social-link js-social-link-${item.name.toLowerCase()}`')
                     component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                     span.sr-only {{ item.name }}
     script(src='https://identity.netlify.com/v1/netlify-identity-widget.js')
@@ -136,5 +136,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
