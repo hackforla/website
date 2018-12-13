@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
   div#app.app
     a#skip-link.sr-only-focusable(href='#content') Skip to main content.
     header.main-header
@@ -29,7 +29,7 @@
         .social-links
           ul.inline-list.social-list
             li(v-for='item in headerSocial')
-              a(:href='item.link', target='_blank').js-social-link
+              a(:href='item.link', target='_blank', :class='`js-social-link js-social-link-${item.name.toLowerCase()}`')
                 component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                 span.sr-only {{ item.name }}
     main
@@ -42,7 +42,7 @@
               h2.social-header Follow us&mdash;
               ul.inline-list.social-list
                 li(v-for='item in social')
-                  a(:href='item.link', target='_blank').js-social-link
+                  a(:href='item.link', target='_blank', :class='`js-social-link js-social-link-${item.name.toLowerCase()}`')
                     component(:is='item.icon', :class='`icon-${item.name.toLowerCase()}`').icon
                     span.sr-only {{ item.name }}
     script(src='https://identity.netlify.com/v1/netlify-identity-widget.js')
@@ -76,6 +76,7 @@ import LogoGithub from '~/assets/images/icon-github.svg';
 import LogoMeetup from '~/assets/images/icon-meetup.svg';
 import LogoSlack from '~/assets/images/icon-slack.svg';
 import LogoTwitter from '~/assets/images/icon-twitter.svg';
+import LogoMedium from '~/assets/images/icon-medium.svg';
 
 export default {
   components: {
@@ -102,6 +103,11 @@ export default {
           name: 'Facebook',
           link: 'https://hackforla-slack.herokuapp.com/',
           icon: LogoFacebook
+        },
+        {
+          name: 'Medium',
+          link: 'https://medium.com/hack-for-la',
+          icon: LogoMedium
         }
       ],
       social: [
@@ -111,19 +117,24 @@ export default {
           icon: LogoMeetup
         },
         {
-          name: 'Slack',
-          link: 'https://hackforla-slack.herokuapp.com/',
-          icon: LogoSlack
-        },
-        {
           name: 'Github',
           link: 'https://github.com/hackforla',
           icon: LogoGithub
         },
         {
+          name: 'Slack',
+          link: 'https://hackforla-slack.herokuapp.com/',
+          icon: LogoSlack
+        },
+        {
           name: 'Facebook',
           link: 'https://www.facebook.com/hackforla',
           icon: LogoFacebook
+        },
+        {
+          name: 'Medium',
+          link: 'https://medium.com/hack-for-la',
+          icon: LogoMedium
         },
         {
           name: 'Twitter',
@@ -136,5 +147,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
