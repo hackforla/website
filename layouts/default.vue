@@ -76,6 +76,7 @@ import LogoGithub from '~/assets/images/icon-github.svg';
 import LogoMeetup from '~/assets/images/icon-meetup.svg';
 import LogoSlack from '~/assets/images/icon-slack.svg';
 import LogoTwitter from '~/assets/images/icon-twitter.svg';
+import LogoMedium from '~/assets/images/icon-medium.svg';
 
 export default {
   components: {
@@ -102,6 +103,11 @@ export default {
           name: 'Facebook',
           link: 'https://hackforla-slack.herokuapp.com/',
           icon: LogoFacebook
+        },
+        {
+          name: 'Medium',
+          link: 'https://medium.com/hack-for-la',
+          icon: LogoMedium
         }
       ],
       social: [
@@ -111,19 +117,24 @@ export default {
           icon: LogoMeetup
         },
         {
-          name: 'Slack',
-          link: 'https://hackforla-slack.herokuapp.com/',
-          icon: LogoSlack
-        },
-        {
           name: 'Github',
           link: 'https://github.com/hackforla',
           icon: LogoGithub
         },
         {
+          name: 'Slack',
+          link: 'https://hackforla-slack.herokuapp.com/',
+          icon: LogoSlack
+        },
+        {
           name: 'Facebook',
           link: 'https://www.facebook.com/hackforla',
           icon: LogoFacebook
+        },
+        {
+          name: 'Medium',
+          link: 'https://medium.com/hack-for-la',
+          icon: LogoMedium
         },
         {
           name: 'Twitter',
