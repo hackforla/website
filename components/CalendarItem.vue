@@ -40,7 +40,7 @@ export default {
     time() {
       if (this.start && 'date' in this.start) {
         return new Date(this.start.date).toLocaleString('en-US', {
-          timeZone: 'America/Los_Angeles',
+          timeZone: 'UTC',
           weekday: 'long',
           day: 'numeric',
           month: 'long',
@@ -64,5 +64,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
