@@ -24,6 +24,7 @@ location:
       state: CA
       title: Westside
       zip: '90401'
+      map: 'https://duckduckgo.com/?q=525+Colorado+Ave.%2C+Santa+Monica%2C+CA+90401&t=h_&ia=maps&iaxm=maps'
     - address1: 'La Kretz Innovation Center, Room 401'
       address2: 525 S Hewitt St
       city: Los Angeles
@@ -32,6 +33,7 @@ location:
       state: CA
       title: Downtown
       zip: '90013'
+      map: 'https://duckduckgo.com/?q=525+S+Hewitt+St%2C+Los+Angeles%2C+CA+90013&t=h_&ia=maps&iaxm=maps'
   title: Hack Nights - Every Monday & Tuesday
 projects:
   - dek: ''
