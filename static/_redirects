@@ -2,8 +2,9 @@
 # <path>    <destination>    <Response Code> (301 by default)
 
 # Force HTTPS
-http://www.hackforla.org   https://www.hackforla.org
-http://www.hackforla.org/* https://www.hackforla.org/:splat
+# pausing while we figure out the DNS/domain situation
+# http://www.hackforla.org   https://www.hackforla.org
+# http://www.hackforla.org/* https://www.hackforla.org/:splat
 
 # Core Shortcuts and Aliases
 /calendar https://calendar.google.com/calendar?cid=cnQ3dXBpcmF2ZWtpOTFhY2trdXQ5OTRwZHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
