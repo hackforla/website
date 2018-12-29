@@ -115,8 +115,8 @@ projects:
 
     
   - dek: >-
-      Public Tree Map is an online way to explore Santa Monica’s urban forest.
-    image: /images/uploads/project-public-tree-map1.pnp
+      Public Tree Map documents every public tree in Santa Monica. We present contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, daily updates will be made to the map.
+    image: /images/uploads/project-public-tree-map.png
     links:
       - name: Github
         url: 'https://github.com/Public-Tree-Map/'
