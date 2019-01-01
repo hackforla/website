@@ -114,6 +114,23 @@ projects:
       anyone else...
     title: Engage
     location: Santa Monica
+
+    
+  - dek: >-
+      Public Tree Map documents every public tree in Santa Monica. We present contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, daily updates will be made to the map.
+    image: /images/uploads/project-public-tree-map.png
+    links:
+      - name: Github
+        url: 'https://github.com/Public-Tree-Map/'
+      # - name: Site
+      #   url: 'https://'
+    looking: >-
+      JS developers, front-end web developers, and tree enthusiasts.
+    title: Public Tree Map
+    location: Santa Monica
+    Partner: City of Santa Monica Urban Forest
+
+
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
