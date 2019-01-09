@@ -144,7 +144,7 @@ projects:
     location: Santa Monica
     Partner: Hope of the Valley and hopefully others in the near future.
 
-      - dek: >-
+  - dek: >-
       HelloGOV is helping reproductive rights advocacy organizations connect supporters to their state assembly and state senate representatives for call campaigns. The HelloGOV webapp generates a campaign shortlink that can be used in texts, social posts, and more.
     image: /images/uploads/project-hellogov.jpg
     links:
