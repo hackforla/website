@@ -132,7 +132,7 @@ projects:
 
   - dek: >-
       A project that connects people in need of clothing and other essentials with people in the community who have things to spare. It's kind of like one on one Goodwill. The main objective is to foster interactions between the housed and unhoused. The donation is the mechanism for building these connections throughout our community.
-    image: /images/uploads/project-spare.png
+    image: /images/uploads/project-public-spare.png
     links:
       - name: Github
         url: 'https://github.com/hackforla/spare'
@@ -144,7 +144,7 @@ projects:
     location: Santa Monica
     Partner: Hope of the Valley and hopefully others in the near future.
 
-      - dek: >-
+  - dek: >-
       HelloGOV is helping reproductive rights advocacy organizations connect supporters to their state assembly and state senate representatives for call campaigns. The HelloGOV webapp generates a campaign shortlink that can be used in texts, social posts, and more.
     image: /images/uploads/project-hellogov.jpg
     links:
@@ -157,24 +157,6 @@ projects:
     title: HelloGOV
     location: Santa Monica
     Partner: Digital Defense Fund
-
-  - dek: >-
-      A better way for large communities to discuss and plan work toward a specific goal online. Users will be shown personalized suggested posts, similar to social media, which they can rate, comment on, improve, or add related posts for, like answering questions or identifying problems.
-    image: /images/uploads/project-colaboration-tree.png
-    links:
-      - name: Github
-        url: 'https://github.ctree.org'
-      - name: Slack
-        url: 'https://slack.ctree.org'
-      - name: Hackathon
-        url: 'https://hackathon.ctree.org'
-      - name: Demo
-        url: 'https://demo.ctree.org'
-    looking: >-
-      Developers (any experience level) and designers.
-    title: Collaboration Tree (cTree)
-    location: Downtown
-    Partner: Hack for LA, TechHire/Youth Policy Institute
 
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
