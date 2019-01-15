@@ -158,6 +158,25 @@ projects:
     location: Santa Monica
     Partner: Digital Defense Fund
 
+  - dek: >-
+      A better way for large communities to discuss and plan work toward a specific goal online. Users will be shown personalized suggested posts, similar to social media, which they can rate, comment on, improve, or add related posts for, like answering questions or identifying problems.
+    image: /images/uploads/project-colaboration-tree.png
+    links:
+      - name: Github
+        url: 'https://github.ctree.org/'
+      - name: Slack
+        url: 'http://slack.ctree.org/'      
+      - name: Hackathon
+        url: 'http://hackathon.ctree.org/'
+      - name: Demo
+        url: 'http://demo.ctree.org/'
+
+    looking: >-
+      Developers (any experience level) and designers.
+    title: Collaboration Tree
+    location: Downtown LA
+    Partner: Hack for LA, TechHire/Youth Policy Institute
+
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
