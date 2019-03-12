@@ -163,7 +163,7 @@ projects:
     image: /images/uploads/project-jobs-for-hope.png
     links:
       - name: Homepage
-        url: 'jobsforhope.digitalservice.la
+        url: 'jobsforhope.digitalservice.la'
       - name: Github
         url: 'https://github.com/hackforla/jobs-for-hope'
     looking: >-
