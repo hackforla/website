@@ -1,18 +1,15 @@
-# hackforla
+# hfla
 
-> Nuxt.js project
+> [Jekyll](https://jekyllrb.com) / [GitHub pages](https://pages.github.com/)
 
-## Build Setup
+## Run Locally
+
+We use Docker to keep development some what sane across a multi-platform team.
+
+Start a build server locally, watching changes in the `site` directory:
 
 ```bash
-# install dependencies
-$ npm install # Or yarn install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# generate static project
-$ npm run generate
+$ docker-compose up
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+Now browse to http://localhost:4000
