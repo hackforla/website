@@ -115,7 +115,7 @@ projects:
     title: Engage
     location: Santa Monica
 
-    
+
   - dek: >-
       Public Tree Map documents every public tree in Santa Monica. We present contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, daily updates will be made to the map.
     image: /images/uploads/project-public-tree-map.png
@@ -157,6 +157,20 @@ projects:
     title: HelloGOV
     location: Santa Monica
     Partner: Digital Defense Fund
+
+  - dek: >-
+      We compiled job listings from 60+ different non-profit organization websites for the LA County Homeless Initiative and consolidated them into a single database so that it is easier for job-seekers to search and filter for jobs.
+    image: /images/uploads/project-jobs-for-hope.png
+    links:
+      - name: Homepage
+        url: 'jobsforhope.digitalservice.la
+      - name: Github
+        url: 'https://github.com/hackforla/jobs-for-hope'
+    looking: >-
+      No one currently
+    title: Jobs for Hope
+    location: Downtown LA
+    Partner: LA County Homeless Initiative; http://homeless.lacounty.gov
 
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
