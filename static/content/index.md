@@ -31,7 +31,7 @@ location:
       date: 'Tuesdays at 6:00 pm'
       image: /images/uploads/la-kretz.jpg
       state: CA
-      title: Downtown
+      title: Downtown LA
       zip: '90013'
       map: 'https://duckduckgo.com/?q=525+S+Hewitt+St%2C+Los+Angeles%2C+CA+90013&t=h_&ia=maps&iaxm=maps'
   title: Hack Nights - Every Monday & Tuesday
@@ -45,7 +45,7 @@ projects:
         url: 'https://lighttheway.herokuapp.com/'
     looking: 'Front-end Developers, UX Designers'
     title: Project Light The Way
-    location: Downtown
+    location: Downtown LA
   - dek: >-
       Applying for work should be simple—but the application process for the
       City of LA is confusing and cumbersome. We’re going to make it easier to
@@ -57,7 +57,7 @@ projects:
     looking: 'UX, Writers, Designers'
     partner: Department of Personnel
     title: Work for LA
-    location: Downtown
+    location: Downtown LA
   - dek: >-
       Everyone deserves access to healthy food. Help us make it easier for
       Angelenos to find the best places to buy or grow healthy food in their
@@ -99,7 +99,7 @@ projects:
         url: 'https://curbmap.com/'
     looking: 'UX designers, UX researchers, UI designers'
     title: curbmap
-    location: Downtown
+    location: Downtown LA
   - dek: >-
       Engage is a platform to stay up to date on your local issues, making it
       easy to get your voice heard.
