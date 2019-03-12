@@ -172,6 +172,18 @@ projects:
     location: Downtown LA
     Partner: LA County Homeless Initiative; http://homeless.lacounty.gov
 
+  - dek: >-
+      The health monitor tracks LA Metro trains and generates summaries of daily, weekly, monthly and annual performance. We are building a tool that allows anyone to easily review and analyze the on-time performance of LA's 6 train lines.
+    image: /images/uploads/project-la-metro-heath-monitor.png
+    links:
+      - name: Github
+        url: 'https://github.com/metro-ontime'
+    looking: >-
+      Frontend Developers (React, D3), Backend Developers (Python, Pandas)
+    title: LA Metro Health Monitor
+    location: Downtown LA
+    Partner: LA Metro (https://www.metro.net/)
+
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
