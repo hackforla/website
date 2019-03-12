@@ -8,7 +8,6 @@ We use Docker to keep development some what sane across a multi-platform team.
 
 Start a build server locally, watching changes in the `site` directory:
 
-
 ```bash
 $ docker-compose up
 # this will take about 10 minutes the 1st time
