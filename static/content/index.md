@@ -159,6 +159,20 @@ projects:
     Partner: Digital Defense Fund
 
   - dek: >-
+      We compiled job listings from 60+ different non-profit organization websites for the LA County Homeless Initiative and consolidated them into a single database so that it is easier for job-seekers to search and filter for jobs.
+    image: /images/uploads/project-jobs-for-hope.png
+    links:
+      - name: Homepage
+        url: 'jobsforhope.digitalservice.la'
+      - name: Github
+        url: 'https://github.com/hackforla/jobs-for-hope'
+    looking: >-
+      No one currently
+    title: Jobs for Hope
+    location: Downtown LA
+    Partner: LA County Homeless Initiative; http://homeless.lacounty.gov
+
+  - dek: >-
       The health monitor tracks LA Metro trains and generates summaries of daily, weekly, monthly and annual performance. We are building a tool that allows anyone to easily review and analyze the on-time performance of LA's 6 train lines.
     image: /images/uploads/project-la-metro-heath-monitor.png
     links:
