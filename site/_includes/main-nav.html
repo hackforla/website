@@ -1,0 +1,13 @@
+<nav class="header-nav">
+  <ul class="inline-list">
+    {% for item in site.data.navigation.main %}
+    <li class="{{ item.listClass }}">
+      <a href="{{ item.link }}">
+        {% if item.iconUrl %} {%- include {{ site.baseurl
+        }}{{ item.iconUrl }} -%} {% endif %}
+        {{- item.name -}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
