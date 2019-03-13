@@ -1,0 +1,24 @@
+<footer class="main-footer">
+  <div class="page-contain">
+    <nav class="footer-nav">
+      <div class="social-links">
+        <h2 class="social-header">Follow us&mdash;</h2>
+        <ul class="inline-list social-list">
+          {% for item in site.data.navigation.social %} {% if item.footer %}
+          <li>
+            <a
+              href="{{ item.link }}"
+              target="_blank"
+              class="js-social-link js-social-link-{{ item.name | downcase }}"
+            >
+              {% if item.iconUrl %} {%- include {{ site.baseurl
+              }}{{ item.iconUrl }}.svg -%} {% endif %}
+              <span class="sr-only">{{ item.name }}</span>
+            </a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
