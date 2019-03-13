@@ -1,6 +1,6 @@
 ---
 title: Spare
-image: /images/uploads/project-spare.png
+image: /assets/images/projects/project-spare.png
 links:
   - name: Github
     url: 'https://github.com/hackforla/spare'
