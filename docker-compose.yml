@@ -7,5 +7,4 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - ./site:/src/hfla/site
-      - ./_site:/src/hfla/_site
+      - .:/src/hfla
