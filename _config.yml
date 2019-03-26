@@ -10,20 +10,23 @@ description: Hack for LA's website!
 baseurl: ""
 url: https://hackforla.github.io/website/
 
+sass:
+  sass_dir: site/_sass
+
 collections:
   projects:
     output: true
 
 defaults:
   -
-    scope:
+  scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
 
   -
-    scope:
+  scope:
       path: ""
       type: "projects"
     values:
