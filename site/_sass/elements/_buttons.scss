@@ -1,0 +1,29 @@
+.btn {
+  background: $color-red;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  color: $color-white;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: map-get($font-weight, bold);
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  text-decoration: none;
+  transition: all 100ms ease-in;
+  white-space: nowrap;
+
+  &:link,
+  &:visited {
+    color: $color-white;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-red, 10%);
+    color: $color-white;
+    text-decoration: none;
+  }
+}
