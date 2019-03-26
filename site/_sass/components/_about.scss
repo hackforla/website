@@ -1,0 +1,54 @@
+.contact-form {
+  border-bottom: 2px solid rgba($color-teal, 0.25);
+  padding-bottom: 32px;
+
+  textarea {
+    min-height: 200px;
+  }
+
+  .form-controls {
+    @media #{$bp-tablet-up} {
+      display: flex;
+
+      .form-input {
+        flex-grow: 1;
+      }
+
+      .btn {
+        margin: 0 0 24px 12px;
+      }
+    }
+  }
+}
+
+.logo-garden {
+  li {
+    margin-bottom: 12px;
+
+    @media #{$bp-mobile-up} {
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .unstyled-list {
+    @media #{$bp-mobile-up} {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .logo {
+    img {
+      display: block;
+      height: 50px;
+
+      @media #{$bp-mobile-up} {
+        height: 70px;
+      }
+    }
+  }
+}

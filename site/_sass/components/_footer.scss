@@ -1,0 +1,20 @@
+.main-footer {
+  background: $color-blue-dark;
+  color: $color-white;
+  margin-top: 50px;
+  padding: 32px 16px 100px;
+
+  @media #{$bp-tablet-up} {
+    padding-bottom: 32px;
+  }
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  .social-list {
+    align-items: center;
+    display: flex;
+  }
+}
