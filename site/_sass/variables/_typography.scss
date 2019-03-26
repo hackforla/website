@@ -1,0 +1,119 @@
+/**
+ * Typography
+ */
+$font-family-body: 'Roboto', sans-serif;
+$font-family-decorative: 'Roboto', sans-serif;
+
+$font-family: (
+  body: $font-family-body,
+  decorative: $font-family-decorative
+);
+
+$font-weight: (
+  light: 300,
+  normal: 400,
+  semibold: 600,
+  bold: 700
+);
+
+$rem-base: 16px;
+
+// Typography scale inspired by:
+// http://typecast.com/blog/a-more-modern-scale-for-web-typography
+$font-size-small: (
+  print: 10pt,
+  mobile: 0.625rem,
+  /* 10px*/ tablet: 0.875rem,
+  /* 14px*/ desktop: 0.875rem /* 14px*/
+);
+
+$font-size-base: (
+  print: 12pt,
+  mobile: $rem-base,
+  /* 16px*/ tablet: $rem-base,
+  /* 16px*/ desktop: $rem-base /* 16px*/
+);
+
+$font-size-blockquote: (
+  print: 24pt,
+  mobile: 1.25rem,
+  /* 20px*/ tablet: 1.5rem,
+  /* 24px*/ desktop: 1.5rem /* 24px*/
+);
+
+$font-size-h4: (
+  print: 14pt,
+  mobile: 1.125rem,
+  /* 18px*/ tablet: 1.125rem,
+  /* 18px*/ desktop: 1.125rem /* 18px*/
+);
+
+$font-size-h3: (
+  print: 18pt,
+  mobile: 1.375rem,
+  /* 22px*/ tablet: 1.5rem,
+  /* 24px*/ desktop: 1.75rem /* 28px*/
+);
+
+$font-size-h2: (
+  print: 24pt,
+  mobile: 1.625rem,
+  /* 26px*/ tablet: 2rem,
+  /* 32px*/ desktop: 2.25rem /* 36px*/
+);
+
+$font-size-h1: (
+  print: 36pt,
+  mobile: 2rem,
+  /* 32px*/ tablet: 2.5rem,
+  /* 40px*/ desktop: 3rem /* 48px*/
+);
+
+$line-height-small: (
+  print: 1.25,
+  mobile: 1.25,
+  tablet: 1.375,
+  desktop: 1.375
+);
+
+$line-height-base: (
+  print: 1.25,
+  mobile: 1.25,
+  tablet: 1.375,
+  desktop: 1.375
+);
+
+$line-height-blockquote: (
+  print: 1.25,
+  mobile: 1.25,
+  tablet: 1.458,
+  desktop: 1.458
+);
+
+$line-height-h4: (
+  print: 1.25,
+  mobile: 1.111,
+  tablet: 1.222,
+  desktop: 1.222
+);
+
+$line-height-h3: (
+  print: 1.25,
+  mobile: 1.136,
+  tablet: 1.25,
+  desktop: 1.25
+);
+
+$line-height-h2: (
+  print: 1.25,
+  mobile: 1.154,
+  tablet: 1.25,
+  desktop: 1.25
+);
+
+$line-height-h1: (
+  print: 1.25,
+  mobile: 1.25,
+  tablet: 1.125,
+  desktop: 1.05
+);
