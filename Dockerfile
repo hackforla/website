@@ -7,5 +7,5 @@ COPY _config.yml _config.yml
 
 EXPOSE 4000
 
-CMD ["jekyll", "serve", "--watch", "--incremental", "--force_polling"]
+CMD ["jekyll", "serve", "--watch", "--force_polling"]
 ENTRYPOINT ["bash"]

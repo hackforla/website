@@ -1,3 +1,8 @@
+lsi: false
+safe: true
+
+source: .
+
 title: Hack for LA
 email: hello@hackforla.org
 description: Hack for LA's website!
@@ -5,23 +10,19 @@ description: Hack for LA's website!
 baseurl: ""
 url: https://hackforla.github.io/website/
 
-source: site
-destination: _site
 
 collections:
   projects:
     output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
 
-  -
-    scope:
+  - scope:
       path: ""
       type: "projects"
     values:
