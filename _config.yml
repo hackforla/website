@@ -10,20 +10,19 @@ description: Hack for LA's website!
 baseurl: ""
 url: https://hackforla.github.io/website/
 
+
 collections:
   projects:
     output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
 
-  -
-    scope:
+  - scope:
       path: ""
       type: "projects"
     values:

@@ -1,0 +1,11 @@
+.js-social-link {
+  display: inline-block;
+  @include size(24px);
+
+  &.js-social-link-meetup {
+    @include size(89px, 32px);
+  }
+  .icon {
+    @include size(100%);
+  }
+}

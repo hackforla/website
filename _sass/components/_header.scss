@@ -1,0 +1,56 @@
+.main-header {
+  @include position(absolute, 0 0 null 0);
+  background: $color-white;
+  box-shadow: 0 1px 4px 0 rgba($color-black, 0.12);
+  font-weight: map-get($font-weight, bold);
+  padding: 20px;
+  z-index: 10;
+
+  @media #{$bp-tablet-up} {
+    @include clearfix;
+    padding: 10px;
+    position: fixed;
+
+    .social-links {
+      flex-grow: 0;
+    }
+  }
+
+  .social-links {
+    flex-grow: 1;
+    text-align: right;
+
+    li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: $color-black;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-red;
+      }
+    }
+  }
+
+  .branding {
+    @include position(absolute, -20px null null -40px);
+
+    @media #{$bp-tablet-up} {
+      left: -20px;
+    }
+  }
+}
+
+.main-header-content {
+  display: flex;
+}

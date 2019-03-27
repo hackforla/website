@@ -1,0 +1,38 @@
+.press {
+  padding: 32px 16px;
+}
+
+.news-cards {
+  border-bottom: 2px solid rgba($color-teal, 0.25);
+  margin: 0;
+  padding: 0 0 32px;
+
+  @media #{$bp-mobile-up} {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+
+  @media #{$bp-tablet-up} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.news-title {
+  margin-bottom: 0;
+
+  a {
+    &:link,
+    &:visited {
+      color: $color-black;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($color-red, 10%);
+    }
+  }
+}
