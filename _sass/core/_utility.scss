@@ -1,0 +1,19 @@
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
+
+/* stylelint-disable declaration-no-important */
+.hidden {
+  display: none !important;
+}
+
+.hide-mobile {
+  @media #{$bp-below-tablet} {
+    display: none !important;
+  }
+}
+/* stylelint-enable */

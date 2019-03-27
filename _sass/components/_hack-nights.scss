@@ -1,0 +1,53 @@
+.section-hack-nights {
+  background: $color-blue-dark;
+  color: $color-white;
+}
+
+.locations {
+  @media #{$bp-tablet-up} {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.location {
+  background: $color-white;
+  border-radius: 20px;
+  color: $color-black;
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  @media #{$bp-tablet-up} {
+    width: calc(50% - 12px);
+  }
+}
+
+.location-img {
+  background: white center no-repeat;
+  background-size: cover;
+  display: block;
+  height: 0;
+  padding-top: 40%;
+  width: 100%;
+}
+
+.location-header {
+  font-size: 1rem;
+  margin-bottom: 0;
+
+  strong {
+    color: $color-red;
+  }
+}
+
+.location-details {
+  padding: 16px;
+
+  address {
+    font-style: normal;
+  }
+}
+
+.btn {
+  margin: 0 20px 20px 0;
+}

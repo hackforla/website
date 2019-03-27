@@ -1,0 +1,174 @@
+html,
+body {
+  font: #{map-get($font-size-base, mobile)} / #{map-get(
+      $line-height-base,
+      mobile
+    )} map-get($font-family, body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+h1,
+.type-h1 {
+  font: map-get($font-weight, bold) #{map-get($font-size-h1, mobile)} / #{map-get(
+      $line-height-h1,
+      mobile
+    )} map-get($font-family, decorative);
+}
+
+h2,
+.type-h2 {
+  color: $color-red;
+  font: map-get($font-weight, bold) #{map-get($font-size-h2, mobile)} / #{map-get(
+      $line-height-h2,
+      mobile
+    )} map-get($font-family, decorative);
+}
+
+h3,
+.type-h3 {
+  font: map-get($font-weight, bold) #{map-get($font-size-h3, mobile)} / #{map-get(
+      $line-height-h3,
+      mobile
+    )} map-get($font-family, decorative);
+}
+
+h4,
+.type-h4 {
+  color: $color-red;
+  font: map-get($font-weight, bold) #{map-get($font-size-h4, mobile)} / #{map-get(
+      $line-height-h4,
+      mobile
+    )} map-get($font-family, decorative);
+}
+
+blockquote p,
+.type-featured {
+  font: map-get($font-weight, bold) #{map-get($font-size-blockquote, mobile)} / #{map-get(
+      $line-height-blockquote,
+      mobile
+    )} map-get($font-family, body);
+}
+
+.quote {
+  border-bottom: 2px solid rgba($color-teal, 0.25);
+  margin: 0 0 32px;
+  padding: 0 0 32px;
+  position: relative;
+
+  cite {
+    color: $color-black;
+    font-style: normal;
+    font-weight: map-get($font-weight, normal);
+  }
+
+  .quote-tmb {
+    @include position(absolute, null -24px -16px null);
+    border-radius: 100px;
+    display: block;
+  }
+}
+
+small,
+.type-small {
+  font: #{map-get($font-size-small, mobile)} / #{map-get(
+      $line-height-small,
+      mobile
+    )} map-get($font-family, body);
+}
+
+@media #{$bp-tablet-up} {
+  html,
+  body {
+    font-size: #{map-get($font-size-base, tablet)};
+    line-height: #{map-get($line-height-base, tablet)};
+  }
+
+  h1,
+  .type-h1 {
+    font-size: #{map-get($font-size-h1, tablet)};
+    line-height: #{map-get($line-height-h1, tablet)};
+  }
+
+  h2,
+  .type-h2 {
+    font-size: #{map-get($font-size-h2, tablet)};
+    line-height: #{map-get($line-height-h2, tablet)};
+  }
+
+  h3,
+  .type-h3 {
+    font-size: #{map-get($font-size-h3, tablet)};
+    line-height: #{map-get($line-height-h3, tablet)};
+  }
+
+  h4,
+  .type-h4 {
+    font-size: #{map-get($font-size-h4, tablet)};
+    line-height: #{map-get($line-height-h4, tablet)};
+  }
+
+  blockquote p,
+  .type-featured {
+    font-size: #{map-get($font-size-blockquote, tablet)};
+    line-height: #{map-get($line-height-blockquote, tablet)};
+  }
+
+  small {
+    font-size: map-get($font-size-small, tablet);
+    line-height: map-get($line-height-small, tablet);
+  }
+}
+
+@media #{$bp-desktop-up} {
+  html,
+  body {
+    font-size: #{map-get($font-size-base, desktop)};
+    line-height: #{map-get($line-height-base, desktop)};
+  }
+
+  h1,
+  .type-h1 {
+    font-size: #{map-get($font-size-h1, desktop)};
+    line-height: #{map-get($line-height-h1, desktop)};
+  }
+
+  h2,
+  .type-h2 {
+    font-size: #{map-get($font-size-h2, desktop)};
+    line-height: #{map-get($line-height-h2, desktop)};
+  }
+
+  h3,
+  .type-h3 {
+    font-size: #{map-get($font-size-h3, desktop)};
+    line-height: #{map-get($line-height-h3, desktop)};
+  }
+
+  h4,
+  .type-h4 {
+    font-size: #{map-get($font-size-h4, desktop)};
+    line-height: #{map-get($line-height-h4, desktop)};
+  }
+
+  blockquote p,
+  .type-featured {
+    font-size: #{map-get($font-size-blockquote, desktop)};
+    line-height: #{map-get($line-height-blockquote, desktop)};
+  }
+
+  small {
+    font-size: map-get($font-size-small, desktop);
+    line-height: map-get($line-height-small, desktop);
+  }
+}
