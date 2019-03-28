@@ -1,0 +1,12 @@
+<header class="hero">
+  <div class="hero-inner">
+    {% for item in site.hero %}
+    <h1>{{ item.title }}</h1>
+    <p class="type-featured">{{ item.message }}</p>
+    {% endfor %}
+    {% include forms/hero-signup.html %}
+    <p class="form-confirmation">
+      <strong></strong>
+    </p>
+  </div>
+</header>
