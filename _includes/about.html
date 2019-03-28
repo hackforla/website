@@ -1,0 +1,12 @@
+<section id="about" class="content-section about">
+  <div class="page-contain">
+    {% for item in site.about %}
+    {{ item.content | mardownify }}
+    {% endfor %}
+    <div id="contact">
+      {% for item in site.contactus %}
+      {{ item.content | mardownify }}
+      {% endfor %} {% include forms/contactus-form.html %}
+    </div>
+  </div>
+</section>
