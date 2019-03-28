@@ -3,21 +3,22 @@
 
 <section id="projects" class="content-section projects">
   <div class="page-contain projects-inner">
-  <h2 class="project-header">Current Projects</h2>
+    <h2 class="project-header">Current Projects</h2>
     <ul class="project-list unstyled-list">
-    {% for item in site.projects %}
-    <li class="project-card">
-      <div class="project-card-inner">
-        <div class="project-tmb">
+      {% for item in site.projects %}
+      <li class="project-card">
+        <div class="project-card-inner">
+          <div class="project-tmb">
             <img src={{ item.image }} class="project-tmb-img">
             <div class="project-body">
               <h4 class="project-title">{{ item.title }}</h4>
               <p class="project-description">{{ item.dek }}</p>
             </div>
+          </div>
         </div>
-      </div>
-    </li>
-    {% endfor %}
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </section>
+{%- include press.html -%}
