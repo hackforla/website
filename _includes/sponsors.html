@@ -1,0 +1,20 @@
+<section id="sponsors" class="content-section">
+  <div class="section-inner page-contain">
+    <div class="section-body-full">
+      <h2>Sponsors</h2>
+      <div class="logo-garden">
+        <ul class="unstyled-list">
+          {% for item in site.data.sponsors %}
+          <li>
+            <div class="logo">
+              <a href="{{ item.link }}" taget="_blank">
+                <img src="{{ baseurl }}{{ item.imgUrl }}" alt="{{ item.name }}" />
+              </a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
