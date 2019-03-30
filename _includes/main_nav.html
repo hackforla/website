@@ -1,10 +1,10 @@
 <nav class="header-nav">
   <ul class="inline-list">
     {% for item in site.data.navigation.main %}
-    <li class="{{ item.listClassName }}">
+    <li class="{{ item.list_class_name }}">
       <a href="{{ item.link }}">
-        {% if item.iconUrl %} {%- include {{ site.baseurl
-        }}{{ item.iconUrl }} -%} {% endif %}
+        {% if item.icon_url %} {%- include {{ site.baseurl
+        }}{{ item.icon_url }} -%} {% endif %}
         {{- item.name -}}
       </a>
     </li>
