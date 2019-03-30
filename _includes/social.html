@@ -3,8 +3,8 @@
     {% for item in site.data.navigation.social %} {% if item.header %}
     <li>
       <a class="js-social-link js-social-link-{{ item.name | downcase }}" href="{{ item.link }}" target="_blank">
-        {% if item.iconUrl %} {%- include {{ site.baseurl
-        }}{{ item.iconUrl }}.svg -%} {% endif %}
+        {% if item.icon_url %} {%- include {{ site.baseurl
+        }}{{ item.icon_url }}.svg -%} {% endif %}
       </a>
       <div class="span sr-only">
         {{ item.name }}
