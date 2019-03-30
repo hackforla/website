@@ -12,10 +12,11 @@ url: https://hackforla.github.io/website/
 
 
 collections:
+  press:
   projects:
     output: true
+  sponsors:
   testimonials:
-  press:
 
 defaults:
   - scope:
