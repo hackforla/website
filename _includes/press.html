@@ -1,0 +1,28 @@
+<section id="press" class="content-section press">
+  <div class="page-contain">
+    {% for item in site.testimonials %}
+    <blockquote class="quote">
+      <p>{{ item.quote }}</p>
+      <cite class="type-h4">{{ item.source }}</cite>
+      <img class="quote-tmb" src="{{ item.img_url }}" alt="{{ item.source }}" />
+    </blockquote>
+    {% endfor %}
+    <h2>Press</h2>
+    <ul class="news-cards unstyled-list">
+      {% for item in site.press %}
+      <li>
+        <div class="news-card">
+          <div class="news-card-inner">
+            <div class="news-body">
+              <h4 class="news-title">
+                <a href="{{ item.url }}">{{ item.title }}</a>
+              </h4>
+              <p>{{ item.source }}</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
