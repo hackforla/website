@@ -1,0 +1,47 @@
+<section id="projects" class="content-section projects">  
+      <div class="page-contain projects-inner">
+        <h2 class="project-header">Current Projects</h2>
+          <ul class="project-list unstyled-list">
+            {% for item in site.projects %}
+            <li class="project-card">
+              <div class="project-card-inner">
+                <div class="project-tmb">
+                  <img src={{ item.image }} class="project-tmb-img">
+                </div>
+                <div class="project-body">
+                  <h4 class="project-title">{{ item.title }}</h4>
+                  <p class="project-description">{{ item.description }}</p>
+                  <div class="project-links">
+                    {% if item.links %}
+                      <strong>Links: </strong> 
+                        {% for item in item.links %} 
+                          <a href={{ item.url }} target='_blank'> {{ item.name }}</a>{% if forloop.last == false %},
+                          {% endif %}
+                        {% endfor %}
+                    {% endif %} 
+                  </div>
+                  <div class="project-partner">
+                  {% if item.partner %}
+                  <strong>Partner: </strong>
+                   {{ item.partner }}
+                  {% endif %}
+                  </div>
+                  <div class="project-needs">
+                    {% if item.looking %}
+                    <strong>Looking for: </strong>
+                    {{ item.looking }}
+                    {% endif %}
+                  </div>
+                  <div class="project-location">
+                    {% if item.location %}
+                    <strong>Location: </strong>
+                      {{ item.location }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+          <p class="project-pitch">Have an idea? 
+              <a href="#contact" class="btn btn-primary">Submit your pitch</a></p>
