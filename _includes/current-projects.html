@@ -1,7 +1,5 @@
-<section id="projects" class="content-section projects">
-    
+<section id="projects" class="content-section projects">  
       <div class="page-contain projects-inner">
-        
         <h2 class="project-header">Current Projects</h2>
           <ul class="project-list unstyled-list">
             {% for item in site.projects %}
@@ -28,14 +26,12 @@
                    {{ item.partner }}
                   {% endif %}
                   </div>
-
                   <div class="project-needs">
                     {% if item.looking %}
                     <strong>Looking for: </strong>
                     {{ item.looking }}
                     {% endif %}
                   </div>
-
                   <div class="project-location">
                     {% if item.location %}
                     <strong>Location: </strong>
