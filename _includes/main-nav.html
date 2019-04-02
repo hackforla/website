@@ -2,7 +2,7 @@
   <ul class="inline-list">
     {% for item in site.data.navigation.main %}
     <li class="{{ item.list_class_name }}">
-      <a href="{{ item.link | prepend: "#" }}">
+      <a href="{{ item.link }}">
         {% if item.icon %} {%- include {{ site.baseurl
         }}{{ item.icon }} -%} {% endif %}
         {{- item.name -}}
