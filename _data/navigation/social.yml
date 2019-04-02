@@ -1,35 +1,35 @@
 - name: Meetup
   link: https://www.meetup.com/hackforla/
-  icon_url: /svg/icon-meetup
+  icon: /svg/icon-meetup.svg
   header: false
   footer: true
 
 - name: Github
   link: https://github.com/hackforla
-  icon_url: /svg/icon-github
+  icon: /svg/icon-github.svg
   header: true
   footer: true
 
 - name: Slack
   link: https://hackforla-slack.herokuapp.com/
-  icon_url: /svg/icon-slack
+  icon: /svg/icon-slack.svg
   header: true
   footer: true
 
 - name: Facebook
   link: https://hackforla-slack.herokuapp.com/
-  icon_url: /svg/icon-facebook
+  icon: /svg/icon-facebook.svg
   header: true
   footer: true
 
 - name: Medium
   link: https://medium.com/hack-for-la
-  icon_url: /svg/icon-medium
+  icon: /svg/icon-medium.svg
   header: true
   footer: true
 
 - name: Twitter
   link: https://twitter.com/HackForLA
-  icon_url: /svg/icon-twitter
+  icon: /svg/icon-twitter.svg
   header: false
   footer: true
