@@ -1,29 +1,27 @@
 - name: Hack Nights
   link: hack-nights
   list_class_name:
-  icon_url: /svg/icon-hacknights.svg
-  icon_class: icon icon-hack-nights nav-icon
+  icon: /svg/icon-hacknights.svg
 
 - name: Projects
   link: projects
   list_class_name:
-  icon_url: /svg/icon-projects.svg
-  icon_class: icon icon-hack-nights nav-icon icon icon-projects nav-icon
+  icon: /svg/icon-projects.svg
+
 
 - name: Press
   link: press
   list_class_name:
-  icon_url: /svg/icon-press.svg
-  icon_class: icon icon-hack-nights nav-icon icon icon-projects nav-icon icon icon-press nav-icon
+  icon: /svg/icon-press.svg
+
 
 - name: About
   link: about
   list_class_name:
-  icon_url: /svg/icon-about.svg
-  icon_class: icon icon-hack-nights nav-icon icon icon-projects nav-icon icon icon-about nav-icon
+  icon: /svg/icon-about.svg
 
 - name: Contact Us
   link: contact
   list_class_name: hide-mobile
-  icon_url:
+  icon:
   icon_class:
