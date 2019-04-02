@@ -22,12 +22,11 @@ Now browse to http://localhost:4000.
 Due to the difficulty of getting a proper `ruby/jekyll` environment running, this method is
 *not recommended* for Windows users.
 
-
 ### Docker
 
-This is the recommended approach for cross-platform compatibility and getting started quickly.
+This is the recommended approach to quickly getting started.
 
-There are two prerequisites: Docker and Docker Compose. The recommended installation method is
+There are two pre-requisites: Docker and Docker Compose. The recommended installation method is
 [Docker CE][dockerce] for Windows 10 64-bit, Mac, and Linux users. Users of unsupported operating
 systems may check out [Docker Toolbox][dockertoolbox] instead.
 
