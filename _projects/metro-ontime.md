@@ -1,8 +1,6 @@
 ---
 title: LA Metro Health Monitor (Metro Ontime)
-description: The health monitor tracks LA Metro trains and generates summaries of daily, weekly,
-             monthly and annual performance. We are building a tool that allows anyone to easily 
-             review and analyze the on-time performance of LA's 6 train lines.
+description: The health monitor tracks LA Metro trains and generates summaries of daily, weekly,monthly and annual performance. We are building a tool that allows anyone to easily review and analyze the on-time performance of LA's 6 train lines.
 image: /assets/images/projects/metro-ontime.png
 links: 
   - name: Github
