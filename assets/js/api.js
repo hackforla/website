@@ -1,4 +1,4 @@
-(function(window, document, undefined) {
+(function (window, document, undefined) {
   //capture all DOM Elements
   var heroForm = document.querySelector(".hero-signup");
   var heroFormInput = document.getElementById("hero-signup");
@@ -19,7 +19,7 @@
   var url = "https://actionnetwork.org/api/v2/people/";
 
   // FORM SUBMISSION HELPER FUNCTIONS
-  var submitEmail = function(url = ``, email) {
+  var submitEmail = function (url = ``, email) {
     var postData = {
       person: {
         email_addresses: [{ address: email }]
@@ -36,7 +36,7 @@
     }).then(response => response.json());
   };
 
-  var setPostMessage = function(targetNode, error) {
+  var setPostMessage = function (targetNode, error) {
     var successMessage = document.createTextNode(
       "Thanks! You'll hear from us soon."
     );
@@ -51,12 +51,12 @@
 
   // EVENT LISTENERS FOR FORM SUBMISSIONS
 
-  heroBtn.addEventListener("click", function(event) {
+  heroBtn.addEventListener("click", function (event) {
     event.preventDefault();
     var email = heroFormInput.value;
 
     submitEmail(url, email)
-      .then(function(data) {
+      .then(function (data) {
         if (data.error) {
           setPostMessage(heroFormConfirm, data.error);
         } else {
@@ -65,19 +65,19 @@
 
         heroForm.reset();
       })
-      .catch(function(error) {
+      .catch(function (error) {
         var errorMessage = document.createTextNode(error.message);
         heroFormConfirm.appendChild(errorMessage);
         heroForm.reset();
       });
   });
 
-  contactFormBtn.addEventListener("click", function(event) {
+  contactFormBtn.addEventListener("click", function (event) {
     event.preventDefault();
     var email = contactFormEmail;
 
     submitEmail(url, email)
-      .then(function(data) {
+      .then(function (data) {
         if (data.error) {
           setPostMessage(contactFormConfirm, data.error);
         } else {
@@ -86,7 +86,7 @@
 
         contactForm.reset();
       })
-      .catch(function(error) {
+      .catch(function (error) {
         var errorMessage = document.createTextNode(error.message);
         contactFormConfirm.appendChild(errorMessage);
         contactForm.reset();
