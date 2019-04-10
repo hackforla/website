@@ -17,6 +17,7 @@ collections:
     output: true
   sponsors:
   testimonials:
+  hacknights:
 
 defaults:
   - scope:
