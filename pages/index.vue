@@ -108,8 +108,6 @@ div
             action='thank-you',
             method='post',
             name='Contact Form',
-            netlify,
-            netlify-honeypot='bot-field',
             @submit.prevent='submitFeedback')
           textarea(placeholder='Send us a message',
               name='message',
