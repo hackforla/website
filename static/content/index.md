@@ -184,6 +184,17 @@ projects:
     location: Downtown LA
     Partner: LA Metro (https://www.metro.net/)
 
+  - dek: >-
+      Our project's goal is to make all criminal sentences administered in LA county into an open dataset. There is a lot of data about when and where crimes are committed - but none about what sentences are passed down in LA County.
+    image: /images/uploads/criminal-sentancing.jpg
+    links:
+      - name: Github
+        url: 'https://github.com/timdef/criminal-sentencing'
+    looking: >-
+      Great communicators and researchers!
+    title: Los Angeles Criminal Sentencing Project
+    location: Downtown LA
+
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
