@@ -6,7 +6,8 @@
             inclusive, diverse community, and everyone is welcome. Join an existing project team or pitch your own civic
             issue.</p>
         <div class="locations">
-            {%- for item in site.hack-nights -%}
+            {%- assign hacknights = site.hack-nights | sort: 'ordinal' -%}
+            {%- for item in hacknights -%}
             <div class="location">
                 <div class="location-img" style="background-image: url({{ item.image }})"></div>
                 <div class="location-details">

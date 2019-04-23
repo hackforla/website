@@ -12,12 +12,12 @@ url: https://hackforla.github.io/website/
 
 
 collections:
+  hack-nights:
   press:
   projects:
     output: true
   sponsors:
   testimonials:
-  hack-nights:
 
 defaults:
   - scope:
