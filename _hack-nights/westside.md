@@ -3,7 +3,8 @@ address1: Carbon Five
 address2: 525 Colorado Ave.
 city: Santa Monica
 event-date: 'Mondays at 6:00 pm'
-image: /assets/images/hack-nights/santa-monica.jpg
+image: /assets/images/hack-nights/westside.jpg
+ordinal: 0
 state: CA
 title: Westside
 zip: '90401'
