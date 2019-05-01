@@ -2,6 +2,7 @@
 title: Los Angeles Criminal Sentencing Project
 description: Our project's goal is to make all criminal sentences administered in LA county into an open dataset. There is a lot of data about when and where crimes are committed - but none about what sentences are passed down in LA County.
 image: /assets/images/projects/criminal-sentencing.jpg
+alt: "gavel"
 links: 
   - name: Github
     url: "https://github.com/timdef/criminal-sentencing" 
