@@ -2,7 +2,7 @@
 title: Engage
 description: Engage is a civic participation platform. Currently in beta, Engage makes it easier for residents of Santa Monica, CA to offer their feedback on policy issues that City Council is considering. Engage aims to increase access for community stakeholders who are unable to attend public meetings or may otherwise feel unheard by their local government.
 image: /assets/images/projects/engage.jpg
-alt: "city council"
+alt: "'city council closed in session'"
 links: 
   - name: Github
     url: 'https://github.com/hackla-engage'
