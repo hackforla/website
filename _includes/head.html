@@ -7,6 +7,6 @@
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 </head>
