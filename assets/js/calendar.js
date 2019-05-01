@@ -82,11 +82,11 @@
   // fetchCalendar(`https://www.googleapis.com/calendar/v3/calendars/${encodeURI(CALENDAR_ID)}/events`)
   // .then(events => printToConsole(events))
   // .catch(err => console.error(err))
-  
+
   /************** test to see if we are correctly scrubbing data **********/
   const calendarEvents = filterCalendarEvents(data.items);
   const mappedEvents = mapCalendarEvents(calendarEvents);
-  console.log(mappedEvents);
+  printToConsole(mappedEvents);
   mappedEvents.forEach(insertDetails);
   /************************************************************************/
 })();
