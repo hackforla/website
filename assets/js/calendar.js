@@ -25,8 +25,8 @@
   
   function mapCalendarEvents(events) {
     const mappedEvents = events.map(item => {
-      item.start.dateTime = formatDate(item.start.dateTime)
-      item.end.dateTime = formatDate(item.end.dateTime)
+      item.start.dateTime = formatDate(item.start.dateTime);
+      item.end.dateTime = formatDate(item.end.dateTime);
       return item;
     });
     return mappedEvents;
@@ -53,35 +53,34 @@
   }
 
   function fetchCalendar(url = '') {
-      return fetch(url, {
-          method: "GET",
-          headers: {
-              authorization: CALENDAR_API,
-          },
-              params: {
-                  maxItems: 100,
-                  orderBy: 'startTime',
-                  singleEvents: true,
-                  timeMin: new Date(new Date().setHours(0, 0, 0, 0)).toISOString(),
-                  key: CALENDAR_API
-              }
-          })
-          .then(response => response.json())
-          .then(function (response) {
-              // save only the non hack night events that are current
-              const calendarEvents = filterCalendarEvents(response.items);
-              const mappedEvents = mapCalendarEvents(calendarEvents);
-              mappedEvents.forEach(insertDetails)
-              return mappedEvents;
-          })
-          .catch(function (response) {
-              printToConsole(response.json)
-          });
-  }//https://www.googleapis.com/calendar/v3/calendars/calendarId/events/eventId
+    return fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: CALENDAR_API,
+      },
+      params: {
+        maxItems: 100,
+        orderBy: 'startTime',
+        singleEvents: true,
+        timeMin: new Date(new Date().setHours(0, 0, 0, 0)).toISOString(),
+        key: CALENDAR_API
+        }
+    })
+    .then(response => response.json())
+    .then(function (response) {
+      const calendarEvents = filterCalendarEvents(response.items);
+      const mappedEvents = mapCalendarEvents(calendarEvents);
+      mappedEvents.forEach(insertDetails);
+      return mappedEvents;
+    })
+    .catch(function (response) {
+      printToConsole(response.json)
+    });
+  }
 
-  // fetchCalendar(`https://www.googleapis.com/calendar/v3/calendars/${encodeURI(CALENDAR_ID)}/events`)
-  // .then(events => printToConsole(events))
-  // .catch(err => console.error(err))
+  fetchCalendar(`https://www.googleapis.com/calendar/v3/calendars/${encodeURI(CALENDAR_ID)}/events`)
+  .then(events => printToConsole(events))
+  .catch(err => printToConsole(err))
 
   /************** test to see if we are correctly scrubbing data **********/
   const calendarEvents = filterCalendarEvents(data.items);
