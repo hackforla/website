@@ -1,0 +1,21 @@
+<section id="sponsors" class="content-section">
+  <div class="section-inner page-contain">
+    <div class="section-body-full">
+      <h2>Sponsors</h2>
+      <div class="logo-garden">
+        <ul class="unstyled-list">
+          {% assign sponsors = site.sponsors | sort: 'position' %}
+          {% for item in sponsors %}
+          <li>
+            <div class="logo">
+              <a href="{{ item.link }}" target="_blank">
+                <img src="{{ baseurl }}{{ item.img_url }}" alt="{{ item.name }}" />
+              </a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

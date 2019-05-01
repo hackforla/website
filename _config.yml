@@ -1,0 +1,33 @@
+lsi: false
+safe: true
+
+source: .
+
+title: Hack for LA
+email: hello@hackforla.org
+description: Hack for LA's website!
+
+baseurl: ""
+url: https://hackforla.github.io/website/
+
+
+collections:
+  hack-nights:
+  press:
+  projects:
+    output: true
+  sponsors:
+  testimonials:
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

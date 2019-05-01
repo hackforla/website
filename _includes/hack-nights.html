@@ -1,0 +1,30 @@
+<section id="hack-nights" class="content-section section-hack-nights">
+    <div class="page-contain">
+        <h2>Hack Nights - Every Monday &amp; Tuesday</h2>
+        <p>We host weekly Hack Nights in Downtown Los Angeles and Santa Monica. At these events, we organize groups of
+            volunteers to build technology addressing the LA region’s biggest civic issues. Each night offers an
+            inclusive, diverse community, and everyone is welcome. Join an existing project team or pitch your own civic
+            issue.</p>
+        <div class="locations">
+            {%- assign hacknights = site.hack-nights | sort: 'ordinal' -%}
+            {%- for item in hacknights -%}
+            <div class="location">
+                <div class="location-img" style="background-image: url({{ item.image }})"></div>
+                <div class="location-details">
+                    <h3 class="location-header"></h3>
+                    <strong>{{ item.title }}</strong> {{ item.event-date }}
+                    <address>
+                        <a href={{ item.map }} target="_blank">
+                            {{ item.address1 }}<br>{{ item.address2 }}, {{ item.city }}, {{ item.state }} {{ item.zip }}
+                        </a>
+                    </address>
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+        <p>
+            <a href="https://www.meetup.com/hackforla/" target="_blank" class="btn btn-primary">RSVP on Meetup</a>
+            <a href="http://hackforla-slack.herokuapp.com/" target="_blank" class="btn btn-primary">Join our Slack</a>
+        </p>
+    </div>
+</section>

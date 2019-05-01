@@ -1,0 +1,15 @@
+<div class="social-links">
+  <ul class="inline-list social-list">
+    {% for item in site.data.navigation.social %} {% if item.header %}
+    <li>
+      <a class="js-social-link js-social-link-{{ item.name | downcase }}" href="{{ item.link }}" target="_blank">
+        {% if item.icon %} {%- include {{ site.baseurl
+        }}{{ item.icon }} -%} {% endif %}
+      </a>
+      <div class="span sr-only">
+        {{ item.name }}
+      </div>
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
+</div>

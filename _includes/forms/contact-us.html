@@ -1,0 +1,27 @@
+<form action="thank-you" method="post" class="contact-form" name="Contact Form">
+  <textarea name="message" placeholder="Send us a message" required></textarea>
+  <div class="form-controls">
+    <div class="form-input">
+      <label for="contact-email" class="sr-only">
+        Enter tour email address
+      </label>
+      <input
+        id="contact-email"
+        type="email"
+        name="email"
+        placeholder="Enter your email address"
+        required
+      />
+    </div>
+    <div class="sr-only">
+      <label for=""
+        >Don't fill this out if you're human
+        <input name="bot-field" />
+      </label>
+    </div>
+    <button id="contact-form-btn" type="submit" class="btn btn-primary">
+      Send message
+    </button>
+  </div>
+  <p class="form-confirmation"><strong></strong></p>
+</form>

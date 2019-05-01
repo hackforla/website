@@ -1,0 +1,24 @@
+- name: Hack Nights
+  link: "#hack-nights"
+  list_class_name:
+  icon: /svg/icon-hacknights.svg
+
+- name: Projects
+  link: "#projects"
+  list_class_name:
+  icon: /svg/icon-projects.svg
+
+- name: Press
+  link: "#press"
+  list_class_name:
+  icon: /svg/icon-press.svg
+
+- name: About
+  link: "#about"
+  list_class_name:
+  icon: /svg/icon-about.svg
+
+- name: Contact Us
+  link: "#contact"
+  list_class_name: hide-mobile
+  icon:

@@ -1,0 +1,10 @@
+version: "3"
+services:
+  site:
+    build: .
+    image: hfla_site
+    container_name: hfla_site
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/src/hfla
