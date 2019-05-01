@@ -9,7 +9,7 @@
             {%- assign hacknights = site.hack-nights | sort: 'ordinal' -%}
             {%- for item in hacknights -%}
             <div class="location">
-                <div class="location-img" style="background-image: url({{ item.image }})"></div>
+                <div class="location-img" style="background-image: url({{ item.image | absolute_url }})"></div>
                 <div class="location-details">
                     <h3 class="location-header"></h3>
                     <strong>{{ item.title }}</strong> {{ item.event-date }}
