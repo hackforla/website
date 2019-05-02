@@ -1,5 +1,7 @@
 ---
 ---
 
-// start content
+// define the absolute_url for use in image includes
+$absolute_url: "{{ absolute_url }}";
+
 @import 'main';
