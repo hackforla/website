@@ -1,10 +1,13 @@
 version: "3"
 services:
-  site:
-    build: .
-    image: hfla_site
+  hfla_site:
+    image: jekyll/jekyll:pages
     container_name: hfla_site
+    command: jekyll serve --force_polling --livereload --config _config.yml,_config.docker.yml
+    environment:
+      - JEKYLL_ENV=docker
     ports:
       - 4000:4000
+      - 35729:35729
     volumes:
-      - .:/src/hfla
+      - .:/srv/jekyll
