@@ -2,16 +2,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta property="og:url"                content="https://seanholahan.github.io/BuiltInLAWebsite/" />
-  <meta property="og:type"               content="website" />
-  <meta property="og:title"              content="You can change LA for the better!" />
-  <meta property="og:description"        content="Can you design, write, or code? Are you an activist with an idea? You can help Los Angeles live up to its potential at Hack for LA. Everyone is welcome!" />
-  <meta property="og:image"              content="assets/images/logo/hfla_fb_logo.png" />
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="You can change LA for the better!" />
+  <meta property="og:description" content="Can you design, write, or code? Are you an activist with an idea? You can help Los Angeles live up to its potential at Hack for LA. Everyone is welcome!" />
+  <meta property="og:image" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}/assets/images/logo/hfla_fb_logo.png" />
 
   <title> {% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="stylesheet" href="{{ 'assets/css/main.css' | prepend: site.baseurl }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}/assets/images/icon/favicon.ico" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 </head>
