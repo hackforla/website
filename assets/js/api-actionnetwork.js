@@ -43,18 +43,27 @@
     var errorMessage = document.createTextNode(error);
 
     if (error) {
+      targetNode.innerHTML = '';
       targetNode.appendChild(errorMessage);
     } else {
+      targetNode.innerHTML = '';
       targetNode.appendChild(successMessage);
     }
   };
+
+  var validateEmail = function(email) {
+     var pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+    return pattern.test(email);
+  }
 
   // EVENT LISTENERS FOR FORM SUBMISSIONS
 
   heroBtn.addEventListener("click", function (event) {
     event.preventDefault();
     var email = heroFormInput.value;
-
+    
+    if(validateEmail(email)) {
     submitEmail(url, email)
       .then(function (data) {
         if (data.error) {
@@ -70,12 +79,17 @@
         heroFormConfirm.appendChild(errorMessage);
         heroForm.reset();
       });
+  } else {
+          setPostMessage(heroFormConfirm, "Invalid Email Format");
+  }
   });
 
   contactFormBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    var email = contactFormEmail;
+    var email = contactFormEmail.value;
 
+    if(validateEmail(email)) {
+    submitEmail(url, email)
     submitEmail(url, email)
       .then(function (data) {
         if (data.error) {
@@ -91,5 +105,8 @@
         contactFormConfirm.appendChild(errorMessage);
         contactForm.reset();
       });
+    } else {
+          setPostMessage(contactFormConfirm, "Invalid Email Format");
+    }
   });
 })(window, document);
