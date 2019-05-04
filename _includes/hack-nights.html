@@ -14,7 +14,7 @@
                     <h3 class="location-header"></h3>
                     <strong>{{ item.title }}</strong> {{ item.event-date }}
                     <address>
-                        <a href={{ item.map }} target="_blank">
+                        <a href={{ item.map }} rel="noopener" target="_blank">
                             {{ item.address1 }}<br>{{ item.address2 }}, {{ item.city }}, {{ item.state }} {{ item.zip }}
                         </a>
                     </address>
@@ -23,8 +23,8 @@
             {%- endfor -%}
         </div>
         <p>
-            <a href="https://www.meetup.com/hackforla/" target="_blank" class="btn btn-primary">RSVP on Meetup</a>
-            <a href="http://hackforla-slack.herokuapp.com/" target="_blank" class="btn btn-primary">Join our Slack</a>
+            <a href="https://www.meetup.com/hackforla/" rel="noopener" target="_blank" class="btn btn-primary">RSVP on Meetup</a>
+            <a href="http://hackforla-slack.herokuapp.com/" rel="noopener" target="_blank" class="btn btn-primary">Join our Slack</a>
         </p>
     </div>
 </section>
