@@ -15,7 +15,7 @@
                   <div class="project-links">
                     <strong>Links: </strong> 
                       {%- for item in item.links -%} 
-                        <a href={{ item.url }} target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
+                        <a href={{ item.url }} rel="noopener" target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
                         {%- endif -%}
                       {%- endfor -%}
                   </div>
