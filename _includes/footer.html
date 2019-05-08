@@ -6,7 +6,7 @@
         <ul class="inline-list social-list">
           {% for item in site.data.navigation.social %} {% if item.footer %}
           <li>
-            <a href="{{ item.link }}" target="_blank" class="js-social-link js-social-link-{{ item.name | downcase }}">
+            <a href="{{ item.link }}" rel="noopener" target="_blank" class="js-social-link js-social-link-{{ item.name | downcase }}">
               {% if item.icon %} {%- include {{ site.baseurl
               }}{{ item.icon }} -%} {% endif %}
               <span class="sr-only">{{ item.name }}</span>
