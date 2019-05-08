@@ -10,7 +10,7 @@
   {% if page.title %} <meta property="og:title" content="{{page.title}}" /> 
   {% else %} <meta property="og:title" content="{{site.title}}" /> 
   {% endif %}
-
+  
   <title> {% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
