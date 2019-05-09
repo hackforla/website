@@ -4,11 +4,14 @@
   <p> Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just
   <a href="http://hackforla-slack.herokuapp.com/" rel="noopener" target="_blank">check us out on Slack</a>? Looking to volunteer? </p>
 <form action="thank-you" method="post" class="contact-form" name="Contact Form">
-  <textarea name="message" placeholder="Send us a message" required></textarea>
+  <label for="message" class="sr-only">
+      Send us a message
+  </label>
+  <textarea id="message" name="message" placeholder="Send us a message" required></textarea>
   <div class="form-controls">
     <div class="form-input">
       <label for="contact-email" class="sr-only">
-        Enter tour email address
+        Enter your email address
       </label>
       <input
         id="contact-email"
