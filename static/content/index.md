@@ -83,7 +83,7 @@ projects:
     looking: ''
     partner: County of Los Angeles
     title: ArtWatcher
-    location: ''
+    location: Downtown LA
   - dek: >-
       We are building a platform to engage the community to map and update the
       city's parking restrictions. Simultaneously we want to create an app that
