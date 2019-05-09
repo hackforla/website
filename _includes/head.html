@@ -2,7 +2,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hack for LA" />
+  <meta property="og:description" content="Can you design, write, or code? Are you an activist with an idea? You can help Los Angeles live up to its potential at Hack for LA. Everyone is welcome!" />
+  <meta property="og:image" content="{{'/assets/images/logos/hfla_fb_logo.png' | absolute_url }}" />
+  {% if page.title %} <meta property="og:title" content="{{page.title}}" /> 
+  {% else %} <meta property="og:title" content="{{site.title}}" /> 
+  {% endif %}
+  
   <title> {% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
