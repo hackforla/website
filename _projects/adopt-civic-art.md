@@ -9,6 +9,6 @@ links:
   # - name: Site
   #   url: ''
 # looking: 
-# location: Downtown LA or Santa Monica
+location: Downtown LA
 partner: County of Los Angeles
 ---
