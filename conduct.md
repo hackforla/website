@@ -1,5 +1,4 @@
 ---
-layout: redirect
+layout: conduct
 permalink: /conduct/
-redirect_to: https://github.com/hackforla/codeofconduct
 ---
