@@ -10,5 +10,6 @@ links:
     url: 'https://lighttheway.herokuapp.com/'
 looking: Front-end Developers, UX Designers
 location: Downtown LA
+hide: true
 # partner: 
 ---
