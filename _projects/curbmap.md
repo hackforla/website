@@ -10,5 +10,6 @@ links:
     url: 'https://curbmap.com/'
 looking: UX designers, UX researchers, UI designers
 location: Downtown LA
+hide: true
 # partner: 
 ---
