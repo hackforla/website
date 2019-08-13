@@ -1,6 +1,6 @@
 ---
 title: Public Tree Map
-description: Public Tree Map documents all ~36,000 public trees in Santa Monica. The map includes contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, the map updates every day.
+description: Public Tree Map documents all ~36,000 public trees in Santa Monica's urban forest. The map includes contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, the map updates every day.
 image: /assets/images/projects/public-tree-map.png
 alt: "'public tree map grid'"
 links: 
