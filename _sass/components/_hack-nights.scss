@@ -31,20 +31,12 @@
   width: 100%;
 }
 
-.location-header {
-  font-size: 1rem;
-  margin-bottom: 0;
-
-  strong {
-    color: $color-red;
-  }
-}
-
 .location-details {
   padding: 16px;
 
-  address {
-    font-style: normal;
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
