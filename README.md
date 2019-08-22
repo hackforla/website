@@ -11,7 +11,7 @@ There are a few options for developing the site locally.
 This is the recommended approach to quickly getting started.
 
 There are two pre-requisites: Docker and Docker Compose.
-The recommended installation method is [Docker CE][dockerce] for Windows 10 64-bit,
+The recommended installation method is [Docker Desktop][dockerdesktop] for Windows 10 64-bit,
 Mac, and Linux users. Users of unsupported operating systems may check out [Docker Toolbox][dockertoolbox] instead.
 
 More on using Docker and the concepts of containerization:
@@ -91,9 +91,9 @@ Now that local is up to date with `upstream`, update your GitHub fork with:
 git push --force origin/gh-pages
 ```
 
-[dockerce]: https://docs.docker.com/install/#supported-platforms
-[dockercompose]: https://docs.docker.com/compose/gettingstarted/
 [docker]: https://docs.docker.com/get-started/
+[dockercompose]: https://docs.docker.com/compose/gettingstarted/
+[dockerdesktop]: https://docs.docker.com/install/#supported-platforms
 [dockertoolbox]: https://docs.docker.com/toolbox/overview/
 [ghpages]: https://pages.github.com/
 [jekyll]: https://jekyllrb.com
