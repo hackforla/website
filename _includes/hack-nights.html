@@ -1,29 +1,34 @@
 <section id="hack-nights" class="content-section section-hack-nights">
     <div class="page-contain">
-        <h2>Hack Nights - Every Monday &amp; Tuesday</h2>
-        <p>We host weekly Hack Nights in Downtown Los Angeles and Santa Monica. At these events, we organize groups of
-            volunteers to build technology addressing the LA region’s biggest civic issues. Each night offers an
-            inclusive, diverse community, and everyone is welcome. Join an existing project team or pitch your own civic
-            issue.</p>
+        <h2>Weekly Civic Hack Nights</h2>
+        <p>
+            We host Civic Hack Nights in Santa Monica, Downtown Los Angeles and Inglewood each week.
+            At these events, we help groups of volunteers organize themselves into project teams to build
+            technology addressing the LA region’s biggest civic issues. Each night offers an
+            inclusive, diverse community and everyone is welcome.
+        </p>
         <div class="locations">
             {%- assign hacknights = site.hack-nights | sort: 'ordinal' -%}
             {%- for item in hacknights -%}
             <div class="location">
                 <div class="location-img" style="background-image: url({{ item.image | absolute_url }})"></div>
                 <div class="location-details">
-                    <strong>{{ item.title }}</strong> {{ item.event-date }}
-                    <address>
-                        <a href={{ item.map }} rel="noopener" target="_blank">
-                            {{ item.address1 }}<br>{{ item.address2 }}, {{ item.city }}, {{ item.state }} {{ item.zip }}
-                        </a>
-                    </address>
+                    <h3>{{ item.title }}</h3>
+                    {{ item.event_date }}
+                    <div>
+                        Onboarding: <em>{{ item.onboarding }}</em>
+                    </div>
                 </div>
             </div>
             {%- endfor -%}
         </div>
         <p>
-            <a href="https://www.meetup.com/hackforla/" rel="noopener" target="_blank" class="btn btn-primary">RSVP on Meetup</a>
-            <a href="http://hackforla-slack.herokuapp.com/" rel="noopener" target="_blank" class="btn btn-primary">Join our Slack</a>
+            We welcome new volunteers on select <strong>Onboarding Nights</strong>.
+            Check our Meetup events page for the current schedule and locations.
+        </p>
+        <p>
+            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary">Our Meetup Events</a>
+            <a href="https://www.hackforla.org/slack" rel="noopener" target="_blank" class="btn btn-primary">Join our Slack</a>
         </p>
     </div>
 </section>
