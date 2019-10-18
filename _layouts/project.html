@@ -1,3 +1,38 @@
-<h1>{{ page.title }}</h1>
+---
+layout: default
+---
+
+<div style='background-image: url({{ page.image }});' class='hero'>
+
+</div>
+
+<div class='content-section section-hack-nights'>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.description }}</p>
+    <p>Partner: {{ page.partner }}</p>
+    <p>Looking for: {{ page.looking }}</p>
+    <p>Location: {{ page.location }}</p>
+</div>
+
+<div class='content-section projects'>
+    <ul class="project-list unstyled-list">
+        {%- for item in page.links -%}
+            <li class='project-card'>
+                <div class='project-card-inner'>
+                    <!--Where the images will be-->
+                    <div class='project-tmb'>
+                        <img src={{ page.image | absolute_url }} class='project-tmb-img' alt={{page.alt}}/>
+                    </div>
+
+                    <div class='project-body'>
+                        <h4 class='project-title'>
+                            <a href='{{ item.url }}'>{{ item.name }}</a>
+                        </h4>
+                    </div>
+                </div>
+            </li>
+        {%- endfor -%}
+    </ul>
+</div>
 
 {{ content | markdownify }}
