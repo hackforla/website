@@ -1,0 +1,90 @@
+.project-banner {
+    background: $color-blue-dark;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+    max-height: 300px;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+  
+    @media #{$bp-tablet-up} {
+      min-height: 0;
+    }
+  
+    &::after {
+      @include position(absolute, 0 0 0 0);
+      background: linear-gradient(
+        to bottom,
+        rgba($color-blue-dark, 0.3) 0%,
+        rgba($color-blue-dark, 1) 100%
+      );
+      content: "";
+      display: block;
+      z-index: 1;
+  
+      @media #{$bp-tablet-up} {
+        background: linear-gradient(
+          to bottom,
+          rgba($color-blue-dark, 0) 30%,
+          rgba($color-blue-dark, 1) 100%
+        );
+        opacity: 1;
+      }
+    }
+  }
+
+.project-details {
+    background: $color-blue-dark;
+    color: $color-white;
+}
+
+.links {
+    background: $color-teal;
+    padding: 32px 16px;
+  }
+
+.link-list {
+    margin-bottom: 24px;
+    order: 2;
+}
+
+.link-card {
+    background: $color-white;
+    border: 0 solid rgba($color-black, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    max-width: 252px;
+    max-height: 252px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    @media #{$bp-tablet-up} {
+        margin-bottom: 0;
+    }
+}
+
+.link-tmb {
+    max-width: 252px;
+    max-height: 168px;
+}
+
+.link-tmb-img {
+    display: block;
+    //width: 100%
+}
+
+.link-body {
+    padding: 16px;
+}
+
+.link-header {
+    margin-block-end: 0px;
+    order: 1;
+}
