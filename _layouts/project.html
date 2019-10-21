@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-{% assign github-image = 'https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg'%}
-{% assign slack-image = 'https://pbs.twimg.com/profile_images/1174056919410954240/Cluq9fXt_400x400.jpg'%}
 
 <div style='background-image: url({{ page.image }});' class='project-banner'></div>
 
@@ -18,17 +16,10 @@ layout: default
     <ul class="link-list unstyled-list">
         {%- for item in page.links -%}
             <li class='link-card'>
-                <div class='project-card-inner'>
+                <div class='link-card-inner'>
                     <!--Where the images will be-->
                     <div class='link-tmb'>
-                        {% if item.name == 'Github' %}
-                            {% assign image = github-image %}
-                        {% elsif item.name == 'Slack' %}
-                            {% assign image = slack-image %}
-                        {% else %}
-                            {% assign image = page.image %}
-                        {% endif %}
-                        <img src={{ image | absolute_url }} class='link-tmb-img' alt={{page.alt}}/>
+                        <img src={{ page.image | absolute_url }} class='link-tmb-img' alt={{page.alt}}/>
                     </div>
 
                     <div class='link-body'>
