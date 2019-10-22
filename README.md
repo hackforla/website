@@ -4,9 +4,12 @@
 
 This is a standard [Jekyll][jekyll] site hosted right here on [GitHub pages][ghpages].
 
-There are a few options for developing the site locally.
+There are two options for developing the site locally: (1) Using the environment container "Docker" or (2) using Ruby and Jekyll directly ensuring you're using the same exact environment we're developing in. Therefore the first approach is recommended and very easy to use. 
 
-## Developing via Docker (Recommended)
+First you'll need the repository on your computer so you have a site to run when these development environments are installed.
+For new Git users, see Git section below after we discuss the two development approaches. 
+
+## Option 1 of 2: Developing via Docker (Recommended)
 
 This is the recommended approach to quickly getting started.
 
@@ -52,7 +55,14 @@ Bring the same server back up later with:
 docker-compose up
 ```
 
-## Developing directly with Ruby / Jekyll
+## Option 2 of 2: Developing directly with Ruby / Jekyll
+
+Due to the difficulty of getting a consistent environment running, this method is
+*not recommended*, particularly for Windows users. 
+
+Therefore, if Docker runs using the commands above, 
+don't add clutter to your computer by installing ruby and jekyll separately. 
+However, if you want to, then do the following. 
 
 With `ruby` and `jekyll` installed locally, use the [`jekyll` CLI commands][jekyllcli] directly to build and serve the site:
 
@@ -62,8 +72,79 @@ jekyll serve
 
 Now browse to http://localhost:4000.
 
-Due to the difficulty of getting a consistent environment running, this method is
+Again: Due to the difficulty of getting a consistent environment running, this method is
 *not recommended*, particularly for Windows users.
+
+
+# Git:
+
+## Forking and Cloning the Repository with Proper Security
+
+### Step 1: Get added as a member of the GitHub repository
+
+In the hfla-website slack channel, send your GitHub name to the project manager or on the channel thread and we'll add you as a member to the GitHub repository.
+
+Once you have accepted github invite (comes via email), please do the following:
+
+Mark your own membership public
+https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership
+
+Setup two factor authentication on your account
+https://github.com/hackforla/governance/issues/20 (edited) 
+
+### Step 2: Fork the Repository
+
+In https://github.com/hackforla/website, look for the fork icon in the top right. Click it and create a fork of the repository.
+For git beginners, this is a copy of the repository that will be placed on your GitHub account url. 
+It should create a copy here: https://github.com/your_GitHub_user_name/website, where your_GitHub_user_name is replaced with exactly that.
+Note that this copy is on a remote server on the GitHub website and not on your computer yet.
+If you click the icon again, it will not create a new fork but instead give you the URL associated with your fork. 
+
+### Step 3: Clone YOUR online repository to your local computer
+
+For git beginners, this process will create a third copy of the repository on your local desktop.
+
+First create a new folder on your desktop that will contain hackforla projects.
+In your shell, navigate there then run the following commands:
+
+```bash
+git clone https://github.com/your_GitHub_user_name/website.git
+```
+
+You should now have a new folder in your hackforla folder called "website". 
+
+If you accidentally cloned the hackforla/website.git then you can change your local copy to upload to YOUR fork by the following:
+
+```bash
+git remote set-url origin  https://github.com/your_user_name/website.git 
+```
+
+This will check if which URL you're pointing to:
+
+```bash
+git remote show origin
+```
+
+### Step 4: Change to a new branch
+
+For each issue, we'll try to create a new branch for that issue.
+This command will let you know available branches and which branch you're on. 
+Star (*) indicates which branch you're on
+
+```bash
+git branch
+```
+
+By default you should start on the 'gh-pages' branch. 
+This command will (create and) change to a new branch:
+
+```bash
+git checkout -b 140-fix-logo-width
+```
+
+We prefer that you work on a branch name that relates to the issue you're working on (or assigned).
+The format should look like the scheme above where 140 is the issue number in GitHub, and the words are a brief description of the issue. 
+No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces. 
 
 ## Incorporating changes from upstream
 
@@ -90,6 +171,20 @@ Now that local is up to date with `upstream`, update your GitHub fork with:
 ```bash
 git push --force origin/gh-pages
 ```
+## Making changes, committing and pushing
+
+The general process of making changes to the website is to make changes on your local repository of your fork in your own branch. 
+
+Then commit those changes with a comment related to the issue it addresses to your local repository.
+
+Then push that commit to YOUR online fork.
+
+Then go to the hackforla repository and create a PULL request which asks hackforla to pull changes from YOUR fork into their repository.
+
+Therefore all changes are made on your copy and only after the owner of the hackforla website approves and pulls your changes will updates be made. 
+
+New git users: please ask around for guidance here. See the commit and push commands. 
+
 
 [docker]: https://docs.docker.com/get-started/
 [dockercompose]: https://docs.docker.com/compose/gettingstarted/
