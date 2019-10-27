@@ -2,37 +2,56 @@
 layout: default
 ---
 
-<div style='background-image: url({{ page.image }});' class='project-banner'></div>
-
-<div class='content-section project-details'>
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.description }}</p>
-    <p><strong>Partner:</strong> {{ page.partner }}</p>
-    <p><strong>Looking for:</strong> {{ page.looking }}</p>
-    <p><strong>Location:</strong> {{ page.location }}</p>
-    <p><strong>Languages:</strong></p>
-    <p><strong>Status:</strong></p>
+<div style='background-image: url({{ page.image }});' class='project-banner'>
+    <h2 class='project-page-title'>{{ page.title }}</h2>
 </div>
 
-<div class='content-section links'>
-    <ul class="link-list unstyled-list">
-        {%- for item in page.links -%}
-            <li class='link-card'>
-                <div class='link-card-inner'>
-                    <!--Where the images will be-->
-                    <div class='link-tmb'>
-                        <img src={{ page.image | absolute_url }} class='link-tmb-img' alt={{page.alt}}/>
-                    </div>
+<div class='content-section project-page-content'>
+    <!--Project Discription Card-->
+    <div class='project-page-card project-page-description'>
+        <div class='project-page-description-item'>
+            <p><strong>Partner: </strong>{{ page.partner }}</p>
+            <p><strong>Status: </strong>{{ page.status }}</p>
+            <p><strong>Location: </strong>{{ page.location }}</p>
+            <p><strong>Languages: </strong>{{ page.languages }}</p>
+            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary">Meetup</a>
+        </div>
 
-                    <div class='link-body'>
-                        <h4 class='link-header'>
-                            <a href='{{ item.url }}'>{{ item.name }}</a>
-                        </h4>
-                    </div>
-                </div>
-            </li>
-        {%- endfor -%}
-    </ul>
+        <div class='project-page-description-item'>
+            <p>{{page.description}}</p>
+            <p><strong>Looking For: </strong>{{ page.looking }}</p>
+        </div>
+    </div>
+
+    <!--Project Team Card-->
+    <div class='project-page-card'>
+        <p>Project Team Card</p>
+    </div>
+
+    <!--Project Resources Card-->
+    <div class='project-page-card'>
+        <h4 class='resource-header'>Project Resources</h4>
+        <div class='project-page-resources'>
+            <ul class="resource-list unstyled-list">
+                {%- for item in page.links -%}
+                    <li class='resource-card'>
+                        <div class='resource-card-inner'>
+                            <!--Where the images will be-->
+                            <div class='resource-tmb'>
+                                <img src={{ page.image | absolute_url }} class='resource-tmb-img' alt={{page.alt}}/>
+                            </div>
+
+                            <div class='resource-body'>
+                                <h4 class='resource-header'>
+                                    <a href='{{ item.url }}'>{{ item.name }}</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
 </div>
 
 {{ content | markdownify }}

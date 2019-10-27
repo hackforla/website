@@ -1,57 +1,66 @@
 .project-banner {
     background: $color-blue-dark;
-    background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
     max-height: 300px;
     min-height: 100vh;
-    padding: 20px;
     position: relative;
   
     @media #{$bp-tablet-up} {
       min-height: 0;
     }
-  
-    &::after {
-      @include position(absolute, 0 0 0 0);
-      background: linear-gradient(
-        to bottom,
-        rgba($color-blue-dark, 0.3) 0%,
-        rgba($color-blue-dark, 1) 100%
-      );
-      content: "";
-      display: block;
-      z-index: 1;
-  
-      @media #{$bp-tablet-up} {
-        background: linear-gradient(
-          to bottom,
-          rgba($color-blue-dark, 0) 30%,
-          rgba($color-blue-dark, 1) 100%
-        );
-        opacity: 1;
-      }
-    }
   }
 
-.project-details {
-    background: $color-blue-dark;
-    color: $color-white;
+.project-page-title {
+  background: $color-blue-dark;
+  margin-left: 20px;
 }
 
-.links {
-    background: $color-teal;
-    padding: 32px 16px;
+.project-page-content {
+  background: $color-teal;
+}
+
+.project-page-card {
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.project-page-description {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto;
+}
+
+.project-page-description-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30px 30px 30px 30px;
+}
+
+.project-page-resources {
+    padding: 16px 16px;
   }
 
-.link-list {
+.resource-header {
+  //padding: 30px 30px 30px 30px;
+}
+
+.resource-list {
     margin-bottom: 24px;
-    order: 2;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.link-card {
+.resource-card {
     background: $color-white;
     border: 0 solid rgba($color-black, 0.06);
     border-radius: 16px;
@@ -59,8 +68,8 @@
     margin-bottom: 24px;
     overflow: hidden;
 
-    max-width: 252px;
-    max-height: 252px;
+    max-width: 160px;
+    max-height: 192px;
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
@@ -70,22 +79,22 @@
     }
 }
 
-.link-tmb {
-    max-width: 252px;
-    max-height: 168px;
+.resource-tmb {
+    width: 128px;
+    height: 128px;
 }
 
-.link-tmb-img {
-    display: block;
+.resource-tmb-img {
     width:100%;
+    height: 100%;
+    object-fit: cover
     
 }
 
-.link-body {
-    padding: 16px;
+.resource-body {
+    padding: 10px;
 }
 
-.link-header {
+.resource-header {
     margin-block-end: 0px;
-    order: 1;
 }
