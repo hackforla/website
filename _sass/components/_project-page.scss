@@ -12,7 +12,7 @@
     @media #{$bp-tablet-up} {
       min-height: 0;
     }
-  }
+}
 
 .project-page-title {
   background: $color-blue-dark;
@@ -30,6 +30,8 @@
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   margin-bottom: 24px;
   overflow: hidden;
+  max-width: 1024px;
+  margin: 24px auto;
 }
 
 .project-page-description {
@@ -51,7 +53,8 @@
   }
 
 .resource-header {
-  //padding: 30px 30px 30px 30px;
+  margin: 30px 0px 0px 30px;
+
 }
 
 .resource-list {
@@ -95,6 +98,6 @@
     padding: 10px;
 }
 
-.resource-header {
+.resource-title {
     margin-block-end: 0px;
 }
