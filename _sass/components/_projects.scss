@@ -75,21 +75,19 @@
 }
 
 .status-indicator {
-  position: absolute;
-  right: 0;
-  // background-color: rgb(255, 255, 121);
-  background-color: rgb(160, 216, 160);
-  //padding: 2px;
+  //position: absolute;
+  //right: 0;
+  float: right;
+  background-color: rgb(255, 255, 121);
   padding: 2px 7px;
-  margin: 5px 5px 0px 0px;
+  //margin: 0px 6px 0px 0px;
   border: 0 solid rgba($color-black, 0.06);
   border-radius: 9px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.1);
 }
 
 .status-text {
   margin: 0px 0px;
-  color: $color-white;
 }
 
 .status-Active {
