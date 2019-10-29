@@ -11,6 +11,7 @@ links:
 looking: Frontend Developers (React, D3), Backend Developers (Python, Pandas)
 location: Downtown LA
 partner: LA Metro (https://www.metro.net/)
+status: Active
 ---
 
 

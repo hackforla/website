@@ -11,4 +11,5 @@ links:
 looking: TBD
 location: Downtown LA
 partner: EmpowerLA
+status: Active
 ---

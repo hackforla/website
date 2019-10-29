@@ -11,4 +11,5 @@ links:
 looking: Front-end development, Back-end development, Product Management, and Marketing.
 location: Santa Monica
 partner: Hope of the Valley and hopefully others in the near future.
+status: On Hold
 ---
