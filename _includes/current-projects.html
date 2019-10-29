@@ -7,6 +7,13 @@
             <li class="project-card">
               <div class="project-card-inner">
                 <div class="project-tmb">
+                  <!-- Status indicator -->
+                  {% assign status = 'Launched' %}
+                  <!-- <div class='status-indicator {{ "status-" | append: status }}'> -->
+                  <div class='status-indicator'>
+                    <h5 class='status-text'>{{ status }}</h5>
+                  </div>
+                  <!-- Status indicator -->
                   <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
                 </div>
                 <div class="project-body">

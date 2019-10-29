@@ -68,3 +68,38 @@
     margin: 0 0 0 12px;
   }
 }
+
+// Status Indicator Styling
+.project-tmb {
+  position: relative;
+}
+
+.status-indicator {
+  position: absolute;
+  right: 0;
+  // background-color: rgb(255, 255, 121);
+  background-color: rgb(160, 216, 160);
+  //padding: 2px;
+  padding: 2px 7px;
+  margin: 5px 5px 0px 0px;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 9px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+}
+
+.status-text {
+  margin: 0px 0px;
+  color: $color-white;
+}
+
+.status-Active {
+  background-color: rgb(160, 216, 160);
+}
+
+.status-Rebooting {
+  background-color: rgb(156, 167, 199);
+}
+
+.status-Launched {
+  background-color: rgb(250, 17, 79);
+}
