@@ -4,12 +4,12 @@
 
 This is a standard [Jekyll][jekyll] site hosted right here on [GitHub pages][ghpages].
 
-There are two options for developing the site locally: (1) Using the environment container "Docker" or (2) using Ruby and Jekyll directly ensuring you're using the same exact environment we're developing in. Therefore the first approach is recommended and very easy to use. 
+There are two options for developing the site locally: (1) Using the environment container "Docker" or (2) using Ruby and Jekyll directly ensuring you're using the same exact environment we're developing in. Therefore the first approach is recommended and very easy to use. The second approach is not supported. 
 
 First you'll need the repository on your computer so you have a site to run when these development environments are installed.
 For new Git users, see Git section below after we discuss the two development approaches. 
 
-## Option 1 of 2: Developing via Docker (Recommended)
+## Developing via Docker
 
 This is the recommended approach to quickly getting started.
 
@@ -55,26 +55,6 @@ Bring the same server back up later with:
 docker-compose up
 ```
 
-## Option 2 of 2: Developing directly with Ruby / Jekyll
-
-Due to the difficulty of getting a consistent environment running, this method is
-*not recommended*, particularly for Windows users. 
-
-Therefore, if Docker runs using the commands above, 
-don't add clutter to your computer by installing ruby and jekyll separately. 
-However, if you want to, then do the following. 
-
-With `ruby` and `jekyll` installed locally, use the [`jekyll` CLI commands][jekyllcli] directly to build and serve the site:
-
-```bash
-jekyll serve
-```
-
-Now browse to http://localhost:4000.
-
-Again: Due to the difficulty of getting a consistent environment running, this method is
-*not recommended*, particularly for Windows users.
-
 
 # Git:
 
@@ -82,9 +62,9 @@ Again: Due to the difficulty of getting a consistent environment running, this m
 
 ### Step 1: Get added as a member of the GitHub repository
 
-In the hfla-website slack channel, send your GitHub name to the project manager or on the channel thread and we'll add you as a member to the GitHub repository.
+In the hfla-website slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository.
 
-Once you have accepted github invite (comes via email), please do the following:
+Once you have accepted github invite (comes via email or in your GitHub.com inbox), please do the following:
 
 Mark your own membership public
 https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership
