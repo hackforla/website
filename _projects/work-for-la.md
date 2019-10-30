@@ -11,4 +11,5 @@ links:
 looking: UX, Writers, Designers
 location: Downtown LA
 partner: Department of Personnel
+status: Completed
 ---

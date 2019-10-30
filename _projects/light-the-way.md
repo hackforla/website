@@ -12,4 +12,5 @@ looking: Front-end Developers, UX Designers
 location: Downtown LA
 hide: true
 # partner: 
+status: On Hold
 ---

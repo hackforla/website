@@ -11,4 +11,5 @@ links:
 looking: Flutter, Mobile Development UI/UX, Empathy and sensitivity with subject material and end users.
 location: Santa Monica
 partner: Seeking
+status: Active
 ---
