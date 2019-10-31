@@ -11,4 +11,5 @@ links:
 looking: Angular skills or willing to learn, Node, JS, visual designers, dev-ops.
 location: Santa Monica
 partner: Digital Defense Fund
+status: Active
 ---

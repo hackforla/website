@@ -11,4 +11,5 @@ links:
 looking: project management, product management, design-thinking, user research, user interviews, UX design, UI design, front & back-end web development, scrum / agile project management & product delivery
 location: Downtown LA
 # partner:
+status: Active
 ---
