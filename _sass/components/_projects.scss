@@ -76,10 +76,11 @@
 
 .status-indicator {
   float: right;
-  //background-color: rgb(255, 255, 121);
-  background-color: rgb(247, 231, 174);
+  text-align: center;
+  background-color: rgb(255, 255, 151);
+  width: 82px;
   padding: 2px 7px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .status-text {
@@ -87,16 +88,13 @@
 }
 
 .status-Active {
-  //background-color: rgb(160, 216, 160);
-  background-color: rgb(198, 226, 198);
+  background-color: rgb(187, 255, 187);
 }
 
 .status-Rebooting {
-  //background-color: rgb(156, 167, 199);
-  background-color: rgb(174, 212, 239);
+  background-color: rgb(164, 213, 255);
 }
 
 .status-Completed {
-  //background-color: rgb(250, 17, 79);
-  background-color: rgb(243, 151, 175);
+  background-color: rgb(255, 122, 122);
 }
