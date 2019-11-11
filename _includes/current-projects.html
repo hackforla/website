@@ -10,14 +10,9 @@
                   <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
                 </div>
                 <div class="project-body">
-
-                  <!-- Status indicator -->
-                  {% assign status = item.status %}
-                  <div class='status-indicator {{ "status-" | append: status }}'>
-                    <h5 class='status-text'>{{ status }}</h5>
+                  <div class='status-indicator {{ "status-" | append: item.status }}'>
+                    <h5 class='status-text'>{{ item.status }}</h5>
                   </div>
-                  <!-- Status indicator -->
-
                   <h4 class="project-title">{{ item.title }}</h4>
                   <p class="project-description">{{ item.description }}</p>
                   {%- if item.links -%}
