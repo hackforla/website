@@ -33,7 +33,9 @@ layout: default
                         <div class='resource-card-inner'>
                             <!--Where the images will be-->
                             <div class='resource-tmb'>
-                                <img src={{ page.image | absolute_url }} class='resource-tmb-img' alt={{page.alt}}/>
+                                {% if item.name == 'Github' or item.name == 'Slack' %}
+                                    {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
+                                {% endif %}
                             </div>
 
                             <div class='resource-body'>
