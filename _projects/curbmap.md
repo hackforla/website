@@ -12,4 +12,5 @@ looking: UX designers, UX researchers, UI designers
 location: Downtown LA
 hide: true
 # partner: 
+status: On Hold
 ---

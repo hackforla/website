@@ -11,4 +11,5 @@ links:
 # looking: No one currently
 location: Downtown LA
 partner: LA County Homeless Initiative; http://homeless.lacounty.gov
+status: Active
 ---
