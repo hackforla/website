@@ -1,3 +1,39 @@
+// All projects
+
+.project-page-contain {
+  margin: 5rem;
+}
+
+.subpage-header {
+  height: 35vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+  }
+  h4 {
+    // font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.all-project-list {
+    column-count: auto;
+    column-width: 18rem;
+    column-gap: 3rem;
+    .project-card {
+      margin-bottom: 20px;
+      break-inside: avoid;
+      // padding-bottom: 1px;
+    }
+}
+
+
+// End all projects
+
+
 .projects {
   background: $color-teal;
   padding: 32px 16px;
