@@ -5,17 +5,19 @@
 }
 
 .subpage-header {
-  height: 35vh;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  // height: 35vh;
+  // display: flex;
+  // justify-content: flex-end;
+  // flex-direction: column;
+  width: -webkit-fill-available;
+  margin-top: 10rem;
   h2 {
     font-size: 3rem;
     margin-bottom: 0.3rem;
   }
   h4 {
     // font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 }
 
@@ -29,7 +31,9 @@
       // padding-bottom: 1px;
     }
 }
-
+.filter-form {
+  margin: 2rem 0px;;
+}
 
 // End all projects
 
