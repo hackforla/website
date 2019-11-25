@@ -6,10 +6,20 @@
       <h2>Current Projects</h2>
       <h4>Here's what we're working on. Join us at one of our meetups and contribute!</h4>
     </div>
-      <ul class="all-project-list unstyled-list">
+    <div class="filter-form">
+      <form action="">
+       <select id = "location-selection">
+         <option default>LOCATION</option>
+         <option value = "downtownla">DTLA</option>
+         <option value = "southla">SOUTH LA</option>
+         <option value = "santamonica">WESTIDE</option>
+       </select>
+      </form>
+    </div>
+      <ul id="project-list" class="all-project-list unstyled-list">
         {%- for item in site.projects -%}
           {%- if item.hide != true -%}
-            <li class="project-card">
+            <li class="project-card {{item.location | split: " " | join: "" | downcase}}">
               <div class="project-card-inner">
                 <div class="project-tmb">
                   <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
