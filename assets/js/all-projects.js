@@ -1,33 +1,32 @@
 
 
-var lis = document.getElementById("project-list").getElementsByTagName("li");
+var projects = document.getElementById("project-list").getElementsByTagName("li");
 var locationSelector = document.getElementById("location-selection");
 var statusSelector = document.getElementById("status-selection");
+var searchFilters = {
+  location: "project-card",
+  status: "project-card"
+};
+
+// Goes through all projects and
+// shows them if they have a class in the filter or
+// hides them if they don't have a class in the filter
+function showHideProjects(){
+  Array.from(projects).forEach(function(project){
+    projectClassIncludesFilter = Object.values(searchFilters)
+      .every((filter) => project.className.includes(filter) );
+
+    if (projectClassIncludesFilter) {project.style.display = "block"}
+    else {project.style.display = "none"}
+  });
+};
 
 locationSelector.addEventListener('change', (event) => {
-  var location = event.target.value;
-  Array.from(lis).forEach(function(li){
-    if (location == "LOCATION"){
-      li.style.display = 'block';
-    } else if (li.className.includes(location)) {
-      li.style.display = 'block';
-    } else {
-      li.style.display = 'none';
-    }
-  });
+  searchFilters["location"] = event.target.value;
+  showHideProjects();
 });
 
-
 statusSelector.addEventListener('change', (event) => {
-  var status = event.target.value;
-  console.log(status)
-  Array.from(lis).forEach(function(li){
-    if (status == "STATUS"){
-      li.style.display = 'block';
-    } else if (li.className.includes(status)) {
-      li.style.display = 'block';
-    } else {
-      li.style.display = 'none';
-    }
-  });
+  searchFilters["status"] = event.target.value;
+  showHideProjects();
 });
