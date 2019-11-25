@@ -16,10 +16,23 @@
        </select>
       </form>
     </div>
+    <div class="filter-form">
+      <form action="">
+       <select id = "status-selection">
+         <option default>STATUS</option>
+         <option value = "active">Active</option>
+         <option value = "onhold">ON HOLD</option>
+         <option value = "rebooting">REBOOTING</option>
+       </select>
+      </form>
+    </div>
       <ul id="project-list" class="all-project-list unstyled-list">
         {%- for item in site.projects -%}
           {%- if item.hide != true -%}
-            <li class="project-card {{item.location | split: " " | join: "" | downcase}}">
+            <li class="project-card
+              {{item.location | split: " " | join: "" | downcase}}
+              {{item.status | split: " " | join: "" | downcase}}"
+            >
               <div class="project-card-inner">
                 <div class="project-tmb">
                   <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
