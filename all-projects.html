@@ -1,30 +1,31 @@
 ---
 ---
 <section id="projects" class="content-section projects">
-  <div class="project-page-contain projects-inner">
+  <div class="project-page-contain">
     <div class="subpage-header">
       <h2>Current Projects</h2>
       <h4>Here's what we're working on. Join us at one of our meetups and contribute!</h4>
     </div>
-    <div class="filter-form">
-      <form action="">
-       <select id = "location-selection">
-         <option value="project-card" default>LOCATION</option>
-         <option value = "downtownla">DTLA</option>
-         <option value = "southla">SOUTH LA</option>
-         <option value = "santamonica">WESTIDE</option>
-       </select>
-      </form>
-    </div>
-    <div class="filter-form">
-      <form action="">
-       <select id = "status-selection">
-         <option value="project-card" default>STATUS</option>
-         <option value = "active">Active</option>
-         <option value = "onhold">ON HOLD</option>
-         <option value = "rebooting">REBOOTING</option>
-       </select>
-      </form>
+    <div class="filters">
+      <h2>Sort By:</h2>
+      <div class="filter-forms">
+        <form class="filter-form" action="">
+          <select id = "location-selection">
+            <option value="project-card" default>LOCATION</option>
+            <option value = "downtownla">DTLA</option>
+            <option value = "southla">SOUTH LA</option>
+            <option value = "santamonica">WESTIDE</option>
+          </select>
+        </form>
+        <form class="filter-form" action="">
+          <select id = "status-selection">
+            <option value="project-card" default>STATUS</option>
+            <option value = "active">Active</option>
+            <option value = "onhold">ON HOLD</option>
+            <option value = "rebooting">REBOOTING</option>
+          </select>
+        </form>
+      </div>
     </div>
       <ul id="project-list" class="all-project-list unstyled-list">
         {%- for item in site.projects -%}
@@ -40,28 +41,6 @@
                 <div class="project-body">
                   <h4 class="project-title">{{ item.title }}</h4>
                   <p class="project-description">{{ item.description }}</p>
-                  {%- if item.links -%}
-                    <div class="project-links">
-                      <strong>Links: </strong>
-                        {%- for item in item.links -%}
-                          <a href={{ item.url }} rel="noopener" target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
-                          {%- endif -%}
-                        {%- endfor -%}
-                    </div>
-                  {%- endif -%}
-                  {%- if item.partner -%}
-                    <div class="project-partner">
-                    <strong>Partner: </strong>
-                      {{ item.partner }}
-                    </div>
-                  {%- endif -%}
-                  {%- if item.looking -%}
-                    <div class="project-needs">
-                      <strong>Looking for: </strong>
-                        {{ item.looking }}
-                    </div>
-                  {%- endif -%}
-
                   {%- if item.location -%}
                     <div class="project-location">
                       <strong>Location: </strong>

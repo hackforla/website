@@ -1,0 +1,46 @@
+// All projects
+
+.project-page-contain {
+  margin: 5rem;
+}
+
+.subpage-header {
+  margin-top: 6rem;
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+  }
+  h4 {
+    // font-size: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+.all-project-list {
+    column-count: auto;
+    column-width: 18rem;
+    column-gap: 3rem;
+    .project-card {
+      margin-bottom: 20px;
+      break-inside: avoid;
+      // padding-bottom: 1px;
+    }
+}
+.filters {
+  width: 50%;
+  margin: 2rem 0px;
+  h2 {
+    margin: 1rem 0;
+  }
+  .filter-forms {
+    display: flex;
+    justify-content: space-around;
+    // .filter-form {
+    //   margin: 0.5rem, 0px;
+    // }
+  }
+}
+
+
+
+// End all projectsd
