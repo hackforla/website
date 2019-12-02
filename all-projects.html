@@ -1,58 +1,54 @@
 ---
 ---
-<section id="projects" class="content-section projects">
-  <div class="project-page-contain">
-    <div class="subpage-header">
-      <h2>Current Projects</h2>
-      <h4>Here's what we're working on. Join us at one of our meetups and contribute!</h4>
-    </div>
-    <div class="filters">
-      <h2>Sort By:</h2>
-      <div class="filter-forms">
-        <form class="filter-form" action="">
-          <select id = "location-selection">
-            <option value="project-card" default>LOCATION</option>
-            <option value = "downtownla">DTLA</option>
-            <option value = "southla">SOUTH LA</option>
-            <option value = "santamonica">WESTIDE</option>
-          </select>
-        </form>
-        <form class="filter-form" action="">
-          <select id = "status-selection">
-            <option value="project-card" default>STATUS</option>
-            <option value = "active">Active</option>
-            <option value = "onhold">ON HOLD</option>
-            <option value = "rebooting">REBOOTING</option>
-          </select>
-        </form>
-      </div>
-    </div>
-      <ul id="project-list" class="all-project-list unstyled-list">
-        {%- for item in site.projects -%}
-          {%- if item.hide != true -%}
-            <li class="project-card
-              {{item.location | split: " " | join: "" | downcase}}
-              {{item.status | split: " " | join: "" | downcase}}"
-            >
-              <div class="project-card-inner">
-                <div class="project-tmb">
-                  <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
-                </div>
-                <div class="project-body">
-                  <h4 class="project-title">{{ item.title }}</h4>
-                  <p class="project-description">{{ item.description }}</p>
-                  {%- if item.location -%}
-                    <div class="project-location">
-                      <strong>Location: </strong>
-                        {{ item.location }}
-                    </div>
-                  {%- endif -%}
-                </div>
-              </div>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-
+<div class="all-projects">
+  <div class="all-projects__header">
+    <h2>Current Projects</h2>
+    <h4>Here's what we're working on. Join us at one of our meetups and contribute!</h4>
   </div>
-</section>
+  <div class="all-projects-container">
+    <div class="filter-form">
+      <h2 class="filter-form__header">Sort By:</h2>
+      <form class="filter-form__form" action="">
+        <select id = "location-selection">
+          <option value="all-projects-card" default>LOCATION</option>
+          <option value = "downtownla">DTLA</option>
+          <option value = "southla">SOUTH LA</option>
+          <option value = "santamonica">WESTIDE</option>
+        </select>
+        <select id = "status-selection">
+          <option value="all-projects-card" default>STATUS</option>
+          <option value = "active">Active</option>
+          <option value = "onhold">ON HOLD</option>
+          <option value = "rebooting">REBOOTING</option>
+        </select>
+      </form>
+    </div>
+    <ul id="project-list" class="all-projects-list">
+      {%- for item in site.projects -%}
+      {%- if item.hide != true -%}
+      <li class="all-projects-card
+      {{item.location | split: " " | join: "" | downcase}}
+      {{item.status | split: " " | join: "" | downcase}}"
+      >
+      <div class="all-projects-inner">
+        <div class="all-project-tmb">
+          <img src={{ item.image | absolute_url }} class="all-projects-tmb-img" alt={{item.alt}}/>
+        </div>
+        <div class="all-projects-body">
+          <h4 class="all-project-title">{{ item.title }}</h4>
+          <p class="all-project-description">{{ item.description }}</p>
+          {%- if item.location -%}
+          <div class="all-project-location">
+            <strong>Location: </strong>
+            {{ item.location }}
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </li>
+    {%- endif -%}
+    {%- endfor -%}
+    </ul>
+  </div>
+
+</div>
