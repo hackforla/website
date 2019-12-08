@@ -14,13 +14,31 @@ layout: default
             <p><strong>Status: </strong>{{ page.status }}</p>
             <p><strong>Location: </strong>{{ page.location }}</p>
             <p><strong>Languages: </strong>{{ page.languages }}</p>
-            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary">Meetup</a>
+            <p><strong>Tools: </strong>Figma, Balsamiq, Zeplin, Axure</p>
         </div>
 
         <div class='project-page-description-item'>
-            <p>{{page.description}}</p>
-            <p><strong>Looking For: </strong>{{ page.looking }}</p>
+            <div class='project-summary'>
+                <p>{{page.description}}</p>
+            </div>
+            <div class='project-roles'>
+                    <p><strong>Open Roles</strong></p>
+                    <ul class='project-roles-list'>
+                        <li class='project-role-item'>Project Manager</li>
+                        <li class='project-role-item'>Product Manager</li>
+                        <li class='project-role-item'>UX/UI Designer</li>
+                        <li class='project-role-item'>Back-End Developer</li>
+                        <li class='project-role-item'>Front-End Developer</li>
+                    </ul>
+            </div>
+            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary request-to-join">Request to Join</a>
         </div>
+    </div>
+
+    <!--Project Team Card-->
+    <div class='project-page-card'>
+        <p><strong>Project Leadership</strong></p>
+        <p><strong>Contributors</strong></p>
     </div>
 
     <!--Project Resources Card-->

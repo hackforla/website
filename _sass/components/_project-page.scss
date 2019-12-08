@@ -64,13 +64,27 @@
   padding: 30px 30px 30px 30px;
 }
 
+.project-roles-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project-role-item {
+  flex-basis: 50%;
+  margin-bottom: 7px;
+}
+
+.request-to-join {
+  margin: 0px auto;
+}
+
 .project-page-resources {
     padding: 16px 16px;
   }
 
 .resource-header {
   margin: 30px 0px 0px 30px;
-
 }
 
 .resource-list {
