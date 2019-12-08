@@ -9,7 +9,8 @@ layout: default
 <div class='content-section project-page-content'>
     <!--Project Discription Card-->
     <div class='project-page-card project-page-description'>
-        <div class='project-page-description-item'>
+        <!--Project Details-->
+        <div>
             <p><strong>Partner: </strong>{{ page.partner }}</p>
             <p><strong>Status: </strong>{{ page.status }}</p>
             <p><strong>Location: </strong>{{ page.location }}</p>
@@ -17,10 +18,9 @@ layout: default
             <p><strong>Tools: </strong>Figma, Balsamiq, Zeplin, Axure</p>
         </div>
 
-        <div class='project-page-description-item'>
-            <div class='project-summary'>
-                <p>{{page.description}}</p>
-            </div>
+        <div>
+            <!--Project Summary and Roles-->
+            <p>{{page.description}}</p>
             <div class='project-roles'>
                     <p><strong>Open Roles</strong></p>
                     <ul class='project-roles-list'>
@@ -35,37 +35,27 @@ layout: default
         </div>
     </div>
 
-    <!--Project Team Card-->
-    <div class='project-page-card'>
-        <p><strong>Project Leadership</strong></p>
-        <p><strong>Contributors</strong></p>
-    </div>
-
     <!--Project Resources Card-->
     <div class='project-page-card'>
-        <h4 class='resource-header'>Project Resources</h4>
-        <div class='project-page-resources'>
-            <ul class="resource-list unstyled-list">
-                {%- for item in page.links -%}
-                    <li class='resource-card'>
-                        <div class='resource-card-inner'>
-                            <!--Where the images will be-->
-                            <div class='resource-tmb'>
-                                {% if item.name == 'Github' or item.name == 'Slack' %}
-                                    {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
-                                {% endif %}
-                            </div>
+        <p><strong>Project Resources</strong></p>
+        <ul class="resource-list unstyled-list">
+            {%- for item in page.links -%}
+                <li class='resource-card'>
+                    <!--Where the images will be-->
+                    <div class='resource-img'>
+                        {% if item.name == 'Github' or item.name == 'Slack' %}
+                            {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
+                        {% endif %}
+                    </div>
 
-                            <div class='resource-body'>
-                                <h4 class='resource-title'>
-                                    <a href='{{ item.url }}'>{{ item.name }}</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </li>
-                {%- endfor -%}
-            </ul>
-        </div>
+                    <div class='resource-body'>
+                        <h4 class='resource-title'>
+                            <a href='{{ item.url }}'>{{ item.name }}</a>
+                        </h4>
+                    </div>
+                </li>
+            {%- endfor -%}
+        </ul>
     </div>
 </div>
 

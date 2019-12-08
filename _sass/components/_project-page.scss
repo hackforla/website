@@ -48,20 +48,13 @@
   overflow: hidden;
   max-width: 896px;
   margin: 24px auto;
+  padding: 30px;
 }
 
 .project-page-description {
   display: grid;
   grid-template-columns: 40% auto;
   grid-template-rows: auto;
-}
-
-.project-page-description-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 30px 30px 30px 30px;
 }
 
 .project-roles-list {
@@ -76,15 +69,8 @@
 }
 
 .request-to-join {
-  margin: 0px auto;
-}
-
-.project-page-resources {
-    padding: 16px 16px;
-  }
-
-.resource-header {
-  margin: 30px 0px 0px 30px;
+  margin: 0px 50% 0px 50%;
+  transform: translate(-50%, 0px);
 }
 
 .resource-list {
@@ -112,17 +98,10 @@
   }
 }
 
-.resource-tmb {
+.resource-img {
   width: 128px;
   height: 128px;
   padding: 20px;
-}
-
-.resource-tmb-img {
-  width:100%;
-  height: 100%;
-  object-fit: cover
-    
 }
 
 .resource-body {
