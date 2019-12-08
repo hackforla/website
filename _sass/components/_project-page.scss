@@ -73,6 +73,30 @@
   transform: translate(-50%, 0px);
 }
 
+.leadership-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leader-card {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto;
+
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 10px;
+
+  width: 252px;
+  height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .resource-list {
   margin-bottom: 24px;
   display: flex;
