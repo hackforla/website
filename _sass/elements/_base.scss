@@ -62,3 +62,10 @@ a {
     color: darken($color-red, 10%);
   }
 }
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -49px;
+  visibility: hidden;
+}
