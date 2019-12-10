@@ -11,6 +11,9 @@
                   <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
                 </div>
                 <div class="project-body">
+                  <div class='status-indicator {{ "status-" | append: item.status }}'>
+                    <h5 class='status-text'>{{ item.status }}</h5>
+                  </div>
                   <h4 class="project-title">{{ item.title }}</h4>
                   <p class="project-description">{{ item.description }}</p>
                   {%- if item.links -%}
