@@ -38,21 +38,55 @@ layout: default
     <!--Project Team Card-->
     <div class='project-page-card'>
         <p><strong>Project Leadership</strong></p>
-        <ul class='leadership-list unstyled-list'>
+        <ul class='team-list unstyled-list'>
             <li class='leader-card'>
                 <!--Profile Picture-->
                 <div>
-                    <p>¯\_(ツ)_/¯</p>
+                    {% include svg/_ionicons_svg_md-contact.svg %}
                 </div>
 
                 <!--Leader description-->
+                <div class='leader-description-section'>
+                    <p class='leader-description'><strong>John Doe</strong></p>
+                    <p class='leader-description'><strong>Role:</strong> Project Lead</p>
+                </div>
+            </li>
+            <li class='leader-card'>
+                <!--Profile Picture-->
                 <div>
-                    <p><strong>Leader Name</strong></p>
-                    <p><strong>Role:</strong> Leader Role</p>
+                    {% include svg/_ionicons_svg_md-contact.svg %}
+                </div>
+
+                <!--Leader description-->
+                <div class='leader-description-section'>
+                    <p class='leader-description'><strong>Jane Doe</strong></p>
+                    <p class='leader-description'><strong>Role:</strong> Technical Lead</p>
+                </div>
+            </li>
+            <li class='leader-card'>
+                <!--Profile Picture-->
+                <div>
+                    {% include svg/_ionicons_svg_md-contact.svg %}
+                </div>
+
+                <!--Leader description-->
+                <div class='leader-description-section'>
+                    <p class='leader-description'><strong>John Doe</strong></p>
+                    <p class='leader-description'><strong>Role:</strong> Data Scientist</p>
                 </div>
             </li>
         </ul>
         <p><strong>Contributors</strong></p>
+        <ul class='team-list unstyled-list'>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
+        </ul>
     </div>
 
     <!--Project Resources Card-->

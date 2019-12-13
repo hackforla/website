@@ -58,9 +58,11 @@
 }
 
 .project-roles-list {
+  list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-inline-start: 0px
 }
 
 .project-role-item {
@@ -68,12 +70,19 @@
   margin-bottom: 7px;
 }
 
+.project-role-item::before {
+  content: "\2022 ";
+  color: #fa114f;
+  margin-right: 7px;
+  font-size: 20px;
+}
+
 .request-to-join {
   margin: 0px 50% 0px 50%;
   transform: translate(-50%, 0px);
 }
 
-.leadership-list {
+.team-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -95,6 +104,24 @@
   height: 80px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.leader-description {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.leader-description-section {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.team-contributor {
+  width: 92px;
+  height: 65px;
+  margin-right: -21px;
 }
 
 .resource-list {
