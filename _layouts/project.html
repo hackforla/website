@@ -11,82 +11,17 @@ layout: default
     <div class='project-page-card project-page-description'>
         <!--Project Details-->
         <div>
-            <p><strong>Partner: </strong>{{ page.partner }}</p>
-            <p><strong>Status: </strong>{{ page.status }}</p>
-            <p><strong>Location: </strong>{{ page.location }}</p>
-            <p><strong>Languages: </strong>{{ page.languages }}</p>
-            <p><strong>Tools: </strong>Figma, Balsamiq, Zeplin, Axure</p>
+            {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
+            {% if page.status %}<p><strong>Status: </strong>{{ page.status }}</p>{% endif %}
+            {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
+            {% if page.languages %}<p><strong>Languages: </strong>{{ page.languages }}</p>{% endif %}
         </div>
 
         <div>
-            <!--Project Summary and Roles-->
+            <!--Project Summary-->
             <p>{{page.description}}</p>
-            <div class='project-roles'>
-                    <p><strong>Open Roles</strong></p>
-                    <ul class='project-roles-list'>
-                        <li class='project-role-item'>Project Manager</li>
-                        <li class='project-role-item'>Product Manager</li>
-                        <li class='project-role-item'>UX/UI Designer</li>
-                        <li class='project-role-item'>Back-End Developer</li>
-                        <li class='project-role-item'>Front-End Developer</li>
-                    </ul>
-            </div>
-            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary request-to-join">Request to Join</a>
+            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary request-to-join">Join Our Meetup</a>
         </div>
-    </div>
-
-    <!--Project Team Card-->
-    <div class='project-page-card'>
-        <p><strong>Project Leadership</strong></p>
-        <ul class='team-list unstyled-list'>
-            <li class='leader-card'>
-                <!--Profile Picture-->
-                <div>
-                    {% include svg/_ionicons_svg_md-contact.svg %}
-                </div>
-
-                <!--Leader description-->
-                <div class='leader-description-section'>
-                    <p class='leader-description'><strong>John Doe</strong></p>
-                    <p class='leader-description'><strong>Role:</strong> Project Lead</p>
-                </div>
-            </li>
-            <li class='leader-card'>
-                <!--Profile Picture-->
-                <div>
-                    {% include svg/_ionicons_svg_md-contact.svg %}
-                </div>
-
-                <!--Leader description-->
-                <div class='leader-description-section'>
-                    <p class='leader-description'><strong>Jane Doe</strong></p>
-                    <p class='leader-description'><strong>Role:</strong> Technical Lead</p>
-                </div>
-            </li>
-            <li class='leader-card'>
-                <!--Profile Picture-->
-                <div>
-                    {% include svg/_ionicons_svg_md-contact.svg %}
-                </div>
-
-                <!--Leader description-->
-                <div class='leader-description-section'>
-                    <p class='leader-description'><strong>John Doe</strong></p>
-                    <p class='leader-description'><strong>Role:</strong> Data Scientist</p>
-                </div>
-            </li>
-        </ul>
-        <p><strong>Contributors</strong></p>
-        <ul class='team-list unstyled-list'>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-            <li class='team-contributor'>{% include svg/_ionicons_svg_md-contact.svg %}</li>
-        </ul>
     </div>
 
     <!--Project Resources Card-->
