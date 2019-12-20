@@ -45,7 +45,9 @@
             <img src={{ item.image | absolute_url }} class="all-projects-tmb-img" alt={{item.alt}}/>
           </div>
           <div class="all-projects-body">
-            <h4 class="all-project-title">hello </h4>
+            <h4 class="all-project-title">
+              <a href="{%-link {{item.path}}-%}">{{item.title}}</a>
+            </h4>
             <p class="all-project-description">{{ item.description }}</p>
             {%- if item.location -%}
             <div class="all-project-location">
