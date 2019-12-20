@@ -46,7 +46,7 @@
           </div>
           <div class="all-projects-body">
             <h4 class="all-project-title">
-              <a href={%-link {{item.path}}-%}>{{item.title}}</a>
+              <a href={{ item.url | absolute_url}}>{{item.title}}</a>
             </h4>
             <p class="all-project-description">{{ item.description }}</p>
             {%- if item.location -%}
