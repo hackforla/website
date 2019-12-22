@@ -12,14 +12,7 @@ layout: default
         <!--Project Details-->
         <div>
             {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
-            {% if page.status %}
-                <div>
-                    <p><strong>Status: </strong></p>
-                    <div class='status-indicator {{ "status-" | append: item.status }}'>
-                        <h5 class='status-text'>{{ page.status }}</h5>
-                    </div>
-                </div>
-            {% endif %}
+            {% if page.status %}<p><strong>Status: </strong>{{ page.status }}</p>{% endif %}
             {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
             {% if page.languages %}<p><strong>Languages: </strong>{{ page.languages }}</p>{% endif %}
         </div>
@@ -41,6 +34,8 @@ layout: default
                     <div class='resource-img'>
                         {% if item.name == 'Github' or item.name == 'Slack' %}
                             {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
+                        {% else %}
+                            <img src={{ page.image | absolute_url }} class="project-tmb-img" alt={{page.alt}}/>
                         {% endif %}
                     </div>
 
