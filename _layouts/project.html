@@ -35,7 +35,7 @@ layout: default
                         {% if item.name == 'Github' or item.name == 'Slack' %}
                             {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
                         {% else %}
-                            <img src={{ page.image | absolute_url }} class="project-tmb-img" alt={{page.alt}}/>
+                            {% include svg/_ionicons_svg_ios-link.svg %}
                         {% endif %}
                     </div>
 
