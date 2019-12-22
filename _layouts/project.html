@@ -8,31 +8,41 @@ layout: default
 
 <div class='content-section project-page-content'>
     <!--Project Discription Card-->
-    <div class='project-page-card project-page-description'>
+    <div class='project-page-card'>
+        <h4>Project Overview</h4>
         <!--Project Details-->
-        <div>
-            {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
-            {% if page.status %}<p><strong>Status: </strong>{{ page.status }}</p>{% endif %}
-            {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
-            {% if page.languages %}<p><strong>Languages: </strong>{{ page.languages }}</p>{% endif %}
-        </div>
-
-        <div>
-            <!--Project Summary-->
-            <p>{{page.description}}</p>
-            <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary request-to-join">Join Our Meetup</a>
+        <div class='project-page-description'>
+            <div>
+                    {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
+                    {% if page.status %}
+                        <div>
+                            <p style='display:inline-block'><strong>Status: </strong></p>
+                            <div style='display:inline-block; float:none' class='status-indicator {{ "status-" | append: page.status }}'>
+                                <h5 class='status-text'>{{ page.status }}</h5>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
+                    {% if page.languages %}<p><strong>Languages: </strong>{{ page.languages }}</p>{% endif %}
+                </div>
+        
+                <div>
+                    <!--Project Summary-->
+                    <p>{{page.description}}</p>
+                    <a href="https://www.meetup.com/hackforla/events" rel="noopener" target="_blank" class="btn btn-primary request-to-join">Join Our Meetup</a>
+                </div>
         </div>
     </div>
 
     <!--Project Resources Card-->
     <div class='project-page-card'>
-        <p><strong>Project Resources</strong></p>
+            <h4>Project Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
                 <li class='resource-card'>
                     <!--Where the images will be-->
                     <div class='resource-img'>
-                        {% if item.name == 'Github' or item.name == 'Slack' %}
+                        {% if item.name == 'Github' or item.name == 'Slack' or item.name == 'Site' or item.name == 'site' %}
                             {% include {{ item.name | prepend: 'svg/icon-' | append: '.svg' | downcase }} %}
                         {% else %}
                             {% include svg/_ionicons_svg_ios-link.svg %}

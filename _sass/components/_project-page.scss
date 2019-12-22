@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: 40% auto;
   grid-template-rows: auto;
+  padding: 0px 17px;
 }
 
 .project-roles-list {
@@ -78,7 +79,7 @@
 }
 
 .request-to-join {
-  margin: 0px 50% 0px 50%;
+  margin: 10px 50% 0px 50%;
   transform: translate(-50%, 0px);
 }
 
