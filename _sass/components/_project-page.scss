@@ -1,0 +1,166 @@
+.project-banner {
+  background: $color-blue-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100vh;
+  max-height: 300px;
+  min-height: 100vh;
+  position: relative;
+
+  @media #{$bp-tablet-up} {
+    min-height: 0;
+  }
+
+  &::after {
+    @include position(absolute, 0 0 0 0);
+    background: linear-gradient(
+      to bottom,
+      rgba($color-blue-dark, 0.3) 0%,
+      rgba($color-blue-dark, 1) 100%
+    );
+    content: "";
+    display: block;
+    z-index: 1;
+  }
+}
+
+.project-page-title {
+  background: #ffffff;
+  padding: 0px 20px 0px 7px;
+  border: 1px solid #000;
+  margin-left: 20px;
+  color: #fa114f;
+  z-index: 2;
+}
+
+.project-page-content {
+  background: $color-teal;
+}
+
+.project-page-card {
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+  max-width: 896px;
+  margin: 24px auto;
+  padding: 30px;
+}
+
+.project-page-description {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto;
+  padding: 0px 17px;
+}
+
+.project-roles-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-inline-start: 0px
+}
+
+.project-role-item {
+  flex-basis: 50%;
+  margin-bottom: 7px;
+}
+
+.project-role-item::before {
+  content: "\2022 ";
+  color: #fa114f;
+  margin-right: 7px;
+  font-size: 20px;
+}
+
+.request-to-join {
+  margin: 10px 50% 0px 50%;
+  transform: translate(-50%, 0px);
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leader-card {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto;
+
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 10px;
+
+  width: 252px;
+  height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.leader-description {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.leader-description-section {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.team-contributor {
+  width: 92px;
+  height: 65px;
+  margin-right: -21px;
+}
+
+.resource-list {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resource-card {
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  max-width: 160px;
+  max-height: 192px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media #{$bp-tablet-up} {
+      margin-bottom: 0;
+  }
+}
+
+.resource-img {
+  width: 128px;
+  height: 128px;
+  padding: 20px;
+}
+
+.resource-body {
+  padding: 10px;
+  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.resource-title {
+  margin-block-end: 0px;
+}
