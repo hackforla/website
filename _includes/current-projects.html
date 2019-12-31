@@ -49,7 +49,10 @@
               <h5 class="status-text">{{item.status}}</h5>
             </div>
             <h4 class="all-project-title">
-              <a href={{ item.url | absolute_url}}>{{item.title}}</a>
+              <!-- add the commented code below / delete the div when you're ready to link to Kain's project page -->
+              <!-- <a href="{{ item.url | absolute_url}}">{{item.title}}</a> -->
+              <div>{{item.title}}</div>
+              <!-- delete the div above after you uncomment the anchor -->
             </h4>
             <p class="all-project-description">{{ item.description }}</p>
             {%- if item.location -%}
