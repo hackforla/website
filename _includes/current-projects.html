@@ -45,6 +45,9 @@
             <img src={{ item.image | absolute_url }} class="all-projects-tmb-img" alt={{item.alt}}/>
           </div>
           <div class="all-projects-body">
+            <div class='status-indicator {{ "status-" | append: item.status}}'>
+              <h5 class="status-text">{{item.status}}</h5>
+            </div>
             <h4 class="all-project-title">
               <a href={{ item.url | absolute_url}}>{{item.title}}</a>
             </h4>
