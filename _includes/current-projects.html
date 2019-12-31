@@ -1,57 +1,73 @@
-<a class="anchor" id="projects"></a>
-<section class="content-section projects">  
-  <div class="page-contain projects-inner">
-    <h2 class="project-header">Current Projects</h2>
-      <ul class="project-list unstyled-list">
+<section id="projects" class="projects content-section">
+  <div class="page-contain">
+    <div class="all-projects__header">
+      <div class="all-projects__header-title">
+        <h2>Current Projects</h2>
+        <p class="project-pitch">Have an idea?
+                  <a href="#contact" class="btn btn-complimentary">Submit your pitch</a>
+        </p>
+      </div>
+      <h4>Here's what we're working on. Join us at one of our meetups and contribute!</h4>
+    </div>
+    <div class="all-projects-container">
+      <div class="filter-form">
+        <h3 class="filter-form__header">Sort By:</h3>
+        <div class="filter-form__form">
+          <div class="filter-form__select" style="width:150px;">
+            <select id = "location-selection">
+              <option value="all-projects-card" default>LOCATION</option>
+              <option value="all-projects-card" default>ALL</option>
+              <option value = "downtownla">DTLA</option>
+              <option value = "southla">SOUTH LA</option>
+              <option value = "santamonica">WESTIDE</option>
+            </select>
+          </div>
+          <div class="filter-form__select" style="width:150px;">
+            <select id = "status-selection">
+              <option value="all-projects-card" default>STATUS</option>
+              <option value="all-projects-card">ALL</option>
+              <option value = "active">ACTIVE</option>
+              <option value = "onhold">ON HOLD</option>
+              <option value = "rebooting">REBOOTING</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <ul id="project-list" class="all-projects-list">
         {%- for item in site.projects -%}
-          {%- if item.hide != true -%}
-            <li class="project-card">
-              <div class="project-card-inner">
-                <div class="project-tmb">
-                  <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
-                </div>
-                <div class="project-body">
-                  <div class='status-indicator {{ "status-" | append: item.status }}'>
-                    <h5 class='status-text'>{{ item.status }}</h5>
-                  </div>
-                  <h4 class="project-title">{{ item.title }}</h4>
-                  <p class="project-description">{{ item.description }}</p>
-                  {%- if item.links -%}
-                    <div class="project-links">
-                      <strong>Links: </strong> 
-                        {%- for item in item.links -%} 
-                          <a href={{ item.url }} rel="noopener" target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
-                          {%- endif -%}
-                        {%- endfor -%}
-                    </div>
-                  {%- endif -%} 
-                  {%- if item.partner -%}
-                    <div class="project-partner">
-                    <strong>Partner: </strong>
-                      {{ item.partner }}
-                    </div>
-                  {%- endif -%}
-                  {%- if item.looking -%}
-                    <div class="project-needs">
-                      <strong>Looking for: </strong>
-                        {{ item.looking }}
-                    </div>
-                  {%- endif -%}
-                  
-                  {%- if item.location -%}
-                    <div class="project-location">
-                      <strong>Location: </strong>
-                        {{ item.location }}
-                    </div>
-                  {%- endif -%}
-                </div>
-              </div>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-    <p class="project-pitch">Have an idea?
-              <a href="#contact" class="btn btn-primary">Submit your pitch</a>
-    </p>
+        {%- if item.hide != true -%}
+        <li class="all-projects-card
+        {{item.location | split: " " | join: "" | downcase}}
+        {{item.status | split: " " | join: "" | downcase}}"
+        >
+        <div class="all-projects-inner">
+          <div class="all-project-tmb">
+            <img src={{ item.image | absolute_url }} class="all-projects-tmb-img" alt={{item.alt}}/>
+          </div>
+          <div class="all-projects-body">
+            <div class='status-indicator {{ "status-" | append: item.status}}'>
+              <h5 class="status-text">{{item.status}}</h5>
+            </div>
+            <h4 class="all-project-title">
+              <!-- add the commented code below / delete the div when you're ready to link to Kain's project page -->
+              <!-- <a href="{{ item.url | absolute_url}}">{{item.title}}</a> -->
+              <div>{{item.title}}</div>
+              <!-- delete the div above after you uncomment the anchor -->
+            </h4>
+            <p class="all-project-description">{{ item.description }}</p>
+            {%- if item.location -%}
+            <div class="all-project-location">
+              <strong>Location: </strong>
+              {{ item.location }}
+            </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </li>
+      {%- endif -%}
+      {%- endfor -%}
+    </ul>
   </div>
+  </div>
+
 </section>
