@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const https = require("https");
 const fs = require('fs');
+const path = require('path')
 
 
 try {
@@ -42,7 +43,8 @@ try {
       body = JSON.parse(body)
       let newBody = JSON.stringify(body, null, 2);
       console.log("it worked!");
-      fs.writeFileSync('db/db.json', newBody)
+      let jsonPath = path.join(__dirname, '..', 'db', 'db.json');
+      fs.writeFileSync(jsonPath, newBody)
     });
   });
 } catch (error) {
