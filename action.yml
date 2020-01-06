@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Get JSON Data'
+description: 'Calls the github API for all projects witht he hack-for-la tag and writes a JSON file'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'

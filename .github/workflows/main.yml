@@ -3,13 +3,13 @@ on:
     - cron:  '*/5 * * * *'
 
 jobs:
-  hello_world_job:
+  github_json:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Build JSON from GithubAPI
     steps:
-    - name: Hello world action step
+    - name: Generate JSON
       id: hello
-      uses: StephenVNelson/website/@3-experiment-with-actions
+      uses: StephenVNelson/website/@gh-pages
       with:
         who-to-greet: 'Van Vleet!'
     # Use the output from the `hello` step
