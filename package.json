@@ -1,0 +1,25 @@
+{
+  "name": "Website",
+  "version": "1.0.0",
+  "description": "> Hack for LA's website https://www.hackforla.org",
+  "main": "./github-actions/main.js",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenVNelson/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephenVNelson/website/issues"
+  },
+  "homepage": "https://github.com/StephenVNelson/website#readme"
+}
