@@ -1,6 +1,6 @@
 ---
 title: Shared Housing Project
-description: LA Family Housing, an LA-based non-profit working to end the homelessness crisis, engaged the help of Hack for LA to identify and design a more efficient & effective solution for matching multiple individuals who experience homelessness as potential co-tenants, and placing the matched individuals in suitable shared housing units.
+description: The shared housing team works on creating an efficient & effective solution for matching multiple individuals who experience homelessness as potential co-tenants, and placing the matched individuals in suitable shared housing units.
 image: /assets/images/projects/shared-housing-project.jpg
 alt: "'linked arms'"
 links:
@@ -10,6 +10,6 @@ links:
   #   url: ''
 looking: Graphics Designer
 location: Downtown LA
-partner: LA Family Housing
+# partner: 
 status: Active
 ---
