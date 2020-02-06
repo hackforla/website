@@ -11,4 +11,5 @@ links:
 looking: Mobile Development, Serverless PaaS Expertise, UX knowledge, React Web Development, Marketing/Research, any high school student or technical mentor interested
 partner: Seeking
 location: Santa Monica, CA
+status: Active
 ---
