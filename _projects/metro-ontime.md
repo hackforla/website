@@ -8,7 +8,9 @@ links:
     url: 'https://github.com/metro-ontime'
   - name: Site
     url: https://la.railstats.org
-looking: Frontend Developers (React, D3), Backend Developers (Python, Pandas)
+looking: 
+  - Frontend Developers (React, D3) 
+  - Backend Developers (Python, Pandas)
 location: Downtown LA
 partner: LA Metro (https://www.metro.net/)
 status: Active
