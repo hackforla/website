@@ -10,7 +10,7 @@ links:
     url: 'https://hackforla.slack.com/archives/CTJN4HPRA'
   - name: Readme
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
-looking: Business Analyst (BA) to work on authentication and authorization (AA) practices for a governmentt team, Information Technology (IT) Role to work with the BA role on AA
+looking: Business Analyst (BA) to work on authentication and authorization (AA) practices for a government team, Information Technology (IT) Role to work with the BA role on AA
 location: Downtown LA
 partner: 
 status: Active
