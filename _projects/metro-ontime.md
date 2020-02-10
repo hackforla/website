@@ -18,4 +18,3 @@ location: Downtown LA
 tools: Docker, AWS, Observable
 status: Active
 ---
-
