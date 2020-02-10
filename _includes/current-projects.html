@@ -4,49 +4,23 @@
     <h2 class="project-header">Current Projects</h2>
       <ul class="project-list unstyled-list">
         {%- for item in site.projects -%}
-          {%- if item.hide != true -%}
-            <li class="project-card">
-              <div class="project-card-inner">
-                <div class="project-tmb">
-                  <img src={{ item.image | absolute_url }} class="project-tmb-img" alt={{item.alt}}/>
-                </div>
-                <div class="project-body">
-                  <div class='status-indicator {{ "status-" | append: item.status }}'>
-                    <h5 class='status-text'>{{ item.status }}</h5>
-                  </div>
-                  <h4 class="project-title">{{ item.title }}</h4>
-                  <p class="project-description">{{ item.description }}</p>
-                  {%- if item.links -%}
-                    <div class="project-links">
-                      <strong>Links: </strong> 
-                        {%- for item in item.links -%} 
-                          <a href={{ item.url }} rel="noopener" target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
-                          {%- endif -%}
-                        {%- endfor -%}
-                    </div>
-                  {%- endif -%} 
-                  {%- if item.partner -%}
-                    <div class="project-partner">
-                    <strong>Partner: </strong>
-                      {{ item.partner }}
-                    </div>
-                  {%- endif -%}
-                  {%- if item.looking -%}
-                    <div class="project-needs">
-                      <strong>Looking for: </strong>
-                        {{ item.looking }}
-                    </div>
-                  {%- endif -%}
-                  
-                  {%- if item.location -%}
-                    <div class="project-location">
-                      <strong>Location: </strong>
-                        {{ item.location }}
-                    </div>
-                  {%- endif -%}
-                </div>
-              </div>
-            </li>
+          {%- if item.hide != true and item.status == 'Active' -%}
+            {%- include project-card.html -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for item in site.projects -%}
+          {%- if item.hide != true and item.status == 'Rebooting' -%}
+            {%- include project-card.html -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for item in site.projects -%}
+          {%- if item.hide != true and item.status == 'Completed' -%}
+            {%- include project-card.html -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for item in site.projects -%}
+          {%- if item.hide != true and item.status == 'On Hold' -%}
+            {%- include project-card.html -%}
           {%- endif -%}
         {%- endfor -%}
       </ul>
