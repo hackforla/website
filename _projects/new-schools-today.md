@@ -12,4 +12,8 @@ looking: Mobile Development, Serverless PaaS Expertise, UX knowledge, React Web 
 partner: Seeking
 location: Santa Monica, CA
 status: Active
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> b66573c450470649120d4fded4470434c86f2cd4
