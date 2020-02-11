@@ -5,22 +5,22 @@
       <ul class="project-list unstyled-list">
         {%- for item in site.projects -%}
           {%- if item.hide != true and item.status == 'Active' -%}
-            {%- include project-card.html -%}
+            {%- include project-card.html project=item -%}
           {%- endif -%}
         {%- endfor -%}
         {%- for item in site.projects -%}
           {%- if item.hide != true and item.status == 'Rebooting' -%}
-            {%- include project-card.html -%}
+            {%- include project-card.html project=item -%}
           {%- endif -%}
         {%- endfor -%}
         {%- for item in site.projects -%}
           {%- if item.hide != true and item.status == 'Completed' -%}
-            {%- include project-card.html -%}
+            {%- include project-card.html project=item -%}
           {%- endif -%}
         {%- endfor -%}
         {%- for item in site.projects -%}
           {%- if item.hide != true and item.status == 'On Hold' -%}
-            {%- include project-card.html -%}
+            {%- include project-card.html project=item -%}
           {%- endif -%}
         {%- endfor -%}
       </ul>
