@@ -17,7 +17,7 @@ looking:
   - UX developer 
   - JavaScript programmer 
   - QA coder 
-  - DevOps engineer.
+  - DevOps engineer
 location: Downtown LA
 partner:
 status: Active
