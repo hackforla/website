@@ -8,7 +8,10 @@ links:
     url: 'https://github.com/curbmap'
   - name: Site
     url: 'https://curbmap.com/'
-looking: UX designers, UX researchers, UI designers
+looking: 
+  - UX designers 
+  - UX researchers 
+  - UI designers
 location: Downtown LA
 hide: true
 # partner: 

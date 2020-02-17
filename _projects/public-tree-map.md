@@ -12,7 +12,10 @@ links:
     url: 'https://hackforla.slack.com/messages/C9UU5KKAA/'
   # - name: Site
   #   url: ''
-looking: Front-end web development (JS, leaflet), project management, appreciation for trees.
+looking: 
+  - Front-end web development (JS, leaflet) 
+  - project management 
+  - appreciation for trees
 location: Santa Monica
 partner: City of Santa Monica
 status: Active

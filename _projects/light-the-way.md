@@ -8,7 +8,9 @@ links:
   #   url: 'https://github.com/light-the-way'
   - name: Site
     url: 'https://lighttheway.herokuapp.com/'
-looking: Front-end Developers, UX Designers
+looking: 
+  - Front-end Developers 
+  - UX Designers
 location: Downtown LA
 hide: true
 # partner: 

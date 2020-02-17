@@ -8,7 +8,13 @@ links:
       url: https://github.com/hackforla/new-schools-today
     - name: Slack
       url: https://hackforla.slack.com/archives/CQZ5R91C5
-looking: Mobile Development, Serverless PaaS Expertise, UX knowledge, React Web Development, Marketing/Research, any high school student or technical mentor interested
+looking: 
+  - Mobile Development 
+  - Serverless PaaS Expertise 
+  - UX knowledge 
+  - React Web Development 
+  - Marketing/Research 
+  - any high school student or technical mentor interested
 partner: Seeking
 location: Santa Monica, CA
 status: Active
