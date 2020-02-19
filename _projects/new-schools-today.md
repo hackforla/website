@@ -2,10 +2,14 @@
 title: New Schools Today
 description: We’re building a platform for students across LA County to create more accessible school-related apps and web apps. Our desired impact is to make students feel more welcomed and included in their community through an online academic environment created by peers, for peers
 <<<<<<< HEAD
+<<<<<<< HEAD
 image: /assets/images/projects/new-schools.jpg
 =======
 image: /assets/images/projects/school-new.jpg
 >>>>>>> proj4
+=======
+image: /assets/images/projects/school-new.jpg
+>>>>>>> b02a2ff567cb7719c7f5f94e8a57367f768031e0
 alt: "'Team working during meeting'"
 links: 
     - name: GitHub
