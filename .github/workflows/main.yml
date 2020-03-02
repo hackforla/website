@@ -1,0 +1,30 @@
+name: Build
+
+# Run this action every day at 3am Pacific (11 am UTC)
+on: 
+  schedule:
+    - cron: '0 11 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bahmutov/npm-install@v1
+      with:
+        working-directory: github-actions
+    - name: Generate github-data.json
+      id: json
+      uses: ./github-actions
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      with:
+        # Optional glob pattern of files which should be added to the commit
+        file_pattern: _data/github-data.json
+
+        commit_message: Update contributor and language data
+
+        # Optional commit user and author settings
+        commit_user_name: GitHub Actions Bot
+        commit_user_email: hackforla-bot@hackforla.org
