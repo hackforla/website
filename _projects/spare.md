@@ -5,7 +5,7 @@ description: A fun new project project that connects people in need of clothing 
 image: /assets/images/projects/spare.png
 alt: "'a logo that reads what can you spare'"
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/spare'
   - name: Site
     url: 'http://whatcanyouspare.org'

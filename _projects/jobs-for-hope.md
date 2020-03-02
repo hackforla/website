@@ -5,7 +5,7 @@ description: We compiled job listings from 60+ different non-profit organization
 image: /assets/images/projects/jobs-for-hope.png
 alt: "'LA county homelessness initiative logo'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/jobs-for-hope'
   - name: Site
     url: 'https://jobs-for-hope.herokuapp.com/'

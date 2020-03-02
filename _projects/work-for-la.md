@@ -4,7 +4,7 @@ description: Applying for work should be simple—but the application process fo
 image: /assets/images/projects/work-for-la.jpg
 alt: "'Los Angeles City Hall building'"
 links: 
-  # - name: Github
+  # - name: GitHub
   #   url: ''
   - name: Site
     url: 'http://www.workfor.la/'

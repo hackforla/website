@@ -5,7 +5,7 @@ description: Our project's goal is to make all criminal sentences administered i
 image: /assets/images/projects/criminal-sentencing.jpg
 alt: "gavel"
 links: 
-  - name: Github
+  - name: GitHub
     url: "https://github.com/timdef/criminal-sentencing" 
   # - name: Site
   #   url: ''

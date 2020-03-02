@@ -5,7 +5,7 @@ description: We’re building a TDM web calculator for LADOT. It scores proposed
 image: /assets/images/projects/tdm-calculator.jpg
 alt: "'LA TDM Calculator Landing Page (Mock Up)'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/orgs/hackforla/teams/tdm-calculator'
   #- name: Site
   #  url: 'https://www.google.com/'

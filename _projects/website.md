@@ -5,7 +5,7 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: "wireframe sample from new website"
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/website'
   - name: Site
     url: 'https://www.hackforla.org'

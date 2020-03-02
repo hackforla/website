@@ -5,7 +5,7 @@ description: NotToday is a mobile app for people who suffer from chronic suicida
 image: /assets/images/projects/not-today.png
 alt: 'person being supported by another.  Art by c.w. moss'
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/not-today'
   # - name: Site
   #  url: 
