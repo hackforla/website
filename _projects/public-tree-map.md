@@ -5,7 +5,7 @@ description: Public Tree Map documents all ~36,000 public trees in Santa Monica'
 image: /assets/images/projects/public-tree-map.png
 alt: "'public tree map grid'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/Public-Tree-Map/'
   - name: Test Site
     url: 'http://public-tree-map.surge.sh/'

@@ -5,7 +5,7 @@ description: Heart is a project working directly with the LA City Attorney’s H
 image: /assets/images/projects/heart.png
 alt: "'programming code icon that reads helping the homeless with code '"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/heart'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
