@@ -8,7 +8,10 @@ links:
   #   url: ''
   - name: Site
     url: 'http://www.workfor.la/'
-looking: UX, Writers, Designers
+looking: 
+  - UX 
+  - Writers 
+  - Designers
 location: Downtown LA
 partner: Department of Personnel
 status: Completed

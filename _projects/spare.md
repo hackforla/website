@@ -9,7 +9,11 @@ links:
     url: 'https://github.com/hackforla/spare'
   - name: Site
     url: 'http://whatcanyouspare.org'
-looking: Front-end development, Back-end development, Product Management, and Marketing.
+looking: 
+  - Front-end development 
+  - Back-end development 
+  - Product Management 
+  - Marketing
 location: Santa Monica
 partner: Hope of the Valley and hopefully others in the near future.
 status: On Hold

@@ -11,7 +11,14 @@ links:
     url: 'https://hackforla.slack.com/archives/CTJN4HPRA'
   - name: Readme
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
-looking: Gender researcher, Communications writer, Videographer, UX developer, JavaScript programmer, QA coder, DevOps engineer.
+looking: 
+  - Gender researcher 
+  - Communications writer 
+  - Videographer 
+  - UX developer 
+  - JavaScript programmer 
+  - QA coder 
+  - DevOps engineer
 location: Downtown LA
 partner:
 status: Active

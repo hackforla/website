@@ -9,7 +9,12 @@ links:
     url: 'https://github.com/helloGov/'
   - name: Site
     url: 'https://hellogov.squarespace.com/'
-looking: Angular skills or willing to learn, Node, JS, visual designers, dev-ops.
+looking: 
+  - Angular skills or willing to learn 
+  - Node 
+  - JS 
+  - visual designers 
+  - dev-ops
 location: Santa Monica
 partner: Digital Defense Fund
 status: Active

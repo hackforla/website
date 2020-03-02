@@ -9,7 +9,10 @@ links:
     url: 'https://github.com/hackforla/heart'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
-looking: experienced full-stack developer, node.js, react
+looking: 
+  - experienced full-stack developer 
+  - node.js 
+  - react
 partner: LA City Attorney’s Homeless Engagement and Response Team
 status: On Hold
 ---
