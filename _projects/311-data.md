@@ -9,7 +9,8 @@ links:
     url: 'https://github.com/hackforla/311-data'
   # - name: Site
   #   url: ''
-looking: TBD
+looking: 
+  - TBD
 location: Downtown LA
 partner: EmpowerLA
 status: Active

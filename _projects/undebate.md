@@ -9,7 +9,9 @@ links:
     url: 'https://github.com/EnCiv/undebate'
   - name: Demo
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'
-looking: Node, React
+looking: 
+  - Node 
+  - React
 location: Santa Monica + Remote
 partner: EnCiv.org, Ballotpedia.org
 status: Active

@@ -10,7 +10,8 @@ links:
     - name: Slack
       url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
 partner: NDICA
-looking: Research/UX-UI
+looking: 
+  - Research/UX-UI
 location: West Los Angeles
 status: Active
 ---

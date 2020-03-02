@@ -11,7 +11,10 @@ links:
     url: 'https://foodoasis.la/'
   - name: Read.me
     url: 'https://github.com/hackforla/food-oasis/blob/master/README.md'
-looking: Project Management, Junior Python developers (2) , documentarian (UX) - specifically someone to help with the wiki for onboarding and communicating to stake holders what the project is about.
+looking: 
+  - Project Management 
+  - Junior Python developers (2) 
+  - documentarian (UX) - specifically someone to help with the wiki for onboarding and communicating to stake holders what the project is about
 location: Downtown LA
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
 partner: seeking

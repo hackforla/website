@@ -9,8 +9,12 @@ links:
     url: 'https://github.com/hackla-engage'
   - name: Site
     url: 'https://sm.engage.town'
-looking: NLP engineers, Django developers (API), React developers, UX designers,
-      anyone else...
+looking: 
+  - NLP engineers 
+  - Django developers (API) 
+  - React developers 
+  - UX designers
+  - anyone else...
 location: Santa Monica
 partner: City of Santa Monica
 status: Active
