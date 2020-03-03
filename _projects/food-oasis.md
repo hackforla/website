@@ -4,7 +4,7 @@ description: The website is focused on individuals seeking food in Los Angeles w
 image: /assets/images/projects/food-oasis.jpg
 alt: "'vegatables beats stacked'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/foodoasisla'
   - name: Site
     url: 'https://foodoasis.la/'

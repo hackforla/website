@@ -4,7 +4,7 @@ description: Not debates, but recorded online video Q&A with candidates so voter
 image: /assets/images/projects/undebate.jpg
 alt: "Undebate with moderator and 7 participants"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/EnCiv/undebate'
   - name: Demo
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'

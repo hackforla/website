@@ -4,7 +4,7 @@ description: There are thousands of works of public art scattered around the cit
 image: /assets/images/projects/adopt-civic-art.jpg
 alt: "'adopt civic arts'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/adopt-civic-art'
   # - name: Site
   #   url: ''

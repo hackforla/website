@@ -4,7 +4,7 @@ description: Engage is a civic participation platform. Currently in beta, Engage
 image: /assets/images/projects/engage.jpg
 alt: "'city council closed in session'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackla-engage'
   - name: Site
     url: 'https://sm.engage.town'

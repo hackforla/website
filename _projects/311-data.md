@@ -4,7 +4,7 @@ description: The 311 Data project seeks to empower local Neighborhood Councils t
 image: /assets/images/projects/311.jpg
 alt: "image of building with windows that look like they spell out 311"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/311-data'
   # - name: Site
   #   url: ''

@@ -4,7 +4,7 @@ description: We are building a platform to engage the community to map and updat
 image: /assets/images/projects/curbmap.jpg
 alt: "'parking sign'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/curbmap'
   - name: Site
     url: 'https://curbmap.com/'

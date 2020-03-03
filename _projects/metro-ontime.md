@@ -4,7 +4,7 @@ description: Trailstats LA tracks LA Metro trains and generates punctuality repo
 image: /assets/images/projects/metro-time.jpg
 alt: "'metro ontime'"
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/metro-ontime'
   - name: Site
     url: 'https://la.railstats.org'

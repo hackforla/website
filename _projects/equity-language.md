@@ -4,7 +4,7 @@ description: Equity is a priority in the City of Los Angeles and we want to impr
 image: /assets/images/projects/equity-language.png
 alt: "The word 'Equity' in many colors with the E and Q resembling a document searcher, and a rainbow-like border"
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/gender-equity'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CTJN4HPRA'

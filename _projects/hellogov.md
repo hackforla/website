@@ -4,7 +4,7 @@ description: HelloGOV is helping reproductive rights advocacy organizations conn
 image: /assets/images/projects/hellogov.jpg
 alt: "'smartphones using hellogo app'"
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/helloGov/'
   - name: Site
     url: 'https://hellogov.squarespace.com/'
