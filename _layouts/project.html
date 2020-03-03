@@ -1,3 +1,288 @@
-<h1>{{ page.title }}</h1>
+---
+layout: default
+---
+{% if page.image-hero %}
+    <header style='background: url({{ page.image-hero }}) center center no-repeat;' class='project-hero'>
+{% else %}
+    <header style='background: url(/assets/images/hero/hacknight-women.jpg) center center no-repeat;' class='project-hero'>
+{% endif %}
+        <h1 class='hero-inner'>{{ page.title }}</h1>
+    </header>
+
+<div class='content-section project-home-page'>
+    <!--Project Description Card-->
+    <div id='project-description-card' class='project-page-card'>
+        <h4 style='color:#333'>Project Overview</h4>
+        <!--Project Details-->
+        <div class='project-page-description'>
+            <!--Project Properties-->
+            <div class='description-grid-item'>
+                {% if page.status %}
+                    <div>
+                        <p style='display:inline-block'><strong>Status: </strong></p>
+                        <div style='display:inline-block; float:none' class='status-indicator {{ "status-" | append: page.status }}'>
+                            <h5 class='status-text'>{{ page.status }}</h5>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
+                {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
+                
+                <!-- Links Logic to filter prioritized links and to correct comma placement -->
+                {% if page.links %}
+                    {% assign counter = 0 %}
+                    {% for item in page.links %}
+                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Launch Site' %}
+                            {% assign counter = counter | plus:1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if counter > 0 %}
+                        <p>
+                            <strong>Links: </strong>
+                            {% for item in page.links %}
+                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Launch Site' %}
+                                    {% if counter > 1 %}
+                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
+                                        {% assign counter = counter | minus:1 %}
+                                    {% elsif counter <= 1 %}
+                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                {% endif %}
+
+                {% if page.tools %}<p><strong>Tools: </strong>{{ page.tools }}</p>{% endif %}
+                <p id='languages'><strong>Languages: </strong></p>
+            </div>
+            
+            <!--Project Summary and Getting Started Button-->
+            <div class='description-grid-item'>
+                <p>{{page.description}}</p>
+                {% if page.looking %}
+                    <p style='margin-bottom:7px;'><strong>Open roles</strong></p>
+                    <ul id='open-roles'>
+                        {% for item in page.looking %}
+                            <li><p class='role-paragraph'>{{ item }}</p></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <div class="getting-started">
+                    <p style='margin-bottom:0px;'>Getting Started</p>
+                    <button onClick='gettingStarted()' class='getting-started-button'>
+                        {% include svg/_ionicons_svg_ios-arrow-down.svg %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Getting Started Card-->
+    <div id="getting-started-section" class='project-page-card'>
+        <ul class="resource-list unstyled-list">
+            <!-- Hfla Start Guide -->
+            {%- include resource-card.html name='Getting Started' url='https://github.com/hackforla/getting-started' -%}
+
+            {% assign hasGettingStarted = false %}
+
+            <!-- Check for Project Wiki -->
+            {% for item in page.links %}
+                {% if item.name == 'Wiki' %}
+                    {% assign hasGettingStarted = true %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
+
+            <!-- Check for Project Readme -->
+            {% for item in page.links %}
+                {% if item.name == 'Readme' %}
+                    {% assign hasGettingStarted = true %}
+                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
+            {% if hasGettingStarted == false %}
+                <div id='help-getting-started'>
+                    <p>Looks like this project doesn't have their own Getting Started guide.</p>
+                    <button onClick='helpMakeGuide()' class="btn btn-primary help-make-button" style='margin: 0 0 0 0;'>Help Make One!</button onClick=''>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Project Team Card -->
+    <div id='project-team-card' class='project-page-card'>
+        <h4 style='color:#333'>Project Leadership</h4>
+        {% if page.leadership %}
+            <div class='resource-list'>
+                {% for item in page.leadership %}
+                    <div class='leader-card'>
+                        <a href='{{ item.links.GitHub }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
+                        <div class='leader-description'>
+                            <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
+                            <p style='margin-block-end: 0.25em;'><strong>Role: </strong>{{ item.role }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class='empty-content-message'>
+                <p>Looks like this project has not revealed specific leadership roles yet!</p>
+            </div>
+        {% endif %}
+        <h4 style='color:#333'>Contributors</h4>
+        <div id='contributors-list' class='resource-list'></div>
+    </div>
+
+    <!--Project Resources Card-->
+    <div class='project-page-card'>
+        <h4 style='color:#333'>Project Resources</h4>
+        <ul class="resource-list unstyled-list">
+            {%- for item in page.links -%}
+                {% if item.name == 'Readme' or item.name == 'Wiki' %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% else %}
+                    {%- include resource-card.html name=item.name url=item.url -%}
+                {% endif %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>
 
 {{ content | markdownify }}
+
+<!--Script for fetching the correct project-->
+<script>
+    {% assign projects = site.data.github-data | jsonify %}
+    let projects = {{ projects }};
+    let projectId = '{{ page.identification }}';
+    // Search for correct project
+    let project = null;
+    for(item of projects){
+        let itemId = item.id.toString();
+        if(itemId == projectId){
+            project = item;
+            break;
+        }
+    }
+</script>
+
+<!--Script for adding languages to "Languages" Section-->
+<script>
+    let languagesSection = document.getElementById('languages');
+    if(project != null && project.languages.data.length > 0){
+        let languages = project.languages.data.join(', ');
+        let languagesParagraph = document.createElement('p');
+        languagesParagraph.style.display = 'inline';
+        let languagesText = document.createTextNode(languages);
+        languagesParagraph.appendChild(languagesText);
+        languagesSection.appendChild(languagesParagraph);
+    } else {
+        languagesSection.remove();
+    }
+</script>
+
+<!--Script for constructing Team Card-->
+<script>
+    let contributors = document.getElementById('contributors-list');
+    if(project != null){
+        for(contributor of project.contributors.data){
+            let contributorDiv = document.createElement('div');
+            contributorDiv.classList.add('contributor-div');
+
+            let contributorProfile = document.createElement('a');
+            contributorProfile.classList.add('contributor-link');
+            contributorProfile.setAttribute('href', contributor.github_url);
+            contributorProfile.setAttribute('target', '_blank');
+            let contributorUrl = contributor.github_url.split('/');
+            let contributorName = contributorUrl.pop();
+            contributorProfile.setAttribute('title', contributorName);
+
+            let contributorImg = document.createElement('img');
+            contributorImg.style['border-radius'] = '12px';
+            contributorImg.setAttribute('src', contributor.avatar_url);
+            //contributorImg.classList.add('contributor-img');
+
+            contributorProfile.appendChild(contributorImg);
+            //contributorDiv.appendChild(contributorProfile);
+            //contributors.appendChild(contributorDiv);
+            contributors.appendChild(contributorProfile);
+        }
+    } else {
+        let messageDiv = document.createElement('div');
+        messageDiv.classList.add('empty-content-message');
+        let messageText = document.createElement('p');
+        messageText.appendChild(document.createTextNode('Looks like this project has not connected a GitHub repository yet!'));
+        messageDiv.appendChild(messageText);
+        contributors.appendChild(messageDiv);
+    }
+</script>
+
+<!--Script for Getting Started drop down functionality-->
+<script>
+    let dropDownOpen = false;
+    function gettingStarted(){
+        if(!dropDownOpen){
+            dropDownOpen = true;
+            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
+            gettingStartedButton.style.transform = 'rotate(180deg)';
+
+            let gettingStartedCard = document.getElementById('getting-started-section');
+            gettingStartedCard.style['max-height'] = '300px';
+            gettingStartedCard.style.padding = '30px 30px';
+        } 
+        else {
+            dropDownOpen = false;
+            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
+            gettingStartedButton.style.transform = 'rotate(0deg)';
+
+            let gettingStartedCard = document.getElementById('getting-started-section');
+            gettingStartedCard.style['max-height'] = '0px';
+            gettingStartedCard.style.padding = '0px 30px';
+        }
+    }
+</script>
+
+<!--Script for constructing Getting Started call to action message-->
+<script>
+    let helpGettingStarted = document.getElementById('help-getting-started');
+    let textDiv = document.createElement('div');
+    textDiv.setAttribute('id', 'help-make-text-section');
+
+    let hflaSlack = document.createElement('a');
+    hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
+    hflaSlack.setAttribute('target', '_blank');
+    let hflaSlackText = document.createTextNode('Hack for LA');
+    hflaSlack.appendChild(hflaSlackText);
+
+    let projectSlack = document.createElement('a');
+    {% for item in page.links %}
+        {% if item.name == 'Slack' %}
+            projectSlack.setAttribute('href', '{{ item.url }}')
+            projectSlack.setAttribute('target', '_blank');
+        {% endif %}
+    {% endfor %}
+    let projectSlackText = document.createTextNode('our');
+    projectSlack.appendChild(projectSlackText);
+
+    let message = document.createElement('p');
+    message.style.width = '200px';
+    let text1 = document.createTextNode('Once you are on the ');
+    let text2 = document.createTextNode(' slack channel, please post a note in ');
+    let text3 = document.createTextNode(' channel indicating your interest.');
+    
+    message.appendChild(text1);
+    message.appendChild(hflaSlack);
+    message.appendChild(text2);
+    message.appendChild(projectSlack);
+    message.appendChild(text3);
+    textDiv.appendChild(message);
+    helpGettingStarted.insertAdjacentElement('afterend', textDiv);
+    
+    function helpMakeGuide(){
+        let textDiv = document.getElementById('help-make-text-section');
+        textDiv.style['max-width'] = '225px';
+        //textDiv.style['min-width'] = 'fit-content';
+        textDiv.style.padding = '35px 15px';
+    }
+</script>

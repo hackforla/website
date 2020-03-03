@@ -1,0 +1,26 @@
+{% assign url = include.url %}
+{% assign image = include.image %}
+{% assign name = include.name %}
+
+<a href='{{ url }}' target="_blank" class='resource-link'>
+    <li class='resource-card'>
+        <!--Where the images will be-->
+        <div class='resource-img' {% if image %} style='padding:12px;' {% endif %}>
+            {% if name == 'GitHub' or name == 'Slack' %}
+                {% include {{ name | prepend: 'svg/icon-' | append: '-color.svg' | downcase }} %}
+            {% elsif name == 'Getting Started' %}
+                {% include svg/logo-hfla-small.svg %}
+            {% elsif image %}
+                <img src={{ page.image | absolute_url }} class='project-tmb-img project-start-guide-img' alt={{item.alt}}/>
+            {% else %}
+                {% include svg/_ionicons_svg_ios-link.svg %}
+            {% endif %}
+        </div>
+
+        <div class='resource-body'>
+            <h4 style='margin-block-end: 0px;'>
+                {{ name }}
+            </h4>
+        </div>
+    </li>
+</a>
