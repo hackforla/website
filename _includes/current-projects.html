@@ -3,25 +3,14 @@
   <div class="page-contain projects-inner">
     <h2 class="project-header">Current Projects</h2>
     <ul class="project-list unstyled-list">
-      {%- for item in site.projects -%}
-        {%- if item.hide != true and item.status == 'Active' -%}
-          {%- include project-card.html project=item -%}
-        {%- endif -%}
-      {%- endfor -%}
-      {%- for item in site.projects -%}
-        {%- if item.hide != true and item.status == 'Rebooting' -%}
-          {%- include project-card.html project=item -%}
-        {%- endif -%}
-      {%- endfor -%}
-      {%- for item in site.projects -%}
-        {%- if item.hide != true and item.status == 'Completed' -%}
-          {%- include project-card.html project=item -%}
-        {%- endif -%}
-      {%- endfor -%}
-      {%- for item in site.projects -%}
-        {%- if item.hide != true and item.status == 'On Hold' -%}
-          {%- include project-card.html project=item -%}
-        {%- endif -%}
+      {% assign status_list = "Active, Rebooting, Completed, On Hold" | split: ", " %}
+      {% for status in status_list %}
+        {% assign projects = site.projects | sample: site.projects.size - 1 | where: "status", status %}
+        {%- for item in projects -%}
+          {%- if item.hide != true -%}
+            {%- include project-card.html project=item -%}
+          {%- endif -%}
+        {%- endfor -%}
       {%- endfor -%}
     </ul>
     <p class="project-pitch">

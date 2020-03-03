@@ -10,6 +10,7 @@
       </div>
       <h4 class="project-title">{{ project.title }}</h4>
       <p class="project-description">{{ project.description }}</p>
+
       {%- if project.links -%}
       <div class="project-links">
         <strong>Links: </strong>
@@ -19,17 +20,21 @@
         {%- endfor -%}
       </div>
       {%- endif -%}
+
       {%- if project.partner -%}
       <div class="project-partner">
         <strong>Partner: </strong>
         {{ project.partner }}
       </div>
       {%- endif -%}
+
       {%- if project.looking -%}
-      <div class="project-needs">
-        <strong>Looking for: </strong>
-        {{ project.looking }}
-      </div>
+        <div class="project-needs">
+          <strong>Looking for: </strong>
+          {% for role in item.looking %}
+            <p style='display:inline;'> {{ role }}</p>{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        </div>
       {%- endif -%}
 
       {%- if project.location -%}
