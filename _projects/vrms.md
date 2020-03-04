@@ -26,7 +26,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
   - name: Site
     url: 'http://vrms.io'
