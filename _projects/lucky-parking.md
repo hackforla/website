@@ -38,7 +38,7 @@ leadership:
   #     github:
   #   picture:
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
   - name: Readme
     url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
