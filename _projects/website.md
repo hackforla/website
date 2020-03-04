@@ -10,7 +10,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/archives/DE8SR80F7'
       github: 'https://github.com/thekaveman'
-    picture: https://avatars.githubusercontent.com/thekaveman 
+    picture: https://avatars.githubusercontent.com/thekaveman
   - name: Bonnie Wolfe
     role: Product Owner & Tech Lead
     links:
