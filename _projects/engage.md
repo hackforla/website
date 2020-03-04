@@ -22,12 +22,14 @@ links:
     url: 'https://github.com/hackla-engage'
   - name: Site
     url: 'https://sm.engage.town'
+  - name: Wiki
+    url: 'https://github.com/hackla-engage/Engage-Product-Documentation/wiki'
 looking:
-  - NLP engineers
-  - Django developers (API)
-  - React developers
+  - Product Manager
+  - Project Manager
   - UX designers
-  - anyone else...
+  - React developers
+  - NLP engineers
 location: Santa Monica
 partner: City of Santa Monica
 status: Active

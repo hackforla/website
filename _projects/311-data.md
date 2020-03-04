@@ -38,10 +38,13 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
-  # - name: Site
-  #   url: ''
+  - name: Join Us
+    url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
 looking:
-  - TBD
+  - Frontend Developers
+  - Backend Developers
+  - Backend Lead
+  - DevOps
 location: Downtown LA
 partner: EmpowerLA
 status: Active
