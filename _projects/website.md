@@ -5,6 +5,12 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: "wireframe sample from new website"
 leadership:
+   - name: Kegan Maher
+    role: Technical Architect
+    links:
+      slack: 'https://hackforla.slack.com/archives/DE8SR80F7'
+      github: 'https://github.com/thekaveman'
+    picture: https://avatars.githubusercontent.com/thekaveman 
   - name: Bonnie Wolfe
     role: Product Owner & Tech Lead
     links:
