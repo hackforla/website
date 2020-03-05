@@ -167,6 +167,48 @@
     }
   },
   {
+    "id": 226157870,
+    "name": "VRMS",
+    "languages": {
+      "url": "https://api.github.com/repos/hackforla/VRMS/languages",
+      "data": [
+        "JavaScript",
+        "CSS",
+        "HTML",
+        "Dockerfile"
+      ]
+    },
+    "contributors": {
+      "url": "https://api.github.com/repos/hackforla/VRMS/contributors",
+      "data": [
+        {
+          "id": 39248174,
+          "github_url": "https://github.com/sarL3y",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/39248174?v=4",
+          "gravatar_id": ""
+        },
+        {
+          "id": 50650237,
+          "github_url": "https://github.com/shiningjustice",
+          "avatar_url": "https://avatars3.githubusercontent.com/u/50650237?v=4",
+          "gravatar_id": ""
+        },
+        {
+          "id": 9064317,
+          "github_url": "https://github.com/rachelwhaley",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/9064317?v=4",
+          "gravatar_id": ""
+        },
+        {
+          "id": 37763229,
+          "github_url": "https://github.com/ExperimentsInHonesty",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
+          "gravatar_id": ""
+        }
+      ]
+    }
+  },
+  {
     "id": 190321758,
     "name": "311-data",
     "languages": {
@@ -248,6 +290,12 @@
           "id": 20999589,
           "github_url": "https://github.com/johnr54321",
           "avatar_url": "https://avatars2.githubusercontent.com/u/20999589?v=4",
+          "gravatar_id": ""
+        },
+        {
+          "id": 59002767,
+          "github_url": "https://github.com/itsjoycelee",
+          "avatar_url": "https://avatars3.githubusercontent.com/u/59002767?v=4",
           "gravatar_id": ""
         },
         {
@@ -337,42 +385,6 @@
           "id": 50686892,
           "github_url": "https://github.com/Rankazze",
           "avatar_url": "https://avatars3.githubusercontent.com/u/50686892?v=4",
-          "gravatar_id": ""
-        }
-      ]
-    }
-  },
-  {
-    "id": 226157870,
-    "name": "VRMS",
-    "languages": {
-      "url": "https://api.github.com/repos/hackforla/VRMS/languages",
-      "data": [
-        "JavaScript",
-        "CSS",
-        "HTML",
-        "Dockerfile"
-      ]
-    },
-    "contributors": {
-      "url": "https://api.github.com/repos/hackforla/VRMS/contributors",
-      "data": [
-        {
-          "id": 39248174,
-          "github_url": "https://github.com/sarL3y",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/39248174?v=4",
-          "gravatar_id": ""
-        },
-        {
-          "id": 9064317,
-          "github_url": "https://github.com/rachelwhaley",
-          "avatar_url": "https://avatars2.githubusercontent.com/u/9064317?v=4",
-          "gravatar_id": ""
-        },
-        {
-          "id": 37763229,
-          "github_url": "https://github.com/ExperimentsInHonesty",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
           "gravatar_id": ""
         }
       ]
