@@ -38,6 +38,10 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/CJY4R382X'
+  - name: Wiki
+    url: 'https://github.com/hackforla/311-data/wiki'
   - name: Join Us
     url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
 looking:

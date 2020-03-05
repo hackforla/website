@@ -4,6 +4,8 @@ title: Equity Language
 description: Equity is a priority in the City of Los Angeles and we want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
 image: /assets/images/projects/equity-language.png
 alt: "The word 'Equity' in many colors with the E and Q resembling a document searcher, and a rainbow-like border"
+image-hero: /assets/images/projects/equity-language-hero.png
+alt-hero: "An E and Q resembling a document searcher with a rainbow-like border"
 leadership:
   - name: Joel Parker Henderson
     role: Project Architect

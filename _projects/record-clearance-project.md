@@ -7,35 +7,37 @@ alt: "'record clearance project'"
 leadership:
   - name: Angelina Molina
     role: Project Lead
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UNG92TWSV'
       github: 'https://github.com/H1Angela'
     picture: https://avatars.githubusercontent.com/H1Angela
-  - name: Kelsey Justis 
+  - name: Kelsey Justis
     role: Project Manager
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UP92GTCG2'
       github: 'https://github.com/KelseyJustis'
     picture: https://avatars.githubusercontent.com/KelseyJustis
-  - name: Charlotte Soestini 
+  - name: Charlotte Soestini
     role: UI/UX Lead
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UA69HNWPQ'
       github: 'https://github.com/charlottesauce'
     picture: https://avatars.githubusercontent.com/charlottesauce
-  - name: Wesley Rowe 
+  - name: Wesley Rowe
     role: Tech Lead
-    links: 
+    links:
       slack: 'https://app.slack.com/team/U3C7Z2GLE'
       github: 'https://github.com/wesrowe'
     picture: https://avatars.githubusercontent.com/wesrowe
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
+    - name: Readme
+      url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
       url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
 partner: NDICA
-looking: 
+looking:
   - Research/UX-UI
 location: West Los Angeles
 status: Active

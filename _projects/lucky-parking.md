@@ -42,6 +42,8 @@ links:
     url: 'https://github.com/hackforla/lucky-parking'
   - name: Readme
     url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
 looking:
   - Python
   - App Development
@@ -50,5 +52,6 @@ looking:
   - Data Science
 location: Santa Monica
 partner: TBD
+tools: Google Colab
 status: Active
 ---
