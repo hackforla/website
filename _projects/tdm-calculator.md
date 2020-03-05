@@ -5,6 +5,12 @@ description: We’re building a TDM web calculator for LADOT. It scores proposed
 image: /assets/images/projects/tdm-calculator.jpg
 alt: "'LA TDM Calculator Landing Page (Mock Up)'"
 leadership:
+  - name: Bonnie Wolfe
+    role: Product Owner
+    links:
+      slack: 'https://app.slack.com/team/DE1HK083W'
+      github: 'https://github.com/ExperimentsInHonesty'
+    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Kevin Howley
     role: Project Manager
     links:
@@ -17,24 +23,39 @@ leadership:
       slack: 'https://app.slack.com/team/UFLDX9V19'
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
+  - name: Nicole Doan
+    role: UI/UX Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
+      github: 'https://github.com/nekobox'
+    picture: https://avatars.githubusercontent.com/nekobox
+  - name: Mindy Morgan
+    role: Frontend Lead
+    links:
+      slack: 'https://hackforla.slack.com/archives/DPQBYJ5T3'
+      github: 'https://github.com/mmorgs'
+    picture: https://avatars.githubusercontent.com/mmorgs
   - name: Fang Liu
     role: Backend Lead
     links:
       slack: 'https://hackforla.slack.com/team/UCE01B4AX'
       github: 'https://github.com/fyliu'
     picture: https://avatars.githubusercontent.com/fyliu
-  - name: Nicole Doan
-    role: Backend UI/UX Lead
+  - name: Claire Nguyen
+    role: Sr. Fullstack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
-      github: 'https://github.com/nekobox'
-    picture: https://avatars.githubusercontent.com/nekobox
+      slack: 'https://hackforla.slack.com/team/DHR7M22DN'
+      github: 'https://github.com/nclairesays'
+    picture: https://avatars.githubusercontent.com/nclairesays
 links:
   - name: GitHub
-    url: 'https://github.com/orgs/hackforla/teams/tdm-calculator'
-  #- name: Site
-  #  url: 'https://www.google.com/'
-# looking:
+    url: 'https://github.com/hackforla/tdm-calculator'
+  - name: Wiki
+    url: 'https://github.com/hackforla/tdm-calculator/wiki'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/CKY65G266'
+looking:
+  - UI Designer
 location: Downtown LA
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
 status: Active

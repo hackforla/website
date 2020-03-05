@@ -30,6 +30,12 @@ links:
     url: 'https://github.com/hackforla/VRMS'
   - name: Site
     url: 'http://vrms.io'
+  - name: Readme
+    url: 'https://github.com/hackforla/VRMS/blob/master/README.md'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/CRGH5HM0Q'
+  - name: Wiki
+    url: 'https://github.com/hackforla/VRMS/wiki'
 looking:
   - Front end devs (any level)
   - Back end devs (any level)

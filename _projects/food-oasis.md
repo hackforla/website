@@ -46,8 +46,10 @@ links:
     url: 'https://github.com/foodoasisla'
   - name: Site
     url: 'https://foodoasis.la/'
-  - name: Read.me
+  - name: Readme
     url: 'https://github.com/hackforla/food-oasis/blob/master/README.md'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/C6JBH478W'
 looking:
   - Project Management
   - Junior Python developers (2)
