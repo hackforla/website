@@ -2,7 +2,7 @@
 <li class="project-card">
   <div class="project-card-inner">
     <div class="project-tmb">
-      <img src={{ project.image | absolute_url }} class="project-tmb-img" alt={{project.alt}}/>
+      <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt={{project.alt}}/>
     </div>
     <div class="project-body">
       <div class='status-indicator {{ "status-" | append: project.status }}'>
