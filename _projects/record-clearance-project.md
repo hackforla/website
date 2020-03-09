@@ -36,8 +36,6 @@ links:
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
       url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
-    - name: Readme
-      url: 'https://github.com/hackforla/record-clearance'
 partner: NDICA
 looking:
   - Research/UX-UI
