@@ -22,7 +22,7 @@ leadership:
   - name: Mark Jackson
     role: Backend Lead
     links:
-      slack:
+      slack: 'https://app.slack.com/team/UNQTRN0DC'
       github: 'https://github.com/captainrandom'
     picture: https://avatars.githubusercontent.com/captainrandom
 links:

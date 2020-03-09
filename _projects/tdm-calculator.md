@@ -4,6 +4,7 @@ title: LA TDM Calculator
 description: We’re building a TDM web calculator for LADOT. It scores proposed real estate developments in real-time and aims to discourage exceeding parking requirements to reduce the occurrence of single-occupancy trips to new developments.
 image: /assets/images/projects/tdm-calculator.jpg
 alt: "'LA TDM Calculator Landing Page (Mock Up)'"
+image-hero: /assets/images/projects/TDM-calculator-hero.png
 leadership:
   - name: Bonnie Wolfe
     role: Product Owner
@@ -26,25 +27,25 @@ leadership:
   - name: Nicole Doan
     role: UI/UX Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
+      slack: 'https://app.slack.com/team/UBPKHJJVC'
       github: 'https://github.com/nekobox'
     picture: https://avatars.githubusercontent.com/nekobox
   - name: Mindy Morgan
     role: Frontend Lead
     links:
-      slack: 'https://hackforla.slack.com/archives/DPQBYJ5T3'
+      slack: 'https://app.slack.com/team/UPGMZK1KR'
       github: 'https://github.com/mmorgs'
     picture: https://avatars.githubusercontent.com/mmorgs
   - name: Fang Liu
     role: Backend Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UCE01B4AX'
+      slack: 'https://app.slack.com/team/UCE01B4AX'
       github: 'https://github.com/fyliu'
     picture: https://avatars.githubusercontent.com/fyliu
   - name: Claire Nguyen
     role: Sr. Fullstack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/DHR7M22DN'
+      slack: 'https://app.slack.com/team/UHJKN8UJD'
       github: 'https://github.com/nclairesays'
     picture: https://avatars.githubusercontent.com/nclairesays
 links:
