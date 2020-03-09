@@ -10,21 +10,27 @@ leadership:
   - name: Matt Tapper
     role: Tech Team Lead
     links:
-      slack: 'https://app.slack.com/team/UPMRJ2R1N'
+      slack: ' https://hackforla.slack.com/team/UPMRJ2R1N'
       github: 'https://github.com/sarL3y'
     picture: https://avatars.githubusercontent.com/sarL3y
   - name: Kelsey Capps
     role: Product Owner
     links:
-      slack: 'https://app.slack.com/team/USU144NL8'
+      slack: 'https://hackforla.slack.com/team/USU144NL8'
       github: 'https://github.com/kelseylc'
     picture: https://avatars.githubusercontent.com/kelseylc
   - name: Bonnie Wolfe
     role: Stakeholder Rep
     links:
-      slack: 'https://app.slack.com/team/UE1UG1YFP'
+      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Steven Ettinger
+    role: API Integration
+    links: 
+      slack: 'https://app.slack.com/team/UNFG6M8FN'
+      github: 'https://github.com/disregardfiat'
+    picture: https://avatars.githubusercontent.com/disregardfiat
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
