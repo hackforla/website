@@ -16,7 +16,7 @@ leadership:
   - name: Charlotte Soestini
     role: UI/UX Lead
     links:
-      slack:
+      slack: 'https://app.slack.com/team/UA69HNWPQ'
       github: 'https://github.com/charlottesauce'
     picture: https://avatars.githubusercontent.com/charlottesauce
 links:

@@ -10,7 +10,7 @@ leadership:
   - name: Rong Xue
     role: Product Owner
     links:
-      # slack: deactivated slack account
+      slack: 'https://app.slack.com/team/UNYMHBSQ1'
       github: 'https://github.com/breeze-094'
     picture: https://avatars.githubusercontent.com/breeze-094
   # - name: Kristin Bodt
@@ -22,7 +22,7 @@ leadership:
   - name: Matt Colwin
     role: Frontend Lead
     links:
-      slack:
+      slack: 'https://app.slack.com/team/UUF8X8RKP'
       github: 'https://github.com/MPCdevhub'
     picture: https://avatars.githubusercontent.com/MPCdevhub
   - name: Greg Pawin
