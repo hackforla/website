@@ -12,5 +12,6 @@ links:
 # looking: Great communicators and researchers!
 location: Downtown LA
 # partner: 
+hide: true
 status: On Hold
 ---
