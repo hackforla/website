@@ -26,11 +26,11 @@ links:
     url: 'https://www.metro.net/'
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
-looking:
-  - Application Developers (Javascript, Node, React, D3)
-  - Data Engineers (Python, Pandas, GIS)
+# looking:
+  # - Application Developers (Javascript, Node, React, D3)
+  # - Data Engineers (Python, Pandas, GIS)
 location: Downtown LA
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
-status: Active
+status: Completed
 ---
