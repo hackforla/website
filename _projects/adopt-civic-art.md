@@ -12,5 +12,6 @@ links:
 # looking: 
 location: Downtown LA
 partner: County of Los Angeles
+hide: true
 status: On Hold
 ---
