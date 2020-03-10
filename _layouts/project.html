@@ -11,7 +11,7 @@ layout: default
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
-    <div id='project-description-card' class='project-page-card'>
+    <div id='project-description-card' class='project-page-card' style='padding-bottom: 19px;'>
         <h4 style='color:#333'>Project Overview</h4>
         <!--Project Details-->
         <div class='project-page-description'>
@@ -68,13 +68,13 @@ layout: default
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <div class="getting-started">
-                    <p style='margin-bottom:0px;'>Getting Started</p>
-                    <button onClick='gettingStarted()' class='getting-started-button'>
-                        {% include svg/_ionicons_svg_ios-arrow-down.svg %}
-                    </button>
-                </div>
             </div>
+        </div>
+        <div class="getting-started">
+            <p style='margin-bottom:0px;'>Getting Started</p>
+            <button onClick='gettingStarted()' class='getting-started-button'>
+                {% include svg/_ionicons_svg_ios-arrow-down.svg %}
+            </button>
         </div>
     </div>
 
@@ -103,7 +103,7 @@ layout: default
             {% endfor %}
             {% if hasGettingStarted == false %}
                 <div id='help-getting-started'>
-                    <p>Looks like this project doesn't have their own Getting Started guide.</p>
+                    <p style='margin: 0px 15px 13px 15px;'>Looks like this project doesn't have their own Getting Started guide.</p>
                     <button onClick='helpMakeGuide()' class="btn btn-primary help-make-button" style='margin: 0 0 0 0;'>Help Make One!</button onClick=''>
                 </div>
             {% endif %}
@@ -130,13 +130,13 @@ layout: default
                 <p>Looks like this project has not revealed specific leadership roles yet!</p>
             </div>
         {% endif %}
-        <h4 style='color:#333'>Contributors</h4>
+        <h4 id='contributor-header'style='color:#333'>Contributors</h4>
         <div id='contributors-list' class='resource-list'></div>
     </div>
 
     <!--Project Resources Card-->
     <div class='project-page-card'>
-        <h4 style='color:#333'>Project Resources</h4>
+        <h4 style='color:#333'>Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
                 {% if item.name == 'Readme' or item.name == 'Wiki' %}
@@ -201,12 +201,10 @@ layout: default
             let contributorImg = document.createElement('img');
             contributorImg.style['border-radius'] = '12px';
             contributorImg.setAttribute('src', contributor.avatar_url);
-            //contributorImg.classList.add('contributor-img');
 
             contributorProfile.appendChild(contributorImg);
-            //contributorDiv.appendChild(contributorProfile);
-            //contributors.appendChild(contributorDiv);
-            contributors.appendChild(contributorProfile);
+            contributorDiv.appendChild(contributorProfile);
+            contributors.appendChild(contributorDiv);
         }
     } else {
         let messageDiv = document.createElement('div');
@@ -214,7 +212,8 @@ layout: default
         let messageText = document.createElement('p');
         messageText.appendChild(document.createTextNode('Looks like this project has not connected a GitHub repository yet!'));
         messageDiv.appendChild(messageText);
-        contributors.appendChild(messageDiv);
+        contributors.parentNode.appendChild(messageDiv);
+        contributors.parentNode.removeChild(contributors);
     }
 </script>
 
@@ -281,8 +280,7 @@ layout: default
     
     function helpMakeGuide(){
         let textDiv = document.getElementById('help-make-text-section');
-        textDiv.style['max-width'] = '225px';
-        //textDiv.style['min-width'] = 'fit-content';
+        textDiv.style['min-width'] = '225px';
         textDiv.style.padding = '35px 15px';
     }
 </script>
