@@ -61,7 +61,7 @@ layout: default
             <div class='description-grid-item'>
                 <p>{{page.description}}</p>
                 {% if page.looking %}
-                    <p style='margin-bottom:7px;'><strong>Open roles</strong></p>
+                    <p style='margin-bottom:7px;'><strong>Open roles:</strong></p>
                     <ul id='open-roles'>
                         {% for item in page.looking %}
                             <li><p class='role-paragraph'>{{ item }}</p></li>
@@ -71,7 +71,7 @@ layout: default
             </div>
         </div>
         <div class="getting-started">
-            <p style='margin-bottom:0px;'>Getting Started</p>
+            <p style='margin-bottom:0px; white-space: nowrap;'>Getting Started</p>
             <button onClick='gettingStarted()' class='getting-started-button'>
                 {% include svg/_ionicons_svg_ios-arrow-down.svg %}
             </button>
@@ -227,7 +227,8 @@ layout: default
             gettingStartedButton.style.transform = 'rotate(180deg)';
 
             let gettingStartedCard = document.getElementById('getting-started-section');
-            gettingStartedCard.style['max-height'] = '300px';
+            let maxHeight = gettingStartedCard.children[0].offsetHeight * 1.5; // Adding pixels for good measure and pop up message
+            gettingStartedCard.style['max-height'] = maxHeight + 'px';
             gettingStartedCard.style.padding = '30px 30px';
         } 
         else {

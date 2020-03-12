@@ -66,6 +66,11 @@
   margin: 12px auto;
   margin-bottom: 0;
   padding: 30px;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    padding: 30px 15px;
+  }
 }
 
 .project-page-description {
@@ -97,6 +102,11 @@
     margin-left: -0.6em;
     vertical-align: middle;
   }
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    column-count: 1;
+  }
 }
 
 .description-grid-item {
@@ -110,10 +120,11 @@
   border: 1px solid #eaeaea;
   padding: 0px 13px;
   border-radius: 12px;
+  width: fit-content;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
-    margin: 4% 17% 0% 17%;
+    margin: 4% auto 0% auto;
   }
 }
 
@@ -142,9 +153,8 @@
 }
 
 #help-getting-started {
-  max-height: 175px;
-  max-width: 224px;
-  margin-left: 10px;
+  height: 175px;
+  width: 224px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -184,9 +194,9 @@
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
-    flex-wrap: nowrap;
-    overflow: auto;
-    padding: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0px;
   }
 }
 
@@ -209,10 +219,11 @@
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   overflow: hidden;
   display: inline-block;
-  margin: 0px 42px 0px 0px;
+  margin: 0px 42px 21px 0px;
 
-  @media #{$bp-tablet-up} {
-      margin-bottom: 0;
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    margin: 0px 13px 21px 0px;
   }
 }
 
@@ -221,6 +232,12 @@
   height: 128px;
   padding: 20px;
   margin: auto auto;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    width: 116px;
+    height: 116px;
+  }
 }
 
 .resource-body {
@@ -255,8 +272,14 @@
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
-    grid-template-columns: auto auto;
-    min-width: 286px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto auto 25px auto;
   }
 }
 
@@ -297,4 +320,8 @@
   width: 94px;
   padding: 12px;
   flex-shrink: 0;
+
+  @media #{$bp-below-mobile} {
+    margin: 0px 10px 26px 0px;
+  }
 }
