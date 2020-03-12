@@ -51,7 +51,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
   - name: Testing site
-    url: 'http://food-oasis.herokuapp.com/' 
+    url: 'http://food-oasis.herokuapp.com/'
 looking:
   - Project Management
   - Junior Python developers (2)
