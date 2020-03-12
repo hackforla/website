@@ -8,11 +8,14 @@ image-hero: /assets/images/projects/hellogov-hero.jpg
 alt-hero: "Sky blue background"
 leadership:
   - name: Kate
-    slack: 'https://app.slack.com/team/UA02Y8W2Z'
+    links:
+      slack: 'https://app.slack.com/team/UA02Y8W2Z'
   - name: Sarah 
-    slack: 'https://app.slack.com/team/U686ZV93P'
-  - name: Brett 
-    slack: 'https://app.slack.com/team/USRRN73NE'
+    links:
+      slack: 'https://app.slack.com/team/U686ZV93P'
+  - name: Brett
+    links: 
+      slack: 'https://app.slack.com/team/USRRN73NE'
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
