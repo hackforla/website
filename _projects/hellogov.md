@@ -10,12 +10,15 @@ leadership:
   - name: Kate
     links:
       slack: 'https://app.slack.com/team/UA02Y8W2Z'
+      github: 'https://github.com/kate-rose'
   - name: Sarah 
     links:
       slack: 'https://app.slack.com/team/U686ZV93P'
+      github: 'https://github.com/seport'
   - name: Brett
     links: 
       slack: 'https://app.slack.com/team/USRRN73NE'
+      github: 'https://github.com/beekley'
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
