@@ -50,6 +50,8 @@ links:
     url: 'https://github.com/hackforla/food-oasis/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
+  - name: Testing site
+    url: 'http://food-oasis.herokuapp.com/' 
 looking:
   - Project Management
   - Junior Python developers (2)
