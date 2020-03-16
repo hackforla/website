@@ -18,9 +18,14 @@
     margin-bottom: 0;
     padding: 30px;
     height: fit-content;
+    margin: 12px auto;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
         padding: 30px 15px;
     }
+}
+
+.getting-started-guide-content-section {
+    margin-left: 21px;
 }
