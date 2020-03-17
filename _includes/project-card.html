@@ -1,14 +1,16 @@
 {% assign project = include.project %}
 <li class="project-card">
   <div class="project-card-inner">
-    <div class="project-tmb">
-      <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt={{project.alt}}/>
-    </div>
+    <a href='{{ project.url }}'>
+      <div class="project-tmb">
+        <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt={{project.alt}}/>
+      </div>
+    </a>
     <div class="project-body">
       <div class='status-indicator {{ "status-" | append: project.status }}'>
         <h5 class='status-text'>{{ project.status }}</h5>
       </div>
-      <h4 class="project-title">{{ project.title }}</h4>
+      <a href="{{ project.url }}"><h4 class="project-title">{{ project.title }}</h4></a>
       <p class="project-description">{{ project.description }}</p>
 
       {%- if project.links -%}
