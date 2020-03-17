@@ -35,12 +35,3 @@
     justify-content: space-evenly;
     flex-wrap: wrap
 }
-
-.zoom-img {
-    width: 320px;
-
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
-        width: auto;
-    }
-}
