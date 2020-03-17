@@ -1,7 +1,7 @@
 {% assign project = include.project %}
 <li class="project-card">
   <div class="project-card-inner">
-    <a href='{{ project.url }}'>
+    <a href='{{ project.url | replace: ".html", "" }}'>
       <div class="project-tmb">
         <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt={{project.alt}}/>
       </div>
@@ -10,14 +10,14 @@
       <div class='status-indicator {{ "status-" | append: project.status }}'>
         <h5 class='status-text'>{{ project.status }}</h5>
       </div>
-      <a href="{{ project.url }}"><h4 class="project-title">{{ project.title }}</h4></a>
+      <a href='{{ project.url | replace: ".html", "" }}'><h4 class="project-title">{{ project.title }}</h4></a>
       <p class="project-description">{{ project.description }}</p>
 
       {%- if project.links -%}
       <div class="project-links">
         <strong>Links: </strong>
-        {%- for project in project.links -%}
-        <a href={{ project.url }} rel="noopener" target='_blank'> {{ project.name }}</a>{%- if forloop.last == false -%},
+        {%- for item in project.links -%}
+          <a href={{ item.url }} rel="noopener" target='_blank'> {{ item.name }}</a>{%- if forloop.last == false -%},
         {%- endif -%}
         {%- endfor -%}
       </div>
