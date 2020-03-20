@@ -34,18 +34,9 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
-        display: none;
-    }
 }
 
 .zoom-img {
     width: 320px;
-
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
-        width: auto;
-    }
+    align-self: center;
 }
