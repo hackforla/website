@@ -17,12 +17,6 @@ leadership:
       slack: 'https://app.slack.com/team/UP92GTCG2'
       github: 'https://github.com/KelseyJustis'
     picture: https://avatars.githubusercontent.com/KelseyJustis
-  - name: Charlotte Soestini
-    role: UI/UX Lead
-    links:
-      slack: 'https://app.slack.com/team/UA69HNWPQ'
-      github: 'https://github.com/charlottesauce'
-    picture: https://avatars.githubusercontent.com/charlottesauce
   - name: Wesley Rowe
     role: Tech Lead
     links:
