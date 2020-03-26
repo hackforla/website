@@ -1,0 +1,61 @@
+.calendar-started-page {
+    margin-top: 29px;
+    background: #030d2d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-page-card {
+    background: #fff;
+    border: 0 solid rgba(51,51,51,0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+    overflow: hidden;
+    max-width: 896px;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 30px;
+    height: fit-content;
+    margin: 12px auto;
+
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-mobile} {
+        padding: 30px 15px;
+    }
+}
+
+.schedule-list {
+    list-style: none;
+    li:before {
+      content: "\2022";
+      color: #fa114f;
+      font-weight: bold;
+      font-size: 28px;
+      display: inline-block;
+      width: 0.60em;
+      margin-left: -0.6em;
+      vertical-align: middle;
+    }
+}
+
+.time-slot-text {
+    vertical-align: text-top;
+    display: inline-block;
+    margin-block-end: 0;
+}
+
+.day-header {
+    margin-block-end: 0.25em;
+}
+
+.team-meetings-title {
+    color: #fff;
+
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-mobile} {
+        margin-top: 60px;
+      }
+}
