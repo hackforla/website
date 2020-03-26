@@ -4,7 +4,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 140vh;
   justify-content: flex-end;
   max-height: 700px;
   min-height: 100vh;
@@ -39,7 +39,7 @@
 
 .hero-inner {
   color: $color-white;
-  margin: 60px auto 40px;
+  margin: 60px auto 0px;
   max-width: $max-content-width;
   position: relative;
   z-index: 2;

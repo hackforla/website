@@ -45,9 +45,11 @@
     img {
       display: block;
       height: 50px;
+      margin: 10px 80px;
 
       @media #{$bp-mobile-up} {
         height: 70px;
+        margin: 10px;
       }
     }
   }
