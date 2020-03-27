@@ -1,7 +1,7 @@
 ---
 identification: '202051333'
 title: Not Today - Self-Defense Against Suicidal Thoughts
-description: NotToday is a mobile app for people who suffer from chronic suicidal ideation (thoughts). It allows people to time-shift their desire to live across suicidal/non-suicidal dissociated mental states.
+description:  Not Today is an app intended to help people wait out periods of suicidal thinking without acting on their thoughts.
 image: /assets/images/projects/not-today.png
 alt: 'person being supported by another.  Art by c.w. moss'
 leadership:
