@@ -24,6 +24,8 @@
 .logo-garden {
   li {
     margin-bottom: 12px;
+    display:  flex;
+    justify-content: center; 
 
     @media #{$bp-mobile-up} {
       margin-right: 24px;
