@@ -45,11 +45,10 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
 looking:
-  - Python
-  - App Development
-  - Machine Learning
-  - Deep Learning
-  - Data Science
+  - Frontend Software Engineer
+  - Backend Software Engineer
+  - Advanced Data Scientist
+  - Python Enthusiast
 location: Santa Monica
 partner: TBD
 tools: Google Colab
