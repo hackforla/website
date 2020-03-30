@@ -73,7 +73,7 @@ blockquote p,
   }
 
   .quote-tmb {
-    @include position(absolute, null -24px -16px null);
+    @include position(absolute, null -24px -34px null);
     border-radius: 100px;
     display: block;
   }
