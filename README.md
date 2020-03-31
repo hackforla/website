@@ -72,7 +72,35 @@ This section discusses some tips and best practices for working with Git.
 
 ### Forking and cloning the repository with proper security
 
-#### Step 1: Become a member of the repository Team
+---
+
+*OVERVIEW*
+
+1. [Join the Repo Team](#step-1-become-a-member-of-the-repository-team)
+
+2. [Fork the Repo](#step-2-fork-the-repository)
+
+3. [Clone to your local machine](#step-3-clone-your-online-repository-to-your-local-computer)
+
+4. [Switch to new issue branch](#step-4-change-to-a-new-branch)
+
+**Before you make a pull request!**
+
+5. [Check upstream before you push](#step-5-check-upstream-before-you-push).
+
+6. [No changes in the upstream repo](#step-6a-no-changes-in-the-upstream-repository)
+
+**Or**
+
+6. [Conflicting changes in the upstream repo](#step-6b-conflicting-changes-in-the-upstream-repository) and how to resolve them
+              
+**Okay. You're good to go!**        
+ 
+7. [Complete the pull request](#step-7-complete-the-pull-request)
+
+---
+
+#### Step 1 Become a member of the repository Team
 
 In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
 
@@ -82,7 +110,7 @@ Once you have accepted the GitHub invite (comes via email or in your GitHub noti
 
 1. Setup two factor authentication on your account https://github.com/hackforla/governance/issues/20
 
-#### Step 2: Fork the repository
+#### Step 2 Fork the repository
 
 In https://github.com/hackforla/website, look for the fork icon in the top right. Click it and create a fork of the repository.
 
@@ -94,7 +122,7 @@ Note that this copy is on a remote server on the GitHub website and not on your 
 
 If you click the icon again, it will not create a new fork but instead give you the URL associated with your fork.
 
-#### Step 3: Clone your online repository to your local computer
+#### Step 3 Clone your online repository to your local computer
 
 For git beginners, this process will create a third copy of the repository on your local desktop.
 
@@ -126,9 +154,12 @@ Add another remote called `upstream` that points to the `hackforla` version of t
 git remote add upstream https://github.com/hackforla/website.git
 ```
 
-#### Step 4: Change to a new branch
+#### Step 4 Change to a new branch
 
-For each issue, create a new branch to work in.
+For each issue, create a new branch to work in. Doing all your work on
+topic branches, leaves your repository's main branch (named
+`gh-pages`) unmodified and greatly simplifies keeping your fork in
+sync with the main project.
 
 This command will let you know available branches and which branch you're on.
 
@@ -150,31 +181,136 @@ We prefer that you work on a branch name that relates to the issue you're workin
 
 The format should look like the scheme above where `140` is the issue number in GitHub, and the words are a brief description of the issue.
 
-No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces. 
+No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces.
+
+#### Step 5 Check upstream before you push
+
+Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website
+repository. `git fetch` will check remote repositories for changes
+without altering your local repository.
+
+```bash
+git fetch upstream
+```
+
+##### Step 6a No changes in the upstream repository
+
+If you do not see any output, there have not been any changes in the
+main Hack for LA website repository since the last time you
+checked. So it is safe to push your local commits to your fork.
+If you just type `git push` you will be prompted to create a new
+branch in your GitHub repository. In our example, the text would read
+as below. Use this more complete command to push your local branch to
+your copy of the website repository.
+
+```bash
+git push --set-upstream origin 140-fix-logo-width
+```
+
+##### Step 6b conflicting changes in the upstream repository
+
+When you check the upstream repository, you may see output like this:
+
+```bash
+Fetching upstream
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 11 (delta 5), reused 7 (delta 4), pack-reused 0
+Unpacking objects: 100% (11/11), 8.25 KiB | 402.00 KiB/s, done.
+From https://github.com/hackforla/website
+ + 770d667...14f9f46 Bonnie     -> hackforla/Bonnie  (forced update)
+ * [new branch]      bonnie     -> hackforla/bonnie
+   5773ebe..0c86ecd  gh-pages   -> hackforla/gh-pages
+```
+
+You can safely ignore changes in other issue branches, such as
+`bonnie` above. But if you see changes in gh-pages, as in
+`5773ebe..0c86ecd  gh-pages   -> hackforla/gh-pages`, you should
+incorporate those changes into your repository before merging or
+rebasing your issue branch. Use the [instructions below](#incorporating-changes-from-upstream)
+to bring your fork up to date with the main repository.
+
 
 ### Incorporating changes from upstream
 
 Your fork of this repository on GitHub, and your local clone of that fork, will
-get out of sync with this (upstream) repository from time to time.
+get out of sync with this (upstream) repository from time to time. 
+One way to keep your fork up to date with this repository is to follow
+these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
 
-Assuming you have a local clone with remotes `upstream` (this repo) and `origin`
-(your GitHub fork of this repo):
+You can also update your fork via the local clone of your fork, using
+these instructions. Assuming you have a local clone with remotes
+`upstream` (this repo) and `origin` (your GitHub fork of this repo):
 
 ```bash
-# WARNING: this will erase local pending changes!
-# commit them to a different branch or use git stash
+# create a local branch which tracks upstream/gh-pages;
+# you will only need to do this once
+git checkout -b upstream-gh-pages --track upstream/gh-pages
+# If you already have the branch upstream-gh-pages, just check it out
+git checkout upstream-gh-pages
+git pull  # This updates your tracking branch to match the gh-pages branch in this repository
 git checkout gh-pages
-git fetch upstream
-git reset --hard upstream/gh-pages
+git merge upstream-gh-pages
+# If you do all your work on topic branches and keep gh-pages free of local modifications,
+# this merge should apply cleanly
+# Then push the merge changes to your GitHub fork
+git push gh-pages
 ```
 
-Creating a new branch for a feature/bugfix from this reset `gh-pages` will lead to a clean, easy merge down the line.
+#### Incorporating changes into your topic branch
 
+To incorporate these updates from the main GitHub repository into your
+topic branch, you can 'rebase' your branch onto your updated gh-pages
+branch. NOTE you should only rebase if you have never pushed your
+topic branch to GitHub (or shared it with another collaborator).
 
-[docker]: https://docs.docker.com/get-started/
-[dockercompose]: https://docs.docker.com/compose/gettingstarted/
-[dockerdesktop]: https://docs.docker.com/install/#supported-platforms
-[dockertoolbox]: https://docs.docker.com/toolbox/overview/
-[ghpages]: https://pages.github.com/
-[jekyll]: https://jekyllrb.com
-[jekyllcli]: https://jekyllrb.com/docs/usage/
+```bash
+git checkout 140-fix-logo-width
+git rebase master
+```
+
+If you receive warnings about conflicts, abort the rebase with `git
+rebase --abort` and instead merge master into your branch.
+
+```bash
+git checkout 140-fix-logo-width
+git merge master
+```
+
+#### Step 7 Complete the pull request
+
+```bash
+git push --set-upstream origin 140-fix-logo-width
+```
+
+Now create a new pull request to ask for your updates to be
+incorporated into the live web site. Go to
+https://github.com/hackforla/website/pulls and click on "New pull
+request". Since your changes are not in the hackforla/website
+repostory, you need to click the "compare across forks" link in the
+first paragraph to make you repository and your new branch
+available. Review the changes that will be included in the pull
+request and, if it fixes a specific issue, include `Fixes #140` in the
+pull request message so the issue will be closed automatically once
+your pull request is accepted and merged.
+
+Once you have finished working on the issue you have chosen, commit
+the changes to your local branch (e.g. `140-fix-logo-width`).
+
+## Useful links
+
+### Supported Platforms
+
+- [dockertoolbox](https://docs.docker.com/toolbox/overview/)
+- [ghpages](https://pages.github.com/)
+- [jekyll](https://jekyllrb.com)
+- [jekyllcli](https://jekyllrb.com/docs/usage/)
+
+### Tutorials
+
+- [Github Guides](https://guides.github.com/) 
+- [docker](https://docs.docker.com/get-started/)
+- [dockercompose](https://docs.docker.com/compose/gettingstarted/)
+- [dockerdesktop](https://docs.docker.com/install/)
+
