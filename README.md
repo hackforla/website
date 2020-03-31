@@ -76,31 +76,31 @@ This section discusses some tips and best practices for working with Git.
 
 *OVERVIEW*
 
-1. [Join the Repo Team](#step-1:-become-a-member-of-the-repository-team)
+1. [Join the Repo Team](#step-1-become-a-member-of-the-repository-team)
 
-2. [Fork the Repo](#step-2:-fork-the-repository)
+2. [Fork the Repo](#step-2-fork-the-repository)
 
-3. [Clone to your local machine](#step-3:-clone-your-online-repository-to-your-local-computer)
+3. [Clone to your local machine](#step-3-clone-your-online-repository-to-your-local-computer)
 
-4. [Switch to new issue branch](#step-4:-change-to-a-new-branch)
+4. [Switch to new issue branch](#step-4-change-to-a-new-branch)
 
 **Before you make a pull request!**
 
-5. [Check upstream before you push](#step-5:-check-upstream-before-you-push)
+5. [Check upstream before you push](#step-5-check-upstream-before-you-push).
 
-6. [No changes in the upstream repo](#step-6a:-no-changes-in-the-upstream-repository)
+6. [No changes in the upstream repo](#step-6a-no-changes-in-the-upstream-repository)
 
 **Or**
 
-6. [Conflicting changes in the upstream repo](#step-6b:-conflicting-changes-in-the-upstream-repository) and how to resolve them
+6. [Conflicting changes in the upstream repo](#step-6b-conflicting-changes-in-the-upstream-repository) and how to resolve them
               
 **Okay. You're good to go!**        
  
-7. [Complete the pull request](#step-7:-complete-the-pull-request)
+7. [Complete the pull request](#step-7-complete-the-pull-request)
 
 ---
 
-#### Step 1: Become a member of the repository Team
+#### Step 1 Become a member of the repository Team
 
 In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
 
@@ -110,7 +110,7 @@ Once you have accepted the GitHub invite (comes via email or in your GitHub noti
 
 1. Setup two factor authentication on your account https://github.com/hackforla/governance/issues/20
 
-#### Step 2: Fork the repository
+#### Step 2 Fork the repository
 
 In https://github.com/hackforla/website, look for the fork icon in the top right. Click it and create a fork of the repository.
 
@@ -122,7 +122,7 @@ Note that this copy is on a remote server on the GitHub website and not on your 
 
 If you click the icon again, it will not create a new fork but instead give you the URL associated with your fork.
 
-#### Step 3: Clone your online repository to your local computer
+#### Step 3 Clone your online repository to your local computer
 
 For git beginners, this process will create a third copy of the repository on your local desktop.
 
@@ -154,7 +154,7 @@ Add another remote called `upstream` that points to the `hackforla` version of t
 git remote add upstream https://github.com/hackforla/website.git
 ```
 
-#### Step 4: Change to a new branch
+#### Step 4 Change to a new branch
 
 For each issue, create a new branch to work in. Doing all your work on
 topic branches, leaves your repository's main branch (named
@@ -183,7 +183,7 @@ The format should look like the scheme above where `140` is the issue number in 
 
 No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces.
 
-#### Step 5: Check upstream before you push
+#### Step 5 Check upstream before you push
 
 Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website
 repository. `git fetch` will check remote repositories for changes
@@ -193,7 +193,7 @@ without altering your local repository.
 git fetch upstream
 ```
 
-##### Step 6a: No changes in the upstream repository
+##### Step 6a No changes in the upstream repository
 
 If you do not see any output, there have not been any changes in the
 main Hack for LA website repository since the last time you
@@ -207,7 +207,7 @@ your copy of the website repository.
 git push --set-upstream origin 140-fix-logo-width
 ```
 
-##### Step 6b: conflicting changes in the upstream repository
+##### Step 6b conflicting changes in the upstream repository
 
 When you check the upstream repository, you may see output like this:
 
@@ -278,7 +278,11 @@ git checkout 140-fix-logo-width
 git merge master
 ```
 
-#### Step 7: Complete the pull request
+#### Step 7 Complete the pull request
+
+```bash
+git push --set-upstream origin 140-fix-logo-width
+```
 
 Now create a new pull request to ask for your updates to be
 incorporated into the live web site. Go to
@@ -294,13 +298,19 @@ your pull request is accepted and merged.
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `140-fix-logo-width`).
 
-### Useful links
+## Useful links
 
-[Github Guides]:https://guides.github.com/ 
-[docker]: https://docs.docker.com/get-started/
-[dockercompose]: https://docs.docker.com/compose/gettingstarted/
-[dockerdesktop]: https://docs.docker.com/install/#supported-platforms
-[dockertoolbox]: https://docs.docker.com/toolbox/overview/
-[ghpages]: https://pages.github.com/
-[jekyll]: https://jekyllrb.com
-[jekyllcli]: https://jekyllrb.com/docs/usage/
+### Supported Platforms
+
+- [dockertoolbox](https://docs.docker.com/toolbox/overview/)
+- [ghpages](https://pages.github.com/)
+- [jekyll](https://jekyllrb.com)
+- [jekyllcli](https://jekyllrb.com/docs/usage/)
+
+### Tutorials
+
+- [Github Guides](https://guides.github.com/) 
+- [docker](https://docs.docker.com/get-started/)
+- [dockercompose](https://docs.docker.com/compose/gettingstarted/)
+- [dockerdesktop](https://docs.docker.com/install/)
+
