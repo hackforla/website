@@ -5,8 +5,6 @@ title: Civic Tech Index
 description: Our goal of the project is to create a comprehensive, searchable index of all civic tech open source software projects around the world. We have created the framework. Now our next step is to create a website and other marketing tools that will demonstrate the power of the index and will provide instructions for how to tag and share your github repository in 2 min or less.
 image: /assets/images/projects/civic-tech-index.png
 alt: civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.
-
-# hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: outline of the world map with connectivity dots linking major cities on each continent
 leadership:
@@ -47,12 +45,6 @@ links:
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
   - name: Wiki
     url: 'https://github.com/civictechindex/website/wiki'
-#   - name: Site
-#     url: 'https://www.example.com'
-  # unused links can be commented out
-  # - name: Showcase deck
-  #   url: ''
-  #   alt: ''
 looking:
   - Fullstack Developer with Node/React knowledge
   - Experienced Data Scientist
@@ -60,7 +52,4 @@ looking:
 location: DTLA
 partner: Code for America, Yale OpenLab and many more.
 status: Active
-# tools: figma, photoshop, sketch, phone calls.
-# If the card should not be included on the site, add the following line (uncommented):
-# hide: true
 ---
