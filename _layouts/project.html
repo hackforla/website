@@ -117,7 +117,7 @@ layout: default
             <div class='resource-list'>
                 {% for item in page.leadership %}
                     <div class='leader-card'>
-                        <a href='{{ item.links.GitHub }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
+                        <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
                         <div class='leader-description'>
                             <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
                             <p style='margin-block-end: 0.25em;'><strong>Role: </strong>{{ item.role }}</p>
