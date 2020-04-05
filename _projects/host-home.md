@@ -39,7 +39,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/peteplass
 links: 
   - name: Demo
-    url: 'http://smile.nonprofitnetworks.com/hosthome'
+    url: 'https://lacommunity.site/hosthome'
   - name: GitHub
     url: 'https://github.com/hackforla/host-home'
   - name: Wiki
