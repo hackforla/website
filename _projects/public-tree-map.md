@@ -5,7 +5,7 @@ description: Public Tree Map helps connect people to Santa Monica's urban forest
 image: /assets/images/projects/public-tree-map.png
 alt: 'public tree map grid'
 image-hero: /assets/images/projects/public-tree-map-hero.jpeg
-alt-hero: 'Coral tree - Dave Baiocchi'
+alt-hero: 'Coral tree - Dave Baiocchi www.studiobaiocchi.com'
 leadership:
   - name: Emily F.
     role: Product Owner
@@ -37,7 +37,7 @@ links:
   # - name: Site
   #   url: ''
 looking:
-  - Front-end web development (JS, Leaflet)
+  - Front-end web development (JavaScript, Leaflet)
   - Data processing (GeoPandas, Python)
   - QA and UX testing
   - Appreciation for trees (anyone interested is welcome!)
