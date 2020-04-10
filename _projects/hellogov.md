@@ -6,6 +6,22 @@ image: /assets/images/projects/hellogov.jpg
 alt: "'smartphones using hellogo app'"
 image-hero: /assets/images/projects/hellogov-hero.jpg
 alt-hero: "Sky blue background"
+leadership:
+  - name: Kate
+    links:
+      slack: 'https://app.slack.com/team/UA02Y8W2Z'
+      github: 'https://github.com/kate-rose'
+    picture: https://avatars.githubusercontent.com/kate-rose
+  - name: Sarah Port
+    links:
+      slack: 'https://app.slack.com/team/U686ZV93P'
+      github: 'https://github.com/seport'
+    picture: https://avatars.githubusercontent.com/seport
+  - name: Brett Beekley
+    links:
+      slack: 'https://app.slack.com/team/USRRN73NE'
+      github: 'https://github.com/beekley'
+    picture: https://avatars.githubusercontent.com/beekley
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
@@ -16,11 +32,9 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
-  - QA to help implement end-to-end testing
-  - UX testing and outeach
-  - UI redesign
-  - All skill levels, all kinds of contributions welcome
+  - Looking for folks to help with implementing end to end testing, user testing and outreach, and a UI redesign. All skill levels, all kinds of contribution welcome.
 location: Santa Monica
 partner: Digital Defense Fund
+tools: Mongo, Angular, Node, JS
 status: Active
 ---
