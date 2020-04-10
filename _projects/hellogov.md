@@ -6,6 +6,13 @@ image: /assets/images/projects/hellogov.jpg
 alt: "'smartphones using hellogo app'"
 image-hero: /assets/images/projects/hellogov-hero.jpg
 alt-hero: "Sky blue background"
+leadership:
+  - name: Kate
+    slack: 'https://app.slack.com/team/UA02Y8W2Z'
+  - name: Sarah 
+    slack: 'https://app.slack.com/team/U686ZV93P'
+  - name: Brett 
+    slack: 'https://app.slack.com/team/USRRN73NE'
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
@@ -16,11 +23,9 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
-  - QA to help implement end-to-end testing
-  - UX testing and outeach
-  - UI redesign
-  - All skill levels, all kinds of contributions welcome
+  - Looking for folks to help with implementing end to end testing, user testing and outreach, and a UI redesign. All skill levels, all kinds of contribution welcome.
 location: Santa Monica
 partner: Digital Defense Fund
+tools: Mongo, Angular, Node, JS
 status: Active
 ---
