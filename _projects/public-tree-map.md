@@ -1,11 +1,11 @@
 ---
 identification: '128148093'
 title: Public Tree Map
-description: Public Tree Map documents all ~36,000 public trees in Santa Monica's urban forest. The map includes contextual information compiled from open datasets and digitized city records. To reflect tree plantings and removals, the map updates every day.
+description: Public Tree Map helps connect people to Santa Monica's urban forest. The map includes information about each of the 35,000 trees (and vacant tree sites) in Santa Monica's publicly-owned urban forest (compiled from open datasets, digitized city records, and federal ecosystem services values), as well as tools for users to share favorite trees. To reflect tree plantings and removals, the map updates every day.
 image: /assets/images/projects/public-tree-map.png
-alt: "'public tree map grid'"
-image-hero: /assets/images/projects/public-tree-map-hero.png
-alt-hero: "'Public tree map of Santa Monica, California"
+alt: 'public tree map grid'
+image-hero: /assets/images/projects/public-tree-map-hero.jpeg
+alt-hero: 'Coral tree - Dave Baiocchi www.studiobaiocchi.com'
 leadership:
   - name: Emily F.
     role: Product Owner
@@ -20,7 +20,7 @@ leadership:
       github: 'https://github.com/isabelle-wagenvoord'
     picture: https://avatars.githubusercontent.com/isabelle-wagenvoord
   - name: Mark Jackson
-    role: Backend Lead
+    role: Backend Developer
     links:
       slack: 'https://app.slack.com/team/UNQTRN0DC'
       github: 'https://github.com/captainrandom'
@@ -37,9 +37,10 @@ links:
   # - name: Site
   #   url: ''
 looking:
-  - Front-end web development (JS, leaflet)
-  - project management
-  - appreciation for trees
+  - Front-end web development (JavaScript, Leaflet)
+  - Data processing (GeoPandas, Python)
+  - QA and UX testing
+  - Appreciation for trees (anyone interested is welcome!)
 location: Santa Monica
 partner: City of Santa Monica
 tools: Zeplin
