@@ -5,7 +5,7 @@
     <ul class="project-list unstyled-list">
       {% assign status_list = "Active, Rebooting, Completed, On Hold" | split: ", " %}
       {% for status in status_list %}
-        {% assign projects = site.projects | sample: site.projects.size - 1 | where: "status", status %}
+        {% assign projects = site.projects | where: "status", status | sort: "title" %}
         {%- for item in projects -%}
           {%- if item.hide != true -%}
             {%- include project-card.html project=item -%}
