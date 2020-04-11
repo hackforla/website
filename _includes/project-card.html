@@ -10,7 +10,11 @@
       <div class='status-indicator {{ "status-" | append: project.status }}'>
         <h5 class='status-text'>{{ project.status }}</h5>
       </div>
+      {%- if project.project-homepage == false -%}
+      <h4 class="project-title project-title-no-page">{{ project.title }}</h4>
+      {%- else  -%}
       <a href='{{ project.url | replace: ".html", "" }}'><h4 class="project-title">{{ project.title }}</h4></a>
+      {%- endif -%}
       <p class="project-description">{{ project.description }}</p>
 
       {%- if project.links -%}
