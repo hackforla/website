@@ -32,7 +32,7 @@ layout: default
                 {% if page.links %}
                     {% assign counter = 0 %}
                     {% for item in page.links %}
-                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Launch Site' %}
+                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Site' %}
                             {% assign counter = counter | plus:1 %}
                         {% endif %}
                     {% endfor %}
@@ -40,7 +40,7 @@ layout: default
                         <p>
                             <strong>Links: </strong>
                             {% for item in page.links %}
-                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Launch Site' %}
+                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Site' %}
                                     {% if counter > 1 %}
                                         <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
                                         {% assign counter = counter | minus:1 %}
