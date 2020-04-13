@@ -9,15 +9,12 @@ leadership:
     role: Data Scientist
     links: 
       github: 'https://github.com/hunterowens'
+    picture: https://avatars3.githubusercontent.com/u/1735650?s=400&u=0bd738be476cb814c53f2988502d1d5d9e10152a&v=4
 links: 
   - name: GitHub
     url: 'https://github.com/hunterowens/workfor.la'
   - name: Site
     url: 'http://www.workfor.la/'
-looking: 
-  - UX 
-  - Writers 
-  - Designers
 location: Downtown LA
 partner: Department of Personnel
 status: Completed
