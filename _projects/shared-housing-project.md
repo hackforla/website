@@ -13,5 +13,5 @@ looking:
   - Graphics Designer
 location: Downtown LA
 # partner: 
-status: Active
+status: On Hold
 ---
