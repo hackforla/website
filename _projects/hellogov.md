@@ -7,7 +7,7 @@ alt: "'smartphones using hellogo app'"
 image-hero: /assets/images/projects/hellogov-hero.jpg
 alt-hero: "Sky blue background"
 leadership:
-  - name: Kate
+  - name: Kate Rose
     links:
       slack: 'https://app.slack.com/team/UA02Y8W2Z'
       github: 'https://github.com/kate-rose'
@@ -26,7 +26,7 @@ links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
   - name: Site
-    url: 'https://hellogov.squarespace.com/'
+    url: 'https://hellogov.squarespace.com'
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
