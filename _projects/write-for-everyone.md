@@ -2,10 +2,10 @@
 identification: '238357606'
 title: Write for Everyone
 description: (Formerly, Equity Language) We want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
-image: /assets/images/projects/equity-language.png
-alt: "The word 'Equity' in many colors with the E and Q resembling a document searcher, and a rainbow-like border"
-image-hero: /assets/images/projects/equity-language-hero.png
-alt-hero: "An E and Q resembling a document searcher with a rainbow-like border"
+image: /assets/images/projects/write-for-everyone.png
+alt: "The words 'write for everyone' in rainbow colors and a rainbow-like border"
+image-hero: /assets/images/projects/write-for-everyone-hero.png
+alt-hero: "A large rainbow-colored background"
 leadership:
   - name: Joel Parker Henderson
     role: Project Architect
