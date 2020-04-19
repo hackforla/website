@@ -19,18 +19,18 @@ leadership:
   #     slack:
   #     github:
   #   picture:
-  - name: Matt Colwin
-    role: Frontend Lead
-    links:
-      slack: 'https://app.slack.com/team/UUF8X8RKP'
   - name: David Kim
     role: Frontend Lead
     links:
       slack: 'https://app.slack.com/team/UV407QSBE'
+      github: 'https://github.com/hyomiTheTech'
+    picture: https://avatars0.githubusercontent.com/u/38476995?s=400&u=43e9d12bf5a5df1b9347519fc1e4ef3991b9ae13&v=4
   - name: Elly Kyles
     role: Backend Lead
     links:
       slack: 'https://app.slack.com/team/UPPLBKK71'
+      github: 'https://github.com/ellykyles'
+    picture: https://avatars2.githubusercontent.com/u/45793292?s=400&v=4
   - name: Greg Pawin
     role: Data Lead
     links:
