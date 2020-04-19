@@ -19,6 +19,10 @@ leadership:
   #     slack:
   #     github:
   #   picture:
+  - name: Matt Colwin
+    role: Frontend Lead
+    links:
+      slack: 'https://app.slack.com/team/UUF8X8RKP'
   - name: David Kim
     role: Frontend Lead
     links:
