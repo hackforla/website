@@ -13,12 +13,6 @@ leadership:
       slack: 'https://app.slack.com/team/UNYMHBSQ1'
       github: 'https://github.com/breeze-094'
     picture: https://avatars.githubusercontent.com/breeze-094
-  # - name: Kristin Bodt
-  #   role: UI/UX Lead
-  #   links:
-  #     slack:
-  #     github:
-  #   picture:
   - name: David Kim
     role: Frontend Lead
     links:
@@ -37,12 +31,12 @@ leadership:
       slack: 'https://app.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
-  # - name: Pam Yoon
-  #   role: Product Manager
-  #   links:
-  #     slack:
-  #     github:
-  #   picture:
+  - name: Pam Yoon
+    role: Product Manager
+    links:
+      slack:  'https://app.slack.com/team/UU1H7MJAW'
+      github: 'https://github.com/pammyworld'
+    picture: https://avatars2.githubusercontent.com/u/30425272?s=400&v=4
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
