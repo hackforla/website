@@ -23,14 +23,8 @@ leadership:
     role: Frontend Lead
     links:
       slack: 'https://app.slack.com/team/UUF8X8RKP'
-  - name: David Kim
-    role: Frontend Lead
-    links:
-      slack: 'https://app.slack.com/team/UV407QSBE'
-  - name: Elly Kyles
-    role: Backend Lead
-    links:
-      slack: 'https://app.slack.com/team/UPPLBKK71'
+      github: 'https://github.com/MPCdevhub'
+    picture: https://avatars.githubusercontent.com/MPCdevhub
   - name: Greg Pawin
     role: Data Lead
     links:
@@ -56,7 +50,7 @@ looking:
   - Advanced Data Scientist
   - Python Enthusiast
 location: Santa Monica
-partner: Seeking
-tools: Google Colab, AWS
+partner: TBD
+tools: Google Colab
 status: Active
 ---
