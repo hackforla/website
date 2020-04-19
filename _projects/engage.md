@@ -35,6 +35,7 @@ looking:
   - React developers
   - NLP engineers
 location: Santa Monica
+tools: Hotjar, Google Analytics
 partner: City of Santa Monica
 status: Active
 ---
