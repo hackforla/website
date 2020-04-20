@@ -8,24 +8,24 @@ alt: civic tech index logo layered on top of the world map. Paired with a globe 
 image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: outline of the world map with connectivity dots linking major cities on each continent
 leadership:
-  - name: Marissa Wilson
-    role: Product Manager
+  - name: Bonnie Wolfe
+    role: Acting PM (project looking for a new PM)
     links:
-      slack: 'https://app.slack.com/team/UUG26TUTB'
-      github: 'https://github.com/mw376707'
-    picture: https://avatars.githubusercontent.com/mw376707
+      slack: 'https://app.slack.com/team/UE1UG1YFP'
+      github: 'https://github.com/ExperimentsInHonesty'
+    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+#  - name: Marissa Wilson
+#   role: Product Manager
+#   links:
+#     slack: 'https://app.slack.com/team/UUG26TUTB'
+#     github: 'https://github.com/mw376707'
+#   picture: https://avatars.githubusercontent.com/mw376707
   - name: Chali Prasertsri
     role: UX Lead
     links:
       slack: 'https://app.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
-  - name: Bonnie Wolf
-    role: Portfolio Owner
-    links:
-      slack: 'https://app.slack.com/team/UE1UG1YFP'
-      github: 'https://github.com/ExperimentsInHonesty'
-    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Bo Yang
     role: Data Analyst
     links:
