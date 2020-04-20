@@ -13,30 +13,30 @@ leadership:
       slack: 'https://app.slack.com/team/UNYMHBSQ1'
       github: 'https://github.com/breeze-094'
     picture: https://avatars.githubusercontent.com/breeze-094
-  # - name: Kristin Bodt
-  #   role: UI/UX Lead
-  #   links:
-  #     slack:
-  #     github:
-  #   picture:
-  - name: Matt Colwin
+  - name: David Kim
     role: Frontend Lead
     links:
-      slack: 'https://app.slack.com/team/UUF8X8RKP'
-      github: 'https://github.com/MPCdevhub'
-    picture: https://avatars.githubusercontent.com/MPCdevhub
+      slack: 'https://app.slack.com/team/UV407QSBE'
+      github: 'https://github.com/hyomiTheTech'
+    picture: https://avatars0.githubusercontent.com/u/38476995?s=400&u=43e9d12bf5a5df1b9347519fc1e4ef3991b9ae13&v=4
+  - name: Elly Kyles
+    role: Backend Lead
+    links:
+      slack: 'https://app.slack.com/team/UPPLBKK71'
+      github: 'https://github.com/ellykyles'
+    picture: https://avatars2.githubusercontent.com/u/45793292?s=400&v=4
   - name: Greg Pawin
     role: Data Lead
     links:
       slack: 'https://app.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
-  # - name: Pam Yoon
-  #   role: Product Manager
-  #   links:
-  #     slack:
-  #     github:
-  #   picture:
+  - name: Pam Yoon
+    role: Product Manager
+    links:
+      slack:  'https://app.slack.com/team/UU1H7MJAW'
+      github: 'https://github.com/pammyworld'
+    picture: https://avatars2.githubusercontent.com/u/30425272?s=400&v=4
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -50,7 +50,7 @@ looking:
   - Advanced Data Scientist
   - Python Enthusiast
 location: Santa Monica
-partner: TBD
-tools: Google Colab
+partner: Seeking
+tools: Google Colab, AWS
 status: Active
 ---
