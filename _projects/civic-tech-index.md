@@ -39,7 +39,7 @@ leadership:
       github: 'https://github.com/Gsnapp'
     picture: https://avatars.githubusercontent.com/GSnapp
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/civictechindex/website'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
