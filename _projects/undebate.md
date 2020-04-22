@@ -21,6 +21,8 @@ links:
 looking:
   - Node
   - React
+  - UI/UX
+  - Marketing/Branding/Social Media
 location: Santa Monica + Remote
 partner: EnCiv.org, Ballotpedia.org
 status: Active
