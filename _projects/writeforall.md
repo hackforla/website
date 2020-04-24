@@ -1,7 +1,6 @@
 ---
 identification: '238357606'
-title: Write for All
-tm: true
+title: Write for All&trade;
 description: We want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
 image: /assets/images/projects/writeforall.png
 alt: "A a rainbow document searcher icon , the words 'Write for All TM', and a rainbow-like border"
@@ -29,7 +28,6 @@ links:
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
   - name: Demo link
     url: 'http://writeforall.org/'
-    http://writeforall.org
 looking:
   - Gender researcher
   - Communications writer
@@ -38,7 +36,7 @@ looking:
   - JavaScript programmer
   - QA coder
   - DevOps engineer
-location: Remote - Downtown LA
+location: Downtown LA and remote
 partner: Seeking
 status: Active
 ---
