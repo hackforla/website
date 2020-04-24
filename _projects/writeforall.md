@@ -1,7 +1,9 @@
 ---
 identification: '238357606'
-title: Write for All&trade;
-description: We want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
+title: Write for All&#8482;
+description: We want to improve the language used in websites to be
+  more inclusive (of all communities) while also educating the public
+  about exclusionary language. @writeforallorg&#8482;
 image: /assets/images/projects/writeforall.png
 alt: "A a rainbow document searcher icon , the words 'Write for All TM', and a rainbow-like border"
 image-hero: /assets/images/projects/writeforall-hero.png
