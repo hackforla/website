@@ -1,11 +1,12 @@
 ---
 identification: '238357606'
-title: Write for Everyone
-description: (Formerly, Equity Language) We want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
-image: /assets/images/projects/write-for-everyone.png
-alt: "The words 'write for everyone' in rainbow colors and a rainbow-like border"
-image-hero: /assets/images/projects/write-for-everyone-hero.png
-alt-hero: "A large rainbow-colored background"
+title: Write for All
+tm: true
+description: We want to improve the language used in websites to be more inclusive (of all communities) while also educating the public about exclusionary language.
+image: /assets/images/projects/writeforall.png
+alt: "A a rainbow document searcher icon , the words 'Write for All TM', and a rainbow-like border"
+image-hero: /assets/images/projects/writeforall-hero.png
+alt-hero: "A large rainbow-colored background with a rainbow document searcher icon in the middle"
 leadership:
   - name: Joel Parker Henderson
     role: Project Architect
@@ -21,11 +22,14 @@ leadership:
     picture: https://avatars.githubusercontent.com/charlottesauce
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/gender-equity'
+    url: 'https://github.com/hackforla/writeforall'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CTJN4HPRA'
   - name: Readme
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
+  - name: Demo link
+    url: 'http://writeforall.org/'
+    http://writeforall.org
 looking:
   - Gender researcher
   - Communications writer
@@ -34,7 +38,7 @@ looking:
   - JavaScript programmer
   - QA coder
   - DevOps engineer
-location: Downtown LA
-partner:
+location: Remote - Downtown LA
+partner: Seeking
 status: Active
 ---
