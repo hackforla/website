@@ -9,6 +9,7 @@ links:
     url: 'https://github.com/hackforla/heart'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
+frameworks:
 looking: 
   - experienced full-stack developer 
   - node.js 

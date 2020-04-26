@@ -9,6 +9,7 @@ links:
     url: 'https://github.com/hackforla/adopt-civic-art'
   # - name: Site
   #   url: ''
+frameworks:
 # looking: 
 location: Downtown LA
 partner: County of Los Angeles

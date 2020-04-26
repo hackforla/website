@@ -44,6 +44,7 @@ links:
     url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
+frameworks: React-JS, PostgreSQL
 looking:
   - Frontend Software Engineer
   - Backend Software Engineer

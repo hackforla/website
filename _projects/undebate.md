@@ -18,6 +18,7 @@ links:
     url: 'https://github.com/EnCiv/undebate'
   - name: Demo
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'
+frameworks: Mongo, Express, React, Node (MERN)
 looking:
   - Node
   - React

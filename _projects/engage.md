@@ -28,6 +28,7 @@ links:
     url: 'https://github.com/hackla-engage/Engage-Product-Documentation/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
+frameworks: React, Django, SQL (PostgreSQL)
 looking:
   - Product Manager
   - Project Manager

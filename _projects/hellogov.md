@@ -31,6 +31,7 @@ links:
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
+frameworks:
 looking:
   - Looking for folks to help with implementing end to end testing, user testing and outreach, and a UI redesign. All skill levels, all kinds of contribution welcome.
 location: Santa Monica

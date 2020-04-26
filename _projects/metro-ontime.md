@@ -26,6 +26,7 @@ links:
     url: 'https://www.metro.net/'
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
+frameworks:
 # looking:
   # - Application Developers (Javascript, Node, React, D3)
   # - Data Engineers (Python, Pandas, GIS)

@@ -8,6 +8,7 @@ links:
     url: 'https://github.com/curbmap'
   - name: Site
     url: 'https://curbmap.com/'
+frameworks:
 looking: 
   - UX designers 
   - UX researchers 

@@ -55,6 +55,7 @@ links:
     url: 'https://github.com/hackforla/tdm-calculator/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CKY65G266'
+frameworks:
 looking:
   - UI Designer
 location: Downtown LA

@@ -9,6 +9,7 @@ links:
     url: 'https://github.com/hackforla/shared-housing'
   # - name: Site
   #   url: ''
+frameworks:
 looking: 
   - Graphics Designer
 location: Downtown LA

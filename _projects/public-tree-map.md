@@ -36,6 +36,7 @@ links:
     url: 'https://github.com/Public-Tree-Map/public-tree-map/blob/master/README.md'
   # - name: Site
   #   url: ''
+frameworks:
 looking:
   - Front-end web development (JavaScript, Leaflet)
   - Data processing (GeoPandas, Python)

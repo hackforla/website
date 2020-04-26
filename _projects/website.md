@@ -44,6 +44,7 @@ links:
     url: 'https://github.com/hackforla/website'
   - name: Site
     url: 'https://www.hackforla.org'
+frameworks: gh-pages, jekyll
 looking:
   - UI (wireframes)
   - Photoshop

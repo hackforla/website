@@ -9,6 +9,7 @@ links:
     url: "https://github.com/timdef/criminal-sentencing" 
   # - name: Site
   #   url: ''
+frameworks:
 # looking: Great communicators and researchers!
 location: Downtown LA
 # partner: 

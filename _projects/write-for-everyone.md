@@ -26,6 +26,7 @@ links:
     url: 'https://hackforla.slack.com/archives/CTJN4HPRA'
   - name: Readme
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
+frameworks:
 looking:
   - Gender researcher
   - Communications writer

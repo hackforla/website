@@ -45,6 +45,7 @@ links:
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
   - name: Wiki
     url: 'https://github.com/civictechindex/website/wiki'
+frameworks:
 looking:
   - Fullstack Developer with Node/React knowledge
   - Experienced Data Scientist
