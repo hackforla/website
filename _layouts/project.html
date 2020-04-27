@@ -55,6 +55,8 @@ layout: default
 
                 {% if page.tools %}<p><strong>Tools: </strong>{{ page.tools }}</p>{% endif %}
                 <p id='languages'><strong>Languages: </strong></p>
+                {% if page.frameworks %}<p id='frameworks' style='margin-bottom:0px;'><strong>Frameworks: </strong></p>{{ page.frameworks }}</p>{% endif %}
+                
             </div>
             
             <!--Project Summary and Getting Started Button-->
@@ -179,6 +181,21 @@ layout: default
         languagesSection.appendChild(languagesParagraph);
     } else {
         languagesSection.remove();
+    }
+</script>
+
+<!--Script for adding frameworks to "Frameworks" Section-->
+<script>
+    let frameworksSection = document.getElementById('frameworks');
+    if(project != null && project.frameworks.data.length > 0){
+        let frameworks = project.frameworks.data.join(', ');
+        let frameworksParagraph = document.createElement('p');
+        frameworksParagraph.style.display = 'inline';
+        let frameworksText = document.createTextNode(frameworks);
+        frameworksParagraph.appendChild(frameworksText);
+        frameworksSection.appendChild(frameworksParagraph);
+    } else {
+        frameworksSection.remove();
     }
 </script>
 
