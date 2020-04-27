@@ -46,6 +46,7 @@ links:
     url: 'https://github.com/hackforla/host-home/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'
+frameworks: React, NoSQL
 looking:
   - UI (including wireframes, familiar with Figma)
 location: Downtown LA and remote
