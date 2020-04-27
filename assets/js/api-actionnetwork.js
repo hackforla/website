@@ -22,7 +22,9 @@
   var submitEmail = function (url = ``, email) {
     var postData = {
       person: {
-        email_addresses: [{ address: email }]
+        email_addresses: [{
+          address: email
+        }]
       }
     };
 
@@ -51,62 +53,65 @@
     }
   };
 
-  var validateEmail = function(email) {
-     var pattern =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  var validateEmail = function (email) {
+    var pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
     return pattern.test(email);
   }
 
   // EVENT LISTENERS FOR FORM SUBMISSIONS
+  if (heroBtn) {
+    heroBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      var email = heroFormInput.value;
 
-  heroBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    var email = heroFormInput.value;
-    
-    if(validateEmail(email)) {
-    submitEmail(url, email)
-      .then(function (data) {
-        if (data.error) {
-          setPostMessage(heroFormConfirm, data.error);
-        } else {
-          setPostMessage(heroFormConfirm);
-        }
+      if (validateEmail(email)) {
+        submitEmail(url, email)
+          .then(function (data) {
+            if (data.error) {
+              setPostMessage(heroFormConfirm, data.error);
+            } else {
+              setPostMessage(heroFormConfirm);
+            }
 
-        heroForm.reset();
-      })
-      .catch(function (error) {
-        var errorMessage = document.createTextNode(error.message);
-        heroFormConfirm.appendChild(errorMessage);
-        heroForm.reset();
-      });
-  } else {
-          setPostMessage(heroFormConfirm, "Invalid Email Format");
+            heroForm.reset();
+          })
+          .catch(function (error) {
+            var errorMessage = document.createTextNode(error.message);
+            heroFormConfirm.appendChild(errorMessage);
+            heroForm.reset();
+          });
+      } else {
+        setPostMessage(heroFormConfirm, "Invalid Email Format");
+      }
+    });
   }
-  });
 
-  contactFormBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    var email = contactFormEmail.value;
+  if (contactFormBtn) {
+    contactFormBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      var email = contactFormEmail.value;
 
-    if(validateEmail(email)) {
-    submitEmail(url, email)
-    submitEmail(url, email)
-      .then(function (data) {
-        if (data.error) {
-          setPostMessage(contactFormConfirm, data.error);
-        } else {
-          setPostMessage(contactFormConfirm);
-        }
+      if (validateEmail(email)) {
+        submitEmail(url, email)
+          // submitEmail(url, email)
+          .then(function (data) {
+            if (data.error) {
+              setPostMessage(contactFormConfirm, data.error);
+            } else {
+              setPostMessage(contactFormConfirm);
+            }
 
-        contactForm.reset();
-      })
-      .catch(function (error) {
-        var errorMessage = document.createTextNode(error.message);
-        contactFormConfirm.appendChild(errorMessage);
-        contactForm.reset();
-      });
-    } else {
-          setPostMessage(contactFormConfirm, "Invalid Email Format");
-    }
-  });
+            contactForm.reset();
+          })
+          .catch(function (error) {
+            var errorMessage = document.createTextNode(error.message);
+            contactFormConfirm.appendChild(errorMessage);
+            contactForm.reset();
+          });
+      } else {
+        setPostMessage(contactFormConfirm, "Invalid Email Format");
+      }
+    });
+  }
 })(window, document);
