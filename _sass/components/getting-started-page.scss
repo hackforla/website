@@ -1,18 +1,52 @@
+.header-container {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    border-radius: 16px;
+    // box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    max-width: 896px;
+    margin-bottom: 0;
+    padding: 30px;
+    height: fit-content;
+    margin: 12px auto;
+}
+
 .getting-started-page {
     margin-top: 29px;
-    background: #030d2d;
+    background: #030c2c;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 59px;
+    line-height: 69px;
+    color: #000000;
+    width: 858px;
+    height: 113px;
+    left: 291px;
+    top: 116px;
+    font-family: Roboto;
 }
 
 .getting-started-page-card {
     background: #fff;
-    border: 0 solid rgba(51,51,51,0.06);
+    border: 0 solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
     max-width: 896px;
     margin-bottom: 0;
@@ -25,6 +59,7 @@
         padding: 30px 15px;
     }
 }
+
 
 .getting-started-guide-content-section {
     margin-left: 21px;
