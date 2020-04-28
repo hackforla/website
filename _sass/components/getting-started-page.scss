@@ -1,14 +1,11 @@
 .header-container {
     background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
-    border-radius: 16px;
-    // box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    overflow: hidden;
-    max-width: 896px;
-    margin-bottom: 0;
     padding: 30px;
     height: fit-content;
     margin: 12px auto;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
 }
 
 .getting-started-page {
@@ -24,7 +21,29 @@
     font-weight: normal;
 }
 
+a {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
 
+.step-img {
+    width: 300px;
+
+}
+
+.step-links {
+    display: grid;
+    padding: 33px;
+    margin: 10px auto;
+}
+
+.step-link-img {
+    display: flex;
+    margin: 0px auto;
+    max-width: 1114px;
+}
 
 h1 {
     display: flex;
@@ -35,12 +54,20 @@ h1 {
     font-size: 59px;
     line-height: 69px;
     color: #000000;
-    width: 858px;
-    height: 113px;
-    left: 291px;
-    top: 116px;
+    height: 50px;
     font-family: Roboto;
 }
+
+.header-p {
+    font-size: 27px;
+    display: flex;
+    max-width: 895px;
+    text-align: center;
+    padding: 30px;
+    margin: 12px auto;
+    font-family: Roboto;
+}
+
 
 .getting-started-page-card {
     background: #fff;
