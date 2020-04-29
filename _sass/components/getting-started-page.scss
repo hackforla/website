@@ -3,9 +3,20 @@
     padding: 30px;
     height: fit-content;
     margin: 12px auto;
-    font-family: Roboto;
+    font-family: "Roboto"sans-serif;
     font-style: normal;
     font-weight: normal;
+    text-align: center;
+}
+
+.header-p {
+    font-size: 27px;
+    display: flex;
+    max-width: 895px;
+    text-align: center;
+    padding: 30px;
+    margin: 12px auto;
+    font-family: "Roboto"sans-serif;
 }
 
 .getting-started-page {
@@ -16,20 +27,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Roboto;
+    font-family: "Roboto"sans-serif;
     font-style: normal;
     font-weight: normal;
 }
 
-a {
-    display: flex;
+.gs-link {
     text-decoration: none;
+    font-size: 20px;
     text-align: center;
-    justify-content: center;
 }
 
 .step-img {
-    width: 300px;
+    width: 250px;
     height: 190px;
 }
 
@@ -45,29 +55,11 @@ a {
     max-width: 1114px;
 }
 
-h1 {
+.step-header {
     display: flex;
     justify-content: center;
-    align-content: center;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 59px;
-    line-height: 69px;
     color: #000000;
-    height: 50px;
-    font-family: Roboto;
 }
-
-.header-p {
-    font-size: 27px;
-    display: flex;
-    max-width: 895px;
-    text-align: center;
-    padding: 30px;
-    margin: 12px auto;
-    font-family: Roboto;
-}
-
 
 .getting-started-page-card {
     background: #fff;
@@ -80,6 +72,7 @@ h1 {
     padding: 30px;
     height: fit-content;
     margin: 12px auto;
+    font-family: "Roboto"sans-serif;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
@@ -87,14 +80,23 @@ h1 {
     }
 }
 
-
-.getting-started-guide-content-section {
-    margin-left: 21px;
+.getting-started-onboard-content {
+    display: flex;
 }
 
-.getting-started-guide-content-section h4 {
-    margin-block-end: 16px;
+.self-onboarding {
+    margin: 2vh 20vh;
+    text-align: center;
+    padding: 4vh;
 }
+
+// .getting-started-guide-content-section {
+//     margin-left: 21px;
+// }
+
+// .getting-started-guide-content-section h4 {
+//     margin-block-end: 16px;
+// }
 
 .zoom-pictures {
     display: flex;
