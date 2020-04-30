@@ -6,6 +6,7 @@
     "dependencies": {
       "@actions/core": "^1.2.0",
       "@actions/github": "^2.0.0",
+      "@actions/http-client": ">=1.0.8",
       "request": "2.88.0",
       "request-promise": "4.2.5"
     },
@@ -16,4 +17,4 @@
     "keywords": [],
     "author": "",
     "license": "ISC"
-  }
+}
