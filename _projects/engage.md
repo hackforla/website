@@ -34,6 +34,7 @@ looking:
   - UX designers
   - React developers
   - NLP engineers
+frameworks: React, Django, SQL (PostgreSQL)
 location: Santa Monica
 partner: City of Santa Monica
 status: Active
