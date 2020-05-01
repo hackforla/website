@@ -25,7 +25,5 @@ jobs:
 
         commit_message: Update contributor and language data
 
-        # Optional commit user and author settings
-        commit_user_name: GitHub Actions Bot
-        commit_user_email: hackforla-bot@hackforla.org
-        commit_author: hackforla-bot@hackforla.org
+        # Commit author settings
+        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>
