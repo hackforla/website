@@ -48,8 +48,10 @@ links:
 looking:
   - Fullstack Developer with Node/React knowledge
   - Experienced Data Scientist
+  - Database Architect
   - UX specialist for testing and conducting interviews with stakeholders
-location: DTLA
+  - Project Manager
+location: DTLA and remote
 partner: Code for America, Yale OpenLab and many more.
 status: Active
 ---
