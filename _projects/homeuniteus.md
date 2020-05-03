@@ -48,6 +48,7 @@ links:
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'
 looking:
   - UI (including wireframes, familiar with Figma)
+frameworks: React, NoSQL
 location: Downtown LA and remote
 partner: Safe Place for Youth (SPY)
 status: Active

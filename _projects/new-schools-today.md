@@ -41,6 +41,7 @@ looking:
   - React Web Development
   - Marketing/Research
   - any high school student or technical mentor interested
+frameworks: ReactJS, Flutter
 partner: Seeking
 location: Santa Monica, CA
 status: Active
