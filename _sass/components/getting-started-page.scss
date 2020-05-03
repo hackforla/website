@@ -59,6 +59,7 @@
     display: flex;
     justify-content: center;
     color: #000000;
+    font-family: "Roboto"sans-serif;
 }
 
 .getting-started-page-card {
@@ -80,19 +81,19 @@
     }
 }
 
-.getting-started-onboard-content {
-    display: flex;
-}
+// .getting-started-onboard-content {
+//     display: flex;
+// }
 
 .self-onboarding {
-    margin: 2vh 20vh;
-    text-align: center;
-    padding: 4vh;
+    display: table-cell;
+    padding: inherit;
+    margin: 11px;
 }
 
-// .getting-started-guide-content-section {
-//     margin-left: 21px;
-// }
+.getting-started-guide-content-section {
+    margin-left: 21px;
+}
 
 // .getting-started-guide-content-section h4 {
 //     margin-block-end: 16px;
@@ -107,4 +108,10 @@
 .zoom-img {
     width: 320px;
     align-self: center;
+}
+
+.project-position {
+    display: table-cell;
+    padding: inherit;
+    margin: 11px;
 }
