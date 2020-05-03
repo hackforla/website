@@ -34,6 +34,7 @@ looking:
   - UX designers
   - React developers
   - NLP engineers
+frameworks: React, Django, SQL (PostgreSQL)
 location: Santa Monica
 tools: Hotjar, Google Analytics
 partner: City of Santa Monica

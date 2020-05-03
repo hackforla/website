@@ -49,6 +49,7 @@ looking:
   - Photoshop
   - Junior JavaScript developers
   - anyone wanting to learn how to do Git commits in a collaborative work environment
+frameworks: GitHub Pages, Jekyll
 location: Santa Monica, Downtown and Remote
 # partner: N/A
 status: Active

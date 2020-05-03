@@ -55,6 +55,13 @@
         {{ project.location }}
       </div>
       {%- endif -%}
+
+      {%- if project.frameworks -%}
+      <div class="project-frameworks">
+        <strong>Frameworks: </strong>
+        {{ project.frameworks }}
+      </div>
+      {%- endif -%}
     </div>
   </div>
 </li>
