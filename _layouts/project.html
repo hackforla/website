@@ -185,20 +185,6 @@ layout: default
     }
 </script>
 
-<!--Script for adding frameworks to "Frameworks" Section-->
-<script>
-    let frameworksSection = document.getElementById('frameworks');
-    if(project != null && project.frameworks.data.length > 0){
-        let frameworks = project.frameworks.data.join(', ');
-        let frameworksParagraph = document.createElement('p');
-        frameworksParagraph.style.display = 'inline';
-        let frameworksText = document.createTextNode(frameworks);
-        frameworksParagraph.appendChild(frameworksText);
-        frameworksSection.appendChild(frameworksParagraph);
-    } else {
-        frameworksSection.remove();
-    }
-</script>
 
 <!--Script for constructing Team Card-->
 <script>
