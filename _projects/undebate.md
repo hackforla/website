@@ -21,8 +21,9 @@ links:
 looking:
   - Node
   - React
-frameworks: Mongo, Express, React, Node (MERN)
-location: Santa Monica + Remote
+  - UI/UX
+  - Marketing/Branding/Social Media
+frameworks: Mongo, Express, React, Node (MERN)location: Santa Monica + Remote
 partner: EnCiv.org, Ballotpedia.org
 status: Active
 ---
