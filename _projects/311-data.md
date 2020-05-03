@@ -50,7 +50,7 @@ looking:
   - Backend Developers
   - Backend Lead
   - DevOps
-frameworks: React / Redux, Flask (Sanic) / Pandas, Bulma, PostgreSql
+frameworks: React / Redux, Flask (Sanic) / Pandas, Bulma, PostgreSQL
 location: Downtown LA
 partner: EmpowerLA
 status: Active
