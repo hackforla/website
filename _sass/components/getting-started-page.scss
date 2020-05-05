@@ -44,7 +44,6 @@
 }
 
 .step-img {
-    // width: 250px;
     height: 100px;
 }
 
@@ -58,8 +57,6 @@
     justify-content: space-evenly;
     margin-left: 6%;
 
-    // margin: 0px auto;
-    // max-width: 1114px;
     @media #{$bp-below-mobile} {
         flex-direction: column;
         text-align: -webkit-center;
@@ -96,9 +93,6 @@
     }
 }
 
-// .getting-started-onboard-content {
-//     display: flex;
-// }
 
 .self-onboarding {
     display: flex;
@@ -107,15 +101,11 @@
 }
 
 .getting-started-guide-content-section {
-    // margin-left: 20px;
     text-align: center;
 
 
 }
 
-// .getting-started-guide-content-section h4 {
-//     margin-block-end: 16px;
-// }
 
 .zoom-pictures {
     display: flex;
@@ -153,38 +143,17 @@
 
 .accordion:after {
     content: '\22CE';
-    // content: '\22C1';
+
     float: right;
 }
 
 .active:after {
     content: '\22CF';
-    // content: '\22C0';
+
 }
 
 
-// .svg-vector:active {
-//     // transform: rotate(360deg);
-//     /* Vector 1 */
-//     position: absolute;
-//     width: 17px;
-//     height: 9px;
-//     left: 1196px;
-//     top: 3692px;
 
-//     border: 2px solid #000000;
-//     transform: rotate(360deg);
-
-
-// }
-
-// .svg-vector:hover {
-//     transform: rotate(360deg);
-// }
-
-// .svg-vector::after {
-//     transform: rotate(360deg);
-// }
 
 .panel {
     display: none;
