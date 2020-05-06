@@ -219,8 +219,8 @@ layout: default
         </div>
         <div class='getting-started-guide-content-section'>
 
-            <p class="accordion" style="font-size: 20px;">How do I raise my hand on Zoom? </p>
 
+            <p class="accordion" style="font-size: 20px;">How do I raise my hand on Zoom? </p>
 
             <div class="panel">
                 <p><i>To raise your hand in Zoom: (1) Click the Participants button found in the control panel at the
@@ -234,8 +234,10 @@ layout: default
                 </div>
 
             </div>
-            <p class="accordion" style="font-size: 20px;">How many hours are you expected to commit to Hack for LA each
-                week?</p>
+
+            <p class="accordion" style="font-size: 20px;">How many hours are you expected to
+                commit to Hack for LA each
+                week? </p>
             <div class="panel">
                 <p>At least 3 hours per week. Most often, this means you commit to recurring weekly meetings, plus a
                     minimum of 2 hours. Since meetings are primarily reserved for coordination of tasks and feedback,
@@ -252,7 +254,8 @@ layout: default
                 </p>
 
             </div>
-            <p class="accordion" style="font-size: 20px;">Can you tell me more about how communication in Hack for LA
+            <p class="accordion" style="font-size: 20px;">Can you tell me more about how
+                communication in Hack for LA
                 works? </p>
             <div class="panel">
                 <p> We work in Slack, GitHub, and Google Drive. Some teams may use additional tools, so check with the
@@ -283,11 +286,11 @@ layout: default
 <!-- //script for FAQ dropdown -->
 
 <script>
-    var acc = document.getElementsByClassName('accordion');
-    var i;
+    var showAnswer = document.getElementsByClassName('accordion');
 
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
+    for (var i = 0; i < showAnswer.length; i++) {
+        showAnswer[i].addEventListener("click", function () {
+
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             if (panel.style.display === "block") {
@@ -296,5 +299,6 @@ layout: default
                 panel.style.display = "block"
             }
         })
+
     }
 </script>
