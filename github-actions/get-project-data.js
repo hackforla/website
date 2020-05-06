@@ -131,7 +131,7 @@ async function main(params) {
   function finish(){
     let output = github.apiData.sort(github.compareValues('name'));
     console.log(JSON.stringify(output, null, 2));
-    fs.writeFileSync('github-actions/github_data.json', JSON.stringify(output, null, 2));
+    fs.writeFileSync('_data/github-data.json', JSON.stringify(output, null, 2));
   }
 }
 
