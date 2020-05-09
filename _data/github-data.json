@@ -743,6 +743,12 @@
           "gravatar_id": ""
         },
         {
+          "id": 54970194,
+          "github_url": "https://github.com/parkderick",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/54970194?v=4",
+          "gravatar_id": ""
+        },
+        {
           "id": 50754725,
           "github_url": "https://github.com/tabatahg",
           "avatar_url": "https://avatars1.githubusercontent.com/u/50754725?v=4",
@@ -1891,6 +1897,35 @@
     }
   },
   {
+    "id": 241519642,
+    "name": "website",
+    "languages": {
+      "url": "https://api.github.com/repos/civictechindex/website/languages",
+      "data": [
+        "JavaScript",
+        "HTML",
+        "Dockerfile"
+      ]
+    },
+    "contributors": {
+      "url": "https://api.github.com/repos/civictechindex/website/contributors",
+      "data": [
+        {
+          "id": 30850773,
+          "github_url": "https://github.com/Jeff-Enriquez",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/30850773?v=4",
+          "gravatar_id": ""
+        },
+        {
+          "id": 37763229,
+          "github_url": "https://github.com/ExperimentsInHonesty",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
+          "gravatar_id": ""
+        }
+      ]
+    }
+  },
+  {
     "id": 130000551,
     "name": "website",
     "languages": {
@@ -1959,6 +1994,12 @@
           "gravatar_id": ""
         },
         {
+          "id": 64623632,
+          "github_url": "https://github.com/HackforLABot",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
+          "gravatar_id": ""
+        },
+        {
           "id": 33906590,
           "github_url": "https://github.com/ruben1s",
           "avatar_url": "https://avatars3.githubusercontent.com/u/33906590?v=4",
@@ -1968,12 +2009,6 @@
           "id": 13112628,
           "github_url": "https://github.com/yulia-kh",
           "avatar_url": "https://avatars2.githubusercontent.com/u/13112628?v=4",
-          "gravatar_id": ""
-        },
-        {
-          "id": 64623632,
-          "github_url": "https://github.com/HackforLABot",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": ""
         },
         {
@@ -2082,41 +2117,6 @@
           "id": 6194542,
           "github_url": "https://github.com/RyanCahela",
           "avatar_url": "https://avatars2.githubusercontent.com/u/6194542?v=4",
-          "gravatar_id": ""
-        }
-      ]
-    }
-  },
-  {
-    "id": 241519642,
-    "name": "website",
-    "languages": {
-      "url": "https://api.github.com/repos/civictechindex/website/languages",
-      "data": [
-        "JavaScript",
-        "HTML",
-        "Dockerfile"
-      ]
-    },
-    "contributors": {
-      "url": "https://api.github.com/repos/civictechindex/website/contributors",
-      "data": [
-        {
-          "id": 22826815,
-          "github_url": "https://github.com/JeffEnriquez",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/22826815?v=4",
-          "gravatar_id": ""
-        },
-        {
-          "id": 30850773,
-          "github_url": "https://github.com/Jeff-Enriquez",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/30850773?v=4",
-          "gravatar_id": ""
-        },
-        {
-          "id": 37763229,
-          "github_url": "https://github.com/ExperimentsInHonesty",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
           "gravatar_id": ""
         }
       ]
