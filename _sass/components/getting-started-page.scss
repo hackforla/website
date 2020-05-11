@@ -3,7 +3,7 @@
   padding: 30px;
   height: fit-content;
   margin: 12px auto;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
   font-style: normal;
   font-weight: normal;
   text-align: center;
@@ -21,7 +21,7 @@
   text-align: center;
   padding: 30px;
   margin: 12px auto;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
 }
 
 .getting-started-page {
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
   font-style: normal;
   font-weight: normal;
 }
@@ -45,6 +45,8 @@
 
 .step-img {
   height: 100px;
+  // margin-right: 20px;
+  text-align: center;
 }
 
 .step-links {
@@ -67,7 +69,7 @@
   display: flex;
   justify-content: center;
   color: #000000;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
 
   @media #{$bp-below-mobile} {
     text-align: center;
@@ -85,7 +87,7 @@
   padding: 30px;
   height: fit-content;
   margin: 12px auto;
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -100,7 +102,8 @@
 }
 
 .getting-started-guide-content-section {
-  text-align: center;
+  // text-align: center;
+  text-align: justify;
 }
 
 .zoom-pictures {
@@ -115,8 +118,8 @@
 }
 
 .project-position {
-  padding: 28px 21px;
-  margin: 0px;
+  padding: 16px;
+  margin: 30px auto;
 }
 
 .accordion {
@@ -138,14 +141,17 @@
 .svg-accordion {
   float: right;
 }
+
 .svg-accordion:hover {
   opacity: 0.5;
 }
+
 .accordion:after {
   content: "\232A";
   float: right;
   transform: rotate(90deg);
   transition: transform 0.25s ease-in;
+  color: rgb(250, 17, 79);
 }
 
 .active::after {
@@ -164,9 +170,10 @@
 .ordered-list-steps {
   display: flex;
   flex-direction: row;
-  padding: 5px;
+  padding: 4px 0px;
   height: fit-content;
   margin-left: 26px;
+  text-align: center;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -176,14 +183,16 @@
 }
 
 .project-position-1 {
-  padding: 3rem;
-  margin: 0px;
+  padding: 40px 28px;
+  margin: 0px 30px;
+
 }
 
 .ordered-list-steps-1 {
   display: flex;
   flex-direction: row;
   padding: 5px;
+  text-align: center;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -195,6 +204,10 @@
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.project-position-2 {
+  text-align: center;
 }
 
 hr {
