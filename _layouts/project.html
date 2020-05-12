@@ -78,12 +78,14 @@ layout: default
 
             </div>
         </div>
+        {% if page.status != "Completed" %}
         <div class="getting-started">
             <p style='margin-bottom:0px; white-space: nowrap;'>Getting Started</p>
             <button onClick='gettingStarted()' class='getting-started-button'>
                 {% include svg/_ionicons_svg_ios-arrow-down.svg %}
             </button>
         </div>
+        {% endif %}
     </div>
 
     <!--Getting Started Card-->
