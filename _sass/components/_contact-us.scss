@@ -9,16 +9,22 @@
 .surveybtn {
     width: 175px;
     height: 40px;
-    line-height: 0.5em;
-    margin: 0px 20px 0px 0px !important; 
+    text-align: center;
+    margin: 0 !important;
 }
 
-.alignleft {
-    float: left;
-    padding-left: 150px;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.alignright {
-    float: right;
-    margin-right: 150px;
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
