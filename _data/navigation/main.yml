@@ -17,8 +17,8 @@
   link: "/#about"
   list_class_name:
   icon: /svg/icon-about.svg
-  #this contact us link will be replace with new contact form.
-# - name: Contact Us
-#   link: "/#contact"
-#   list_class_name: hide-mobile
-#   icon:
+
+- name: Contact Us
+  link: "/#contact"
+  list_class_name: hide-mobile
+  icon:

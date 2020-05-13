@@ -69,6 +69,29 @@ var github = {
     }).catch(function(err) {
       return err.message;
     });
+  },
+  compareValues: function(key, order = 'asc') {
+    return function innerSort(a, b) {
+      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        // property doesn't exist on either object
+        return 0;
+      }
+
+      const varA = (typeof a[key] === 'string')
+            ? a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string')
+            ? b[key].toUpperCase() : b[key];
+
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return (
+        (order === 'desc') ? (comparison * -1) : comparison
+      );
+    };
   }
 }
 
@@ -106,8 +129,9 @@ async function main(params) {
       console.log(e)
     });
   function finish(){
-    console.log(JSON.stringify(github.apiData, null, 2));
-    fs.writeFileSync('_data/github-data.json', JSON.stringify(github.apiData, null, 2));
+    let output = github.apiData.sort(github.compareValues('name'));
+    console.log(JSON.stringify(output, null, 2));
+    fs.writeFileSync('_data/github-data.json', JSON.stringify(output, null, 2));
   }
 }
 
