@@ -5,66 +5,143 @@ layout: default
     <h1 class='team-meetings-title'>Project Team Meetings</h1>
     <div class='calendar-page-card'>
         <p class='meetings-message'>All meetings are currently online due to COVID19.<br>Details about a team’s meeting can be obtained in each team’s slack channel.</p>
-        <h3 class='day-header'>Monday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>5:30-10:30 pm <a href='/projects/lucky-parking'>Lucky Parking</a></p></li>
-                <li><p class='time-slot-text'>6:30-8:30 pm <a href='/projects/hellogov'>HelloGov</a></p></li>
-                <li><p class='time-slot-text'>6:30-6:40 pm <a href='/projects/not-today'>Not Today</a> (updates)</p></li>
-                <li><p class='time-slot-text'>6:30-8:30 pm <a href='/projects/new-schools-today'>New Schools Today</a></p></li>
-                <li><p class='time-slot-text'>6:30-8:45 pm <a href='/projects/record-clearance-project'>Record Clearance</a></p></li>
-                <li><p class='time-slot-text'>6:30-TBD pm <a href='/projects/public-tree-map'>Public Tree map</a></p></li>
-                <li><p class='time-slot-text'>7:00-9:00 pm <a href='/projects/vrms'>VRMS</a></p></li>
+        <div id="Monday">
+            <h3 class='day-header'>Monday</h3>
+            <ul id="Monday-List" class="schedule-list">
+                <li id="defaultMon">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Tuesday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>6:30-7:30 pm <a href='/projects/food-oasis'>Food Oasis</a></p></li>
-                <li><p class='time-slot-text'>7:00-8:00 pm <a href='/projects/homeuniteus'>Home Unite US</a></p></li>
-                <li><p class='time-slot-text'>7:00-8:00 pm <a href='/projects/website'>Hackforla.org Website</a> development team</p></li>
-                <li><p class='time-slot-text'>7:00-9:00 pm <a href='/projects/311-data'>311 Data</a> team meeting</p></li>
+        <div id="Tuesday">
+            <h3 class='day-header'>Tuesday</h3>
+            <ul id="Tuesday-List" class="schedule-list">
+                <li id="defaultTue">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Wednesday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>6:30-9:00 pm <a href='/projects/undebate'>Undebate</a></p></li>
-                <li><p class='time-slot-text'>6:00-6:45 pm IT + hosting + operations working group</p></li>
-                <li><p class='time-slot-text'>6:00-7:00 pm <a href='/projects/engage'>Engage</a></p></li>
-                <li><p class='time-slot-text'>7:00-9:00 pm <a href='/projects/writeforall'>Write for All &trade;</a></p></li>
-                <li><p class='time-slot-text'>7:00-8:30 pm <a href='/projects/tdm-calculator'>TDM Calculator</a></p></li>
+        <div id="Wednesday">
+            <h3 class='day-header'>Wednesday</h3>
+            <ul id="Wednesday-List" class="schedule-list">
+                <li id="defaultWed">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Thursday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>7:00-8:00 pm <a href='/projects/311-data'>311 Data</a> management meeting</p></li>
-                <li><p class='time-slot-text'>6:00-7:00 pm <a href='/projects/civic-tech-index'>Civic Tech Index</a></p></li>
-                <li><p class='time-slot-text'>8:00-9:00 pm <a href='/projects/food-oasis'>Food Oasis</a></p></li>
+        <div id="Thursday">
+            <h3 class='day-header'>Thursday</h3>
+            <ul id="Thursday-List" class="schedule-list">
+                <li id="defaultThu">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Friday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li>No Scheduled Meetings</li>
+        <div id="Friday">
+            <h3 class='day-header'>Friday</h3>
+            <ul id="Friday-List" class="schedule-list">
+                <li id="defaultFri">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Saturday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>10:00-12:00 pm <a href='/projects/tdm-calculator'>TDM Calculator</a></p></li>
-                <li><p class='time-slot-text'>12:00-2:00 pm <a href='/projects/homeuniteus'>Home Unite US</a></p></li>
-                <li><p class='time-slot-text'>2:00-4:00 pm <a href='/projects/new-schools-today'>New Schools Today</a></p></li>
+        <div id="Saturday">
+            <h3 class='day-header'>Saturday</h3>
+            <ul id="Saturday-List" class="schedule-list">
+                <li id="defaultSat">No meetings scheduled today.</li>
             </ul>
         </div>
-        <h3 class='day-header'>Sunday</h3>
-        <div>
-            <ul class='schedule-list'>
-                <li><p class='time-slot-text'>10:00-12:00 pm <a href='/projects/website'>Hackforla.org Website</a></p></li>
-                <li><p class='time-slot-text'>12:00-2:00 pm <a href='/projects/website'>Hackforla.org Website</a> marketing team</p></li>
-                <li><p class='time-slot-text'>2:00-4:00 pm <a href='/projects/civic-tech-index'>Civic Tech Index</a></p></li>
+        <div id="Sunday">
+            <h3 class='day-header'>Sunday</h3>
+            <ul id="Sunday-List" class="schedule-list">
+                <li id="defaultSun">No meetings scheduled today.</li>
             </ul>
         </div>
     </div>
 </div>
+
+<script crossorigin="">
+    const API_URL = 'https://www.vrms.io/api/recurringevents';
+    const mondayList = document.querySelector("#Monday-List");
+    const tuesdayList = document.querySelector("#Tuesday-List");
+    const wednesdayList = document.querySelector("#Wednesday-List");
+    const thursdayList = document.querySelector("#Thursday-List");
+    const fridayList = document.querySelector("#Friday-List");
+    const saturdayList = document.querySelector("#Saturday-List");
+    const sundayList = document.querySelector("#Sunday-List");
+
+    const defaultMon = document.querySelector("#defaultMon");
+    const defaultTue = document.querySelector("#defaultTue");
+    const defaultWed = document.querySelector("#defaultWed");
+    const defaultThu = document.querySelector("#defaultThu");
+    const defaultFri = document.querySelector("#defaultFri");
+    const defaultSat = document.querySelector("#defaultSat");
+    const defaultSun = document.querySelector("#defaultSun");
+
+    let calendarFetch = fetch(API_URL, {method: 'GET'});
+
+    calendarFetch
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        for (let i = 0; i <= data.length; i++) {
+            let startTime = timeFormat(new Date(data[i].startTime));
+            let endTime = timeFormat(new Date(data[i].endTime));
+            let webURL = data[i].project.hflaWebsiteUrl;
+            let projectName = data[i].name;
+            let day = new Date(data[i].date).toString().substring(0,3);
+
+            if (day === "Mon") 
+            {
+                defaultMon.remove();
+                mondayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`);
+            }
+            else if (day === "Tue")
+            {
+                defaultTue.remove();
+                tuesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+            else if (day === "Wed")
+            {
+                defaultWed.remove();
+                wednesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+            else if (day === "Thu")
+            {
+                defaultThu.remove();
+                thursdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+            else if (day === "Fri")
+            {
+                defaultFri.remove();
+                fridayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+            else if (day === "Sat")
+            {
+                defaultSat.remove();
+                saturdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+            else if (day === "Sun")
+            {
+                defaultSun.remove();
+                sundayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            }
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+    function timeFormat(time) {
+        hours = time.getHours();
+        minutes = time.getMinutes();
+
+        if (minutes == 0) {
+            minutes = minutes + "0";
+        }
+
+        if (hours < 12) {
+            return `${hours}:${minutes} am`;
+        }
+        else if (hours > 12){
+            hours = hours - 12;
+            return `${hours}:${minutes} pm`;
+        }
+        else if (hours = 12){
+            return `${hours}:${minutes} pm`;
+        }
+        
+    }
+
+
+</script>
