@@ -73,6 +73,7 @@ layout: default
     calendarFetch
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         for (let i = 0; i <= data.length; i++) {
             let startTime = timeFormat(new Date(data[i].startTime));
             let endTime = timeFormat(new Date(data[i].endTime));
@@ -83,41 +84,43 @@ layout: default
             if (day === "Mon") 
             {
                 defaultMon.remove();
-                mondayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`);
+                mondayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`);
             }
             else if (day === "Tue")
             {
                 defaultTue.remove();
-                tuesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                tuesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
             else if (day === "Wed")
             {
                 defaultWed.remove();
-                wednesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                wednesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
             else if (day === "Thu")
             {
                 defaultThu.remove();
-                thursdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                thursdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
             else if (day === "Fri")
             {
                 defaultFri.remove();
-                fridayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                fridayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
             else if (day === "Sat")
             {
                 defaultSat.remove();
-                saturdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                saturdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
             else if (day === "Sun")
             {
                 defaultSun.remove();
-                sundayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}" style="text-decoration: none;">${projectName}</a></li>`)
+                sundayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
             }
         }
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+        console.log(err);
+    })
 
     function timeFormat(time) {
         hours = time.getHours();
@@ -128,14 +131,14 @@ layout: default
         }
 
         if (hours < 12) {
-            return `${hours}:${minutes} A.M.`;
+            return `${hours}:${minutes} am`;
         }
         else if (hours > 12){
             hours = hours - 12;
-            return `${hours}:${minutes} P.M.`;
+            return `${hours}:${minutes} pm`;
         }
         else if (hours = 12){
-            return `${hours}:${minutes} P.M.`;
+            return `${hours}:${minutes} pm`;
         }
         
     }
