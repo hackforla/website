@@ -1,7 +1,94 @@
+<style>
+  a.filter-item {
+    text-decoration: none;
+  }
+
+  nav {
+    font-family: monospace;
+  }
+
+  ul.filter-list {
+    background: lightgray;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li.filter-item {
+    border: 1px solid black;
+    color: black;
+    background: lightgray;
+    display: block;
+    float: left;
+    padding: 1rem 3rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+  }
+
+  li.filter-item a {
+    color: black;
+  }
+
+  li.filter-item:hover,
+  li.filter-item:focus-within {
+    background: grey;
+    cursor: pointer;
+  }
+
+  li.filter-item:focus-within a {
+    outline: none;
+  }
+
+  ul.filter-list li ul {
+    background: lightgray;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+
+  ul.filter-list li:hover>ul,
+  ul.filter-list li:focus-within>ul,
+  ul.filter-list li ul:hover,
+  ul.filter-list li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block
+  }
+
+  ul.filter-list li ul li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hidden-project {
+    display: none;
+  }
+</style>
+
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
+
   <div class="page-contain projects-inner">
     <h2 class="project-header">Current Projects</h2>
+    <p class="project-pitch">
+      Have an idea? <a href="mailto:team@hackforla.org" class="btn btn-primary">Submit your pitch</a>
+    </p>
+  </div>
+
+  <div class="page-contain filter-toolbar" style="text-align: center;">
+    <ul class="filter-list" id="filter-list">
+    </ul>
+
+  </div>
+  <div class="page-contain projects-inner" style="clear: left;">
     <ul class="project-list unstyled-list">
       {% assign status_list = "Active, Rebooting, Completed, On Hold" | split: ", " %}
       {% for status in status_list %}
@@ -13,8 +100,210 @@
         {%- endfor -%}
       {%- endfor -%}
     </ul>
-    <p class="project-pitch">
-      Have an idea? <a href="mailto:team@hackforla.org" class="btn btn-primary">Submit your pitch</a>
-    </p>
   </div>
 </section>
+
+<script>
+
+  {% assign p = site.data.github-data | jsonify %}
+  let p = {{ p }};
+
+
+  // map of categories to a reverse index of value->record id / index
+
+  window.addEventListener('load', function () {
+
+    console.log('loading filter test script');
+
+    const recordIds = p.map(proj => proj.id);
+
+
+
+    const categoryFilter = new Map();
+
+    const markdownCategories = ['role'];
+
+    markdownCategories.forEach(category => {
+      console.log('creating reverse index for category: ' + category);
+      categoryFilter.set(category, new Map());
+    });
+
+    document.querySelectorAll(".project-card").forEach(element => {
+      console.log(`project card: ${element.id}`);
+
+      for (let category of categoryFilter.keys()) {
+        // console.log(`- getting p elements for category ${category}`);
+        element.querySelectorAll("." + category).forEach(roleElement => {
+
+          const role = roleElement.innerHTML;
+
+          console.log(`--- adding record ${element.id} to role ${role}`);
+
+          if (!categoryFilter.get(category).has(role)) {
+            categoryFilter.get(category).set(role, new Array());
+          }
+          categoryFilter.get(category).get(role).push(element.id);
+        });
+      }
+    })
+
+
+    /*
+    <li class="filter-item"><a href="#">Two</a>
+            <ul class="dropdown">
+              <li><a href="#">Sub-1</a></li>
+              <li><a href="#">Sub-2</a></li>
+              <li><a href="#">Sub-3</a></li>
+            </ul>
+          </li>
+    */
+
+    const jsonCategories = ['languages']
+
+
+    for(let category of jsonCategories) {
+
+      categoryFilter.set(category, new Map());
+
+      for (let project of p) {
+        const values = project[category]['data'];
+        console.log(`values for category '${category}': ${JSON.stringify(values)}`);
+        values.forEach(value => {
+          if(!categoryFilter.get(category).has(value)) {
+            categoryFilter.get(category).set(value, new Array());
+          }
+          categoryFilter.get(category).get(value).push(project.id);
+        })
+      }
+    }
+
+    let filters = new Map();
+
+    for (let [category, reverseIndex] of categoryFilter) {
+
+      const categoryDropdown = document.createElement('li');
+      categoryDropdown.setAttribute('class', 'filter-item');
+
+      const categoryTitle = document.createElement('a');
+      categoryTitle.appendChild(document.createTextNode(category));
+      categoryDropdown.appendChild(categoryTitle);
+
+      const termList = document.createElement('ul')
+      termList.setAttribute('class', 'dropdown');
+
+      for (let [term, ids] of reverseIndex) {
+        const termItem = document.createElement('li');
+
+        const text = `${term} (${ids.length})`;
+
+        const content = document.createElement('div');
+        const checkbox = document.createElement('input');
+        checkbox.setAttribute('type', 'checkbox');
+
+
+        const textSpan = document.createElement('span');
+        textSpan.setAttribute('id', `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`);
+        textSpan.innerHTML = text;
+
+        checkbox.addEventListener('input', function(event) {
+          console.log(`checking ${term} to ${event.target.checked}`);
+          if(!filters.has(category)) {
+            filters.set(category, new Set());
+          }
+          if(event.target.checked) {
+            filters.get(category).add(term);
+          } else {
+            filters.get(category).delete(term);
+          }
+
+          rerender();
+
+        });
+        content.appendChild(checkbox);
+
+
+        content.appendChild(textSpan);
+
+        termItem.appendChild(content);
+
+        termList.appendChild(termItem);
+      }
+
+      categoryDropdown.appendChild(termList);
+      document.querySelector("#filter-list").appendChild(categoryDropdown);
+
+    }
+
+
+    function setToStr(s) {
+      let str = '';
+      for(let item of s) {
+        str += item + ', ';
+      }
+     return str;
+    }
+
+    function rerender() {
+      console.log('rerendering...');
+
+      let allIds = new Set([...recordIds]);
+
+      console.log(`rerender(): allIds: ${JSON.stringify(setToStr(allIds))}`);
+
+      const elementsToHide = [];
+
+      
+      
+      for(let [category, terms] of filters) {
+        console.log(`rerender(): - category: ${JSON.stringify(category)}`);
+        console.log(`rerender(): - terms: ${JSON.stringify(setToStr(terms))}`);
+        if(terms && terms.size > 0) {
+          const s = new Set();
+          for(let term of terms) {
+            
+            console.log(`rerender(): ---- term: ${JSON.stringify(term)}`);
+            const recordswithterm = categoryFilter.get(category).get(term);
+            console.log(`rerender(): ---- recordswithterm: ${JSON.stringify(recordswithterm)}`);
+            for(let recordId of recordswithterm) {
+              console.log(`rerender(): ----- recordId: ${JSON.stringify(recordId)}`);
+              s.add(recordId);
+            }
+          }
+          allIds = new Set([...allIds].filter(id => s.has(id)));
+        }
+      }
+
+      const counts = new Map();
+
+      for(let [category, terms] of categoryFilter) {
+        counts.set(category, new Map());
+        for(let term of terms.keys()) {
+          const matching = new Set([...terms.get(term)].filter(id => allIds.has(id)));
+          counts.get(category).set(term, matching.size);
+          document.querySelector(`#${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`).innerHTML = `${term} (${matching.size})`;
+        }
+      }
+
+      console.log(`rerender(): done making set: ${JSON.stringify(setToStr(allIds))}`);
+      document.querySelectorAll(".project-card").forEach(element => {
+          console.log(`rerender(): project card: ${element.id}`);
+          if(!allIds.has(parseInt(element.id))) {
+            element.setAttribute('class', 'project-card hidden-project');
+          } else {
+            element.setAttribute('class', 'project-card');
+          }
+        });
+
+    }
+
+
+  });
+
+
+
+
+
+
+
+
+</script>

@@ -1,5 +1,5 @@
 {% assign project = include.project %}
-<li class="project-card">
+<li class="project-card" id="{{ project.identification }}">
   <div class="project-card-inner">
     {%- if project.project-homepage == false -%}
     <div class="project-tmb">
@@ -44,7 +44,7 @@
         <div class="project-needs">
           <strong>Looking for: </strong>
           {% for role in project.looking %}
-            <p style='display:inline;'> {{ role }}</p>{% if forloop.last == false %},{% endif %}
+            <p style='display:inline;' class="role"> {{ role }}</p>{% if forloop.last == false %},{% endif %}
           {% endfor %}
         </div>
       {%- endif -%}
