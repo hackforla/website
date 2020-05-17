@@ -18,5 +18,4 @@ links:
 location: Downtown LA
 partner: Department of Personnel
 status: Completed
-project-homepage: false
 ---

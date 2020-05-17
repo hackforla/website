@@ -75,7 +75,11 @@ layout: default
                         {% endfor %}
                     </ul>
                 {% endif %}
-
+                {% if page.status == "Completed" and page.completed-contact %}
+                    <p>If you would like to talk to us about this completed project, please reach out to {{ page.completed-contact }}</p>
+                {% elsif page.status == "Completed" %}
+                    <p>If you would like to talk to us about this completed project, please reach out to team@hackforla.org</p>
+                {% endif %}
             </div>
         </div>
         {% if page.status != "Completed" %}
@@ -129,7 +133,13 @@ layout: default
                     <div class='leader-card'>
                         <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
                         <div class='leader-description'>
-                            <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
+                            {% if page.status == "Completed" and item.links.linkedin %}
+                                <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
+                            {% elsif page.status == "Completed" %}
+                               <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
+                            {% else %}
+                                <p style='margin-block-end: 0.25em;'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
+                            {%  endif %}
                             <p style='margin-block-end: 0.25em;'><strong>Role: </strong>{{ item.role }}</p>
                         </div>
                     </div>
