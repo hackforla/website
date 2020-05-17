@@ -56,10 +56,12 @@
       </div>
       {%- endif -%}
 
-      {%- if project.frameworks -%}
-      <div class="project-frameworks">
-        <strong>Frameworks: </strong>
-        {{ project.frameworks }}
+      {%- if project.technologies -%}
+      <div class="project-technologies">
+        <strong>Technologies: </strong>
+        {% for tech in project.technologies %}
+          <p style='display:inline;'> {{ tech }}</p>{% if forloop.last == false %},{% endif %}
+        {% endfor %}
       </div>
       {%- endif -%}
     </div>
