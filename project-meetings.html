@@ -73,8 +73,7 @@ layout: default
     calendarFetch
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        for (let i = 0; i <= data.length; i++) {
+        for (let i = 0; i <= data.length - 1; i++) {
             let startTime = timeFormat(new Date(data[i].startTime));
             let endTime = timeFormat(new Date(data[i].endTime));
             let webURL = data[i].project.hflaWebsiteUrl;
