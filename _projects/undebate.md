@@ -23,7 +23,11 @@ looking:
   - React
   - UI/UX
   - Marketing/Branding/Social Media
-frameworks: Mongo, Express, React, Node (MERN)
+technologies: 
+  - Mongo
+  - Express
+  - React
+  - Node (MERN)
 location: Santa Monica + Remote
 partner: EnCiv.org, Ballotpedia.org
 status: Active

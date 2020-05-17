@@ -49,7 +49,9 @@ looking:
   - Backend Software Engineer
   - Advanced Data Scientist
   - Python Enthusiast
-frameworks: React-JS, PostgreSQL
+technologies: 
+  - React-JS
+  - PostgreSQL
 location: Santa Monica
 partner: Seeking
 tools: Google Colab, AWS
