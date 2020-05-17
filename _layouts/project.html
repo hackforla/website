@@ -55,8 +55,14 @@ layout: default
 
                 {% if page.tools %}<p><strong>Tools: </strong>{{ page.tools }}</p>{% endif %}
                 <p id='languages'><strong>Languages: </strong></p>
-                {% if page.technologies %}<p id='technologies'><strong>Technologies: </strong>{{ page.technologies }}</p>{% endif %}
-            </div>
+                {% if page.technologies %}
+                <p id='technologies'><strong>Technologies: </strong>
+                  {% for tech in page.technologies %}
+                    {{ tech }}{% if forloop.last == false %},{% endif %}
+                  {% endfor %}
+                </p>
+                {% endif %}            
+             </div>
 
             <!--Project Summary and Getting Started Button-->
             <div class='description-grid-item'>
