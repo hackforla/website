@@ -185,6 +185,12 @@
 .project-position-1 {
   padding: 40px 28px;
   margin: 0px 30px;
+  width: 50%;
+
+  @media #{$bp-below-mobile} {
+    flex-direction: column;
+    width: auto;
+  }
 
 }
 
