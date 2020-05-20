@@ -87,9 +87,7 @@ ProjectFilter.prototype = {
         const filtered = projects.filter(p => this.satisfiesConditions(p));
         const countReport = new Map();
 
-        // for(let [categoryName, valueSet] of this.conditions.entries()) {
         for(let [categoryName, valueSet] of this.valuesByCategory.entries()) {
-            // console.log(`getFilterReport: valueSet = ${JSON.stringify([...valueSet])}`);
 
             countReport.set(categoryName, new Map());
             valueSet.forEach(value => {
@@ -99,7 +97,6 @@ ProjectFilter.prototype = {
                         value, 
                         filtered.filter(p => {
                             const v = p.get(categoryName);
-                            // console.log(`getFilterReport: v = ${JSON.stringify(v)}`);
                             const isMatch = v.indexOf(value) >= 0;
                             return isMatch;
                         }).length
