@@ -105,118 +105,119 @@
 
 <script>
 
-  {% assign p = site.data.github-data | jsonify %}
-  let p = {{ p }};
-
+  {% assign p = site.data.data | jsonify %}
+  let projectData = {{ p }};
 
   // map of categories to a reverse index of value->record id / index
 
+  const filterCategories = ['languages', 'color', 'size', 'origin']
+
   window.addEventListener('load', function () {
 
-    console.log('loading filter test script');
 
-    const recordIds = p.map(proj => proj.id);
+    const projects = projectData.map(project => {
 
+      let record = filterCategories.reduce((rec, cur) => {
+        rec[cur] = project[cur]['data'];
+        return rec;
+      }, {});
 
+      record['id'] = project['id'];
 
-    const categoryFilter = new Map();
+      return new Project(record)
 
-    const markdownCategories = ['role'];
-
-    markdownCategories.forEach(category => {
-      console.log('creating reverse index for category: ' + category);
-      categoryFilter.set(category, new Map());
     });
 
-    document.querySelectorAll(".project-card").forEach(element => {
-      console.log(`project card: ${element.id}`);
+    const valuesByCategory = new Map();
+    projects.forEach(p => {
+      for (let key in p.data) {
+        if (key === 'id') {
+          continue;
+        }
+        if (!valuesByCategory.has(key)) {
+          valuesByCategory.set(key, new Set());
+        }
+        for (let v in p.data[key]) {
+          valuesByCategory.get(key).add(p.data[key][v]);
 
-      for (let category of categoryFilter.keys()) {
-        // console.log(`- getting p elements for category ${category}`);
-        element.querySelectorAll("." + category).forEach(roleElement => {
-
-          const role = roleElement.innerHTML;
-
-          console.log(`--- adding record ${element.id} to role ${role}`);
-
-          if (!categoryFilter.get(category).has(role)) {
-            categoryFilter.get(category).set(role, new Array());
-          }
-          categoryFilter.get(category).get(role).push(element.id);
-        });
+        }
       }
-    })
+    });
+
+    const projectFilter = new ProjectFilter(valuesByCategory);
+
+    let report = projectFilter.getFilterReport(projects);
 
 
-    /*
-    <li class="filter-item"><a href="#">Two</a>
-            <ul class="dropdown">
-              <li><a href="#">Sub-1</a></li>
-              <li><a href="#">Sub-2</a></li>
-              <li><a href="#">Sub-3</a></li>
-            </ul>
-          </li>
-    */
-
-    const jsonCategories = ['languages']
+    function applyFilter(filterReport) {
 
 
-    for(let category of jsonCategories) {
+      document.querySelectorAll(".project-card").forEach(element => {
+        if (filterReport.ids.indexOf(parseInt(element.id)) < 0) {
+          element.setAttribute('class', 'project-card hidden-project');
+        } else {
+          element.setAttribute('class', 'project-card');
+        }
+      });
 
-      categoryFilter.set(category, new Map());
 
-      for (let project of p) {
-        const values = project[category]['data'];
-        console.log(`values for category '${category}': ${JSON.stringify(values)}`);
-        values.forEach(value => {
-          if(!categoryFilter.get(category).has(value)) {
-            categoryFilter.get(category).set(value, new Array());
-          }
-          categoryFilter.get(category).get(value).push(project.id);
-        })
+      for(let category in report.counts) {
+        const termCounts = report.counts[category];
+        for(let term in termCounts) {
+          const cleanName = `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
+          const text = `${term} (${termCounts[term]})`;
+          document.getElementById(cleanName).innerHTML = text;
+        }
       }
+
     }
 
-    let filters = new Map();
+    for (let category in report.counts) {
 
-    for (let [category, reverseIndex] of categoryFilter) {
+      const termSet = report.counts[category];
 
+      // dropdown container - menu item
       const categoryDropdown = document.createElement('li');
       categoryDropdown.setAttribute('class', 'filter-item');
 
+      // dropdown label/trigger element
       const categoryTitle = document.createElement('a');
       categoryTitle.appendChild(document.createTextNode(category));
       categoryDropdown.appendChild(categoryTitle);
 
+      // dropdown menu
       const termList = document.createElement('ul')
       termList.setAttribute('class', 'dropdown');
 
-      for (let [term, ids] of reverseIndex) {
-        const termItem = document.createElement('li');
+      for (let term in termSet) {
 
-        const text = `${term} (${ids.length})`;
+        const count = termSet[term];
+
+        const termItem = document.createElement('li');
 
         const content = document.createElement('div');
         const checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
 
+        const text = `${term} (${count})`;
 
         const textSpan = document.createElement('span');
         textSpan.setAttribute('id', `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`);
         textSpan.innerHTML = text;
 
-        checkbox.addEventListener('input', function(event) {
-          console.log(`checking ${term} to ${event.target.checked}`);
-          if(!filters.has(category)) {
-            filters.set(category, new Set());
-          }
-          if(event.target.checked) {
-            filters.get(category).add(term);
+        checkbox.addEventListener('input', function (event) {
+
+
+          if (event.target.checked) {
+            projectFilter.addCondition(category, term);
           } else {
-            filters.get(category).delete(term);
+            projectFilter.removeCondition(category, term);
           }
 
-          rerender();
+          report = projectFilter.getFilterReport(projects);
+
+
+          applyFilter(report);
 
         });
         content.appendChild(checkbox);
@@ -234,74 +235,7 @@
 
     }
 
-
-    function setToStr(s) {
-      let str = '';
-      for(let item of s) {
-        str += item + ', ';
-      }
-     return str;
-    }
-
-    function rerender() {
-      console.log('rerendering...');
-
-      let allIds = new Set([...recordIds]);
-
-      console.log(`rerender(): allIds: ${JSON.stringify(setToStr(allIds))}`);
-
-      const elementsToHide = [];
-
-      
-      
-      for(let [category, terms] of filters) {
-        console.log(`rerender(): - category: ${JSON.stringify(category)}`);
-        console.log(`rerender(): - terms: ${JSON.stringify(setToStr(terms))}`);
-        if(terms && terms.size > 0) {
-          const s = new Set();
-          for(let term of terms) {
-            
-            console.log(`rerender(): ---- term: ${JSON.stringify(term)}`);
-            const recordswithterm = categoryFilter.get(category).get(term);
-            console.log(`rerender(): ---- recordswithterm: ${JSON.stringify(recordswithterm)}`);
-            for(let recordId of recordswithterm) {
-              console.log(`rerender(): ----- recordId: ${JSON.stringify(recordId)}`);
-              s.add(recordId);
-            }
-          }
-          allIds = new Set([...allIds].filter(id => s.has(id)));
-        }
-      }
-
-      const counts = new Map();
-
-      for(let [category, terms] of categoryFilter) {
-        counts.set(category, new Map());
-        for(let term of terms.keys()) {
-          const matching = new Set([...terms.get(term)].filter(id => allIds.has(id)));
-          counts.get(category).set(term, matching.size);
-          document.querySelector(`#${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`).innerHTML = `${term} (${matching.size})`;
-        }
-      }
-
-      console.log(`rerender(): done making set: ${JSON.stringify(setToStr(allIds))}`);
-      document.querySelectorAll(".project-card").forEach(element => {
-          console.log(`rerender(): project card: ${element.id}`);
-          if(!allIds.has(parseInt(element.id))) {
-            element.setAttribute('class', 'project-card hidden-project');
-          } else {
-            element.setAttribute('class', 'project-card');
-          }
-        });
-
-    }
-
-
   });
-
-
-
-
 
 
 
