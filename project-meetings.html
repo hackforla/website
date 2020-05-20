@@ -7,50 +7,39 @@ layout: default
         <p class='meetings-message'>All meetings are currently online due to COVID19.<br>Details about a team’s meeting can be obtained in each team’s slack channel.</p>
         <div id="Monday">
             <h3 class='day-header'>Monday</h3>
-            <ul id="Monday-List" class="schedule-list">
-                <li id="defaultMon">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Monday-List" class="schedule-list"></ul>
         </div>
         <div id="Tuesday">
             <h3 class='day-header'>Tuesday</h3>
-            <ul id="Tuesday-List" class="schedule-list">
-                <li id="defaultTue">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Tuesday-List" class="schedule-list"></ul>
         </div>
         <div id="Wednesday">
             <h3 class='day-header'>Wednesday</h3>
-            <ul id="Wednesday-List" class="schedule-list">
-                <li id="defaultWed">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Wednesday-List" class="schedule-list"></ul>
         </div>
         <div id="Thursday">
             <h3 class='day-header'>Thursday</h3>
-            <ul id="Thursday-List" class="schedule-list">
-                <li id="defaultThu">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Thursday-List" class="schedule-list"></ul>
         </div>
         <div id="Friday">
             <h3 class='day-header'>Friday</h3>
-            <ul id="Friday-List" class="schedule-list">
-                <li id="defaultFri">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Friday-List" class="schedule-list"></ul>
         </div>
         <div id="Saturday">
             <h3 class='day-header'>Saturday</h3>
-            <ul id="Saturday-List" class="schedule-list">
-                <li id="defaultSat">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Saturday-List" class="schedule-list"></ul>
         </div>
         <div id="Sunday">
             <h3 class='day-header'>Sunday</h3>
-            <ul id="Sunday-List" class="schedule-list">
-                <li id="defaultSun">No meetings scheduled today.</li>
-            </ul>
+            <ul id="Sunday-List" class="schedule-list"></ul>
         </div>
     </div>
 </div>
 
-<script crossorigin="">
+<script>
+    {% assign meetingTimes = site.data.project-meetings-from-vrms | jsonify %}
+    let meetingTimes = {{ meetingTimes }};
+
     const API_URL = 'https://www.vrms.io/api/recurringevents';
     const mondayList = document.querySelector("#Monday-List");
     const tuesdayList = document.querySelector("#Tuesday-List");
@@ -60,61 +49,152 @@ layout: default
     const saturdayList = document.querySelector("#Saturday-List");
     const sundayList = document.querySelector("#Sunday-List");
 
-    const defaultMon = document.querySelector("#defaultMon");
-    const defaultTue = document.querySelector("#defaultTue");
-    const defaultWed = document.querySelector("#defaultWed");
-    const defaultThu = document.querySelector("#defaultThu");
-    const defaultFri = document.querySelector("#defaultFri");
-    const defaultSat = document.querySelector("#defaultSat");
-    const defaultSun = document.querySelector("#defaultSun");
-
     let calendarFetch = fetch(API_URL, {method: 'GET'});
 
-    calendarFetch
-    .then(response => response.json())
-    .then(data => {
-        for (let i = 0; i <= data.length - 1; i++) {
-            let startTime = timeFormat(new Date(data[i].startTime));
-            let endTime = timeFormat(new Date(data[i].endTime));
-            let webURL = data[i].project.hflaWebsiteUrl;
-            let projectName = data[i].name;
-            let day = new Date(data[i].date).toString().substring(0,3);
+    function schedule(scheduleData) {
+        let daysReceived = [];
+        let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        let daysMatched = [];
+        
 
-            if (day === "Mon") 
-            {
-                defaultMon.remove();
-                mondayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`);
+        for (let i = 0; i <= scheduleData.length - 1; i++) {
+            let startTime = timeFormat(new Date(scheduleData[i].startTime));
+            let endTime = timeFormat(new Date(scheduleData[i].endTime));
+            let webURL = scheduleData[i].project.hflaWebsiteUrl;
+            let projectName = scheduleData[i].name;
+            let day = new Date(scheduleData[i].date).toString().substring(0,3);
+            let scheduleClass;
+
+            daysReceived.push(day);
+
+            for (let j = 0; j <= daysReceived.length - 1; j ++) {
+            for (let k = 0; k <= days.length - 1; k++) {
+                    if (daysReceived[j] == days[k]) {
+                        daysMatched.push(days[k]);
+                    }
+                }
             }
-            else if (day === "Tue")
-            {
-                defaultTue.remove();
-                tuesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            function scheduleDay() {
+                let dayList;
+                if (scheduleData == meetingTimes) {
+                    scheduleClass = "meetingTimes";
+                } else {
+                    scheduleClass = "updated";
+                }
+                if ((day === "Mon")) {dayList = mondayList;}
+                else if ((day === "Tue")) {dayList = tuesdayList;}
+                else if ((day === "Wed")) {dayList = wednesdayList;}
+                else if ((day === "Thu")) {dayList = thursdayList;}
+                else if ((day === "Fri")) {dayList = fridayList;}
+                else if ((day === "Sat")) {dayList = saturdayList;}
+                else if ((day === "Sun")) {dayList = sundayList;}
+
+                dayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`);
             }
-            else if (day === "Wed")
-            {
-                defaultWed.remove();
-                wednesdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+            
+            scheduleDay(day);
+        }
+
+        let cleanArray = removeDuplicates(daysMatched);
+        let emptyDays = arr_diff(days, cleanArray);
+
+        if (emptyDays) {
+            function scheduleEmpty(emptyDays) {
+            for (let a = 0; a <= emptyDays.length -1; a++) {
+            let emptyDayList;
+            let day = emptyDays[a].toString();
+                if (scheduleData == meetingTimes) {
+                    scheduleClass = "meetingTimes";
+                } else {
+                    scheduleClass = "updated";
+                }
+                if ((day === "Mon")) {emptyDayList = mondayList;}
+                else if ((day === "Tue")) {emptyDayList = tuesdayList;}
+                else if ((day === "Wed")) {emptyDayList = wednesdayList;}
+                else if ((day === "Thu")) {emptyDayList = thursdayList;}
+                else if ((day === "Fri")) {emptyDayList = fridayList;}
+                else if ((day === "Sat")) {emptyDayList = saturdayList;}
+                else if ((day === "Sun")) {emptyDayList = sundayList;}
+
+            emptyDayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">There are no meetings scheduled.</li>`);
             }
-            else if (day === "Thu")
-            {
-                defaultThu.remove();
-                thursdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
+        }
+        scheduleEmpty(emptyDays)
+        }
+    }
+
+    function removeDuplicates(array) {
+            return array.filter((a, b) => array.indexOf(a) === b)
+        };
+
+    function arr_diff (a1, a2) {
+
+        let a = [], diff = [];
+
+        for (let i = 0; i < a1.length; i++) {
+            a[a1[i]] = true;
+        }
+
+        for (let i = 0; i < a2.length; i++) {
+            if (a[a2[i]]) {
+                delete a[a2[i]];
+            } else {
+                a[a2[i]] = true;
             }
-            else if (day === "Fri")
-            {
-                defaultFri.remove();
-                fridayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
-            }
-            else if (day === "Sat")
-            {
-                defaultSat.remove();
-                saturdayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
-            }
-            else if (day === "Sun")
-            {
-                defaultSun.remove();
-                sundayList.insertAdjacentHTML("beforeend", `<li>${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`)
-            }
+        }
+
+        for (let k in a) {
+            diff.push(k);
+        }
+
+        return diff;
+        // console.log(diff)
+    }
+
+    function clearSchedule() {
+        ///let container = document.getElementById("container");
+        let prevMonList = mondayList.getElementsByClassName("meetingTimes");
+        let prevTueList = tuesdayList.getElementsByClassName("meetingTimes");
+        let prevWedList = wednesdayList.getElementsByClassName("meetingTimes");
+        let prevThuList = thursdayList.getElementsByClassName("meetingTimes");
+        let prevFriList = fridayList.getElementsByClassName("meetingTimes");
+        let prevSatList = saturdayList.getElementsByClassName("meetingTimes");
+        let prevSunList = sundayList.getElementsByClassName("meetingTimes");
+
+        while (prevMonList[0]) {
+            prevMonList[0].parentNode.removeChild(prevMonList[0]);
+        }
+        while (prevTueList[0]) {
+            prevTueList[0].parentNode.removeChild(prevTueList[0]);
+        }
+        while (prevWedList[0]) {
+            prevWedList[0].parentNode.removeChild(prevWedList[0]);
+        }
+        while (prevThuList[0]) {
+            prevThuList[0].parentNode.removeChild(prevThuList[0]);
+        }
+        while (prevFriList[0]) {
+            prevFriList[0].parentNode.removeChild(prevFriList[0]);
+        }
+        while (prevSatList[0]) {
+            prevSatList[0].parentNode.removeChild(prevSatList[0]);
+        }
+        while (prevSunList[0]) {
+            prevSunList[0].parentNode.removeChild(prevSunList[0]);
+        }
+    }
+
+    schedule(meetingTimes);
+
+    calendarFetch
+        .then(response => response.json())
+        .then((data) => {
+            // console.log(data);
+            // console.log(meetingTimes);
+            // arr_diff(data, meetingTimes)
+        if (arr_diff(data, meetingTimes)) {
+            clearSchedule();
+            schedule(data);
         }
     })
     .catch(err => {
@@ -141,6 +221,4 @@ layout: default
         }
         
     }
-
-
 </script>
