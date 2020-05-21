@@ -1,78 +1,3 @@
-<style>
-  a.filter-item {
-    text-decoration: none;
-  }
-
-  nav {
-    font-family: monospace;
-  }
-
-  ul.filter-list {
-    background: lightgray;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  li.filter-item {
-    border: 1px solid black;
-    color: black;
-    background: lightgray;
-    display: block;
-    float: left;
-    padding: 1rem 3rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
-  }
-
-  li.filter-item a {
-    color: black;
-  }
-
-  li.filter-item:hover,
-  li.filter-item:focus-within {
-    background: grey;
-    cursor: pointer;
-  }
-
-  li.filter-item:focus-within a {
-    outline: none;
-  }
-
-  ul.filter-list li ul {
-    background: lightgray;
-    visibility: hidden;
-    opacity: 0;
-    min-width: 5rem;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
-    z-index: 1;
-  }
-
-  ul.filter-list li:hover>ul,
-  ul.filter-list li:focus-within>ul,
-  ul.filter-list li ul:hover,
-  ul.filter-list li ul:focus {
-    visibility: visible;
-    opacity: 1;
-    display: block
-  }
-
-  ul.filter-list li ul li {
-    clear: both;
-    width: 100%;
-    text-align: left;
-  }
-
-  .hidden-project {
-    display: none;
-  }
-</style>
-
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
 
@@ -107,7 +32,7 @@
 
   {% assign p = site.data.github-data | jsonify %}
   let projectData = {{ p }};
-
+  
 
   // demo random categories
   // const filterCategories = ['languages', 'color', 'size', 'origin']
