@@ -255,7 +255,7 @@ git merge upstream-gh-pages
 # If you do all your work on topic branches and keep gh-pages free of local modifications,
 # this merge should apply cleanly
 # Then push the merge changes to your GitHub fork
-git push gh-pages
+git push
 ```
 
 #### Incorporating changes into your topic branch
@@ -267,15 +267,15 @@ topic branch to GitHub (or shared it with another collaborator).
 
 ```bash
 git checkout 140-fix-logo-width
-git rebase master
+git rebase gh-pages
 ```
 
 If you receive warnings about conflicts, abort the rebase with `git
-rebase --abort` and instead merge master into your branch.
+rebase --abort` and instead merge gh-pages into your branch.
 
 ```bash
 git checkout 140-fix-logo-width
-git merge master
+git merge gh-pages
 ```
 
 #### Step 7 Complete the pull request
