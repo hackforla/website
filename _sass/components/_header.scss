@@ -50,8 +50,23 @@
       left: -20px;
     }
   }
+
+  .main-header-content {
+    display: flex;
+  }
+  
 }
 
 .main-header-content {
   display: flex;
 }
+
+.btn-donate { 
+  background-color: $color-black;
+  color: $color-white;
+}
+
+.btn-donate:hover {
+  background-color: $color-red;
+}
+
