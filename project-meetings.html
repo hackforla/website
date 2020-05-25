@@ -37,10 +37,13 @@ layout: default
 </div>
 
 <script>
-    {% assign meetingTimes = site.data.project-meetings-from-vrms | jsonify %}
-    let meetingTimes = {{ meetingTimes }};
+    // Assigns local JSON Data to localData variable
+    {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+    let localData = {{ localData }};
 
     const API_URL = 'https://www.vrms.io/api/recurringevents';
+
+    // Assigns variable to each header by ID
     const mondayList = document.querySelector("#Monday-List");
     const tuesdayList = document.querySelector("#Tuesday-List");
     const wednesdayList = document.querySelector("#Wednesday-List");
@@ -49,24 +52,29 @@ layout: default
     const saturdayList = document.querySelector("#Saturday-List");
     const sundayList = document.querySelector("#Sunday-List");
 
+    // GET request 
     let calendarFetch = fetch(API_URL, {method: 'GET'});
 
+    // Function schedules data that is passed in
     function schedule(scheduleData) {
         let daysReceived = [];
         let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         let daysMatched = [];
         
-
+        // Loops through data and assigns information to variables in a readable format
         for (let i = 0; i <= scheduleData.length - 1; i++) {
             let startTime = timeFormat(new Date(scheduleData[i].startTime));
             let endTime = timeFormat(new Date(scheduleData[i].endTime));
             let webURL = scheduleData[i].project.hflaWebsiteUrl;
-            let projectName = scheduleData[i].name;
+            let projectName = scheduleData[i].project.name;
+            let description = scheduleData[i].description;
             let day = new Date(scheduleData[i].date).toString().substring(0,3);
             let scheduleClass;
 
+            // Fills up array of days received to later check if any days are missing
             daysReceived.push(day);
 
+            // Checks if days received matches days of the week
             for (let j = 0; j <= daysReceived.length - 1; j ++) {
             for (let k = 0; k <= days.length - 1; k++) {
                     if (daysReceived[j] == days[k]) {
@@ -74,10 +82,13 @@ layout: default
                     }
                 }
             }
+            
+            // Function that adds data to proper header
             function scheduleDay() {
                 let dayList;
-                if (scheduleData == meetingTimes) {
-                    scheduleClass = "meetingTimes";
+                // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
+                if (scheduleData == localData) {
+                    scheduleClass = "localData";
                 } else {
                     scheduleClass = "updated";
                 }
@@ -89,22 +100,28 @@ layout: default
                 else if ((day === "Sat")) {dayList = saturdayList;}
                 else if ((day === "Sun")) {dayList = sundayList;}
 
-                dayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">${startTime} - ${endTime} <a href="${webURL}">${projectName}</a></li>`);
+                dayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">${startTime} - ${endTime} <a href="${webURL}">${projectName}</a> ${description}</li>`);
             }
             
             scheduleDay(day);
         }
 
+        // Removes duplicate days from days matched
         let cleanArray = removeDuplicates(daysMatched);
+
+        // Fills up array with days that have nothing scheduled
         let emptyDays = arr_diff(days, cleanArray);
 
+        // Passes in array of days with nothing scheduled
         if (emptyDays) {
+            // Function passes in array of days that outputs an li element w/ "There are no meeting scheduled" to days without meetings scheduled
             function scheduleEmpty(emptyDays) {
             for (let a = 0; a <= emptyDays.length -1; a++) {
             let emptyDayList;
             let day = emptyDays[a].toString();
-                if (scheduleData == meetingTimes) {
-                    scheduleClass = "meetingTimes";
+                // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
+                if (scheduleData == localData) {
+                    scheduleClass = "localData";
                 } else {
                     scheduleClass = "updated";
                 }
@@ -119,14 +136,17 @@ layout: default
             emptyDayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">There are no meetings scheduled.</li>`);
             }
         }
+        // Executes empty schedule
         scheduleEmpty(emptyDays)
         }
     }
 
+    // Function removes duplicates in an array
     function removeDuplicates(array) {
             return array.filter((a, b) => array.indexOf(a) === b)
         };
 
+    // Function checks for differences between two arrays
     function arr_diff (a1, a2) {
 
         let a = [], diff = [];
@@ -151,15 +171,15 @@ layout: default
         // console.log(diff)
     }
 
+    // Function clears the schedule
     function clearSchedule() {
-        ///let container = document.getElementById("container");
-        let prevMonList = mondayList.getElementsByClassName("meetingTimes");
-        let prevTueList = tuesdayList.getElementsByClassName("meetingTimes");
-        let prevWedList = wednesdayList.getElementsByClassName("meetingTimes");
-        let prevThuList = thursdayList.getElementsByClassName("meetingTimes");
-        let prevFriList = fridayList.getElementsByClassName("meetingTimes");
-        let prevSatList = saturdayList.getElementsByClassName("meetingTimes");
-        let prevSunList = sundayList.getElementsByClassName("meetingTimes");
+        let prevMonList = mondayList.getElementsByClassName("localData");
+        let prevTueList = tuesdayList.getElementsByClassName("localData");
+        let prevWedList = wednesdayList.getElementsByClassName("localData");
+        let prevThuList = thursdayList.getElementsByClassName("localData");
+        let prevFriList = fridayList.getElementsByClassName("localData");
+        let prevSatList = saturdayList.getElementsByClassName("localData");
+        let prevSunList = sundayList.getElementsByClassName("localData");
 
         while (prevMonList[0]) {
             prevMonList[0].parentNode.removeChild(prevMonList[0]);
@@ -184,15 +204,15 @@ layout: default
         }
     }
 
-    schedule(meetingTimes);
+    // Executes schedule with localData
+    schedule(localData);
 
+    // Fetchs JSON file from VRMS_API
     calendarFetch
         .then(response => response.json())
         .then((data) => {
-            // console.log(data);
-            // console.log(meetingTimes);
-            // arr_diff(data, meetingTimes)
-        if (arr_diff(data, meetingTimes)) {
+        // Checks for differences between localData and VRMS data
+        if (arr_diff(data, localData)) {
             clearSchedule();
             schedule(data);
         }
@@ -201,6 +221,7 @@ layout: default
         console.log(err);
     })
 
+    // Formats time to be readable
     function timeFormat(time) {
         hours = time.getHours();
         minutes = time.getMinutes();
@@ -218,6 +239,8 @@ layout: default
         }
         else if (hours = 12){
             return `${hours}:${minutes} pm`;
+        } else {
+            return `${hours}:${minutes} am`;
         }
         
     }
