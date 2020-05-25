@@ -700,7 +700,7 @@
           "github_url": "https://github.com/cnk",
           "avatar_url": "https://avatars1.githubusercontent.com/u/5952?v=4",
           "gravatar_id": "",
-          "contributions": 84
+          "contributions": 85
         },
         {
           "id": 7821047,
@@ -742,7 +742,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 23
+          "contributions": 24
         },
         {
           "id": 25378061,
@@ -763,7 +763,7 @@
           "github_url": "https://github.com/yulia-kh",
           "avatar_url": "https://avatars2.githubusercontent.com/u/13112628?v=4",
           "gravatar_id": "",
-          "contributions": 10
+          "contributions": 11
         },
         {
           "id": 26785124,
@@ -2067,7 +2067,7 @@
           "github_url": "https://github.com/fyliu",
           "avatar_url": "https://avatars3.githubusercontent.com/u/1160105?v=4",
           "gravatar_id": "",
-          "contributions": 99
+          "contributions": 101
         },
         {
           "id": 45305029,
@@ -2081,7 +2081,7 @@
           "github_url": "https://github.com/lemazza",
           "avatar_url": "https://avatars2.githubusercontent.com/u/32402365?v=4",
           "gravatar_id": "",
-          "contributions": 52
+          "contributions": 55
         },
         {
           "id": 43628838,
@@ -2937,6 +2937,7 @@
         "https://api.github.com/repos/civictechindex/website/contributors",
         "https://api.github.com/repos/civictechindex/brigade-project-index-statusboard/contributors",
         "https://api.github.com/repos/civictechindex/civictechindex-launch/contributors",
+        "https://api.github.com/repos/civictechindex/database/contributors",
         "https://api.github.com/repos/civictechindex/github-api-test/contributors",
         "https://api.github.com/repos/civictechindex/publiccode-pusher/contributors"
       ],
@@ -3005,18 +3006,19 @@
           "contributions": 3
         },
         {
-          "id": 52798256,
-          "github_url": "https://github.com/plocket",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/52798256?v=4",
-          "gravatar_id": "",
-          "contributions": 2
-        },
-        {
           "id": 5952,
           "github_url": "https://github.com/cnk",
           "avatar_url": "https://avatars1.githubusercontent.com/u/5952?v=4",
           "gravatar_id": "",
           "contributions": 1
+        },
+        "Cannot read property 'forEach' of undefined",
+        {
+          "id": 52798256,
+          "github_url": "https://github.com/plocket",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/52798256?v=4",
+          "gravatar_id": "",
+          "contributions": 2
         },
         {
           "id": 49699333,
