@@ -24,6 +24,7 @@
   margin-bottom: 0;
 
   a {
+
     &:link,
     &:visited {
       color: $color-black;
@@ -35,4 +36,8 @@
       color: darken($color-red, 10%);
     }
   }
+}
+
+.press-link {
+  color: black;
 }
