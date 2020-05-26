@@ -14,6 +14,8 @@
     min-height: 0;
   }
 
+
+
   &::after {
     @include position(absolute, 0 0 0 0);
     background: linear-gradient(
@@ -45,6 +47,10 @@
     max-height: 350px;
     min-height: 0;
   }
+}
+
+.meetingTime {
+  padding-bottom: 1rem;
 }
 
 .project-home-page {
