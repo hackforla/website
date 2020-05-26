@@ -75,9 +75,6 @@
       }
     });
 
-    // initialize project filter and get initial report (no filters applied yet)
-    const projectFilter = new ProjectFilter(valuesByCategory);
-    let report = projectFilter.getFilterReport(projects);
 
     // Hide cards not satisfying filter, update counts in dropdowns
     function applyFilter(filterReport) {
@@ -93,8 +90,8 @@
 
 
       // Assign updated counts to dropdown text
-      for(let category in report.counts) {
-        const termCounts = report.counts[category];
+      for(let category in filterReport.counts) {
+        const termCounts = filterReport.counts[category];
         for(let term in termCounts) {
           // const cleanName = `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
           const cleanName = cleanFieldName(category, term);
@@ -104,6 +101,12 @@
       }
 
     }
+
+    // initialize project filter and get initial report (no filters applied yet)
+    const projectFilter = new ProjectFilter(valuesByCategory);
+    projectFilter.populateFromUrlParams();
+
+    let report = projectFilter.getFilterReport(projects);
 
     // Render the filter toolbar
     for (let category in report.counts) {
@@ -155,6 +158,8 @@
 
           applyFilter(report);
 
+          projectFilter.propagateUrlParams();
+
         });
 
         // finalize build UI component
@@ -168,6 +173,18 @@
       categoryDropdown.appendChild(termList);
       document.querySelector("#filter-list").appendChild(categoryDropdown);
 
+      applyFilter(report);
+
+
+
+      for (let [categoryName, valueSet] of projectFilter.conditions.entries()) {
+        if (valueSet.size > 0) {
+          for(let v of valueSet) {
+            const cleanName = cleanFieldName(categoryName, v);
+            document.getElementById(cleanName).previousSibling.checked = true;
+          }
+        }
+      }
     }
 
   });

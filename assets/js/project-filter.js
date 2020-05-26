@@ -37,6 +37,43 @@ function ProjectFilter(valuesByCategory) {
 
 ProjectFilter.prototype = {
 
+    /** Add filters from URL params */
+    populateFromUrlParams: function() {
+        const params = getUrlSearchParams();
+        for(let [key, value] of params) {
+            if(value instanceof Array) {
+                for(let i in value) {
+                    this.addCondition(key, value[i]);
+                }
+            } else {
+                this.addCondition(key, value);
+            }
+        }
+    },
+
+    /** Add filters from URL params */
+    propagateUrlParams: function() {
+        if(this.conditions.size < 1) {
+            return;
+        }
+        let queryString = '?';
+        for (let [categoryName, valueSet] of this.conditions.entries()) {
+            if(valueSet.size < 1) {
+                continue;
+            }
+            queryString += categoryName + '=';
+
+            [...valueSet].forEach((value, index) => {
+                queryString += value;
+                if(index < valueSet.size - 1) {
+                    queryString += ',';
+                }
+            });
+            
+        }
+        window.history.replaceState(null, '', queryString);
+    },
+
     /** Create a filter entry for category, if necessary */
     addCategoryIfMissing: function (categoryName) {
         if (!this.conditions.has(categoryName)) {
@@ -148,3 +185,32 @@ function setToArr(s) {
 
 }
 
+
+/** Helper for initializing filter from query string (note: dedicated URLSearchParams API not supported in IE) */
+function getUrlSearchParams() {
+    const queryString = window.location.search;
+    const params = new Map();
+    if(queryString.length < 2) {
+        return params;
+    }
+    const components = queryString.slice(1).split('&');
+    for(let componentIndex in components) {
+        const component = components[componentIndex];
+
+        const tuple = component.split('=');
+        const key = tuple[0];
+        if(tuple[1].indexOf(',') < 0) {
+            params.set(key, tuple[1]);
+        } else {
+            const value = new Array();
+            const valuesStrings = tuple[1].split(',');
+            for(let valueIndex in valuesStrings) {
+                value.push(valuesStrings[valueIndex]);
+            }
+            params.set(key, value);
+        }
+        
+    }
+    return params;
+    
+}
