@@ -319,8 +319,6 @@ let meetingsToday = false;
 {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
 let localData = {{ localData }};
 
-console.log(localData);
-
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Assigns variable to each header by ID
@@ -379,8 +377,6 @@ function schedule(scheduleData) {
             else if ((day === "Sat")) {dayList = saturdayList;}
             else if ((day === "Sun")) {dayList = sundayList;}
 
-            console.log(projectTitle.toLowerCase().substring(3,6));
-
             if (projectTitle.toLowerCase().substring(0,4) === projectName.toLowerCase().substring(0, 4)
                 || projectTitle.toLowerCase().substring(3,9) === projectName.toLowerCase().substring(0, 6)) {
                 meetingsToday = true;
@@ -430,7 +426,6 @@ function arr_diff (a1, a2) {
     }
 
     return diff;
-    // console.log(diff)
 }
 
 // Function clears the schedule
