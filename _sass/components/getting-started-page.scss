@@ -147,16 +147,18 @@
 }
 
 .accordion:after {
-  content: "\232A";
+  content: "\221F";
   float: right;
-  transform: rotate(90deg);
+  transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
   color: rgb(250, 17, 79);
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .active::after {
-  content: "\232A";
-  transform: rotate(270deg);
+  content: "\221F";
+  transform: rotate(135deg);
   transition: transform 0.25s ease-in;
 }
 
