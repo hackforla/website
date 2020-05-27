@@ -318,10 +318,8 @@ let projectTitle = '{{ page.title }}';
 {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
 let localData = {{ localData }};
 
-const API_URL = 'https://www.vrms.io/api/recurringevents';
-
 // GET request 
-let calendarFetch = fetch(API_URL, {method: 'GET'});
+let calendarFetch = fetch('https://www.vrms.io/api/recurringevents', {method: 'GET'});
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
@@ -344,8 +342,7 @@ function schedule(scheduleData) {
             } else {
                 scheduleClass = "updated";
             }
-            if (projectTitle.toLowerCase().substring(0,4) === projectName.toLowerCase().substring(0, 4)
-                || projectTitle.toLowerCase().substring(3,9) === projectName.toLowerCase().substring(0, 6)) {
+            if (projectTitle === projectName) {
                 meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
             }
         }
@@ -354,11 +351,6 @@ function schedule(scheduleData) {
 }
 
 meetingsHeader.insertAdjacentHTML("beforeend", '<strong>Meetings: </strong>');
-
-// Function removes duplicates in an array
-function removeDuplicates(array) {
-        return array.filter((a, b) => array.indexOf(a) === b)
-    };
 
 // Function checks for differences between two arrays
 function arr_diff (a1, a2) {
