@@ -326,9 +326,6 @@ let calendarFetch = fetch(API_URL, {method: 'GET'});
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
-    let daysReceived = [];
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    let daysMatched = [];
     
     // Loops through data and assigns information to variables in a readable format
     for (let i = 0; i <= scheduleData.length - 1; i++) {
@@ -339,35 +336,15 @@ function schedule(scheduleData) {
         let description = scheduleData[i].description;
         let day = new Date(scheduleData[i].date).toString().substring(0,3);
         let scheduleClass;
-
-        // Fills up array of days received to later check if any days are missing
-        daysReceived.push(day);
-        // Checks if days received matches days of the week
-        for (let j = 0; j <= daysReceived.length - 1; j ++) {
-        for (let k = 0; k <= days.length - 1; k++) {
-                if (daysReceived[j] == days[k]) {
-                    daysMatched.push(days[k]);
-                }
-            }
-        }
         
         // Function that adds data to proper header
         function scheduleDay() {
-            let dayList;
             // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
             if (scheduleData == localData) {
                 scheduleClass = "localData";
             } else {
                 scheduleClass = "updated";
             }
-            if ((day === "Mon")) {dayList = meetingsList;}
-            else if ((day === "Tue")) {dayList = meetingsList;}
-            else if ((day === "Wed")) {dayList = meetingsList;}
-            else if ((day === "Thu")) {dayList = meetingsList;}
-            else if ((day === "Fri")) {dayList = meetingsList;}
-            else if ((day === "Sat")) {dayList = meetingsList;}
-            else if ((day === "Sun")) {dayList = meetingsList;}
-
             if (projectTitle.toLowerCase().substring(0,4) === projectName.toLowerCase().substring(0, 4)
                 || projectTitle.toLowerCase().substring(3,9) === projectName.toLowerCase().substring(0, 6)) {
                 meetingsToday = true;
@@ -380,14 +357,7 @@ function schedule(scheduleData) {
     // Adds Meetings: to project page
     if (meetingsToday === true) {
                 meetingsHeader.insertAdjacentHTML("beforeend", '<strong>Meetings: </strong>');
-            }
-
-    // Removes duplicate days from days matched
-    let cleanArray = removeDuplicates(daysMatched);
-
-    // Fills up array with days that have nothing scheduled
-    let emptyDays = arr_diff(days, cleanArray);
-
+        }
 }
 
 // Function removes duplicates in an array
