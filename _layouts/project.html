@@ -64,7 +64,7 @@ layout: default
                 {% endif %}
                 <p class="meetingsHeader"></p>
                 <div id="meetings">
-                    <ul class="meeting-times">
+                    <ul class="meeting-times-list">
                     </ul> 
                 </div>           
              </div>
@@ -310,7 +310,7 @@ layout: default
 </script>
 <script>
 // Script for adding meeting times to "meetings" Section
-let meetingsList = document.querySelector('.meeting-times');
+let meetingsList = document.querySelector('.meeting-times-list');
 let meetingsHeader = document.querySelector('.meetingsHeader');
 let projectTitle = '{{ page.title }}';
 let meetingsToday = false;
@@ -319,16 +319,7 @@ let meetingsToday = false;
 {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
 let localData = {{ localData }};
 
-const API_URL = 'https://www.vrms.io/api/recurringevents';
-
-// Assigns variable to each header by ID
-const mondayList = document.querySelector("#Monday-List");
-const tuesdayList = document.querySelector("#Tuesday-List");
-const wednesdayList = document.querySelector("#Wednesday-List");
-const thursdayList = document.querySelector("#Thursday-List");
-const fridayList = document.querySelector("#Friday-List");
-const saturdayList = document.querySelector("#Saturday-List");
-const sundayList = document.querySelector("#Sunday-List");
+const API_URL = 'https://www.vrms.io/api/recurringevents!';
 
 // GET request 
 let calendarFetch = fetch(API_URL, {method: 'GET'});
@@ -369,13 +360,13 @@ function schedule(scheduleData) {
             } else {
                 scheduleClass = "updated";
             }
-            if ((day === "Mon")) {dayList = mondayList;}
-            else if ((day === "Tue")) {dayList = tuesdayList;}
-            else if ((day === "Wed")) {dayList = wednesdayList;}
-            else if ((day === "Thu")) {dayList = thursdayList;}
-            else if ((day === "Fri")) {dayList = fridayList;}
-            else if ((day === "Sat")) {dayList = saturdayList;}
-            else if ((day === "Sun")) {dayList = sundayList;}
+            if ((day === "Mon")) {dayList = meetingsList;}
+            else if ((day === "Tue")) {dayList = meetingsList;}
+            else if ((day === "Wed")) {dayList = meetingsList;}
+            else if ((day === "Thu")) {dayList = meetingsList;}
+            else if ((day === "Fri")) {dayList = meetingsList;}
+            else if ((day === "Sat")) {dayList = meetingsList;}
+            else if ((day === "Sun")) {dayList = meetingsList;}
 
             if (projectTitle.toLowerCase().substring(0,4) === projectName.toLowerCase().substring(0, 4)
                 || projectTitle.toLowerCase().substring(3,9) === projectName.toLowerCase().substring(0, 6)) {
@@ -430,34 +421,10 @@ function arr_diff (a1, a2) {
 
 // Function clears the schedule
 function clearSchedule() {
-    let prevMonList = mondayList.getElementsByClassName("localData");
-    let prevTueList = tuesdayList.getElementsByClassName("localData");
-    let prevWedList = wednesdayList.getElementsByClassName("localData");
-    let prevThuList = thursdayList.getElementsByClassName("localData");
-    let prevFriList = fridayList.getElementsByClassName("localData");
-    let prevSatList = saturdayList.getElementsByClassName("localData");
-    let prevSunList = sundayList.getElementsByClassName("localData");
+    let prevDayList = meetingsList.getElementsByClassName("localData");
 
-    while (prevMonList[0]) {
-        prevMonList[0].parentNode.removeChild(prevMonList[0]);
-    }
-    while (prevTueList[0]) {
-        prevTueList[0].parentNode.removeChild(prevTueList[0]);
-    }
-    while (prevWedList[0]) {
-        prevWedList[0].parentNode.removeChild(prevWedList[0]);
-    }
-    while (prevThuList[0]) {
-        prevThuList[0].parentNode.removeChild(prevThuList[0]);
-    }
-    while (prevFriList[0]) {
-        prevFriList[0].parentNode.removeChild(prevFriList[0]);
-    }
-    while (prevSatList[0]) {
-        prevSatList[0].parentNode.removeChild(prevSatList[0]);
-    }
-    while (prevSunList[0]) {
-        prevSunList[0].parentNode.removeChild(prevSunList[0]);
+    while (prevDayList[0]) {
+        prevDayList[0].parentNode.removeChild(prevDayList[0]);
     }
 }
 
@@ -472,7 +439,7 @@ calendarFetch
     if (arr_diff(data, localData)) {
         clearSchedule();
         schedule(data);
-    }
+    } 
 })
 .catch(err => {
     console.log(err);
