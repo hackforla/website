@@ -317,9 +317,7 @@ let projectTitle = '{{ page.title }}';
 // Assigns local JSON Data to localData variable
 {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
 let localData = {{ localData }};
-
-// GET request 
-let calendarFetch = fetch('https://www.vrms.io/api/recurringevents', {method: 'GET'});
+const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
@@ -389,7 +387,7 @@ function clearSchedule() {
 schedule(localData);
 
 // Fetchs JSON file from VRMS_API
-calendarFetch
+fetch(API_URL, {method: 'GET'})
     .then(response => response.json())
     .then((data) => {
     // Checks for differences between localData and VRMS data
