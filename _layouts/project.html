@@ -62,8 +62,8 @@ layout: default
                 <p class="meetingsHeader"></p>
                 <div id="meetings">
                     <ul class="meeting-times-list">
-                    </ul> 
-                </div>           
+                    </ul>
+                </div>
              </div>
 
             <!--Project Summary and Getting Started Button-->
@@ -276,44 +276,47 @@ layout: default
 <!--Script for constructing Getting Started call to action message-->
 <script>
     let helpGettingStarted = document.getElementById('help-getting-started');
-    let textDiv = document.createElement('div');
-    textDiv.setAttribute('id', 'help-make-text-section');
+    if (helpGettingStarted) {
+        let textDiv = document.createElement('div');
+        textDiv.setAttribute('id', 'help-make-text-section');
 
-    let hflaSlack = document.createElement('a');
-    hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
-    hflaSlack.setAttribute('target', '_blank');
-    let hflaSlackText = document.createTextNode('Hack for LA');
-    hflaSlack.appendChild(hflaSlackText);
+        let hflaSlack = document.createElement('a');
+        hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
+        hflaSlack.setAttribute('target', '_blank');
+        let hflaSlackText = document.createTextNode('Hack for LA');
+        hflaSlack.appendChild(hflaSlackText);
 
-    let projectSlack = document.createElement('a');
-    {% for item in page.links %}
-        {% if item.name == 'Slack' %}
-            projectSlack.setAttribute('href', '{{ item.url }}')
-            projectSlack.setAttribute('target', '_blank');
-        {% endif %}
-    {% endfor %}
-    let projectSlackText = document.createTextNode('our');
-    projectSlack.appendChild(projectSlackText);
+        let projectSlack = document.createElement('a');
+        {% for item in page.links %}
+            {% if item.name == 'Slack' %}
+                projectSlack.setAttribute('href', '{{ item.url }}')
+                projectSlack.setAttribute('target', '_blank');
+            {% endif %}
+        {% endfor %}
+        let projectSlackText = document.createTextNode('our');
+        projectSlack.appendChild(projectSlackText);
 
-    let message = document.createElement('p');
-    message.style.width = '200px';
-    let text1 = document.createTextNode('Once you are on the ');
-    let text2 = document.createTextNode(' slack channel, please post a note in ');
-    let text3 = document.createTextNode(' channel indicating your interest.');
+        let message = document.createElement('p');
+        message.style.width = '200px';
+        let text1 = document.createTextNode('Once you are on the ');
+        let text2 = document.createTextNode(' slack channel, please post a note in ');
+        let text3 = document.createTextNode(' channel indicating your interest.');
 
-    message.appendChild(text1);
-    message.appendChild(hflaSlack);
-    message.appendChild(text2);
-    message.appendChild(projectSlack);
-    message.appendChild(text3);
-    textDiv.appendChild(message);
-    helpGettingStarted.insertAdjacentElement('afterend', textDiv);
+        message.appendChild(text1);
+        message.appendChild(hflaSlack);
+        message.appendChild(text2);
+        message.appendChild(projectSlack);
+        message.appendChild(text3);
+        textDiv.appendChild(message);
+        helpGettingStarted.insertAdjacentElement('afterend', textDiv);
+    }
 
     function helpMakeGuide(){
         let textDiv = document.getElementById('help-make-text-section');
         textDiv.style['min-width'] = '225px';
         textDiv.style.padding = '35px 15px';
     }
+
 </script>
 <script>
 // Script for adding meeting times to "meetings" Section
