@@ -10,6 +10,8 @@
   height: 46vw;
   max-height: 74vh;
 
+
+
   &::after {
     @include position(absolute, 0 0 0 0);
     background: linear-gradient(
@@ -35,6 +37,10 @@
       background: linear-gradient(to bottom, rgba(3,13,45,0.3) 30%, #030d2d 100%);
     }
   }
+}
+
+.meetingTime {
+  padding-bottom: 1rem;
 }
 
 .project-home-page {
