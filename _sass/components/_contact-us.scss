@@ -28,3 +28,22 @@
   flex-basis: 100%;
   flex: 1;
 }
+
+.volunteerWithUs {
+  margin: 0 5%;
+}
+
+.volunteerWithUs .row { 
+  width: 90%;
+}
+
+@media only screen and (max-device-width: 550px) {
+  //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
+  .volunteerWithUs .surveybtn {
+    margin: 0 0 15px 0 !important;
+  }
+
+  .subscribe {
+    margin: 5px 0 10px 0 !important;
+  }
+}
