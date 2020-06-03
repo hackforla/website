@@ -728,7 +728,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 32
+          "contributions": 33
         },
         {
           "id": 1783439,
@@ -1921,14 +1921,14 @@
           "github_url": "https://github.com/adamkendis",
           "avatar_url": "https://avatars3.githubusercontent.com/u/40484278?v=4",
           "gravatar_id": "",
-          "contributions": 247
+          "contributions": 265
         },
         {
           "id": 9143823,
           "github_url": "https://github.com/jmensch1",
           "avatar_url": "https://avatars3.githubusercontent.com/u/9143823?v=4",
           "gravatar_id": "",
-          "contributions": 200
+          "contributions": 201
         },
         {
           "id": 29147758,
@@ -2303,7 +2303,9 @@
         "PLpgSQL",
         "JavaScript",
         "HTML",
-        "CSS"
+        "Dockerfile",
+        "CSS",
+        "Shell"
       ]
     },
     "contributors": {
@@ -2316,7 +2318,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 356
+          "contributions": 363
         },
         {
           "id": 22228236,
@@ -2340,18 +2342,18 @@
           "contributions": 23
         },
         {
+          "id": 6464919,
+          "github_url": "https://github.com/jafow",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/6464919?v=4",
+          "gravatar_id": "",
+          "contributions": 14
+        },
+        {
           "id": 33523751,
           "github_url": "https://github.com/lucas-homer",
           "avatar_url": "https://avatars1.githubusercontent.com/u/33523751?v=4",
           "gravatar_id": "",
           "contributions": 13
-        },
-        {
-          "id": 6464919,
-          "github_url": "https://github.com/jafow",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/6464919?v=4",
-          "gravatar_id": "",
-          "contributions": 8
         },
         {
           "id": 1853260,
@@ -2804,14 +2806,14 @@
           "github_url": "https://github.com/arshiamasih",
           "avatar_url": "https://avatars2.githubusercontent.com/u/23245081?v=4",
           "gravatar_id": "",
-          "contributions": 70
+          "contributions": 86
         },
         {
           "id": 9952154,
           "github_url": "https://github.com/tylerthome",
           "avatar_url": "https://avatars1.githubusercontent.com/u/9952154?v=4",
           "gravatar_id": "",
-          "contributions": 55
+          "contributions": 56
         },
         {
           "id": 48224444,
