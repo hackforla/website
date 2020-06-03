@@ -7,29 +7,29 @@
 - name: Twitter
   link: https://twitter.com/HackForLA
   icon: /svg/icon-twitter.svg
-  header: true
+  header: false
   footer: true
 
 - name: Slack
   link: https://hackforla-slack.herokuapp.com/
   icon: /svg/icon-slack.svg
-  header: true
+  header: false
   footer: true
 
 - name: Facebook
   link: https://www.facebook.com/hackforla
   icon: /svg/icon-facebook.svg
-  header: true
+  header: false
   footer: true
 
 - name: Medium
   link: https://medium.com/hack-for-la
   icon: /svg/icon-medium.svg
-  header: true
+  header: false
   footer: true
 
 - name: Github
   link: https://github.com/hackforla
   icon: /svg/icon-github.svg
-  header: true
+  header: false
   footer: true
