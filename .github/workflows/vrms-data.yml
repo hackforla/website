@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: '0 10 * * *'
 
+jobs:
   vrms_data:
     runs-on: ubuntu-latest
 
