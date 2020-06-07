@@ -13,12 +13,16 @@
   list_class_name:
   icon: /svg/icon-press.svg
 
-- name: About
-  link: "/#about"
+# - name: About
+#   link: "/#about"
+#   list_class_name:
+#   icon: /svg/icon-about.svg
+
+- name: Connect
+  link: "/#contact"
   list_class_name:
   icon: /svg/icon-about.svg
-
-- name: Contact Us
-  link: "/#contact"
-  list_class_name: hide-mobile
-  icon:
+# - name: Contact Us
+#   link: "/#contact"
+#   list_class_name: hide-mobile
+#   icon:
