@@ -35,28 +35,59 @@
   
 
   // demo random categories
-  // const filterCategories = ['languages', 'color', 'size', 'origin']
+  // const githubFilterCategories = ['languages', 'color', 'size', 'origin']
 
-  const filterCategories = ['languages']
+  const githubFilterCategories = ['languages']
 
   window.addEventListener('load', function () {
 
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
 
+    const htmlFieldValues = new Map();
+
+    // additional data from html generated from yaml files
+    document.querySelectorAll('.project-card').forEach((node) => {
+      
+      try {
+
+        const locationValue = node.querySelector('.project-location').lastChild.textContent.trim();
+        const statusValue = node.querySelector('.status-text').lastChild.textContent.trim();
+        htmlFieldValues.set(node.id, {locationValue, statusValue});        
+
+      } catch(e) {
+
+        console.log(`Error for node '${node.id}': ${e}`);
+
+      }
+      
+    });
+
     // Add project data to encapsulated objects compatible with filtering library
     const projects = projectData.map(project => {
 
-      let record = filterCategories.reduce((rec, cur) => {
+      let record = githubFilterCategories.reduce((rec, cur) => {
         rec[cur] = project[cur]['data'];
         return rec;
       }, {});
 
       record['id'] = project['id'];
 
+      // const projectId = parseInt(project['id']);
+      const projectId = project['id'].toString();
+      
+      if(htmlFieldValues.has(projectId)) {
+        record['location'] = [htmlFieldValues.get(projectId)['locationValue']];
+        record['status'] = [htmlFieldValues.get(projectId)['statusValue']];
+      } else {
+        record['location'] = ['Unspecified'];
+        record['status'] = ['Unspecified'];
+      }
+
       return new Project(record)
 
     });
+
 
     // Collect all possible filter values for count computation
     const valuesByCategory = new Map();
@@ -126,6 +157,7 @@
       const termList = document.createElement('ul')
       termList.setAttribute('class', 'dropdown');
 
+
       for (let term in termSet) {
 
         const count = termSet[term];
@@ -173,11 +205,9 @@
       categoryDropdown.appendChild(termList);
       document.querySelector("#filter-list").appendChild(categoryDropdown);
 
-      applyFilter(report);
+    }
 
-
-
-      for (let [categoryName, valueSet] of projectFilter.conditions.entries()) {
+    for (let [categoryName, valueSet] of projectFilter.conditions.entries()) {
         if (valueSet.size > 0) {
           for(let v of valueSet) {
             const cleanName = cleanFieldName(categoryName, v);
@@ -185,7 +215,8 @@
           }
         }
       }
-    }
+
+    applyFilter(report);
 
   });
 

@@ -64,12 +64,16 @@ ProjectFilter.prototype = {
             queryString += categoryName + '=';
 
             [...valueSet].forEach((value, index) => {
-                queryString += value;
+                queryString += value.replace(' ', '+');
                 if(index < valueSet.size - 1) {
                     queryString += ',';
                 }
             });
-            
+
+            queryString += '&';            
+        }
+        if(queryString[queryString.length - 1] === '&') {
+            queryString = queryString.slice(0,queryString.length - 1);
         }
         window.history.replaceState(null, '', queryString);
     },
@@ -118,6 +122,35 @@ ProjectFilter.prototype = {
 
     },
 
+    /** Check all indicated filter constraints against a single record */
+    satisfiesConditionsExceptCategory: function (project, category) {
+        for (let [categoryName, valueSet] of this.conditions.entries()) {
+            
+            if(categoryName === category) {
+                continue;
+            }
+
+            if(valueSet.size < 1) {
+                // when no filter is set for a given category, 
+                //   all records should satisfy the condition
+                continue;
+            }
+            let conditionMet = false;
+            const values = project.get(categoryName);
+            for (let value in values) {
+                if (valueSet.has(values[value])) {
+                    conditionMet = true;
+                    break;
+                }
+            }
+            if (!conditionMet) {
+                return false;
+            }
+        }
+        return true;
+
+    },
+
     /** Return record IDs satisfying filter, and the updated counts associated with each field value */
     getFilterReport: function(projects) {
 
@@ -125,20 +158,23 @@ ProjectFilter.prototype = {
         const countReport = new Map();
 
         for(let [categoryName, valueSet] of this.valuesByCategory.entries()) {
-
+            
             countReport.set(categoryName, new Map());
+            
+            // for every term in this category, count how many projects have 
+            //    this value in their term list
             valueSet.forEach(value => {
                 countReport
                     .get(categoryName)
                     .set(
                         value, 
-                        filtered.filter(p => {
-                            const v = p.get(categoryName);
-                            const isMatch = v.indexOf(value) >= 0;
-                            return isMatch;
-                        }).length
+                        // filtered.filter(p => p.get(categoryName).indexOf(value) >= 0).length
+                        projects
+                            .filter(p => this.satisfiesConditionsExceptCategory(p, categoryName))
+                            .filter(p => p.get(categoryName).indexOf(value) >= 0)
+                            .length
                     );
-            })
+            });
 
         }
         return {
@@ -200,12 +236,12 @@ function getUrlSearchParams() {
         const tuple = component.split('=');
         const key = tuple[0];
         if(tuple[1].indexOf(',') < 0) {
-            params.set(key, tuple[1]);
+            params.set(key, tuple[1].replace('+', ' '));
         } else {
             const value = new Array();
             const valuesStrings = tuple[1].split(',');
             for(let valueIndex in valuesStrings) {
-                value.push(valuesStrings[valueIndex]);
+                value.push(valuesStrings[valueIndex].replace('+', ' '));
             }
             params.set(key, value);
         }
