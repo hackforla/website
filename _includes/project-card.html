@@ -44,7 +44,7 @@
         <div class="project-needs">
           <strong>Looking for: </strong>
           {% for role in project.looking %}
-            <p style='display:inline;' class="role"> {{ role }}</p>{% if forloop.last == false %},{% endif %}
+            <p class='project-card-field-inline'> {{ role }}</p>{% if forloop.last == false %},{% endif %}
           {% endfor %}
         </div>
       {%- endif -%}
@@ -56,10 +56,12 @@
       </div>
       {%- endif -%}
 
-      {%- if project.frameworks -%}
-      <div class="project-frameworks">
-        <strong>Frameworks: </strong>
-        {{ project.frameworks }}
+      {%- if project.technologies -%}
+      <div class="project-technologies">
+        <strong>Technologies: </strong>
+        {% for tech in project.technologies %}
+          <p class='project-card-field-inline'> {{ tech }}</p>{% if forloop.last == false %},{% endif %}
+        {% endfor %}
       </div>
       {%- endif -%}
     </div>

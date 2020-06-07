@@ -43,6 +43,7 @@
   color: $color-black;
 }
 
+
 .project-tmb-img {
   display: block;
   width: 100%;
@@ -102,4 +103,8 @@
 
 .status-Completed {
   background-color: rgb(255, 173, 173);
+}
+
+.project-card-field-inline {
+  display: inline;
 }

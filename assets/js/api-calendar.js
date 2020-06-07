@@ -68,10 +68,12 @@ function getCalendar() {
 
   function errEventsDisplay(calendarPillMessage) {
     const container = document.querySelector('.cal');
+    if (container) {
     const el = document.createElement('div');
     el.classList.add('cal-item');
     el.innerHTML = `<div class="type-h4 cal-item--title">${calendarPillMessage}</div>`;
     container.append(el);
+    }
   }
 
   const fetchURL = `${googleURL}${encodeURI(CALENDAR_ID)}/events?key=${CALENDAR_API}&singleEvents=true&timeMin=${timeMin}&orderBy=startTime`;
@@ -84,25 +86,27 @@ function getCalendar() {
   }
 
   function fetchCalendar(url) {
-    return fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })
-      .then(response => handleErrors(response))
-      .then((response) => {
-        const calendarEvents = filterCalendarEvents(response.items);
-        const mappedEvents = mapCalendarEvents(calendarEvents);
-        if (mappedEvents.length > 0) {
-          mappedEvents.forEach(insertDetails);
-        } else {
-          errEventsDisplay('No scheduled events other than Hack Nights.');
-        }
+    if (url == true) {
+      return fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       })
-      .catch(() => {
-        errEventsDisplay('Sorry, the Google Calendar API seems not to be working temporarily.  Please see our meetup link above for the latest events.');
-      });
+        .then(response => handleErrors(response))
+        .then((response) => {
+          const calendarEvents = filterCalendarEvents(response.items);
+          const mappedEvents = mapCalendarEvents(calendarEvents);
+          if (mappedEvents.length > 0) {
+            mappedEvents.forEach(insertDetails);
+          } else {
+            errEventsDisplay('No scheduled events other than Hack Nights.');
+          }
+        })
+        .catch(() => {
+          errEventsDisplay('Sorry, the Google Calendar API seems not to be working temporarily.  Please see our meetup link above for the latest events.');
+        });
+    }
   }
   fetchCalendar(fetchURL);
 }
