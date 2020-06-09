@@ -728,7 +728,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 38
+          "contributions": 39
         },
         {
           "id": 1783439,
@@ -2060,21 +2060,21 @@
           "github_url": "https://github.com/fyliu",
           "avatar_url": "https://avatars3.githubusercontent.com/u/1160105?v=4",
           "gravatar_id": "",
-          "contributions": 103
+          "contributions": 104
         },
         {
           "id": 45305029,
           "github_url": "https://github.com/nclairesays",
           "avatar_url": "https://avatars0.githubusercontent.com/u/45305029?v=4",
           "gravatar_id": "",
-          "contributions": 94
+          "contributions": 96
         },
         {
           "id": 32402365,
           "github_url": "https://github.com/lemazza",
           "avatar_url": "https://avatars2.githubusercontent.com/u/32402365?v=4",
           "gravatar_id": "",
-          "contributions": 59
+          "contributions": 60
         },
         {
           "id": 43628838,
@@ -2117,6 +2117,13 @@
           "avatar_url": "https://avatars3.githubusercontent.com/u/50686892?v=4",
           "gravatar_id": "",
           "contributions": 10
+        },
+        {
+          "id": 35116846,
+          "github_url": "https://github.com/alexchoiweb",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/35116846?v=4",
+          "gravatar_id": "",
+          "contributions": 6
         },
         {
           "id": 31966100,
@@ -2293,8 +2300,8 @@
     "languages": {
       "url": "https://api.github.com/repos/hackforla/food-oasis/languages",
       "data": [
-        "PLpgSQL",
         "JavaScript",
+        "PLpgSQL",
         "HTML",
         "Dockerfile",
         "CSS",
@@ -2311,7 +2318,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 368
+          "contributions": 380
         },
         {
           "id": 22228236,
@@ -2339,7 +2346,7 @@
           "github_url": "https://github.com/jafow",
           "avatar_url": "https://avatars1.githubusercontent.com/u/6464919?v=4",
           "gravatar_id": "",
-          "contributions": 15
+          "contributions": 16
         },
         {
           "id": 33523751,
@@ -2410,6 +2417,7 @@
         "Jupyter Notebook",
         "JavaScript",
         "CSS",
+        "Python",
         "HTML"
       ]
     },
@@ -2423,7 +2431,7 @@
           "github_url": "https://github.com/breeze-094",
           "avatar_url": "https://avatars2.githubusercontent.com/u/45272158?v=4",
           "gravatar_id": "",
-          "contributions": 94
+          "contributions": 96
         },
         {
           "id": 38476995,
@@ -2437,7 +2445,7 @@
           "github_url": "https://github.com/andy-vh",
           "avatar_url": "https://avatars2.githubusercontent.com/u/51978284?v=4",
           "gravatar_id": "",
-          "contributions": 6
+          "contributions": 14
         },
         {
           "id": 8117210,
