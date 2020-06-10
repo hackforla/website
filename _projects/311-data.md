@@ -46,6 +46,7 @@ links:
   - name: Join Us
     url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
 looking:
+  - Product Manager
   - Frontend Developers
   - Backend Developers
   - Backend Lead
