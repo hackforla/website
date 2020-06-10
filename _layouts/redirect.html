@@ -5,6 +5,7 @@
     <link rel="canonical" href="{{ page.redirect_to }}"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="refresh" content="0;url={{ page.redirect_to }}" />
+    <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}" />
 </head>
 <body>
