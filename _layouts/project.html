@@ -215,26 +215,40 @@ layout: default
 <!--Script for constructing Team Card-->
 <script>
     let contributors = document.getElementById('contributors-list');
+    // Empty array for valid contributors
+    let contributorsArray = [];
+
     if(project != null){
-        for(contributor of project.contributors.data){
-            let contributorDiv = document.createElement('div');
-            contributorDiv.classList.add('contributor-div');
+        for (contributor of project.contributors.data) {
+            // Checking for valid data
+            if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
+                // Pushing valid data to contributorsArray
+                contributorsArray.push(contributor);
+            } 
+        }
 
-            let contributorProfile = document.createElement('a');
-            contributorProfile.classList.add('contributor-link');
-            contributorProfile.setAttribute('href', contributor.github_url);
-            contributorProfile.setAttribute('target', '_blank');
-            let contributorUrl = contributor.github_url.split('/');
-            let contributorName = contributorUrl.pop();
-            contributorProfile.setAttribute('title', contributorName);
+        // Creates DOM elements for contributors
+        for(contributor of contributorsArray){
+            if (contributorsArray.length >= 1) {
+                let contributorDiv = document.createElement('div');
+                contributorDiv.classList.add('contributor-div');
 
-            let contributorImg = document.createElement('img');
-            contributorImg.style['border-radius'] = '12px';
-            contributorImg.setAttribute('src', contributor.avatar_url);
+                let contributorProfile = document.createElement('a');
+                contributorProfile.classList.add('contributor-link');
+                contributorProfile.setAttribute('href', contributor.github_url);
+                contributorProfile.setAttribute('target', '_blank');
+                let contributorUrl = contributor.github_url.split('/');
+                let contributorName = contributorUrl.pop();
+                contributorProfile.setAttribute('title', contributorName);
 
-            contributorProfile.appendChild(contributorImg);
-            contributorDiv.appendChild(contributorProfile);
-            contributors.appendChild(contributorDiv);
+                let contributorImg = document.createElement('img');
+                contributorImg.style['border-radius'] = '12px';
+                contributorImg.setAttribute('src', contributor.avatar_url);
+
+                contributorProfile.appendChild(contributorImg);
+                contributorDiv.appendChild(contributorProfile);
+                contributors.appendChild(contributorDiv);
+            }
         }
     } else {
         let messageDiv = document.createElement('div');
