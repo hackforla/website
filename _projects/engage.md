@@ -29,12 +29,9 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
 looking:
-  - Product Manager
-  - Project Manager
   - UX designers
-  - React developers
   - NLP engineers
-technologies: 
+technologies:
   - React
   - Django
   - SQL (PostgreSQL)

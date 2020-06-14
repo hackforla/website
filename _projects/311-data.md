@@ -50,7 +50,8 @@ looking:
   - Backend Developers
   - Backend Lead
   - DevOps
-technologies: 
+  - SDET
+technologies:
   - React / Redux
   - Flask (Sanic) / Pandas
   - Bulma

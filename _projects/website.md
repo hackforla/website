@@ -45,11 +45,10 @@ links:
   - name: Site
     url: 'https://www.hackforla.org'
 looking:
-  - UI (wireframes)
   - Photoshop
   - Junior JavaScript developers
   - anyone wanting to learn how to do Git commits in a collaborative work environment
-technologies: 
+technologies:
   - GitHub Pages
   - Jekyll
 location: Santa Monica, Downtown and Remote

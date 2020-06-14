@@ -43,7 +43,7 @@ leadership:
       slack: 'https://app.slack.com/team/UTRGDTE2Z'
       github: 'https://github.com/peteplass'
     picture: https://avatars.githubusercontent.com/peteplass
-links: 
+links:
   - name: Demo
     url: 'https://lacommunity.site/hosthome'
   - name: GitHub
@@ -53,8 +53,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'
 looking:
-  - UI (including wireframes, familiar with Figma)
-technologies: 
+technologies:
   - React
   - NoSQL
 location: Downtown LA and remote
