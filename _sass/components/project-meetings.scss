@@ -4,13 +4,12 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    // max-height: 700px;
-    // min-height: 40vh;
     position: relative;
 
     .project-meetings-header-text-container {
         width: 65%;
-        padding: 100px 0 0 40px;
+        max-width: 700px;
+        padding: 125px 0 0 60px;
 
         h1 {
             color: #000000;
