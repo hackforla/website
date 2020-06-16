@@ -1,34 +1,48 @@
-.project-page-header {
+.project-meetings-banner {
     background: $color-white;
-    height: 40vh;
+    height: 500px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    max-height: 600px;
-    min-height: 40vh;
-    padding: 20px;
-    margin: 0;
+    // max-height: 700px;
+    // min-height: 40vh;
     position: relative;
 
+    .project-meetings-header-text-container {
+        width: 65%;
+        padding: 100px 0 0 40px;
 
-    h1 {
-        color: #000000;
+        h1 {
+            color: #000000;
+            font-weight: normal;
+        }
     }
 
 }
 
 .covid-notification-banner {
     background-color: #f2c94d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    p {
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+        padding: 15px 0;
+    }
 }
 
-// .calendar-started-page {
-//     margin-top: 29px;
-//     background: #030d2d;
-//     min-height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// }
+.calendar-started-page {
+    background: #030d2d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .calendar-page-card {
     background: #fff;
