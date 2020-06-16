@@ -1,18 +1,40 @@
-.calendar-started-page {
-    margin-top: 29px;
-    background: #030d2d;
-    min-height: 100vh;
+.project-page-header {
+    background: $color-white;
+    height: 40vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-height: 600px;
+    min-height: 40vh;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+
+
+    h1 {
+        color: #000000;
+    }
+
 }
+
+.covid-notification-banner {
+    background-color: #f2c94d;
+}
+
+// .calendar-started-page {
+//     margin-top: 29px;
+//     background: #030d2d;
+//     min-height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
 
 .calendar-page-card {
     background: #fff;
-    border: 0 solid rgba(51,51,51,0.06);
+    border: 0 solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
     max-width: 896px;
     width: 100%;
@@ -29,15 +51,16 @@
 
 .schedule-list {
     list-style: none;
+
     li:before {
-      content: "\2022";
-      color: #fa114f;
-      font-weight: bold;
-      font-size: 28px;
-      display: inline-block;
-      width: 0.60em;
-      margin-left: -0.6em;
-      vertical-align: middle;
+        content: "\2022";
+        color: #fa114f;
+        font-weight: bold;
+        font-size: 28px;
+        display: inline-block;
+        width: 0.60em;
+        margin-left: -0.6em;
+        vertical-align: middle;
     }
 }
 
@@ -57,7 +80,7 @@
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
         margin-top: 60px;
-      }
+    }
 }
 
 .meetings-message {
