@@ -3,18 +3,18 @@ layout: default
 title: Project Meetings
 ---
 <!-- <div class='content-section'> -->
-    <div class='project-meetings-banner'>
-        <div class= 'project-meetings-header-text-container'>
-            <h1 class='team-meetings-title'>Project Team Meetings</h1>
-            <p>Please review the listing of project team meeting times to find a project that fits your schedule.
-                You are welcome to attend a project team meeting after you have completed <a href='#'>Onboarding</a>.
-                Details about a team's meeting can be obtained in each team's slack channel.
-            </p>
-        </div>
+<div class='project-meetings-banner'>
+    <div class='project-meetings-header-text-container'>
+        <h1 class='team-meetings-title'>Project Team Meetings</h1>
+        <p>Please review the listing of project team meeting times to find a project that fits your schedule.
+            You are welcome to attend a project team meeting after you have completed <a href='#'>Onboarding</a>.
+            Details about a team's meeting can be obtained in each team's slack channel.
+        </p>
     </div>
-    <div class='covid-notification-banner'>
-        <p class='meetings-message'>All meetings are currently online due to COVID19.</p>
-    </div>
+</div>
+<div class='covid-notification-banner'>
+    <p class='meetings-message'>All meetings are currently online due to COVID19.</p>
+</div>
 <div class='content-section calendar-started-page'>
     <div class='calendar-page-card'>
         <div id="Monday">
@@ -51,15 +51,8 @@ title: Project Meetings
 
 <script>
     // Assigns local JSON Data to localData variable
-    {
-        %
-        assign localData = site.data.project - meetings - from - vrms | jsonify %
-    }
-    let localData = {
-        {
-            localData
-        }
-    };
+    {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+    let localData = {{ localData }};
 
     const API_URL = 'https://www.vrms.io/api/recurringevents';
 
