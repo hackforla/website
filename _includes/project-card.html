@@ -1,5 +1,5 @@
 {% assign project = include.project %}
-<li class="project-card">
+<li class="project-card" id="{{ project.identification }}">
   <div class="project-card-inner">
     {%- if project.project-homepage == false -%}
     <div class="project-tmb">
