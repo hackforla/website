@@ -1,20 +1,34 @@
 .project-meetings-banner {
-    background: $color-white;
+    background: no-repeat url('/assets/images/project-meetings-page/project-meetings-banner-image.png'), $color-white;
+    background-position: center bottom 40px;
+    background-size: auto 45%;
     height: 500px;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
 
     .project-meetings-header-text-container {
-        width: 65%;
-        max-width: 700px;
-        padding: 125px 0 0 60px;
+        padding: 70px 0 0 0px;
+        display: flex;
+        flex-direction:column; 
+        align-items: center;
 
         h1 {
             color: #000000;
             font-weight: normal;
+            text-align: center;
+
         }
+        p {
+            width: 80%;
+            margin:auto;
+
+            @media (min-width: $screen-desktop) {
+                width: 65%;
+            }
+        }
+
     }
 
 }
