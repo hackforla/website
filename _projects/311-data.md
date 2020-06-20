@@ -51,6 +51,7 @@ looking:
   - Backend Lead
   - DevOps
   - SDET
+  - Project Manager
 technologies:
   - React / Redux
   - Flask (Sanic) / Pandas
