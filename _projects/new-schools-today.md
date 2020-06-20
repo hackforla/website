@@ -7,7 +7,7 @@ alt: "'Team working during meeting'"
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
 alt-hero: "'Team working during meeting'"
 leadership:
-  - name: Ben Swedlow
+  - name: Ben Swerdlow
     role: Tech Team Lead
     links:
       slack: 'https://app.slack.com/team/UKUHHS94L'
@@ -25,6 +25,12 @@ leadership:
       slack: 'https://app.slack.com/team/USM20BUFP'
       github: 'https://github.com/jacobzwang'
     picture: https://avatars.githubusercontent.com/jacobzwang
+  - name: Ethan Hopkins
+    role: Project Manager
+    links: 
+      slack: 'https://app.slack.com/team/UQUBHLPC2'
+      github: 'https://github.com/ethanh256'
+    picture: https://avatars.githubusercontent.com/ethanh256
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/new-schools-today'
