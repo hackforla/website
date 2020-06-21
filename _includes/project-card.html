@@ -44,7 +44,7 @@
         <div class="project-needs">
           <strong>Looking for: </strong>
           {% for role in project.looking %}
-            <p class='project-card-field-inline'> {{ role }}</p>{% if forloop.last == false %},{% endif %}
+            <p class='project-card-field-inline'> {% if role.skill %}{{ role.skill }}{% endif %}</p>{% if forloop.last == false %},{% endif %}
           {% endfor %}
         </div>
       {%- endif -%}
