@@ -41,12 +41,18 @@ links:
     - name: Wiki
       url: 'https://github.com/hackforla/new-schools-today/wiki'
 looking:
-  - Mobile Development
-  - Serverless PaaS Expertise
-  - UX knowledge
-  - React Web Development
-  - Marketing/Research
-  - any high school student or technical mentor interested
+  - category: Development
+    skill: Mobile Development
+  - category: Development
+    skill: Serverless PaaS Expertise
+  - category: UI/UX
+    skill: UX knowledge
+  - category: Development
+    skill: React Web Development
+  - category: SEO/Marketing
+    skill: Marketing/Research
+  - category: Content
+    skill: any high school student or technical mentor interested
 technologies: 
   - ReactJS
   - Flutter

@@ -43,8 +43,10 @@ links:
   - name: Wiki
     url: 'https://github.com/hackforla/VRMS/wiki'
 looking:
-  - Front end devs (any level)
-  - Back end devs (any level)
+  - category: Development
+    skill: Front end devs (any level)
+  - category: Development
+    skill: Back end devs (any level)
 location: Santa Monica, Downtown LA
 partner: TBD
 status: Active
