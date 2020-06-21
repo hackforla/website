@@ -77,7 +77,7 @@ layout: default
                 <p class='open-roles'><strong>Open roles:</strong></p>
                 <ul id='open-roles-list'>
                     {% for item in page.looking %}
-                        <li><p class='role-paragraph'>{{ item }}</p></li>
+                        <li><p class='role-paragraph'>{% if item.skill %}{{ item.skill }}{% endif %}</p></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
