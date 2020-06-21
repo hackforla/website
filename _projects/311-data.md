@@ -46,11 +46,18 @@ links:
   - name: Join Us
     url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
 looking:
-  - Frontend Developers
-  - Backend Developers
-  - Backend Lead
-  - DevOps
-  - SDET
+  - category: Development
+    skill: Frontend Developers
+  - category: Development
+    skill: Backend Developers
+  - category: PM
+    skill: Project Manager
+  - category: Ops
+    skill: Product Manager
+  - category: Ops
+    skill: DevOps
+  - category: QA
+    skill: SDET
 technologies:
   - React / Redux
   - Flask (Sanic) / Pandas
