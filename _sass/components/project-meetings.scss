@@ -8,6 +8,11 @@
     flex-direction: column;
     position: relative;
 
+    @media (max-width: $screen-mobile) {
+        height: 80vh;
+        background-size: auto 30%;
+    }
+
     .project-meetings-header-text-container {
         padding: 70px 0 0 0px;
         display: flex;
@@ -18,7 +23,6 @@
             color: #000000;
             font-weight: normal;
             text-align: center;
-
         }
         p {
             width: 80%;
@@ -26,6 +30,14 @@
 
             @media (min-width: $screen-desktop) {
                 width: 65%;
+            }
+
+            @media (min-width: 1300px) {
+                width: 40%;
+            }
+
+            @media (max-width: $screen-mobile) {
+                font-size: .9rem;
             }
         }
 
