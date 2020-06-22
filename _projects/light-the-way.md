@@ -9,8 +9,10 @@ links:
   - name: Site
     url: 'https://lighttheway.herokuapp.com/'
 looking: 
-  - Front-end Developers 
-  - UX Designers
+  - category: Development
+    skill: Front-end Developers 
+  - category: UI/UX
+    skill: UX Designers
 location: Downtown LA
 hide: true
 # partner: 

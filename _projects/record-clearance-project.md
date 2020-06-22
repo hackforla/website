@@ -34,7 +34,10 @@ links:
       url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
 partner: NDICA
 looking:
-  - Research/UX-UI
+  - category: Content
+    skill: Research
+    category: UI/UX
+    skill: UX-UI
 location: West Los Angeles
 status: Active
 ---
