@@ -29,6 +29,22 @@
 </section>
 
 <script>
+  var projectDataFromJekyll = [
+    {%- for project in site.projects -%}
+    {"id": "{{ project.identification }}",
+     "title": "{{ project.title }}",
+     "data": {"status": "{{ project.status }}",
+              "location": "{{ project.location }}"
+              {%- if project.looking -%}
+              , "looking": {{project.looking | jsonify }}
+              {%- endif -%}
+              {%- if project.technologies -%}
+              , "technologies": {{project.technologies | jsonify }}
+              {%- endif -%} }
+    }{%- unless forloop.last -%},{% endunless %}
+    {% endfor %}
+  ];
+  console.log(projectDataFromJekyll);
 
   {% assign p = site.data.github-data | jsonify %}
   let projectData = {{ p }};
