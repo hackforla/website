@@ -31,79 +31,29 @@
 <script>
   var projectDataFromJekyll = [
     {%- for project in site.projects -%}
-    {"id": "{{ project.identification }}",
-     "title": "{{ project.title }}",
-     "data": {"status": "{{ project.status }}",
-              "location": "{{ project.location }}"
-              {%- if project.looking -%}
-              , "looking": {{project.looking | jsonify }}
-              {%- endif -%}
-              {%- if project.technologies -%}
-              , "technologies": {{project.technologies | jsonify }}
-              {%- endif -%} }
+    {"id": {{ project.identification | default: 0 }},
+     "status": ["{{ project.status }}"],
+     "location": ["{{ project.location }}"]
+     {%- if project.looking -%}
+     , "looking": {{project.looking | jsonify }}
+     {%- endif -%}
+     {%- if project.technologies -%}
+     , "technologies": {{project.technologies | jsonify }}
+     {%- endif -%}
     }{%- unless forloop.last -%},{% endunless %}
     {% endfor %}
   ];
-  console.log(projectDataFromJekyll);
 
-  {% assign p = site.data.github-data | jsonify %}
-  let projectData = {{ p }};
-  
-
-  // demo random categories
-  // const githubFilterCategories = ['languages', 'color', 'size', 'origin']
-
-  const githubFilterCategories = ['languages']
+  // const filterCategories = ['technologies', 'looking']
 
   window.addEventListener('load', function () {
 
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
 
-    const htmlFieldValues = new Map();
-
-    // additional data from html generated from yaml files
-    document.querySelectorAll('.project-card').forEach((node) => {
-      
-      try {
-
-        const locationValue = node.querySelector('.project-location').lastChild.textContent.trim();
-        const statusValue = node.querySelector('.status-text').lastChild.textContent.trim();
-        htmlFieldValues.set(node.id, {locationValue, statusValue});        
-
-      } catch(e) {
-
-        console.log(`Error for node '${node.id}': ${e}`);
-
-      }
-      
+    const projects = projectDataFromJekyll.map(record => {
+      return new Project(record);
     });
-
-    // Add project data to encapsulated objects compatible with filtering library
-    const projects = projectData.map(project => {
-
-      let record = githubFilterCategories.reduce((rec, cur) => {
-        rec[cur] = project[cur]['data'];
-        return rec;
-      }, {});
-
-      record['id'] = project['id'];
-
-      // const projectId = parseInt(project['id']);
-      const projectId = project['id'].toString();
-      
-      if(htmlFieldValues.has(projectId)) {
-        record['location'] = [htmlFieldValues.get(projectId)['locationValue']];
-        record['status'] = [htmlFieldValues.get(projectId)['statusValue']];
-      } else {
-        record['location'] = ['Unspecified'];
-        record['status'] = ['Unspecified'];
-      }
-
-      return new Project(record)
-
-    });
-
 
     // Collect all possible filter values for count computation
     const valuesByCategory = new Map();
