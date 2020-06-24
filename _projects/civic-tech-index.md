@@ -46,11 +46,16 @@ links:
   - name: Wiki
     url: 'https://github.com/civictechindex/website/wiki'
 looking:
-  - Fullstack Developer with Node/React knowledge
-  - Experienced Data Scientist
-  - Database Architect
-  - UX specialist for testing and conducting interviews with stakeholders
-  - Project Manager
+  - category: Development
+    skill: Fullstack Developer with Node/React knowledge
+  - category: Data
+    skill: Experienced Data Scientist
+  - category: Data
+    skill: Database Architect
+  - category: UI/UX
+    skill: UX specialist for testing and conducting interviews with stakeholders
+  - category: PM
+    skill: Project Manager
 location: DTLA and remote
 partner: Code for America, Yale OpenLab and many more.
 status: Active

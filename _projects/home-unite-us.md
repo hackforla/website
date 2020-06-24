@@ -52,7 +52,9 @@ links:
     url: 'https://github.com/hackforla/HomeUniteUs/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'
-looking:
+looking: 
+  - category: UI/UX
+    skill: UI (including wireframes, familiar with Figma)
 technologies:
   - React
   - NoSQL

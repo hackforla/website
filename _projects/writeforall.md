@@ -31,13 +31,20 @@ links:
   - name: Demo link
     url: 'http://writeforall.org/'
 looking:
-  - Gender researcher
-  - Communications writer
-  - Videographer
-  - UX developer
-  - JavaScript programmer
-  - QA coder
-  - DevOps engineer
+  - category: Content
+    skill: Gender researcher
+  - category: Content
+    skill: Communications writer
+  - category: SEO/Marketing
+    skill: Videographer
+  - category: UI/UX
+    skill: UX developer
+  - category: Development
+    skill: JavaScript programmer
+  - category: QA
+    skill: QA coder
+  - category: Ops
+    skill: DevOps engineer
 location: Downtown LA and remote
 partner: Seeking
 status: Active

@@ -45,10 +45,14 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
 looking:
-  - Frontend Software Engineer
-  - Backend Software Engineer
-  - Advanced Data Scientist
-  - Python Enthusiast
+  - category: Development
+    skill: Frontend Software Engineer
+  - category: Development
+    skill: Backend Software Engineer
+  - category: Data
+    skill: Advanced Data Scientist
+  - category: Development
+    skill: Python Enthusiast
 technologies: 
   - React-JS
   - PostgreSQL

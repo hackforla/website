@@ -19,10 +19,14 @@ links:
   - name: Demo
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'
 looking:
-  - Node
-  - React
-  - UI/UX
-  - Marketing/Branding/Social Media
+  - category: Development
+    skill: Node
+  - category: Development
+    skill: React
+  - category: UI/UX
+    skill: UI/UX
+  - category: SEO/Marketing
+    skill: Marketing/Branding/Social Media
 technologies: 
   - Mongo
   - Express
