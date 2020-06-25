@@ -29,8 +29,10 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
 looking:
-  - UX designers
-  - NLP engineers
+  - category: UI/UX
+    skill: UX designers
+  - category: Development
+    skill: NLP engineers
 technologies:
   - React
   - Django

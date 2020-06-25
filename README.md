@@ -1,58 +1,56 @@
-# website
+# Website
 
-> Hack for LA's website https://www.hackforla.org
+> Hack for LA's website: https://www.hackforla.org
 
-This is a standard [Jekyll][jekyll] site hosted right here on [GitHub pages][ghpages].
+This is a standard [Jekyll](https://jekyllrb.com/) site hosted right here on [GitHub pages](https://pages.github.com/).
 
-To develop the site, you'll need to first clone the repository on to your computer. For new Git users, see the [Using Git](#using-git) section below.
+To develop the site, you'll need to first clone the repository on to your computer. For new Git users, see the [Using Git](#using-git) section below. <br><br>
 
-## Developing via Docker
+# OVERVIEW
+**Set up**
+1. [Join the Repo Team](#step-1-become-a-member-of-the-repository-team)
 
-Docker is the recommended approach to quickly getting started with local development.
+2. [Using Git](#using-git) and [Fork the Repo](#step-2-fork-the-repository)
 
-There are two pre-requisites: Docker and Docker Compose.
-The recommended installation method is [Docker Desktop][dockerdesktop] for Windows 10 64-bit,
-Mac, and Linux users. Users of unsupported operating systems may check out [Docker Toolbox][dockertoolbox] instead.
+3. [Clone to your local machine](#step-3-clone-your-online-repository-to-your-local-computer)
 
-More on using Docker and the concepts of containerization:
+4. [Set up Docker](#step-4-setting-up-docker)
 
-* [Get started with Docker][docker]
-* [Get started with Docker Compose][dockercompose]
+**Before you start working on an issue**
 
-*Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
+5. [Read Hack for LA's Site Architecture to get acquainted with how the website is structured](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
 
-### Build and serve the website locally
+6. [Switch to new issue branch before you start making changes](#step-6-change-to-a-new-branch)
 
-This command starts a jekyll server locally. The server watches for changes to
-the source files and rebuilds and refreshes the site automatically in your browser.
 
-```bash
-docker-compose up
-```
+**After you've worked on your issue and before you make a pull request:**
 
-Now browse to http://localhost:4000
+7. [Check upstream before you push](#step-7-check-upstream-before-you-push).
 
-### Tear down
+8. [No changes in the upstream repo](#step-7a-no-changes-in-the-upstream-repository)
 
-To stop and completely remove the jekyll server (i.e. the running Docker container):
+**Or**
 
-*(do this anytime Docker or jekyll configuration or other repository settings change)*
+9. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
+              
+**Okay. You're good to go!**        
+ 
+10. [Complete the pull request](#step-8-complete-the-pull-request)
 
-```bash
-docker-compose down
-```
+---
 
-To stop the server, but not destroy it (often sufficient for day-to-day work):
+### Forking and cloning the repository with proper security
 
-```bash
-docker-compose stop
-```
+#### Step 1 Become a member of the repository Team
 
-Bring the same server back up later with:
+In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
 
-```bash
-docker-compose up
-```
+Once you have accepted the GitHub invite (comes via email or in your GitHub notifications), please do the following:
+
+1. Mark your own membership public https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership
+
+1. Setup two factor authentication on your account https://github.com/hackforla/governance/issues/20
+
 
 ## Using Git
 
@@ -69,46 +67,6 @@ This section discusses some tips and best practices for working with Git.
 1. From the `hackforla` repository, create a Pull Request which asks `hackforla` to pull changes from your fork into the main repository.
 
 1. After the owner of the `hackforla` repository approves and merges your Pull Request, your changes will be live on the website. 
-
-### Forking and cloning the repository with proper security
-
----
-
-*OVERVIEW*
-
-1. [Join the Repo Team](#step-1-become-a-member-of-the-repository-team)
-
-2. [Fork the Repo](#step-2-fork-the-repository)
-
-3. [Clone to your local machine](#step-3-clone-your-online-repository-to-your-local-computer)
-
-4. [Switch to new issue branch](#step-4-change-to-a-new-branch)
-
-**Before you make a pull request!**
-
-5. [Check upstream before you push](#step-5-check-upstream-before-you-push).
-
-6. [No changes in the upstream repo](#step-6a-no-changes-in-the-upstream-repository)
-
-**Or**
-
-6. [Conflicting changes in the upstream repo](#step-6b-conflicting-changes-in-the-upstream-repository) and how to resolve them
-              
-**Okay. You're good to go!**        
- 
-7. [Complete the pull request](#step-7-complete-the-pull-request)
-
----
-
-#### Step 1 Become a member of the repository Team
-
-In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
-
-Once you have accepted the GitHub invite (comes via email or in your GitHub notifications), please do the following:
-
-1. Mark your own membership public https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership
-
-1. Setup two factor authentication on your account https://github.com/hackforla/governance/issues/20
 
 #### Step 2 Fork the repository
 
@@ -154,7 +112,58 @@ Add another remote called `upstream` that points to the `hackforla` version of t
 git remote add upstream https://github.com/hackforla/website.git
 ```
 
-#### Step 4 Change to a new branch
+#### Step 4: Setting up Docker
+
+Docker is the recommended approach to quickly getting started with local development. (ELI5: Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request).
+
+There are two pre-requisites: Docker and Docker Compose.
+The recommended installation method is [Docker Desktop](https://docs.docker.com/install/) for Windows 10 64-bit,
+Mac, and Linux users. Users of unsupported operating systems may check out [Docker Toolbox](https://docs.docker.com/compose/gettingstarted/) instead.
+
+More on using Docker and the concepts of containerization:
+
+* [Get started with Docker](#docker)
+* [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
+
+*Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
+
+### Build and serve the website locally
+
+This command starts a jekyll server locally. The server watches for changes to
+the source files and rebuilds and refreshes the site automatically in your browser.
+
+```bash
+docker-compose up
+```
+
+Now browse to http://localhost:4000
+
+### Tear down
+
+To stop and completely remove the jekyll server (i.e. the running Docker container):
+
+*(do this anytime Docker or jekyll configuration or other repository settings change)*
+
+```bash
+docker-compose down
+```
+
+To stop the server, but not destroy it (often sufficient for day-to-day work):
+
+```bash
+docker-compose stop
+```
+
+Bring the same server back up later with:
+
+```bash
+docker-compose up
+```
+<br>
+
+#### Step 5: Read [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture) to get acquainted with how the website is structured
+
+#### Step 6 Change to a new branch
 
 For each issue, create a new branch to work in. Doing all your work on
 topic branches, leaves your repository's main branch (named
@@ -183,7 +192,9 @@ The format should look like the scheme above where `140` is the issue number in 
 
 No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces.
 
-#### Step 5 Check upstream before you push
+When you've finished working on your issue, follow the steps below before pushing your code. 
+
+#### Step 7 Check upstream before you push
 
 Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website
 repository. `git fetch` will check remote repositories for changes
@@ -193,7 +204,7 @@ without altering your local repository.
 git fetch upstream
 ```
 
-##### Step 6a No changes in the upstream repository
+##### Step 7a No changes in the upstream repository
 
 If you do not see any output, there have not been any changes in the
 main Hack for LA website repository since the last time you
@@ -207,7 +218,7 @@ your copy of the website repository.
 git push --set-upstream origin 140-fix-logo-width
 ```
 
-##### Step 6b conflicting changes in the upstream repository
+##### Step 7b conflicting changes in the upstream repository
 
 When you check the upstream repository, you may see output like this:
 
@@ -278,7 +289,7 @@ git checkout 140-fix-logo-width
 git merge gh-pages
 ```
 
-#### Step 7 Complete the pull request
+#### Step 8 Complete the pull request
 
 ```bash
 git push --set-upstream origin 140-fix-logo-width
@@ -298,7 +309,7 @@ your pull request is accepted and merged.
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `140-fix-logo-width`).
 
-## Useful links
+## Useful Links
 
 ### Supported Platforms
 
@@ -314,3 +325,5 @@ the changes to your local branch (e.g. `140-fix-logo-width`).
 - [dockercompose](https://docs.docker.com/compose/gettingstarted/)
 - [dockerdesktop](https://docs.docker.com/install/)
 
+
+[Back to Top](#overview)
