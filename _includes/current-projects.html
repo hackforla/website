@@ -44,14 +44,18 @@
     {% endfor %}
   ];
 
-  // const filterCategories = ['technologies', 'looking']
-
   window.addEventListener('load', function () {
 
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
+    const onlyUnique = (value, index, self) => self.indexOf(value) === index;
 
     const projects = projectDataFromJekyll.map(record => {
+      let categories = [];
+      if (record.looking) {
+        categories = record.looking.map(x => x.category);
+      }
+      record.looking = categories.filter(onlyUnique);
       return new Project(record);
     });
 

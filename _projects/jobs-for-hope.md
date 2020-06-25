@@ -6,12 +6,11 @@ image: /assets/images/projects/jobs-for-hope.png
 alt: "'LA county homelessness initiative logo'"
 image-hero: /assets/images/projects/jobs-for-hope-hero.png
 alt-hero: "Purple background"
-links: 
+links:
   - name: GitHub
     url: 'https://github.com/hackforla/jobs-for-hope'
   - name: Site
     url: 'https://jobs-for-hope.herokuapp.com/'
-# looking: No one currently
 location: Downtown LA
 partner: LA County Homeless Initiative; http://homeless.lacounty.gov
 status: On Hold

@@ -55,9 +55,12 @@ links:
   - name: Test Site
     url: "http://food-oasis.herokuapp.com/"
 looking:
-  - Project Management
-  - Junior Python developers (2)
-  - documentarian (UX) - specifically someone to help with the wiki for onboarding and communicating to stake holders what the project is about
+  - category: PM
+    skill: Project Management
+  - category: Development
+    skill: Junior Python developers
+  - category: Content
+    skill: documentarian (UX) - specifically someone to help with the wiki for onboarding and communicating to stake holders what the project is about
 location: Downtown LA
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
 partner: seeking
