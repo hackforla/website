@@ -12,7 +12,8 @@ links:
   # - name: Site
   #   url: ''
 looking: 
-  - Graphics Designer
+  - category: UI/UX
+    skill: Graphics Designer
 location: Downtown LA
 # partner: 
 status: On Hold

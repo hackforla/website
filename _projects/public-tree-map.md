@@ -37,10 +37,14 @@ links:
   # - name: Site
   #   url: ''
 looking:
-  - Front-end web development (JavaScript, Leaflet)
-  - Data processing (GeoPandas, Python)
-  - QA and UX testing
-  - Appreciation for trees (anyone interested is welcome!)
+  - category: Development
+    skill: Front-end web development (JavaScript, Leaflet)
+  - category: Data
+    skill: Data processing (GeoPandas, Python)
+  - category: QA
+    skill: QA and UX testing
+  - category: Content
+    skill: Appreciation for trees (anyone interested is welcome!)
 location: Santa Monica
 partner: City of Santa Monica
 tools: Zeplin

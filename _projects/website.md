@@ -45,9 +45,12 @@ links:
   - name: Site
     url: 'https://www.hackforla.org'
 looking:
-  - Photoshop
-  - Junior JavaScript developers
-  - anyone wanting to learn how to do Git commits in a collaborative work environment
+  - category: UI/UX
+    skill: Photoshop artist
+  - category: Development
+    skill: Junior JavaScript developers
+  - category: Development
+    skill: anyone wanting to learn how to do Git commits in a collaborative work environment
 technologies:
   - GitHub Pages
   - Jekyll

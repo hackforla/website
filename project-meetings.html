@@ -2,10 +2,22 @@
 layout: default
 title: Project Meetings
 ---
-<div class='content-section getting-started-page'>
-    <h1 class='team-meetings-title'>Project Team Meetings</h1>
+<!-- <div class='content-section'> -->
+<div class='project-meetings-banner'>
+    <div class='project-meetings-header-text-container'>
+        <h1 class='team-meetings-title'>Project Team Meetings</h1>
+        <p>Please review the listing of project team meeting times to find a project that fits your schedule.
+            You are welcome to attend a project team meeting after you have completed <a href='https://www.hackforla.org/getting-started'>Onboarding</a>.
+            Details about a team's meeting can be obtained in each team's slack channel.
+        </p>
+        <!--<img src="./assets/images/project-meetings-page/project-meetings-banner-image.png" alt="project meetings banner image">-->
+    </div>
+</div>
+<div class='covid-notification-banner'>
+    <p class='meetings-message'>All meetings are currently online due to COVID19.</p>
+</div>
+<div class='content-section calendar-started-page'>
     <div class='calendar-page-card'>
-        <p class='meetings-message'>All meetings are currently online due to COVID19.<br>Details about a team’s meeting can be obtained in each team’s slack channel.</p>
         <div id="Monday">
             <h3 class='day-header'>Monday</h3>
             <ul id="Monday-List" class="schedule-list"></ul>
@@ -35,6 +47,7 @@ title: Project Meetings
             <ul id="Sunday-List" class="schedule-list"></ul>
         </div>
     </div>
+    <!-- </div> -->
 </div>
 
 <script>
@@ -54,14 +67,16 @@ title: Project Meetings
     const sundayList = document.querySelector("#Sunday-List");
 
     // GET request 
-    let calendarFetch = fetch(API_URL, {method: 'GET'});
+    let calendarFetch = fetch(API_URL, {
+        method: 'GET'
+    });
 
     // Function schedules data that is passed in
     function schedule(scheduleData) {
         let daysReceived = [];
         let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         let daysMatched = [];
-        
+
         // Loops through data and assigns information to variables in a readable format
         for (let i = 0; i <= scheduleData.length - 1; i++) {
             let startTime = timeFormat(new Date(scheduleData[i].startTime));
@@ -69,21 +84,21 @@ title: Project Meetings
             let webURL = scheduleData[i].project.hflaWebsiteUrl;
             let projectName = scheduleData[i].project.name;
             let description = scheduleData[i].description;
-            let day = new Date(scheduleData[i].date).toString().substring(0,3);
+            let day = new Date(scheduleData[i].date).toString().substring(0, 3);
             let scheduleClass;
 
             // Fills up array of days received to later check if any days are missing
             daysReceived.push(day);
 
             // Checks if days received matches days of the week
-            for (let j = 0; j <= daysReceived.length - 1; j ++) {
-            for (let k = 0; k <= days.length - 1; k++) {
+            for (let j = 0; j <= daysReceived.length - 1; j++) {
+                for (let k = 0; k <= days.length - 1; k++) {
                     if (daysReceived[j] == days[k]) {
                         daysMatched.push(days[k]);
                     }
                 }
             }
-            
+
             // Function that adds data to proper header
             function scheduleDay() {
                 let dayList;
@@ -93,17 +108,27 @@ title: Project Meetings
                 } else {
                     scheduleClass = "updated";
                 }
-                if ((day === "Mon")) {dayList = mondayList;}
-                else if ((day === "Tue")) {dayList = tuesdayList;}
-                else if ((day === "Wed")) {dayList = wednesdayList;}
-                else if ((day === "Thu")) {dayList = thursdayList;}
-                else if ((day === "Fri")) {dayList = fridayList;}
-                else if ((day === "Sat")) {dayList = saturdayList;}
-                else if ((day === "Sun")) {dayList = sundayList;}
+                if ((day === "Mon")) {
+                    dayList = mondayList;
+                } else if ((day === "Tue")) {
+                    dayList = tuesdayList;
+                } else if ((day === "Wed")) {
+                    dayList = wednesdayList;
+                } else if ((day === "Thu")) {
+                    dayList = thursdayList;
+                } else if ((day === "Fri")) {
+                    dayList = fridayList;
+                } else if ((day === "Sat")) {
+                    dayList = saturdayList;
+                } else if ((day === "Sun")) {
+                    dayList = sundayList;
+                }
 
-                dayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">${startTime} - ${endTime} <a href="${webURL}">${projectName}</a> ${description}</li>`);
+                dayList.insertAdjacentHTML("beforeend",
+                    `<li class="${scheduleClass}">${startTime} - ${endTime} <a href="${webURL}">${projectName}</a> ${description}</li>`
+                );
             }
-            
+
             scheduleDay(day);
         }
 
@@ -117,40 +142,50 @@ title: Project Meetings
         if (emptyDays) {
             // Function passes in array of days that outputs an li element w/ "There are no meeting scheduled" to days without meetings scheduled
             function scheduleEmpty(emptyDays) {
-            for (let a = 0; a <= emptyDays.length -1; a++) {
-            let emptyDayList;
-            let day = emptyDays[a].toString();
-                // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-                if (scheduleData == localData) {
-                    scheduleClass = "localData";
-                } else {
-                    scheduleClass = "updated";
-                }
-                if ((day === "Mon")) {emptyDayList = mondayList;}
-                else if ((day === "Tue")) {emptyDayList = tuesdayList;}
-                else if ((day === "Wed")) {emptyDayList = wednesdayList;}
-                else if ((day === "Thu")) {emptyDayList = thursdayList;}
-                else if ((day === "Fri")) {emptyDayList = fridayList;}
-                else if ((day === "Sat")) {emptyDayList = saturdayList;}
-                else if ((day === "Sun")) {emptyDayList = sundayList;}
+                for (let a = 0; a <= emptyDays.length - 1; a++) {
+                    let emptyDayList;
+                    let day = emptyDays[a].toString();
+                    // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
+                    if (scheduleData == localData) {
+                        scheduleClass = "localData";
+                    } else {
+                        scheduleClass = "updated";
+                    }
+                    if ((day === "Mon")) {
+                        emptyDayList = mondayList;
+                    } else if ((day === "Tue")) {
+                        emptyDayList = tuesdayList;
+                    } else if ((day === "Wed")) {
+                        emptyDayList = wednesdayList;
+                    } else if ((day === "Thu")) {
+                        emptyDayList = thursdayList;
+                    } else if ((day === "Fri")) {
+                        emptyDayList = fridayList;
+                    } else if ((day === "Sat")) {
+                        emptyDayList = saturdayList;
+                    } else if ((day === "Sun")) {
+                        emptyDayList = sundayList;
+                    }
 
-            emptyDayList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass}">There are no meetings scheduled.</li>`);
+                    emptyDayList.insertAdjacentHTML("beforeend",
+                        `<li class="${scheduleClass}">There are no meetings scheduled.</li>`);
+                }
             }
-        }
-        // Executes empty schedule
-        scheduleEmpty(emptyDays)
+            // Executes empty schedule
+            scheduleEmpty(emptyDays)
         }
     }
 
     // Function removes duplicates in an array
     function removeDuplicates(array) {
-            return array.filter((a, b) => array.indexOf(a) === b)
-        };
+        return array.filter((a, b) => array.indexOf(a) === b)
+    };
 
     // Function checks for differences between two arrays
-    function arr_diff (a1, a2) {
+    function arr_diff(a1, a2) {
 
-        let a = [], diff = [];
+        let a = [],
+            diff = [];
 
         for (let i = 0; i < a1.length; i++) {
             a[a1[i]] = true;
@@ -212,15 +247,15 @@ title: Project Meetings
     calendarFetch
         .then(response => response.json())
         .then((data) => {
-        // Checks for differences between localData and VRMS data
-        if (arr_diff(data, localData)) {
-            clearSchedule();
-            schedule(data);
-        }
-    })
-    .catch(err => {
-        console.log(err);
-    })
+            // Checks for differences between localData and VRMS data
+            if (arr_diff(data, localData)) {
+                clearSchedule();
+                schedule(data);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
 
     // Formats time to be readable
     function timeFormat(time) {
@@ -233,16 +268,14 @@ title: Project Meetings
 
         if (hours < 12) {
             return `${hours}:${minutes} am`;
-        }
-        else if (hours > 12){
+        } else if (hours > 12) {
             hours = hours - 12;
             return `${hours}:${minutes} pm`;
-        }
-        else if (hours = 12){
+        } else if (hours = 12) {
             return `${hours}:${minutes} pm`;
         } else {
             return `${hours}:${minutes} am`;
         }
-        
+
     }
 </script>

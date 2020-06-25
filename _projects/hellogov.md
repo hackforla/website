@@ -32,7 +32,12 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
-  - Looking for folks to help with implementing end to end testing, user testing and outreach, and a UI redesign. All skill levels, all kinds of contribution welcome.
+  - category: QA
+    skill: Implementation of end to end testing
+  - category: QA
+    skill: User Testing and Outreach
+  - category: UI/UX
+    skill: UI redesign, all skill levels
 location: Santa Monica
 partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
