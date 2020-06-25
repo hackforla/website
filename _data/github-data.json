@@ -491,7 +491,7 @@
           "github_url": "https://github.com/emillipede",
           "avatar_url": "https://avatars2.githubusercontent.com/u/22624609?v=4",
           "gravatar_id": "",
-          "contributions": 475
+          "contributions": 476
         },
         {
           "id": 1358731,
@@ -714,7 +714,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 57
+          "contributions": 58
         },
         {
           "id": 7821047,
@@ -763,7 +763,7 @@
           "github_url": "https://github.com/ruben1s",
           "avatar_url": "https://avatars3.githubusercontent.com/u/33906590?v=4",
           "gravatar_id": "",
-          "contributions": 15
+          "contributions": 16
         },
         {
           "id": 13112628,
@@ -780,18 +780,18 @@
           "contributions": 9
         },
         {
+          "id": 49918375,
+          "github_url": "https://github.com/ye-susan",
+          "avatar_url": "https://avatars3.githubusercontent.com/u/49918375?v=4",
+          "gravatar_id": "",
+          "contributions": 9
+        },
+        {
           "id": 45779646,
           "github_url": "https://github.com/charlottesauce",
           "avatar_url": "https://avatars2.githubusercontent.com/u/45779646?v=4",
           "gravatar_id": "",
           "contributions": 9
-        },
-        {
-          "id": 49918375,
-          "github_url": "https://github.com/ye-susan",
-          "avatar_url": "https://avatars3.githubusercontent.com/u/49918375?v=4",
-          "gravatar_id": "",
-          "contributions": 8
         },
         {
           "id": 54970194,
@@ -839,6 +839,13 @@
           "id": 7980047,
           "github_url": "https://github.com/GeorgeSu",
           "avatar_url": "https://avatars0.githubusercontent.com/u/7980047?v=4",
+          "gravatar_id": "",
+          "contributions": 2
+        },
+        {
+          "id": 54752231,
+          "github_url": "https://github.com/hannahlivnat",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/54752231?v=4",
           "gravatar_id": "",
           "contributions": 2
         },
@@ -902,13 +909,6 @@
           "id": 27145,
           "github_url": "https://github.com/joelparkerhenderson",
           "avatar_url": "https://avatars3.githubusercontent.com/u/27145?v=4",
-          "gravatar_id": "",
-          "contributions": 1
-        },
-        {
-          "id": 39248174,
-          "github_url": "https://github.com/sarL3y",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/39248174?v=4",
           "gravatar_id": "",
           "contributions": 1
         }
@@ -2310,9 +2310,9 @@
       "data": [
         "JavaScript",
         "PLpgSQL",
+        "CSS",
         "HTML",
         "Dockerfile",
-        "CSS",
         "Shell"
       ]
     },
@@ -2326,7 +2326,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 435
+          "contributions": 439
         },
         {
           "id": 22228236,
@@ -2557,7 +2557,8 @@
       "url": "https://api.github.com/repos/hackforla/record-clearance/languages",
       "data": [
         "Jupyter Notebook",
-        "Python"
+        "Python",
+        "HTML"
       ]
     },
     "contributors": {
@@ -2577,7 +2578,7 @@
           "github_url": "https://github.com/cayd",
           "avatar_url": "https://avatars1.githubusercontent.com/u/15892775?v=4",
           "gravatar_id": "",
-          "contributions": 3
+          "contributions": 7
         },
         {
           "id": 6464919,
@@ -2843,7 +2844,7 @@
           "github_url": "https://github.com/tylerthome",
           "avatar_url": "https://avatars1.githubusercontent.com/u/9952154?v=4",
           "gravatar_id": "",
-          "contributions": 64
+          "contributions": 65
         },
         {
           "id": 48224444,
@@ -2857,7 +2858,7 @@
           "github_url": "https://github.com/martyboggs",
           "avatar_url": "https://avatars2.githubusercontent.com/u/5304045?v=4",
           "gravatar_id": "",
-          "contributions": 43
+          "contributions": 44
         },
         {
           "id": 54044142,
