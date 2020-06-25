@@ -1,5 +1,40 @@
 .content-hack-night {
     margin-top: 85px;
+    padding: 88px;
 }
 
-.show-video {}
+.show-video {
+    display: flex;
+    // margin-left: 12%;
+}
+
+.flex-page-card {
+    display: flex;
+}
+
+.getting-started-page-card-hack-nights {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    max-width: 448px;
+    margin-bottom: 0;
+    padding: 30px;
+    height: fit-content;
+    margin: 12px auto;
+    font-family: "Roboto"sans-serif;
+
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-mobile} {
+        padding: 30px 15px;
+    }
+}
+
+.meetup-steps {
+    display: flex;
+}
+
+#text-content {
+    padding: 20px;
+}
