@@ -51,27 +51,26 @@
     const onlyUnique = (value, index, self) => self.indexOf(value) === index;
 
     const projects = projectDataFromJekyll.map(record => {
-      let categories = [];
+      let lookingCategories = [];
       if (record.looking) {
-        categories = record.looking.map(x => x.category);
+       lookingCategories = record.looking.map(x => x.category);
       }
-      record.looking = categories.filter(onlyUnique);
+      record.looking = lookingCategories.filter(onlyUnique);
       return new Project(record);
     });
 
+    const filterableCategories= [ 'status', 'looking', 'technologies', 'location' ];
+
     // Collect all possible filter values for count computation
-    const valuesByCategory = new Map();
+    let valuesByCategory = new Map();
+    filterableCategories.forEach(cat => {valuesByCategory.set(cat, new Set())});
     projects.forEach(p => {
       for (let key in p.data) {
-        if (key === 'id') {
+        if (!filterableCategories.includes(key)) {
           continue;
-        }
-        if (!valuesByCategory.has(key)) {
-          valuesByCategory.set(key, new Set());
         }
         for (let v in p.data[key]) {
           valuesByCategory.get(key).add(p.data[key][v]);
-
         }
       }
     });
