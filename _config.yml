@@ -18,6 +18,8 @@ collections:
     output: true
   sponsors:
   testimonials:
+  guide-pages:
+    output: true
 
 defaults:
   - scope:
