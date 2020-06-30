@@ -43,8 +43,6 @@ links:
 looking:
   - category: Development
     skill: Mobile Development
-  - category: Development
-    skill: Serverless PaaS Expertise
   - category: UI/UX
     skill: UX knowledge
   - category: Development

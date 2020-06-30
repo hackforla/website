@@ -52,10 +52,14 @@ looking:
     skill: Experienced Data Scientist
   - category: Data
     skill: Database Architect
+  - category: Development
+    skill: Front end react developers
   - category: UI/UX
     skill: UX specialist for testing and conducting interviews with stakeholders
-  - category: PM
-    skill: Project Manager
+  - category: UI/UX
+    skill: UI designer
+  - category: Content
+    skill: Video content script writer
 location: DTLA and remote
 partner: Code for America, Yale OpenLab and many more.
 status: Active
