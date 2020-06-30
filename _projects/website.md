@@ -46,7 +46,7 @@ links:
     url: 'https://www.hackforla.org'
 looking:
   - category: UI/UX
-    skill: Photoshop artist
+    skill: UI (wireframes)
   - category: Development
     skill: Junior JavaScript developers
   - category: Development

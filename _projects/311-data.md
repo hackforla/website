@@ -50,12 +50,8 @@ looking:
     skill: Frontend Developers
   - category: Development
     skill: Backend Developers
-  - category: PM
-    skill: Project Manager
   - category: Ops
-    skill: Product Manager
-  - category: Ops
-    skill: DevOps
+    skill: Product Owner
   - category: QA
     skill: SDET
 technologies:
