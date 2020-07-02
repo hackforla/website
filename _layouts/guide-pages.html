@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<img class='page-hero' src="assets/images/guides/github-issue-hero.png">
+<img class='page-hero' src="../assets/images/guides/guide-page-hero.png">
 
 <div class="header-content">
     <div class="left-col"> 
@@ -16,10 +16,11 @@ layout: default
     <div class="right-col">
         <h3><strong>In This Guide</strong></h3>
         <ul>
-            <li><a href="#example-issue">Example of a Good End-to-End Issue</a>
-            <li><a href="#issue-sections">Issue Sections: Description and Tips</a></li>
-            <li><a href="#issue-template">Issue Template <em>(Copy & Paste)</em></a></li>
-            <li><a href="#member-analytics">Member Analytics</a></li>
+
+            {% for item in page.in-this-guide %} 
+                <li><a href= '{{ item.link }}'> {{ item.name }}</a> 
+            {% endfor %}
+
         </ul>
 
     </div>

@@ -33,3 +33,8 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  - scope:
+      path: ""
+      type: "guide-pages"
+    values:
+      layout: "guide-pages"
