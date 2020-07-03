@@ -38,3 +38,71 @@
 #text-content {
     padding: 20px;
 }
+
+.covid-notification-banner {
+    background-color: #f2c94d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.covid-notification-banner p {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.meetings-message {
+    text-align: center;
+}
+.location-image{
+    margin: -5px;
+    border-radius: 5px;
+    width: 410px;
+    height: 445.12px;
+}
+
+.getting-started-page-card-locations {
+    background: #fff;
+    border: 0 solid rgba(51,51,51,0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+    overflow: hidden;
+    max-width: 996px;
+    margin-bottom: 0;
+    padding: 0 30px 0 0;
+    height: fit-content;
+    margin: 12px auto;
+    font-family: "Roboto" sans-serif;
+}
+
+
+
+.locations-1{
+    display: flex;
+}
+.location-content{
+    
+}
+.location-img-pos{
+    margin-right: 34px;
+}
+.mini-projects{
+    display: flex;
+    flex-wrap: wrap;
+}
+#mini-img{
+    width: 90px;
+    height: 66px;
+}
+.img-dis{
+    width: 92px;
+    border: 1px solid gray;
+    margin: 10px;
+    height: 120px;
+}
+.proj-desc{
+
+}
