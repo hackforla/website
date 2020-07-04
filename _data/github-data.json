@@ -714,7 +714,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 65
+          "contributions": 66
         },
         {
           "id": 7821047,
@@ -2046,6 +2046,7 @@
       "url": "https://api.github.com/repos/hackforla/tdm-calculator/languages",
       "data": [
         "JavaScript",
+        "TSQL",
         "CSS",
         "HTML",
         "Dockerfile"
@@ -2061,14 +2062,14 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 236
+          "contributions": 238
         },
         {
           "id": 45305029,
           "github_url": "https://github.com/nclairesays",
           "avatar_url": "https://avatars0.githubusercontent.com/u/45305029?v=4",
           "gravatar_id": "",
-          "contributions": 108
+          "contributions": 109
         },
         {
           "id": 1160105,
@@ -2326,7 +2327,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 466
+          "contributions": 469
         },
         {
           "id": 22228236,
@@ -2357,18 +2358,18 @@
           "contributions": 21
         },
         {
+          "id": 52722401,
+          "github_url": "https://github.com/djbradleyii",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
+          "gravatar_id": "",
+          "contributions": 14
+        },
+        {
           "id": 33523751,
           "github_url": "https://github.com/lucas-homer",
           "avatar_url": "https://avatars1.githubusercontent.com/u/33523751?v=4",
           "gravatar_id": "",
           "contributions": 13
-        },
-        {
-          "id": 52722401,
-          "github_url": "https://github.com/djbradleyii",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
-          "gravatar_id": "",
-          "contributions": 9
         },
         {
           "id": 1853260,
