@@ -19,17 +19,9 @@ leadership:
       slack: 'https://app.slack.com/team/UNTQA141G'
       github: 'https://github.com/jacoronilla'
     picture: https://avatars.githubusercontent.com/jacoronilla
-  # - name: Nick Gieschen
-  #     role: 
-  #     links: 
-  #       slack: 'https://app.slack.com/team/UQZ739K5X'
-  #       github: 
-  #     picture: 
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/not-today'
-  # - name: Site
-  #  url: 
 looking: 
   - category: Development
     skill: Flutter Development
@@ -39,7 +31,9 @@ looking:
     skill: UI/UX
   - category: Content
     skill: Empathy and sensitivity with subject material and end users
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: Seeking
 status: Active
 ---

@@ -37,7 +37,9 @@ technologies:
   - React
   - Django
   - SQL (PostgreSQL)
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 tools: Hotjar, Google Analytics
 partner: City of Santa Monica
 status: Active

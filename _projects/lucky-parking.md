@@ -56,7 +56,9 @@ looking:
 technologies: 
   - React-JS
   - PostgreSQL
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: Seeking
 tools: Google Colab, AWS
 status: Active

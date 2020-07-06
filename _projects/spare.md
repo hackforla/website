@@ -20,7 +20,9 @@ looking:
     skill: Product Management 
   - category: SEO/Marketing
     skill: Marketing
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: Hope of the Valley and hopefully others in the near future.
 status: On Hold
 ---

@@ -15,7 +15,9 @@ links:
     url: 'https://github.com/hunterowens/workfor.la'
   - name: Site
     url: 'http://www.workfor.la/'
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 partner: Department of Personnel
 status: Completed
 completed-contact: WorkForLA@googlegroups.com

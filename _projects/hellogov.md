@@ -38,7 +38,9 @@ looking:
     skill: User Testing and Outreach
   - category: UI/UX
     skill: UI redesign, all skill levels
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
 status: Active

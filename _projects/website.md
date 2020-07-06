@@ -54,7 +54,9 @@ looking:
 technologies:
   - GitHub Pages
   - Jekyll
-location: Santa Monica, Downtown and Remote
-# partner: N/A
+location: 
+  - Santa Monica 
+  - Downtown LA 
+  - Remote
 status: Active
 ---
