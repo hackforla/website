@@ -9,12 +9,11 @@ alt-hero: "Light-gray background"
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/shared-housing'
-  # - name: Site
-  #   url: ''
 looking: 
   - category: UI/UX
     skill: Graphics Designer
-location: Downtown LA
-# partner: 
+location: 
+  - Downtown LA
+  - Remote
 status: On Hold
 ---

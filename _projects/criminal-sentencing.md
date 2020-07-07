@@ -7,11 +7,9 @@ alt: "'gavel'"
 links: 
   - name: GitHub
     url: "https://github.com/timdef/criminal-sentencing" 
-  # - name: Site
-  #   url: ''
-# looking: Great communicators and researchers!
-location: Downtown LA
-# partner: 
+location: 
+  - Downtown LA
+  - Remote
 hide: true
 status: On Hold
 ---

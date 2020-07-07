@@ -34,8 +34,6 @@ links:
     url: 'https://hackforla.slack.com/messages/C9UU5KKAA/'
   - name: Readme
     url: 'https://github.com/Public-Tree-Map/public-tree-map/blob/master/README.md'
-  # - name: Site
-  #   url: ''
 looking:
   - category: Development
     skill: Front-end web development (JavaScript, Leaflet)
@@ -45,7 +43,9 @@ looking:
     skill: QA and UX testing
   - category: Content
     skill: Appreciation for trees (anyone interested is welcome!)
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: City of Santa Monica
 tools: Zeplin
 status: Active

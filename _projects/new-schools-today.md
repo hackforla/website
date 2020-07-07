@@ -55,6 +55,8 @@ technologies:
   - ReactJS
   - Flutter
 partner: Seeking
-location: Santa Monica, CA
+location: 
+  - Santa Monica
+  - Remote
 status: Active
 ---
