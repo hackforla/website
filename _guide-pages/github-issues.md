@@ -20,38 +20,38 @@ in-this-guide:
     <p><em>Click any section link below to jump down to its description</em></p> <br>
 
     <div class="overlay-links">
-        <img class="screenshot" src="../assets/images/guides/github-issue/good-issue-example.svg" >
+        <img class="github-issues-screenshot" src="../assets/images/guides/github-issue/good-issue-example.svg" >
         <!-- Arrows and Overlay Text Links -->
         <!-- RIGHT SIDE LINKS -->
-        <img class="assignees" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer assignees" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#assignees-section" class="assignees">ASSIGNEES</a></h4>
 
-        <img class="labels" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer labels" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#labels-section" class="labels">LABELS</a></h4>
 
-        <img class="project-board" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer project-board" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#project-board-section" class="project-board">PROJECTS</a></h4>
 
-        <img class="milestones" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer milestones" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#milestones-section" class="milestones">MILESTONES</a></h4>
 
         <!-- LEFT SIDE LINKS -->
-        <img class="title left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer title left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#title-section" class="title">TITLE</a></h4>
 
-        <img class="overview left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer overview left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#overview-section" class="overview">OVERVIEW</a></h4>
 
-        <img class="dependency left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer dependency left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#dependency-section" class="dependency">DEPENDENCY</a></h4>
 
-        <img class="action-items left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer action-items left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#action-items-section" class="action-items">ACTION ITEMS</a></h4>
 
-        <img class="resources left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer resources left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#resources-section" class="resources">RESOURCES/ INSTRUCTIONS</a></h4>
 
-        <img class="resume left-pointer" src="../assets/images/guides/pink-pointer.svg">
+        <img class="pinkpointer resume left-pointer" src="../assets/images/guides/pink-pointer.svg">
         <h4><a href="#resume-section" class="resume">RESUME</a></h4>
     </div>
     <p><em>This issue is shown in Preview mode</em></p>
@@ -70,20 +70,20 @@ in-this-guide:
         For a start-to-finish issue, as in this case, choose a title that is generic enough to allow for all phases (research, ideation, design, development). <br><br>
         For an issue taking on only part of the workflow, be more declarative in what it covers (e.g. a research issue might be called “Determine Best Testing Library for Code Base”).
     </p><br>
-    <img src="../assets/images/guides/github-issue/issue-sections-1.png"><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
-    <img src="../assets/images/guides/github-issue/issue-sections-2.png"><br><br><br><br>
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-1.png"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-2.png"><br><br><br><br>
 
 
     <h4 id="overview-section">OVERVIEW</h4> 
     <p>Clearly state the purpose of this issue in 2 lines or less.</p>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-3.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-3.png">
         <p class="img-caption">Markdown draft: ### formats header</p>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-4.png"><br>
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-4.png"><br>
         <p class="img-caption">Final post</p>
     </div><br><br><br>
 
@@ -92,12 +92,12 @@ in-this-guide:
     <span> (if applicable)</span></div>
     <p>If your issue relies on another issue’s completion first, link to the issue it is dependent on.</p>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-5.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-5.png">
         <p class="img-caption">Markdown draft: [title](url) formats links</p>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-6.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-6.png">
         <p class="img-caption">Final post</p>
     </div><br><br><br>
 
@@ -110,17 +110,17 @@ in-this-guide:
         If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate sections.
     </p><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-7.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-7.png">
         <p class="img-caption">Markdown draft: - [ ] formats checklist</p>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-8.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-8.png">
         <p class="img-caption">Final post</p><br>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-9.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-9.png">
         <p class="img-caption">Final post with checkmarks</p>
     </div><br><br><br>
 
@@ -130,12 +130,12 @@ in-this-guide:
         If there is a link with documentation that helps with this issue, provide the link(s) here.
     </p><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-10.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-10.png">
         <p class="img-caption">Markdown draft</p>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-11.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-11.png">
         <p class="img-caption">Final post</p>
     </div><br><br><br>
     
@@ -145,12 +145,12 @@ in-this-guide:
         Specify how tasks can be listed in all assignees’ resumés to provide value for project volunteers, divided by roles.
     </p><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-12.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-12.png">
         <p class="img-caption">Markdown draft</p>
     </div><br>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+    <img class="grayarrow" src="../assets/images/guides/gray-arrow.svg"><br>
     <div class="img-and-caption">
-        <img src="../assets/images/guides/github-issue/issue-sections-13.png">
+        <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-13.png">
         <p class="img-caption">Final post</p>
     </div><br><br><br>
 
@@ -161,16 +161,16 @@ in-this-guide:
         In the upper-right corner, click Assignees. To assign a user (including yourself), start typing their username and click their name when it appears. <br><br>
         Assign the issue to only one person at a time, by order of their tasks.
     </p><br>
-    <span><img src="../assets/images/guides/github-issue/issue-sections-14.png">
-    <img src="../assets/images/guides/github-issue/issue-sections-15.png"></span><br><br><br>
+    <span><img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-14.png">
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-15.png"></span><br><br><br>
 
 
     <h4 id="labels-section">LABELS</h4> 
     <p>
         Select all relevant labels. See GitHub’s <a href="https://help.github.com/en/github/managing-your-work-on-github/about-labels">About Labels</a> guide for more details.
     </p><br>
-    <span><img src="../assets/images/guides/github-issue/issue-sections-16.png">
-    <img src="../assets/images/guides/github-issue/issue-sections-17.png"></span><br><br><br>
+    <span><img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-16.png">
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-17.png"></span><br><br><br>
 
 
     <h4 id="project-board-section">PROJECT BOARD</h4> 
@@ -180,20 +180,20 @@ in-this-guide:
         If the issue has been created and is ready but not yet assigned to someone, it should be set in <strong>prioritized backlog.</strong><br><br>
         When someone has been assigned to the issue, this should be set to <strong>in progress.</strong>
     </p><br>
-    <img src="../assets/images/guides/github-issue/issue-sections-18.png"><br><br><br>
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-18.png"><br><br><br>
 
 
     <h4 id="milestones-section">MILESTONES</h4> 
     <p>
         You can use milestones to track the progress of groups of issues or pull requests in a repository. Read more at GitHub’s <a href="https://help.github.com/en/github/managing-your-work-on-github/about-milestones">About Milestones</a> guide.
     </p><br>
-    <img src="../assets/images/guides/github-issue/issue-sections-19.png"><br><br><br>
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-19.png"><br><br><br>
 
     <div class="inline-text-with-title"><h4 class="black-font ">TIP: </h4><h4> PREVIEW</h4></div>
     <p>
         Don’t forget to preview your new issue before posting to make sure it’s formatted correctly.
     </p><br>
-    <img src="../assets/images/guides/github-issue/issue-sections-20.png"><br><br><br>
+    <img class="screenshot" src="../assets/images/guides/github-issue/issue-sections-20.png"><br><br><br>
 </div>
 
 
@@ -224,7 +224,7 @@ in-this-guide:
                 <span class="green-text">UI Mockup: </span><br>
                 - <br>
                 - <br>
-                <span class="green-text"></span>Developers: </span><br>
+                <span class="green-text">Developers: </span><br>
                 - <br>
                 - <br>
             </code>
