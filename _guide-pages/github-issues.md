@@ -13,7 +13,6 @@ in-this-guide:
 ---
 
 
-
 <div class="section-container link-section">
     <h3 id="example-issue">Example of a Good End-to-End Issue</h3>
     <h5>An effective Hack for LA Github issue includes the following components:</h5>

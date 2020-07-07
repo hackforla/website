@@ -64,57 +64,29 @@
   width: 90%;
 }
 
-
 // VARIABLES FOR OVERLAY LINKS
-// @mixin right-overlay {
-//   position: absolute;
-//   left: 93%;
-//   width: 7%;
-// }
-// @mixin right-text-overlay {
-//   position: absolute;
-//   left: 100.5%;
-// }
-
-// @mixin left-overlay {
-//   position: absolute;
-//   right: 92%;
-//   width: 7%;
-// }
-// @mixin left-text-overlay {
-//   position: absolute;
-//   right: 90.5%;
-//   width: 10%;
-//   direction: rtl;
-//   text-align: start;
-// }
-
-// //Scale mixins down on smaller screens
-// @media #{$bp-below-tablet} {  
-  // VARIABLES FOR OVERLAY LINKS
-  @mixin right-overlay {
-    position: absolute;
+@mixin right-overlay {
+  position: absolute;
     left: 90%;
     width: 7%;
   }
-  @mixin right-text-overlay {
-    position: absolute;
+@mixin right-text-overlay {
+  position: absolute;
     left: 97.5%;
-  }
+}
   
-  @mixin left-overlay {
-    position: absolute;
-    right: 88%;
-    width: 7%;
-  }
-  @mixin left-text-overlay {
-    position: absolute;
-    right: 87%;
-    width: 10%;
-    direction: rtl;
-    text-align: start;
-  }
-// }
+@mixin left-overlay {
+  position: absolute;
+  right: 88%;
+  width: 7%;
+}
+@mixin left-text-overlay {
+  position: absolute;
+  right: 87%;
+  width: 10%;
+  direction: rtl;
+  text-align: start;
+}
 
 //INDIVIDUAL PLACEMENTS OF OVERLAY LINKS 
 //RIGHT SIDE LINKS
@@ -234,23 +206,6 @@
   .screenshot {
     width: 85%;
   }
-
-  // .github-issues-screenshot {
-  //   max-width: none;
-  //   width: 90%;
-  // }
-
-  // #title {
-  //   @include left-overlay;
-  //   top: 9%;
-  //   right: 97%;
-  
-  //   + h4 {
-  //     @include left-text-overlay;
-  //     top: 9%;
-  //     right: 95%;
-  //   }
-  // } 
 
   .clipboard {
     max-height: 16px;
