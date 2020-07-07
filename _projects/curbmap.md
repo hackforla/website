@@ -15,8 +15,9 @@ looking:
     skill: UX researchers 
   - category: UI/UX
     skill: UI designers
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 hide: true
-# partner: 
 status: On Hold
 ---

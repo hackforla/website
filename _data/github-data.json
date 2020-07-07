@@ -491,7 +491,7 @@
           "github_url": "https://github.com/emillipede",
           "avatar_url": "https://avatars2.githubusercontent.com/u/22624609?v=4",
           "gravatar_id": "",
-          "contributions": 476
+          "contributions": 480
         },
         {
           "id": 1358731,
@@ -714,7 +714,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 64
+          "contributions": 69
         },
         {
           "id": 7821047,
@@ -773,16 +773,16 @@
           "contributions": 15
         },
         {
-          "id": 26785124,
-          "github_url": "https://github.com/stu562",
-          "avatar_url": "https://avatars2.githubusercontent.com/u/26785124?v=4",
-          "gravatar_id": "",
-          "contributions": 9
-        },
-        {
           "id": 49918375,
           "github_url": "https://github.com/ye-susan",
           "avatar_url": "https://avatars3.githubusercontent.com/u/49918375?v=4",
+          "gravatar_id": "",
+          "contributions": 10
+        },
+        {
+          "id": 26785124,
+          "github_url": "https://github.com/stu562",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/26785124?v=4",
           "gravatar_id": "",
           "contributions": 9
         },
@@ -2046,6 +2046,7 @@
       "url": "https://api.github.com/repos/hackforla/tdm-calculator/languages",
       "data": [
         "JavaScript",
+        "TSQL",
         "CSS",
         "HTML",
         "Dockerfile"
@@ -2061,14 +2062,14 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 236
+          "contributions": 246
         },
         {
           "id": 45305029,
           "github_url": "https://github.com/nclairesays",
           "avatar_url": "https://avatars0.githubusercontent.com/u/45305029?v=4",
           "gravatar_id": "",
-          "contributions": 108
+          "contributions": 109
         },
         {
           "id": 1160105,
@@ -2326,7 +2327,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 458
+          "contributions": 472
         },
         {
           "id": 22228236,
@@ -2341,6 +2342,13 @@
           "avatar_url": "https://avatars2.githubusercontent.com/u/48224444?v=4",
           "gravatar_id": "",
           "contributions": 40
+        },
+        {
+          "id": 52722401,
+          "github_url": "https://github.com/djbradleyii",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
+          "gravatar_id": "",
+          "contributions": 30
         },
         {
           "id": 43628838,
@@ -2362,13 +2370,6 @@
           "avatar_url": "https://avatars1.githubusercontent.com/u/33523751?v=4",
           "gravatar_id": "",
           "contributions": 13
-        },
-        {
-          "id": 52722401,
-          "github_url": "https://github.com/djbradleyii",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
-          "gravatar_id": "",
-          "contributions": 9
         },
         {
           "id": 1853260,
@@ -2564,8 +2565,10 @@
       "url": "https://api.github.com/repos/hackforla/record-clearance/languages",
       "data": [
         "Jupyter Notebook",
+        "JavaScript",
+        "HTML",
         "Python",
-        "HTML"
+        "CSS"
       ]
     },
     "contributors": {
@@ -2585,7 +2588,7 @@
           "github_url": "https://github.com/cayd",
           "avatar_url": "https://avatars1.githubusercontent.com/u/15892775?v=4",
           "gravatar_id": "",
-          "contributions": 7
+          "contributions": 10
         },
         {
           "id": 6464919,
@@ -2708,7 +2711,7 @@
           "github_url": "https://github.com/jbubar",
           "avatar_url": "https://avatars0.githubusercontent.com/u/53061723?v=4",
           "gravatar_id": "",
-          "contributions": 7
+          "contributions": 8
         },
         {
           "id": 58455740,
@@ -2732,6 +2735,13 @@
           "contributions": 3
         },
         {
+          "id": 49699333,
+          "github_url": "https://github.com/apps/dependabot",
+          "avatar_url": "https://avatars0.githubusercontent.com/in/29110?v=4",
+          "gravatar_id": "",
+          "contributions": 3
+        },
+        {
           "id": 22552124,
           "github_url": "https://github.com/BananaBoss22",
           "avatar_url": "https://avatars3.githubusercontent.com/u/22552124?v=4",
@@ -2742,13 +2752,6 @@
           "id": 37763229,
           "github_url": "https://github.com/ExperimentsInHonesty",
           "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
-          "gravatar_id": "",
-          "contributions": 2
-        },
-        {
-          "id": 49699333,
-          "github_url": "https://github.com/apps/dependabot",
-          "avatar_url": "https://avatars0.githubusercontent.com/in/29110?v=4",
           "gravatar_id": "",
           "contributions": 2
         }
@@ -2858,7 +2861,7 @@
           "github_url": "https://github.com/tylerthome",
           "avatar_url": "https://avatars1.githubusercontent.com/u/9952154?v=4",
           "gravatar_id": "",
-          "contributions": 65
+          "contributions": 66
         },
         {
           "id": 48224444,
@@ -2872,7 +2875,7 @@
           "github_url": "https://github.com/martyboggs",
           "avatar_url": "https://avatars2.githubusercontent.com/u/5304045?v=4",
           "gravatar_id": "",
-          "contributions": 44
+          "contributions": 46
         },
         {
           "id": 54044142,
@@ -3121,5 +3124,35 @@
       ]
     },
     "repoEndpoint": "https://api.github.com/repos/hackforla/covid19-help"
+  },
+  {
+    "id": 273746448,
+    "name": "civic-opportunity",
+    "languages": {
+      "url": "https://api.github.com/repos/hackforla/civic-opportunity/languages",
+      "data": []
+    },
+    "contributors": {
+      "url": [
+        "https://api.github.com/repos/hackforla/civic-opportunity/contributors"
+      ],
+      "data": [
+        {
+          "id": 67340971,
+          "github_url": "https://github.com/rfambro2",
+          "avatar_url": "https://avatars3.githubusercontent.com/u/67340971?v=4",
+          "gravatar_id": "",
+          "contributions": 11
+        },
+        {
+          "id": 37763229,
+          "github_url": "https://github.com/ExperimentsInHonesty",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/37763229?v=4",
+          "gravatar_id": "",
+          "contributions": 4
+        }
+      ]
+    },
+    "repoEndpoint": "https://api.github.com/repos/hackforla/civic-opportunity"
   }
 ]

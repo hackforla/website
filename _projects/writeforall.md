@@ -45,7 +45,9 @@ looking:
     skill: QA coder
   - category: Ops
     skill: DevOps engineer
-location: Downtown LA and remote
+location: 
+  - Downtown LA 
+  - Remote
 partner: Seeking
 status: Active
 ---

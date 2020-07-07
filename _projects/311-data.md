@@ -59,7 +59,10 @@ technologies:
   - Flask (Sanic) / Pandas
   - Bulma
   - PostgreSQL
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
+
 partner: EmpowerLA
 status: Active
 ---

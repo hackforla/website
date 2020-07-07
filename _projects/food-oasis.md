@@ -57,7 +57,9 @@ links:
 looking:
   - category: Development
     skill: React developers (2)
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
 partner: seeking
 status: Rebooting
