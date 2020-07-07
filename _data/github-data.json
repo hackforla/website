@@ -714,7 +714,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 67
+          "contributions": 68
         },
         {
           "id": 7821047,
@@ -2062,7 +2062,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 238
+          "contributions": 246
         },
         {
           "id": 45305029,
@@ -2327,7 +2327,7 @@
           "github_url": "https://github.com/entrotech",
           "avatar_url": "https://avatars0.githubusercontent.com/u/9939032?v=4",
           "gravatar_id": "",
-          "contributions": 469
+          "contributions": 472
         },
         {
           "id": 22228236,
@@ -2344,6 +2344,13 @@
           "contributions": 40
         },
         {
+          "id": 52722401,
+          "github_url": "https://github.com/djbradleyii",
+          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
+          "gravatar_id": "",
+          "contributions": 30
+        },
+        {
           "id": 43628838,
           "github_url": "https://github.com/bfojas",
           "avatar_url": "https://avatars2.githubusercontent.com/u/43628838?v=4",
@@ -2356,13 +2363,6 @@
           "avatar_url": "https://avatars1.githubusercontent.com/u/6464919?v=4",
           "gravatar_id": "",
           "contributions": 21
-        },
-        {
-          "id": 52722401,
-          "github_url": "https://github.com/djbradleyii",
-          "avatar_url": "https://avatars0.githubusercontent.com/u/52722401?v=4",
-          "gravatar_id": "",
-          "contributions": 14
         },
         {
           "id": 33523751,
@@ -2565,8 +2565,10 @@
       "url": "https://api.github.com/repos/hackforla/record-clearance/languages",
       "data": [
         "Jupyter Notebook",
+        "JavaScript",
+        "HTML",
         "Python",
-        "HTML"
+        "CSS"
       ]
     },
     "contributors": {
@@ -2586,7 +2588,7 @@
           "github_url": "https://github.com/cayd",
           "avatar_url": "https://avatars1.githubusercontent.com/u/15892775?v=4",
           "gravatar_id": "",
-          "contributions": 7
+          "contributions": 9
         },
         {
           "id": 6464919,
@@ -2859,7 +2861,7 @@
           "github_url": "https://github.com/tylerthome",
           "avatar_url": "https://avatars1.githubusercontent.com/u/9952154?v=4",
           "gravatar_id": "",
-          "contributions": 65
+          "contributions": 66
         },
         {
           "id": 48224444,
@@ -2873,7 +2875,7 @@
           "github_url": "https://github.com/martyboggs",
           "avatar_url": "https://avatars2.githubusercontent.com/u/5304045?v=4",
           "gravatar_id": "",
-          "contributions": 44
+          "contributions": 46
         },
         {
           "id": 54044142,
