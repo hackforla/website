@@ -58,7 +58,9 @@ looking:
 technologies:
   - React
   - NoSQL
-location: Downtown LA and remote
+location: 
+  - Downtown LA
+  - Remote
 partner: Safe Place for Youth (SPY)
 status: Active
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
