@@ -11,18 +11,22 @@
 .flex-page-card {
     display: flex;
 }
-
+.step-img-1{
+    height: 134px;
+    text-align: center;
+    width: 529px;
+}
 .getting-started-page-card-hack-nights {
     background: #fff;
     border: 0 solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
-    max-width: 448px;
+    max-width: 483px;
     margin-bottom: 0;
     padding: 30px;
     height: fit-content;
-    margin: 12px auto;
+    margin: 20px;
     font-family: "Roboto"sans-serif;
 
     // NEW MOBILE FRIENDLY RULES
@@ -33,13 +37,19 @@
 
 .meetup-steps {
     display: flex;
+    margin: 100px 0;
+}
+
+.meetup-steps-1 {
+    display: flex;
+    margin: 45px 0;
 }
 
 #text-content {
-    padding: 20px;
+    padding: 0 39px;
 }
 
-.covid-notification-banner {
+.notification-banner {
     background-color: #f2c94d;
     width: 100%;
     display: flex;
@@ -47,11 +57,11 @@
     align-content: center;
 }
 
-.covid-notification-banner p {
+.notification-banner p {
     text-align: center;
     font-weight: bold;
-    margin: 0;
-    padding: 15px 0;
+    margin: auto 30%;
+    padding: 20px;
 }
 
 .meetings-message {
@@ -60,8 +70,8 @@
 .location-image{
     margin: -5px;
     border-radius: 5px;
-    width: 410px;
-    height: 445.12px;
+    max-width: 372px;
+    height: 450px;
 }
 
 .getting-started-page-card-locations {
@@ -72,23 +82,19 @@
     overflow: hidden;
     max-width: 996px;
     margin-bottom: 0;
-    padding: 0 30px 0 0;
+    // padding: 0 30px 0 0;
     height: fit-content;
-    margin: 12px auto;
+    margin: 50px auto;
     font-family: "Roboto" sans-serif;
 }
-
-
 
 .locations-1{
     display: flex;
 }
 .location-content{
-    
+    margin: 36px;
 }
-.location-img-pos{
-    margin-right: 34px;
-}
+
 .mini-projects{
     display: flex;
     flex-wrap: wrap;
@@ -104,5 +110,5 @@
     height: 120px;
 }
 .proj-desc{
-
+    text-align: center;
 }
