@@ -1,15 +1,55 @@
 .content-hack-night {
     margin: 83px 0px;
     padding: 25px;
+    @media #{$bp-below-tablet}  {
+        margin-top: 52px;
+        padding: 0;
+    }
+}
+.header-container-hacknights{
+    background: #fff;
+    padding: 30px;
+    height: fit-content;
+    margin: 12px auto;
+    font-family: "Roboto" sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    margin: 182px;
+
+    @media #{$bp-below-tablet} {
+        margin: 45px 0px;
+        padding: 0;
+        flex-direction: column;
+        margin-top: 96px;
+        font-size: 16px;
+      }
 }
 
+.show-desc{
+    margin: 0 44px;
+    @media #{$bp-below-tablet} {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 49px 24px;
+    }
+}
 .show-video {
     display: flex;
     margin-left: 40px;
+    @media #{$bp-below-tablet} {
+        flex-direction: column;
+        margin: 0;
+    }
 }
 
 .flex-page-card {
     display: flex;
+
+    @media #{$bp-below-tablet} {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 .step-img-1{
     height: 167px;
@@ -30,37 +70,64 @@
     max-width: 483px;
     margin-bottom: 0;
     padding: 20px;
-    // height: fit-content;
     margin: 20px;
     font-family: "Roboto"sans-serif;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
         padding: 30px 15px;
+
     }
 }
+.video-size{
+    left: 0;
+     top: 0; 
+    width: 426px; 
+    height: 300px;
+
+    @media #{$bp-below-mobile} {
+        left: 0;
+        top: 0;
+        width: 308px;
+        height: 215px;
+}
+}
+
 
 .meetup-steps {
     display: flex;
     margin: 60px 0;
-}
 
-.meetup-steps-1 {
-    display: flex;
-    margin: 45px 0;
+    @media #{$bp-below-mobile} {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 .meetup-steps-2 {
     display: flex;
-    
+    @media #{$bp-below-mobile} {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 #text-content {
     padding: 0px 28px;
     font-size: 1.22rem;
+
+    @media #{$bp-below-mobile} {
+        padding: 0;
+        font-size: 1rem;
+    }
 }
 #text-content-1 {
     padding: 0 27px;
     font-size: 18px;
+
+    @media #{$bp-below-mobile} {
+        padding: 8px;
+        font-size: 1rem;
+    }
 }
 
 .notification-banner {
@@ -76,6 +143,12 @@
     font-weight: bold;
     margin: auto 30%;
     padding: 20px;
+
+    @media #{$bp-below-mobile} {
+        text-align: justify;
+        padding: 9px;
+        margin: 0;
+    }
 }
 
 .meetings-message {
@@ -85,7 +158,10 @@
     margin: -5px;
     border-radius: 5px;
     max-width: 372px;
-    height: 451px;
+    height: 460px;
+    @media #{$bp-below-mobile} {
+        height: auto;
+    }
 }
 
 .getting-started-page-card-locations {
@@ -100,13 +176,28 @@
     height: fit-content;
     margin: 50px auto;
     font-family: "Roboto" sans-serif;
+
+    @media #{$bp-below-tablet} {
+        width: 350px;
+    }
 }
 
 .locations-1{
     display: flex;
+    height: 451px;
+
+    @media #{$bp-below-mobile} {
+        flex-direction: column;
+        text-align: center;
+        height: fit-content;
+    }
 }
 .location-content{
     margin: 36px;
+
+    @media #{$bp-below-mobile} {
+        margin: 7px;
+    }
 }
 
 .mini-projects{
@@ -129,12 +220,20 @@
 
 .days-display{
     font-size: 0.9rem;
+
+    @media #{$bp-below-mobile} {
+        font-size: 0.7rem;
+    }
 }
 
 .title-meetup {
     font-size: 2.25rem;
     text-align: center;
     margin: 67px;
+
+    @media #{$bp-below-mobile} {
+        margin: 0;
+    }
 }
 
 .btn-meet{
@@ -153,10 +252,18 @@
     transition: all 100ms ease-in;
     white-space: nowrap;
     width: 78%;
+
+    @media #{$bp-below-mobile} {
+       font-size: 1.3rem;
+    }
 }
 .class-btn{
     text-align: center;
     margin-top: 99px;
+
+    @media #{$bp-below-mobile} {
+        margin: 0;
+     }
 }
 .event-title{
     text-align: center;
