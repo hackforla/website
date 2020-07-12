@@ -165,7 +165,9 @@ body {
 }
 
 // mixins for position of arrows/links - 
-// default percentages set for left / right position
+// Any parameters structured as $variable: value have a default value
+
+// small arrow and companion text positioning
 @mixin arrow-right-overlay($top, $left: 91%) {
   position: absolute;
   left: $left;
@@ -185,7 +187,6 @@ body {
   width: 7%;
   top: $top;
   transform: rotate(180deg);
-
 }
 
 @mixin arrow-left-text-overlay($top, $right: 102%) {
@@ -195,5 +196,16 @@ body {
   top: $top;
   direction: rtl;
   text-align: start;
+}
+
+// large arrow and companion text positioning
+@mixin large-arrow-right-overlay($top, $left, $width) {
+  @include arrow-right-overlay($top, $left);
+  width: $width;
+}
+
+@mixin large-arrow-left-overlay($top, $left, $width) {
+  @include arrow-left-overlay($top, $left);
+  width: $width;
 }
 

@@ -18,10 +18,10 @@
 }
 
 .select-existing-spreadsheet-arrow {
-  @include arrow-left-overlay(60%);
+  @include large-arrow-left-overlay(54%, 85%, 20%);
 
   + h4 {
-    @include arrow-left-text-overlay(60%);
+    @include arrow-left-text-overlay(54%);
   }
 }
 
