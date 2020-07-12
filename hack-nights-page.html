@@ -3,7 +3,7 @@ layout: default
 title: Hack Nights
 ---
 <div class="header-container-hacknights">
-    <h1>Hack Nigths</h1>
+    <h1>Hack Nights</h1>
     <div class="content-hack-night">
         <div class="show-video">
        
@@ -16,7 +16,7 @@ title: Hack Nights
             </div>
             <div class="show-desc">
 
-                <h2 style="text-align: initial;font-weight: 530;">Hack for LA is the Los Angeles brigade of <a href="http://brigade.codeforamerica.org/"
+                <h2 style="text-align: initial;font-weight: 530; font-size: 25px; line-height: 29px;">Hack for LA is the Los Angeles brigade of <a href="http://brigade.codeforamerica.org/"
                         target="_blank">Code
                         for America</a>,
                     a network of civic-minded technologists who contribute their skills toward using the web as a
@@ -209,7 +209,7 @@ title: Hack Nights
 
                 </div>
                 <div class="location-content">
-                    <h1>Monday</h1>
+                    <h1 style="font-size: 35px;">Monday</h1>
                     <div class="mini-projects">
                         <div class="img-dis"><img id="mini-img" src="/assets/images/projects/engage.jpg" alt="">
                             <div class="proj-desc">
@@ -283,7 +283,7 @@ title: Hack Nights
             <img class="location-image" src="assets/images/hack-nights/DTLA.png" alt="DTLA">
             </div>
             <div class="location-content">
-                <h1>Tuesday</h1>
+                <h1 style="font-size: 35px;">Tuesday</h1>
                 <div class="mini-projects">
                     <div class="img-dis"><img id="mini-img" src="assets/images/projects/311.jpg" alt="">
                         <div class="proj-desc">
@@ -345,8 +345,8 @@ title: Hack Nights
                     <img class="location-image" src="assets/images/hack-nights/southla.png" alt="southLA">
             </div>
             <div class="location-content">
-                <h1>Wednesday</h1>
-                <div class="mini-projects">
+                <h1 style="font-size: 35px;">Wednesday</h1>
+                <div style="padding: 10px;" class="mini-projects">
                     <p>Our South LA meetup was created by a community member on our leadership team.</p>
                     <p>The mission of the South LA hacknight is to offer free technical education opportunities and facilitate user centered design and software development projects to improve civic life in the local area with local partners and stakeholders.</p>
                     <p>This meetup is just getting started, there are no current projects.</p>
@@ -363,6 +363,7 @@ title: Hack Nights
 
    const locationsDropDown = document.querySelector('.getting-started-mobile-page')
    const showingLocations = document.querySelector('.mobile-locations-dropdown')
+   const arrowVector = document.querySelector('.arrow-down');
 
     const showContent = document.querySelectorAll('.event-title');
     
@@ -387,8 +388,10 @@ title: Hack Nights
             let dropDown = this.nextElementSibling;
             if(dropDown.style.display === "none"){
                 dropDown.style.display = "block"
+                arrowVector.style.transform = "rotate(180deg)"
             }else{
                 dropDown.style.display = "none"
+                arrowVector.style.transform = "rotate(90deg)"
             }
         })
     }
