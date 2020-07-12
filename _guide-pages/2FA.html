@@ -10,24 +10,21 @@ in-this-guide:
   
 ---
 
-<div class='content-section getting-started-page'>
+<div class='content-section'>
 
     <a class='anchor' id='To-Enable-2FA'></a>
-    <div class='getting-started-page-card'>
+    <div class='section-container'>
         <div>
-            <h1 style="text-align: center;"><b>To Enable 2FA:</b></h1>
-            <h3 style="text-align: center;"><b>Visit and follow </b><a href="">Github's Guide to Setting Up 2FA</a></h3>
+            <h3 class="title-left"><b>To Enable 2FA:</b></h3>
+            <h5 class="title-left"><b>Visit and follow </b><b><a href="https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication" target="blank">Github's Guide to Setting Up 2FA</a></b></h5>
         </div>
 
         <div>
             <br><p>If you already have a 2FA application on your mobile phone, you can use that.  If you do not already have a 2FA application you will be instructed to download your mobile app of choice (we have had good luck with Authy) and follow the detailed instructions to complete configuration in GitHub.</p><br>
         </div>
 
-        <div style="text-align: center;">
-            <img src="../assets/images/guides/2FA/2FA-Screenshot.png" alt="" style="display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;">
+        <div class="screenshot-2FA">
+            <img src="../assets/images/guides/2FA/2FA-Screenshot.png" alt="">
         </div>
     </div>
 
@@ -35,7 +32,7 @@ in-this-guide:
     <div class='section-container'>
         <a class='anchor' id='FAQ'></a>
         <div class="step-header">
-            <h3> Frequently Asked Questions</h3>
+            <h3>Frequently Asked Questions</h3>
         </div>
         <div class=''>
 
@@ -57,29 +54,29 @@ in-this-guide:
 
             </div>
             <p class="accordion">Encountering challenges using Git CLI after setting up 2FA? (Developers) </p>
-            <div class="panel" style="">
+            <div class="panel">
                 
                 <p>You might encounter a challenge using the Git CLI after enabling 2-Factor Authentication if you have not used the ssh link for the repo URL.</p><br>
                 
-                <p style="padding-left: 2rem;">If you clone via the ssh URL for a repo, e.g.</p>
-                <p style="padding-left: 2rem;"><mark style="background-color: #dfdfdd">git@github.com:hackforla/governance.git</mark></p>
-                <p style="padding-left: 2rem;">instead of the https URL, e.g.</p>
-                <p style="padding-left: 2rem;"><mark style="background-color: #dfdfdd">https://github.com/hackforla/governance.git</mark></p>
-                <p style="padding-left: 2rem;">then you probably won't run into any issues after enabling 2FA, as you already use an SSH key.</p><br>
+                <p class="indent">If you clone via the ssh URL for a repo, e.g.</p>
+                <p class="indent"><mark class="highlight">git@github.com:hackforla/governance.git</mark></p>
+                <p class="indent">instead of the <mark class="highlight">https</mark> URL, e.g.</p>
+                <p class="indent"><mark class="highlight">https://github.com/hackforla/governance.git</mark></p>
+                <p class="indent">then you probably won't run into any issues after enabling 2FA, as you already use an SSH key.</p><br>
 
-                <p>Read more about <a href="">connecting to GitHub with SSH.</a></p>
+                <p>Read more about <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="blank">connecting to GitHub with SSH.</a></p>
                 <p>Also, these steps might help you get the CLI auth working again:</p>
                 <ol>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><p>Try pushing code from the CLI, if you get rejected unexpectedly it’s 2FA (if you enabled it)</p></li>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><p><a href="">Clear your cached GH credentials</a></p></li>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><p><a href="">Create a token at GH.com, which you’ll use as your CLI password</a></p></li>
+                    <li><p>Try pushing code from the CLI, if you get rejected unexpectedly it’s 2FA (if you enabled it)</p></li>
+                    <li><p><a href="https://devconnected.com/how-to-clear-git-cache/#:~:text=The%20easiest%20way%20to%20clear,remove%20an%20entire%20working%20directory." target="blank">Clear your cached GH credentials</a></p></li>
+                    <li><p><a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" target="blank">Create a token at GH.com, which you’ll use as your CLI password</a></p></li>
                 </ol><br>
-                <p>If you are still having issues using 2FA with your CLI, please reach out to the <a href="">#ops</a> channel on the Hack for LA Slack.</p>
+                <p>If you are still having issues using 2FA with your CLI, please reach out to the <a href="https://app.slack.com/client/T04502KQX/CV7QGL66B" target="blank">#ops</a> channel on the Hack for LA Slack.</p>
             </div>
         </div>
     </div>
 
-    <div class='getting-started-page-card'>
+    <div class='section-container'>
         <a class='anchor' id='Member-Analytics'></a>
         <div class="step-header">
             <h3>Member Analytics</h3>
@@ -87,7 +84,7 @@ in-this-guide:
         <div class='getting-started-guide-content-section'>
             <div>
                 <div class="donut-chart">
-                    <canvas id="myCanvas"></canvas>
+                    <canvas id="myCanvas" class="step-header"></canvas>
                     <script>
                         let myCanvas = document.getElementById("myCanvas");
                         myCanvas.width = 300;
@@ -201,9 +198,9 @@ in-this-guide:
 myPiechart.draw();
                     </script>
                 </div>
-                <ul>
-                    <li style="list-style: none;"><span class="dot used"></span>New Members that have 2FA.</li>
-                    <li style="list-style: none;"><span class="dot never-used"></span>New Members that have never used 2FA.</li>
+                <ul class="donut-list">
+                    <li><span class="dot used"></span>New Members that have 2FA.</li>
+                    <li><span class="dot never-used"></span>New Members that have never used 2FA.</li>
                 </ul>
             </div>
         </div>
@@ -211,36 +208,6 @@ myPiechart.draw();
 </div>
 
 <!-- //script for FAQ dropdown -->
-<style>
-    .accordion {
-        padding: 0.2rem;
-        
-    }
-
-    #myCanvas {
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .dot {
-        height: 2rem;
-        width: 2rem;
-        padding-right: 1rem;
-        margin-right: 1rem;
-        margin-top: 1rem;
-        border-radius: 50%;
-        display: inline-block;
-    }
-
-    .used {
-        background-color: #89cff0;
-    }
-
-    .never-used {
-        background-color: #0000ff;
-    }
-    </style>
 <script>
     let showAnswer = document.getElementsByClassName('accordion');
 
