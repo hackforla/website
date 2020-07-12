@@ -40,6 +40,8 @@ looking:
     skill: UX-UI
   - category: Content
     skill: Content/writing
-location: West Los Angeles
+location: 
+  - West Los Angeles
+  - Remote
 status: Active
 ---

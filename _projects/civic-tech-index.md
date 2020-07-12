@@ -60,7 +60,9 @@ looking:
     skill: UI designer
   - category: Content
     skill: Video content script writer
-location: DTLA and remote
+location: 
+  - Downtown LA
+  - Remote
 partner: Code for America, Yale OpenLab and many more.
 status: Active
 ---
