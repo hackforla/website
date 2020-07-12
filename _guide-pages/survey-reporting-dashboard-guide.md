@@ -10,83 +10,226 @@ in-this-guide:
 - name: Additional Resources
 ---
 
-<div class="section-container">
+<!-- SECTION CONTAINER ONE : LINKING GOOGLE FORMS TO SHEETS -->
+<div class="section-container link-section">
   <h3 id="link-to-google"> Link Google Form to Google Sheets</h3>
-  <p class="subheading" >Link your survey results to a designated Google Sheets workbook</p>
+  <h5>Link your survey results to a designated Google Sheets workbook</h5>
   <h4 class="title-section">Select Response Destination</h4>
   <p>Click the vertical elipsis located at the top right of the survey form</p>
-
-  <div class="overlay-links">
-    <img class="elipsis" src="../assets/images/guides/survey-reporting/dashboard-0.png">
-    <!-- Arrows and Overlay Text Links -->
-    <!-- RIGHT SIDE LINKS -->
-    <img class="elipsis" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="elipsis">VERTICAL ELIPSIS</a></h4>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
-    <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-1.png">
-    <!-- Arrows and Overlay Text Links -->
-    <!-- RIGHT SIDE LINKS -->
-    <img class="" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="select-response-and-destination">SELECT RESPONSE DESTINATION</a></h4>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
-    <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-2.png">
-    <!-- Arrows and Overlay Text Links -->
-    <!-- LEFT SIDE LINKS -->
-    <img class="elipsis" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="elipsis">SELECT EXISTING SPREADSHEET</a></h4>
-    <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
-    <img class="select-target-sheet" src="../assets/images/guides/survey-reporting/dashboard-3.png">
-    <!-- Arrows and Overlay Text Links -->
-    <!-- LEFT SIDE LINKS -->
-    <img class="select-target-sheet" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="select-target-sheet">SELECT TARGET SHEET</a></h4>
-  </div>
+  <img class="elipsis github-issues-screenshot" src="../assets/images/guides/survey-reporting/dashboard-0.png">
+  <!-- Arrows and Overlay Text Links -->
+  <!-- RIGHT SIDE LINKS -->
+  <img class="elipsis-link-arrow" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="elipsis-link-label">VERTICAL ELIPSIS</a></h4>
+  <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+  <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-1.png">
+  <!-- Arrows and Overlay Text Links -->
+  <!-- RIGHT SIDE LINKS -->
+  <img class="" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="select-response-and-destination">SELECT RESPONSE DESTINATION</a></h4>
+  <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+  <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-2.png">
+  <!-- Arrows and Overlay Text Links -->
+  <!-- LEFT SIDE LINKS -->
+  <img class="elipsis" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="elipsis">SELECT EXISTING SPREADSHEET</a></h4>
+  <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
+  <img class="select-target-sheet" src="../assets/images/guides/survey-reporting/dashboard-3.png">
+  <!-- Arrows and Overlay Text Links -->
+  <!-- LEFT SIDE LINKS -->
+  <img class="select-target-sheet" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="select-target-sheet">SELECT TARGET SHEET</a></h4>
 </div>
-
+<!-- SECTION CONTAINER TWO: CLEAN DATA IN GOOGLE SHEETS -->
 <div class="section-container">
   <h3 id="clean-data-google-sheets">Clean Data in Google Sheets </h3>
   <h5>Clean the data exported by your Google Form to enable proper manipulation in Google Data Studio</h5>
   <h4 class="title-section" >Format Spreadsheet </h4>
   <p>
-    Once you have set the response destination for your Google Form to your desired Google Sheets File, your data will be visible in a new worksheet. <br><br>
-    (1) Choose a short, yet descriptive title for your worksheet. If your spreadsheet contains multiple worksheets, move the new tab to the desired location by dragging and dropping using the tab selector. <br><br>
-    (2) Format the first row of data. Select the first row, then go to Format -> Text Wrapping -> Wrap. <br><br>
+    Once you have set the response destination for your Google Form to your desired Google Sheets  File, your data will be visible in a new worksheet. 
+    <br><br>
+    (1) Choose a short, yet descriptive title for your worksheet. If your spreadsheet contains multiple worksheets, move the new tab to the desired location by dragging and dropping using the tab selector. 
+    <br><br>
+    (2) Format the first row of data. Select the first row, then go to Format -> Text Wrapping -> Wrap. 
+    <br><br>
     (3) Select the first row and set the font to bold. Add a background color to further set the column titles off from the rows of data below.
   </p>
-    <img class="format-spreadsheet" src="../assets/images/guides/survey-reporting/dashboard-4.png">
-    <!-- Arrows and Overlay Text Links -->
-    <!-- LEFT SIDE LINKS -->
-    <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="format-spreadsheet">ROW 1</a></h4>
-    <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer.svg">
-    <h4><a href="#" class="format-spreadsheet">LINKED WORKSHEET TAB</a></h4>
-    <h4 class="title-section">CREATE NEW COLUMNS</h4>
-    <p> 
+  <img class="format-spreadsheet" src="../assets/images/guides/survey-reporting/dashboard-4.png">
+  <!-- Arrows and Overlay Text Links -->
+  <!-- LEFT SIDE LINKS -->
+  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="format-spreadsheet">ROW 1</a></h4>
+  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="format-spreadsheet">LINKED WORKSHEET TAB</a></h4>
+  <h4 class="title-section">CREATE NEW COLUMNS</h4>
+  <p> 
       Depending on the way your data is structured within a particular column, you will need to insert columns in order to clean your data for processing. <br><br>
       In most cases, where data is formatted as a list within a cell, this can be accomplished through the insertion of 2 new columns to the right of your target column data. <br><br>
       (1) Select the target column (‘G’). As a shortcut, select the column that immediately precedes as well (‘F’). <br><br>
       (2) In the Go to the Insert menu -> choose ‘2 Columns right.’
-    </p>
-    <img class="create-new-columns" src="../assets/images/guides/survey-reporting/dashboard-5.png">
-    <h4 class="title-section">TITLE NEW COLUMNS</h4>
-    <p>
-      Once you have created your new columns to clean your data, title the new columns the same title as your target column with an appendage, such as “- 1” and “- 2”. This will distinguish your new columns from your target column
-    </p>
-    <img class="title-new-columns" src="../assets/images/guides/survey-reporting/dashboard-6.png">
-    <h4 class="title-section">TRANSPOSE ROW DATA</h4>
-    <p>
-      To create a chart, whether direclty in Google Sheets, or by using a data visualization tool like Google Data Studio, we must have a 1:1 relationship between the data in a particular cell and its dimension (column name). By default, survey questions of the “check all that apply” variety produce data arrays that violate this principle. <br><br>
-
-      We use the TRANSPOSE() function with the SPLIT() and JOIN() functions to achieve this outcome. In our example, we enter the formula =TRANSPOSE((SPLIT(JOIN(“,”, G2:G995), “,”))) in cell H2. <br><br>
-
-      How did we choose G995 as the endpoint of our range? The parameter requires a defined end point; therefore, we arbitrarily choose a cell value beyond which we are certain no future values will be recorded.
-    </p>
-    <img class="transpose-row-data" src-"../assets/images/guides/survey-reporting/dashboard-7.png">
-
+  </p>
+  <img class="create-new-columns" src="../assets/images/guides/survey-reporting/dashboard-5.png">
+  <h4 class="title-section">TITLE NEW COLUMNS</h4>
+  <p>
+    Once you have created your new columns to clean your data, title the new columns the same title as your target column with an appendage, such as “- 1” and “- 2”. This will distinguish your new columns from your target column
+  </p>
+  <img class="title-new-columns" src="../assets/images/guides/survey-reporting/dashboard-6.png">
+  <h4 class="title-section">TRANSPOSE ROW DATA</h4>
+  <p>
+    To create a chart, whether direclty in Google Sheets, or by using a data visualization tool like Google Data Studio, we must have a 1:1 relationship between the data in a particular cell and its dimension (column name). By default, survey questions of the “check all that apply” variety produce data arrays that violate this principle. 
+    <br><br>
+    We use the TRANSPOSE() function with the SPLIT() and JOIN() functions to achieve this outcome. In our example, we enter the formula =TRANSPOSE((SPLIT(JOIN(“,”, G2:G995), “,”))) in cell H2. 
+    <br><br>
+    How did we choose G995 as the endpoint of our range? The parameter requires a defined end point; therefore, we arbitrarily choose a cell value beyond which we are certain no future values will be recorded.
+  </p>
+  <img class="transpose-row-data" src="../assets/images/guides/survey-reporting/dashboard-8.png">
+  <!-- LEFT HAND ARROW -->
+  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
+  <h4 class="title-section">TRIM DATA</h4>
+  <p>
+    Once we have transposed our data, we must remove any leading or trailing spaces found in every string. We can accomplish this by using the TRIM() function coupled with the ARRAYFORMULA() function.
+    <br><br>
+    In our example, we enter =ARRAYFORMULA(TRIM(H2:H)) in cell I2. Why do we use “H” as the endpoint of our range? In this case, the TRIM() permits us to use an undefined endpoint.
+  </p>
+  <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9.png">
+  <!-- RIGHT HAND ARROW -->
+  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
+  <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9b.png">
 </div>
-
-    
-
+<!-- SECTION CONTAINER THREE: BUILD REPORT IN GOOGLE DATA STUDIO -->
+<div class="section-container">
+  <h3 id="build-report-in-google-data-studio">Build Report in Google Data Studio </h3>
+  <h5>Build a report in Google Data Studio using your data in Google Sheets</h5>
+  <h4 class="title-section" >Choose Report </h4>
+  <p>Once you are logged into Google Data Studio, create a Blank Report, or choose an existing report</p>
+  <img class="choose-report" src="../assets/images/guides/survey-reporting/dashboard-10.png">
+  <h4 class="title-section" >Add New Page(Optional) </h4>
+  <p>
+    Within your report, you have the option of building multiple pages. Use this approach when you wish to break up the number of charts you display per page, or if you choose to organize your data in a specific way.
+    <br><br>
+    (1) Click on the Page dropdown at the far left of the menu bar, then click ‘Add a new page’. 
+    <br><br>
+    (2) Hovering over the new page added within the dropdown menu, you will see a vertical elipsis. Click the vertical elipsis and select Rename. Choose a short, yet descriptive name for your new page.
+  </p>
+  <img class="guide-page-add-new-page" src="../assets/images/guides/survey-reporting/dashboard-11.png">
+  <!-- LEFT HAND ARROW -->
+  <img class="guide-page-add-new-page" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-add-new-page">ADD PAGE</a></h4>
+  <h4 class="title-section" >Add Data </h4>
+  <p>
+    In order to create charts in Google Data Studio, you will need to connect your report to a data source. Data Studio accomplishes this using Connectors. At the time of this writing, Data Studio offers 16 connectors to tools within the Google ecosystem, along with 204 partner connectors. 
+    <br><br>
+    A few examples of connectors you may find useful include Google Sheets, Google Analytics, PostgreSQL, Facebook Page, and Twitter Analytics.
+    <br><br>
+    (1) Select ‘Add data’ from the menu bar.
+    <br><br>
+    (2) Choose your desired Connector from the ‘Connect to data’ window that opens. In our example, we use Google Sheets.
+  </p>
+  <img class="guide-page-add-data" src="../assets/images/guides/survey-reporting/dashboard-12.png">
+  <!-- LEFT HAND ARROW -->
+  <img class="guide-page-add-data" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="add-data">ADD DATA</a></h4>
+  <img class="guide-page-add-data" src="../assets/images/guides/survey-reporting/dashboard-13.png">
+  <!-- RIGHT HAND ARROW -->
+  <img class="guide-page-connections" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="guide-page-connections">CONNECTORS</a></h4>
+  <h4 class="title-section" >Select Worksheet </h4>
+  <p>
+  When using Google Sheets, Google Data Studio builds charts at the spreadsheet level.
+  <br><br>
+  (1) Select your Spreadsheet, the corresponding Worksheet, and checkmark the desired formatting options.
+  <br><br>
+  (2) Click the ‘Add’ button in the bottom right.
+  </p>
+  <img class="guide-page-add-data-sources" src="../assets/images/guides/survey-reporting/dashboard-14.png">
+  <!-- LEFT HAND ARROW -->
+  <img class="guide-page-add-data-sources" src="../assets/images/guides/pink-pointer-lg.png">
+  <h4><a href="#" class="guide-page-add-data-sources">DATA SOURCES</a></h4>
+  <h4 class="title-section" > Add Chart </h4>
+  <h4 class="title-section" >Select Worksheet </h4>
+  <p>
+    Google Data Studio provides numerous ways to visualize data, from tables to bar graphs, pie charts to trendlines, and scatter plots to pivot tables. Choose the chart that will best represent the data you select.
+  </p>
+  <img class="guide-page-add-chart" src="../assets/images/guides/survey-reporting/dashboard-16.png">
+  <!-- LEFT HAND ARROW -->
+  <img class="guide-page-add-chart" src="../assets/images/guides/pink-pointer-md.png">
+  <h4><a href="#" class="guide-page-add-chart">ADD A CHART</a></h4> 
+  <h4 class="title-section" > Customize Chart </h4>
+  <p>
+    By default, Google Data Studio will arbitrarily choose a Dimension for a newly added chart. 
+  </p>
+  <img class="guide-page-customize-chart" src="../assets/images/guides/survey-reporting/dashboard-17.png">
+  <!-- RIGHT HAND ARROW -->
+  <img class="guide-page-data-page" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-data-page">DATA PAGE</a></h4> 
+  <img class="guide-page-properties-panel" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-properties-panel">PROPERTIES PANEL</a></h4>
+  <img class="guide-page-dimension" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-dimension">DIMENSION</a></h4>  
+  <img class="guide-page-metric" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-metric">METRIC</a></h4> 
+  <img class="guide-page-sort" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-sort">SORT</a></h4> 
+  <img class="guide-page-filter" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-filter">FILTER</a></h4> 
+  <p>
+    Select the appropriate dimension for your chart. In Google Data Studio, dimension refers to a selected column title in your Worksheet.
+    <br><br>
+    (1) Click on the Dimension field. You will see a ‘Default group’ along with a search bar. Type your desired column name in the search bar. 
+    <br><br>
+    (2) Choose your Dimension. If you have cleaned your data, all column names that share this dimension name will show. Choose the dimension that refers to the farthest right new column that you created, or the one whose title appendage has the highest numerical value.
+    <br><br>
+    (3) Choose your Metric. Google Data Studio will often default to ‘Record Count.’ In some cases, this may not be what you want. Once you have chosen your desired metric, appropriately select ‘Count’ or ‘Count Distinct.’ In most cases, you will want to select ‘Count.’ Make this selection by clicking on the ‘CTD’ or ‘CT’ label just to the left of your metric variable.
+  </p>
+  <img class="guide-page-customize-chart" src="../assets/images/guides/survey-reporting/dashboard-18.png">
+  <!-- RIGHT HAND ARROW -->
+  <img class="guide-page-dimension-2" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-dimension-2">DIMENSION</a></h4> 
+  <h4 class="title-section" > Filter Null Values </h4>
+  <p>
+    You may find (more often than not) null values that have been incorporated into your chart. You will need to create a filter to remove them.
+    <br><br>
+    (1) Choose ‘ADD A FILTER’ from the properties panel.
+    <br><br>
+    (2) Select ‘CREATE A FILTER’ from the ‘Filter picker.’
+    <br><br>
+    (3) Copy and paste the name of the column for your cleaned data. In our example this is “Which projects most interest you? (check all that apply) - 2”
+    <br><br>
+    (4) From the drop downs, choose ‘Exclude’ and ‘Is Null.’
+    <br><br>
+    (5) Select Save.  
+  </p>
+   <img class="guide-page-filter-null-values" src="../assets/images/guides/survey-reporting/dashboard-19.png">
+  <h4 class="title-section" > Style Chart </h4>
+  <p>
+    The graphical components of an added chart can be customized across several different attributes. View the style pane within the properties panel and make your desired selections.
+    <br><br>
+    Adding a gradient
+    <br><br>
+    If you wish to introduce a gradient to a single color bar graph, you will need to take one additional step in the Data pane.
+    <br><br>
+    (1) Select ‘Add Dimension’ under Breakdown Dimension. Select the exact same dimension as you have chosen.
+    <br><br>
+    (2) Return to the Style pane. Within the ‘Color by’ section, choose a color that will best represent your data.
+  </p>
+  <img class="guide-page-style-chart" src="../assets/images/guides/survey-reporting/dashboard-20.png">
+  <!-- RIGHT HAND ARROW -->
+  <img class="guide-page-style-pane" src="../assets/images/guides/pink-pointer.svg">
+  <h4><a href="#" class="guide-page-style-pane">STYLE PANE</a></h4> 
+</div>
+<!-- SECTION CONTAINER FOUR: ADDITIONAL RESOURCES -->
+<div class="section-container">
+  <h3 id="additional-resources"> Additional Resources </h3>
+  <h5>For more detailed exploration of Google Forms, Google Sheets, and Google Data Studio, please see the resources below.</h5>
+  <p>Google Forms</p>
+  <p class="guidepage-pink-underline-link"><a>How to Use Google Forms</a></p>
+  <p>Google Sheets</p>
+  <p class="guidepage-pink-underline-link"><a>Google Sheets Training and Help</a></p>
+  <p>Google Data Studio</p>
+  <p class="guidepage-pink-underline-link"><a>Data Studio Training</a></p>
+</div>
 <script>
     const issueTemplate = document.querySelector('.issue-template-code');
     const code = document.querySelector('.template-code');
