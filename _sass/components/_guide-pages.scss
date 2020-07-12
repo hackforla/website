@@ -137,6 +137,7 @@ body {
 .grayarrow {
   width: 20px;
   max-width: none;
+  margin: 1rem auto;
 }
 
 @media #{$bp-below-tablet} {
@@ -144,3 +145,55 @@ body {
     padding: 12.5% 10%;
   }
 }
+
+// STYLING FOR GUIDE PAGE DIVS CONTAINING IMAGE WITH OVERLAY LINKS 
+
+//Div holding image and arrows
+.overlay-links {
+  position: relative;
+
+  h4 {
+    font-size: 0.85em;
+  }
+}
+
+// image within overlay-links section
+.overlay-links-img {
+  max-width: none;
+  width: 90%;
+  margin: auto;
+}
+
+// mixins for position of arrows/links - 
+// default percentages set for left / right position
+@mixin arrow-right-overlay($top, $left: 91%) {
+  position: absolute;
+  left: $left;
+  width: 7%;
+  top: $top;
+}
+
+@mixin arrow-right-text-overlay($top, $left: 99%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin arrow-left-overlay($top, $right: 94%) {
+  position: absolute;
+  right: $right;
+  width: 7%;
+  top: $top;
+  transform: rotate(180deg);
+
+}
+
+@mixin arrow-left-text-overlay($top, $right: 102%) {
+  position: absolute;
+  right: $right;
+  width: 10%;
+  top: $top;
+  direction: rtl;
+  text-align: start;
+}
+

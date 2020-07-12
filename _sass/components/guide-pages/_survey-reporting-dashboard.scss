@@ -1,0 +1,35 @@
+//Styles to align arrows to images
+// overlay links class defined in github issues page
+
+.elipsis-arrow {
+  @include arrow-right-overlay(37%);
+
+  + h4 {
+    @include arrow-right-text-overlay(37%);
+  }
+}
+
+.select-response-arrow {
+  @include arrow-right-overlay(35%);
+
+  + h4 {
+    @include arrow-right-text-overlay(35%);
+  }
+}
+
+.select-existing-spreadsheet-arrow {
+  @include arrow-left-overlay(60%);
+
+  + h4 {
+    @include arrow-left-text-overlay(60%);
+  }
+}
+
+.select-target-sheet-arrow {
+  @include arrow-left-overlay(50%);
+
+  + h4 {
+    @include arrow-left-text-overlay(50%);
+  }
+}
+
