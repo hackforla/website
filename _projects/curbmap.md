@@ -10,13 +10,14 @@ links:
     url: 'https://curbmap.com/'
 looking:
   - category: UI/UX
-    skill: UX designers
+    skill: UX designers 
   - category: UI/UX
-    skill: UX researchers
+    skill: UX researchers 
   - category: UI/UX
     skill: UI designers
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 hide: true
-# partner:
 status: On Hold
 ---

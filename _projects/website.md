@@ -46,7 +46,7 @@ links:
     url: 'https://www.hackforla.org'
 looking:
   - category: UI/UX
-    skill: Photoshop artist
+    skill: UI (wireframes)
   - category: Development
     skill: Junior JavaScript developers
   - category: Development
@@ -54,7 +54,9 @@ looking:
 technologies:
   - GitHub Pages
   - Jekyll
-location: Santa Monica, Downtown and Remote
-# partner: N/A
+location: 
+  - Santa Monica 
+  - Downtown LA 
+  - Remote
 status: Active
 ---

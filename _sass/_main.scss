@@ -44,7 +44,11 @@
 @import 'components/home-getting-started';
 @import 'components/getting-started-page.scss';
 @import 'components/project-meetings.scss';
-@import 'components/project-filter.scss';
+@import 'components/guide-pages.scss';
+
+//Guide Pages (Within Components)
+@import 'components/guide-pages/github-issue-guide.scss';
+
 
 // /**
 //  * Layouts

@@ -36,8 +36,12 @@ partner: NDICA
 looking:
   - category: Content
     skill: Research
-    category: UI/UX
+  - category: UI/UX
     skill: UX-UI
-location: West Los Angeles
+  - category: Content
+    skill: Content/writing
+location: 
+  - West Los Angeles
+  - Remote
 status: Active
 ---

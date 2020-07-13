@@ -11,7 +11,9 @@ links:
     url: 'https://github.com/hackforla/jobs-for-hope'
   - name: Site
     url: 'https://jobs-for-hope.herokuapp.com/'
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 partner: LA County Homeless Initiative; http://homeless.lacounty.gov
 status: On Hold
 ---

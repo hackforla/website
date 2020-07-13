@@ -1,0 +1,228 @@
+//Issue Template Classes
+.issue-template-container {
+  position: relative;
+}
+
+.issue-template-code {
+  border: 1px solid $color-pink;
+  background-color: $color-pink;
+  font-family: monospace;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.copy-button {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  border: 0.5px solid white;
+  border-radius: 4px;
+  color: black;
+  width: 85px;
+  height: 30px;
+  right: 1%;
+  top: 1%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.copy-button:hover {
+  background: white;
+  color: black;
+}
+
+.clipboard {
+  max-width: none;
+  width: auto;
+  max-height: 22px;
+}
+
+.green-text {
+  color: #58915b;
+}
+
+.blue-text {
+  color: #407BFF;
+}
+
+//
+// STYLING FOR Example of a Good End-to-End Issue OVERLAY LINKS
+//
+.overlay-links {
+  position: relative;
+
+  h4 {
+    font-size: 0.85em;
+  }
+}
+
+.link-section p {
+  text-align: center;
+}
+
+.github-issues-screenshot {
+  max-width: none;
+  width: 90%;
+}
+
+// VARIABLES FOR OVERLAY LINKS
+@mixin right-overlay {
+  position: absolute;
+    left: 90%;
+    width: 7%;
+  }
+@mixin right-text-overlay {
+  position: absolute;
+    left: 97.5%;
+}
+  
+@mixin left-overlay {
+  position: absolute;
+  right: 88%;
+  width: 7%;
+}
+@mixin left-text-overlay {
+  position: absolute;
+  right: 87%;
+  width: 10%;
+  direction: rtl;
+  text-align: start;
+}
+
+//INDIVIDUAL PLACEMENTS OF OVERLAY LINKS 
+//RIGHT SIDE LINKS
+.assignees {
+  @include right-overlay;
+  top: 17.5%;
+
+  + h4 {
+    @include right-text-overlay;
+    top: 17.5%;
+  }
+}
+
+.labels {
+  @include right-overlay;
+  top: 21%;
+
+  + h4 {
+    @include right-text-overlay;
+    top: 21%;
+  }
+}
+
+.project-board {
+  @include right-overlay;
+  top: 27.5%;
+
+  + h4 {
+    @include right-text-overlay;
+    top: 27.5%;
+  }
+}
+
+.milestones {
+  @include right-overlay;
+  top: 36%;
+
+  + h4 {
+    @include right-text-overlay;
+    top: 36%;
+  }
+} 
+
+//LEFT SIDE LINKS 
+.left-pointer {
+  transform: rotate(180deg);
+}
+
+.title {
+  @include left-overlay;
+  right: 94%;
+  top: 9%;
+
+  + h4 {
+    @include left-text-overlay;
+    top: 9%;
+    right: 92.5%;
+  }
+} 
+
+.overview {
+  @include left-overlay;
+  top: 19%;
+  
+  + h4 {
+    @include left-text-overlay;
+    top: 19%;
+  }
+}
+
+.dependency {
+  @include left-overlay;
+  top: 25.5%;
+
+  + h4 {
+    @include left-text-overlay;
+    top: 25.5%;
+  }
+}
+
+.action-items {
+  @include left-overlay;
+  top: 30.5%;
+
+  + h4 {
+    @include left-text-overlay;
+    top: 30.5%;
+  }
+}
+
+.resources {
+  @include left-overlay;
+  top: 54.5%;
+
+  + h4 {
+    @include left-text-overlay;
+    top: 54.5%;
+  }
+}
+
+.resume {
+  @include left-overlay;
+  top: 62.4%;
+
+  + h4 {
+    @include left-text-overlay;
+    top: 62.4%;
+  }
+}
+
+//Scale overlay-text down on smaller screens
+@media #{$bp-below-tablet} {
+  .overlay-links h4 {
+    font-size: 0.4em;
+  }
+
+  .screenshot {
+    width: 85%;
+  }
+
+  .clipboard {
+    max-height: 16px;
+  }
+
+  .copy-button {
+    width: 70px;
+    height: 26px;
+    top: 0%;
+  }
+}
+
+.grayarrow {
+  width: 20px;
+  max-width: none;
+}
+
+.pinkpointer {
+  width: 7%;
+}
