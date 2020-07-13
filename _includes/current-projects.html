@@ -126,6 +126,11 @@
       const termList = document.createElement('ul')
       termList.setAttribute('class', 'dropdown');
 
+      // create label arrow
+      const arrowSpan = document.createElement('span');
+      const labelArrow = arrowSpan.appendChild(document.createTextNode(" \u{0221f} "));
+      arrowSpan.setAttribute('class', 'labelArrow');
+      categoryTitle.appendChild(arrowSpan);
 
       for (let term in termSet) {
 
@@ -135,7 +140,10 @@
 
         const content = document.createElement('div');
         const checkbox = document.createElement('input');
+        
+
         checkbox.setAttribute('type', 'checkbox');
+        checkbox.setAttribute('class', 'filter-checkbox');
 
         const text = `${term} (${count})`;
 
@@ -150,8 +158,17 @@
 
           if (event.target.checked) {
             projectFilter.addCondition(category, term);
+
+            //change label background color
+            categoryDropdown.style.backgroundColor="#fa114f";
+            categoryTitle.style.color="white";
+
           } else {
             projectFilter.removeCondition(category, term);
+            
+            //remove label background color
+            categoryDropdown.style.backgroundColor="white";
+            categoryTitle.style.color="black";
           }
 
           // recompute counts and IDs to hide

@@ -1,72 +1,102 @@
 a.filter-item {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
-  nav {
-    font-family: monospace;
-  }
+//filter container
+ul.filter-list {
+  background: $color-pink;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  justify-content: space-between;
+}
 
-  ul.filter-list {
-    background: lightgray;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
+//category boxes
+li.filter-item {
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  color: black;
+  background: white;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  transition-duration: 0.5s;
+  flex: 1;
+  margin: 5px; 
+  text-align: left;
+}
 
-  li.filter-item {
-    border: 1px solid black;
-    color: black;
-    background: lightgray;
-    display: block;
-    float: left;
-    padding: 1rem 5rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
-  }
+//category names
+li.filter-item a {
+  color: black;
+  text-transform: capitalize;
+}
 
-  li.filter-item a {
-    color: black;
-  }
+li.filter-item:hover,
+li.filter-item:focus-within {
+  background: white;
+  cursor: pointer;
+}
 
-  li.filter-item:hover,
-  li.filter-item:focus-within {
-    background: grey;
-    cursor: pointer;
-  }
+li.filter-item:focus-within a {
+  outline: none;
+}
 
-  li.filter-item:focus-within a {
-    outline: none;
-  }
+//dropdown
+ul.filter-list li ul {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  visibility: hidden;
+  opacity: 0;  
+  transition: all 0.5s ease;
+  z-index: 1;
+  list-style: none;
+  width: 200px;
+  padding: 15px 20px;
+  line-height: 2em;
+  font-size: .9em;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
 
-  ul.filter-list li ul {
-    background: lightgray;
-    visibility: hidden;
-    opacity: 0;
-    min-width: 5rem;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
-    z-index: 1;
-  }
+ul.filter-list li:hover > ul,
+ul.filter-list li:focus-within > ul,
+ul.filter-list li ul:hover,
+ul.filter-list li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
 
-  ul.filter-list li:hover>ul,
-  ul.filter-list li:focus-within>ul,
-  ul.filter-list li ul:hover,
-  ul.filter-list li ul:focus {
-    visibility: visible;
-    opacity: 1;
-    display: block
-  }
+ul.filter-list li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+}
 
-  ul.filter-list li ul li {
-    clear: both;
-    width: 100%;
-    text-align: left;
-  }
+.hidden-project {
+  display: none;
+}
 
-  .hidden-project {
-    display: none;
-  }
+.dropdown {
+  display: inline-block;
+  max-width: 180px;
+}
+
+.filter-checkbox {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin: 0px 5px;
+}
+
+.labelArrow {
+  float: right;
+  transform: rotate(-45deg);
+  font-weight: boldest;
+  font-size: 24px;
+  position: absolute;
+  top: 2%;
+  left: 80%;
+}
+
