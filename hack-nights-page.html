@@ -362,14 +362,13 @@ title: Hack Nights
    const locationsDropDown = document.querySelector('.getting-started-mobile-page')
    const showingLocations = document.querySelector('.mobile-locations-dropdown')
    const arrowVector = document.querySelector('.arrow-down');
-
     const showContent = document.querySelectorAll('.event-title');
     
 
 
     locationsDropDown.addEventListener("click" , function(){
         if (showingLocations.style.display === "none"){
-            locationsDropDown.style.display = "none"
+            // locationsDropDown.style.display = "none"
             showingLocations.style.display = "block"
         } else {
             locationsDropDown.style.display = "block"
@@ -389,7 +388,7 @@ title: Hack Nights
                 arrowVector.style.transform = "rotate(180deg)"
             }else{
                 dropDown.style.display = "none"
-                arrowVector.style.transform = "rotate(90deg)"
+                arrowVector.style.transform = "rotate(0deg)"
             }
         })
     }
