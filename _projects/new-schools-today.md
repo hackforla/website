@@ -43,8 +43,6 @@ links:
 looking:
   - category: Development
     skill: Mobile Development
-  - category: Development
-    skill: Serverless PaaS Expertise
   - category: UI/UX
     skill: UX knowledge
   - category: Development
@@ -57,6 +55,8 @@ technologies:
   - ReactJS
   - Flutter
 partner: Seeking
-location: Santa Monica, CA
+location: 
+  - Santa Monica
+  - Remote
 status: Active
 ---

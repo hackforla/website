@@ -58,7 +58,9 @@ links:
 looking:
   - category: UI/UX
     skill: UI Designer
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
 status: Active
 ---

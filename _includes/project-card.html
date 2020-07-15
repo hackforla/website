@@ -52,7 +52,9 @@
       {%- if project.location -%}
       <div class="project-location">
         <strong>Location: </strong>
-        {{ project.location }}
+        {% for city in project.location %}
+          <p class='project-card-field-inline'> {{ city }}</p>{% if forloop.last == false %},{% endif %}
+        {% endfor %}
       </div>
       {%- endif -%}
 

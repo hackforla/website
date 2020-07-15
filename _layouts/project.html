@@ -23,7 +23,11 @@ layout: default
                     </div>
                 {% endif %}
                 {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
-                {% if page.location %}<p><strong>Location: </strong>{{ page.location }}</p>{% endif %}
+                {% if page.location %}<p><strong>Location: </strong>
+                    {% for city in page.location %}
+                    {{ city }}{% if forloop.last == false %},{% endif %}
+                    {% endfor %}
+                </p>{% endif %}
 
                 <!-- Links Logic to filter prioritized links and to correct comma placement -->
                 {% if page.links %}
@@ -179,10 +183,11 @@ layout: default
     let projectId = '{{ page.identification }}';
     // Search for correct project
     let project = null;
-    for(item of projects){
-        let itemId = item.id.toString();
+    // Starts at 1 now since the first element is a time stamp
+    for(i = 1; i < projects.length; i++){
+        let itemId = projects[i].id.toString();
         if(itemId == projectId){
-            project = item;
+            project = projects[i];
             break;
         }
     }
@@ -219,7 +224,7 @@ layout: default
     let contributorsArray = [];
 
     if(project != null){
-        for (contributor of project.contributors.data) {
+        for (contributor of project.contributorsComplete.data) {
             // Checking for valid data
             if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
                 // Pushing valid data to contributorsArray

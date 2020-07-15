@@ -32,7 +32,9 @@ technologies:
   - Express
   - React
   - Node (MERN)
-location: Santa Monica + Remote
+location: 
+  - Santa Monica
+  - Remote
 partner: EnCiv.org, Ballotpedia.org
 status: Active
 ---

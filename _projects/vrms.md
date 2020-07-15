@@ -47,7 +47,12 @@ looking:
     skill: Front end devs (any level)
   - category: Development
     skill: Back end devs (any level)
-location: Santa Monica, Downtown LA
+  - category: UI/UX
+    skill: UI/UX
+location: 
+  - Santa Monica
+  - Downtown LA
+  - Remote
 partner: TBD
 status: Active
 ---
