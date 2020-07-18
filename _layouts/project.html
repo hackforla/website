@@ -116,7 +116,16 @@ layout: default
                         {%- include resource-card.html name=item.name url=item.url image=page.image -%}
                 {% endif %}
             {% endfor %}
+
+            <!-- Check for Project One Page -->
+            {% for item in page.links %}
+                {% if item.name == 'Project One Page' or item.name == 'Project One Pager' %}
+                    {% assign hasGettingStarted = true %}
+                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
             {% if hasGettingStarted == false %}
+
                 <div id='help-getting-started'>
                     <p class='help-getting-started-text'>Looks like this project doesn't have their own Getting Started guide.</p>
                     <button onClick='helpMakeGuide()' class="btn btn-primary help-make-button">Help Make One!</button onClick=''>
@@ -160,7 +169,7 @@ layout: default
         <h4 class='project-page-card-title'>Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
-                {% if item.name == 'Readme' or item.name == 'Wiki' %}
+                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Project One Page' or item.name == 'Project One Pager' %}
                     {%- include resource-card.html name=item.name url=item.url image=page.image -%}
                 {% else %}
                     {%- include resource-card.html name=item.name url=item.url -%}
@@ -224,7 +233,7 @@ layout: default
             if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
                 // Pushing valid data to contributorsArray
                 contributorsArray.push(contributor);
-            } 
+            }
         }
 
         // Creates DOM elements for contributors
@@ -346,7 +355,7 @@ const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
-    
+
     // Loops through data and assigns information to variables in a readable format
     for (let i = 0; i <= scheduleData.length - 1; i++) {
         let startTime = timeFormat(new Date(scheduleData[i].startTime));
@@ -418,7 +427,7 @@ fetch(API_URL, {method: 'GET'})
     if (arr_diff(data, localData)) {
         clearSchedule();
         schedule(data);
-    } 
+    }
 })
 .catch(err => {
     console.log(err);
@@ -449,6 +458,6 @@ function timeFormat(time) {
     } else {
         return `${hours}:${minutes} am`;
     }
-    
+
 }
 </script>

@@ -18,10 +18,10 @@ links:
     url: 'https://github.com/hackforla/civic-opportunity/projects/1'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C016CJZ8VTN'
-  - name: Project One Page
-    url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
   - name: Readme
     url: 'https://github.com/hackforla/civic-opportunity/blob/master/README.md'
+  - name: Project One Page
+    url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
 looking:
   - category: UI/UX
     skill: UI designer
