@@ -117,13 +117,6 @@ layout: default
                 {% endif %}
             {% endfor %}
 
-            <!-- Check for Project One Page -->
-            {% for item in page.links %}
-                {% if item.name == 'Project One Page' or item.name == 'Project One Pager' %}
-                    {% assign hasGettingStarted = true %}
-                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
             {% if hasGettingStarted == false %}
 
                 <div id='help-getting-started'>
