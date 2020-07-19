@@ -36,7 +36,7 @@ in-this-guide:
     <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-2.png">
     <!-- Arrows and Overlay Text Links -->
     <!-- LEFT SIDE LINKS -->
-    <img class="select-existing-spreadsheet-arrow" src="../assets/images/guides/pink-pointer-lg.png">
+    <img class="select-existing-spreadsheet-arrow" src="../assets/images/guides/pink-pointer-md.png">
     <h4><a href="#">SELECT EXISTING SPREADSHEET</a></h4>
   </div>
   <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
@@ -62,13 +62,16 @@ in-this-guide:
     <br><br>
     (3) Select the first row and set the font to bold. Add a background color to further set the column titles off from the rows of data below.
   </p>
+  <div class="overlay-links">
   <img class="format-spreadsheet" src="../assets/images/guides/survey-reporting/dashboard-4.png">
   <!-- Arrows and Overlay Text Links -->
   <!-- LEFT SIDE LINKS -->
-  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer.svg">
+  <img class="format-spreadsheet-row-1-arrow" src="../assets/images/guides/pink-pointer.svg">
   <h4><a href="#" class="format-spreadsheet">ROW 1</a></h4>
-  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
+  <img class="format-spreadsheet-linked-worksheet-arrow" src="../assets/images/guides/pink-pointer-md.png">
   <h4><a href="#" class="format-spreadsheet">LINKED WORKSHEET TAB</a></h4>
+  </div>
+
   <h4 class="title-section">CREATE NEW COLUMNS</h4>
   <p> 
       Depending on the way your data is structured within a particular column, you will need to insert columns in order to clean your data for processing. <br><br>
@@ -90,21 +93,25 @@ in-this-guide:
     <br><br>
     How did we choose G995 as the endpoint of our range? The parameter requires a defined end point; therefore, we arbitrarily choose a cell value beyond which we are certain no future values will be recorded.
   </p>
-  <img class="transpose-row-data" src="../assets/images/guides/survey-reporting/dashboard-8.png">
-  <!-- LEFT HAND ARROW -->
-  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
-  <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
+  <div class="overlay-links">
+    <img class="transpose-row-data" src="../assets/images/guides/survey-reporting/dashboard-8.png">
+    <!-- LEFT HAND ARROW -->
+    <img class="formula-cell-arrow" src="../assets/images/guides/pink-pointer-md.png">
+    <h4><a href="#">FORMULA CELL</a></h4>
+  </div>
   <h4 class="title-section">TRIM DATA</h4>
   <p>
     Once we have transposed our data, we must remove any leading or trailing spaces found in every string. We can accomplish this by using the TRIM() function coupled with the ARRAYFORMULA() function.
     <br><br>
     In our example, we enter =ARRAYFORMULA(TRIM(H2:H)) in cell I2. Why do we use “H” as the endpoint of our range? In this case, the TRIM() permits us to use an undefined endpoint.
   </p>
-  <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9.png">
-  <!-- RIGHT HAND ARROW -->
-  <img class="format-spreadsheet" src="../assets/images/guides/pink-pointer-lg.png">
-  <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
-  <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9b.png">
+  <div class="overlay-links">
+    <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9.png">
+    <!-- RIGHT HAND ARROW -->
+    <img class="formula-cell-arrow" src="../assets/images/guides/pink-pointer-lg.png">
+    <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
+  </div>
+    <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9b.png">
 </div>
 <!-- SECTION CONTAINER THREE: BUILD REPORT IN GOOGLE DATA STUDIO -->
 <div class="section-container">
@@ -121,10 +128,12 @@ in-this-guide:
     <br><br>
     (2) Hovering over the new page added within the dropdown menu, you will see a vertical elipsis. Click the vertical elipsis and select Rename. Choose a short, yet descriptive name for your new page.
   </p>
-  <img class="guide-page-add-new-page" src="../assets/images/guides/survey-reporting/dashboard-11.png">
-  <!-- LEFT HAND ARROW -->
-  <img class="guide-page-add-new-page" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-add-new-page">ADD PAGE</a></h4>
+  <div class="overlay-links">
+    <img class="guide-page-add-new-page" src="../assets/images/guides/survey-reporting/dashboard-11.png">
+    <!-- LEFT HAND ARROW -->
+    <img class="guide-page-add-page-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#">ADD PAGE</a></h4>
+  </div>
   <h4 class="title-section" >Add Data </h4>
   <p>
     In order to create charts in Google Data Studio, you will need to connect your report to a data source. Data Studio accomplishes this using Connectors. At the time of this writing, Data Studio offers 16 connectors to tools within the Google ecosystem, along with 204 partner connectors. 
@@ -135,14 +144,18 @@ in-this-guide:
     <br><br>
     (2) Choose your desired Connector from the ‘Connect to data’ window that opens. In our example, we use Google Sheets.
   </p>
-  <img class="guide-page-add-data" src="../assets/images/guides/survey-reporting/dashboard-12.png">
-  <!-- LEFT HAND ARROW -->
-  <img class="guide-page-add-data" src="../assets/images/guides/pink-pointer-lg.png">
-  <h4><a href="#" class="add-data">ADD DATA</a></h4>
-  <img class="guide-page-add-data" src="../assets/images/guides/survey-reporting/dashboard-13.png">
-  <!-- RIGHT HAND ARROW -->
-  <img class="guide-page-connections" src="../assets/images/guides/pink-pointer-lg.png">
-  <h4><a href="#" class="guide-page-connections">CONNECTORS</a></h4>
+  <div class="overlay-links">
+    <img src="../assets/images/guides/survey-reporting/dashboard-12.png">
+    <!-- LEFT HAND ARROW -->
+    <img class="guide-page-add-data-arrow" src="../assets/images/guides/pink-pointer-lg.png">
+    <h4><a href="#" class="add-data">ADD DATA</a></h4>
+  </div>
+  <div class="overlay-links">
+    <img src="../assets/images/guides/survey-reporting/dashboard-13.png">
+    <!-- RIGHT HAND ARROW -->
+    <img class="guide-page-connectors-arrow" src="../assets/images/guides/pink-pointer-lg.png">
+    <h4><a href="#">CONNECTORS</a></h4>
+  </div>
   <h4 class="title-section" >Select Worksheet </h4>
   <p>
   When using Google Sheets, Google Data Studio builds charts at the spreadsheet level.

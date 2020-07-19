@@ -199,12 +199,12 @@ body {
 }
 
 // large arrow and companion text positioning
-@mixin large-arrow-right-overlay($top, $left, $width) {
+@mixin md-arrow-right-overlay($top, $left, $width: 18%) {
   @include arrow-right-overlay($top, $left);
   width: $width;
 }
 
-@mixin large-arrow-left-overlay($top, $left, $width) {
+@mixin md-arrow-left-overlay($top, $left, $width: 18%) {
   @include arrow-left-overlay($top, $left);
   width: $width;
 }

@@ -17,8 +17,9 @@
   }
 }
 
+//needs to be fixed
 .select-existing-spreadsheet-arrow {
-  @include large-arrow-left-overlay(54%, 85%, 20%);
+  @include md-arrow-left-overlay(54%, 82%);
 
   + h4 {
     @include arrow-left-text-overlay(54%);
@@ -32,4 +33,63 @@
     @include arrow-left-text-overlay(50%);
   }
 }
+
+.format-spreadsheet-row-1-arrow {
+    @include arrow-left-overlay(15%,97%);
+
+  + h4 {
+    @include arrow-left-text-overlay(15%, 106%);
+  }
+}
+
+.format-spreadsheet-linked-worksheet-arrow {
+  @include md-arrow-left-overlay(96%, 84%);
+
+  + h4 {
+    @include arrow-left-text-overlay(96%, 104%);
+  }
+}
+
+.formula-cell-arrow {
+  @include md-arrow-left-overlay(29%, 78%, 23%);
+
+  + h4 {
+    @include arrow-left-text-overlay(29%, 102%);
+  }
+}
+
+.formula-cell-arrow {
+  @include md-arrow-right-overlay(30%, 80%, 20%);
+
+  + h4 {
+    @include arrow-right-text-overlay(30%);
+  }
+}
+
+.guide-page-add-page-arrow {
+  @include arrow-left-overlay(8%,97%);
+
+  + h4 {
+    @include arrow-left-text-overlay(8%, 106%);
+  }
+}
+
+.guide-page-add-data-arrow {
+  @include md-arrow-right-overlay(30%, 80%, 20%);
+
+  + h4 {
+    @include arrow-right-text-overlay(30%);
+  }
+}
+
+.guide-page-connectors-arrow {
+  @include md-arrow-right-overlay(30%, 80%, 20%);
+
+  + h4 {
+    @include arrow-right-text-overlay(30%);
+  }
+}
+
+
+
 
