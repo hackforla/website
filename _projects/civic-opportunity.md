@@ -20,7 +20,7 @@ links:
     url: 'https://hackforla.slack.com/archives/C016CJZ8VTN'
   - name: Readme
     url: 'https://github.com/hackforla/civic-opportunity/blob/master/README.md'
-  - name: Project One Page
+  - name: Overview
     url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
 looking:
   - category: UI/UX
