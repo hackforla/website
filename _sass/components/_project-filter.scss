@@ -5,10 +5,12 @@ a.filter-item {
 //filter container
 ul.filter-list {
   background: $color-pink;
-  display: flex;
+  display: grid;
   list-style: none;
   padding-left: 0;
-  justify-content: space-between;
+  grid-auto-flow: column;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 //category boxes
@@ -17,13 +19,10 @@ li.filter-item {
   border-radius: 5px;
   color: black;
   background: white;
-  display: block;
+  display: flex;
   padding: 10px 15px;
   position: relative;
   transition-duration: 0.5s;
-  flex: 1;
-  margin: 5px; 
-  text-align: left;
 }
 
 //category names
@@ -51,7 +50,7 @@ ul.filter-list li ul {
   transition: all 0.5s ease;
   z-index: 1;
   list-style: none;
-  width: 200px;
+  width: 115%;
   padding: 15px 20px;
   line-height: 2em;
   font-size: .9em;
@@ -79,11 +78,6 @@ ul.filter-list li ul li {
   display: none;
 }
 
-.dropdown {
-  display: inline-block;
-  max-width: 180px;
-}
-
 .filter-checkbox {
   border: 1px solid #000000;
   border-radius: 4px;
@@ -91,12 +85,44 @@ ul.filter-list li ul li {
 }
 
 .labelArrow {
-  float: right;
   transform: rotate(-45deg);
-  font-weight: boldest;
   font-size: 24px;
   position: absolute;
   top: 2%;
-  left: 80%;
+  right: 10%;
 }
 
+@media #{$bp-below-tablet} {
+
+  //resize dropdown on tablet and mobile view
+  ul.filter-list li ul {
+    width: 105%;
+    padding: 15px;
+  }
+  
+}
+
+@media  #{$bp-below-mobile} {
+
+  //creating 2 rows and 2 columns to display categories on mobile
+  ul.filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-gap: 10px;
+  }
+
+  //resize category labels
+  li.filter-item {
+    padding: 5px 10px;
+  }
+
+  //resize and reposition label arrow 
+  .labelArrow {
+    top: -8%;
+    right: 5%;
+    font-size: 20px;
+  }  
+
+}

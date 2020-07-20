@@ -32,8 +32,10 @@
   var projectDataFromJekyll = [
     {%- for project in site.projects -%}
     {"id": {{ project.identification | default: 0 }},
-     "status": ["{{ project.status }}"],
-     "location": ["{{ project.location }}"]
+     "status": ["{{ project.status }}"]
+     {%- if project.location -%}
+     ,"location": {{project.location | jsonify }}
+     {%- endif -%}
      {%- if project.looking -%}
      , "looking": {{project.looking | jsonify }}
      {%- endif -%}
@@ -108,8 +110,9 @@
 
     let report = projectFilter.getFilterReport(projects);
 
-    // Render the filter toolbar
-    for (let category in report.counts) {
+    // Render the filter toolbar - depending on  screensize
+    if(screen.width > 480) {
+      for (let category in report.counts) {
 
       const termSet = report.counts[category];
 
@@ -190,7 +193,100 @@
       // compile DOM node and attach to document tree
       categoryDropdown.appendChild(termList);
       document.querySelector("#filter-list").appendChild(categoryDropdown);
+      }
+    } else {
+        for (let category in report.counts) {
+          const termSet = report.counts[category];
 
+          // dropdown container - menu item
+          const categoryDropdown = document.createElement('li');
+          categoryDropdown.setAttribute('class', 'filter-item');        
+
+          // dropdown label/trigger element
+          const categoryTitle = document.createElement('a');
+          categoryTitle.appendChild(document.createTextNode(category));
+          categoryDropdown.appendChild(categoryTitle);
+
+
+          // dropdown menu
+          const termList = document.createElement('ul')
+          termList.setAttribute('class', 'dropdown');
+
+          // create label arrow
+          const arrowSpan = document.createElement('span');
+          const labelArrow = arrowSpan.appendChild(document.createTextNode(" \u{0221f} "));
+          arrowSpan.setAttribute('class', 'labelArrow');
+          categoryTitle.appendChild(arrowSpan);
+
+          for (let term in termSet) {
+
+            const count = termSet[term];
+
+            const termItem = document.createElement('li');
+            const content = document.createElement('div');
+            const checkbox = document.createElement('input');
+
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.setAttribute('class', 'filter-checkbox');
+
+            const text = `${term} (${count})`;
+
+            const textSpan = document.createElement('span');
+
+            // TODO: Find a better mechanism for indexing dropdown items
+            textSpan.setAttribute('id', cleanFieldName(category, term));
+            textSpan.innerHTML = text;
+
+            // trigger a new filtering when a checkbox is clicked
+            checkbox.addEventListener('input', function (event) {
+
+              if (event.target.checked) {
+                projectFilter.addCondition(category, term);
+
+                //change label background color
+                categoryDropdown.style.backgroundColor="#fa114f";
+                categoryTitle.style.color="white";
+
+              } else {
+                projectFilter.removeCondition(category, term);
+                
+                //remove label background color
+                categoryDropdown.style.backgroundColor="white";
+                categoryTitle.style.color="black";
+              }
+
+              // recompute counts and IDs to hide
+              report = projectFilter.getFilterReport(projects);
+
+              applyFilter(report);
+
+              projectFilter.propagateUrlParams();
+
+            });
+
+            // finalize build UI component
+            content.appendChild(checkbox);
+            content.appendChild(textSpan);
+            termItem.appendChild(content);
+            termList.appendChild(termItem);
+          }
+
+          // compile DOM node and attach to document tree
+          categoryDropdown.appendChild(termList);
+          document.querySelector("#filter-list").appendChild(categoryDropdown);
+          }
+
+          // let categoryNames = document.querySelector('.filter-item');
+          // for (var i = 0; i < categoryNames.length; i++) {
+          //   categoryNames[i].addEventListener("click", function () {              
+          //     // let panel = this.nextElementSibling;
+          //     let panel = categoryNames[i].childNodes[1];
+          //     if (panel.style.display === "flex") {
+          //         panel.style.display = "none"
+          //     } else {
+          //         panel.style.display = "flex";
+          //     }
+          // })
     }
 
     for (let [categoryName, valueSet] of projectFilter.conditions.entries()) {
