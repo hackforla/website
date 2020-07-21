@@ -28,7 +28,8 @@ looking:
   - category: UI/UX
     skill: UX researcher
 # technologies:
-location: Remote
+location: 
+  - Remote
 # tools:
 partner: Undisclosed
 status: Active
