@@ -100,13 +100,15 @@ Verify which URL your `origin` remote is pointing to:
 git remote show origin
 ```
 
-If you accidentally cloned the `hackforla/website.git` then you can change your local copy to upload to your fork with the following:
+If you accidentally cloned the `hackforla/website.git` then you can correct that with the following two commands: 
+
+1) Change your local copy to upload to your fork with the following:
 
 ```bash
 git remote set-url origin https://github.com/your_user_name/website.git
 ```
 
-Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
+2) Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
 
 ```bash
 git remote add upstream https://github.com/hackforla/website.git
@@ -183,12 +185,12 @@ By default you should start on the `gh-pages` branch.
 This command will (create and) change to a new branch:
 
 ```bash
-git checkout -b 140-fix-logo-width
+git checkout -b fix-logo-width-311
 ```
 
 We prefer that you work on a branch name that relates to the issue you're working on.
 
-The format should look like the scheme above where `140` is the issue number in GitHub, and the words are a brief description of the issue.
+The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
 
 No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces.
 
