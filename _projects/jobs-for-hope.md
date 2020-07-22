@@ -6,7 +6,7 @@ image: /assets/images/projects/jobs-for-hope.png
 alt: "'LA county homelessness initiative logo'"
 image-hero: /assets/images/projects/jobs-for-hope-hero.png
 alt-hero: "Purple background"
-links: 
+links:
   - name: GitHub
     url: 'https://github.com/hackforla/jobs-for-hope'
   - name: Site
