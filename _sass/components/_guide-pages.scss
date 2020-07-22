@@ -39,13 +39,17 @@ body {
     }
 }
 
-.header-content {
+.guidepage-header {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     width: 100%;
     padding: 3%;
     background-color: $color-white;
+
+    h1 {
+      font-size: 30px;
+    }
 
     .left-col {
         width: 50%;
@@ -79,24 +83,20 @@ body {
   }
 }
 
-h2 {
-  font-size: 30px;
+.section-container h5 {
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
-h5 {
-    font-size: 1.2em;
-    font-weight: normal;
-}
-
-h4 {
+.section-container h4 {
   text-align: left;
 }
 
-p {
+.section-container p {
   text-align: left;
 }
 
-img {
+.section-container img {
   display: table-cell;
   vertical-align: top;
 }
@@ -137,4 +137,10 @@ img {
 .grayarrow {
   width: 20px;
   max-width: none;
+}
+
+@media #{$bp-below-tablet} {
+  .section-container {
+    padding: 12.5% 10%;
+  }
 }

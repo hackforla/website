@@ -120,6 +120,15 @@ layout: default
                         {%- include resource-card.html name=item.name url=item.url image=page.image -%}
                 {% endif %}
             {% endfor %}
+
+            <!-- Check for Project Overview -->
+            {% for item in page.links %}
+                {% if item.name == 'Overview' %}
+                    {% assign hasGettingStarted = true %}
+                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
+
             {% if hasGettingStarted == false %}
                 <div id='help-getting-started'>
                     <p class='help-getting-started-text'>Looks like this project doesn't have their own Getting Started guide.</p>
@@ -164,7 +173,7 @@ layout: default
         <h4 class='project-page-card-title'>Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
-                {% if item.name == 'Readme' or item.name == 'Wiki' %}
+                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
                     {%- include resource-card.html name=item.name url=item.url image=page.image -%}
                 {% else %}
                     {%- include resource-card.html name=item.name url=item.url -%}
@@ -183,10 +192,11 @@ layout: default
     let projectId = '{{ page.identification }}';
     // Search for correct project
     let project = null;
-    for(item of projects){
-        let itemId = item.id.toString();
+    // Starts at 1 now since the first element is a time stamp
+    for(i = 1; i < projects.length; i++){
+        let itemId = projects[i].id.toString();
         if(itemId == projectId){
-            project = item;
+            project = projects[i];
             break;
         }
     }
@@ -223,12 +233,12 @@ layout: default
     let contributorsArray = [];
 
     if(project != null){
-        for (contributor of project.contributors.data) {
+        for (contributor of project.contributorsComplete.data) {
             // Checking for valid data
             if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
                 // Pushing valid data to contributorsArray
                 contributorsArray.push(contributor);
-            } 
+            }
         }
 
         // Creates DOM elements for contributors
@@ -350,7 +360,7 @@ const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
-    
+
     // Loops through data and assigns information to variables in a readable format
     for (let i = 0; i <= scheduleData.length - 1; i++) {
         let startTime = timeFormat(new Date(scheduleData[i].startTime));
@@ -422,7 +432,7 @@ fetch(API_URL, {method: 'GET'})
     if (arr_diff(data, localData)) {
         clearSchedule();
         schedule(data);
-    } 
+    }
 })
 .catch(err => {
     console.log(err);
@@ -453,6 +463,6 @@ function timeFormat(time) {
     } else {
         return `${hours}:${minutes} am`;
     }
-    
+
 }
 </script>
