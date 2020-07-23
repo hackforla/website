@@ -1,6 +1,6 @@
-//Styles to align arrows to images
-// overlay links class defined in github issues page
+//Styles to align arrows to images within overlay-links container
 
+// SECTION CONTAINER ONE STYLING : LINKING GOOGLE FORMS TO SHEETS
 .elipsis-arrow {
   @include arrow-right-overlay(37%);
 
@@ -17,86 +17,216 @@
   }
 }
 
-//needs to be fixed
 .select-existing-spreadsheet-arrow {
-  @include md-arrow-left-overlay(54%, 82%);
+  @include md-arrow-left-overlay(54%, 80%);
 
   + h4 {
-    @include arrow-left-text-overlay(54%);
+    @include arrow-left-text-overlay(54%, 99%);
   }
 }
 
 .select-target-sheet-arrow {
-  @include arrow-left-overlay(50%);
+  @include arrow-left-overlay(50%, 90%);
 
   + h4 {
-    @include arrow-left-text-overlay(50%);
+    @include arrow-left-text-overlay(50%, 99%);
   }
 }
 
+// SECTION CONTAINER TWO STYLING : CLEAN DATA IN GOOGLE SHEETS
 .format-spreadsheet-row-1-arrow {
-    @include arrow-left-overlay(15%,97%);
+  @media #{$bp-below-mobile} { 
+    @include arrow-overlay-on-mobile(10%, 95%, 240deg, 12%)
+  }
+    @include arrow-left-overlay(15%, 92%);
 
   + h4 {
-    @include arrow-left-text-overlay(15%, 106%);
+    @media #{$bp-below-mobile} { 
+      @include arrow-left-text-overlay(2%); 
+    }
+    @include arrow-left-text-overlay(15%);
   }
 }
 
 .format-spreadsheet-linked-worksheet-arrow {
-  @include md-arrow-left-overlay(96%, 84%);
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(87%, 67%, 300deg, 25%);
+  }
+
+  @include md-arrow-left-overlay(96%, 80%);
 
   + h4 {
-    @include arrow-left-text-overlay(96%, 103%);
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(70%, 65%);
+    }
+    @include arrow-left-text-overlay(96%);
   }
 }
 
 .formula-cell-arrow {
-  @include md-arrow-left-overlay(29%, 78%, 23%);
+  @include md-arrow-left-overlay(29%, 75%, 23%);
 
   + h4 {
-    @include arrow-left-text-overlay(29%, 102%);
+    @include arrow-left-text-overlay(29%, 100%);
+    width: 12%;
   }
 }
 
 .trim-section-formula-cell-arrow {
-  @include md-arrow-right-overlay(30%, 65%, 35%);
+  @include md-arrow-right-overlay(29%, 62%, 35%);
 
   + h4 {
-    @include arrow-right-text-overlay(30%, 105%);
+    @include arrow-right-text-overlay(30%, 100%);
   }
 }
 
+// SECTION CONTAINER THREE STYLING : BUILD REPORT IN GOOGLE DATA STUDIO
 .guide-page-add-page-arrow {
-  @include arrow-left-overlay(8%,97%);
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(1%, 89%, 270deg);
+  }
+  @include arrow-left-overlay(8%);
 
   + h4 {
-    @include arrow-left-text-overlay(8%, 106%);
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(-15%, 92%);
+      text-align: left;
+    }
+    @include arrow-left-text-overlay(8%);
   }
 }
 
+//NEED TO FINISH EDITING ALL THESE BELOW
 .guide-page-add-data-arrow {
-  @include md-arrow-left-overlay(31%, 70%, 30%);
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+  }
+  @include md-arrow-left-overlay(31%, 68%, 30%);
 
   + h4 {
-    @include arrow-left-text-overlay(31%, 105%);
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(-15%, 45%);
+      text-align: left;
+    }
+    @include arrow-left-text-overlay(31%);
   }
+}
+
+.guide-page-mobile-add-page-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(1%, 69%, 310deg);
+  }
+  display: none;
 }
 
 .guide-page-connectors-arrow {
-  @include md-arrow-right-overlay(48%, 65%, 40%);
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(45%, 60%, 0deg, 15%);
+  }
+  @include md-arrow-right-overlay(45%, 60%, 35%);
 
   + h4 {
-    @include arrow-right-text-overlay(48%);
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(45%, 55%);
+    }
+    @include arrow-right-text-overlay(45%, 97%);
   }
 }
 
 .guide-page-add-data-sources {
-  @include md-arrow-left-overlay(60%, 80% );
+  @include md-arrow-left-overlay(60%, 65%, 30% );
 
   + h4 {
-    @include arrow-left-text-overlay(60%);
+    @include arrow-left-text-overlay(60%, 98%);
   }
 }
 
+.guide-page-add-chart-arrows {
+  @include md-arrow-left-overlay(6%, 85%);
 
+  + h4 {
+    @include arrow-left-text-overlay(6%, 105%);
+  }
+}
 
+.guide-pages-customize-chart-image {
+  margin-bottom: 2rem;
+}
+
+.guide-page-customize-chart-data-page-arrow {
+  @include arrow-right-overlay(2%, 82%);
+  transform: rotate(300deg);
+
+  + h4 {
+    @include arrow-right-text-overlay(-5%, 85%);
+  }
+}
+
+.guide-page-customize-chart-properties-panel-arrow {
+  @include arrow-right-overlay(6%, 90%);
+
+  + h4 {
+    @include arrow-right-text-overlay(5%);
+  }
+}
+
+.guide-page-customize-chart-dimension-arrow {
+  @include arrow-right-overlay(27%, 90%);
+
+  + h4 {
+    @include arrow-right-text-overlay(27%);
+  }
+}
+
+.guide-page-customize-chart-metric-arrow {
+  @include arrow-right-overlay(35%, 90%);
+
+  + h4 {
+    @include arrow-right-text-overlay(35%);
+  }
+}
+
+.guide-page-customize-chart-sort-arrow {
+  @include arrow-right-overlay(43%, 90%);
+
+  + h4 {
+    @include arrow-right-text-overlay(43%);
+  }
+}
+
+.guide-page-customize-chart-filter-arrow {
+  @include arrow-right-overlay(65%, 87%);
+
+  + h4 {
+    @include arrow-right-text-overlay(65%);
+  }
+}
+
+.guide-page-dimension-2-arrow {
+  @include arrow-right-overlay(20%, 88%);
+
+  + h4 {
+    @include arrow-right-text-overlay(15%, 97%);
+  }
+}
+
+.guide-page-style-pane-arrow {
+  @include arrow-right-overlay(25%, 92%);
+
+  + h4 {
+    @include arrow-right-text-overlay(25%, 102%);
+  }
+}
+
+.additional-resources-bold-text {
+  font-weight: bold;
+}
+
+.additional-resources-bold-text-top-margin {
+  margin-top: 3rem;
+}
+
+.guidepage-pink-underline-link {
+  text-decoration: underline;
+  color: #FA114F;
+}

@@ -92,8 +92,16 @@ body {
   text-align: left;
 }
 
+.section-container .add-margin-top-to-header {
+  margin-top: 4rem;
+}
+
 .section-container p {
   text-align: left;
+}
+
+.after-paragraph-margin {
+  margin-bottom: 2rem;
 }
 
 .section-container img {
@@ -135,6 +143,10 @@ body {
 }
 
 .grayarrow {
+  @media #{$bp-below-mobile} {
+    width: 15px;
+  }
+
   width: 20px;
   max-width: none;
   margin: 1rem auto;
@@ -147,18 +159,32 @@ body {
 }
 
 // STYLING FOR GUIDE PAGE DIVS CONTAINING IMAGE WITH OVERLAY LINKS 
-
-//Div holding image and arrows
+// Div holding image and arrows
 .overlay-links {
   position: relative;
 
   h4 {
     font-size: 0.85em;
+
+    a {
+      text-decoration: underline;
+    }
   }
+}
+
+.guide-pages-text-section-reduced-width {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
+  width: 90%;
+  margin: auto auto 1rem auto;
 }
 
 // image within overlay-links section
 .overlay-links-img {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
   max-width: none;
   width: 90%;
   margin: auto;
@@ -209,3 +235,23 @@ body {
   width: $width;
 }
 
+//mobile-adjusted arrow classes
+
+.hide-guide-page-arrow-on-mobile {
+    @media #{$bp-below-mobile} {
+      display: none;
+      visibility: hidden;
+
+      + h4 {
+        display: none;
+      }
+    }
+}
+
+@mixin arrow-overlay-on-mobile($top, $right, $deg, $width: 7%) {
+  position: absolute;
+  right: $right;
+  width: $width;
+  top: $top;
+  transform: rotate($deg);
+}
