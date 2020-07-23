@@ -46,7 +46,7 @@
   @include md-arrow-left-overlay(96%, 84%);
 
   + h4 {
-    @include arrow-left-text-overlay(96%, 104%);
+    @include arrow-left-text-overlay(96%, 103%);
   }
 }
 
@@ -58,11 +58,11 @@
   }
 }
 
-.formula-cell-arrow {
-  @include md-arrow-right-overlay(30%, 80%, 20%);
+.trim-section-formula-cell-arrow {
+  @include md-arrow-right-overlay(30%, 65%, 35%);
 
   + h4 {
-    @include arrow-right-text-overlay(30%);
+    @include arrow-right-text-overlay(30%, 105%);
   }
 }
 
@@ -75,21 +75,28 @@
 }
 
 .guide-page-add-data-arrow {
-  @include md-arrow-right-overlay(30%, 80%, 20%);
+  @include md-arrow-left-overlay(31%, 70%, 30%);
 
   + h4 {
-    @include arrow-right-text-overlay(30%);
+    @include arrow-left-text-overlay(31%, 105%);
   }
 }
 
 .guide-page-connectors-arrow {
-  @include md-arrow-right-overlay(30%, 80%, 20%);
+  @include md-arrow-right-overlay(48%, 65%, 40%);
 
   + h4 {
-    @include arrow-right-text-overlay(30%);
+    @include arrow-right-text-overlay(48%);
   }
 }
 
+.guide-page-add-data-sources {
+  @include md-arrow-left-overlay(60%, 80% );
+
+  + h4 {
+    @include arrow-left-text-overlay(60%);
+  }
+}
 
 
 

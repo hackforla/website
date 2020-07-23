@@ -33,7 +33,7 @@ in-this-guide:
   </div>
   <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
   <div class="overlay-links">
-    <img class="select-response-and-destination" src="../assets/images/guides/survey-reporting/dashboard-2.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-2.png">
     <!-- Arrows and Overlay Text Links -->
     <!-- LEFT SIDE LINKS -->
     <img class="select-existing-spreadsheet-arrow" src="../assets/images/guides/pink-pointer-md.png">
@@ -41,7 +41,7 @@ in-this-guide:
   </div>
   <img src="../assets/images/guides/gray-arrow.svg" class="grayarrow"><br>
   <div class="overlay-links">
-    <img src="../assets/images/guides/survey-reporting/dashboard-3.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-3.png">
     <!-- Arrows and Overlay Text Links -->
     <!-- LEFT SIDE LINKS -->
     <img class="select-target-sheet-arrow" src="../assets/images/guides/pink-pointer.svg">
@@ -63,13 +63,13 @@ in-this-guide:
     (3) Select the first row and set the font to bold. Add a background color to further set the column titles off from the rows of data below.
   </p>
   <div class="overlay-links">
-  <img class="format-spreadsheet" src="../assets/images/guides/survey-reporting/dashboard-4.png">
+  <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-4.png">
   <!-- Arrows and Overlay Text Links -->
   <!-- LEFT SIDE LINKS -->
   <img class="format-spreadsheet-row-1-arrow" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="format-spreadsheet">ROW 1</a></h4>
+  <h4><a href="#">ROW 1</a></h4>
   <img class="format-spreadsheet-linked-worksheet-arrow" src="../assets/images/guides/pink-pointer-md.png">
-  <h4><a href="#" class="format-spreadsheet">LINKED WORKSHEET TAB</a></h4>
+  <h4><a href="#">LINKED WORKSHEET TAB</a></h4>
   </div>
 
   <h4 class="title-section">CREATE NEW COLUMNS</h4>
@@ -94,7 +94,7 @@ in-this-guide:
     How did we choose G995 as the endpoint of our range? The parameter requires a defined end point; therefore, we arbitrarily choose a cell value beyond which we are certain no future values will be recorded.
   </p>
   <div class="overlay-links">
-    <img class="transpose-row-data" src="../assets/images/guides/survey-reporting/dashboard-8.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-8.png">
     <!-- LEFT HAND ARROW -->
     <img class="formula-cell-arrow" src="../assets/images/guides/pink-pointer-md.png">
     <h4><a href="#">FORMULA CELL</a></h4>
@@ -106,10 +106,10 @@ in-this-guide:
     In our example, we enter =ARRAYFORMULA(TRIM(H2:H)) in cell I2. Why do we use “H” as the endpoint of our range? In this case, the TRIM() permits us to use an undefined endpoint.
   </p>
   <div class="overlay-links">
-    <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-9.png">
     <!-- RIGHT HAND ARROW -->
-    <img class="formula-cell-arrow" src="../assets/images/guides/pink-pointer-lg.png">
-    <h4><a href="#" class="format-spreadsheet">FORMULA CELL</a></h4>
+    <img class="trim-section-formula-cell-arrow" src="../assets/images/guides/pink-pointer-lg.png">
+    <h4><a href="#">FORMULA CELL</a></h4>
   </div>
     <img class="trim-data" src="../assets/images/guides/survey-reporting/dashboard-9b.png">
 </div>
@@ -129,12 +129,12 @@ in-this-guide:
     (2) Hovering over the new page added within the dropdown menu, you will see a vertical elipsis. Click the vertical elipsis and select Rename. Choose a short, yet descriptive name for your new page.
   </p>
   <div class="overlay-links">
-    <img class="guide-page-add-new-page" src="../assets/images/guides/survey-reporting/dashboard-11.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-11.png">
     <!-- LEFT HAND ARROW -->
     <img class="guide-page-add-page-arrow" src="../assets/images/guides/pink-pointer.svg">
     <h4><a href="#">ADD PAGE</a></h4>
   </div>
-  <h4 class="title-section" >Add Data </h4>
+  <h4 class="title-section"> Add Data </h4>
   <p>
     In order to create charts in Google Data Studio, you will need to connect your report to a data source. Data Studio accomplishes this using Connectors. At the time of this writing, Data Studio offers 16 connectors to tools within the Google ecosystem, along with 204 partner connectors. 
     <br><br>
@@ -145,13 +145,13 @@ in-this-guide:
     (2) Choose your desired Connector from the ‘Connect to data’ window that opens. In our example, we use Google Sheets.
   </p>
   <div class="overlay-links">
-    <img src="../assets/images/guides/survey-reporting/dashboard-12.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-12.png">
     <!-- LEFT HAND ARROW -->
     <img class="guide-page-add-data-arrow" src="../assets/images/guides/pink-pointer-lg.png">
     <h4><a href="#" class="add-data">ADD DATA</a></h4>
   </div>
   <div class="overlay-links">
-    <img src="../assets/images/guides/survey-reporting/dashboard-13.png">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-13.png">
     <!-- RIGHT HAND ARROW -->
     <img class="guide-page-connectors-arrow" src="../assets/images/guides/pink-pointer-lg.png">
     <h4><a href="#">CONNECTORS</a></h4>
@@ -164,37 +164,43 @@ in-this-guide:
   <br><br>
   (2) Click the ‘Add’ button in the bottom right.
   </p>
-  <img class="guide-page-add-data-sources" src="../assets/images/guides/survey-reporting/dashboard-14.png">
-  <!-- LEFT HAND ARROW -->
-  <img class="guide-page-add-data-sources" src="../assets/images/guides/pink-pointer-lg.png">
-  <h4><a href="#" class="guide-page-add-data-sources">DATA SOURCES</a></h4>
+  <div class="overlay-links">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-14.png">
+    <!-- LEFT HAND ARROW -->
+    <img class="guide-page-add-data-sources" src="../assets/images/guides/pink-pointer-lg.png">
+    <h4><a href="#" >DATA SOURCES</a></h4>
+  </div>
   <h4 class="title-section" > Add Chart </h4>
   <h4 class="title-section" >Select Worksheet </h4>
   <p>
     Google Data Studio provides numerous ways to visualize data, from tables to bar graphs, pie charts to trendlines, and scatter plots to pivot tables. Choose the chart that will best represent the data you select.
   </p>
-  <img class="guide-page-add-chart" src="../assets/images/guides/survey-reporting/dashboard-16.png">
-  <!-- LEFT HAND ARROW -->
-  <img class="guide-page-add-chart" src="../assets/images/guides/pink-pointer-md.png">
-  <h4><a href="#" class="guide-page-add-chart">ADD A CHART</a></h4> 
-  <h4 class="title-section" > Customize Chart </h4>
+  <div class="overlay-links">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-16.png">
+    <!-- LEFT HAND ARROW -->
+    <img class="guide-page-add-chart" src="../assets/images/guides/pink-pointer-md.png">
+    <h4><a href="#">ADD A CHART</a></h4> 
+  </div>
+  <h4 > Customize Chart </h4>
   <p>
     By default, Google Data Studio will arbitrarily choose a Dimension for a newly added chart. 
   </p>
-  <img class="guide-page-customize-chart" src="../assets/images/guides/survey-reporting/dashboard-17.png">
-  <!-- RIGHT HAND ARROW -->
-  <img class="guide-page-data-page" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-data-page">DATA PAGE</a></h4> 
-  <img class="guide-page-properties-panel" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-properties-panel">PROPERTIES PANEL</a></h4>
-  <img class="guide-page-dimension" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-dimension">DIMENSION</a></h4>  
-  <img class="guide-page-metric" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-metric">METRIC</a></h4> 
-  <img class="guide-page-sort" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-sort">SORT</a></h4> 
-  <img class="guide-page-filter" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-filter">FILTER</a></h4> 
+  <div class="overlay-links">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-17.png">
+    <!-- RIGHT HAND ARROW -->
+    <img class="guide-page-customize-chart-data-page-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#">DATA PAGE</a></h4> 
+    <img class="guide-page-customize-chart-properties-panel-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >PROPERTIES PANEL</a></h4>
+    <img class="guide-page-customize-chart-dimension-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >DIMENSION</a></h4>  
+    <img class="guide-page-customize-chart-metric-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >METRIC</a></h4> 
+    <img class="guide-page-customize-chart-sort-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >SORT</a></h4> 
+    <img class="guide-page-customize-chart-filter-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >FILTER</a></h4> 
+  </div>
   <p>
     Select the appropriate dimension for your chart. In Google Data Studio, dimension refers to a selected column title in your Worksheet.
     <br><br>
@@ -204,10 +210,12 @@ in-this-guide:
     <br><br>
     (3) Choose your Metric. Google Data Studio will often default to ‘Record Count.’ In some cases, this may not be what you want. Once you have chosen your desired metric, appropriately select ‘Count’ or ‘Count Distinct.’ In most cases, you will want to select ‘Count.’ Make this selection by clicking on the ‘CTD’ or ‘CT’ label just to the left of your metric variable.
   </p>
-  <img class="guide-page-customize-chart" src="../assets/images/guides/survey-reporting/dashboard-18.png">
-  <!-- RIGHT HAND ARROW -->
-  <img class="guide-page-dimension-2" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-dimension-2">DIMENSION</a></h4> 
+  <div class="overlay-links">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-18.png">
+    <!-- RIGHT HAND ARROW -->
+    <img class="guide-page-dimension-2" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >DIMENSION</a></h4> 
+  </div>
   <h4 class="title-section" > Filter Null Values </h4>
   <p>
     You may find (more often than not) null values that have been incorporated into your chart. You will need to create a filter to remove them.
@@ -222,7 +230,7 @@ in-this-guide:
     <br><br>
     (5) Select Save.  
   </p>
-   <img class="guide-page-filter-null-values" src="../assets/images/guides/survey-reporting/dashboard-19.png">
+  <img class="guide-page-filter-null-values" src="../assets/images/guides/survey-reporting/dashboard-19.png">
   <h4 class="title-section" > Style Chart </h4>
   <p>
     The graphical components of an added chart can be customized across several different attributes. View the style pane within the properties panel and make your desired selections.
@@ -235,10 +243,12 @@ in-this-guide:
     <br><br>
     (2) Return to the Style pane. Within the ‘Color by’ section, choose a color that will best represent your data.
   </p>
-  <img class="guide-page-style-chart" src="../assets/images/guides/survey-reporting/dashboard-20.png">
-  <!-- RIGHT HAND ARROW -->
-  <img class="guide-page-style-pane" src="../assets/images/guides/pink-pointer.svg">
-  <h4><a href="#" class="guide-page-style-pane">STYLE PANE</a></h4> 
+  <div class="overlay-links">
+    <img class="overlay-links-img" src="../assets/images/guides/survey-reporting/dashboard-20.png">
+    <!-- RIGHT HAND ARROW -->
+    <img class="guide-page-style-pane-arrow" src="../assets/images/guides/pink-pointer.svg">
+    <h4><a href="#" >STYLE PANE</a></h4> 
+  </div>
 </div>
 <!-- SECTION CONTAINER FOUR: ADDITIONAL RESOURCES -->
 <div class="section-container">

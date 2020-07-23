@@ -204,8 +204,8 @@ body {
   width: $width;
 }
 
-@mixin md-arrow-left-overlay($top, $left, $width: 18%) {
-  @include arrow-left-overlay($top, $left);
+@mixin md-arrow-left-overlay($top, $right, $width: 18%) {
+  @include arrow-left-overlay($top, $right);
   width: $width;
 }
 
