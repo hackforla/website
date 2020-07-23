@@ -209,7 +209,7 @@ Run the command:
 git add .
 ```
 
--Use the `git satus` command to see what files are staged. 
+-Use the `git status` command to see what files are staged. 
 
 This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. 
 ```bash
