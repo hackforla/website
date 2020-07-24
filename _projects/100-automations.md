@@ -25,11 +25,11 @@ looking:
      skill: designer
    - category: UI/UX
      skill: content writer
-   - category: Developer
+   - category: Development
      skill: Anyone who wants to write open source automations
    - category: Development
      skill: API writers
-   - category: Developer
+   - category: Development
      skill: API integrators
 technologies: 
   - GitHub Pages
