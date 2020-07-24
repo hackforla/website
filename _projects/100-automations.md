@@ -10,14 +10,14 @@ leadership:
   - name: Niven Prasad
     role: Product Manager
     links:
-    slack: 'https://app.slack.com/team/U015R4RTDJA'
-    github: 'https://github.com/nivenprasad'
+      slack: 'https://app.slack.com/team/U015R4RTDJA'
+      github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
 links: 
    - name: Slack 
      url: 'https://hackforla.slack.com/archives/CV7QGL66B'
    - name: GitHub
-     url: 'https://github.com/OpenSourceAutomations'
+     url: 'https://github.com/100Automations/'
    - name: ReadMe
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
@@ -27,7 +27,7 @@ looking:
      skill: content writer
    - category: Developer
      skill: Anyone who wants to write open source automations
-   - category: Developer
+   - category: Development
      skill: API writers
    - category: Developer
      skill: API integrators
