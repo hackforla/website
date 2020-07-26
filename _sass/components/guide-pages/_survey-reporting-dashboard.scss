@@ -220,7 +220,7 @@
 
   + h4 {
     @media #{$bp-below-mobile} {
-      @include arrow-right-text-overlay(10%, 68%);
+      @include arrow-right-text-overlay(10%, 65%);
     }
     @include arrow-right-text-overlay(-3%, 85%);
   }
@@ -246,7 +246,7 @@
 
   + h4 {
     @media #{$bp-below-mobile} {
-      @include arrow-right-text-overlay(-10%, 67%);
+      @include arrow-right-text-overlay(-15%, 65%);
       width: 50px;
       line-height: 10px;
       text-align: right;
@@ -275,7 +275,7 @@
   + h4 {
     @include arrow-right-text-overlay(15%);
     @media #{$bp-below-mobile} {
-      @include arrow-right-text-overlay(26%, 68%);
+      @include arrow-right-text-overlay(26%, 67%);
       text-align: right;
     }
   }
@@ -353,7 +353,7 @@
   + h4 {
     @include arrow-right-text-overlay(40%);
     @media #{$bp-below-mobile} {
-      @include arrow-right-text-overlay(66%, 73%);
+      @include arrow-right-text-overlay(66%, 70%);
       text-align: right;
     }
   }
