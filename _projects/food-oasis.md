@@ -66,7 +66,6 @@ technologies:
   - Docker
   - Mapobx
   - Material-UI
-  - HTML
   - SCSS
 location:
   - Downtown LA
