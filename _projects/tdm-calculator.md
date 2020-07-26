@@ -58,7 +58,16 @@ links:
 looking:
   - category: UI/UX
     skill: UI Designer
-location: 
+technologies:
+  - React
+  - Express
+  - Node
+  - Microsoft SQL Server
+  - Docker
+  - Azure App Service for Containers
+  - HTML
+  - SCSS
+location:
   - Downtown LA
   - Remote
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
