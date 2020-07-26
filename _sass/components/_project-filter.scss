@@ -1,263 +1,128 @@
-.notouch {
-
-  a.filter-item {
-    text-decoration: none;
-  }
-
-  //filter container
-  ul.filter-list {
-    background: $color-pink;
-    display: grid;
-    list-style: none;
-    padding-left: 0;
-    grid-auto-flow: column;
-    grid-column-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  //category boxes
-  li.filter-item {
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    color: black;
-    background: white;
-    display: flex;
-    padding: 10px 15px;
-    position: relative;
-    transition-duration: 0.5s;
-  }
-
-  //category names
-  li.filter-item a {
-    color: black;
-    text-transform: capitalize;
-  }
-
-  li.filter-item:hover,
-  li.filter-item:focus-within {
-    background: white;
-    cursor: pointer;
-  }
-
-  li.filter-item:focus-within a {
-    outline: none;
-  }
-
-  //dropdown
-  ul.filter-list li ul {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    visibility: hidden;
-    opacity: 0;  
-    transition: all 0.5s ease;
-    z-index: 1;
-    list-style: none;
-    width: 115%;
-    padding: 15px 20px;
-    line-height: 2em;
-    font-size: .9em;
-    position: absolute;
-    left: 0;
-    top: 100%;
-  }
-
-  ul.filter-list li:hover > ul,
-  ul.filter-list li:focus-within > ul,
-  ul.filter-list li ul:hover,
-  ul.filter-list li ul:focus {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-  }
-
-  ul.filter-list li ul li {
-    clear: both;
-    width: 100%;
-    text-align: left;
-  }
-
-  .hidden-project {
-    display: none;
-  }
-
-  .filter-checkbox {
-    border: 1px solid #000000;
-    border-radius: 4px;
-    margin: 0px 5px;
-  }
-
-  .labelArrow {
-    transform: rotate(-45deg);
-    font-size: 24px;
-    position: absolute;
-    top: 2%;
-    right: 10%;
-  }
-
-  @media #{$bp-below-tablet} {
-
-    //resize dropdown on tablet and mobile view
-    ul.filter-list li ul {
-      width: 105%;
-      padding: 15px;
-    }
-    
-  }
-
-  @media  #{$bp-below-mobile} {
-
-    //creating 2 rows and 2 columns to display categories on mobile
-    ul.filter-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-auto-flow: row;
-      grid-gap: 10px;
-    }
-
-    //resize category labels
-    li.filter-item {
-      padding: 5px 10px;
-    }
-
-    //resize and reposition label arrow 
-    .labelArrow {
-      top: -8%;
-      right: 5%;
-      font-size: 20px;
-    }  
-
-  }
+a.filter-item {
+  text-decoration: none;
 }
 
-.touchscreen {
+//filter container
+ul.filter-list {
+  background: $color-pink;
+  display: grid;
+  list-style: none;
+  padding-left: 0;
+  grid-auto-flow: column;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
 
-  a.filter-item {
-    text-decoration: none;
-  }
+//category boxes
+li.filter-item {
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  color: black;
+  background: white;
+  display: flex;
+  padding: 10px 15px;
+  position: relative;
+  transition-duration: 0.5s;
+}
 
-  //filter container
-  ul.filter-list {
-    background: $color-pink;
-    display: grid;
-    list-style: none;
-    padding-left: 0;
-    grid-auto-flow: column;
-    grid-column-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-  }
+//category names
+li.filter-item a {
+  color: black;
+  text-transform: capitalize;
+}
 
-  //category boxes
-  li.filter-item {
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    color: black;
-    background: white;
-    display: flex;
-    padding: 10px 15px;
-    position: relative;
-    transition-duration: 0.5s;
-  }
+li.filter-item:hover,
+li.filter-item:focus-within {
+  background: white;
+  cursor: pointer;
+}
 
-  //category names
-  li.filter-item a {
-    color: black;
-    text-transform: capitalize;
-  }
+li.filter-item:focus-within a {
+  outline: none;
+}
 
-  li.filter-item:hover,
-  li.filter-item:focus-within {
-    background: white;
-    cursor: pointer;
-  }
+//dropdown
+ul.filter-list li ul {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  visibility: hidden;
+  opacity: 0;  
+  transition: all 0.5s ease;
+  z-index: 1;
+  list-style: none;
+  width: 115%;
+  padding: 15px 20px;
+  line-height: 2em;
+  font-size: .9em;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
 
-  li.filter-item:focus-within a {
-    outline: none;
-  }
+ul.filter-list li:hover > ul,
+ul.filter-list li:focus-within > ul,
+ul.filter-list li ul:hover,
+ul.filter-list li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
 
-  //dropdown
+ul.filter-list li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+}
+
+.hidden-project {
+  display: none;
+}
+
+.filter-checkbox {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin: 0px 5px;
+}
+
+.labelArrow {
+  transform: rotate(-45deg);
+  font-size: 24px;
+  position: absolute;
+  top: 2%;
+  right: 10%;
+}
+
+@media #{$bp-below-tablet} {
+
+  //resize dropdown on tablet and mobile view
   ul.filter-list li ul {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    visibility: hidden;
-    opacity: 0;  
-    transition: all 0.5s ease;
-    z-index: 1;
-    list-style: none;
-    width: 115%;
-    padding: 15px 20px;
-    line-height: 2em;
-    font-size: .9em;
-    position: absolute;
-    left: 0;
-    top: 100%;
+    width: 105%;
+    padding: 15px;
+  }
+  
+}
+
+@media  #{$bp-below-mobile} {
+
+  //creating 2 rows and 2 columns to display categories on mobile
+  ul.filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-gap: 10px;
   }
 
-  ul.filter-list li:hover > ul,
-  ul.filter-list li:focus-within > ul,
-  ul.filter-list li ul:hover,
-  ul.filter-list li ul:focus {
-    visibility: visible;
-    opacity: 1;
-    display: block;
+  //resize category labels
+  li.filter-item {
+    padding: 5px 10px;
   }
 
-  ul.filter-list li ul li {
-    clear: both;
-    width: 100%;
-    text-align: left;
-  }
-
-  .hidden-project {
-    display: none;
-  }
-
-  .filter-checkbox {
-    border: 1px solid #000000;
-    border-radius: 4px;
-    margin: 0px 5px;
-  }
-
+  //resize and reposition label arrow 
   .labelArrow {
-    transform: rotate(-45deg);
-    font-size: 24px;
-    position: absolute;
-    top: 2%;
-    right: 10%;
-  }
+    top: -8%;
+    right: 5%;
+    font-size: 20px;
+  }  
 
-  @media #{$bp-below-tablet} {
-
-    //resize dropdown on tablet and mobile view
-    ul.filter-list li ul {
-      width: 105%;
-      padding: 15px;
-    }
-    
-  }
-
-  @media  #{$bp-below-mobile} {
-
-    //creating 2 rows and 2 columns to display categories on mobile
-    ul.filter-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-auto-flow: row;
-      grid-gap: 10px;
-    }
-
-    //resize category labels
-    li.filter-item {
-      padding: 5px 10px;
-    }
-
-    //resize and reposition label arrow 
-    .labelArrow {
-      top: -8%;
-      right: 5%;
-      font-size: 20px;
-    }  
-
-  }
 }
