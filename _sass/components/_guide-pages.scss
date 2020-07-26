@@ -71,7 +71,6 @@ body {
     }
 }
 
-
 //only show header divider if screen is bigger than mobile
 @media #{$bp-mobile-up} {
   .border-right {
@@ -239,7 +238,6 @@ body {
 }
 
 //mobile-adjusted arrow classes
-
 .hide-guide-page-arrow-on-mobile {
     @media #{$bp-below-mobile} {
       display: none;
