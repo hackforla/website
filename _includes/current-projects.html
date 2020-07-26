@@ -10,7 +10,7 @@
     </p>
   </div>
 
-  <div class="page-contain filter-toolbar" style="text-align: center;">
+  <div class="page-contain filter-toolbar notouch" style="text-align: center;">
     <ul class="filter-list" id="filter-list"></ul>
   </div>
   <div class="page-contain projects-inner" style="clear: left;">
@@ -41,6 +41,13 @@
     }{%- unless forloop.last -%},{% endunless %}
     {% endfor %}
   ];
+
+  const touch = true;
+  // if("ontouchstart" in document.documentElement) {
+  //   console.log('touch');
+  // } else {
+  //   console.log('notouch');
+  // }
 
   window.addEventListener('load', function () {
 
@@ -97,7 +104,6 @@
           document.getElementById(cleanName).innerHTML = text;
         }
       }
-
     }
 
     // initialize project filter and get initial report (no filters applied yet)
@@ -106,6 +112,8 @@
 
     let report = projectFilter.getFilterReport(projects);
 
+    //no touchscreen - DEFAULT
+    if (!touch){
       // Render the filter toolbar - depending on  screensize
       for (let category in report.counts) {
 
@@ -165,7 +173,7 @@
           } else {
             projectFilter.removeCondition(category, term);
             checkedboxCounter--;
-            
+
             if (checkedboxCounter == 0){
               //remove label background color
               categoryDropdown.style.backgroundColor="white";
@@ -193,6 +201,113 @@
       categoryDropdown.appendChild(termList);
       document.querySelector("#filter-list").appendChild(categoryDropdown);
       }
+    }
+    
+
+    //touchscreen scenario
+    else {
+      const filterToolbar = document.querySelector('.filter-toolbar');
+      filterToolbar.removeAttribute("class", "notouch");
+      filterToolbar.setAttribute("class", "touchscreen");
+
+      for (let category in report.counts) {
+        const termSet = report.counts[category];
+
+        // dropdown container - menu item
+        const categoryDropdown = document.createElement('li');
+        categoryDropdown.setAttribute('class', 'filter-item');
+
+        // dropdown label/trigger element
+        const categoryTitle = document.createElement('a');
+        categoryTitle.appendChild(document.createTextNode(category));
+        categoryDropdown.appendChild(categoryTitle);
+
+        // dropdown menu
+        const termList = document.createElement('ul')
+        termList.setAttribute('class', 'dropdown');
+
+        // create label arrow
+        const arrowSpan = document.createElement('span');
+        const labelArrow = arrowSpan.appendChild(document.createTextNode(" \u{0221f} "));
+        arrowSpan.setAttribute('class', 'labelArrow');
+        categoryTitle.appendChild(arrowSpan);
+
+        //counter for checkedboxes
+        let checkedboxCounter = 0;
+
+        for (let term in termSet) {
+
+          const count = termSet[term];
+          const termItem = document.createElement('li');
+          const content = document.createElement('div');
+          const checkbox = document.createElement('input');
+
+          checkbox.setAttribute('type', 'checkbox');
+          checkbox.setAttribute('class', 'filter-checkbox');
+
+          const text = `${term} (${count})`;
+
+          const textSpan = document.createElement('span');
+
+          // TODO: Find a better mechanism for indexing dropdown items
+          textSpan.setAttribute('id', cleanFieldName(category, term));
+          textSpan.innerHTML = text;
+
+          // trigger a new filtering when a checkbox is clicked
+          checkbox.addEventListener('input', function (event) {
+
+            if (event.target.checked) {
+              projectFilter.addCondition(category, term);
+              checkedboxCounter++;
+
+              //change label background color
+              categoryDropdown.style.backgroundColor="#fa114f";
+              categoryTitle.style.color="white";
+
+            } else {
+              projectFilter.removeCondition(category, term);
+              checkedboxCounter--;
+
+              if (checkedboxCounter == 0){
+                //remove label background color
+                categoryDropdown.style.backgroundColor="white";
+                categoryTitle.style.color="black";
+              }
+            }
+
+            // recompute counts and IDs to hide
+            report = projectFilter.getFilterReport(projects);
+
+            applyFilter(report);
+
+            projectFilter.propagateUrlParams();
+
+          });
+
+          // finalize build UI component
+          content.appendChild(checkbox);
+          content.appendChild(textSpan);
+          termItem.appendChild(content);
+          termList.appendChild(termItem);
+        }
+
+        // compile DOM node and attach to document tree
+        categoryDropdown.appendChild(termList);
+        document.querySelector("#filter-list").appendChild(categoryDropdown);
+        }
+
+
+    }
+
+
+
+    const filterList = document.querySelector(".filter-list");
+    const filterItem = filterList.children;
+    for (let x = 0; x < filterItem.length; x++ ) {
+      filterItem[x].addEventListener("click", function(){
+        console.log( filterItem[x] + 'filter item clicked');
+      })
+    }
 
 
 
