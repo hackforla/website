@@ -44,6 +44,12 @@
 
   window.addEventListener('load', function () {
 
+  //disable project filters temporarily on touchscreen versions of Safari while debugging the filters for Safari
+  let browserAndDeviceType = navigator.userAgent.toLowerCase(); 
+  if (((browserAndDeviceType.indexOf('iphone') > -1) || (browserAndDeviceType.indexOf('ipad') > -1)) && (browserAndDeviceType.indexOf('safari') > -1)){
+
+  } else {
+
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
     const onlyUnique = (value, index, self) => self.indexOf(value) === index;
@@ -207,5 +213,7 @@
 
     applyFilter(report);
 
+
+    }
   });
 </script>
