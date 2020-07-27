@@ -55,8 +55,11 @@ looking:
   - category: QA
     skill: SDET
 technologies:
-  - React / Redux
-  - Flask (Sanic) / Pandas
+  - ReactJS
+  - Redux
+  - Flask
+  - Sanic
+  - Pandas
   - Bulma
   - PostgreSQL
 location: 

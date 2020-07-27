@@ -30,8 +30,8 @@ looking:
 technologies: 
   - Mongo
   - Express
-  - React
-  - Node (MERN)
+  - ReactJS
+  - Node.js
 location: 
   - Santa Monica
   - Remote

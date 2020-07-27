@@ -34,9 +34,9 @@ looking:
   - category: Development
     skill: NLP engineers
 technologies:
-  - React
+  - ReactJS
   - Django
-  - SQL (PostgreSQL)
+  - PostgreSQL
 location: 
   - Santa Monica
   - Remote
