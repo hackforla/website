@@ -16,3 +16,7 @@ dist
 _site
 Gemfile
 Gemfile.lock
+
+#ignores file used by Intellesense
+models.json
+
