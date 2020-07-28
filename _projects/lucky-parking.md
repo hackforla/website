@@ -53,10 +53,10 @@ looking:
     skill: Advanced Data Scientist
   - category: Development
     skill: Python Enthusiast
-technologies: 
-  - ReactJS
+technologies:
+  - React
   - PostgreSQL
-location: 
+location:
   - Santa Monica
   - Remote
 partner: Seeking

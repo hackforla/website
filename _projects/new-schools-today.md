@@ -27,7 +27,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/jacobzwang
   - name: Ethan Hopkins
     role: Project Manager
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UQUBHLPC2'
       github: 'https://github.com/ethanh256'
     picture: https://avatars.githubusercontent.com/ethanh256
@@ -51,11 +51,11 @@ looking:
     skill: Marketing/Research
   - category: Content
     skill: any high school student or technical mentor interested
-technologies: 
-  - ReactJS
+technologies:
+  - React
   - Flutter
 partner: Seeking
-location: 
+location:
   - Santa Monica
   - Remote
 status: Active
