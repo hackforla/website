@@ -9,20 +9,20 @@ alt-hero: "Blue background"
 leadership:
   - name: Mya Stark
     role: Product Owner & SME
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UMC7AJLDV'
       github: 'https://github.com/myastark'
     picture: https://avatars.githubusercontent.com/myastark
   - name: Jacquelin Coronilla
     role: Project Manager
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UNTQA141G'
       github: 'https://github.com/jacoronilla'
     picture: https://avatars.githubusercontent.com/jacoronilla
-links: 
+links:
   - name: GitHub
     url: 'https://github.com/hackforla/not-today'
-looking: 
+looking:
   - category: Development
     skill: Flutter Development
   - category: Development
@@ -31,7 +31,9 @@ looking:
     skill: UI/UX
   - category: Content
     skill: Empathy and sensitivity with subject material and end users
-location: 
+technologies:
+  - React Native
+location:
   - Santa Monica
   - Remote
 partner: Seeking
