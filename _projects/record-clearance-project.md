@@ -40,7 +40,7 @@ looking:
     skill: UX-UI
   - category: Content
     skill: Content/writing
-  technologies:
+technologies:
   - React
 location:
   - West Los Angeles
