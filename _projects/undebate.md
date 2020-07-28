@@ -28,7 +28,7 @@ looking:
   - category: SEO/Marketing
     skill: Marketing/Branding/Social Media
 technologies: 
-  - Mongo
+  - MongoDB
   - Express
   - ReactJS
   - Node.js

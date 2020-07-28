@@ -50,10 +50,10 @@ looking:
   - category: UI/UX
     skill: UI/UX
 technologies:
-  - Mongo
+  - MongoDB
   - Express
-  - React
-  - Node
+  - ReactJS
+  - Node.js
   - SCSS
 location:
   - Santa Monica

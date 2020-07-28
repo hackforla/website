@@ -54,7 +54,7 @@ looking:
   - category: Development
     skill: Python Enthusiast
 technologies:
-  - React
+  - ReactJS
   - PostgreSQL
 location:
   - Santa Monica

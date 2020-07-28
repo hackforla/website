@@ -61,9 +61,9 @@ looking:
   - category: Content
     skill: Video content script writer
 technologies:
-  - React
+  - ReactJS
   - Django
-  - SQL (PostgreSQL)
+  - PostgreSQL
 location:
   - Downtown LA
   - Remote
