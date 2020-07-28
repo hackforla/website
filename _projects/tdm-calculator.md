@@ -65,7 +65,6 @@ technologies:
   - Microsoft SQL Server
   - Docker
   - Azure App Service for Containers
-  - HTML
   - SCSS
 location:
   - Downtown LA
