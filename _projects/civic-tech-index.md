@@ -38,7 +38,7 @@ leadership:
       slack: 'https://app.slack.com/team/UTL09G68Z'
       github: 'https://github.com/Gsnapp'
     picture: https://avatars.githubusercontent.com/GSnapp
-links: 
+links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
   - name: Slack
@@ -60,7 +60,11 @@ looking:
     skill: UI designer
   - category: Content
     skill: Video content script writer
-location: 
+technologies:
+  - React
+  - Django
+  - SQL (PostgreSQL)
+location:
   - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
