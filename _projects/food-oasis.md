@@ -64,7 +64,7 @@ technologies:
   - SQL (PostgreSQL) with PostGIS (geographic) features
   - AWS
   - Docker
-  - Mapobx
+  - Mapbox
   - Material-UI
   - SCSS
 location:
