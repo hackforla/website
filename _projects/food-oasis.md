@@ -57,7 +57,17 @@ links:
 looking:
   - category: Development
     skill: React developers (2)
-location: 
+technologies:
+  - React
+  - Express
+  - Node
+  - SQL (PostgreSQL) with PostGIS (geographic) features
+  - AWS
+  - Docker
+  - Mapbox
+  - Material-UI
+  - SCSS
+location:
   - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
