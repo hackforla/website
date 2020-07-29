@@ -5,7 +5,7 @@ description: The shared housing team works on creating an efficient & effective 
 image: /assets/images/projects/shared-housing-project.jpg
 alt: "'linked arms'"
 image-hero: /assets/images/projects/shared-housing-project-hero.png
-alt-hero: "Light-gray background"
+alt-hero: "'Light-gray background'"
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/shared-housing'

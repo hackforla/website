@@ -4,9 +4,9 @@ identification: '241519642'
 title: Civic Tech Index
 description: Our goal of the project is to create a comprehensive, searchable index of all civic tech open source software projects around the world. We have created the framework. Now our next step is to create a website and other marketing tools that will demonstrate the power of the index and will provide instructions for how to tag and share your github repository in 2 min or less.
 image: /assets/images/projects/civic-tech-index.png
-alt: civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.
+alt: "'Civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.'"
 image-hero: /assets/images/projects/civic-tech-index-hero.png
-alt-hero: outline of the world map with connectivity dots linking major cities on each continent
+alt-hero: "'outline of the world map with connectivity dots linking major cities on each continent'"
 leadership:
   - name: Bonnie Wolfe
     role: Acting PM (project looking for a new PM)

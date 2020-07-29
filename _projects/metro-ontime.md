@@ -5,7 +5,7 @@ description: Trailstats LA tracks LA Metro trains and generates punctuality repo
 image: /assets/images/projects/metro-ontime.png
 alt: "'metro ontime'"
 image-hero: /assets/images/projects/metro-ontime-hero.png
-alt-hero: "Line graph of arrival times vs schedule for the Green Line train"
+alt-hero: "'Line graph of arrival times vs schedule for the Green Line train'"
 leadership:
   - name: Cameron Sexton
     role: Product Owner/Lead Developer

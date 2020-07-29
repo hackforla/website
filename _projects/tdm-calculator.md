@@ -5,6 +5,7 @@ description: We’re building a TDM web calculator for LADOT. It scores proposed
 image: /assets/images/projects/tdm-calculator.jpg
 alt: "'LA TDM Calculator Landing Page (Mock Up)'"
 image-hero: /assets/images/projects/TDM-calculator-hero.png
+alt-hero: "'Los Angeles downtown skyline at dusk with cranes on top of some buildings'"
 leadership:
   - name: Bonnie Wolfe
     role: Product Owner

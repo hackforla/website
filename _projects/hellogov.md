@@ -5,7 +5,7 @@ description: HelloGOV is helping grassroots organizations connect supporters to 
 image: /assets/images/projects/hellogov.jpg
 alt: "'smartphones using hellogo app'"
 image-hero: /assets/images/projects/hellogov-hero.jpg
-alt-hero: "Sky blue background"
+alt-hero: "'Sky blue background'"
 leadership:
   - name: Kate Rose
     links:

@@ -5,7 +5,7 @@ description: Engage is a civic participation platform. Currently in beta, Engage
 image: /assets/images/projects/engage.jpg
 alt: "'city council closed in session'"
 image-hero: /assets/images/projects/engage-hero.jpg
-alt-hero: "Neon sign for the Santa Monica pier. Palm trees and sunset in the background"
+alt-hero: "'Neon sign for the Santa Monica pier. Palm trees and sunset in the background'"
 leadership:
   - name: Teddy Cripeneau
     role:
