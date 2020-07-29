@@ -1,0 +1,66 @@
+---
+layout: default
+title: Credits
+--- 
+<div class="header-container-2">
+  <h1>Credits36</h1>
+  <p class="header-p-2">Thank you to all of the artists who have made our page look great. 
+    Check out all of the iconography and imagery we have used on our site.
+  </p>
+  <div class="step-link-img-2">
+      <div class="step-links">
+          <img class="credit-image" src="./assets/images/credits/credits-hero.png">
+
+      </div>
+  </div>
+</div>
+
+<div class='content-section getting-started-page'>
+<a class='anchor' id='step-1'></a>
+          <div class='getting-started-page-card'>
+            <div class="page-contain projects-inner">
+                <ul class="project-list unstyled-list">
+                  {%- for item in site.credits -%}
+                        <li>
+                          <!-- originally class="project-card-inner" -->
+                        <div class="credits-inner">
+                          <div class="project-tmb">
+                            <img src={{ item.image-url | absolute_url }} class="step-img" alt={{item.alt}}/>
+                          </div>
+                          <div class="project-body">
+                            {%- if item.title -%}
+                             <div class="project-partner">
+                              <strong>Name: </strong>
+                                {{ item.title }}
+                             </div> 
+                            {%- endif -%}
+                            {%- if item.used-in -%}
+                             <div class="project-partner">
+                              <strong>Used in: </strong>
+                                {{ item.used-in }}
+                             </div> 
+                            {%- endif -%}
+                            {%- if item.artist -%}
+                              <div class="project-needs">
+                                <strong>Artist: </strong>
+                                  {{ item.artist }}
+                              </div>
+                            {%- endif -%}
+                            {%- if item.provider -%}
+                              <div class="project-location">
+                                <strong>Provider: </strong>
+                                  {{ item.provider }}
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </li>
+                  {%- endfor -%}
+                </ul>
+            </div>
+          </div>
+ 
+
+        </div>
+<!-- Do not delete below-->
+</div>
