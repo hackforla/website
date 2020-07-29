@@ -47,7 +47,7 @@ looking:
   - GeoPandas
   - jQuery
   - Leaflet
-  - Node
+  - NodeJS
 location:
   - Santa Monica
   - Remote
