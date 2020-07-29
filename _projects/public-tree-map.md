@@ -43,11 +43,11 @@ looking:
     skill: QA and UX testing
   - category: Content
     skill: Appreciation for trees (anyone interested is welcome!)
-  technologies:
+technologies:
   - GeoPandas
   - jQuery
   - Leaflet
-  - NodeJS
+  - Node.js
 location:
   - Santa Monica
   - Remote
