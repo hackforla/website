@@ -41,7 +41,7 @@ looking:
   - category: Content
     skill: Content/writing
 technologies:
-  - React
+  - ReactJS
 location:
   - West Los Angeles
   - Remote

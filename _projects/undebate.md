@@ -28,10 +28,10 @@ looking:
   - category: SEO/Marketing
     skill: Marketing/Branding/Social Media
 technologies: 
-  - Mongo
+  - MongoDB
   - Express
-  - React
-  - Node (MERN)
+  - ReactJS
+  - Node.js
 location: 
   - Santa Monica
   - Remote

@@ -52,7 +52,7 @@ looking:
   - category: Content
     skill: any high school student or technical mentor interested
 technologies:
-  - React
+  - ReactJS
   - Flutter
 partner: Seeking
 location:

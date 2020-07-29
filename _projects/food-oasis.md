@@ -58,10 +58,11 @@ looking:
   - category: Development
     skill: React developers (2)
 technologies:
-  - React
+  - ReactJS
   - Express
-  - Node
-  - SQL (PostgreSQL) with PostGIS (geographic) features
+  - Node.js
+  - PostgreSQL
+  - PostGIS
   - AWS
   - Docker
   - Mapbox

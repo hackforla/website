@@ -56,7 +56,7 @@ looking:
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
 technologies:
-  - React
+  - ReactJS
   - NoSQL
 location: 
   - Downtown LA

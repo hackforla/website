@@ -59,12 +59,12 @@ looking:
   - category: UI/UX
     skill: UI Designer
 technologies:
-  - React
+  - ReactJS
   - Express
-  - Node
+  - Node.js
   - Microsoft SQL Server
   - Docker
-  - Azure App Service for Containers
+  - Azure App Service
   - SCSS
 location:
   - Downtown LA
