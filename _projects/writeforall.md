@@ -5,9 +5,9 @@ description: We want to improve the language used in websites to be
   more inclusive (of all communities) while also educating the public
   about exclusionary language. @writeforallorg&#8482;
 image: /assets/images/projects/writeforall.png
-alt: "A a rainbow document searcher icon , the words 'Write for All TM', and a rainbow-like border"
+alt: 'A a rainbow document searcher icon, the words Write for All TM, and a rainbow-like border.'
 image-hero: /assets/images/projects/writeforall-hero.png
-alt-hero: "A large rainbow-colored background with a rainbow document searcher icon in the middle"
+alt-hero: 'A large rainbow-colored background with a rainbow document searcher icon in the middle.'
 leadership:
   - name: Joel Parker Henderson
     role: Project Architect

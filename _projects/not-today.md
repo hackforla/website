@@ -5,7 +5,7 @@ description:  Not Today is an app intended to help people wait out periods of su
 image: /assets/images/projects/not-today.png
 alt: 'person being supported by another.  Art by c.w. moss'
 image-hero: /assets/images/projects/not-today-hero.png
-alt-hero: "Blue background"
+alt-hero: 'Blue background'
 leadership:
   - name: Mya Stark
     role: Product Owner & SME
