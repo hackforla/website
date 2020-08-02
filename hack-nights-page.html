@@ -3,7 +3,7 @@ layout: default
 title: Hack Nights
 ---
 <div class="header-container-hacknights">
-    <h1>Hack Nights</h1>
+    <h1>Events</h1>
     <div class="content-hack-night">
         <div class="show-video">
        
@@ -25,7 +25,7 @@ title: Hack Nights
                     local government and community service.</h2>
         
 
-                <p id="head-content" style="text-align: initial;"><span style='font-size:25px;'>&#8810;</span>To learn more, watch the <a
+                <p id="head-content" style="text-align: initial;"><span class="icon-arrow" style='font-size:25px;'>&#8810;</span>To learn more, watch the <a
                         href="https://www.ted.com/talks/jennifer_pahlka_coding_a_better_government" target="_blank">Ted
                         Talk</a> by Code for America founder, Jennifer Pahlka, on maintaining a better government
                     through
@@ -37,7 +37,7 @@ title: Hack Nights
 </div>
 
 <div class="getting-started-page">
-    <h1 style="color:#ffffff; margin-top: 75px;"> Our Events</h1>
+    <h1 style="color:#ffffff; margin-top: 75px; font-size: 35px;"> Our Events</h1>
     <div class="flex-page-card">
         <div class="getting-started-page-card-hack-nights">
             <h2 class="event-title"> <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg" class="vector-img">
@@ -157,12 +157,11 @@ title: Hack Nights
     </div>
 
     
-    <h1 style="color:#ffffff; margin-top: 40px;">Our Locations</h1>
+    <h1 style="color:#ffffff; margin-top: 40px; font-size: 35px;">Our Locations</h1>
         <div class="notification-banner">
             <p class="meetings-message">In light of the COVID-19 pandemic, Hack for LA has suspended its in-person events below. 
             The organization remains fully active, and all events are now being conducted remotely using Zoom 
             at the days/times listed above.</p>
-
             <div class="getting-started-mobile-page">
                 <h2  class="event-title"> <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="vector-img">
                     <g clip-path="url(#clip0)">
@@ -198,7 +197,8 @@ title: Hack Nights
             </div>
         </div>
 
-     <div class="mobile-locations-dropdown">
+
+    <div class="mobile-locations-dropdown">
         <div class="getting-started-page-card-locations"> 
             <div class=locations-1>
 
@@ -359,39 +359,60 @@ title: Hack Nights
 
 <script>
 
-   const locationsDropDown = document.querySelector('.getting-started-mobile-page')
-   const showingLocations = document.querySelector('.mobile-locations-dropdown')
-   const arrowVector = document.querySelector('.arrow-down');
-    const showContent = document.querySelectorAll('.event-title');
+const locationsDropDown = document.querySelector('.getting-started-mobile-page')
+const showingLocations = document.querySelector('.mobile-locations-dropdown')
+const arrowVector = document.querySelector('arrow-down');
+const showContent = document.querySelectorAll('.event-title');
     
 
+// locationsDropDown.addEventListener("click", init)
 
-    locationsDropDown.addEventListener("click" , function(){
-        if (showingLocations.style.display === "none"){
-            // locationsDropDown.style.display = "none"
-            showingLocations.style.display = "block"
-        } else {
-            locationsDropDown.style.display = "block"
-            showingLocations.style.display = "none"
+// function init(){
+//     var screenSize = window.matchMedia("(min-width: 450px)")
 
+//     if (screenSize.matches){
+//         locationsDropDown.style.display = "none"
+//     } else {
+//         locationsDropDown.style.display = "block"
+//     }
+// }
+
+
+// locationsDropDown.addEventListener("click" , function(){
+//     if (locationsDropDown.style.display === "none"){
+//         locationsDropDown.style.display = "block"
+//         showingLocations.style.display = "block"
+//     } else {
+//         // locationsDropDown.style.display = "none"
+//         showingLocations.style.display = "none"
+
+//     }
+// })
+
+
+for(let i = 0; i < showContent.length; i++){
+    showContent[i].addEventListener("click", function(){
+
+        // this.classList.toggle("active");
+        let dropDown = this.nextElementSibling;
+        if(dropDown.style.display === "none"){
+            dropDown.style.display = "block"
+            arrowVector.style.transform = "rotate(180deg)"
+        }else{
+            dropDown.style.display = "none"
+            arrowVector.style.transform = "rotate(0deg)"
         }
     })
+}
 
+// showContent.addEventListener("click", function(){
+//     showingLocations.style.visibility = "hidden";
+// })
 
-    for(let i = 0; i < showContent.length; i++){
-        showContent[i].addEventListener("click", function(){
+</script>
 
-            // this.classList.toggle("active");
-            let dropDown = this.nextElementSibling;
-            if(dropDown.style.display === "none"){
-                dropDown.style.display = "block"
-                arrowVector.style.transform = "rotate(180deg)"
-            }else{
-                dropDown.style.display = "none"
-                arrowVector.style.transform = "rotate(0deg)"
-            }
-        })
-    }
+<script>
+
 
 
     // Assigns local JSON Data to localData variable

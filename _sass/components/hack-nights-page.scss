@@ -4,6 +4,7 @@
     @media #{$bp-below-tablet}  {
         margin-top: 52px;
         padding: 0;
+        margin: 0px;
     }
 }
 .header-container-hacknights{
@@ -18,7 +19,7 @@
     margin: 8%;
 
     @media #{$bp-below-tablet} {
-        margin: 45px 0px;
+        // margin: 45px 0px;
         padding: 0;
         flex-direction: column;
         margin-top: 96px;
@@ -31,7 +32,7 @@
     @media #{$bp-below-tablet} {
         display: flex;
         flex-direction: column-reverse;
-        margin: 49px 24px;
+        margin: 50px 0px;
     }
 }
 .show-video {
@@ -51,6 +52,17 @@
         width: 100%;
     }
 }
+
+// .icon-arrow{
+
+//     @media #{$bp-below-mobile} {
+//         transform: rotate(90deg);
+//         transition: ease-in;
+
+
+//     }
+
+// }
 .step-img-1{
     height: 134px;
     text-align: center;
@@ -82,21 +94,21 @@
 
 .getting-started-mobile-page{
     display: none;
-    background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
-    border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    overflow: hidden;
-    max-width: 654px;
-    margin-bottom: 0;
-    padding: 20px;
-    margin: 20px;
-    font-family: "Roboto"sans-serif;
-
+    // overflow: hidden;
+    // max-width: 654px;
+    // margin-bottom: 0;
+    // padding: 20px;
+    // font-family: "Roboto"sans-serif;
+    
     @media #{$bp-below-mobile} {
-        display: flex;
-        padding: 30px 15px;
-        justify-content: center;
+        display: inline;
+        margin: 20px;
+        // background: #fff;
+        border: 0 solid rgba(51, 51, 51, 0.06);
+        border-radius: 16px;
+        // box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+        // padding: 30px 15px;
+        // justify-content: center;
 
     }
 }
@@ -161,7 +173,7 @@
     align-content: center;
 
     @media #{$bp-below-tablet} {
-        margin: 25px 0;
+        // margin: 25px 0;
         flex-direction: column;
     }
 }
@@ -169,13 +181,17 @@
 .notification-banner p {
     text-align: center;
     font-weight: bold;
-    margin: auto 30%;
+    margin: auto 16%;
     padding: 20px;
+    font-size: 25px;
+    line-height: 29px;
 
     @media #{$bp-below-mobile} {
         text-align: justify;
-        padding: 9px;
+        padding: 12px;
         margin: 0;
+        font-size: 16px;
+        line-height: 19px;
     }
 }
 
@@ -206,8 +222,8 @@
     height: fit-content;
 
     @media #{$bp-below-tablet} {
-        width: 335px;
-        padding: 16px 9px;
+        // max-width: 335px;
+        padding: 16px 16px;
     }
 }
 
@@ -336,7 +352,8 @@
 
 .mobile-locations-dropdown{
     @media #{$bp-below-tablet} {
-        display: none;
+        // display: none;
+        background: #f2c94d;
      }
 }   
 
