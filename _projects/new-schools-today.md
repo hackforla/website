@@ -3,7 +3,7 @@ identification: '222602391'
 title: New Schools Today
 description: We’re building a platform for students across LA County to create more accessible school-related apps and web apps. Our desired impact is to make students feel more welcomed and included in their community through an online academic environment created by peers, for peers
 image: /assets/images/projects/new-schools-today.jpg
-alt: 'Team working during meeting.'
+alt: 'Team working a during meeting.'
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
 alt-hero: 'Team working during a meeting.'
 leadership:
