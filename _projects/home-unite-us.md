@@ -5,7 +5,7 @@ description: We're working with community non-profits who have a Host Home initi
 image: /assets/images/projects/home-unite-us.png
 alt: 'Cartoon picture of person'
 image-hero: /assets/images/projects/home-unite-us-hero.png
-alt-hero: 'Cartoon picture of person and a plus sign and a house all in a row'
+alt-hero: 'Cartoon picture of person and a plus sign and a house all in a row.'
 leadership:
   - name: Timothy Malstead
     role: Front End Web Developer Lead (on loan to Food Oasis project)
