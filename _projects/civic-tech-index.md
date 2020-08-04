@@ -14,12 +14,12 @@ leadership:
       slack: 'https://app.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
- - name: Arun Prakash
-  role: Product Manager
-  links:
-    slack: 'https://app.slack.com/team/U015GPCKUFK'
-    github: 'https://github.com/arunprakash87'
-  picture: https://avatars.githubusercontent.com/arunprakash87
+#  - name: Marissa Wilson
+#   role: Product Manager
+#   links:
+#     slack: 'https://app.slack.com/team/UUG26TUTB'
+#     github: 'https://github.com/mw376707'
+#   picture: https://avatars.githubusercontent.com/mw376707
   - name: Chali Prasertsri
     role: UX Lead
     links:
