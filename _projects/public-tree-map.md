@@ -43,7 +43,12 @@ looking:
     skill: QA and UX testing
   - category: Content
     skill: Appreciation for trees (anyone interested is welcome!)
-location: 
+technologies:
+  - GeoPandas
+  - jQuery
+  - Leaflet
+  - Node.js
+location:
   - Santa Monica
   - Remote
 partner: City of Santa Monica
