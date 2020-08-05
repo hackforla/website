@@ -17,14 +17,14 @@ links:
    - name: Slack 
      url: 'https://hackforla.slack.com/archives/CV7QGL66B'
    - name: GitHub
-     url: 'https://github.com/100Automations/'
+     url: 'https://github.com/100Automations/website'
    - name: ReadMe
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
    - category: UI/UX
-     skill: designer
+     skill: UI/UX designer
    - category: UI/UX
-     skill: content writer
+     skill: Content Writer
    - category: Development
      skill: Anyone who wants to write open source automations
    - category: Development
