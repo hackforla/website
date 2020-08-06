@@ -3,9 +3,9 @@ identification: '226157870'
 title: VRMS
 description: VRMS is a tool used for the engagement, support, and retention of a network of volunteers.
 image: /assets/images/projects/vrms.png
-alt: "VRMS homepage showing the check-in buttons"
+alt: 'VRMS homepage showing the check-in buttons.'
 image-hero: /assets/images/projects/vrms-hero.png
-alt-hero: "City of LA skyline"
+alt-hero: 'City of LA skyline.'
 leadership:
   - name: Matt Tapper
     role: Tech Team Lead
@@ -50,10 +50,10 @@ looking:
   - category: UI/UX
     skill: UI/UX
 technologies:
-  - Mongo
+  - MongoDB
   - Express
-  - React
-  - Node
+  - ReactJS
+  - Node.js
   - SCSS
 location:
   - Santa Monica
