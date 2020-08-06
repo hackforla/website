@@ -3,9 +3,9 @@ identification: '216854923'
 title: Lucky Parking
 description: A platform looking for nearby street parking with least possibility of getting citation
 image: /assets/images/projects/lucky-parking.png
-alt: "Lucky Parking Logo"
+alt: 'Lucky Parking Logo'
 image-hero: /assets/images/projects/lucky-parking-hero.png
-alt-hero: "Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagon"
+alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagon.'
 leadership:
   - name: Rong Xue
     role: Product Owner
@@ -54,7 +54,7 @@ looking:
   - category: Development
     skill: Python Enthusiast
 technologies:
-  - React
+  - ReactJS
   - PostgreSQL
 location:
   - Santa Monica

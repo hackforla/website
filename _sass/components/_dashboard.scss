@@ -1,0 +1,28 @@
+.dashboardEmbed{
+    display: flex;
+    background-color: #020d2d;
+    margin: 0 auto 0 auto;
+
+    @media #{$bp-tablet-up}{
+        #mobileView{
+            display: none;
+        }
+    }
+    @media #{$bp-below-tablet}{
+        #mobileView{
+            display: block;
+            margin: 22% auto 0 auto;
+        }
+        #webView{
+            display: none;
+        }
+    }
+}
+
+iframe{
+    margin: 0 auto 0 auto;
+}
+
+.dashboardEmbed {
+    background-color: #020d2d;
+}
