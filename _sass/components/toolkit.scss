@@ -1,0 +1,246 @@
+.toolkit-h1{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 59px;
+    line-height: 69px;
+    align-items: center;
+    text-align: center;
+}
+
+.toolkit-flex-text {
+    word-wrap: break-word;
+}
+
+.toolkit-p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.toolkit-svg-container {
+    padding-bottom: 20px;
+}
+
+.toolkit-hero-text {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    padding-left: 20rem; 
+    padding-right: 20rem; 
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.toolkit-background {
+    background-color: #030d2d;
+}
+
+.toolkit-button-container {
+    padding-top: 5rem;
+    padding-bottom: 0.5rem;
+    flex: 1;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolkit-suggest-text {
+    color: white;
+    padding-left: 5rem;
+}
+
+.toolkit-button {
+    position: relative;
+    right: 5rem;
+}
+
+.toolkit-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.toolkit-flex-item {
+    display: inline-block;
+    margin: 30px;
+    padding: 10rem;
+    flex: 1;
+    flex-basis: 0.5%;
+}
+
+.toolkit-flex-item-resources {
+    display: inline-block;
+    margin: 20px;
+    padding: 5rem;
+    flex: 1;
+    flex-basis: 0.5%;
+    
+}
+
+.toolkit-image {
+    display: block;
+    margin: auto;
+}
+
+.zoom-image {
+    width: 120px;
+    height: 50px;
+}
+
+.github-image {
+    width: 75px;
+    height: 75px;
+}
+
+.figma-image {
+    width: 75px;
+    height: 120px;
+}
+
+.toolkit-anchor-text {
+    position: relative;
+    text-align: right;
+    margin: auto;
+}
+
+.toolkit-flex-heading-container {
+    flex: 1;
+    margin: auto;
+}
+.toolkit-flex-text-container {
+    flex: 1;
+    margin: auto;
+    overflow: hidden;
+}
+
+.toolkit-resource-caption {
+    padding: 1rem;
+    font-size: 25px;
+    text-align: center;
+}
+
+.toolkit-resource-item-heading {
+    margin: auto;
+}
+
+@media #{$bp-below-tablet} {
+    .toolkit-header {
+        padding: 0rem;
+    }
+
+    .toolkit-hero-text {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+        padding-top: 2rem;
+        padding-left: 0rem; 
+        padding-right: 0rem; 
+        text-align: center;
+    }
+
+    .toolkit-p {
+        padding: 0.5rem;
+    }
+
+    .toolkit-h1{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 69px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .toolkit-p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 32px;
+    }
+    
+    .toolkit-svg-container {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .toolkit-flex-item {
+        display: inline-block;
+        margin: 20px;
+        padding: 1rem;
+        padding-bottom: 5rem;
+        flex: 1;
+        flex-basis: 100%;
+    }
+
+    .toolkit-flex-item-resources {
+        display: inline-block;
+        margin: 20px;
+        padding: 1rem;
+        flex: 1;
+        flex-basis: 0.5%;
+        
+    }
+
+    .toolkit-flex-text-container {
+        flex: 1;
+        flex-grow: 1;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .toolkit-button-container {
+        flex-basis: 0%;
+        padding-top: 5rem;
+        padding-bottom: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .toolkit-resource-caption {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .toolkit-button {
+        position: center;
+        left: 1%;
+        margin: auto;
+    }
+
+    .toolkit-suggest-text {
+        color: white;
+        text-align: center;
+        margin: auto;
+        right: 0;
+        justify-content: left;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 1rem;
+    }
+
+    .toolkit-item-heading {
+        font-size: 15px;
+    }
+    
+    .toolkit-flex-text {
+        font-size: 10px;
+    }
+
+    .toolkit-anchor-text {
+        font-size: 10px;
+    }
+}
+
+
+@media only screen and (device-width: 768px) {
+    /* For general iPad layouts */
+    .toolkit-hero-text {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        padding-left: 5rem; 
+        padding-right: 5rem; 
+        text-align: center;
+        padding-bottom: 0;
+    }
+  }
