@@ -71,7 +71,6 @@ body {
     }
 }
 
-
 //only show header divider if screen is bigger than mobile
 @media #{$bp-mobile-up} {
   .border-right {
@@ -92,8 +91,16 @@ body {
   text-align: left;
 }
 
+.section-container .add-margin-top-to-header {
+  margin-top: 4rem;
+}
+
 .section-container p {
   text-align: left;
+}
+
+.after-paragraph-margin {
+  margin-bottom: 2rem;
 }
 
 .section-container img {
@@ -135,12 +142,122 @@ body {
 }
 
 .grayarrow {
+  @media #{$bp-below-mobile} {
+    width: 15px;
+  }
+
   width: 20px;
   max-width: none;
+  margin: 1rem auto;
 }
 
 @media #{$bp-below-tablet} {
   .section-container {
     padding: 12.5% 10%;
   }
+}
+
+// STYLING FOR GUIDE PAGE DIVS CONTAINING IMAGE WITH OVERLAY LINKS 
+// Div holding image and arrows
+.overlay-links {
+  position: relative;
+
+  h4 {
+    font-size: 0.85em;
+    @media #{$bp-below-tablet} {
+      line-height: 1.5em;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.guide-pages-text-section-reduced-width {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
+  width: 90%;
+  margin: auto auto 1rem auto;
+
+  img {
+    width: 100%;
+  }
+
+}
+
+// image within overlay-links section
+.overlay-links-img {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
+  max-width: none;
+  width: 90%;
+  margin: auto;
+}
+
+// mixins for position of arrows/links - 
+// Any parameters structured as $variable: value have a default value
+
+// small arrow and companion text positioning
+@mixin arrow-right-overlay($top, $left: 91%) {
+  position: absolute;
+  left: $left;
+  width: 7%;
+  top: $top;
+}
+
+@mixin arrow-right-text-overlay($top, $left: 99%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin arrow-left-overlay($top, $right: 94%) {
+  position: absolute;
+  right: $right;
+  width: 7%;
+  top: $top;
+  transform: rotate(180deg);
+}
+
+@mixin arrow-left-text-overlay($top, $right: 102%) {
+  position: absolute;
+  right: $right;
+  width: 10%;
+  top: $top;
+  direction: rtl;
+  text-align: start;
+}
+
+// large arrow and companion text positioning
+@mixin md-arrow-right-overlay($top, $left, $width: 18%) {
+  @include arrow-right-overlay($top, $left);
+  width: $width;
+}
+
+@mixin md-arrow-left-overlay($top, $right, $width: 18%) {
+  @include arrow-left-overlay($top, $right);
+  width: $width;
+}
+
+//mobile-adjusted arrow classes
+.hide-guide-page-arrow-on-mobile {
+    @media #{$bp-below-mobile} {
+      display: none;
+      visibility: hidden;
+
+      + h4 {
+        display: none;
+      }
+    }
+}
+
+@mixin arrow-overlay-on-mobile($top, $right, $deg, $width: 7%) {
+  position: absolute;
+  right: $right;
+  width: $width;
+  top: $top;
+  transform: rotate($deg);
 }

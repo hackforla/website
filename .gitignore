@@ -14,3 +14,8 @@ dist
 .DS_store
 .vscode
 _site
+Gemfile
+Gemfile.lock
+
+#ignore models.json file added by IDE intellesense
+models.json

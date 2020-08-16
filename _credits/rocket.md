@@ -1,11 +1,11 @@
 ---
-title: Review
+title: Rocket
 content: icon
 used-in: Getting Started
-artist: Rinaros 79
+artist: Osama Dawood
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/proj-1.png
-alt: "Image of Review"
+image-url: /assets/images/getting-started/proj-3.png
+alt: "Image of Rocket"
 type: icon
 ---

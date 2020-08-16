@@ -165,42 +165,71 @@ docker-compose up
 
 #### Step 5: Read [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture) to get acquainted with how the website is structured
 
-#### Step 6 Change to a new branch
+#### Step 6: Work on an issue using git
 
-For each issue, create a new branch to work in. Doing all your work on
-topic branches, leaves your repository's main branch (named
-`gh-pages`) unmodified and greatly simplifies keeping your fork in
-sync with the main project.
+Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
-This command will let you know available branches and which branch you're on.
+a) Check current branch
 
-Star (`*`) indicates which branch you're on
+The `git branch` command will let you know what branch you are in, and what branch names are already in use.
 
 ```bash
 git branch
 ```
 
-By default you should start on the `gh-pages` branch.
+You will see a list of all of your branches. There will be a star (`*`) next to the branch that you are currently in. By default you should start on the `gh-pages` branch.
 
-This command will (create and) change to a new branch:
+b) Create a new branch where you will work on your issue
+
+The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
+
+To create a new issue branch, and switch into it: 
 
 ```bash
 git checkout -b fix-logo-width-311
 ```
 
-We prefer that you work on a branch name that relates to the issue you're working on.
+The text after the `-b`, in the example `fix-logo-width-311`, will be the name of your new branch. Choose a branch name that relates to the issue you're working on. (No spaces!)
 
 The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
 
-No law of physics will break if you don't adhere to this scheme but laws of git will break if you add spaces.
+No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
 
-When you've finished working on your issue, follow the steps below before pushing your code. 
+When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
+
+c) Prepare your changes to push to your repository
+
+Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
+
+-Use the `git add` command to stage your changes.  
+This command prepares your changes before you commit them. You can stage files one at a time using the filename, or you can use the `.` to stage all of the files that you have added or made changes to. 
+
+Run the command: 
+```bash
+git add .
+```
+
+-Use the `git status` command to see what files are staged. 
+
+This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. 
+```bash
+git status
+```
+
+-Use the `git commit` command
+
+This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to reisst the temptation to be overly cryptic.
+
+To commit your changes with a message, run:
+```bash
+git commit -m “insert message here”
+```
+
+Congratulations!  You are now ready to push your work to your repository. 
 
 #### Step 7 Check upstream before you push
 
-Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website
-repository. `git fetch` will check remote repositories for changes
-without altering your local repository.
+Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
 
 ```bash
 git fetch upstream
@@ -211,13 +240,11 @@ git fetch upstream
 If you do not see any output, there have not been any changes in the
 main Hack for LA website repository since the last time you
 checked. So it is safe to push your local commits to your fork.
-If you just type `git push` you will be prompted to create a new
-branch in your GitHub repository. In our example, the text would read
-as below. Use this more complete command to push your local branch to
-your copy of the website repository.
+
+If you just type `git push` you will be prompted to create a new branch in your GitHub repository. The more complete command below will create a new branch on your copy of the website repository, and then push your local branch there. The name at the end of this command should be the same as the name of the local branch that you created back in step 6, as in the example below:  
 
 ```bash
-git push --set-upstream origin 140-fix-logo-width
+git push --set-upstream origin fix-logo-width-311
 ```
 
 ##### Step 7b conflicting changes in the upstream repository
@@ -248,7 +275,8 @@ to bring your fork up to date with the main repository.
 ### Incorporating changes from upstream
 
 Your fork of this repository on GitHub, and your local clone of that fork, will
-get out of sync with this (upstream) repository from time to time. 
+get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+
 One way to keep your fork up to date with this repository is to follow
 these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
 
@@ -256,20 +284,31 @@ You can also update your fork via the local clone of your fork, using
 these instructions. Assuming you have a local clone with remotes
 `upstream` (this repo) and `origin` (your GitHub fork of this repo):
 
+First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes. 
+
+Run the following two commands: 
+
 ```bash
-# create a local branch which tracks upstream/gh-pages;
-# you will only need to do this once
+git fetch upstream
 git checkout -b upstream-gh-pages --track upstream/gh-pages
-# If you already have the branch upstream-gh-pages, just check it out
-git checkout upstream-gh-pages
+```
+
+If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes: 
+
+```bash
+git checkout upstream-gh-pages # Move to the branch you want to merge with. 
 git pull  # This updates your tracking branch to match the gh-pages branch in this repository
-git checkout gh-pages
-git merge upstream-gh-pages
-# If you do all your work on topic branches and keep gh-pages free of local modifications,
-# this merge should apply cleanly
-# Then push the merge changes to your GitHub fork
+git checkout gh-pages  # Move back to your gn-pages branch
+git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
+```
+If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
+
+Then push the merge changes to your GitHub fork:  
+
+```bash
 git push
 ```
+If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
 
 #### Incorporating changes into your topic branch
 
@@ -279,7 +318,7 @@ branch. NOTE you should only rebase if you have never pushed your
 topic branch to GitHub (or shared it with another collaborator).
 
 ```bash
-git checkout 140-fix-logo-width
+git checkout fix-logo-width-311
 git rebase gh-pages
 ```
 
@@ -287,14 +326,14 @@ If you receive warnings about conflicts, abort the rebase with `git
 rebase --abort` and instead merge gh-pages into your branch.
 
 ```bash
-git checkout 140-fix-logo-width
+git checkout fix-logo-width-311
 git merge gh-pages
 ```
 
 #### Step 8 Complete the pull request
 
 ```bash
-git push --set-upstream origin 140-fix-logo-width
+git push --set-upstream origin fix-logo-width-311
 ```
 
 Now create a new pull request to ask for your updates to be
@@ -310,7 +349,7 @@ pull request message so the issue will be closed automatically once
 your pull request is accepted and merged.
 
 Once you have finished working on the issue you have chosen, commit
-the changes to your local branch (e.g. `140-fix-logo-width`).
+the changes to your local branch (e.g. `fix-logo-width-311`).
 
 ## Useful Links
 

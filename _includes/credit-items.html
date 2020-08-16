@@ -3,7 +3,7 @@ layout: default
 title: Credits
 --- 
 <div class="header-container-2">
-  <h1>Credits36</h1>
+  <h1>Credits51</h1>
   <p class="header-p-2">Thank you to all of the artists who have made our page look great. 
     Check out all of the iconography and imagery we have used on our site.
   </p>
@@ -17,21 +17,23 @@ title: Credits
 
 <div class='content-section getting-started-page'>
 <a class='anchor' id='step-1'></a>
-          <div class='getting-started-page-card'>
+          <div class='white-page-card-credits'>
             <div class="page-contain projects-inner">
                 <ul class="project-list unstyled-list">
                   {%- for item in site.credits -%}
                         <li>
                           <!-- originally class="project-card-inner" -->
                         <div class="credits-inner">
-                          <div class="project-tmb">
+                          <div class="icon-left">
                             <img src={{ item.image-url | absolute_url }} class="step-img" alt={{item.alt}}/>
                           </div>
-                          <div class="project-body">
+                          <div class="icon-info">
                             {%- if item.title -%}
                              <div class="project-partner">
                               <strong>Name: </strong>
-                                {{ item.title }}
+                              <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'
+-->
+                                <a href="{{item.provider-link}}">{{ item.title }}</a>
                              </div> 
                             {%- endif -%}
                             {%- if item.used-in -%}
@@ -49,7 +51,11 @@ title: Credits
                             {%- if item.provider -%}
                               <div class="project-location">
                                 <strong>Provider: </strong>
-                                  {{ item.provider }}
+                                {%- if item.provider-link -%}
+                                <a href="{{item.provider-link}}">{{ item.provider }}</a>
+                                {%- else -%}
+                                {{ item.provider }}
+                                {%- endif -%}
                               </div>
                             {%- endif -%}
                           </div>

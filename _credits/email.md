@@ -1,11 +1,11 @@
 ---
-title: Review
+title: Email
 content: icon
 used-in: Getting Started
-artist: Rinaros 79
+artist: Hadi Sucipto
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/proj-1.png
-alt: "Image of Review"
+image-url: /assets/images/getting-started/join-1.png
+alt: "Image of Email"
 type: icon
 ---

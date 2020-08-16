@@ -27,7 +27,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Steven Ettinger
     role: API Integration
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UNFG6M8FN'
       github: 'https://github.com/disregardfiat'
     picture: https://avatars.githubusercontent.com/disregardfiat
@@ -49,7 +49,13 @@ looking:
     skill: Back end devs (any level)
   - category: UI/UX
     skill: UI/UX
-location: 
+technologies:
+  - MongoDB
+  - Express
+  - ReactJS
+  - Node.js
+  - SCSS
+location:
   - Santa Monica
   - Downtown LA
   - Remote

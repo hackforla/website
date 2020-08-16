@@ -1,0 +1,436 @@
+//Styles to align arrows to images within overlay-links container
+
+// SECTION CONTAINER ONE STYLING : LINKING GOOGLE FORMS TO SHEETS
+.elipsis-arrow {
+  @include arrow-right-overlay(37%);
+
+  + h4 {
+    @include arrow-right-text-overlay(37%);
+
+  }
+}
+
+.select-response-arrow {
+  @include arrow-right-overlay(35%);
+
+  + h4 {
+    @include arrow-right-text-overlay(35%);
+
+  }
+}
+
+.select-existing-spreadsheet-arrow {
+  @include md-arrow-left-overlay(54%, 80%);
+
+  + h4 {
+    @include arrow-left-text-overlay(54%, 99%);
+
+  }
+}
+
+.select-target-sheet-arrow {
+  @include arrow-left-overlay(50%, 90%);
+
+  + h4 {
+    @include arrow-left-text-overlay(50%, 99%);
+
+  }
+}
+
+// SECTION CONTAINER TWO STYLING : CLEAN DATA IN GOOGLE SHEETS
+.format-spreadsheet-row-1-arrow {
+  @media #{$bp-below-mobile} { 
+    @include arrow-overlay-on-mobile(10%, 95%, 240deg, 12%)
+  }
+    @include arrow-left-overlay(15%, 92%);
+
+  + h4 {
+    @media #{$bp-below-mobile} { 
+      @include arrow-left-text-overlay(2%); 
+    }
+    @include arrow-left-text-overlay(15%);
+  }
+}
+
+.format-spreadsheet-linked-worksheet-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(87%, 67%, 300deg, 25%);
+  }
+
+  @include md-arrow-left-overlay(96%, 80%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(70%, 65%);
+    }
+    @include arrow-left-text-overlay(96%);
+  }
+}
+
+.formula-cell-arrow {
+  @include md-arrow-left-overlay(29%, 75%, 23%);
+
+  + h4 {
+    @include arrow-left-text-overlay(29%, 100%);
+    width: 12%;
+  }
+}
+
+.trim-section-formula-cell-arrow {
+  @include md-arrow-right-overlay(29%, 62%, 35%);
+
+  + h4 {
+    @include arrow-right-text-overlay(29%, 100%);
+  }
+}
+
+// SECTION CONTAINER THREE STYLING : BUILD REPORT IN GOOGLE DATA STUDIO
+.guide-page-add-page-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(1%, 89%, 270deg);
+  }
+  @include arrow-left-overlay(8%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(-15%, 86%);
+      text-align: left;
+    }
+    @include arrow-left-text-overlay(8%);
+  }
+}
+
+.guide-page-add-data-arrow {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+  }
+  @include md-arrow-left-overlay(31%, 68%, 30%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(-60%, 60%);
+      text-align: left;
+    }
+    @include arrow-left-text-overlay(31%);
+  }
+}
+
+.guide-page-mobile-add-page-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(1%, 69%, 310deg);
+    visibility: visible;
+  }
+  display: none;
+  visibility: hidden;
+
+}
+
+.guide-page-connectors-arrow {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+  @include md-arrow-right-overlay(45%, 60%, 35%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(45%, 70%);
+    }
+    @include arrow-right-text-overlay(45%, 97%);
+  }
+}
+
+.guide-page-mobile-connectors-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(45%, 32%, 0deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-add-data-sources {
+  @media #{$bp-below-mobile} {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include md-arrow-left-overlay(60%, 65%, 30% );
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(55%, 48%);
+      text-align: left;
+    }
+
+    @include arrow-left-text-overlay(60%, 98%);
+  }
+}
+
+.guide-page-mobile-add-data-sources-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(60%, 60%, 0deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-add-chart-arrows {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+
+  @include md-arrow-left-overlay(6%, 85%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-text-overlay(-10%, 70%);
+      text-align: left;
+    }
+    @include arrow-left-text-overlay(6%, 105%);
+  }
+}
+
+.guide-page-mobile-add-chart-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(0%, 80%, 320deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-pages-customize-chart-image {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.guide-page-customize-chart-data-pane-arrow {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+  @include arrow-right-overlay(2%, 82%);
+  transform: rotate(300deg);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(10%, 65%);
+    }
+    @include arrow-right-text-overlay(-3%, 85%);
+  }
+}
+
+.guide-page-mobile-customize-chart-data-pane-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(11%, 12%, 180deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-customize-chart-properties-panel-arrow {
+  @include arrow-right-overlay(6%, 90%);
+
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(-15%, 65%);
+      width: 50px;
+      line-height: 10px;
+      text-align: right;
+    }
+    @include arrow-right-text-overlay(5%);
+  }
+}
+
+.guide-page-mobile-customize-chart-properties-panel-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(2%, 7%, 210deg, 8%);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-customize-chart-dimension-arrow {
+  @include arrow-right-overlay(15%, 90%);
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+
+  + h4 {
+    @include arrow-right-text-overlay(15%);
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(26%, 67%);
+      text-align: right;
+    }
+  }
+}
+
+.guide-page-mobile-customize-chart-dimension-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(27%, 12%, 180deg);
+    visibility: visible;
+
+  }
+
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-customize-chart-metric-arrow {
+  @include arrow-right-overlay(22%, 90%);
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+
+  + h4 {
+    @include arrow-right-text-overlay(22%);
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(34%, 70%);
+      text-align: right;
+    }
+  }
+}
+
+.guide-page-mobile-customize-chart-metric-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(35%, 12%, 180deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-customize-chart-sort-arrow {
+  @include arrow-right-overlay(28%, 90%);
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+
+  + h4 {
+    @include arrow-right-text-overlay(28%);
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(42%, 73%);
+      text-align: right;
+    }
+  }
+}
+
+.guide-page-mobile-customize-chart-sort-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(43%, 12%, 180deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-customize-chart-filter-arrow {
+  @include arrow-right-overlay(40%, 90%);
+  @media #{$bp-below-mobile} {
+    display: none;
+    visibility: hidden;
+  }
+  + h4 {
+    @include arrow-right-text-overlay(40%);
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(66%, 70%);
+      text-align: right;
+    }
+  }
+}
+
+.guide-page-mobile-customize-chart-filter-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(67%, 12%, 180deg);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-dimension-2-arrow {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+  @include arrow-right-overlay(20%, 88%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(17%, 70%);
+    }
+    @include arrow-right-text-overlay(20%, 97%);
+  }
+}
+
+.guide-page-mobile-dimension-2-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(22%, 12%, 220deg, 6%);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.guide-page-style-pane-arrow {
+  @media #{$bp-below-mobile} {
+    visibility: hidden;
+    display: none;
+  }
+  @include arrow-right-overlay(25%, 92%);
+
+  + h4 {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-text-overlay(13%, 73%);
+      text-align: right;
+      width: 30px;
+      line-height: 9px;
+    }
+    @include arrow-right-text-overlay(25%, 102%);
+  }
+}
+
+.guide-page-mobile-style-pane-arrow {
+  @media #{$bp-below-mobile} {
+    @include arrow-overlay-on-mobile(22%, 10%, 220deg, 6%);
+    visibility: visible;
+
+  }
+  display: none;
+  visibility: hidden;
+}
+
+.additional-resources-bold-text {
+  font-weight: bold;
+}
+
+.additional-resources-bold-text-top-margin {
+  margin-top: 3rem;
+}
+
+.guidepage-pink-underline-link {
+  text-decoration: underline;
+  color: #FA114F;
+}

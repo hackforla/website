@@ -4,7 +4,7 @@
   height: fit-content;
   margin: 12px auto;
   padding-top: 75px;
-  font-family: "Roboto"sans-serif;
+  font-family: "Roboto" sans-serif;
   font-style: normal;
   font-weight: normal;
   text-align: center;
@@ -15,6 +15,15 @@
   }
 }
 
+.icon-info {
+  width: 200px;
+}
+.icon-left {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
 .header-p-2 {
   font-size: 26px;
   display: flex;
@@ -22,7 +31,7 @@
   text-align: center;
   padding: 30px;
   margin: 12px auto;
-  font-family: "Roboto"sans-serif;
+  font-family: "Roboto" sans-serif;
 }
 
 .getting-started-page {
@@ -33,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto"sans-serif;
+  font-family: "Roboto" sans-serif;
   font-style: normal;
   font-weight: normal;
 }
@@ -45,7 +54,7 @@
 }
 
 .getting-started-step-title-overview {
-  text-align: center; 
+  text-align: center;
   font-size: 20px;
 }
 
@@ -86,7 +95,7 @@
   display: flex;
   justify-content: center;
   color: #000000;
-  font-family: "Roboto"sans-serif;
+  font-family: "Roboto" sans-serif;
 
   @media #{$bp-below-mobile} {
     text-align: center;
@@ -94,33 +103,32 @@
 }
 
 .credits-inner {
-  margin:15px;
-  padding-right:30px;
-  padding-bottom:15px;
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-
+  margin: 15px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.getting-started-page-card {
+.white-page-card-credits {
   background: #fff;
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
-  max-width: 896px;
+  max-width: 75%;
   margin-bottom: 0;
   padding: 30px;
   height: fit-content;
   margin: 12px auto;
-  font-family: "Roboto"sans-serif;
-
-  // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-mobile} {
-    padding: 30px 15px;
-  }
+  font-family: "Roboto" sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
+
+// NEW MOBILE FRIENDLY RULES @media #{$bp-below-mobile} { padding: 30px 15px;}}
 
 .self-onboarding {
   display: flex;
@@ -142,6 +150,11 @@
 .zoom-img {
   width: 320px;
   align-self: center;
+}
+
+.project-list {
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .project-position {
@@ -220,7 +233,6 @@
     flex-direction: column;
     width: auto;
   }
-
 }
 
 .ordered-list-steps-1 {
