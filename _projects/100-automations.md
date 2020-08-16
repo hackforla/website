@@ -13,12 +13,12 @@ leadership:
       slack: 'https://app.slack.com/team/U015R4RTDJA'
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
-links: 
-   - name: Slack 
+links:
+   - name: Slack
      url: 'https://hackforla.slack.com/archives/CV7QGL66B'
    - name: GitHub
      url: 'https://github.com/100Automations/website'
-   - name: ReadMe
+   - name: Readme
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
    - category: UI/UX
@@ -31,7 +31,7 @@ looking:
      skill: API writers
    - category: Development
      skill: API integrators
-technologies: 
+technologies:
   - GitHub Pages
   - Jekyll
 location:
