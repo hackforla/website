@@ -7,6 +7,7 @@ on:
 
 jobs:
   github_data:
+    if: github.repository == 'hackforla/website'    
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
