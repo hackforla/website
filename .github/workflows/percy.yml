@@ -1,0 +1,21 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    if: github.repository == 'cnk/website'   
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@gh-pages
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+      - name: Install
+        run: bundle install
+      - name: Build
+        run: bundle exec jekyll build
+      - name: Default test
+        uses: percy/snapshot-action@v0.1.1
+        with:
+          build-directory: "_site"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
