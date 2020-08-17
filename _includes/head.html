@@ -3,21 +3,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:url" content="{{ page.url | relative_url }}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} by {% endif %}{{ site.title | escape}}" />
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else%}{{'/assets/images/logos/hfla_fb_logo.png' | absolute_url }}{% endif %}" />
+  <meta property="og:image" content="{% if page.image %}{{ page.image | relative_url }}{% else%}{{'/assets/images/logos/hfla_fb_logo.png' | relative_url }}{% endif %}" />
 
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
     content="{% if page.description %}{{ page.description | strip_html strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}" />
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | absolute_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  <link rel="canonical" href="{{ page.url | relative_url }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | relative_url }}" />
 
   <script>
-  // Hotjar Tracking Code for www.hackforla.org 
+  // Hotjar Tracking Code for www.hackforla.org
     (function(h,o,t,j,a,r) {
         h.hj=h.hj||function(){
           (h.hj.q=h.hj.q||[])
