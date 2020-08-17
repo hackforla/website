@@ -7,6 +7,7 @@ on:
 
 jobs:
   vrms_data:
+    if: github.repository == 'hackforla/website' 
     runs-on: ubuntu-latest
 
     steps:
