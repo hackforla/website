@@ -3,8 +3,9 @@ identification: '190321758'
 title: 311 Data
 description: The 311 Data project seeks to empower local Neighborhood Councils to improve the ideation and analysis of their initiatives using the wealth of publicly available 311 data.
 image: /assets/images/projects/311.jpg
-alt: "image of building with windows that look like they spell out 311"
+alt: 'Image of building with windows that look like they spell out 311.'
 image-hero: /assets/images/projects/311data-hero.png
+alt-hero: 'iPhone and iPad showing app display.'
 leadership:
   - name: John Ritchey
     role: Product Manager
@@ -50,20 +51,22 @@ looking:
     skill: Frontend Developers
   - category: Development
     skill: Backend Developers
-  - category: PM
-    skill: Project Manager
   - category: Ops
-    skill: Product Manager
-  - category: Ops
-    skill: DevOps
+    skill: Product Owner
   - category: QA
     skill: SDET
 technologies:
-  - React / Redux
-  - Flask (Sanic) / Pandas
+  - ReactJS
+  - Redux
+  - Flask
+  - Sanic
+  - Pandas
   - Bulma
   - PostgreSQL
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
+
 partner: EmpowerLA
 status: Active
 ---
