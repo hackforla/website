@@ -2,7 +2,7 @@
 identification: '190321758'
 title: 311 Data
 description: The 311 Data project seeks to empower local Neighborhood Councils to improve the ideation and analysis of their initiatives using the wealth of publicly available 311 data.
-image: /assets/images/projects/311.jpg
+image: /assets/images/projects/311_data.png
 alt: 'Image of building with windows that look like they spell out 311.'
 image-hero: /assets/images/projects/311data-hero.png
 alt-hero: 'iPhone and iPad showing app display.'
@@ -46,6 +46,8 @@ links:
     url: 'https://github.com/hackforla/311-data/wiki'
   - name: Join Us
     url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
+  - name: Site
+    url: 'https://www.311-data.org/'
 looking:
   - category: Development
     skill: Frontend Developers
