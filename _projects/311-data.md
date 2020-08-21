@@ -13,30 +13,30 @@ leadership:
       slack: 'https://app.slack.com/team/UNFV029Q8'
       github: 'https://github.com/johnr54321'
     picture: https://avatars.githubusercontent.com/johnr54321
-  - name: Joyce Lee
+  - name: Dana Chen
     role: UI/UX Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UQZ71S04A'
-      github: 'https://github.com/itsjoycelee'
-    picture: https://avatars.githubusercontent.com/itsjoycelee
-  - name: Joshua Marx
+      slack: 'https://hackforla.slack.com/team/U0112KZPV6C'
+      github: 'https://github.com/danarchen'
+    picture: https://avatars.githubusercontent.com/danarchen
+  - name: Adam Kendis
     role: Frontend Lead
     links:
-      slack: 'https://app.slack.com/team/UG4G54YUD'
-      github: 'https://github.com/brodly'
-    picture: https://avatars.githubusercontent.com/brodly
+      slack: 'https://app.slack.com/team/USNAHR0KE'
+      github: 'https://github.com/adamkendis'
+    picture: https://avatars.githubusercontent.com/adamkendis
   - name: Ryan Swan
     role: Data Science Lead
     links:
       slack: 'https://app.slack.com/team/UPB2FHJCX'
       github: 'https://github.com/ryanmswan'
     picture: https://avatars.githubusercontent.com/ryanmswan
-  - name: Russell Tan
+  - name: Jake Mensch
     role: Backend Lead
     links:
-      slack: 'https://app.slack.com/team/UKBN4RB7G'
-      github: 'https://github.com/sellnat77'
-    picture: https://avatars.githubusercontent.com/sellnat77
+      slack: 'https://app.slack.com/team/ULJAWB8M8'
+      github: 'https://github.com/jmensch1'
+    picture: https://avatars.githubusercontent.com/jmensch1
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
