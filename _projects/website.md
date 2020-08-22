@@ -4,13 +4,9 @@ title: Hackforla.org Website
 description: The hackforla.org website is our organization's way of communicating with new volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We are currently in a redesign phase, using CI/CD in the run up to demoing the new version at Code for America's Summit 2020 in Washington, D.C.
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
+image-hero: /assets/images/projects/website-hero.jpg
+alt-hero: 'Five women in tech collaborating.'
 leadership:
-  - name: Kegan Maher
-    role: Technical Architect
-    links:
-      slack: 'https://hackforla.slack.com/team/U0BMTH6A1'
-      github: 'https://github.com/thekaveman'
-    picture: https://avatars.githubusercontent.com/thekaveman
   - name: Bonnie Wolfe
     role: Product Owner & Tech Lead
     links:
@@ -20,7 +16,7 @@ leadership:
   - name: Alex Stubbs
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/D016MT1Q9H6'
+      slack: 'https://hackforla.slack.com/team/U015KCAN676'
       github: 'https://github.com/alexandrastubbs'
     picture: https://avatars.githubusercontent.com/alexandrastubbs
   - name: Kian Badie
@@ -44,13 +40,17 @@ looking:
   - category: Development
     skill: Junior JavaScript developers
   - category: Development
+    skill: Javascript Mentor / PR reviewer
+  - category: Development
     skill: anyone wanting to learn how to do Git commits in a collaborative work environment
 technologies:
   - GitHub Pages
   - Jekyll
-location: 
-  - Santa Monica 
-  - Downtown LA 
+  - Docker
+tools: Figma, Google Drive, Zoom, Google Analytics
+location:
+  - Santa Monica
+  - Downtown LA
   - Remote
 status: Active
 ---
