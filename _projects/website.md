@@ -17,24 +17,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Harish Lingam
+  - name: Alex Stubbs
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/ULYUA6MNF'
-      github: 'https://github.com/harishlingam'
-    picture: https://avatars.githubusercontent.com/harishlingam
+      slack: 'https://hackforla.slack.com/team/D016MT1Q9H6'
+      github: 'https://github.com/alexandrastubbs'
+    picture: https://avatars.githubusercontent.com/alexandrastubbs
   - name: Kian Badie
-    role: Frontend Lead
+    role: Lead Developer
     links:
       slack: 'https://hackforla.slack.com/team/UNAQGKW91'
       github: 'https://github.com/KianBadie'
     picture: https://avatars.githubusercontent.com/KianBadie
-  - name: Cynthia Kiser
-    role: Backend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/USBB18YDR'
-      github: 'https://github.com/cnk'
-    picture: https://avatars.githubusercontent.com/cnk
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
