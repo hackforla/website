@@ -76,3 +76,22 @@ body {
     display: none;
   }
 }
+
+/* Hamburger nav CSS */ 
+#burgerImage { 
+  display: block;
+  height: 25px;
+  width: 25px;
+  border: none;
+} 
+
+#burgerImageX { 
+  display: none; 
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+#headerNav {
+  display: none;
+}

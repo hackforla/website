@@ -1,0 +1,47 @@
+  <div class="social-links" id="swapButton">
+    <ul class="inline-list social-list">
+      <li>
+        <button onclick="burgerSwap()" id="burgerImage" class="nav-icon">{% include svg/icon-hamburger-nav.svg %}</button>
+        <button onclick="burgerSwap()" id="burgerImageX" class="nav-icon">{% include svg/icon-hamburger-nav-x.svg %}</button> 
+      </li>
+    </ul>
+  </div>
+
+<script>
+
+ // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
+ let visibleBurger = true;
+
+  function burgerSwap() {
+
+    // Initialize
+    let burgerImage = document.getElementById("burgerImage"), burgerImageX = document.getElementById("burgerImageX");
+    let burgerMenu = document.getElementById("headerNav");
+
+    //Test to see the current state of the image
+    if (visibleBurger == true) {
+      // If the burger is showing, swap for the X and show the menu.
+      burgerImage.style.display = "none"; 
+      burgerImageX.style.display = "block";
+      burgerMenu.style.display = "block";
+
+      //Change the state marker
+      visibleBurger = false; 
+    } else {
+      //If the menu is showing, swap for burger.
+      burgerImage.style.display = "block"; 
+      burgerImageX.style.display = "none";
+      burgerMenu.style.display = "none"; 
+    
+      //Change the state marker
+      visibleBurger = true;
+    }
+    
+  }
+
+/* This is an alternate way of listening for the click.  I'm leaving this here just in case I want to use it later.
+   Listen for the click and then run burgerSwap function
+
+   document.getElementById("burgerImage").addEventListener("click",burgerSwap);
+*/
+</script>
