@@ -77,21 +77,33 @@ body {
   }
 }
 
-/* Hamburger nav CSS */ 
-#burgerImage { 
-  display: block;
-  height: 25px;
-  width: 25px;
-  border: none;
-} 
+/* Hamburger nav CSS */
 
-#burgerImageX { 
-  display: none; 
-  height: 25px;
-  width: 25px;
-  border: none;
-}
+// On larger displays the hambergur nav doesn't show.
+@media #{$bp-tablet-up} {
+  #swapButton {
+    display: none;
+  }
+}  
 
-#headerNav {
-  display: none;
+
+// This styles the hamburger nav and menus on mobile
+@media #{$bp-below-tablet} {
+  #burgerImage { 
+    display: block;
+    height: 25px;
+    width: 25px;
+    border: none;
+  } 
+
+  #burgerImageX { 
+    display: none; 
+    height: 25px;
+    width: 25px;
+    border: none;
+  }
+
+  .flex-grow-2 {
+    flex-grow: 2;
+  }
 }

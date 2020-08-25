@@ -1,5 +1,5 @@
-  <div class="social-links" id="swapButton">
-    <ul class="inline-list social-list">
+  <div class="align-right" id="swapButton">
+    <ul class="inline-list">
       <li>
         <button onclick="burgerSwap()" id="burgerImage" class="nav-icon">{% include svg/icon-hamburger-nav.svg %}</button>
         <button onclick="burgerSwap()" id="burgerImageX" class="nav-icon">{% include svg/icon-hamburger-nav-x.svg %}</button> 
@@ -15,7 +15,8 @@
   function burgerSwap() {
 
     // Initialize
-    let burgerImage = document.getElementById("burgerImage"), burgerImageX = document.getElementById("burgerImageX");
+    let burgerImage = document.getElementById("burgerImage");
+    let burgerImageX = document.getElementById("burgerImageX");
     let burgerMenu = document.getElementById("headerNav");
 
     //Test to see the current state of the image
@@ -38,10 +39,4 @@
     }
     
   }
-
-/* This is an alternate way of listening for the click.  I'm leaving this here just in case I want to use it later.
-   Listen for the click and then run burgerSwap function
-
-   document.getElementById("burgerImage").addEventListener("click",burgerSwap);
-*/
 </script>
