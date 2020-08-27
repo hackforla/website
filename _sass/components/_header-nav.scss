@@ -75,17 +75,21 @@ body {
   @media #{$bp-tablet-up} {
     display: none;
   }
+
+  @media #{$bp-below-tablet} {
+    display: none;
+  }
+
 }
 
 /* Hamburger nav CSS */
 
-// On larger displays the hambergur nav doesn't show.
+// On larger displays the hamburger nav doesn't show.
 @media #{$bp-tablet-up} {
   #swapButton {
     display: none;
   }
 }  
-
 
 // This styles the hamburger nav and menus on mobile
 @media #{$bp-below-tablet} {
@@ -112,16 +116,42 @@ body {
     display: none;
   }
 
+  .header-nav {
+    @include position(fixed, 63px 0 67% 0);
+    z-index: -1;
+    padding: 30px 120px;
+  }
+
   .header-nav ul {
     flex-direction: column;
   }
 
-  .header-nav {
-    @include position(relative, null 0 0 0)
+  .header-nav li {
+    padding: 6px;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 16px;
   }
 
-  .hide-nav-icon {
-    display: hidden !important;
+  .header-nav li a {
+    text-decoration: none;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-black;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
   }
 
+  .main-header {
+    position: fixed;
+  }
 }

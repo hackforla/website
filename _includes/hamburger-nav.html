@@ -9,11 +9,10 @@
 
 <script>
 
- // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
- let visibleBurger = true;
+  // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
+  let visibleBurger = true;
 
   function burgerSwap() {
-
     // Initialize
     let burgerImage = document.getElementById("burgerImage");
     let burgerImageX = document.getElementById("burgerImageX");
@@ -24,12 +23,12 @@
       // If the burger is showing, swap for the X and show the menu.
       burgerImage.style.display = "none"; 
       burgerImageX.style.display = "block";
-      burgerMenu.style.display = "block";
+      burgerMenu.style.display = "flex";
 
       //Change the state marker
       visibleBurger = false; 
     } else {
-      //If the menu is showing, swap for burger.
+      //If the X and menu is showing, swap for burger.
       burgerImage.style.display = "block"; 
       burgerImageX.style.display = "none";
       burgerMenu.style.display = "none"; 
@@ -37,6 +36,8 @@
       //Change the state marker
       visibleBurger = true;
     }
-    
   }
+
+  // Listens for someone selecting a link from the mobile nav. Runs burgerSwap to close menu and reset burger
+  document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
 </script>
