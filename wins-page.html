@@ -42,6 +42,7 @@ title: Wins
     request.then(function(response) {
       // TODO: Change code below to process the `response` object:
       console.log(response.result);
+	  console.log(JSON.stringify(response.result, null, 2));
   let responseData = response.result;
   //let responses = document.getElementById('responses-list');
 
@@ -63,7 +64,7 @@ title: Wins
 
   function initClient() {
     var API_KEY = 'AIzaSyDXE6W_gclWg7gTchgqgYKqheWKj4MG0Is';  // TODO: Update placeholder with desired API key.
-
+//might need to import a secret from a file that is gitignored. and added to the google drive.<-----
     var CLIENT_ID = '735772460522-lf2f074ks7qu56lh299hneispbh1nqdt.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
 
     // TODO: Authorize using one of the following scopes:
@@ -107,4 +108,102 @@ title: Wins
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
   </script>
+
+
+
+<script>
+
+
+	let data = {
+	  "range": "Responses!A1:S103",
+	  "majorDimension": "ROWS",
+	  "values": [
+		[
+		  "Timestamp",
+		  "Email Address",
+		  "Full name",
+		  "Linkedin URL (optional)",
+		  "Could we use your Linkedin profile picture next to your story?",
+		  "Github URL (optional)",
+		  "Could we use your Github profile picture next to your story?",
+		  "Select the team(s) you're on",
+		  "Select your role(s) on the team",
+		  "What is/was your specific role? (optional)",
+		  "When did you join Hack for LA? (optional)",
+		  "What do you want to celebrate (select all that apply)?",
+		  "Give us a brief overview"
+		],
+		[
+		  "8/15/2020 21:55:40",
+		  "paridox@hotmail.com",
+		  "Dean Church",
+		  "https://www.linkedin.com/in/deanchurch/",
+		  "Yes",
+		  "",
+		  "No",
+		  "VRMS",
+		  "Business Analyst",
+		  "Product Roadmap construction",
+		  "7/1/2019",
+		  "I worked on an enterprise project, I worked on a project that will help the people of Los Angeles",
+		  "I took the skills I have learned from HackforLA projects and applied them at work to orchestrate the launch of an MVP to help with Wildfire Mitigation throughout Southern California"
+		],
+		[
+		  "8/15/2020 22:28:30",
+		  "paridox@hotmail.com",
+		  "Dean Church",
+		  "https://www.linkedin.com/in/deanchurch/",
+		  "Yes",
+		  "",
+		  "No",
+		  "VRMS",
+		  "Business Analyst",
+		  "",
+		  "7/1/2019",
+		  "I got a new job",
+		  "As an over 50 year old career changer I was amazed at how supportive the community at HackforLA was in my finding meaningful employment in the local tech industry.  Through exposure and application of Agile frameworks and user centered design thinking my time and practice at HfLA was instrumental in building my modern application skills competency and confidence.  A direct result of my time at HfLA is that I was able to ace my 45min White Boarding interview where I had to diagram a workflow from end to end and identify areas that would benefit from automation.  "
+		]
+	  ]
+	};
+
+	const list = document.querySelector('#responses');
+	console.log (data.values.length);
+	for (let i = 1; i < data.values.length; i++){
+		let li = document.createElement('li');
+	  li.classList.add("project-card");
+		list.appendChild(li);
+	  let div = document.createElement('div');
+	  div.classList.add("project-card-inner", "wins-card");
+		li.appendChild(div);
+	  console.log(i);
+	  for (let j = 0; j < data.values[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
+		if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
+		  let innerDiv = document.createElement('div');
+		  innerDiv.classList.add("project-inner");
+		  div.appendChild(innerDiv);
+		  if (j == 2){
+			innerDiv.classList.add("wins-card-name");
+			innerDiv.innerHTML = data.values[i][j]
+		  }
+		  else if (j == 7){
+			innerDiv.classList.add("wins-card-team");
+			innerDiv.innerHTML = `Team(s): ${data.values[i][j]}`
+		  }
+		  else if (j == 8){
+			innerDiv.classList.add("wins-card-team");
+			innerDiv.innerHTML = `Role(s): ${data.values[i][j]}`
+		  }
+		  else if (j == 11){
+			innerDiv.classList.add("wins-card-info");
+			innerDiv.innerHTML = `${data.values[i][11]}! ${data.values[i][12]}`
+		  }
+
+		  console.log(j);
+		}
+	  }
+	}
+	  //console.log(data.values);
+
+
+	  </script>
 
