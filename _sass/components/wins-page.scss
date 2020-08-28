@@ -1,4 +1,8 @@
 
+.wins-page-contain{
+	margin:0 auto;
+	max-width: 1292px;
+}
 .wins-card{
 	padding: 50px;
   }
@@ -18,15 +22,29 @@
 	display: flex;
 	align-items: center;
 }
+.wins-card-info{
+	margin-top: 50px;
 
+}
 
+//Hero styling
 .wins-hero{
 	//padding-top: 60px;
 	margin-top: 40px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	img{
+		height: 366;
+	}
+	h1{
+		font-size: 59px;
+		line-height: 69px;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+	}
 }
 
 @media #{$bp-below-tablet} {
