@@ -2,14 +2,14 @@
 .wins-card{
 	padding: 50px;
   }
-  .wins-card-name{
+.wins-card-name{
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 28px;
-  }
-  .wins-card-team{
+}
+.wins-card-team{
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: normal;
@@ -17,4 +17,60 @@
 	line-height: 23px;
 	display: flex;
 	align-items: center;
-  }
+}
+
+
+.wins-hero{
+	//padding-top: 60px;
+	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+@media #{$bp-below-tablet} {
+	.wins-hero{
+
+		img{
+			height: 230px;
+		}
+		h1{
+			font-style: normal;
+			font-weight: normal;
+			font-size: 38px;
+		}
+		.wins-btn{
+			max-width: 217px;
+			max-height: 60.5px;
+			font-size: 18.5px;
+		}
+	}
+}
+
+@media #{$bp-below-mobile} {
+	.wins-hero{
+
+		img{
+			height: 105px;
+		}
+		h1{
+			font-style: normal;
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 28px;
+		}
+		.wins-btn{
+			max-width: 134px;
+			max-height: 46px;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+}
+
+
+.wins-btn{
+	max-width: 300px;
+	max-height: 75px;
+}
