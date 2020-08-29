@@ -72,17 +72,23 @@
     }
 }
 
+#head-content::before{
+    content: "\226A";
+    float: left;
+    // transform: rotate(-45deg);
+    transition: transform 0.25s ease-in;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 18px;
+    margin: 0 6px;
 
-// .icon-arrow{
-
-//     @media #{$bp-below-mobile} {
-//         transform: rotate(90deg);
-//         transition: ease-in;
-
-
-//     }
-
-// }
+    @media #{$bp-below-mobile} {
+        content: "\226A";
+        transform: rotate(90deg);
+        transition: transform 0.25s ease-in;
+        font-size: 20px;
+    }
+}
 .step-img-1{
     height: 134px;
     text-align: center;
@@ -207,11 +213,11 @@
 
 .notification-banner p {
     text-align: center;
-    font-weight: bold;
-    margin: auto 16%;
+    margin: auto 18%;
     padding: 20px;
     font-size: 25px;
     line-height: 29px;
+    font-weight: normal;
 
     @media #{$bp-below-mobile} {
         text-align: justify;
