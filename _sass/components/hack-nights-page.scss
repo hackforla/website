@@ -26,18 +26,37 @@
         font-size: 16px;
       }
 }
+.header-desc {
+    text-align: initial;
+    font-weight: 530;
+    font-size: 25px;
+    line-height: 29px;
+    margin: 2% 0 0% 5%;
+
+    @media #{$bp-below-tablet} {
+        font-size: 16px;
+        line-height: 19px;
+       margin: 0;
+      }
+}
+
 
 .show-desc{
-    margin: 15px 44px;
+    // margin: 15px 44px;
+    margin-left: 43%;
     @media #{$bp-below-tablet} {
-        display: flex;
-        flex-direction: column-reverse;
-        margin: 50px 0px;
+        // display: flex;
+        // flex-direction: column;
+        margin: 74px 0px;
+        font-size: 13px;
+        line-height: 15px;
     }
 }
 .show-video {
     display: flex;
+    flex-direction: row-reverse;
     margin-left: 40px;
+    margin-bottom: -4%;
     @media #{$bp-below-tablet} {
         flex-direction: column;
         margin: 0;
@@ -52,6 +71,7 @@
         width: 100%;
     }
 }
+
 
 // .icon-arrow{
 
@@ -121,15 +141,16 @@
     @media #{$bp-below-mobile} {
         left: 0;
         top: 0;
-        width: 308px;
+        width: 325px;
         height: 215px;
+        margin-top: 22px;
 }
 }
 
 
 .meetup-steps {
     display: flex;
-    margin: 60px 0;
+    margin: 17px 0;
 
     @media #{$bp-below-mobile} {
         flex-direction: column;
@@ -151,7 +172,10 @@
 
     @media #{$bp-below-mobile} {
         padding: 0;
-        font-size: 1rem;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: initial;
+        margin: 37px;
     }
 }
 #text-content-1 {
@@ -161,7 +185,10 @@
 
     @media #{$bp-below-mobile} {
         padding: 8px;
-        font-size: 1rem;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: initial;
+        margin-bottom: 25px;
     }
 }
 
@@ -249,6 +276,12 @@
 .mini-projects{
     display: flex;
     flex-wrap: wrap;
+
+    @media #{$bp-below-mobile} {
+        margin: 11px;
+        font-size: 12px;
+        line-height: 14px;
+    }
 }
 #mini-img{
     width: 90px;
@@ -277,7 +310,8 @@
 .title-meetup {
     font-size: 25px;
     text-align: center;
-    margin: 67px;
+    margin: 30px;
+    font-weight: normal;
 
     @media #{$bp-below-mobile} {
         margin: 0;
@@ -291,7 +325,7 @@
     box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
     color: #fff;
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 25px;
     font-weight: 400;
     height: 86px;
    
@@ -308,7 +342,7 @@
 }
 .class-btn{
     text-align: center;
-    margin-top: 44%;
+    margin-top: 15%;
 
     @media #{$bp-below-mobile} {
         margin: 0;
@@ -316,8 +350,10 @@
 }
 .event-title{
     text-align: center;
-    font-size: 31px;
+    font-size: 30px;
     margin-top: 20px;
+    line-height: 35px;
+    font-weight: normal;
 
     @media #{$bp-below-tablet} {
         font-size: 17px;
@@ -357,3 +393,42 @@
      }
 }   
 
+.days-display-1 {
+    // font-size: 0.9rem;
+    margin: 22px 32px;
+
+    @media #{$bp-below-tablet} {
+        margin: 0;
+     }
+}
+
+.schedule-list-1 {
+    list-style: none;
+    font-size: 16px;
+    line-height: 19px;
+    /* text-decoration: none; */
+    @media #{$bp-below-tablet} {
+        font-size: 13px;
+    line-height: 15px;
+     }
+}
+
+.day-header-1 {
+    margin-block-end: 0.25em;
+    font-size: 16px;
+    line-height: 21px;
+
+    @media #{$bp-below-tablet} {
+        font-size: 15px;
+    line-height: 18px;
+     }
+}
+
+.description{
+    margin: 0;
+
+    @media #{$bp-below-mobile} {
+        text-align: initial;
+        margin: 57px;
+    }
+}
