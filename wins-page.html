@@ -18,16 +18,23 @@ title: Wins
   </div>
 </section>
 <script>
-	if (document.querySelectorAll('.wins-card').length == 0){
-		const page = document.querySelector('.wins-page-contain');
-		const p = document.createElement('p');
-		//p.classList.add("project-card");
-		page.appendChild(p);
-		p.innerHTML = "No one has shared a win yet...be the first!"
+	function ifPageEmpty(){
+		if (document.querySelectorAll('.wins-card').length == 0){
+			const page = document.querySelector('.wins-page-contain');
+			const p = document.createElement('p');
+			//p.classList.add("project-card");
+			page.appendChild(p);
+			p.innerHTML = "No one has shared a win yet...be the first!";
+		}
 	}
+	fetch('https://sheets.googleapis.com/v4/spreadsheets/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/values/Responses?key=AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU')
+            .then(response => response.json())
+            .then(data => createCards(data))
+			.then(() => ifPageEmpty());
+
 </script>
 
-<script>
+<!-- <script>
   function makeApiCall() {
     var params = {
       // The ID of the spreadsheet to retrieve data from.
@@ -118,7 +125,7 @@ title: Wins
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
   </script>
-
+ -->
 
 
 <script>
