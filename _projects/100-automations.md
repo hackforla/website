@@ -13,12 +13,21 @@ leadership:
       slack: 'https://app.slack.com/team/U015R4RTDJA'
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
+<<<<<<< HEAD
 links:
    - name: Slack
      url: 'https://hackforla.slack.com/archives/CV7QGL66B'
    - name: GitHub
      url: 'https://github.com/100Automations/website'
    - name: Readme
+=======
+links: 
+   - name: Slack 
+     url: 'https://hackforla.slack.com/archives/CV7QGL66B'
+   - name: GitHub
+     url: 'https://github.com/100Automations/website'
+   - name: ReadMe
+>>>>>>> beeeace6ca46d12b16aa7a244868f932cf3c4b24
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
    - category: UI/UX
@@ -31,7 +40,11 @@ looking:
      skill: API writers
    - category: Development
      skill: API integrators
+<<<<<<< HEAD
 technologies:
+=======
+technologies: 
+>>>>>>> beeeace6ca46d12b16aa7a244868f932cf3c4b24
   - GitHub Pages
   - Jekyll
 location:
