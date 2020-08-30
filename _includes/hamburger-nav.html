@@ -12,12 +12,12 @@
   // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
   let visibleBurger = true;
 
-  function burgerSwap() {
+  function burgerSwap(event) {
     // Initialize
     let burgerImage = document.getElementById("burgerImage");
     let burgerImageX = document.getElementById("burgerImageX");
     let burgerMenu = document.getElementById("headerNav");
-
+    
     //Test to see the current state of the image
     if (visibleBurger == true) {
       // If the burger is showing, swap for the X and show the menu.
@@ -27,6 +27,7 @@
 
       //Change the state marker
       visibleBurger = false; 
+
     } else {
       //If the X and menu is showing, swap for burger.
       burgerImage.style.display = "block"; 
@@ -37,7 +38,27 @@
       visibleBurger = true;
     }
   }
+    // Listens for someone selecting a link from the mobile nav. Runs burgerSwap to close menu and reset burger
+    document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
 
-  // Listens for someone selecting a link from the mobile nav. Runs burgerSwap to close menu and reset burger
-  document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
+/*
+// This is intented so that when you click outside the menu it closes.  (Not yet functional)
+    function clickOutsideToClose() {
+      let burgerMenu = document.getElementById("headerNav");
+      let burgerImage = document.getElementById("burgerImage");
+      let burgerImageX = document.getElementById("burgerImageX");
+ 
+      if (event.target != burgerMenu && event.target.parentNode != burgerMenu) {
+      //If the X and menu is showing, swap for burger.
+      burgerImage.style.display = "block"; 
+      burgerImageX.style.display = "none";
+      burgerMenu.style.display = "none"; 
+    
+      //Change the state marker
+      visibleBurger = true;
+      }
+    }
+    window.addEventListener("touchend", clickOutsideToClose);
+    event.stopPropagation();  // This goes somewhere
+*/
 </script>

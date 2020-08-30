@@ -75,11 +75,6 @@ body {
   @media #{$bp-tablet-up} {
     display: none;
   }
-
-  @media #{$bp-below-tablet} {
-    display: none;
-  }
-
 }
 
 /* Hamburger nav CSS */
@@ -120,16 +115,24 @@ body {
     display: none;
   }
 
+  // Hide the nav icons
+  .nav-icon {
+    display: none;
+  }  
+
+  // This is the position of the white box of the menu
   .header-nav {
     @include position(fixed, 48px 0 69% 0);
     z-index: -1;
     padding: 18px 71px;
   }
 
+  //Menu is top to bottom instead of side to side
   .header-nav ul {
     flex-direction: column;
   }
 
+  // menu links
   .header-nav li {
     padding: 6px;
     text-align: left;
@@ -139,6 +142,7 @@ body {
     font-size: 16px;
   }
 
+  // Underlines the active link
   .header-nav li a {
     text-decoration: none;
 
@@ -155,12 +159,13 @@ body {
     }
   }
 
+  // HFLA logo setting for mobile
   .main-header {
     position: fixed;
     padding: 7px;
   }
 
-  // This is to make the button smaller for mobile
+  // Make the donate button smaller for mobile
   .btn-donate {
     padding: 5px 25px;
     font-size: .75rem;
@@ -170,9 +175,32 @@ body {
     line-height: 0;
   }
 
+  // style the HFLA logo for mobile
   .main-header .branding {
     position: absolute;
     top: -12px;
     left: 0px;
+    height: 50px;
+    width: 70px;
+  }
 }
+
+/*
+// This is me playing with the screen size to try to include landscape phones
+@media screen and (max-width: 700px)  {
+  // This is the position of the white box of the menu on phone in landscape
+  .header-nav {
+    @include position(fixed, 48px 0 49% 0);
+    z-index: -1;
+    padding: 18px 71px;
+  }
+}
+*/
+// This is to resize the branding image for larger displays
+@media #{$bp-tablet-up} {
+  .main-header .branding {
+    height: 114px;
+    width: 114px;
+    left: 0;
+  }
 }
