@@ -12,11 +12,11 @@ title: Wins
   </div> -->
   <div class="wins-page-contain projects-inner" style="clear: left;">
     <ul id="responses" class="project-list unstyled-list">
-		<!-- <li id="responses-data" class="project-card"></li> -->
 
     </ul>
   </div>
 </section>
+
 <script>
 	function ifPageEmpty(){
 		if (document.querySelectorAll('.wins-card').length == 0){
@@ -27,203 +27,73 @@ title: Wins
 			p.innerHTML = "No one has shared a win yet...be the first!";
 		}
 	}
-	fetch('https://sheets.googleapis.com/v4/spreadsheets/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/values/Responses?key=AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU')
-            .then(response => response.json())
-            .then(data => createCards(data))
-			.then(() => ifPageEmpty());
+	const sheetId = '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg';
+	const apiKey = 'AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU';
 
-</script>
+	fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Responses?key=${apiKey}`)
+				.then(response => response.json())
+				.then(data => makeCards(data.values))
+				.then(() => ifPageEmpty());
 
-<!-- <script>
-  function makeApiCall() {
-    var params = {
-      // The ID of the spreadsheet to retrieve data from.
-      spreadsheetId: '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg',  // TODO: Update placeholder value.
-
-      // The A1 notation of the values to retrieve.
-      range: 'Responses',  // TODO: Update placeholder value.
-
-      // How values should be represented in the output.
-      // The default render option is ValueRenderOption.FORMATTED_VALUE.
-      //valueRenderOption: '',  // TODO: Update placeholder value.
-
-      // How dates, times, and durations should be represented in the output.
-      // This is ignored if value_render_option is
-      // FORMATTED_VALUE.
-      // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-      //dateTimeRenderOption: '',  // TODO: Update placeholder value.
-    };
-
-    var request = gapi.client.sheets.spreadsheets.values.get(params);
-    request.then(function(response) {
-      // TODO: Change code below to process the `response` object:
-      //console.log(response.result);
-	  //console.log(JSON.stringify(response.result, null, 2));
-  var responseData = response.result;
-  //let responses = document.getElementById('responses-list');
-
-
-
-
-
-
-//********************************************************************************HERE
-
-//for (let i=1; response.values; i++){
-  var myJSON = responseData.values[1];
-  //document.getElementById("responses-data").innerHTML = myJSON;
-  createCards(responseData);
-  //}
-    }, function(reason) {
-      console.error('error: ' + reason.result.error.message);
-    });
-  }
-
-  function initClient() {
-    var API_KEY = 'AIzaSyDXE6W_gclWg7gTchgqgYKqheWKj4MG0Is';  // TODO: Update placeholder with desired API key.
-//might need to import a secret from a file that is gitignored. and added to the google drive.<-----
-    var CLIENT_ID = '735772460522-lf2f074ks7qu56lh299hneispbh1nqdt.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
-
-    // TODO: Authorize using one of the following scopes:
-    //   'https://www.googleapis.com/auth/drive'
-    //   'https://www.googleapis.com/auth/drive.file'
-    //   'https://www.googleapis.com/auth/drive.readonly'
-    //   'https://www.googleapis.com/auth/spreadsheets'
-    //   'https://www.googleapis.com/auth/spreadsheets.readonly'
-    var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-
-    gapi.client.init({
-      'apiKey': API_KEY,
-      'clientId': CLIENT_ID,
-      'scope': SCOPE,
-      'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-    }).then(function() {
-      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-      updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-    });
-  }
-
-  function handleClientLoad() {
-    gapi.load('client:auth2', initClient);
-  }
-
-  function updateSignInStatus(isSignedIn) {
-    if (isSignedIn) {
-      makeApiCall();
-    }
-  }
-
-  function handleSignInClick(event) {
-    gapi.auth2.getAuthInstance().signIn();
-  }
-
-  function handleSignOutClick(event) {
-    gapi.auth2.getAuthInstance().signOut();
-  }
-  </script>
-  <script async defer src="https://apis.google.com/js/api.js"
-    onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">
-  </script>
- -->
-
-
-<script>
-function createCards(responseData){
-	let data = responseData;
-	console.log(`this is the data ${data}`);
-		// let data = {
-		//   "range": "Responses!A1:S103",
-		//   "majorDimension": "ROWS",
-		//   "values": [
-		// 	[
-		// 	  "Timestamp",
-		// 	  "Email Address",
-		// 	  "Full name",
-		// 	  "Linkedin URL (optional)",
-		// 	  "Could we use your Linkedin profile picture next to your story?",
-		// 	  "Github URL (optional)",
-		// 	  "Could we use your Github profile picture next to your story?",
-		// 	  "Select the team(s) you're on",
-		// 	  "Select your role(s) on the team",
-		// 	  "What is/was your specific role? (optional)",
-		// 	  "When did you join Hack for LA? (optional)",
-		// 	  "What do you want to celebrate (select all that apply)?",
-		// 	  "Give us a brief overview"
-		// 	],
-		// 	[
-		// 	  "8/15/2020 21:55:40",
-		// 	  "paridox@hotmail.com",
-		// 	  "Dean Church",
-		// 	  "https://www.linkedin.com/in/deanchurch/",
-		// 	  "Yes",
-		// 	  "",
-		// 	  "No",
-		// 	  "VRMS",
-		// 	  "Business Analyst",
-		// 	  "Product Roadmap construction",
-		// 	  "7/1/2019",
-		// 	  "I worked on an enterprise project, I worked on a project that will help the people of Los Angeles",
-		// 	  "I took the skills I have learned from HackforLA projects and applied them at work to orchestrate the launch of an MVP to help with Wildfire Mitigation throughout Southern California"
-		// 	],
-		// 	[
-		// 	  "8/15/2020 22:28:30",
-		// 	  "paridox@hotmail.com",
-		// 	  "Dean Church",
-		// 	  "https://www.linkedin.com/in/deanchurch/",
-		// 	  "Yes",
-		// 	  "",
-		// 	  "No",
-		// 	  "VRMS",
-		// 	  "Business Analyst",
-		// 	  "",
-		// 	  "7/1/2019",
-		// 	  "I got a new job",
-		// 	  "As an over 50 year old career changer I was amazed at how supportive the community at HackforLA was in my finding meaningful employment in the local tech industry.  Through exposure and application of Agile frameworks and user centered design thinking my time and practice at HfLA was instrumental in building my modern application skills competency and confidence.  A direct result of my time at HfLA is that I was able to ace my 45min White Boarding interview where I had to diagram a workflow from end to end and identify areas that would benefit from automation.  "
-		// 	]
-		//   ]
-		// };
-
-		const list = document.querySelector('#responses');
-		//console.log (data.values.length);
-		for (let i = 1; i < data.values.length; i++){
-			let li = document.createElement('li');
-		li.classList.add("project-card");
-			list.appendChild(li);
-		let div = document.createElement('div');
-		div.classList.add("project-card-inner", "wins-card");
-			li.appendChild(div);
-		for (let j = 0; j < data.values[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
-			if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
-			let innerDiv = document.createElement('div');
-			innerDiv.classList.add("project-inner");
-			div.appendChild(innerDiv);
+	function makeElement (elementType, parent, className){
+	let child = document.createElement(elementType);
+	child.classList.add(className);
+	parent.appendChild(child);
+	return child;
+	}
+	function makeIcon (href, parent, className, src){
+	let icon = makeElement('a', parent, 'wins-card-icon');
+	icon.setAttribute("href", href);
+	let iconImg = makeElement('img', icon, className);
+	iconImg.setAttribute("src", src);
+	}
+	function makeCards(data){
+	const list = document.querySelector('#responses');
+	for (let i = 1; i < data.length; i++){
+		let li = makeElement('li', list, "project-card");
+		li.classList.add("wins-card");
+		let leftDiv = makeElement('div', li, "wins-card-left");
+		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
+		profileImg.setAttribute("src", "/assets/images/wins-page/default-profile-img.svg");
+		let quote = makeElement('div', leftDiv, "wins-card-big-quote");
+		quote.innerHTML = '"';
+		let rightDiv = makeElement('div', li, "wins-card-content");
+		rightDiv.classList.add("project-card-inner");
+		for (let j = 0; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
+		if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
+			let innerDiv = makeElement('div', rightDiv, "project-inner");
 			if (j == 2){
-				innerDiv.classList.add("wins-card-name");
-				innerDiv.innerHTML = data.values[i][j]
+			innerDiv.classList.add("wins-card-top");
+			let name = makeElement('span', innerDiv, "wins-card-name");
+			name.innerHTML = data[i][j];
+			let icons = makeElement('span', innerDiv, "wins-card-icons");
+			if(data[i][3].length > 0){
+				makeIcon (data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+			}if(data[i][5].length > 0){
+				makeIcon (data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			}
 			}
 			else if (j == 7){
-				if(data.values[i][j].length > 0){
-					innerDiv.classList.add("wins-card-team");
-					innerDiv.innerHTML = `Team(s): ${data.values[i][j]}`
-				}
+			innerDiv.classList.add("wins-card-team");
+			innerDiv.innerHTML = `Team(s): ${data[i][j]}`
 			}
 			else if (j == 8){
-				if(data.values[i][j].length > 0){
-					innerDiv.classList.add("wins-card-team");
-					innerDiv.innerHTML = `Role(s): ${data.values[i][j]}`
-				}
+			if(data[i][j].length > 0){
+				innerDiv.classList.add("wins-card-team");
+				innerDiv.innerHTML = `Role(s): ${data[i][j]}`
+			}
 			}
 			else if (j == 11){
-				innerDiv.classList.add("wins-card-info");
-				innerDiv.innerHTML = `${data.values[i][11]}! ${data.values[i][12]}` // have someone look at this and see if I need to add an if statement if index 12 exists
+			innerDiv.classList.add("wins-card-info");
+			innerDiv.innerHTML = `${data[i][11]}!`
 			}
-
+			else if (j == 12){
+			innerDiv.classList.add("wins-card-overview");
+			innerDiv.innerHTML = data[i][12]
 			}
 		}
 		}
-		//console.log(data.values);
- }
-
-	  </script>
+	}
+	}
+</script>
 
