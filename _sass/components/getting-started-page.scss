@@ -9,8 +9,8 @@
   text-align: center;
 
   @media #{$bp-below-mobile} {
-    padding: 30px 15px;
-    margin-top: 23%;
+    padding: 87px 15px 0px 15px;
+    margin-top: 10%;
   }
 }
 
@@ -107,7 +107,7 @@
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
-    padding: 30px 15px;
+    padding: 30px 20px;
   }
 }
 
@@ -118,7 +118,6 @@
 }
 
 .getting-started-guide-content-section {
-  // text-align: center;
   text-align: justify;
 }
 
