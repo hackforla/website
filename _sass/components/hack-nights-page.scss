@@ -78,7 +78,7 @@
     // transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
     color: #000000;
-    font-weight: bolder;
+    font-weight: normal;
     font-size: 18px;
     margin: 0 6px;
 
@@ -86,7 +86,8 @@
         content: "\226A";
         transform: rotate(90deg);
         transition: transform 0.25s ease-in;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: normal;
     }
 }
 .step-img-1{
@@ -119,7 +120,7 @@
 }
 
 .getting-started-mobile-page{
-    display: none;
+    // display: none;
     // overflow: hidden;
     // max-width: 654px;
     // margin-bottom: 0;
@@ -354,7 +355,9 @@
         margin: 0;
      }
 }
-.event-title{
+
+.event-title-1{
+    display: none;
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
@@ -362,11 +365,71 @@
     font-weight: normal;
 
     @media #{$bp-below-tablet} {
+        
         font-size: 17px;
         display: flex;
         justify-content: space-between;
      }
 }
+
+.event-title-1::after{
+    content: "\221F";
+
+    @media #{$bp-below-tablet} {
+        content: "\221F";
+        float: right;
+        transform: rotate(-45deg);
+        transition: transform 0.25s ease-in;
+        color: #fa114f;
+        font-weight: bolder;
+        font-size: 24px;
+     }
+}
+.active::after{
+    // display: none;
+    @media #{$bp-below-tablet} {
+        content: "\221F";
+        transform: rotate(135deg);
+        transition: transform 0.25s ease-in;
+    }
+}
+.event-title{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    line-height: 35px;
+    font-weight: normal;
+    // display: none; //I might remove this property
+
+    @media #{$bp-below-tablet} {
+        // display: none;
+        font-size: 17px;
+        display: flex;
+        justify-content: space-between;
+     }
+}
+.event-title::after{
+   
+
+    @media #{$bp-below-tablet} {
+        content: "\221F";
+        float: right;
+        transform: rotate(-45deg);
+        transition: transform 0.25s ease-in;
+        color: #fa114f;
+        font-weight: bolder;
+        font-size: 24px;
+     }
+}
+.active::after{
+    // display: none;
+    @media #{$bp-below-tablet} {
+        content: "\221F";
+        transform: rotate(135deg);
+        transition: transform 0.25s ease-in;
+    }
+}
+
 
 .vector-img{
     display: none;
@@ -376,14 +439,14 @@
      }
 }
 
-.arrow-down{
-    display: none;
-    width: 36px;
-    height: 35px;
-    @media #{$bp-below-tablet} {
-        display: initial;
-     }
-}
+// .arrow-down{
+//     display: none;
+//     width: 36px;
+//     height: 35px;
+//     @media #{$bp-below-tablet} {
+//         display: initial;
+//      }
+// }
 
 .mobile-dropdown{
 
@@ -393,8 +456,9 @@
 }
 
 .mobile-locations-dropdown{
+
     @media #{$bp-below-tablet} {
-        // display: none;
+        display: none;
         background: #f2c94d;
      }
 }   
