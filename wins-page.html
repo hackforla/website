@@ -18,6 +18,16 @@ title: Wins
 </section>
 
 <script>
+	function formatMessage(win){
+		let str = '';
+		let lastCommaIndex = win.lastIndexOf(",");
+		if (lastCommaIndex != -1){
+			str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
+		}else{
+			str += win + '!';
+		}
+		return str;
+	}
 	function ifPageEmpty(){
 		if (document.querySelectorAll('.wins-card').length == 0){
 			const page = document.querySelector('.wins-page-contain');
@@ -28,7 +38,11 @@ title: Wins
 		}
 	}
 	const sheetId = '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg';
+	//josh's api key
 	const apiKey = 'AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU';
+
+	//bonnie's api key
+	//const apiKey = 'AIzaSyAoOlBfPvQ_bEk_rUoT6Sg4wAml7F8-Yus';
 
 	fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Responses?key=${apiKey}`)
 				.then(response => response.json())
@@ -49,17 +63,17 @@ title: Wins
 	}
 	function makeCards(data){
 	const list = document.querySelector('#responses');
-	for (let i = 1; i < data.length; i++){
+	for (let i = data.length - 1; i > 0 ; i--){
 		let li = makeElement('li', list, "project-card");
 		li.classList.add("wins-card");
 		let leftDiv = makeElement('div', li, "wins-card-left");
 		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
-		profileImg.setAttribute("src", "/assets/images/wins-page/default-profile-img.svg");
-		let quote = makeElement('div', leftDiv, "wins-card-big-quote");
-		quote.innerHTML = '"';
+		profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
+		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
 		let rightDiv = makeElement('div', li, "wins-card-content");
 		rightDiv.classList.add("project-card-inner");
-		for (let j = 0; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
+		for (let j = 1; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
 		if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
 			let innerDiv = makeElement('div', rightDiv, "project-inner");
 			if (j == 2){
@@ -75,21 +89,21 @@ title: Wins
 			}
 			else if (j == 7){
 			innerDiv.classList.add("wins-card-team");
-			innerDiv.innerHTML = `Team(s): ${data[i][j]}`
+			innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
 			}
 			else if (j == 8){
 			if(data[i][j].length > 0){
 				innerDiv.classList.add("wins-card-team");
-				innerDiv.innerHTML = `Role(s): ${data[i][j]}`
+				innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
 			}
 			}
 			else if (j == 11){
 			innerDiv.classList.add("wins-card-info");
-			innerDiv.innerHTML = `${data[i][11]}!`
+			innerDiv.innerHTML = formatMessage(data[i][11]);
 			}
 			else if (j == 12){
 			innerDiv.classList.add("wins-card-overview");
-			innerDiv.innerHTML = data[i][12]
+			innerDiv.innerHTML = data[i][12];
 			}
 		}
 		}
