@@ -3,9 +3,9 @@ identification: '127079094'
 title: Spare
 description: A fun new project project that connects people in need of clothing and other essentials with people in the community who have things to spare. It's kind of like one on one Goodwill. The main objective is to foster interactions between the housed and unhoused. The donation is the mechanism for building these connections throughout our community.
 image: /assets/images/projects/spare.png
-alt: "'a logo that reads what can you spare'"
+alt: 'A logo that reads what can you spare'
 image-hero: /assets/images/projects/spare-hero.png
-alt-hero: "Gray background"
+alt-hero: 'Gray background'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/spare'
@@ -20,7 +20,9 @@ looking:
     skill: Product Management 
   - category: SEO/Marketing
     skill: Marketing
-location: Santa Monica
+location: 
+  - Santa Monica
+  - Remote
 partner: Hope of the Valley and hopefully others in the near future.
 status: On Hold
 ---

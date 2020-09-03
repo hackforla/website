@@ -3,9 +3,9 @@ identification: '155295655'
 title: Railstats LA
 description: Trailstats LA tracks LA Metro trains and generates punctuality reports. Our website enables both Metro officials and the public to easily review up-to-date statistics for LA's 6 train lines.
 image: /assets/images/projects/metro-ontime.png
-alt: "'metro ontime'"
+alt: 'metro ontime'
 image-hero: /assets/images/projects/metro-ontime-hero.png
-alt-hero: "Line graph of arrival times vs schedule for the Green Line train"
+alt-hero: 'Line graph of arrival times vs schedule for the Green Line train.'
 leadership:
   - name: Cameron Sexton
     role: Product Owner/Lead Developer
@@ -26,10 +26,9 @@ links:
     url: 'https://www.metro.net/'
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
-# looking:
-  # - Application Developers (Javascript, Node, React, D3)
-  # - Data Engineers (Python, Pandas, GIS)
-location: Downtown LA
+location: 
+  - Downtown LA
+  - Remote
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
 status: Completed

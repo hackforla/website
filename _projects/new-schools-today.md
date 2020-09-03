@@ -3,9 +3,9 @@ identification: '222602391'
 title: New Schools Today
 description: We’re building a platform for students across LA County to create more accessible school-related apps and web apps. Our desired impact is to make students feel more welcomed and included in their community through an online academic environment created by peers, for peers
 image: /assets/images/projects/new-schools-today.jpg
-alt: "'Team working during meeting'"
+alt: 'Team working a during meeting.'
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
-alt-hero: "'Team working during meeting'"
+alt-hero: 'Team working during a meeting.'
 leadership:
   - name: Ben Swerdlow
     role: Tech Team Lead
@@ -27,7 +27,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/jacobzwang
   - name: Ethan Hopkins
     role: Project Manager
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UQUBHLPC2'
       github: 'https://github.com/ethanh256'
     picture: https://avatars.githubusercontent.com/ethanh256
@@ -43,8 +43,6 @@ links:
 looking:
   - category: Development
     skill: Mobile Development
-  - category: Development
-    skill: Serverless PaaS Expertise
   - category: UI/UX
     skill: UX knowledge
   - category: Development
@@ -53,10 +51,12 @@ looking:
     skill: Marketing/Research
   - category: Content
     skill: any high school student or technical mentor interested
-technologies: 
+technologies:
   - ReactJS
   - Flutter
 partner: Seeking
-location: Santa Monica, CA
+location:
+  - Santa Monica
+  - Remote
 status: Active
 ---

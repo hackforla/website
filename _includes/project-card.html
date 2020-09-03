@@ -1,5 +1,5 @@
 {% assign project = include.project %}
-<li class="project-card">
+<li class="project-card" id="{{ project.identification }}">
   <div class="project-card-inner">
     {%- if project.project-homepage == false -%}
     <div class="project-tmb">
@@ -8,7 +8,7 @@
     {%- else  -%}
     <a href='{{ project.url | replace: ".html", "" }}'>
       <div class="project-tmb">
-        <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt={{project.alt}}/>
+        <img src="{{ project.image | absolute_url }}" class="project-tmb-img" alt="{{project.alt}}"/>
       </div>
     </a>
     {%- endif -%}
@@ -52,7 +52,9 @@
       {%- if project.location -%}
       <div class="project-location">
         <strong>Location: </strong>
-        {{ project.location }}
+        {% for city in project.location %}
+          <p class='project-card-field-inline'> {{ city }}</p>{% if forloop.last == false %},{% endif %}
+        {% endfor %}
       </div>
       {%- endif -%}
 

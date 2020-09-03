@@ -3,9 +3,9 @@ identification: '226157870'
 title: VRMS
 description: VRMS is a tool used for the engagement, support, and retention of a network of volunteers.
 image: /assets/images/projects/vrms.png
-alt: "VRMS homepage showing the check-in buttons"
+alt: 'VRMS homepage showing the check-in buttons.'
 image-hero: /assets/images/projects/vrms-hero.png
-alt-hero: "City of LA skyline"
+alt-hero: 'City of LA skyline.'
 leadership:
   - name: Matt Tapper
     role: Tech Team Lead
@@ -27,7 +27,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Steven Ettinger
     role: API Integration
-    links: 
+    links:
       slack: 'https://app.slack.com/team/UNFG6M8FN'
       github: 'https://github.com/disregardfiat'
     picture: https://avatars.githubusercontent.com/disregardfiat
@@ -47,7 +47,18 @@ looking:
     skill: Front end devs (any level)
   - category: Development
     skill: Back end devs (any level)
-location: Santa Monica, Downtown LA
+  - category: UI/UX
+    skill: UI/UX
+technologies:
+  - MongoDB
+  - Express
+  - ReactJS
+  - Node.js
+  - SCSS
+location:
+  - Santa Monica
+  - Downtown LA
+  - Remote
 partner: TBD
 status: Active
 ---
