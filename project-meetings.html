@@ -52,7 +52,7 @@ title: Project Meetings
 
 <script>
     // Assigns local JSON Data to localData variable
-    {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+    {% assign localData = site.data.vrms_data | jsonify %}
     let localData = {{ localData }};
 
     const API_URL = 'https://www.vrms.io/api/recurringevents';
