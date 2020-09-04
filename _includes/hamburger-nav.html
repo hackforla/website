@@ -1,18 +1,18 @@
-  <div class="align-right" id="swapButton">
-    <ul class="inline-list">
-      <li>
-        <button onclick="burgerSwap()" id="burgerImage" class="nav-icon">{% include svg/icon-hamburger-nav.svg %}</button>
-        <button onclick="burgerSwap()" id="burgerImageX" class="nav-icon">{% include svg/icon-hamburger-nav-x.svg %}</button> 
-      </li>
-    </ul>
-  </div>
+<div class="align-right" id="swapButton">
+  <ul class="inline-list">
+    <li>
+      <button onclick="burgerSwap()" id="burgerImage" class="nav-icon">{% include svg/icon-hamburger-nav.svg %}</button>
+      <button onclick="burgerSwap()" id="burgerImageX" class="nav-icon">{% include svg/icon-hamburger-nav-x.svg %}</button> 
+    </li>
+  </ul>
+</div>
 
 <script>
 
   // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
   let visibleBurger = true;
 
-  function burgerSwap(event) {
+  function burgerSwap() {
     // Initialize
     let burgerImage = document.getElementById("burgerImage");
     let burgerImageX = document.getElementById("burgerImageX");
@@ -29,7 +29,7 @@
       visibleBurger = false; 
 
     } else {
-      //If the X and menu is showing, swap for burger.
+      //If the X and menu is showing, swap for burger and close the menu.
       burgerImage.style.display = "block"; 
       burgerImageX.style.display = "none";
       burgerMenu.style.display = "none"; 
@@ -37,28 +37,29 @@
       //Change the state marker
       visibleBurger = true;
     }
+    event.stopPropagation();
   }
-    // Listens for someone selecting a link from the mobile nav. Runs burgerSwap to close menu and reset burger
-    document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
+  // When you click anywhere on the page, other than the menu, if the menu is open, this closes it. 
+  function clickOutsideToClose() {
+    if (visibleBurger == false) {
+      let eventID = event.target.id;
 
-/*
-// This is intented so that when you click outside the menu it closes.  (Not yet functional)
-    function clickOutsideToClose() {
-      let burgerMenu = document.getElementById("headerNav");
-      let burgerImage = document.getElementById("burgerImage");
-      let burgerImageX = document.getElementById("burgerImageX");
- 
-      if (event.target != burgerMenu && event.target.parentNode != burgerMenu) {
-      //If the X and menu is showing, swap for burger.
-      burgerImage.style.display = "block"; 
-      burgerImageX.style.display = "none";
-      burgerMenu.style.display = "none"; 
-    
-      //Change the state marker
-      visibleBurger = true;
+      // If the click is on the navigation menu, it does nothing.  If it is not on the navmenu it runs burgerSwap and closes the menu. 
+      if (eventID != "headerNav") {
+        burgerSwap();
+        event.stopPropagation();
       }
     }
-    window.addEventListener("touchend", clickOutsideToClose);
-    event.stopPropagation();  // This goes somewhere
-*/
+  }
+
+  // If this is mobile, it adds event listeners to close the menus. 
+  let windowWidth = window.innerWidth;
+  if (windowWidth < 768) {
+    //Listen for someone clicking a link from the mobile nav.
+    document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
+
+    //Listen for someone clicking anywhere on the page to close the menus.
+    window.addEventListener("click", clickOutsideToClose);
+
+  }
 </script>
