@@ -15,7 +15,7 @@ title: Credits
   </div>
 </div>
 
-<div class='content-section getting-started-page'>
+<div class='content-section wide-div'>
 <a class='anchor' id='step-1'></a>
           <div class='white-page-card-credits'>
             <div class="page-contain projects-inner">
@@ -29,34 +29,34 @@ title: Credits
                           </div>
                           <div class="icon-info">
                             {%- if item.title -%}
-                             <div class="project-partner">
+                             <p>
                               <strong>Name: </strong>
                               <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'
 -->
                                 <a href="{{item.provider-link}}">{{ item.title }}</a>
-                             </div> 
+                              </p>
                             {%- endif -%}
                             {%- if item.used-in -%}
-                             <div class="project-partner">
+                             <p>
                               <strong>Used in: </strong>
                                 {{ item.used-in }}
-                             </div> 
+                              </p>
                             {%- endif -%}
                             {%- if item.artist -%}
-                              <div class="project-needs">
+                              <p>
                                 <strong>Artist: </strong>
                                   {{ item.artist }}
-                              </div>
+                              </p>
                             {%- endif -%}
                             {%- if item.provider -%}
-                              <div class="project-location">
+                              <p>
                                 <strong>Provider: </strong>
                                 {%- if item.provider-link -%}
                                 <a href="{{item.provider-link}}">{{ item.provider }}</a>
                                 {%- else -%}
                                 {{ item.provider }}
                                 {%- endif -%}
-                              </div>
+                              </p>
                             {%- endif -%}
                           </div>
                         </div>

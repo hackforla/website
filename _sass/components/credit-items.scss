@@ -34,7 +34,7 @@
   font-family: "Roboto" sans-serif;
 }
 
-.getting-started-page {
+.wide-div {
   margin-top: 29px;
   background: #030c2c;
   min-height: 100vh;
@@ -150,11 +150,6 @@
 .zoom-img {
   width: 320px;
   align-self: center;
-}
-
-.project-list {
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .project-position {
