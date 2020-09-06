@@ -1,35 +1,42 @@
 .toolkit-header {
     padding-top: 10rem; 
     padding-bottom: 10rem;
-}
 
-.toolkit-header-text-group {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    padding-left: 30rem; 
-    padding-right: 30rem; 
-    text-align: center;
-}
+    &__text-group {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        padding-left: 30rem; 
+        padding-right: 30rem; 
+        text-align: center;
 
-.toolkit-header-h2 {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 59px;
-    line-height: 69px;
-    align-items: center;
-    text-align: center;
-}
+        @media only screen and (max-width: 1300px){
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: space-evenly;
+        }
 
-.toolkit-header-p {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 27px;
-    line-height: 32px;
-}
+    }
+    
+    &__h2 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 3.7rem;
+        line-height: 4.3rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    &__p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
 
-.toolkit-hero-image-container {
-    max-width: 100%;
+    &__hero-image {
+        max-width: 100%;
+    }
 }
 
 .toolkit-svg {
@@ -40,6 +47,7 @@
 .toolkit-background {
     background-color: #030D2D;
     padding: 2rem;
+    margin-bottom: 3rem;
 }
 
 .toolkit-section-container-h5 {
@@ -77,6 +85,11 @@
     padding-left: 3rem; 
     padding-right: 3rem; 
     text-align: center;
+
+    @media only screen and (max-width: 600px){
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
 }
 
 .suggest-guide-group h3 {
@@ -92,6 +105,17 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.resource-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @media only screen and (max-width: 1150px) {
+        flex-direction: column;
+    }
 }
 
 .toolkit-flex-item {
@@ -101,227 +125,130 @@
     padding-top: 0.1rem;
     padding-bottom: 10rem;
     margin: 2rem;
+    position: relative;
+
+    @media only screen and (max-width: 800px) {
+        flex: 1;
+        width: 30rem;
+        height: 40rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 20rem;
+        height: 35rem;
+        padding: 2rem;
+    }
+}
+
+.toolkit-image-container svg {
+    @media only screen and (max-width: 850px) {
+        flex: 1;
+        width: 100%;
+    }
 }
 
 .toolkit-flex-item-header {
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     text-decoration-line: underline;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 1rem;
+    }
 }
 
 .toolkit-flex-item-p {
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 1rem;
+    line-height: 1.1rem;
+
+    @media only screen and (max-width: 800px) {
+        column-count: 2;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 400px) {
+        column-count: 2;
+        font-size: .7rem;
+    }
 }
 
 .coming-soon-text {
-    position: inherit;
+    position: absolute;
+    padding-right: 1rem;
     text-align: right;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 23px;
-    overflow: hidden;
-    left: 500px;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+    bottom: 1rem;
+    left: 28rem;
     color: #333333;
+
+    @media only screen and (max-width: 700px) {
+        left: 24rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        left: 20rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+        left: 15rem;
+        padding-top: 1rem;
+        font-size: 1.1rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        left: 10rem;
+        padding-top: 1rem;
+        font-size: 1rem;
+    }
 }
 
 .toolkit-image {
-    display: block;
-    max-width: 200px;
-    max-height: 400px;
+    display: inline-block;
+    max-width: 13rem;
+    max-height: 25rem;
     margin: auto;
 }
 
 .toolkit-flex-item-resource {
-    flex: 0 0 5%;
-    margin: auto;
-    padding: auto;
-    flex: 0 0 30%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 40rem;
+    padding: 2rem;
     margin: 2rem;
-}
 
-.figma-title {
-    padding-top: 100px;
-}
-
-.github-title {
-    padding-top: 100px;
-}
-
-.zoom-title {
-    padding-top: 250px;
+    @media only screen and (max-width: 600px) {
+        height: 30rem;
+    }
 }
 
 .toolkit-resource-header {
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 1,5rem;
+    line-height: 1.5rem;
     text-decoration-line: underline;
 
     /* Accent Color */
-
     color: #FA114F;
 }
 
 .toolkit-resource-text {
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-
+    font-size: 1.2rem;
+    
     color: #333333;
 }
 
-@media #{$bp-below-tablet} {
-    .toolkit-header-text-group {
-        display: block;
-    }
-
-    .toolkit-header-text-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-left: 11.5rem;
-        padding-right: 20rem;
-        text-align: center;
-    }
-
-    .toolkit-flex-item-resource {
-        min-width: 0;
-        margin: auto;
-        padding: auto;
-        flex: 0 0 30%;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        margin: 2rem;
-    }
-
-    .toolkit-flex-item-resource img{
-        min-width: 0;
-        width: 100%;
-    }
-}
-
-@media #{$bp-below-desktop} {
-    .toolkit-header-h2 {
-        font-size: 49px;
-        line-height: 59px;
-    }
-
-    .toolkit-svg {
-        width: 85%;
-        height: 85%;
-    }
-    
-    .toolkit-header-p {
-        font-size: 17px;
-        line-height: 22px;
-    }
-
-    .toolkit-header-text-group {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-left: 11.5rem;
-        padding-right: 20rem;
-        text-align: center;
-    }
-
-    .toolkit-hero-image-container {
-        max-width: 10px;
-    }
-
-    .toolkit-flex-container {
-        flex-wrap: wrap;
-    }
-
-
-    .toolkit-flex-item {
-        min-width: 0;
-        flex-basis: 100%;
-        flex-shrink: 1;
-        padding: 1rem;
-        margin: 3rem;
-        flex-flow: row;
-    }
-
-    .toolkit-image-container svg{
-        min-width: 0;
-        width: 100%;
-    }
-
-    .toolkit-section-container-h5 {
-        text-align: center;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .toolkit-section-container-li {
-        text-align: left;
-        padding: 0.5rem;
-    }
-
-    .toolkit-flex-item-resource {
-        margin: auto;
-        padding: auto;
-        flex: 0 0 30%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin: 0.3rem;
-    }
-
-    .figma-title {
-        padding-top: 255px;
-    }
-    
-    .github-title {
-        padding-top: 195px;
-    }
-    
-    .zoom-title {
-        padding-top: 250px;
-    }
-
-    .figma-image {
-        padding-top: 250px;
-    }
-    
-    .github-image {
-        padding-top: 250px;
-    }
-    
-    .zoom-image {
-        padding-top: 150px;
-    }
-
-
-    .toolkit-resources-h5 {
-        padding-top: 2rem;
-        text-align: left;
-        font-size: 20px;
-        line-height: 25px;
-    }
-    
-    .toolkit-resources-li {
-        text-align: left;
-        padding: 0.5rem;
-    }
-
+.toolkit__external-resources {
+    padding-top: 10rem;
+    padding-bottom: 50rem;
 }

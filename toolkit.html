@@ -4,23 +4,24 @@ title: Toolkit
 ---
 
 <div class="toolkit-header header-container">
-    <h2 class="toolkit-header-h2">Our Toolkit</h2>
-    <p class="toolkit-header-p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
+    <h2 class="toolkit-header__h2">Our Toolkit</h2>
+    <p class="toolkit-header__p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
 What you will find here are tools we have found to be effective. Think of this as the most awesome collective tool shed!
 Here you can find, share, and suggest tools that are of use to the open source civic tech software community.</p>
-    <div class="toolkit-hero-image">
+    <div class="toolkit-header__hero-image">
         {% include svg/toolkit-hero.svg %}
     </div>
 </div>
 
-<div class="toolkit-header-text-group">
+<div class="toolkit-header__text-group">
     <h3>Development</h3>
     <h3>Design</h3>
     <h3>Project Management</h3>
 </div>
 
 <div class="toolkit-background content-section">
-    <div class="suggest-guide-group"><h3>Guides(We Made These!)</h3><button class="toolkit-button btn btn-primary">Suggest a guide</button></div>
+    <div class="toolkit__guides-section">
+        <div class="suggest-guide-group"><h3>Guides(We Made These!)</h3><button class="toolkit-button btn btn-primary">Suggest a guide</button></div>
 
     <div class="toolkit-flex-container">
         <div class="toolkit-flex-item section-container">
@@ -66,29 +67,29 @@ Here you can find, share, and suggest tools that are of use to the open source c
         </div>
 
     </div>
-</div>    
+    </div>
 
+    <div class="toolkit__external-resources">
+        <div class="suggest-guide-group"><h3>External Resources</h3><button class="toolkit-button btn btn-primary">Suggest a resource</button></div>
 
-<div class="toolkit-background content-section">
-    <div class="suggest-guide-group"><h3>External Resources</h3><button class="toolkit-button btn btn-primary">Suggest a resource</button></div>
+        <div class="resource-container">
+            <div class="toolkit-flex-item-resource section-container">
+                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-figma.png" alt="">
+                <h3 class="toolkit-resource-header"><a href="https://www.figma.com/">Figma</a></h3>
+                <p class="toolkit-resource-text">Our design team uses Figma to create wireframes and mockups. </p>
+            </div>
 
-    <div class="toolkit-flex-container">
-        <div class="toolkit-flex-item-resource section-container">
-            <img class="toolkit-image toolkit-image-container figma-image" style="padding-top: 50px;" src="assets/images/toolkit/logo-figma.png" alt="">
-            <h3 class="toolkit-resource-header figma-title"><a href="">Figma</a></h3>
-            <p class="toolkit-resource-text">Our design team uses Figma to create wireframes and mockups. </p>
-        </div>
+            <div class="toolkit-flex-item-resource section-container">
+                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-github.png" alt="" >
+                <h3 class="toolkit-resource-header"><a href="https://github.com/hackforla">Github</a></h3>
+                <p class="toolkit-resource-text">We use github for our project management and to streamline development.</p>
+            </div>
 
-        <div class="toolkit-flex-item-resource section-container">
-            <img class="toolkit-image toolkit-image-container github-image" style="padding-bottom: 100px; padding-top: 50px;" src="assets/images/toolkit/logo-github.png" alt="" >
-            <h3 class="toolkit-resource-header github-title"><a href="">Github</a></h3>
-            <p class="toolkit-resource-text">We use github for our project management and to streamline development.</p>
-        </div>
-
-        <div class="toolkit-flex-item-resource section-container">
-            <img class="toolkit-image toolkit-image-container zoom-image" style="padding-top: 150px;" src="assets/images/toolkit/logo-zoom.png" alt="">
-            <h3 class="toolkit-resource-header zoom-title"><a href="">Zoom</a></h3>
-            <p class="toolkit-resource-text">HackforLA uses zoom for onboarding and weekly meetings</p>
+            <div class="toolkit-flex-item-resource section-container project-card">
+                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-zoom.png" alt="">
+                <h3 class="toolkit-resource-header"><a href="https://zoom.us/">Zoom</a></h3>
+                <p class="toolkit-resource-text">HackforLA uses zoom for onboarding and weekly meetings</p>
+            </div>
         </div>
     </div>
-</div>
+</div>    
