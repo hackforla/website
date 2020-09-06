@@ -2,12 +2,12 @@
 layout: default
 title: Credits
 --- 
-<div class="header-container-2">
+<div class="credits-header-container">
   <h1>Credits</h1>
-  <p class="header-p-2">Thank you to all of the artists who have made our page look great. 
+  <p class="header-text">Thank you to all of the artists who have made our page look great. 
     Check out all of the iconography and imagery we have used on our site.
   </p>
-  <div class="step-link-img-2">
+  <div class="credit-hero">
       <div class="step-links">
           <img class="credit-image" src="./assets/images/credits/credits-hero.png">
 
@@ -25,7 +25,7 @@ title: Credits
                           <!-- originally class="project-card-inner" -->
                         <div class="credits-inner">
                           <div class="icon-left">
-                            <img src={{ item.image-url | absolute_url }} class="step-img" alt={{item.alt}}/>
+                            <img src={{ item.image-url | absolute_url }} alt={{item.alt}}/>
                           </div>
                           <div class="icon-info">
                             {%- if item.title -%}
