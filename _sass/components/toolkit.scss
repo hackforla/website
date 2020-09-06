@@ -128,9 +128,16 @@
     position: relative;
 
     @media only screen and (max-width: 800px) {
-        flex: 1;
+        //flex: 1;
+        text-align: center;
         width: 30rem;
         height: 40rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+        width: 15rem;
+        text-align: center;
+        padding: .5rem;
     }
 
     @media only screen and (max-width: 400px) {
@@ -159,19 +166,37 @@
     }
 }
 
+.section-container p {
+    @media only screen and (max-width: 800px) {
+        width: 20rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+        width: 15rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
 .toolkit-flex-item-p {
     font-style: normal;
     font-weight: normal;
     font-size: 1rem;
+    text-align: center;
     line-height: 1.1rem;
+    position: inherit;
 
     @media only screen and (max-width: 800px) {
-        column-count: 2;
+        column-count: 1;
+        padding: 2rem;
         text-align: center;
     }
 
-    @media only screen and (max-width: 400px) {
-        column-count: 2;
+    @media only screen and (max-width: 500px) {
+        column-count: 1;
+        padding: 1rem;
         font-size: .7rem;
     }
 }
@@ -188,8 +213,8 @@
     left: 28rem;
     color: #333333;
 
-    @media only screen and (max-width: 700px) {
-        left: 24rem;
+    @media only screen and (max-width: 800px) {
+        left: 22rem;
     }
 
     @media only screen and (max-width: 600px) {
@@ -197,13 +222,13 @@
     }
 
     @media only screen and (max-width: 500px) {
-        left: 15rem;
+        left: 10rem;
         padding-top: 1rem;
         font-size: 1.1rem;
     }
 
     @media only screen and (max-width: 400px) {
-        left: 10rem;
+        left: 11.5rem;
         padding-top: 1rem;
         font-size: 1rem;
     }
