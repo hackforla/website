@@ -101,7 +101,7 @@ layout: default
     <div id="getting-started-section" class='project-page-card'>
         <ul class="resource-list unstyled-list">
             <!-- Hfla Start Guide -->
-            {%- include resource-card.html name='Getting Started' url='https://github.com/hackforla/getting-started' -%}
+            {%- include resource-card.html name='Getting Started' url='https://www.hackforla.org/getting-started' -%}
 
             {% assign hasGettingStarted = false %}
 
@@ -354,7 +354,7 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+{% assign localData = site.data.vrms_data | jsonify %}
 let localData = {{ localData }};
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 

@@ -1,0 +1,106 @@
+.toolkit-header {
+    padding-top: 10rem; 
+    padding-bottom: 10rem;
+}
+
+.toolkit-header-h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 59px;
+    line-height: 69px;
+    align-items: center;
+    text-align: center;
+}
+
+.toolkit-header-p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 32px;
+}
+
+.toolkit-hero-image-container {
+    max-width: 100%;
+}
+
+.toolkit-svg {
+    width: 60%;
+    height: 60%;
+}
+
+.toolkit-background {
+    background-color: #030D2D;
+    padding: 2rem;
+}
+
+.toolkit-section-container-h5 {
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.toolkit-section-container-li {
+    text-align: left;
+}
+
+.toolkit-resources-h5 {
+    padding-top: 2rem;
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.toolkit-resources-li {
+    text-align: left;
+}
+
+@media #{$bp-below-tablet} {
+    .toolkit-header-h2 {
+        font-size: 49px;
+        line-height: 59px;
+    }
+
+    .toolkit-svg {
+        width: 85%;
+        height: 85%;
+    }
+    
+    .toolkit-header-p {
+        font-size: 17px;
+        line-height: 22px;
+    }
+
+    .toolkit-section-container-h5 {
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .toolkit-section-container-li {
+        text-align: left;
+        padding: 0.5rem;
+    }
+
+    .toolkit-resources-h5 {
+        padding-top: 2rem;
+        text-align: left;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    
+    .toolkit-resources-li {
+        text-align: left;
+        padding: 0.5rem;
+    }
+
+}
