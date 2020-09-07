@@ -38,6 +38,12 @@
   font-family: "Roboto" sans-serif;
 }
 
+.mobile-image {
+  @media #{$bp-below-mobile} {
+    padding: 0;
+  }
+}
+
 .credit-hero {
   padding: 33px;
   margin: 0px auto;
@@ -52,13 +58,14 @@
 
 .credits-inner {
   margin: 15px;
-  padding-right: 30px;
+  @media #{$bp-below-mobile} {
+    margin: 5px;
+  }
   padding-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .white-page-card-credits {
@@ -66,9 +73,9 @@
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  max-width: 1080px;
   margin-bottom: 0;
   padding: 30px;
+  overflow: hidden;
   height: fit-content;
   margin: 12px auto;
   font-family: "Roboto" sans-serif;
@@ -77,11 +84,19 @@
 }
 
 .icon-left {
-  width: 30%;
+  width: 100px;
+  padding-right: 20px;
   display: flex;
   justify-content: center;
+  @media #{$bp-below-mobile} {
+    width: 60px;
+    padding-right: 10px;
+  }
 }
 
 .icon-info {
-  width: 70%;
+  width: 190px;
+  p {
+    margin: 0;
+  }
 }
