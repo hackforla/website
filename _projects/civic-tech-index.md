@@ -9,7 +9,7 @@ image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Acting PM (project looking for a new PM)
+    role: Technical Product Manager
     links:
       slack: 'https://app.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
