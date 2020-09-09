@@ -33,7 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f0d6c56-4149-4aba-a356-c45423f8f0d7" name="Default Changelist" comment="First push for BallotNav">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1h8VG1v8R7SmReOHDLwDyc1jdu4" />
   <component name="ProjectViewState">
@@ -65,6 +66,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images/projects" />
@@ -84,7 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599392607209</updated>
-      <workItem from="1599392608366" duration="3257000" />
+      <workItem from="1599392608366" duration="4862000" />
+      <workItem from="1599608846735" duration="3264000" />
     </task>
     <task id="LOCAL-00001" summary="First push for BallotNav">
       <created>1599395453865</created>
@@ -121,12 +124,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First push for BallotNav" />
     <option name="LAST_COMMIT_MESSAGE" value="First push for BallotNav" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="726" y="254" width="530" height="605" key="FileChooserDialogImpl" timestamp="1599396276796">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="726" y="254" width="530" height="605" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599396276796" />
     <state x="72" y="27" width="1838" height="1053" key="FileDocumentManager.FileCacheConflict" timestamp="1599394955432">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -147,13 +155,18 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="222" y="194" width="1528" height="733" key="com.intellij.dvcs.ui.CompareBranchesDialog/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599394652241" />
-    <state x="710" y="449" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599393707559">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="2472" y="361" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599609440978">
+      <screen x="1920" y="0" width="1600" height="900" />
     </state>
+    <state x="2472" y="361" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1848.1053/1920.0.1600.900@1920.0.1600.900" timestamp="1599609440978" />
     <state x="710" y="449" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599393707559" />
     <state x="600" y="210" width="791" height="686" key="find.popup" timestamp="1599393057374">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="600" y="210" width="791" height="686" key="find.popup/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599393057374" />
+    <state x="523" y="418" width="935" height="278" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1599395931097">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="523" y="418" width="935" height="278" key="git4idea.remote.GitConfigureRemotesDialog/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599395931097" />
   </component>
 </project>

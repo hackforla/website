@@ -1,0 +1,168 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(date 1599395870185)
++++ .idea/workspace.xml	(date 1599395870185)
+@@ -0,0 +1,159 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:pr" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="BRANCH:origin/ballot-nav-card" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </select>
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="0f0d6c56-4149-4aba-a356-c45423f8f0d7" name="Default Changelist" comment="First push for BallotNav">
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ComposerSettings">
++    <execution />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="HTML File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="gh-pages" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="1h8VG1v8R7SmReOHDLwDyc1jdu4" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="DefaultHtmlFileTemplate" value="HTML File" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images/projects" />
++    <property name="nodejs_package_manager_path" value="npm" />
++    <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/assets/images/projects" />
++    </key>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="0f0d6c56-4149-4aba-a356-c45423f8f0d7" name="Default Changelist" comment="" />
++      <created>1599392607209</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1599392607209</updated>
++      <workItem from="1599392608366" duration="3257000" />
++    </task>
++    <task id="LOCAL-00001" summary="First push for BallotNav">
++      <created>1599395453865</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1599395453865</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/ballot-nav-card" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="First push for BallotNav" />
++    <option name="LAST_COMMIT_MESSAGE" value="First push for BallotNav" />
++  </component>
++  <component name="WindowStateProjectService">
++    <state x="72" y="27" width="1838" height="1053" key="FileDocumentManager.FileCacheConflict" timestamp="1599394955432">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="72" y="27" width="1838" height="1053" key="FileDocumentManager.FileCacheConflict/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599394955432" />
++    <state x="505" y="398" width="972" height="317" key="Github.CreatePullRequestDialog" timestamp="1599394658304">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="505" y="398" width="972" height="317" key="Github.CreatePullRequestDialog/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599394658304" />
++    <state x="814" y="430" width="364" height="254" key="Github.ShareDialog" timestamp="1599394554040">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="814" y="430" width="364" height="254" key="Github.ShareDialog/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599394554040" />
++    <state x="491" y="226" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1599395462292">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="491" y="226" width="1000" height="661" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599395462292" />
++    <state x="222" y="194" width="1528" height="733" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1599394652241">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="222" y="194" width="1528" height="733" key="com.intellij.dvcs.ui.CompareBranchesDialog/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599394652241" />
++    <state x="710" y="449" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599393707559">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="710" y="449" width="562" height="215" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599393707559" />
++    <state x="600" y="210" width="791" height="686" key="find.popup" timestamp="1599393057374">
++      <screen x="72" y="27" width="1848" height="1053" />
++    </state>
++    <state x="600" y="210" width="791" height="686" key="find.popup/72.27.1848.1053/1920.0.1600.900@72.27.1848.1053" timestamp="1599393057374" />
++  </component>
++</project>
+\ No newline at end of file
