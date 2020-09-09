@@ -13,6 +13,7 @@ dist
 .jekyll-metadata
 .DS_store
 .vscode
+.idea
 _site
 Gemfile
 Gemfile.lock
