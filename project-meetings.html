@@ -18,6 +18,7 @@ title: Project Meetings
 </div>
 <div class='content-section calendar-started-page'>
     <div class='calendar-page-card'>
+        <div id="userTimeZone" class='userTimeZone'></div>
         <div id="Monday">
             <h3 class='day-header'>Monday</h3>
             <ul id="Monday-List" class="schedule-list"></ul>
@@ -266,8 +267,10 @@ title: Project Meetings
             minutes = minutes + "0";
         }
 
-        if (hours < 12) {
+        if (hours < 12 && hours !== 0) {
             return `${hours}:${minutes} am`;
+        } else if (hours === 0) {
+            return `12:${minutes} am`;    
         } else if (hours > 12) {
             hours = hours - 12;
             return `${hours}:${minutes} pm`;
@@ -278,4 +281,9 @@ title: Project Meetings
         }
 
     }
+
+    // userTimeZone is displayed so the user knows what time zone the meeting times are shown in.
+    let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    let timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
+    document.getElementById("userTimeZone").innerHTML = timeZoneOutput;
 </script>
