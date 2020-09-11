@@ -285,5 +285,5 @@ title: Project Meetings
     // userTimeZone is displayed so the user knows what time zone the meeting times are shown in.
     let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     let timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
-    document.getElementById("userTimeZone").innerHTML = timeZoneOutput;
+    document.getElementById("userTimeZone").insertAdjacentHTML('afterbegin', timeZoneOutput);
 </script>
