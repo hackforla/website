@@ -61,7 +61,6 @@
 
 .step-img {
   height: 100px;
-  // margin-right: 20px;
   text-align: center;
 }
 
@@ -107,7 +106,7 @@
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
-    padding: 30px 20px;
+    padding: 30px 15px;
   }
 }
 
@@ -150,7 +149,6 @@
   @media #{$bp-below-mobile} {
     margin-top: 20px;
     min-width: 255px;
-    font-size: 16px;
   }
 }
 
