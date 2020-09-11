@@ -282,8 +282,20 @@ title: Project Meetings
 
     }
 
-    // userTimeZone is displayed so the user knows what time zone the meeting times are shown in.
-    let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    let timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
+    /* Show user's time zone */
+
+    // Initialize variables and set defaults
+    let userTimeZone = undefined;
+    let timeZoneOutput = "All times listed in your local time zone.";
+
+    // Get user time zone
+    userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // If userTimeZone exists, add it to the text
+    if (userTimeZone) {
+        timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
+    }
+    
+    // Display time zone on page
     document.getElementById("userTimeZone").insertAdjacentHTML('afterbegin', timeZoneOutput);
 </script>
