@@ -158,39 +158,4 @@ body {
       text-decoration: underline;
     }
   }
-
-  // HFLA logo setting for mobile
-  .main-header {
-    position: fixed;
-    padding: 7px;
-  }
-
-  // Make the donate button smaller for mobile
-  .btn-donate {
-    padding: 5px 25px;
-    font-size: .75rem;
-    font-weight: 500;
-    height: 30px;
-    margin-top: 2px;
-    line-height: 0;
-  }
-
-  // style the HFLA logo for mobile
-  .main-header .branding {
-    position: absolute;
-    top: -13px;
-    left: -18px;
-    height: 50px;
-    width: 95px;
-  }
-}
-
-// This is to resize the branding image for larger displays
-@media #{$bp-tablet-up} {
-  .main-header .branding {
-    height: 150px;
-    width: 150px;
-    left: -20px;
-    top: -24px;
-  }
 }
