@@ -9,8 +9,8 @@
   text-align: center;
 
   @media #{$bp-below-mobile} {
-    padding: 30px 15px;
-    margin-top: 23%;
+    padding: 87px 15px 0px 15px;
+    margin-top: 10%;
   }
 }
 
@@ -61,7 +61,6 @@
 
 .step-img {
   height: 100px;
-  // margin-right: 20px;
   text-align: center;
 }
 
@@ -118,7 +117,6 @@
 }
 
 .getting-started-guide-content-section {
-  // text-align: center;
   text-align: justify;
 }
 

@@ -1,12 +1,10 @@
-@charset "UTF-8";
+/**
+ * General utility variables
+ */
+
 
 /// A list of all _text-based_ HTML inputs.
-///
-/// @type list
-///
-/// @access private
-
-$_text-inputs-list: (
+$all-text-inputs: (
   "[type='color']",
   "[type='date']",
   "[type='datetime']",

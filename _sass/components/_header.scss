@@ -1,5 +1,8 @@
 .main-header {
-  @include position(absolute, 0 0 null 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background: $color-white;
   box-shadow: 0 1px 4px 0 rgba($color-black, 0.12);
   font-weight: map-get($font-weight, bold);
@@ -46,7 +49,9 @@
   }
 
   .branding {
-    @include position(absolute, -23px null null -23px);
+    position: absolute;
+    top: -23px;
+    left: -23px;
 
     @media #{$bp-tablet-up} {
       left: -20px;

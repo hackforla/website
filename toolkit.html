@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Toolkit
----
-
+--- 
 <div class="toolkit-header header-container">
     <h2 class="toolkit-header__h2">Our Toolkit</h2>
     <p class="toolkit-header__p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
@@ -24,48 +23,28 @@ Here you can find, share, and suggest tools that are of use to the open source c
         <div class="suggest-guide-group"><h3>Guides(We Made These!)</h3><button class="toolkit-button btn btn-primary">Suggest a guide</button></div>
 
     <div class="toolkit-flex-container">
-        <div class="toolkit-flex-item section-container">
-            <div class="toolkit-image-container">
-                {% include svg/toolkit-default-card-image.svg %}
-            </div>
-            <h3 class="toolkit-flex-item-header"><a href="https://www.hackforla.org/guide-pages/github-issues">Getting the Most Out of Github Issues</a></h3>
-            <p class="toolkit-flex-item-p">Each of Hack for LA’s GitHub project repositories (repos) use issues to track and organize ideas, enhancements, and tasks. All team members will use GitHub issues to communicate in our multifunctional teams.</p>
-        </div>
+        <!-- Searching through toolkitPages collection -->
+        {%- for item in site.toolkitPages -%}
+            <div class="toolkit-flex-item section-container">
+                {%- if item.svg -%}
+                <div class="toolkit-image-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
 
-        <div class="toolkit-flex-item section-container">
-            <div class="toolkit-image-container">
-                {% include svg/2FA.svg %} 
-            </div>
-            <h3 class="toolkit-flex-item-header"><a href="https://www.hackforla.org/guide-pages/2FA.html">Enabling 2-Factor Authentication</a></h3>
-            <p class="toolkit-flex-item-p">Hack for LA requires two-factor authentication (2FA) in GitHub for all project contributors.</p>
-        </div>
+                {%- if item.title -%}
+                <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
+                {%- endif -%}
 
-        <div class="toolkit-flex-item section-container">
-            <div class="toolkit-image-container">
-                {% include svg/survey-reporting.svg %} 
-            </div>
-            <h3 class="toolkit-flex-item-header"><a href="https://www.hackforla.org/guide-pages/survey-reporting-dashboard-guide">Building a Survey Reporting Dashboard</a></h3>
-            <p class="toolkit-flex-item-p">Google Analytics includes a number of tools that allow individuals and teams to capture and analyze different types of data. These tools are especially valuable when it comes to survey-based user research. </p>
-        </div>
+                {%- if item.description -%}
+                <p class="toolkit-flex-item-p">{{ item.description }}</p>
+                {%- endif -%}
 
-        <div class="toolkit-flex-item section-container">
-            <div class="toolkit-image-container">
-                {% include svg/toolkit-default-card-image.svg %}
+                {%- if item.coming-soon -%}
+                <p class="coming-soon-text">{{ item.coming-soon }}</p>
+                {%- endif -%}
             </div>
-            <h3 class="toolkit-flex-item-header"><a href="">Create a Kanban Project Board from 0ur Template</a></h3>
-            <p class="toolkit-flex-item-p">Each of Hack for LA’s GitHub project repositories (repos) use issues to track and organize ideas, enhancements, and tasks. All team members will use GitHub issues to communicate in our multifunctional teams. </p>
-            <h3 class="coming-soon-text">coming soon</h3>
-        </div>
-
-        <div class="toolkit-flex-item section-container">
-            <div class="toolkit-image-container">
-                {% include svg/toolkit-default-card-image.svg %}
-            </div>
-            <h3 class="toolkit-flex-item-header"><a href="">Using Kanban Project Boards for Team Effectiveness</a></h3>
-            <p class="toolkit-flex-item-p">Each of Hack for LA’s GitHub project repositories (repos) use issues to track and organize ideas, enhancements, and tasks. All team members will use GitHub issues to communicate in our multifunctional teams. </p>
-            <h3 class="coming-soon-text">coming soon</h3>
-        </div>
-
+        {%- endfor -%}
     </div>
     </div>
 
@@ -73,23 +52,22 @@ Here you can find, share, and suggest tools that are of use to the open source c
         <div class="suggest-guide-group"><h3>External Resources</h3><button class="toolkit-button btn btn-primary">Suggest a resource</button></div>
 
         <div class="resource-container">
+            <!-- Searching through toolkitResources collection -->
+            {%- for item in site.toolkitResources -%}
             <div class="toolkit-flex-item-resource section-container">
-                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-figma.png" alt="">
-                <h3 class="toolkit-resource-header"><a href="https://www.figma.com/">Figma</a></h3>
-                <p class="toolkit-resource-text">Our design team uses Figma to create wireframes and mockups. </p>
-            </div>
 
-            <div class="toolkit-flex-item-resource section-container">
-                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-github.png" alt="" >
-                <h3 class="toolkit-resource-header"><a href="https://github.com/hackforla">Github</a></h3>
-                <p class="toolkit-resource-text">We use github for our project management and to streamline development.</p>
-            </div>
+                {%- if item.svg -%}
+                <div class="svg-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
 
-            <div class="toolkit-flex-item-resource section-container project-card">
-                <img class="toolkit-image toolkit-image-container" src="assets/images/toolkit/logo-zoom.png" alt="">
-                <h3 class="toolkit-resource-header"><a href="https://zoom.us/">Zoom</a></h3>
-                <p class="toolkit-resource-text">HackforLA uses zoom for onboarding and weekly meetings</p>
+                {%- if item.title -%}
+                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}">{{ item.title }}</a></h3>
+                <p class="toolkit-resource-text">{{ item.description }}</p>
+                {%- endif -%}
             </div>
+            {%- endfor -%}
         </div>
     </div>
 </div>    
