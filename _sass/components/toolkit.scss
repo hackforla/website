@@ -120,11 +120,11 @@
 
 .toolkit-flex-item {
     flex: 0 0 10%;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     padding-top: 0.1rem;
     padding-bottom: 10rem;
-    margin: 2rem;
+    margin: .5rem;
     position: relative;
 
     @media only screen and (max-width: 800px) {
@@ -214,25 +214,25 @@
     font-size: 1.5rem;
     line-height: 1.2rem;
     bottom: 1rem;
-    left: 28rem;
+    left: 65%;
     color: #333333;
 
     @media only screen and (max-width: 800px) {
-        left: 22rem;
+        left: 50%;
     }
 
     @media only screen and (max-width: 600px) {
-        left: 20rem;
+        left: 45%;
     }
 
     @media only screen and (max-width: 500px) {
-        left: 10rem;
+        left: 25%;
         padding-top: 1rem;
         font-size: 1.1rem;
     }
 
     @media only screen and (max-width: 400px) {
-        left: 11.5rem;
+        left: 35%;
         padding-top: 1rem;
         font-size: 1rem;
     }
@@ -264,7 +264,7 @@
     font-size: 1,5rem;
     line-height: 1.5rem;
     text-decoration-line: underline;
-
+    width: fit-content; //ADDED THIS LINE
     /* Accent Color */
     color: #FA114F;
 }
@@ -280,4 +280,14 @@
 .toolkit__external-resources {
     padding-top: 10rem;
     padding-bottom: 50rem;
+}
+
+.svg-container {
+    height: 164px;
+    width: 164px;
+    margin: auto auto;
+    display: flex;
+}
+.svg-container svg{
+    width: 100%
 }
