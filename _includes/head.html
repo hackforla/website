@@ -6,12 +6,12 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} by {% endif %}{{ site.title | escape}}" />
-  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
   <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else%}{{'/assets/images/logos/hfla_fb_logo.png' | absolute_url }}{% endif %}" />
 
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
-    content="{% if page.description %}{{ page.description | strip_html strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
+    content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | absolute_url }}" />
