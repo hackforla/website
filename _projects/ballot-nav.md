@@ -6,6 +6,13 @@ image: /assets/images/projects/ballot-nav.png
 alt: 'Map of the United States for Ballot Nav'
 image-hero: /assets/images/projects/ballot-nav.png
 alt-hero: 'Gray background'
+leadership:
+  - name: Mya Stark
+    role: 
+    links:
+      slack: 'https://app.slack.com/team/UMC7AJLDV'
+      github:  'https://github.com/myastark'
+    picture:  'https://avatars.githubusercontent.com/myastark'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/BallotNav'
