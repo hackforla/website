@@ -1,0 +1,102 @@
+.wide-div {
+  margin-top: 29px;
+  background: #030c2c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto" sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.credits-header-container {
+  background: #fff;
+  padding: 30px;
+  height: fit-content;
+  margin: 12px auto;
+  padding-top: 75px;
+  font-family: "Roboto" sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+
+  @media #{$bp-below-mobile} {
+    padding: 30px 15px;
+    margin-top: 23%;
+  }
+}
+
+.header-text {
+  font-size: 26px;
+  display: flex;
+  max-width: 895px;
+  text-align: center;
+  padding: 30px;
+  margin: 12px auto;
+  font-family: "Roboto" sans-serif;
+}
+
+.mobile-image {
+  @media #{$bp-below-mobile} {
+    padding: 0;
+  }
+}
+
+.credit-hero {
+  padding: 33px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-evenly;
+
+  @media #{$bp-below-mobile} {
+    flex-direction: column;
+    text-align: -webkit-center;
+  }
+}
+
+.credits-inner {
+  margin: 15px;
+  @media #{$bp-below-mobile} {
+    margin: 5px;
+  }
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.white-page-card-credits {
+  background: #fff;
+  border: 0 solid rgba(51, 51, 51, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+  margin-bottom: 0;
+  padding: 30px;
+  overflow: hidden;
+  height: fit-content;
+  margin: 12px auto;
+  font-family: "Roboto" sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.icon-left {
+  width: 100px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  @media #{$bp-below-mobile} {
+    width: 60px;
+    padding-right: 10px;
+  }
+}
+
+.icon-info {
+  width: 190px;
+  p {
+    margin: 0;
+  }
+}

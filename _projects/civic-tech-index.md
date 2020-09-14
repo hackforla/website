@@ -9,17 +9,17 @@ image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Acting PM (project looking for a new PM)
+    role: Technical Product Manager
     links:
       slack: 'https://app.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Arun Prakash
+  - name: Jonathan Sachsman
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U015GPCKUFK'
-      github: 'https://github.com/arunprakash87'
-    picture: https://avatars.githubusercontent.com/arunprakash87
+      slack: 'https://app.slack.com/team/U018CSDL5FZ'
+      github: 'https://github.com/jsachsman'
+    picture: https://avatars.githubusercontent.com/jsachsman
   - name: Chali Prasertsri
     role: UX Lead
     links:
