@@ -24,8 +24,42 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
     <div class="toolkit-flex-container">
         <!-- Searching through toolkitPages collection -->
-        {%- for item in site.toolkitPages -%}
+        <!-- change collection to _guidepages -->
+        {%- for item in site.guide-pages -%}
+        {%- if item.status == 'active' -%}
             <div class="toolkit-flex-item section-container">
+            
+                {%- if item.svg -%}
+                <div class="toolkit-image-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
+
+                {%- if item.title -%}
+                <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
+                {%- endif -%}
+
+                {%- if item.short-description -%}
+                <p class="toolkit-flex-item-p">{{ item.short-description }}</p>
+                {%- endif -%}
+
+                {%- if item.status == 'coming-soon' -%}
+                <!-- change to coming soon item.status -->
+                <!-- rename css class to status text -->
+                <p class="status-text">{{ item.status }}</p>
+                {%- endif -%}
+            </div>
+        {%- endif -%}
+        {%- endfor -%}
+    </div>
+
+    <div class="toolkit-flex-container">
+        <!-- Searching through toolkitPages collection -->
+        <!-- change collection to _guidepages -->
+        {%- for item in site.guide-pages -%}
+        {%- if item.status == 'coming-soon' -%}
+            <div class="toolkit-flex-item section-container">
+            
                 {%- if item.svg -%}
                 <div class="toolkit-image-container">
                     {% include {{ item.svg }} %}
@@ -40,10 +74,13 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 <p class="toolkit-flex-item-p">{{ item.description }}</p>
                 {%- endif -%}
 
-                {%- if item.coming-soon -%}
-                <p class="coming-soon-text">{{ item.coming-soon }}</p>
+                {%- if item.status == 'coming-soon' -%}
+                <!-- change to coming soon item.status -->
+                <!-- rename css class to status text -->
+                <p class="status-text">{{ item.status }}</p>
                 {%- endif -%}
             </div>
+        {%- endif -%}
         {%- endfor -%}
     </div>
     </div>
@@ -54,6 +91,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
         <div class="resource-container">
             <!-- Searching through toolkitResources collection -->
             {%- for item in site.toolkitResources -%}
+            {%- if item.display ==  true -%}
             <div class="toolkit-flex-item-resource section-container">
 
                 {%- if item.svg -%}
@@ -67,6 +105,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 <p class="toolkit-resource-text">{{ item.description }}</p>
                 {%- endif -%}
             </div>
+            {%- endif -%}
             {%- endfor -%}
         </div>
     </div>
