@@ -4,49 +4,48 @@
         <h2 class="project-header">Current Projects</h2>
         <p class="project-pitch">
             Have an idea?
-            <a href="mailto:team@hackforla.org" class="btn btn-primary"
-              >Submit your pitch</a
-            >
+            <a href="mailto:team@hackforla.org" class="btn btn-primary">Submit your pitch</a>
         </p>
     </div>
-
     <div class="page-contain filter-toolbar" style="text-align: center;">
         <ul class="filter-list" id="filter-list"></ul>
     </div>
     <div class="page-contain projects-inner" style="clear: left;">
-        <ul class="project-list unstyled-list">
-            {% assign status_list = "Active, Rebooting, Completed, On Hold" | split:
-            ", " %} {% for status in status_list %} {% assign projects = site.projects
-            | where: "status", status | sort: "title" %} {%- for item in projects -%}
-            {%- if item.hide != true -%} {%- include project-card.html project=item
-            -%} {%- endif -%} {%- endfor -%} {%- endfor -%}
-        </ul>
+      <ul class="project-list unstyled-list">
+        {% assign status_list = "Active, Rebooting, Completed, On Hold" | split: ", " %}
+        {% for status in status_list %}
+          {% assign projects = site.projects | where: "status", status | sort: "title" %}
+          {%- for item in projects -%}
+            {%- if item.hide != true -%}
+              {%- include project-card.html project=item -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
     </div>
 </section>
-
 <script>
-  var projectDataFromJekyll = [
-    {%- for project in site.projects -%}
-    {"id": {{ project.identification | default: 0 }},
-     "status": ["{{ project.status }}"]
-     {%- if project.location -%}
-     ,"location": {{project.location | jsonify }}
-     {%- endif -%}
-     {%- if project.looking -%}
-     , "looking": {{project.looking | jsonify }}
-     {%- endif -%}
-     {%- if project.technologies -%}
-     , "technologies": {{project.technologies | jsonify }}
-     {%- endif -%}
-    }{%- unless forloop.last -%},{% endunless %}
-    {% endfor %}
-  ];
+var projectDataFromJekyll = [{%- for project in site.projects -%}
+      {
+        "id": {{ project.identification | default: 0 }},
+        "status": ["{{ project.status }}"]
+        {%- if project.location -%},
+        "location": {{ project.location | jsonify }}
+        {%-endif -%}
+        {%- if project.looking -%},
+        "looking": {{ project.looking | jsonify }}
+        {%-endif -%}
+        {%- if project.technologies -%},
+        "technologies": {{ project.technologies | jsonify }}
+        {%- endif -%}
+      } {%- unless forloop.last -%}, {% endunless %}
+    {% endfor %}];
 
-window.addEventListener('load', function () {
-    
+window.addEventListener('load', function() {
+
     //detect touchscreen/non-touchscreen
     let touch;
-    if("ontouchstart" in document.documentElement) {
+    if ("ontouchstart" in document.documentElement) {
         touch = true;
     } else {
         touch = false;
@@ -66,11 +65,13 @@ window.addEventListener('load', function () {
         return new Project(record);
     });
 
-    const filterableCategories= [ 'status', 'looking', 'technologies', 'location' ];
+    const filterableCategories = ['status', 'looking', 'technologies', 'location'];
 
     // Collect all possible filter values for count computation
     let valuesByCategory = new Map();
-    filterableCategories.forEach(cat => {valuesByCategory.set(cat, new Set())});
+    filterableCategories.forEach(cat => {
+        valuesByCategory.set(cat, new Set())
+    });
     projects.forEach(p => {
         for (let key in p.data) {
             if (!filterableCategories.includes(key)) {
@@ -97,9 +98,9 @@ window.addEventListener('load', function () {
 
 
         // Assign updated counts to dropdown text
-        for(let category in filterReport.counts) {
+        for (let category in filterReport.counts) {
             const termCounts = filterReport.counts[category];
-            for(let term in termCounts) {
+            for (let term in termCounts) {
                 // const cleanName = `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
                 const cleanName = cleanFieldName(category, term);
                 const text = `${term} (${termCounts[term]})`;
@@ -161,23 +162,23 @@ window.addEventListener('load', function () {
             textSpan.innerHTML = text;
 
             // trigger a new filtering when a checkbox is clicked
-            checkbox.addEventListener('input', function (event) {
+            checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
 
                     //change label background color
-                    categoryDropdown.style.backgroundColor="#fa114f";
-                    categoryTitle.style.color="white";
+                    categoryDropdown.style.backgroundColor = "#fa114f";
+                    categoryTitle.style.color = "white";
                 } else {
                     projectFilter.removeCondition(category, term);
                     checkedboxCounter--;
-                  
-                  if (checkedboxCounter == 0){
-                      //remove label background color
-                      categoryDropdown.style.backgroundColor="white";
-                      categoryTitle.style.color="black";
-                  }
+
+                    if (checkedboxCounter == 0) {
+                        //remove label background color
+                        categoryDropdown.style.backgroundColor = "white";
+                        categoryTitle.style.color = "black";
+                    }
                 }
 
                 // recompute counts and IDs to hide
@@ -198,26 +199,26 @@ window.addEventListener('load', function () {
         document.querySelector("#filter-list").appendChild(categoryDropdown);
     }
 
-    if(touch) {
-      const filterList = document.querySelector(".filter-list");
-      const filterItem = filterList.children;
-      const clickedItems = [];
-      for (let x = 0; x < filterItem.length; x++ ) {
-          filterItem[x].addEventListener("click", function(){
-              clickedItems.push(filterItem[x]);
-              filterItem[x].children[1].style = "opacity: 1; visibility: visible;";
+    if (touch) {
+        const filterList = document.querySelector(".filter-list");
+        const filterItem = filterList.children;
+        const clickedItems = [];
+        for (let x = 0; x < filterItem.length; x++) {
+            filterItem[x].addEventListener("click", function() {
+                clickedItems.push(filterItem[x]);
+                filterItem[x].children[1].style = "opacity: 1; visibility: visible;";
 
-              setTimeout(function(){
-                  filterItem[x].children[1].style = "opacity: 0; visibility: hidden;";
-              }, 3000)
-          })
-      }
+                setTimeout(function() {
+                    filterItem[x].children[1].style = "opacity: 0; visibility: hidden;";
+                }, 3000)
+            })
+        }
     }
 
 
     for (let [categoryName, valueSet] of projectFilter.conditions.entries()) {
         if (valueSet.size > 0) {
-            for(let v of valueSet) {
+            for (let v of valueSet) {
                 const cleanName = cleanFieldName(categoryName, v);
                 document.getElementById(cleanName).previousSibling.checked = true;
             }
@@ -225,6 +226,6 @@ window.addEventListener('load', function () {
     }
 
     applyFilter(report);
-  
-});
+
+    });
 </script>
