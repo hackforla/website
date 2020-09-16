@@ -5,7 +5,8 @@ svg:
 alt-text:
 card-type:
 status:
-url: 
+provider-link: 
+link-svg: svg/outer-link.svg
 display: false
 category:
 ---

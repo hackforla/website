@@ -111,11 +111,16 @@
 .resource-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 
     @media only screen and (max-width: 1150px) {
         flex-direction: column;
     }
+}
+
+.outer-link {
+    display: flex;
+    align-self: flex-end;
+    padding: 0;
 }
 
 .toolkit-flex-item {
@@ -249,9 +254,9 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    height: 40rem;
-    padding: 2rem;
-    margin: 2rem;
+    height: 35rem;
+    padding: 3rem;
+    margin: 6rem;
 
     @media only screen and (max-width: 600px) {
         height: 30rem;
