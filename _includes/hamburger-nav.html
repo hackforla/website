@@ -62,15 +62,27 @@
     window.addEventListener("click", clickOutsideToClose);
   }
 
-
-  // There was bug where if you go from portrait to landscape on a really tall phone, you lose the navigation links.  
-  // This was caused by hiding the links in portrait and they're still hidden in landscape.  This reloads the page
-  // when you change orientation to "fix" this. 
   window.addEventListener("orientationchange", handleOrientationChange, true);
 
   function handleOrientationChange (event) {
-      location.reload();
-      event.stopPropagation();
+    let windowHeight = window.innerHeight;
+    let windowWidth = window.innerWidth;
+    let burgerMenu = document.getElementById("headerNav");
+    // "if statements" only affect tall phones
+    if(windowHeight >= 768) {
+      // Should display original nav bar for large phones
+      document.getElementById("mobileNavLink").removeEventListener("click", burgerSwap);
+      window.removeEventListener("click", clickOutsideToClose);
+      burgerMenu.style.display = "block";
+    } else if (windowWidth >= 768) {
+      // Reset things to mobile nav bar
+      document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
+      window.addEventListener("click", clickOutsideToClose);
+      // Trigger burger swap to set things to initial view
+      visibleBurger = false;
+      burgerSwap();
     }
+    event.stopPropagation();
+  }
 
 </script>
