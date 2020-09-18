@@ -36,13 +36,15 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 </div>
                 {%- endif -%}
 
-                {%- if item.title -%}
-                <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
-                {%- endif -%}
+                <div class="toolkit-info-container">
+                    {%- if item.title -%}
+                    <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
+                    {%- endif -%}
 
-                {%- if item.short-description -%}
-                <p class="toolkit-flex-item-p">{{ item.short-description }}</p>
-                {%- endif -%}
+                    {%- if item.short-description -%}
+                    <p class="toolkit-flex-item-p">{{ item.short-description }}</p>
+                    {%- endif -%}
+                </div>
                     
             </div>
         {%- endif -%}
@@ -58,17 +60,19 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 </div>
                 {%- endif -%}
 
-                {%- if item.title -%}
-                <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
-                {%- endif -%}
+                <div class="toolkit-info-container">
+                    {%- if item.title -%}
+                    <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
+                    {%- endif -%}
 
-                {%- if item.description -%}
-                <p class="toolkit-flex-item-p">{{ item.description }}</p>
-                {%- endif -%}
+                    {%- if item.description -%}
+                    <p class="toolkit-flex-item-p">{{ item.description }}</p>
+                    {%- endif -%}
 
-                {%- if item.status == 'coming-soon' -%}
-                <p class="status-text">coming soon</p>
-                {%- endif -%}
+                    {%- if item.status == 'coming-soon' -%}
+                    <p class="toolkit-status-text">coming soon</p>
+                    {%- endif -%}
+                </div>
             </div>
         {%- endif -%}
         {%- endfor -%}

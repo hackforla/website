@@ -3,7 +3,6 @@
                     <path d="M0 16C0 7.16345 7.16344 0 16 0H398C406.837 0 414 7.16344 414 16V288.026H0V16Z" fill="#C4C4C4"/>
                     </mask>
                     <g mask="url(#mask0)">
-                    <path d="M0 16C0 7.16346 7.16344 0 16 0H398C406.837 0 414 7.16344 414 16V276.291H0V16Z" fill="url(#pattern0)"/>
                     <rect x="23" y="24" width="369" height="241" fill="url(#pattern1)"/>
                     </g>
                     <defs>

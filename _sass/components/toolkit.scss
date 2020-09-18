@@ -105,11 +105,12 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .resource-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     @media only screen and (max-width: 1150px) {
@@ -124,13 +125,18 @@
 }
 
 .toolkit-flex-item {
-    flex: 0 0 10%;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 0.1rem;
-    padding-bottom: 10rem;
-    margin: .5rem;
+    flex-basis: 25%;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+    margin: 1.2rem;
     position: relative;
+
+    @media only screen and (max-width: 1200px) {
+        flex-basis: 13%; 
+        margin: 1rem;
+    }
 
     @media only screen and (max-width: 800px) {
         //flex: 1;
@@ -152,6 +158,15 @@
     }
 }
 
+.toolkit-info-container {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    @media only screen and (max-width: 500px) {
+        padding: 0rem;
+    }
+}
+
+
 .toolkit-image-container svg {
     @media only screen and (max-width: 800px) {
         flex: 1;
@@ -168,7 +183,6 @@
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 1.2rem;
-    text-decoration-line: underline;
 
     @media only screen and (max-width: 500px) {
         font-size: 1rem;
@@ -210,7 +224,7 @@
     }
 }
 
-.status-text {
+.toolkit-status-text {
     position: absolute;
     padding-right: 1rem;
     text-align: right;
@@ -220,14 +234,16 @@
     line-height: 1.2rem;
     bottom: 1rem;
     left: 65%;
+    padding-top: 20rem;
+    padding-bottom: 0rem;
     color: #333333;
 
     @media only screen and (max-width: 800px) {
-        left: 45%;
+        left: 35%;
     }
 
     @media only screen and (max-width: 600px) {
-        left: 45%;
+        left: 30%;
     }
 
     @media only screen and (max-width: 500px) {
@@ -238,7 +254,6 @@
 
     @media only screen and (max-width: 400px) {
         left: 35%;
-        padding-top: 1rem;
         font-size: 1rem;
     }
 }
@@ -252,11 +267,12 @@
 
 .toolkit-flex-item-resource {
     display: flex;
+    position: relative;
     flex: 1;
     flex-direction: column;
-    height: 35rem;
-    padding: 3rem;
-    margin: 6rem;
+    height: 40rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
 
     @media only screen and (max-width: 600px) {
         height: 30rem;
