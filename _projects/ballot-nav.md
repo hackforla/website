@@ -3,8 +3,8 @@ identification: '288594239'
 title: BallotNav
 description: BallotNav aims to support absentee voters who are concerned about the present reliability of the USPS by addressing limitations caused by conflicting information from the media, hard to navigate government websites, and statewide regulations, with an efficient way to get accurate information about where, when and how to deliver your ballot in person.<br><br>This will take dedicated partners across the country to keep this resource up to date by daily monitoring of Secretary of State and county registrar websites across all 50 states and 3,007 counties through November 3rd (X number of days left). The end result will be a clear path to action for those who need it most.<br><br>This task is nearly impossible, but no one is coming. It’s up to us to save our democracy, and we can do it.
 image: /assets/images/projects/ballot-nav.png
-alt: 'Map of the United States with each state and county outlined.'
-image-hero: /assets/images/projects/ballot-nav.png
+alt: 'Person holding phone with ballot nav website on it.'
+image-hero: /assets/images/projects/ballot-nav-hero.png
 alt-hero: 'Map of the United States with each state and county outlined.'
 leadership:
   - name: Mya Stark
@@ -23,12 +23,14 @@ links:
   - name: Readme
     url:  'https://github.com/hackforla/ballotnav/blob/master/README.md'
 looking: 
+  - category: Data
+    skill: Data Scientist
+  - category: UI/UX
+    skill: UX Researcher
   - category: UI/UX
     skill: UI Designer
-  - category: UI/UX
-    skill: UX Researcher  
-  - category: BA
-    skill: Business Analyst
+  - category: Content
+    skill: Anyone who wants to help validate website data!
 location: 
   - Remote
 partner: Code for America, Other Brigades
