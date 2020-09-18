@@ -62,6 +62,9 @@
     window.addEventListener("click", clickOutsideToClose);
   }
 
+  // There was bug where if you go from portrait to landscape on a really tall phone, you lose the navigation links.  
+  // This was caused by hiding the links in portrait and they're still hidden in landscape.  
+  // This code fixes that bug
   window.addEventListener("orientationchange", handleOrientationChange, true);
 
   function handleOrientationChange (event) {
