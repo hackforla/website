@@ -1,5 +1,6 @@
 /**
  * Accessibility
+ *   - same as bootstrap/scss/mixins/_screen_reader.scss
  */
 @mixin sr-only {
   border: 0;
@@ -23,5 +24,23 @@
     overflow: visible;
     position: static;
     width: auto;
+  }
+}
+
+
+// Sizing shortcut from bootstrap/scss/mixins/_size.scss
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// From bootstrap/scss/mixins/_clearfix.scss
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
   }
 }

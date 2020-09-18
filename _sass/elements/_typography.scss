@@ -85,7 +85,9 @@ map-get($font-family, body);
   }
 
   .quote-tmb {
-    @include position(absolute, null -24px -34px null);
+    position: absolute;
+    right: -24px;
+    bottom: -34px;
     border-radius: 100px;
     display: block;
   }
