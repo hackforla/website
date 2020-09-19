@@ -1,7 +1,7 @@
 ---
 identification: '288594239'
 title: BallotNav
-description: BallotNav aims to support absentee voters who are concerned about the present reliability of the USPS by addressing limitations caused by conflicting information from the media, hard to navigate government websites, and statewide regulations, with an efficient way to get accurate information about where, when and how to deliver your ballot in person.<br><br>This will take dedicated partners across the country to keep this resource up to date by daily monitoring of Secretary of State and county registrar websites across all 50 states and 3,007 counties through November 3rd (X number of days left). The end result will be a clear path to action for those who need it most.<br><br>This task is nearly impossible, but no one is coming. It’s up to us to save our democracy, and we can do it.
+description: BallotNav will help voters quickly find the location, times of operation, and due date for dropping off mail-in ballots in person. Due to COVID-19 and cuts to the United States Postal Service, some voters may feel insecure not only about going out to the polls, but also about utilizing the mail to cast their vote. While it is possible to drop off your mail-in ballot in person, the rules for doing so are not clearly outlined in one single location. Information is scattered across state and county websites, each of which may individually fail to provide one or more elements of crucial information, such as available ballot drop-off times. The BallotNav project will collect this data through a network of brigade partnerships and update it accordingly leading up to November’s election.<br><br>BallotNav’s overall goal is to provide information that helps voters cast their ballots safely and correctly, and avoid accidental disenfranchisement.
 image: /assets/images/projects/ballot-nav.png
 alt: 'Person holding phone with ballot nav website on it.'
 image-hero: /assets/images/projects/ballot-nav-hero.png
@@ -23,14 +23,18 @@ links:
   - name: Readme
     url:  'https://github.com/hackforla/ballotnav/blob/master/README.md'
 looking: 
+  - category: SEO/Marketing
+    skill: Marketing, PR & Partnerships
+  - category: SEO/Marketing
+    skill: Fundraising
+  - category: Development
+    skill: Software Developers
   - category: Data
-    skill: Data Scientist
-  - category: UI/UX
-    skill: UX Researcher
-  - category: UI/UX
-    skill: UI Designer
+    skill: Data Scientists
   - category: Content
-    skill: Anyone who wants to help validate website data!
+    skill: Translators (Spanish especially)
+  - category: Content
+    skill: "Community Data Monitors: We need an army of people to collect information about drop-off sites for 3,000 counties, and remain on-call to update it when changes occur."
 location: 
   - Remote
 partner: Code for America, Other Brigades
