@@ -161,6 +161,10 @@
 .toolkit-info-container {
     padding: 2rem;
     padding-bottom: 5rem;
+
+    a {
+        font-size: 1.5rem;
+    }
     @media only screen and (max-width: 500px) {
         padding: 0rem;
     }
