@@ -116,16 +116,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 1.4rem;
 
-    @media only screen and (max-width: 1150px) {
-        flex-direction: column;
-    }
 }
 
 .outer-link {
+    width: 30px;
     display: flex;
     align-self: flex-end;
-    padding: 0;
 }
 
 .toolkit-flex-item {
@@ -293,6 +291,13 @@
     padding: 1.5rem;
     margin: 1.5rem;
 
+    min-width: 33em;
+    flex-grow: 0;
+
+    @media #{$bp-below-mobile} {
+        min-width: auto;
+    }
+
     @media only screen and (max-width: 600px) {
         height: 30rem;
     }
@@ -305,14 +310,20 @@
     line-height: 1.5rem;
     text-decoration-line: underline;
     width: fit-content; //ADDED THIS LINE
+    margin-bottom: -1rem;
     /* Accent Color */
     color: #FA114F;
+
+    @media #{$bp-below-mobile} {
+        margin-bottom: .95rem;
+    }
 }
 
 .toolkit-resource-text {
     font-style: normal;
     font-weight: normal;
     font-size: 1.2rem;
+    text-align: left !important;
     
     color: #333333;
 }
@@ -327,7 +338,16 @@
     width: 164px;
     margin: auto auto;
     display: flex;
+    margin-bottom: 8rem;
+
+    @media #{$bp-below-mobile} {
+        margin-bottom: 3rem;
+    }
 }
 .svg-container svg{
-    width: 100%
+    width: 125%
+}
+
+.toolkit-button {
+    margin: 5px 0px;
 }
