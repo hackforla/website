@@ -96,9 +96,9 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 {%- endif -%}
 
                 {%- if item.title -%}
-                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}">{{ item.title }}</a></h3>
+                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
                 <p class="toolkit-resource-text">{{ item.description }}</p>
-                <a href="{{item.provider-link}}" class="outer-link" target="blank">
+                <a href="{{item.provider-link}}" class="outer-link" target="_blank">
                     {% include {{ item.link-svg }} %}
                 </a>
                 {%- endif -%}
