@@ -32,6 +32,10 @@
         font-weight: normal;
         font-size: 1.7rem;
         line-height: 2rem;
+        @media only screen and (max-width: 400px){
+            font-size: 1.1rem;
+        }
+
     }
 
     &__hero-image {
@@ -153,7 +157,7 @@
 
     @media only screen and (max-width: 400px) {
         width: 20rem;
-        height: 35rem;
+        height: 40rem;
         padding: 2rem;
     }
 }
@@ -167,6 +171,12 @@
     }
     @media only screen and (max-width: 500px) {
         padding: 0rem;
+    }
+
+    @media only screen and (max-width: 400px){
+        p {
+            font-size: 1rem;
+        }
     }
 }
 
