@@ -183,6 +183,7 @@
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 1.2rem;
+    text-align: left;
 
     @media only screen and (max-width: 500px) {
         font-size: 1rem;
@@ -263,6 +264,10 @@
     max-width: 13rem;
     max-height: 25rem;
     margin: auto;
+}
+
+.not-clickable {
+    color: $color-red;
 }
 
 .toolkit-flex-item-resource {
