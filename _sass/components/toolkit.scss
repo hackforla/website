@@ -1,26 +1,42 @@
 .toolkit-header {
     padding-top: 10rem; 
     padding-bottom: 10rem;
-}
 
-.toolkit-header-h2 {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 59px;
-    line-height: 69px;
-    align-items: center;
-    text-align: center;
-}
+    &__text-group {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        padding-left: 30rem; 
+        padding-right: 30rem; 
+        text-align: center;
 
-.toolkit-header-p {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 27px;
-    line-height: 32px;
-}
+        @media only screen and (max-width: 1300px){
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: space-evenly;
+        }
 
-.toolkit-hero-image-container {
-    max-width: 100%;
+    }
+    
+    &__h2 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 3.7rem;
+        line-height: 4.3rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    &__p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+
+    &__hero-image {
+        max-width: 100%;
+    }
 }
 
 .toolkit-svg {
@@ -31,6 +47,7 @@
 .toolkit-background {
     background-color: #030D2D;
     padding: 2rem;
+    margin-bottom: 3rem;
 }
 
 .toolkit-section-container-h5 {
@@ -61,46 +78,237 @@
     text-align: left;
 }
 
-@media #{$bp-below-tablet} {
-    .toolkit-header-h2 {
-        font-size: 49px;
-        line-height: 59px;
+.suggest-guide-group {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    padding-left: 3rem; 
+    padding-right: 3rem; 
+    text-align: center;
+
+    @media only screen and (max-width: 600px){
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}
+
+.suggest-guide-group h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.toolkit-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.resource-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 1150px) {
+        flex-direction: column;
+    }
+}
+
+.outer-link {
+    display: flex;
+    align-self: flex-end;
+    padding: 0;
+}
+
+.toolkit-flex-item {
+    flex-basis: 25%;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+    margin: 1.2rem;
+    position: relative;
+
+    @media only screen and (max-width: 1200px) {
+        flex-basis: 13%; 
+        margin: 1rem;
     }
 
-    .toolkit-svg {
-        width: 85%;
-        height: 85%;
-    }
-    
-    .toolkit-header-p {
-        font-size: 17px;
-        line-height: 22px;
-    }
-
-    .toolkit-section-container-h5 {
+    @media only screen and (max-width: 800px) {
+        //flex: 1;
         text-align: center;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .toolkit-section-container-li {
-        text-align: left;
-        padding: 0.5rem;
+        width: 30rem;
+        height: 40rem;
     }
 
-    .toolkit-resources-h5 {
-        padding-top: 2rem;
-        text-align: left;
-        font-size: 20px;
-        line-height: 25px;
-    }
-    
-    .toolkit-resources-li {
-        text-align: left;
-        padding: 0.5rem;
+    @media only screen and (max-width: 500px) {
+        width: 15rem;
+        text-align: center;
+        padding: .5rem;
     }
 
+    @media only screen and (max-width: 400px) {
+        width: 20rem;
+        height: 35rem;
+        padding: 2rem;
+    }
+}
+
+.toolkit-info-container {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    @media only screen and (max-width: 500px) {
+        padding: 0rem;
+    }
+}
+
+
+.toolkit-image-container svg {
+    @media only screen and (max-width: 800px) {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+.section-container p {
+    margin: auto;
+}
+
+.toolkit-flex-item-header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 1rem;
+    }
+}
+
+.section-container p {
+    @media only screen and (max-width: 800px) {
+        width: 20rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+        width: 15rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+.toolkit-flex-item-p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.1rem;
+    position: inherit;
+
+    @media only screen and (max-width: 800px) {
+        column-count: 1;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        column-count: 1;
+        padding: 1rem;
+        font-size: .7rem;
+    }
+}
+
+.toolkit-status-text {
+    position: absolute;
+    padding-right: 1rem;
+    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+    bottom: 1rem;
+    left: 65%;
+    padding-top: 20rem;
+    padding-bottom: 0rem;
+    color: #333333;
+
+    @media only screen and (max-width: 800px) {
+        left: 35%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        left: 30%;
+    }
+
+    @media only screen and (max-width: 500px) {
+        left: 25%;
+        padding-top: 1rem;
+        font-size: 1.1rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        left: 35%;
+        font-size: 1rem;
+    }
+}
+
+.toolkit-image {
+    display: inline-block;
+    max-width: 13rem;
+    max-height: 25rem;
+    margin: auto;
+}
+
+.toolkit-flex-item-resource {
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    height: 40rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+
+    @media only screen and (max-width: 600px) {
+        height: 30rem;
+    }
+}
+
+.toolkit-resource-header {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1,5rem;
+    line-height: 1.5rem;
+    text-decoration-line: underline;
+    width: fit-content; //ADDED THIS LINE
+    /* Accent Color */
+    color: #FA114F;
+}
+
+.toolkit-resource-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    
+    color: #333333;
+}
+
+.toolkit__external-resources {
+    padding-top: 10rem;
+    padding-bottom: 50rem;
+}
+
+.svg-container {
+    height: 164px;
+    width: 164px;
+    margin: auto auto;
+    display: flex;
+}
+.svg-container svg{
+    width: 100%
 }

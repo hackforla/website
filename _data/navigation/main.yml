@@ -1,7 +1,7 @@
-- name: Hack Nights
-  link: "/#hack-nights"
+- name: Toolkit
+  link: toolkit.html
   list_class_name:
-  icon: /svg/icon-hacknights.svg
+  icon: /svg/icon-wrench.svg
 
 - name: Projects
   link: "/#projects"
@@ -17,6 +17,7 @@
   link: "/#about"
   list_class_name:
   icon: /svg/icon-about.svg
+
 # - name: Contact Us
 #   link: "/#contact"
 #   list_class_name: hide-mobile
