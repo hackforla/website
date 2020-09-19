@@ -39,7 +39,7 @@ links:
   - name: BOP Github
     url: "https://github.com/codeforamerica/brigade-playbook"
   - name: BOP CfA Slack
-    url: "https://cfa.slack.com/archives/G0196272BBN"
+    url: "https://cfa.slack.com/archives/C019RCM15FE"
 looking:
   - category: UI/UX
     skill: UI designer (brand building)
