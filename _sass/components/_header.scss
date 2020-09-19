@@ -50,11 +50,12 @@
 
   .branding {
     position: absolute;
-    top: -23px;
-    left: -23px;
+    top: -24px;
+    left: -20px;
 
     @media #{$bp-tablet-up} {
-      left: -20px;
+      height: 150px;
+      width: 150px;
     }
   }
 
@@ -79,3 +80,29 @@
   background-color: $color-red;
 }
 
+@media #{$bp-below-tablet} {
+  // HFLA logo setting for mobile
+  .main-header {
+    position: fixed;
+    padding: 7px;
+  }
+
+  // Make the donate button smaller for mobile
+  .btn-donate {
+    padding: 5px 25px;
+    font-size: .75rem;
+    font-weight: 500;
+    height: 30px;
+    margin-top: 6px;
+    line-height: 0;
+  }
+
+  // style the HFLA logo for mobile
+  .main-header .branding {
+    position: absolute;
+    top: -13px;
+    left: -18px;
+    height: 50px;
+    width: 95px;
+  }
+}
