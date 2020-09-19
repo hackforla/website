@@ -32,6 +32,10 @@
         font-weight: normal;
         font-size: 1.7rem;
         line-height: 2rem;
+        @media only screen and (max-width: 400px){
+            font-size: 1.1rem;
+        }
+
     }
 
     &__hero-image {
@@ -153,7 +157,7 @@
 
     @media only screen and (max-width: 400px) {
         width: 20rem;
-        height: 35rem;
+        height: 40rem;
         padding: 2rem;
     }
 }
@@ -161,8 +165,18 @@
 .toolkit-info-container {
     padding: 2rem;
     padding-bottom: 5rem;
+
+    a {
+        font-size: 1.5rem;
+    }
     @media only screen and (max-width: 500px) {
         padding: 0rem;
+    }
+
+    @media only screen and (max-width: 400px){
+        p {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -183,6 +197,7 @@
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 1.2rem;
+    text-align: left;
 
     @media only screen and (max-width: 500px) {
         font-size: 1rem;
@@ -263,6 +278,10 @@
     max-width: 13rem;
     max-height: 25rem;
     margin: auto;
+}
+
+.not-clickable {
+    color: $color-red;
 }
 
 .toolkit-flex-item-resource {
