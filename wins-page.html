@@ -7,9 +7,6 @@ title: Wins
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
 
-  <!-- <div class=" filter-toolbar" style="text-align: center;">
-    <ul class="filter-list" id="filter-list"></ul>
-  </div> -->
   <div class="wins-page-contain projects-inner" style="clear: left;">
     <ul id="responses" class="project-list unstyled-list">
 
@@ -37,17 +34,19 @@ title: Wins
 			p.innerHTML = "No one has shared a win yet...be the first!";
 		}
 	}
-	const sheetId = '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg';
-	//josh's api key
-	const apiKey = 'AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU';
+	// const sheetId = '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg';
+	// //josh's api key
+	// const apiKey = 'AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU';
 
-	//bonnie's api key
-	//const apiKey = 'AIzaSyAoOlBfPvQ_bEk_rUoT6Sg4wAml7F8-Yus';
+	// fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Responses?key=${apiKey}`)
+	// 			.then(response => response.json())
+	// 			.then(data => makeCards(data.values))
+	// 			.then(() => ifPageEmpty());
 
-	fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Responses?key=${apiKey}`)
-				.then(response => response.json())
-				.then(data => makeCards(data.values))
-				.then(() => ifPageEmpty());
+	{% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+    let localData = {{ localData }};
+	let data = localData.values
+	makeCards(data);
 
 	function makeElement (elementType, parent, className){
 	let child = document.createElement(elementType);
