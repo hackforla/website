@@ -119,7 +119,11 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    padding: 1.5rem;
+
+    @media #{$bp-below-mobile} {
+        justify-content: center;
+    }
 }
 
 .resource-container {
@@ -141,9 +145,9 @@
     padding-left: 0rem;
     padding-right: 0rem;
     padding-top: 0rem;
-    margin: 1.2rem;
+    margin: 1.2rem 1.3rem;
     position: relative;
-    min-width: 31rem;
+    min-width: 34rem;
     padding-bottom: 0;
 
     @media #{$bp-below-mobile} {
@@ -155,41 +159,25 @@
         margin: 1rem;
     }
 
-    @media only screen and (max-width: 800px) {
-        //flex: 1;
-        text-align: center;
-        width: 30rem;
-        height: 40rem;
-    }
-
-    @media only screen and (max-width: 500px) {
-        width: 15rem;
-        text-align: center;
-        padding: .5rem;
-    }
-
-    @media only screen and (max-width: 400px) {
-        width: 20rem;
-        height: 40rem;
-        padding: 2rem;
-    }
 }
 
 .toolkit-info-container {
-    padding: 2rem;
-    padding-bottom: 5rem;
+    padding: 1rem 2rem 5rem 2rem;
 
-    a {
+    h3 {
         font-size: 1.5rem;
-    }
-    @media only screen and (max-width: 500px) {
-        padding: 0rem;
+        margin-bottom: 3rem;
+        line-height: 1.75rem;
+
+        @media #{$bp-below-mobile} {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5rem;
+        }
     }
 
-    @media only screen and (max-width: 400px){
-        p {
-            font-size: 1rem;
-        }
+    @media #{$bp-below-mobile} {
+        padding: 2rem;
     }
 }
 
@@ -211,6 +199,7 @@
     font-size: 1.2rem;
     line-height: 1.2rem;
     text-align: left;
+    color: #FA114F;
 
     @media only screen and (max-width: 500px) {
         font-size: 1rem;
@@ -235,43 +224,28 @@
     font-style: normal;
     font-weight: normal;
     font-size: 1rem;
-    text-align: center;
+    text-align: left !important;
     line-height: 1.1rem;
     position: inherit;
 
-    @media only screen and (max-width: 800px) {
-        column-count: 1;
-        padding: 2rem;
-        text-align: center;
-    }
-
-    @media only screen and (max-width: 500px) {
-        column-count: 1;
-        padding: 1rem;
-        font-size: .7rem;
+    @media #{$bp-below-mobile} {
+        padding: 0rem !important;
     }
 }
 
 .toolkit-status-text {
     position: absolute;
-    padding-right: 1rem;
-    text-align: right;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.2rem;
     bottom: 1rem;
-    left: 65%;
-    padding-top: 20rem;
-    padding-bottom: 0rem;
+    left: 69%;
     color: #333333;
 
-    @media only screen and (max-width: 800px) {
-        left: 35%;
-    }
-
-    @media only screen and (max-width: 600px) {
-        left: 30%;
+    @media #{$bp-below-mobile} {
+        width: fit-content !important;
+        float: right;
+        position: inherit;
+        padding: 1rem 0rem !important;
     }
 
     @media only screen and (max-width: 500px) {
@@ -291,10 +265,6 @@
     max-width: 13rem;
     max-height: 25rem;
     margin: auto;
-}
-
-.not-clickable {
-    color: $color-red;
 }
 
 .toolkit-flex-item-resource {
