@@ -144,9 +144,12 @@
 
 .resource-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     padding: 1.4rem;
+
+    @media #{$bp-below-mobile} {
+        justify-content: center;
+    }
 
 }
 
