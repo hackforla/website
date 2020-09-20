@@ -133,9 +133,14 @@
     padding-left: 0rem;
     padding-right: 0rem;
     padding-top: 0rem;
-    padding-bottom: 5rem;
     margin: 1.2rem;
     position: relative;
+    min-width: 31rem;
+    padding-bottom: 0;
+
+    @media #{$bp-below-mobile} {
+        min-width: auto;
+      }
 
     @media only screen and (max-width: 1200px) {
         flex-basis: 13%; 
