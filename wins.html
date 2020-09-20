@@ -25,6 +25,7 @@ title: Wins
 		}
 		return str;
 	}
+
 	function ifPageEmpty(){
 		if (document.querySelectorAll('.wins-card').length == 0){
 			const page = document.querySelector('.wins-page-contain');
@@ -34,31 +35,18 @@ title: Wins
 			p.innerHTML = "No one has shared a win yet...be the first!";
 		}
 	}
-	// const sheetId = '1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg';
-	// //josh's api key
-	// const apiKey = 'AIzaSyBoxkYpxtcUk6b3wiZQ62N17x_C3s0BTKU';
-
-	// fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Responses?key=${apiKey}`)
-	// 			.then(response => response.json())
-	// 			.then(data => makeCards(data.values))
-	// 			.then(() => ifPageEmpty());
-
-	{% assign localData = site.data.wins-data | jsonify %}
-    let localData = {{ localData }};
-	let data = localData.values
-	makeCards(data);
 
 	function makeElement (elementType, parent, className){
-	let child = document.createElement(elementType);
-	child.classList.add(className);
-	parent.appendChild(child);
-	return child;
+		let child = document.createElement(elementType);
+		child.classList.add(className);
+		parent.appendChild(child);
+		return child;
 	}
 	function makeIcon (href, parent, className, src){
-	let icon = makeElement('a', parent, 'wins-card-icon');
-	icon.setAttribute("href", href);
-	let iconImg = makeElement('img', icon, className);
-	iconImg.setAttribute("src", src);
+		let icon = makeElement('a', parent, 'wins-card-icon');
+		icon.setAttribute("href", href);
+		let iconImg = makeElement('img', icon, className);
+		iconImg.setAttribute("src", src);
 	}
 	function makeCards(data){
 	const list = document.querySelector('#responses');
@@ -108,5 +96,15 @@ title: Wins
 		}
 	}
 	}
+	function main(){
+		{% assign localData = site.data.wins-data | jsonify %}
+		let localData = {{ localData }};
+		let data = localData.values
+		makeCards(data);
+		ifPageEmpty();
+	}
+
+	main();
+
 </script>
 
