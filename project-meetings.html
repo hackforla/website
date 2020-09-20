@@ -7,7 +7,7 @@ title: Project Meetings
     <div class='project-meetings-header-text-container'>
         <h1 class='team-meetings-title'>Project Team Meetings</h1>
         <p>Please review the listing of project team meeting times to find a project that fits your schedule.
-            You are welcome to attend a project team meeting after you have completed <a href='https://www.hackforla.org/getting-started'>Onboarding</a>.
+            You are welcome to attend a project team meeting after you have completed <a href='/getting-started'>Onboarding</a>.
             Details about a team's meeting can be obtained in each team's slack channel.
         </p>
         <!--<img src="./assets/images/project-meetings-page/project-meetings-banner-image.png" alt="project meetings banner image">-->
@@ -18,6 +18,7 @@ title: Project Meetings
 </div>
 <div class='content-section calendar-started-page'>
     <div class='calendar-page-card'>
+        <div id="userTimeZone" class='userTimeZone'></div>
         <div id="Monday">
             <h3 class='day-header'>Monday</h3>
             <ul id="Monday-List" class="schedule-list"></ul>
@@ -52,7 +53,7 @@ title: Project Meetings
 
 <script>
     // Assigns local JSON Data to localData variable
-    {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+    {% assign localData = site.data.vrms_data | jsonify %}
     let localData = {{ localData }};
 
     const API_URL = 'https://www.vrms.io/api/recurringevents';
@@ -266,8 +267,10 @@ title: Project Meetings
             minutes = minutes + "0";
         }
 
-        if (hours < 12) {
+        if (hours < 12 && hours !== 0) {
             return `${hours}:${minutes} am`;
+        } else if (hours === 0) {
+            return `12:${minutes} am`;    
         } else if (hours > 12) {
             hours = hours - 12;
             return `${hours}:${minutes} pm`;
@@ -278,4 +281,21 @@ title: Project Meetings
         }
 
     }
+
+    /* Show user's time zone */
+
+    // Initialize variables and set defaults
+    let userTimeZone = undefined;
+    let timeZoneOutput = "All times listed in your local time zone.";
+
+    // Get user time zone
+    userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // If userTimeZone exists, add it to the text
+    if (userTimeZone) {
+        timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
+    }
+    
+    // Display time zone on page
+    document.getElementById("userTimeZone").insertAdjacentHTML('afterbegin', timeZoneOutput);
 </script>
