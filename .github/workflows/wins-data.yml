@@ -1,9 +1,9 @@
 name: Update wins data
 
-# Run this action every day at 2am Pacific (10 am UTC)
-on: push
-  # schedule:
-  #   - cron: '0 10 * * *'
+# Run this action every day at 4am Pacific (12 am UTC)
+on:
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   vrms_data:
