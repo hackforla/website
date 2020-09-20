@@ -43,7 +43,7 @@ title: Wins
 	// 			.then(data => makeCards(data.values))
 	// 			.then(() => ifPageEmpty());
 
-	{% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+	{% assign localData = site.data.wins-data | jsonify %}
     let localData = {{ localData }};
 	let data = localData.values
 	makeCards(data);
