@@ -2,6 +2,10 @@
     padding-top: 10rem; 
     padding-bottom: 10rem;
 
+    @media only screen and (max-width: 1200px) {
+        padding-bottom: 3rem;
+    }
+
     &__text-group {
         display: flex; 
         flex-wrap: wrap; 
@@ -42,6 +46,14 @@
         font-weight: normal;
         font-size: 1.7rem;
         line-height: 2rem;
+        max-width: 60vw;
+        margin: 3rem auto;
+        text-align: left;
+
+        @media only screen and (max-width: 1200px){
+            max-width: 70vw;
+        }
+
         @media only screen and (max-width: 400px){
             font-size: 1.1rem;
         }
@@ -54,8 +66,12 @@
 }
 
 .toolkit-svg {
-    width: 60%;
+    width: 45%;
     height: 60%;
+
+    @media only screen and (max-width: 1200px) {
+        width: 75%;
+    }
 }
 
 .toolkit-background {
