@@ -236,6 +236,7 @@ title: Hack Nights
           </div>
         </div>
         <div class="days-display-1">
+          <div id="userTimeZone" class='userTimeZone'></div>
           <div id="Monday">
             <h3 class="day-header-1" style="font-size: 1.6rem">Monday</h3>
             <ul id="Monday-List" class="schedule-list-1"></ul>
@@ -784,7 +785,7 @@ title: Hack Nights
 
 
   // Assigns local JSON Data to localData variable
-  {% assign localData = site.data.project-meetings-from-vrms | jsonify %}
+  {% assign localData = site.data.vrms_data | jsonify %}
   let localData = {{ localData }};
 
   const API_URL = 'https://www.vrms.io/api/recurringevents';
@@ -998,8 +999,10 @@ title: Hack Nights
           minutes = minutes + "0";
       }
 
-      if (hours < 12) {
+      if (hours < 12 && hours !== 0 ) {
           return `${hours}:${minutes} am`;
+      } else if (hours === 0) {
+          return `12:${minutes} am`;
       } else if (hours > 12) {
           hours = hours - 12;
           return `${hours}:${minutes} pm`;
@@ -1008,6 +1011,21 @@ title: Hack Nights
       } else {
           return `${hours}:${minutes} am`;
       }
-
   }
+  /* Show user's time zone */
+
+  // Initialize variables and set defaults
+  let userTimeZone = undefined;
+  let timeZoneOutput = "All times listed in your local time zone.";
+
+  // Get user time zone
+  userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // If userTimeZone exists, add it to the text
+  if (userTimeZone) {
+      timeZoneOutput = `Times are in your local time zone: ${userTimeZone}`;
+  }
+
+  // Display time zone on page
+  document.getElementById("userTimeZone").insertAdjacentHTML('afterbegin', timeZoneOutput);
 </script>
