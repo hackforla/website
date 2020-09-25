@@ -4,35 +4,27 @@
 	padding: 50px;
 	display: flex;
 	flex-direction: row;
-  }
-  .wins-card-left{
+}
+.wins-card-left{
 	width: 100px;
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
-  }
-  .wins-card-profile-img{
+}
+.wins-card-profile-img{
 	width: 100px;
 	height: 100px;
 	border-radius: 100px;
-	// object-fit: cover;
-	// object-position: top;
-  }
-  .wins-card-big-quote{
+}
+.wins-card-big-quote{
 	width: 28px;
 	height: 96.05px;
-	font-family: Rift Soft;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 80px;
-	line-height: 96px;
-	color: #BDBDBD;
 	margin: 8px;
-  }
-  .wins-card-content{
+}
+.wins-card-content{
 	margin-left: 20px;
 	width: 100%;
-  }
+}
 .wins-page-contain{
 	margin:0 auto;
 	max-width: 1292px;
@@ -60,23 +52,22 @@
 .wins-card-top{
 	display: flex;
 	justify-content: space-between;
-  }
-  .wins-card-icon{
+}
+.wins-card-icon{
 	margin-left: 18px;
-  }
+}
 
-  .wins-card-info{
+.wins-card-info{
 	margin-top: 50px;
 	font-weight: bold;
-  }
+}
 
-  .wins-card-overview{
+.wins-card-overview{
 	margin-top: 1em;
-  }
+}
 
 //Hero styling
 .wins-hero{
-	//padding-top: 60px;
 	margin-top: 40px;
 	display: flex;
 	flex-direction: row;
@@ -111,6 +102,7 @@
 			font-size: 18.5px;
 		}
 	}
+
 }
 
 @media #{$bp-below-mobile} {
@@ -131,6 +123,56 @@
 			font-size: 12px;
 			line-height: 14px;
 		}
+	}
+
+	.wins-card{
+		padding: 24px;
+	}
+	.wins-card-left{
+		width: 50px;
+	}
+	.wins-card-profile-img{
+		width: 50px;
+		height: 50px;
+		border-radius: 100px;
+	}
+	.wins-card-big-quote{
+		margin: 4px;
+		height: 60px;
+		width: 18px;
+	}
+	.wins-card-content{
+		margin-left: 6px;
+	}
+
+	.wins-card-name{
+		font-size: 19px;
+		line-height: 22px;
+		margin: 0;
+		padding-top: 5px;
+	}
+	.wins-card-team{
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.wins-card-icon{
+		margin-left: 13.5px;
+	}
+	.github-icon{
+		height: 20px;
+		width: 20px;
+	}
+	.linkedin-icon{
+		height: 20px;
+		width: 20px;
+	}
+	.wins-card-info{
+		margin-top: 15px;
+	}
+
+	.wins-card-overview{
+		margin-top: 0;
+		font-size: 16px;
 	}
 }
 
