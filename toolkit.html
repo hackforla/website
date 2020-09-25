@@ -69,10 +69,10 @@ Here you can find, share, and suggest tools that are of use to the open source c
                     <p class="toolkit-flex-item-p">{{ item.description }}</p>
                     {%- endif -%}
 
-                    {%- if item.status == 'coming-soon' -%}
-                    <p class="toolkit-status-text">coming soon</p>
-                    {%- endif -%}
                 </div>
+                {%- if item.status == 'coming-soon' -%}
+                    <p class="toolkit-status-text">coming soon</p>
+                {%- endif -%}
             </div>
         {%- endif -%}
         {%- endfor -%}

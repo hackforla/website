@@ -72,7 +72,7 @@
     text-align: left;
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 3.7rem;
     line-height: 35px;
     display: flex;
     align-items: center;
@@ -133,33 +133,15 @@
     padding-left: 0rem;
     padding-right: 0rem;
     padding-top: 0rem;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
     margin: 1.2rem;
     position: relative;
 
-    @media only screen and (max-width: 1200px) {
-        flex-basis: 13%; 
-        margin: 1rem;
-    }
-
-    @media only screen and (max-width: 800px) {
-        //flex: 1;
-        text-align: center;
-        width: 30rem;
-        height: 40rem;
-    }
-
     @media only screen and (max-width: 500px) {
-        width: 15rem;
-        text-align: center;
-        padding: .5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    @media only screen and (max-width: 400px) {
-        width: 20rem;
-        height: 40rem;
-        padding: 2rem;
-    }
 }
 
 .toolkit-info-container {
@@ -182,6 +164,8 @@
 
 
 .toolkit-image-container svg {
+    width: 100% !important;
+
     @media only screen and (max-width: 800px) {
         flex: 1;
         width: 100%;
@@ -195,7 +179,7 @@
 .toolkit-flex-item-header {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.2rem;
     text-align: left;
 
@@ -239,38 +223,21 @@
     }
 }
 
+.not-clickable {
+    color: black !important;
+}
+
 .toolkit-status-text {
-    position: absolute;
-    padding-right: 1rem;
-    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    right: 100%;
     font-style: normal;
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 1.2rem;
-    bottom: 1rem;
-    left: 65%;
-    padding-top: 20rem;
-    padding-bottom: 0rem;
     color: #333333;
-
-    @media only screen and (max-width: 800px) {
-        left: 35%;
-    }
-
-    @media only screen and (max-width: 600px) {
-        left: 30%;
-    }
-
-    @media only screen and (max-width: 500px) {
-        left: 25%;
-        padding-top: 1rem;
-        font-size: 1.1rem;
-    }
-
-    @media only screen and (max-width: 400px) {
-        left: 35%;
-        font-size: 1rem;
-    }
+    padding-right: 20px;
 }
 
 .toolkit-image {
@@ -287,21 +254,28 @@
 .toolkit-flex-item-resource {
     display: flex;
     position: relative;
-    flex: 1;
+    flex-basis: 23%;
     flex-direction: column;
     height: 40rem;
     padding: 1.5rem;
-    margin: 1.5rem;
+    margin: 1.2rem !important;
+    justify-content: center;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
         height: 30rem;
+        margin: 9rem !important;
+    }
+
+    @media only screen and (max-width: 680px) {
+        height: 30rem;
+        margin: 4rem !important;
     }
 }
 
 .toolkit-resource-header {
     font-style: normal;
     font-weight: normal;
-    font-size: 1,5rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
     text-decoration-line: underline;
     width: fit-content; //ADDED THIS LINE
@@ -312,7 +286,7 @@
 .toolkit-resource-text {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1rem;
     
     color: #333333;
 }
@@ -329,5 +303,5 @@
     display: flex;
 }
 .svg-container svg{
-    width: 100%
+    width: 100%;
 }
