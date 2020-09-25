@@ -13,9 +13,9 @@ Here you can find, share, and suggest tools that are of use to the open source c
 </div>
 
 <div class="toolkit-header__text-group">
-    <h3>Development</h3>
-    <h3>Design</h3>
-    <h3>Project Management</h3>
+    <h3 class="toolkit-header__h3">Development</h3>
+    <h3 class="toolkit-header__h3">Design</h3>
+    <h3 class="toolkit-header__h3">Project Management</h3>
 </div>
 
 <div class="toolkit-background content-section">
@@ -28,7 +28,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
         {%- for item in site.guide-pages -%}
         {%- if item.status == 'active' -%}
 
-            <div class="toolkit-flex-item section-container">
+            <div class="toolkit-flex-item section-container toolkit-section-container">
             
                 {%- if item.svg -%}
                 <div class="toolkit-image-container">
@@ -52,7 +52,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
         {%- for item in site.guide-pages -%}
         {%- if item.status == 'coming-soon' -%}
-            <div class="toolkit-flex-item section-container">
+            <div class="toolkit-flex-item toolkit-section-container">
             
                 {%- if item.svg -%}
                 <div class="toolkit-image-container">
@@ -62,7 +62,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
                 <div class="toolkit-info-container">
                     {%- if item.title -%}
-                    <h3 class="toolkit-flex-item-header not-clickable">{{ item.title }}</h3>
+                    <h3 class="toolkit-flex-item-header">{{ item.title }}</h3>
                     {%- endif -%}
 
                     {%- if item.description -%}
@@ -87,7 +87,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
             <!-- Searching through toolkitResources collection -->
             {%- for item in site.toolkitResources -%}
             {%- if item.display ==  true -%}
-            <div class="toolkit-flex-item-resource section-container">
+            <div class="toolkit-flex-item-resource toolkit-section-container">
 
                 {%- if item.svg -%}
                 <div class="svg-container">
@@ -96,9 +96,9 @@ Here you can find, share, and suggest tools that are of use to the open source c
                 {%- endif -%}
 
                 {%- if item.title -%}
-                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}">{{ item.title }}</a></h3>
+                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
                 <p class="toolkit-resource-text">{{ item.description }}</p>
-                <a href="{{item.provider-link}}" class="outer-link" target="blank">
+                <a href="{{item.provider-link}}" class="outer-link" target="_blank">
                     {% include {{ item.link-svg }} %}
                 </a>
                 {%- endif -%}
