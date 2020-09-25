@@ -7,25 +7,7 @@
     margin: 0px;
   }
 }
-/*
-.header-container-hacknights {
-  background: #fff;
-  padding: 8px;
-  height: fit-content;
-  font-family: "Roboto" sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  margin: 8%;
 
-  @media #{$bp-below-tablet} {
-    padding: 0;
-    flex-direction: column;
-    margin-top: 96px;
-    font-size: 16px;
-  }
-}
-*/
 .hacknights--header-container {
   padding: 6rem 6rem 5rem 8rem;
 }
@@ -83,6 +65,7 @@
 #head-content::before {
   content: "\226A";
   float: left;
+  // transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
   color: #000000;
   font-weight: normal;
