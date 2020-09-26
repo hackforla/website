@@ -135,7 +135,8 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 1.5rem;
+    justify-content: center;
+    // padding: 1.5rem;
 
     @media #{$bp-below-mobile} {
         justify-content: center;
@@ -145,6 +146,7 @@
 .resource-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 1.4rem;
 
     @media #{$bp-below-mobile} {
@@ -259,30 +261,17 @@
 }
 
 .toolkit-status-text {
-    position: absolute;
-    font-size: 1.6rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    right: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
     line-height: 1.2rem;
-    bottom: 1rem;
-    left: 69%;
     color: #333333;
-
-    @media #{$bp-below-mobile} {
-        width: fit-content !important;
-        float: right;
-        position: inherit;
-        padding: 1rem 0rem !important;
-    }
-
-    @media only screen and (max-width: 500px) {
-        left: 25%;
-        padding-top: 1rem;
-        font-size: 1.1rem;
-    }
-
-    @media only screen and (max-width: 400px) {
-        left: 35%;
-        font-size: 1rem;
-    }
+    padding-right: 1rem;
+    padding-bottom: 1rem;;
 }
 
 .toolkit-image {

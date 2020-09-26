@@ -52,7 +52,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
         {%- for item in site.guide-pages -%}
         {%- if item.status == 'coming-soon' -%}
-            <div class="toolkit-flex-item toolkit-section-container">
+            <div class="toolkit-flex-item section-container toolkit-section-container">
             
                 {%- if item.svg -%}
                 <div class="toolkit-image-container">
@@ -62,7 +62,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
                 <div class="toolkit-info-container">
                     {%- if item.title -%}
-                    <h3 class="toolkit-flex-item-header">{{ item.title }}</h3>
+                    <h3 class="toolkit-flex-item-header not-clickable">{{ item.title }}</h3>
                     {%- endif -%}
 
                     {%- if item.description -%}
@@ -87,7 +87,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
             <!-- Searching through toolkitResources collection -->
             {%- for item in site.toolkitResources -%}
             {%- if item.display ==  true -%}
-            <div class="toolkit-flex-item-resource toolkit-section-container">
+            <div class="toolkit-flex-item-resource section-container toolkit-section-container">
 
                 {%- if item.svg -%}
                 <div class="svg-container">
