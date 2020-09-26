@@ -134,6 +134,7 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding-left: 2rem;
     padding-right: 2rem;
 
@@ -146,11 +147,8 @@
 .resource-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 1.4rem;
-
-    @media only screen and (max-width: 800px) {
-        justify-content: center;
-    }
 
 }
 
@@ -165,9 +163,9 @@
     padding-left: 0rem;
     padding-right: 0rem;
     padding-top: 0rem;
-    margin: 1.2rem 1rem;
+    margin: 1.2rem 0rem;
     position: relative;
-    min-width: 33rem;
+    min-width: 38rem;
     padding-bottom: 0;
 
     @media only screen and (max-width: 1200px) {
@@ -288,15 +286,15 @@
     flex-basis: 23%;
     flex-direction: column;
     min-height: 40rem;
+    min-width: 38rem;
     padding: 1.5rem;
     margin: 1.2rem !important;
     justify-content: center;
-
-    min-width: 33em;
     flex-grow: 0;
 
     @media only screen and (max-width: 800px) {
         min-height: 30rem;
+        min-width: 30rem;
     }
 
     // @media only screen and (max-width: 800px) {
