@@ -1,33 +1,110 @@
 ---
 layout: default
 title: Toolkit
----
-
+--- 
 <div class="toolkit-header header-container">
-    <h2 class="toolkit-header-h2">Our Toolkit</h2>
-    <p class="toolkit-header-p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
+    <h2 class="toolkit-header__h2">Our Toolkit</h2>
+    <p class="toolkit-header__p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
 What you will find here are tools we have found to be effective. Think of this as the most awesome collective tool shed!
 Here you can find, share, and suggest tools that are of use to the open source civic tech software community.</p>
-    <div class="toolkit-hero-image">
+    <div class="toolkit-header__hero-image">
         {% include svg/toolkit-hero.svg %}
     </div>
 </div>
 
-<div class="toolkit-background">
-    <div class="toolkit-section-container section-container">
-        <h5 class="toolkit-section-container-h5">Guides(we made these!)</h5>
-        <ul class="toolkit-section-container-ul">
-            <li class="toolkit-section-container-li"><a href="/guide-pages/github-issues" target="blank">Getting the Most Out of Github Issues</a></li>
-            <li class="toolkit-section-container-li"><a href="/guide-pages/2FA.html" target="blank">Enabling 2-Factor Authentication</a></li>
-            <li class="toolkit-section-container-li"><a href="/guide-pages/survey-reporting-dashboard-guide" target="blank">Building a Survey Reporting Dashboard</a></li>
-            <li class="toolkit-section-container-li">Create a Kanban Project Board from Our Template <br>-<i>coming soon...</i></li>
-            <li class="toolkit-section-container-li">Using Kanban Project Boards for Team Effectiveness <br>-<i>coming soon...</i></li>
-        </ul>
-        <h5 class="toolkit-resources-h5">External Resources</h5>
-        <ul class="toolkit-resources-ul">
-            <li class="toolkit-resources-li"><a href="https://www.figma.com/" target="blank">Figma</a></li>
-            <li class="toolkit-resources-li"><a href="https://github.com/hackforla" target="blank">Github</a></li>
-            <li class="toolkit-resources-li"><a href="https://zoom.us/" target="blank">Zoom</a></li>
-        </ul>
-    </div>
+<div class="toolkit-header__text-group">
+    <h3 class="toolkit-header__h3">Development</h3>
+    <h3 class="toolkit-header__h3">Design</h3>
+    <h3 class="toolkit-header__h3">Project Management</h3>
 </div>
+
+<div class="toolkit-background content-section">
+    <div class="toolkit__guides-section">
+        <div class="suggest-guide-group"><h3>Guides (We Made These!)</h3><button class="toolkit-button btn btn-primary">Suggest a guide</button></div>
+
+    <div class="toolkit-flex-container">
+        <!-- Searching through toolkitPages collection -->
+        <!-- change collection to _guidepages -->
+        {%- for item in site.guide-pages -%}
+        {%- if item.status == 'active' -%}
+
+            <div class="toolkit-flex-item section-container toolkit-section-container">
+            
+                {%- if item.svg -%}
+                <div class="toolkit-image-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
+
+                <div class="toolkit-info-container">
+                    {%- if item.title -%}
+                    <h3 class="toolkit-flex-item-header"><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
+                    {%- endif -%}
+
+                    {%- if item.short-description -%}
+                    <p class="toolkit-flex-item-p">{{ item.short-description }}</p>
+                    {%- endif -%}
+                </div>
+                    
+            </div>
+        {%- endif -%}
+        {%- endfor -%}
+
+        {%- for item in site.guide-pages -%}
+        {%- if item.status == 'coming-soon' -%}
+            <div class="toolkit-flex-item section-container toolkit-section-container">
+            
+                {%- if item.svg -%}
+                <div class="toolkit-image-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
+
+                <div class="toolkit-info-container">
+                    {%- if item.title -%}
+                    <h3 class="toolkit-flex-item-header not-clickable">{{ item.title }}</h3>
+                    {%- endif -%}
+
+                    {%- if item.description -%}
+                    <p class="toolkit-flex-item-p">{{ item.description }}</p>
+                    {%- endif -%}
+
+                </div>
+                {%- if item.status == 'coming-soon' -%}
+                    <p class="toolkit-status-text">coming soon</p>
+                {%- endif -%}
+            </div>
+        {%- endif -%}
+        {%- endfor -%}
+    </div>
+
+    </div>
+
+    <div class="toolkit__external-resources">
+        <div class="suggest-guide-group"><h3>External Resources</h3><button class="toolkit-button btn btn-primary">Suggest a resource</button></div>
+
+        <div class="resource-container">
+            <!-- Searching through toolkitResources collection -->
+            {%- for item in site.toolkitResources -%}
+            {%- if item.display ==  true -%}
+            <div class="toolkit-flex-item-resource section-container toolkit-section-container">
+
+                {%- if item.svg -%}
+                <div class="svg-container">
+                    {% include {{ item.svg }} %}
+                </div>
+                {%- endif -%}
+
+                {%- if item.title -%}
+                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
+                <p class="toolkit-resource-text">{{ item.description }}</p>
+                <a href="{{item.provider-link}}" class="outer-link" target="_blank">
+                    {% include {{ item.link-svg }} %}
+                </a>
+                {%- endif -%}
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+        </div>
+    </div>
+</div>    
