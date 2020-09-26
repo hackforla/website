@@ -77,7 +77,6 @@
 .toolkit-background {
     background-color: #030D2D;
     padding: 2rem;
-    margin-bottom: 3rem;
 }
 
 .toolkit-section-container-h5 {
@@ -135,21 +134,21 @@
 .toolkit-flex-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    // padding: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
-    @media #{$bp-below-mobile} {
-        justify-content: center;
+    @media only screen and (max-width: 800px) {
+        align-content: center;
+        flex-direction: column;
     }
 }
 
 .resource-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     padding: 1.4rem;
 
-    @media #{$bp-below-mobile} {
+    @media only screen and (max-width: 800px) {
         justify-content: center;
     }
 
@@ -166,18 +165,26 @@
     padding-left: 0rem;
     padding-right: 0rem;
     padding-top: 0rem;
-    margin: 1.2rem 1.3rem;
+    margin: 1.2rem 1rem;
     position: relative;
-    min-width: 34rem;
+    min-width: 33rem;
     padding-bottom: 0;
-
-    @media #{$bp-below-mobile} {
-        min-width: auto;
-      }
 
     @media only screen and (max-width: 1200px) {
         flex-basis: 13%; 
         margin: 1rem;
+    }
+
+    @media only screen and (max-width: 800px) {
+        min-width: 28rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        min-height: 30rem;
+    }
+
+    @media #{$bp-below-mobile} {
+        min-width: auto;
     }
 
 }
@@ -212,10 +219,6 @@
     }
 }
 
-.toolkit-section-container p {
-    margin: auto;
-}
-
 .toolkit-flex-item-header {
     font-style: normal;
     font-weight: normal;
@@ -230,16 +233,10 @@
 }
 
 .toolkit-section-container p {
-    @media only screen and (max-width: 800px) {
-        width: 20rem;
-        text-align: center;
-        padding: 1rem;
-    }
+    margin: 1rem auto auto 0rem;
 
     @media only screen and (max-width: 500px) {
         width: 15rem;
-        text-align: center;
-        padding: 1rem;
     }
 }
 
@@ -271,7 +268,11 @@
     line-height: 1.2rem;
     color: #333333;
     padding-right: 1rem;
-    padding-bottom: 1rem;;
+    padding-bottom: 1rem;
+
+    @media #{$bp-below-mobile} {
+        font-size: 1.1rem;
+    }
 }
 
 .toolkit-image {
@@ -286,7 +287,7 @@
     position: relative;
     flex-basis: 23%;
     flex-direction: column;
-    height: 40rem;
+    min-height: 40rem;
     padding: 1.5rem;
     margin: 1.2rem !important;
     justify-content: center;
@@ -294,19 +295,22 @@
     min-width: 33em;
     flex-grow: 0;
 
+    @media only screen and (max-width: 800px) {
+        min-height: 30rem;
+    }
+
+    // @media only screen and (max-width: 800px) {
+    //     min-height: 30rem;
+    // }
+
+    @media only screen and (max-width: 600px) {
+        min-width: 28rem;
+    }
+
     @media #{$bp-below-mobile} {
         min-width: auto;
     }
 
-    @media only screen and (max-width: 600px) {
-        height: 30rem;
-        margin: 9rem !important;
-    }
-
-    @media only screen and (max-width: 680px) {
-        height: 30rem;
-        margin: 4rem !important;
-    }
 }
 
 .toolkit-resource-header {
@@ -316,7 +320,6 @@
     line-height: 1.5rem;
     text-decoration-line: underline;
     width: fit-content; //ADDED THIS LINE
-    margin-bottom: -1rem;
     /* Accent Color */
     color: #FA114F;
 
@@ -328,7 +331,7 @@
 .toolkit-resource-text {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left !important;
     
     color: #333333;
@@ -336,22 +339,22 @@
 
 .toolkit__external-resources {
     padding-top: 10rem;
-    padding-bottom: 50rem;
 }
 
 .svg-container {
-    height: 164px;
-    width: 164px;
-    margin: auto auto;
+    height: 356px;
+    width: 356px;
+    margin: 0rem auto 1rem auto;
     display: flex;
-    margin-bottom: 8rem;
 
-    @media #{$bp-below-mobile} {
+    @media only screen and (max-width: 800px) {
+        height: 164px;
+        width: 164px;
         margin-bottom: 3rem;
     }
 }
 .svg-container svg{
-    width: 125%;
+    width: 100%;
 }
 
 .toolkit-button {
