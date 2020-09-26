@@ -3,9 +3,9 @@ identification: '76137532'
 title: HelloGOV
 description: HelloGOV is helping grassroots organizations connect supporters to their state assembly and state senate representatives for call campaigns to advocate on the legislation that matters most to their work. The HelloGOV webapp generates a campaign shortlink that can be used in texts, social posts, and more.
 image: /assets/images/projects/hellogov.jpg
-alt: "'smartphones using hellogo app'"
+alt: 'Smartphones using hellogo app'
 image-hero: /assets/images/projects/hellogov-hero.jpg
-alt-hero: "Sky blue background"
+alt-hero: 'Sky blue background'
 leadership:
   - name: Kate Rose
     links:
@@ -32,8 +32,15 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
-  - Looking for folks to help with implementing end to end testing, user testing and outreach, and a UI redesign. All skill levels, all kinds of contribution welcome.
-location: Santa Monica
+  - category: QA
+    skill: Implementation of end to end testing
+  - category: QA
+    skill: User Testing and Outreach
+  - category: UI/UX
+    skill: UI redesign, all skill levels
+location: 
+  - Santa Monica
+  - Remote
 partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
 status: Active

@@ -11,6 +11,14 @@ npm-debug.log
 dist
 
 .jekyll-metadata
+_site
+Gemfile
+Gemfile.lock
+
+# Ignore OS and IDE tracking files
 .DS_store
 .vscode
-_site
+.idea
+
+#ignore models.json file added by IDE intellesense
+models.json

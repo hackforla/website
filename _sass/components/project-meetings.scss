@@ -1,5 +1,66 @@
+.project-meetings-banner {
+    background: no-repeat url('/assets/images/project-meetings-page/project-meetings-banner-image.png'), $color-white;
+    background-position: center bottom 40px;
+    background-size: auto 45%;
+    height: 500px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media (max-width: $screen-mobile) {
+        height: 80vh;
+        background-size: auto 30%;
+    }
+
+    .project-meetings-header-text-container {
+        padding: 70px 0 0 0px;
+        display: flex;
+        flex-direction:column; 
+        align-items: center;
+
+        h1 {
+            color: #000000;
+            font-weight: normal;
+            text-align: center;
+        }
+        p {
+            width: 80%;
+            margin:auto;
+
+            @media (min-width: $screen-desktop) {
+                width: 65%;
+            }
+
+            @media (min-width: 1300px) {
+                width: 40%;
+            }
+
+            @media (max-width: $screen-mobile) {
+                font-size: .9rem;
+            }
+        }
+
+    }
+
+}
+
+.covid-notification-banner {
+    background-color: #f2c94d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    p {
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+        padding: 15px 0;
+    }
+}
+
 .calendar-started-page {
-    margin-top: 29px;
     background: #030d2d;
     min-height: 100vh;
     display: flex;
@@ -10,9 +71,9 @@
 
 .calendar-page-card {
     background: #fff;
-    border: 0 solid rgba(51,51,51,0.06);
+    border: 0 solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
     max-width: 896px;
     width: 100%;
@@ -29,15 +90,16 @@
 
 .schedule-list {
     list-style: none;
+
     li:before {
-      content: "\2022";
-      color: #fa114f;
-      font-weight: bold;
-      font-size: 28px;
-      display: inline-block;
-      width: 0.60em;
-      margin-left: -0.6em;
-      vertical-align: middle;
+        content: "\2022";
+        color: #fa114f;
+        font-weight: bold;
+        font-size: 28px;
+        display: inline-block;
+        width: 0.60em;
+        margin-left: -0.6em;
+        vertical-align: middle;
     }
 }
 
@@ -57,9 +119,13 @@
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
         margin-top: 60px;
-      }
+    }
 }
 
 .meetings-message {
     text-align: center;
+}
+
+.userTimeZone {
+    margin-bottom: 20px;
 }

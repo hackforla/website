@@ -2,13 +2,14 @@
   <div class="page-contain">
     <nav class="footer-nav">
       <div class="social-links">
-        <h2 class="social-header">Follow us&mdash;</h2>
+        <h2 class="social-header">Follow us&mdash;<a href="/donate/" target="_blank" ><button class="btn btn-primary btn-donate-footer">Donate</button></a></h2>
         <ul class="inline-list social-list">
           {% for item in site.data.navigation.social %} {% if item.footer %}
           <li>
             <a href="{{ item.link }}" rel="noopener" target="_blank" class="js-social-link js-social-link-{{ item.name | downcase }}">
-              {% if item.icon %} {%- include {{ site.baseurl
-              }}{{ item.icon }} -%} {% endif %}
+              {% if item.icon %}
+              {%- include {{ site.baseurl }}{{ item.icon }} -%}
+              {% endif %}
               <span class="sr-only">{{ item.name }}</span>
             </a>
           </li>

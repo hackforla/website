@@ -1,16 +1,16 @@
 .header-container {
   background: #fff;
-  padding: 30px;
+  padding: 40px;
   height: fit-content;
-  margin: 12px auto;
+  margin: 37px auto 0;
   font-family: "Roboto"sans-serif;
   font-style: normal;
   font-weight: normal;
   text-align: center;
 
   @media #{$bp-below-mobile} {
-    padding: 30px 15px;
-    margin-top: 23%;
+    padding: 87px 15px 0px 15px;
+    margin-top: 10%;
   }
 }
 
@@ -25,7 +25,6 @@
 }
 
 .getting-started-page {
-  margin-top: 29px;
   background: #030c2c;
   min-height: 100vh;
   display: flex;
@@ -43,9 +42,25 @@
   text-align: center;
 }
 
+.getting-started-step-title-overview {
+  text-align: center; 
+  font-size: 20px;
+}
+
+.getting-started-step-title-header {
+  font-size: 25px;
+}
+
+.getting-started-step-subheader {
+  text-align: center;
+}
+
+.getting-started-onboarding-instructions {
+  text-align: initial;
+}
+
 .step-img {
   height: 100px;
-  // margin-right: 20px;
   text-align: center;
 }
 
@@ -102,7 +117,6 @@
 }
 
 .getting-started-guide-content-section {
-  // text-align: center;
   text-align: justify;
 }
 
@@ -126,7 +140,7 @@
   color: black;
   cursor: pointer;
   transition: 0.4s;
-  font-size: 25px;
+  font-size: 20px;
   text-align: left;
   border-bottom: 0.5px solid gray;
   min-width: 835px;
@@ -147,16 +161,18 @@
 }
 
 .accordion:after {
-  content: "\232A";
+  content: "\221F";
   float: right;
-  transform: rotate(90deg);
+  transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
   color: rgb(250, 17, 79);
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .active::after {
-  content: "\232A";
-  transform: rotate(270deg);
+  content: "\221F";
+  transform: rotate(135deg);
   transition: transform 0.25s ease-in;
 }
 

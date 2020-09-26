@@ -1,74 +1,49 @@
-<!-- This is the old form// We are going to move to a new contact form where is being done by @harish-->
-
-<!-- <a class="anchor" id="contact"></a>
-<section class="content-section">
-  <div class="page-contain">
-    <h3> Contact Us</h3>
-    <p> Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just
-      <a href="http://hackforla-slack.herokuapp.com/" rel="noopener" target="_blank">check us out on Slack</a>? Looking
-      to volunteer? </p>
-    <form action="thank-you" method="post" class="contact-form" name="Contact Form">
-      <textarea id="message" name="message" placeholder="Send us a message" aria-label="Send us a message"
-        required></textarea>
-      <div class="form-controls">
-        <div class="form-input">
-          <input id="contact-email" type="email" name="email" placeholder="Enter your email address"
-            aria-label="Enter your email address" required />
-        </div>
-        <div class="sr-only">
-          <label for="">Don't fill this out if you're human
-            <input name="bot-field" />
-          </label>
-        </div>
-        <button id="contact-form-btn" type="submit" class="btn btn-primary">
-          Send message
-        </button>
-      </div>
-      <p class="form-confirmation"><strong></strong></p>
-    </form>
-  </div>
-</section> -->
-
-<!-- This is the new contact us form -->
 <a class="anchor" id="contact"></a>
 <section class="content-section">
-  <h2 class="page-contain">Get in Touch</h2><br>
+  <!-- <h2 class="page-contain">Get in Touch</h2><br> -->
 
-  <div class="page-contain contactus"> 
-    <h3>Sign up for our newsletter</h3> 
+  <div class="page-contain contactus">
+    <h3>Sign up for our newsletter</h3>
     <form class="hero-signup" name="Quick Signup Form">
-      <input id="hero-signup" class="form-input"
-             type="email" 
-             name="email" 
-             placeholder="Enter your email address"
-             aria-label="Enter your email address"
-             required />
-      <button id="hero-signup-btn" type="submit" class="surveybtn btn btn-primary">Subscribe</button>
+      <input id="hero-signup" class="form-input" type="email" name="email" placeholder="Enter your email address"
+        aria-label="Enter your email address" required />
+      <button id="hero-signup-btn" type="submit" class="surveybtn btn btn-primary subscribe">Subscribe</button>
     </form>
     <div class="form-confirmation"><strong></strong></div>
   </div><br>
 
-  <div class="page-contain contactus"> 
+  <div class="page-contain contactus volunteerWithUs">
     <h3>Volunteer with us</h3>
-    <p>We are looking for volunteers of all different skill types, levels, and civic interests.</p>
-    <a href='./getting-started'><button class='surveybtn btn btn-primary'>Getting Started</button></a>
+    <div class="row-1">
+      <div class="column volunteerWithUs">
+        <p>We are looking for volunteers of all different skill types, levels, and civic interests.</p>
+        <a href='./getting-started'><button class='surveybtn btn btn-primary'>Getting Started</button></a><br>
+      </div>
+      <div class="column volunteerWithUs">
+        <p>Please help us understand your transportation preferences by completing a short survey.</p>
+        <a href='https://docs.google.com/forms/d/e/1FAIpQLSeb5zITlv_OewbT_k0UMNw6kail8-vKIyjM3E9qPMLYR6qiYw/viewform'><button
+            class='surveybtn btn btn-primary'>Transportation</button></a>
+      </div>
+    </div>
   </div><br>
 
-  <div class="page-contain contactus"> 
+  <div class="page-contain contactus">
     <h3>Get in touch with us</h3>
     <p>The more you tell us about yourself, the better we can match you with the right resources.</p><br>
-    
+
     <div class="row">
       <div class="column"><a href='./survey4'><button class='surveybtn btn btn-primary'>Government</button></a></div>
-      <div class="column">I am a government agency.</div></div><br>
-        
+      <div class="column">I am a government agency.</div>
+    </div><br>
+
     <div class="row">
       <div class="column"><a href='./survey3'><button class='surveybtn btn btn-primary'>Non-profit</button></a></div>
-      <div class="column">I am a non-profit organization.</div></div><br>
-        
+      <div class="column">I am a non-profit organization.</div>
+    </div><br>
+
     <div class="row">
       <div class="column"><a href='./survey6'><button class='surveybtn btn btn-primary'>Other</button></a></div>
-      <div class="column">I am none of the above.</div></div><br>
+      <div class="column">I am none of the above.</div>
+    </div><br>
   </div>
 </section>
-

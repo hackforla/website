@@ -1,0 +1,267 @@
+body {
+  background-color: $color-pink;
+}
+
+.page-hero {
+    background-size: cover !important;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    margin-top: 29px;
+    width: 100vw;  
+    
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba($color-blue-dark, 0.3) 0%,
+        rgba($color-blue-dark, 1) 100%
+      );
+      content: "";
+      display: block;
+      z-index: 1;
+  
+      @media #{$bp-tablet-up} {
+        background: linear-gradient(
+          to bottom,
+          rgba($color-blue-dark, 0) 30%,
+          rgba($color-blue-dark, 1) 100%
+        );
+        opacity: 1;
+      }
+  
+      // NEW MOBILE FRIENDLY RULES
+      @media #{$bp-below-mobile} {
+        background: linear-gradient(to bottom, rgba(3,13,45,0.3) 30%, #030d2d 100%);
+      }
+    }
+}
+
+.guidepage-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding: 3%;
+    background-color: $color-white;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .left-col {
+        width: 50%;
+        margin-left: 5%;
+    }
+    .right-col {
+        width: 30%;
+    }
+
+    @media #{$bp-below-mobile} {
+      .left-col {
+          width: 100%;
+          margin: 5%;
+      }
+      .right-col {
+          margin: 5%;
+          width: 100%;
+      }
+    }
+}
+
+//only show header divider if screen is bigger than mobile
+@media #{$bp-mobile-up} {
+  .border-right {
+    border-right: 1px solid rgba(0,0,0, 0.3);
+    align-self: center;
+    max-height: 330px;
+    height: 280px;
+    margin: 0% 5%;
+  }
+}
+
+.section-container h5 {
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+.section-container h4 {
+  text-align: left;
+}
+
+.section-container .add-margin-top-to-header {
+  margin-top: 4rem;
+}
+
+.section-container p {
+  text-align: left;
+}
+
+.after-paragraph-margin {
+  margin-bottom: 2rem;
+}
+
+.section-container img {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.subheading {
+  text-align: center;
+}
+
+.black-font {
+  color: black;
+}
+
+.img-and-caption {
+  display: inline-block;
+}
+
+.img-caption {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: -1.0%;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.inline-text-with-title {
+  display: flex;
+}
+
+.section-container {
+  background: $color-white;
+  box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.2);
+  border-radius: 10px;
+  margin: 5%;
+  padding: 5% 12.5%;
+  text-align: center;
+}
+
+.grayarrow {
+  @media #{$bp-below-mobile} {
+    width: 15px;
+  }
+
+  width: 20px;
+  max-width: none;
+  margin: 1rem auto;
+}
+
+@media #{$bp-below-tablet} {
+  .section-container {
+    padding: 12.5% 10%;
+  }
+}
+
+// STYLING FOR GUIDE PAGE DIVS CONTAINING IMAGE WITH OVERLAY LINKS 
+// Div holding image and arrows
+.overlay-links {
+  position: relative;
+
+  h4 {
+    font-size: 0.85em;
+    @media #{$bp-below-tablet} {
+      line-height: 1.5em;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.guide-pages-text-section-reduced-width {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
+  width: 90%;
+  margin: auto auto 1rem auto;
+
+  img {
+    width: 100%;
+  }
+
+}
+
+// image within overlay-links section
+.overlay-links-img {
+  @media #{$bp-below-mobile} {
+    width: 100%
+  }
+  max-width: none;
+  width: 90%;
+  margin: auto;
+}
+
+// mixins for position of arrows/links - 
+// Any parameters structured as $variable: value have a default value
+
+// small arrow and companion text positioning
+@mixin arrow-right-overlay($top, $left: 91%) {
+  position: absolute;
+  left: $left;
+  width: 7%;
+  top: $top;
+}
+
+@mixin arrow-right-text-overlay($top, $left: 99%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin arrow-left-overlay($top, $right: 94%) {
+  position: absolute;
+  right: $right;
+  width: 7%;
+  top: $top;
+  transform: rotate(180deg);
+}
+
+@mixin arrow-left-text-overlay($top, $right: 102%) {
+  position: absolute;
+  right: $right;
+  width: 10%;
+  top: $top;
+  direction: rtl;
+  text-align: start;
+}
+
+// large arrow and companion text positioning
+@mixin md-arrow-right-overlay($top, $left, $width: 18%) {
+  @include arrow-right-overlay($top, $left);
+  width: $width;
+}
+
+@mixin md-arrow-left-overlay($top, $right, $width: 18%) {
+  @include arrow-left-overlay($top, $right);
+  width: $width;
+}
+
+//mobile-adjusted arrow classes
+.hide-guide-page-arrow-on-mobile {
+    @media #{$bp-below-mobile} {
+      display: none;
+      visibility: hidden;
+
+      + h4 {
+        display: none;
+      }
+    }
+}
+
+@mixin arrow-overlay-on-mobile($top, $right, $deg, $width: 7%) {
+  position: absolute;
+  right: $right;
+  width: $width;
+  top: $top;
+  transform: rotate($deg);
+}

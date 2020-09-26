@@ -1,14 +1,19 @@
 .main-header {
-  @include position(absolute, 0 0 null 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background: $color-white;
   box-shadow: 0 1px 4px 0 rgba($color-black, 0.12);
   font-weight: map-get($font-weight, bold);
   padding: 20px;
+  padding-bottom: 10px;
   z-index: 10;
 
   @media #{$bp-tablet-up} {
     @include clearfix;
-    padding: 10px;
+    padding: 20px 10px 10px 10px;
+    padding-top: 20px;
     position: fixed;
 
     .social-links {
@@ -44,14 +49,60 @@
   }
 
   .branding {
-    @include position(absolute, -23px null null -23px);
+    position: absolute;
+    top: -24px;
+    left: -20px;
 
     @media #{$bp-tablet-up} {
-      left: -20px;
+      height: 150px;
+      width: 150px;
     }
   }
+
+  .main-header-content {
+    display: flex;
+  }
+  
 }
 
 .main-header-content {
   display: flex;
+}
+
+.btn-donate { 
+  background-color: $color-black;
+  color: $color-white;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.btn-donate:hover {
+  background-color: $color-red;
+}
+
+@media #{$bp-below-tablet} {
+  // HFLA logo setting for mobile
+  .main-header {
+    position: fixed;
+    padding: 7px;
+  }
+
+  // Make the donate button smaller for mobile
+  .btn-donate {
+    padding: 5px 25px;
+    font-size: .75rem;
+    font-weight: 500;
+    height: 30px;
+    margin-top: 6px;
+    line-height: 0;
+  }
+
+  // style the HFLA logo for mobile
+  .main-header .branding {
+    position: absolute;
+    top: -13px;
+    left: -18px;
+    height: 50px;
+    width: 95px;
+  }
 }

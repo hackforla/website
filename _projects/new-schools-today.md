@@ -3,11 +3,11 @@ identification: '222602391'
 title: New Schools Today
 description: We’re building a platform for students across LA County to create more accessible school-related apps and web apps. Our desired impact is to make students feel more welcomed and included in their community through an online academic environment created by peers, for peers
 image: /assets/images/projects/new-schools-today.jpg
-alt: "'Team working during meeting'"
+alt: 'Team working a during meeting.'
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
-alt-hero: "'Team working during meeting'"
+alt-hero: 'Team working during a meeting.'
 leadership:
-  - name: Ben Swedlow
+  - name: Ben Swerdlow
     role: Tech Team Lead
     links:
       slack: 'https://app.slack.com/team/UKUHHS94L'
@@ -25,6 +25,12 @@ leadership:
       slack: 'https://app.slack.com/team/USM20BUFP'
       github: 'https://github.com/jacobzwang'
     picture: https://avatars.githubusercontent.com/jacobzwang
+  - name: Ethan Hopkins
+    role: Project Manager
+    links:
+      slack: 'https://app.slack.com/team/UQUBHLPC2'
+      github: 'https://github.com/ethanh256'
+    picture: https://avatars.githubusercontent.com/ethanh256
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/new-schools-today'
@@ -35,16 +41,22 @@ links:
     - name: Wiki
       url: 'https://github.com/hackforla/new-schools-today/wiki'
 looking:
-  - Mobile Development
-  - Serverless PaaS Expertise
-  - UX knowledge
-  - React Web Development
-  - Marketing/Research
-  - any high school student or technical mentor interested
-technologies: 
+  - category: Development
+    skill: Mobile Development
+  - category: UI/UX
+    skill: UX knowledge
+  - category: Development
+    skill: React Web Development
+  - category: SEO/Marketing
+    skill: Marketing/Research
+  - category: Content
+    skill: any high school student or technical mentor interested
+technologies:
   - ReactJS
   - Flutter
 partner: Seeking
-location: Santa Monica, CA
+location:
+  - Santa Monica
+  - Remote
 status: Active
 ---
