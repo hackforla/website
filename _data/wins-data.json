@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:S102",
+  "range": "Responses!A1:S103",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -53,7 +53,7 @@
       "Josh Bubar",
       "https://www.linkedin.com/in/joshua-bubar-25331a118/",
       "Yes",
-      "jbubar",
+      "https://github.com/jbubar",
       "Yes",
       "HackforLA Website",
       "Development",
@@ -61,6 +61,21 @@
       "",
       "I produced something for my portfolio, I increased the number of commits on my Github profile",
       "I built my first page for hack for la! and it is this one!!! ...the wins page"
+    ],
+    [
+      "9/21/2020 10:10:59",
+      "james007bond@netzero.net",
+      "James Bond",
+      "",
+      "No",
+      "",
+      "No",
+      "Not Today",
+      "Content",
+      "",
+      "",
+      "I worked on a project that will help the people of Los Angeles",
+      "Being Bond, James Bond, I work to help the people of Los Angeles."
     ]
   ]
 }
