@@ -196,11 +196,13 @@
         font-size: 1.5rem;
         margin-bottom: 3rem;
         line-height: 1.75rem;
+        max-height: 2rem;
 
         @media #{$bp-below-mobile} {
             font-size: 1.4rem;
             margin-bottom: 1.5rem;
             line-height: 1.5rem;
+            max-height: fit-content;
         }
     }
 
