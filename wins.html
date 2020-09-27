@@ -1,0 +1,110 @@
+---
+layout: default
+title: Wins
+---
+{%- include wins-hero.html -%}
+
+<a class="anchor" id="projects"></a>
+<section class="content-section projects">
+
+  <div class="wins-page-contain projects-inner" style="clear: left;">
+    <ul id="responses" class="project-list unstyled-list">
+
+    </ul>
+  </div>
+</section>
+
+<script>
+	function formatMessage(win){
+		let str = '';
+		let lastCommaIndex = win.lastIndexOf(",");
+		if (lastCommaIndex != -1){
+			str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
+		}else{
+			str += win + '!';
+		}
+		return str;
+	}
+
+	function ifPageEmpty(){
+		if (document.querySelectorAll('.wins-card').length == 0){
+			const page = document.querySelector('.wins-page-contain');
+			const p = document.createElement('p');
+			//p.classList.add("project-card");
+			page.appendChild(p);
+			p.innerHTML = "No one has shared a win yet...be the first!";
+		}
+	}
+
+	function makeElement (elementType, parent, className){
+		let child = document.createElement(elementType);
+		child.classList.add(className);
+		parent.appendChild(child);
+		return child;
+	}
+	function makeIcon (href, parent, className, src){
+		let icon = makeElement('a', parent, 'wins-card-icon');
+		icon.setAttribute("href", href);
+		let iconImg = makeElement('img', icon, className);
+		iconImg.setAttribute("src", src);
+	}
+	function makeCards(data){
+	const list = document.querySelector('#responses');
+	for (let i = data.length - 1; i > 0 ; i--){
+		let li = makeElement('li', list, "project-card");
+		li.classList.add("wins-card");
+		let leftDiv = makeElement('div', li, "wins-card-left");
+		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
+		profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
+		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
+		let rightDiv = makeElement('div', li, "wins-card-content");
+		rightDiv.classList.add("project-card-inner");
+		for (let j = 1; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
+		if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
+			let innerDiv = makeElement('div', rightDiv, "project-inner");
+			if (j == 2){
+			innerDiv.classList.add("wins-card-top");
+			let name = makeElement('span', innerDiv, "wins-card-name");
+			name.innerHTML = data[i][j];
+			let icons = makeElement('span', innerDiv, "wins-card-icons");
+			if(data[i][3].length > 0){
+				makeIcon (data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+			}if(data[i][5].length > 0){
+				makeIcon (data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			}
+			}
+			else if (j == 7){
+			innerDiv.classList.add("wins-card-team");
+			innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
+			}
+			else if (j == 8){
+			if(data[i][j].length > 0){
+				innerDiv.classList.add("wins-card-team");
+				innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
+			}
+			}
+			else if (j == 11){
+			innerDiv.classList.add("wins-card-info");
+			innerDiv.innerHTML = formatMessage(data[i][11]);
+			}
+			else if (j == 12){
+			innerDiv.classList.add("wins-card-overview");
+			innerDiv.innerHTML = data[i][12];
+			}
+		}
+		}
+	}
+	}
+	function main(){
+		{% assign localData = site.data.wins-data | jsonify %}
+		let localData = {{ localData }};
+		let data = localData.values
+		makeCards(data);
+		ifPageEmpty();
+	}
+
+	main();
+
+</script>
+
