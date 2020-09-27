@@ -1,0 +1,183 @@
+
+
+.wins-card{
+	padding: 50px;
+	display: flex;
+	flex-direction: row;
+}
+.wins-card-left{
+	width: 100px;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+}
+.wins-card-profile-img{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+.wins-card-big-quote{
+	width: 28px;
+	height: 96.05px;
+	margin: 8px;
+}
+.wins-card-content{
+	margin-left: 20px;
+	width: 100%;
+}
+.wins-page-contain{
+	margin:0 auto;
+	max-width: 1292px;
+	p{
+		margin: 18px 60px;
+	}
+}
+.wins-card-name{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	margin-top: 13px;
+}
+.wins-card-team{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 23px;
+	display: flex;
+	align-items: center;
+}
+.wins-card-top{
+	display: flex;
+	justify-content: space-between;
+}
+.wins-card-icon{
+	margin-left: 18px;
+}
+
+.wins-card-info{
+	margin-top: 50px;
+	font-weight: bold;
+}
+
+.wins-card-overview{
+	margin-top: 1em;
+}
+
+//Hero styling
+.wins-hero{
+	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	img{
+		height: 366;
+	}
+	h1{
+		font-size: 59px;
+		line-height: 69px;
+		text-align: center;
+		font-style: normal;
+		font-weight: normal;
+	}
+}
+
+@media #{$bp-below-tablet} {
+	.wins-hero{
+
+		img{
+			height: 230px;
+		}
+		h1{
+			font-style: normal;
+			font-weight: normal;
+			font-size: 38px;
+		}
+		.wins-btn{
+			max-width: 217px;
+			max-height: 60.5px;
+			font-size: 18.5px;
+		}
+	}
+
+}
+
+@media #{$bp-below-mobile} {
+	.wins-hero{
+
+		img{
+			height: 105px;
+		}
+		h1{
+			font-style: normal;
+			font-weight: normal;
+			font-size: 24px;
+			line-height: 28px;
+		}
+		.wins-btn{
+			max-width: 134px;
+			max-height: 46px;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+
+	.wins-card{
+		padding: 24px;
+	}
+	.wins-card-left{
+		width: 50px;
+	}
+	.wins-card-profile-img{
+		width: 50px;
+		height: 50px;
+		border-radius: 100px;
+	}
+	.wins-card-big-quote{
+		margin: 4px;
+		height: 60px;
+		width: 18px;
+	}
+	.wins-card-content{
+		margin-left: 6px;
+	}
+
+	.wins-card-name{
+		font-size: 19px;
+		line-height: 22px;
+		margin: 0;
+		padding-top: 5px;
+	}
+	.wins-card-team{
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.wins-card-icon{
+		margin-left: 13.5px;
+	}
+	.github-icon{
+		height: 20px;
+		width: 20px;
+	}
+	.linkedin-icon{
+		height: 20px;
+		width: 20px;
+	}
+	.wins-card-info{
+		margin-top: 15px;
+	}
+
+	.wins-card-overview{
+		margin-top: 0;
+		font-size: 16px;
+	}
+}
+
+
+.wins-btn{
+	max-width: 300px;
+	max-height: 75px;
+}

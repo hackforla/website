@@ -1,0 +1,81 @@
+{
+  "range": "Responses!A1:S103",
+  "majorDimension": "ROWS",
+  "values": [
+    [
+      "Timestamp - 0",
+      "Email Address - 1",
+      "Full name - 2",
+      "Linkedin URL (optional) - 3 ",
+      "Could we use your Linkedin profile picture next to your story? - 4",
+      "Github URL (optional) - 5",
+      "Could we use your Github profile picture next to your story?",
+      "Select the team(s) you're on",
+      "Select your role(s) on the team",
+      "What is/was your specific role? (optional)",
+      "When did you join Hack for LA? (optional)",
+      "What do you want to celebrate (select all that apply)?",
+      "Give us a brief overview"
+    ],
+    [
+      "8/15/2020 21:55:40",
+      "paridox@hotmail.com",
+      "Dean Church",
+      "https://www.linkedin.com/in/deanchurch/",
+      "Yes",
+      "",
+      "No",
+      "VRMS",
+      "Business Analyst",
+      "Product Roadmap construction",
+      "7/1/2019",
+      "I worked on an enterprise project, I worked on a project that will help the people of Los Angeles",
+      "I took the skills I have learned from HackforLA projects and applied them at work to orchestrate the launch of an MVP to help with Wildfire Mitigation throughout Southern California"
+    ],
+    [
+      "8/15/2020 22:28:30",
+      "paridox@hotmail.com",
+      "Dean Church",
+      "https://www.linkedin.com/in/deanchurch/",
+      "Yes",
+      "",
+      "No",
+      "VRMS",
+      "Business Analyst",
+      "",
+      "7/1/2019",
+      "I got a new job",
+      "As an over 50 year old career changer I was amazed at how supportive the community at HackforLA was in my finding meaningful employment in the local tech industry.  Through exposure and application of Agile frameworks and user centered design thinking my time and practice at HfLA was instrumental in building my modern application skills competency and confidence.  A direct result of my time at HfLA is that I was able to ace my 45min White Boarding interview where I had to diagram a workflow from end to end and identify areas that would benefit from automation.  "
+    ],
+    [
+      "9/2/2020 16:56:14",
+      "jpbubar@gmail.com",
+      "Josh Bubar",
+      "https://www.linkedin.com/in/joshua-bubar-25331a118/",
+      "Yes",
+      "https://github.com/jbubar",
+      "Yes",
+      "HackforLA Website",
+      "Development",
+      "Frontend Web Development",
+      "",
+      "I produced something for my portfolio, I increased the number of commits on my Github profile",
+      "I built my first page for hack for la! and it is this one!!! ...the wins page"
+    ],
+    [
+      "9/21/2020 10:10:59",
+      "james007bond@netzero.net",
+      "James Bond",
+      "",
+      "No",
+      "",
+      "No",
+      "Not Today",
+      "Content",
+      "",
+      "",
+      "I worked on a project that will help the people of Los Angeles",
+      "Being Bond, James Bond, I work to help the people of Los Angeles."
+    ]
+  ]
+}
