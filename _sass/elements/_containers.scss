@@ -1,0 +1,15 @@
+.header-container {
+    background: #fff;
+    padding: 40px;
+    height: fit-content;
+    margin: 37px auto 0;
+    font-family: "Roboto"sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+  
+    @media #{$bp-below-mobile} {
+      padding: 87px 15px 0px 15px;
+      margin-top: 10%;
+    }
+  }

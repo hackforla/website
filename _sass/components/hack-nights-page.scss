@@ -7,23 +7,16 @@
     margin: 0px;
   }
 }
-.header-container-hacknights {
-  background: #fff;
-  padding: 8px;
-  height: fit-content;
-  font-family: "Roboto" sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  margin: 8%;
 
-  @media #{$bp-below-tablet} {
-    padding: 0;
-    flex-direction: column;
-    margin-top: 96px;
-    font-size: 16px;
-  }
+.hacknights--header-container {
+  padding: 6rem 6rem 5rem 8rem;
 }
+
+.hacknights--head-content {
+  margin: 2% 0 0% 4%;
+  text-align: initial;
+}
+
 .header-desc {
   text-align: initial;
   font-weight: 530;
