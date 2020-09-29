@@ -23,6 +23,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/U01A2FPLBC3"
       github: "https://github.com/MasSamH"
     picture: https://avatars.githubusercontent.com/MasSamH
+  - name: Thad Kerosky
+    role: Co-Product Manager
+    links:
+      slack: "https://cfa.slack.com/archives/C019RCM15FE"
+      github: "https://github.com/thadk"
+    picture: https://avatars2.githubusercontent.com/u/283343?v=4
   - name: Naomi Chao
     role: Special Projects Coordinator
     links:
