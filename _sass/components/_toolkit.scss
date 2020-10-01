@@ -169,6 +169,7 @@
     position: relative;
     min-width: 33rem;
     padding-bottom: 0;
+    overflow: hidden;
 
     @media only screen and (max-width: 1200px) {
         flex-basis: 13%; 
@@ -187,6 +188,14 @@
         min-width: auto;
     }
 
+}
+
+.toolkit-image-container {
+    min-height: 23.5rem;
+
+    @media only screen and (max-width: 1000px) {
+        min-height: auto;
+    }
 }
 
 .toolkit-info-container {
@@ -213,11 +222,10 @@
 
 
 .toolkit-image-container svg {
-    width: 100% !important;
+    width: 100%;
 
     @media only screen and (max-width: 800px) {
         flex: 1;
-        width: 100%;
     }
 }
 
