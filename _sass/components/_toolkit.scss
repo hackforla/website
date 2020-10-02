@@ -143,32 +143,20 @@
     }
 }
 
-.resource-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1.4rem;
-
-    @media only screen and (max-width: 800px) {
-        justify-content: center;
-    }
-
-}
-
 .outer-link {
     width: 30px;
-    display: flex;
-    align-self: flex-end;
 }
 
 .toolkit-flex-item {
-    flex-basis: 25%;
-    padding-left: 0rem;
-    padding-right: 0rem;
-    padding-top: 0rem;
-    margin: 1.2rem 1rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
     min-width: 33rem;
-    padding-bottom: 0;
+    padding: 0rem;
+    min-height: 40rem;
+    overflow: hidden;
+    margin: 1.2rem 1rem;
     overflow: hidden;
 
     @media only screen and (max-width: 1200px) {
@@ -178,6 +166,7 @@
 
     @media only screen and (max-width: 800px) {
         min-width: 28rem;
+        min-height: auto;
     }
 
     @media only screen and (max-width: 600px) {
@@ -200,6 +189,7 @@
 
 .toolkit-info-container {
     padding: 1rem 2rem 5rem 2rem;
+    min-height: 15rem;
 
     h3 {
         font-size: 1.5rem;
@@ -267,18 +257,12 @@
     color: black !important;
 }
 
-.toolkit-status-text {
-    display: flex;
-    flex-direction: row-reverse;
+.toolkit-flex-item-status {
     align-self: flex-end;
-    right: 100%;
-    font-style: normal;
-    font-weight: normal;
     font-size: 1.5rem;
     line-height: 1.2rem;
-    color: #333333;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 
     @media #{$bp-below-mobile} {
         font-size: 1.1rem;
@@ -290,37 +274,6 @@
     max-width: 13rem;
     max-height: 25rem;
     margin: auto;
-}
-
-.toolkit-flex-item-resource {
-    display: flex;
-    position: relative;
-    flex-basis: 23%;
-    flex-direction: column;
-    min-height: 40rem;
-    padding: 1.5rem;
-    margin: 1.2rem !important;
-    justify-content: center;
-
-    min-width: 33em;
-    flex-grow: 0;
-
-    @media only screen and (max-width: 800px) {
-        min-height: 30rem;
-    }
-
-    // @media only screen and (max-width: 800px) {
-    //     min-height: 30rem;
-    // }
-
-    @media only screen and (max-width: 600px) {
-        min-width: 28rem;
-    }
-
-    @media #{$bp-below-mobile} {
-        min-width: auto;
-    }
-
 }
 
 .toolkit-resource-header {

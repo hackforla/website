@@ -71,7 +71,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
 
                 </div>
                 {%- if item.status == 'coming-soon' -%}
-                    <span class="toolkit-status-text">coming soon</span>
+                    <span class="toolkit-flex-item-status">coming soon</span>
                 {%- endif -%}
             </div>
         {%- endif -%}
@@ -83,25 +83,25 @@ Here you can find, share, and suggest tools that are of use to the open source c
     <div class="toolkit__external-resources">
         <div class="suggest-guide-group"><h3>External Resources</h3><button class="toolkit-button btn btn-primary">Suggest a resource</button></div>
 
-        <div class="resource-container">
+        <div class="toolkit-flex-container">
             <!-- Searching through toolkitResources collection -->
             {%- for item in site.toolkitResources -%}
             {%- if item.display ==  true -%}
-            <div class="toolkit-flex-item-resource section-container toolkit-section-container">
+            <div class="toolkit-flex-item section-container toolkit-section-container">
 
                 {%- if item.svg -%}
                 <div class="svg-container">
                     {% include {{ item.svg }} %}
                 </div>
                 {%- endif -%}
-
-                {%- if item.title -%}
-                <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
-                <p class="toolkit-resource-text">{{ item.description }}</p>
-                <a href="{{item.provider-link}}" class="outer-link" target="_blank">
+                
+                <div class="toolkit-info-container">
+                    <h3 class="toolkit-resource-header"><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
+                    <p class="toolkit-resource-text">{{ item.description }}</p>
+                </div>
+                <a href="{{item.provider-link}}" class="toolkit-flex-item-status outer-link" target="_blank">
                     {% include {{ item.link-svg }} %}
                 </a>
-                {%- endif -%}
             </div>
             {%- endif -%}
             {%- endfor -%}
