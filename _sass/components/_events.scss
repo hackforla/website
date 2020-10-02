@@ -48,7 +48,8 @@
   margin-left: 40px;
   margin-bottom: -7%;
   @media #{$bp-below-tablet} {
-    flex-direction: column;
+    flex-direction: row-reverse;
+    flex-grow: 6;
     margin: 0;
   }
 }
@@ -72,7 +73,7 @@
   font-size: 18px;
   margin: 0 6px;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     content: "\226A";
     transform: rotate(90deg);
     transition: transform 0.25s ease-in;
@@ -455,6 +456,30 @@
   @media #{$bp-below-mobile} {
     text-align: initial;
     margin: 57px;
+  }
+}
+
+/* These styles are for the mobile view of the events page */
+
+@media #{$bp-below-tablet} {
+  .hacknights--header-container {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  //This hides the fullscreen positioned video for mobile
+  .mobile--hide-video {
+    display:none;
+  }
+
+  .hacknights--head-content {
+    margin: 60px 0 0 0;
+    text-align: initial;
+  }
+}
+//This hides the mobile positioned video on displays larger than mobile
+@media #{$bp-tablet-up} {
+  .fullscreen--hide-video {
+    display:none;
   }
 }
 
