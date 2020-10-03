@@ -2,9 +2,12 @@ const core = require("@actions/core");
 const fs = require("fs");
 const { Octokit } = require("@octokit/rest");
 const trueContributorsMixin = require("true-github-contributors");
+const _ = require('lodash');
 
 // Record the time this script started running so it can be stored later
 const dateRan = new Date();
+// Hard coded list of untagged repos we would like to fetch data on
+const untaggedRepoIds = [79977929];
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 
 Object.assign(Octokit.prototype, trueContributorsMixin);
@@ -22,26 +25,35 @@ const octokit = new Octokit({ auth: core.getInput("token") });
   console.log(`Fetching data since: ${dateLastRan.toString()}`);
   for(let repo of allRepos) {
     let repoLanguages = await octokit.repos.listLanguages({ owner: repo.owner.login, repo: repo.name });
-    let projectContributors = await getProjectContributors(repo, (oldGitHubData[repo.id]) ? dateLastRan : undefined);
-    if(!(oldGitHubData.hasOwnProperty(repo.id))) console.log("New project added to data!");
-    console.log(`Contributions for ${repo.name}`);
-    console.log(projectContributors);
-
-    // If previous data exists, aggregate new contribution data with previous contribution data
+    let commitContributors = await getCommitContributors(repo);
+    let issueCommentContributors = await getCommentContributors(repo, (oldGitHubData.hasOwnProperty(repo.id)) ? dateLastRan.toISOString() : undefined);
+    console.log(`Comment contributors from ${repo.name}:`);
+    console.log(issueCommentContributors);
+    // If previous issue comment contributions data exists, aggregate old issue comment contributions data with previous issue comment contributions data
     if(oldGitHubData.hasOwnProperty(repo.id)){
       // "_aggregateContributors" is a helper method in the trueContributorsMixin that aggregates contributions from contributor objects based on a property "id"
-      projectContributors = octokit._aggregateContributors( projectContributors.concat(oldGitHubData[repo.id].contributorsComplete.data) );
+      issueCommentContributors = octokit._aggregateContributors( issueCommentContributors.concat(oldGitHubData[repo.id].issueComments.data) );
     }
+
+    // Create a copy of commitContributors to use to aggregate with issueCommentContributors
+    let commitContributorsCopy = _.cloneDeep(commitContributors);
+    let projectContributors = octokit._aggregateContributors(commitContributorsCopy.concat(issueCommentContributors));
 
     // Add data to new GitHub data array
     newGitHubData.push({
       id: repo.id,
       name: repo.name,
-      repoEndpoint: repo.url,
       languages: Object.keys(repoLanguages.data),
+      repoEndpoint: repo.url,
+      commitContributors: {
+        data: commitContributors
+      },
+      issueComments: {
+        data: issueCommentContributors
+      },
       contributorsComplete: {
         data: projectContributors
-      }
+      },
     });
   }
 
@@ -59,7 +71,7 @@ function getLocalData(){
   data = JSON.parse(data);
   if(Date.parse(data[0]) > 0){
     let date = new Date(data[0]);
-    return { oldGitHubData: data.slice(1), dateLastRan: date.toISOString() }
+    return { oldGitHubData: data.slice(1), dateLastRan: date }
   }
   throw new Error("No valid date value found for when script last ran.");
 }
@@ -82,24 +94,61 @@ function projectListToMap(projectList) {
  * @return {Array}     [Array of GitHub repository objects]
  */
 async function getAllRepos() {
+  let allRepos = [];
   let taggedRepos = await octokit.paginate(octokit.search.repos, {q: "topic:hack-for-la"});
-  // Hard coded list of untagged repos we would like to fetch data on
-  let untaggedRepos = [79977929];
-  for(let i = 0; i < untaggedRepos.length; i++){
-    response = await octokit.request("GET /repositories/:id", { id: untaggedRepos[i] });
-    untaggedRepos[i] = response.data;
+  allRepos = taggedRepos;
+  for(let i = 0; i < untaggedRepoIds.length; i++){
+    let untaggedRepo = await octokit.request("GET /repositories/:id", { id: untaggedRepoIds[i] });
+    allRepos.push(untaggedRepo.data);
   }
-  return taggedRepos.concat(untaggedRepos);
+  return allRepos;
 }
 
 /**
- * Fetches project contributors for a given repo
+ * Fetches commit contributors for a given repo
  * @param {Object} repo     [Repository object from GitHub]
- * @param {String} since      [Date to fetch contributors from] 
- * @return {Object}     [Contains project id's from "projectList" as keys and corresponding "projectList" elements as values ]
+ * @return {Array}     [An array of contributors based on how many commits they have made]
  */
-async function getProjectContributors(repo, dateLastRan) {
+async function getCommitContributors(repo) {
   // Construct parameters for request
+  let requestParams = constructContributorParams(repo);
+
+  // Get commit contributors. listContributorsForOrg is a method from trueContributorsMixin that calls repos.listContributors across orgs in a repo
+  let commitContributors = (requestParams.hasOwnProperty("org")) ? 
+    await octokit.listContributorsForOrg(requestParams) :
+    await octokit.paginate(octokit.repos.listContributors, requestParams);
+  
+  formatContributorsList(commitContributors);
+
+  return commitContributors;
+}
+
+/**
+ * Fetches comment contributors for a given repo
+ * @param {Object} repo     [Repository object from GitHub]
+ * @param {String} dateLastRan      [ISO 8601 Date to fetch contributors from]
+ * @return {Array}     [An array of contributors based on how many commits they have made]
+ */
+async function getCommentContributors(repo, dateLastRan) {
+  // Construct parameters for request
+  let requestParams = constructContributorParams(repo);
+  if(dateLastRan) requestParams.since = dateLastRan;
+
+  let issueCommentContributors = (requestParams.hasOwnProperty("org")) ?
+    await octokit.listCommentContributorsForOrg(requestParams) :
+    await octokit.listCommentContributors(requestParams);
+
+  formatContributorsList(issueCommentContributors);
+
+  return issueCommentContributors;
+}
+
+/**
+ * Fetches comment contributors for a given repo
+ * @param {Object} repo     [Repository object from GitHub]
+ * @return {Object}     [An object containing parameters for making a contributors data request]
+ */
+function constructContributorParams(repo) {
   let requestParams = {};
   let isOrg = (repo.owner.type == "Organization" && repo.owner.login != "hackforla" && repo.owner.login != "cfa");
   if(isOrg) {
@@ -108,17 +157,18 @@ async function getProjectContributors(repo, dateLastRan) {
     requestParams.owner = repo.owner.login;
     requestParams.repo = repo.name;
   }
-  // If dateLastRan is given, only fetch data from when this script last ran
-  if(dateLastRan) requestParams.since = dateLastRan;
+  return requestParams;
+}
 
-  let projectContributors = (isOrg) ?
-      await octokit.listCommitCommentContributorsForOrg(requestParams) :
-      await octokit.listCommitCommentContributors(requestParams);
 
-  // Format contributors data to minimum properties needed
-  for(let i = 0; i < projectContributors.length; i++){
-    currentContributor = projectContributors[i];
-    projectContributors[i] = {
+/**
+ * Removes unwanted properties for each contributors in a contributors lists in place
+ * @param {Array} contirbutorsList     [List of contributor objects]
+ */
+function formatContributorsList(contributorsList){
+  for(let i = 0; i < contributorsList.length; i++){
+    currentContributor = contributorsList[i];
+    contributorsList[i] = {
       id: currentContributor.id,
       github_url: currentContributor.html_url,
       avatar_url: currentContributor.avatar_url,
@@ -126,8 +176,7 @@ async function getProjectContributors(repo, dateLastRan) {
       contributions: currentContributor.contributions
     };
   }
-  return projectContributors;
-}
+} 
 
 /**
  * Writes project data to local 
