@@ -32,16 +32,10 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
-  - category: QA
-    skill: Implementation of end to end testing
-  - category: QA
-    skill: User Testing and Outreach
-  - category: UI/UX
-    skill: UI redesign, all skill levels
 location: 
   - Santa Monica
   - Remote
 partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
-status: Active
+status: Completed
 ---
