@@ -80,14 +80,21 @@
 }
 
 .suggest-guide-group {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    padding-left: 3rem; 
-    padding-right: 3rem; 
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
     text-align: center;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: 1200px){
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
 
     @media only screen and (max-width: 600px){
+        padding-left: 3rem; 
+        padding-right: 3rem;
         justify-content: space-evenly;
         flex-direction: column;
     }
@@ -97,10 +104,12 @@
     font-style: normal;
     font-weight: normal;
     font-size: 35px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
     color: #FFFFFF;
+    margin-bottom: 0;
+
+    @media only screen and (max-width: 600px){
+        margin-bottom: 1rem;
+    }
 }
 
 .toolkit-flex-container {
@@ -109,10 +118,20 @@
     padding-left: 2rem;
     padding-right: 2rem;
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1200px) {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0;
+    }
+
+    @media #{$bp-below-mobile} {
+        display: flex;
+        flex-wrap: wrap;
         align-content: center;
         flex-direction: column;
     }
+
 }
 
 .outer-link {
@@ -126,36 +145,31 @@
     flex-basis: 25%;
     min-width: 33rem;
     padding: 0rem;
+    height: fit-content;
     min-height: 38rem;
-    overflow: hidden;
     margin: 1.2rem 1rem;
     overflow: hidden;
 
     @media only screen and (max-width: 1200px) {
-        flex-basis: 13%; 
-        margin: 1rem;
-    }
-
-    @media only screen and (max-width: 800px) {
-        min-width: 28rem;
+        min-width: auto;
         min-height: auto;
-    }
-
-    @media only screen and (max-width: 600px) {
-        min-height: 30rem;
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
 
     @media #{$bp-below-mobile} {
-        min-width: auto;
-    }
+        margin-bottom: 1.5rem;
+    }    
 
 }
 
 .toolkit-flex-item-img-container {
-    min-height: 60%;
+    height: 60%;
 
     @media only screen and (max-width: 1000px) {
-        min-height: auto;
+        height: auto;
+        width: 100%;
     }
 }
 
@@ -169,29 +183,35 @@
 }
 
 .resource-svg-icons {
-    height: 356px;
-    width: 356px;
-    margin: 0rem auto 1rem auto;
-    display: flex;
+    height: 22.5rem;
+    width: 22.5rem;
+    margin: 0 auto;
 
-    @media only screen and (max-width: 800px) {
-        height: 164px;
-        width: 164px;
-        margin-bottom: 3rem;
+    @media only screen and (max-width: 1000px) {
+        height: 15.5rem;
+        width: 15.5rem;
+    }
+
+    @media #{$bp-below-mobile} {
+        height: 14.5rem;
+        width: 14.5rem;
     }
 }
 
 .toolkit-info-container {
-    margin-top: 1rem;
+    margin: 1rem auto;
     padding: 0rem 2rem;
 
     h3 {
         font-weight: normal;
         text-align: left;
         font-size: 1.5rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
         line-height: 1.75rem;
-        max-height: 2rem;
+        height: fit-content;
+
+        @media only screen and (max-width: 1000px) {
+        }
 
         @media #{$bp-below-mobile} {
             font-size: 1.4rem;
@@ -201,19 +221,15 @@
         }
     }
 
-    @media #{$bp-below-mobile} {
-        padding: 2rem;
+    @media only screen and (max-width: 1000px) {
+        margin-bottom: 4rem;
     }
 }
 
 .toolkit-info-container p {
     margin: 1rem auto auto 0rem;
     line-height: 1.1rem;
-
-    @media only screen and (max-width: 500px) {
-        width: 15rem;
-        padding: 0rem !important;
-    }
+    width: 100%;
 }
 
 .not-clickable {
@@ -227,7 +243,7 @@
     font-size: 1.5rem;
     line-height: 1.2rem;
 
-    @media #{$bp-below-mobile} {
+    @media only screen and (max-width: 1000px) {
         font-size: 1.1rem;
     }
 }
@@ -237,5 +253,5 @@
 }
 
 .toolkit-button {
-    margin: 5px 0px;
+    margin: 0;
 }
