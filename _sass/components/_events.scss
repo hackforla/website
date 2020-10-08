@@ -22,21 +22,18 @@
   font-weight: 530;
   font-size: 25px;
   line-height: 29px;
-  margin: 2% 0 0% 5%;
+  margin: 2% 0 20px 5%;
 
   @media #{$bp-below-tablet} {
     font-size: 16px;
     line-height: 19px;
-    margin: 0;
+    margin-bottom: 20px;
   }
 }
 
 .show-desc {
-  // margin: 15px 44px;
   margin-left: 43%;
   @media #{$bp-below-tablet} {
-    // display: flex;
-    // flex-direction: column;
     margin: 74px 0px;
     font-size: 13px;
     line-height: 15px;
@@ -48,7 +45,8 @@
   margin-left: 40px;
   margin-bottom: -7%;
   @media #{$bp-below-tablet} {
-    flex-direction: column;
+    flex-direction: row-reverse;
+    flex-grow: 6;
     margin: 0;
   }
 }
@@ -65,14 +63,13 @@
 #head-content::before {
   content: "\226A";
   float: left;
-  // transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
   color: #000000;
   font-weight: normal;
   font-size: 18px;
   margin: 0 6px;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-desktop} {
     content: "\226A";
     transform: rotate(90deg);
     transition: transform 0.25s ease-in;
@@ -127,7 +124,6 @@
     top: 0;
     width: 325px;
     height: 215px;
-    margin-top: 22px;
   }
 }
 
@@ -183,7 +179,6 @@
   align-content: center;
 
   @media #{$bp-below-tablet} {
-    // margin: 25px 0;
     flex-direction: column;
   }
 }
@@ -232,7 +227,6 @@
   height: fit-content;
 
   @media #{$bp-below-tablet} {
-    // max-width: 335px;
     padding: 16px 16px;
   }
 }
@@ -362,7 +356,6 @@
   }
 }
 .active::after {
-  // display: none;
   @media #{$bp-below-tablet} {
     content: "\221F";
     transform: rotate(135deg);
@@ -456,6 +449,40 @@
     text-align: initial;
     margin: 57px;
   }
+}
+
+/* These styles are for the mobile view of the events page */
+
+@media #{$bp-below-desktop} {
+  .hacknights--header-container {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  //This hides the fullscreen positioned video for mobile
+  .mobile--hide-video {
+    display:none;
+  }
+
+  .hacknights--head-content {
+    margin: 20px 0 0 0;
+  }
+}
+
+//This hides the mobile positioned video on displays larger than mobile
+@media #{$bp-desktop-up} {
+  .fullscreen--hide-video {
+    display:none;
+  }
+}
+
+.fullscreen-video {
+  width: 100%;
+}
+
+.events-video-fullscreen-container {
+  position: relative; 
+  height: 0; 
+  padding-bottom: 56.25%;
 }
 
 /* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake. 
