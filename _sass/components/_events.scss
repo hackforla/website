@@ -475,6 +475,16 @@
   }
 }
 
+.fullscreen-video {
+  width: 100%;
+}
+
+.events-video-fullscreen-container {
+  position: relative; 
+  height: 0; 
+  padding-bottom: 56.25%;
+}
+
 /* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake. 
     They have been saved because they are still being used in other places on the site. */
     .section-hack-nights {
