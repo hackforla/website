@@ -2,7 +2,7 @@
 name: Suggest an external resource
 about: For resources that could be listed on the toolkit page.
 title: ''
-labels: enhancement, documentation
+labels: documentation, enhancement
 assignees: ''
 
 ---
