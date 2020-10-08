@@ -23,19 +23,11 @@ links:
   - name: GitHub
     url: 'https://github.com/hackforla/not-today'
 looking:
-  - category: Development
-    skill: Flutter Development
-  - category: Development
-    skill: Mobile Development
-    category: UI/UX
-    skill: UI/UX
-  - category: Content
-    skill: Empathy and sensitivity with subject material and end users
 technologies:
   - React Native
 location:
   - Santa Monica
   - Remote
 partner: Seeking
-status: Active
+status: On Hold
 ---
