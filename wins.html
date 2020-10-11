@@ -51,7 +51,7 @@ title: Wins
 	function makeCards(data){
 	const list = document.querySelector('#responses');
 	for (let i = data.length - 1; i > 0 ; i--){
-		if (data[0] != "TRUE") continue; //checks if Display column is set to true
+		if (data[i][13] != "TRUE") continue; //checks if Display column is set to true
 		
 		let li = makeElement('li', list, "project-card");
 		li.classList.add("wins-card");
