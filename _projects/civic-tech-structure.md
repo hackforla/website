@@ -42,11 +42,11 @@ links:
     url: "https://cfa.slack.com/archives/C019RCM15FE"
 looking:
   - category: UI/UX
-    skill: UI designer (brand building)
+    skill: UX Designer
   - category: UI/UX
-    skill: UX team manager / Lead
+    skill: UX Team Manager / Lead
   - category: UI/UX
-    skill: UX researchers (40)
+    skill: UX Researchers (40)
 technologies:
   - Google Docs (Doc, Sheet, Slide, Forms)
   - HackforLA.org guides

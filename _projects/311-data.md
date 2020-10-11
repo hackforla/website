@@ -51,12 +51,12 @@ links:
 looking:
   - category: Development
     skill: Frontend Developers
-  - category: Development
-    skill: Backend Developers
+  - category: Business Analyst
+    skill: Business Analyst
+  - category: Ops
+    skill: Project Manager
   - category: Ops
     skill: Product Owner
-  - category: QA
-    skill: SDET
 technologies:
   - ReactJS
   - Redux

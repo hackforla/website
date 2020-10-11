@@ -41,16 +41,7 @@ links:
     - name: Wiki
       url: 'https://github.com/hackforla/new-schools-today/wiki'
 looking:
-  - category: Development
-    skill: Mobile Development
-  - category: UI/UX
-    skill: UX knowledge
-  - category: Development
-    skill: React Web Development
-  - category: SEO/Marketing
-    skill: Marketing/Research
-  - category: Content
-    skill: any high school student or technical mentor interested
+
 technologies:
   - ReactJS
   - Flutter
