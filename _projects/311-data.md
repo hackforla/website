@@ -15,7 +15,8 @@ leadership:
     picture: https://avatars.githubusercontent.com/johnr54321
   - name: Dana Chen
     role: UI/UX Lead
-    links:
+    links:- category: UI/UX
+     skill: UI/UX designer
       slack: 'https://hackforla.slack.com/team/U0112KZPV6C'
       github: 'https://github.com/danarchen'
     picture: https://avatars.githubusercontent.com/danarchen
@@ -49,14 +50,14 @@ links:
   - name: Site
     url: 'https://www.311-data.org/'
 looking:
+  -category: Business Analyst
+    skill: Business Analyst
   - category: Development
     skill: Frontend Developers
-  - category: Development
-    skill: Backend Developers
+  -category: Ops
+    skill: Project Manager
   - category: Ops
     skill: Product Owner
-  - category: QA
-    skill: SDET
 technologies:
   - ReactJS
   - Redux

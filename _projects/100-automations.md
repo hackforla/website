@@ -22,8 +22,6 @@ links:
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
    - category: UI/UX
-     skill: UI/UX designer
-   - category: UI/UX
      skill: Content Writer
    - category: Development
      skill: Anyone who wants to write open source automations

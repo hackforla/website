@@ -35,11 +35,11 @@ links:
 partner: NDICA
 looking:
   - category: Content
-    skill: Research
+    skill: Content writing
+  - category: Development
+    skill: React Developer
   - category: UI/UX
-    skill: UX-UI
-  - category: Content
-    skill: Content/writing
+    skill: Research/UI-UX
 technologies:
   - ReactJS
 location:

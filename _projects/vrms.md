@@ -49,6 +49,8 @@ looking:
     skill: Back end devs (any level)
   - category: UI/UX
     skill: UI/UX
+  - category: UI/UX
+    skill: UI Designer
 technologies:
   - MongoDB
   - Express

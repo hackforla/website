@@ -67,10 +67,6 @@ looking:
     skill: Frontend Software Engineer
   - category: Development
     skill: Backend Software Engineer
-  - category: Data
-    skill: Advanced Data Scientist
-  - category: Development
-    skill: Python Enthusiast
 technologies:
   - ReactJS
   - PostgreSQL
