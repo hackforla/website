@@ -51,48 +51,55 @@ title: Wins
 	function makeCards(data){
 	const list = document.querySelector('#responses');
 	for (let i = data.length - 1; i > 0 ; i--){
+		if (data[i][13] != "TRUE") continue; //checks if Display column is set to true
+		
 		let li = makeElement('li', list, "project-card");
 		li.classList.add("wins-card");
+
 		let leftDiv = makeElement('div', li, "wins-card-left");
+
 		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
 		profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+
 		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
 		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
+
 		let rightDiv = makeElement('div', li, "wins-card-content");
 		rightDiv.classList.add("project-card-inner");
+
 		for (let j = 1; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
-		if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
-			let innerDiv = makeElement('div', rightDiv, "project-inner");
-			if (j == 2){
-			innerDiv.classList.add("wins-card-top");
-			let name = makeElement('span', innerDiv, "wins-card-name");
-			name.innerHTML = data[i][j];
-			let icons = makeElement('span', innerDiv, "wins-card-icons");
-			if(data[i][3].length > 0){
-				makeIcon (data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-			}if(data[i][5].length > 0){
-				makeIcon (data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
+				let innerDiv = makeElement('div', rightDiv, "project-inner");
+				if (j == 2){
+					innerDiv.classList.add("wins-card-top");
+					let name = makeElement('span', innerDiv, "wins-card-name");
+					name.innerHTML = data[i][j];
+					let icons = makeElement('span', innerDiv, "wins-card-icons");
+				if(data[i][3].length > 0){
+					makeIcon (data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+				}if(data[i][5].length > 0){
+					makeIcon (data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+				}
+				}
+				else if (j == 7){
+					innerDiv.classList.add("wins-card-team");
+					innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
+				}
+				else if (j == 8){
+				if(data[i][j].length > 0){
+					innerDiv.classList.add("wins-card-team");
+					innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
+				}
+				}
+				else if (j == 11){
+					innerDiv.classList.add("wins-card-info");
+					innerDiv.innerHTML = formatMessage(data[i][11]);
+				}
+				else if (j == 12){
+					innerDiv.classList.add("wins-card-overview");
+					innerDiv.innerHTML = data[i][12];
+				}
 			}
-			}
-			else if (j == 7){
-			innerDiv.classList.add("wins-card-team");
-			innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
-			}
-			else if (j == 8){
-			if(data[i][j].length > 0){
-				innerDiv.classList.add("wins-card-team");
-				innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
-			}
-			}
-			else if (j == 11){
-			innerDiv.classList.add("wins-card-info");
-			innerDiv.innerHTML = formatMessage(data[i][11]);
-			}
-			else if (j == 12){
-			innerDiv.classList.add("wins-card-overview");
-			innerDiv.innerHTML = data[i][12];
-			}
-		}
 		}
 	}
 	}
