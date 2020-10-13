@@ -41,7 +41,7 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 ### Forking and cloning the repository with proper security
 
-#### Step 1 Become a member of the repository Team
+#### Step 1: Become a member of the repository Team
 
 In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
 
@@ -68,7 +68,7 @@ This section discusses some tips and best practices for working with Git.
 
 1. After the owner of the `hackforla` repository approves and merges your Pull Request, your changes will be live on the website. 
 
-#### Step 2 Fork the repository
+#### Step 2: Fork the repository
 
 In https://github.com/hackforla/website, look for the fork icon in the top right. Click it and create a fork of the repository.
 
@@ -80,7 +80,7 @@ Note that this copy is on a remote server on the GitHub website and not on your 
 
 If you click the icon again, it will not create a new fork but instead give you the URL associated with your fork.
 
-#### Step 3 Clone your online repository to your local computer
+#### Step 3: Clone your online repository to your local computer
 
 For git beginners, this process will create a third copy of the repository on your local desktop.
 
@@ -227,7 +227,7 @@ git commit -m “insert message here”
 
 Congratulations!  You are now ready to push your work to your repository. 
 
-#### Step 7 Check upstream before you push
+#### Step 7: Check upstream before you push
 
 Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
 
@@ -235,7 +235,7 @@ Before you push your local commits to your repository, check to see if there hav
 git fetch upstream
 ```
 
-##### Step 7a No changes in the upstream repository
+##### Step 7a: No changes in the upstream repository
 
 If you do not see any output, there have not been any changes in the
 main Hack for LA website repository since the last time you
@@ -247,7 +247,7 @@ If you just type `git push` you will be prompted to create a new branch in your 
 git push --set-upstream origin fix-logo-width-311
 ```
 
-##### Step 7b conflicting changes in the upstream repository
+##### Step 7b: conflicting changes in the upstream repository
 
 When you check the upstream repository, you may see output like this:
 
@@ -330,7 +330,7 @@ git checkout fix-logo-width-311
 git merge gh-pages
 ```
 
-#### Step 8 Complete the pull request
+#### Step 8: Complete the pull request
 
 ```bash
 git push --set-upstream origin fix-logo-width-311
