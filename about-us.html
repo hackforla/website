@@ -1,36 +1,18 @@
 ---
 layout: default
-title: Getting Started
+title: About Us
 ---
 <div class="header-container">
-    <h1>Getting Started</h1>
-    <p class="header-p">Hack for LA brings together civic-minded volunteers who build digital products,
-        programs and services with community partners and local government to address issues in the LA region.
+    <h1>About Us</h1>
+    <p class="header-text--about-us">We bring together civic-minded volunteers to build digital products,
+        programs and services with community partners and local government to address issues in our LA region.
     </p>
-    <div class="step-link-img">
-        <div class="step-links">
-            <a class="gs-link" href='getting-started#step-1'>Step 1</a>
-            <p class="getting-started-step-title-overview">Onboard</p>
-            <img class="step-img" src="./assets/images/getting-started/step1.png">
+    <p class="header-text--about-us">
+        Hack for LA is a project of <a href="https://www.codeforamerica.org/" target="_blank">Code for America</a> and its official Los Angeles chapter.
+    </p>
 
-        </div>
-        <div class="step-links">
-            <a class="gs-link" href='getting-started#step-2'>Step 2</a>
-            <p class="getting-started-step-title-overview">Choose a Project</p>
-            <img class="step-img" src="./assets/images/getting-started/step2.png">
-
-        </div>
-        <div class="step-links">
-            <a class="gs-link" href='getting-started#step-3'>Step 3</a>
-            <p class="getting-started-step-title-overview">Join a Project</p>
-            <img class="step-img" src="./assets/images/getting-started/step3.png">
-
-        </div>
-        <div class="step-links">
-            <a class="gs-link" href='getting-started#step-4'>Step 4</a>
-            <p class="getting-started-step-title-overview">Adopt Our Standards</p>
-            <img class="step-img" src="./assets/images/getting-started/step4.png">
-        </div>
+    <div class="">
+        {% include _includes/_page-resources/_about-us/_about-us-header.svg %}
     </div>
 </div>
 
@@ -286,22 +268,3 @@ title: Getting Started
     </div>
 </div>
 
-<!-- //script for FAQ dropdown -->
-
-<script>
-    var showAnswer = document.getElementsByClassName('accordion');
-
-    for (var i = 0; i < showAnswer.length; i++) {
-        showAnswer[i].addEventListener("click", function () {
-
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none"
-            } else {
-                panel.style.display = "block"
-            }
-        })
-
-    }
-</script>
