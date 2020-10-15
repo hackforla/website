@@ -1,9 +1,56 @@
-// header-text is on _credit-items.scss 
+.header-container--about-us {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container h1 {
+    margin-bottom: 20px;
+}
+
 .header-text--about-us {
     font-size: 20px;
-    //display: flex;
-    //max-width: 895px;
+    max-width: 600px;
     text-align: left;
-    padding: 30px;
-    margin: 12px auto;
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    
+        &:link,
+        &:visited {
+          color: $color-black;
+        }
+    
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-red;
+        }
+      }
 }
+
+.page-content-container--about-us {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  //Make universal
+  .page-card {
+     background: #fff;
+     border: 0 solid rgba(51, 51, 51, 0.06);
+     border-radius: 16px;
+     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+     overflow: hidden;
+     max-width: 896px;
+     margin-bottom: 0;
+     padding: 30px;
+     height: fit-content;
+     margin: 12px auto;
+  }
+
+  .page-card--ed {
+    border-radius: 0;
+  }
