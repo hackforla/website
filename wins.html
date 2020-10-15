@@ -68,7 +68,7 @@ title: Wins
 		rightDiv.classList.add("project-card-inner");
 
 		for (let j = 1; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
-			if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12){
+			if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12 || j == 13){
 				let innerDiv = makeElement('div', rightDiv, "project-inner");
 				if (j == 2){
 					innerDiv.classList.add("wins-card-top");
@@ -92,12 +92,16 @@ title: Wins
 				}
 				}
 				else if (j == 11){
-					innerDiv.classList.add("wins-card-info");
-					innerDiv.innerHTML = formatMessage(data[i][11]);
+					innerDiv.classList.add("wins__card-text");
+					let info = makeElement('p', innerDiv, "wins-card-info");
+					info.innerHTML = formatMessage(data[i][11]); //win
+					let overview = makeElement('p', innerDiv, "wins-card-overview");
+					overview.innerHTML = data[i][12];//description
 				}
-				else if (j == 12){
-					innerDiv.classList.add("wins-card-overview");
-					innerDiv.innerHTML = data[i][12];
+				
+				else if (j == 13){
+					innerDiv.classList.add("wins__see-more-div")//make id instead of class/// add id_${i}
+					innerDiv.innerHTML = '<span class="wins__see-more-span">see more</span>'
 				}
 			}
 		}
