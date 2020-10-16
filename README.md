@@ -193,7 +193,7 @@ The text after the `-b`, in the example `fix-logo-width-311`, will be the name o
 
 The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
 
-No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
+No law of material science will break in the event that you don't hold fast to this plan, however laws of git will break in the event that you include spaces.
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
 
