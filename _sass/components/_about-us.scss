@@ -32,9 +32,9 @@
 .page-content-container--about-us {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
   }
 
   //Make universal
@@ -44,7 +44,7 @@
      border-radius: 16px;
      box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
      overflow: hidden;
-     max-width: 896px;
+     max-width: 850px;
      margin-bottom: 0;
      padding: 30px;
      height: fit-content;
@@ -53,4 +53,25 @@
 
   .page-card--ed {
     border-radius: 0;
+  }
+  .sticky-nav {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    max-width: 250px;
+    padding: 30px;
+    height: fit-content;
+    margin-left: 75px;
+  }
+
+  .sticky-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .not-sticky-nav {
+      margin-left: 100px;
   }
