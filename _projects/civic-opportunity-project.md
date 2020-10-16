@@ -23,10 +23,14 @@ links:
   - name: Overview
     url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
 looking:
+  - category: PM
+    skill: Special Projects Coordinators
+  - category: PM
+    skill: Project/Pilot Management
   - category: UI/UX
-    skill: UI designer
+    skill: UI Designer
   - category: UI/UX
-    skill: UX researcher
+    skill: UX Researcher
 # technologies:
 location: 
   - Remote
