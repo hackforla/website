@@ -1,8 +1,8 @@
-<div class="social-links">
-  <ul class="inline-list social-list">
+<div class="header-links">
+  <ul class="inline-list header-list">
     {% for item in site.data.navigation.social %} {% if item.header %}
     <li>
-      <a class="js-social-link js-social-link-{{ item.name | downcase }}" href="{{ item.link }}" aria-label="{{item.name}}" rel="noopener" target="_blank">
+      <a class="js-inline-link js-inline-link-{{ item.name | downcase }}" href="{{ item.link }}" aria-label="{{item.name}}" rel="noopener" target="_blank">
         {% if item.icon %} {%- include {{ item.icon }} -%} {% endif %} 
       </a>
       <div class="span sr-only">
