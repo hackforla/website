@@ -141,10 +141,8 @@
     margin: 0;
 }
 
-@media #{$bp-below-desktop} {
-
+@media only screen and (max-width: 1430px) {
     .toolkit-header {
-        padding-bottom: 3rem;
 
         &__text-group {
             padding-left: 0;
@@ -153,7 +151,26 @@
 
         &__banner-item {
             font-size: 1.2rem;
-            margin: 0 1.2rem;
+            margin: 0 2.9rem;
+        }
+    }
+}
+
+@media #{$bp-below-desktop} {
+
+    .toolkit-header {
+        padding-bottom: 3rem;
+
+        &__text-group {
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        &__banner-item {
+            font-size: .9rem;
+            margin: 0 .7rem;
+            max-width: 6rem;
+            text-align: center;
         }
     }
 
@@ -185,9 +202,10 @@
 
 @media #{$bp-below-mobile} {
     .toolkit-header {
+
         &__banner-item {
-            font-size: .75rem;
-            margin: 0 1rem;
+            font-size: .65rem;
+            max-width: 4rem;
         }
 
         &__p {
