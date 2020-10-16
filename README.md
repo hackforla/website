@@ -41,7 +41,7 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 ### Forking and cloning the repository with proper security
 
-#### Step 1: Become a member of the repository Team
+#### Step 1: for Become a member of the repository Team Do as step 1 
 
 In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
 
