@@ -1,6 +1,4 @@
 .toolkit-header {
-    padding-top: 10rem; 
-    padding-bottom: 10rem;
 
     &__text-group {
         display: flex; 
@@ -10,31 +8,20 @@
         padding: 1.4rem 0;
 
     }
-    
-    &__title {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 3.7rem;
-        line-height: 4.3rem;
-        align-items: center;
-        text-align: center;
-    }
 
     &__banner-item {
         margin-block-end: 0;
         font-weight: 300;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin: 0 4.5rem;
     }
     
     &__p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.7rem;
-        line-height: 2rem;
-        max-width: 60vw;
-        margin: 3rem auto;
+        font-size: 27px;
+        max-width: 895px;
         text-align: left;
+        padding: 30px;
+        margin: 12px auto;
 
     }
 
@@ -65,7 +52,7 @@
 .suggest-guide-group h2 {
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 1.75rem;
     color: #FFFFFF;
     margin-bottom: 0;
 }
@@ -244,7 +231,6 @@
 
         h2 {
             margin-bottom: 1rem;
-            font-size: 31px;
         }
     }
 
