@@ -12,7 +12,7 @@
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"
     content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | absolute_url }}" />
 

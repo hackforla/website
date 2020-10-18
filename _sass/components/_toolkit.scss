@@ -146,7 +146,6 @@
 @media #{$bp-below-desktop} {
 
     .toolkit-header {
-        padding-bottom: 3rem;
 
         &__text-group {
             justify-content: space-evenly;
@@ -189,6 +188,7 @@
 
 @media #{$bp-below-mobile} {
     .toolkit-header {
+        padding-bottom: 3rem;
 
         &__banner-item {
             font-size: .65rem;
