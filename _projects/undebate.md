@@ -20,9 +20,9 @@ links:
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'
 looking:
   - category: Development
-    skill: Node
+    skill: Node Developer
   - category: Development
-    skill: React
+    skill: React Developer
   - category: UI/UX
     skill: UI/UX
   - category: SEO/Marketing

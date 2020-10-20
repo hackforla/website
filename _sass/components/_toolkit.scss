@@ -1,6 +1,4 @@
 .toolkit-header {
-    padding-top: 10rem; 
-    padding-bottom: 10rem;
 
     &__text-group {
         display: flex; 
@@ -10,35 +8,25 @@
         padding: 1.4rem 0;
 
     }
-    
-    &__title {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 3.7rem;
-        line-height: 4.3rem;
-        align-items: center;
-        text-align: center;
-    }
 
     &__banner-item {
         margin-block-end: 0;
         font-weight: 300;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin: 0 4.5rem;
     }
     
     &__p {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.7rem;
-        line-height: 2rem;
-        max-width: 60vw;
-        margin: 3rem auto;
+        font-size: 27px;
+        max-width: 895px;
         text-align: left;
+        padding: 30px;
+        margin: 12px auto;
 
     }
 
     &__hero-image {
+        margin: 33px 0px;
         max-width: 100%;
     }
 }
@@ -56,6 +44,7 @@
 .suggest-guide-group {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 3rem;
     padding-right: 3rem;
     text-align: center;
@@ -65,7 +54,7 @@
 .suggest-guide-group h2 {
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 1.75rem;
     color: #FFFFFF;
     margin-bottom: 0;
 }
@@ -141,10 +130,8 @@
     margin: 0;
 }
 
-@media #{$bp-below-desktop} {
-
+@media only screen and (max-width: 1430px) {
     .toolkit-header {
-        padding-bottom: 3rem;
 
         &__text-group {
             padding-left: 0;
@@ -153,7 +140,25 @@
 
         &__banner-item {
             font-size: 1.2rem;
-            margin: 0 1.2rem;
+            margin: 0 2.9rem;
+        }
+    }
+}
+
+@media #{$bp-below-desktop} {
+
+    .toolkit-header {
+
+        &__text-group {
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        &__banner-item {
+            font-size: .9rem;
+            margin: 0 .7rem;
+            max-width: 6rem;
+            text-align: center;
         }
     }
 
@@ -185,9 +190,11 @@
 
 @media #{$bp-below-mobile} {
     .toolkit-header {
+        padding-bottom: 3rem;
+
         &__banner-item {
-            font-size: .75rem;
-            margin: 0 1rem;
+            font-size: .65rem;
+            max-width: 4rem;
         }
 
         &__p {
@@ -221,12 +228,10 @@
     }
 
     .suggest-guide-group {
-        align-items: center;
         flex-direction: column;
 
         h2 {
             margin-bottom: 1rem;
-            font-size: 31px;
         }
     }
 

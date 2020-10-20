@@ -1,8 +1,8 @@
-.js-social-link {
+.js-inline-link {
   display: inline-block;
   @include size(24px);
 
-  &.js-social-link-meetup {
+  &.js-inline-link-meetup {
     @include size(89px, 32px);
   }
   .icon {

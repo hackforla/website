@@ -3,7 +3,7 @@ layout: default
 title: Toolkit
 --- 
 <div class="toolkit-header header-container">
-    <h1 class="toolkit-header__title">Our Toolkit</h1>
+    <h1>Our Toolkit</h1>
     <p class="toolkit-header__p">Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
 What you will find here are tools we have found to be effective. Think of this as the most awesome collective tool shed!
 Here you can find, share, and suggest tools that are of use to the open source civic tech software community.</p>
@@ -16,6 +16,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
     <p class="toolkit-header__banner-item">Development</p>
     <p class="toolkit-header__banner-item">Design</p>
     <p class="toolkit-header__banner-item">Project Management</p>
+    <p class="toolkit-header__banner-item">Professional Development</p>
 </div>
 
 <div class="toolkit-background content-section">
@@ -65,7 +66,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
                     <h3 class="not-clickable">{{ item.title }}</h3>
                     {%- endif -%}
 
-                    {%- if item.description -%}
+                    {%- if item.short-description -%}
                     <p>{{ item.short-description }}</p>
                     {%- endif -%}
 
