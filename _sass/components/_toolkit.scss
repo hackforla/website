@@ -44,6 +44,7 @@
 .suggest-guide-group {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 3rem;
     padding-right: 3rem;
     text-align: center;
@@ -227,7 +228,6 @@
     }
 
     .suggest-guide-group {
-        align-items: center;
         flex-direction: column;
 
         h2 {
