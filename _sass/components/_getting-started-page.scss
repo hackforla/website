@@ -91,6 +91,10 @@
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
     padding: 30px 15px;
+    p.accordion {
+      display: inline-block;
+      width: 100%;
+    }
   }
 }
 
@@ -136,10 +140,6 @@
   }
 }
 
-p.accordion {
-  display: inline-block;
-  width: 100%;
-}
 
 .svg-accordion {
   float: right;
