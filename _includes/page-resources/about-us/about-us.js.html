@@ -1,0 +1,12 @@
+<script>
+    // This gets the nav id info and keeps it in a variable
+    const nav = document.querySelector('#sticky_nav');
+    let stickyNavTop = nav.offsetTop;
+
+  function stickyNavigation() { 
+  console.log('stickyNavTop = ' + navTop);
+  console.log('scrollY = ' + window.scrollY);
+}
+
+window.addEventListener('scroll', stickyNavigation);
+</script>

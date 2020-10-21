@@ -35,7 +35,6 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: flex-start;
-    border: 2px solid red;
   }
 
   //Make universal
@@ -56,19 +55,13 @@
     border-radius: 0;
   }
 
-  .sticky-element {
+  /*
+  div#nav-container > nav {
     position: -webkit-sticky;
     position: sticky;
-    top: -1px;
-    border: 3px solid black;
-    background-color: yellow;
+    top: 0px;
   }
-
-  .sticky-container {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
+  */
   .sticky-nav {
     background: #fff;
     border: 0px solid rgba(51, 51, 51, 0.06);
@@ -91,15 +84,13 @@
     margin-bottom: 10px;
   }
 
-  /*
-  /* Only stick if you can fit
-@media (min-height: 300px) {
+  /* Only stick if you can fit */
+  @media (min-height: 300px) {
   nav ul {
     position: sticky;
     top: 0;
   }
 }
-*/
 
   .not-sticky-nav {
       margin-left: 100px;

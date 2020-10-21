@@ -2,6 +2,8 @@
 layout: default
 title: About Us
 ---
+<<!-- Include javascript file -->
+{% include page-resources/about-us/about-us.js.html %}
 <div class="header-container header-container--about-us">
     <div>
         <h1>About Us</h1>
@@ -16,8 +18,8 @@ title: About Us
 </div>
 
 <div class="content-section page-content-container--about-us">
-        <nav class="sticky-nav">
-            <ul class="sticky">
+        <nav id="sticky-nav" class="sticky-nav">
+            <ul>
                 <li><a href='about-us#letter'>Letter from the ED</a></li>
                 <li><a href='about-us#platform'>Hack for LA Platform</a></li>
                 <li><a href='about-us#sustainability'>Sustainability</a></li>
