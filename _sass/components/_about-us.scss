@@ -35,6 +35,7 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: flex-start;
+    border: 2px solid red;
   }
 
   //Make universal
@@ -54,9 +55,23 @@
   .page-card--ed {
     border-radius: 0;
   }
+
+  .sticky-element {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    border: 3px solid black;
+    background-color: yellow;
+  }
+
+  .sticky-container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   .sticky-nav {
     background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
+    border: 0px solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
@@ -71,6 +86,20 @@
     margin: 0;
     padding: 0;
   }
+
+  .sticky-nav ul li {
+    margin-bottom: 10px;
+  }
+
+  /*
+  /* Only stick if you can fit
+@media (min-height: 300px) {
+  nav ul {
+    position: sticky;
+    top: 0;
+  }
+}
+*/
 
   .not-sticky-nav {
       margin-left: 100px;
