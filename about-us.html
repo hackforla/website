@@ -2,8 +2,6 @@
 layout: default
 title: About Us
 ---
-<<!-- Include javascript file -->
-{% include page-resources/about-us/about-us.js.html %}
 <div class="header-container header-container--about-us">
     <div>
         <h1>About Us</h1>
@@ -17,23 +15,10 @@ title: About Us
     <div>{% include page-resources/about-us/about-us-header.svg %}</div>
 </div>
 
-<div class="content-section page-content-container--about-us">
-        <nav id="sticky-nav" class="sticky-nav">
-            <ul>
-                <li><a href='about-us#letter'>Letter from the ED</a></li>
-                <li><a href='about-us#platform'>Hack for LA Platform</a></li>
-                <li><a href='about-us#sustainability'>Sustainability</a></li>
-                <li><a href='about-us#accomplishments'>Accomplishments</a></li>
-                <li><a href='about-us#metrics'>Metrics</a></li>
-                <li><a href='about-us#partners'>Partners</a></li>
-                <li><a href='about-us#donations'>Donations</a></li>
-                <li><a href='about-us#sponsors'>Sponsors</a></li>
-                <li><a href='about-us#news'>News</a></li>
-            </ul>
-        </nav>
-        <div class="not-sticky-nav">   
-            <a id='letter'></a>
-            <div class='page-card page-card--ed'>
+<div class="page-content-container-grid">
+    <div class="not-sticky-nav">   
+        <a class="anchor" id='letter'></a>
+        <div class='page-card page-card--ed'>
             <div>
                 <p>Letter from the Executive Director</p>
                 <p>
@@ -58,11 +43,11 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='platform'></a>
-            <div class='page-card'>
-             <div>
+        <a class="anchor" id='platform'></a>
+        <div class='page-card'>
+            <div>
                 <p>Hack for LA Platform</p>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum nisi congue posuere imperdiet. 
@@ -86,10 +71,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='sustainability'></a>
-            <div class='page-card'>
+        <a class="anchor" id='sustainability'></a>
+        <div class='page-card'>
             <div>
                 <p>Sustainable Development Goals</p>
                 <p>
@@ -114,10 +99,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='accomplishments'></a>
-            <div class='page-card'>
+        <a class="anchor" id='accomplishments'></a>
+        <div class='page-card'>
             <div>
                 <p>Accomplishments</p>
                 <p>
@@ -142,10 +127,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='metrics'></a>
-            <div class='page-card'>
+        <a class="anchor" id='metrics'></a>
+        <div class='page-card'>
             <div>
                 <p>Metrics</p>
                 <p>
@@ -170,10 +155,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='partners'></a>
-            <div class='page-card'>
+        <a class="anchor" id='partners'></a>
+        <div class='page-card'>
             <div>
                 <p>Partners</p>
                 <p>
@@ -198,10 +183,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='donations'></a>
-            <div class='page-card'>
+        <a class="anchor" id='donations'></a>
+        <div class='page-card'>
             <div>
                 <p>Make a Donation</p>
                 <p>
@@ -226,10 +211,10 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
+        </div>
 
-            <a id='spnosors'></a>
-            <div class='page-card'>
+        <a class="anchor" id='sponsors'></a>
+        <div class='page-card'>
             <div>
                 <p>Sponsors</p>
                 <p>
@@ -245,8 +230,8 @@ title: About Us
                 Maecenas eu pretium lectus. Phasellus tempor risus vitae sem sodales mattis. Integer ex leo, ultrices sit amet vulputate a, 
                 consectetur id lacus. Proin pharetra tortor quam. Aenean egestas ligula sit amet pharetra maximus. Nunc ultrices est mauris, 
                 non tempor mi suscipit ac.
-            </p>
-            <p>
+                </p>
+                <p>
                 Aliquam erat volutpat. Aenean enim orci, venenatis vehicula dolor nec, dictum auctor erat. Nulla ac odio quis mauris porta pretium 
                 vel ut turpis. Morbi cursus et lorem nec suscipit. Suspendisse potenti. Etiam nec libero sed lacus pharetra lacinia. Sed ac nisi 
                 finibus, pellentesque ante non, ornare mauris. Class aptent taciti sociosqu ad litora torquent per conubia 
@@ -254,10 +239,9 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
-
-            <a id='news'></a>
-            <div class='page-card'>
+        </div>
+        <a class="anchor" id='news'></a>
+        <div class='page-card last-card'>
             <div>
                 <p>Hack for LA in the News</p>
                 <p>
@@ -282,7 +266,23 @@ title: About Us
                 Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                 </p>
             </div>
-            </div>
-        </div>
+        </div>    
+    </div>
+
+    <nav id="sticky-nav" class="sticky-nav">
+        <ul>
+            <li><a href='#letter'>Letter from the ED</a></li>
+            <li><a href='#platform'>Hack for LA Platform</a></li>
+            <li><a href='#sustainability'>Sustainability</a></li>
+            <li><a href='#accomplishments'>Accomplishments</a></li>
+            <li><a href='#metrics'>Metrics</a></li>
+            <li><a href='#partners'>Partners</a></li>
+            <li><a href='#donations'>Donations</a></li>
+            <li><a href='#sponsors'>Sponsors</a></li>
+            <li><a href='#news'>News</a></li>
+        </ul>
+    </nav>
 </div>
 
+<!-- Include javaScript -->
+{% include page-resources/about-us/about-us.js.html %}

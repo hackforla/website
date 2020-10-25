@@ -29,10 +29,11 @@
       }
 }
 
+
 .page-content-container--about-us {
     min-height: 100vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
   }
@@ -48,30 +49,63 @@
      margin-bottom: 0;
      padding: 30px;
      height: fit-content;
-     margin: 12px auto;
+     margin: 12px;
   }
 
   .page-card--ed {
     border-radius: 0;
   }
 
-  /*
-  div#nav-container > nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+  .stick-it {
+    position: fixed;
+    top:80px;
+    z-index: 1;
+    right: 150px;
   }
-  */
+
+  .is-active {
+    color: black;
+    font-weight: 700;
+    color: black !important;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      border: 3px solid green;
+  
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-black;
+      }
+    }
+  }
+
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -75x;
+    visibility: hidden;
+  }
+
+  .last-card {
+    margin-bottom: 125px;
+  }
+
   .sticky-nav {
+    grid-area: nav;
+    justify-self: start;
+    display: none;
     background: #fff;
     border: 0px solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
-    max-width: 250px;
+    max-width: 360px;
     padding: 30px;
     height: fit-content;
-    margin-left: 75px;
   }
 
   .sticky-nav ul {
@@ -84,14 +118,47 @@
     margin-bottom: 10px;
   }
 
-  /* Only stick if you can fit */
-  @media (min-height: 300px) {
-  nav ul {
-    position: sticky;
-    top: 0;
+  .not-sticky-nav {
+    grid-area: content;
+    justify-self: start;
+    margin-left: 100px;
+  }
+
+
+
+// CSS Grid 
+.page-content-container-grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "content";
+  align-items: start;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+}
+
+// Bigger than mobile - 480px
+@media #{$bp-mobile-up} {
+}
+
+// Bigger than tablet - 768px
+@media #{$bp-tablet-up} {
+  .page-content-container-grid {
+    grid-template-columns: auto 360px;
+    grid-template-rows: auto;
+    grid-gap: 0 20px;
+    grid-template-areas: 
+    "content nav";
+  }
+  .sticky-nav {
+    display: block;
   }
 }
 
-  .not-sticky-nav {
-      margin-left: 100px;
-  }
+//Bigger than desktop - 960px
+@media #{$bp-desktop-up} {
+}
+
+/* End Grid Tags */
