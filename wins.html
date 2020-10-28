@@ -3,31 +3,61 @@ layout: default
 title: Wins
 ---
 {%- include wins-hero.html -%}
-
+<div class="overlay" onclick="hideOverlay()">
+	<div id="overlay-project-card" class="project-card wins-card center-screen">
+		<div class="wins-card-left">
+			<img class="wins-card-profile-img" src="/assets/images/wins-page/avatar-default.svg">
+			<img class="wins-card-big-quote" src="/assets/images/wins-page/quote-icon.svg">
+		</div>
+		<div class="wins-card-content project-card-inner">
+			<div class="project-inner wins-card-top">
+				<span id="overlay-name" class="wins-card-name">Blank</span>
+				<span id="overlay-icons" class="wins-card-icons"></span>
+			</div>
+			<div id="overlay-teams" class="project-inner wins-card-team">Team(s): Blank</div>
+			<div id="overlay-roles" class="project-inner wins-card-team">Role(s): Blank</div>
+			<div class="project-inner wins__card-text">
+				<p id="overlay-info" class="wins-card-info">Blank</p>
+				<p id="overlay-overview">Blank</p>
+			</div>
+		</div>
+	</div>
+</div>
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
 
-  <div class="wins-page-contain projects-inner" style="clear: left;">
-    <ul id="responses" class="project-list unstyled-list">
+	<div class="wins-page-contain projects-inner" style="clear: left;">
+		<ul id="responses" class="project-list unstyled-list">
 
-    </ul>
-  </div>
+		</ul>
+	</div>
 </section>
 
 <script>
-	function formatMessage(win){
+
+	function main() {
+		{% assign localData = site.data.wins-data | jsonify %}
+		let localData = {{ localData }};
+	let data = localData.values;
+	window.localStorage.setItem('data', JSON.stringify(data));
+	makeCards(data);
+	ifPageEmpty();
+	}
+
+
+	function formatMessage(win) {
 		let str = '';
 		let lastCommaIndex = win.lastIndexOf(",");
-		if (lastCommaIndex != -1){
+		if (lastCommaIndex != -1) {
 			str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
-		}else{
+		} else {
 			str += win + '!';
 		}
 		return str;
 	}
 
-	function ifPageEmpty(){
-		if (document.querySelectorAll('.wins-card').length == 0){
+	function ifPageEmpty() {
+		if (document.querySelectorAll('.wins-card').length == 0) {
 			const page = document.querySelector('.wins-page-contain');
 			const p = document.createElement('p');
 			//p.classList.add("project-card");
@@ -36,86 +66,116 @@ title: Wins
 		}
 	}
 
-	function makeElement (elementType, parent, className){
+	function makeElement(elementType, parent, className) {
 		let child = document.createElement(elementType);
 		child.classList.add(className);
 		parent.appendChild(child);
 		return child;
 	}
-	function makeIcon (href, parent, className, src){
+	function makeIcon(href, parent, className, src) {
 		let icon = makeElement('a', parent, 'wins-card-icon');
 		icon.setAttribute("href", href);
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}
-	function makeCards(data){
-	const list = document.querySelector('#responses');
-	for (let i = data.length - 1; i > 0 ; i--){
-		if (data[i][13] != "TRUE") continue; //checks if Display column is set to true
-		
-		let li = makeElement('li', list, "project-card");
-		li.classList.add("wins-card");
+	function updateOverlay(i) {
+		let stringData = window.localStorage.getItem("data");
+		let data = JSON.parse(stringData);
 
-		let leftDiv = makeElement('div', li, "wins-card-left");
+		const overlayIcons = document.querySelector('#overlay-icons');
+		overlayIcons.innerHTML = "";
 
-		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
-		profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+		if (data[i][3].length > 0) {
+			makeIcon(data[i][3], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+		} if (data[i][5].length > 0) {
+			makeIcon(data[i][5], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+		}
 
-		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
-		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
+		const overlayName = document.querySelector('#overlay-name');
+		overlayName.innerHTML = data[i][2];
 
-		let rightDiv = makeElement('div', li, "wins-card-content");
-		rightDiv.classList.add("project-card-inner");
+		const overlayTeams = document.querySelector('#overlay-teams');
+		overlayTeams.innerHTML = `Team(s): ${data[i][7]}`;
 
-		for (let j = 1; j < data[i].length; j++){//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
-			if(j == 2 || j == 7 || j == 8 || j == 11 || j == 12 || j == 13){
-				let innerDiv = makeElement('div', rightDiv, "project-inner");
-				if (j == 2){
-					innerDiv.classList.add("wins-card-top");
-					let name = makeElement('span', innerDiv, "wins-card-name");
-					name.innerHTML = data[i][j];
-					let icons = makeElement('span', innerDiv, "wins-card-icons");
-				if(data[i][3].length > 0){
-					makeIcon (data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-				}if(data[i][5].length > 0){
-					makeIcon (data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-				}
-				}
-				else if (j == 7){
-					innerDiv.classList.add("wins-card-team");
-					innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
-				}
-				else if (j == 8){
-				if(data[i][j].length > 0){
-					innerDiv.classList.add("wins-card-team");
-					innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
-				}
-				}
-				else if (j == 11){
-					innerDiv.classList.add("wins__card-text");
-					let info = makeElement('p', innerDiv, "wins-card-info");
-					info.innerHTML = formatMessage(data[i][11]); //win
-					let overview = makeElement('p', innerDiv, "wins-card-overview");
-					overview.innerHTML = data[i][12];//description
-				}
-				
-				else if (j == 13){
-					innerDiv.classList.add("wins__see-more-div")//make id instead of class/// add id_${i}
-					innerDiv.innerHTML = '<span class="wins__see-more-span">see more</span>'
+		const overlayRoles = document.querySelector('#overlay-roles');
+		overlayRoles.innerHTML = `Role(s): ${data[i][8]}`;
+
+		const overlayInfo = document.querySelector('#overlay-info');
+		overlayInfo.innerHTML = formatMessage(data[i][11]);
+
+		const overlayOverview = document.querySelector('#overlay-overview');
+		overlayOverview.innerHTML = data[i][12];
+
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.add("display-initial");
+	}
+	function hideOverlay(e) {
+		e = e || window.event;
+		if (e.target !== e.currentTarget)
+			return;
+
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.remove("display-initial");
+	}
+	function makeCards(data) {
+		const list = document.querySelector('#responses');
+		for (let i = data.length - 1; i > 0; i--) {
+			if (data[i][13] != "TRUE") continue; //checks if Display column is set to true
+
+			let cardElement = makeElement('li', list, "project-card");
+			cardElement.classList.add("wins-card");
+
+			let leftDiv = makeElement('div', cardElement, "wins-card-left");
+
+			let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
+			profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+
+			let quote = makeElement('img', leftDiv, "wins-card-big-quote");
+			quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
+			let rightDiv = makeElement('div', cardElement, "wins-card-content");
+			rightDiv.classList.add("project-card-inner");
+
+			for (let j = 1; j < data[i].length; j++) {//2, 7, 8, 11, and 12 correspond with name, team, role, and wins info
+				if (j == 2 || j == 7 || j == 8 || j == 11 || j == 12 || j == 13) {
+					let innerDiv = makeElement('div', rightDiv, "project-inner");
+					if (j == 2) {
+						innerDiv.classList.add("wins-card-top");
+						let name = makeElement('span', innerDiv, "wins-card-name");
+						name.innerHTML = data[i][j];
+						let icons = makeElement('span', innerDiv, "wins-card-icons");
+						if (data[i][3].length > 0) {
+							makeIcon(data[i][3], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+						} if (data[i][5].length > 0) {
+							makeIcon(data[i][5], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+						}
+					}
+					else if (j == 7) {
+						innerDiv.classList.add("wins-card-team");
+						innerDiv.innerHTML = `Team(s): ${data[i][j]}`;
+					}
+					else if (j == 8) {
+						if (data[i][j].length > 0) {
+							innerDiv.classList.add("wins-card-team");
+							innerDiv.innerHTML = `Role(s): ${data[i][j]}`;
+						}
+					}
+					else if (j == 11) {
+						innerDiv.classList.add("wins__card-text");
+						let info = makeElement('p', innerDiv, "wins-card-info");
+						info.innerHTML = formatMessage(data[i][11]); //win
+						let overview = makeElement('p', innerDiv, "wins-card-overview");
+						overview.innerHTML = data[i][12];//description
+					}
+
+					else if (j == 13) {
+						innerDiv.classList.add("wins__see-more-div")//make id instead of class/// add id_${i}
+						innerDiv.innerHTML = `<span id="${i}" onclick="updateOverlay(this.id)" class="wins__see-more-span">see more</span>`
+					}
 				}
 			}
 		}
 	}
-	}
-	function main(){
-		{% assign localData = site.data.wins-data | jsonify %}
-		let localData = {{ localData }};
-		let data = localData.values
-		makeCards(data);
-		ifPageEmpty();
-	}
-
+	
 	main();
 
 </script>
-
