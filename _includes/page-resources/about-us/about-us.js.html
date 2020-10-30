@@ -72,25 +72,18 @@
 
     document.addEventListener("scroll", scrollHandler, true);
 
-    console.log(qlArray + "|" + positionArray);
-
     function scrollHandler() {
 
         // Initialize
         let currentScrollPosition = document.documentElement.scrollTop;	
         let currentActive;
-
-        console.log(currentScrollPosition);
         
-
         for (let i=1; i <= positionArray.length; i++) {
 
-                // Set value
-                currentScrollPosition = document.documentElement.scrollTop;	
-                
+            // Set value
+            currentScrollPosition = document.documentElement.scrollTop;	
 
             if (currentScrollPosition >= positionArray[i-1] && currentScrollPosition < positionArray[i]) {
-
                 currentActive = document.getElementsByClassName('is-active')[0];
 
                 if (currentActive != undefined){
@@ -98,13 +91,11 @@
                 }
                 
                 quickLinks[i-1].classList.add('is-active');
-
                 break;
             }
 
             if (currentScrollPosition > positionArray[positionArray.length-1]){
                 currentActive = document.getElementsByClassName('is-active');
-
                 currentActive = document.getElementsByClassName('is-active')[0];
 
                 if (currentActive != undefined){
@@ -112,11 +103,44 @@
                 }
                 
                 quickLinks[quickLinks.length-1].classList.add('is-active');
-
                 break;
-
             }
         } // End for
     };
 
+    /***** Script 4: Mobile accordian ****/
+
+    var showAnswer = document.getElementsByClassName('about-us-section-header');
+
+    for (let i = 0; i < showAnswer.length; i++) {
+        showAnswer[i].addEventListener("click", function () {
+
+            this.classList.toggle("au_active");
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none"
+            } else {
+                panel.style.display = "block"
+            }
+        })
+
+    }
+
+    /***** Script 5: Add a break tag to certain headers *****/
+
+    // Get the header text
+    let letterHeadText = document.getElementById("letterBR").innerText;
+    let platformHeadText = document.getElementById("platformBR").innerText;
+    let sustainHeadText = document.getElementById("sustainBR").innerText;
+
+    // Function to add something within a string
+    let insertSomething = (str,ins_str,pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
+
+
+    // If it's mobile, add a break tag and put it back
+    if (windowWidth < 768) {
+        document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
+        document.getElementById("platformBR").innerHTML = insertSomething(platformHeadText, '<br />', 11);
+        document.getElementById("sustainBR").innerHTML = insertSomething(sustainHeadText, '<br />', 18);
+    }
 </script>
