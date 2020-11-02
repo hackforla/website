@@ -55,8 +55,6 @@ links:
   - name: Test Site
     url: "http://food-oasis.herokuapp.com/"
 looking:
-  - category: Development
-    skill: React developers (2)
 technologies:
   - ReactJS
   - Express

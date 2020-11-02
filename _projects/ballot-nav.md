@@ -23,6 +23,12 @@ links:
   - name: Readme
     url:  'https://github.com/hackforla/ballotnav/blob/master/README.md'
 looking: 
+  - category: Business Analyst
+    skill: Business Analyst
+  - category: UI/UX
+    skill: UX Researcher
+  - category: UI/UX
+    skill: UI Designer
   - category: SEO/Marketing
     skill: Marketing, PR & Partnerships
   - category: SEO/Marketing
