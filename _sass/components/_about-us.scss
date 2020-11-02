@@ -33,6 +33,19 @@
       }
 }
 
+// CSS Grid 
+.page-content-container-grid {
+  //min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "content";
+  align-items: start;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+}
+
   //Make universal
   .page-card {
      background: #fff;
@@ -55,9 +68,9 @@
   // Makes the sticky navigation stick
   .stick-it {
     position: fixed;
-    top:80px;
+    top:60px;
     z-index: 1;
-    right: 150px;
+    right: 182px;
   }
 
   // Make the active link different
@@ -69,7 +82,6 @@
     a {
       text-decoration: none;
       font-weight: 700;
-      border: 3px solid green;
   
       &:link,
       &:visited,
@@ -85,6 +97,8 @@
     content: "\25C0";
     float: left;
     font-size: 12px;
+    padding-right: 25px;
+    display: none;
   }
 
   // This adjustment is so that the page scrolls to the correct place when you hit the nav links
@@ -156,18 +170,124 @@
     transform: rotate(135deg);
     transition: transform 0.25s ease-in;
   }
-// CSS Grid 
-.page-content-container-grid {
-  //min-height: 100vh;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "content";
-  align-items: start;
-  margin-top: 20px;
-  scroll-behavior: smooth;
-}
+
+  .sub-card-head {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 15px 0 8px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .sub-head-image {
+    padding-right: 10px;
+  }
+
+  .sub-head-text {
+    padding-bottom: 5px;
+  }
+
+  .sub-card-content {
+    padding-left: 5px;
+    padding-left: 23px;
+    margin-left: 8px;
+  }
+
+  // Colors
+  
+  .au-color-1 {
+    color: #1587FF; 
+  }
+
+  .au-border-1 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #1587FF;
+  }
+  .au-color-2 {
+    color: #0DC583;
+  }
+
+  .au-border-2 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #0DC583;
+  }
+
+  .au-color-3 {
+    color: #F9B402;
+  }
+
+  .au-border-3 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #F9B402;
+  }
+
+  .au-color-4 {
+    color: #F16618; 
+  }
+
+  .au-border-4 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #F16618;
+  }
+
+  .au-color-5 {
+    color: #D7261B; 
+  }
+
+  .au-border-5 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #D7261B;
+  }
+
+  .au-color-6 {
+    color: #FA207C; 
+  }
+
+  .au-border-6 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #FA207C;
+  }
+
+  .au-color-7 {
+    color: #D11D69; 
+  }
+
+  .au-border-7 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #D11D69;
+  }
+
+  .au-color-8 {
+    color: #981DD1; 
+  }
+
+  .au-border-8 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #981DD1;
+  }
+
+  .au-color-9 {
+    color: #571DD1; 
+  }
+
+  .au-border-9 {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: #571DD1;
+  }
+
+  .bold-quote {
+    font-weight: 700;
+    font-style: italic;
+  }
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
@@ -200,7 +320,7 @@
   }
   
   .last-card {
-    margin-bottom: 125px;
+    margin-bottom: 150px;
   }
 
   .about-us-section-content {
@@ -218,6 +338,10 @@
   }
   .line-break {
     display: none;
+  }
+
+  .sticky-nav a {
+    text-decoration: none;
   }
 } // End tablet-up
 
