@@ -72,7 +72,7 @@ title: Wins
 
 		
 
-		// window.localStorage.setItem('data', JSON.stringify(data));
+		window.localStorage.setItem('data', JSON.stringify(cardData));
 		makeCards(cardData);
 		ifPageEmpty();
 	}
@@ -111,50 +111,56 @@ title: Wins
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}
-	// function updateOverlay(i) {
-	// 	let stringData = window.localStorage.getItem("data");
-	// 	let data = JSON.parse(stringData);
+	function updateOverlay(i) {
+			let stringData = window.localStorage.getItem("data");
+			let data = JSON.parse(stringData);
+			console.log(data)
+			console.log(i)
 
-	// 	const overlayIcons = document.querySelector('#overlay-icons');
-	// 	overlayIcons.innerHTML = "";
+			const overlayIcons = document.querySelector('#overlay-icons');
+			overlayIcons.innerHTML = "";
 
-	// 	if (data[i][3].length > 0) {
-	// 		makeIcon(data[i][3], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-	// 	} if (data[i][5].length > 0) {
-	// 		makeIcon(data[i][5], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-	// 	}
+			if (data[i][linkedin_url].length > 0) {
+				makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+			} if (data[i][github_url].length > 0) {
+				makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			}
 
-	// 	const overlayName = document.querySelector('#overlay-name');
-	// 	overlayName.innerHTML = data[i][2];
+			const overlayName = document.querySelector('#overlay-name');
+			overlayName.innerHTML = data[i][name];
 
-	// 	const overlayTeams = document.querySelector('#overlay-teams');
-	// 	overlayTeams.innerHTML = `Team(s): ${data[i][7]}`;
+			const overlayTeams = document.querySelector('#overlay-teams');
+			overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
 
-	// 	const overlayRoles = document.querySelector('#overlay-roles');
-	// 	overlayRoles.innerHTML = `Role(s): ${data[i][8]}`;
+			const overlayRoles = document.querySelector('#overlay-roles');
+			overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
 
-	// 	const overlayInfo = document.querySelector('#overlay-info');
-	// 	overlayInfo.innerHTML = formatMessage(data[i][11]);
+			const overlayInfo = document.querySelector('#overlay-info');
+			overlayInfo.innerHTML = formatMessage(data[i][win]);
 
-	// 	const overlayOverview = document.querySelector('#overlay-overview');
-	// 	overlayOverview.innerHTML = data[i][12];
+			const overlayOverview = document.querySelector('#overlay-overview');
+			overlayOverview.innerHTML = data[i][overview];
 
-	// 	const overlayProjectCard = document.querySelector('#overlay-project-card');
-	// 	overlayProjectCard.parentNode.classList.add("display-initial");
-	// }
-	// function hideOverlay(e) {
-	// 	e = e || window.event;
-	// 	if (e.target !== e.currentTarget)
-	// 		return;
+			const overlayProjectCard = document.querySelector('#overlay-project-card');
+			overlayProjectCard.parentNode.classList.add("display-initial");
+		}
+	function hideOverlay(e) {
+		e = e || window.event;
+		if (e.target !== e.currentTarget)
+			return;
 
-	// 	const overlayProjectCard = document.querySelector('#overlay-project-card');
-	// 	overlayProjectCard.parentNode.classList.remove("display-initial");
-	// }
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.remove("display-initial");
+	}
+
 	function makeCards(data) {
 		const list = document.querySelector('#responses');
 		let idNum = 0
 		data.forEach( (card) => {
-			if (card[display] != "TRUE") return; //checks if Display column is set to true
+			if (card[display] != "TRUE"){
+				idNum++;
+				return; //checks if Display column is set to true
+			}
 
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
@@ -201,12 +207,12 @@ title: Wins
 
 			//makes the see more span on the bottom of the card
 				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
-				seeMoreDiv.classList.add("wins__see-more-div")//make id instead of class/// add id_${i}
-				//innerDiv.innerHTML = `<span id="${idNum}" onclick="updateOverlay(this.id)" class="wins__see-more-span">see more</span>`
+				seeMoreDiv.classList.add("wins__see-more-div")
+				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="updateOverlay(id)" class="wins__see-more-span">see more</span>`
 				idNum++
 		})
 	}
-	
+
 	main();
 
 </script>
