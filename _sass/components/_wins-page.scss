@@ -25,6 +25,10 @@
 	flex-direction: column;
 	margin-left: 20px;
 	width: 100%;
+	position: relative;
+	height: 248px;
+	overflow: hidden;
+	margin-left: 6px;
 }
 .wins-page-contain{
 	margin:0 auto;
@@ -100,6 +104,10 @@
 			max-height: 60.5px;
 			font-size: 18.5px;
 		}
+		
+	}
+	.wins-card-content{
+		height: 218px;
 	}
 
 }
@@ -124,6 +132,9 @@
 		}
 	}
 
+	.wins-card-content{
+		height: 209px;
+	}
 	.wins-card{
 		padding: 24px;
 	}
@@ -139,9 +150,6 @@
 		margin: 4px;
 		height: 60px;
 		width: 18px;
-	}
-	.wins-card-content{
-		margin-left: 6px;
 	}
 
 	.wins-card-name{
@@ -184,8 +192,14 @@
 
 
 .wins__see-more-div {
+	// color: red;
+	// text-align: right;
+	position: absolute;
+	background-color: white;
+	right: 0px;
+	bottom: 0px;
 	color: red;
-	text-align: right;
+	padding: 0px 3px;
 }
 
 .wins__card-text {
