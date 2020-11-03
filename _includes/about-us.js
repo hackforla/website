@@ -130,17 +130,12 @@
 
     // Get the header text
     let letterHeadText = document.getElementById("letterBR").innerText;
-    let platformHeadText = document.getElementById("platformBR").innerText;
-    let sustainHeadText = document.getElementById("sustainBR").innerText;
-
+  
     // Function to add something within a string
     let insertSomething = (str,ins_str,pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
-
 
     // If it's mobile, add a break tag and put it back
     if (windowWidth < 768) {
         document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
-        document.getElementById("platformBR").innerHTML = insertSomething(platformHeadText, '<br />', 11);
-        document.getElementById("sustainBR").innerHTML = insertSomething(sustainHeadText, '<br />', 18);
     }
 </script>

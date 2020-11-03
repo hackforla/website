@@ -196,97 +196,98 @@
   // Colors
   
   .au-color-1 {
-    color: #1587FF; 
+    color: $color-dodgerblue; 
   }
 
   .au-border-1 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #1587FF;
+    border-left-color: $color-dodgerblue;
   }
   .au-color-2 {
-    color: #0DC583;
+    color: $color-lightseagreen;
   }
 
   .au-border-2 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #0DC583;
+    border-left-color: $color-lightseagreen;
   }
 
   .au-color-3 {
-    color: #F9B402;
+    color: $color-orange;
   }
 
   .au-border-3 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #F9B402;
+    border-left-color: $color-orange;
   }
 
   .au-color-4 {
-    color: #F16618; 
+    color: $color-chocolate; 
   }
 
   .au-border-4 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #F16618;
+    border-left-color: $color-chocolate;
   }
 
   .au-color-5 {
-    color: #D7261B; 
+    color: $color-firebrick; 
   }
 
   .au-border-5 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #D7261B;
+    border-left-color: $color-firebrick;
   }
 
   .au-color-6 {
-    color: #FA207C; 
+    color: $color-deeppink;
   }
 
   .au-border-6 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #FA207C;
+    border-left-color: $color-deeppink;
   }
 
   .au-color-7 {
-    color: #D11D69; 
+    color: $color-mediumvioletred; 
   }
 
   .au-border-7 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #D11D69;
+    border-left-color: $color-mediumvioletred;
   }
 
   .au-color-8 {
-    color: #981DD1; 
+    color: $color-darkorchid; 
   }
 
   .au-border-8 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #981DD1;
+    border-left-color: $color-darkorchid;
   }
 
   .au-color-9 {
-    color: #571DD1; 
+    color: $color-blueviolet; 
   }
 
   .au-border-9 {
     border-left-style: solid;
     border-left-width: 5px;
-    border-left-color: #571DD1;
+    border-left-color: $color-blueviolet;
   }
 
   .bold-quote {
     font-weight: 700;
     font-style: italic;
+    text-align: center;
   }
 
 /* Below are the breakpoints and adjustments for different size monitors */
@@ -342,6 +343,48 @@
 
   .sticky-nav a {
     text-decoration: none;
+  }
+
+  .platform-mid-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-template-areas: 
+    "top-left top-right"
+    "top-left top-right"
+    "top-left mid-right"
+    "mid-left mid-right"
+    "mid-left low-right"
+    "mid-left low-right"
+    "bottom-left bottom-right"
+    "bottom-left bottom-right"
+    "bottom-left bottom-right"
+    ;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .platform-sec-impact {
+    grid-area: top-left;
+  }
+  .platform-sec-learning {
+    grid-area: top right;
+  }
+  .platform-sec-diversity {
+    grid-area: mid-left;
+  }
+  .platform-sec-giving {
+    grid-area: mid-right;
+  }
+  .platform-sec-agility {
+    grid-area: low-right
+  }
+  .platform-sec-scalability {
+    grid-area: bottom-left;
+  }
+  .platform-sec-sustainability {
+    grid-area: bottom-right;
+    align-self: center;
   }
 } // End tablet-up
 
