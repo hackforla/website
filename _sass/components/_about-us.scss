@@ -60,6 +60,16 @@
      margin: 12px;
   }
 
+  .grid-2-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 20px;
+    justify-items: stretch;
+    align-content: space-between; 
+  }
+
   // Make the Letter page card have square corners
   .page-card--ed {
     border-radius: 0;
@@ -288,6 +298,21 @@
     font-weight: 700;
     font-style: italic;
     text-align: center;
+  }
+
+  .sdg-images {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-around; 
+    align-content: space-between;
+  }
+
+  .small-text {
+    font-size: 8pt;
+  }
+
+  .grid-center {
+    place-self: center;
   }
 
 /* Below are the breakpoints and adjustments for different size monitors */
