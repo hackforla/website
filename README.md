@@ -366,6 +366,7 @@ the changes to your local branch (e.g. `fix-logo-width-311`).
 - [docker](https://docs.docker.com/get-started/)
 - [dockercompose](https://docs.docker.com/compose/gettingstarted/)
 - [dockerdesktop](https://docs.docker.com/install/)
+- [github protected branches](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-protected-branches)
 
 
 [Back to Top](#overview)
