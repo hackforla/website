@@ -155,6 +155,7 @@
 
   .about-us-section-header {
     font-weight: 900;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: 0.4s;
     display: flex;
@@ -203,96 +204,130 @@
     margin-left: 8px;
   }
 
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   // Colors
   
-  .au-color-1 {
+  .color-dodgerblue {
     color: $color-dodgerblue; 
   }
 
-  .au-border-1 {
+  .border-dodgerblue {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-dodgerblue;
   }
-  .au-color-2 {
+  .color-lightseagreen {
     color: $color-lightseagreen;
   }
 
-  .au-border-2 {
+  .border-lightseagreen {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-lightseagreen;
   }
 
-  .au-color-3 {
+  .color-orange {
     color: $color-orange;
   }
 
-  .au-border-3 {
+  .border-orange {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-orange;
   }
 
-  .au-color-4 {
+  .color-chocolate {
     color: $color-chocolate; 
   }
 
-  .au-border-4 {
+  .border-chocolate {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-chocolate;
   }
 
-  .au-color-5 {
+  .color-firebrick {
     color: $color-firebrick; 
   }
 
-  .au-border-5 {
+  .border-firebrick {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-firebrick;
   }
 
-  .au-color-6 {
+  .color-deeppink {
     color: $color-deeppink;
   }
 
-  .au-border-6 {
+  .border-deeppink {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-deeppink;
   }
 
-  .au-color-7 {
+  .color-mediumvioletred {
     color: $color-mediumvioletred; 
   }
 
-  .au-border-7 {
+  .border-mediumvioletred {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-mediumvioletred;
   }
 
-  .au-color-8 {
+  .color-darkorchid {
     color: $color-darkorchid; 
   }
 
-  .au-border-8 {
+  .border-darkorchid {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-darkorchid;
   }
 
-  .au-color-9 {
+  .color-blueviolet {
     color: $color-blueviolet; 
   }
 
-  .au-border-9 {
+  .border-blueviolet {
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: $color-blueviolet;
   }
+
+  .color-goldenrod-2 {
+    color: #d49f28;
+  }
+
+  .color-orangered {
+    color: #ee412a;
+  }
+
+  .color-brown {
+    color: #8e1737;
+  }
+
+  .color-goldenrod-11 {
+    color: #fa9c25; 
+   }
+
+  .color-darkolivegreen {
+    color: #48763e;
+  }
+
+  .color-teal {
+    color: #01548a;
+  }
+
+  .color-midnightblue {
+    color: #173567;
+  }
+
 
   .bold-quote {
     font-weight: 700;
@@ -315,6 +350,100 @@
     place-self: center;
   }
 
+  .sdg-groups {
+    margin-bottom: 20px;
+  }
+  /* Clear floats after the columns */
+  .sdg-groups:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .sdg-column {
+    float: left;
+  }
+
+  .sdg-left {
+    width: 15%;
+  }
+  .sdg-right {
+    width:  85%;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  .sdg-top-paragraph {
+    padding-top: 25px;
+  }
+
+  .sdg-title-mobile {
+    display: inline;
+  }
+
+  .sdg-title-full {
+    display: none;
+  }
+
+  .accomplishment-title {
+    color: $color-red;
+    text-decoration: underline;
+    margin: 25px 0 10px 0;
+  }
+
+  .accomplishment-wins {
+    color: $color-red;
+    text-decoration: none;
+    margin: 25px 0 10px 0;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+  }
+
+  .accomplishment-wins img {
+    padding-right: 20px;
+  }
+
+  .accomplishment-highlights {
+    margin: 20px 0 0 0;
+  }
+
+  .text-normal {
+    font-size: 16px; 
+    font-weight: 400;
+    font-style: normal;
+    color: $color-black;
+  }
+
+  .eliptical {
+    color: #959393;
+    text-align: right;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+  
+  .wins-cup {
+    padding-right: 25px;
+  }
+
+  .wins-card-mobile {
+    display: block;
+  }
+  .wins-card-desktop {
+    display: none;
+  }
+
+  .coming-soon {
+    margin-top: 18px;
+  }
 /* Below are the breakpoints and adjustments for different size monitors */
 
 // Bigger than mobile - 480px
@@ -349,6 +478,9 @@
     margin-bottom: 150px;
   }
 
+  .about-us-section-header {
+    font-size: 1.5rem;
+  }
   .about-us-section-content {
     display: block;
   }
@@ -410,6 +542,58 @@
   .platform-sec-sustainability {
     grid-area: bottom-right;
     align-self: center;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .flex-container-accomplishments {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sdg-left-column {
+    width: 40%;
+    margin: 30px 25px 0 0;
+  }
+
+  .sdg-right-column {
+    width: 60%;
+  }
+
+  .bottom-right-column {
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  .top-left-column {
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  .sdg-title-mobile {
+    display: none;
+  }
+
+  .sdg-title-full {
+    display: inline;
+  }
+
+  .wins-card-mobile {
+    display: none;
+  }
+  .wins-card-desktop {
+    display: block;
+  }
+  
+  .wins-column-width-left {
+    width: 33%;
+  }
+
+  .wins-column-width-right {
+    width: 64%;
   }
 } // End tablet-up
 
