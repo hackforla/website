@@ -32,6 +32,7 @@
 	bottom: 0px;
 	color: red;
 	padding: 0px 3px;
+	cursor: pointer;
 }
 
 .wins__card-text {
@@ -265,10 +266,11 @@
 	.display-none {
 		display: none;
 	}
-	.center-screen {
-		.wins-card-content{
-			height: auto;
+	.expanded{
+		height: fit-content;
+		.wins__see-more-div {
+			position: relative;
+			right: 0;
 		}
 	}
-	
 }

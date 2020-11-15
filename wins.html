@@ -111,47 +111,6 @@ title: Wins
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}
-	function updateOverlay(i) {
-			let stringData = window.localStorage.getItem("data");
-			let data = JSON.parse(stringData);
-			console.log(data)
-			console.log(i)
-
-			const overlayIcons = document.querySelector('#overlay-icons');
-			overlayIcons.innerHTML = "";
-
-			if (data[i][linkedin_url].length > 0) {
-				makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-			} if (data[i][github_url].length > 0) {
-				makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-			}
-
-			const overlayName = document.querySelector('#overlay-name');
-			overlayName.innerHTML = data[i][name];
-
-			const overlayTeams = document.querySelector('#overlay-teams');
-			overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
-
-			const overlayRoles = document.querySelector('#overlay-roles');
-			overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
-
-			const overlayInfo = document.querySelector('#overlay-info');
-			overlayInfo.innerHTML = formatMessage(data[i][win]);
-
-			const overlayOverview = document.querySelector('#overlay-overview');
-			overlayOverview.innerHTML = data[i][overview];
-
-			const overlayProjectCard = document.querySelector('#overlay-project-card');
-			overlayProjectCard.parentNode.classList.add("display-initial");
-		}
-	function hideOverlay(e) {
-		e = e || window.event;
-		if (e.target !== e.currentTarget)
-			return;
-
-		const overlayProjectCard = document.querySelector('#overlay-project-card');
-		overlayProjectCard.parentNode.classList.remove("display-initial");
-	}
 
 	function makeCards(data) {
 		const list = document.querySelector('#responses');
@@ -208,9 +167,106 @@ title: Wins
 			//makes the see more span on the bottom of the card
 				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
 				seeMoreDiv.classList.add("wins__see-more-div")
-				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="updateOverlay(id)" class="wins__see-more-span">...see more</span>`
+				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
 				idNum++
+
 		})
+	}
+		function seeMore(id){
+			screenWidth = window.innerWidth;
+			console.log(screenWidth);
+			if (screenWidth > 960){
+				updateOverlay(id);
+			}else{
+				mobileSeeMore(id);
+			}
+		}
+		function mobileSeeMore(id){
+			let span = document.getElementById(id);
+			let parent = span.parentElement.parentElement
+			console.log(parent);
+			parent.classList.toggle('expanded')
+			if (parent.classList.contains('expanded')) {
+				span.innerHTML = "see less"
+			}
+			else {
+				span.innerHTML = "...see more"
+			}
+
+			// let expandableSpan = document.querySelectorAll('[expandable]')
+			// function show() {
+			// 	let span = document.getElementById(id);
+			// 	let parent = span.parentElement
+			// 	parent.classList.toggle('expanded')
+			// 	if (parent.classList.contains('expanded')) {
+			// 		span.innerHTML = "read less"
+			// 	}
+			// 	else {
+			// 		span.innerHTML = "...read more"
+			// 	}
+			// }
+
+			// expandableSpan.forEach(span => {
+			// 	span.addEventListener('click', show)
+
+			// 	let expandables = document.querySelectorAll('[expandable]')
+			// 	function show() {
+			// 		let span = document.getElementById(this.id);
+			// 		let parent = span.parentElement
+			// 		parent.classList.toggle('expanded')
+			// 		if (parent.classList.contains('expanded')) {
+			// 			this.innerHTML = "read less"
+			// 		}
+			// 		else {
+			// 			this.innerHTML = "...read more"
+			// 		}
+			// 	}
+
+			// 	expandables.forEach(span => {
+			// 		span.addEventListener('click', show)
+			// 	})
+			// })
+		}
+	function updateOverlay(i) {
+			let stringData = window.localStorage.getItem("data");
+			let data = JSON.parse(stringData);
+			console.log(data)
+			console.log(i)
+
+			const overlayIcons = document.querySelector('#overlay-icons');
+			overlayIcons.innerHTML = "";
+
+			if (data[i][linkedin_url].length > 0) {
+				makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+			} if (data[i][github_url].length > 0) {
+				makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			}
+
+			const overlayName = document.querySelector('#overlay-name');
+			overlayName.innerHTML = data[i][name];
+
+			const overlayTeams = document.querySelector('#overlay-teams');
+			overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
+
+			const overlayRoles = document.querySelector('#overlay-roles');
+			overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
+
+			const overlayInfo = document.querySelector('#overlay-info');
+			overlayInfo.innerHTML = formatMessage(data[i][win]);
+
+			const overlayOverview = document.querySelector('#overlay-overview');
+			overlayOverview.innerHTML = data[i][overview];
+
+			const overlayProjectCard = document.querySelector('#overlay-project-card');
+			overlayProjectCard.parentNode.classList.add("display-initial");
+		}
+	function hideOverlay(e) {
+		e = e || window.event;
+		if (e.target !== e.currentTarget)
+			return;
+
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.remove("display-initial");
 	}
 
 	main();
