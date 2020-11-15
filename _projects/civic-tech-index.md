@@ -57,7 +57,7 @@ looking:
   - category: UI/UX
     skill: UX specialist for testing and conducting interviews with stakeholders
   - category: UI/UX
-    skill: UI designer
+    skill: UI Designer
   - category: Content
     skill: Video content script writer
 technologies:

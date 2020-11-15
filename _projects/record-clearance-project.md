@@ -39,7 +39,9 @@ looking:
   - category: UI/UX
     skill: UX-UI
   - category: Content
-    skill: Content/writing
+    skill: Content Writing
+  - category: Development
+    skill: React Developer
 technologies:
   - ReactJS
 location:

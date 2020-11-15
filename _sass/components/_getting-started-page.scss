@@ -91,6 +91,10 @@
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
     padding: 30px 15px;
+    p.accordion {
+      display: inline-block;
+      width: 100%;
+    }
   }
 }
 
@@ -135,6 +139,7 @@
     min-width: 255px;
   }
 }
+
 
 .svg-accordion {
   float: right;
