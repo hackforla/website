@@ -70,13 +70,10 @@ title: Wins
 			cardData.push(cardObj)
 		})
 
-		
-
 		window.localStorage.setItem('data', JSON.stringify(cardData));
 		makeCards(cardData);
 		ifPageEmpty();
 	}
-
 
 	function formatMessage(win) {
 		let str = '';
@@ -172,61 +169,27 @@ title: Wins
 
 		})
 	}
-		function seeMore(id){
-			screenWidth = window.innerWidth;
-			console.log(screenWidth);
-			if (screenWidth > 960){
-				updateOverlay(id);
-			}else{
-				mobileSeeMore(id);
-			}
+	function seeMore(id){
+		screenWidth = window.innerWidth;
+		console.log(screenWidth);
+		if (screenWidth > 960){
+			updateOverlay(id);
+		}else{
+			mobileSeeMore(id);
 		}
-		function mobileSeeMore(id){
-			let span = document.getElementById(id);
-			let parent = span.parentElement.parentElement
-			console.log(parent);
-			parent.classList.toggle('expanded')
-			if (parent.classList.contains('expanded')) {
-				span.innerHTML = "see less"
-			}
-			else {
-				span.innerHTML = "...see more"
-			}
-
-			// let expandableSpan = document.querySelectorAll('[expandable]')
-			// function show() {
-			// 	let span = document.getElementById(id);
-			// 	let parent = span.parentElement
-			// 	parent.classList.toggle('expanded')
-			// 	if (parent.classList.contains('expanded')) {
-			// 		span.innerHTML = "read less"
-			// 	}
-			// 	else {
-			// 		span.innerHTML = "...read more"
-			// 	}
-			// }
-
-			// expandableSpan.forEach(span => {
-			// 	span.addEventListener('click', show)
-
-			// 	let expandables = document.querySelectorAll('[expandable]')
-			// 	function show() {
-			// 		let span = document.getElementById(this.id);
-			// 		let parent = span.parentElement
-			// 		parent.classList.toggle('expanded')
-			// 		if (parent.classList.contains('expanded')) {
-			// 			this.innerHTML = "read less"
-			// 		}
-			// 		else {
-			// 			this.innerHTML = "...read more"
-			// 		}
-			// 	}
-
-			// 	expandables.forEach(span => {
-			// 		span.addEventListener('click', show)
-			// 	})
-			// })
+	}
+	function mobileSeeMore(id){
+		let span = document.getElementById(id);
+		let parent = span.parentElement.parentElement
+		console.log(parent);
+		parent.classList.toggle('expanded')
+		if (parent.classList.contains('expanded')) {
+			span.innerHTML = "see less"
 		}
+		else {
+			span.innerHTML = "...see more"
+		}
+	}
 	function updateOverlay(i) {
 			let stringData = window.localStorage.getItem("data");
 			let data = JSON.parse(stringData);
