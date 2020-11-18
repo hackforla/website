@@ -171,7 +171,6 @@ title: Wins
 	}
 	function seeMore(id){
 		screenWidth = window.innerWidth;
-		console.log(screenWidth);
 		if (screenWidth > 960){
 			updateOverlay(id);
 		}else{
@@ -181,7 +180,6 @@ title: Wins
 	function mobileSeeMore(id){
 		let span = document.getElementById(id);
 		let parent = span.parentElement.parentElement
-		console.log(parent);
 		parent.classList.toggle('expanded')
 		if (parent.classList.contains('expanded')) {
 			span.innerHTML = "see less"
@@ -193,9 +191,7 @@ title: Wins
 	function updateOverlay(i) {
 			let stringData = window.localStorage.getItem("data");
 			let data = JSON.parse(stringData);
-			console.log(data)
-			console.log(i)
-
+			
 			const overlayIcons = document.querySelector('#overlay-icons');
 			overlayIcons.innerHTML = "";
 

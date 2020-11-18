@@ -24,8 +24,6 @@
 
 
 .wins__see-more-div {
-	// color: red;
-	// text-align: right;
 	position: absolute;
 	background-color: white;
 	right: 0px;
@@ -37,9 +35,6 @@
 
 .wins__card-text {
 	margin-top: 50px;
-	height: 114px;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	p {
 		margin: 0;
 	}
@@ -269,10 +264,10 @@
 		display: none;
 	}
 	.expanded{
-		height: fit-content;
+		height: auto;
 		.wins__see-more-div {
 			position: relative;
-			right: 0;
+			text-align: right;
 		}
 	}
 }
