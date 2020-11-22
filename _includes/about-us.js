@@ -1,4 +1,6 @@
+
 <script>
+
     /***** Script 1: Sticky Navigation *****/    
     //Initialize and set defaults
     let stickyNav = document.getElementById("sticky-nav");
@@ -19,18 +21,22 @@
     window.addEventListener('scroll', stickItHere);
 
 
+    
     /***** Script 2: Highlight Links when clicked *****/
 
-    //locate all the navigation links
+    //locate all the navigation links and arrows
+    //let navLinks = document.querySelectorAll(".sticky-nav a");
     let navLinks = document.querySelectorAll(".sticky-nav a");
 
     for (let i=0; i < navLinks.length; i++){
 
 	    navLinks[i].addEventListener('click', function(event){
-        
-        // Disable scroll handler when click on navigation link
+            
+
+        // Disable scroll handler when click on navigation link if using smooth scroll
         document.removeEventListener('scroll', scrollHandler, true);
-        
+
+
         //check if a link is currently selected, remove is-active class if yes
 		isActive = document.getElementsByClassName('is-active')[0];
 
@@ -41,18 +47,20 @@
         //then add is-active class to the most recent selected link
         this.classList.add('is-active');
         
+
         //re-enable scroll event 1 second after is-active class is added
 		setTimeout(function(){
     		document.addEventListener("scroll", scrollHandler, true); 
 	    }, 1000); 
 	
         });
+
     }
 
 
 
     /***** Script 3: Highlight links when scrolling *****/
-
+ 
     // Initialize and set defaults
     //locate all the navigation links
     let quickLinks = document.querySelectorAll(".sticky-nav a");
@@ -109,22 +117,45 @@
     };
 
     /***** Script 4: Mobile accordian ****/
+  
+    let showAnswer = document.getElementsByClassName('about-us-section-header');
+// If the display is larger than table this doesn't run; otherwise this will open and close the mobile sections
+    if (windowWidth < 768) {   
+        for (let i = 0; i < showAnswer.length; i++) {
+            showAnswer[i].addEventListener("click", function () {
 
-    var showAnswer = document.getElementsByClassName('about-us-section-header');
+                this.classList.toggle("au_active");
+                let panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none"
+                } else {
+                    panel.style.display = "block"
+                }
+            })
 
-    for (let i = 0; i < showAnswer.length; i++) {
-        showAnswer[i].addEventListener("click", function () {
-
-            this.classList.toggle("au_active");
-            let panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none"
-            } else {
-                panel.style.display = "block"
-            }
-        })
-
+        }
     }
+
+    /* ************** Script 4a: Mobile accordian for Letter ************** */
+
+    // Get sections one sibling above div to open/close
+    let letterSection = document.querySelector(".read-more");
+
+    // Open/Close the section and adds class to rotate arrow (or do anything else)
+    function handleAccordionClick (event, className) {
+
+        console.log(className);
+
+        //Add the class to the item
+        this.classList.toggle(className);
+    }
+
+    // Create event listener - pass name of class to add
+    letterSection.addEventListener("click", () => { handleAccordionClick(event, "rotateArrow"); }, false;
+
+
+
+
 
     /***** Script 5: Add a break tag to certain headers *****/
 
