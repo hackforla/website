@@ -47,15 +47,13 @@ looking:
     skill: Front End Devs (from mid level)
   - category: Development
     skill: Back End Devs (from mid level)
-  - category: UX
-    skill: UX Designer
+  - category: UI/UX
+    skill: UI/UX Designer
 technologies:
 - Node
 - Express
 - MongoDB
 - Docker
-- Github Actions
-- AWS
 - React
 - Redux
 - Sass
