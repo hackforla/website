@@ -7,57 +7,61 @@ alt: 'VRMS homepage showing the check-in buttons.'
 image-hero: /assets/images/projects/vrms-hero.png
 alt-hero: 'City of LA skyline.'
 leadership:
-  - name: Matt Tapper
-    role: Tech Team Lead
+  - name: Alex Anakin
+    role: Software Architect / Tech Lead
     links:
-      slack: ' https://hackforla.slack.com/team/UPMRJ2R1N'
-      github: 'https://github.com/sarL3y'
-    picture: https://avatars.githubusercontent.com/sarL3y
-  - name: Kelsey Capps
-    role: Product Owner
+      slack: ' https://hackforla.slack.com/team/U017H3Y7QDS'
+      github: 'https://github.com/alex-anakin'
+    picture: https://avatars.githubusercontent.com/alex-anakin
+  - name: Adam Spar
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/USU144NL8'
-      github: 'https://github.com/kelseylc'
-    picture: https://avatars.githubusercontent.com/kelseylc
+      slack: 'https://hackforla.slack.com/team/UKYHJ16CW'
+      github: 'https://github.com/switchzer0'
+    picture: https://avatars.githubusercontent.com/switchzer0
   - name: Bonnie Wolfe
     role: Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Steven Ettinger
-    role: API Integration
+  - name: Olga Bilogurova
+    role: Frontend Engineer
     links:
-      slack: 'https://app.slack.com/team/UNFG6M8FN'
-      github: 'https://github.com/disregardfiat'
-    picture: https://avatars.githubusercontent.com/disregardfiat
+      slack: 'https://app.slack.com/team/U015MG4LK99'
+      github: 'https://github.com/OlgaBilogurova'
+    picture: https://avatars.githubusercontent.com/OlgaBilogurova
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
   - name: Site
     url: 'http://vrms.io'
   - name: Readme
-    url: 'https://github.com/hackforla/VRMS/blob/master/README.md'
+    url: 'https://github.com/hackforla/VRMS/blob/development/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRGH5HM0Q'
   - name: Wiki
     url: 'https://github.com/hackforla/VRMS/wiki'
 looking:
   - category: Development
-    skill: Front end devs (any level)
+    skill: Front End Devs (from mid level)
   - category: Development
-    skill: Back end devs (any level)
-  - category: UI
-    skill: UI Designer
+    skill: Back End Devs (from mid level)
+  - category: UX
+    skill: UX Designer
 technologies:
-  - MongoDB
-  - Express
-  - ReactJS
-  - Node.js
-  - SCSS
+- Node
+- Express
+- MongoDB
+- Docker
+- Github Actions
+- AWS
+- React
+- Redux
+- Sass
+- Jest
+- React Testing Library
 location:
-  - Santa Monica
-  - Downtown LA
   - Remote
 partner: TBD
 status: Active
