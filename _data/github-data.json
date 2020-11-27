@@ -1,5 +1,5 @@
 [
-  "Thu Nov 26 2020 11:01:11 GMT+0000 (Coordinated Universal Time)",
+  "Fri Nov 27 2020 11:01:09 GMT+0000 (Coordinated Universal Time)",
   {
     "id": 76137532,
     "name": "webapp",
@@ -1764,7 +1764,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 308
+          "contributions": 310
         },
         {
           "id": 5952,
@@ -2822,7 +2822,7 @@
           "github_url": "https://github.com/HackforLABot",
           "avatar_url": "https://avatars0.githubusercontent.com/u/64623632?v=4",
           "gravatar_id": "",
-          "contributions": 308
+          "contributions": 310
         },
         {
           "id": 18221058,
@@ -9486,8 +9486,8 @@
     "name": "record-clearance",
     "languages": [
       "JavaScript",
-      "Jupyter Notebook",
       "TypeScript",
+      "Jupyter Notebook",
       "HTML",
       "Python",
       "CSS"
@@ -9496,18 +9496,18 @@
     "commitContributors": {
       "data": [
         {
+          "id": 35116846,
+          "github_url": "https://github.com/alexchoiweb",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/35116846?v=4",
+          "gravatar_id": "",
+          "contributions": 53
+        },
+        {
           "id": 54191142,
           "github_url": "https://github.com/H1Angela",
           "avatar_url": "https://avatars3.githubusercontent.com/u/54191142?v=4",
           "gravatar_id": "",
           "contributions": 33
-        },
-        {
-          "id": 35116846,
-          "github_url": "https://github.com/alexchoiweb",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/35116846?v=4",
-          "gravatar_id": "",
-          "contributions": 19
         },
         {
           "id": 15892775,
@@ -9602,18 +9602,18 @@
     "contributorsComplete": {
       "data": [
         {
+          "id": 35116846,
+          "github_url": "https://github.com/alexchoiweb",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/35116846?v=4",
+          "gravatar_id": "",
+          "contributions": 61
+        },
+        {
           "id": 54191142,
           "github_url": "https://github.com/H1Angela",
           "avatar_url": "https://avatars3.githubusercontent.com/u/54191142?v=4",
           "gravatar_id": "",
           "contributions": 36
-        },
-        {
-          "id": 35116846,
-          "github_url": "https://github.com/alexchoiweb",
-          "avatar_url": "https://avatars1.githubusercontent.com/u/35116846?v=4",
-          "gravatar_id": "",
-          "contributions": 27
         },
         {
           "id": 15892775,
@@ -12075,7 +12075,7 @@
           "github_url": "https://github.com/tan-zhou",
           "avatar_url": "https://avatars0.githubusercontent.com/u/50305762?v=4",
           "gravatar_id": "",
-          "contributions": 20
+          "contributions": 21
         },
         {
           "id": 31399879,
@@ -12121,7 +12121,7 @@
           "github_url": "https://github.com/tan-zhou",
           "avatar_url": "https://avatars0.githubusercontent.com/u/50305762?v=4",
           "gravatar_id": "",
-          "contributions": 20
+          "contributions": 21
         },
         {
           "id": 31399879,
