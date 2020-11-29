@@ -4,16 +4,17 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
-    padding: 25px 15px 0 15px;
+    padding: 25px 15px 50px 15px;    
 }
 
-.header-container h1 {
-    margin-bottom: 20px;
+.header-container--about-us h1 {
+  font-weight: 900;
+  margin-bottom: 30px;
 }
 
 .header-text--about-us {
-    font-size: 20px;
-    max-width: 600px;
+    font-size: 18px;
+    max-width: 500px;
     text-align: left;
 
     a {
@@ -52,7 +53,7 @@
      border-radius: 16px;
      box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
      overflow: hidden;
-     max-width: 850px;
+     max-width: 896px;
      margin-bottom: 0;
      padding: 22px;
      height: fit-content;
@@ -64,7 +65,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
     column-gap: 10px;
-    row-gap: 20px;
+    row-gap: 26px;
     justify-items: stretch;
     align-content: space-between; 
   }
@@ -77,14 +78,24 @@
   // Makes the sticky navigation stick
   .stick-it {
     position: fixed;
-    top:60px;
+    top:67px;
     z-index: 1;
-    right: 135px;
+    right: 125px;
   }
+
+  // Style the sticky nav links
+
+  .sticky-nav li {
+    list-style-type: none;
+    position: relative;
+    // padding: 15px 0 0 0;
+    margin-bottom: 15px;
+  }
+
 
   // Make the active link different
   .is-active {
-    color: black;
+    color: #333333;
     font-weight: 700;
     color: black !important;
     text-decoration: none;
@@ -102,25 +113,12 @@
     }
   }
 
-  .nav-arrow {
-    display: none;
-  }
-  /*
   .is-active::before {
+    position: absolute;
     content: "\25C0";
-    float: left;
-    font-size: 12px;
-    padding-right: 25px;
-  }
-*/
-  .nav-left {
-    width: 20%;
-    display: inline-block;
     font-size: 10px;
-  }
-  .nav-right {
-    width: 80%;
-    display: inline-block;
+    margin-left: -35px;
+    margin-top: 5px;
   }
 
   // This adjustment is so that the page scrolls to the correct place when you hit the nav links
@@ -137,18 +135,17 @@
 
   .sticky-nav {
     grid-area: nav;
-    justify-self: start;
+    //justify-self: start;
     display: none;
     background: #fff;
     border: 0px solid rgba(51, 51, 51, 0.06);
     border-radius: 16px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
-    width: 265px;
-    padding: 30px;
+    width: 275px;
+    padding: 35px 40px 15px 26px;
     margin-top: 12px;
-    height: fit-content;
-
+    // height: fit-content;
   }
 
   .sticky-nav-inner-grid {
@@ -162,15 +159,6 @@
     scroll-behavior: smooth;
   }
 
-  .sticky-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .sticky-nav ul li {
-    margin-bottom: 10px;
-  }
 
   // The part of the page that is not the sticky nav.  Should probably rename
   .not-sticky-nav-container {
@@ -202,11 +190,14 @@
   .about-us-section-header--ED {
     font-weight: 900;
     font-size: 1.25rem;
-    cursor: pointer;
     transition: 0.4s;
     display: flex;
     justify-content: flex-start;
     text-align: center;
+  }
+
+  #letterBR {
+    padding-left: 30px;
   }
 
   .about-us-section-content {
@@ -236,6 +227,21 @@
     font-size: 16px;
   }
 
+  .read-less {
+    color: $color-red;
+    text-align: right;
+    padding: 0 10 0 0;
+  }
+  .read-less::after {
+    content: "\221F";
+    float: right;
+    transform: rotate(-45deg);
+    transition: transform 0.25s ease-in;
+    color: rgb(250, 17, 79);
+    font-weight: bolder;
+    font-size: 16px;
+  }
+
   .au_active::after {
     content: "\221F";
     transform: rotate(135deg);
@@ -245,7 +251,7 @@
   .sub-card-head {
     font-size: 1.2rem;
     font-weight: 600;
-    padding: 15px 0 8px 0;
+    padding: 15px 0 10px 0;
     display: flex;
     align-items: center;
   }
@@ -374,32 +380,40 @@
     border-left-color: $color-blueviolet;
   }
 
+  // SDG Colors
   .color-goldenrod-2 {
     color: #d49f28;
+    font-weight: 700;
   }
 
   .color-orangered {
     color: #ee412a;
+    font-weight: 700;
   }
 
   .color-brown {
     color: #8e1737;
+    font-weight: 700;
   }
 
   .color-goldenrod-11 {
     color: #fa9c25; 
+    font-weight: 700;
    }
 
   .color-darkolivegreen {
     color: #48763e;
+    font-weight: 700;
   }
 
   .color-teal {
     color: #01548a;
+    font-weight: 700;
   }
 
   .color-midnightblue {
     color: #173567;
+    font-weight: 700;
   }
 
 
@@ -449,6 +463,10 @@
     font-weight: 700;
   }
 
+  .text-bold--sdg {
+    margin: 10px 0 20px 0;
+  }
+
   .top-paragraph {
     padding-top: 25px;
   }
@@ -465,6 +483,7 @@
     color: $color-red;
     text-decoration: underline;
     margin: 25px 0 10px 0;
+    font-weight: 500;
   }
 
   .accomplishment-wins {
@@ -474,6 +493,7 @@
     align-items: flex-start;
     display: flex;
     justify-content: center;
+    font-size: 24px;
   }
 
   .accomplishment-wins img {
@@ -481,7 +501,7 @@
   }
 
   .accomplishment-highlights {
-    margin: 20px 0 0 0;
+    margin: 30px 0 0 0;
   }
 
   .text-normal {
@@ -533,7 +553,7 @@
     height: 180px;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    margin: 25px 0 25px 0;
+    margin: 30px 0 45px 0;
     padding: 10px 0 10px 0;
   }
 
@@ -575,11 +595,12 @@
     //list-style-type: none;
   }
   .donation-spacing {
-    margin: 0 0 25px 20px;
+    margin: 0 0 40px 20px;
+    font-size: 18px;
   }
 
   .text-small-italic {
-    font-size: .75rem;
+    font-size: 15px;
     font-style: italic;
   }
 
@@ -588,11 +609,15 @@
     flex-flow: column nowrap;
     justify-content: center;
     padding: 25px 0 15px 0;
+    align-items: center;
   }
+
   .news-cells p {
-    padding-top: 27px;
-    margin: 0 25px 0 25px;
+    padding-top: 40px;
+    margin: 0 20px 0 20px;
   }
+
+
 
   .more-padding {
     padding-top: 10px;
@@ -626,14 +651,14 @@
   .page-content-container-grid {
     grid-template-columns: auto 400px;
     grid-template-rows: auto;
-    grid-gap: 0 20px;
+    grid-gap: 70px;
     grid-template-areas: 
     "content nav";
   }
   .sticky-nav {
     display: block;
   }
-  
+
 
   .not-sticky-nav-container {
     margin-left: 100px;
@@ -641,13 +666,42 @@
     justify-self: start;
   }
   
+  .page-card {
+    margin: 12px 12px 40px;
+    max-width: 896px;
+    padding: 40px;
+  }
+
+  .page-card--platform {
+    padding: 60px;
+  }
+
+  .read-more {
+    display: none;
+  }
+
+  .read-less {
+    display: none;
+  }
+
   .last-card {
     margin-bottom: 150px;
   }
 
   .about-us-section-header {
     font-size: 1.5rem;
+    margin: 0 0 40px;
+    cursor: default;
+    justify-content: center; 
   }
+
+  .about-us-section-header--ED {
+    justify-content: center;
+    cursor: default;
+    font-size: 1.5rem;
+    margin: 0 0 40px;
+  }
+
   .about-us-section-content {
     display: block;
   }
@@ -661,13 +715,6 @@
 
   .sec-head-img-ed {
     display: none;
-  }
-  .about-us-section-header {
-    justify-content: center;
-  }
-
-  .about-us-section-header--ED {
-    justify-content: flex-start;
   }
 
   .line-break {
@@ -693,7 +740,7 @@
     "bottom-left bottom-right"
     "bottom-left bottom-right"
     ;
-    column-gap: 10px;
+    column-gap: 80px;
     row-gap: 10px;
   }
 
@@ -730,6 +777,13 @@
     flex-direction: row;
   }
 
+  .sdg-left {
+    width: 10%;
+  }
+  .sdg-right {
+    width:  90%;
+  }
+
   .sdg-left-column {
     width: 40%;
     margin: 30px 25px 0 0;
@@ -737,6 +791,7 @@
 
   .sdg-right-column {
     width: 60%;
+    padding-left: 10px;
   }
 
   .bottom-right-column {
@@ -749,6 +804,21 @@
     padding-right: 10px;
   }
 
+  .top-left-column--acc {
+    padding-right: 25px;
+  }
+
+  .bottom-right-column--acc {
+    padding-left: 25px;
+  }
+
+  .top-left-column--donations {
+    width: 45%;
+  }
+
+  .bottom-right-column--donations {
+    width: 55%;
+  }
   .sdg-title-mobile {
     display: none;
   }
@@ -765,11 +835,22 @@
   }
   
   .wins-column-width-left {
-    width: 33%;
+    width: 30%;
+    padding-left: 30px;
   }
 
   .wins-column-width-right {
-    width: 64%;
+    width: 70%;
+    padding-left: 25px;
+  }
+
+  .news-cells p {
+    padding-top: 60px;
+    margin: 0 20px 0 20px;
+  }
+
+  .news-cells--govtech {
+    margin-bottom: 75px; 
   }
 
   .garcetti-mobile {
