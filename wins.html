@@ -161,12 +161,18 @@ title: Wins
 				let overviewElement = makeElement('p', winDiv, "wins-card-overview");
 				overviewElement.innerHTML = card[overview];//description
 
+			let innerHeight = Array.from(rightDiv.childNodes).reduce((acc, el) => el.offsetHeight + acc, 0) + 50
+
 			//makes the see more span on the bottom of the card
+			console.log('rightDiv.offsetHeight:', rightDiv.offsetHeight)
+			console.log('innerHeight:', innerHeight)
+
+			if(innerHeight > rightDiv.offsetHeight){
 				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
 				seeMoreDiv.classList.add("wins__see-more-div")
 				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
 				idNum++
-
+			}
 		})
 	}
 	function seeMore(id){
