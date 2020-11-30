@@ -2,6 +2,24 @@
 <html lang="en">
 {% include head.html %}
 <body>
+  <div>
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+      document.onreadystatechange = function() { 
+        if (document.readyState !== "complete") { 
+            document.querySelector("body").style.visibility = "hidden"; 
+            document.querySelector(".loader-wrapper").style.visibility = "visible"; 
+        } else { 
+            document.querySelector(".loader-wrapper").style.display = "none"; 
+            document.querySelector("body").style.visibility = "visible"; 
+        } 
+      }; 
+    </script>
+  </div>
+  
   <div id="app">
     <a id="skip-link" className="sr-only-focusable" href="#content">
       Skip to main content.
