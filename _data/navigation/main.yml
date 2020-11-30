@@ -1,24 +1,28 @@
-- name: Toolkit
-  link: /toolkit
+- name: Events
+  link: '/events'
   list_class_name:
-  icon: /svg/icon-wrench.svg
+  icon: /svg/icon-hacknights.svg
 
-  # the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
+# the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
 - name: Projects
-  link: "/#projects"
+  link: '/#projects'
   list_class_name:
   icon: /svg/icon-projects.svg
 
 - name: Press
-  link: "/#press"
+  link: '/#press'
   list_class_name:
   icon: /svg/icon-press.svg
 
 - name: Connect
-  link: "/#about"
+  link: '/#about'
   list_class_name:
   icon: /svg/icon-about.svg
 
+- name: Toolkit
+  link: /toolkit
+  list_class_name:
+  icon: /svg/icon-wrench.svg
 # - name: Contact Us
 #   link: "/#contact"
 #   list_class_name: hide-mobile

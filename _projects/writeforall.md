@@ -15,12 +15,6 @@ leadership:
       slack: 'https://app.slack.com/team/UP1U7C53L'
       github: 'https://github.com/joelparkerhenderson'
     picture: https://avatars.githubusercontent.com/joelparkerhenderson
-  - name: Charlotte Soestini
-    role: UI/UX Lead
-    links:
-      slack: 'https://app.slack.com/team/UA69HNWPQ'
-      github: 'https://github.com/charlottesauce'
-    picture: https://avatars.githubusercontent.com/charlottesauce
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/writeforall'
