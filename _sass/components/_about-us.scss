@@ -88,7 +88,6 @@
   .sticky-nav li {
     list-style-type: none;
     position: relative;
-    // padding: 15px 0 0 0;
     margin-bottom: 15px;
   }
 
@@ -135,7 +134,6 @@
 
   .sticky-nav {
     grid-area: nav;
-    //justify-self: start;
     display: none;
     background: #fff;
     border: 0px solid rgba(51, 51, 51, 0.06);
@@ -145,7 +143,6 @@
     width: 275px;
     padding: 35px 40px 15px 26px;
     margin-top: 12px;
-    // height: fit-content;
   }
 
   .sticky-nav-inner-grid {
@@ -194,10 +191,15 @@
     display: flex;
     justify-content: flex-start;
     text-align: center;
+    padding-bottom: inherit;
   }
 
   #letterBR {
     padding-left: 30px;
+  }
+
+  .more-less {
+    display: none;
   }
 
   .about-us-section-content {
@@ -215,13 +217,13 @@
   .read-more {
     color: $color-red;
     text-align: right;
-    padding: 0 10 0 0;
+    margin-right: 30px;
   }
   .read-more::after {
     content: "\221F";
-    float: right;
+    position: absolute;
+    margin-left: 10px;
     transform: rotate(-45deg);
-    transition: transform 0.25s ease-in;
     color: rgb(250, 17, 79);
     font-weight: bolder;
     font-size: 16px;
@@ -230,13 +232,13 @@
   .read-less {
     color: $color-red;
     text-align: right;
-    padding: 0 10 0 0;
+    margin-right: 30px;
   }
   .read-less::after {
     content: "\221F";
-    float: right;
-    transform: rotate(-45deg);
-    transition: transform 0.25s ease-in;
+    position: absolute;
+    margin-left: 10px;
+    transform: rotate(135deg);
     color: rgb(250, 17, 79);
     font-weight: bolder;
     font-size: 16px;
@@ -273,6 +275,10 @@
   .flex-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .flex-container--wins {
+    margin-top: 40px;
   }
 
   .flex-container-row {
@@ -479,6 +485,10 @@
     display: none;
   }
 
+  .plain-text {
+    color: $color-black;
+  }
+
   .accomplishment-title {
     color: $color-red;
     text-decoration: underline;
@@ -592,7 +602,6 @@
   .list-container-no-indent ol {
     margin: 10px;
     padding: 10px;
-    //list-style-type: none;
   }
   .donation-spacing {
     margin: 0 0 40px 20px;
@@ -627,8 +636,6 @@
 
 // Bigger than mobile - 480px
 @media #{$bp-mobile-up} {
-
-
 
 } // End mobile up
 

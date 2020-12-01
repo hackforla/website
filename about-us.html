@@ -32,7 +32,7 @@ title: About Us
                     Duis at hendrerit orci. 
                     </p> 
                 </div>
-                <div class="read-more">Read More...</div>
+                <div class="read-more">Read More</div>
                 <div class="about-us-section-content">    
                     <!-- This will show on mobile with open accordion -->
                     <p>
@@ -57,7 +57,7 @@ title: About Us
                     Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
                     </p>
                 </div>
-                <div class="read-less">Read Less...</div>
+                <div class="read-less more-less">Read Less</div>
             </div>
 
             <a class="anchor" id='platform'></a>
@@ -216,52 +216,46 @@ title: About Us
                         <!--This is the top and then right cell-->
                         <div class="top-left-column top-left-column--acc">
                             <p class="text-bold accomplishment-highlights">Highlights from 2020</p>
-                            <div class="accomplishment-title">Food Oasis</div>
+                            <div class="accomplishment-title"><a href="https://www.codeforamerica.org/events/national-day-of-civic-hacking-2020" target="_blank" rel="noopener noreferrer">National Day of Civic Hacking (NdoCH)</a></div>
+                            <div>In 9/2020 Hack for LA joined over 40 Code for America brigades in bringing together civic leaders, 
+                                public servants, designers, coders, and engaged citizens to partner with local government and community 
+                                groups to help those most in need of a social safety net services during COVID-19.
+                            </div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer">Food Oasis</a></div>
                             <div>Launched 8/2020 the most comprehensive lising of Food Pantries and Meals to address food 
                                 insecurity in Los Angeles (listed as a resource on LA County Public Health website).
                             </div>
-                            <div class="accomplishment-title">LA TDM Calculator
-
-                            </div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/tdm-calculator" target="_blank" rel="noopener noreferrer">LA TDM Calculator</a></div>
                             <div>Hack for LA’s first software application in CI/CD on LA City Department of Transportation’s  
                                 Azure servers - launching publicly in Q4 2020
                             </div>
-                            <div class="accomplishment-title">311-DATA</div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/311-data" target="_blank" rel="noopener noreferrer">311-DATA</a></div>
                             <div>Launched 8/2020 a comprensive 311 service report Neighborhood Council (NC) and City Council district 
                                 comparison tool using 311 data provided by LA City’s data portal.  The product was created through extensive 
                                 Design thinking workshops with NC board members and LA Department of Neighborhood Empowerment
                             </div>
-                            <div class="accomplishment-title">Climate Collabathon</div>
+                        </div>
+
+                        <div class="bottom-right-column bottom-right-column--acc">
+                            <div class="accomplishment-title"><a href="https://www.collabathon.openclimate.earth/" target="_blank" rel="noopener noreferrer">Climate Collabathon</a></div>
                             <div>Launched 4/2020 the Online Climate Collabathon in partnership with Yale Open Labs, Sensorica, 
                                 ESMT Berlin, and CoMakery.  15 speakers, and over 20 breakout and working sessions with experts 
                                 and professionals from across the sector all on Zoom.
                             </div>
-                        </div>
-
-                        <div class="bottom-right-column bottom-right-column--acc">
-                            <div class="accomplishment-title">Undebate</div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/undebate.html" target="_blank" rel="noopener noreferrer">Undebate</a></div>
                             <div>Hack for LA has provided labor to this important tool which continues to increase engagment at local elections 
                                 thorughout the country from the San Francisco City Attorney race, to Student Association Elections on College Campuses.
                             </div>
-                            <div class="accomplishment-title">Write for All</div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/writeforall" target="_blank" rel="noopener noreferrer">Write for All</a></div>
                             <div>Launched 04/2020.  The Write For All project proof of concept finds exclusive langugage where inclusive language should exist.
                             </div>
-                            <div class="accomplishment-title">New Schools Today</div>
+                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/new-schools-today" target="_blank" rel="noopener noreferrer">New Schools Today</a></div>
                             <div>Created and Presented 3/2020 three technical workshops for Title 1 school students at the UCLA Exploretech Conference.  
                                 The project from conception to delivery was executed by Hack for LA’s first team of all high school students.
                             </div>
-                            <p class="text-bold accomplishment-highlights">Highlights from 2019</p>
-                            <div class="accomplishment-title">Slack Redactor</div>
-                            <div>Private Beta 12/2019.  Created automated slack redactor to help LA Business Improvement District office (BID) 
-                                comply with California Public Records Act (CRPA).
-                            </div>
-                            <div class="accomplishment-title">National Day of Civic Hacking <span class="text-plain">(NdoCH)</span></div>
-                            <div>
-                            </div>
-                            <p class="eliptical">and many more....</p>
                         </div>
                     </div>
-                    <div class="flex-container">
+                    <div class="flex-container flex-container--wins">
                         <!--This is the top and then right cell-->
                         <div class="top-left-column wins-column-width-left">
                             <div class="accomplishment-wins"><img src="assets/images/about-us/wins-cup.svg">Wins</div>
@@ -416,6 +410,4 @@ title: About Us
 </div>
 
 <!-- Include javaScript -->
-<!-- <script type="text/javascript" src="https://hackforla.org/assets/js/about-us.js"></script> -->
-<!-- <script src="{{ '/assets/js/about-us.js' | absolute_url }}"></script> -->
-<script> {% include about-us.js %} </script>
+<script src="{{ '/assets/js/about-us.js' | absolute_url }}"></script>

@@ -26,44 +26,38 @@ window.addEventListener('scroll', stickItHere);
 /*************************************************/
 
 //locate all the navigation links and arrows
-//let navLinks = document.querySelectorAll(".sticky-nav a");
 let navLinks = document.querySelectorAll(".sticky-nav a");
 
 for (let i=0; i < navLinks.length; i++){
 
     navLinks[i].addEventListener('click', function(event){
+
+        // Disable scroll handler when click on navigation link if using smooth scroll
+        document.removeEventListener('scroll', scrollHandler, true);
+
+        //check if a link is currently selected, remove is-active class if yes
+        isActive = document.getElementsByClassName('is-active')[0];
+
+        if (isActive != undefined){
+            isActive.classList.remove('is-active');
+        }
         
+        //then add is-active class to the most recent selected link
+        this.classList.add('is-active');    
 
-    // Disable scroll handler when click on navigation link if using smooth scroll
-    document.removeEventListener('scroll', scrollHandler, true);
-
-
-    //check if a link is currently selected, remove is-active class if yes
-    isActive = document.getElementsByClassName('is-active')[0];
-
-    if (isActive != undefined){
-        isActive.classList.remove('is-active');
-    }
-    
-    //then add is-active class to the most recent selected link
-    this.classList.add('is-active');
-    
-
-    //re-enable scroll event 1 second after is-active class is added
-    setTimeout(function(){
-        document.addEventListener("scroll", scrollHandler, true); 
-    }, 1000); 
+        //re-enable scroll event 1 second after is-active class is added
+        setTimeout(function(){
+            document.addEventListener("scroll", scrollHandler, true); 
+        }, 1000); 
 
     });
-
 }
-
 
   /***************************************************/
  /**** Script 3: Highlight links when scrolling *****/
 /***************************************************/
 
-// Initialize and set defaults
+// Initialize
 //locate all the navigation links
 let quickLinks = document.querySelectorAll(".sticky-nav a");
 let qlArray = [];
@@ -118,33 +112,13 @@ function scrollHandler() {
     } // End for
 };
 
-/***** Script 4: Mobile accordian ****/
-/*
-let showAnswer = document.getElementsByClassName('about-us-section-header');
-// If the display is larger than table this doesn't run; otherwise this will open and close the mobile sections
-if (windowWidth < 768) {   
-    for (let i = 0; i < showAnswer.length; i++) {
-        showAnswer[i].addEventListener("click", function () {
-
-            this.classList.toggle("au_active");
-            let panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none"
-            } else {
-                panel.style.display = "block"
-            }
-        })
-
-    }
-}
-*/
   /***********************************************************/
  /* ************** Script 4: Mobile accordian ************* */
 /***********************************************************/
 
 // classToAdd is the name of the class that gets added to the list
 // accordionElements are the elements that we're working on
-function createAccordionEventListenerNext (classToAdd, accordionElements) {
+function createAccordionEventListener (classToAdd, accordionElements) {
 
     for (let el of accordionElements) {
 
@@ -166,64 +140,73 @@ function createAccordionEventListenerNext (classToAdd, accordionElements) {
         })
     }
 } // end function
-/*
-// This function is for when the accorion panel is above the link (like with "read less")
-function createAccordionEventListenerPrevious (classToAdd, accordionElements) {
+
+// Add event listeners
+if (windowWidth < 768) { 
+    // Get the list of elements for the accordion
+    let accordionList = document.querySelectorAll(".about-us-section-header");
+
+    // Create event listeners
+    createAccordionEventListener ("au_active", accordionList);
+}
+
+  /*********************************************************************************/
+ /* ************** Script 5: Mobile accordian - Read more/Read less ************* */
+/*********************************************************************************/
+
+
+function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
 
     for (let el of accordionElements) {
 
         el.addEventListener("click", function () {
 
-            // Toggles adding and removing the class from the class list
-            this.classList.toggle(classToAdd);
-
-            // Which panel to open/close
+            // Declare variables!
             let accordionContainer = this.previousElementSibling;
+            let readMore = document.querySelector(".read-more");
+            let readLess = document.querySelector(".read-less");
 
+            // This needs to toggle "Read more" and "Read less" so one comes on and the other goes off
+                readMore.classList.toggle(classToAdd);
+                readLess.classList.toggle(classToAdd);
+
+            // if it is read-more and not read-less, do this
+            if (this.className.includes("read-more")) {
+                accordionContainer = this.nextElementSibling;
+                console.log("Here -> more");
+            }
+
+            console.log('accordionContainer -> ' + this.className);
 
             // Open and close panel
             if (accordionContainer.style.display === "block") {
+                console.log("Here -> none");
                 accordionContainer.style.display = "none"
             } else {
                 accordionContainer.style.display = "block"
+                console.log("Here -> block");
             }
+              event.stopPropagation()
         })
     }
 } // end function
-*/
 
+// Add event listeners
 if (windowWidth < 768) { 
     // Get the list of elements for the accordion
-    let accordionListNext = document.querySelectorAll(".read-more, .about-us-section-header");
-    let accordionListPrevious = document.querySelectorAll(".read-less");
-
+    let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
 
     // Create event listeners
-    createAccordionEventListenerNext ("au_active", accordionListNext);
-    //createAccordionEventListenerPrevious ("au_active", accordionListPrevious);
+    createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
 }
 
-/*
-// Get sections one sibling above div to open/close
-let letterSection = document.querySelector(".read-more");
-
-// Open/Close the section and adds class to rotate arrow (or do anything else)
-function handleAccordionClick (event, className) {
-
-    console.log(className);
-
-    //Add the class to the item
-    this.classList.toggle(className);
-}
-
-// Create event listener - pass name of class to add
-letterSection.addEventListener("click", () => { handleAccordionClick(event, "rotateArrow"); }, false;
-
-*/
 
   /*******************************************************/
- /***** Script 5: Add a break tag to certain headers ****/
+ /***** Script 6: Add a break tag to certain headers ****/
 /*******************************************************/
+
+// There certain headers need to be split into two lines on mobile
+// This adds a br tag as the designated spot in the string. 
 
 // Get the header text
 let letterHeadText = document.getElementById("letterBR").innerText;
