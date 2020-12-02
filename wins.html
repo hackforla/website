@@ -112,7 +112,7 @@ title: Wins
 	function makeCards(data) {
 		const list = document.querySelector('#responses');
 		let idNum = 0
-		data.forEach( (card) => {
+		data.reverse().forEach( (card) => {
 			if (card[display] != "TRUE"){
 				idNum++;
 				return; //checks if Display column is set to true
