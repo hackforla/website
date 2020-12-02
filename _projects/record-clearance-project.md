@@ -2,7 +2,7 @@
 identification: '218391110'
 title: Record Clearance Project
 description: 'The Record Clearance Project aims to help people in California with non-violent criminal records accomplish record clearance, expungement or reduction as a result of Prop 47 & Prop 64. 
-<br /><br />Our initial focus is on creating an ecosystem map of the Los Angeles record clearance landscape in order to identify organizations that we can help grow their impact through partnership. With tools to be created based on verifiable non-profit or government partner needs/value.'
+<br /><br />We are creating an ecosystem map of the Los Angeles record clearance landscape in order to identify organizations that we can help grow their impact through partnership. With tools to be created based on verifiable non-profit or government partner needs/value.'
 image: /assets/images/projects/record-clearance.jpg
 alt: 'Record clearance project'
 image-hero: /assets/images/projects/record-clearance-hero.png
@@ -48,7 +48,7 @@ looking:
 technologies:
   - ReactJS
 location:
-  - West Los Angeles
+  - Santa Monica
   - Remote
 status: Active
 ---
