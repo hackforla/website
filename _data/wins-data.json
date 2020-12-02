@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:T110",
+  "range": "Responses!A1:T111",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -68,7 +68,7 @@
       "I produced something for my portfolio, I increased the number of commits on my Github profile",
       "I built my first page for hack for la! and it is this one!!! ...the wins page",
       "",
-      "FALSE"
+      "TRUE"
     ],
     [
       "9/21/2020 10:10:59",
@@ -104,7 +104,6 @@
       "",
       "FALSE"
     ],
-    [],
     [
       "11/29/2020 18:52:37",
       "tnahipp@gmail.com",
@@ -166,7 +165,7 @@
       "",
       "",
       "I got a new job, I improved my LinkedIn, I learned how to work better on a team, I worked on a project that will help the people of Los Angeles",
-      "I joined the Shared Housing project (wasn't an option in the project list so I had to pick the closest sounding one) and made a lot of friends with great people who helped me improve my coding skills. I learned how to work better on a team and eventually got a new job through one of my newly found friends here at HackforLA. I also enjoyed working on a project that was meant to help the people of LA, and it motivated me to keep learning front end development skills. ",
+      "I joined the Shared Housing project and made a lot of friends with great people who helped me improve my coding skills. I learned how to work better on a team and eventually got a new job through one of my newly found friends here at HackforLA. I also enjoyed working on a project that was meant to help the people of LA, and it motivated me to keep learning front end development skills. ",
       "",
       "TRUE"
     ],
@@ -184,6 +183,40 @@
       "10/1/2020",
       "I got a new job, I improved my LinkedIn, I learned how to work better on a team, I worked on a project that will help the people of Los Angeles",
       "I am grateful to the Hackforla team to give me an opportunity to contribute to their work and do what I like to do the best",
+      "",
+      "TRUE"
+    ],
+    [
+      "12/1/2020 9:00:51",
+      "sam@greenhacks.org",
+      "Sam Miyamoto",
+      "https://www.linkedin.com/in/e-samantha-miyamoto/",
+      "Yes",
+      "https://github.com/greenhacks",
+      "No",
+      "311 Data, HelloGov",
+      "QA, UI/UX, Accessibility testing (I think that falls under QA?)",
+      "",
+      "6/19/2019",
+      "I improved my LinkedIn, I setup 2FA, I worked on a project that will help the people of Los Angeles, I worked on two or more projects, Found a mentor and became part of a caring tech community!",
+      "HfLA makes me feel like I'm a part of the community, and though I might not be as active as I'd like, this group provides immense comfort! I'm glad to be part of the team here.",
+      "",
+      "TRUE"
+    ],
+    [
+      "12/1/2020 9:14:20",
+      "jenny@foodoasis.la",
+      "Jenny Mikesell",
+      "https://www.linkedin.com/in/jenny-mikesell",
+      "Yes",
+      "",
+      "",
+      "Food Oasis",
+      "Operations, UI/UX",
+      "",
+      "8/1/2018",
+      "I worked on a project that will help the people of Los Angeles",
+      "Food Oasis has an average of 400 unique visitors a day. Our database in Los Angeles has over 1000 listings. Since April 2020, community volunteers have helped us verify over 750 listings. We have proven that 30% of pantries have closed. The Department of Public Health just asked for a copy of our database to share with their nutritionists. We created an API and forked foodoasis.net to included Northern California, Oregon, and Hawaii. \n",
       "",
       "TRUE"
     ]
