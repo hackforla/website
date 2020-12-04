@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:T111",
+  "range": "Responses!A1:T112",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -219,6 +219,21 @@
       "Food Oasis has an average of 400 unique visitors a day. Our database in Los Angeles has over 1000 listings. Since April 2020, community volunteers have helped us verify over 750 listings. We have proven that 30% of pantries have closed. The Department of Public Health just asked for a copy of our database to share with their nutritionists. We created an API and forked foodoasis.net to included Northern California, Oregon, and Hawaii. \n",
       "",
       "TRUE"
+    ],
+    [
+      "12/3/2020 16:20:01",
+      "jake.mensch@gmail.com",
+      "Jake Mensch",
+      "https://www.linkedin.com/in/jacob-mensch/",
+      "Yes",
+      "https://github.com/jmensch1",
+      "Yes",
+      "311 Data",
+      "Development",
+      "",
+      "2/15/2020",
+      "I learned how to work better on a team, I worked on a project that will help the people of Los Angeles, I worked on two or more projects, My team launched our MVP",
+      "I met some great people and built some cool apps."
     ]
   ]
 }
