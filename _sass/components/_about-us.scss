@@ -1,0 +1,875 @@
+/* This page is built using a mobile first method.  Plain tags apply to mobile. Breakpoints below for larger sizes. */
+
+.header-container--about-us {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 25px 15px 50px 15px;    
+}
+
+.header-container--about-us h1 {
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.header-text--about-us {
+    font-size: 18px;
+    max-width: 500px;
+    text-align: left;
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    
+        &:link,
+        &:visited {
+          color: $color-black;
+        }
+    
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-red;
+        }
+      }
+}
+
+// CSS Grid 
+.page-content-container-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "content";
+  align-items: start;
+  margin-top: 20px;
+  scroll-behavior: smooth;
+}
+
+  //Make universal
+  .page-card {
+     background: #fff;
+     border: 0 solid rgba(51, 51, 51, 0.06);
+     border-radius: 16px;
+     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+     overflow: hidden;
+     max-width: 896px;
+     margin-bottom: 0;
+     padding: 22px;
+     height: fit-content;
+     margin: 12px;
+  }
+
+  .grid-2-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 26px;
+    justify-items: stretch;
+    align-content: space-between; 
+  }
+
+  // Make the Letter page card have square corners
+  .page-card--ed {
+    border-radius: 0;
+  }
+
+  // Makes the sticky navigation stick
+  .stick-it {
+    position: fixed;
+    top:67px;
+    z-index: 1;
+    right: 125px;
+  }
+
+  // Style the sticky nav links
+
+  .sticky-nav li {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+
+  // Make the active link different
+  .is-active {
+    color: #333333;
+    font-weight: 700;
+    color: black !important;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+  
+      &:link,
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-black;
+      }
+    }
+  }
+
+  .is-active::before {
+    position: absolute;
+    content: "\25C0";
+    font-size: 10px;
+    margin-left: -35px;
+    margin-top: 5px;
+  }
+
+  // This adjustment is so that the page scrolls to the correct place when you hit the nav links
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -75x;
+    visibility: hidden;
+  }
+
+  .last-card {
+    margin-bottom: 2rem;
+  }
+
+  .sticky-nav {
+    grid-area: nav;
+    display: none;
+    background: #fff;
+    border: 0px solid rgba(51, 51, 51, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    width: 275px;
+    padding: 35px 40px 15px 26px;
+    margin-top: 12px;
+  }
+
+  .sticky-nav-inner-grid {
+    display: grid;
+    grid-template-columns: 15px auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "content";
+    align-items: start;
+    margin-top: 20px;
+    scroll-behavior: smooth;
+  }
+
+
+  // The part of the page that is not the sticky nav.  Should probably rename
+  .not-sticky-nav-container {
+    grid-area: content;
+  }
+
+  .about-us-section-header {
+    font-weight: 900;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .about-us-section-header:after {
+    content: "\221F";
+    float: right;
+    transform: rotate(-45deg);
+    transition: transform 0.25s ease-in;
+    color: rgb(250, 17, 79);
+    font-weight: bolder;
+    font-size: 24px;
+  }
+  
+  // This is the same as the above, but the js that opens and closes the mobile sections
+  // keys on this tag, and until I fix that this is the MacGyver
+  .about-us-section-header--ED {
+    font-weight: 900;
+    font-size: 1.25rem;
+    transition: 0.4s;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    padding-bottom: inherit;
+  }
+
+  #letterBR {
+    padding-left: 30px;
+  }
+
+  .more-less {
+    display: none;
+  }
+
+  .about-us-section-content {
+    display: none;
+  }
+
+  .sec-head-img-ed {
+    padding: 0 25 0 0;
+  }
+
+  .led-closed {
+    margin-top: 25px;
+  }
+
+  .read-more {
+    color: $color-red;
+    text-align: right;
+    margin-right: 30px;
+  }
+  .read-more::after {
+    content: "\221F";
+    position: absolute;
+    margin-left: 10px;
+    transform: rotate(-45deg);
+    color: rgb(250, 17, 79);
+    font-weight: bolder;
+    font-size: 16px;
+  }
+
+  .read-less {
+    color: $color-red;
+    text-align: right;
+    margin-right: 30px;
+  }
+  .read-less::after {
+    content: "\221F";
+    position: absolute;
+    margin-left: 10px;
+    transform: rotate(135deg);
+    color: rgb(250, 17, 79);
+    font-weight: bolder;
+    font-size: 16px;
+  }
+
+  .au_active::after {
+    content: "\221F";
+    transform: rotate(135deg);
+    transition: transform 0.25s ease-in;
+  }
+
+  .sub-card-head {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 15px 0 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .sub-head-image {
+    padding-right: 10px;
+  }
+
+  .sub-head-text {
+    padding-bottom: 5px;
+  }
+
+  .sub-card-content {
+    padding-left: 5px;
+    padding-left: 23px;
+    margin-left: 8px;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-container--wins {
+    margin-top: 40px;
+  }
+
+  .flex-container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .flex-container-row--partners {
+    justify-content: space-evenly;
+    margin-top: 25px;
+  }
+
+
+  // Colors
+  
+  .color-dodgerblue {
+    color: $color-dodgerblue; 
+  }
+
+  .border-dodgerblue {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-dodgerblue;
+  }
+  .color-lightseagreen {
+    color: $color-lightseagreen;
+  }
+
+  .border-lightseagreen {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-lightseagreen;
+  }
+
+  .color-orange {
+    color: $color-orange;
+  }
+
+  .border-orange {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-orange;
+  }
+
+  .color-chocolate {
+    color: $color-chocolate; 
+  }
+
+  .border-chocolate {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-chocolate;
+  }
+
+  .color-firebrick {
+    color: $color-firebrick; 
+  }
+
+  .border-firebrick {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-firebrick;
+  }
+
+  .color-deeppink {
+    color: $color-deeppink;
+  }
+
+  .border-deeppink {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-deeppink;
+  }
+
+  .color-mediumvioletred {
+    color: $color-mediumvioletred; 
+  }
+
+  .border-mediumvioletred {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-mediumvioletred;
+  }
+
+  .color-darkorchid {
+    color: $color-darkorchid; 
+  }
+
+  .border-darkorchid {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-darkorchid;
+  }
+
+  .color-blueviolet {
+    color: $color-blueviolet; 
+  }
+
+  .border-blueviolet {
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: $color-blueviolet;
+  }
+
+  // SDG Colors
+  .color-goldenrod-2 {
+    color: #d49f28;
+    font-weight: 700;
+  }
+
+  .color-orangered {
+    color: #ee412a;
+    font-weight: 700;
+  }
+
+  .color-brown {
+    color: #8e1737;
+    font-weight: 700;
+  }
+
+  .color-goldenrod-11 {
+    color: #fa9c25; 
+    font-weight: 700;
+   }
+
+  .color-darkolivegreen {
+    color: #48763e;
+    font-weight: 700;
+  }
+
+  .color-teal {
+    color: #01548a;
+    font-weight: 700;
+  }
+
+  .color-midnightblue {
+    color: #173567;
+    font-weight: 700;
+  }
+
+
+  .bold-quote {
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .sdg-images {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-around; 
+    align-content: space-between;
+  }
+
+  .small-text {
+    font-size: 8pt;
+  }
+
+  .grid-center {
+    place-self: center;
+  }
+
+  .sdg-groups {
+    margin-bottom: 20px;
+  }
+  /* Clear floats after the columns */
+  .sdg-groups:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .sdg-column {
+    float: left;
+  }
+
+  .sdg-left {
+    width: 15%;
+  }
+  .sdg-right {
+    width:  85%;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  .text-bold--sdg {
+    margin: 10px 0 20px 0;
+  }
+
+  .top-paragraph {
+    padding-top: 25px;
+  }
+
+  .sdg-title-mobile {
+    display: inline;
+  }
+
+  .sdg-title-full {
+    display: none;
+  }
+
+  .plain-text {
+    color: $color-black;
+  }
+
+  .accomplishment-title {
+    color: $color-red;
+    text-decoration: underline;
+    margin: 25px 0 10px 0;
+    font-weight: 500;
+  }
+
+  .accomplishment-wins {
+    color: $color-red;
+    text-decoration: none;
+    margin: 25px 0 10px 0;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .accomplishment-wins img {
+    padding-right: 20px;
+  }
+
+  .accomplishment-highlights {
+    margin: 30px 0 0 0;
+  }
+
+  .text-normal {
+    font-size: 16px; 
+    font-weight: 400;
+    font-style: normal;
+    color: $color-black;
+  }
+
+  .eliptical {
+    color: #959393;
+    text-align: right;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+  
+  .wins-cup {
+    padding-right: 25px;
+  }
+
+  .wins-card-mobile {
+    display: block;
+  }
+  .wins-card-desktop {
+    display: none;
+  }
+
+  .coming-soon {
+    margin-top: 18px;
+  }
+
+  .garcetti-mobile {
+    display: block;
+  }
+
+  .garcetti-large {
+    display: none;
+  }
+
+  // Metrics section
+
+  .small-card {
+    height: 180px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin: 30px 0 45px 0;
+    padding: 10px 0 10px 0;
+  }
+
+  .small-card p {
+    text-align: center;
+  }
+
+  .metrics-image-size {
+    height: 35%;
+    width: 35%;
+  }
+
+  .metrics-title {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: $color-red;
+  }
+
+  .metrics-vrms-title {
+    font-size: 2.2rem;
+    text-decoration: none;
+    font-weight: 900;
+    color: $color-black; 
+    text-align: center;
+    padding: 40px 0 36px 0;
+  }
+
+  .metrics-vrms-links {
+    display: flex;
+    flex-flow: row nowrap; 
+    justify-content: space-evenly; 
+    align-content: space-between;
+  }
+
+  .list-container-no-indent ol {
+    margin: 10px;
+    padding: 10px;
+  }
+  .donation-spacing {
+    margin: 0 0 40px 20px;
+    font-size: 18px;
+  }
+
+  .text-small-italic {
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  .news-cells {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 25px 0 15px 0;
+    align-items: center;
+  }
+
+  .news-cells p {
+    padding-top: 40px;
+    margin: 0 20px 0 20px;
+  }
+
+
+
+  .more-padding {
+    padding-top: 10px;
+  }
+
+/* Below are the breakpoints and adjustments for different size monitors */
+
+// Bigger than mobile - 480px
+@media #{$bp-mobile-up} {
+
+} // End mobile up
+
+@media only screen and (max-width: 850px) {
+
+  .stick-it {
+    right: 0;
+  }
+
+}
+
+// Bigger than tablet - 768px
+@media #{$bp-tablet-up} {
+  .header-container--about-us {
+    flex-flow: row;
+    padding: 3rem 1rem 0 1rem;
+  } 
+
+  // The next two tags turn on and off the sticky nav sidebar
+  .page-content-container-grid {
+    grid-template-columns: auto 400px;
+    grid-template-rows: auto;
+    grid-gap: 70px;
+    grid-template-areas: 
+    "content nav";
+  }
+  .sticky-nav {
+    display: block;
+  }
+
+
+  .not-sticky-nav-container {
+    margin-left: 100px;
+    grid-area: content;
+    justify-self: start;
+  }
+  
+  .page-card {
+    margin: 12px 12px 40px;
+    max-width: 896px;
+    padding: 40px;
+  }
+
+  .page-card--platform {
+    padding: 60px;
+  }
+
+  .read-more {
+    display: none;
+  }
+
+  .read-less {
+    display: none;
+  }
+
+  .last-card {
+    margin-bottom: 150px;
+  }
+
+  .about-us-section-header {
+    font-size: 1.5rem;
+    margin: 0 0 40px;
+    cursor: default;
+    justify-content: center; 
+  }
+
+  .about-us-section-header--ED {
+    justify-content: center;
+    cursor: default;
+    font-size: 1.5rem;
+    margin: 0 0 40px;
+  }
+
+  .about-us-section-content {
+    display: block;
+  }
+
+  .about-us-section-header:after {
+    display: none;
+  }
+  .sec-head-img {
+    display: none;
+  }
+
+  .sec-head-img-ed {
+    display: none;
+  }
+
+  .line-break {
+    display: none;
+  }
+
+  .sticky-nav a {
+    text-decoration: none;
+  }
+
+  .platform-mid-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-template-areas: 
+    "top-left top-right"
+    "top-left top-right"
+    "top-left mid-right"
+    "mid-left mid-right"
+    "mid-left low-right"
+    "mid-left low-right"
+    "bottom-left bottom-right"
+    "bottom-left bottom-right"
+    "bottom-left bottom-right"
+    ;
+    column-gap: 80px;
+    row-gap: 10px;
+  }
+
+  .platform-sec-impact {
+    grid-area: top-left;
+  }
+  .platform-sec-learning {
+    grid-area: top right;
+  }
+  .platform-sec-diversity {
+    grid-area: mid-left;
+  }
+  .platform-sec-giving {
+    grid-area: mid-right;
+  }
+  .platform-sec-agility {
+    grid-area: low-right
+  }
+  .platform-sec-scalability {
+    grid-area: bottom-left;
+  }
+  .platform-sec-sustainability {
+    grid-area: bottom-right;
+    align-self: center;
+  }
+
+  .flex-container-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sdg-left {
+    width: 10%;
+  }
+  .sdg-right {
+    width:  90%;
+  }
+
+  .sdg-left-column {
+    width: 40%;
+    margin: 30px 25px 0 0;
+  }
+
+  .sdg-right-column {
+    width: 60%;
+    padding-left: 10px;
+  }
+
+  .bottom-right-column {
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  .top-left-column {
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  .top-left-column--acc {
+    padding-right: 25px;
+  }
+
+  .bottom-right-column--acc {
+    padding-left: 25px;
+  }
+
+  .top-left-column--donations {
+    width: 45%;
+  }
+
+  .bottom-right-column--donations {
+    width: 55%;
+  }
+  .sdg-title-mobile {
+    display: none;
+  }
+
+  .sdg-title-full {
+    display: inline;
+  }
+
+  .wins-card-mobile {
+    display: none;
+  }
+  .wins-card-desktop {
+    display: block;
+  }
+  
+  .wins-column-width-left {
+    width: 30%;
+    padding-left: 30px;
+  }
+
+  .wins-column-width-right {
+    width: 70%;
+    padding-left: 25px;
+  }
+
+  .news-cells p {
+    padding-top: 60px;
+    margin: 0 20px 0 20px;
+  }
+
+  .news-cells--govtech {
+    margin-bottom: 75px; 
+  }
+
+  .garcetti-mobile {
+    display: none;
+  }
+
+  .garcetti-large {
+    display: block;
+  }
+} // End tablet-up
+
+//Bigger than desktop - 960px
+@media #{$bp-desktop-up} {
+
+} // End desktop up
