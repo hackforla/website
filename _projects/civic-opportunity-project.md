@@ -36,5 +36,6 @@ location:
   - Remote
 # tools:
 partner: Undisclosed
+visible: true
 status: Active
 ---

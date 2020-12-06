@@ -48,5 +48,6 @@ partner: Seeking
 location:
   - Santa Monica
   - Remote
+visible: true
 status: Active
 ---

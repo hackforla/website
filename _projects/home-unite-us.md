@@ -61,7 +61,8 @@ technologies:
 location: 
   - Downtown LA
   - Remote
-partner: Safe Place for Youth (SPY)
-status: Active
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
+partner: Safe Place for Youth (SPY)
+visible: true
+status: Active
 ---

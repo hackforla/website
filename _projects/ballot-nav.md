@@ -44,5 +44,6 @@ looking:
 location: 
   - Remote
 partner: Code for America, Other Brigades
+visible: true
 status: Active
 ---

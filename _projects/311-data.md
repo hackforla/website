@@ -72,5 +72,6 @@ location:
   - Remote
 
 partner: EmpowerLA
+visible: true
 status: Active
 ---

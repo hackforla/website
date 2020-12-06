@@ -71,5 +71,6 @@ location:
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
 partner: seeking
+visible: true
 status: Active
 ---
