@@ -16,7 +16,7 @@
         {% for status in status_list %}
           {% assign projects = site.projects | where: "status", status | sort: "title" %}
           {%- for item in projects -%}
-            {%- if item.hide != true -%}
+            {%- if item.visible == true -%}
               {%- include project-card.html project=item -%}
             {%- endif -%}
           {%- endfor -%}
@@ -25,7 +25,8 @@
     </div>
 </section>
 <script>
-var projectDataFromJekyll = [{%- for project in site.projects -%}
+{% assign visible_projects = site.projects | where: "visible", "true" %}
+var projectDataFromJekyll = [{%- for project in visible_projects -%}
       {
         "id": {{ project.identification | default: 0 }},
         "status": ["{{ project.status }}"]

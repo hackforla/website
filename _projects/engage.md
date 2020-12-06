@@ -42,5 +42,6 @@ location:
   - Remote
 tools: Hotjar, Google Analytics
 partner: City of Santa Monica
+visible: true
 status: Active
 ---

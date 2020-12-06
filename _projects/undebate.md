@@ -36,5 +36,6 @@ location:
   - Santa Monica
   - Remote
 partner: EnCiv.org, Ballotpedia.org
+visible: true
 status: Active
 ---

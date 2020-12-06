@@ -29,5 +29,6 @@ location:
   - Santa Monica
   - Remote
 partner: Seeking
+visible: true
 status: On Hold
 ---

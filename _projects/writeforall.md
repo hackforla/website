@@ -43,5 +43,6 @@ location:
   - Downtown LA 
   - Remote
 partner: Seeking
+visible: true
 status: Active
 ---
