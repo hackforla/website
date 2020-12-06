@@ -168,8 +168,8 @@ title: Wins
 				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
 				seeMoreDiv.classList.add("wins__see-more-div")
 				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
-				idNum++
 			}
+				idNum++
 		})
 	}
 	function seeMore(id){
@@ -193,7 +193,7 @@ title: Wins
 	}
 	function updateOverlay(i) {
 			let stringData = window.localStorage.getItem("data");
-			let data = JSON.parse(stringData);
+			let data = JSON.parse(stringData).reverse();
 			
 			const overlayIcons = document.querySelector('#overlay-icons');
 			overlayIcons.innerHTML = "";
