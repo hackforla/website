@@ -9,6 +9,8 @@ jobs:
   vrms_data:
     runs-on: ubuntu-latest
 
+    if: github.repository == 'hackforla/website'
+
     steps:
     - uses: actions/checkout@v2
 

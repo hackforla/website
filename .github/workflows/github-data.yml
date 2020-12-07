@@ -8,6 +8,7 @@ on:
 jobs:
   github_data:
     runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'
     steps:
     - uses: actions/checkout@v2
     - uses: bahmutov/npm-install@v1
