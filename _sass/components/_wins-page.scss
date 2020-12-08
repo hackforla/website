@@ -112,7 +112,8 @@
 .wins-card-big-quote{
 	width: 28px;
 	height: 96.05px;
-	// margin: 8px;
+	position: relative;
+	top: -20px;
 }
 .wins-card-content{
 	display: flex;
@@ -120,7 +121,7 @@
 	margin-left: 20px;
 	width: 100%;
 	position: relative;
-	height: 233px;
+	height: 225px;
 	overflow: hidden;
 	margin-left: 6px;
 }
@@ -182,6 +183,7 @@
 		margin: 4px;    
 		height: 60px;
 		width: 18px;
+		position: static;
 	}
 
 	.wins-card-name{
