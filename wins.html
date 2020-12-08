@@ -17,8 +17,8 @@ title: Wins
 			<div id="overlay-teams" class="project-inner wins-card-team">Team(s): Blank</div>
 			<div id="overlay-roles" class="project-inner wins-card-team">Role(s): Blank</div>
 			<div class="project-inner wins__card-text">
-				<p id="overlay-info" class="wins-card-info">Blank</p>
 				<p id="overlay-overview">Blank</p>
+				<p id="overlay-info" class="wins-card-info">Blank</p>
 			</div>
 		</div>
 	</div>
@@ -156,10 +156,10 @@ title: Wins
 			//makes the win and info text on the bottom of the card
 				let winDiv = makeElement('div', rightDiv, "project-inner");
 				winDiv.classList.add("wins__card-text");
-				let winElement = makeElement('p', winDiv, "wins-card-info");
-				winElement.innerHTML = formatMessage(card[win]); //win
 				let overviewElement = makeElement('p', winDiv, "wins-card-overview");
 				overviewElement.innerHTML = card[overview];//description
+				let winElement = makeElement('p', winDiv, "wins-card-info");
+				winElement.innerHTML = formatMessage(card[win]); //win
 
 			let innerHeight = Array.from(rightDiv.childNodes).reduce((acc, el) => el.offsetHeight + acc, 0)
 
@@ -168,8 +168,8 @@ title: Wins
 				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
 				seeMoreDiv.classList.add("wins__see-more-div")
 				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
-				idNum++
 			}
+				idNum++
 		})
 	}
 	function seeMore(id){
@@ -193,7 +193,7 @@ title: Wins
 	}
 	function updateOverlay(i) {
 			let stringData = window.localStorage.getItem("data");
-			let data = JSON.parse(stringData);
+			let data = JSON.parse(stringData).reverse();
 			
 			const overlayIcons = document.querySelector('#overlay-icons');
 			overlayIcons.innerHTML = "";
@@ -213,11 +213,11 @@ title: Wins
 			const overlayRoles = document.querySelector('#overlay-roles');
 			overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
 
-			const overlayInfo = document.querySelector('#overlay-info');
-			overlayInfo.innerHTML = formatMessage(data[i][win]);
-
 			const overlayOverview = document.querySelector('#overlay-overview');
 			overlayOverview.innerHTML = data[i][overview];
+
+			const overlayInfo = document.querySelector('#overlay-info');
+			overlayInfo.innerHTML = formatMessage(data[i][win]);
 
 			const overlayProjectCard = document.querySelector('#overlay-project-card');
 			overlayProjectCard.parentNode.classList.add("display-initial");

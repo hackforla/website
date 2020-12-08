@@ -80,6 +80,21 @@
   background-color: $color-red;
 }
 
+@media only screen and (max-width: 1028px) {
+
+  // style the HfLA logo for tablet and mobile
+  // It's not one of the standard numbers because
+  // this is where the text started to get covered up
+  // by the logo
+  .main-header .branding {
+    position: absolute;
+    top: -13px;
+    left: -18px;
+    height: 50px;
+    width: 95px;
+  }
+}
+
 @media #{$bp-below-tablet} {
   // HFLA logo setting for mobile
   .main-header {
@@ -95,14 +110,5 @@
     height: 30px;
     margin-top: 6px;
     line-height: 0;
-  }
-
-  // style the HFLA logo for mobile
-  .main-header .branding {
-    position: absolute;
-    top: -13px;
-    left: -18px;
-    height: 50px;
-    width: 95px;
   }
 }

@@ -10,6 +10,6 @@ links:
 location: 
   - Downtown LA
   - Remote
-hide: true
+visible: false
 status: On Hold
 ---

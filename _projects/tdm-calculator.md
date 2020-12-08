@@ -71,5 +71,6 @@ location:
   - Downtown LA
   - Remote
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
+visible: true
 status: Active
 ---

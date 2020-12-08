@@ -215,8 +215,8 @@ layout: default
 <!--Script for adding languages to "Languages" Section-->
 <script>
     let languagesSection = document.getElementById('languages');
-    if(project != null && project.languages.data.length > 0){
-        let languages = project.languages.data.join(', ');
+    if(project != null && project.languages.length > 0){
+        let languages = project.languages.join(', ');
         let languagesParagraph = document.createElement('p');
         languagesParagraph.style.display = 'inline';
         let languagesText = document.createTextNode(languages);

@@ -24,5 +24,6 @@ location:
   - Santa Monica
   - Remote
 partner: Hope of the Valley and hopefully others in the near future.
+visible: true
 status: On Hold
 ---

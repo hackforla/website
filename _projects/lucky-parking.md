@@ -75,5 +75,6 @@ location:
   - Remote
 partner: Seeking
 tools: Google Colab, AWS
+visible: true
 status: Active
 ---

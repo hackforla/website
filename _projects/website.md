@@ -52,5 +52,6 @@ location:
   - Santa Monica
   - Downtown LA
   - Remote
+visible: true
 status: Active
 ---

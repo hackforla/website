@@ -45,5 +45,6 @@ technologies:
 location:
    - Remote
 # partner: N/A
+visible: true
 status: Active
 ---
