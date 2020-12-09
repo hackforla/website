@@ -63,5 +63,6 @@ technologies:
 location:
   - Remote
 partner: Code for America & its Brigades
+visible: true
 status: Active
 ---

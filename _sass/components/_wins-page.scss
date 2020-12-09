@@ -34,7 +34,7 @@
 }
 
 .wins__card-text {
-	padding-top: 50px;
+	padding-top: 40px;
 	p {
 		margin: 0;
 	}
@@ -93,12 +93,13 @@
 
 //card styling
 .wins-card{
-	padding: 50px;
+	padding: 45px;
 	display: flex;
 	flex-direction: row;
 }
 .wins-card-left{
 	width: 100px;
+	margin-right: 10px;
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
@@ -111,7 +112,8 @@
 .wins-card-big-quote{
 	width: 28px;
 	height: 96.05px;
-	margin: 8px;
+	position: relative;
+	top: -20px;
 }
 .wins-card-content{
 	display: flex;
@@ -128,16 +130,16 @@
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 24px;
-	line-height: 28px;
+	font-size: 20px;
+	line-height: 22px;
 	margin-top: 13px;
 }
 .wins-card-team{
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20px;
-	line-height: 23px;
+	font-size: 16px;
+	line-height: 18px;
 	display: flex;
 	align-items: center;
 }
@@ -158,13 +160,13 @@
 
 @media #{$bp-below-tablet} {
 	.wins-card-content{
-		height: 217px;
+		height: 233px;
 	}
 }
 
 @media #{$bp-below-mobile} {
 	.wins-card-content{
-		height: 209px;
+		height: 215px;
 	}
 	.wins-card{
 		padding: 24px;
@@ -178,9 +180,10 @@
 		border-radius: 100px;
 	}
 	.wins-card-big-quote{
-		margin: 4px;
+		margin: 4px;    
 		height: 60px;
 		width: 18px;
+		position: static;
 	}
 
 	.wins-card-name{
@@ -204,8 +207,8 @@
 		height: 20px;
 		width: 20px;
 	}
-	.wins-card-info{
-		margin-top: 15px;
+	.wins__card-text{
+		padding-top: 16px;
 	}
 
 	.wins-card-overview{

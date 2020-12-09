@@ -11,6 +11,6 @@ location:
   - Downtown LA
   - Remote
 partner: County of Los Angeles
-hide: true
+visible: false
 status: On Hold
 ---

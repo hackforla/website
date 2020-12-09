@@ -31,5 +31,6 @@ location:
   - Remote
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
+visible: true
 status: Completed
 ---

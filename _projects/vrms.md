@@ -62,5 +62,6 @@ technologies:
 location:
   - Remote
 partner: TBD
+visible: true
 status: Active
 ---
