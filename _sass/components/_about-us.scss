@@ -137,8 +137,8 @@ a.anchor {
 }
 
 
-// The part of the page that is not the sticky nav.  Should probably rename
-.not-sticky-nav-container {
+// The content container for pages with sticky nav
+.sticky-nav-content-container {
   grid-area: content;
 }
 
@@ -608,7 +608,7 @@ a.anchor {
   }
 
 
-  .not-sticky-nav-container {
+  .sticky-nav-content-container {
     margin-left: 100px;
     grid-area: content;
     justify-self: start;
