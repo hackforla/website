@@ -16,6 +16,8 @@
     font-size: 18px;
     max-width: 500px;
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
 
     a {
         text-decoration: none;
@@ -94,14 +96,10 @@
 
   // Make the active link different
   .is-active {
-    color: #333333;
     font-weight: 700;
-    color: black !important;
-    text-decoration: none;
+    color:#333 !important;
     a {
-      text-decoration: none;
       font-weight: 700;
-  
       &:link,
       &:visited,
       &:hover,
@@ -218,6 +216,7 @@
     color: $color-red;
     text-align: right;
     margin-right: 30px;
+    cursor: pointer;
   }
   .read-more::after {
     content: "\221F";
@@ -233,6 +232,7 @@
     color: $color-red;
     text-align: right;
     margin-right: 30px;
+    cursor: pointer;
   }
   .read-less::after {
     content: "\221F";
