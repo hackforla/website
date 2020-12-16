@@ -166,25 +166,22 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
             let readMore = document.querySelector(".read-more");
             let readLess = document.querySelector(".read-less");
 
-            // This needs to toggle "Read more" and "Read less" so one comes on and the other goes off
+            // This toggles "Read more" and "Read less" so one comes on and the other goes off
                 readMore.classList.toggle(classToAdd);
                 readLess.classList.toggle(classToAdd);
 
             // if it is read-more and not read-less, do this
             if (this.className.includes("read-more")) {
                 accordionContainer = this.nextElementSibling;
-                console.log("Here -> more");
             }
 
             console.log('accordionContainer -> ' + this.className);
 
             // Open and close panel
             if (accordionContainer.style.display === "block") {
-                console.log("Here -> none");
                 accordionContainer.style.display = "none"
             } else {
                 accordionContainer.style.display = "block"
-                console.log("Here -> block");
             }
               event.stopPropagation()
         })
@@ -206,7 +203,7 @@ if (windowWidth < 768) {
 /*******************************************************/
 
 // There certain headers need to be split into two lines on mobile
-// This adds a br tag as the designated spot in the string. 
+// This adds a br tag at the designated spot in the string. 
 
 // Get the header text
 let letterHeadText = document.getElementById("letterBR").innerText;
