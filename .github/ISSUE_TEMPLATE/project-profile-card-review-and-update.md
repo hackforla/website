@@ -1,8 +1,8 @@
 ---
 name: Project Profile Card review and update
 about: To track project profile card updates
-title: ''
-labels: 'Collaborative Work, Role: Product Management'
+title: 'Update Project Profile: [Project Name]'
+labels: 'Role: Product Management'
 assignees: ''
 
 ---
