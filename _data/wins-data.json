@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:R112",
+  "range": "Responses!A1:R113",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -224,6 +224,21 @@
       "I learned how to work better on a team, I worked on a project that will help the people of Los Angeles, I worked on two or more projects, My team launched our MVP",
       "I met some great people and built some cool apps.",
       "TRUE"
+    ],
+    [
+      "12/17/2020 14:07:08",
+      "joshuazrobins@gmail.com",
+      "Josh Robins",
+      "https://www.linkedin.com/in/joshuazrobins",
+      "Yes",
+      "",
+      "No",
+      "Food Oasis, HackforLA Website, Railstats LA, Work for LA",
+      "Business Analyst, Content, Data, Development, PM, QA, UI/UX",
+      "",
+      "5/10/2016",
+      "I got a new job, I produced something for my portfolio, I improved my LinkedIn, I learned how to work better on a team, I learned a new language, I worked on a project that will help the people of Los Angeles, I worked on two or more projects, My team delivered software to a stakeholder, My team launched our MVP, I joined the leadership team in 2017 and got the opportunity to invest back into the Hack for LA community by organizing teams, projects, and events.",
+      "I came to Hack for LA in 2016 as a full-stack web developer and was part of the founding group of Food Oasis LA. I originally joined this community because I wanted to make the transition to Product Management and gain experience building projects for real-world needs. Eventually, I joined the leadership team and ran our Downtown LA hack nights from 2017 to 2019 before stepping back to focus on personal endeavors. "
     ]
   ]
 }
