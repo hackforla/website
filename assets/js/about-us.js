@@ -4,7 +4,7 @@
 
 //Initialize and set defaults
 let stickyNav = document.getElementById("sticky-nav");
-let stickyNavTop = stickyNav.offsetTop - 80;
+let stickyNavTop = stickyNav.offsetTop - 72;
 
 // When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() { 

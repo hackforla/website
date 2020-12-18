@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
-    padding: 25px 15px 50px 15px;    
+    padding: 25px 15px 20px 15px;    
 }
 
 .header-container--about-us h1 {
@@ -59,9 +59,9 @@
 // Makes the sticky navigation stick
 .stick-it {
   position: fixed;
-  top:67px;
+  top:45px;
   z-index: 1;
-  right: 125px;
+  right: 77px;
 }
 
 // Style the sticky nav links
@@ -120,9 +120,9 @@ a.anchor {
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
-  width: 275px;
-  padding: 35px 40px 15px 26px;
-  margin-top: 12px;
+  width: 250px;
+  padding: 35px 30px 15px 18px;
+  margin-top: 30px;
 }
 
 .sticky-nav-inner-grid {
@@ -595,14 +595,20 @@ a.anchor {
     padding: 3rem 1rem 0 1rem;
   } 
 
+  .about-header-text-margin {
+    margin-right: 100px;
+  }
+
   // The next two tags turn on and off the sticky nav sidebar
   .page-content-container-grid {
-    grid-template-columns: auto 400px;
+    grid-template-columns: auto auto;
     grid-template-rows: auto;
-    grid-gap: 70px;
+    //grid-gap: 70px;
     grid-template-areas: 
     "content nav";
+    margin-top: 30px
   }
+
   .sticky-nav {
     display: block;
   }
@@ -612,12 +618,13 @@ a.anchor {
     margin-left: 100px;
     grid-area: content;
     justify-self: start;
+    margin-top: 20px;
   }
 
   .page-card--about {
     margin: 12px 12px 40px;
     max-width: 896px;
-    padding: 40px;
+    padding: 60px;
   }
 
   .page-card--platform {
