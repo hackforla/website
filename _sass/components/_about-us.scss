@@ -13,25 +13,27 @@
 }
 
 .header-text--about-us {
-  font-size: 18px;
-  max-width: 500px;
-  text-align: left;
+    font-size: 18px;
+    max-width: 500px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
 
-  a {
-      text-decoration: none;
-      font-weight: 700;
-  
-      &:link,
-      &:visited {
-        color: $color-black;
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    
+        &:link,
+        &:visited {
+          color: $color-black;
+        }
+    
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-red;
+        }
       }
-  
-      &:hover,
-      &:active,
-      &:focus {
-        color: $color-red;
-      }
-    }
 }
 
 // CSS Grid 
@@ -65,7 +67,6 @@
 }
 
 // Style the sticky nav links
-
 .sticky-nav li {
   list-style-type: none;
   position: relative;
@@ -74,14 +75,10 @@
 
 // Make the active link different
 .is-active {
-  color: #333333;
   font-weight: 700;
-  color: black !important;
-  text-decoration: none;
+  color:#333 !important;
   a {
-    text-decoration: none;
     font-weight: 700;
-
     &:link,
     &:visited,
     &:hover,
@@ -136,7 +133,6 @@ a.anchor {
   scroll-behavior: smooth;
 }
 
-
 // The content container for pages with sticky nav
 .sticky-nav-content-container {
   grid-area: content;
@@ -180,26 +176,26 @@ a.anchor {
   font-size: 24px;
 }
 
-  .about-us-section-header--ED {
-    font-weight: 900;
-    font-size: 1.25rem;
-    transition: 0.4s;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding-bottom: inherit;
-  }
+.about-us-section-header--ED {
+  font-weight: 900;
+  font-size: 1.25rem;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-bottom: inherit;
+}
 
-  // This is putting NOTHING after the header.  It's necessary to align it the same as the other headers
-  .about-us-section-header--ED:after {
-    content: "\2000 \2000 \2000 \2000 \2000 \2000 \2000 \2000";
-    float: right;
-    transform: rotate(-45deg);
-    transition: transform 0.25s ease-in;
-    color: rgb(250, 17, 79);
-    font-weight: bolder;
-    font-size: 24px;
-  }
+// This is putting NOTHING after the header.  It's necessary to align it the same as the other headers
+.about-us-section-header--ED:after {
+  content: "\2000 \2000 \2000 \2000 \2000 \2000 \2000 \2000";
+  float: right;
+  transform: rotate(-45deg);
+  transition: transform 0.25s ease-in;
+  color: rgb(250, 17, 79);
+  font-weight: bolder;
+  font-size: 24px;
+}
 
 #letterBR {
   padding-left: 30px;
@@ -225,7 +221,9 @@ a.anchor {
   color: $color-red;
   text-align: right;
   margin-right: 30px;
+  cursor: pointer;
 }
+
 .read-more::after {
   content: "\221F";
   position: absolute;
@@ -240,7 +238,9 @@ a.anchor {
   color: $color-red;
   text-align: right;
   margin-right: 30px;
+  cursor: pointer;
 }
+
 .read-less::after {
   content: "\221F";
   position: absolute;
@@ -409,6 +409,7 @@ a.anchor {
 .sdg-groups {
   margin-bottom: 20px;
 }
+
 /* Clear floats after the columns */
 .sdg-groups:after {
   content: "";
@@ -423,6 +424,7 @@ a.anchor {
 .sdg-left {
   width: 15%;
 }
+
 .sdg-right {
   width:  85%;
 }
@@ -546,6 +548,7 @@ a.anchor {
   margin: 10px;
   padding: 10px;
 }
+
 .donation-spacing {
   margin: 0 0 40px 20px;
   font-size: 18px;
@@ -657,6 +660,7 @@ a.anchor {
   .about-us-section-header:after {
     display: none;
   }
+
   .sec-head-img {
     display: none;
   }
@@ -695,21 +699,27 @@ a.anchor {
   .platform-sec-impact {
     grid-area: top-left;
   }
+
   .platform-sec-learning {
     grid-area: top right;
   }
+
   .platform-sec-diversity {
     grid-area: mid-left;
   }
+
   .platform-sec-giving {
     grid-area: mid-right;
   }
+
   .platform-sec-agility {
     grid-area: low-right
   }
+
   .platform-sec-scalability {
     grid-area: bottom-left;
   }
+
   .platform-sec-sustainability {
     grid-area: bottom-right;
     align-self: center;
@@ -728,6 +738,7 @@ a.anchor {
   .sdg-left {
     width: 10%;
   }
+
   .sdg-right {
     width:  90%;
   }
@@ -767,6 +778,7 @@ a.anchor {
   .bottom-right-column--donations {
     width: 55%;
   }
+
   .sdg-title-mobile {
     display: none;
   }
