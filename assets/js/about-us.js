@@ -142,7 +142,7 @@ function createAccordionEventListener (classToAdd, accordionElements) {
 } // end function
 
 // Add event listeners
-if (windowWidth < 768) { 
+if (windowWidth < 960) { 
     // Get the list of elements for the accordion
     let accordionList = document.querySelectorAll(".about-us-section-header");
 
@@ -189,7 +189,7 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
 } // end function
 
 // Add event listeners
-if (windowWidth < 768) { 
+if (windowWidth < 960) { 
     // Get the list of elements for the accordion
     let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
 
@@ -212,6 +212,6 @@ let letterHeadText = document.getElementById("letterBR").innerText;
 let insertSomething = (str,ins_str,pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
 
 // If it's mobile, add a break tag and put it back
-if (windowWidth < 768) {
+if (windowWidth < 960) {
     document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
 }
