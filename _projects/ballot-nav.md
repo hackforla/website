@@ -1,7 +1,7 @@
 ---
 identification: '288594239'
 title: BallotNav
-description: BallotNav will help voters quickly find the location, times of operation, and due date for dropping off mail-in ballots in person. Due to COVID-19 and cuts to the United States Postal Service, some voters may feel insecure not only about going out to the polls, but also about utilizing the mail to cast their vote. While it is possible to drop off your mail-in ballot in person, the rules for doing so are not clearly outlined in one single location. Information is scattered across state and county websites, each of which may individually fail to provide one or more elements of crucial information, such as available ballot drop-off times. The BallotNav project will collect this data through a network of brigade partnerships and update it accordingly leading up to November’s election.<br><br>BallotNav’s overall goal is to provide information that helps voters cast their ballots safely and correctly, and avoid accidental disenfranchisement.
+description: BallotNav is a tool that aims to help prevent disenfranchisement by providing reliable and up to date information on ballot drop off locations across the US. While some states have detailed information about ballot drop off locations, others leave it up to the local jurisdiction to publish that information. In some states, Counties, Towns, Parishes, etc, do not have websites, so there is no reliable online source for ballot drop off information. BallotNav was created to provide a reliable online resource about where to drop your ballot, hours, accessibility, etc. We do this by calling each Jurisdictional office provided by the secretary of state and confirming locations details.
 image: /assets/images/projects/ballot-nav.png
 alt: 'Person holding phone with ballot nav website on it.'
 image-hero: /assets/images/projects/ballot-nav-hero.png
@@ -23,24 +23,14 @@ links:
   - name: Readme
     url:  'https://github.com/hackforla/ballotnav/blob/master/README.md'
 looking: 
-  - category: Business Analyst
-    skill: Business Analyst
   - category: UI/UX
     skill: UX Researcher
-  - category: UI/UX
-    skill: UI Designer
   - category: SEO/Marketing
     skill: Marketing, PR & Partnerships
   - category: SEO/Marketing
     skill: Fundraising
-  - category: Development
-    skill: Software Developers
-  - category: Data
-    skill: Data Scientists
   - category: Content
     skill: Translators (Spanish especially)
-  - category: Content
-    skill: "Community Data Monitors: We need an army of people to collect information about drop-off sites for 3,000 counties, and remain on-call to update it when changes occur."
 location: 
   - Remote
 partner: Code for America, Other Brigades
