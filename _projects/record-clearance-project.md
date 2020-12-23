@@ -1,31 +1,25 @@
 ---
 identification: '218391110'
 title: Record Clearance Project
-description: 'The Record Clearance Project aims to help people in California with non-violent criminal records accomplish record clearance, expungement or reduction as a result of Prop 47 & Prop 64. 
-<br /><br />We are creating an ecosystem map of the Los Angeles record clearance landscape in order to identify organizations that we can help grow their impact through partnership. With tools to be created based on verifiable non-profit or government partner needs/value.'
+description: 'The Record Clearance Project aims to help people in California with criminal records accomplish record clearance, expungement or reduction and subsequently a second chance as a part of society.
+<br /><br />We work with verifiable non-profits, the government and partners to build digital tools that can affect changes in the lives of these justice impacted individuals.'
 image: /assets/images/projects/record-clearance.jpg
 alt: 'Record clearance project'
 image-hero: /assets/images/projects/record-clearance-hero.png
 alt: 'Record clearance hero'
 leadership:
-  - name: Angelina Molina
-    role: Project Lead
+  - name: Daniel Lee
+    role: Project Lead & Product Manager
     links:
-      slack: 'https://app.slack.com/team/UNG92TWSV'
-      github: 'https://github.com/H1Angela'
-    picture: https://avatars.githubusercontent.com/H1Angela
-  - name: Kelsey Justis
-    role: Project Manager
-    links:
-      slack: 'https://app.slack.com/team/UP92GTCG2'
-      github: 'https://github.com/KelseyJustis'
-    picture: https://avatars.githubusercontent.com/KelseyJustis
-  - name: Wesley Rowe
+      slack: 'https://app.slack.com/team/U01BU7LQFHB'
+      github: 'https://github.com/j100892'
+    picture: https://avatars.githubusercontent.com/j100892
+  - name: Daniel Xiao
     role: Tech Lead
     links:
-      slack: 'https://app.slack.com/team/U3C7Z2GLE'
-      github: 'https://github.com/wesrowe'
-    picture: https://avatars.githubusercontent.com/wesrowe
+      slack: 'https://app.slack.com/team/U01CQR12PA8'
+      github: 'https://github.com/aahvocado'
+    picture: https://avatars.githubusercontent.com/aahvocado
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
