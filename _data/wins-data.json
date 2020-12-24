@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:R114",
+  "range": "Responses!A1:R115",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -254,6 +254,21 @@
       "12/21/2019",
       "I got a new job",
       "I have begun a community fellowship with Code for America! We will be working on ways to allow justice impacted people easier access to public resources."
+    ],
+    [
+      "12/23/2020 19:23:37",
+      "j100892@gmail.com",
+      "Daniel Lee",
+      "https://www.linkedin.com/in/kipsbaydan/",
+      "Yes",
+      "",
+      "",
+      "Record Clearance Project",
+      "PM",
+      "",
+      "9/28/2020",
+      "I got a new job, My team launched our MVP",
+      "Hack for LA is where I really had my first hands-on exposure to civic technology. Bonnie Wolfe and Dean Church really helped me bring the record clearance project off the ground and we currently have a tech lead and a development team building designs that our design/research team worked on. I also got an offer for my first civic tech design position today and am grateful for Hack for LA playing an integral part of it. Shoutout to the Record Clearance team and for all the hard work over the past few months! "
     ]
   ]
 }
