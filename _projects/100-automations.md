@@ -26,19 +26,19 @@ leadership:
         github: 'https://github.com/Olivia-Chiong'
     picture:'https://avatars.githubusercontent/Olivia-Chiong'
     - name: Muhi-Dean Othman
-      role: Product Manager
+      role: Full-Stack Developer
       links:
         slack: 'https://hackforla.slack.com/team/U01F5K8DDPW'
         github: 'https://github.com/mdothman'
     picture:'https://avatars.githubusercontent/mdothman'
     - name: Audrey Kim
-      role: Product Manager
+      role: UX Writer
       links:
         slack: 'https://hackforla.slack.com/team/U01H0CXBTUM'
         github: 'https://github.com/nahyungkim1220'
     picture:'https://avatars.githubusercontent/nahyungkim1220'
     - name: Jason Brown
-      role: Product Manager
+      role: UX/Product Manager
       links:
         slack: 'https://hackforla.slack.com/team/U01G7G1HMU1'
         github: 'https://github.com/superbunker'
@@ -59,6 +59,8 @@ looking:
      skill: API integrators
    - category: Development
      skill: Frontend Javascript Developers
+   - category: UI/UX
+     skill: UI/UX Designer
 technologies:
   - GitHub Pages
   - Jekyll
