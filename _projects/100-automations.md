@@ -19,25 +19,25 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U018S4VQK3M'
       github: 'https://github.com/CamilaArias'
     picture: 'https://avatars.githubusercontent.com/CamilaArias'
-  - name: Olivia Chiong
+    - name: Olivia Chiong
       role: Product Manager
       links:
         slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
         github: 'https://github.com/Olivia-Chiong'
     picture:'https://avatars.githubusercontent/Olivia-Chiong'
-  - name: Muhi-Dean Othman
+    - name: Muhi-Dean Othman
       role: Full-Stack Developer
       links:
         slack: 'https://hackforla.slack.com/team/U01F5K8DDPW'
         github: 'https://github.com/mdothman'
     picture:'https://avatars.githubusercontent/mdothman'
-  - name: Audrey Kim
+    - name: Audrey Kim
       role: UX Writer
       links:
         slack: 'https://hackforla.slack.com/team/U01H0CXBTUM'
         github: 'https://github.com/nahyungkim1220'
     picture:'https://avatars.githubusercontent/nahyungkim1220'
-  - name: Jason Brown
+    - name: Jason Brown
       role: UX/Product Manager
       links:
         slack: 'https://hackforla.slack.com/team/U01G7G1HMU1'
