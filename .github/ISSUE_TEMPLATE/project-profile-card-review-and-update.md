@@ -2,7 +2,7 @@
 name: Project Profile Card review and update
 about: To track project profile card updates
 title: 'Update Project Profile: [Project Name]'
-labels: 'Role: Product Management, Feature - Project Info and Page'
+labels: 'Feature - Project Info and Page, Role: Product Management'
 assignees: ''
 
 ---
@@ -19,6 +19,10 @@ Please check off everything that is ok the way that it is, and if not, please pr
 - [ ] description
 - [ ] image
 - [ ] leadership
+   - [ ] Name 
+   - [ ] Role 
+   - [ ] Github Handle
+   - [ ] Slack Member ID
 - [ ] links
   - [ ] Github
   - [ ] Slack
