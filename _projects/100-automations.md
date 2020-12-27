@@ -10,13 +10,13 @@ leadership:
   - name: Niven Prasad
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U015R4RTDJA'
+      slack: 'https://hackforla.slack.com/team/U015R4RTDJA'
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
   - name: Camila Arias
     role: UI/UX Designer
     links:
-      slack: 'https://app.slack.com/team/U018S4VQK3M'
+      slack: 'https://hackforla.slack.com/team/U018S4VQK3M'
       github: 'https://github.com/CamilaArias'
     picture: 'https://avatars.githubusercontent.com/CamilaArias'
 links:
