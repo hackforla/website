@@ -1,14 +1,15 @@
 ---
 identification: '218391110'
 title: Record Clearance Project
-description: 'The Record Clearance Project aims to help people in California with criminal records accomplish record clearance, expungement or reduction and subsequently a second chance as a part of society. <br /><br />We work with verifiable non-profits, the government and partners to build digital tools that can affect changes in the lives of these justice impacted individuals.'
+description: 'The Record Clearance Project aims to help people in California with criminal records accomplish record clearance, expungement or reduction and subsequently a second chance as a part of society.
+<br /><br />We work with verifiable non-profits, the government and partners to build digital tools that can affect changes in the lives of these justice impacted individuals.'
 image: /assets/images/projects/record-clearance.jpg
 alt: 'Record clearance project'
 image-hero: /assets/images/projects/record-clearance-hero.png
 alt: 'Record clearance hero'
 leadership:
   - name: Daniel Lee
-    role: Project Lead
+    role: Project Lead & Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01BU7LQFHB'
       github: 'https://github.com/j100892'
