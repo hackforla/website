@@ -10,15 +10,39 @@ leadership:
   - name: Niven Prasad
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U015R4RTDJA'
+      slack: 'https://hackforla.slack.com/team/U015R4RTDJA'
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
   - name: Camila Arias
     role: UI/UX Designer
     links:
-      slack: 'https://app.slack.com/team/U018S4VQK3M'
+      slack: 'https://hackforla.slack.com/team/U018S4VQK3M'
       github: 'https://github.com/CamilaArias'
     picture: 'https://avatars.githubusercontent.com/CamilaArias'
+  - name: Olivia Chiong
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
+      github: 'https://github.com/Olivia-Chiong'
+    picture: 'https://avatars.githubusercontent.com/Olivia-Chiong'
+  - name: Muhi-Dean Othman
+    role: Full-Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01F5K8DDPW'
+      github: 'https://github.com/mdothman'
+    picture: 'https://avatars.githubusercontent.com/mdothman'
+  - name: Audrey Kim
+    role: UX Writer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01H0CXBTUM'
+      github: 'https://github.com/nahyungkim1220'
+    picture: 'https://avatars.githubusercontent.com/nahyungkim1220'
+  - name: Jason Brown
+    role: UX/Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01G7G1HMU1'
+      github: 'https://github.com/superbunker'
+    picture: 'https://avatars.githubusercontent.com/superbunker'
 links:
    - name: Slack
      url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
@@ -27,8 +51,6 @@ links:
    - name: Readme
      url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
-   - category: UI/UX
-     skill: Content Writer
    - category: Development
      skill: Anyone who wants to write open source automations
    - category: Development
@@ -37,8 +59,8 @@ looking:
      skill: API integrators
    - category: Development
      skill: Frontend Javascript Developers
-   - category: Development
-     skill: Static Site Architect  
+   - category: UI/UX
+     skill: UI/UX Designer
 technologies:
   - GitHub Pages
   - Jekyll
