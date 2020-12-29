@@ -15,8 +15,6 @@ _insert url of their card here before sending - their cards can be found in this
 
 ### Action Items
 
-### Action Items
-
 - [ ] [INSERT TEAM NAME HERE] Team Leadership
    - [ ] Please check off everything that is ok the way that it is, and if not, please provide the updated information in the comments below:
       - [ ] title
