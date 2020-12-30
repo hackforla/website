@@ -70,6 +70,7 @@ location:
   - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
+vertical: Citizen Engagment
 partner: seeking
 visible: true
 status: Active

@@ -41,6 +41,7 @@ location:
   - Santa Monica
   - Remote
 tools: Hotjar, Google Analytics
+vertical: Citizen Engagment
 partner: City of Santa Monica
 visible: true
 status: Active
