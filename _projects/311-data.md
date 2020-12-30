@@ -10,7 +10,7 @@ leadership:
   - name: John Ritchey
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/UNFV029Q8'
+      slack: 'https://hackforla.slack.com/team/UNFV029Q8'
       github: 'https://github.com/johnr54321'
     picture: https://avatars.githubusercontent.com/johnr54321
   - name: Dana Chen
@@ -22,19 +22,19 @@ leadership:
   - name: Adam Kendis
     role: Frontend Lead
     links:
-      slack: 'https://app.slack.com/team/USNAHR0KE'
+      slack: 'https://hackforla.slack.com/team/USNAHR0KE'
       github: 'https://github.com/adamkendis'
     picture: https://avatars.githubusercontent.com/adamkendis
   - name: Ryan Swan
     role: Data Science Lead
     links:
-      slack: 'https://app.slack.com/team/UPB2FHJCX'
+      slack: 'https://hackforla.slack.com/team/UPB2FHJCX'
       github: 'https://github.com/ryanmswan'
     picture: https://avatars.githubusercontent.com/ryanmswan
   - name: Jake Mensch
     role: Backend Lead
     links:
-      slack: 'https://app.slack.com/team/ULJAWB8M8'
+      slack: 'https://hackforla.slack.com/team/ULJAWB8M8'
       github: 'https://github.com/jmensch1'
     picture: https://avatars.githubusercontent.com/jmensch1
 links:

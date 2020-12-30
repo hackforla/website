@@ -12,7 +12,7 @@ leadership:
   - name: Joel Parker Henderson
     role: Project Architect
     links:
-      slack: 'https://app.slack.com/team/UP1U7C53L'
+      slack: 'https://hackforla.slack.com/team/UP1U7C53L'
       github: 'https://github.com/joelparkerhenderson'
     picture: https://avatars.githubusercontent.com/joelparkerhenderson
 links:

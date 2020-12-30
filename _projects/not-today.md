@@ -10,13 +10,13 @@ leadership:
   - name: Mya Stark
     role: Product Owner & SME
     links:
-      slack: 'https://app.slack.com/team/UMC7AJLDV'
+      slack: 'https://hackforla.slack.com/team/UMC7AJLDV'
       github: 'https://github.com/myastark'
     picture: https://avatars.githubusercontent.com/myastark
   - name: Jacquelin Coronilla
     role: Project Manager
     links:
-      slack: 'https://app.slack.com/team/UNTQA141G'
+      slack: 'https://hackforla.slack.com/team/UNTQA141G'
       github: 'https://github.com/jacoronilla'
     picture: https://avatars.githubusercontent.com/jacoronilla
 links:

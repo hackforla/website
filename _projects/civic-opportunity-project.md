@@ -10,7 +10,7 @@ leadership:
   - name: Ray Fambro
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U015QPJS34M'
+      slack: 'https://hackforla.slack.com/team/U015QPJS34M'
       github: 'https://github.com/rfambro2'
     picture: https://avatars.githubusercontent.com/rfambro2
 links:

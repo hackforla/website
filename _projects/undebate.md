@@ -10,7 +10,7 @@ leadership:
   - name: David Fridley
     role: Tech Lead
     links:
-      slack: 'https://app.slack.com/team/U6RCX5XRD'
+      slack: 'https://hackforla.slack.com/team/U6RCX5XRD'
       github: 'https://github.com/ddfridley'
     picture: https://avatars.githubusercontent.com/ddfridley
 links:
