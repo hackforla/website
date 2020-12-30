@@ -50,18 +50,19 @@ looking:
   - category: UI/UX
     skill: UI/UX Designer
 technologies:
-- Node
-- Express
-- MongoDB
-- Docker
-- React
-- Redux
-- Sass
-- Jest
-- React Testing Library
+  - Node
+  - Express
+  - MongoDB
+  - Docker
+  - React
+  - Redux
+  - Sass
+  - Jest
+  - React Testing Library
 location:
   - Remote
 partner: TBD
 visible: true
+vertical: Civic Tech Infrastructure
 status: Active
 ---
