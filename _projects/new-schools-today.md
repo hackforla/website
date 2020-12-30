@@ -10,25 +10,25 @@ leadership:
   - name: Ben Swerdlow
     role: Tech Team Lead
     links:
-      slack: 'https://app.slack.com/team/UKUHHS94L'
+      slack: 'https://hackforla.slack.com/team/UKUHHS94L'
       github: 'https://github.com/theswerd'
     picture: https://avatars.githubusercontent.com/theswerd
   - name: Joshua Bubar
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/UMNNMHXV2'
+      slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
       github: 'https://github.com/jbubar'
     picture: https://avatars.githubusercontent.com/jbubar
   - name: Jacob Zwang
     role: UI/UX Lead
     links:
-      slack: 'https://app.slack.com/team/USM20BUFP'
+      slack: 'https://hackforla.slack.com/team/USM20BUFP'
       github: 'https://github.com/jacobzwang'
     picture: https://avatars.githubusercontent.com/jacobzwang
   - name: Ethan Hopkins
     role: Project Manager
     links:
-      slack: 'https://app.slack.com/team/UQUBHLPC2'
+      slack: 'https://hackforla.slack.com/team/UQUBHLPC2'
       github: 'https://github.com/ethanh256'
     picture: https://avatars.githubusercontent.com/ethanh256
 links:

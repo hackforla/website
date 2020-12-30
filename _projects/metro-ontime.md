@@ -10,7 +10,7 @@ leadership:
   - name: Cameron Sexton
     role: Product Owner/Lead Developer
     links:
-      slack: 'https://app.slack.com/team/UBENYBXGV'
+      slack: 'https://hackforla.slack.com/team/UBENYBXGV'
       github: 'https://github.com/ctsexton'
     picture: https://avatars.githubusercontent.com/ctsexton
 links:
