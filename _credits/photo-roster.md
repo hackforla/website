@@ -3,7 +3,7 @@ title: Photo Roster
 title-link: https://thenounproject.com/search/?q=roster&i=149946
 content: icon
 used-in: Getting Started
-artist: Numero Uno
+artist: Lil Squid
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
 image-url: /assets/images/getting-started/join-3.png
