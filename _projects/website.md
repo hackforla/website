@@ -8,7 +8,7 @@ image-hero: /assets/images/projects/website-hero.jpg
 alt-hero: 'Five women in tech collaborating.'
 leadership:
   - name: Bonnie Wolfe
-    role: Agile Coach / Stakeholder Rep
+    role: Agile Coach/Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
@@ -19,6 +19,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UNAQGKW91'
       github: 'https://github.com/KianBadie'
     picture: https://avatars.githubusercontent.com/KianBadie
+  - name: Cynthia Kiser
+    role: Technical Advisor
+    links:
+      slack: 'https://hackforla.slack.com/team/USBB18YDR'
+      github: 'https://github.com/cnk'
+    picture: https://avatars.githubusercontent.com/cnk
   - name: David Rubinstein
     role: Technical Lead
     links:
@@ -49,12 +55,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FDAPULJE'
       github: 'https://github.com/ahdithebomb'
     picture: https://avatars.githubusercontent.com/ahdithebomb
-  - name: Munas Musthafa
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01F6KA8094'
-      github: 'https://github.com/Munasmusthafa'
-    picture: https://avatars.githubusercontent.com/Munasmusthafa
   - name: Tarang Gupta
     role: Product Manager
     links:
