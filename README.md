@@ -92,17 +92,28 @@ In your shell, navigate there then run the following commands:
 git clone https://github.com/your_GitHub_user_name/website.git
 ```
 
-You should now have a new folder in your `hackforla` folder called `website`.
+You should now have a new folder in your `hackforla` folder called `website`. Verify this by changing into the new directory:
+```bash
+cd website
+```
 
-Verify which URL your `origin` remote is pointing to:
+Next, verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
 
 ```bash
 git remote show origin
 ```
+You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/YOURUSERNAME/website.git`). You are all set to make working changes to the website on your local machine.
 
-If you accidentally cloned the `hackforla/website.git` then you can correct that with the following two commands: 
+However, we still need a way to keep our local repo up to date with the deployed website. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
 
-1) Change your local copy to upload to your fork with the following:
+```bash
+git remote add upstream https://github.com/hackforla/website.git
+git fetch upstream
+```
+
+If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github), then you can correct that with the following two commands: 
+
+1) Set your forked repo on your Github as an `origin` remote:
 
 ```bash
 git remote set-url origin https://github.com/your_user_name/website.git
