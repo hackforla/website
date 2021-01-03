@@ -100,7 +100,7 @@ cd website
 Next, verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
 
 ```bash
-git remote show origin
+git remote -v
 ```
 You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/YOURUSERNAME/website.git`). You are all set to make working changes to the website on your local machine.
 
@@ -110,7 +110,14 @@ However, we still need a way to keep our local repo up to date with the deployed
 git remote add upstream https://github.com/hackforla/website.git
 git fetch upstream
 ```
+After adding the upstream remote, you should now see it if you again run `git remote -v` :
+```bash
+origin  https://github.com/YOURUSERNAME/website.git (fetch)
+origin  https://github.com/YOURUSERNAME/website.git (push)
+upstream        https://github.com/hackforla/website.git (fetch)
+upstream        https://github.com/hackforla/website.git (push)
 
+```
 If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github), then you can correct that with the following two commands: 
 
 1) Set your forked repo on your Github as an `origin` remote:
@@ -124,7 +131,6 @@ git remote set-url origin https://github.com/your_user_name/website.git
 ```bash
 git remote add upstream https://github.com/hackforla/website.git
 ```
-
 #### Step 4: Setting up Docker
 
 Docker is the recommended approach to quickly getting started with local development. (ELI5: Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request).
