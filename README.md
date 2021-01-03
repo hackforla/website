@@ -179,6 +179,14 @@ git branch
 
 You will see a list of all of your branches. There will be a star (`*`) next to the branch that you are currently in. By default you should start on the `gh-pages` branch.
 
+Note: when you work on future issues, you must always be in the `gh-pages` branch when creating a new branch.
+
+If you are not currently in the `gh-pages` branch, run the following command to return to it:
+
+```bash
+git checkout gh-pages
+```
+
 b) Create a new branch where you will work on your issue
 
 The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
@@ -350,6 +358,17 @@ your pull request is accepted and merged.
 
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `fix-logo-width-311`).
+
+Important: After you completed your assignment and committed all of the changes, before moving onto your next issue and creating a new branch, you must leave your current branch and return to the `gh-pages` branch. From there you can checkout into a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch).
+
+Run the following command to return to the `gh-pages` branch:
+
+```bash
+git checkout gh-pages
+```
+
+Now you are all set to work on a new PR. Start over on Step 6.
+
 
 ## Useful Links
 
