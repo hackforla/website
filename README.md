@@ -129,6 +129,9 @@ More on using Docker and the concepts of containerization:
 
 *Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
 
+If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
+* [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
+
 ### Build and serve the website locally
 
 This command starts a jekyll server locally. The server watches for changes to
