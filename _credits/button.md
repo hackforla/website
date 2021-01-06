@@ -1,6 +1,6 @@
 ---
 title: Button
-title-link: https://www.freepik.com/free-vector/choose-concept-illustration_5568798.htm#page=1&query=button%20choose&position=0
+title-link: https://www.freepik.com/free-vector/choose-concept-illustration_5568798.htm
 content: icon
 used-in: Getting Started
 artist: stories
