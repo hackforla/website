@@ -6,7 +6,7 @@ used-in: Wins Page
 artist: freepik
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url:
+image-url: assets/images/wins-page/wins-trophy.png
 alt: 'Image of Winner'
 type: icon
 ---
