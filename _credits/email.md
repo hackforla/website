@@ -1,11 +1,12 @@
 ---
 title: Email
+title-link: https://thenounproject.com/search/?q=email&i=3378569
 content: icon
 used-in: Getting Started
 artist: Hadi Sucipto
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
 image-url: /assets/images/getting-started/join-1.png
-alt: "Image of Email"
+alt: 'Image of Email'
 type: icon
 ---

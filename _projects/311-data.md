@@ -72,6 +72,7 @@ location:
   - Remote
 
 partner: EmpowerLA
+vertical: Citizen Engagement
 visible: true
 status: Active
 ---

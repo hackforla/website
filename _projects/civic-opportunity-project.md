@@ -32,10 +32,11 @@ looking:
   - category: UI/UX
     skill: UX Researcher
 # technologies:
-location: 
+location:
   - Remote
 # tools:
 partner: Undisclosed
 visible: true
+vertical: Civic Tech Infrastructure
 status: Active
 ---
