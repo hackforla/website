@@ -146,6 +146,9 @@ More on using Docker and the concepts of containerization:
 
 *Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
 
+If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
+* [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
+
 ### Build and serve the website locally
 
 This command starts a jekyll server locally. The server watches for changes to
@@ -195,6 +198,14 @@ git branch
 ```
 
 You will see a list of all of your branches. There will be a star (`*`) next to the branch that you are currently in. By default you should start on the `gh-pages` branch.
+
+Note: when you work on future issues, you must always be in the `gh-pages` branch when creating a new branch.
+
+If you are not currently in the `gh-pages` branch, run the following command to return to it:
+
+```bash
+git checkout gh-pages
+```
 
 b) Create a new branch where you will work on your issue
 
@@ -367,6 +378,17 @@ your pull request is accepted and merged.
 
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `fix-logo-width-311`).
+
+Important: After you completed your assignment and committed all of the changes, before moving onto your next issue and creating a new branch, you must leave your current branch and return to the `gh-pages` branch. From there you can checkout into a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch).
+
+Run the following command to return to the `gh-pages` branch:
+
+```bash
+git checkout gh-pages
+```
+
+Now you are all set to work on a new PR. Start over on Step 6.
+
 
 ## Useful Links
 
