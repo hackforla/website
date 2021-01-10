@@ -6,13 +6,13 @@ image: /assets/images/projects/youthjusticenav.png
 alt: "All capital letters spelling out title of project - YOUTH JUSTICE NAV"
 image-hero: /assets/images/projects/youthjusticenav-hero.png
 leadership:
-	- name: Bonnie Wolfe
+  - name: Bonnie Wolfe
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: 'https://avatars.githubusercontent.com/ExperimentsInHonesty'
- 	- name: Leroy Tung
+  - name: Leroy Tung
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01G75XUYHX'
@@ -38,19 +38,19 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/YouthJusticeNav/blob/main/README.md'
 looking:
-   - category: Content
+  - category: Content
     skill: Content Writer
-   - category: UI/UX
+  - category: UI/UX
     skill: UI Designer
-   - category: UI/UX
+  - category: UI/UX
     skill: UX Researcher
 technologies:
-   - Google Docs
-   - Google Sheets
-   - Figma
-   - Miro
+  - Google Docs
+  - Google Sheets
+  - Figma
+  - Miro
 location:
-   - Remote
+  - Remote
 partner: UCLA School of Law, Code for America
 vertical: Justice
 visible: true
