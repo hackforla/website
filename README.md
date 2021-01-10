@@ -369,7 +369,7 @@ incorporated into the live web site. Go to
 https://github.com/hackforla/website/pulls and click on "New pull
 request". Please rename your pull request something descriptive i.e. "building a project card for civic opportunity project".
 Also, since your changes are not in the hackforla/website
-repostory, you need to click the "compare across forks" link in the
+repository, you need to click the "compare across forks" link in the
 first paragraph to make you repository and your new branch
 available. Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
@@ -386,6 +386,13 @@ Run the following command to return to the `gh-pages` branch:
 ```bash
 git checkout gh-pages
 ```
+
+From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
+```bash
+git pull upstream gh-pages
+git branch -d <your-feature-branch>
+```
+Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
 Now you are all set to work on a new PR. Start over on Step 6.
 
