@@ -3,9 +3,9 @@ identification: "215666884"
 title: Food Oasis
 description: The website is focused on individuals seeking food in Los Angeles who need an up-to-date resource about food pantries and meals. Our mission is to update the existing website, foodoasis.la with a simplified UI and verified data.  Future development goals include creating functionality for referral services that will allow the end user to annotate and update listings through a peer verification system.
 image: /assets/images/projects/food-oasis.jpg
-alt: "Vegatables beats stacked"
+alt: 'Vegatables beats stacked'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
-alt-hero: "Food Oasis hero"
+alt-hero: 'Food Oasis hero'
 leadership:
   - name: Jenny Mikesell
     role: Product Manager
@@ -16,7 +16,7 @@ leadership:
   - name: Tina Moh
     role: UX/Service Lead
     links:
-      slack: https://hackforla.slack.com/team/UP4AZM459"
+      slack: "https://hackforla.slack.com/team/UP4AZM459"
       github: "https://github.com/tina-moh"
     picture: https://avatars.githubusercontent.com/tina-moh
   - name: John Darragh

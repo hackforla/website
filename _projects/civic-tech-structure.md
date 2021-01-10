@@ -1,6 +1,6 @@
 ---
-# "identification" is the 9 digit ID for your repo in the GitHub API.
-identification: '293907049'
+# 'identification' is the 9 digit ID for your repo in the GitHub API.
+identification: "293907049"
 title: Civic Tech Structure
 description: "Each of the 80+ Code for America Brigades is an experiment which generates valuable learnings and new effective processes and practices. However, Brigades and other civic tech volunteer organizations need not start from scratch. This project aims to improve existing structures and create new ones that make it easier to share replicable processes and practices so that organizers and members can iterate on each others work, improving outcomes for the whole network.
 <br><br>
