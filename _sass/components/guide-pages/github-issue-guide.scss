@@ -67,12 +67,12 @@
 // VARIABLES FOR OVERLAY LINKS
 @mixin right-overlay {
   position: absolute;
-    left: 90%;
+    left: 70%;
     width: 7%;
   }
 @mixin right-text-overlay {
   position: absolute;
-    left: 97.5%;
+    left: 78%;
 }
   
 @mixin left-overlay {
@@ -92,11 +92,11 @@
 //RIGHT SIDE LINKS
 .assignees {
   @include right-overlay;
-  top: 17.5%;
+  top: 16%;
 
   + h4 {
     @include right-text-overlay;
-    top: 17.5%;
+    top: 16%;
   }
 }
 
