@@ -1,0 +1,12 @@
+---
+title: Meetings
+title-link: https://www.iconfinder.com/icons/3964128/business_group_meeting_team_icon
+content: icon
+used-in: Hack Nights
+artist: IconMarketPK
+provider: Iconfinder
+provider-link: 'https://www.iconfinder.com/'
+image-url: /assets/images/hack-nights/meetings.svg
+alt: 'Image of Meetings'
+type: icon
+---
