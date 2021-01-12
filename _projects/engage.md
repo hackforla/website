@@ -10,13 +10,13 @@ leadership:
   - name: Teddy Cripeneau
     role:
     links:
-      slack: 'https://app.slack.com/team/UAYBYQVV3'
+      slack: 'https://hackforla.slack.com/team/UAYBYQVV3'
       github: 'https://github.com/TeddyCr'
     picture: https://avatars.githubusercontent.com/TeddyCr
   - name: Eli Selkin
     role: Backend Architect
     links:
-      slack: 'https://app.slack.com/team/U0611PL2D'
+      slack: 'https://hackforla.slack.com/team/U0611PL2D'
       github: 'https://github.com/eselkin'
     picture: https://avatars.githubusercontent.com/eselkin
 links:
@@ -41,6 +41,7 @@ location:
   - Santa Monica
   - Remote
 tools: Hotjar, Google Analytics
+vertical: Citizen Engagement
 partner: City of Santa Monica
 visible: true
 status: Active

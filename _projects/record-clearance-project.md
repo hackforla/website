@@ -11,13 +11,13 @@ leadership:
   - name: Daniel Lee
     role: Project Lead & Product Manager
     links:
-      slack: 'https://app.slack.com/team/U01BU7LQFHB'
+      slack: 'https://hackforla.slack.com/team/U01BU7LQFHB'
       github: 'https://github.com/j100892'
     picture: https://avatars.githubusercontent.com/j100892
   - name: Daniel Xiao
     role: Tech Lead
     links:
-      slack: 'https://app.slack.com/team/U01CQR12PA8'
+      slack: 'https://hackforla.slack.com/team/U01CQR12PA8'
       github: 'https://github.com/aahvocado'
     picture: https://avatars.githubusercontent.com/aahvocado
 links:

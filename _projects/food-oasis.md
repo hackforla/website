@@ -10,37 +10,37 @@ leadership:
   - name: Jenny Mikesell
     role: Product Manager
     links:
-      slack: "https://app.slack.com/team/UM4FE6ELQ"
+      slack: "https://hackforla.slack.com/team/UM4FE6ELQ"
       github: "https://github.com/jpmikesell"
     picture: https://avatars.githubusercontent.com/jpmikesell
   - name: Tina Moh
     role: UX/Service Lead
     links:
-      slack: https://app.slack.com/team/UP4AZM459'
+      slack: https://hackforla.slack.com/team/UP4AZM459'
       github: "https://github.com/tina-moh"
     picture: https://avatars.githubusercontent.com/tina-moh
   - name: John Darragh
     role: Architect
     links:
-      slack: "https://app.slack.com/team/UFLDX9V19"
+      slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Lucas Homer
     role: Sr. Developer
     links:
-      slack: "https://app.slack.com/team/UMQ5H55TN"
+      slack: "https://hackforla.slack.com/team/UMQ5H55TN"
       github: "https://github.com/lucas-homer"
     picture: https://avatars.githubusercontent.com/lucas-homer
   - name: Gaby Cohen
     role:
     links:
-      slack: "https://app.slack.com/team/UQG8PEXPX"
+      slack: "https://hackforla.slack.com/team/UQG8PEXPX"
       github: "https://github.com/gcohen02"
     picture: https://avatars.githubusercontent.com/gcohen02
   - name: Steven Ettinger
     role: Blockchain Developer
     links:
-      slack: "https://app.slack.com/team/UNFG6M8FN"
+      slack: "https://hackforla.slack.com/team/UNFG6M8FN"
       github: "https://github.com/disregardfiat"
     picture: https://avatars.githubusercontent.com/disregardfiat
 links:
@@ -70,6 +70,7 @@ location:
   - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
+vertical: Citizen Engagement
 partner: seeking
 visible: true
 status: Active

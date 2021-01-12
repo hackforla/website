@@ -10,25 +10,25 @@ leadership:
   - name: Greg Pawin
     role: Product Owner / Data Science Lead
     links:
-      slack: 'https://app.slack.com/team/UUEQF3AJG'
+      slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
   - name: Matthew Ginther
     role: Full-Stack Developer Lead
     links:
-      slack:  'https://app.slack.com/team/U013GNM93U1'
+      slack:  'https://hackforla.slack.com/team/U013GNM93U1'
       github: 'https://github.com/mg78856'
     picture: https://avatars.githubusercontent.com/mg78856
   - name: David Kim
     role: Full-Stack Developer
     links:
-      slack: 'https://app.slack.com/team/U3MNUEQJ3'
+      slack: 'https://hackforla.slack.com/team/U3MNUEQJ3'
       github: 'https://github.com/hyomiTheTech'
     picture: https://avatars0.githubusercontent.com/u/38476995?s=400&u=43e9d12bf5a5df1b9347519fc1e4ef3991b9ae13&v=4
   - name: Sam Guan
     role: Full-Stack Developer
     links:
-      slack: 'https://app.slack.com/team/U0173AHJ004'
+      slack: 'https://hackforla.slack.com/team/U0173AHJ004'
       github: 'https://github.com/samreality4'
     picture: https://avatars.githubusercontent.com/samreality4
 links:
@@ -57,6 +57,7 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
+vertical: Citizen Engagement
 visible: true
 status: Active
 ---

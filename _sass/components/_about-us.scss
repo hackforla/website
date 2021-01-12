@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
-    padding: 25px 15px 50px 15px;    
+    padding: 25px 15px 20px 15px;    
 }
 
 .header-container--about-us h1 {
@@ -65,9 +65,9 @@
 // Makes the sticky navigation stick
 .stick-it {
   position: fixed;
-  top:67px;
+  top:45px;
   z-index: 1;
-  right: 125px;
+  left: 1070px;
 }
 
 // Style the sticky nav links
@@ -121,9 +121,9 @@ a.anchor {
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
-  width: 275px;
-  padding: 35px 40px 15px 26px;
-  margin-top: 12px;
+  width: 250px;
+  padding: 35px 30px 15px 18px;
+  margin-top: 30px;
 }
 
 .sticky-nav-inner-grid {
@@ -587,44 +587,54 @@ a.anchor {
 
 } // End mobile up
 
-@media only screen and (max-width: 850px) {
-
-  .stick-it {
-    right: 0;
-  }
+// Bigger than tablet - 768px
+@media #{$bp-tablet-up} {
 
 }
 
-// Bigger than tablet - 768px
-@media #{$bp-tablet-up} {
+//Bigger than desktop - 960px
+@media #{$bp-desktop-up} {
+
   .header-container--about-us {
     flex-flow: row;
     padding: 3rem 1rem 0 1rem;
   } 
 
-  // The next two tags turn on and off the sticky nav sidebar
-  .page-content-container-grid {
-    grid-template-columns: auto 400px;
-    grid-template-rows: auto;
-    grid-gap: 70px;
-    grid-template-areas: 
-    "content nav";
-  }
-  .sticky-nav {
-    display: block;
+  .about-header-text-margin {
+    margin-right: 100px;
   }
 
+  // The next two tags turn on and off the sticky nav sidebar
+  .page-content-container-grid {
+    grid-template-columns: 996px auto;
+    grid-template-rows: auto;
+    grid-gap: 75px;
+    grid-template-areas: 
+    "content nav";
+    margin-top: 30px
+  }
+
+  .sticky-nav {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .sticky-nav-spacer-div {
+    grid-area: nav;
+    width: 250px;
+  }
 
   .sticky-nav-content-container {
     margin-left: 100px;
     grid-area: content;
     justify-self: start;
+    margin-top: 20px;
   }
 
   .page-card--about {
     margin: 12px 12px 40px;
     max-width: 896px;
-    padding: 40px;
+    padding: 60px;
   }
 
   .page-card--platform {
@@ -824,9 +834,30 @@ a.anchor {
   .garcetti-large {
     display: block;
   }
-} // End tablet-up
+} // End desktop-up
 
-//Bigger than desktop - 960px
-@media #{$bp-desktop-up} {
+// These are to control the responsive location of the sticky nav
+@media only screen and (max-width: 1321px) {
+  .page-content-container-grid {
+    grid-template-columns: auto auto;
+    grid-gap: 75px;
+  }
 
-} // End desktop up
+  .stick-it {
+    right: 0px;
+    left: auto;
+  }
+}
+
+@media only screen and (max-width: 1171px) {
+
+  .sticky-nav-content-container {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .page-content-container-grid {
+    grid-gap: 23px;
+  }
+}

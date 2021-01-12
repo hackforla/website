@@ -92,17 +92,35 @@ In your shell, navigate there then run the following commands:
 git clone https://github.com/your_GitHub_user_name/website.git
 ```
 
-You should now have a new folder in your `hackforla` folder called `website`.
-
-Verify which URL your `origin` remote is pointing to:
-
+You should now have a new folder in your `hackforla` folder called `website`. Verify this by changing into the new directory:
 ```bash
-git remote show origin
+cd website
 ```
 
-If you accidentally cloned the `hackforla/website.git` then you can correct that with the following two commands: 
+Next, verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
 
-1) Change your local copy to upload to your fork with the following:
+```bash
+git remote -v
+```
+You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/YOURUSERNAME/website.git`). You are all set to make working changes to the website on your local machine.
+
+However, we still need a way to keep our local repo up to date with the deployed website. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
+
+```bash
+git remote add upstream https://github.com/hackforla/website.git
+git fetch upstream
+```
+After adding the upstream remote, you should now see it if you again run `git remote -v` :
+```bash
+origin  https://github.com/YOURUSERNAME/website.git (fetch)
+origin  https://github.com/YOURUSERNAME/website.git (push)
+upstream        https://github.com/hackforla/website.git (fetch)
+upstream        https://github.com/hackforla/website.git (push)
+
+```
+If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github), then you can correct that with the following two commands: 
+
+1) Set your forked repo on your Github as an `origin` remote:
 
 ```bash
 git remote set-url origin https://github.com/your_user_name/website.git
@@ -113,7 +131,6 @@ git remote set-url origin https://github.com/your_user_name/website.git
 ```bash
 git remote add upstream https://github.com/hackforla/website.git
 ```
-
 #### Step 4: Setting up Docker
 
 Docker is the recommended approach to quickly getting started with local development. (ELI5: Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request).
@@ -181,6 +198,14 @@ git branch
 ```
 
 You will see a list of all of your branches. There will be a star (`*`) next to the branch that you are currently in. By default you should start on the `gh-pages` branch.
+
+Note: when you work on future issues, you must always be in the `gh-pages` branch when creating a new branch.
+
+If you are not currently in the `gh-pages` branch, run the following command to return to it:
+
+```bash
+git checkout gh-pages
+```
 
 b) Create a new branch where you will work on your issue
 
@@ -344,7 +369,7 @@ incorporated into the live web site. Go to
 https://github.com/hackforla/website/pulls and click on "New pull
 request". Please rename your pull request something descriptive i.e. "building a project card for civic opportunity project".
 Also, since your changes are not in the hackforla/website
-repostory, you need to click the "compare across forks" link in the
+repository, you need to click the "compare across forks" link in the
 first paragraph to make you repository and your new branch
 available. Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
@@ -353,6 +378,24 @@ your pull request is accepted and merged.
 
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `fix-logo-width-311`).
+
+Important: After you completed your assignment and committed all of the changes, before moving onto your next issue and creating a new branch, you must leave your current branch and return to the `gh-pages` branch. From there you can checkout into a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch).
+
+Run the following command to return to the `gh-pages` branch:
+
+```bash
+git checkout gh-pages
+```
+
+From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
+```bash
+git pull upstream gh-pages
+git branch -d <your-feature-branch>
+```
+Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
+
+Now you are all set to work on a new PR. Start over on Step 6.
+
 
 ## Useful Links
 

@@ -28,7 +28,7 @@ leadership:
   - name: Olga Bilogurova
     role: Frontend Engineer
     links:
-      slack: 'https://app.slack.com/team/U015MG4LK99'
+      slack: 'https://hackforla.slack.com/team/U015MG4LK99'
       github: 'https://github.com/OlgaBilogurova'
     picture: https://avatars.githubusercontent.com/OlgaBilogurova
 links:
@@ -50,18 +50,19 @@ looking:
   - category: UI/UX
     skill: UI/UX Designer
 technologies:
-- Node
-- Express
-- MongoDB
-- Docker
-- React
-- Redux
-- Sass
-- Jest
-- React Testing Library
+  - Node
+  - Express
+  - MongoDB
+  - Docker
+  - React
+  - Redux
+  - Sass
+  - Jest
+  - React Testing Library
 location:
   - Remote
 partner: TBD
 visible: true
+vertical: Civic Tech Infrastructure
 status: Active
 ---
