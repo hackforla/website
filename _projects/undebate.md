@@ -38,4 +38,5 @@ location:
 partner: EnCiv.org, Ballotpedia.org
 visible: true
 status: Active
+vertical: 'Vote / Representation'
 ---
