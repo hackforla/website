@@ -125,35 +125,34 @@ title: Wins
 			if (card[github_url] && card[github_permission] === "Yes") {
 				githubData.slice(1) //first key is a timestamp
 				.forEach(project => {
+
 			/* Exit forEach if githubId is already defined, otherwise
 			iterate through each project (and its contributors) until
 			a matching github_url is found */
 					if (ghId) return;
 					project.contributorsComplete.data.forEach(contrib => {
 						if (contrib.github_url === card[github_url]) {
-							console.log(`URL found! ID ${contrib.id}`);
 							ghId = contrib.id;
 						}
 					});	
 				});
+
 			}
 
-			console.log("ghID is now " + ghId);
+			/* if github url is provided in wins-data and permission 
+			is granted, ghId is defined & we can use their github avatar */
+
+			let githubAvaUrl = ghId ? 
+							`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
+							"";
+			let profileImgSrc = githubAvaUrl ? 
+							githubAvaUrl : 
+							"/assets/images/wins-page/avatar-default.svg";
+
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
 
 			let leftDiv = makeElement('div', cardElement, "wins-card-left");
-
-			/* if ghId is defined, and github url is provided 
-			in wins-data, we can use their github avatar */
-
-			let githubAva = ghId ? 
-							`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
-							"";
-			console.log("checked for ghid: " + ghId);
-			let profileImgSrc = githubAva ? 
-							githubAva : 
-							"/assets/images/wins-page/avatar-default.svg";
 
 			let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
 			profileImg.setAttribute("src", profileImgSrc);
