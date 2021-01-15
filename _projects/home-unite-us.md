@@ -64,5 +64,6 @@ location:
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY)
 visible: true
+vertical: 'Under Development'
 status: Active
 ---
