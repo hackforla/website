@@ -112,7 +112,6 @@ title: Wins
 	function makeCards(data) {
 		{% assign githubData = site.data.github-data | jsonify %}
 		let githubData = {{ githubData }};
-		const githubDataVals = githubData.values;
 
 		const list = document.querySelector('#responses');
 		let idNum = 0
@@ -123,25 +122,23 @@ title: Wins
 			}
 
 			let ghId;
-
-			if (card.github_url && card.github_permission === "Yes") {
-				Object.keys(githubData).slice(1) //first key is a timestamp
+			if (card[github_url] && card[github_permission] === "Yes") {
+				githubData.slice(1) //first key is a timestamp
 				.forEach(project => {
-
 			/* Exit forEach if githubId is already defined, otherwise
 			iterate through each project (and its contributors) until
 			a matching github_url is found */
-
-					if (!ghId && project.contributorsComplete.data) {
-						project.contributorsComplete.data.forEach(contrib => {
-							if (contrib.github_url === card.github_url) {
-								ghId = contrib.id;
-							}
-						});
-					}
+					if (ghId) return;
+					project.contributorsComplete.data.forEach(contrib => {
+						if (contrib.github_url === card[github_url]) {
+							console.log(`URL found! ID ${contrib.id}`);
+							ghId = contrib.id;
+						}
+					});	
 				});
 			}
 
+			console.log("ghID is now " + ghId);
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
 
@@ -153,6 +150,7 @@ title: Wins
 			let githubAva = ghId ? 
 							`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
 							"";
+			console.log("checked for ghid: " + ghId);
 			let profileImgSrc = githubAva ? 
 							githubAva : 
 							"/assets/images/wins-page/avatar-default.svg";
