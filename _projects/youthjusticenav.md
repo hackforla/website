@@ -52,7 +52,7 @@ technologies:
 location:
   - Remote
 partner: UCLA School of Law, Code for America
-vertical: Justice
+vertical: 'Justice'
 visible: true
 sdg: 16.3
 status: Active
