@@ -72,5 +72,6 @@ location:
   - Remote
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
 visible: true
+vertical: 'Under Development'
 status: Active
 ---

@@ -30,5 +30,6 @@ location:
   - Remote
 partner: Seeking
 visible: true
+vertical: 'Under Development'
 status: On Hold
 ---
