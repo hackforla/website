@@ -69,15 +69,8 @@
   display: flex;
 }
 
-.btn-donate { 
-  background-color: $color-black;
-  color: $color-white;
-  margin-top: -10px;
-  margin-bottom: 0;
-}
-
-.btn-donate:hover {
-  background-color: $color-red;
+.btn--donate-header { 
+  margin: -10px 20px 0 0;
 }
 
 @media only screen and (max-width: 1028px) {
@@ -103,7 +96,7 @@
   }
 
   // Make the donate button smaller for mobile
-  .btn-donate {
+  .btn--donate-header {
     padding: 5px 25px;
     font-size: .75rem;
     font-weight: 500;
