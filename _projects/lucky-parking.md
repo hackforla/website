@@ -16,7 +16,7 @@ leadership:
   - name: Matthew Ginther
     role: Full-Stack Developer Lead
     links:
-      slack:  'https://hackforla.slack.com/team/U013GNM93U1'
+      slack: 'https://hackforla.slack.com/team/U013GNM93U1'
       github: 'https://github.com/mg78856'
     picture: https://avatars.githubusercontent.com/mg78856
   - name: David Kim
@@ -57,7 +57,7 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-vertical: Citizen Engagement
+vertical: 'Citizen Engagement'
 visible: true
 status: Active
 ---

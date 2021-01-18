@@ -67,12 +67,12 @@ technologies:
   - Pandas
   - Bulma
   - PostgreSQL
-location: 
+location:
   - Downtown LA
   - Remote
 
 partner: EmpowerLA
-vertical: Citizen Engagement
+vertical: 'Citizen Engagement'
 visible: true
 status: Active
 ---
