@@ -379,12 +379,8 @@ incorporated into the live web site. Go to
 https://github.com/hackforla/website/pulls and click on "New pull
 request". Please rename your pull request something descriptive i.e. "building a project card for civic opportunity project".
 Also, since your changes are not in the hackforla/website
-repository, you need to click the "compare across forks" link in the
-<<<<<<< HEAD
-first paragraph to make you repository and your new branch
-available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made. Review the changes that will be included in the pull
-=======
-first paragraph to make your repository and your new branch
+repository, you need to click the "compare across forks" link in the first paragraph to make you repository and your new branch
+available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made. Review the changes that will be included in the pull first paragraph to make your repository and your new branch
 available. Make sure to include pictures of any visual changes made to the site and document your edits on the PR so that the reviewer can understand the changes made.  Review the changes that will be included in the pull
 >>>>>>> f2449fb76101b965cab8e5c2e7b5e5e709c7ac58
 request and, if it fixes a specific issue, include `Fixes #140` in the
