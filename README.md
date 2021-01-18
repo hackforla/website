@@ -366,6 +366,7 @@ If you have not submitted a pull request make sure to write a weekly status upda
 2. Blockers: "Difficulties or errors encountered."
 3. Availability/Unavailable: "What is your availability to discuss this issue with a team member?"
 4. ETA: "When do you expect this issue to be completed?"
+5. Pictures: "Add any pictures of the visual changes made to the site so far." 
    
 #### Step 9: Complete the pull request
 
@@ -380,7 +381,7 @@ request". Please rename your pull request something descriptive i.e. "building a
 Also, since your changes are not in the hackforla/website
 repository, you need to click the "compare across forks" link in the
 first paragraph to make you repository and your new branch
-available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made.  Review the changes that will be included in the pull
+available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made. Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
 pull request message so the issue will be closed automatically once
 your pull request is accepted and merged.
