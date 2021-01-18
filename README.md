@@ -362,10 +362,10 @@ git merge gh-pages
 
 If you have not submitted a pull request make sure to write a weekly status update on your issue before the Sunday meeting. Follow the format below and add pictures of any visual changes made to the site.
 
-1. Progress: "Added verticals to all the existing md files. Now need to create the reamining files and add verticals."
-2. Blockers: "Changes to the md file changed the CSS. Spacing is off"
-3. Availability/Unavailable: "Available on weekdays after 6pm to work on the issue except on Tuesday"
-4. ETA: "Will be done by next Sunday meeting"
+1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
+2. Blockers: "Difficulties or errors encountered."
+3. Availability/Unavailable: "What is your availability to discuss this issue with a team member?"
+4. ETA: "When do you expect this issue to be completed?"
    
 #### Step 9: Complete the pull request
 
@@ -380,7 +380,7 @@ request". Please rename your pull request something descriptive i.e. "building a
 Also, since your changes are not in the hackforla/website
 repository, you need to click the "compare across forks" link in the
 first paragraph to make you repository and your new branch
-available. Make sure to include pictures of any visual changes made to the site and document your edits on the PR so that the reviewer can understand the changes made.  Review the changes that will be included in the pull
+available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made.  Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
 pull request message so the issue will be closed automatically once
 your pull request is accepted and merged.
@@ -406,13 +406,7 @@ Managing branches this way will keep the commit logs cleaner on the Hack For LA 
 Now you are all set to work on a new PR. Start over on Step 6.
 
 #### Edits to pull request
-If you find an error in your code or your reviewer asks you to make a change you can edit the code directly from the pull request. Follow the steps below:
-
-1. Go to your pull request
-2. Go to the tab 'Files changed'
-3. Click the 3 dots next to the corresponding file you need to change
-4. Click edit file
-5. Start editing your code
+If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request. 
 
 ## Useful Links
 
