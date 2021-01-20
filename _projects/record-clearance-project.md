@@ -17,7 +17,7 @@ leadership:
   - name: Myranda Pierce
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U01E521NT2L'
+      slack: 'https://hackforla.slack.com/team/U01E521NT2L'
       github: 'https://github.com/myrandi'
     picture: 'https://avatars.githubusercontent.com/myrandi'
 links:
