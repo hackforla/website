@@ -44,7 +44,7 @@ title: Wins
 	const linkedin_url = "Linkedin URL (optional)"
 	const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
 	const github_url = "Github URL (optional)"
-	const github_permision = "Could we use your Github profile picture next to your story?"
+	const github_permission = "Could we use your Github profile picture next to your story?"
 	const team = "Select the team(s) you're on"
 	const role = "Select your role(s) on the team"
 	const specific_role = "What is/was your specific role? (optional)"
@@ -110,6 +110,9 @@ title: Wins
 	}
 
 	function makeCards(data) {
+		{% assign githubData = site.data.github-data | jsonify %}
+		let githubData = {{ githubData }};
+
 		const list = document.querySelector('#responses');
 		let idNum = 0
 		data.reverse().forEach( (card) => {
@@ -118,13 +121,39 @@ title: Wins
 				return; //checks if Display column is set to true
 			}
 
+			let ghId;
+			if (card[github_url] && card[github_permission] === "Yes") {
+				githubData.slice(1) //first key is a timestamp
+				.forEach(project => {
+
+			/* Exit forEach if githubId is already defined, otherwise
+			iterate through each project (and its contributors) until
+			a matching github_url is found */
+					if (ghId) return;
+					project.contributorsComplete.data.forEach(contrib => {
+						if (contrib.github_url === card[github_url]) {
+							ghId = contrib.id;
+						}
+					});	
+				});
+
+			}
+
+			/* if github url is provided in wins-data and permission 
+			is granted, ghId is defined & we can use their github avatar 
+			otherwise, use default avatar */
+
+			let profileImgSrc = ghId ? 
+				`https://avatars1.githubusercontent.com/u/${ghId}?v=4` : 
+				"/assets/images/wins-page/avatar-default.svg";
+
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
 
 			let leftDiv = makeElement('div', cardElement, "wins-card-left");
 
 			let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
-			profileImg.setAttribute("src", "/assets/images/wins-page/avatar-default.svg");
+			profileImg.setAttribute("src", profileImgSrc);
 
 			let quote = makeElement('img', leftDiv, "wins-card-big-quote");
 			quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
