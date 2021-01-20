@@ -140,14 +140,12 @@ title: Wins
 			}
 
 			/* if github url is provided in wins-data and permission 
-			is granted, ghId is defined & we can use their github avatar */
+			is granted, ghId is defined & we can use their github avatar 
+			otherwise, use default avatar */
 
-			let githubAvaUrl = ghId ? 
-							`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
-							"";
-			let profileImgSrc = githubAvaUrl ? 
-							githubAvaUrl : 
-							"/assets/images/wins-page/avatar-default.svg";
+			let profileImgSrc = ghId ? 
+				`https://avatars1.githubusercontent.com/u/${ghId}?v=4` : 
+				"/assets/images/wins-page/avatar-default.svg";
 
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
