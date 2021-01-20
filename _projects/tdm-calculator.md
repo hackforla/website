@@ -10,43 +10,43 @@ leadership:
   - name: Bonnie Wolfe
     role: Product Owner
     links:
-      slack: 'https://app.slack.com/team/DE1HK083W'
+      slack: 'https://hackforla.slack.com/team/DE1HK083W'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Kevin Howley
     role: Project Manager
     links:
-      slack: 'https://app.slack.com/team/UL53VUVPZ'
+      slack: 'https://hackforla.slack.com/team/UL53VUVPZ'
       github: 'https://github.com/kphowley'
     picture: https://avatars.githubusercontent.com/kphowley
   - name: John Darragh
     role: Architect
     links:
-      slack: 'https://app.slack.com/team/UFLDX9V19'
+      slack: 'https://hackforla.slack.com/team/UFLDX9V19'
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Nicole Doan
     role: UI/UX Lead
     links:
-      slack: 'https://app.slack.com/team/UBPKHJJVC'
+      slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
       github: 'https://github.com/nekobox'
     picture: https://avatars.githubusercontent.com/nekobox
   - name: Mindy Morgan
     role: Frontend Lead
     links:
-      slack: 'https://app.slack.com/team/UPGMZK1KR'
+      slack: 'https://hackforla.slack.com/team/UPGMZK1KR'
       github: 'https://github.com/mmorgs'
     picture: https://avatars.githubusercontent.com/mmorgs
   - name: Fang Liu
     role: Backend Lead
     links:
-      slack: 'https://app.slack.com/team/UCE01B4AX'
+      slack: 'https://hackforla.slack.com/team/UCE01B4AX'
       github: 'https://github.com/fyliu'
     picture: https://avatars.githubusercontent.com/fyliu
   - name: Claire Nguyen
     role: Sr. Fullstack Developer
     links:
-      slack: 'https://app.slack.com/team/UHJKN8UJD'
+      slack: 'https://hackforla.slack.com/team/UHJKN8UJD'
       github: 'https://github.com/nclairesays'
     picture: https://avatars.githubusercontent.com/nclairesays
 links:
@@ -72,5 +72,6 @@ location:
   - Remote
 partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
 visible: true
+vertical: 'Under Development'
 status: Active
 ---

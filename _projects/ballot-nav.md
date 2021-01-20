@@ -10,7 +10,7 @@ leadership:
   - name: Mya Stark
     role: 
     links:
-      slack: 'https://app.slack.com/team/UMC7AJLDV'
+      slack: 'https://hackforla.slack.com/team/UMC7AJLDV'
       github:  'https://github.com/myastark'
     picture:  'https://avatars.githubusercontent.com/myastark'
 links:
@@ -36,4 +36,5 @@ location:
 partner: Code for America, Other Brigades
 visible: true
 status: Active
+vertical: 'Vote / Representation'
 ---

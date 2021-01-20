@@ -45,5 +45,6 @@ location:
   - Santa Monica
   - Remote
 visible: true
+vertical: 'Justice'
 status: Active
 ---

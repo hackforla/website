@@ -11,31 +11,31 @@ leadership:
   - name: Bonnie Wolfe
     role: Technical Product Manager
     links:
-      slack: 'https://app.slack.com/team/UE1UG1YFP'
+      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Jonathan Sachsman
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U018CSDL5FZ'
+      slack: 'https://hackforla.slack.com/team/U018CSDL5FZ'
       github: 'https://github.com/jsachsman'
     picture: https://avatars.githubusercontent.com/jsachsman
   - name: Chali Prasertsri
     role: UX Lead
     links:
-      slack: 'https://app.slack.com/team/USLBE6X4M'
+      slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
   - name: Bo Yang
     role: Data Analyst
     links:
-      slack: 'https://app.slack.com/team/UTW4ZPXDK'
+      slack: 'https://hackforla.slack.com/team/UTW4ZPXDK'
       github: 'https://github.com/ddkbky'
     picture: https://avatars.githubusercontent.com/ddkbky
   - name: Gwendolyn Snapp
     role: Illustrator/Visual Designer
     links:
-      slack: 'https://app.slack.com/team/UTL09G68Z'
+      slack: 'https://hackforla.slack.com/team/UTL09G68Z'
       github: 'https://github.com/Gsnapp'
     picture: https://avatars.githubusercontent.com/GSnapp
 links:
@@ -69,5 +69,6 @@ location:
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 visible: true
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

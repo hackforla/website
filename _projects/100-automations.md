@@ -44,29 +44,30 @@ leadership:
       github: 'https://github.com/superbunker'
     picture: 'https://avatars.githubusercontent.com/superbunker'
 links:
-   - name: Slack
-     url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
-   - name: GitHub
-     url: 'https://github.com/100Automations/website'
-   - name: Readme
-     url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
+  - name: GitHub
+    url: 'https://github.com/100Automations/website'
+  - name: Readme
+    url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
 looking:
-   - category: Development
-     skill: Anyone who wants to write open source automations
-   - category: Development
-     skill: API writers
-   - category: Development
-     skill: API integrators
-   - category: Development
-     skill: Frontend Javascript Developers
-   - category: UI/UX
-     skill: UI/UX Designer
+  - category: Development
+    skill: Anyone who wants to write open source automations
+  - category: Development
+    skill: API writers
+  - category: Development
+    skill: API integrators
+  - category: Development
+    skill: Frontend Javascript Developers
+  - category: UI/UX
+    skill: UI/UX Designer
 technologies:
   - GitHub Pages
   - Jekyll
 location:
-   - Remote
+  - Remote
 # partner: N/A
 visible: true
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

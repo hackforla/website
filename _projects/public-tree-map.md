@@ -10,19 +10,19 @@ leadership:
   - name: Emily F.
     role: Product Owner
     links:
-      slack: 'https://app.slack.com/team/U1E5ADA03'
+      slack: 'https://hackforla.slack.com/team/U1E5ADA03'
       github: 'https://github.com/emillipede'
     picture: https://avatars.githubusercontent.com/emillipede
   - name: Isabelle Wagenvoord
     role: Frontend Lead
     links:
-      slack: 'https://app.slack.com/team/ULFE20LGY'
+      slack: 'https://hackforla.slack.com/team/ULFE20LGY'
       github: 'https://github.com/isabelle-wagenvoord'
     picture: https://avatars.githubusercontent.com/isabelle-wagenvoord
   - name: Mark Jackson
     role: Backend Developer
     links:
-      slack: 'https://app.slack.com/team/UNQTRN0DC'
+      slack: 'https://hackforla.slack.com/team/UNQTRN0DC'
       github: 'https://github.com/captainrandom'
     picture: https://avatars.githubusercontent.com/captainrandom
 links:

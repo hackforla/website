@@ -67,6 +67,7 @@ links:
     url: 'https://github.com/hackforla/heart/wiki'
 partner: LA City Attorney’s Homeless Engagement and Response Team
 visible: true
+vertical: 'Justice'
 status: Completed
 ---
 

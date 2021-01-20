@@ -10,37 +10,37 @@ leadership:
   - name: Timothy Malstead
     role: Front End Web Developer Lead (on loan to Food Oasis project)
     links:
-      slack: 'https://app.slack.com/team/UQJDADYHL'
+      slack: 'https://hackforla.slack.com/team/UQJDADYHL'
       github: 'https://github.com/timmalstead'
     picture: https://avatars.githubusercontent.com/timmalstead
   - name: Arshia Masih
     role: Front End Web Developer Lead
     links:
-      slack: 'https://app.slack.com/team/UNQ8U4ZSL'
+      slack: 'https://hackforla.slack.com/team/UNQ8U4ZSL'
       github: 'https://github.com/arshiamasih'
     picture: https://avatars.githubusercontent.com/arshiamasih
   - name: Sophia Alice
     role: Lead Data Scientist
     links:
-      slack: 'https://app.slack.com/team/UN7V7L934'
+      slack: 'https://hackforla.slack.com/team/UN7V7L934'
       github: 'https://github.com/salice'
     picture: https://avatars.githubusercontent.com/salice
   - name: Carolanne Fuchs
     role: PM
     links:
-      slack: 'https://app.slack.com/team/UPF9NSL3Y'
+      slack: 'https://hackforla.slack.com/team/UPF9NSL3Y'
       github: 'https://github.com/c-fuchs'
     picture: https://avatars.githubusercontent.com/c-fuchs
   - name: Tyler Thome
     role: Tech Lead
     links:
-      slack: 'https://app.slack.com/team/ULN1M6UAH'
+      slack: 'https://hackforla.slack.com/team/ULN1M6UAH'
       github: 'https://github.com/tylerthome'
     picture: https://avatars.githubusercontent.com/tylerthome
   - name: Peter Plass
     role: Data Scientist/AWS stress tester
     links:
-      slack: 'https://app.slack.com/team/UTRGDTE2Z'
+      slack: 'https://hackforla.slack.com/team/UTRGDTE2Z'
       github: 'https://github.com/peteplass'
     picture: https://avatars.githubusercontent.com/peteplass
 links:
@@ -64,5 +64,6 @@ location:
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY)
 visible: true
+vertical: 'Under Development'
 status: Active
 ---
