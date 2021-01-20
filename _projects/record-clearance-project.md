@@ -11,7 +11,7 @@ leadership:
   - name: Gretchen Howard
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U01GC5HU9AB'
+      slack: 'https://hackforla.slack.com/team/U01GC5HU9AB'
       github: 'https://github.com/ggrrettcchhenn'
     picture: 'https://avatars.githubusercontent.com/ggrrettcchhenn'
   - name: Myranda Pierce
