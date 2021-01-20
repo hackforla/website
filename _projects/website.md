@@ -92,4 +92,5 @@ location:
   - Remote
 visible: true
 status: Active
+vertical: Workforce Development
 ---
