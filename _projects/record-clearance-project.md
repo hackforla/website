@@ -8,18 +8,18 @@ alt: 'Record clearance project'
 image-hero: /assets/images/projects/record-clearance-hero.png
 alt: 'Record clearance hero'
 leadership:
-  - name: Gretchen Howard
-    role: Product Manager
+  - name: Daniel Lee
+    role: Project Lead & Product Manager
     links:
-      slack: 'https://app.slack.com/team/U01GC5HU9AB'
-      github: 'https://github.com/ggrrettcchhenn'
-    picture: 'https://avatars.githubusercontent.com/ggrrettcchhenn'
-  - name: Myranda Pierce
-    role: Product Manager
+      slack: 'https://app.slack.com/team/U01BU7LQFHB'
+      github: 'https://github.com/j100892'
+    picture: https://avatars.githubusercontent.com/j100892
+  - name: Daniel Xiao
+    role: Tech Lead
     links:
-      slack: 'https://app.slack.com/team/U01E521NT2L'
-      github: 'https://github.com/myrandi'
-    picture: 'https://avatars.githubusercontent.com/myrandi'
+      slack: 'https://app.slack.com/team/U01CQR12PA8'
+      github: 'https://github.com/aahvocado'
+    picture: https://avatars.githubusercontent.com/aahvocado
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
