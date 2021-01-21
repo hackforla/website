@@ -21,7 +21,6 @@ li.filter-item {
   background: white;
   display: flex;
   padding: 10px 15px;
-  padding-right: 30px;
   position: relative;
   transition-duration: 0.5s;
 }
@@ -101,7 +100,7 @@ ul.filter-list li ul li {
   }
 }
 
-@media #{$bp-below-mobile} {
+@media (max-width:659px ) {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.filter-list {
     display: grid;
