@@ -364,7 +364,7 @@ If you have not submitted a pull request make sure to write a weekly status upda
 
 1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
 2. Blockers: "Difficulties or errors encountered."
-3. Availability/Unavailable: "What is your availability to discuss this issue with a team member?"
+3. Availability: "How much time will you have this week to work on this issue?"
 4. ETA: "When do you expect this issue to be completed?"
 5. Pictures: "Add any pictures of the visual changes made to the site so far." 
    
