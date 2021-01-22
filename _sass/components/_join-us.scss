@@ -43,17 +43,30 @@
       font-size: 20px;
     }
 
-    img {
+    h2 {
+      font-size: 16px;
+    }
+
+    .join-us-card-img {
       width: 150px;
       padding: 40px 0;
+    }
+
+    .join-us-donation-png {
+      width: 100%;
+      margin: 20px 0;
     }
 
     ol {
       padding-left: 20px;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
     .join-us-card-body {
-      p {
+      width: 100% p {
         padding-bottom: 20px;
       }
 
@@ -61,5 +74,12 @@
         width: 100%;
       }
     }
+  }
+
+  .join-us-donation {
+    margin: 20px auto;
+    background: #f7f5f5;
+    padding: 20px;
+    border-radius: 20px;
   }
 }
