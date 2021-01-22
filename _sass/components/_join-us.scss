@@ -46,7 +46,21 @@
 
     img {
       width: 150px;
-      padding: 20px 0;
+      padding: 40px 0;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    .join-us-card-body {
+      p {
+        padding-bottom: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   }
 }
