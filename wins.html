@@ -150,57 +150,63 @@ title: Wins
 			let cardElement = makeElement('li', list, "project-card");
 			cardElement.classList.add("wins-card");
 
-			let leftDiv = makeElement('div', cardElement, "wins-card-left");
+			let topDiv = makeElement('div', cardElement, "wins-card-top");
 
-			let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
+			let profileImg = makeElement('img', topDiv, "wins-card-profile-img");
 			profileImg.setAttribute("src", profileImgSrc);
+			let topRightDiv = makeElement('div', topDiv, "wins-card-top-right");
 
-			let quote = makeElement('img', leftDiv, "wins-card-big-quote");
+			let bottomDiv = makeElement('div', cardElement, "wins-card-bottom");
+			// bottomDiv.classList.add("project-card-inner");
+
+			let quote = makeElement('img', bottomDiv, "wins-card-big-quote");
 			quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
-			let rightDiv = makeElement('div', cardElement, "wins-card-content");
-			rightDiv.classList.add("project-card-inner");
-			
+
+			// let bottomRightDiv = makeElement('div', bottomDiv, "wins-card-content");
+
+
 			//makes the top of thecard name and icons
-				let topDiv = makeElement('div', rightDiv, "project-inner");
-				topDiv.classList.add("wins-card-top");
-				let nameElement = makeElement('span', topDiv, "wins-card-name");
-				nameElement.innerHTML = card[name];
-				let icons = makeElement('span', topDiv, "wins-card-icons");
-				if (card[linkedin_url].length > 0) {
-					makeIcon(card[linkedin_url], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-				} if (card[github_url].length > 0) {
-					makeIcon(card[github_url], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-				}
-	
+			let titleDiv = makeElement('div', topRightDiv, "project-inner");
+			titleDiv.classList.add("wins-card-title");
+			let nameElement = makeElement('span', titleDiv, "wins-card-name");
+			nameElement.innerHTML = card[name];
+			let icons = makeElement('span', titleDiv, "wins-card-icons");
+			if (card[linkedin_url].length > 0) {
+				makeIcon(card[linkedin_url], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+			} if (card[github_url].length > 0) {
+				makeIcon(card[github_url], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+			}
+
 			//makes the team and roles portion in the middle
-				let nameDiv = makeElement('div', rightDiv, "project-inner");
-				nameDiv.classList.add("wins-card-team");
-				nameDiv.innerHTML = `Team(s): ${card[team]}`;
-				if (card[role].length > 0) {
-					let roleDiv = makeElement('div', rightDiv, "project-inner");
-					roleDiv.classList.add("wins-card-team");
-					roleDiv.innerHTML = `Role(s): ${card[role]}`;
-				}
+			let nameDiv = makeElement('div', topRightDiv, "project-inner");
+			nameDiv.classList.add("wins-card-team");
+			nameDiv.innerHTML = `Team(s): ${card[team]}`;
+			if (card[role].length > 0) {
+				let roleDiv = makeElement('div', topRightDiv, "project-inner");
+				roleDiv.classList.add("wins-card-team");
+				roleDiv.innerHTML = `Role(s): ${card[role]}`;
+			}
 
 			//makes the win and info text on the bottom of the card
-				let winDiv = makeElement('div', rightDiv, "project-inner");
-				winDiv.classList.add("wins__card-text");
-				let overviewElement = makeElement('p', winDiv, "wins-card-overview");
-				overviewElement.innerHTML = card[overview];//description
-				let winElement = makeElement('p', winDiv, "wins-card-info");
-				winElement.innerHTML = formatMessage(card[win]); //win
+			let winDiv = makeElement('div', bottomDiv, "project-inner");
+			winDiv.classList.add("wins-card-text");
+			let overviewElement = makeElement('p', winDiv, "wins-card-overview");
+			overviewElement.innerHTML = card[overview];//description
+			let winElement = makeElement('p', winDiv, "wins-card-info");
+			winElement.innerHTML = formatMessage(card[win]); //win
 
-			let innerHeight = Array.from(rightDiv.childNodes).reduce((acc, el) => el.offsetHeight + acc, 0)
+			let innerHeight = Array.from(winDiv.childNodes).reduce((acc, el) => el.offsetHeight + acc, 0)
 
 			//makes the see more span on the bottom of the card
-			if(innerHeight > rightDiv.offsetHeight){ //checks if see more is needed.
-				let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
-				seeMoreDiv.classList.add("wins__see-more-div")
-				seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
+			if(innerHeight > winDiv.offsetHeight){ //checks if see more is needed.
+			 let seeMoreDiv = makeElement('div', winDiv, "wins-see-more-div");
+			//  seeMoreDiv.classList.add("wins-see-more-div")
+			 seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" expandable>...see more</span>`
 			}
-				idNum++
+			 idNum++
 		})
-	}
+    }
+
 	function seeMore(id){
 		screenWidth = window.innerWidth;
 		if (screenWidth > 960){
