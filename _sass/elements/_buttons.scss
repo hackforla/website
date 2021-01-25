@@ -1,54 +1,18 @@
-/*================================================================
-
-  Buttons
-
-  The following class names style all buttons on the HfLA site. 
-  To create a button: add the base button class, a color
-  class, a size class, and (when needed) a page-specific class.
-
-
-  Index:
-
-  - Base class
-  - Color classes
-  - Size classes
-  - Page-specific classes
-
-=================================================================*/
-
-
-/*---------------------------
-
-  Button Base class
-
-  * Use on all buttons
-
----------------------------*/
-
-
 .btn {
+  background: $color-red;
   border: 0;
+  border-radius: 20px;
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  color: $color-white;
   display: inline-block;
+  font-size: 1rem;
   font-weight: map-get($font-weight, bold);
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
   text-decoration: none;
   transition: all 100ms ease-in;
   white-space: nowrap;
-}
-
-
-/*---------------------------
-
-  Button Colors
-
----------------------------*/
-
-
-/*   Primary Button  ---  Pink   */
-
-.btn-primary {
-  background: $color-red;
-  color: $color-white;
 
   &:link,
   &:visited {
@@ -63,121 +27,3 @@
     text-decoration: none;
   }
 }
-
-
-/*   Primary on Dark Button  ---  Pink & white hover state   */
-
-.btn-primary-on-dark {
-  background: $color-red;
-  color: $color-white;
-
-  &:link,
-  &:visited {
-    color: $color-white;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $color-white;
-    color: $color-black;
-  }
-}
-
-
-/*   Dark Button  ---  Black   */
-
-.btn-dark {
-  background-color: $color-black;
-  color: $color-white;
-
-  &:link,
-  &:visited {
-    color: $color-white;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: $color-red;
-  }
-}
-
-
-/*---------------------------
-
-  Button Sizes
-
----------------------------*/
-
-
-/*   X-Large Button   */
-
-.btn-xl {
-  height: 72px;
-  padding: 0 60px;
-  border-radius: 100px;
-  font-size: 1.5rem;
-
-  @media #{$bp-below-tablet} {
-    height: 60px;
-    padding: 0 50px;
-    border-radius: 60px;
-    font-size: 1.25rem;
-  }
-}
-
-
-/*   Large Button   */
-
-.btn-lg {
-  height: 60px;
-  padding: 0 50px;
-  border-radius: 60px;
-  font-size: 1.25rem;
-}
-
-
-/*   Medium Button   */
-
-.btn-md {
-  height: 40px;
-  padding: 0 32px;
-  border-radius: 20px;
-  font-size: 1rem;
-}
-
-
-/*   Medium Narrow Button --- less padding   */
-
-.btn-md-narrow {
-  height: 40px;
-  padding: 0 20px;
-  border-radius: 20px;
-  font-size: 1rem;
-  line-height: 40px; /* Centers the text */
-}
-
-
-/*----------------------------------------------------
-  Page-Specific Button Classes
-
-  * Use when special styling is needed for a button
-  on a specific page (usually placement)
------------------------------------------------------*/
-
-/*   
-
-- Page-specific class name formatting should be:
-
-  btn--page-name
-  EXAMPLE: btn--wins
-
-- If there is more than one button in the page, formatting for each button should be:
-
-  btn--page-name-button-function
-  EXAMPLE: btn--home-getting-started
-
-- Page-specific class names should live in that specific page's .scss file
-
-*/

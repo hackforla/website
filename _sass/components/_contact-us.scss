@@ -6,17 +6,11 @@
   padding: 20px;
 }
 
-.btn--home-subscribe {
-  margin: 0 !important;
-}
-
-.btn--home-survey {
+.surveybtn {
   width: 175px;
   height: 40px;
-  font-size: 1rem;
   text-align: center;
   margin: 0 !important;
-  border-radius: 20px;
 }
 
 .row {
@@ -62,11 +56,11 @@
 @media only screen and (max-device-width: 550px) {
 
   //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
-  .volunteerWithUs .btn--home-survey {
+  .volunteerWithUs .surveybtn {
     margin: 0 0 15px 0 !important;
   }
 
-  .btn--home-subscribe {
+  .subscribe {
     margin: 5px 0 10px 0 !important;
   }
 }

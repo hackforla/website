@@ -2,11 +2,9 @@
     text-align: center;
 }
 
-.btn--home-getting-started {
-    margin: 0 20px 20px 0;
-
-    @media #{$bp-below-tablet} {
-        margin: 0 0 20px 0;
-    }
+.home-getting-started {
+    width: 300px;
+    height: 75px;
+    border-radius: 100px;
+    font-size: 25px;
 }
-

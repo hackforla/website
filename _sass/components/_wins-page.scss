@@ -17,6 +17,12 @@
 	}
 }
 
+.wins-btn{
+	max-width: 300px;
+	max-height: 75px;
+}
+
+
 .wins__see-more-div {
 	position: absolute;
 	background-color: white;
@@ -46,11 +52,10 @@
 			font-weight: normal;
 			font-size: 38px;
 		}
-		.btn--wins{
-			height: 60px;
-			padding: 0 50px;
-			border-radius: 60px;
-			font-size: 1.25rem;
+		.wins-btn{
+			max-width: 217px;
+			max-height: 60.5px;
+			font-size: 18.5px;
 		}
 		
 	}
@@ -68,11 +73,11 @@
 			font-size: 24px;
 			line-height: 28px;
 		}
-		.btn--wins{
-			height: 40px;
-			padding: 0 32px;
-			border-radius: 20px;
-			font-size: 1rem;
+		.wins-btn{
+			max-width: 134px;
+			max-height: 46px;
+			font-size: 12px;
+			line-height: 14px;
 		}
 	}
 }
