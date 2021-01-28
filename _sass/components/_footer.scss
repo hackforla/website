@@ -18,18 +18,11 @@
     justify-content: center;;
   }
   
-  .btn-donate-footer {
-    background-color: $color-red;
-    color: $color-white;
+  .btn--donate-footer {
     position: absolute;
     right: 0;
     margin-right: 0;
     margin-top: -5px;
-  }
-  
-  .btn-donate-footer:hover {
-    background-color: $color-white;
-    color: $color-black;
   }
 
   .footer-header {
