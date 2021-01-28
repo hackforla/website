@@ -1,0 +1,160 @@
+//mobile view
+@mixin mobile {
+  @media #{$bp-below-tablet} { 
+    @content;
+  }
+}
+
+
+.header-container--sitemap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  img{
+    max-width: 252.14px;
+  }
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.header-text-margin--sitemap {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+  p{
+    font-size: 18px;
+    max-width: 508px;
+    text-align: left;
+  }
+  h1 {
+    font-size: 48px;
+    }
+    @include mobile{
+     margin: auto;
+      h1{
+       font-size: 24px;
+     }
+    
+    }
+}
+
+//¿¿Is there a class for page body specifiying color, height, flex-direction?
+.sitemap-page {
+  background: #E5E5E5; 
+  //following figma color but this is different from the rest of the site(#f7f5f5)
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+ 
+  h3{//¿¿Should I be using h2?
+    font-size: 24px;
+  }
+  p{
+    font-size: 18px;
+    max-width: 477px;
+  }
+  @include mobile{
+
+    h3{
+      font-size: 20px;
+    }
+    p{
+      font-size: 16px;
+    }
+ 
+  }
+  
+}
+.card-width{
+  width: 100%;
+
+}
+.card-body{
+  text-align: left;
+  img{
+    margin: auto;
+    margin-left: auto
+  }
+  .card-mobile-icon{
+    display: none;
+  }
+  @include mobile{
+    h3{
+      text-align: center;
+    }
+    .card-desktop-icon{
+      display: none;
+    }
+    .card-mobile-icon{
+      display: flex;
+      margin: 58px auto;
+    }
+    a{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+
+//¿¿Do I need to create my own page specific class for the page cards or can I copy & paste the following notes left by Danielle?
+/*---------------------------
+| Base Page Card
+---------------------------*/
+.page-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: $color-white;
+}
+
+/*---------------------------
+| Card Color
+---------------------------*/
+// White 
+.card-primary {
+  background: $color-white;
+}
+
+/*---------------------------
+| Page Card Size
+---------------------------*/
+//Large
+.page-card-lg {
+  max-width: 896px;
+  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+  padding: 48px;
+  margin: 16px auto;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+      padding: 32px 16px;
+      margin: 12px auto;
+  }
+  }
+
+
+/*   Page-specific button  */
+
+.btn--site-map-suggest {
+  width: 224px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 !important;
+  border-radius: 20px;
+}
+
+/*   Medium Long Button  - more padding */
+
+.btn-md-long-2 {
+  height: 40px;
+  padding: 0 44px;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
