@@ -137,7 +137,59 @@
 
   .join-us-card-container {
     .page-card {
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto;
+
+      h1 {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      .join-us-card-body {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+        align-items: flex-start;
+
+        .join-us-donation-png {
+          max-width: 419px;
+          margin: auto;
+        }
+      }
+
+      img {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+        margin: auto;
+      }
+
+      .join-us-donation {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+
+        img {
+          width: 318px;
+        }
+
+        .join-us-donation-body {
+          padding: 0 40px;
+
+          h2 {
+            font-size: 18px;
+          }
+
+          ol {
+            line-height: 24px;
+          }
+
+          li {
+            padding: 5px 0;
+          }
+        }
+      }
     }
   }
 }
