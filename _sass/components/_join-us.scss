@@ -9,14 +9,14 @@
   padding: 80px 35px 0 35px;
   height: 600px;
 
-  h1 {
-    font-size: 24px;
-  }
-
   .join-us-banner-text {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h1 {
+      font-size: 24px;
+    }
   }
 
   img {
@@ -29,22 +29,26 @@
 .join-us-card-container {
   background: #f7f5f5;
   padding: 32px 16px;
-  .join-us-card {
+
+  .page-card {
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
-    background: $color-white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.2);
 
     h1 {
       font-size: 20px;
+      // Fixs title wrap at smallest mobile size
+      @media (max-width: #{$screen-mobile - 160}) {
+        padding: 0 43px;
+        text-align: center;
+      }
     }
 
     h2 {
       font-size: 16px;
+      width: 100%;
     }
 
     .join-us-card-img {
@@ -66,13 +70,34 @@
     }
 
     .join-us-card-body {
-      width: 100% p {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
         padding-bottom: 20px;
       }
 
-      .btn {
-        width: 100%;
+      .btn-md {
+        width: 196px;
       }
+    }
+  }
+
+  .card-primary {
+    background: $color-white;
+  }
+
+  .page-card-lg {
+    max-width: 896px;
+    box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.2);
+    padding: 30px;
+    margin: 16px auto;
+
+    @media #{$bp-below-mobile} {
+      padding: 32px 16px;
+      margin: 12px auto;
     }
   }
 
@@ -81,5 +106,38 @@
     background: #f7f5f5;
     padding: 20px;
     border-radius: 20px;
+  }
+}
+
+@media #{$bp-tablet-up} {
+  .join-us-banner {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: auto;
+
+    .join-us-banner-text {
+      width: 500px;
+      margin: auto;
+
+      h1 {
+        font-size: 48px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    img {
+      max-width: 385px;
+      margin: auto;
+      padding: 0 15px;
+    }
+  }
+
+  .join-us-card-container {
+    .page-card {
+      flex-direction: row;
+    }
   }
 }
