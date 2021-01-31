@@ -22,4 +22,5 @@ partner: Department of Personnel
 visible: true
 status: Completed
 completed-contact: WorkForLA@googlegroups.com
+vertical: Workforce Development
 ---
