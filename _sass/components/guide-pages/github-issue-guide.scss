@@ -1,228 +1,183 @@
-//Issue Template Classes
-.issue-template-container {
-  position: relative;
-}
-
-.issue-template-code {
-  border: 1px solid $color-pink;
-  background-color: $color-pink;
-  font-family: monospace;
-  text-align: left;
-  font-size: 0.8em;
-}
-
-.copy-button {
-  position: absolute;
-  z-index: 10;
-  background: white;
-  border: 0.5px solid white;
-  border-radius: 4px;
-  color: black;
-  width: 85px;
-  height: 30px;
-  right: 1%;
-  top: 1%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.copy-button:hover {
-  background: white;
-  color: black;
-}
-
-.clipboard {
-  max-width: none;
-  width: auto;
-  max-height: 22px;
-}
-
-.green-text {
-  color: #58915b;
-}
-
-.blue-text {
-  color: #407BFF;
-}
-
-//
-// STYLING FOR Example of a Good End-to-End Issue OVERLAY LINKS
-//
-.overlay-links {
-  position: relative;
-
-  h4 {
-    font-size: 0.85em;
-  }
-}
-
-.link-section p {
-  text-align: center;
-}
-
-.github-issues-screenshot {
-  max-width: none;
-  width: 90%;
-}
-
-// VARIABLES FOR OVERLAY LINKS
-@mixin right-overlay {
-  position: absolute;
-  left: 94%;
-  width: 7%;
-  }
-@mixin right-text-overlay {
-  position: absolute;
-  left: 102%;
-}
-  
-@mixin left-overlay {
-  position: absolute;
-  right: 88%;
-  width: 7%;
-}
-@mixin left-text-overlay {
-  position: absolute;
-  right: 87%;
-  width: 10%;
-  direction: rtl;
-  text-align: start;
-}
-
 //INDIVIDUAL PLACEMENTS OF OVERLAY LINKS 
 //RIGHT SIDE LINKS
 .assignees {
-  @include right-overlay;
-  top: 16%;
+  @media #{$bp-below-mobile} {
+    @include arrow-right-overlay (16%, 99%);
+    width: 7.65px;
+    height: 7px; 
+  }
+  @include arrow-right-overlay (16%, 94%); 
 
   + h4 {
-    @include right-text-overlay;
-    top: 16%;
+    @media #{$bp-below-mobile}{
+      @include arrow-right-text-overlay (15.5%, 103%); 
+      text-align: right;
+      font-size: 0.4em;
+    }
+    @include arrow-right-text-overlay(16%, 102%); 
   }
 }
 
 .labels {
-  @include right-overlay;
-  top: 21%;
+  @media #{$bp-below-mobile} {
+    @include arrow-right-overlay (21%, 99%);
+    width: 7.65px;
+    height: 7px; 
+  }
+  @include arrow-right-overlay (21%, 94%); 
 
   + h4 {
-    @include right-text-overlay;
-    top: 21%;
+    @media #{$bp-below-mobile}{
+      @include arrow-right-text-overlay (20.5%, 103%); 
+      text-align: right;
+      font-size: 0.4em;
+    }
+    @include arrow-right-text-overlay(21%, 102%); 
   }
 }
 
 .project-board {
-  @include right-overlay;
-  top: 27.5%;
+  @media #{$bp-below-mobile} {
+    @include arrow-right-overlay (27.5%, 99%);
+    width: 7.65px;
+    height: 7px; 
+  }
+  @include arrow-right-overlay (27.5%, 94%); 
 
   + h4 {
-    @include right-text-overlay;
-    top: 27.5%;
+    @media #{$bp-below-mobile}{
+      @include arrow-right-text-overlay (27%, 103%);
+      text-align: right;
+      font-size: 0.4em;
+    }
+    @include arrow-right-text-overlay(27.5%, 102%);
   }
 }
 
 .milestones {
-  @include right-overlay;
-  top: 36%;
+  @media #{$bp-below-mobile} {
+    @include arrow-right-overlay (36%, 99%);
+    width: 7.65px;
+    height: 7px; 
+  }
+  @include arrow-right-overlay (36%, 94%);
 
   + h4 {
-    @include right-text-overlay;
-    top: 36%;
+    @media #{$bp-below-mobile}{
+      @include arrow-right-text-overlay (35.5%, 103%);
+      text-align: right;
+      font-size: 0.4em;
+    }
+    @include arrow-right-text-overlay(36%, 102%);
   }
-} 
+}
 
 //LEFT SIDE LINKS 
-.left-pointer {
-  transform: rotate(180deg);
-}
-
 .title {
-  @include left-overlay;
-  right: 94%;
-  top: 9%;
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay (9%, 99%);
+    font-size: 0.4em;
+  }
+  @include arrow-left-overlay (9%, 94%);
 
   + h4 {
-    @include left-text-overlay;
-    top: 9%;
-    right: 92.5%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (10.5%, 107.5%);
+      direction: rtl;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(10.5%, 102%);
+    transform: rotate(180deg);
   }
-} 
+}
 
 .overview {
-  @include left-overlay;
-  top: 19%;
-  
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay (19%, 92.5%);
+  }
+  @include arrow-left-overlay (19%, 88.5%);
+
   + h4 {
-    @include left-text-overlay;
-    top: 19%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (20%, 100%);
+      direction: rtl;
+      text-align: start;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(20%, 96%);
+    transform: rotate(180deg);
   }
 }
 
-.dependency {
-  @include left-overlay;
-  top: 25.5%;
+.dependency  {
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay(25.5%, 92.5%);
+  }
+  @include arrow-left-overlay (25.5%, 88.5%);
 
   + h4 {
-    @include left-text-overlay;
-    top: 25.5%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (26.5%, 100%);
+      direction: rtl;
+      text-align: start;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(27%, 96%); 
+    transform: rotate(180deg);
   }
 }
 
-.action-items {
-  @include left-overlay;
-  top: 30.5%;
+
+.action-items  {
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay(31%, 92.5%);
+  }
+  @include arrow-left-overlay (30.5%, 88.5%);
 
   + h4 {
-    @include left-text-overlay;
-    top: 30.5%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (33%, 100%);
+      direction: rtl;
+      text-align: start;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(33%, 96%); 
+    transform: rotate(180deg);
   }
 }
 
 .resources {
-  @include left-overlay;
-  top: 54.5%;
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay(54.5%, 92.5%);
+  }
+  @include arrow-left-overlay (54.5%, 88.5%);
 
   + h4 {
-    @include left-text-overlay;
-    top: 54.5%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (56.5%, 100%);
+      direction: rtl;
+      text-align: start;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(57%, 96%); 
+    transform: rotate(180deg);
   }
 }
 
 .resume {
-  @include left-overlay;
-  top: 62.4%;
+  @media #{$bp-below-mobile} {
+    @include arrow-left-overlay(63%, 92.5%);
+  }
+  @include arrow-left-overlay (62.5%, 88.5%);
 
   + h4 {
-    @include left-text-overlay;
-    top: 62.4%;
+    @media #{$bp-below-mobile}{
+      @include arrow-left-text-overlay (64.5%, 100%);
+      direction: rtl;
+      text-align: start;
+      font-size: 0.3em;
+    }
+    @include arrow-left-text-overlay(64%, 96%); 
+    transform: rotate(180deg);
   }
-}
-
-//Scale overlay-text down on smaller screens
-@media #{$bp-below-tablet} {
-  .overlay-links h4 {
-    font-size: 0.4em;
-  }
-
-  .screenshot {
-    width: 85%;
-  }
-
-  .clipboard {
-    max-height: 16px;
-  }
-
-  .copy-button {
-    width: 70px;
-    height: 26px;
-    top: 0%;
-  }
-}
-
-.grayarrow {
-  width: 20px;
-  max-width: none;
-}
-
-.pinkpointer {
-  width: 7%;
 }
