@@ -1,7 +1,7 @@
 ---
 identification: '216854923'
 title: Lucky Parking
-description: Helping the city planners and the community make informed decisions about parking policies in the City of Los Angeles.
+description: Visualization of parking data to assist in understanding of the effects of parking policies on a neighborhood by neighborhood basis in the City of Los Angeles.
 image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking Logo'
 image-hero: /assets/images/projects/lucky-parking-hero.png
