@@ -18,9 +18,9 @@ title: Wins
 		</div>
 		<div class="wins-card-bottom">
 			<img class="wins-card-big-quote" src="/assets/images/wins-page/quote-icon.svg">
-			<div class="project-inner wins-card-text">
+			<div class="project-inner overlay-card-text">
 				<p id="overlay-overview">Blank</p>
-				<p id="overlay-info" class="wins-card-info">Blank</p>
+				<p id="overlay-badges" class="wins-card-badges">Blank</p>
 			</div>
 		</div>
 	</div>
@@ -55,6 +55,22 @@ title: Wins
 	const overview = "Give us a brief overview"
 	const display = "Display?"
 
+	const badgeIcons = {
+		"I got a new job": "badge-new-job.svg",
+		"I produced something for my portfolio": "badge-file.svg",
+		"I improved my LinkedIn": "badge-linkedin.svg",
+		"I learned how to work better on a team": "badge-team.svg",
+		"I increased the number of commits on my Github profile": "badge-github.svg",
+		"I learned a new language": "badge-code.svg",
+		"I setup 2FA": "badge-twofa.svg",
+		"I worked on an enterprise project": "badge-enterprise.svg",
+		"I worked on a project that will help the people of Los Angeles": "badge-giving.svg",
+		"I worked on two or more projects": "badge-hammers.svg",
+		"I taught or mentored a person on my team": "badge-mentor.svg",
+		"I taught or mentored a person on another team": "badge-mentor.svg",
+		"My team delivered software to a stakeholder": "badge-software-delivered.svg",
+		"My team launched our MVP": "badge-launch.svg"
+	}
 	function main() {
 		{% assign localData = site.data.wins-data | jsonify %}
 		let localData = {{ localData }};
@@ -92,7 +108,6 @@ title: Wins
 		if (document.querySelectorAll('.wins-card').length == 0) {
 			const page = document.querySelector('.wins-page-contain');
 			const p = document.createElement('p');
-			//p.classList.add("project-card");
 			page.appendChild(p);
 			p.innerHTML = "No one has shared a win yet...be the first!";
 		}
@@ -229,36 +244,58 @@ title: Wins
 		}
 	}
 	function updateOverlay(i) {
-			let stringData = window.localStorage.getItem("data");
-			let data = JSON.parse(stringData).reverse();
-			
-			const overlayIcons = document.querySelector('#overlay-icons');
-			overlayIcons.innerHTML = "";
+		let stringData = window.localStorage.getItem("data");
+		let data = JSON.parse(stringData).reverse();
+		
+		const overlayIcons = document.querySelector('#overlay-icons');
+		overlayIcons.innerHTML = "";
 
-			if (data[i][linkedin_url].length > 0) {
-				makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-			} if (data[i][github_url].length > 0) {
-				makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-			}
-
-			const overlayName = document.querySelector('#overlay-name');
-			overlayName.innerHTML = data[i][name];
-
-			const overlayTeams = document.querySelector('#overlay-teams');
-			overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
-
-			const overlayRoles = document.querySelector('#overlay-roles');
-			overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
-
-			const overlayOverview = document.querySelector('#overlay-overview');
-			overlayOverview.innerHTML = data[i][overview];
-
-			const overlayInfo = document.querySelector('#overlay-info');
-			overlayInfo.innerHTML = formatMessage(data[i][win]);
-
-			const overlayProjectCard = document.querySelector('#overlay-project-card');
-			overlayProjectCard.parentNode.classList.add("display-initial");
+		if (data[i][linkedin_url].length > 0) {
+			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+		} if (data[i][github_url].length > 0) {
+			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
 		}
+
+		const overlayName = document.querySelector('#overlay-name');
+		overlayName.innerHTML = data[i][name];
+
+		const overlayTeams = document.querySelector('#overlay-teams');
+		overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
+
+		const overlayRoles = document.querySelector('#overlay-roles');
+		overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
+
+		const overlayOverview = document.querySelector('#overlay-overview');
+		overlayOverview.innerHTML = data[i][overview];
+
+		// const overlayInfo = document.querySelector('#overlay-badges');
+		// overlayInfo.innerHTML = 
+		createBadges(data[i][win]);
+
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.add("display-initial");
+	}
+
+	function createBadges(winStr) { // badges come in as a string with comma seperations
+		const badges = winStr.split(', ');
+		const badgeContainer = document.querySelector('#overlay-badges');
+		badgeContainer.innerHTML = ""
+
+		badges.forEach(badge => {
+			const badgeItem = makeElement('div', badgeContainer, 'badge-item')
+			const badgeIcon = makeElement('img', badgeItem, 'badge-icon');
+			badgeIcon.setAttribute("src", `/assets/images/wins-page/badges/${badgeIcons[badge] || "badge-star.svg"}`);
+			const badgeText = makeElement('div', badgeItem, 'badge-item-text')
+			badgeText.innerHTML = badge;
+		})
+		// let badge = "eat cake"
+		// const badgeItem = makeElement('div', badgeContainer, 'badge-item')
+		// const badgeIcon = makeElement('img', badgeItem, 'badge-icon');
+		// badgeIcon.setAttribute("src", `/assets/images/wins-page/badges/${badgeIcons[badge] || "badge-star.svg"}`);
+		// const badgeText = makeElement('div', badgeItem, 'badge-item-text')
+		// badgeText.innerHTML = badge;
+	}
+	
 	function hideOverlay(e) {
 		e = e || window.event;
 		if (e.target !== e.currentTarget)

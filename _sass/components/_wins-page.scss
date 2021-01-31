@@ -257,7 +257,25 @@
         .wins-card-content{
             height: auto;
         }
-    }
+	}
+	.overlay-card-text{
+		padding-top: 40px;
+	}
+	.wins-card-badges{
+		display:flex;
+		flex-flow: column wrap;
+		width: 100%;
+		.badge-item{
+			flex: 1 1; 
+			// width: 100px;
+			margin: 4px;
+			display: flex;
+			.badge-icon{
+				margin: 2px 20px 0 0;
+				height: 15px;
+			}
+		}
+	}
 }
 
 //mobile see more
