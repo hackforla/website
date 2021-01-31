@@ -41,7 +41,7 @@
     }
 }
 
-//¿¿Is there a class for page body specifiying color, height, flex-direction?
+
 .sitemap-page {
   background: #E5E5E5; 
   //following figma color but this is different from the rest of the site(#f7f5f5)
@@ -75,10 +75,11 @@
 
 }
 .card-body{
+
   text-align: left;
   img{
     margin: auto;
-    margin-left: auto
+    margin-left: auto;
   }
   .card-mobile-icon{
     display: none;
@@ -102,7 +103,6 @@
 }
 
 
-//¿¿Do I need to create my own page specific class for the page cards or can I copy & paste the following notes left by Danielle?
 /*---------------------------
 | Base Page Card
 ---------------------------*/
@@ -129,14 +129,16 @@
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
   padding: 48px;
   margin: 16px auto;
-
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
       padding: 32px 16px;
       margin: 12px auto;
   }
   }
-
+  
+.page-card-lg:nth-child(1n+2){
+  padding-left: 0;
+}
 
 /*   Page-specific button  */
 
