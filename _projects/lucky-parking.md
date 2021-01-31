@@ -1,7 +1,7 @@
 ---
 identification: '216854923'
 title: Lucky Parking
-description: Visualization of parking data to assist in understanding of the effects of parking policies on a neighborhood by neighborhood basis in the City of Los Angeles.
+description: Helping the city planners and the community make informed decisions about parking policies in the City of Los Angeles.
 image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking Logo'
 image-hero: /assets/images/projects/lucky-parking-hero.png
@@ -13,6 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
+  - name: Abhinav Bommakanti
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01EW24KL3V'
+      github: 'https://github.com/abhib87'
+    picture: https://avatars.githubusercontent.com/abhib87
   - name: Matthew Ginther
     role: Full-Stack Developer Lead
     links:
@@ -38,6 +44,8 @@ links:
     url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
+  - name: Test Site
+    url: 'https://www.luckyparking.info/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
