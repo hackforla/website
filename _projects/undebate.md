@@ -1,14 +1,14 @@
 ---
 identification: "221070186"
 title: Undebate
-description: Not debates, but recorded online video Q&A with candidates so voters can quickly can get to know them, for every candidate, for every election, across the US.
+description: For down ballot offices like school-board, voters often don’t know the candidates, so they skip it. With declining media attention, candidates for these offices have a hard time being heard by voters. But electing good people is important!<br /><br /> Undebates are automated online video Q&A so candidates can be heard, and voters can quickly decide - for every candidate, for every election, across the US.
 image: /assets/images/projects/undebate.jpg
 alt: "Undebate with moderator and 7 participants."
 image-hero: /assets/images/projects/undebate-hero.jpg
 alt-hero: "Silhouette of three people sitting in chairs. Two of them have empty speach bubbles over their heads."
 leadership:
   - name: David Fridley
-    role: Tech Lead
+    role: Stake Holder/Technical Lead
     links:
       slack: "https://hackforla.slack.com/team/U6RCX5XRD"
       github: "https://github.com/ddfridley"
