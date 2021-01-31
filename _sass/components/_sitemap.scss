@@ -43,15 +43,14 @@
 
 
 .sitemap-page {
-  background: #E5E5E5; 
-  //following figma color but this is different from the rest of the site(#f7f5f5)
+  background: #f7f5f5; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
  
-  h3{//¿¿Should I be using h2?
+  h3{
     font-size: 24px;
   }
   p{
@@ -135,7 +134,7 @@
       margin: 12px auto;
   }
   }
-  
+
 .page-card-lg:nth-child(1n+2){
   padding-left: 0;
 }
