@@ -1,3 +1,7 @@
+/*--------
+| Mobile 
+----------*/
+
 .join-us-wrapper {
   min-height: 100vh;
 }
@@ -109,6 +113,9 @@
   }
 }
 
+/*---------
+| Desktop 
+-----------*/
 @media #{$bp-tablet-up} {
   .join-us-banner {
     flex-direction: row;
@@ -153,7 +160,8 @@
 
         .join-us-donation-png {
           max-width: 419px;
-          margin: auto;
+          margin: 20px auto;
+          padding-bottom: 20px;
         }
       }
 

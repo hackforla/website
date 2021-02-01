@@ -1,21 +1,21 @@
 - name: Events
-  link: '/events'
+  link: "/events"
   list_class_name:
   icon: /svg/icon-hacknights.svg
 
 # the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
 - name: Projects
-  link: '/#projects'
+  link: "/#projects"
   list_class_name:
   icon: /svg/icon-projects.svg
 
 - name: Press
-  link: '/#press'
+  link: "/#press"
   list_class_name:
   icon: /svg/icon-press.svg
 
-- name: Connect
-  link: '/#about'
+- name: Join
+  link: "/join-us"
   list_class_name:
   icon: /svg/icon-about.svg
 
