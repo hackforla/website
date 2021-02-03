@@ -1,0 +1,53 @@
+.comm-practice-header {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 20px 40px 40px;
+    background: #fff;
+    height: fit-content;
+    margin: 40px auto 0;
+    font-family: "Roboto"sans-serif;
+    font-style: normal;
+    font-weight: normal;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 33.6px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .comm-practice-header-text {
+        margin: 15px 0; 
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .comm-practice-header-img {
+        
+    }
+}
+
+.page-card {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-primary {
+    background: $color-white;
+}
+
+.page-card-lg {
+    max-width: 896px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    padding: 30px;
+    margin: 16px auto;
+
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-mobile} {
+        padding: 32px 16px;
+        margin: 12px auto;
+    }
+}
