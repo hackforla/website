@@ -12,7 +12,7 @@
     &__banner-item {
         margin-block-end: 0;
         font-weight: 300;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin: 0 4.5rem;
     }
     
@@ -32,8 +32,8 @@
 }
 
 .toolkit-svg {
-    width: 45%;
-    height: 60%;
+    width: auto;
+    height: 240px;
 }
 
 .toolkit-background {
@@ -65,6 +65,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     align-items: stretch;
+    justify-content: center;
 }
 
 .outer-link {
@@ -73,12 +74,11 @@
 
 .toolkit-flex-item {
     position: relative;
-    max-width: 24.5rem;
+    max-width: 23rem;
     padding: 0rem;
     height: auto;
     margin: 1.2rem 1rem;
     overflow: hidden;
-
 }
 
 .toolkit-flex-item-img-container {
@@ -133,6 +133,10 @@
 
 .toolkit-button {
     margin: 0;
+}
+
+.header-container {
+    display: flex;
 }
 
 @media only screen and (max-width: 1430px) {
