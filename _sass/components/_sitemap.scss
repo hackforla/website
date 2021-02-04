@@ -23,17 +23,18 @@
 .header-text-margin--sitemap {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
+  margin-right: 80px;
   p{
     font-size: 18px;
     max-width: 508px;
+    margin-top: 8px;
     text-align: left;
   }
   h1 {
     font-size: 48px;
     }
     @include mobile{
-     margin: auto;
+     margin: 32px 37px 36px;
       h1{
        font-size: 24px;
      }
@@ -52,10 +53,13 @@
  
   h3{
     font-size: 24px;
+    margin-bottom: 32px;
   }
   p{
-    font-size: 18px;
+    font-size: 16px;
     max-width: 477px;
+    margin-bottom: 40px;
+  
   }
   @include mobile{
 
@@ -135,8 +139,11 @@
   }
   }
 
-.page-card-lg:nth-child(1n+2){
-  padding-left: 0;
+
+  @media (min-width:768px) {
+    .page-card-lg:nth-child(1n+2){
+      padding-left: 0;
+}
 }
 
 /*   Page-specific button  */
