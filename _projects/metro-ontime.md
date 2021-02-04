@@ -32,5 +32,6 @@ location:
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
 visible: true
+vertical: 'Environement'
 status: Completed
 ---
