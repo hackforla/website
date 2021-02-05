@@ -1,32 +1,18 @@
 - name: Events
-  link: '/events'
-  list_class_name:
-  icon: /svg/icon-hacknights.svg
+  link: /events
 
 # the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
 - name: Projects
-  link: '/#projects'
-  list_class_name:
-  icon: /svg/icon-projects.svg
+  link: /#projects
 
 - name: Press
-  link: '/#press'
-  list_class_name:
-  icon: /svg/icon-press.svg
-
+  link: /#press
+  
 - name: Connect
-  link: '/#about'
-  list_class_name:
-  icon: /svg/icon-about.svg
-
+  link: /#about
+  
 - name: Toolkit
   link: /toolkit
-  list_class_name:
-  icon: /svg/icon-wrench.svg
-# - name: Contact Us
-#   link: "/#contact"
-#   list_class_name: hide-mobile
-#   icon:
 
 - name: Wins
   link: /wins
