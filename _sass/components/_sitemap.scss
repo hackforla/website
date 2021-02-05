@@ -10,16 +10,31 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background: #fff;
+  padding: 64px;
+  height: fit-content;
+  margin: 37px auto 0;
+  font-family: "Roboto"sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  
+  
   img{
     max-width: 252.14px;
-    margin-bottom: 32px;
   }
   @include mobile{
     flex-direction: column;
     align-items: center;
+    padding: 32px;
   }
 }
 
+// .header-container{
+//   @include mobile{
+//     padding: 32px auto ;
+//   }
+// }
 
 .header-text-margin--sitemap {
   display: flex;
@@ -35,9 +50,11 @@
     font-size: 48px;
     }
     @include mobile{
-     margin: 32px 37px 36px;
+      margin: auto;
+     margin-bottom: 36px;
       h1{
        font-size: 24px;
+       margin-bottom: 20px;
      }
     
     }
@@ -134,7 +151,7 @@
   padding: 48px;
   margin: 16px auto;
   // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
       padding: 32px 16px;
       margin: 12px auto;
   }
