@@ -12,6 +12,7 @@
   justify-content: center;
   img{
     max-width: 252.14px;
+    margin-bottom: 32px;
   }
   @include mobile{
     flex-direction: column;
