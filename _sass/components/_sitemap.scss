@@ -158,7 +158,7 @@
   }
 
 
-  @media (min-width:768px) {
+  @media #{$bp-below-tablet}{
     .page-card-lg:nth-child(1n+2){
       padding-left: 0;
 }
