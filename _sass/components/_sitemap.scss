@@ -158,7 +158,7 @@
   }
 
 
-  @media #{$bp-below-tablet}{
+  @media #{$bp-tablet-up}{
     .page-card-lg:nth-child(1n+2){
       padding-left: 0;
 }
