@@ -52,13 +52,11 @@ links:
     url: 'https://hackforla.slack.com/archives/CKY65G266'
 looking:
   - category: UI/UX
-    skill: UI Designer
+    skill:  UI/UX Designers and Researchers
   - category: Development
     skill: Front End Developers 
   - category: Development
     skill: Experienced Back End Developers
-  - catergory: UI/UX
-    skill: UI/UX Researchers
 technologies:
   - ReactJS
   - Express
