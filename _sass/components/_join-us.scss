@@ -20,6 +20,7 @@
 
     h1 {
       font-size: 24px;
+      padding-bottom: 28px;
     }
   }
 
@@ -67,6 +68,7 @@
 
     ol {
       padding-left: 20px;
+      max-width: 300px;
     }
 
     ul {
@@ -81,7 +83,7 @@
 
       p {
         padding-bottom: 20px;
-        max-width: 480px;
+        max-width: 300px;
       }
 
       .join-us-remove-p-padding {
@@ -127,6 +129,7 @@
 
     #donation-footer {
       padding-left: 20px;
+      font-size: 15px;
     }
   }
 }
@@ -146,6 +149,7 @@
 
       h1 {
         font-size: 48px;
+        padding-bottom: 0;
       }
 
       p {
@@ -169,6 +173,14 @@
       h1 {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
+      }
+
+      p {
+        max-width: 480px;
+      }
+
+      ol {
+        max-width: 480px;
       }
 
       .join-us-card-body {
