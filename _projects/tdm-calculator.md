@@ -38,7 +38,7 @@ leadership:
       github: 'https://github.com/kevinshih613'
     picture: https://avatars.githubusercontent.com/kevinshih613
   - name: Vivek Jha
-    role: Product manager
+    role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U019HFZ9WM6'
       github: 'https://github.com/VJ1285'
