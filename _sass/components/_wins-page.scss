@@ -161,14 +161,14 @@
 }
 
 @media #{$bp-below-tablet} {
-    .wins-card-content{
-        height: 233px;
+    .wins-card-text{
+        height: 81px;
     }
 }
 
 @media #{$bp-below-mobile} {
-    .wins-card-content{
-        height: 215px;
+    .wins-card-text{
+        height: 80px;
     }
     .wins-card{
         padding: 24px;
@@ -180,10 +180,11 @@
         width: 50px;
         height: 50px;
         border-radius: 100px;
+        margin-right: 6px;
     }
     .wins-card-big-quote{
-        margin: 4px;    
-        height: 60px;
+        margin: 0 6px 0 32px;
+        height: 54px;
         width: 18px;
         position: static;
     }
@@ -210,7 +211,7 @@
         width: 20px;
     }
     .wins-card-text{
-        padding-top: 16px;
+        margin-top: 16px;
     }
 
     .wins-card-overview{
@@ -234,10 +235,12 @@
         position: fixed;
         left: 0px;
         top: 0px;
-        width: 100%;
+        width: calc(100vw + 17px);
         height: 100%;
         background-color: rgba(70, 70, 70, 0.5);
         padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .display-none {
@@ -245,34 +248,42 @@
     }
 
     .display-initial {
-        display: initial;
+        display: flex;
+        flex-direction: column;
     }
-
-    .center-screen {
-        position: fixed;
-        opacity: 1;
+    .top-buffer{
+        height: 20vh;
+    }
+    .bottom-buffer {
+        height: 5vh;
+    }
+    .modal-container{
+        position: absolute;
         width: 60%;
         left: 20%;
-        top: 30%;
-        .wins-card-content{
-            height: auto;
-        }
+    }
+    .center-screen {
+        opacity: 1;
 	}
 	.overlay-card-text{
 		padding-top: 40px;
 	}
 	.wins-card-badges{
 		display:flex;
-		flex-flow: column wrap;
+		flex-flow: row wrap;
 		width: 100%;
 		.badge-item{
-			flex: 1 1; 
+            flex: 1 1;
+            flex-basis: 250px;
 			// width: 100px;
 			margin: 4px;
 			display: flex;
 			.badge-icon{
-				margin: 2px 20px 0 0;
+				margin: 2px 12.5px 0 0;
 				height: 15px;
+				min-width: 30px;
+				display: flex;
+				justify-content: center;
 			}
 		}
 	}
