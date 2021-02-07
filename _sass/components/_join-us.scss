@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 35px 0 35px;
-  height: 600px;
+  padding: 4rem 1rem;
+  height: fit-content;
 
   .join-us-banner-text {
     display: flex;
@@ -32,7 +32,6 @@
 
 .join-us-card-container {
   background: #f7f5f5;
-  padding: 32px 16px;
 
   .page-card {
     border-radius: 20px;
@@ -42,8 +41,9 @@
     align-items: center;
 
     h1 {
-      font-size: 20px;
-      // Fixs title wrap at smallest mobile size
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      // Fixes title wrap at smallest mobile size
       @media (max-width: #{$screen-mobile - 160}) {
         padding: 0 43px;
         text-align: center;
@@ -81,10 +81,16 @@
 
       p {
         padding-bottom: 20px;
+        max-width: 480px;
       }
 
-      .btn-md {
-        width: 196px;
+      .join-us-remove-p-padding {
+        padding-bottom: 0;
+      }
+
+      .btn-partner-with-us {
+        margin-bottom: 27px;
+        width: 175px;
       }
     }
   }
@@ -96,7 +102,7 @@
   .page-card-lg {
     max-width: 896px;
     box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.2);
-    padding: 30px;
+    padding: 3rem;
     margin: 16px auto;
 
     @media #{$bp-below-mobile} {
@@ -107,9 +113,21 @@
 
   .join-us-donation {
     margin: 20px auto;
-    background: #f7f5f5;
+    background: #f6f6f6;
     padding: 20px;
     border-radius: 20px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    li {
+      font-size: 1.125rem;
+    }
+
+    #donation-footer {
+      padding-left: 20px;
+    }
   }
 }
 
@@ -120,11 +138,11 @@
   .join-us-banner {
     flex-direction: row;
     max-width: 1200px;
-    margin: auto;
+    margin: 37px auto 0;
 
     .join-us-banner-text {
       width: 500px;
-      margin: auto;
+      margin: auto 5rem auto 8rem;
 
       h1 {
         font-size: 48px;
@@ -137,7 +155,7 @@
 
     img {
       max-width: 385px;
-      margin: auto;
+      margin: auto 1rem auto 0;
       padding: 0 15px;
     }
   }
@@ -145,7 +163,7 @@
   .join-us-card-container {
     .page-card {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 3fr;
       grid-template-rows: auto;
 
       h1 {
