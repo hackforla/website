@@ -16,7 +16,7 @@ leadership:
   - name: Tina Moh
     role: UX/Service Lead
     links:
-      slack: https://hackforla.slack.com/team/UP4AZM459'
+      slack: "https://hackforla.slack.com/team/UP4AZM459"
       github: "https://github.com/tina-moh"
     picture: https://avatars.githubusercontent.com/tina-moh
   - name: John Darragh
@@ -70,7 +70,7 @@ location:
   - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
-vertical: Citizen Engagement
+vertical: 'Citizen Engagement'
 partner: seeking
 visible: true
 status: Active

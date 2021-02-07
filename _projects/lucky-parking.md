@@ -13,10 +13,16 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
+  - name: Abhinav Bommakanti
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01EW24KL3V'
+      github: 'https://github.com/abhib87'
+    picture: https://avatars.githubusercontent.com/abhib87
   - name: Matthew Ginther
     role: Full-Stack Developer Lead
     links:
-      slack:  'https://hackforla.slack.com/team/U013GNM93U1'
+      slack: 'https://hackforla.slack.com/team/U013GNM93U1'
       github: 'https://github.com/mg78856'
     picture: https://avatars.githubusercontent.com/mg78856
   - name: David Kim
@@ -38,6 +44,8 @@ links:
     url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
+  - name: Test Site
+    url: 'https://www.luckyparking.info/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
@@ -57,7 +65,7 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-vertical: Citizen Engagement
+vertical: 'Citizen Engagement'
 visible: true
 status: Active
 ---

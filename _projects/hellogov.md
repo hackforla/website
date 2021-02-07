@@ -39,4 +39,5 @@ partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
 visible: true
 status: Completed
+vertical: 'Vote / Representation'
 ---

@@ -36,4 +36,5 @@ location:
 partner: Code for America, Other Brigades
 visible: true
 status: Active
+vertical: 'Vote / Representation'
 ---

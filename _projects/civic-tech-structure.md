@@ -64,6 +64,6 @@ location:
   - Remote
 partner: Code for America & its Brigades
 visible: true
-vertical: Civic Tech Infrastructure 
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

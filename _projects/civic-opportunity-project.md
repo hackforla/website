@@ -13,6 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U015QPJS34M'
       github: 'https://github.com/rfambro2'
     picture: https://avatars.githubusercontent.com/rfambro2
+  - name: Tan Zhou
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/UPMSC27G8'
+      github: 'https://github.com/tan-zhou'
+    picture: https://avatars.githubusercontent.com/tan-zhou
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/civic-opportunity/projects/1'
@@ -37,6 +43,6 @@ location:
 # tools:
 partner: Undisclosed
 visible: true
-vertical: Civic Tech Infrastructure
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

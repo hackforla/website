@@ -63,6 +63,6 @@ location:
   - Remote
 partner: TBD
 visible: true
-vertical: Civic Tech Infrastructure
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

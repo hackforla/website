@@ -3,8 +3,18 @@
 /**************************************/
 
 //Initialize and set defaults
-let stickyNav = document.getElementById("sticky-nav");
-let stickyNavTop = stickyNav.offsetTop - 72;
+
+/* Originally stickyNavTop was calculated with the following code: 
+
+stickyNavTop = stickyNav.offsetTop - 72;
+
+However, when the page was loaded in mobile view, where there was no stickyNav
+to calculate, it caused problems when subsequently expanded to desktop view.  I tried various 
+ways to recalculate on resize or orientation change, but none proved better than hard-coding
+stickyNavTop.
+*/
+let stickyNav = document.querySelector("#sticky-nav");
+let stickyNavTop = 343;
 
 // When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() { 
@@ -19,7 +29,6 @@ function stickItHere() {
 
 // Listen to the scrolling to find when it reaches the sticky spot
 window.addEventListener('scroll', stickItHere);
-
 
   /*************************************************/
  /**** Script 2: Highlight Links when clicked *****/

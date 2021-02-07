@@ -6,11 +6,17 @@
   padding: 20px;
 }
 
-.surveybtn {
+.btn--home-subscribe {
+  margin: 0 !important;
+}
+
+.btn--home-survey {
   width: 175px;
   height: 40px;
+  font-size: 1rem;
   text-align: center;
   margin: 0 !important;
+  border-radius: 20px;
 }
 
 .row {
@@ -24,8 +30,10 @@
   text-align: initial;
   margin-left: 20%;
 
-  @media #{$bp-below-mobile} {
+  @media screen and (max-width: 600px) {
     text-align: center;
+    flex-direction: column;
+    margin: auto;
   }
 }
 
@@ -56,11 +64,11 @@
 @media only screen and (max-device-width: 550px) {
 
   //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
-  .volunteerWithUs .surveybtn {
+  .volunteerWithUs .btn--home-survey {
     margin: 0 0 15px 0 !important;
   }
 
-  .subscribe {
+  .btn--home-subscribe {
     margin: 5px 0 10px 0 !important;
   }
 }
