@@ -1,4 +1,9 @@
-// This was originally created for the about-us page which has a separate column for sticky nav
+/* This was originally created for the about-us page which has a separate column for sticky nav 
+It is, however, not actually being used on that page so that there isn't a problem when we change
+the .page-card class as part of the standardization process. I have commented it out so there is no
+confusion...about this.  */
+
+/*
 .page-card {
     background: #fff;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -17,6 +22,7 @@
         padding: 40px;
     }
 }
+*/
 
 .small-card {
     height: 180px;

@@ -49,5 +49,5 @@ location:
   - Santa Monica
   - Remote
 visible: true
-status: Active
+status: On Hold
 ---
