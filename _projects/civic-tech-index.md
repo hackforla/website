@@ -2,30 +2,48 @@
 # 'identification' is the 9 digit ID for your repo in the GitHub API.
 identification: '241519642'
 title: Civic Tech Index
-description: Our goal of the project is to create a comprehensive, searchable index of all civic tech open source software projects around the world. We have created the framework. Now our next step is to create a website and other marketing tools that will demonstrate the power of the index and will provide instructions for how to tag and share your github repository in 2 min or less.
+description: Our goal of the project is to create a comprehensive, searchable index of all civic tech open source software projects around the world. We have created the framework and an interest list. We are currently working on building out the website and other marketing tools that demonstrate the power of the index.
 image: /assets/images/projects/civic-tech-index.png
 alt: 'Civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.'
 image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Technical Product Manager
+    role: Agile Coach/Acting Technical Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Jonathan Sachsman
+  - name: Jonathan Shin
+    role: Technical Mentor
+    links:
+      slack: 'https://hackforla.slack.com/team/U01ASHCHSP2'
+      github: 'https://github.com/shinjonathan'
+    picture: https://avatars.githubusercontent.com/shinjonathan
+  - name: Olivia Chiong
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U018CSDL5FZ'
-      github: 'https://github.com/jsachsman'
-    picture: https://avatars.githubusercontent.com/jsachsman
+      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
+      github: 'https://github.com/Olivia-Chiong'
+    picture: https://avatars.githubusercontent.com/Olivia-Chiong
+  - name: Gio Sce
+    role: Technical Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01CU8059BL'
+      github: 'https://github.com/giosce'
+    picture: https://avatars.githubusercontent.com/giosce
   - name: Chali Prasertsri
     role: UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
+  - name: Sean Flores
+    role: Frontend Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U012CG71VD1'
+      github: 'https://github.com/codewilling'
+    picture: https://avatars.githubusercontent.com/codewilling
   - name: Bo Yang
     role: Data Analyst
     links:
@@ -45,25 +63,24 @@ links:
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
   - name: Wiki
     url: 'https://github.com/civictechindex/website/wiki'
+  - name: Site
+    url: 'http://civictechindex.org/'
+  - name: Overview
+    url: 'https://github.com/civictechindex/CTI-website-frontend/blob/main/Civic-Tech-Index-Product-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Fullstack Developer with Node/React knowledge
-  - category: Data
-    skill: Experienced Data Scientist
-  - category: Data
-    skill: Database Architect
   - category: Development
-    skill: Front end react developers
+    skill: Front end React developers
   - category: UI/UX
     skill: UX specialist for testing and conducting interviews with stakeholders
-  - category: UI/UX
-    skill: UI Designer
-  - category: Content
-    skill: Video content script writer
 technologies:
   - ReactJS
   - Django
   - PostgreSQL
+  - ESLint
+  - Code Climate
+  - Cypress
 location:
   - Downtown LA
   - Remote

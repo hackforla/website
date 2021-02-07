@@ -39,10 +39,11 @@ looking:
     skill: QA coder
   - category: Ops
     skill: DevOps engineer
-location: 
-  - Downtown LA 
+location:
+  - Downtown LA
   - Remote
 partner: Seeking
 visible: true
 status: Active
+vertical: 'Diversity, Equity & Inclusion'
 ---

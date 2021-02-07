@@ -46,14 +46,14 @@ ul.filter-list li ul {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.24);
   visibility: hidden;
-  opacity: 0;  
+  opacity: 0;
   transition: all 0.5s ease;
   z-index: 99;
   list-style: none;
   width: 115%;
   padding: 15px 20px;
   line-height: 2em;
-  font-size: .9em;
+  font-size: 0.9em;
   position: absolute;
   left: 0;
   top: 100%;
@@ -93,17 +93,14 @@ ul.filter-list li ul li {
 }
 
 @media #{$bp-below-tablet} {
-
   //resize dropdown on tablet and mobile view
   ul.filter-list li ul {
     width: 105%;
     padding: 15px;
   }
-  
 }
 
-@media  #{$bp-below-mobile} {
-
+@media (max-width:659px) {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.filter-list {
     display: grid;
@@ -118,11 +115,10 @@ ul.filter-list li ul li {
     padding: 5px 10px;
   }
 
-  //resize and reposition label arrow 
+  //resize and reposition label arrow
   .labelArrow {
     top: -8%;
     right: 5%;
     font-size: 20px;
-  }  
-
+  }
 }
