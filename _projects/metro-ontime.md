@@ -34,5 +34,4 @@ tools: Docker, AWS, Observable
 visible: true
 vertical: 'Environment'
 status: Completed
-vertical: Environment
 ---
