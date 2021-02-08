@@ -72,6 +72,5 @@ location:
 partner: LA Department of Transportation and Los Angeles City Planning (https://ladot.lacity.org/)
 vertical: 'Environment'
 visible: true
-vertical: Environment
 status: Active
 ---
