@@ -13,10 +13,11 @@ Here you can find, share, and suggest tools that are of use to the open source c
 </div>
 
 <div class="toolkit-header__text-group">
-    <p class="toolkit-header__banner-item">Development</p>
-    <p class="toolkit-header__banner-item">Design</p>
-    <p class="toolkit-header__banner-item">Project Management</p>
-    <p class="toolkit-header__banner-item">Professional Development</p>
+    {% assign toolkit_filters = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
+    {% for filter in toolkit_filters %}
+      <a class="toolkit-header__banner-item">{{ filter }}</a>
+      <!-- if statement that filters the results based on which button is clicked -->
+    {% endfor %}
 </div>
 
 <div class="toolkit-background content-section">
