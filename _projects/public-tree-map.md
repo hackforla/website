@@ -34,15 +34,6 @@ links:
     url: 'https://hackforla.slack.com/messages/C9UU5KKAA/'
   - name: Readme
     url: 'https://github.com/Public-Tree-Map/public-tree-map/blob/master/README.md'
-looking:
-  - category: Development
-    skill: Front-end web development (JavaScript, Leaflet)
-  - category: Data
-    skill: Data processing (GeoPandas, Python)
-  - category: QA
-    skill: QA and UX testing
-  - category: Content
-    skill: Appreciation for trees (anyone interested is welcome!)
 technologies:
   - GeoPandas
   - jQuery
@@ -54,6 +45,6 @@ location:
 partner: City of Santa Monica
 tools: Zeplin
 visible: true
-status: Active
+status: Completed
 vertical: 'Environment'
 ---
