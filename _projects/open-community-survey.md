@@ -19,12 +19,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01GTRX0H7X'
       github: 'https://github.com/phoebeng'
     picture: https://avatars.githubusercontent.com/phoebeng
-  - name: John
-    role: Product Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UNFV029Q8'
-      github: 'https://github.com/johnr54321'
-    picture: https://avatars.githubusercontent.com/johnr54321
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/community-survey-nc-websites'
@@ -32,7 +26,6 @@ links:
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
   - name: Getting Started
     url: 'https://github.com/hackforla/community-survey-nc-websites/projects/1#card-51519391'
-
 looking:
   - category: PM
     skill: Product Manager
@@ -40,11 +33,9 @@ looking:
     skill: Product Owner
   - category: Data
     skill: Data Scientists
-
 location:
   - Los Angeles
   - Remote
-
 partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
 tools: 'ArcGIS surveys, Google Docs, Zoom'
 visible: true
