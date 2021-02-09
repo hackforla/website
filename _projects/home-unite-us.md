@@ -10,16 +10,16 @@ leadership:
   - name: Tyler Thome
     role: HUU Tech Lead
     links:
-      slack: 'https://hackforla.slack.com/team/ULN1M6UAH'
-      github: 'https://github.com/tylerthome'
+      slack: "https://hackforla.slack.com/team/ULN1M6UAH"
+      github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
-    - name: Abby Hipp
+  - name: Abby Hipp
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U0189RUQM7Y'
       github: 'https://github.com/abbyhipp'
     picture: https://avatars.githubusercontent.com/abbyhipp
-    - name: Tracy Michelle
+  - name: Tracy Michelle
     role: Calender Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U014ZPWTJV6'
@@ -34,9 +34,9 @@ links:
     url: 'https://github.com/hackforla/HomeUniteUs/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'  
-    - name: Test site
-    url: 'https://test.homeunite.us/'  
-    - name: Site
+  - name: Test site
+    url: "https://test.homeunite.us/"
+  - name: Site
     url: 'https://homeunite.us/'
 looking: 
   - category: UI/UX
