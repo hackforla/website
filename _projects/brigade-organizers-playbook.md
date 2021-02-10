@@ -3,7 +3,7 @@ identification: '336742445'
 title: Brigade Organizers Playbook
 description: Each of the 80+ Code for America Brigades is an experiment which generates valuable learnings and new effective processes and practices. However, Brigades and other civic tech volunteer organizations need not start from scratch. This project aims to improve existing structures and create new ones that make it easier to share replicable processes and practices so that organizers and members can iterate on each others work, improving outcomes for the whole network.
 image: /assets/images/projects/brigade-organizers-playbook.png
-alt: 'Brigade Organizer's Playbook Extension Project'
+alt: "Brigade Organizer's Playbook Extension Project"
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
 alt-hero: 'A dark blue background.'
 leadership:
@@ -89,12 +89,7 @@ links:
   - name: Effective Practices
     url: 'https://docs.google.com/spreadsheets/d/1N0VSDhYyy5WhX_z18Q0RvLlGO29JGGdMxVsD4X3nFYs/edit#gid=1425278717'
 looking:
-tools:
-  - Zoom
-  - Calendly
-  - Otter.ai
-  - Google Docs (Doc, Sheet, Slide, Forms)
-  - HackforLA.org guides
+tools: Zoom, Calendly, Otter.ai, Google Docs (Doc, Sheet, Slide, Forms), HackforLA.org guides
 technologies:
   - Markdown
 location:
