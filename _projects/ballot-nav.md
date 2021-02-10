@@ -8,21 +8,23 @@ image-hero: /assets/images/projects/ballot-nav-hero.png
 alt-hero: 'Map of the United States with each state and county outlined.'
 leadership:
   - name: Mya Stark
-    role: 
+    role:
     links:
       slack: 'https://hackforla.slack.com/team/UMC7AJLDV'
-      github:  'https://github.com/myastark'
-    picture:  'https://avatars.githubusercontent.com/myastark'
+      github: 'https://github.com/myastark'
+    picture: 'https://avatars.githubusercontent.com/myastark'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/BallotNav'
   - name: Site
     url: 'http://ballotnav.org'
   - name: Slack
-    url:  'https://hackforla.slack.com/archives/C0191KE1XB7'
+    url: 'https://hackforla.slack.com/archives/C0191KE1XB7'
   - name: Readme
-    url:  'https://github.com/hackforla/ballotnav/blob/master/README.md'
-looking: 
+    url: 'https://github.com/hackforla/ballotnav/blob/master/README.md'
+  - name: Overview
+    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/BallotNav-Project-One-Sheet.pdf'
+looking:
   - category: UI/UX
     skill: UX Researcher
   - category: SEO/Marketing
@@ -31,7 +33,7 @@ looking:
     skill: Fundraising
   - category: Content
     skill: Translators (Spanish especially)
-location: 
+location:
   - Remote
 partner: Code for America, Other Brigades
 visible: true
