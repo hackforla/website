@@ -4,39 +4,33 @@ title: 311 Data
 description: The 311 Data project seeks to empower local Neighborhood Councils to improve the ideation and analysis of their initiatives using the wealth of publicly available 311 data.
 image: /assets/images/projects/311_data.png
 alt: 'Image of building with windows that look like they spell out 311.'
-image-hero: /assets/images/projects/311data-hero.png
-alt-hero: 'iPhone and iPad showing app display.'
+image-hero: /assets/images/projects/311data-beta.png
+alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
 leadership:
-  - name: John Ritchey
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/UNFV029Q8'
-      github: 'https://github.com/johnr54321'
-    picture: https://avatars.githubusercontent.com/johnr54321
   - name: Dana Chen
-    role: UI/UX Lead
+    role: UI/UX Senior Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0112KZPV6C'
       github: 'https://github.com/danarchen'
     picture: https://avatars.githubusercontent.com/danarchen
+  - name: Kevin Perez
+    role: UI/UX Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U011K0F02M9'
+      github: 'https://github.com/kevindperez'
+    picture: https://avatars.githubusercontent.com/kevindperez
   - name: Adam Kendis
     role: Frontend Lead
     links:
       slack: 'https://hackforla.slack.com/team/USNAHR0KE'
       github: 'https://github.com/adamkendis'
     picture: https://avatars.githubusercontent.com/adamkendis
-  - name: Ryan Swan
-    role: Data Science Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UPB2FHJCX'
-      github: 'https://github.com/ryanmswan'
-    picture: https://avatars.githubusercontent.com/ryanmswan
-  - name: Jake Mensch
+  - name: Matt Webster
     role: Backend Lead
     links:
-      slack: 'https://hackforla.slack.com/team/ULJAWB8M8'
-      github: 'https://github.com/jmensch1'
-    picture: https://avatars.githubusercontent.com/jmensch1
+      slack: 'https://hackforla.slack.com/team/URLNVEEB0'
+      github: 'https://github.com/mattyweb'
+    picture: https://avatars.githubusercontent.com/mattyweb
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -62,11 +56,18 @@ looking:
 technologies:
   - ReactJS
   - Redux
-  - Flask
-  - Sanic
-  - Pandas
-  - Bulma
+  - Material-UI
+  - Mapbox
+  - AWS
+  - Python
+  - FastAPI
+  - Redis
   - PostgreSQL
+  - Prefect
+  - Docker
+  - Figma
+  - Adobe CC
+  - Miro
 location:
   - Downtown LA
   - Remote
