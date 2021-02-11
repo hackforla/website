@@ -1,4 +1,18 @@
 .toolkit-header {
+    display: flex;
+    justify-content: center;
+
+    &__text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 5rem;
+
+        h1 {
+            margin-top: 2.25rem;
+            margin-bottom: 3.125rem;
+        }
+    }
 
     &__text-group {
         display: flex; 
@@ -17,12 +31,10 @@
     }
     
     &__p {
-        font-size: 27px;
-        max-width: 895px;
+        font-size: 1.125rem;
+        max-width: 508px;
         text-align: left;
-        padding: 30px;
         margin: 12px auto;
-
     }
 
     &__hero-image {
@@ -34,6 +46,33 @@
 .toolkit-svg {
     width: auto;
     height: 240px;
+}
+
+@media(max-width: 850px) {
+    .toolkit-header {
+        flex-flow: column;
+
+        &__text {
+            margin-right: 0;
+
+            h1 {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        &__p {
+            margin-bottom: 0;
+        }
+
+        &__hero-image {
+            margin: 10px 0;
+        }
+    }
+
+    .header-container {
+        padding: 2rem;
+        margin-top: 10%;
+    }
 }
 
 .toolkit-background {
@@ -161,10 +200,6 @@
             max-width: 6rem;
             text-align: center;
         }
-    }
-
-    .toolkit-svg {
-        width: 75%;
     }
 
     .suggest-guide-group {
