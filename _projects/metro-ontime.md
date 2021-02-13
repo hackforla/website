@@ -26,11 +26,12 @@ links:
     url: 'https://www.metro.net/'
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
-location: 
+location:
   - Downtown LA
   - Remote
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
 visible: true
+vertical: 'Environment'
 status: Completed
 ---

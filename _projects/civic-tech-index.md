@@ -65,6 +65,8 @@ links:
     url: 'https://github.com/civictechindex/website/wiki'
   - name: Site
     url: 'http://civictechindex.org/'
+  - name: Overview
+    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Index-Product-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Fullstack Developer with Node/React knowledge
