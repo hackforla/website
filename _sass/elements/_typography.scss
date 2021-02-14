@@ -8,67 +8,6 @@ body {
 map-get($font-family, body);
 }
 
-.entire-quote{
-  margin-top: 30px;
-  width: 90%;
-}
-.quote-marks{
-  position: relative;
-  width: 20px;
-  display: inline-block;
-  vertical-align: top;
-  bottom: 10px;
-  left:-10px
-}
-
-#quote-tmc{
-  border-radius: 100px;
-  position: relative;
-  right: -50px;
-  bottom: 10px;
-  height: 75px;
-  width: 75px;
-}
-
-.mayor-cite{
-  position: relative;
-  bottom: 50px;
-  left: 20px;
-}
-.quote-text{
-  position: relative;
-  display: inline-block;
-  width: 88%;
-}
-
-@media only screen and (min-width:700px){
-  .quote-text{
-    font-weight: bold;
-  }
-  .entire-quote{
-    position: relative;
-    width:93%;
-    left:100px;
-  }
-  #quote-tmc{
-    bottom: 110px;
-    right: 180px;
-    height: 100px;
-    width: 100px;
-  }
-  .mayor-cite{
-    position: relative;
-    left:125px;
-    bottom: 90px;
-  }
-  .garcetti-quote{
-    position: relative;
-    margin-bottom: -100px;
-    margin-left:3vw;
-  }
-}
-
-
 h1,
 h2,
 h3,
