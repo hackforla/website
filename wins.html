@@ -38,21 +38,24 @@ title: Wins
 <section class="content-section projects">
   <div
     class="wins-page-contain projects-inner"
-    id="filter-template-conatainer"
+    id="filter-template-container"
     style="clear: left"
   >
-    <ul class="filter-list" id="filter-list">
+    <ul class="filter-list" id="filter-list" 
+	style="grid-template-columns: repeat(2, 1fr);
+	 min-width: 216px;"
+	 >
       <li class="filter-item">
-        <a style="margin-right: 175px"
+        <a
           >Role<span class="labelArrow"> ∟ </span></a
         >
-        <ul class="dropdown" id="role-dropdown"></ul>
+        <ul class="dropdown" id="role-dropdown" style="width: 100%;"></ul>
       </li>
       <li class="filter-item">
-        <a style="margin-right: 175px"
+        <a
           >Team<span class="labelArrow"> ∟ </span></a
         >
-        <ul class="dropdown" id="team-dropdown"></ul>
+        <ul class="dropdown" id="team-dropdown" style="width: 100%;"></ul>
       </li>
     </ul>
     <template id="template">
@@ -64,7 +67,10 @@ title: Wins
       </li>
     </template>
 
-    <ul id="responses" class="project-list unstyled-list"></ul>
+    <ul id="responses" class="project-list unstyled-list">
+
+		
+	</ul>
   </div>
 </section>
 
