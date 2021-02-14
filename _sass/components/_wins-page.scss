@@ -271,26 +271,4 @@
 }
 
 
-@media #{$bp-desktop-up} {
-	.filter-list{
-		width: 40%; 
 
-	}
-}
-
-@media (min-width: 768px){
-	.filter-list{
-		width: 40%; 
-
-	}
-}
-
-@media (max-width: 659px){
-	ul.filter-list{
-		grid-template-rows: repeat(2, 1fr);
-    	grid-auto-flow: column;
-	}
-	.filter-list{
-		width: 100%;
-	}
-}
