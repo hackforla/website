@@ -233,7 +233,6 @@ title: Wins
 
   	//If there are no entries in URL display all Cards
   	if(Object.keys(filterParams).length === 0){
-  		console.log("Removing all display:hidden styls on wins-card");
   		winsCards.forEach(card=>{card.style.display='flex';})
   		return;
   	}

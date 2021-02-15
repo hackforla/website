@@ -272,20 +272,23 @@
 
 
 
-//
-ul.filter-list{
+//wins page filter override section begin
+.wins-page-contain > ul.filter-list{
 	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
 	width: 46%;
+
+	
 }
 
-ul.filter-list li ul {
+.wins-page-contain > ul.filter-list li ul {
 	width: 100%;
 }
 
-@media (max-width: 659px){
-	ul.wins-filter{
+@media #{$bp-below-tablet}{
+	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
 	}
 }
+//wins page filter override section end
