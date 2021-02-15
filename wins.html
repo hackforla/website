@@ -42,20 +42,18 @@ title: Wins
     style="clear: left"
   >
     <ul class="filter-list" id="filter-list" 
-	style="grid-template-columns: repeat(2, 1fr);
-	 min-width: 216px;"
 	 >
       <li class="filter-item">
         <a
           >Role<span class="labelArrow"> ∟ </span></a
         >
-        <ul class="dropdown" id="role-dropdown" style="width: 100%;"></ul>
+        <ul class="dropdown" id="role-dropdown"></ul>
       </li>
       <li class="filter-item">
         <a
           >Team<span class="labelArrow"> ∟ </span></a
         >
-        <ul class="dropdown" id="team-dropdown" style="width: 100%;"></ul>
+        <ul class="dropdown" id="team-dropdown"></ul>
       </li>
     </ul>
     <template id="template">
@@ -100,7 +98,7 @@ title: Wins
   	{% assign localData = site.data.wins-data | jsonify %}
   	let localData = {{ localData }};
   	const rawData = localData.values;
-
+	console.log("Epicness")
   	//creates an array of objects where each question is the key and the answer is the value
   	//cardData[index][question_str] = answer_str
   	let cardData = []

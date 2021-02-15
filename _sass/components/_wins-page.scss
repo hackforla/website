@@ -272,3 +272,14 @@
 
 
 
+//
+ul.filter-list{
+	grid-template-columns: repeat(2, 1fr)  !important;
+	min-width: 216px;
+	width: 40%;
+	background-color: yellow;
+}
+
+.dropdown{
+	width: 100%;
+}
