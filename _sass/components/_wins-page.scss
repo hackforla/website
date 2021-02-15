@@ -274,11 +274,18 @@
 
 //
 ul.filter-list{
-	grid-template-columns: repeat(2, 1fr)  !important;
+	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
-	width: 40%;
+	width: 46%;
 }
 
-.dropdown{
+ul.filter-list li ul {
 	width: 100%;
+}
+
+@media (max-width: 659px){
+	ul.wins-filter{
+		width: 100%;
+		grid-template-rows: none;
+	}
 }
