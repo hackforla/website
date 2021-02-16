@@ -4,15 +4,6 @@
 
 //Initialize and set defaults
 
-/* Originally stickyNavTop was calculated with the following code: 
-
-stickyNavTop = stickyNav.offsetTop - 72;
-
-However, when the page was loaded in mobile view, where there was no stickyNav
-to calculate, it caused problems when subsequently expanded to desktop view.  I tried various 
-ways to recalculate on resize or orientation change, but none proved better than hard-coding
-stickyNavTop.
-*/
 let stickyNav = document.querySelector("#sticky-nav");
 let stickyNavTop = 343;
 
@@ -125,39 +116,49 @@ function scrollHandler() {
  /* ************** Script 4: Mobile accordian ************* */
 /***********************************************************/
 
-// classToAdd is the name of the class that gets added to the list
-// accordionElements are the elements that we're working on
-function createAccordionEventListener (classToAdd, accordionElements) {
-
+// This function creates the event listener
+function createAccordionEventListener (accordionElements) {
     for (let el of accordionElements) {
-
-        el.addEventListener("click", function () {
-
-            // Toggles adding and removing the class from the class list
-            this.classList.toggle(classToAdd);
-
-            // Which panel to open/close
-            let accordionContainer = this.nextElementSibling;
-
-
-            // Open and close panel
-            if (accordionContainer.style.display === "block") {
-                accordionContainer.style.display = "none"
-            } else {
-                accordionContainer.style.display = "block"
-            }
-        })
+        el.addEventListener("click", toggleAccordion, false)
     }
 } // end function
 
-// Add event listeners
-if (windowWidth < 960) { 
+// This removes the event listeners.  This is used when the display was loaded in mobile view
+// and then switched to full display.  
+function removeEventListener (accordionElements) {
+    for (let el of accordionElements) {
+        el.removeEventListener("click", toggleAccordion, false);
+    }
+} // end function
+
+
+// This is the meat of the event listener
+function toggleAccordion () {
+    // Toggles adding and removing the class from the class list
+    this.classList.toggle('au_active');
+
+    // Which panel to open/close
+    let accordionContainer = this.nextElementSibling;
+
+    // Open and close panel
+    if (accordionContainer.style.display === "block") {
+        accordionContainer.style.display = "none"
+    } else {
+        accordionContainer.style.display = "block"
+    }
+}
+
+
+
+// On page load add event listeners if 
+ 
     // Get the list of elements for the accordion
     let accordionList = document.querySelectorAll(".about-us-section-header");
 
-    // Create event listeners
-    createAccordionEventListener ("au_active", accordionList);
-}
+    if (windowWidth < 960) {
+        // Create event listeners
+        createAccordionEventListener (accordionList);
+    }
 
   /*********************************************************************************/
  /* ************** Script 5: Mobile accordian - Read more/Read less ************* */
@@ -183,8 +184,6 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
             if (this.className.includes("read-more")) {
                 accordionContainer = this.nextElementSibling;
             }
-
-            console.log('accordionContainer -> ' + this.className);
 
             // Open and close panel
             if (accordionContainer.style.display === "block") {
