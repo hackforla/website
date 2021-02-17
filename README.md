@@ -2,6 +2,15 @@
 
 > Hack for LA's website: https://www.hackforla.org
 
+Please refer to the [wiki](https://github.com/hackforla/website/wiki) to learn more about joining the team. 
+You will find the following information on the wiki.
+1. Project Definition 
+2. Joining the Team
+3. Tools by Role
+4. Resources by Role
+5. Agendas 
+6. Project Terminology 
+
 This is a standard [Jekyll](https://jekyllrb.com/) site hosted right here on [GitHub pages](https://pages.github.com/).
 
 To develop the site, you'll need to first clone the repository on to your computer. For new Git users, see the [Using Git](#using-git) section below. <br><br>
