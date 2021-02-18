@@ -116,23 +116,22 @@ function scrollHandler() {
  /* ************** Script 4: Mobile accordian ************* */
 /***********************************************************/
 
-// This function creates the event listener
+// This function creates the event listeners
 function createAccordionEventListener (accordionElements) {
     for (let el of accordionElements) {
         el.addEventListener("click", toggleAccordion, false)
     }
 } // end function
 
-// This removes the event listeners.  This is used when the display was loaded in mobile view
-// and then switched to full display.  
-function removeEventListener (accordionElements) {
+// This removes the event listeners.  
+// This is used when the display was loaded in mobile view and then switched to full display.  
+function removeAccordionEventListener (accordionElements) {
     for (let el of accordionElements) {
         el.removeEventListener("click", toggleAccordion, false);
     }
 } // end function
 
-
-// This is the meat of the event listener
+// This opens and closes the sections to make it accordion-like
 function toggleAccordion () {
     // Toggles adding and removing the class from the class list
     this.classList.toggle('au_active');
@@ -146,19 +145,61 @@ function toggleAccordion () {
     } else {
         accordionContainer.style.display = "block"
     }
+} // end function
+
+// This expands all sections when it goes from mobile to desktop
+function expandAccordion (accordionElements) {
+    for (let el of accordionElements) {
+        el.nextElementSibling.style.display = "block";
+    }
+} // end function
+
+// accordionFlag tracks the state of the window | mobile = 0; desktop = 1
+let accordionFlag;
+
+//Initialize
+if (windowWidth < 960) {
+    accordionFlag = 0;
+} else {
+    accordionFlag = 1;
 }
 
-
-
-// On page load add event listeners if 
- 
-    // Get the list of elements for the accordion
-    let accordionList = document.querySelectorAll(".about-us-section-header");
-
-    if (windowWidth < 960) {
-        // Create event listeners
-        createAccordionEventListener (accordionList);
+// This function checks for when the window crosses the threshold between mobile and desktop
+// When it does, it either adds or removes the event handlers and resets the flag
+function resizeHandler() {
+    
+    if (accordionFlag === 0) {
+        if (window.innerWidth >= 960) {
+            removeAccordionEventListener(accordionList);
+            expandAccordion(accordionExpandList);
+            accordionFlag = 1;
+        }
     }
+
+    if (accordionFlag === 1) {
+       if (window.innerWidth < 960) {
+            createAccordionEventListener(accordionList);
+            accordionFlag = 0;
+        }
+    } 
+} // end function 
+ 
+// Get the list of elements for the accordion
+let accordionList = document.querySelectorAll(".about-us-section-header");
+
+// Get the elements to expand when going from mobile to desktop
+let accordionExpandList = document.querySelectorAll(".about-us-section-header, .read-more");
+
+// Create event listeners on page load if in mobile
+if (windowWidth < 960) {
+    // Create event listeners
+    createAccordionEventListener (accordionList);
+}
+
+// Add or remove event listeners on resize or orientation change
+window.addEventListener('resize',resizeHandler);
+
+
 
   /*********************************************************************************/
  /* ************** Script 5: Mobile accordian - Read more/Read less ************* */
@@ -197,13 +238,12 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
 } // end function
 
 // Add event listeners
-if (windowWidth < 960) { 
-    // Get the list of elements for the accordion
-    let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
 
-    // Create event listeners
-    createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
-}
+// Get the list of elements for the accordion
+let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
+
+// Create event listeners
+createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
 
 
   /*******************************************************/
