@@ -154,6 +154,30 @@ function expandAccordion (accordionElements) {
     }
 } // end function
 
+// This closees all sections when it goes from desktop to mobile
+// if the element was active (open) it leaves it open
+function closeAccordion (accordionElements) {
+
+    for (let el of accordionElements) {
+        if (el.classList.contains("au_active")) {
+            // Do nothing
+        } else {
+            el.nextElementSibling.style.display = "none";
+        }
+    }
+
+} // end function
+
+// This adjusts the letter when it goes back to mobile
+// It should leave it open if it was open, and closed if it was closed
+function letterBackToMobile (readMoreElement, readLessElement) {
+    if (readLessElement.classList.contains("more-less")) {
+        readMoreElement.nextElementSibling.style.display = "none";
+    } else {
+        readMoreElement.nextElementSibling.style.display = "block";
+    }
+} // end function
+
 // accordionFlag tracks the state of the window | mobile = 0; desktop = 1
 let accordionFlag;
 
@@ -176,6 +200,8 @@ function resizeHandler() {
 
     if (accordionFlag === 1 && window.innerWidth < 960) {
             createAccordionEventListener(accordionList);
+            closeAccordion(accordionList);
+            letterBackToMobile (readMoreToMobile, readLessToMobile);
             accordionFlag = 0;
     } 
 } // end function 
@@ -185,6 +211,10 @@ let accordionList = document.querySelectorAll(".about-us-section-header");
 
 // Get the elements to expand when going from mobile to desktop
 let accordionExpandList = document.querySelectorAll(".about-us-section-header, .read-more");
+
+// This is to close the letter to the editor on going to mobile
+let readMoreToMobile = document.querySelector(".read-more");
+let readLessToMobile = document.querySelector(".read-less");
 
 // Create event listeners on page load if in mobile
 if (windowWidth < 960) {
@@ -236,11 +266,10 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
 // Add event listeners
 
 // Get the list of elements for the accordion
-let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
+    let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
 
-// Create event listeners
-createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
-
+    // Create event listeners
+    createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
 
   /*******************************************************/
  /***** Script 6: Add a break tag to certain headers ****/
