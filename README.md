@@ -2,8 +2,7 @@
 
 > Hack for LA's website: https://www.hackforla.org
 
-Please refer to the [wiki](https://github.com/hackforla/website/wiki) to learn more about joining the team. 
-You will find the following information on the wiki.
+Please refer to the [wiki](https://github.com/hackforla/website/wiki) to learn more about the following areas.  
 1. Project Definition 
 2. Joining the Team
 3. Tools by Role
