@@ -81,6 +81,7 @@
 .wins-page-contain{
 	margin:0 auto;
 	max-width: 1292px;
+	clear: left;
 }
 .wins-page-contain > p{
 	margin: 18px 60px;
@@ -273,7 +274,7 @@
 
 
 //wins page filter override section begin
-.wins-page-contain > ul.filter-list{
+ul.wins-filter{
 	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
 	width: 46%;
@@ -281,12 +282,12 @@
 	
 }
 
-.wins-page-contain > ul.filter-list li ul {
+ul.wins-filter li ul {
 	width: 100%;
 }
 
 @media #{$bp-below-tablet}{
-	.wins-page-contain > ul.wins-filter{
+	ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
 	}

@@ -1,0 +1,31 @@
+<template id="wins-card-template">
+  <li class="project-card wins-card" style="display: flex">
+    <div class="wins-card-left">
+      <img class="wins-card-profile-img" /><img class="wins-card-big-quote" />
+    </div>
+    <div class="wins-card-content project-card-inner">
+      <div class="project-inner wins-card-top">
+        <span class="wins-card-name"> </span>
+        <span class="wins-card-icons">
+          <a class="wins-card-linkedin-icon"><img class="linkedin-icon" /></a>
+          <a class="wins-card-github-icon"><img class="github-icon" /></a>
+        </span>
+      </div>
+      <div class="project-inner wins-card-team"></div>
+      <div class="project-inner wins-card-role"></div>
+      <div class="project-inner wins__card-text">
+        <p class="wins-card-overview"></p>
+        <p class="wins-card-info"></p>
+      </div>
+      <div class="project-inner wins__see-more-div">
+        <span
+          id="0"
+          onclick="seeMore(id)"
+          class="wins__see-more-span"
+          expandable=""
+          >...see more</span
+        >
+      </div>
+    </div>
+  </li>
+</template>
