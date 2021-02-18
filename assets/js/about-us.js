@@ -168,19 +168,15 @@ if (windowWidth < 960) {
 // When it does, it either adds or removes the event handlers and resets the flag
 function resizeHandler() {
     
-    if (accordionFlag === 0) {
-        if (window.innerWidth >= 960) {
-            removeAccordionEventListener(accordionList);
-            expandAccordion(accordionExpandList);
-            accordionFlag = 1;
-        }
+    if (accordionFlag === 0 && window.innerWidth >= 960) {
+        removeAccordionEventListener(accordionList);
+        expandAccordion(accordionExpandList);
+        accordionFlag = 1;
     }
 
-    if (accordionFlag === 1) {
-       if (window.innerWidth < 960) {
+    if (accordionFlag === 1 && window.innerWidth < 960) {
             createAccordionEventListener(accordionList);
             accordionFlag = 0;
-        }
     } 
 } // end function 
  
