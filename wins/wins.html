@@ -90,6 +90,7 @@ permalink: /wins/
 
   	})
 
+
   	//Create dropdown key,values where the keys are name of the drops downs and the values are the number of occurences of each key
   	const roleHash =  Object.fromEntries([ ...roleArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
   	const teamHash =  Object.fromEntries([ ...teamArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
