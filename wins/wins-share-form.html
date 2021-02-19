@@ -73,6 +73,7 @@ permalink: /share-your-wins/
             <button type="submit" id='nameEmailNextButton'>Next</button>
     
     </form>
+    
     <form id="professionalLinkForm">
         <div class="form-group">
             <label for="linkedinurl">LinkedIn URL(optional)</label>
@@ -128,7 +129,8 @@ permalink: /share-your-wins/
             <input type="text" class="form-control" id="specificRole" placeholder="Your Role..." required>
         </div>
     
-        <input type="submit" id='teamsRolesNextButton' value="Submit">
+        <button type="submit" id='teamsRolesNextButton' >Next</button>
+
 
 
     </form>
@@ -179,7 +181,7 @@ permalink: /share-your-wins/
        let rolesCheckBoxTemplate =  document.querySelector('#rolesCheckBoxTemplate');
 
        const availableTeams = ['311 Data', 'Civic Tech Index', 'Engage', 'Food Oasis','HackforLA Website', 'HelloGov','Home Unite Us', 'The LA TDM Calculator', 'Lucky Parking', 'New Schools Today', 'Not Today', 'Public Tree Map','Record Clearance Project', 'Undebate', 'VRMS']
-       const availableRoles = ['Buisness Analyst','Content','Data', 'Development','Operations','PM','Operations','PM','QA','SEO/Marketing','UI/UX']
+       const availableRoles = ['Buisness Analyst','Content','Data', 'Development','PM','Operations','QA','SEO/Marketing','UI/UX']
 
        for(const team of availableTeams){
         let cloneteamsCheckBoxTemplate = teamsCheckBoxTemplate.content.cloneNode(true);
@@ -358,9 +360,21 @@ permalink: /share-your-wins/
     })
 
     function submitFormToGoogleSheets(){
+        const googleFormUri = 'https://script.google.com/macros/s/AKfycbza-c14TyNZ1l8SIzOOZJZH7KYyhIT_4WXUlPYHB_DFsyYto742YelpHA/exec';
+
         const form = JSON.parse(localStorage.getItem('form'));
-        console.log(form);
+        let queryString = Object.keys(form).map(key => key + '=' + form[key]).join('&').replaceAll(" ","+");
+
+        fetch(`${googleFormUri}?${queryString}`)
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+  
+
+
+
+
     }
+
   </script>
 </html>
 
