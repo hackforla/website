@@ -157,7 +157,7 @@
 }
 
 /*---------
-| Desktop 
+| Tablet
 -----------*/
 @media #{$bp-tablet-up} {
   .join-us-card-container {
@@ -233,6 +233,10 @@
     }
   }
 }
+
+/*---------
+| Desktop
+-----------*/
 
 @media #{$bp-desktop-up} {
   .join-us-banner {
