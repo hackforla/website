@@ -22,10 +22,19 @@
       font-size: 24px;
       padding-bottom: 28px;
     }
+
+    p {
+      font-size: 18px;
+      max-width: 300px;
+      @media #{$bp-tablet-up} {
+        max-width: 500px;
+      }
+    }
   }
 
   img {
     width: 80%;
+    max-width: 500px;
     margin: auto;
     padding-top: 20px;
   }
@@ -44,8 +53,8 @@
     align-items: center;
 
     h1 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
       // Fixes title wrap at smallest mobile size
       @media (max-width: #{$screen-mobile - 160}) {
         padding: 0 43px;
@@ -56,6 +65,7 @@
     h2 {
       font-size: 16px;
       width: 100%;
+      max-width: 300px;
     }
 
     .join-us-card-img {
@@ -65,7 +75,7 @@
 
     .join-us-donation-png {
       width: 100%;
-      margin: 20px 0;
+      margin: 20px auto;
     }
 
     ol {
@@ -88,6 +98,14 @@
         max-width: 300px;
       }
 
+      li {
+        padding: 3px 0;
+      }
+
+      li::marker {
+        padding: 3px 0;
+      }
+
       .join-us-remove-p-padding {
         padding-bottom: 0;
       }
@@ -108,10 +126,10 @@
     width: 100%;
     box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.2);
     padding: 3rem;
-    margin: 16px auto 16px auto;
+    margin: 16px auto;
 
     @media #{$bp-below-mobile} {
-      padding: 32px 16px;
+      padding: 32px 20px;
       margin: 12px auto;
     }
   }
@@ -128,6 +146,7 @@
 
     li {
       font-size: 1.125rem;
+      padding: 8px 0;
     }
 
     #donation-footer {
@@ -141,32 +160,6 @@
 | Desktop 
 -----------*/
 @media #{$bp-tablet-up} {
-  .join-us-banner {
-    flex-direction: row;
-    max-width: 1200px;
-    margin: 37px auto 0;
-
-    .join-us-banner-text {
-      width: 500px;
-      margin: auto 5rem auto 8rem;
-
-      h1 {
-        font-size: 48px;
-        padding-bottom: 0;
-      }
-
-      p {
-        font-size: 18px;
-      }
-    }
-
-    img {
-      max-width: 385px;
-      margin: auto 1rem auto 0;
-      padding: 0 15px;
-    }
-  }
-
   .join-us-card-container {
     .page-card {
       display: grid;
@@ -176,14 +169,23 @@
       h1 {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
-      }
-
-      p {
-        max-width: 480px;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       ol {
         max-width: 480px;
+      }
+
+      img {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+        margin: auto;
+      }
+
+      #join-us-donation-icon {
+        margin: 1rem auto;
+        align-self: flex-start;
       }
 
       .join-us-card-body {
@@ -191,17 +193,14 @@
         grid-row: 2 / span 1;
         align-items: flex-start;
 
+        p {
+          max-width: 480px;
+        }
+
         .join-us-donation-png {
           max-width: 419px;
-          margin: 20px auto;
           padding-bottom: 20px;
         }
-      }
-
-      img {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 2;
-        margin: auto;
       }
 
       .join-us-donation {
@@ -216,7 +215,7 @@
         }
 
         .join-us-donation-body {
-          padding: 0 40px;
+          padding: 0 32px 0 16px;
 
           h2 {
             font-size: 18px;
@@ -231,6 +230,36 @@
           }
         }
       }
+    }
+  }
+}
+
+@media #{$bp-desktop-up} {
+  .join-us-banner {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 37px auto 0;
+
+    .join-us-banner-text {
+      width: 500px;
+      min-width: 300px;
+      margin: auto 5rem auto 8rem;
+
+      h1 {
+        font-size: 48px;
+        padding-bottom: 0;
+      }
+
+      p {
+        font-size: 18px;
+        max-width: 508px;
+      }
+    }
+
+    img {
+      max-width: 385px;
+      margin: auto 1rem auto 0;
+      padding: 0 15px;
     }
   }
 }
