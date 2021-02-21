@@ -1,183 +1,186 @@
-//INDIVIDUAL PLACEMENTS OF OVERLAY LINKS 
-//RIGHT SIDE LINKS
-.assignees {
-  @media #{$bp-below-mobile} {
-    @include arrow-right-overlay (16%, 99%);
-    width: 7.65px;
-    height: 7px; 
+.github-issue-guide {
+  //INDIVIDUAL PLACEMENTS OF OVERLAY LINKS 
+  //RIGHT SIDE LINKS
+  .assignees {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-overlay (16%, 99%);
+      width: 7.65px;
+      height: 7px; 
+    }
+    @include arrow-right-overlay (16%, 94%); 
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-right-text-overlay (15.5%, 103%); 
+        text-align: right;
+        font-size: 0.1em;
+      }
+      @include arrow-right-text-overlay(16%, 102%); 
+    }
   }
-  @include arrow-right-overlay (16%, 94%); 
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-right-text-overlay (15.5%, 103%); 
-      text-align: right;
+  
+  .labels {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-overlay (21%, 99%);
+      width: 7.65px;
+      height: 7px; 
+    }
+    @include arrow-right-overlay (21%, 94%); 
+    
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-right-text-overlay (21%, 103%); 
+        text-align: right;
+        font-size: 0.1em;
+      }
+      @include arrow-right-text-overlay(21%, 102%); 
+    }
+  }
+  
+  .project-board {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-overlay (27.5%, 99%);
+      width: 7.65px;
+      height: 7px; 
+    }
+    @include arrow-right-overlay (27.5%, 94%); 
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-right-text-overlay (27%, 103%);
+        text-align: right;
+        font-size: 0.1em;
+      }
+      @include arrow-right-text-overlay(27.5%, 102%);
+    }
+  }
+  
+  .milestones {
+    @media #{$bp-below-mobile} {
+      @include arrow-right-overlay (36%, 99%);
+      width: 7.65px;
+      height: 7px; 
+    }
+    @include arrow-right-overlay (36%, 94%);
+  
+     + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-right-text-overlay (35.5%, 103%);
+        text-align: right;
+        font-size: 0.1em;
+      }
+      @include arrow-right-text-overlay(36%, 102%);
+    }
+  }
+  
+  //LEFT SIDE LINKS 
+  .title {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay (9%, 99%);
       font-size: 0.4em;
     }
-    @include arrow-right-text-overlay(16%, 102%); 
-  }
-}
-
-.labels {
-  @media #{$bp-below-mobile} {
-    @include arrow-right-overlay (21%, 99%);
-    width: 7.65px;
-    height: 7px; 
-  }
-  @include arrow-right-overlay (21%, 94%); 
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-right-text-overlay (20.5%, 103%); 
-      text-align: right;
-      font-size: 0.4em;
+    @include arrow-left-overlay (9%, 94%);
+  
+     + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (10.5%, 107.5%);
+        direction: rtl;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(10%, 102%);
+      transform: rotate(180deg);
     }
-    @include arrow-right-text-overlay(21%, 102%); 
   }
-}
-
-.project-board {
-  @media #{$bp-below-mobile} {
-    @include arrow-right-overlay (27.5%, 99%);
-    width: 7.65px;
-    height: 7px; 
-  }
-  @include arrow-right-overlay (27.5%, 94%); 
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-right-text-overlay (27%, 103%);
-      text-align: right;
-      font-size: 0.4em;
+  
+  .overview {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay (19%, 92.5%);
     }
-    @include arrow-right-text-overlay(27.5%, 102%);
-  }
-}
-
-.milestones {
-  @media #{$bp-below-mobile} {
-    @include arrow-right-overlay (36%, 99%);
-    width: 7.65px;
-    height: 7px; 
-  }
-  @include arrow-right-overlay (36%, 94%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-right-text-overlay (35.5%, 103%);
-      text-align: right;
-      font-size: 0.4em;
+    @include arrow-left-overlay (19%, 88.5%);
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (20%, 100%);
+        direction: rtl;
+        text-align: start;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(20%, 96%);
+      transform: rotate(180deg);
     }
-    @include arrow-right-text-overlay(36%, 102%);
   }
-}
-
-//LEFT SIDE LINKS 
-.title {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay (9%, 99%);
-    font-size: 0.4em;
-  }
-  @include arrow-left-overlay (9%, 94%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (10.5%, 107.5%);
-      direction: rtl;
-      font-size: 0.3em;
+  
+  .dependency  {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay(25.5%, 92.5%);
     }
-    @include arrow-left-text-overlay(10.5%, 102%);
-    transform: rotate(180deg);
-  }
-}
-
-.overview {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay (19%, 92.5%);
-  }
-  @include arrow-left-overlay (19%, 88.5%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (20%, 100%);
-      direction: rtl;
-      text-align: start;
-      font-size: 0.3em;
+    @include arrow-left-overlay (25.5%, 88.5%);
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (26.5%, 100%);
+        direction: rtl;
+        text-align: start;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(27%, 96%); 
+      transform: rotate(180deg);
     }
-    @include arrow-left-text-overlay(20%, 96%);
-    transform: rotate(180deg);
   }
-}
-
-.dependency  {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay(25.5%, 92.5%);
-  }
-  @include arrow-left-overlay (25.5%, 88.5%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (26.5%, 100%);
-      direction: rtl;
-      text-align: start;
-      font-size: 0.3em;
+  
+  
+  .action-items  {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay(31%, 92.5%);
     }
-    @include arrow-left-text-overlay(27%, 96%); 
-    transform: rotate(180deg);
-  }
-}
-
-
-.action-items  {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay(31%, 92.5%);
-  }
-  @include arrow-left-overlay (30.5%, 88.5%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (33%, 100%);
-      direction: rtl;
-      text-align: start;
-      font-size: 0.3em;
+    @include arrow-left-overlay (30.5%, 88.5%);
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (33%, 100%);
+        direction: rtl;
+        text-align: start;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(33%, 96%); 
+      transform: rotate(180deg);
     }
-    @include arrow-left-text-overlay(33%, 96%); 
-    transform: rotate(180deg);
   }
-}
-
-.resources {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay(54.5%, 92.5%);
-  }
-  @include arrow-left-overlay (54.5%, 88.5%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (56.5%, 100%);
-      direction: rtl;
-      text-align: start;
-      font-size: 0.3em;
+  
+  .resources {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay(54.5%, 92.5%);
     }
-    @include arrow-left-text-overlay(57%, 96%); 
-    transform: rotate(180deg);
-  }
-}
-
-.resume {
-  @media #{$bp-below-mobile} {
-    @include arrow-left-overlay(63%, 92.5%);
-  }
-  @include arrow-left-overlay (62.5%, 88.5%);
-
-  + h4 {
-    @media #{$bp-below-mobile}{
-      @include arrow-left-text-overlay (64.5%, 100%);
-      direction: rtl;
-      text-align: start;
-      font-size: 0.3em;
+    @include arrow-left-overlay (54.5%, 88.5%);
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (56.5%, 100%);
+        direction: rtl;
+        text-align: start;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(57%, 96%); 
+      transform: rotate(180deg);
     }
-    @include arrow-left-text-overlay(64%, 96%); 
-    transform: rotate(180deg);
   }
-}
+  
+  .resume {
+    @media #{$bp-below-mobile} {
+      @include arrow-left-overlay(63%, 92.5%);
+    }
+    @include arrow-left-overlay (62.5%, 88.5%);
+  
+    + h4 {
+      @media #{$bp-below-mobile}{
+        @include arrow-left-text-overlay (64.5%, 100%);
+        direction: rtl;
+        text-align: start;
+        font-size: 0.3em;
+      }
+      @include arrow-left-text-overlay(64%, 96%); 
+      transform: rotate(180deg);
+    }
+  }
+  }
+  
