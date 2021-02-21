@@ -62,6 +62,7 @@ for (let i=0; i < navLinks.length; i++){
     });
 }
 
+
   /***************************************************/
  /**** Script 3: Highlight links when scrolling *****/
 /***************************************************/
@@ -86,39 +87,58 @@ for (var i=0; i < qlArray.length; i++){
 document.addEventListener("scroll", scrollHandler, true);
 
 function scrollHandler() {
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-    // Initialize
-    let currentScrollPosition = document.documentElement.scrollTop;	
-    let currentActive;
+    currentActive = document.getElementsByClassName('is-active')[0];
+    for (let i = 0; i < qlArray.length - 1; i++) {
+        const top = document.getElementById(qlArray[i]).getBoundingClientRect().top
+        const bottom = document.getElementById(qlArray[i+1]).getBoundingClientRect().top
+        if (top > 0 && top < vh * 0.8 || bottom >= vh * 0.8) {
+            if (currentActive != undefined){
+                currentActive.classList.remove('is-active');
+            }        
+            quickLinks[i].classList.add('is-active');
+            return;
+        }
+    }
+    if (currentActive != undefined){
+        currentActive.classList.remove('is-active');
+    }  
+    quickLinks[qlArray.length - 1].classList.add('is-active');
+
+
+    // // Initialize
+    // let currentScrollPosition = document.documentElement.scrollTop;	
+    // let currentActive;
     
-    for (let i=1; i <= positionArray.length; i++) {
+    // for (let i=1; i <= positionArray.length; i++) {
 
-        // Set value
-        currentScrollPosition = document.documentElement.scrollTop;	
+    //     // Set value
+    //     currentScrollPosition = document.documentElement.scrollTop;	
 
-        if (currentScrollPosition >= positionArray[i-1] && currentScrollPosition < positionArray[i]) {
-            currentActive = document.getElementsByClassName('is-active')[0];
+    //     if (currentScrollPosition >= positionArray[i-1] && currentScrollPosition < positionArray[i]) {
+    //         currentActive = document.getElementsByClassName('is-active')[0];
 
-            if (currentActive != undefined){
-                currentActive.classList.remove('is-active');
-            }
+    //         if (currentActive != undefined){
+    //             currentActive.classList.remove('is-active');
+    //         }
             
-            quickLinks[i-1].classList.add('is-active');
-            break;
-        }
+    //         quickLinks[i-1].classList.add('is-active');
+    //         break;
+    //     }
 
-        if (currentScrollPosition > positionArray[positionArray.length-1]){
-            currentActive = document.getElementsByClassName('is-active');
-            currentActive = document.getElementsByClassName('is-active')[0];
+    //     if (currentScrollPosition > positionArray[positionArray.length-1]){
+    //         currentActive = document.getElementsByClassName('is-active');
+    //         currentActive = document.getElementsByClassName('is-active')[0];
 
-            if (currentActive != undefined){
-                currentActive.classList.remove('is-active');
-            }
+    //         if (currentActive != undefined){
+    //             currentActive.classList.remove('is-active');
+    //         }
             
-            quickLinks[quickLinks.length-1].classList.add('is-active');
-            break;
-        }
-    } // End for
+    //         quickLinks[quickLinks.length-1].classList.add('is-active');
+    //         break;
+    //     }
+    // } // End for
 };
 
   /***********************************************************/
