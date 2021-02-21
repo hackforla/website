@@ -11,9 +11,9 @@
   
     + h4 {
       @media #{$bp-below-mobile}{
-        @include arrow-right-text-overlay (15.5%, 103%); 
+        @include arrow-right-text-overlay (16%, 102%); 
         text-align: right;
-        font-size: 0.1em;
+        font-size: 0.3em;
       }
       @include arrow-right-text-overlay(16%, 102%); 
     }
@@ -29,9 +29,9 @@
     
     + h4 {
       @media #{$bp-below-mobile}{
-        @include arrow-right-text-overlay (21%, 103%); 
+        @include arrow-right-text-overlay (21%, 102%); 
         text-align: right;
-        font-size: 0.1em;
+        font-size: 0.3em;
       }
       @include arrow-right-text-overlay(21%, 102%); 
     }
@@ -47,9 +47,9 @@
   
     + h4 {
       @media #{$bp-below-mobile}{
-        @include arrow-right-text-overlay (27%, 103%);
+        @include arrow-right-text-overlay (27.5%, 102%);
         text-align: right;
-        font-size: 0.1em;
+        font-size: 0.3em;
       }
       @include arrow-right-text-overlay(27.5%, 102%);
     }
@@ -65,9 +65,9 @@
   
      + h4 {
       @media #{$bp-below-mobile}{
-        @include arrow-right-text-overlay (35.5%, 103%);
+        @include arrow-right-text-overlay (36%, 102%);
         text-align: right;
-        font-size: 0.1em;
+        font-size: 0.25em;
       }
       @include arrow-right-text-overlay(36%, 102%);
     }
@@ -77,15 +77,15 @@
   .title {
     @media #{$bp-below-mobile} {
       @include arrow-left-overlay (9%, 99%);
-      font-size: 0.4em;
     }
     @include arrow-left-overlay (9%, 94%);
   
      + h4 {
       @media #{$bp-below-mobile}{
-        @include arrow-left-text-overlay (10.5%, 107.5%);
+        @include arrow-left-text-overlay (10.5%, 106%);
         direction: rtl;
-        font-size: 0.3em;
+        text-align: start;
+        font-size: 0.35em;
       }
       @include arrow-left-text-overlay(10%, 102%);
       transform: rotate(180deg);
