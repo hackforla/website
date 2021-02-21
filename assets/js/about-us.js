@@ -77,6 +77,7 @@ for (var i=0; i < qlArray.length; i++){
 
 document.addEventListener("scroll", scrollHandler, true);
 
+// alignment of page card with its corresponding link on the sticky navigation 
 function scrollHandler() {
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
@@ -97,39 +98,6 @@ function scrollHandler() {
     }  
     quickLinks[qlArray.length - 1].classList.add('is-active');
 
-
-    // // Initialize
-    // let currentScrollPosition = document.documentElement.scrollTop;	
-    // let currentActive;
-    
-    // for (let i=1; i <= positionArray.length; i++) {
-
-    //     // Set value
-    //     currentScrollPosition = document.documentElement.scrollTop;	
-
-    //     if (currentScrollPosition >= positionArray[i-1] && currentScrollPosition < positionArray[i]) {
-    //         currentActive = document.getElementsByClassName('is-active')[0];
-
-    //         if (currentActive != undefined){
-    //             currentActive.classList.remove('is-active');
-    //         }
-            
-    //         quickLinks[i-1].classList.add('is-active');
-    //         break;
-    //     }
-
-    //     if (currentScrollPosition > positionArray[positionArray.length-1]){
-    //         currentActive = document.getElementsByClassName('is-active');
-    //         currentActive = document.getElementsByClassName('is-active')[0];
-
-    //         if (currentActive != undefined){
-    //             currentActive.classList.remove('is-active');
-    //         }
-            
-    //         quickLinks[quickLinks.length-1].classList.add('is-active');
-    //         break;
-    //     }
-    // } // End for
 };
 
   /***********************************************************/
@@ -174,7 +142,7 @@ function expandAccordion (accordionElements) {
     }
 } // end function
 
-// This closees all sections when it goes from desktop to mobile
+// This closes all sections when it goes from desktop to mobile
 // if the element was active (open) it leaves it open
 function closeAccordion (accordionElements) {
 
@@ -244,7 +212,6 @@ if (windowWidth < 960) {
 
 // Add or remove event listeners on resize or orientation change
 window.addEventListener('resize',resizeHandler);
-
 
 
   /*********************************************************************************/
