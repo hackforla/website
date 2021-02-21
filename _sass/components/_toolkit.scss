@@ -7,6 +7,10 @@
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
+        
+        .selected-category {
+            color: blue !important;
+        }
     }
 
     &__banner-item {
