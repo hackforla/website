@@ -245,6 +245,8 @@
 			height: auto;
 		}
 	}
+
+
 }
 
 //mobile see more
@@ -267,3 +269,26 @@
 .wins-card-content > * {
 	flex: 0 0 auto;
 }
+
+
+
+//wins page filter override section begin
+.wins-page-contain > ul.filter-list{
+	grid-template-columns: repeat(2, 1fr);
+	min-width: 216px;
+	width: 46%;
+
+	
+}
+
+.wins-page-contain > ul.filter-list li ul {
+	width: 100%;
+}
+
+@media #{$bp-below-tablet}{
+	.wins-page-contain > ul.wins-filter{
+		width: 100%;
+		grid-template-rows: none;
+	}
+}
+//wins page filter override section end

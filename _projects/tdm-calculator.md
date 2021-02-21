@@ -1,20 +1,20 @@
 ---
 identification: '197452459'
-title: LA TDM Calculator
-description: We’re building a TDM web calculator for LADOT. It scores proposed real estate developments in real-time and aims to discourage exceeding parking requirements to reduce the occurrence of single-occupancy trips to new developments.
+title: The LA TDM Calculator
+description: The LA TDM Calculator is a web app, created in conjunction with the L.A. Department of Transportation (LADOT) and Los Angeles City Planning, to help real estate developers design better projects for Los Angeles. The Calculator is being implemented alongside a new ordinance reducing over-parking and improving the infrastructure to incentivize public transportation and discourage single occupancy vehicle trips.
 image: /assets/images/projects/tdm-calculator.jpg
 alt: 'LA TDM Calculator Landing Page (Mock Up)'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
 alt-hero: 'Los Angeles skyline at dusk, complete with cranes on top of buildings and golden smog.'
 leadership:
   - name: Bonnie Wolfe
-    role: Product Owner
+    role: Agile Coach / Primary Stakeholder Relationship Manager
     links:
       slack: 'https://hackforla.slack.com/team/DE1HK083W'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Kevin Howley
-    role: Project Manager
+    role: Product Manager / Stakeholder Project Rep
     links:
       slack: 'https://hackforla.slack.com/team/UL53VUVPZ'
       github: 'https://github.com/kphowley'
@@ -25,30 +25,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UFLDX9V19'
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
-  - name: Nicole Doan
-    role: UI/UX Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
-      github: 'https://github.com/nekobox'
-    picture: https://avatars.githubusercontent.com/nekobox
-  - name: Mindy Morgan
-    role: Frontend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UPGMZK1KR'
-      github: 'https://github.com/mmorgs'
-    picture: https://avatars.githubusercontent.com/mmorgs
-  - name: Fang Liu
-    role: Backend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UCE01B4AX'
-      github: 'https://github.com/fyliu'
-    picture: https://avatars.githubusercontent.com/fyliu
   - name: Claire Nguyen
     role: Sr. Fullstack Developer
     links:
       slack: 'https://hackforla.slack.com/team/UHJKN8UJD'
       github: 'https://github.com/nclairesays'
     picture: https://avatars.githubusercontent.com/nclairesays
+  - name: Kevin Shih
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U01K4Q3EU6R'
+      github: 'https://github.com/kevinshih613'
+    picture: https://avatars.githubusercontent.com/kevinshih613
+  - name: Vivek Jha
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U019HFZ9WM6'
+      github: 'https://github.com/VJ1285'
+    picture: https://avatars.githubusercontent.com/VJ1285
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
@@ -58,7 +52,11 @@ links:
     url: 'https://hackforla.slack.com/archives/CKY65G266'
 looking:
   - category: UI/UX
-    skill: UI Designer
+    skill:  UI/UX Designers and Researchers
+  - category: Development
+    skill: Front End Developers 
+  - category: Development
+    skill: Experienced Back End Developers
 technologies:
   - ReactJS
   - Express
@@ -67,11 +65,12 @@ technologies:
   - Docker
   - Azure App Service
   - SCSS
+  - Figma
 location:
   - Downtown LA
   - Remote
-partner: LA Department of Transportation LADOT (https://ladot.lacity.org/)
+partner: LA Department of Transportation and Los Angeles City Planning (https://ladot.lacity.org/)
+vertical: 'Environment'
 visible: true
-vertical: 'Under Development'
 status: Active
 ---

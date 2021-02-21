@@ -3,8 +3,9 @@
 /**************************************/
 
 //Initialize and set defaults
-let stickyNav = document.getElementById("sticky-nav");
-let stickyNavTop = stickyNav.offsetTop - 72;
+
+let stickyNav = document.querySelector("#sticky-nav");
+let stickyNavTop = 343;
 
 // When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() { 
@@ -19,7 +20,6 @@ function stickItHere() {
 
 // Listen to the scrolling to find when it reaches the sticky spot
 window.addEventListener('scroll', stickItHere);
-
 
   /*************************************************/
  /**** Script 2: Highlight Links when clicked *****/
@@ -116,39 +116,116 @@ function scrollHandler() {
  /* ************** Script 4: Mobile accordian ************* */
 /***********************************************************/
 
-// classToAdd is the name of the class that gets added to the list
-// accordionElements are the elements that we're working on
-function createAccordionEventListener (classToAdd, accordionElements) {
-
+// This function creates the event listeners
+function createAccordionEventListener (accordionElements) {
     for (let el of accordionElements) {
-
-        el.addEventListener("click", function () {
-
-            // Toggles adding and removing the class from the class list
-            this.classList.toggle(classToAdd);
-
-            // Which panel to open/close
-            let accordionContainer = this.nextElementSibling;
-
-
-            // Open and close panel
-            if (accordionContainer.style.display === "block") {
-                accordionContainer.style.display = "none"
-            } else {
-                accordionContainer.style.display = "block"
-            }
-        })
+        el.addEventListener("click", toggleAccordion, false)
     }
 } // end function
 
-// Add event listeners
-if (windowWidth < 960) { 
-    // Get the list of elements for the accordion
-    let accordionList = document.querySelectorAll(".about-us-section-header");
+// This removes the event listeners.  
+// This is used when the display was loaded in mobile view and then switched to full display.  
+function removeAccordionEventListener (accordionElements) {
+    for (let el of accordionElements) {
+        el.removeEventListener("click", toggleAccordion, false);
+    }
+} // end function
 
-    // Create event listeners
-    createAccordionEventListener ("au_active", accordionList);
+// This opens and closes the sections to make it accordion-like
+function toggleAccordion () {
+    // Toggles adding and removing the class from the class list
+    this.classList.toggle('au_active');
+
+    // Which panel to open/close
+    let accordionContainer = this.nextElementSibling;
+
+    // Open and close panel
+    if (accordionContainer.style.display === "block") {
+        accordionContainer.style.display = "none"
+    } else {
+        accordionContainer.style.display = "block"
+    }
+} // end function
+
+// This expands all sections when it goes from mobile to desktop
+function expandAccordion (accordionElements) {
+    for (let el of accordionElements) {
+        el.nextElementSibling.style.display = "block";
+    }
+} // end function
+
+// This closees all sections when it goes from desktop to mobile
+// if the element was active (open) it leaves it open
+function closeAccordion (accordionElements) {
+
+    for (let el of accordionElements) {
+        if (el.classList.contains("au_active")) {
+            // Do nothing
+        } else {
+            el.nextElementSibling.style.display = "none";
+        }
+    }
+
+} // end function
+
+// This adjusts the letter when it goes back to mobile
+// It should leave it open if it was open, and closed if it was closed
+function letterBackToMobile (readMoreElement, readLessElement) {
+    if (readLessElement.classList.contains("more-less")) {
+        readMoreElement.nextElementSibling.style.display = "none";
+    } else {
+        readMoreElement.nextElementSibling.style.display = "block";
+    }
+} // end function
+
+// accordionFlag tracks the state of the window | mobile = 0; desktop = 1
+let accordionFlag;
+
+//Initialize
+if (windowWidth < 960) {
+    accordionFlag = 0;
+} else {
+    accordionFlag = 1;
 }
+
+// This function checks for when the window crosses the threshold between mobile and desktop
+// When it does, it either adds or removes the event handlers and resets the flag
+function resizeHandler() {
+    
+    if (accordionFlag === 0 && window.innerWidth >= 960) {
+        removeAccordionEventListener(accordionList);
+        expandAccordion(accordionExpandList);
+        accordionFlag = 1;
+    }
+
+    if (accordionFlag === 1 && window.innerWidth < 960) {
+            createAccordionEventListener(accordionList);
+            closeAccordion(accordionList);
+            letterBackToMobile (readMoreToMobile, readLessToMobile);
+            accordionFlag = 0;
+    } 
+} // end function 
+ 
+// Get the list of elements for the accordion
+let accordionList = document.querySelectorAll(".about-us-section-header");
+
+// Get the elements to expand when going from mobile to desktop
+let accordionExpandList = document.querySelectorAll(".about-us-section-header, .read-more");
+
+// This is to close the letter to the editor on going to mobile
+let readMoreToMobile = document.querySelector(".read-more");
+let readLessToMobile = document.querySelector(".read-less");
+
+// Create event listeners on page load if in mobile
+if (windowWidth < 960) {
+    // Create event listeners
+    createAccordionEventListener (accordionList);
+}
+
+// Add or remove event listeners on resize or orientation change
+window.addEventListener('resize',resizeHandler);
+
+
 
   /*********************************************************************************/
  /* ************** Script 5: Mobile accordian - Read more/Read less ************* */
@@ -175,8 +252,6 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
                 accordionContainer = this.nextElementSibling;
             }
 
-            console.log('accordionContainer -> ' + this.className);
-
             // Open and close panel
             if (accordionContainer.style.display === "block") {
                 accordionContainer.style.display = "none"
@@ -189,14 +264,12 @@ function createReadMoreReadLessEventListener (classToAdd, accordionElements) {
 } // end function
 
 // Add event listeners
-if (windowWidth < 960) { 
-    // Get the list of elements for the accordion
+
+// Get the list of elements for the accordion
     let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
 
     // Create event listeners
     createReadMoreReadLessEventListener ("more-less", letterFromExecDir);
-}
-
 
   /*******************************************************/
  /***** Script 6: Add a break tag to certain headers ****/
