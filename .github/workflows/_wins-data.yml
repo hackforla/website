@@ -1,0 +1,42 @@
+name: Update wins data
+
+# Run this action every day at 4:30am Pacific (12:30 am UTC)
+on:
+  schedule:
+    - cron: '30 12 * * *'
+
+jobs:
+  wins-data-grabber:
+    runs-on: ubuntu-latest
+    
+    if: github.repository == 'akibrhast/github-actions-test'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    
+    - name: Install script requirements
+      run: pip install -r utils/wins-cleaner-requirements.txt
+    
+    - name: Save wins-data.json
+      env:
+          WINS_API_KEY: ${{ secrets.WINS_API_KEY }}
+      run: python utils/wins-cleaner.py
+    
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      with:
+        # Optional glob pattern of files which should be added to the commit
+        file_pattern: _data/_wins-data.json
+
+        commit_message: Update wins data
+
+        # Optional commit user and author settings
+        commit_author: GitHub Actions Bot <akibrhast>
+
