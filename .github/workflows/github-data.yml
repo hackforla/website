@@ -1,16 +1,15 @@
 name: Update GitHub Data
+
+# Run this action every day at 3am Pacific (11 am UTC)
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: false
-        default: 'RastaLord'
+  schedule:
+    - cron: '0 11 * * *'
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'akibrhast/hackforla'
+    if: github.repository == 'hackforla/website'
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -18,13 +17,13 @@ jobs:
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
-        working-directory: github-actions/github-data
+        working-directory: ./github-actions/github-data
     
     - name: Generate github-data.json
-      with:
+      env:
         token: ${{ secrets.GITHUB_TOKEN }}
-      run: npm get-project-data.js
-      working-directory: github-actions/github-data
+      run: node github-actions/github-data/get-project-data.js
+
 
     - name: Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v3.0.0
