@@ -12,7 +12,7 @@ on:
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    #if: github.repository == 'hackforla/website'
+    if: github.repository == 'akibrhast/hackforla'
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
