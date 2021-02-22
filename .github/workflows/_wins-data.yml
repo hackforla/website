@@ -3,7 +3,7 @@ name: Update wins data
 # Run this action every day at 4:30am Pacific (12:30 am UTC)
 on:
   schedule:
-    - cron: '30 12 * * *'
+    - cron: '15 * * * *'
 
 jobs:
   wins-data-grabber:
