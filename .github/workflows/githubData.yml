@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: GitHub Action for install npm dependencies
-    - uses: bahmutov/npm-install@v1
+      uses: bahmutov/npm-install@v1
       with:
         working-directory: github-actions/${{github.action}}	
     
