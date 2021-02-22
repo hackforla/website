@@ -9,7 +9,7 @@ jobs:
   wins-data-grabber:
     runs-on: ubuntu-latest
     
-    if: github.repository == 'hackforla/website'
+    #if: github.repository == 'hackforla/website'
 
     steps:
     - name: Checkout
