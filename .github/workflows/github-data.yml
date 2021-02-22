@@ -1,6 +1,4 @@
 name: Update GitHub Data
-
-# Run this action every day at 3am Pacific (11 am UTC)
 on:
   workflow_dispatch:
     inputs:
@@ -20,14 +18,13 @@ jobs:
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
-        working-directory: github-actions/${{github.action}}	
+        working-directory: github-actions/github-data
     
     - name: Generate github-data.json
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-      using: 'node12'
       run: npm get-project-data.js
-      
+      working-directory: github-actions/github-data
 
     - name: Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v3.0.0
