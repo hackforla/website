@@ -38,5 +38,5 @@ jobs:
         commit_message: Update wins data
 
         # Optional commit user and author settings
-        commit_author: GitHub Actions Bot <akibrhast>
+        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>
 
