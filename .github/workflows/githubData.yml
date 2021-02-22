@@ -4,22 +4,35 @@ name: Update GitHub data
 on:
   schedule:
     - cron: '0 11 * * *'
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: false
+        default: 'RastaLord'
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    #if: github.repository == 'hackforla/website'
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: GitHub Action for install npm dependencies
     - uses: bahmutov/npm-install@v1
       with:
-        working-directory: github-actions
+        working-directory: github-actions/${{github.action}}	
+    
     - name: Generate github-data.json
-      id: json
-      uses: ./github-actions
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      using: 'node12'
+      run: npm get-project-data.js
+      
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
       with:
         # Optional glob pattern of files which should be added to the commit
         file_pattern: _data/github-data.json
