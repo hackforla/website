@@ -1,4 +1,4 @@
-name: Update wins data
+name: Update _wins data
 
 # Run this action every day at 4:30am Pacific (12:30 am UTC)
 on:
