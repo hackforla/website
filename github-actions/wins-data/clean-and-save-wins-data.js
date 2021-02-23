@@ -36,14 +36,17 @@ async function sendGetRequest(url) {
 function create_container_object(keys, persons, unwanted_keys) {
   try {
     const container = [];
-    //get rid of item if display is not set
-    persons.map(function (person, index) {
-      if (person.length < 14) {
-        persons.splice(index);
-      }
-    });
+    const persons_container = [];
 
-    persons.map((person) => {
+    //get rid of item if display is not set
+    persons.forEach(function(person){
+        let display_column_number = 14
+        if (person.length > display_column_number -1) {
+            persons_container.push(person)
+        }
+    })
+
+    persons_container.map((person) => {
       //If the last element in the person array is not false
       if (person[person.length - 1] != "FALSE") {
         const person_obj = {};
