@@ -1,6 +1,6 @@
 name: Update wins data
 
-# Run this action every day at 4am Pacific (12 am UTC)
+# Run this action every day at 4am Pacific (12 am UTC) test
 on:
   schedule:
     - cron: '0 12 * * *'
