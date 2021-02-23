@@ -180,5 +180,19 @@
     "join_date": "1613433600000",
     "win": "I increased the number of commits on my github profile,I learned a new language",
     "overview": "I did tests"
+  },
+  {
+    "time": "1608699600",
+    "name": "test4Name",
+    "linkedin_url": "https://www.linkedin.com/in/test4/",
+    "linkedin_permission": "yes",
+    "github_url": "https://www.github.com/test4/",
+    "github_permission": "no",
+    "team": "HackforLA Website",
+    "role": "Development",
+    "specific_role": "Frontend Web Development",
+    "join_date": "1576904400",
+    "win": "I produced something for my portfolio, I increased the number of commits on my Github profile",
+    "overview": "I built my first page for hack for la! and it is this one!!! ...the wins page"
   }
 ]
