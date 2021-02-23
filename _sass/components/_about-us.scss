@@ -303,6 +303,10 @@ a.anchor {
 .flex-container-row--partners {
   justify-content: space-evenly;
   margin-top: 25px;
+  
+  & .partner-logo{
+    width: 120px;
+  }
 }
 
 .border-dodgerblue {
