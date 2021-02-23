@@ -50,7 +50,7 @@ excel_data_array.then(data_array =>{
 function writeData(container){
 
     try{
-        fs.writeFileSync('./../../_data/github-data.json', JSON.stringify(container, null, 2));
+        fs.writeFileSync('_data/github-data.json', JSON.stringify(container, null, 2));
     }catch(e){
         console.log(e)
     }
