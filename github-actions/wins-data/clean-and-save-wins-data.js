@@ -38,7 +38,7 @@ function create_container_object(keys, persons, unwanted_keys) {
     const container = [];
     const persons_container = [];
 
-    //get rid of item if display is not set
+    //get rid of item if display column does not exist
     persons.forEach(function(person){
         let display_column_number = 14
         if (person.length > display_column_number -1) {
