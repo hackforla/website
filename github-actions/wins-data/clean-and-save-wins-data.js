@@ -41,6 +41,13 @@ async function sendGetRequest(url){
 function create_container_object(keys,persons,unwanted_keys){
     const container = [];
 
+    //get rid of item if display is not set
+    persons.map(function(person,index){
+        if(person.length < 14){
+            persons.splice(index)
+        }
+    })
+
     persons.map(person=>{
         //If the last element in the person array is not false
         if(person[person.length -1] != 'FALSE'){
