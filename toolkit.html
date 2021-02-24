@@ -16,7 +16,6 @@ Here you can find, share, and suggest tools that are of use to the open source c
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
       <a href="#{{category}}" id="{{category}}" class="toolkit-header__banner-item">{{ category }}</a>
-      <!-- if statement that filters the results based on which button is clicked -->
     {% endfor %}
 </div>
 
@@ -25,7 +24,7 @@ Here you can find, share, and suggest tools that are of use to the open source c
         <div class="suggest-guide-group"><h2>Guides (We Made These!)</h2><button class="btn btn-primary btn-md-narrow">Suggest a guide</button></div>
 
     <div class="toolkit-flex-container">
-        <!-- Searching through toolkitPages collection -->
+        <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
                 {%- if item.display == true -%}
