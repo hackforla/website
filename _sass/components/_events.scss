@@ -496,3 +496,16 @@
       color: $color-white;
     }
 
+
+    
+.events-page{
+  background: #030c2c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto"sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
