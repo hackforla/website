@@ -87,7 +87,7 @@
   text-align: center;
   max-width: 150px;
 }
-.getting-started-page-card-hack-nights {
+.column-card-lg--events {
   background: #fff;
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
@@ -286,10 +286,9 @@
 }
 
 .title-meetup {
-  font-size: 25px;
+  font-size: 1.25rem;
   text-align: center;
-  margin: 30px;
-  font-weight: normal;
+  font-weight: 700;
 
   @media #{$bp-below-mobile} {
     margin: 0;
