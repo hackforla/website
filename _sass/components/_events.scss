@@ -185,11 +185,11 @@
 
 .notification-banner p {
   text-align: center;
-  margin: auto 18%;
+  margin: auto 29%;
   padding: 20px;
-  font-size: 25px;
+  font-size: 1rem;
   line-height: 29px;
-  font-weight: normal;
+  font-weight: 700;
 
   @media #{$bp-below-mobile} {
     text-align: justify;
@@ -432,6 +432,8 @@
   list-style: none;
   font-size: 16px;
   line-height: 19px;
+
+
   @media #{$bp-below-tablet} {
     font-size: 13px;
     line-height: 15px;

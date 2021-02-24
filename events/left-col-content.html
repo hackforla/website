@@ -1,54 +1,24 @@
 <h2 class="event-title">
-    <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="image of an m" />
-    Meetup Events
-  </h2>
-  <div class="mobile-dropdown">
-    
-    <div class="meetup-steps">
-      <div id="img-content">
-        <img class="step-img-1" src="../assets/images/getting-started/step1.png" />
-      </div>
-      <div id="text-content">
-        <h2 class="title-meetup">Onboarding</h2>
-        <p>
-          If you are new to the community, join us for Onboarding Night! We
-          offer both Guided Onboarding and Self Onboarding options on our
-          <a target="_blank" href="getting-started">Getting Started</a>
-          page.
-        </p>
-      </div>
-    </div>
+  <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="image of an m" />
+  Meetup Events
+</h2>
+<div class="mobile-dropdown">
 
-    <div class="meetup-steps">
-      <div id="img-content">
-        <img class="step-img-1" src="../assets/images/hack-nights/building.png" />
-      </div>
-      <div id="text-content">
-        <h2 class="title-meetup">Workshops</h2>
-        <p>
-          We host workshops on a range of topics, from development best
-          practices to project management methodologies. Please check back
-          for the current workshop schedule.
-        </p>
-      </div>
+{% for event in site.data.events %}
+  <div class="meetup-steps">
+    <div id="img-content">
+      <img class="step-img-1" src="{{event.link}}" />
     </div>
-
-    <div class="meetup-steps">
-      <div id="img-content">
-        <img class="step-img-1" src="../assets/images/hack-nights/happy-hour.png" />
-      </div>
-      <div id="text-content">
-        <h2 class="title-meetup">Happy Hour</h2>
-        <p>
-          Bars and cafes are shut down, but that doesn’t mean we can’t enjoy
-          each other’s company! Grab your beverage of choice and socialize
-          with fellow hackers following some organizational announcements.
-        </p>
-      </div>
-    </div>
-
-    <div class="class-btn">
-      <a href="https://www.meetup.com/hackforla/events" target="_blank">
-        <button class="btn btn-primary btn-lg btn--events">View on Meetup</button></a>
+    <div id="text-content">
+      <h2 class="title-meetup">{{event.name}}</h2>
+      <p>{{event.text}}</p>
     </div>
   </div>
+{% endfor %}
+
+  <div class="class-btn">
+    <a href="https://www.meetup.com/hackforla/events" target="_blank">
+      <button class="btn btn-primary btn-lg btn--events">View on Meetup</button></a>
+  </div>
+
+</div>
