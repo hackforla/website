@@ -1,6 +1,6 @@
 name: Update GitHub Data
 
-# Run this action every day at 3am Pacific (11 am UTC)
+# Run this action every day at 3am Pacific (11 am UTC) | test at 8:49pm
 on:
   schedule:
     - cron:  '0 11 * * *'
