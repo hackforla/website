@@ -369,10 +369,9 @@
 }
 .event-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5rem;
   margin-top: 20px;
-  line-height: 35px;
-  font-weight: normal;
+  font-weight: 700;
 }
 
 @media #{$bp-below-tablet} {
@@ -497,7 +496,7 @@
     }
 
 
-    
+
 .events-page{
   background: #030c2c;
   min-height: 100vh;
