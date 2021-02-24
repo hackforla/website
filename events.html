@@ -119,7 +119,9 @@ title: Hack Nights
         <div class="days-display-1">
           <div id="userTimeZone" class='userTimeZone'></div>
           <div id="Monday">
-            <h3 class="day-header-1" style="font-size: 1.6rem">Monday</h3>
+            <h3 class="day-header-1 style=&quot;font-size: 1.6rem;&quot;">
+              Monday
+            </h3>
             <ul id="Monday-List" class="schedule-list-1"></ul>
           </div>
           <div id="Tuesday">
@@ -423,6 +425,18 @@ title: Hack Nights
     let daysReceived = [];
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let daysMatched = [];
+    
+    //sorting based on Hours then minutes
+    scheduleData.sort(
+    function(a, b) {
+        var newA = new Date(a.startTime);  
+        var newB = new Date(b.startTime);
+        if (newA.getHours() != newB.getHours() ) {
+            return (newA.getHours() - newB.getHours());
+        } else {
+            return newA.getMinutes() - newB.getMinutes();
+        }
+    } );
 
     // Loops through data and assigns information to variables in a readable format
     for (let i = 0; i <= scheduleData.length - 1; i++) {
