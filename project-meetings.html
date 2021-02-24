@@ -77,6 +77,18 @@ title: Project Meetings
         let daysReceived = [];
         let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         let daysMatched = [];
+        
+    //sorting based on Hours then minutes
+    scheduleData.sort(
+    function(a, b) {
+        var newA = new Date(a.startTime);  
+        var newB = new Date(b.startTime);
+        if (newA.getHours() != newB.getHours() ) {
+            return (newA.getHours() - newB.getHours());
+        } else {
+            return newA.getMinutes() - newB.getMinutes();
+        }
+    } );
 
         // Loops through data and assigns information to variables in a readable format
         for (let i = 0; i <= scheduleData.length - 1; i++) {
