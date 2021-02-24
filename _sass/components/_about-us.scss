@@ -288,16 +288,25 @@ a.anchor {
 }
 
 .flex-container-row {
+  @media only screen and (max-width: 350px) {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    }
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .flex-container-row--partners {
   justify-content: space-evenly;
   margin-top: 25px;
+  
+  & .partner-logo{
+    width: 120px;
+  }
 }
 
 .border-dodgerblue {
@@ -521,8 +530,12 @@ a.anchor {
 }
 
 .metrics-image-size {
+  @media only screen and (max-width: 445px) {
   height: 35%;
   width: 35%;
+  }
+  height: 110px;
+  width: 120px;
 }
 
 .metrics-title {
