@@ -3,80 +3,81 @@
  */
 
 // This is the original reset included when we used bourbon.sass
-@import 'normalize.scss';
+@import "normalize.scss";
 
 /**
  * General Settings and Utilities
  */
-@import 'core/mixins';
-@import 'variables/colors';
-@import 'variables/layout';
-@import 'variables/typography';
-@import 'variables/utilities';
+@import "core/mixins";
+@import "variables/colors";
+@import "variables/layout";
+@import "variables/typography";
+@import "variables/utilities";
 
 // /**
 //  * Base global styles.
 //  */
-@import 'elements/base';
+@import "elements/base";
 
 // /**
 //  * Elements
 //  */
-@import 'elements/buttons';
-@import 'elements/forms';
-@import 'elements/icons';
-@import 'elements/lists';
-@import 'elements/loader';
-@import 'elements/typography';
-@import 'elements/containers';
-@import 'elements/cards';
-@import 'elements/color-styles';
+@import "elements/buttons";
+@import "elements/forms";
+@import "elements/icons";
+@import "elements/lists";
+@import "elements/loader";
+@import "elements/typography";
+@import "elements/containers";
+@import "elements/cards";
+@import "elements/color-styles";
 
 // /**
 //  * Components
 //  */
-@import 'components/about-us';
-@import 'components/about';
-@import 'components/calendar';
-@import 'components/contact-us';
-@import 'components/footer';
-@import 'components/events.scss';
-@import 'components/header';
-@import 'components/header-nav';
-@import 'components/hero';
-@import 'components/impact-stats';
-@import 'components/press';
-@import 'components/projects';
-@import 'components/project-filter';
-@import 'components/social-links';
-@import 'components/home-getting-started';
-@import 'components/getting-started-page.scss';
-@import 'components/credit-items.scss';
-@import 'components/project-meetings.scss';
-@import 'components/guide-pages.scss';
-@import 'components/dashboard';
-@import 'components/guide-pages/2FA.scss';
-@import 'components/toolkit.scss';
-@import 'components/wins-page.scss';
-@import 'components/join-us.scss';
+@import "components/about-us";
+@import "components/about";
+@import "components/calendar";
+@import "components/contact-us";
+@import "components/footer";
+@import "components/events.scss";
+@import "components/header";
+@import "components/header-nav";
+@import "components/hero";
+@import "components/impact-stats";
+@import "components/press";
+@import "components/projects";
+@import "components/project-filter";
+@import "components/social-links";
+@import "components/home-getting-started";
+@import "components/getting-started-page.scss";
+@import "components/credit-items.scss";
+@import "components/project-meetings.scss";
+@import "components/guide-pages.scss";
+@import "components/dashboard";
+@import "components/guide-pages/2FA.scss";
+@import "components/toolkit.scss";
+@import "components/wins-page.scss";
+@import "components/join-us.scss";
+@import "components/sitemap.scss";
 
 //Guide Pages (Within Components)
-@import 'components/guide-pages/github-issue-guide.scss';
-@import 'components/guide-pages/survey-reporting-dashboard.scss';
+@import "components/guide-pages/github-issue-guide.scss";
+@import "components/guide-pages/survey-reporting-dashboard.scss";
 
 // /**
 //  * Layouts
 //  */
-@import 'layouts/main';
-@import 'layouts/redirect';
+@import "layouts/main";
+@import "layouts/redirect";
 
 // /**
 //  * Utility
 //  */
-@import 'core/utility';
-@import 'core/print';
+@import "core/utility";
+@import "core/print";
 
 // /**
 //  * Prototype Project Page
 //  */
-@import 'components/project-page';
+@import "components/project-page";

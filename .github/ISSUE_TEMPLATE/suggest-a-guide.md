@@ -15,3 +15,6 @@ assignees: ''
 
 ### Resources
 (Include any resources that you have found helpful or you believe would be helpful in the creation of this guide.)
+
+#### To Do items for HackforLA.org PMS
+- [ ] This guide issue will need to be added to our [Guide Tracking sheet](https://docs.google.com/spreadsheets/d/1omYkR_WeploNuOkF3Pqsg6DhIdej5SS2EBbG9FRefbA/edit?usp=sharing)
