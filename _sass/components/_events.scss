@@ -129,7 +129,7 @@
 
 .meetup-steps {
   display: flex;
-  margin: 17px 0;
+  margin: 72px 0;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -290,6 +290,7 @@
   text-align: center;
   font-weight: 700;
   text-align: left;
+  margin-bottom: 16px;
 
   @media #{$bp-below-mobile} {
     margin: 0;
@@ -321,7 +322,7 @@
 
 .class-btn {
   text-align: center;
-  // margin-top: 33%;
+  margin-top: 8px;
 
   @media #{$bp-below-mobile} {
     margin: 0;
