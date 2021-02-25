@@ -90,7 +90,7 @@
 .column-card-lg--events {
   background: #fff;
   border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
   max-width: 489px;
@@ -101,7 +101,7 @@
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-tablet} {
-    padding: 30px 15px;
+    padding: 5px 15px;
   }
 }
 
