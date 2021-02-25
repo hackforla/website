@@ -345,6 +345,8 @@
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
+
   }
 }
 
@@ -432,6 +434,8 @@
   list-style: none;
   font-size: 16px;
   line-height: 19px;
+
+
 
 
   @media #{$bp-below-tablet} {
