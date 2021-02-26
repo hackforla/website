@@ -33,7 +33,7 @@
     const API_ENDPOINT = 'https://www.vrms.io/api/recurringevents';
 
     /**
-     * This type of function is called an IIFE function. The main function is the primarily controller that for loading the recurring events on this page.
+     * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
      * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
     */
     (async function main(){
@@ -45,7 +45,58 @@
         let sortedData = sortData(filteredData);
 
         document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
+
+        document.addEventListener('DOMContentLoaded',insertTimeZoneText());
+
+
     })()
+
+    /**
+     * Retrieves data from the wins excel sheet provided a valid excel url
+     * @param  {URL} url 
+     * @return {Object} response data
+     */
+     async function sendGetRequest(url){
+        try {
+            // const resp =  await axios.get(url);
+            const resp = await fetch(url);
+            return await resp.json();
+        } catch (err) {
+            // Handle Error Here
+            console.error(err);
+        }
+    }
+
+    /**
+     * Filters out the needed data from the api endpoint
+    */
+    function filterDataFromApi(response_data){
+        const return_obj={}
+        response_data.forEach(item=>{
+            let day_of_week = getDayString(item.date)
+            if(!(day_of_week in return_obj)){
+                return_obj[day_of_week] = [];
+                return_obj[day_of_week].push(display_object(item))
+            }
+            else{
+                return_obj[day_of_week].push(display_object(item))
+            }
+        })
+
+        return return_obj;
+    }
+
+    /**
+     * Sorts Filtered Date from the api end point by their start time
+    */
+    function sortData(filteredData){
+        for(const [key,value] of Object.entries(filteredData)){
+            value.sort(function (a, b) {
+                return convertTime12to24(a.start) - convertTime12to24(b.start);
+            });
+        }
+        return filteredData;
+    }
 
     /**
      * Inserts the recurring events into the html
@@ -75,22 +126,6 @@
                 {timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,hour12:true,hour:'2-digit',minute:'numeric'}
             );
         
-    }
-
-    /**
-     * Retrieves data from the wins excel sheet provided a valid excel url
-     * @param  {URL} url 
-     * @return {Object} response data
-     */
-    async function sendGetRequest(url){
-        try {
-            // const resp =  await axios.get(url);
-            const resp = await fetch(url);
-            return await resp.json();
-        } catch (err) {
-            // Handle Error Here
-            console.error(err);
-        }
     }
 
     /**
@@ -126,37 +161,6 @@
     }
 
     /**
-     * Filters out the needed data from the api endpoint
-    */
-    function filterDataFromApi(response_data){
-        const return_obj={}
-        response_data.forEach(item=>{
-            let day_of_week = getDayString(item.date)
-            if(!(day_of_week in return_obj)){
-                return_obj[day_of_week] = [];
-                return_obj[day_of_week].push(display_object(item))
-            }
-            else{
-                return_obj[day_of_week].push(display_object(item))
-            }
-        })
-
-        return return_obj;
-    }
-
-    /**
-     * Sorts Filtered Date from the api end point by their start time
-    */
-    function sortData(filteredData){
-        for(const [key,value] of Object.entries(filteredData)){
-            value.sort(function (a, b) {
-                return convertTime12to24(a.start) - convertTime12to24(b.start);
-            });
-        }
-        return filteredData;
-    }
-    
-    /**
      * Function that represent the individual object extracted from the api
     */
     function display_object(item){
@@ -170,6 +174,12 @@
         return rv_object;
     }
 
-
+    /**
+     * Displays/Inserts the user's time zone in the DOM
+    */
+    function insertTimeZoneText(){
+        let timeZoneText  = `Times are in your local time zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
+        document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText);
+    }
 
 </script>
