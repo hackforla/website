@@ -376,7 +376,7 @@
   font-size: 1.5rem;
   margin-top: 20px;
   font-weight: 700;
-  margin-bottom: 72px;
+  margin-bottom: 15px;
 
 }
 
@@ -385,6 +385,7 @@
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .event-title::after {
     content: "\221F";
