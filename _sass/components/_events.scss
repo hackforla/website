@@ -130,7 +130,7 @@
 .meetup-steps {
   display: flex;
   align-items: center;
-  margin: 72px 0;
+  margin: 24px 0;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -140,6 +140,7 @@
 .meetup-steps-2 {
   display: flex;
   align-items: center;
+  margin: 24px 0;
   @media #{$bp-below-mobile} {
     flex-direction: column;
     text-align: center;
@@ -289,9 +290,7 @@
   text-align: left;
   margin-bottom: 16px;
 
-  @media #{$bp-below-mobile} {
-    margin: 0;
-  }
+
 }
 
 // .btn-meet {
@@ -327,7 +326,7 @@
 }
 
 .btn--events {
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .event-title-1 {
