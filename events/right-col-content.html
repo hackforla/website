@@ -28,8 +28,40 @@
         {% endfor %}
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script>
 <script>
+
+    const API_ENDPOINT = 'https://www.vrms.io/api/recurringevents';
+
+    /**
+     * This type of function is called an IIFE function. The main function is the primarily controller that for loading the recurring events on this page.
+     * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+    */
+    (async function main(){
+
+        const response_data = await sendGetRequest(API_ENDPOINT);
+
+        let filteredData = filterDataFromApi(response_data);
+
+        let sortedData = sortData(filteredData);
+
+        document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
+    })()
+
+    /**
+     * Inserts the recurring events into the html
+     * @param {Object} sortedData - An array object of the type returned by displayObject()
+    */
+    function insertEventSchedule(sortedData){
+        for(const [key,value] of Object.entries(sortedData)){
+            let placeToInsert = document.querySelector(`#${key}-List`);
+            value.forEach(event=>{
+                placeToInsert.insertAdjacentHTML('beforeend',
+                `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`
+                );
+            })
+        }
+
+    }
 
     /**
      * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
@@ -52,40 +84,92 @@
      */
     async function sendGetRequest(url){
         try {
-            const resp =  await axios.get(url);
-            return resp.data;
+            // const resp =  await axios.get(url);
+            const resp = await fetch(url);
+            return await resp.json();
         } catch (err) {
             // Handle Error Here
             console.error(err);
         }
     }
 
-    (async function main(){
+    /**
+     * @param {Date} date - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
+     * @return {String} - The name of the day represented by the time string. Example 2020-05-13 was a wednesday. I.e rv = 'Wednesday'
+    */
+    function getDayString(date){
+        let new_date = new Date(date);
+        let weekday = new_date.getDay();
+        let options = {weekday:'long'};
+        return new Intl.DateTimeFormat('en-US', options).format(new_date);
+    }
 
-        const response_data = await sendGetRequest('https://www.vrms.io/api/recurringevents');
+    /**
+     * Given a time string of 12 hour format like '06:00 pm' returns the integer of that string in 24 hour format -> 0600
+     * @param {String} time12h - A 12 hour format time string
+     * @return {Integer} An integer representing the input time string in 24 hour format
+    */
+    function convertTime12to24(time12h){
+        const [time, modifier] = time12h.split(" ");
+        
+        let [hours, minutes] = time.split(":");
+        
+        if (hours === "12") {
+            hours = "00";
+        }
+        
+        if (modifier === "PM" || 'pm') {
+            hours = parseInt(hours, 10) + 12;
+        }
+        return parseInt(`${hours}${minutes}`);
 
-        let obj = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]}
-        let obj1={}
+    }
+
+    /**
+     * Filters out the needed data from the api endpoint
+    */
+    function filterDataFromApi(response_data){
+        const return_obj={}
         response_data.forEach(item=>{
-            let mydate = new Date(item.date)
-            let weekday = mydate.getDay();
-            let options = {weekday:'long'};
-            let day_of_week = new Intl.DateTimeFormat('en-US', options).format(mydate);
-
-
-        //let day_key = (new Date(item.date)).getDay();
-            if(!(day_of_week in obj1)){
-                obj1[day_of_week] = [];
-                obj1[day_of_week].push({"name":item.project.name,"dsc":item.description,"start":localeTimeIn12Format(item.startTime),"end":localeTimeIn12Format(item.endTime)})
+            let day_of_week = getDayString(item.date)
+            if(!(day_of_week in return_obj)){
+                return_obj[day_of_week] = [];
+                return_obj[day_of_week].push(display_object(item))
             }
             else{
-                obj1[day_of_week].push({"name":item.project.name,"dsc":item.description,"start":localeTimeIn12Format(item.startTime),"end":localeTimeIn12Format(item.endTime)})
+                return_obj[day_of_week].push(display_object(item))
             }
-
-        
         })
-        console.log(obj1)
-    })()
+
+        return return_obj;
+    }
+
+    /**
+     * Sorts Filtered Date from the api end point by their start time
+    */
+    function sortData(filteredData){
+        for(const [key,value] of Object.entries(filteredData)){
+            value.sort(function (a, b) {
+                return convertTime12to24(a.start) - convertTime12to24(b.start);
+            });
+        }
+        return filteredData;
+    }
+    
+    /**
+     * Function that represent the individual object extracted from the api
+    */
+    function display_object(item){
+        rv_object = {
+            "name":item.project.name,
+            "dsc": item.description,
+            "start":localeTimeIn12Format(item.startTime),
+            "end": localeTimeIn12Format(item.endTime),
+            "hflaWebsiteUrl": item.project.hflaWebsiteUrl
+        }
+        return rv_object;
+    }
+
 
 
 </script>
