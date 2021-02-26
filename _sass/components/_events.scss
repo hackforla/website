@@ -129,6 +129,7 @@
 
 .meetup-steps {
   display: flex;
+  align-items: center;
   margin: 72px 0;
 
   @media #{$bp-below-mobile} {
@@ -138,6 +139,7 @@
 }
 .meetup-steps-2 {
   display: flex;
+  align-items: center;
   @media #{$bp-below-mobile} {
     flex-direction: column;
     text-align: center;
