@@ -56,7 +56,7 @@
             let placeToInsert = document.querySelector(`#${key}-List`);
             value.forEach(event=>{
                 placeToInsert.insertAdjacentHTML('beforeend',
-                `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`
+                `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`
                 );
             })
         }
@@ -72,7 +72,7 @@
         return new Date(time)
             .toLocaleTimeString(
                 {},
-                {timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,hour12:true,hour:'numeric',minute:'numeric'}
+                {timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,hour12:true,hour:'2-digit',minute:'numeric'}
             );
         
     }
