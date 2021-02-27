@@ -373,10 +373,10 @@ title: Hack Nights
 
   showLocations.addEventListener("click", function () {
     this.classList.toggle("active");
-    if (showingLocations.style.display == "none") {
-      showingLocations.style.display = "block";
-    } else {
+    if (showingLocations.style.display == "block") {
       showingLocations.style.display = "none";
+    } else {
+      showingLocations.style.display = "block";
     }
   });
 
