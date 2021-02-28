@@ -50,6 +50,8 @@ links:
     url: 'https://github.com/hackforla/tdm-calculator/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CKY65G266'
+  - name: Overview
+    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/TDM-Calculator-Product-One-Sheet.pdf
 looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers
@@ -69,7 +71,7 @@ technologies:
 location:
   - Downtown LA
   - Remote
-partner: LA Department of Transportation and Los Angeles City Planning (https://ladot.lacity.org/)
+partner: LA Department of Transportation and Los Angeles City Planning
 vertical: 'Environment'
 visible: true
 status: Active
