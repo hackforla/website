@@ -236,8 +236,15 @@ git add “filename.ext”
 -Use the `git status` command to see what files are staged. 
 
 This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you find you have included unrelated changes, please unstage them before making this commit - and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
+
 ```bash
 git status
+```
+-Use the `git reset HEAD` command to remove a staged file. 
+
+This command will remove a file that has been staged.  This file will not be committed (saved) when you run the next command, `git commit`. This only works if the wrong files were added, but they were not yet committed. The file will be removed from the staging area, but not actually deleted:
+```bash
+git reset HEAD “filename.ext” 
 ```
 
 -Use the `git commit` command
