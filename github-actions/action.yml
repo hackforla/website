@@ -1,8 +1,0 @@
-name: 'Get Project Data'
-description: Calls the github API for all projects with the hack-for-la tag, gets contributor and language data and writes it to a JSON file
-outputs:
-  json: # id of output
-    description: 'json data we need for project cards'
-runs:
-  using: 'node12'
-  main: './get-project-data.js'
