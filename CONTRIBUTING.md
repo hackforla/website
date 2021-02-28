@@ -226,11 +226,11 @@ c) Prepare your changes to push to your repository
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
 -Use the `git add` command to stage your changes.  
-This command prepares your changes before you commit them. You can stage files one at a time using the filename, or you can use the `.` to stage all of the files that you have added or made changes to. 
+This command prepares your changes before you commit them. You can stage files one at a time using the filename. 
 
 Run the command: 
 ```bash
-git add .
+git add “filename.ext”
 ```
 
 -Use the `git status` command to see what files are staged. 
