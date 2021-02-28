@@ -1,53 +1,126 @@
 .comm-practice-header {
-    display: flex;
+  display: flex;
+  flex-flow: row wrap;
+  //justify-content: center;
+  padding: 20px 40px 40px;
+  background: #fff;
+  height: fit-content;
+  margin: 40px auto 0;
+  font-family: "Roboto" sans-serif;
+  font-style: normal;
+  font-weight: normal;
+
+  @media #{$bp-below-mobile} {
     flex-flow: column wrap;
     justify-content: center;
-    padding: 20px 40px 40px;
-    background: #fff;
-    height: fit-content;
-    margin: 40px auto 0;
-    font-family: "Roboto"sans-serif;
-    font-style: normal;
-    font-weight: normal;
+  }
 
-    h1 {
+  h1 {
+    font-weight: 700;
+    line-height: 33.6px;
+    text-align: center;
+    padding: 10px 0;
+    @media #{$bp-below-mobile} {
         font-size: 24px;
-        font-weight: 700;
-        line-height: 33.6px;
-        text-align: center;
-        padding: 10px 0;
     }
+  }
 
-    .comm-practice-header-text {
-        margin: 15px 0; 
-        text-align: left;
-        font-size: 16px;
-        font-weight: 400;
-    }
+  .comm-practice-header-text {
+    margin: 15px 0;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+  }
 
-    .comm-practice-header-img {
-        
-    }
+  .comm-practice-header-img {
+  }
 }
 
-.page-card {
+.comm-practice-content {
+  .comm-practice-page-card {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    padding: 20px;
+    margin: 45px;
+    font-family: "Roboto" sans-serif;
+    height: fit-content;
+
+    @media #{$bp-below-tablet} {
+      padding: 16px 16px;
+    }
+  }
+
+  .card-primary {
+    background: $color-white;
+  }
+
+  .page-card {
     border-radius: 20px;
     overflow: hidden;
-}
+  }
 
-.card-primary {
-    background: $color-white;
-}
-
-.page-card-lg {
+  .page-card-lg {
     max-width: 896px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    border: 1px solid rgba(51, 51, 51, 0.06);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     padding: 30px;
-    margin: 16px auto;
+    margin: 0px auto 16px;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
-        padding: 32px 16px;
-        margin: 12px auto;
+      padding: 0px 16px;
+      margin: 0px auto 12px;
     }
+  }
+
+  .page-card-container {
+    display: flex;
+    height: 454px;
+    margin: -17px;
+
+    @media #{$bp-below-tablet} {
+      flex-direction: column;
+      height: -moz-fit-content;
+      height: fit-content;
+    }
+  }
+
+  .comm-practice-expanded-card {
+      @media #{$bp-tablet-up} {
+        height: 494px;
+      }
+  }
+
+  .page-card-image {
+    margin: -5px;
+    border-radius: 5px;
+    max-width: 372px;
+    height: 100%;
+  
+    @media #{$bp-below-mobile} {
+      height: auto;
+      width: 100%;
+      max-height: 40vh;
+      overflow: hidden;
+    }
+  }
+
+  .page-card-content {
+    margin: 34px;
+    @media #{$bp-below-mobile} {
+      margin: 40px 0;
+      padding: 0 16px;
+    }
+
+    .card-content-strong {
+        display: block;
+        font-weight: 700;
+    }
+
+    .btn-wrapper {
+        text-align: center;
+    }
+  }
 }
