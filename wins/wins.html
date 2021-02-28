@@ -256,7 +256,7 @@ permalink: /wins/
   	{% assign githubData = site.data.github-data | jsonify %}
   	let githubData = {{ githubData }};
 
-	const cards = data;
+	const cards = data.reverse();
 	const cardTemplate = document.getElementById("wins-card-template");
 	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
 	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
@@ -264,22 +264,26 @@ permalink: /wins/
 	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
 	const winsCardContainer  = document.querySelector('#responses');
 
-	for(const card of cards){
+	cards.forEach((card, index) => {
+		if (card[display] != "TRUE") return;
 		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
-
+		let ghId;
 		if(card[github_url] && card[github_permission] === "Yes"){
 			githubData.slice(1).map(item=>{
 				item.contributorsComplete.data.map(contributors=>{
 					if(contributors.github_url == card[github_url]){
-						cloneCardTemplate.querySelector('.wins-card-profile-img').src = `https://avatars1.githubusercontent.com/u/${contributors.id}?v=4` ;
+						ghId = contributors.id;
 					}
 				})
 
 			})
 
-		} else{
-			cloneCardTemplate.querySelector('.wins-card-profile-img').src = AVATAR_DEFAULT_PATH;
-		} ;
+		} 
+		let profileImgSrc = ghId ?
+			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
+			AVATAR_DEFAULT_PATH;
+		
+		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
@@ -287,22 +291,44 @@ permalink: /wins/
 		if (card[linkedin_url].length > 0) {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
 			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
 		};
 
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
-		cloneCardTemplate.querySelector('.project-inner+.wins-card-team').textContent = `Team(s): ${card[team]}`;
-		cloneCardTemplate.querySelector('.project-inner+.wins-card-role').textContent = `Role(s): ${card[role]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
+		
 		winsCardContainer.append(cloneCardTemplate);
+		
+		const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		function addSeeMore() {
+			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
-	}
+			//makes the see more span on the bottom of the card
+			console.log('winText.offsetHeight + 18:', winText.offsetHeight)
+			console.log('innerHeight:', innerHeight)
+			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
+				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+			} else {
+				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+			}
+		}
+		addSeeMore()
+
+		new ResizeObserver(addSeeMore).observe(winText)
+	})
 
 
 
@@ -416,6 +442,19 @@ permalink: /wins/
   		span.innerHTML = "...see more"
   	}
   }
+  // need to delete makeElement and makeIcon
+  function makeElement(elementType, parent, className) {
+		let child = document.createElement(elementType);
+		child.classList.add(className);
+		parent.appendChild(child);
+		return child;
+	}
+  function makeIcon(href, parent, className, src) {
+		let icon = makeElement('a', parent, 'wins-card-icon');
+		icon.setAttribute("href", href);
+		let iconImg = makeElement('img', icon, className);
+		iconImg.setAttribute("src", src);
+	}
   function updateOverlay(i) {
   		let stringData = window.localStorage.getItem("data");
   		let data = JSON.parse(stringData).reverse();
