@@ -66,13 +66,22 @@ permalink: /events/
   }
 
   function showingDropDown() {
-    this.classList.toggle("active");
-    let dropDown = this.nextElementSibling;
-
-    if (dropDown.style.display === "block") {
-      dropDown.style.display = "none";
-    } else {
-      dropDown.style.display = "block";
+    if(document.body.clientWidth<767){
+      let dropDown = this.nextElementSibling;
+      if (dropDown.style.display === "block") {
+        dropDown.style.display = "none";
+      } else {
+        dropDown.style.display = "block";
+      }
+    }
+  }
+  window.addEventListener('resize',fixDropDown)
+  function fixDropDown(){
+    if(document.body.clientWidth>767){
+      const columns = document.querySelectorAll('.mobile-dropdown');
+      for(let column of columns){
+        column.style.display='block';
+      }
     }
   }
 </script>
