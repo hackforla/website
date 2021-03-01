@@ -309,21 +309,13 @@
 }
 
 .wins-card-content > * {
-<<<<<<< HEAD
     flex: 0 0 auto;
-=======
-	flex: 0 0 auto;
->>>>>>> gh-pages
 }
 
 
 
 //wins page filter override section begin
-<<<<<<< HEAD
-ul.wins-filter{
-=======
 .wins-page-contain > ul.filter-list{
->>>>>>> gh-pages
 	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
 	width: 46%;
@@ -331,20 +323,12 @@ ul.wins-filter{
 	
 }
 
-<<<<<<< HEAD
-ul.wins-filter li ul {
-=======
 .wins-page-contain > ul.filter-list li ul {
->>>>>>> gh-pages
 	width: 100%;
 }
 
 @media #{$bp-below-tablet}{
-<<<<<<< HEAD
-	ul.wins-filter{
-=======
 	.wins-page-contain > ul.wins-filter{
->>>>>>> gh-pages
 		width: 100%;
 		grid-template-rows: none;
 	}
