@@ -6,7 +6,7 @@ used-in: Getting Started, Hack Nights
 artist: stories
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/getting-started/step1.png
+image-url: getting-started/step1.png
 alt: 'Image of Business'
 type: icon
 ---

@@ -7,7 +7,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} by {% endif %}{{ site.title | escape}}" />
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 400 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else%}{{'/assets/images/logos/hfla_fb_logo.png' | absolute_url }}{% endif %}" />
+  <meta property="og:image" content="{% if page.image %}{{ site.imgdir }}/{{ page.image }}{% else%}{{'{{ site.imgdir }}/logos/hfla_fb_logo.png' | absolute_url }}{% endif %}" />
 
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape}}</title>
   <meta name="description"

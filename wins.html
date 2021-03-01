@@ -9,11 +9,11 @@ title: Wins
     <div class="wins-card-left">
       <img
         class="wins-card-profile-img"
-        src="/assets/images/wins-page/avatar-default.svg"
+        src="{{ site.imgdir }}/wins-page/avatar-default.svg"
       />
       <img
         class="wins-card-big-quote"
-        src="/assets/images/wins-page/quote-icon.svg"
+        src="{{ site.imgdir }}/wins-page/quote-icon.svg"
       />
     </div>
     <div class="wins-card-content project-card-inner">
@@ -352,7 +352,7 @@ title: Wins
 
   		let profileImgSrc = ghId ?
   			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
-  			"/assets/images/wins-page/avatar-default.svg";
+  			"{{ site.imgdir }}//wins-page/avatar-default.svg";
 
   		let cardElement = makeElement('li', list, "project-card");
   		cardElement.classList.add("wins-card");
@@ -363,7 +363,7 @@ title: Wins
   		profileImg.setAttribute("src", profileImgSrc);
 
   		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
-  		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
+  		quote.setAttribute("src", "{{ site.imgdir }}//wins-page/quote-icon.svg");
   		let rightDiv = makeElement('div', cardElement, "wins-card-content");
   		rightDiv.classList.add("project-card-inner");
 
@@ -374,9 +374,9 @@ title: Wins
   			nameElement.innerHTML = card[name];
   			let icons = makeElement('span', topDiv, "wins-card-icons");
   			if (card[linkedin_url].length > 0) {
-  				makeIcon(card[linkedin_url], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+  				makeIcon(card[linkedin_url], icons, 'linkedin-icon', '{{ site.imgdir }}//wins-page/icon-linkedin-small.svg');
   			} if (card[github_url].length > 0) {
-  				makeIcon(card[github_url], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  				makeIcon(card[github_url], icons, 'github-icon', '{{ site.imgdir }}//wins-page/icon-github-small.svg');
   			}
 
   		//makes the team and roles portion in the middle
@@ -435,9 +435,9 @@ title: Wins
   		overlayIcons.innerHTML = "";
 
   		if (data[i][linkedin_url].length > 0) {
-  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '{{ site.imgdir }}//wins-page/icon-linkedin-small.svg');
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '{{ site.imgdir }}//wins-page/icon-github-small.svg');
   		}
 
   		const overlayName = document.querySelector('#overlay-name');

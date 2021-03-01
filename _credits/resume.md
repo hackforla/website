@@ -6,7 +6,7 @@ used-in: Getting Started
 artist: unlimicon
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/adopt-2.png
+image-url: getting-started/adopt-2.png
 alt: 'Image of Resume'
 type: icon
 ---

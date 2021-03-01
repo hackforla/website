@@ -6,7 +6,7 @@ used-in: Getting Started
 artist: stories
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/getting-started/step2.png
+image-url: getting-started/step2.png
 alt: 'Image of Button'
 type: icon
 ---

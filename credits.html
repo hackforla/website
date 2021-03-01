@@ -9,7 +9,7 @@ title: Credits
   </p>
   <div class="credit-hero">
       <div class="step-links mobile-image">
-          <img class="credit-image" src="./assets/images/credits/credits-hero.png">
+          <img class="credit-image" src="{{ site.imgdir }}/credits/credits-hero.png">
 
       </div>
   </div>
@@ -25,7 +25,7 @@ title: Credits
                           <!-- originally class="project-card-inner" -->
                         <div class="credits-inner">
                           <div class="icon-left">
-                            <img src={{ item.image-url | absolute_url }} alt={{item.alt}}/>
+                            <img src="{{ site.imgdir }}/{{ item.image-url }} alt={{item.alt}}/>
                           </div>
                           <div class="icon-info">
                             {%- if item.title -%}

@@ -1,5 +1,5 @@
 .project-meetings-banner {
-    background: no-repeat url('/assets/images/project-meetings-page/project-meetings-banner-image.png'), $color-white;
+    background: no-repeat url('{{ site.imgdir }}//project-meetings-page/project-meetings-banner-image.png'), $color-white;
     background-position: center bottom 40px;
     background-size: auto 45%;
     height: 500px;

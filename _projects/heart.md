@@ -2,9 +2,9 @@
 identification: '159286729'
 title: Heart
 description: Heart is a project working directly with the LA City Attorney’s Homeless Engagement and Response Team. The HEART program helps individuals experiencing homelessness resolve eligible traffic and pedestrian infractions and related warrants and fines by engaging with relevant services. Hack for LA is helping them build a database and case management system to streamline their workflow and enable them to scale their program.
-image: /assets/images/projects/heart.png
+image: projects/heart.png
 alt: 'Programming code icon that reads helping the homeless with code.'
-image-hero: /assets/images/projects/heart-hero.png
+image-hero: /projects/heart-hero.png
 alt-hero: 'A line of tents under a freeway overpass.'
 leadership:
   - name: Marie-Aimee Brajeux

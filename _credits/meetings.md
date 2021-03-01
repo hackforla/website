@@ -6,7 +6,7 @@ used-in: Hack Nights
 artist: IconMarketPK
 provider: Iconfinder
 provider-link: 'https://www.iconfinder.com/'
-image-url: /assets/images/hack-nights/meetings.svg
+image-url: hack-nights/meetings.svg
 alt: 'Image of Meetings'
 type: icon
 ---

@@ -1,5 +1,5 @@
 .hero {
-  background: $color-blue-dark url($absolute_url + "/assets/images/hero/hacknight-women.jpg") center
+  background: $color-blue-dark url($absolute_url + "{{ site.imgdir }}//hero/hacknight-women.jpg") center
     center no-repeat;
   background-size: cover;
   display: flex;

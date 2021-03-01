@@ -6,7 +6,7 @@ used-in: Hack Nights
 artist: stories
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/hack-nights/building.png
+image-url: hack-nights/building.png
 alt: 'Image of Building'
 type: icon
 ---

@@ -6,7 +6,7 @@ used-in: Hack Nights
 artist: stories
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/hack-nights/happy-hour.png
+image-url: hack-nights/happy-hour.png
 alt: 'Image of People'
 type: icon
 ---

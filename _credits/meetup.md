@@ -6,7 +6,7 @@ used-in: Hack Nights
 artist: Flatart
 provider: Iconfinder
 provider-link: 'https://www.iconfinder.com/'
-image-url: /assets/images/hack-nights/meetup.svg
+image-url: hack-nights/meetup.svg
 alt: 'Image of Meetup'
 type: icon
 ---

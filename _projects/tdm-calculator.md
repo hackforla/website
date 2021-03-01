@@ -2,9 +2,9 @@
 identification: '197452459'
 title: The LA TDM Calculator
 description: The LA TDM Calculator is a web app, created in conjunction with the L.A. Department of Transportation (LADOT) and Los Angeles City Planning, to help real estate developers design better projects for Los Angeles. The Calculator is being implemented alongside a new ordinance reducing over-parking and improving the infrastructure to incentivize public transportation and discourage single occupancy vehicle trips.
-image: /assets/images/projects/tdm-calculator.jpg
+image: projects/tdm-calculator.jpg
 alt: 'LA TDM Calculator Landing Page (Mock Up)'
-image-hero: /assets/images/projects/TDM-calculator-hero.png
+image-hero: /projects/TDM-calculator-hero.png
 alt-hero: 'Los Angeles skyline at dusk, complete with cranes on top of buildings and golden smog.'
 leadership:
   - name: Bonnie Wolfe

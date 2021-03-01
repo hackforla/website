@@ -9,6 +9,7 @@ description: Can you design, write, or code? Are you an activist with an idea? Y
 
 baseurl: ""
 url: https://www.hackforla.org
+imgdir: ../assets/images
 
 
 collections:

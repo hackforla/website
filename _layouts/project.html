@@ -206,9 +206,9 @@ layout: default
 <script>
     let heroSection = document.getElementsByClassName('project-hero')[0];
     {% if page.image-hero %}
-        heroSection.style.background = 'url({{ page.image-hero }}) center center no-repeat';
+        heroSection.style.background = 'url({{ site.imgdir }}/{{ page.image-hero }}) center center no-repeat';
     {% else %}
-        heroSection.style.background = 'url(/assets/images/hero/hacknight-women.jpg) center center no-repeat';
+        heroSection.style.background = 'url({{ site.imgdir }}/hero/hacknight-women.jpg) center center no-repeat';
     {% endif %}
 </script>
 

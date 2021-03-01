@@ -6,7 +6,7 @@ used-in: Getting Started
 artist: Graphik Designz
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/adopt-1.png
+image-url: getting-started/adopt-1.png
 alt: 'Image of Security'
 type: icon
 ---

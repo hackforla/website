@@ -1,5 +1,5 @@
 <h2 class="event-title">
-  <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="image of an m" />
+  <img class="vector-img" src="{{ site.imgdir }}/hack-nights/meetup.svg" alt="image of an m" />
   Meetup Events
 </h2>
 <div class="mobile-dropdown">
@@ -7,7 +7,7 @@
 {% for event in site.data.events %}
   <div class="meetup-steps">
     <div id="img-content">
-      <img class="step-img-1" src="{{event.link}}" />
+      <img class="step-img-1" src="{{ site.imgdir }}/{{event.image-url}}" />
     </div>
     <div id="text-content">
       <h2 class="title-meetup">{{event.name}}</h2>

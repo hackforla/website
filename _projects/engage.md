@@ -2,9 +2,9 @@
 identification: '138791772'
 title: Engage
 description: Engage is a civic participation platform. Currently in beta, Engage makes it easier for residents of Santa Monica, CA to offer their feedback on policy issues that City Council is considering. Engage aims to increase access for community stakeholders who are unable to attend public meetings or may otherwise feel unheard by their local government.
-image: /assets/images/projects/engage.jpg
+image: projects/engage.jpg
 alt: 'City council closed in session.'
-image-hero: /assets/images/projects/engage-hero.jpg
+image-hero: /projects/engage-hero.jpg
 alt-hero: 'Neon sign for the Santa Monica pier. Palm trees and sunset in the background.'
 leadership:
   - name: Teddy Cripeneau

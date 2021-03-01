@@ -2,9 +2,9 @@
 identification: '216854923'
 title: Lucky Parking
 description: Visualization of parking data to assist in understanding of the effects of parking policies on a neighborhood by neighborhood basis in the City of Los Angeles.
-image: /assets/images/projects/lucky-parking.png
+image: projects/lucky-parking.png
 alt: 'Lucky Parking Logo'
-image-hero: /assets/images/projects/lucky-parking-hero.png
+image-hero: /projects/lucky-parking-hero.png
 alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagon.'
 leadership:
   - name: Greg Pawin

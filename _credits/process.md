@@ -6,7 +6,7 @@ used-in: Hack Nights, Projects
 artist: stories
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/hack-nights/org-projects.png
+image-url: hack-nights/org-projects.png
 alt: 'Image of Process'
 type: icon
 ---

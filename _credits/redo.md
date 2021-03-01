@@ -6,7 +6,7 @@ used-in: Getting Started
 artist: Numero Uno
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/onboard-4.png
+image-url: getting-started/onboard-4.png
 alt: 'Image of Redo'
 type: icon
 ---

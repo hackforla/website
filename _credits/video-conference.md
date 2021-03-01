@@ -6,7 +6,7 @@ used-in: Getting Started
 artist: Edwin PM
 provider: Noun Project
 provider-link: 'https://thenounproject.com/'
-image-url: /assets/images/getting-started/onboard-2.png
+image-url: getting-started/onboard-2.png
 alt: 'Image of Video Conference'
 type: icon
 ---

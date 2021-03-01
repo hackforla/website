@@ -2,9 +2,9 @@
 identification: '190321758'
 title: 311 Data
 description: The 311 Data project seeks to empower local Neighborhood Councils to improve the ideation and analysis of their initiatives using the wealth of publicly available 311 data.
-image: /assets/images/projects/311_data.png
+image: projects/311_data.png
 alt: 'Image of building with windows that look like they spell out 311.'
-image-hero: /assets/images/projects/311data-beta.png
+image-hero: /projects/311data-beta.png
 alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
 leadership:
   - name: Dana Chen

@@ -6,7 +6,7 @@ used-in: Guides
 artist: katemangostar
 provider: Freepik
 provider-link: 'https://www.freepik.com/'
-image-url: /assets/images/guides/guide-page-hero.png
+image-url: guides/guide-page-hero.png
 alt: 'Image of Brochure'
 type: icon
 ---

@@ -6,7 +6,7 @@ used-in: Hack Nights
 artist: Marta Konyk
 provider: Iconfinder
 provider-link: 'https://www.iconfinder.com/'
-image-url: /assets/images/hack-nights/locations.svg
+image-url: hack-nights/locations.svg
 alt: 'Image of Locations'
 type: icon
 ---
