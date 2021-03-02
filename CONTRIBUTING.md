@@ -225,19 +225,30 @@ c) Prepare your changes to push to your repository
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
+> - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+> Alternatively you can follow the intstructions below to stage changes through the terminal.
+
+
 -Use the `git add` command to stage your changes.  
-This command prepares your changes before you commit them. You can stage files one at a time using the filename, or you can use the `.` to stage all of the files that you have added or made changes to. 
+This command prepares your changes before you commit them. You can stage files one at a time using the filename. 
 
 Run the command: 
 ```bash
-git add .
+git add “filename.ext”
 ```
 
 -Use the `git status` command to see what files are staged. 
 
 This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you find you have included unrelated changes, please unstage them before making this commit - and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
+
 ```bash
 git status
+```
+-Use the `git reset HEAD` command to remove a staged file. 
+
+This command will remove a file that has been staged.  This file will not be committed (saved) when you run the next command, `git commit`. This only works if the wrong files were added, but they were not yet committed. The file will be removed from the staging area, but not actually deleted:
+```bash
+git reset HEAD “filename.ext” 
 ```
 
 -Use the `git commit` command
