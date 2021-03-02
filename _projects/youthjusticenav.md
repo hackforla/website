@@ -51,7 +51,7 @@ technologies:
   - Miro
 location:
   - Remote
-partner: UCLA School of Law, Code for America
+partner: UCLA School of Law, Golden Gate University School of Law
 vertical: 'Justice'
 visible: true
 sdg: 16.3

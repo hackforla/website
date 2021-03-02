@@ -17,7 +17,7 @@ title: Toolkit
 <div class="toolkit-header__text-group">
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
-      <a href="#{{category}}" id="{{category}}" class="toolkit-header__banner-item">{{ category }}</a>
+      <a href="#{{category | replace: ' ', '+'}}" id="{{ category }}" class="toolkit-header__banner-item">{{ category }}</a>
     {% endfor %}
 </div>
 
@@ -60,9 +60,9 @@ title: Toolkit
         //add listener for url change and toggle visible cards.
         window.addEventListener("hashchange", hashFilter);
         function hashFilter(e) {
-            let currentHash = location.hash.split('#')[1].replace("%20", "").toLowerCase();
+            let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
 
-            let cardContainers = document.querySelectorAll(".guide-card");
+            let cardContainers = document.querySelectorAll("[data-article-type]");
             cardContainers.forEach((card) => {
                 if(currentHash == 'all'){
                     card.style.display = 'block';

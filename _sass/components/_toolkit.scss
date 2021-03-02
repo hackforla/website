@@ -21,26 +21,22 @@
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
-        
-        a {
-            font-weight: 300;
-            text-decoration: none;
-            color: black;
-        }
-        a:hover {
-            color: $color-mediumvioletred !important;
-            transform: scale(1.01);
-        }
-        .selected-category {
-            color: $color-mediumvioletred !important;
-        }
+    
+    
+            a {
+                font-weight: 300;
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                color: $color-mediumvioletred;
+                transform: scale(1.01);
+            }
 
-    }
+            .selected-category {
+            color: $color-mediumvioletred;
+            }
 
-    &__banner-item {
-        margin-block-end: 0;
-        font-size: 1.2rem;
-        margin: 0 4rem;
     }
     
     &__p {
@@ -117,7 +113,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     align-items: stretch;
-    justify-content: center;
+    justify-content: start;
 }
 
 .outer-link {
