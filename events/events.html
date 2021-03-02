@@ -67,6 +67,7 @@ permalink: /events/
 
   function showingDropDown() {
     if(document.body.clientWidth<767){
+    this.classList.toggle("active");
       let dropDown = this.nextElementSibling;
       if (dropDown.style.display === "block") {
         dropDown.style.display = "none";
@@ -81,6 +82,7 @@ permalink: /events/
       const columns = document.querySelectorAll('.mobile-dropdown');
       for(let column of columns){
         column.style.display='block';
+        column.previousElementSibling.classList.remove('active');
       }
     }
   }
