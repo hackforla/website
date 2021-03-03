@@ -85,5 +85,11 @@ permalink: /events/
         column.previousElementSibling.classList.remove('active');
       }
     }
+    else{
+      const columns = document.querySelectorAll('.mobile-dropdown');
+      for(let column of columns){
+        column.style.display='none';
+    }
   }
+}
 </script>
