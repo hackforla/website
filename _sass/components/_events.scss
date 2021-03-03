@@ -102,6 +102,7 @@
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-tablet} {
     padding: 5px 15px;
+    max-width: 100%;
   }
 }
 
