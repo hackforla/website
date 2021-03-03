@@ -62,6 +62,10 @@
     width: 90%;
   }
   
+  @media #{$bp-below-mobile}{
+    width: 95%;
+  }
+
   & > .column-card-lg--events {
     background: #fff;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -86,7 +90,8 @@
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-tablet} {
       padding: 5px 15px;
-  
+      max-width: 100%;
+
       &:first-child, &:last-child{
         margin-left: auto;
         margin-right: auto;
