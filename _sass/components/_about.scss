@@ -301,11 +301,12 @@ a.anchor {
 }
 
 .flex-container-row--partners {
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 25px;
   
   & .partner-logo{
-    width: 120px;
+		width: 100px;
+		margin: 12px 15px;
   }
 }
 
