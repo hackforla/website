@@ -30,6 +30,6 @@ location:
   - Remote
 partner: Seeking
 visible: true
-vertical: 'Under Development'
+vertical: 'Social Safety Net'
 status: On Hold
 ---
