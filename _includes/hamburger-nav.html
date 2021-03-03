@@ -7,10 +7,13 @@
 </div>
 
 <script>
+    //Retrieve svg string from _includes
+    const burgerImage = `{% include svg/icon-hamburger-nav.svg %}` ;
+    const burgerImageX = `{% include svg/icon-hamburger-nav-x.svg %}` ;
 
 
   document.querySelector('#burgerImage').addEventListener('click',toggleNavDisplay);
-  window.addEventListener('resize', removeStyleAttrOnResize);
+  window.addEventListener('resize', resetNavBarPropsToDefaultState);
 
   function toggleNavDisplay(){
     swapIcons(this.firstElementChild.id);
@@ -21,11 +24,6 @@
 
 
   function swapIcons(icon_id){
-
-    //Retrieve svg string from _includes
-    const burgerImage = `{% include svg/icon-hamburger-nav.svg %}` ;
-    const burgerImageX = `{% include svg/icon-hamburger-nav-x.svg %}` ;
-
     //Create dictionary for swap
     const hamburger = {
       'hamburger-nav': {"el":burgerImage,'opposite':burgerImageX},
@@ -42,10 +40,14 @@
   }
   
 
-  function removeStyleAttrOnResize(){
+  function resetNavBarPropsToDefaultState(){
     if(document.body.clientWidth>767){
       document.querySelector('#headerNav').removeAttribute("style");
+      document.querySelector(`#burgerImage`).firstElementChild.remove();
+      document.querySelector(`#burgerImage`).insertAdjacentHTML('afterbegin',burgerImage);
+
     }
+
 
   }
 
