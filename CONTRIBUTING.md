@@ -225,6 +225,10 @@ c) Prepare your changes to push to your repository
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
+> - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+> Alternatively you can follow the intstructions below to stage changes through the terminal.
+
+
 -Use the `git add` command to stage your changes.  
 This command prepares your changes before you commit them. You can stage files one at a time using the filename. 
 
