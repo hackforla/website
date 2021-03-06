@@ -205,7 +205,7 @@ let readMoreToMobile = document.querySelector(".read-more");
 let readLessToMobile = document.querySelector(".read-less");
 
 // Create event listeners on page load if in mobile
-if (windowWidth < 960) {
+if (window.innerWidth < 960) {
     // Create event listeners
     createAccordionEventListener(accordionList);
 }
