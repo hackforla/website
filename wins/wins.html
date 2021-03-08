@@ -317,8 +317,6 @@ permalink: /wins/
 			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
 			//makes the see more span on the bottom of the card
-			console.log('winText.offsetHeight + 18:', winText.offsetHeight)
-			console.log('innerHeight:', innerHeight)
 			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
 				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
 			} else {

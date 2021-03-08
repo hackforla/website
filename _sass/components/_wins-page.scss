@@ -149,8 +149,11 @@
     display: flex;
     justify-content: space-between;
 }
-.wins-card-icon{
+.wins-card-icon, .wins-card-github-icon, .wins-card-linkedin-icon{
     margin-left: 18px;
+}
+.wins-card-icons{
+    display: flex;
 }
 .wins-card-info{
     font-weight: bold;
