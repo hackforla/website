@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="bg-color">
+    <img class='page-hero' src="../assets/images/guides/guide-page-hero.png">
+
+    <div class="guidepage-header">
+        <div class="left-col"> 
+            <h1>{{ page.title }}</h1>
+            <p>
+                {{ page.description }}
+            </p>
+        </div>
+        <div class="border-right"></div>
+        <br>
+        <div class="right-col">
+            <h3><strong>In This Guide</strong></h3>
+            <ul>
+
+                {% for item in page.in-this-guide %} 
+                    <li><a href= '{{ item.link }}'> {{ item.name }}</a> 
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </div>
+
+        {{ content | markdownify }}
+</div>
