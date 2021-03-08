@@ -152,24 +152,23 @@
       padding-left: 0;
     }
   }
-}
+  /*   Page-specific button  */
 
-/*   Page-specific button  */
+  .btn--site-map-suggest {
+    width: 224px;
+    height: 40px;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 !important;
+    border-radius: 20px;
+  }
 
-.btn--site-map-suggest {
-  width: 224px;
-  height: 40px;
-  font-size: 1rem;
-  text-align: center;
-  margin: 0 !important;
-  border-radius: 20px;
-}
+  /*   Medium Long Button  - more padding */
 
-/*   Medium Long Button  - more padding */
-
-.btn-md-long-2 {
-  height: 40px;
-  padding: 0 44px;
-  border-radius: 20px;
-  font-size: 1rem;
+  .btn-md-long-2 {
+    height: 40px;
+    padding: 0 44px;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
 }
