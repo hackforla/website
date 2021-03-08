@@ -258,10 +258,10 @@ permalink: /wins/
 
 	const cards = data.reverse();
 	const cardTemplate = document.getElementById("wins-card-template");
-	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
-	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
-	const GITHUB_ICON = '/assets/images/wins-page/icon-github-small.svg';
-	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
+	const QUOTE_ICON_PATH = '../assets/images/wins-page/quote-icon.svg'
+	const AVATAR_DEFAULT_PATH = "../assets/images/wins-page/avatar-default.svg"
+	const GITHUB_ICON = '../assets/images/wins-page/icon-github-small.svg';
+	const LINKEDIN_ICON = '../assets/images/wins-page/icon-linkedin-small.svg'
 	const winsCardContainer  = document.querySelector('#responses');
 
 	cards.forEach((card, index) => {
@@ -370,9 +370,9 @@ permalink: /wins/
   		overlayIcons.innerHTML = "";
 
   		if (data[i][linkedin_url].length > 0) {
-  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '../assets/images/wins-page/icon-linkedin-small.svg');
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '../assets/images/wins-page/icon-github-small.svg');
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
