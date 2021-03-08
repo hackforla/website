@@ -17,12 +17,6 @@
 	}
 }
 
-.wins-btn{
-	max-width: 300px;
-	max-height: 75px;
-}
-
-
 .wins__see-more-div {
 	position: absolute;
 	background-color: white;
@@ -52,10 +46,11 @@
 			font-weight: normal;
 			font-size: 38px;
 		}
-		.wins-btn{
-			max-width: 217px;
-			max-height: 60.5px;
-			font-size: 18.5px;
+		.btn--wins{
+			height: 60px;
+			padding: 0 50px;
+			border-radius: 60px;
+			font-size: 1.25rem;
 		}
 		
 	}
@@ -73,11 +68,11 @@
 			font-size: 24px;
 			line-height: 28px;
 		}
-		.wins-btn{
-			max-width: 134px;
-			max-height: 46px;
-			font-size: 12px;
-			line-height: 14px;
+		.btn--wins{
+			height: 40px;
+			padding: 0 32px;
+			border-radius: 20px;
+			font-size: 1rem;
 		}
 	}
 }
@@ -105,8 +100,6 @@
 	flex-direction: column;
 }
 .wins-card-profile-img{
-	width: 100px;
-	height: 100px;
 	border-radius: 100px;
 }
 .wins-card-big-quote{
@@ -127,16 +120,12 @@
 }
 
 .wins-card-name{
-	font-family: Roboto;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 22px;
 	margin-top: 13px;
 }
 .wins-card-team{
-	font-family: Roboto;
-	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 18px;
@@ -256,6 +245,8 @@
 			height: auto;
 		}
 	}
+
+
 }
 
 //mobile see more
@@ -278,3 +269,26 @@
 .wins-card-content > * {
 	flex: 0 0 auto;
 }
+
+
+
+//wins page filter override section begin
+.wins-page-contain > ul.filter-list{
+	grid-template-columns: repeat(2, 1fr);
+	min-width: 216px;
+	width: 46%;
+
+	
+}
+
+.wins-page-contain > ul.filter-list li ul {
+	width: 100%;
+}
+
+@media #{$bp-below-tablet}{
+	.wins-page-contain > ul.wins-filter{
+		width: 100%;
+		grid-template-rows: none;
+	}
+}
+//wins page filter override section end

@@ -10,7 +10,7 @@ leadership:
   - name: Cameron Sexton
     role: Product Owner/Lead Developer
     links:
-      slack: 'https://app.slack.com/team/UBENYBXGV'
+      slack: 'https://hackforla.slack.com/team/UBENYBXGV'
       github: 'https://github.com/ctsexton'
     picture: https://avatars.githubusercontent.com/ctsexton
 links:
@@ -26,11 +26,12 @@ links:
     url: 'https://www.metro.net/'
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
-location: 
+location:
   - Downtown LA
   - Remote
 partner: LA Metro (https://www.metro.net/)
 tools: Docker, AWS, Observable
 visible: true
+vertical: 'Environment'
 status: Completed
 ---

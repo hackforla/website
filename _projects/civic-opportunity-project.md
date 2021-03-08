@@ -10,9 +10,15 @@ leadership:
   - name: Ray Fambro
     role: Product Manager
     links:
-      slack: 'https://app.slack.com/team/U015QPJS34M'
+      slack: 'https://hackforla.slack.com/team/U015QPJS34M'
       github: 'https://github.com/rfambro2'
     picture: https://avatars.githubusercontent.com/rfambro2
+  - name: Tan Zhou
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/UPMSC27G8'
+      github: 'https://github.com/tan-zhou'
+    picture: https://avatars.githubusercontent.com/tan-zhou
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/civic-opportunity/projects/1'
@@ -32,10 +38,11 @@ looking:
   - category: UI/UX
     skill: UX Researcher
 # technologies:
-location: 
+location:
   - Remote
 # tools:
 partner: Undisclosed
 visible: true
+vertical: 'Civic Tech Infrastructure'
 status: Active
 ---

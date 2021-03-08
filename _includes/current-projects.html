@@ -4,7 +4,7 @@
         <h2 class="project-header">Current Projects</h2>
         <p class="project-pitch">
             Have an idea?
-            <a href="mailto:team@hackforla.org" class="btn btn-primary">Submit your pitch</a>
+            <a href="mailto:team@hackforla.org" class="btn btn-primary btn-md-narrow">Submit your pitch</a>
         </p>
     </div>
     <div class="page-contain filter-toolbar" style="text-align: center;">
@@ -113,6 +113,14 @@ window.addEventListener('load', function() {
 
     // initialize project filter and get initial report (no filters applied yet)
     const projectFilter = new ProjectFilter(valuesByCategory);
+    
+    //Sorts the filters in alphabetical order
+    for(const [key,value] of projectFilter.valuesByCategory){
+        let ls = [...projectFilter.valuesByCategory.get(key)].sort();
+        ls = new Set(ls)
+        projectFilter.valuesByCategory.set(key,ls)
+    }
+    
     projectFilter.populateFromUrlParams();
 
     let report = projectFilter.getFilterReport(projects);

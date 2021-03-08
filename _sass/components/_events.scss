@@ -53,11 +53,52 @@
 
 .flex-page-card {
   display: flex;
+  justify-content: center;
+  margin-left: 45px;
+  margin-right: 45px;
 
   @media #{$bp-below-tablet} {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
+  
+  @media #{$bp-below-mobile}{
+    width: 95%;
+  }
+
+  & > .column-card-lg--events {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    border-radius: 20px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    max-width: 489px;
+    width: 100%;
+    padding: 32px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: "Roboto" sans-serif;
+    
+    &:first-child{
+      margin-right: 8px;
+    }
+  
+    &:last-child{
+      margin-left: 8px;
+    }
+  
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-tablet} {
+      padding: 5px 15px;
+      max-width: 100%;
+
+      &:first-child, &:last-child{
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
 }
 
 #head-content::before {
@@ -87,23 +128,6 @@
   text-align: center;
   max-width: 150px;
 }
-.getting-started-page-card-hack-nights {
-  background: #fff;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  overflow: hidden;
-  max-width: 489px;
-  margin-bottom: 0;
-  padding: 18px;
-  margin: 8px;
-  font-family: "Roboto" sans-serif;
-
-  // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-tablet} {
-    padding: 30px 15px;
-  }
-}
 
 .getting-started-mobile-page {
   @media #{$bp-below-mobile} {
@@ -129,7 +153,8 @@
 
 .meetup-steps {
   display: flex;
-  margin: 17px 0;
+  align-items: center;
+  margin: 24px 0;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -138,6 +163,8 @@
 }
 .meetup-steps-2 {
   display: flex;
+  align-items: center;
+  margin: 24px 0;
   @media #{$bp-below-mobile} {
     flex-direction: column;
     text-align: center;
@@ -151,8 +178,6 @@
 
   @media #{$bp-below-mobile} {
     padding: 0;
-    font-size: 12px;
-    line-height: 14px;
     text-align: initial;
     margin: 37px;
   }
@@ -164,8 +189,6 @@
 
   @media #{$bp-below-mobile} {
     padding: 8px;
-    font-size: 12px;
-    line-height: 14px;
     text-align: initial;
     margin-bottom: 25px;
   }
@@ -185,11 +208,10 @@
 
 .notification-banner p {
   text-align: center;
-  margin: auto 18%;
+  margin: auto 29%;
   padding: 20px;
-  font-size: 25px;
-  line-height: 29px;
-  font-weight: normal;
+  font-size: 1rem;
+  font-weight: 700;
 
   @media #{$bp-below-mobile} {
     text-align: justify;
@@ -286,45 +308,49 @@
 }
 
 .title-meetup {
-  font-size: 25px;
+  font-size: 1.25rem;
   text-align: center;
-  margin: 30px;
-  font-weight: normal;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 16px;
 
-  @media #{$bp-below-mobile} {
-    margin: 0;
-  }
+
 }
 
-.btn-meet {
-  background: #fa114f;
-  border: 2;
-  border-radius: 60px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  color: #fff;
-  display: inline-block;
-  font-size: 25px;
-  font-weight: 400;
-  height: 86px;
+// .btn-meet {
+//   background: #fa114f;
+//   border: 2;
+//   border-radius: 60px;
+//   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+//   color: #fff;
+//   display: inline-block;
+//   font-size: 25px;
+//   font-weight: 400;
+//   height: 86px;
 
-  padding: 0 20px;
-  text-decoration: none;
-  transition: all 100ms ease-in;
-  white-space: nowrap;
-  width: 62%;
+//   padding: 0 20px;
+//   text-decoration: none;
+//   transition: all 100ms ease-in;
+//   white-space: nowrap;
+//   width: 62%;
 
-  @media #{$bp-below-mobile} {
-    font-size: 1.1rem;
-    width: 70%;
-  }
-}
+//   @media #{$bp-below-mobile} {
+//     font-size: 1.1rem;
+//     width: 70%;
+//   }
+// }
+
 .class-btn {
   text-align: center;
-  margin-top: 33%;
+  margin-top: 8px;
 
   @media #{$bp-below-mobile} {
     margin: 0;
   }
+}
+
+.btn--events {
+  margin-bottom: 32px;
 }
 
 .event-title-1 {
@@ -339,6 +365,8 @@
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
+
   }
 }
 
@@ -364,10 +392,11 @@
 }
 .event-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5rem;
   margin-top: 20px;
-  line-height: 35px;
-  font-weight: normal;
+  font-weight: 700;
+  margin-bottom: 15px;
+
 }
 
 @media #{$bp-below-tablet} {
@@ -375,6 +404,7 @@
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .event-title::after {
     content: "\221F";
@@ -425,6 +455,13 @@
   list-style: none;
   font-size: 16px;
   line-height: 19px;
+
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+
+
+
+
   @media #{$bp-below-tablet} {
     font-size: 13px;
     line-height: 15px;
@@ -432,10 +469,12 @@
 }
 
 .day-header-1 {
+  text-transform: uppercase;
   margin-block-end: 0.25em;
-  font-size: 16px;
-  line-height: 21px;
-
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 30px 0 10px 0;
+  padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;
     line-height: 18px;
@@ -492,6 +531,26 @@
       color: $color-white;
     }
 
-    .btn {
-      margin: 0 20px 20px 0;
-    }
+
+
+.events-page{
+  background: #030c2c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto"sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.userTimeZone {
+  font-weight: 700;
+}
+
+.events-page-header {
+  color: #ffffff; 
+  margin-top: 48px; 
+  font-size: 36px;
+}
