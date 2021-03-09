@@ -146,6 +146,12 @@ function expandAccordion(accordionElements) {
 // if the element was active (open) it leaves it open
 function closeAccordion(accordionElements) {
 
+    // Create event listeners to current highlighted content
+    // find the element that correlates to reading content
+    const currentHighlight = document.getElementsByClassName('is-active')[0].getAttribute('href');
+    const currentAnchor = currentHighlight.split("#")[1];
+    openOneAccordion(currentAnchor);
+    
     for (let el of accordionElements) {
         if (el.classList.contains("au_active")) {
             // Do nothing
@@ -156,6 +162,13 @@ function closeAccordion(accordionElements) {
 
 } // end function
 
+// Open current highlighted content
+function openOneAccordion(currentAnchor){
+    document.getElementById(currentAnchor).nextElementSibling.children[0].classList.add("au_active");
+    document.getElementById(currentAnchor).nextElementSibling.children[1].style.display = "block";
+};
+//end function
+
 // This adjusts the letter when it goes back to mobile
 // It should leave it open if it was open, and closed if it was closed
 function letterBackToMobile(readMoreElement, readLessElement) {
@@ -165,6 +178,33 @@ function letterBackToMobile(readMoreElement, readLessElement) {
         readMoreElement.nextElementSibling.style.display = "block";
     }
 } // end function
+
+// Initialize Current Mobile Viewing Content
+let currentMobileContent;
+
+// This remembers the element for mobile to desktop
+// Find where the element is on screen
+function locateMobileContent(){
+    const currentViewingContent = document.getElementsByClassName("au_active");
+    let elementClosestToViewport = {top: Number.MAX_SAFE_INTEGER};
+
+    for (let element of currentViewingContent) {
+        const rectangleRelativeToViewport = element.getBoundingClientRect();
+        if(rectangleRelativeToViewport.top < 0 && rectangleRelativeToViewport.bottom >0){
+            return element;
+        } else if (rectangleRelativeToViewport.top >= 0) {
+            if(rectangleRelativeToViewport.top < elementClosestToViewport.top) {
+                elementClosestToViewport = element;
+            }
+        } 
+    }
+    
+    if (elementClosestToViewport.top !== Number.MAX_SAFE_INTEGER) {
+        return elementClosestToViewport;
+    }
+    return null;
+}
+ //end function
 
 // accordionFlag tracks the state of the window | mobile = 0; desktop = 1
 let accordionFlag;
@@ -184,13 +224,24 @@ function resizeHandler() {
         removeAccordionEventListener(accordionList);
         expandAccordion(accordionExpandList);
         accordionFlag = 1;
+ 
+        // find current mobile viewing content before resizing
+    if(currentMobileContent !== null){
+        currentMobileContentParent = currentMobileContent.parentElement;
+        currentMobileContentAnchor = currentMobileContentParent.previousElementSibling;
+        location.href = "#"+currentMobileContentAnchor.id; 
+        }
     }
 
     if (accordionFlag === 1 && window.innerWidth < 960) {
         createAccordionEventListener(accordionList);
         closeAccordion(accordionList);
-        letterBackToMobile(readMoreToMobile, readLessToMobile);
+        letterBackToMobile (readMoreToMobile, readLessToMobile);
         accordionFlag = 0;
+    } 
+
+    if (accordionFlag === 0 && window.innerWidth < 960){
+        currentMobileContent = locateMobileContent();
     }
 } // end function 
 
