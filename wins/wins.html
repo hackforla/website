@@ -1,75 +1,21 @@
 ---
 layout: default
 title: Wins
+permalink: /wins/
+
 ---
 
-{%- include wins-hero.html -%}
-<div class="overlay" onclick="hideOverlay()">
-  <div id="overlay-project-card" class="project-card wins-card center-screen">
-    <div class="wins-card-left">
-      <img
-        class="wins-card-profile-img"
-        src="/assets/images/wins-page/avatar-default.svg"
-      />
-      <img
-        class="wins-card-big-quote"
-        src="/assets/images/wins-page/quote-icon.svg"
-      />
-    </div>
-    <div class="wins-card-content project-card-inner">
-      <div class="project-inner wins-card-top">
-        <span id="overlay-name" class="wins-card-name">Blank</span>
-        <span id="overlay-icons" class="wins-card-icons"></span>
-      </div>
-      <div id="overlay-teams" class="project-inner wins-card-team">
-        Team(s): Blank
-      </div>
-      <div id="overlay-roles" class="project-inner wins-card-team">
-        Role(s): Blank
-      </div>
-      <div class="project-inner wins__card-text">
-        <p id="overlay-overview">Blank</p>
-        <p id="overlay-info" class="wins-card-info">Blank</p>
-      </div>
-    </div>
-  </div>
-</div>
+{%- include_relative wins-hero.html -%}
+{% include_relative wins-overlay.html %}
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
-  <div
-    class="wins-page-contain projects-inner"
-    id="filter-template-container"
-    style="clear: left"
-  >
-    <ul class="filter-list wins-filter" id="filter-list" 
-	 >
-      <li class="filter-item">
-        <a
-          >Role<span class="labelArrow"> ∟ </span></a
-        >
-        <ul class="dropdown" id="role-dropdown"></ul>
-      </li>
-      <li class="filter-item">
-        <a
-          >Team<span class="labelArrow"> ∟ </span></a
-        >
-        <ul class="dropdown" id="team-dropdown"></ul>
-      </li>
-    </ul>
-    <template id="template">
-      <li>
-        <div>
-          <input type="checkbox" class="filter-checkbox" />
-          <span id=""></span>
-        </div>
-      </li>
-    </template>
+	<div   class="wins-page-contain projects-inner" >
 
-    <ul id="responses" class="project-list unstyled-list">
+		{% include_relative wins-filter-template.html %}
+		{% include_relative wins-card-template.html %}
 
-		
-	</ul>
-  </div>
+		<ul id="responses" class="project-list unstyled-list"></ul>
+	</div>
 </section>
 
 <script>
@@ -144,13 +90,13 @@ title: Wins
 
   	})
 
+
   	//Create dropdown key,values where the keys are name of the drops downs and the values are the number of occurences of each key
   	const roleHash =  Object.fromEntries([ ...roleArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
   	const teamHash =  Object.fromEntries([ ...teamArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
 
 
-  	const filterTemplate = document.getElementById("template");
-  	var cloneFilterTemplate = filterTemplate.content.cloneNode(true);
+	const filterTemplate = document.getElementById("wins-filter-template-repeat");
   	const roleDropwDown =  document.getElementById("role-dropdown");
   	const teamDropDown = document.getElementById("team-dropdown");
 
@@ -297,116 +243,92 @@ title: Wins
   	if (document.querySelectorAll('.wins-card').length == 0) {
   		const page = document.querySelector('.wins-page-contain');
   		const p = document.createElement('p');
-  		//p.classList.add("project-card");
   		page.appendChild(p);
   		p.innerHTML = "No one has shared a win yet...be the first!";
   	}
   }
 
-  function makeElement(elementType, parent, className) {
-  	let child = document.createElement(elementType);
-  	child.classList.add(className);
-  	parent.appendChild(child);
-  	return child;
-  }
-  function makeIcon(href, parent, className, src) {
-  	let icon = makeElement('a', parent, 'wins-card-icon');
-  	icon.setAttribute("href", href);
-  	let iconImg = makeElement('img', icon, className);
-  	iconImg.setAttribute("src", src);
-  }
+
+
+
 
   function makeCards(data) {
   	{% assign githubData = site.data.github-data | jsonify %}
   	let githubData = {{ githubData }};
 
-  	const list = document.querySelector('#responses');
-  	let idNum = 0
-  	data.reverse().forEach( (card) => {
-  		if (card[display] != "TRUE"){
-  			idNum++;
-  			return; //checks if Display column is set to true
-  		}
+	const cards = data.reverse();
+	const cardTemplate = document.getElementById("wins-card-template");
+	const QUOTE_ICON_PATH = '../assets/images/wins-page/quote-icon.svg'
+	const AVATAR_DEFAULT_PATH = "../assets/images/wins-page/avatar-default.svg"
+	const GITHUB_ICON = '../assets/images/wins-page/icon-github-small.svg';
+	const LINKEDIN_ICON = '../assets/images/wins-page/icon-linkedin-small.svg'
+	const winsCardContainer  = document.querySelector('#responses');
 
-  		let ghId;
-  		if (card[github_url] && card[github_permission] === "Yes") {
-  			githubData.slice(1) //first key is a timestamp
-  			.forEach(project => {
+	cards.forEach((card, index) => {
+		if (card[display] != "TRUE") return;
+		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
+		let ghId;
+		if(card[github_url] && card[github_permission] === "Yes"){
+			githubData.slice(1).map(item=>{
+				item.contributorsComplete.data.map(contributors=>{
+					if(contributors.github_url == card[github_url]){
+						ghId = contributors.id;
+					}
+				})
 
-  		/* Exit forEach if githubId is already defined, otherwise
-  		iterate through each project (and its contributors) until
-  		a matching github_url is found */
-  				if (ghId) return;
-  				project.contributorsComplete.data.forEach(contrib => {
-  					if (contrib.github_url === card[github_url]) {
-  						ghId = contrib.id;
-  					}
-  				});
-  			});
+			})
 
-  		}
+		} 
+		let profileImgSrc = ghId ?
+			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
+			AVATAR_DEFAULT_PATH;
+		
+		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
 
-  		/* if github url is provided in wins-data and permission
-  		is granted, ghId is defined & we can use their github avatar
-  		otherwise, use default avatar */
+		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
+		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
+	
+		if (card[linkedin_url].length > 0) {
+			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
+			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
+		};
 
-  		let profileImgSrc = ghId ?
-  			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
-  			"/assets/images/wins-page/avatar-default.svg";
+		if (card[github_url].length > 0){
+			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
+			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
+		}
 
-  		let cardElement = makeElement('li', list, "project-card");
-  		cardElement.classList.add("wins-card");
+		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
-  		let leftDiv = makeElement('div', cardElement, "wins-card-left");
+		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
+		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
-  		let profileImg = makeElement('img', leftDiv, "wins-card-profile-img");
-  		profileImg.setAttribute("src", profileImgSrc);
+		
+		winsCardContainer.append(cloneCardTemplate);
+		
+		const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		function addSeeMore() {
+			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
-  		let quote = makeElement('img', leftDiv, "wins-card-big-quote");
-  		quote.setAttribute("src", "/assets/images/wins-page/quote-icon.svg");
-  		let rightDiv = makeElement('div', cardElement, "wins-card-content");
-  		rightDiv.classList.add("project-card-inner");
+			//makes the see more span on the bottom of the card
+			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
+				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+			} else {
+				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+			}
+		}
+		addSeeMore()
 
-  		//makes the top of thecard name and icons
-  			let topDiv = makeElement('div', rightDiv, "project-inner");
-  			topDiv.classList.add("wins-card-top");
-  			let nameElement = makeElement('span', topDiv, "wins-card-name");
-  			nameElement.innerHTML = card[name];
-  			let icons = makeElement('span', topDiv, "wins-card-icons");
-  			if (card[linkedin_url].length > 0) {
-  				makeIcon(card[linkedin_url], icons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
-  			} if (card[github_url].length > 0) {
-  				makeIcon(card[github_url], icons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
-  			}
+		new ResizeObserver(addSeeMore).observe(winText)
+	})
 
-  		//makes the team and roles portion in the middle
-  			let nameDiv = makeElement('div', rightDiv, "project-inner");
-  			nameDiv.classList.add("wins-card-team");
-  			nameDiv.innerHTML = `Team(s): ${card[team]}`;
-  			if (card[role].length > 0) {
-  				let roleDiv = makeElement('div', rightDiv, "project-inner");
-  				roleDiv.classList.add("wins-card-role");
-  				roleDiv.innerHTML = `Role(s): ${card[role]}`;
-  			}
 
-  		//makes the win and info text on the bottom of the card
-  			let winDiv = makeElement('div', rightDiv, "project-inner");
-  			winDiv.classList.add("wins__card-text");
-  			let overviewElement = makeElement('p', winDiv, "wins-card-overview");
-  			overviewElement.innerHTML = card[overview];//description
-  			let winElement = makeElement('p', winDiv, "wins-card-info");
-  			winElement.innerHTML = formatMessage(card[win]); //win
-
-  		let innerHeight = Array.from(rightDiv.childNodes).reduce((acc, el) => el.offsetHeight + acc, 0)
-
-  		//makes the see more span on the bottom of the card
-  		if(innerHeight > rightDiv.offsetHeight){ //checks if see more is needed.
-  			let seeMoreDiv = makeElement('div', rightDiv, "project-inner");
-  			seeMoreDiv.classList.add("wins__see-more-div")
-  			seeMoreDiv.innerHTML = `<span id="${idNum}" onclick="seeMore(id)" class="wins__see-more-span" expandable>...see more</span>`
-  		}
-  			idNum++
-  	})
   }
   function seeMore(id){
   	screenWidth = window.innerWidth;
@@ -427,6 +349,19 @@ title: Wins
   		span.innerHTML = "...see more"
   	}
   }
+  // need to delete makeElement and makeIcon
+  function makeElement(elementType, parent, className) {
+		let child = document.createElement(elementType);
+		child.classList.add(className);
+		parent.appendChild(child);
+		return child;
+	}
+  function makeIcon(href, parent, className, src) {
+		let icon = makeElement('a', parent, 'wins-card-icon');
+		icon.setAttribute("href", href);
+		let iconImg = makeElement('img', icon, className);
+		iconImg.setAttribute("src", src);
+	}
   function updateOverlay(i) {
   		let stringData = window.localStorage.getItem("data");
   		let data = JSON.parse(stringData).reverse();
@@ -435,9 +370,9 @@ title: Wins
   		overlayIcons.innerHTML = "";
 
   		if (data[i][linkedin_url].length > 0) {
-  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '../assets/images/wins-page/icon-linkedin-small.svg');
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '../assets/images/wins-page/icon-github-small.svg');
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
