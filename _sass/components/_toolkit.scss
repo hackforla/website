@@ -17,7 +17,7 @@
     &__text-group {
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: center;
+        justify-content: space-evenly;
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
@@ -238,12 +238,12 @@
         padding-bottom: 3rem;
 
         &__banner-item {
-            font-size: .65rem;
-            max-width: 4rem;
+            font-size: .5rem;
+            max-width: 3.6rem;
         }
 
         &__p {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 
