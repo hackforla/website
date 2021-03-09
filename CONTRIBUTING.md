@@ -3,7 +3,9 @@
 To develop the site, you'll need to first clone the repository on to your computer. For new Git users, see the [Using Git](#using-git) section below. <br><br>
 
 # OVERVIEW
+
 **Set up**
+
 1. [Join the Repo Team](#step-1-become-a-member-of-the-repository-team)
 
 2. [Using Git](#using-git) and [Fork the Repo](#step-2-fork-the-repository)
@@ -18,7 +20,6 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 6. [Switch to new issue branch before you start making changes](#step-6-change-to-a-new-branch)
 
-
 **After you've worked on your issue and before you make a pull request:**
 
 7. [Check upstream before you push](#step-7-check-upstream-before-you-push).
@@ -28,9 +29,9 @@ To develop the site, you'll need to first clone the repository on to your comput
 **Or**
 
 9. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
-              
-**Okay. You're good to go!**        
- 
+
+**Okay. You're good to go!**
+
 10. [Complete the pull request](#step-8-complete-the-pull-request)
 
 ---
@@ -47,7 +48,6 @@ Once you have accepted the GitHub invite (comes via email or in your GitHub noti
 
 1. Setup two factor authentication on your account https://github.com/hackforla/governance/issues/20
 
-
 ## Using Git
 
 This section discusses some tips and best practices for working with Git.
@@ -62,7 +62,7 @@ This section discusses some tips and best practices for working with Git.
 
 1. From the `hackforla` repository, create a Pull Request which asks `hackforla` to pull changes from your fork into the main repository.
 
-1. After the owner of the `hackforla` repository approves and merges your Pull Request, your changes will be live on the website. 
+1. After the owner of the `hackforla` repository approves and merges your Pull Request, your changes will be live on the website.
 
 #### Step 2: Fork the repository
 
@@ -89,6 +89,7 @@ git clone https://github.com/your_GitHub_user_name/website.git
 ```
 
 You should now have a new folder in your `hackforla` folder called `website`. Verify this by changing into the new directory:
+
 ```bash
 cd website
 ```
@@ -98,6 +99,7 @@ Next, verify that your local cloned repository is pointing to the correct `origi
 ```bash
 git remote -v
 ```
+
 You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/YOURUSERNAME/website.git`). You are all set to make working changes to the website on your local machine.
 
 However, we still need a way to keep our local repo up to date with the deployed website. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
@@ -106,7 +108,9 @@ However, we still need a way to keep our local repo up to date with the deployed
 git remote add upstream https://github.com/hackforla/website.git
 git fetch upstream
 ```
+
 After adding the upstream remote, you should now see it if you again run `git remote -v` :
+
 ```bash
 origin  https://github.com/YOURUSERNAME/website.git (fetch)
 origin  https://github.com/YOURUSERNAME/website.git (push)
@@ -114,19 +118,21 @@ upstream        https://github.com/hackforla/website.git (fetch)
 upstream        https://github.com/hackforla/website.git (push)
 
 ```
-If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github), then you can correct that with the following two commands: 
 
-1) Set your forked repo on your Github as an `origin` remote:
+If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github), then you can correct that with the following two commands:
+
+1. Set your forked repo on your Github as an `origin` remote:
 
 ```bash
 git remote set-url origin https://github.com/your_user_name/website.git
 ```
 
-2) Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
+2. Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
 
 ```bash
 git remote add upstream https://github.com/hackforla/website.git
 ```
+
 #### Step 4: Setting up Docker
 
 Docker is the recommended approach to quickly getting started with local development. (ELI5: Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request).
@@ -137,13 +143,14 @@ Mac, and Linux users. Users of unsupported operating systems may check out [Dock
 
 More on using Docker and the concepts of containerization:
 
-* [Get started with Docker](#docker)
-* [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
+- [Get started with Docker](https://docs.docker.com/get-docker/)
+- [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 
-*Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
+_Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository._
 
 If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
-* [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
+
+- [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
 
 ### Build and serve the website locally
 
@@ -160,7 +167,7 @@ Now browse to http://localhost:4000
 
 To stop and completely remove the jekyll server (i.e. the running Docker container):
 
-*(do this anytime Docker or jekyll configuration or other repository settings change)*
+_(do this anytime Docker or jekyll configuration or other repository settings change)_
 
 ```bash
 docker-compose down
@@ -177,6 +184,7 @@ Bring the same server back up later with:
 ```bash
 docker-compose up
 ```
+
 <br>
 
 #### Step 5: Read [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture) to get acquainted with how the website is structured
@@ -205,9 +213,9 @@ git checkout gh-pages
 
 b) Create a new branch where you will work on your issue
 
-The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
+The `git checkout` command will create and change to a new branch where you will do the work on your issue. In git, the checkout command lets you navigate between different branches. Using the `-b` flag you can create a new branch and immediately switch into it.
 
-To create a new issue branch, and switch into it: 
+To create a new issue branch, and switch into it:
 
 ```bash
 git checkout -b fix-logo-width-311
@@ -215,41 +223,44 @@ git checkout -b fix-logo-width-311
 
 The text after the `-b`, in the example `fix-logo-width-311`, will be the name of your new branch. Choose a branch name that relates to the issue you're working on. (No spaces!)
 
-The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
+The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue.
 
 No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
 
-When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
+When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
 c) Prepare your changes to push to your repository
 
-Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
+Once you are done with the work on your issue you will push it to your repository. Before you can push your work to your repository, you will stage and commit your changes. These two commands are similar to the save command that you have used to in other programs.
 
 -Use the `git add` command to stage your changes.  
-This command prepares your changes before you commit them. You can stage files one at a time using the filename, or you can use the `.` to stage all of the files that you have added or made changes to. 
+This command prepares your changes before you commit them. You can stage files one at a time using the filename, or you can use the `.` to stage all of the files that you have added or made changes to.
 
-Run the command: 
+Run the command:
+
 ```bash
 git add .
 ```
 
--Use the `git status` command to see what files are staged. 
+-Use the `git status` command to see what files are staged.
 
-This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you find you have included unrelated changes, please unstage them before making this commit - and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
+This command will list the files that have been staged. These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you find you have included unrelated changes, please unstage them before making this commit - and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
+
 ```bash
 git status
 ```
 
 -Use the `git commit` command
 
-This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to reisst the temptation to be overly cryptic.
+This command saves your work, and prepares it to push to your repository. Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working. It will be extremely helpful if other people can understand your message, so try to reisst the temptation to be overly cryptic.
 
 To commit your changes with a message, run:
+
 ```bash
 git commit -m “insert message here”
 ```
 
-Congratulations!  You are now ready to push your work to your repository. 
+Congratulations! You are now ready to push your work to your repository.
 
 #### Step 7: Check upstream before you push
 
@@ -265,7 +276,7 @@ If you do not see any output, there have not been any changes in the
 main Hack for LA website repository since the last time you
 checked. So it is safe to push your local commits to your fork.
 
-If you just type `git push` you will be prompted to create a new branch in your GitHub repository. The more complete command below will create a new branch on your copy of the website repository, and then push your local branch there. The name at the end of this command should be the same as the name of the local branch that you created back in step 6, as in the example below:  
+If you just type `git push` you will be prompted to create a new branch in your GitHub repository. The more complete command below will create a new branch on your copy of the website repository, and then push your local branch there. The name at the end of this command should be the same as the name of the local branch that you created back in step 6, as in the example below:
 
 ```bash
 git push --set-upstream origin fix-logo-width-311
@@ -290,16 +301,15 @@ From https://github.com/hackforla/website
 
 You can safely ignore changes in other issue branches, such as
 `bonnie` above. But if you see changes in gh-pages, as in
-`5773ebe..0c86ecd  gh-pages   -> hackforla/gh-pages`, you should
+`5773ebe..0c86ecd gh-pages -> hackforla/gh-pages`, you should
 incorporate those changes into your repository before merging or
 rebasing your issue branch. Use the [instructions below](#incorporating-changes-from-upstream)
 to bring your fork up to date with the main repository.
 
-
 ### Incorporating changes from upstream
 
 Your fork of this repository on GitHub, and your local clone of that fork, will
-get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+get out of sync with this (upstream) repository from time to time. (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
 One way to keep your fork up to date with this repository is to follow
 these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
@@ -308,30 +318,32 @@ You can also update your fork via the local clone of your fork, using
 these instructions. Assuming you have a local clone with remotes
 `upstream` (this repo) and `origin` (your GitHub fork of this repo):
 
-First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes. 
+First, you will need to create a local branch which tracks upstream/gh-pages. You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes.
 
-Run the following two commands: 
+Run the following two commands:
 
 ```bash
 git fetch upstream
 git checkout -b upstream-gh-pages --track upstream/gh-pages
 ```
 
-If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes: 
+If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes:
 
 ```bash
-git checkout upstream-gh-pages # Move to the branch you want to merge with. 
+git checkout upstream-gh-pages # Move to the branch you want to merge with.
 git pull  # This updates your tracking branch to match the gh-pages branch in this repository
 git checkout gh-pages  # Move back to your gn-pages branch
-git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
+git merge upstream-gh-pages  # Merge to bring your gh-pages current.
 ```
+
 If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
 
-Then push the merge changes to your GitHub fork:  
+Then push the merge changes to your GitHub fork:
 
 ```bash
 git push
 ```
+
 If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
 
 #### Incorporating changes into your topic branch
@@ -346,8 +358,7 @@ git checkout fix-logo-width-311
 git rebase gh-pages
 ```
 
-If you receive warnings about conflicts, abort the rebase with `git
-rebase --abort` and instead merge gh-pages into your branch.
+If you receive warnings about conflicts, abort the rebase with `git rebase --abort` and instead merge gh-pages into your branch.
 
 ```bash
 git checkout fix-logo-width-311
@@ -362,8 +373,8 @@ If you have not submitted a pull request make sure to write a weekly status upda
 2. Blockers: "Difficulties or errors encountered."
 3. Availability: "How much time will you have this week to work on this issue?"
 4. ETA: "When do you expect this issue to be completed?"
-5. Pictures: "Add any pictures of the visual changes made to the site so far." 
-   
+5. Pictures: "Add any pictures of the visual changes made to the site so far."
+
 #### Step 9: Complete the pull request
 
 ```bash
@@ -394,16 +405,19 @@ git checkout gh-pages
 ```
 
 From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
+
 ```bash
 git pull upstream gh-pages
 git branch -d <your-feature-branch>
 ```
+
 Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
 Now you are all set to work on a new PR. Start over on Step 6.
 
 #### Edits to pull request
-If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request. 
+
+If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 ## Useful Links
 
@@ -416,10 +430,9 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 ### Tutorials
 
-- [Github Guides](https://guides.github.com/) 
+- [Github Guides](https://guides.github.com/)
 - [docker](https://docs.docker.com/get-started/)
 - [dockercompose](https://docs.docker.com/compose/gettingstarted/)
 - [dockerdesktop](https://docs.docker.com/install/)
-
 
 [Back to Top](#overview)
