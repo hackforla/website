@@ -137,7 +137,7 @@ Mac, and Linux users. Users of unsupported operating systems may check out [Dock
 
 More on using Docker and the concepts of containerization:
 
-* [Get started with Docker](#docker)
+* [Get started with Docker](https://docs.docker.com/get-docker/)
 * [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 
 *Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
@@ -333,7 +333,7 @@ If you have already created the branch upstream-gh-pages, the following commands
 ```bash
 git checkout upstream-gh-pages # Move to the branch you want to merge with. 
 git pull  # This updates your tracking branch to match the gh-pages branch in this repository
-git checkout gh-pages  # Move back to your gn-pages branch
+git checkout gh-pages  # Move back to your gh-pages branch
 git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
 ```
 If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
