@@ -19,6 +19,7 @@ Gemfile.lock
 .DS_store
 .vscode
 .idea
+.vs
 
 #ignore models.json file added by IDE intellesense
 models.json
