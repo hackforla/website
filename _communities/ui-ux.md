@@ -6,7 +6,7 @@ status: Active
 location:
   - Remote
 
-image: /assets/images/communities-of-practice/uiux.svg
+image: /assets/images/communities-of-practice/uiux.jpg
 alt: 'A board full of Post-it notes is used as a communication tool'
 
 meeting-times: Mondays 6:00-7:00 PM PT (every week)

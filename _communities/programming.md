@@ -6,7 +6,7 @@ status: Seeking
 location:
   - Remote
 
-image: /assets/images/communities-of-practice/data-sci.svg
+image: /assets/images/communities-of-practice/programming.jpg
 alt: 'A computer screen shows a diagram used to manage code development'
 
 meeting-times: TBD

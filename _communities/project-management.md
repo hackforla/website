@@ -6,7 +6,7 @@ status: Active
 location:
   - Remote
 
-image: /assets/images/communities-of-practice/proj-prod-mgmt.svg
+image: /assets/images/communities-of-practice/product.jpg
 alt: 'Several people around a small table listen intently as one person speaks.'
 
 meeting-times: Tuesdays 6:00-7:00 pm PT (every other week)

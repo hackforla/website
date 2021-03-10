@@ -1,7 +1,8 @@
 .comm-practice-header {
   display: flex;
-  flex-flow: row wrap;
-  //justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items:center;
   padding: 20px 40px 40px;
   background: #fff;
   height: fit-content;
@@ -10,29 +11,38 @@
   font-style: normal;
   font-weight: normal;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     flex-flow: column wrap;
-    justify-content: center;
   }
 
   h1 {
-    font-weight: 700;
-    line-height: 33.6px;
+    font-size: 48px;
+//    line-height: 33.6px; This looks weird bt breakpoints
     text-align: center;
     padding: 10px 0;
-    @media #{$bp-below-mobile} {
+    @media #{$bp-below-tablet} {
         font-size: 24px;
     }
   }
 
   .comm-practice-header-text {
-    margin: 15px 0;
+    width: 600px;
+    margin: 40px;
     text-align: left;
     font-size: 16px;
     font-weight: 400;
+    @media #{$bp-below-tablet} {
+      width:100%;
+      margin: auto;
+      }
   }
 
   .comm-practice-header-img {
+    width:320px;
+    @media #{$bp-below-tablet} {
+    width:100%;
+    max-width:320px;
+    }
   }
 }
 
@@ -51,7 +61,7 @@
       padding: 16px 16px;
     }
   }
-
+  /*Kind of the same as in _sitemap and the Figma notes, just leave this alone for now */
   .card-primary {
     background: $color-white;
   }
@@ -69,7 +79,7 @@
     margin: 0px auto 16px;
 
     // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
+    @media #{$bp-below-tablet} {
       padding: 0px 16px;
       margin: 0px auto 12px;
     }
@@ -113,14 +123,39 @@
       margin: 40px 0;
       padding: 0 16px;
     }
-
-    .card-content-strong {
-        display: block;
-        font-weight: 700;
-    }
-
-    .btn-wrapper {
-        text-align: center;
-    }
   }
+}
+/*leader card styling - adapted from project page, mostly wrt sizing */
+.leader-list--communities {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:space-evenly;
+  margin: 20px auto;
+    }
+.leader-img--communities {
+  margin: 10px;
+  width: 50px;
+  min-width: 40px;
+  border-radius: 10px;
+  }
+.leader-card--communities {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 24% auto;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+  width: 240px;
+  margin-bottom: 10px;
+
+ /* // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-tablet} {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto auto 25px auto;
+  }*/
 }

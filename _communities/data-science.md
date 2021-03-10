@@ -6,7 +6,7 @@ status: Active
 location:
   - Remote
 
-image: /assets/images/communities-of-practice/data-sci.svg
+image: /assets/images/communities-of-practice/data.jpg
 alt: 'A person uses a laptop to review a data dashboard'
 
 meeting-times: Thursdays 8:00-9:00 pm PT (every week)
