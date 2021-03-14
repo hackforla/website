@@ -6,14 +6,10 @@
 	align-items: center;
 	justify-content: space-evenly;
 	img{
-		height: 366;
+		height: 360px;
 	}
-	h1{
-		font-size: 59px;
-		line-height: 69px;
-		text-align: center;
-		font-style: normal;
-		font-weight: normal;
+	h1 {
+		margin-bottom: 56px;
 	}
 }
 
@@ -22,7 +18,7 @@
 	background-color: white;
 	right: 0px;
 	bottom: 0px;
-	color: red;
+	color: $color-red;
 	padding: 0px 3px;
 	cursor: pointer;
 }
@@ -41,18 +37,12 @@
 		img{
 			height: 230px;
 		}
-		h1{
-			font-style: normal;
-			font-weight: normal;
-			font-size: 38px;
-		}
 		.btn--wins{
 			height: 60px;
 			padding: 0 50px;
 			border-radius: 60px;
 			font-size: 1.25rem;
 		}
-		
 	}
 }
 
@@ -61,12 +51,6 @@
 
 		img{
 			height: 105px;
-		}
-		h1{
-			font-style: normal;
-			font-weight: normal;
-			font-size: 24px;
-			line-height: 28px;
 		}
 		.btn--wins{
 			height: 40px;
