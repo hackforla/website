@@ -17,7 +17,7 @@ title: Toolkit
 <div class="toolkit-header__text-group">
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
-      <a href="#{{category | replace: ' ', '+'}}" id="{{ category }}" class="toolkit-header__banner-item">{{ category }}</a>
+      <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item">{{ category }}</a>
     {% endfor %}
 </div>
 
