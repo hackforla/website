@@ -11,7 +11,7 @@ alt: 'A person uses a laptop to review a data dashboard'
 
 meeting-times: Thursdays 8:00-9:00 pm PT (every week)
 
-leadership-type: Mentor-led
+leadership-type: Mentor Led
 leadership:
   - name: Sophia Alice
     role: Co-lead

@@ -11,21 +11,25 @@ alt: 'A board full of Post-it notes is used as a communication tool'
 
 meeting-times: Mondays 6:00-7:00 PM PT (every week)
 
-leadership-type: Seeking
+leadership-type: Peer Led
 leadership:
-  - name: 
-    role: 
+  - name: Danielle Nevidi
+    role: Co-lead
     links:
-      slack: 
-      github: 
-    picture: 
-
+      slack: https://hackforla.slack.com/team/U013U4VN8V7
+      github: https://github.com/daniellex0
+    picture: https://avatars.githubusercontent.com/u/67400366
+  - name: Tan Zhou
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/UPMSC27G8
+      github: https://github.com/tan-zhou
+    picture: https://avatars.githubusercontent.com/u/50305762
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C017ESHSMNG/
   - name: Github
     url: 
   
-recruiting-message: If you've been working on a Hack for LA project for a month or more and are interested in organizing this group, join us at the Project/Product Management Community of Practice meeting to talk about how we can help you get this off the ground (the project leads will be able to get the word out to their project team).
-
+recruiting-message:
 ---
