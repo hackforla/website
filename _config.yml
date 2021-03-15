@@ -39,3 +39,5 @@ defaults:
       type: "guide-pages"
     values:
       layout: "guide-pages"
+
+exclude: ['github-actions']
