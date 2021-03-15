@@ -1,0 +1,53 @@
+name: Validate Projects Collections
+
+# Run this action every day at 4am Pacific (12 am UTC)
+# on:
+#   schedule:
+#     - cron: '0 12 * * *'
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  validate_projects:
+    runs-on: ubuntu-latest
+    
+    # if: github.repository == 'hackforla/website'
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: 'validate-collections'
+    
+    - name: GitHub Action for install npm dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        working-directory: ./github-actions/validate-project-collections
+    
+    - name: Generate validation report
+      env:
+        token: ${{ secrets.GITHUB_TOKEN }}
+      run: node github-actions/validate-project-collections/validate.js
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      with:
+        # Optional glob pattern of files which should be added to the commit
+        file_pattern: _data/project_validation_report.json
+
+        commit_message: Create Project validation report
+        branch: validate-collections
+
+        # Commit author settings
+        commit_author: GitHub Actions Bot <akib-bot@hackforla.org>

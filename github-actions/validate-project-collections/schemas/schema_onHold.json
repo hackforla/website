@@ -1,0 +1,77 @@
+{
+    "id": "/ProjectsSchema",
+    "type": "object",
+    "properties": {
+      "identification":{"type":"string"},
+      "title": {"type": "string"},
+      "description": {"type": "string"},
+      "image": {"type":"string"},
+      "image-hero": {"type":"string"},
+      "alt": {"type": "string"},
+      "leadership": { "type":"array", "items":{"$ref": "#/$defs/leader"} },
+      "links":{ "type":"array",  "items":{"$ref": "#/$defs/links"}   },
+      "location":{"type":"array", "items":{"type":"string", "enum":["Remote","Downtown LA","Santa Monica","South LA","Los Angeles"] } },
+      "technologies":{ "type":"array","items":{"type":"string" }  },
+      "partner":{"type":"string"},
+      "tools":{"type":"string"},
+      "vertical": {"type":"string"},
+      "status":{"type":"string","enum":["On Hold"]}
+  
+    },
+    "required":[
+      "identification",
+      "title",
+      "description",
+      "image",
+      "alt",
+      "image-hero",
+      "leadership",
+      "links",
+      "location",
+      "technologies",
+      "partner",
+      "tools",
+      "vertical",
+      "status"
+    ],
+    "$defs":{
+      "leader":{
+        "type":"object",
+        "required":["name","role","picture","links"],
+        "properties":{
+          "name":{"type":"string"},
+          "role":{"type":"string"},
+          "picture":{"type":"string"},
+          "links":{
+            "type":"object",
+            "required":["github","slack"],
+            "properties":{
+              "github":{"type":"string"},
+              "slack":{"type":"string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "links":{
+       "type":"object",
+       "required":["name","url"],
+       "properties":{
+         "name":{"type":"string"},
+         "url": {"type":"string"}
+       },
+       "additionalProperties": false
+      },
+      "looking":{
+        "type":"object",
+        "required":["category","skill"],
+        "properties":{
+          "category":{"type":"string"},
+          "skill":{"type":"string"}
+        },
+        "additionalProperties": false
+      }
+    }
+    
+}
