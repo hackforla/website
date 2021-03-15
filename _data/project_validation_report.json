@@ -1,0 +1,520 @@
+[
+    {
+        "file": "100 Automations",
+        "errors": [
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "311 Data",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "ArtWatcher",
+        "errors": [
+            {
+                "message": "requires property \"image-hero\"",
+                "stack": "instance requires property \"image-hero\""
+            },
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "BallotNav",
+        "errors": [
+            {
+                "message": "is not of a type(s) string",
+                "stack": "instance.leadership[0].role is not of a type(s) string"
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Brigade Organizers Playbook",
+        "errors": [
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Civic Opportunity Project",
+        "errors": [
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Civic Tech Index",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Civic Tech Structure",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Los Angeles Criminal Sentencing Project",
+        "errors": [
+            {
+                "message": "requires property \"image-hero\"",
+                "stack": "instance requires property \"image-hero\""
+            },
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "curbmap",
+        "errors": [
+            {
+                "message": "requires property \"identification\"",
+                "stack": "instance requires property \"identification\""
+            },
+            {
+                "message": "requires property \"image-hero\"",
+                "stack": "instance requires property \"image-hero\""
+            },
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Engage",
+        "errors": [
+            {
+                "message": "is not of a type(s) string",
+                "stack": "instance.leadership[0].role is not of a type(s) string"
+            }
+        ]
+    },
+    {
+        "file": "Food Oasis",
+        "errors": [
+            {
+                "message": "is not of a type(s) string",
+                "stack": "instance.leadership[4].role is not of a type(s) string"
+            }
+        ]
+    },
+    {
+        "file": "Heart",
+        "errors": [
+            {
+                "message": "requires property \"github\"",
+                "stack": "instance.leadership[0].links requires property \"github\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[0].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[0].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"github\"",
+                "stack": "instance.leadership[1].links requires property \"github\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[1].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[1].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"github\"",
+                "stack": "instance.leadership[2].links requires property \"github\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[2].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[2].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[3].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[3].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[4].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[4].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[5].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[5].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[6].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[6].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[7].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[7].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[8].links requires property \"slack\""
+            },
+            {
+                "message": "is not allowed to have the additional property \"linkedin\"",
+                "stack": "instance.leadership[8].links is not allowed to have the additional property \"linkedin\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            }
+        ]
+    },
+    {
+        "file": "HelloGOV",
+        "errors": [
+            {
+                "message": "requires property \"role\"",
+                "stack": "instance.leadership[0] requires property \"role\""
+            },
+            {
+                "message": "requires property \"role\"",
+                "stack": "instance.leadership[1] requires property \"role\""
+            },
+            {
+                "message": "requires property \"role\"",
+                "stack": "instance.leadership[2] requires property \"role\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            }
+        ]
+    },
+    {
+        "file": "Jobs for Hope",
+        "errors": [
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Light The Way",
+        "errors": [
+            {
+                "message": "requires property \"identification\"",
+                "stack": "instance requires property \"identification\""
+            },
+            {
+                "message": "requires property \"image-hero\"",
+                "stack": "instance requires property \"image-hero\""
+            },
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Railstats LA",
+        "errors": [
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            }
+        ]
+    },
+    {
+        "file": "New Schools Today",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Not Today - Self-Defense Against Suicidal Thoughts",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Open Community Survey",
+        "errors": [
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            }
+        ]
+    },
+    {
+        "file": "Record Clearance Project",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Shared Housing Project",
+        "errors": [
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "Spare",
+        "errors": [
+            {
+                "message": "requires property \"leadership\"",
+                "stack": "instance requires property \"leadership\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            },
+            {
+                "message": "requires property \"vertical\"",
+                "stack": "instance requires property \"vertical\""
+            }
+        ]
+    },
+    {
+        "file": "LA TDM Calculator",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Undebate",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "VRMS",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Hackforla.org Website",
+        "errors": [
+            {
+                "message": "requires property \"partner\"",
+                "stack": "instance requires property \"partner\""
+            }
+        ]
+    },
+    {
+        "file": "Work for LA",
+        "errors": [
+            {
+                "message": "requires property \"slack\"",
+                "stack": "instance.leadership[0].links requires property \"slack\""
+            },
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            }
+        ]
+    },
+    {
+        "file": "Write for All&#8482;",
+        "errors": [
+            {
+                "message": "requires property \"technologies\"",
+                "stack": "instance requires property \"technologies\""
+            },
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    },
+    {
+        "file": "Youth Justice Nav",
+        "errors": [
+            {
+                "message": "requires property \"tools\"",
+                "stack": "instance requires property \"tools\""
+            }
+        ]
+    }
+]
