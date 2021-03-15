@@ -25,5 +25,29 @@ jobs:
     
     # if: github.repository == 'hackforla/website'
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: 'validate-collections'
+    
+    - name: GitHub Action for install npm dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        working-directory: ./github-actions/validate-project-collections
+    
+    - name: Generate validation report
+      env:
+        token: ${{ secrets.GITHUB_TOKEN }}
+      run: node github-actions/validate-project-collections/validate.js
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      with:
+        # Optional glob pattern of files which should be added to the commit
+        file_pattern: _data/project_validation_report.json
+
+        commit_message: Create Project validation report
+        branch: validate-collections
+
+        # Commit author settings
+        commit_author: GitHub Actions Bot <akib-bot@hackforla.org>
