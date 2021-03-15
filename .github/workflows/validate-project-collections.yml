@@ -1,0 +1,29 @@
+name: Validate Projects Collections
+
+# Run this action every day at 4am Pacific (12 am UTC)
+# on:
+#   schedule:
+#     - cron: '0 12 * * *'
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  validate_projects:
+    runs-on: ubuntu-latest
+    
+    # if: github.repository == 'hackforla/website'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2

@@ -5,22 +5,22 @@ const validator = new Validator();
 
 //["Active","On Hold","Completed"]
 const schemaOptions ={
-  "Active"    : "./Hack4LA/schemas/schema_active.json",
-  "On Hold"   : "./Hack4LA/schemas/schema_onHold.json",
-  "Completed" : "./Hack4LA/schemas/schema_completed.json"
+  "Active"    : "github-actions/validate-project-collections/schemas/schema_active.json",
+  "On Hold"   : "github-actions/validate-project-collections/schemas/schema_onHold.json",
+  "Completed" : "github-actions/validate-project-collections/schemas/schema_completed.json"
 }
 
-const testFileLocation = './Hack4LA/testFiles';
+const projectFileLocation = '_projects';
 
 (function main() {
   
-  const file_path_list = get_all_file_path(testFileLocation);
+  const file_path_list = get_all_file_path(projectFileLocation);
 
   const report = gernerateReport(file_path_list);
 
   const clean_report = cleanReport(report);
 
-  writeCleanReportToFile('./Hack4LA/report.json',clean_report);
+  writeCleanReportToFile('_data/project_validation_report.json',clean_report);
 
 
 })();

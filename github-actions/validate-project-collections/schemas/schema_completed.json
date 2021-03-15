@@ -1,0 +1,62 @@
+{
+    "id": "/ProjectsSchemaCompleted",
+    "type": "object",
+    "properties": {
+        "identification": {"type":"string"},
+        "title": {"type":"string"},
+        "description": {"type":"string"},
+        "image": {"type":"string"},
+        "image-hero": {"type":"string"},
+        "leadership":{ "type":"array", "items":{"$ref": "#/$defs/leader"}},
+        "alt": {"type":"string"},
+        "links": {"type":"array", "items":{"$ref": "#/$defs/links"}},
+        "technologies":{"type":"array","items":{"type":"string"}},
+        "partner": {"type":"string"},
+        "vertical": {"type":"string"},
+        "status": { "type":"string", "enum":["Completed"]},
+        "additionalProperties": false
+    },
+    "required":[
+        "identification",
+        "title",
+        "description",
+        "image","alt",
+        "leadership",
+        "links",
+        "technologies",
+        "partner",
+        "vertical",
+        "status"
+    ],
+    "$defs": {
+        "links":{
+            "type":"object",
+            "required":["name","url"],
+            "properties":{
+              "name":{"type":"string"},
+              "url": {"type":"string"}
+            },
+            "additionalProperties": false
+           },
+        "leader":{
+        "type":"object",
+        "required":["name","role","picture","links"],
+        "properties":{
+            "name":{"type":"string"},
+            "role":{"type":"string"},
+            "picture":{"type":"string"},
+            "links":{
+            "type":"object",
+            "required":["github","slack"],
+            "properties":{
+                "github":{"type":"string"},
+                "slack":{"type":"string"}
+            },
+            "additionalProperties": false
+            }
+        },
+        "additionalProperties": false
+        }
+    }
+    
+}
