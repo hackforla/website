@@ -6,7 +6,7 @@ description: 'The Record Clearance Project aims to help people in California wit
 image: /assets/images/projects/record-clearance.jpg
 alt: 'Record clearance project'
 image-hero: /assets/images/projects/record-clearance-hero.png
-alt: 'Record clearance hero'
+alt-hero: 'Record clearance hero'
 leadership:
   - name: Gretchen Howard
     role: Product Manager
