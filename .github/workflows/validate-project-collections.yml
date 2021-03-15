@@ -27,8 +27,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        ref: 'validate-collections'
     
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
@@ -47,7 +45,6 @@ jobs:
         file_pattern: _data/project_validation_report.json
 
         commit_message: Create Project validation report
-        branch: validate-collections
-
+        
         # Commit author settings
         commit_author: GitHub Actions Bot <akib-bot@hackforla.org>
