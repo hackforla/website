@@ -153,7 +153,7 @@
             hours = "00";
         }
         
-        if (modifier === "PM" || 'pm') {
+        if (modifier.toLowerCase() === 'pm') {
             hours = parseInt(hours, 10) + 12;
         }
         return parseInt(`${hours}${minutes}`);
