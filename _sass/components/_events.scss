@@ -100,6 +100,16 @@
   }
 
 }
+@media only screen and (max-width:750px){
+  .mobile-font-verison{
+    font-size: 1rem;
+  }
+}
+.location-heading{
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
 
 #head-content::before {
   content: "\226A";
@@ -285,12 +295,14 @@
 #mini-img {
   width: 90px;
   height: 66px;
+  border-radius: 5px 5px 0 0;
 }
 .img-dis {
   width: 92px;
   border: 1px solid gray;
   margin: 10px;
   height: 120px;
+  border-radius: 5px;
 }
 .proj-desc {
   text-align: center;
