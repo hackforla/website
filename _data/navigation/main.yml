@@ -1,5 +1,5 @@
 - name: Events
-  link: /website/events
+  link: /events
 
 # the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
 - name: Projects
@@ -15,4 +15,4 @@
   link: /toolkit
 
 - name: Wins
-  link: /website/wins
+  link: /wins
