@@ -15,10 +15,10 @@ title: Toolkit
 </div>
 
 <div class="toolkit-header__text-group">
-    <p class="toolkit-header__banner-item">Development</p>
-    <p class="toolkit-header__banner-item">Design</p>
-    <p class="toolkit-header__banner-item">Project Management</p>
-    <p class="toolkit-header__banner-item">Professional Development</p>
+    {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
+    {% for category in category_list %}
+      <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item">{{ category }}</a>
+    {% endfor %}
 </div>
 
 <div class="toolkit-background content-section">
@@ -26,62 +26,52 @@ title: Toolkit
         <div class="suggest-guide-group"><h2>Guides (We Made These!)</h2><button class="btn btn-primary btn-md-narrow">Suggest a guide</button></div>
 
     <div class="toolkit-flex-container">
-        <!-- Searching through toolkitPages collection -->
-        <!-- change collection to _guidepages -->
-        {%- for item in site.guide-pages -%}
-        {%- if item.status == 'active' -%}
-
-            <div class="toolkit-flex-item section-container">
-            
-                {%- if item.svg -%}
-                <div class="toolkit-flex-item-img-container">
-                    {% include {{ item.svg }} %}
-                </div>
+        <!-- Iterating through toolkitPages collection -->
+            {%- assign guides = site.guide-pages | sort: "title" -%}
+            {%- for item in guides -%}
+                {%- if item.display == true -%}
+                    {%- include guide-card.html guide=item -%}
                 {%- endif -%}
-
-                <div class="toolkit-info-container">
-                    {%- if item.title -%}
-                    <h3><a href={{ item.provider-link }}>{{ item.title }}</a></h3>
-                    {%- endif -%}
-
-                    {%- if item.short-description -%}
-                    <p>{{ item.short-description }}</p>
-                    {%- endif -%}
-                </div>
-                    
-            </div>
-        {%- endif -%}
-        {%- endfor -%}
-
-        {%- for item in site.guide-pages -%}
-        {%- if item.status == 'coming-soon' -%}
-            <div class="toolkit-flex-item section-container">
-            
-                {%- if item.svg -%}
-                <div class="toolkit-flex-item-img-container">
-                    {% include {{ item.svg }} %}
-                </div>
-                {%- endif -%}
-
-                <div class="toolkit-info-container">
-                    {%- if item.title -%}
-                    <h3 class="not-clickable">{{ item.title }}</h3>
-                    {%- endif -%}
-
-                    {%- if item.short-description -%}
-                    <p>{{ item.short-description }}</p>
-                    {%- endif -%}
-
-                </div>
-                {%- if item.status == 'coming-soon' -%}
-                    <span class="toolkit-flex-item-status">coming soon</span>
-                {%- endif -%}
-            </div>
-        {%- endif -%}
-        {%- endfor -%}
+            {%- endfor -%}
     </div>
 
-    </div>
+</div>
+
+<script>
+    //add listener for click in banner, and toggle classes for filters.
+    document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
+        filter.addEventListener('click', function(event) {
+            let thisCategory = event.currentTarget;
+            let otherCategories = event.currentTarget.parentElement.children;
+            
+            if (thisCategory.classList.contains('selected-category')) {
+                return;
+            } else {
+                Array.from(otherCategories).forEach((category) => {
+                if (category.classList.contains('selected-category')) {
+                    category.classList.remove('selected-category');
+                return; }
+                });
+
+            thisCategory.classList.toggle('selected-category');  
+            }
+        });
+    });
+        //add listener for url change and toggle visible cards.
+        window.addEventListener("hashchange", hashFilter);
+        function hashFilter(e) {
+            let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
+
+            let cardContainers = document.querySelectorAll("[data-article-type]");
+            cardContainers.forEach((card) => {
+                if(currentHash == 'all'){
+                    card.style.display = 'block';
+                return;
+                }
+                card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
+            });
+        } 
+</script>
 
     <div class="toolkit__card-list">
         <div class="suggest-guide-group"><h2>External Resources</h2><button class="btn btn-primary btn-md-narrow">Suggest a resource</button></div>

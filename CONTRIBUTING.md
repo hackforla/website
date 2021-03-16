@@ -137,7 +137,7 @@ Mac, and Linux users. Users of unsupported operating systems may check out [Dock
 
 More on using Docker and the concepts of containerization:
 
-* [Get started with Docker](#docker)
+* [Get started with Docker](https://docs.docker.com/get-docker/)
 * [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 
 *Ensure you run the `docker` commands below from a shell inside the local directory containing your clone of this repository.*
