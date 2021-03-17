@@ -1,61 +1,77 @@
 .header--communities {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row;
   justify-content: center;
-  align-items:center;
-  padding: 64px;
   background: #fff;
+  padding: 64px;
   height: fit-content;
   margin: 37px auto 0;
   font-family: "Roboto" sans-serif;
   font-style: normal;
   font-weight: normal;
-  @media #{$bp-below-tablet} {
+  align-items: center;
+  /*This page has a lot more text than the others, so it starts looking weird earlier*/
+  @media #{$bp-below-desktop} {
     flex-direction: column;
   }
 
-  h1 {
-    font-size: 48px;
-    text-align: center;
-    padding: 10px 0;
-    @media #{$bp-below-tablet} {
-        font-size: 24px;
-    }
-  }
-
   .header-text--communities {
-    width: 600px;
-    margin: 40px;
-    text-align: left;
-    font-size: 18px;
-    font-weight: 400;
-    @media #{$bp-below-tablet} {
-      width:100%;
-      margin: auto;
-      font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    
+    p{
+      font-size: 18px;
+      max-width: 550px;
+      margin-top: 8px;
+      text-align: left;
+      @media #{$bp-below-tablet} {
+        width:100%;
+        margin: auto;
+        font-size: 16px;
+        }
+    }
+    h1 {
+      font-size: 48px;
+      @media #{$bp-below-tablet} {
+        font-size: 24px;
       }
+    }
   }
 
   .header-img--communities {
     width:320px;
+    margin-left: 80px;
+    @media #{$bp-below-desktop} {
+      margin: auto;
+
+    }
     @media #{$bp-below-tablet} {
-    width:100%;
-    max-width:320px;
+      width:100%;
     }
   }
 
-  .alert--communities {
-    font-size: 16px;
-    font-weight: bold;
-  }
+  .header-self-invite--communities {
+    display:flex;
+    align-items: flex-start;
+    max-width: 550px;
+    @media #{$bp-below-tablet} {
+      margin: 30px;
+    }
 
-  .slack-self-invite {
+    .alert--communities {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .self-invite-img {
     margin: 15px;
-    float: left;
+    width: 24px;
+    height: 24px;
   }
 }
 
 .content--communities {
+  background: #e5e5e5;
 
   .card-primary {
     background: $color-white;
@@ -63,19 +79,15 @@
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   }
 
-  /*got rid of page-card-lg bc it was bringing in padding where it shouldn't be, folded some of it into this specific class*/
   .page-card--communities {
     background: #fff;
     border: 0 solid rgba(51, 51, 51, 0.06);
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    /*padding: 20px;*/
-    margin: 45px;
     max-width: 896px;
     border-radius: 20px;
     overflow: hidden;
-    margin: 0px auto 16px;
+    margin: 20px auto;
 
-    // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-tablet} {
       margin: 0px auto 12px;
     }
@@ -83,8 +95,7 @@
 
   .page-card-container {
     display: flex;
-    min-height: 454px
-    height: -moz-fit-content;
+    min-height: 454px;
     height: fit-content;
 
     @media #{$bp-below-tablet} {
@@ -135,7 +146,7 @@
   display:flex;
   flex-flow: row wrap;
   justify-content:space-evenly;
-  margin: 20px auto;
+  margin: 20px -5px;
   @media #{$bp-below-tablet} {
     justify-content:center;
   }
@@ -152,19 +163,8 @@
   grid-template-columns: 24% auto;
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
-  width: 245px;
+  width: 240px;
+  height: 70px;
   margin-bottom: 10px;
-
- /* This is from the original but seemed to break on mobile, seems to work OK when I take it out
- // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-tablet} {
-    min-width: 100%;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin: auto auto 25px auto;
-  } */
+  font-size: 14px;
 }
