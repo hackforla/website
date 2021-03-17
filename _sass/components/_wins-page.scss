@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-evenly;
     img{
-        height: 366;
+        height: 360px;
     }
     h1{
         margin-bottom: 56px;
@@ -24,7 +24,7 @@
     background-color: white;
     right: 0px;
     bottom: 0px;
-    color: red;
+    color: $color-red;
     padding: 0px 3px;
     cursor: pointer;
 }
