@@ -22,7 +22,7 @@ collections:
   sponsors:
   testimonials:
 
-# Please refer to the documentation here before modifying defaults
+# Please refer to the documentation here[https://jekyllrb.com/docs/datafiles/] before modifying defaults
 # The settings below reads as so
 #     - Everything within the `pages` directory that is of type `pages` will be rendered using the `default` layout as defined ins `_layouts/default.html`
 #     - Everything within the `_projects` directory that is of type `projects` will be rendered using the `project` layout as defined ins `_layouts/project.html`
