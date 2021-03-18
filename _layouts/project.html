@@ -439,16 +439,11 @@ fetch(API_URL, {method: 'GET'})
     console.log(err);
 })
 
-/**
- * Displays/Inserts the user's time zone in the DOM
-*/
-function insertTimeZoneText(){
-    let timeZoneText  = `Times are in your local time zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
-    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText);
-}
+
 if (meetingsFound.length >= 1) {
-    insertTimeZoneText();
     meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings</strong>');
+    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+
 }
 
 // Formats time to be readable
@@ -474,4 +469,6 @@ function timeFormat(time) {
     }
 
 }
+
+
 </script>
