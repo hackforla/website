@@ -47,9 +47,8 @@
         document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
 
         //Displays/Inserts the user's time zone in the DOM
-        document.addEventListener('DOMContentLoaded',function(){
-            document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-        });
+        document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+       
 
 
     })()
