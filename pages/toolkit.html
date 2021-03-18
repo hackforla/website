@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Toolkit
+permalink: /toolkit/
 --- 
 <div class="toolkit-header header-container">
     <div class="toolkit-header__text">
@@ -78,7 +79,7 @@ title: Toolkit
 
         <div class="toolkit-flex-container">
             <!-- Searching through toolkitResources collection -->
-            {%- for item in site.toolkitResources -%}
+            {%- for item in site.data.toolkit.resource -%}
             {%- if item.display ==  true -%}
             <div class="toolkit-flex-item section-container">
 

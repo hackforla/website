@@ -21,21 +21,25 @@ collections:
     output: true
   sponsors:
   testimonials:
-  toolkitResources:
 
+# Please refer to the documentation here before modifying defaults
+# The settings below reads as so
+#     - Everything within the `pages` directory that is of type `pages` will be rendered using the `default` layout as defined ins `_layouts/default.html`
+#     - Everything within the `_projects` directory that is of type `projects` will be rendered using the `project` layout as defined ins `_layouts/project.html`
+#     - Everything within the `_guide-pages` directory that is of type `guide-pages` will be rendered using the `guide-pages` layout as defined ins `_layouts/guide-pages.html`
 defaults:
   - scope:
-      path: ""
+      path: "pages" # an empty string here means all files in the project
       type: "pages"
     values:
       layout: "default"
   - scope:
-      path: ""
+      path: "_projects" # an empty string here means all files in the project
       type: "projects"
     values:
       layout: "project"
   - scope:
-      path: ""
+      path: "_guide-pages" # an empty string here means all files in the project
       type: "guide-pages"
     values:
       layout: "guide-pages"
