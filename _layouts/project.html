@@ -64,6 +64,7 @@ layout: default
                 </p>
                 {% endif %}
                 <p class="meetingsHeader"></p>
+                <div id="userTimeZone" class="userTimeZone--project-page"></div>
                 <div id="meetings">
                     <ul class="meeting-times-list">
                     </ul>
@@ -438,8 +439,11 @@ fetch(API_URL, {method: 'GET'})
     console.log(err);
 })
 
+
 if (meetingsFound.length >= 1) {
-    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings: </strong>');
+    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings</strong>');
+    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+
 }
 
 // Formats time to be readable
@@ -465,4 +469,6 @@ function timeFormat(time) {
     }
 
 }
+
+
 </script>
