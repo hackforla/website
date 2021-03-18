@@ -217,7 +217,6 @@ title: Project Meetings
         }
 
         return diff;
-        // console.log(diff)
     }
 
     // Function clears the schedule
@@ -294,20 +293,6 @@ title: Project Meetings
 
     }
 
-    /* Show user's time zone */
-
-    // Initialize variables and set defaults
-    let userTimeZone = undefined;
-    let timeZoneOutput = "All times listed in your local time zone.";
-
-    // Get user time zone
-    userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-    // If userTimeZone exists, add it to the text
-    if (userTimeZone) {
-        timeZoneOutput = `All times listed in your local time zone: ${userTimeZone}`;
-    }
-    
     // Display time zone on page
-    document.getElementById("userTimeZone").insertAdjacentHTML('afterbegin', timeZoneOutput);
+    document.querySelector("#userTimeZone").insertAdjacentHTML('afterbegin', timeZoneText());
 </script>
