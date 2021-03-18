@@ -6,14 +6,10 @@
     align-items: center;
     justify-content: space-evenly;
     img{
-        height: 366;
+        max-height: 360px;
     }
     h1{
-        font-size: 59px;
-        line-height: 69px;
-        text-align: center;
-        font-style: normal;
-        font-weight: normal;
+        margin-bottom: 56px;
     }
 }
 
@@ -28,7 +24,7 @@
     background-color: white;
     right: 0px;
     bottom: 0px;
-    color: red;
+    color: $color-red;
     padding: 0px 3px;
     cursor: pointer;
 }
@@ -41,8 +37,8 @@
     p {
         margin: 0;
     }
-
 }
+
 
 @media #{$bp-below-tablet} {
     .wins-hero{
@@ -64,17 +60,11 @@
     }
 }
 
+
 @media #{$bp-below-mobile} {
     .wins-hero{
-
         img{
             height: 105px;
-        }
-        h1{
-            font-style: normal;
-            font-weight: normal;
-            font-size: 24px;
-            line-height: 28px;
         }
         .wins-btn{
             max-width: 134px;

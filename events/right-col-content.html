@@ -46,7 +46,9 @@
 
         document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
 
-        document.addEventListener('DOMContentLoaded',insertTimeZoneText());
+        //Displays/Inserts the user's time zone in the DOM
+        document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+       
 
 
     })()
@@ -174,12 +176,5 @@
         return rv_object;
     }
 
-    /**
-     * Displays/Inserts the user's time zone in the DOM
-    */
-    function insertTimeZoneText(){
-        let timeZoneText  = `Times are in your local time zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
-        document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText);
-    }
 
 </script>
