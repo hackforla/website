@@ -34,8 +34,6 @@ defaults:
       type: "projects"
     values:
       layout: "project"
-    values:
-      layout: "default"
   - scope:
       path: ""
       type: "guide-pages"
