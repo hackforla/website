@@ -1,4 +1,3 @@
----
 - name: Onboarding
   text: If you are new to the community, join us for Onboarding Night! We offer both Guided Onboarding and Self Onboarding options on our <a target='_blank' href='getting-started'>Getting Started</a> page.
   link: '../assets/images/getting-started/step1.png'
@@ -8,4 +7,3 @@
 - name: Happy Hour
   text: Bars and cafes are shut down, but that doesn’t mean we can’t enjoy each other’s company! Grab your beverage of choice and socialize with fellow hackers following some organizational announcements.
   link: ../assets/images/hack-nights/happy-hour.png
----
