@@ -284,6 +284,7 @@ permalink: /wins/
 			AVATAR_DEFAULT_PATH;
 		
 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
+		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
@@ -366,6 +367,9 @@ permalink: /wins/
   		let stringData = window.localStorage.getItem("data");
   		let data = JSON.parse(stringData).reverse();
 
+		const overlayProfileImg = document.querySelector('#overlay-profile-img');
+		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
+
   		const overlayIcons = document.querySelector('#overlay-icons');
   		overlayIcons.innerHTML = "";
 
@@ -376,7 +380,7 @@ permalink: /wins/
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
-  		overlayName.innerHTML = data[i][name];
+		overlayName.innerHTML = data[i][name];
 
   		const overlayTeams = document.querySelector('#overlay-teams');
   		overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
