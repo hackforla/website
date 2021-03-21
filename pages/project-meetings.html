@@ -54,7 +54,7 @@ permalink: /project-meetings
 
 <script>
     // Assigns local JSON Data to localData variable
-    {% assign localData = site.data.vrms_data | jsonify %}
+    {% assign localData = site.data.external.vrms_data | jsonify %}
     let localData = {{ localData }};
 
     const API_URL = 'https://www.vrms.io/api/recurringevents';
