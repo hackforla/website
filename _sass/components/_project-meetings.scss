@@ -69,22 +69,12 @@
     align-items: center;
 }
 
-.calendar-page-card {
-    background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
-    border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    overflow: hidden;
-    max-width: 896px;
-    width: 100%;
-    margin-bottom: 0;
+.page-card--project-meetings {
     padding: 30px;
-    height: fit-content;
-    margin: 12px auto;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
-        padding: 30px 15px;
+        padding: 32px 16px;
     }
 }
 

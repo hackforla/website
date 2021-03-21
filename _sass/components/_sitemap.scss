@@ -85,11 +85,30 @@
       max-width: 300px;
     }
   }
-  .card-width {
-    width: 100%;
-  }
-  .card-body {
+
+  .page-card--sitemap-flex {
+    padding: 48px;
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media #{$bp-tablet-up} {
+    .page-card-lg:nth-child(1n + 2) {
+      padding-left: 0;
+    }
+  }
+
+  .page-card--sitemap {
+    width: 100%;
+    padding: 48px;
+
+    @media #{$bp-below-mobile} {
+      padding: 32px 16px;
+    }
+  
     img {
       margin: auto;
       margin-left: auto;
@@ -114,44 +133,7 @@
       }
     }
   }
-  /*---------------------------
-  | Base Page Card
-  ---------------------------*/
-  .page-card {
-    border-radius: 20px;
-    overflow: hidden;
-    background: $color-white;
-  }
-
-  /*---------------------------
-  | Card Color
-  ---------------------------*/
-  // White
-  .card-primary {
-    background: $color-white;
-  }
-
-  /*---------------------------
-  | Page Card Size
-  ---------------------------*/
-  //Large
-  .page-card-lg {
-    max-width: 896px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    padding: 48px;
-    margin: 16px auto;
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-tablet} {
-      padding: 32px 16px;
-      margin: 12px auto;
-    }
-  }
-
-  @media #{$bp-tablet-up} {
-    .page-card-lg:nth-child(1n + 2) {
-      padding-left: 0;
-    }
-  }
+  
   /*   Page-specific button  */
 
   .btn--site-map-suggest {
