@@ -253,7 +253,7 @@ permalink: /wins/
 
 
   function makeCards(data) {
-  	{% assign githubData = site.data.github-data | jsonify %}
+  	{% assign githubData = site.data.external.github-data | jsonify %}
   	let githubData = {{ githubData }};
 
 	const cards = data.reverse();
