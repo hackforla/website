@@ -64,6 +64,7 @@ layout: default
                 </p>
                 {% endif %}
                 <p class="meetingsHeader"></p>
+                <div id="userTimeZone" class="userTimeZone--project-page"></div>
                 <div id="meetings">
                     <ul class="meeting-times-list">
                     </ul>
@@ -187,7 +188,7 @@ layout: default
 
 <!--Script for fetching the correct project-->
 <script>
-    {% assign projects = site.data.github-data | jsonify %}
+    {% assign projects = site.data.external.github-data | jsonify %}
     let projects = {{ projects }};
     let projectId = '{{ page.identification }}';
     // Search for correct project
@@ -354,7 +355,7 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.vrms_data | jsonify %}
+{% assign localData = site.data.external.vrms_data | jsonify %}
 let localData = {{ localData }};
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
@@ -438,8 +439,11 @@ fetch(API_URL, {method: 'GET'})
     console.log(err);
 })
 
+
 if (meetingsFound.length >= 1) {
-    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings: </strong>');
+    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings</strong>');
+    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+
 }
 
 // Formats time to be readable
@@ -465,4 +469,6 @@ function timeFormat(time) {
     }
 
 }
+
+
 </script>

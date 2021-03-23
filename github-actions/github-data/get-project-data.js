@@ -67,7 +67,7 @@ const octokit = new Octokit({ auth: core.getInput("token") });
  * @return {Object}     [Contains old project data as "oldGitHubData" and the date this script last ran as "dateLastRan"]
  */
 function getLocalData(){
-  let data = fs.readFileSync('_data/github-data.json', 'utf8');
+  let data = fs.readFileSync('_data/external/github-data.json', 'utf8');
   data = JSON.parse(data);
   if(Date.parse(data[0]) > 0){
     let date = new Date(data[0]);
@@ -186,7 +186,7 @@ function writeData(projectData){
   projectData.sort(sortById);
   // Store the date this script finished running. dateRan is a global variable defined at the beginning of this script
   projectData.unshift(dateRan.toString());
-  fs.writeFileSync('_data/github-data.json', JSON.stringify(projectData, null, 2));
+  fs.writeFileSync('_data/external/github-data.json', JSON.stringify(projectData, null, 2));
 }
 
 /**

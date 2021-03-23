@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const core = require("@actions/core");
 
-const PATH_TO_WRITE_FILE = "_data/_wins-data.json";
+const PATH_TO_WRITE_FILE = "_data/external/_wins-data.json";
 
 const BASE_API_URL = "https://sheets.googleapis.com/v4/spreadsheets";
 const SPREAD_SHEET_ID = "1zkr_dEyiT-WTksUkVyL4jYQuYC5_YvJCLrUIfBf1CeE";

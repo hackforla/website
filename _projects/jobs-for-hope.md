@@ -14,7 +14,7 @@ links:
 location: 
   - Downtown LA
   - Remote
-partner: LA County Homeless Initiative; http://homeless.lacounty.gov
+partner: LA County Homeless Initiative; 
 visible: true
 status: On Hold
 ---
