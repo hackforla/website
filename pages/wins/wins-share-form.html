@@ -10,7 +10,8 @@ permalink: /share-your-wins/
   </head> -->
 
   <div class="container-fluid wins-form content-section">
-    <form id="nameEmailForm" class="page-card-lg page-card card-primary">
+    <form id="nameEmailForm" class="page-card-lg page-card">
+      <h1 class="wins-form-title">Share your wins with us!</h1>
       <div class="form-group">
         <label for="fullName">Full name</label>
         <input
@@ -35,7 +36,7 @@ permalink: /share-your-wins/
       <button type="submit" id="nameEmailNextButton">Next</button>
     </form>
 
-    <form id="professionalLinkForm">
+    <form id="professionalLinkForm" class="page-card-lg page-card">
       <div class="form-group">
         <label for="linkedinurl">LinkedIn URL(optional)</label>
         <input
@@ -109,7 +110,7 @@ permalink: /share-your-wins/
       </button>
     </form>
 
-    <form id="teamsRolesForm">
+    <form id="teamsRolesForm" class="page-card-lg page-card">
       <section id="teams">
         <p>Select the team(s) you're on</p>
         <template id="teamsCheckBoxTemplate">
@@ -125,7 +126,7 @@ permalink: /share-your-wins/
         </template>
       </section>
       <div class="form-group">
-        <label for="specificRole">What is/was your specific role</label>
+        <label for="specificRole"><p>What is/was your specific role</p></label>
         <input
           type="text"
           class="form-control"
@@ -135,7 +136,7 @@ permalink: /share-your-wins/
         />
       </div>
       <section id="joinDate">
-        <label for="joinDateInput">Join date</label>
+        <label for="joinDateInput"><p>Join date</p></label>
         <input
           type="date"
           id="joinDateInput"
@@ -147,7 +148,7 @@ permalink: /share-your-wins/
       <button type="submit" id="teamsRolesNextButton">Next</button>
     </form>
 
-    <form id="celebrationsForm">
+    <form id="celebrationsForm" class="page-card-lg page-card">
       <section id="wins">
         <p>What do you want to celebrate (select all that apply)?</p>
         <template id="winsCheckboxTemplate">
@@ -156,15 +157,19 @@ permalink: /share-your-wins/
         </template>
       </section>
       <div class="form-group">
-        <label for="winsOverview">Give us a brief overview</label>
-        <textarea name="winsOverview" id="winsOverview" form="celebrationsForm">
-Enter text here...</textarea
-        >
+        <label for="winsOverview"><p>Give us a brief overview</p></label>
+        <textarea 
+          name="winsOverview" 
+          id="winsOverview" 
+          form="celebrationsForm"
+          placeholder="Enter text here..."
+        ></textarea>
       </div>
-
-      <button id="submitButton" type="submit" class="btn btn-primary">
-        Submit
-      </button>
+      <div class="btn-container">
+        <button id="submitButton" type="submit" class="btn btn-lg btn-primary">
+          Submit
+        </button>
+      </div>
     </form>
   </div>
   <script>
