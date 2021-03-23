@@ -171,6 +171,14 @@ permalink: /share-your-wins/
         </button>
       </div>
     </form>
+    <div id="successMessage" class="page-card-lg page-card">
+      <h2>Thank you for sharing your win with us!</h2>
+      <p>Our process for adding it to the website is:</p>
+      <ol>
+      <li>Review and Approve</li>
+      <li>Chron job runs nightly and adds reviewed wins to the site</li>
+      </ol>
+    </div>
   </div>
   <script>
     /**
@@ -497,11 +505,13 @@ permalink: /share-your-wins/
         .then((response) => {
           response.json().then((data) => {
             console.log(data);
-            alert(
-              `This is submission success debug alert that you can comment out: ${JSON.stringify(
-                data
-              )}`
-            );
+            // alert(
+            //   `This is submission success debug alert that you can comment out: ${JSON.stringify(
+            //     data
+            //   )}`
+            // );
+            document.querySelector("#celebrationsForm").style.display = "none";
+            document.querySelector("#successMessage").style.display = "block";
           });
         })
         .catch((error) => console.error("Error!", error.message));

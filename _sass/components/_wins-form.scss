@@ -43,6 +43,9 @@
   #githubPhotoPermission {
     display: none;
   }
+  #successMessage {
+    display: none;
+  }
   .form-group {
     margin-bottom: 1rem;
   }
@@ -79,7 +82,4 @@
       display: flex;
       justify-content: center;
   }
-//   .btn-lg{
-      
-//   }
 }
