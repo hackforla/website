@@ -92,6 +92,30 @@ ul.filter-list li ul li {
   right: 10%;
 }
 
+.btn--current-projects-filter-tag {
+  box-sizing: border-box;
+  margin: 0em 1em 1em;
+  padding: .3em 1em;
+  background: $color-red;
+  border: none;
+  border-radius: 5px;
+  color: $color-white;
+  font-weight: 700;
+
+  &::after {
+    content: "\00d7";
+    padding-left: .7em;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-red, 10%);
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   ul.filter-list li ul {

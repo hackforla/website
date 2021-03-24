@@ -7,7 +7,7 @@
             <a href="mailto:team@hackforla.org" class="btn btn-primary btn-md-narrow">Submit your pitch</a>
         </p>
     </div>
-    <div class="page-contain filter-toolbar" style="text-align: center;">
+    <div class="page-contain filter-toolbar">
         <ul class="filter-list" id="filter-list"></ul>
     </div>
     <div class="page-contain projects-inner" style="clear: left;">
@@ -125,7 +125,11 @@ window.addEventListener('load', function() {
 
     let report = projectFilter.getFilterReport(projects);
 
-    // Render the filter toolbar - depending on  screensize
+    // container for filterTags
+        const filterFragment = document.createDocumentFragment()
+        const filterToolbar = document.querySelector('.filter-toolbar')
+
+        // Render the filter toolbar - depending on  screensize
     for (let category in report.counts) {
 
         const termSet = report.counts[category];
@@ -169,21 +173,28 @@ window.addEventListener('load', function() {
             // TODO: Find a better mechanism for indexing dropdown items
             textSpan.setAttribute('id', cleanFieldName(category, term));
             textSpan.innerHTML = text;
-
             // trigger a new filtering when a checkbox is clicked
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
+                    //TODO: move beginning filter tag more left 
 
-                    //change label background color
-                    categoryDropdown.style.backgroundColor = "#fa114f";
-                    categoryTitle.style.color = "white";
+                    // creates filter tags
+                    // could be moved into own function, that gets called here?
+                    const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
+                    const filterTags = document.createElement('button')
+
+                    filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
+                    filterTags.innerHTML = `${categoryCapitalized}: ${term}`
+                    filterFragment.appendChild(filterTags)
+                    filterToolbar.insertBefore(filterFragment, filterToolbar[0])
                 } else {
                     projectFilter.removeCondition(category, term);
                     checkedboxCounter--;
 
                     if (checkedboxCounter == 0) {
+                        //TODO: remove code below (no longer needed) and add in removal of filterTags and its container
                         //remove label background color
                         categoryDropdown.style.backgroundColor = "white";
                         categoryTitle.style.color = "black";
