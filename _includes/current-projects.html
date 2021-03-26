@@ -125,15 +125,44 @@ window.addEventListener('load', function() {
 
     let report = projectFilter.getFilterReport(projects);
 
-    // container for filterTags
-        const filterFragment = document.createDocumentFragment()
-        const filterToolbar = document.querySelector('.filter-toolbar')
+    // for filterTags
+    const filterFragment = document.createDocumentFragment()
+    const filterToolbar = document.querySelector('.filter-toolbar')
+    const clearAllFilterTags = document.createElement('a')
+        //filterFunction
+    const categoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
+         categoryTitle = categoryTitle.innerHTML = `
+                        ${category}
+                        <span class="number-of-checked-boxes">
+                            (${checkedboxCounter})
+                        </span> 
+                        <span class="labelArrow"> ∟ </span> 
+                    `
+    }
+    // FIXME: if ALL counters are 0, THEN remove clearALL - 
+    const unCheckedBox = (checkedboxCounter) => {
+        if (!event.target.checked) {
+            const checkboxId =
+                event.target.nextElementSibling.getAttribute('id')
+            const filterTagKey =
+                document.querySelector(`[data-key~=${checkboxId}]`)
+
+            if (!filterTagKey) { return }
+            filterTagKey.remove()
+            if (checkedboxCounter == 0) {
+                clearAllFilterTags.remove()
+            }
+        } 
+    }
+
+    clearAllFilterTags.textContent = 'Clear All'
+    clearAllFilterTags.setAttribute('class', 'clear-filter-tags')
 
         // Render the filter toolbar - depending on  screensize
     for (let category in report.counts) {
 
         const termSet = report.counts[category];
-
+        
         // dropdown container - menu item
         const categoryDropdown = document.createElement('li');
         categoryDropdown.setAttribute('class', 'filter-item');
@@ -155,9 +184,12 @@ window.addEventListener('load', function() {
 
         //counter for checkedboxes
         let checkedboxCounter = 0;
+        console.log(checkedboxCounter)
 
+        // FIXME: how to capture _ALL_ checkbox counters
+    
         for (let term in termSet) {
-
+           console.log(checkedboxCounter)
             const count = termSet[term];
             const termItem = document.createElement('li');
             const content = document.createElement('div');
@@ -167,39 +199,65 @@ window.addEventListener('load', function() {
             checkbox.setAttribute('class', 'filter-checkbox');
 
             const text = `${term} (${count})`;
-
             const textSpan = document.createElement('span');
 
             // TODO: Find a better mechanism for indexing dropdown items
             textSpan.setAttribute('id', cleanFieldName(category, term));
             textSpan.innerHTML = text;
+
             // trigger a new filtering when a checkbox is clicked
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
-                    //TODO: move beginning filter tag more left 
 
-                    // creates filter tags
-                    // could be moved into own function, that gets called here?
-                    const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
+                    const categoryCapitalized = 
+                        category.charAt(0).toUpperCase() + category.slice(1)
                     const filterTags = document.createElement('button')
+                    // to sync up checkboxes with filterTags 
+                    const grabCheckboxId = 
+                        event.target.nextElementSibling.getAttribute('id')
 
+                    //creates filterTags
+                    filterTags.setAttribute('data-key', `${grabCheckboxId}`)
                     filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
                     filterTags.innerHTML = `${categoryCapitalized}: ${term}`
                     filterFragment.appendChild(filterTags)
+                    filterFragment.appendChild(clearAllFilterTags)
                     filterToolbar.insertBefore(filterFragment, filterToolbar[0])
+                    
+                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
+
                 } else {
                     projectFilter.removeCondition(category, term);
+                    const checkboxId = event.target.getAttribute('id')
                     checkedboxCounter--;
+                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
 
-                    if (checkedboxCounter == 0) {
-                        //TODO: remove code below (no longer needed) and add in removal of filterTags and its container
-                        //remove label background color
-                        categoryDropdown.style.backgroundColor = "white";
-                        categoryTitle.style.color = "black";
+                    if (checkedboxCounter <= 0) {
+                        categoryTitle.innerHTML = `
+                            ${category}
+                            <span class="labelArrow"> ∟ </span> 
+                            `
                     }
+
+                    // removes necessary items via un-checking box
+                    unCheckedBox(checkedboxCounter) 
                 }
+
+                //TODO:  category Counter Number
+                //resets items when filterTag or clearAll isClicked
+                document.addEventListener('click', function(e){
+                    if (e.target.classList.contains('btn--current-projects-filter-tag')) {
+                        const filterTagKey = e.target.getAttribute('data-key')
+                        const checkboxId = document.querySelector(`#${filterTagKey}`)
+
+                        e.target.remove()
+                        checkboxId.previousElementSibling.checked = false
+                    }
+                    //TODO: clearAll click && clear category Counter Number
+                    
+                })
 
                 // recompute counts and IDs to hide
                 report = projectFilter.getFilterReport(projects);

@@ -92,6 +92,7 @@ ul.filter-list li ul li {
   right: 10%;
 }
 
+//filter tags
 .btn--current-projects-filter-tag {
   box-sizing: border-box;
   margin: 0em 1em 1em;
@@ -114,6 +115,13 @@ ul.filter-list li ul li {
     color: $color-white;
     text-decoration: none;
   }
+}
+.clear-filter-tags{
+  text-decoration: underline;
+}
+
+.number-of-checked-boxes {
+  color: $color-red;
 }
 
 @media #{$bp-below-tablet} {
