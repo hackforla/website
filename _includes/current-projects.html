@@ -124,40 +124,59 @@ window.addEventListener('load', function() {
     projectFilter.populateFromUrlParams();
     let report = projectFilter.getFilterReport(projects);
 
-    // for filterTags
+    // create parentNode for filterTags
     const filterFragment = document.createDocumentFragment()
     const filterToolbar = document.querySelector('.filter-toolbar')
-    const clearAllFilterTags = document.createElement('a')
-        //filterFunction
-    const categoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
-         categoryTitle = categoryTitle.innerHTML = `
-                        ${category}
-                        <span class="number-of-checked-boxes">
-                            (${checkedboxCounter})
-                        </span> 
-                        <span class="labelArrow"> ∟ </span> 
-                    `
+
+    // create clearAll
+    const clearAll = document.createElement('a')
+    const renderClearAll = (clearAll) => {
+        if(!document.querySelector('.clear-filter-tags')){
+            clearAll.textContent = 'Clear All'
+            clearAll.setAttribute('class', 'clear-filter-tags')
+            clearAll.style.whiteSpace = 'nowrap' 
+        }
     }
-    // // FIXME: if ALL counters are 0, THEN remove clearALL - 
-    // const unCheckedBox = (checkedboxCounter) => {
-    //     if (!event.target.checked) {
-    //         const checkboxId =
-    //             event.target.nextElementSibling.getAttribute('id')
-    //         const filterTagKey =
-    //             document.querySelector(`[data-key~=${checkboxId}]`)
+    // functions for filters
+    const updateCategoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
+        if(checkedboxCounter > 0) {categoryTitle = categoryTitle.innerHTML = `
+            ${category}
+            <span class="number-of-checked-boxes">
+                (${checkedboxCounter})
+            </span> 
+            <span class="labelArrow"> ∟ </span> 
+        `}
+         else if (checkedboxCounter <= 0) {
+            categoryTitle.innerHTML = `
+                ${category}
+                <span class="labelArrow"> ∟ </span> 
+                `
+        } 
+    }
+//FIXME: connect to URL Params
+    const removeAllFilterTags = () => {
+        const filters = document.querySelectorAll('.btn--current-projects-filter-tag')
 
-    //         if (!filterTagKey) { return }
-    //         filterTagKey.remove()
-    //         if (checkedboxCounter == 0) {
-    //             clearAllFilterTags.remove()
-    //         }
-    //     } 
-    // }
+        filters.forEach(filter => filter.parentNode.removeChild(filter))
+    }
+//FIXME: connect to URL Params
+    const removeFilterTag = event => {
+        const checkboxId =
+            event.target.nextElementSibling.getAttribute('id')
+        const filterTagKey =
+            document.querySelector(`[data-key~=${checkboxId}]`)
 
-    clearAllFilterTags.textContent = 'Clear All'
-    clearAllFilterTags.setAttribute('class', 'clear-filter-tags')
+        if (!filterTagKey) { return }
+        filterTagKey.remove()
+    }
+//FIXME: connect to URL Params
+    const removeClearAll = () => {
+        document.querySelector('.clear-filter-tags').innerHTML = ''
+        clearAll.remove()
+    }
+  
 
-        // Render the filter toolbar - depending on  screensize
+        // Render the filter toolbar - depending on screensize
     for (let category in report.counts) {
 
         const termSet = report.counts[category];
@@ -200,14 +219,11 @@ window.addEventListener('load', function() {
             textSpan.setAttribute('id', cleanFieldName(category, term));
             textSpan.innerHTML = text;
 
-//TODO: link tags/checkboxes to URL
-            
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
-//TODO: link tags/checkboxes to URL
-                    console.log(projectFilter.conditions.keys())
+
                     const newProjectFilter = projectFilter.conditions.forEach(function(e) {
                         console.log(e.keys())
                         // if (e.entries()){
@@ -215,78 +231,59 @@ window.addEventListener('load', function() {
                         // }
                     })
 
-                    const categoryCapitalized = 
-                        category.charAt(0).toUpperCase() + category.slice(1)
-                    const filterTags = document.createElement('button')
-                    // to sync up checkboxes with filterTags 
-                    const grabCheckboxId = 
-                        event.target.nextElementSibling.getAttribute('id')
+                    const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
+                    const filterTags = document.createElement('button') 
+                    const grabCheckboxId = event.target.nextElementSibling.getAttribute('id')
+                    renderClearAll(clearAll)
 
                     //creates filterTags
                     filterTags.setAttribute('data-key', `${grabCheckboxId}`)
                     filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
                     filterTags.innerHTML = `${categoryCapitalized}: ${term}`
                     filterFragment.appendChild(filterTags)
-                    filterFragment.appendChild(clearAllFilterTags)
+                    filterFragment.appendChild(clearAll)
                     filterToolbar.insertBefore(filterFragment, filterToolbar[0])
                     
-                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
-
+                    updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
                 } else {
-                    const checkboxId = event.target.getAttribute('id')
-
+// FIXME: connect unChecks to URL Params — sometimes works, sometimes doesn't
                     projectFilter.removeCondition(category, term);
                     checkedboxCounter--;
 
-                    // console.log(projectFilter.conditions.entries())
-//TODO: link tags/checkboxes to URL
-
-                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
-                    if (checkedboxCounter <= 0) {
-                        categoryTitle.innerHTML = `
-                            ${category}
-                            <span class="labelArrow"> ∟ </span> 
-                            `
-                    }
-
-                    // removes necessary items via un-checking box
-                    // FIXME: connect to URLparams 
-                        if (!event.target.checked) {
-                            const checkboxId =
-                                event.target.nextElementSibling.getAttribute('id')
-                            const filterTagKey =
-                                document.querySelector(`[data-key~=${checkboxId}]`)
-
-                            if (!filterTagKey) { return }
-                            filterTagKey.remove()
-
-                            if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
-                                document.querySelector('.clear-filter-tags').innerHTML = ''
-                                clearAllFilterTags.remove()
-                            }
-
-                        }
-                        
+                    removeFilterTag(event)
+                    updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+ 
+                    // if all inputs unChecked, removeClearAll
+                    if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
+                        removeClearAll()
+                    }   
                 }
-
-                //TODO:  category Counter Number
+                
                 //resets items when filterTag or clearAll isClicked
+    // FIXME: CONNECT TO URL PARAMS
+                clearAll.addEventListener('click', function () {
+                    removeAllFilterTags()
+                    removeClearAll()
+                })
+
+    // FIXME: connect to URL Params && category title 
+                // removes Checkmark when filter tag is removed
                 document.addEventListener('click', function(e){
                     if (e.target.classList.contains('btn--current-projects-filter-tag')) {
                         const filterTagKey = e.target.getAttribute('data-key')
                         const checkboxId = document.querySelector(`#${filterTagKey}`)
-
+                        
                         e.target.remove()
                         checkboxId.previousElementSibling.checked = false
                     }
-                    //TODO: clearAll click && clear category Counter Number
                 })
-
+                
                 // recompute counts and IDs to hide
                 report = projectFilter.getFilterReport(projects);
                 console.log(report)
                 applyFilter(report);
                 projectFilter.propagateUrlParams();
+
             });
 
             // finalize build UI component
