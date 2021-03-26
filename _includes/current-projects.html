@@ -122,7 +122,6 @@ window.addEventListener('load', function() {
     }
     
     projectFilter.populateFromUrlParams();
-
     let report = projectFilter.getFilterReport(projects);
 
     // for filterTags
@@ -184,16 +183,13 @@ window.addEventListener('load', function() {
 
         //counter for checkedboxes
         let checkedboxCounter = 0;
-
-        // FIXME: how to capture _ALL_ checkbox counters
     
         for (let term in termSet) {
-           console.log(checkedboxCounter)
             const count = termSet[term];
             const termItem = document.createElement('li');
             const content = document.createElement('div');
             const checkbox = document.createElement('input');
-
+            
             checkbox.setAttribute('type', 'checkbox');
             checkbox.setAttribute('class', 'filter-checkbox');
 
@@ -204,11 +200,20 @@ window.addEventListener('load', function() {
             textSpan.setAttribute('id', cleanFieldName(category, term));
             textSpan.innerHTML = text;
 
-            // trigger a new filtering when a checkbox is clicked
+//TODO: link tags/checkboxes to URL
+            
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
+//TODO: link tags/checkboxes to URL
+                    console.log(projectFilter.conditions.keys())
+                    const newProjectFilter = projectFilter.conditions.forEach(function(e) {
+                        console.log(e.keys())
+                        // if (e.entries()){
+                        //     console.log(e.entries())
+                        // }
+                    })
 
                     const categoryCapitalized = 
                         category.charAt(0).toUpperCase() + category.slice(1)
@@ -228,11 +233,15 @@ window.addEventListener('load', function() {
                     categoryInnerHTML(categoryTitle, category, checkedboxCounter)
 
                 } else {
-                    projectFilter.removeCondition(category, term);
                     const checkboxId = event.target.getAttribute('id')
-                    checkedboxCounter--;
-                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
 
+                    projectFilter.removeCondition(category, term);
+                    checkedboxCounter--;
+
+                    // console.log(projectFilter.conditions.entries())
+//TODO: link tags/checkboxes to URL
+
+                    categoryInnerHTML(categoryTitle, category, checkedboxCounter)
                     if (checkedboxCounter <= 0) {
                         categoryTitle.innerHTML = `
                             ${category}
@@ -241,7 +250,7 @@ window.addEventListener('load', function() {
                     }
 
                     // removes necessary items via un-checking box
-                    // FIXME: if ALL counters are 0, THEN remove clearALL - 
+                    // FIXME: connect to URLparams 
                         if (!event.target.checked) {
                             const checkboxId =
                                 event.target.nextElementSibling.getAttribute('id')
@@ -250,10 +259,14 @@ window.addEventListener('load', function() {
 
                             if (!filterTagKey) { return }
                             filterTagKey.remove()
-                            if (checkedboxCounter == 0) {
+
+                            if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
+                                document.querySelector('.clear-filter-tags').innerHTML = ''
                                 clearAllFilterTags.remove()
                             }
+
                         }
+                        
                 }
 
                 //TODO:  category Counter Number
@@ -267,11 +280,11 @@ window.addEventListener('load', function() {
                         checkboxId.previousElementSibling.checked = false
                     }
                     //TODO: clearAll click && clear category Counter Number
-                    
                 })
 
                 // recompute counts and IDs to hide
                 report = projectFilter.getFilterReport(projects);
+                console.log(report)
                 applyFilter(report);
                 projectFilter.propagateUrlParams();
             });
