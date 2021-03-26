@@ -139,21 +139,21 @@ window.addEventListener('load', function() {
                         <span class="labelArrow"> ∟ </span> 
                     `
     }
-    // FIXME: if ALL counters are 0, THEN remove clearALL - 
-    const unCheckedBox = (checkedboxCounter) => {
-        if (!event.target.checked) {
-            const checkboxId =
-                event.target.nextElementSibling.getAttribute('id')
-            const filterTagKey =
-                document.querySelector(`[data-key~=${checkboxId}]`)
+    // // FIXME: if ALL counters are 0, THEN remove clearALL - 
+    // const unCheckedBox = (checkedboxCounter) => {
+    //     if (!event.target.checked) {
+    //         const checkboxId =
+    //             event.target.nextElementSibling.getAttribute('id')
+    //         const filterTagKey =
+    //             document.querySelector(`[data-key~=${checkboxId}]`)
 
-            if (!filterTagKey) { return }
-            filterTagKey.remove()
-            if (checkedboxCounter == 0) {
-                clearAllFilterTags.remove()
-            }
-        } 
-    }
+    //         if (!filterTagKey) { return }
+    //         filterTagKey.remove()
+    //         if (checkedboxCounter == 0) {
+    //             clearAllFilterTags.remove()
+    //         }
+    //     } 
+    // }
 
     clearAllFilterTags.textContent = 'Clear All'
     clearAllFilterTags.setAttribute('class', 'clear-filter-tags')
@@ -184,7 +184,6 @@ window.addEventListener('load', function() {
 
         //counter for checkedboxes
         let checkedboxCounter = 0;
-        console.log(checkedboxCounter)
 
         // FIXME: how to capture _ALL_ checkbox counters
     
@@ -242,7 +241,19 @@ window.addEventListener('load', function() {
                     }
 
                     // removes necessary items via un-checking box
-                    unCheckedBox(checkedboxCounter) 
+                    // FIXME: if ALL counters are 0, THEN remove clearALL - 
+                        if (!event.target.checked) {
+                            const checkboxId =
+                                event.target.nextElementSibling.getAttribute('id')
+                            const filterTagKey =
+                                document.querySelector(`[data-key~=${checkboxId}]`)
+
+                            if (!filterTagKey) { return }
+                            filterTagKey.remove()
+                            if (checkedboxCounter == 0) {
+                                clearAllFilterTags.remove()
+                            }
+                        }
                 }
 
                 //TODO:  category Counter Number
