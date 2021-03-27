@@ -175,7 +175,6 @@ window.addEventListener('load', function() {
         clearAll.remove()
     }
   
-
         // Render the filter toolbar - depending on screensize
     for (let category in report.counts) {
 
@@ -223,13 +222,14 @@ window.addEventListener('load', function() {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
-
-                    const newProjectFilter = projectFilter.conditions.forEach(function(e) {
-                        console.log(e.keys())
-                        // if (e.entries()){
-                        //     console.log(e.entries())
-                        // }
-                    })
+//FIXME: !!! 
+            //    const newProjectFilter = projectFilter.conditions
+            //         newProjectFilter.forEach(function (e) {
+            //             console.log(e.keys())
+            //             // if (e.entries()){
+            //             //     console.log(e.entries())
+            //             // }
+            //         })
 
                     const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
                     const filterTags = document.createElement('button') 
@@ -245,45 +245,63 @@ window.addEventListener('load', function() {
                     filterToolbar.insertBefore(filterFragment, filterToolbar[0])
                     
                     updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+
+                    console.log("reach-1");
                 } else {
-// FIXME: connect unChecks to URL Params — sometimes works, sometimes doesn't
+
+                    console.log("reach0");
+    // FIXME: connect unChecks to URL Params — sometimes works, sometimes doesn't
                     projectFilter.removeCondition(category, term);
                     checkedboxCounter--;
 
                     removeFilterTag(event)
                     updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
  
+
+                    
                     // if all inputs unChecked, removeClearAll
                     if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
                         removeClearAll()
                     }   
                 }
-                
-                //resets items when filterTag or clearAll isClicked
+
+                console.log("reach1");
+    //FIXME:
+                                                console.log(projectFilter.conditions.keys())
+                                                
+                                                const newProjectFilter = projectFilter.conditions
+                                                newProjectFilter.forEach(function (e) {
+                                                    console.log(e.keys())
+                                                })
     // FIXME: CONNECT TO URL PARAMS
+                // resets all changes on click
                 clearAll.addEventListener('click', function () {
                     removeAllFilterTags()
                     removeClearAll()
-                })
 
+                    console.log("reach2");
+                })
     // FIXME: connect to URL Params && category title 
-                // removes Checkmark when filter tag is removed
+                // resets changes when filterTag is removed
+
+                console.log("reach3");
                 document.addEventListener('click', function(e){
                     if (e.target.classList.contains('btn--current-projects-filter-tag')) {
+                        console.log('reach4');
+
                         const filterTagKey = e.target.getAttribute('data-key')
                         const checkboxId = document.querySelector(`#${filterTagKey}`)
                         
                         e.target.remove()
-                        checkboxId.previousElementSibling.checked = false
+                        checkboxId.previousElementSibling.click();
+
                     }
                 })
                 
                 // recompute counts and IDs to hide
                 report = projectFilter.getFilterReport(projects);
-                console.log(report)
                 applyFilter(report);
                 projectFilter.propagateUrlParams();
-
             });
 
             // finalize build UI component
