@@ -158,7 +158,6 @@ window.addEventListener('load', function() {
 //FIXME: connect to URL Params
     const removeAllFilterTags = () => {
         const filters = document.querySelectorAll('.btn--current-projects-filter-tag')
-
         filters.forEach(filter => filter.parentNode.removeChild(filter))
     }
 //FIXME: connect to URL Params
@@ -210,6 +209,13 @@ window.addEventListener('load', function() {
         //counter for checkedboxes
         let checkedboxCounter = 0;
 
+        const removeUrlParam = (category, term) => {
+            projectFilter.removeCondition(category, term);
+            report = projectFilter.getFilterReport(projects);
+            applyFilter(report);
+            projectFilter.propagateUrlParams();
+        }
+
         for (let term in termSet) {
             const count = termSet[term];
             const termItem = document.createElement('li');
@@ -249,6 +255,19 @@ window.addEventListener('load', function() {
                     filterToolbar.insertBefore(filterFragment, filterToolbar[0])
                     
                     updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+                    filterTags.addEventListener('click', function (event) {
+                        if (event.target.classList.contains('btn--current-projects-filter-tag')) {
+                            let updateConditions
+                            const filterTagKey = event.target.getAttribute('data-key')
+                            const checkboxId = document.querySelector(`#${filterTagKey}`)
+
+                            event.target.remove()
+                            checkboxId.previousElementSibling.checked = false
+                            
+                            removeUrlParam(category, term)
+                            
+                        }
+                    })
                 } else {
     // FIXME: connect unChecks to URL Params — sometimes works, sometimes doesn't
                     projectFilter.removeCondition(category, term);
@@ -269,27 +288,34 @@ window.addEventListener('load', function() {
                     removeAllFilterTags()
                     removeClearAll()
                     removeAllChecks()
+                    removeUrlParam(category, term)
                 })
     // FIXME: connect to URL Params && category title 
                 // resets changes when filterTag is removed
                 //TODO: find better way to execute this code
-                document.addEventListener('click', function(event){
-                    if (event.target.classList.contains('btn--current-projects-filter-tag')) {
-                        let updateConditions
-                        const filterTagKey = event.target.getAttribute('data-key')
-                        const checkboxId = document.querySelector(`#${filterTagKey}`)
-                        
-                        // removeCondition is working
-                        // need to figure out how to _return_ / _update_ the change
-                        // specifically for applying to report 
-                        projectFilter.removeCondition(category, term);
-                        console.log(report)
+                // document.addEventListener('click', function(event){
+                //     if (event.target.classList.contains('btn--current-projects-filter-tag')) {
+                //         let updateConditions
+                //         const filterTagKey = event.target.getAttribute('data-key')
+                //         const checkboxId = document.querySelector(`#${filterTagKey}`)
 
-                        event.target.remove()
-                        checkboxId.previousElementSibling.checked = false
-                        console.log(projectFilter.conditions)
-                    }
-                })
+                //         event.target.remove()
+                //         checkboxId.previousElementSibling.checked = false
+                        
+                //         // removeCondition is working
+                //         // need to figure out how to _return_ / _update_ the change
+                //         // specifically for applying to report 
+                //         console.log(event.target.parentNode)
+                //         projectFilter.removeCondition(category, term);
+                //         console.log(projectFilter.conditions)
+                //         // console.log(report)
+                //         // console.log(projectFilter.conditions)
+                //         report = projectFilter.getFilterReport(projects);
+                //         applyFilter(report);
+                //         // console.log(report)
+                //         projectFilter.propagateUrlParams();
+                //     }
+                // })
             
             console.log(report)
                 // recompute counts and IDs to hide
@@ -306,10 +332,6 @@ window.addEventListener('load', function() {
             termItem.appendChild(content);
             termList.appendChild(termItem);
         }
-        //create projectFilter.conditions state outside of all "loops"
-            //each time projectFilter.conditions are changed, return changes 
-            // => from checkedbox event listener 
-            // filter tag event , etc
 
         // compile DOM node and attach to document tree
         categoryDropdown.appendChild(termList);
