@@ -123,8 +123,8 @@ window.addEventListener('load', function() {
     
     projectFilter.populateFromUrlParams();
     let report = projectFilter.getFilterReport(projects);
-    console.log(ProjectFilter.prototype)
-    console.log(projectFilter)
+    // console.log(ProjectFilter.prototype)
+    // console.log(projectFilter)
 
     // create parentNode for filterTags
     const filterFragment = document.createDocumentFragment()
@@ -155,13 +155,17 @@ window.addEventListener('load', function() {
                 `
         } 
     }
+    const recomputeFilter = () => {
+        report = projectFilter.getFilterReport(projects);
+        applyFilter(report);
+        projectFilter.propagateUrlParams();
+    }
 //FIXME: connect to URL Params
     const removeAllFilterTags = () => {
         const filters = document.querySelectorAll('.btn--current-projects-filter-tag')
         filters.forEach(filter => filter.parentNode.removeChild(filter))
     }
-//FIXME: connect to URL Params
-    const removeFilterTag = event => {
+    const removeFilterTagOnUncheck = event => {
         const checkboxId =
             event.target.nextElementSibling.getAttribute('id')
         const filterTagKey =
@@ -211,9 +215,13 @@ window.addEventListener('load', function() {
 
         const removeUrlParam = (category, term) => {
             projectFilter.removeCondition(category, term);
-            report = projectFilter.getFilterReport(projects);
-            applyFilter(report);
-            projectFilter.propagateUrlParams();
+            recomputeFilter()
+        }
+        const removeAllUrlParams = (term) => {
+            for (let [keys, values] of projectFilter.conditions) {
+                projectFilter.removeCondition(category, term)
+                recomputeFilter()
+            }
         }
 
         for (let term in termSet) {
@@ -234,11 +242,9 @@ window.addEventListener('load', function() {
             textSpan.innerHTML = text;
 
             // console.log(projectFilter)
-            
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
-                    console.log(projectFilter.conditions)
                     checkedboxCounter++;
 //FIXME: !!! 
                     const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
@@ -255,6 +261,7 @@ window.addEventListener('load', function() {
                     filterToolbar.insertBefore(filterFragment, filterToolbar[0])
                     
                     updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+                    
                     filterTags.addEventListener('click', function (event) {
                         if (event.target.classList.contains('btn--current-projects-filter-tag')) {
                             let updateConditions
@@ -265,16 +272,15 @@ window.addEventListener('load', function() {
                             checkboxId.previousElementSibling.checked = false
                             
                             removeUrlParam(category, term)
-                            
+                            if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
+                                removeClearAll()
+                            } 
                         }
                     })
                 } else {
-    // FIXME: connect unChecks to URL Params — sometimes works, sometimes doesn't
                     projectFilter.removeCondition(category, term);
                     checkedboxCounter--;
-                    console.log(projectFilter.conditions)
-
-                    removeFilterTag(event)
+                    removeFilterTagOnUncheck(event)
                     updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
                     
                     // if all inputs unChecked, removeClearAll
@@ -282,48 +288,16 @@ window.addEventListener('load', function() {
                         removeClearAll()
                     }   
                 }
-    // FIXME: CONNECT TO URL PARAMS
+
                 // resets all changes on click
                 clearAll.addEventListener('click', function () {
+                    removeAllUrlParams(term)
                     removeAllFilterTags()
                     removeClearAll()
                     removeAllChecks()
-                    removeUrlParam(category, term)
                 })
-    // FIXME: connect to URL Params && category title 
-                // resets changes when filterTag is removed
-                //TODO: find better way to execute this code
-                // document.addEventListener('click', function(event){
-                //     if (event.target.classList.contains('btn--current-projects-filter-tag')) {
-                //         let updateConditions
-                //         const filterTagKey = event.target.getAttribute('data-key')
-                //         const checkboxId = document.querySelector(`#${filterTagKey}`)
-
-                //         event.target.remove()
-                //         checkboxId.previousElementSibling.checked = false
-                        
-                //         // removeCondition is working
-                //         // need to figure out how to _return_ / _update_ the change
-                //         // specifically for applying to report 
-                //         console.log(event.target.parentNode)
-                //         projectFilter.removeCondition(category, term);
-                //         console.log(projectFilter.conditions)
-                //         // console.log(report)
-                //         // console.log(projectFilter.conditions)
-                //         report = projectFilter.getFilterReport(projects);
-                //         applyFilter(report);
-                //         // console.log(report)
-                //         projectFilter.propagateUrlParams();
-                //     }
-                // })
-            
-            console.log(report)
                 // recompute counts and IDs to hide
-                report = projectFilter.getFilterReport(projects);
-                applyFilter(report);
-            console.log(report)
-                projectFilter.propagateUrlParams();
-                // console.log(projectFilter.propagateUrlParams())
+                recomputeFilter()
             });
             
             // finalize build UI component
