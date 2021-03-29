@@ -1,7 +1,9 @@
 a.filter-item {
   text-decoration: none;
 }
-
+.project-list {
+  margin-top: .5rem;
+}
 //filter container
 ul.filter-list {
   background: $color-pink;
@@ -116,8 +118,17 @@ ul.filter-list li ul li {
     text-decoration: none;
   }
 }
-.clear-filter-tags{
+
+a.clear-filter-tags {
+  margin-left: 1em;
   text-decoration: underline;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+div.page-contain {
+
 }
 
 .number-of-checked-boxes {
@@ -153,4 +164,13 @@ ul.filter-list li ul li {
     right: 5%;
     font-size: 20px;
   }
+
+  .btn--current-projects-filter-tag{
+    display: none;
+  }
+  .clear-filter-tags{
+    display: none;
+  }
+
 }
+
