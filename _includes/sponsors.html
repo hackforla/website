@@ -4,7 +4,7 @@
       <h2>Sponsors</h2>
       <div class="logo-garden">
         <ul class="unstyled-list">
-          {% assign sponsors = site.sponsors | sort: 'position' %}
+          {% assign sponsors = site.data.internal.sponsors | sort: 'position' %}
           {% for item in sponsors %}
           <li>
             <div class="logo">

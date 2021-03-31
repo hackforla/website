@@ -6,6 +6,10 @@
   padding: 30px;
   margin: 12px auto;
   font-family: "Roboto"sans-serif;
+
+  @media #{$bp-below-mobile} {
+    font-size: 18px;
+  }
 }
 
 .getting-started-page {

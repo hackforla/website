@@ -188,7 +188,7 @@ layout: default
 
 <!--Script for fetching the correct project-->
 <script>
-    {% assign projects = site.data.github-data | jsonify %}
+    {% assign projects = site.data.external.github-data | jsonify %}
     let projects = {{ projects }};
     let projectId = '{{ page.identification }}';
     // Search for correct project
@@ -355,7 +355,7 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.vrms_data | jsonify %}
+{% assign localData = site.data.external.vrms_data | jsonify %}
 let localData = {{ localData }};
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
