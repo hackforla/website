@@ -56,16 +56,9 @@
   }
 }
 
-.project-page-card {
-  background: $color-white;
-  border: 0 solid rgba($color-black, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
-  overflow: hidden;
-  max-width: 896px;
-  margin: 12px auto;
-  margin-bottom: 0;
+.page-card--project-description-page {
   padding: 30px;
+  margin-bottom: 0;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {

@@ -45,12 +45,15 @@
   display: flex;
   flex-direction: column;
 
-  .page-card {
-    border-radius: 20px;
-    overflow: hidden;
+  .page-card--join {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 3rem;
+
+    @media #{$bp-below-mobile} {
+      padding: 32px 20px;
+    }
 
     h1 {
       font-size: 1.25rem;
@@ -117,23 +120,6 @@
     }
   }
 
-  .card-primary {
-    background: $color-white;
-  }
-
-  .page-card-lg {
-    max-width: 896px;
-    width: 100%;
-    box-shadow: 0px 0px 8px rgba(51, 51, 51, 0.2);
-    padding: 3rem;
-    margin: 16px auto;
-
-    @media #{$bp-below-mobile} {
-      padding: 32px 20px;
-      margin: 12px auto;
-    }
-  }
-
   .join-us-donation {
     margin: 20px auto;
     background: #f6f6f6;
@@ -161,7 +147,7 @@
 -----------*/
 @media #{$bp-tablet-up} {
   .join-us-card-container {
-    .page-card {
+    .page-card--join {
       display: grid;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: auto;

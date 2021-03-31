@@ -10,7 +10,7 @@ permalink: /credits/
   </p>
   <div class="credit-hero">
       <div class="step-links mobile-image">
-          <img class="credit-image" src="./assets/images/credits/credits-hero.png">
+          <img class="credit-image" src="/assets/images/credits/credits-hero.png">
 
       </div>
   </div>
@@ -18,13 +18,13 @@ permalink: /credits/
 
 <div class='content-section wide-div'>
 <a class='anchor' id='step-1'></a>
-          <div class='white-page-card-credits'>
-            <div class="page-contain projects-inner">
-                <ul class="project-list unstyled-list">
+          <div class='page-card-base card-primary page-card-lg page-card--credits'>
+            <div class="page-contain credits-inner">
+                <ul class="credits-list unstyled-list">
                   {%- for item in site.credits -%}
                         <li>
                           <!-- originally class="project-card-inner" -->
-                        <div class="credits-inner">
+                        <div class="credits-item">
                           <div class="icon-left">
                             <img src={{ item.image-url | absolute_url }} alt={{item.alt}}/>
                           </div>

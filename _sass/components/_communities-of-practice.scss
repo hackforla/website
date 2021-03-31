@@ -72,26 +72,8 @@
 
 .content--communities {
   background: #e5e5e5;
-
-  .card-primary {
-    background: $color-white;
-    border: 1px solid rgba(51, 51, 51, 0.06);
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  }
-
-  .page-card--communities {
-    background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    max-width: 896px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 20px auto;
-
-    @media #{$bp-below-tablet} {
-      margin: 0px auto 12px;
-    }
-  }
+  display: flex;
+  flex-direction: column;
 
   .page-card-container {
     display: flex;
@@ -141,6 +123,7 @@
     }
   }
 }
+
 /*leader card styling - adapted from project page, mostly wrt sizing */
 .leader-list--communities {
   display:flex;

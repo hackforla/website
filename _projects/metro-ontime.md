@@ -1,7 +1,7 @@
 ---
 identification: '155295655'
 title: Railstats LA
-description: Trailstats LA tracks LA Metro trains and generates punctuality reports. Our website enables both Metro officials and the public to easily review up-to-date statistics for LA's 6 train lines.
+description: Railstats LA tracks LA Metro trains and generates punctuality reports. Our website enables both Metro officials and the public to easily review up-to-date statistics for LA's 6 train lines.
 image: /assets/images/projects/metro-ontime.png
 alt: 'metro ontime'
 image-hero: /assets/images/projects/metro-ontime-hero.png
@@ -29,7 +29,7 @@ links:
 location:
   - Downtown LA
   - Remote
-partner: LA Metro (https://www.metro.net/)
+partner: LA Metro
 tools: Docker, AWS, Observable
 visible: true
 vertical: 'Environment'

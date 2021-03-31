@@ -41,7 +41,7 @@ permalink: /wins/
 
 
   function main() {
-  	{% assign localData = site.data.wins-data | jsonify %}
+  	{% assign localData = site.data.external.wins-data | jsonify %}
   	let localData = {{ localData }};
   	const rawData = localData.values;
   	//creates an array of objects where each question is the key and the answer is the value
@@ -253,7 +253,7 @@ permalink: /wins/
 
 
   function makeCards(data) {
-  	{% assign githubData = site.data.github-data | jsonify %}
+  	{% assign githubData = site.data.external.github-data | jsonify %}
   	let githubData = {{ githubData }};
 
 	const cards = data.reverse();
