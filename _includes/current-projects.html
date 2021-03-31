@@ -52,6 +52,70 @@ window.addEventListener('load', function() {
         touch = false;
     }
 
+    // vars for filterTag elements
+    const filterParams = Object.fromEntries(new URLSearchParams(window.location.search))
+    const entries = Object.entries(filterParams)
+    const filterFragment = document.createDocumentFragment()
+    const filterToolbar = document.querySelector('.filter-toolbar')
+    const clearAll = document.createElement('a')
+
+
+
+
+    // render clearAll
+    const renderClearAll = (clearAll) => {
+        if (!document.querySelector('.clear-filter-tags')) {
+            clearAll.textContent = 'Clear All'
+            clearAll.setAttribute('class', 'clear-filter-tags')
+            clearAll.style.whiteSpace = 'nowrap'
+        }
+    }
+    // updates category filters 
+    const updateCategoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
+        if (checkedboxCounter > 0) {
+            categoryTitle = categoryTitle.innerHTML = `
+            ${category}
+            <span class="number-of-checked-boxes">
+                (${checkedboxCounter})
+            </span> 
+            <span class="labelArrow"> ∟ </span> 
+        `}
+        else if (checkedboxCounter <= 0) {
+            categoryTitle.innerHTML = `
+                ${category}
+                <span class="labelArrow"> ∟ </span> 
+                `
+        }
+    }
+
+//TODO: add eventListeners to filterTags and "clear all" 
+        // figure out how to work in counter 
+    function updateFilterTags(){
+        if (Object.keys(filterParams).length === 0) {
+            return
+        }
+        // renders filterTags based on URL params
+        for (const [key, value] of entries) {
+            const valuesArr = value.split(',')
+            renderClearAll(clearAll)
+            
+            for (const value of valuesArr) {
+                const filterTags = document.createElement('button')
+                filterTags.setAttribute(
+                    'data-key',
+                    `${key.split(' ').join('_')}` + `_` + `${value.split(' ').join('_')}`
+                )
+                filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
+                filterTags.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
+                filterFragment.appendChild(filterTags)
+                filterFragment.appendChild(clearAll)
+                filterToolbar.insertBefore(filterFragment, filterToolbar[0])
+
+               
+            }
+        }
+    }
+   updateFilterTags()
 
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
@@ -83,7 +147,6 @@ window.addEventListener('load', function() {
             }
         }
     });
-
 
     // Hide cards not satisfying filter, update counts in dropdowns
     function applyFilter(filterReport) {
@@ -124,38 +187,7 @@ window.addEventListener('load', function() {
     projectFilter.populateFromUrlParams();
     let report = projectFilter.getFilterReport(projects);
 
-
-    // create parentNode for filterTags
-    const filterFragment = document.createDocumentFragment()
-    const filterToolbar = document.querySelector('.filter-toolbar')
-
-    // create clearAll
-    const clearAll = document.createElement('a')
-    const renderClearAll = (clearAll) => {
-        if(!document.querySelector('.clear-filter-tags')){
-            clearAll.textContent = 'Clear All'
-            clearAll.setAttribute('class', 'clear-filter-tags')
-            clearAll.style.whiteSpace = 'nowrap' 
-        }
-    }
-
-    
 // functions for filters
-    const updateCategoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
-        if(checkedboxCounter > 0) {categoryTitle = categoryTitle.innerHTML = `
-            ${category}
-            <span class="number-of-checked-boxes">
-                (${checkedboxCounter})
-            </span> 
-            <span class="labelArrow"> ∟ </span> 
-        `}
-         else if (checkedboxCounter <= 0) {
-            categoryTitle.innerHTML = `
-                ${category}
-                <span class="labelArrow"> ∟ </span> 
-                `
-        } 
-    }
     const recomputeFilter = () => {
         report = projectFilter.getFilterReport(projects)
         applyFilter(report)
@@ -195,11 +227,12 @@ window.addEventListener('load', function() {
         const termSet = report.counts[category];
         
         // dropdown container - menu item
+        const categoryTitle = document.createElement('a');
         const categoryDropdown = document.createElement('li');
+        categoryTitle.setAttribute('class', 'category-title')
         categoryDropdown.setAttribute('class', 'filter-item');
 
         // dropdown label/trigger element
-        const categoryTitle = document.createElement('a');
         categoryTitle.appendChild(document.createTextNode(category));
         categoryDropdown.appendChild(categoryTitle);
 
@@ -211,10 +244,30 @@ window.addEventListener('load', function() {
         const arrowSpan = document.createElement('span');
         const labelArrow = arrowSpan.appendChild(document.createTextNode(" \u{0221f} "));
         arrowSpan.setAttribute('class', 'labelArrow');
-        categoryTitle.appendChild(arrowSpan);
 
         //counter for checkedboxes
         let checkedboxCounter = 0;
+
+//TODO: refactor to fit into updateCategory... function 
+        if (Object.keys(filterParams).length > 0) {
+            for (const [key, value] of entries) {
+                const valuesArr = value.split(',')
+
+                checkedboxCounter = valuesArr.length
+
+                if (key === categoryTitle.textContent) {
+                    categoryTitle.innerHTML = `
+                        ${key}
+                        <span class="number-of-checked-boxes">
+                            (${checkedboxCounter})
+                        </span> 
+                        <span class="labelArrow"> ∟ </span>
+                    `
+                } 
+            }
+        }
+
+        categoryTitle.appendChild(arrowSpan)
 
         const removeUrlParam = (category, term) => {
             projectFilter.removeCondition(category, term);
@@ -233,7 +286,6 @@ window.addEventListener('load', function() {
             const content = document.createElement('div');
             const checkbox = document.createElement('input');
 
-
             checkbox.setAttribute('type', 'checkbox');
             checkbox.setAttribute('class', 'filter-checkbox');
 
@@ -251,11 +303,10 @@ window.addEventListener('load', function() {
 
                     const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
                     const filterTags = document.createElement('button') 
-                    const grabCheckboxId = event.target.nextElementSibling.getAttribute('id')
                     renderClearAll(clearAll)
 
                     //creates filterTags
-                    filterTags.setAttribute('data-key', `${grabCheckboxId}`)
+                    filterTags.setAttribute('data-key', `${cleanFieldName(category, term)}`)
                     filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
                     filterTags.innerHTML = `${categoryCapitalized}: ${term}`
                     filterFragment.appendChild(filterTags)
@@ -278,6 +329,7 @@ window.addEventListener('load', function() {
                             removeClearAll()
                         }
                     })
+
                 } else {
                     checkedboxCounter--
                     projectFilter.removeCondition(category, term);
@@ -294,11 +346,11 @@ window.addEventListener('load', function() {
                     removeAllFilterTags()
                     removeAllChecks()                    
                 })
-
+               
                 // recompute counts and IDs to hide
                 recomputeFilter()
             });
-            
+
             // finalize build UI component
             content.appendChild(checkbox);
             content.appendChild(textSpan);
