@@ -144,7 +144,7 @@ window.addEventListener('load', function() {
             clearAll.style.whiteSpace = 'nowrap'
         }
     }
-  window.onload = console.log(`i've loaded`)
+
     // updates category filters 
     function updateCategoryTitle(counter, categoryTitle) {
         let UrlParamsCounter = 0
@@ -172,6 +172,7 @@ window.addEventListener('load', function() {
         }
     }
 
+//TODO: consolidate all the title updates 
     const updateCategoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
         if (checkedboxCounter > 0) {
             categoryTitle = categoryTitle.innerHTML = `
@@ -226,8 +227,6 @@ window.addEventListener('load', function() {
         }
     }
 
-    //TODO: add eventListeners to filterTags and "clear all" 
-    // figure out how to work in counter 
     function updateFilterTags() {
         if (Object.keys(filterParams).length === 0) {
             return
@@ -249,6 +248,7 @@ window.addEventListener('load', function() {
                 filterFragment.appendChild(clearAll)
                 filterToolbar.insertBefore(filterFragment, filterToolbar[0])
 
+//FIXME: add counter  on removal
                 filterTags.addEventListener('click', event => {
                     if (event.target.classList.contains('btn--current-projects-filter-tag')) {
                         const filterTagKey = event.target.getAttribute('data-key')
@@ -263,13 +263,12 @@ window.addEventListener('load', function() {
                 })
 
 //FIXME: add counter issues , category title update 
-//FIXME: issues with _technolgies_ drop down and the checkmark boxes becoming unchecked 
+//FIXME: issues with _technologies_ drop down and the checkmark boxes becoming unchecked 
                 clearAll.addEventListener('click', event => {
                     removeAllUrlParams(key, value)
                     removeAllFilterTags()
                     removeAllChecks() 
                 })
-
             }
         }
     }
