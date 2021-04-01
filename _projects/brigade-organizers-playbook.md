@@ -5,7 +5,7 @@ description: Each of the 80+ Code for America Brigades is an experiment which ge
 image: /assets/images/projects/brigade-organizers-playbook.png
 alt: "Brigade Organizer's Playbook Extension Project"
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
-alt-hero: 'A dark blue background.'
+alt-hero: 'A cover page of "Brigade Organizer's Playbook, Extension Project" on a dark blue background.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Mentor & CfA National Advisory Council BOP project Co-Lead
