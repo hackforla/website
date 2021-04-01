@@ -3,9 +3,9 @@ identification: '336742445'
 title: Brigade Organizers Playbook
 description: Each of the 80+ Code for America Brigades is an experiment which generates valuable learnings and new effective processes and practices. However, Brigades and other civic tech volunteer organizations need not start from scratch. This project aims to improve existing structures and create new ones that make it easier to share replicable processes and practices so that organizers and members can iterate on each others work, improving outcomes for the whole network.
 image: /assets/images/projects/brigade-organizers-playbook.png
-alt: "A cover page of "Brigade Organizer's Playbook Extension Project" on a dark blue background."
+alt: "A cover page of "Brigade Organizer's Playbook Extension Project""
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
-alt-hero: 'Dark blue background.'
+alt-hero: ''
 leadership:
   - name: Bonnie Wolfe
     role: Agile Mentor & CfA National Advisory Council BOP project Co-Lead
