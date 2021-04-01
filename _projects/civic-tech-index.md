@@ -6,7 +6,7 @@ description: Our goal of the project is to create a comprehensive, searchable in
 image: /assets/images/projects/civic-tech-index.png
 alt: 'Civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.'
 image-hero: /assets/images/projects/civic-tech-index-hero.png
-alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
+alt-hero: 'Civic Tech Index logo. A magnifying glass over the outline of the world map on the left "Civic Tech Index" on the right.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Acting Technical Project Manager
