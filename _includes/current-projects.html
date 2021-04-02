@@ -59,6 +59,12 @@ window.addEventListener('load', function() {
     const filterToolbar = document.querySelector('.filter-toolbar')
     const clearAll = document.createElement('a')
 
+    let statusUrlParams = 0
+    let lookingUrlParams = 0
+    let technologiesUrlParams = 0
+    let locationUrlParams = 0
+    
+
     // utilities
     const cleanFieldName = (category, term) => `${category}_${term.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
     const onlyUnique = (value, index, self) => self.indexOf(value) === index;
@@ -147,8 +153,6 @@ window.addEventListener('load', function() {
 
     // updates category filters 
     function updateCategoryTitle(counter, categoryTitle) {
-        let UrlParamsCounter = 0
-
         function titleHtml(key, counter) {
             categoryTitle.innerHTML = `
                         ${key}
@@ -172,7 +176,7 @@ window.addEventListener('load', function() {
         }
     }
 
-//TODO: consolidate all the title updates 
+//TODO: consolidate title updates 
     const updateCategoryInnerHTML = (categoryTitle, category, checkedboxCounter) => {
         if (checkedboxCounter > 0) {
             categoryTitle = categoryTitle.innerHTML = `
@@ -227,6 +231,27 @@ window.addEventListener('load', function() {
         }
     }
 
+// updates filters # based on checked boxes
+    const filterCounts = (key, filterCount) => {
+        let filterDrop = filterToolbar.querySelector(`#${key}`)
+        statusUrlParams = filterDrop.querySelectorAll('input[type=checkbox]:checked').length
+        const filterParent = filterDrop.parentNode
+        const filterTitle = filterParent.firstChild
+        updateCategoryInnerHTML(filterTitle, key, statusUrlParams)
+    }
+
+    const createFilterTag = (filterTags, key, value) => {
+        filterTags.setAttribute(
+            'data-key',
+            `${key.split(' ').join('_')}` + `_` + `${value.split(' ').join('_')}`
+        )
+        filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
+        filterTags.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
+        filterFragment.appendChild(filterTags)
+        filterFragment.appendChild(clearAll)
+        filterToolbar.insertBefore(filterFragment, filterToolbar[0])
+    }
+    
     function updateFilterTags() {
         if (Object.keys(filterParams).length === 0) {
             return
@@ -238,38 +263,44 @@ window.addEventListener('load', function() {
 
             for (const value of valuesArr) {
                 const filterTags = document.createElement('button')
-                filterTags.setAttribute(
-                    'data-key',
-                    `${key.split(' ').join('_')}` + `_` + `${value.split(' ').join('_')}`
-                )
-                filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
-                filterTags.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
-                filterFragment.appendChild(filterTags)
-                filterFragment.appendChild(clearAll)
-                filterToolbar.insertBefore(filterFragment, filterToolbar[0])
+                createFilterTag(filterTags, key, value)
 
-//FIXME: add counter  on removal
+//FIXME: Technologies list always breaks if there is _only one_ item checked
                 filterTags.addEventListener('click', event => {
                     if (event.target.classList.contains('btn--current-projects-filter-tag')) {
                         const filterTagKey = event.target.getAttribute('data-key')
                         const checkboxId = document.querySelector(`#${filterTagKey}`)
+                        const dropDownNodeList = filterToolbar.querySelectorAll('.dropdown')
+                        let dropDownArr = []
+                        
+                        dropDownNodeList.forEach(list => dropDownArr.push(list))
 
                         event.target.remove()
                         checkboxId.previousElementSibling.checked = false
 
+                        dropDownArr.forEach(item => {
+                            if (event.target.getAttribute('data-key').includes(key)){
+                            filterCounts(key, statusUrlParams)
+                            filterCounts(key, technologiesUrlParams)
+                            filterCounts(key, locationUrlParams)
+                            filterCounts(key, lookingUrlParams)}
+                        })
+                
                         removeUrlParam(key, value)
                         removeClearAll()
                     }
                 })
 
-//FIXME: add counter issues , category title update 
 //FIXME: issues with _technologies_ drop down and the checkmark boxes becoming unchecked 
                 clearAll.addEventListener('click', event => {
                     removeAllUrlParams(key, value)
                     removeAllFilterTags()
-                    removeAllChecks() 
+                    removeAllChecks()
+                    filterCounts(key, statusUrlParams)
+                    filterCounts(key, technologiesUrlParams)
+                    filterCounts(key, locationUrlParams)
+                    filterCounts(key, lookingUrlParams)
                 })
-
             }
         }
     }
@@ -293,6 +324,7 @@ window.addEventListener('load', function() {
         // dropdown menu
         const termList = document.createElement('ul')
         termList.setAttribute('class', 'dropdown');
+        termList.setAttribute('id', category)
 
         // create label arrow
         const arrowSpan = document.createElement('span');
@@ -302,17 +334,9 @@ window.addEventListener('load', function() {
         //counter for checkedboxes
         let checkedboxCounter = 0;
 
-//TODO: refactor to fit into updateCategory... function 
         updateCategoryTitle(checkedboxCounter, categoryTitle)
 
         categoryTitle.appendChild(arrowSpan)
-        
-        // const removeAllUrlParams = (category, term) => {
-        //     for (let [keys, values] of projectFilter.conditions) {
-        //         projectFilter.removeCondition(category, term)
-        //         recomputeFilter()
-        //     }
-        // }
 
         for (let term in termSet) {
             const count = termSet[term];
@@ -329,25 +353,22 @@ window.addEventListener('load', function() {
             // TODO: Find a better mechanism for indexing dropdown items
             textSpan.setAttribute('id', cleanFieldName(category, term));
             textSpan.innerHTML = text;
-
             checkbox.addEventListener('input', function(event) {
                 if (event.target.checked) {
                     projectFilter.addCondition(category, term);
                     checkedboxCounter++;
-
+                   
                     const categoryCapitalized = category.charAt(0).toUpperCase() + category.slice(1)
                     const filterTags = document.createElement('button') 
                     renderClearAll(clearAll)
+                    createFilterTag(filterTags, category, term)
 
-                    //creates filterTags
-                    filterTags.setAttribute('data-key', `${cleanFieldName(category, term)}`)
-                    filterTags.setAttribute('class', 'btn--current-projects-filter-tag')
-                    filterTags.innerHTML = `${categoryCapitalized}: ${term}`
-                    filterFragment.appendChild(filterTags)
-                    filterFragment.appendChild(clearAll)
-                    filterToolbar.insertBefore(filterFragment, filterToolbar[0])
-                    
-                    updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+                    if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
+                        filterCounts(category, statusUrlParams)
+                        filterCounts(category, locationUrlParams)
+                        filterCounts(category, lookingUrlParams)
+                        filterCounts(category, technologiesUrlParams)
+                    }
                     
                     filterTags.addEventListener('click', function (event) {
                         if (event.target.classList.contains('btn--current-projects-filter-tag')) {
@@ -357,17 +378,26 @@ window.addEventListener('load', function() {
                             event.target.remove()
                             checkboxId.previousElementSibling.checked = false
                             checkedboxCounter--
-
-                            updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+                            
+                            filterCounts(category, statusUrlParams)
+                            filterCounts(category, locationUrlParams)
+                            filterCounts(category, lookingUrlParams)
+                            filterCounts(category, technologiesUrlParams)
+                        
                             removeUrlParam(category, term)
                             removeClearAll()
                         }
                     })
-
                 } else {
                     checkedboxCounter--
                     projectFilter.removeCondition(category, term);
-                    updateCategoryInnerHTML(categoryTitle, category, checkedboxCounter)
+                    
+                    if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
+                        filterCounts(category, statusUrlParams)
+                        filterCounts(category, locationUrlParams)
+                        filterCounts(category, lookingUrlParams)
+                        filterCounts(category, technologiesUrlParams)
+                    }
                     removeFilterTagOnUncheck(event)
                     removeClearAll()
                 }
