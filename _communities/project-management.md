@@ -13,13 +13,18 @@ meeting-times: Tuesdays 6:00-7:00 pm PT (every other week)
 
 leadership-type: Community Led
 leadership:
-  - name: 
-    role: 
+  - name: Niven Prasad
+    role: Co-lead
     links:
-      slack: 
-      github: 
-    picture: 
-
+      slack: https://hackforla.slack.com/team/U015R4RTDJA
+      github: https://github.com/NivenPrasad
+    picture: https://avatars.githubusercontent.com/u/61798667
+  - name: Olivia Chiong
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U01GJC7VC6L
+      github: https://github.com/Olivia-Chiong
+    picture: https://avatars.githubusercontent.com/u/75456721
 
 links:
   - name: Slack

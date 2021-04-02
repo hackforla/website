@@ -1,6 +1,6 @@
 ---
 name: UI/UX
-description: This group is needed as a space where UI and UX professionals from different projects can come together to share effective practices, give and get mentorship, set standards and create guides for new projects.
+description: This group creates a space where UI/UX designers and researchers from different projects can come together to share effective practices, give and get mentorship, set standards, and create guides for new projects.
 visible: true
 status: Active
 location:
@@ -13,7 +13,7 @@ meeting-times: Mondays 6:00-7:00 PM PT (every week)
 
 leadership-type: Peer Led
 leadership:
-  - name: Danielle Nevidi
+  - name: Danielle Nedivi
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/U013U4VN8V7

@@ -1,6 +1,6 @@
 ---
 name: Data Science
-description: This group is a space where data science professionals can come together to share effective practices, give and get mentorship, and workshop group projects.
+description: This group is a space where data science professionals from different projects can come together to share effective practices, give and get mentorship. The members also sometimes workshop group projects.
 visible: true
 status: Active
 location:
