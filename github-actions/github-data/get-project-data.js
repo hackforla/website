@@ -13,6 +13,7 @@ const untaggedRepoIds = [79977929];
 Object.assign(Octokit.prototype, trueContributorsMixin);
 const octokit = new Octokit({ auth: process.env.token });
 
+
 (async function main() {
   let { oldGitHubData, dateLastRan } = getLocalData();
   // Convert project array to map (JSON object) with repo id's as keys for more efficient lookup
