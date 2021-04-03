@@ -1,17 +1,9 @@
 .header-container--project-meetings {
-    // background: no-repeat url('/assets/images/project-meetings-page/project-meetings-banner-image.png'), $color-white;
-    // background-position: center bottom 40px;
-    // background-size: auto 45%;
-    // height: 500px;
-    // margin-top: 20px;
-    // display: flex;
-    // flex-direction: column;
-    // position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background: #fff;
-    padding: 64px;
+    padding: 32px;
     height: fit-content;
     margin: 37px auto 0;
     font-family: "Roboto" sans-serif;
@@ -19,10 +11,11 @@
     font-weight: normal;
     text-align: center;
 
-    @media (max-width: $screen-tablet) {
-        flex-direction: column;
+    @media #{$bp-desktop-up}  {
+        flex-direction: row;
         align-items: center;
-        padding: 32px;
+        padding: 64px;
+        justify-content: center;
     }
 
     @media (max-width: $screen-mobile) {
@@ -30,49 +23,52 @@
         background-size: auto 30%;
     }
 
-    .project-meetings--img-container {
-        max-height: 240px;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        width: 100%;
-
-        & img {
-            object-fit: contain;
+    & .project-meetings-banner-icon {
+        max-width: 385px;
+        padding: 0 15px;
+        
+        @media #{$bp-desktop-up}  {
+            margin: auto 1rem auto 0;
         }
+
     }
 
     .project-meetings-header-text-container {
-        // padding: 70px 0 0 0px;
         display: flex;
         flex-direction:column;
-        margin-right: 80px;
         font-size: 1.125rem;
         max-width: 508px;
-        // align-items: center;
+        
+        @media #{$bp-desktop-up}  {
+            margin: auto 5rem;
+        }
 
         h1 {
             color: #333;
             font-weight: 700;
-            // text-align: center;
+            font-size: 24px;
+            padding-bottom: 28px;
+
+            @media #{$bp-desktop-up}  {
+                font-size: 48px;
+                padding-bottom: 0;
+            }
         }
         p {
-            width: 80%;
+            font-size: 18px;
             margin:auto;
+            max-width: 300px;
+            margin-bottom: 1rem;
+            text-align: start;
 
-            @media (min-width: $screen-desktop) {
-                width: 65%;
+            @media #{$bp-desktop-up} {
+              margin-bottom: 0;
             }
 
-            @media (min-width: 1300px) {
-                width: 40%;
-            }
-
-            @media (max-width: $screen-mobile) {
-                font-size: .9rem;
+            @media #{$bp-tablet-up} {
+                max-width: 500px;
             }
         }
-
     }
 
 }
