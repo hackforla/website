@@ -34,7 +34,6 @@ li.filter-item a {
 li.filter-item:hover,
 li.filter-item:focus-within {
   background: white;
-  cursor: pointer;
 }
 
 li.filter-item:focus-within a {
@@ -82,6 +81,7 @@ ul.filter-list li ul li {
   border: 1px solid #000000;
   border-radius: 4px;
   margin: 0px 5px;
+  cursor: pointer;
 }
 
 .labelArrow {
