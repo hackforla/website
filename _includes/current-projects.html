@@ -26,20 +26,20 @@
 </section>
 <script>
     {% assign visible_projects = site.projects | where: "visible", "true" %}
-    var projectDataFromJekyll = [{% - for project in visible_projects -%}
+    var projectDataFromJekyll = [{%- for project in visible_projects -%}
     {
-        "id": { { project.identification | default: 0 } },
+        "id": {{ project.identification | default: 0 }},
         "status": ["{{ project.status }}"]
-        {% - if project.location -%},
-        "location": { { project.location | jsonify } }
-        {% -endif -%}
-        {% - if project.looking -%},
-        "looking": { { project.looking | jsonify } }
-        {% -endif -%}
-        {% - if project.technologies -%},
-        "technologies": { { project.technologies | jsonify } }
-        {% - endif -%}
-    } {% - unless forloop.last -%}, {% endunless %}
+        {%- if project.location -%},
+        "location": {{ project.location | jsonify }}
+        {%- endif -%}
+        {%- if project.looking -%},
+        "looking": {{ project.looking | jsonify }}
+        {%- endif -%}
+        {%- if project.technologies -%},
+        "technologies": {{ project.technologies | jsonify }}
+        {%- endif -%}
+    } {%- unless forloop.last -%}, {% endunless %}
     {% endfor %}];
 
     window.addEventListener('load', function () {
