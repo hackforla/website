@@ -1,0 +1,153 @@
+.header--communities {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  background: #fff;
+  padding: 64px;
+  height: fit-content;
+  margin: 37px auto 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  align-items: center;
+  /*This page has a lot more text than the others, so it starts looking weird earlier*/
+  @media #{$bp-below-desktop} {
+    flex-direction: column;
+  }
+
+  .header-text--communities {
+    display: flex;
+    flex-direction: column;
+    
+    p{
+      font-size: 18px;
+      max-width: 550px;
+      margin-top: 8px;
+      text-align: left;
+      @media #{$bp-below-tablet} {
+        width:100%;
+        margin: auto;
+        font-size: 16px;
+        }
+    }
+    h1 {
+      font-size: 48px;
+      @media #{$bp-below-tablet} {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .header-img--communities {
+    width:320px;
+    margin-left: 80px;
+    @media #{$bp-below-desktop} {
+      margin: auto;
+
+    }
+    @media #{$bp-below-tablet} {
+      width:100%;
+    }
+  }
+
+  .header-self-invite--communities {
+    display:flex;
+    align-items: flex-start;
+    max-width: 550px;
+    @media #{$bp-below-tablet} {
+      margin: 30px;
+    }
+
+    .alert--communities {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .self-invite-img {
+    margin: 15px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.content--communities {
+  background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+
+  .page-card-container {
+    display: flex;
+    min-height: 454px;
+    height: fit-content;
+
+    @media #{$bp-below-tablet} {
+      flex-direction: column;
+    }
+  }
+
+  .page-card-image-container {
+    flex: 0 0 auto;
+    width: 327px;
+    overflow: hidden;
+    @media #{$bp-below-tablet} {
+      width: 100%;
+      max-height: 40vh;
+
+    }
+  }
+
+  .page-card-image {
+    /*moved this to the container so I could use object-fit to accomodate random heights
+    margin: -5px;
+    max-width: 372px;*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+    @media #{$bp-below-tablet} {
+      height: auto;
+    /*  width: 100%;
+      max-height: 40vh;
+      overflow: hidden;*/
+    }
+  }
+
+  .page-card-content {
+    flex: 0 1 auto;
+    margin: 34px;
+    height: -moz-fit-content;
+    height: fit-content;
+    @media #{$bp-below-tablet} {
+      margin: 40px 0;
+      padding: 0 16px;
+    }
+  }
+}
+
+/*leader card styling - adapted from project page, mostly wrt sizing */
+.leader-list--communities {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:space-evenly;
+  margin: 20px -5px;
+  @media #{$bp-below-tablet} {
+    justify-content:center;
+  }
+    }
+.leader-img--communities {
+  margin: 10px;
+  width: 50px;
+  min-width: 40px;
+  border-radius: 10px;
+  }
+.leader-card--communities {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 24% auto;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+  width: 240px;
+  height: 70px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

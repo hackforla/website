@@ -8,7 +8,7 @@ layout: default
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
-    <div id='project-description-card' class='project-page-card'>
+    <div id='project-description-card' class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Project Overview</h4>
         <!--Project Details-->
         <div class='project-page-description'>
@@ -64,6 +64,7 @@ layout: default
                 </p>
                 {% endif %}
                 <p class="meetingsHeader"></p>
+                <div id="userTimeZone" class="userTimeZone--project-page"></div>
                 <div id="meetings">
                     <ul class="meeting-times-list">
                     </ul>
@@ -98,7 +99,7 @@ layout: default
     </div>
 
     <!--Getting Started Card-->
-    <div id="getting-started-section" class='project-page-card'>
+    <div id="getting-started-section" class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <ul class="resource-list unstyled-list">
             <!-- Hfla Start Guide -->
             {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
@@ -139,7 +140,7 @@ layout: default
     </div>
 
     <!-- Project Team Card -->
-    <div id='project-team-card' class='project-page-card'>
+    <div id='project-team-card' class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Project Leadership</h4>
         {% if page.leadership %}
             <div class='resource-list'>
@@ -169,7 +170,7 @@ layout: default
     </div>
 
     <!--Project Resources Card-->
-    <div class='project-page-card'>
+    <div class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
@@ -187,7 +188,7 @@ layout: default
 
 <!--Script for fetching the correct project-->
 <script>
-    {% assign projects = site.data.github-data | jsonify %}
+    {% assign projects = site.data.external.github-data | jsonify %}
     let projects = {{ projects }};
     let projectId = '{{ page.identification }}';
     // Search for correct project
@@ -354,7 +355,7 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.vrms_data | jsonify %}
+{% assign localData = site.data.external.vrms_data | jsonify %}
 let localData = {{ localData }};
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
@@ -438,8 +439,11 @@ fetch(API_URL, {method: 'GET'})
     console.log(err);
 })
 
+
 if (meetingsFound.length >= 1) {
-    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings: </strong>');
+    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings</strong>');
+    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+
 }
 
 // Formats time to be readable
@@ -465,4 +469,6 @@ function timeFormat(time) {
     }
 
 }
+
+
 </script>

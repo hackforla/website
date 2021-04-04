@@ -49,12 +49,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
       github: 'https://github.com/pawan92'
     picture: https://avatars.githubusercontent.com/pawan92
-  - name: Ahdithan Uthayakumar
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FDAPULJE'
-      github: 'https://github.com/ahdithebomb'
-    picture: https://avatars.githubusercontent.com/ahdithebomb
   - name: Tarang Gupta
     role: Product Manager
     links:

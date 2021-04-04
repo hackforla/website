@@ -56,31 +56,47 @@
   }
 }
 
-.credits-inner {
+.credits-item {
   margin: 15px;
-  @media #{$bp-below-mobile} {
-    margin: 5px;
-  }
   padding-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  
+  @media #{$bp-below-mobile} {
+    margin: 5px;
+  }
 }
 
-.white-page-card-credits {
-  background: #fff;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  margin-bottom: 0;
+.page-card--credits {
   padding: 30px;
-  overflow: hidden;
-  height: fit-content;
-  margin: 12px auto;
-  font-family: "Roboto" sans-serif;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+  @media #{$bp-below-mobile} {
+    padding: 32px 16px;
+  }
+}
+
+.credits-list {
+  order: 2;
+
+  @media #{$bp-tablet-up} {
+    display: grid;
+    grid-gap: 32px 54px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+}
+
+.credits-inner {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$bp-mobile-up} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .icon-left {

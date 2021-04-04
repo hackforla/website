@@ -31,6 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U015MG4LK99'
       github: 'https://github.com/OlgaBilogurova'
     picture: https://avatars.githubusercontent.com/OlgaBilogurova
+  - name: Khushboo Shah
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01EW21842X'
+      github: 'https://github.com/khushbooshah-PM'
+    picture: 'https://avatars.githubusercontent.com/khushbooshah-PM'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
