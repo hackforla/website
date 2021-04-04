@@ -14,13 +14,16 @@
   .page-card-lg {
     max-width: 896px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-    padding: 48px;
+    padding: 48px 100px;
     margin: 16px auto;
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-tablet} {
       padding: 32px 16px;
       margin: 12px auto;
     }
+  }
+  button[type="submit"]{
+    float: right;
   }
   .page-card {
     border-radius: 20px;
@@ -64,9 +67,15 @@
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-bottom: 1.5px solid #585a5c; //need to change color
+    border-radius: 0;
+    box-shadow: inset 0px 0px 0px 0px;
+    // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .form-control:focus {
+    outline: none;
+    border-bottom: 2px solid #117fee; //need to change color
+    background-color: #f6f8f9;
   }
   .container-fluid {
     width: 100%;
