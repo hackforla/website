@@ -1,7 +1,9 @@
 a.filter-item {
   text-decoration: none;
 }
-
+.project-list {
+  margin-top: .5rem;
+}
 //filter container
 ul.filter-list {
   background: $color-pink;
@@ -92,6 +94,47 @@ ul.filter-list li ul li {
   right: 10%;
 }
 
+//filter tags
+.btn--current-projects-filter-tag {
+  box-sizing: border-box;
+  margin: 0em 1em 1em;
+  padding: .3em 1em;
+  background: $color-red;
+  border: none;
+  border-radius: 5px;
+  color: $color-white;
+  font-weight: 700;
+
+  &::after {
+    content: "\00d7";
+    padding-left: .7em;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-red, 10%);
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
+a.clear-filter-tags {
+  margin-left: 1em;
+  text-decoration: underline;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+div.page-contain {
+
+}
+
+.number-of-checked-boxes {
+  color: $color-red;
+}
+
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   ul.filter-list li ul {
@@ -121,4 +164,13 @@ ul.filter-list li ul li {
     right: 5%;
     font-size: 20px;
   }
+
+  .btn--current-projects-filter-tag{
+    display: none;
+  }
+  .clear-filter-tags{
+    display: none;
+  }
+
 }
+
