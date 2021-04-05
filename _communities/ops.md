@@ -9,7 +9,7 @@ location:
 image: /assets/images/communities-of-practice/ops.jpg
 alt: 'A dramatic closeup of a screen filled with code'
 
-meeting-times: Tuesdays 8:00-9:00 pm PT (every week)
+meeting-times: Tuesdays 8:00-9:00 pm PT
 
 leadership-type: Community Led
 leadership:

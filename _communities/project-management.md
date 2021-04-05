@@ -1,6 +1,6 @@
 ---
 name: Project/Product Management
-description: This group is a space where project and product managers from different projects come together to share effective practices, give and get mentorship, set development standards, and create guides and templates for new projects.
+description: PMs from different projects come together in this group to share effective practices, give and get mentorship, set product management standards, and create guides and templates for new projects.
 visible: true
 status: Active
 location:
@@ -9,9 +9,9 @@ location:
 image: /assets/images/communities-of-practice/product.jpg
 alt: 'Several people around a small table listen intently as one person speaks.'
 
-meeting-times: Tuesdays 6:00-7:00 pm PT (every other week)
+meeting-times: Tuesdays 6:00-7:00 pm PT
 
-leadership-type: Community Led
+leadership-type: Mentor Led
 leadership:
   - name: Niven Prasad
     role: Co-lead

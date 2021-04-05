@@ -6,10 +6,10 @@ status: Active
 location:
   - Remote
 
-image: /assets/images/communities-of-practice/programming.jpg
+image: /assets/images/communities-of-practice/engineering.jpg
 alt: 'A computer screen shows a diagram used to manage code development'
 
-meeting-times: Wednesdays 6:00-7:00 pm PT (every week)
+meeting-times: Wednesdays 6:00-7:00 pm PT
 
 leadership-type: Mentor Led
 leadership:
