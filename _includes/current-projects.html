@@ -232,7 +232,7 @@
         }
 
         // updates filters # based on checked boxes
-        const filterCounts = (key, filterCount) => {
+        const filterCounts = (key) => {
             let filterDrop = filterToolbar.querySelector(`#${key}`)
             statusUrlParams = filterDrop.querySelectorAll('input[type=checkbox]:checked').length
             const filterParent = filterDrop.parentNode
@@ -281,10 +281,7 @@
 
                             dropDownArr.forEach(item => {
                                 if (event.target.getAttribute('data-key').includes(key)) {
-                                    filterCounts(key, statusUrlParams)
-                                    filterCounts(key, technologiesUrlParams)
-                                    filterCounts(key, locationUrlParams)
-                                    filterCounts(key, lookingUrlParams)
+                                    filterCounts(key);
                                 }
                             })
 
@@ -298,10 +295,7 @@
                         removeAllUrlParams(key, value)
                         removeAllFilterTags()
                         removeAllChecks()
-                        filterCounts(key, statusUrlParams)
-                        filterCounts(key, technologiesUrlParams)
-                        filterCounts(key, locationUrlParams)
-                        filterCounts(key, lookingUrlParams)
+                        filterCounts(key)
                     })
                 }
             }
@@ -366,10 +360,7 @@
                         createFilterTag(filterTags, category, term)
 
                         if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
-                            filterCounts(category, statusUrlParams)
-                            filterCounts(category, locationUrlParams)
-                            filterCounts(category, lookingUrlParams)
-                            filterCounts(category, technologiesUrlParams)
+                            filterCounts(category)
                         }
 
                         filterTags.addEventListener('click', function (event) {
@@ -381,10 +372,7 @@
                                 checkboxId.previousElementSibling.checked = false
                                 checkedboxCounter--
 
-                                filterCounts(category, statusUrlParams)
-                                filterCounts(category, locationUrlParams)
-                                filterCounts(category, lookingUrlParams)
-                                filterCounts(category, technologiesUrlParams)
+                                filterCounts(category);
 
                                 removeUrlParam(category, term)
                                 removeClearAll()
@@ -395,10 +383,8 @@
                         projectFilter.removeCondition(category, term);
 
                         if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
-                            filterCounts(category, statusUrlParams)
-                            filterCounts(category, locationUrlParams)
-                            filterCounts(category, lookingUrlParams)
-                            filterCounts(category, technologiesUrlParams)
+                            filterCounts(category)
+
                         }
                         removeFilterTagOnUncheck(event)
                         removeClearAll()
