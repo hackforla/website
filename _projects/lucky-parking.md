@@ -61,7 +61,7 @@ technologies:
   - Node.js
   - Mapbox
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
