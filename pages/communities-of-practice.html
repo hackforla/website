@@ -57,7 +57,7 @@ permalink: /communities-of-practice
                 {% endfor %}
                 </div>
             {% endif %}                
-            {% if community.status == "Seeking" %}
+            {% if community.status == "Seeking" and community.recruiting-message %}
                 <p><strong>How to get started:</strong> {{ community.recruiting-message }}</p>
             {% endif %}
             <div class="align-center">

@@ -26,6 +26,5 @@ links:
   - name: Github
     url: 
   
-recruiting-message: Input here if waiting for someone to start the group.
-
+recruiting-message:
 ---
