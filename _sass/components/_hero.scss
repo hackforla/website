@@ -61,12 +61,12 @@
       font-size: 3rem;
     }
   }
-
+  
+  span {
+    border-bottom: 3px solid $color-red;
+  }
 }
 
-.underlined {
-  border-bottom: 3px $color-red solid;
-}
 
 .hero-signup {
   .form-input {
