@@ -7,12 +7,54 @@ alt: 'Person holding phone with ballot nav website on it.'
 image-hero: /assets/images/projects/ballot-nav-hero.png
 alt-hero: 'Map of the United States with each state and county outlined.'
 leadership:
-  - name: Mya Stark
-    role:
+  - name: Karen Coronel
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/UMC7AJLDV'
-      github: 'https://github.com/myastark'
-    picture: 'https://avatars.githubusercontent.com/myastark'
+      slack: 'https://hackforla.slack.com/team/U010KUGJATC'
+      github: 'https://github.com/kcoronel'
+    picture: 'https://avatars.githubusercontent.com/kcoronel'
+  - name: Randall Ellis
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U018TL37XJ6'
+      github: 'https://github.com/Arjayellis'
+    picture: 'https://avatars.githubusercontent.com/Arjayellis'
+  - name: Alina Shokina
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U019Y5KEB96'
+      github: 'https://github.com/allysmatrix'
+    picture: 'https://avatars.githubusercontent.com/allysmatrix'
+  - name: Jake Mensch
+    role: Lead Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/ULJAWB8M8'
+      github: 'https://github.com/jmensch1'
+    picture: 'https://avatars.githubusercontent.com/jmensch1'
+  - name: Andrew Steman
+    role: Lead Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01AP5R8U6P'
+      github: 'https://github.com/aNullValue'
+    picture: 'https://avatars.githubusercontent.com/aNullValue'
+  - name: Seymour Liao
+    role: Lead Data Scientist
+    links:
+      slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
+      github: 'https://github.com/Seymour100'
+    picture: 'https://avatars.githubusercontent.com/Seymour100'
+  - name: Federica Landini
+    role: Lead UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01A9RCMY13'
+      github: 'https://github.com/fedelandini'
+    picture: 'https://avatars.githubusercontent.com/fedelandini'
+  - name: Irina Rostovtseva
+    role: Lead UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01A3MMN59U'
+      github: 'https://github.com/IrinaRost'
+    picture: 'https://avatars.githubusercontent.com/IrinaRost' 
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/BallotNav'

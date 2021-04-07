@@ -29,7 +29,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v3.0.0
       with:
         # Optional glob pattern of files which should be added to the commit
-        file_pattern: _data/github-data.json
+        file_pattern: _data/external/github-data.json
 
         commit_message: Update contributor and language data
 

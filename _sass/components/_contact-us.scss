@@ -1,9 +1,5 @@
-.contactus {
+.page-card--home {
   text-align: center;
-  background: $color-pink;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding: 20px;
 }
 
 .btn--home-subscribe {
@@ -64,7 +60,7 @@
 @media only screen and (max-device-width: 550px) {
 
   //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
-  .volunteerWithUs .btn--home-survey {
+  .page-card--home-volunteer .btn--home-survey {
     margin: 0 0 15px 0 !important;
   }
 

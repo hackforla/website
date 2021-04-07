@@ -17,8 +17,8 @@ Gemfile.lock
 
 # Ignore OS and IDE tracking files
 .DS_store
-.vscode
 .idea
+.vs
 
 #ignore models.json file added by IDE intellesense
 models.json

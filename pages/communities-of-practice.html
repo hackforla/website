@@ -1,0 +1,76 @@
+---
+layout: default
+title: Communities of Practice
+permalink: /communities-of-practice
+---
+
+<section class="header-container header--communities">
+    <div class="header-text--communities">
+        <h1>Communities of Practice</h1>
+        <p>
+            Communities of Practice started at Hack for LA in 2020, post-Covid. These communities have been a vital connection point in our fully remote organization. They have enabled us to connect people across projects in ways that are both meaningful for the individuals, and have helped the organization build professional infrastructure to support our community, nonprofit and government project partnerships. These communities have also enabled Hack for LA to provide rapid response to the evolving crises of 2020.
+        </p>
+        <p>
+            If you'd like to join one of the Communities of Practice that has a regular meeting time, join their Slack channel and look for the meeting details, usually pinned or in the description. Otherwise, see the "How to get started" sections below.
+        </p>
+            <div class="header-self-invite--communities">
+                <object data="/assets/images/communities-of-practice/slack-self-invite.svg" type="image/svg+xml" class="self-invite-img" /></object>
+                <p class="alert--communities">To join the Slack channels below, you first need to be a member of our Hack for LA Slack Community – you can self-invite <a href="https://hackforla-slack.herokuapp.com" target="_blank">here</a>.
+            </p></div>
+    </div>
+    <object data="/assets/images/communities-of-practice/comm-prac-header.svg" type="image/svg+xml" class="header-img--communities" /> </object>
+</section>
+<section class="content-section content--communities">
+    {% for community in site.communities %}
+    {% if community.visible == true %}
+    <div class="page-card-base card-primary page-card-lg page-card--communities page-card-container">
+        <div class="page-card-image-container">
+            <img class="page-card-image" src="{{ community.image }}" alt="{{ community.alt }}"/>
+        </div>
+        <div class="page-card-content">
+            <h3>{{ community.name}}</h3>
+            <p>{{ community.description}}</p>
+            <p>
+                <strong>Meeting Times:</strong> 
+                {% if community.meeting-times %}{{ community.meeting-times }}{% else %}TBD{% endif %}<br>
+                <strong>Leadership Type:</strong> 
+                {% if community.leadership-type %}{{ community.leadership-type }}{% else %}TBD{% endif %}
+            </p>
+            {% if community.leadership[0].name %}
+                <div class='leader-list--communities'>
+                {% for leader in community.leadership %}
+                <div class='leader-card--communities'>
+                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img--communities' src='{{ leader.picture }}'/></a>
+                    <div class='leader-description'>
+                        <p class='leader-description-field'><strong>Name: </strong>
+                        {% if page.status == "Completed" and item.links.linkedin %}
+                            <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile'>
+                        {% elsif page.status == "Completed" %}
+                            <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'>
+                        {% else %}
+                            <a href='{{ leader.links.slack }}' target='_blank' title='Slack Direct Message'>
+                        {%  endif %}
+                        {{ leader.name }}</a></p>
+                        <p class='leader-description-field'><strong>Role: </strong>{{ leader.role }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            {% endif %}                
+            {% if community.status == "Seeking" %}
+                <p><strong>How to get started:</strong> {{ community.recruiting-message }}</p>
+            {% endif %}
+            <div class="align-center">
+                {% if community.links[0].url %}
+                    <a href="{{ community.links[0].url }}"><button class="btn btn-primary btn-md">Join Meeting Slack Channel</button></a>
+                {% elsif community.links[1].url %}
+                    <a href="{{ community.links[1].url }}"><button class="btn btn-primary btn-md">View GitHub</button></a>
+                {% else %}
+                    <button class="btn btn-primary btn-md">Coming soon...</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
