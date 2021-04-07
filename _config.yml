@@ -24,7 +24,6 @@ collections:
 # which then redirects to `github.com/hackforla/website` and `https://www.codeforamerica.org/donate` respecitively
   redirections:
     output: true
-  communities:
   credits:
   guide-pages:
     output: true
