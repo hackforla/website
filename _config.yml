@@ -6,7 +6,6 @@ lsi: false # Produce an index for related posts. Requires the classifier-reborn 
 safe: true # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 
 
-
 source: . # Change the directory where Jekyll will read files
 
 title: Hack for LA
@@ -25,13 +24,12 @@ collections:
 # which then redirects to `github.com/hackforla/website` and `https://www.codeforamerica.org/donate` respecitively
   redirections:
     output: true
-  projects:
-    output: true
+  credits:
   guide-pages:
     output: true
   press:
-
-    
+  projects:
+    output: true
 
 # Please refer to the documentation here[https://jekyllrb.com/docs/configuration/front-matter-defaults/] before modifying defaults
 # The settings below reads as so
