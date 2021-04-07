@@ -24,7 +24,7 @@
     }
 
     & .project-meetings-banner-icon {
-        max-width: 385px;
+        max-height: 240px;
         padding: 0 15px;
         
         @media #{$bp-desktop-up}  {
@@ -37,7 +37,6 @@
         display: flex;
         flex-direction:column;
         font-size: 1.125rem;
-        max-width: 508px;
         
         @media #{$bp-desktop-up}  {
             margin: auto 5rem;
@@ -66,7 +65,7 @@
             }
 
             @media #{$bp-tablet-up} {
-                max-width: 500px;
+                max-width: 508px;
             }
         }
     }
