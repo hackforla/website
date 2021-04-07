@@ -21,7 +21,7 @@ permalink: /communities-of-practice
     <object data="/assets/images/communities-of-practice/comm-prac-header.svg" type="image/svg+xml" class="header-img--communities" /> </object>
 </section>
 <section class="content-section content--communities">
-    {% for community in site.communities %}
+    {% for community in site.data.internal.communities %}
     {% if community[1].visible == true %}
     <div class="page-card-base card-primary page-card-lg page-card--communities page-card-container">
         <div class="page-card-image-container">
