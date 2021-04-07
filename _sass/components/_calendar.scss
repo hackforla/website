@@ -65,9 +65,4 @@ button {
   cursor: pointer;
   font-size: #{map-get($font-size-small, print)};
   margin: 5px 0;
-
-  &:hover {
-    background: $color-red;
-    color: $color-white;
-  }
 }
