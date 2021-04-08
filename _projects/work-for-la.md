@@ -18,7 +18,7 @@ links:
 location: 
   - Downtown LA
   - Remote
-partner: Department of Personnel
+partner: LA City Department of Personnel
 visible: true
 status: Completed
 completed-contact: WorkForLA@googlegroups.com
