@@ -135,7 +135,7 @@
 }
 
 .fullwidth-background-container {
-  background-color: #f2c94d;
+  background-color: $color-gold;
   margin: 0 -2em;
 }
 .add-padding-container {
@@ -209,7 +209,7 @@
 }
 
 .notification-banner {
-  background-color: #f2c94d;
+  background-color: $color-gold;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -452,7 +452,7 @@
 .mobile-locations-dropdown {
   @media #{$bp-below-tablet} {
     display: none;
-    background: #f2c94d;
+    background: $color-gold;
   }
 }
 
