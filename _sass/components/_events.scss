@@ -134,8 +134,19 @@
   max-width: 150px;
 }
 
+//Fixes for 
+.fullwidth-background-container {
+  background-color: #f2c94d;
+  margin: 0 -2em;
+}
+.add-padding-container {
+  padding: 0 2.5em;
+}
+
 .getting-started-mobile-page {
+  // NEW MARkup BELOW
   @media #{$bp-below-mobile} {
+    pading: 0 2em;
     display: inline;
     margin: 20px;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -219,9 +230,8 @@
   font-weight: 700;
 
   @media #{$bp-below-mobile} {
-    text-align: justify;
-    padding: 12px;
     margin: 0;
+    padding: 1em 2em; 
     font-size: 16px;
     line-height: 19px;
   }
@@ -538,7 +548,7 @@
 
 
 
-.events-page{
+.events-page, .content-section{
   background: $color-blue-dark;
   min-height: 100vh;
   display: flex;
