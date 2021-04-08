@@ -13,7 +13,7 @@ looking:
   - category: UI/UX
     skill: Graphics Designer
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 visible: false
 status: On Hold

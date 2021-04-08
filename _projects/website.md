@@ -81,8 +81,8 @@ technologies:
   - Docker
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
-  - Santa Monica
-  - Downtown LA
+  # - Santa Monica
+  # - Downtown LA
   - Remote
 visible: true
 status: Active
