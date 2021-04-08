@@ -110,7 +110,7 @@
   content: "\226A";
   float: left;
   transition: transform 0.25s ease-in;
-  color: #000000;
+  color: $color-black
   font-weight: normal;
   font-size: 18px;
   margin: 0 6px;
@@ -391,7 +391,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -424,7 +424,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -563,7 +563,7 @@
 }
 
 .events-page-header {
-  color: #ffffff; 
+  color: $color-white; 
   margin-top: 48px; 
   font-size: 36px;
 }
