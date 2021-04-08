@@ -69,7 +69,7 @@ technologies:
   - Adobe CC
   - Miro
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 
 partner: EmpowerLA

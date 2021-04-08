@@ -8,7 +8,7 @@ links:
   - name: GitHub
     url: 'https://github.com/hackforla/adopt-civic-art'
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: County of Los Angeles
 visible: false
