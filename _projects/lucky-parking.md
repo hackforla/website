@@ -45,7 +45,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
-    url: 'https://www.luckyparking.info/'
+    url: 'http://www.luckyparking.info/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
