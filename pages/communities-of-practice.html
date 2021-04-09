@@ -21,9 +21,10 @@ permalink: /communities-of-practice
     <object data="/assets/images/communities-of-practice/comm-prac-header.svg" type="image/svg+xml" class="header-img--communities" /> </object>
 </section>
 <section class="content-section content--communities">
-    {% for community in site.data.internal.communities %}
+    {% assign sorted_communities = site.data.internal.communities | sort %}
+    {% for community in sorted_communities %}
     {% if community[1].visible == true %}
-    <div class="page-card-base card-primary page-card-lg page-card--communities page-card-container">
+    <div class="page-card-base card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ community[1].image }}" alt="{{ community[1].alt }}"/>
         </div>
@@ -57,7 +58,7 @@ permalink: /communities-of-practice
                 {% endfor %}
                 </div>
             {% endif %}                
-            {% if community[1].status == "Seeking" %}
+            {% if community[1].status == "Seeking" and community[1].recruiting-message %}
                 <p><strong>How to get started:</strong> {{ community[1].recruiting-message }}</p>
             {% endif %}
             <div class="align-center">
