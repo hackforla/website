@@ -33,7 +33,7 @@ links:
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
 looking:
 location: 
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS

@@ -41,9 +41,9 @@ links:
 looking: 
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
-  - category: Manager
+  - category: PM
     skill: Product Manager
-  - category: Developer
+  - category: Development
     skill: React Expert
 technologies:
   - ReactJS

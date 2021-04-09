@@ -40,7 +40,7 @@ looking:
   - category: Ops
     skill: DevOps engineer
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: Seeking
 visible: true
