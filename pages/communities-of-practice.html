@@ -32,7 +32,9 @@ permalink: /communities-of-practice
             <p>{{ community.description}}</p>
             <p>
                 <strong>Meeting Times:</strong> 
-                {% if community.meeting-times %}{{ community.meeting-times }}{% else %}TBD{% endif %}<br>
+                {% if community.meeting-times %}{{ community.meeting-times }}{% else %}TBD{% endif %}<br> 
+            </p>
+            <p>
                 <strong>Leadership Type:</strong> 
                 {% if community.leadership-type %}{{ community.leadership-type }}{% else %}TBD{% endif %}
             </p>
