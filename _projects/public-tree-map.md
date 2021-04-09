@@ -40,7 +40,7 @@ technologies:
   - Leaflet
   - Node.js
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: City of Santa Monica
 tools: Zeplin
