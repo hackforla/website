@@ -71,7 +71,7 @@
 }
 
 .content--communities {
-  background: #e5e5e5;
+  background: $color-pink;
   display: flex;
   flex-direction: column;
 
@@ -120,6 +120,14 @@
     @media #{$bp-below-tablet} {
       margin: 40px 0;
       padding: 0 16px;
+    }
+  }
+  .page-card-content h3 {
+    @media #{$bp-mobile-up} {
+      font-size: 1.25rem;
+    }
+    @media #{$bp-desktop-up} {
+      font-size: 1.5rem;
     }
   }
 }
