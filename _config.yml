@@ -41,7 +41,6 @@ defaults: # The `defaults` key holds an array of scope/values pairs that define 
       type: "pages"
     values:
       layout: "default"
-      sitemap: false
   - scope:
       path: "_projects" # an empty string here means all files in the project
       type: "projects"
