@@ -154,22 +154,22 @@
 
 @media #{$bp-below-tablet} {
     .wins-card {
-//NEW ADD
         position: relative;
     }
+
     .wins-card-text{
         height: 81px;
         position: inherit;
     }
-//NEW ADD
+
     .wins-see-more-div {
         height: 0;
         margin-top: 4px;
         padding: 0;
-//NEW ADDS
         right: 7%;
         top: 88.5%;
     }
+    
     .home-getting-started-container {
         h1 {font-size: 2rem;}
     }
@@ -215,10 +215,7 @@
         font-size: 19px;
         line-height: 22px;
     }
-    // .wins-card-team{
-    //     font-size: 12px;
-    //     line-height: 16px;
-    // }
+
     .wins-card-icon{
         margin-left: 13.5px;
     }
