@@ -38,30 +38,45 @@
     */
     (async function main(){
 
+        if(localStorage.getItem('storedData')){
+            
+        }
+
+        if(localStorage.getItem('storedData')) {
+            const storedData = JSON.parse(localStorage.getItem('storedData'))
+            document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData))
+            return
+        }
+
         const response_data = await sendGetRequest(API_ENDPOINT);
         let filteredData = filterDataFromApi(response_data);
 
         let sortedData = sortData(filteredData);
 
         document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
-
+        
         //Displays/Inserts the user's time zone in the DOM
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
         //TODO: my additions
         storeData(sortedData)
-        console.log(window.localStorage)
+        // console.log(JSON.parse(localStorage.getItem('storedData')))
     })()
 
-//TODO: store data in localStorage 
+
+//TODO: my additions
      function storeData(apiData){
         const dataString = JSON.stringify(apiData)
         const date = new Date()
-        localStorage.setItem('storedData', `${dataString}`)
-        localStorage.setItem('storedDate', `${date}`)
-        console.log(date)
+        
+        if (!localStorage.getItem('storedData')) {
+             localStorage.setItem('storedData', `${dataString}`)
+         }
+
+        if(!localStorage.getItem('storedDate')){
+            localStorage.setItem('storedDate', `${date}`)
+        } 
     }
-    
 
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
