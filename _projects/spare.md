@@ -21,7 +21,7 @@ looking:
   - category: SEO/Marketing
     skill: Marketing
 location: 
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Hope of the Valley and hopefully others in the near future.
 visible: true
