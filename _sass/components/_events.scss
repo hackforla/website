@@ -546,16 +546,18 @@
 
 
 
-.events-page, .content-section{
-  background: $color-blue-dark;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto"sans-serif;
-  font-style: normal;
-  font-weight: normal;
+.events-page{
+  .content-section{
+    background: $color-blue-dark;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto"sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
 }
 
 .userTimeZone {
