@@ -110,7 +110,7 @@
   content: "\226A";
   float: left;
   transition: transform 0.25s ease-in;
-  color: #000000;
+  color: $color-black;
   font-weight: normal;
   font-size: 18px;
   margin: 0 6px;
@@ -134,8 +134,17 @@
   max-width: 150px;
 }
 
+.fullwidth-background-container {
+  background-color: $color-gold;
+  margin: 0 -2em;
+}
+.add-padding-container {
+  padding: 0 2.5em;
+}
+
 .getting-started-mobile-page {
   @media #{$bp-below-mobile} {
+    pading: 0 2em;
     display: inline;
     margin: 20px;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -200,7 +209,7 @@
 }
 
 .notification-banner {
-  background-color: #f2c94d;
+  background-color: $color-gold;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -219,9 +228,8 @@
   font-weight: 700;
 
   @media #{$bp-below-mobile} {
-    text-align: justify;
-    padding: 12px;
     margin: 0;
+    padding: 1em 2em; 
     font-size: 16px;
     line-height: 19px;
   }
@@ -383,7 +391,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -416,7 +424,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -444,7 +452,7 @@
 .mobile-locations-dropdown {
   @media #{$bp-below-tablet} {
     display: none;
-    background: #f2c94d;
+    background: $color-gold;
   }
 }
 
@@ -538,7 +546,7 @@
 
 
 
-.events-page{
+.events-page, .content-section{
   background: $color-blue-dark;
   min-height: 100vh;
   display: flex;
@@ -555,7 +563,7 @@
 }
 
 .events-page-header {
-  color: #ffffff; 
+  color: $color-white; 
   margin-top: 48px; 
   font-size: 36px;
 }
