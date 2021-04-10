@@ -39,7 +39,6 @@
     (async function main(){
 
         const response_data = await sendGetRequest(API_ENDPOINT);
-
         let filteredData = filterDataFromApi(response_data);
 
         let sortedData = sortData(filteredData);
@@ -48,10 +47,21 @@
 
         //Displays/Inserts the user's time zone in the DOM
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-       
 
-
+        //TODO: my additions
+        storeData(sortedData)
+        console.log(window.localStorage)
     })()
+
+//TODO: store data in localStorage 
+     function storeData(apiData){
+        const dataString = JSON.stringify(apiData)
+        const date = new Date()
+        localStorage.setItem('data', `${dataString}`)
+        localStorage.setItem('dateReceived', `${date}`)
+        console.log(date)
+    }
+    
 
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
@@ -68,7 +78,7 @@
             console.error(err);
         }
     }
-
+ 
     /**
      * Filters out the needed data from the api endpoint
     */
@@ -115,6 +125,7 @@
         }
 
     }
+
 
     /**
      * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
