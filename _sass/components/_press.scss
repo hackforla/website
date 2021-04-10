@@ -1,5 +1,12 @@
 .press {
   padding: 32px 16px;
+  // Fixes issues created from .content-section styling
+  min-height: auto;
+  color: $color-white;
+    .news-cards li a{
+      color: $color-red;
+    }
+    h2, .type-h4{color: $color-white;}
 }
 
 .news-cards {

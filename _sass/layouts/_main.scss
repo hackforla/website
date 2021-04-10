@@ -21,3 +21,12 @@
 .content-section {
   padding: 32px 16px;
 }
+
+// Fixes issues created from .content-section styling
+.content-section--home, #sponsors {
+  min-height: auto;
+  color: $color-white;
+  h2 {
+    color: $color-white;
+  }
+}
