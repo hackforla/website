@@ -57,8 +57,8 @@
      function storeData(apiData){
         const dataString = JSON.stringify(apiData)
         const date = new Date()
-        localStorage.setItem('data', `${dataString}`)
-        localStorage.setItem('dateReceived', `${date}`)
+        localStorage.setItem('storedData', `${dataString}`)
+        localStorage.setItem('storedDate', `${date}`)
         console.log(date)
     }
     
