@@ -38,18 +38,16 @@
     */
     (async function main(){
 
-        if(localStorage.getItem('storedData')){
-            
-        }
-
-        if(localStorage.getItem('storedData')) {
-            const storedData = JSON.parse(localStorage.getItem('storedData'))
-            document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData))
-            return
-        }
-
+        // if(localStorage.getItem('storedDate')) {
+        //     const storedData = JSON.parse(localStorage.getItem('storedData'))
+        //     document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData))
+        //     console.log(storedData)
+        //     return
+        // }
+        
         const response_data = await sendGetRequest(API_ENDPOINT);
         let filteredData = filterDataFromApi(response_data);
+        compareDates(response_data)
 
         let sortedData = sortData(filteredData);
 
@@ -58,25 +56,37 @@
         //Displays/Inserts the user's time zone in the DOM
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
-        //TODO: my additions
         storeData(sortedData)
-        // console.log(JSON.parse(localStorage.getItem('storedData')))
     })()
 
 
-//TODO: my additions
+//TODO: 
      function storeData(apiData){
         const dataString = JSON.stringify(apiData)
-        const date = new Date()
-        
+        const userDate = new Date()
+
         if (!localStorage.getItem('storedData')) {
              localStorage.setItem('storedData', `${dataString}`)
          }
 
         if(!localStorage.getItem('storedDate')){
-            localStorage.setItem('storedDate', `${date}`)
+            localStorage.setItem('storedDate', `${userDate}`)
         } 
     }
+
+//TODO: 
+//** Need to Change this to my own API fetch .. 
+//** As the current one _will not fetch_ if user has localStorage of date-time
+    function compareDates(responseData){
+        let updatedDates = responseData.map(data => (data.updatedDate))
+        const userDate = localStorage.getItem('storedDate')
+        console.log(userDate)
+        // for(const date of updatedDates){
+
+        // }
+    }
+    // "2020-05-09T21:55:22.088Z"
+    // Sat Apr 10 2021 11:00:03 GMT-0700 (Pacific Daylight Time)
 
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
@@ -118,6 +128,7 @@
     */
     function sortData(filteredData){
         for(const [key,value] of Object.entries(filteredData)){
+            console.log(key, value)
             value.sort(function (a, b) {
                 return convertTime12to24(a.start) - convertTime12to24(b.start);
             });
@@ -147,7 +158,6 @@
      * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 PM"
     */
     function localeTimeIn12Format(time){
-        
         return new Date(time)
             .toLocaleTimeString(
                 {},
