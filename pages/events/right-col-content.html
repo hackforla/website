@@ -31,6 +31,7 @@
 <script>
 
     const API_ENDPOINT = 'https://www.vrms.io/api/recurringevents';
+    
     /**
      * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
      * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -43,14 +44,19 @@
             document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData));
 
             //After storage data is rendered, Check if API has been Updated
-            const response_data = await sendGetRequest(API_ENDPOINT);
-            compareDates(response_data);
+            let req = new XMLHttpRequest('https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1');
+
+            req.open("GET", "https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1", true);
+            req.setRequestHeader("secret-key", `$2b$10$5hcb.eTuJFK.70MfEDUTeOvS9BoKt3fDBeMAdGIXAN/Lf.2QepRIG`);
+            req.send();
+
+            compareDates(req);
             return;
         }
 
         //Initial fetch of data
         const response_data = await sendGetRequest(API_ENDPOINT);
-        let filteredData = filterDataFromApi(response_data)
+        let filteredData = filterDataFromApi(response_data);
         let sortedData = sortData(filteredData);
 
         document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
@@ -74,21 +80,28 @@
 
 //TODO: 
     function compareDates(responseData){
-        let updatedDates = responseData.map(data => (data.updatedDate));
-        const userDate = localStorage.getItem('storedDate');
+        responseData.onreadystatechange = () => {
+            if (responseData.readyState == XMLHttpRequest.DONE) {
+                const parseData = JSON.parse(responseData.response);
 
-        for(const date of updatedDates){
-            if(date > userDate){
-                //TODO: replace entire document, or just data?
+                let updatedDates = parseData.map(data => (data.updatedDate));
+                const userDate = localStorage.getItem('storedDate');
+                
+                for(const date of updatedDates){
+                    if(date > userDate){
+                        console.log(`This ${date} is newer than users date`)
 
-                //Updates localStorage with newer data
-                storeData(sortedData)
-            } 
-            else {
-                console.log('no updated needed')
+                        let filteredData = filterDataFromApi(parseData)
+                        let sortedData = sortData(filteredData);
+                        console.log(sortedData)
+                        document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
+
+                    } else { console.log(`no updated needed`) }
+                }
             }
-        }
+        };
     }
+
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
      * @param  {URL} url 
@@ -120,7 +133,6 @@
                 return_obj[day_of_week].push(display_object(item))
             }
         })
-
         return return_obj;
     }
 
@@ -143,19 +155,20 @@
     function insertEventSchedule(sortedData){
         for(const [key,value] of Object.entries(sortedData)){
             let placeToInsert = document.querySelector(`#${key}-List`);
+            // console.log(placeToInsert)
+            // value.forEach(val => console.log(val.start, val.name))
             value.forEach(event=>{
                 placeToInsert.insertAdjacentHTML('beforeend',
                 `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`
                 );
             })
+            const liTest = Array.from(placeToInsert.getElementsByTagName('li'))
         }
     }
 //TODO:
     function replaceEventSchedule(sortedData){
        
     }
-
-
 
     /**
      * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
@@ -215,6 +228,4 @@
         }
         return rv_object;
     }
-
-
 </script>
