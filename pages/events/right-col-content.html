@@ -65,16 +65,18 @@
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
         //Initial store of data locally
-        if (!localStorage.getItem('storedData')) {
+        if (!localStorage.getItem('storedDate')) {
              storeData(sortedData);
         };
     })()
+    console.log(localStorage)    
 
-     function storeData(apiData){
-        const dataString = JSON.stringify(apiData);
+     function storeData(sortedData){
+        const dataString = JSON.stringify(sortedData);
         const date = Date();
         const userDate = new Date().toISOString(date);
         
+        localStorage.setItem('storedDate', `${userDate}`)
         localStorage.setItem('storedData', `${dataString}`)
     }
 
@@ -93,10 +95,11 @@
 
                         let filteredData = filterDataFromApi(parseData)
                         let sortedData = sortData(filteredData);
-                        console.log(sortedData)
+                        
                         document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
 
-                    } else { console.log(`no updated needed`) }
+                        storeData(sortedData)
+                    }
                 }
             }
         };
@@ -155,14 +158,12 @@
     function insertEventSchedule(sortedData){
         for(const [key,value] of Object.entries(sortedData)){
             let placeToInsert = document.querySelector(`#${key}-List`);
-            // console.log(placeToInsert)
-            // value.forEach(val => console.log(val.start, val.name))
+            placeToInsert.innerHTML = '';
             value.forEach(event=>{
                 placeToInsert.insertAdjacentHTML('beforeend',
                 `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`
                 );
             })
-            const liTest = Array.from(placeToInsert.getElementsByTagName('li'))
         }
     }
 //TODO:
