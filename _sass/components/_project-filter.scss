@@ -25,6 +25,7 @@ li.filter-item {
   padding: 10px 15px;
   position: relative;
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 //category names
@@ -58,6 +59,7 @@ ul.filter-list li ul {
   position: absolute;
   left: 0;
   top: 100%;
+  cursor: default;
 }
 
 ul.filter-list li:hover > ul,
