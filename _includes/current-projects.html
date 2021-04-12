@@ -200,7 +200,7 @@
         }
         const removeFilterTagOnUncheck = event => {
             const checkboxId =
-                event.target.nextElementSibling.getAttribute('id')
+                event.target.getAttribute('id')
             const filterTagKey =
                 document.querySelector(`[data-key~=${checkboxId}]`)
 
@@ -277,7 +277,7 @@
                             dropDownNodeList.forEach(list => dropDownArr.push(list))
 
                             event.target.remove()
-                            checkboxId.previousElementSibling.checked = false
+                            checkboxId.checked = false
 
                             dropDownArr.forEach(item => {
                                 if (event.target.getAttribute('data-key').includes(key)) {
@@ -348,13 +348,15 @@
 
                 checkbox.setAttribute('type', 'checkbox');
                 checkbox.setAttribute('class', 'filter-checkbox');
+                checkbox.setAttribute('id', cleanFieldName(category, term));
 
                 const text = `${term} (${count})`;
-                const textSpan = document.createElement('span');
+                const textLabel = document.createElement('label');
 
                 // TODO: Find a better mechanism for indexing dropdown items
-                textSpan.setAttribute('id', cleanFieldName(category, term));
-                textSpan.innerHTML = text;
+                // textLabel.setAttribute('id', cleanFieldName(category, term));
+                textLabel.setAttribute('for', cleanFieldName(category, term));
+                textLabel.textContent = text;
                 checkbox.addEventListener('input', function (event) {
                     if (event.target.checked) {
                         projectFilter.addCondition(category, term);
@@ -365,7 +367,7 @@
                         renderClearAll(clearAll)
                         createFilterTag(filterTags, category, term)
 
-                        if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
+                        if (event.target.type === 'checkbox' && event.target.getAttribute('id').includes(category)) {
                             filterCounts(category, statusUrlParams)
                             filterCounts(category, locationUrlParams)
                             filterCounts(category, lookingUrlParams)
@@ -378,7 +380,7 @@
                                 const checkboxId = document.querySelector(`#${filterTagKey}`)
 
                                 event.target.remove()
-                                checkboxId.previousElementSibling.checked = false
+                                checkboxId.checked = false
                                 checkedboxCounter--
 
                                 filterCounts(category, statusUrlParams)
@@ -394,7 +396,7 @@
                         checkedboxCounter--
                         projectFilter.removeCondition(category, term);
 
-                        if (event.target.type === 'checkbox' && event.target.nextElementSibling.getAttribute('id').includes(category)) {
+                        if (event.target.type === 'checkbox' && event.target.getAttribute('id').includes(category)) {
                             filterCounts(category, statusUrlParams)
                             filterCounts(category, locationUrlParams)
                             filterCounts(category, lookingUrlParams)
@@ -419,7 +421,7 @@
 
                 // finalize build UI component
                 content.appendChild(checkbox);
-                content.appendChild(textSpan);
+                content.appendChild(textLabel);
                 termItem.appendChild(content);
                 termList.appendChild(termItem);
             }
