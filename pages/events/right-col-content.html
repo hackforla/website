@@ -31,103 +31,64 @@
 <script>
 
     const API_ENDPOINT = 'https://www.vrms.io/api/recurringevents';
-
-    // const API_ENDPOINT = 'https://api.jsonbin.io/b/60735df15b165e19f61d0d9d/3'
-
-    let req = new XMLHttpRequest('https://api.jsonbin.io/b/60735df15b165e19f61d0d9d/3');
-
-        req.onreadystatechange = () => {
-            if (req.readyState == XMLHttpRequest.DONE) {
-                const parseData = JSON.parse(req.response);
-                console.log(parseData.map(dates => console.log(dates.updatedDate)))
-                // console.log(req.responseText);
-            }
-        };
-
-        req.open("GET", "https://api.jsonbin.io/b/60735df15b165e19f61d0d9d", true);
-        req.setRequestHeader("secret-key", `$2b$10$5hcb.eTuJFK.70MfEDUTeOvS9BoKt3fDBeMAdGIXAN/Lf.2QepRIG`);
-        req.send();
-
     /**
      * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
      * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
     */
     (async function main(){
 
-//Retrieves storedData and then checks: API updatedDate > users storedDate ?
+        //Retrieves locally storedData and checks API for updates
         if(localStorage.getItem('storedDate')) {
-            const storedData = JSON.parse(localStorage.getItem('storedData'))
-            document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData))
-    //do i need to write the response_data const twice? 
+            const storedData = JSON.parse(localStorage.getItem('storedData'));
+            document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData));
+
+            //After storage data is rendered, Check if API has been Updated
             const response_data = await sendGetRequest(API_ENDPOINT);
-            compareDates(response_data)
-            return
+            compareDates(response_data);
+            return;
         }
 
-//Initial fetch and store of data, if does not already exist in users localStorage
+        //Initial fetch of data
         const response_data = await sendGetRequest(API_ENDPOINT);
-        filterSortInsert(response_data)
-        // let filteredData = filterDataFromApi(response_data);
-        // compareDates(response_data)
-
-        // let sortedData = sortData(filteredData);
-
-        // document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
-        
-        // //Displays/Inserts the user's time zone in the DOM
-        // document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-
-        // storeData(sortedData)
-    })()
-
-//TODO: to be used in different context / different 
-//TODO: create Prototypes of functions used more than once 
-    function filterSortInsert(responseData){
-        let filteredData = filterDataFromApi(responseData);
-        compareDates(responseData)
-
+        let filteredData = filterDataFromApi(response_data)
         let sortedData = sortData(filteredData);
 
-        document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
+        document.addEventListener('DOMContentLoaded',insertEventSchedule(sortedData));
 
         //Displays/Inserts the user's time zone in the DOM
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
-        storeData(sortedData)
-    }
-
-
-//TODO: 
-     function storeData(apiData){
-        const dataString = JSON.stringify(apiData)
-        const date = Date()
-        const userDate = new Date().toISOString(date)
-
+        //Initial store of data locally
         if (!localStorage.getItem('storedData')) {
-             localStorage.setItem('storedData', `${dataString}`)
-         }
+             storeData(sortedData);
+        };
+    })()
 
-        if(!localStorage.getItem('storedDate')){
-            localStorage.setItem('storedDate', `${userDate}`)
-        } 
+     function storeData(apiData){
+        const dataString = JSON.stringify(apiData);
+        const date = Date();
+        const userDate = new Date().toISOString(date);
+        
+        localStorage.setItem('storedData', `${dataString}`)
     }
 
 //TODO: 
-//** Need to Change this to my own API fetch .. 
-//** As the current one _will not fetch_ if user has localStorage of date-time
     function compareDates(responseData){
-        let updatedDates = responseData.map(data => (data.updatedDate))
-        const userDate = localStorage.getItem('storedDate')
+        let updatedDates = responseData.map(data => (data.updatedDate));
+        const userDate = localStorage.getItem('storedDate');
 
         for(const date of updatedDates){
             if(date > userDate){
-                // filterSortInsert(responseData)
-            } else {
-                console.log('No needed Update')
+                //TODO: replace entire document, or just data?
+
+                //Updates localStorage with newer data
+                storeData(sortedData)
+            } 
+            else {
+                console.log('no updated needed')
             }
         }
     }
-
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
      * @param  {URL} url 
@@ -188,8 +149,12 @@
                 );
             })
         }
-
     }
+//TODO:
+    function replaceEventSchedule(sortedData){
+       
+    }
+
 
 
     /**
