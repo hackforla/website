@@ -71,7 +71,10 @@
     })()
     console.log(localStorage)    
 
-    //Stores API data and the users date-time locally
+    /**
+     * Stores API data and the users date-time locally
+     * @param {Object} sortedData — 2 key : value pairs in localStorage
+    */
      function storeData(sortedData){
         const dataString = JSON.stringify(sortedData);
         const date = Date();
@@ -82,9 +85,9 @@
     }
 
     /**
-         * Compares users storedDate to all updatedDates in the API
-         * @param {Object} time12h - A 12 hour format time string
-        */
+     * Compares users storedDate to all updatedDates in the API
+     * @param {Object} responseData — will update localStorage and page with new data, if found
+    */
     function compareDates(responseData){
         console.log(responseData)
         responseData.onreadystatechange = () => {
