@@ -38,12 +38,12 @@
     */
     (async function main(){
 
-        //Retrieves locally storedData and checks API for updates
+        //Runs only if storedDate exists in users localStorage
         if(localStorage.getItem('storedDate')) {
             const storedData = JSON.parse(localStorage.getItem('storedData'));
             document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData));
 
-            //After storage data is rendered, Check if API has been Updated
+            //After storedData is rendered, checks if API has been updated
             let req = new XMLHttpRequest('https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1');
 
             req.open("GET", "https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1", true);
@@ -54,7 +54,7 @@
             return;
         }
 
-        //Initial fetch of data
+        //Initial fetch to render data
         const response_data = await sendGetRequest(API_ENDPOINT);
         let filteredData = filterDataFromApi(response_data);
         let sortedData = sortData(filteredData);
@@ -64,13 +64,14 @@
         //Displays/Inserts the user's time zone in the DOM
         document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
-        //Initial store of data locally
+        //Initial store of data to users localStorage
         if (!localStorage.getItem('storedDate')) {
              storeData(sortedData);
         };
     })()
     console.log(localStorage)    
 
+    //Stores API data and the users date-time locally
      function storeData(sortedData){
         const dataString = JSON.stringify(sortedData);
         const date = Date();
@@ -80,8 +81,12 @@
         localStorage.setItem('storedData', `${dataString}`)
     }
 
-//TODO: 
+    /**
+         * Compares users storedDate to all updatedDates in the API
+         * @param {Object} time12h - A 12 hour format time string
+        */
     function compareDates(responseData){
+        console.log(responseData)
         responseData.onreadystatechange = () => {
             if (responseData.readyState == XMLHttpRequest.DONE) {
                 const parseData = JSON.parse(responseData.response);
@@ -165,10 +170,6 @@
                 );
             })
         }
-    }
-//TODO:
-    function replaceEventSchedule(sortedData){
-       
     }
 
     /**
