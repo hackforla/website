@@ -7,9 +7,9 @@ description: "Each of the 80+ Code for America Brigades is an experiment which g
 The Civic Tech Structure's first project seeks to improve the existing Code for America Brigade Organizer’s Playbook (BOP) into a communal, high-value resource for sharing. We will be performing an intensive UX Research phase with the BOP end users to understand their priorities, infrastructure, and potential contributions."
 
 image: /assets/images/projects/civic-tech-structure.png
-alt: "A network of lines within lines, with nodes, and a large dot in the center."
+alt: "A network of lines and nodes, and the lines converge to a large dot in the center."
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
-alt-hero: "A network of lines within lines, with nodes, and a large dot in the center."
+alt-hero: "A network of lines and nodes, and the lines converge to a large dot in the center."
 leadership:
   - name: Bonnie Wolfe
     role: Co-Product Manager
