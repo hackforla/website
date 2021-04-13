@@ -42,7 +42,7 @@ looking:
 technologies:
   - ReactJS
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 visible: true
 vertical: 'Justice'

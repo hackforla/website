@@ -34,7 +34,7 @@ looking:
   - category: Data
     skill: Data Scientists
 location:
-  - Los Angeles
+  # - Los Angeles
   - Remote
 partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
 tools: 'ArcGIS surveys, Google Docs, Zoom'

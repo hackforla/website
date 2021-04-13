@@ -46,7 +46,7 @@ technologies:
   - Flutter
 partner: Seeking
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 visible: true
 status: On Hold

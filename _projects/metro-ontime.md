@@ -27,7 +27,7 @@ links:
   - name: Observable
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: LA Metro
 tools: Docker, AWS, Observable

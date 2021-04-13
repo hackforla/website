@@ -33,7 +33,7 @@ technologies:
   - ReactJS
   - Node.js
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: EnCiv.org, Ballotpedia.org
 visible: true

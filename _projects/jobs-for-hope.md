@@ -12,7 +12,7 @@ links:
   - name: Site
     url: 'https://jobs-for-hope.herokuapp.com/'
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: LA County Homeless Initiative; 
 visible: true

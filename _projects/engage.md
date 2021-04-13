@@ -38,7 +38,7 @@ technologies:
   - Django
   - PostgreSQL
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 tools: Hotjar, Google Analytics
 vertical: 'Citizen Engagement'

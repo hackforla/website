@@ -67,7 +67,7 @@ technologies:
   - Material-UI
   - SCSS
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
 vertical: 'Citizen Engagement'

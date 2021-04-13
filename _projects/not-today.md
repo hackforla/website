@@ -26,7 +26,7 @@ looking:
 technologies:
   - React Native
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Seeking
 visible: true

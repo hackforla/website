@@ -82,7 +82,7 @@ technologies:
   - Code Climate
   - Cypress
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 visible: true
