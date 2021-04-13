@@ -44,13 +44,9 @@
             document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData));
 
             //After storedData is rendered, checks if API has been updated
-            let req = new XMLHttpRequest('https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1');
-
-            req.open("GET", "https://api.jsonbin.io/b/6074a9b30ed6f819beaa3e29/1", true);
-            req.setRequestHeader("secret-key", `$2b$10$5hcb.eTuJFK.70MfEDUTeOvS9BoKt3fDBeMAdGIXAN/Lf.2QepRIG`);
-            req.send();
-
-            compareDates(req);
+            const response_data = await sendGetRequest(API_ENDPOINT);
+            compareDates(response_data);
+            
             return;
         }
 
@@ -89,28 +85,21 @@
      * @param {Object} responseData — will update localStorage and page with new data, if found
     */
     function compareDates(responseData){
-        console.log(responseData)
-        responseData.onreadystatechange = () => {
-            if (responseData.readyState == XMLHttpRequest.DONE) {
-                const parseData = JSON.parse(responseData.response);
+        let updatedDates = responseData.map(data => (data.updatedDate));
+        const userDate = localStorage.getItem('storedDate');
+        
+        for(const date of updatedDates){
+            if(date > userDate){
+                console.log(`This ${date} is newer than users date`)
 
-                let updatedDates = parseData.map(data => (data.updatedDate));
-                const userDate = localStorage.getItem('storedDate');
+                let filteredData = filterDataFromApi(parseData)
+                let sortedData = sortData(filteredData);
                 
-                for(const date of updatedDates){
-                    if(date > userDate){
-                        console.log(`This ${date} is newer than users date`)
+                document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
 
-                        let filteredData = filterDataFromApi(parseData)
-                        let sortedData = sortData(filteredData);
-                        
-                        document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
-
-                        storeData(sortedData)
-                    }
-                }
-            }
-        };
+                storeData(sortedData)
+            } else { console.log('im good') }
+        }
     }
 
     /**
