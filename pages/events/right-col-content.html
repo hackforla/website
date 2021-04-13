@@ -46,7 +46,7 @@
             //After storedData is rendered, checks if API has been updated
             const response_data = await sendGetRequest(API_ENDPOINT);
             compareDates(response_data);
-            
+
             return;
         }
 
@@ -74,7 +74,7 @@
      function storeData(sortedData){
         const dataString = JSON.stringify(sortedData);
         const date = Date();
-        const userDate = new Date().toISOString(date);
+        const userDate = new Date().toISOString(date); // do I need to fix this TIME?
         
         localStorage.setItem('storedDate', `${userDate}`)
         localStorage.setItem('storedData', `${dataString}`)
