@@ -125,8 +125,7 @@
 .wins-card-name{
     font-weight: bold;
     font-size: 20px;
-    line-height: 22px;
-    margin-top: 13px;
+    padding-bottom: .4em;
 }
 .wins-card-team{
     font-weight: normal;
@@ -154,8 +153,38 @@
 }
 
 @media #{$bp-below-tablet} {
+    .wins-card {
+        position: relative;
+    }
+
     .wins-card-text{
         height: 81px;
+        position: inherit;
+    }
+
+    .wins-see-more-div {
+        height: 0;
+        margin-top: 4px;
+        padding: 0;
+        right: 7%;
+        top: 88.5%;
+    }
+
+    .home-getting-started-container {
+        h1 {font-size: 2rem;}
+    }
+
+    .project-inner {
+        font-size: .937rem;
+        line-height: 1.3rem;
+        margin-bottom: .3rem;
+    }
+    .btn--wins {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: 20px;
+        font-size: 1rem;
+        line-height: 40px;
     }
 }
 
@@ -185,13 +214,8 @@
     .wins-card-name{
         font-size: 19px;
         line-height: 22px;
-        margin: 0;
-        padding-top: 5px;
     }
-    .wins-card-team{
-        font-size: 12px;
-        line-height: 16px;
-    }
+
     .wins-card-icon{
         margin-left: 13.5px;
     }
@@ -311,7 +335,7 @@
 .wins-page-contain > ul.filter-list{
 	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
-	width: 46%;
+	width: 40%;
 
 	
 }

@@ -11,7 +11,8 @@ const untaggedRepoIds = [79977929];
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 
 Object.assign(Octokit.prototype, trueContributorsMixin);
-const octokit = new Octokit({ auth: core.getInput("token") });
+const octokit = new Octokit({ auth: process.env.token });
+
 
 (async function main() {
   let { oldGitHubData, dateLastRan } = getLocalData();
@@ -26,35 +27,39 @@ const octokit = new Octokit({ auth: core.getInput("token") });
   for(let repo of allRepos) {
     let repoLanguages = await octokit.repos.listLanguages({ owner: repo.owner.login, repo: repo.name });
     let commitContributors = await getCommitContributors(repo);
-    let issueCommentContributors = await getCommentContributors(repo, (oldGitHubData.hasOwnProperty(repo.id)) ? dateLastRan.toISOString() : undefined);
-    console.log(`Comment contributors from ${repo.name}:`);
-    console.log(issueCommentContributors);
-    // If previous issue comment contributions data exists, aggregate old issue comment contributions data with previous issue comment contributions data
-    if(oldGitHubData.hasOwnProperty(repo.id)){
-      // "_aggregateContributors" is a helper method in the trueContributorsMixin that aggregates contributions from contributor objects based on a property "id"
-      issueCommentContributors = octokit._aggregateContributors( issueCommentContributors.concat(oldGitHubData[repo.id].issueComments.data) );
+    if(commitContributors){
+      let issueCommentContributors = await getCommentContributors(repo, (oldGitHubData.hasOwnProperty(repo.id)) ? dateLastRan.toISOString() : undefined);
+      console.log(`Comment contributors from ${repo.name}:`);
+      console.log(issueCommentContributors);
+      // If previous issue comment contributions data exists, aggregate old issue comment contributions data with previous issue comment contributions data
+      if(oldGitHubData.hasOwnProperty(repo.id)){
+        // "_aggregateContributors" is a helper method in the trueContributorsMixin that aggregates contributions from contributor objects based on a property "id"
+        issueCommentContributors = octokit._aggregateContributors( issueCommentContributors.concat(oldGitHubData[repo.id].issueComments.data) );
+      }
+  
+      // Create a copy of commitContributors to use to aggregate with issueCommentContributors
+      let commitContributorsCopy = _.cloneDeep(commitContributors);
+      let projectContributors = octokit._aggregateContributors(commitContributorsCopy.concat(issueCommentContributors));
+  
+      // Add data to new GitHub data array
+      newGitHubData.push({
+        id: repo.id,
+        name: repo.name,
+        languages: Object.keys(repoLanguages.data),
+        repoEndpoint: repo.url,
+        commitContributors: {
+          data: commitContributors
+        },
+        issueComments: {
+          data: issueCommentContributors
+        },
+        contributorsComplete: {
+          data: projectContributors
+        },
+      });
+
     }
 
-    // Create a copy of commitContributors to use to aggregate with issueCommentContributors
-    let commitContributorsCopy = _.cloneDeep(commitContributors);
-    let projectContributors = octokit._aggregateContributors(commitContributorsCopy.concat(issueCommentContributors));
-
-    // Add data to new GitHub data array
-    newGitHubData.push({
-      id: repo.id,
-      name: repo.name,
-      languages: Object.keys(repoLanguages.data),
-      repoEndpoint: repo.url,
-      commitContributors: {
-        data: commitContributors
-      },
-      issueComments: {
-        data: issueCommentContributors
-      },
-      contributorsComplete: {
-        data: projectContributors
-      },
-    });
   }
 
   // Write updated data to github-data.json
@@ -113,14 +118,18 @@ async function getCommitContributors(repo) {
   // Construct parameters for request
   let requestParams = constructContributorParams(repo);
 
+  try{
   // Get commit contributors. listContributorsForOrg is a method from trueContributorsMixin that calls repos.listContributors across orgs in a repo
   let commitContributors = (requestParams.hasOwnProperty("org")) ? 
     await octokit.listContributorsForOrg(requestParams) :
     await octokit.paginate(octokit.repos.listContributors, requestParams);
-  
-  formatContributorsList(commitContributors);
+    formatContributorsList(commitContributors);
 
-  return commitContributors;
+    return commitContributors;
+  }catch(err){
+    console.error(err);
+  }
+
 }
 
 /**

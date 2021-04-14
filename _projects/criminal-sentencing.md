@@ -8,7 +8,7 @@ links:
   - name: GitHub
     url: "https://github.com/timdef/criminal-sentencing" 
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
 visible: false
 status: On Hold

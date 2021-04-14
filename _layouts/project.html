@@ -8,7 +8,7 @@ layout: default
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
-    <div id='project-description-card' class='project-page-card'>
+    <div id='project-description-card' class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Project Overview</h4>
         <!--Project Details-->
         <div class='project-page-description'>
@@ -99,7 +99,7 @@ layout: default
     </div>
 
     <!--Getting Started Card-->
-    <div id="getting-started-section" class='project-page-card'>
+    <div id="getting-started-section" class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <ul class="resource-list unstyled-list">
             <!-- Hfla Start Guide -->
             {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
@@ -140,7 +140,7 @@ layout: default
     </div>
 
     <!-- Project Team Card -->
-    <div id='project-team-card' class='project-page-card'>
+    <div id='project-team-card' class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Project Leadership</h4>
         {% if page.leadership %}
             <div class='resource-list'>
@@ -170,7 +170,7 @@ layout: default
     </div>
 
     <!--Project Resources Card-->
-    <div class='project-page-card'>
+    <div class='page-card-base card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Resources</h4>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
