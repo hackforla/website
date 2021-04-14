@@ -323,6 +323,6 @@ let letterHeadText = document.getElementById("letterBR").innerText;
 let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
 
 // If it's mobile, add a break tag and put it back
-if (windowWidth < 960) {
+if (window.innerWidth < 960) {
     document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
 }
