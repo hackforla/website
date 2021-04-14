@@ -126,12 +126,14 @@ function toggleAccordion() {
 
     // Which panel to open/close
     let accordionContainer = this.nextElementSibling;
+    let accordionID = this.parentElement.previousElementSibling.id;
 
     // Open and close panel
     if (accordionContainer.style.display === "block") {
         accordionContainer.style.display = "none"
     } else {
         accordionContainer.style.display = "block"
+        location.href = "#"+ accordionID;
     }
 } // end function
 
