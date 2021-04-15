@@ -58,7 +58,7 @@ looking:
   - category: UI/UX
     skill: UX Team Manager / Lead
 technologies:
-  - Google Docs (Doc, Sheet, Slide, Forms)
+  - Google Docs
   - HackforLA.org guides
 location:
   - Remote
