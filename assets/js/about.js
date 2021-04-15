@@ -331,14 +331,14 @@ if (window.innerWidth < 960) {
 
 // If it's mobile, if href has #, open content
 if(window.innerWidth <960) {
-    if (location.href.includes("letter")) {
+    if (location.href.includes("#letter")) {
         readMore = readMoreToMobile.nextElementSibling;
         readMore.style.display = "block";
         if (readMore.style.display === "block") {
             readMoreToMobile.classList.add("more-less")
             readLessToMobile.classList.remove("more-less")
         }
-        // letterBackToMobile (readMoreToMobile, readLessToMobile);
+
     } else if(location.href.includes("#")) {
         const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
         openOneAccordion(currentURLHashId);
