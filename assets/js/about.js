@@ -327,4 +327,13 @@ let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_st
 // If it's mobile, add a break tag and put it back
 if (window.innerWidth < 960) {
     document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
+    if(location.href.includes("#")) {
+        const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
+        openOneAccordion(currentURLHashId);
+    }
 }
+
+
+
+    // location.href = "#" + readMoreElement.parentElement.previousElementSibling.id
+    // console.log(readMoreElement.parentElement.previousElementSibling.id)
