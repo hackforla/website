@@ -178,6 +178,7 @@ function letterBackToMobile(readMoreElement, readLessElement) {
         readMoreElement.nextElementSibling.style.display = "none";
     } else {
         readMoreElement.nextElementSibling.style.display = "block";
+        location.href = "#letter";
     }
 } // end function
 
@@ -327,13 +328,30 @@ let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_st
 // If it's mobile, add a break tag and put it back
 if (window.innerWidth < 960) {
     document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
-    if(location.href.includes("#")) {
+}
+
+// If it's mobile, if href has #, open content
+if (window.innerWidth < 960) {
+    if (location.href.includes("#letter")) {
+        readMore = readMoreToMobile.nextElementSibling;
+        readMore.style.display = "block";
+        if (readMore.style.display === "block") {
+            readMoreToMobile.classList.add("more-less")
+            readLessToMobile.classList.remove("more-less")
+        }
+        // letterBackToMobile (readMoreToMobile, readLessToMobile);
+    } else if(location.href.includes("#")) {
         const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
         openOneAccordion(currentURLHashId);
     }
 }
 
-
-
-    // location.href = "#" + readMoreElement.parentElement.previousElementSibling.id
-    // console.log(readMoreElement.parentElement.previousElementSibling.id)
+// let readMoreToMobile = document.querySelector(".read-more");
+// let readLessToMobile = document.querySelector(".read-less");
+// function letterBackToMobile(readMoreElement, readLessElement) {
+//     if (readLessElement.classList.contains("more-less")) {
+//         readMoreElement.nextElementSibling.style.display = "none";
+//     } else {
+//         readMoreElement.nextElementSibling.style.display = "block";
+//         location.href = "#letter";
+//     }
