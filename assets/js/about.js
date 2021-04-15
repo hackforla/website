@@ -178,7 +178,6 @@ function letterBackToMobile(readMoreElement, readLessElement) {
         readMoreElement.nextElementSibling.style.display = "none";
     } else {
         readMoreElement.nextElementSibling.style.display = "block";
-        location.href = "#letter";
     }
 } // end function
 
@@ -331,8 +330,8 @@ if (window.innerWidth < 960) {
 }
 
 // If it's mobile, if href has #, open content
-if (window.innerWidth < 960) {
-    if (location.href.includes("#letter")) {
+if(window.innerWidth <960) {
+    if (location.href.includes("letter")) {
         readMore = readMoreToMobile.nextElementSibling;
         readMore.style.display = "block";
         if (readMore.style.display === "block") {
@@ -346,12 +345,10 @@ if (window.innerWidth < 960) {
     }
 }
 
-// let readMoreToMobile = document.querySelector(".read-more");
-// let readLessToMobile = document.querySelector(".read-less");
-// function letterBackToMobile(readMoreElement, readLessElement) {
-//     if (readLessElement.classList.contains("more-less")) {
-//         readMoreElement.nextElementSibling.style.display = "none";
-//     } else {
-//         readMoreElement.nextElementSibling.style.display = "block";
-//         location.href = "#letter";
-//     }
+function hashLetter() {
+    if (readMoreToMobile.nextElementSibling.style.display = "block"){
+        location.href = "#letter";
+    }
+}
+
+readMoreToMobile.addEventListener("click", hashLetter);
