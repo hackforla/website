@@ -23,8 +23,6 @@
   document.addEventListener("DOMContentLoaded",function(){
       (function main(){
 
-
-
           const projectData = retrieveProjectDataFromCollection();
 
           const sortedProjectData = projectDataSorter(projectData);
@@ -91,7 +89,6 @@
       return sortedProjectContainer;
   }
 
-
   /**
    * Given an array of project object as returned by ``retrieveProjectDataFromCollection()``
    * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
@@ -104,7 +101,6 @@
               'location': ['Remote']
           }
   }
-
 
   /**
    * Update the history state and the url parameters on checkbox changes
@@ -163,7 +159,6 @@
 
   }
 
-
    /**
     * Computes and return the frequency of each checkbox filter that are currently present in on the displayed cards on the page
    */
@@ -201,6 +196,9 @@
 
    }
 
+   /**
+    * Filters listed in the url parameter are checked or unchecked based on filter params
+   */
    function updateCheckBoxState(filterParams){
     document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
           if(checkBox.name in filterParams){
@@ -210,6 +208,9 @@
       })
    }
 
+   /**
+    * Card is shown/hidden based on filters listed in the url parameter
+   */
    function updateProjectCardDisplayState(filterParams){
     document.querySelectorAll('.project-card').forEach(projectCard => {
           const projectCardObj = {};
@@ -233,6 +234,9 @@
       });
    }
 
+   /**
+    * Updates the filter tags show on the page based on the url paramenter
+   */
    function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
     document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
@@ -246,6 +250,9 @@
     }
    }
    
+   /**
+    * Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
+   */
    function attachEventListenerToFilterTags(){
     if(document.querySelectorAll('.btn--current-projects-filter-tag').length > 0){
 
@@ -263,8 +270,6 @@
         }
     }
    }
-
-
 
   /**
    * If there are no url parameter
@@ -287,7 +292,6 @@
       document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
       return;
   }
-
 
   /**
    * Filter Tag Button On Click Event Handler
@@ -318,7 +322,6 @@
       //Update URL parameters
       window.history.replaceState(null, '', `?${queryString}`);
   }
-
 
   /**
    * Clear All Button Event Handler
@@ -403,7 +406,6 @@
   </div>
   </li>`
   }
-
 
   /**
    * Takes a filter category name and array of filter stirings and returns the html string representing a single filter component
