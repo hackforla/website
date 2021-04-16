@@ -137,95 +137,37 @@
   */
   function updateUI(){
 
-
-
       //Get filter parameters from the url
       const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
 
       //Transform filterparam object values to arrays
       Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
-
       //If there are no entries in URL display clear all filter tags and display all cards
-      if(Object.keys(filterParams).length === 0 ){
-          noUrlParameterUpdate(filterParams)
-      };
+      if(Object.keys(filterParams).length === 0 ){noUrlParameterUpdate(filterParams) };
 
-      // Filters listed in the url parameter are checked or unchecked
-      document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
-          if(checkBox.name in filterParams){
-              let args = filterParams[checkBox.name]
-              args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
-          }
-      })
+      // Filters listed in the url parameter are checked or unchecked based on filter params
+      updateCheckBoxState(filterParams);
 
       // Card is shown/hidden based on filters listed in the url parameter
-      document.querySelectorAll('.project-card').forEach(projectCard => {
-          const projectCardObj = {};
-          for(const key in filterParams){
-              projectCardObj[key] = projectCard.dataset[key].split(",");
-          }
-          const cardsToHideContainer = [];
-          for(const [key,value] of Object.entries(filterParams)){
-              let inUrl = value;
-              let inCard = projectCardObj[key];
-              if( ( inCard.filter(x => inUrl.includes(x)) ).length == 0 ){
-                  cardsToHideContainer.push([key,projectCard.id]);
-              }
-              else{
-                  projectCard.style.display = 'list-item' ;
-              }
+      updateProjectCardDisplayState(filterParams);
 
-          }
-          cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
+      // The function updates the frequency of each filter based on the cards that are displayed on the page.
+      updateFilterFrequency();
 
-      });
-
-      // The function computes the frequency of each filter based on the cards that are displayed on the page.
-      let filterFrequencyObject = computeFilterFrequency()
-
-      // Update filter frequencies on the DOM
-      for(const [key,value] of Object.entries(filterFrequencyObject)){
-        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
-      }
-
-      // Clear all filter tags
-      document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) )
-
-      //Filter tags display hide logic
-      for(const [key,value] of Object.entries(filterParams)){
-          value.forEach(item =>{
-              document.querySelector('.filter-list').insertAdjacentHTML('afterend', filterTagComponent(key,item ) );
-          })
-
-      }
+      // Updates the filter tags show on the page based on the url paramenter
+      updateFilterTagDisplayState(filterParams);
 
       // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
-      if(document.querySelectorAll('.btn--current-projects-filter-tag').length > 0){
-
-          // Attach event handlers to button
-          document.querySelectorAll('.btn--current-projects-filter-tag').forEach(button => {
-              button.addEventListener('click',filterTagOnClickEventHandler)
-          })
-
-          // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
-          if(!document.querySelector('.clear-filter-tags')){
-              document.querySelector('.btn--current-projects-filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
-
-              //Attach an event handler to the clear all button
-              document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
-          }
-
-      }
-
+      attachEventListenerToFilterTags()
 
   }
 
 
-    /**
-     * Computes and return the frequency of each checkbox filter that are currently present in on the displayed cards on the page
-    */
-   function computeFilterFrequency(){
+   /**
+    * Computes and return the frequency of each checkbox filter that are currently present in on the displayed cards on the page
+   */
+   function updateFilterFrequency(){
 
     const onPageFilters = []
     // Push the filters present on the displayed cards on the page into an array.
@@ -253,11 +195,76 @@
         }
     }
 
-    return filterFrequencyObject;
-
-
+    for(const [key,value] of Object.entries(filterFrequencyObject)){
+        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
+    }
 
    }
+
+   function updateCheckBoxState(filterParams){
+    document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
+          if(checkBox.name in filterParams){
+              let args = filterParams[checkBox.name]
+              args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
+          }
+      })
+   }
+
+   function updateProjectCardDisplayState(filterParams){
+    document.querySelectorAll('.project-card').forEach(projectCard => {
+          const projectCardObj = {};
+          for(const key in filterParams){
+              projectCardObj[key] = projectCard.dataset[key].split(",");
+          }
+          const cardsToHideContainer = [];
+          for(const [key,value] of Object.entries(filterParams)){
+              let inUrl = value;
+              let inCard = projectCardObj[key];
+              if( ( inCard.filter(x => inUrl.includes(x)) ).length == 0 ){
+                  cardsToHideContainer.push([key,projectCard.id]);
+              }
+              else{
+                  projectCard.style.display = 'list-item' ;
+              }
+
+          }
+          cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
+
+      });
+   }
+
+   function updateFilterTagDisplayState(filterParams){
+    // Clear all filter tags
+    document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
+
+    //Filter tags display hide logic
+    for(const [key,value] of Object.entries(filterParams)){
+        value.forEach(item =>{
+            document.querySelector('.filter-list').insertAdjacentHTML('afterend', filterTagComponent(key,item ) );
+        })
+
+    }
+   }
+   
+   function attachEventListenerToFilterTags(){
+    if(document.querySelectorAll('.btn--current-projects-filter-tag').length > 0){
+
+        // Attach event handlers to button
+        document.querySelectorAll('.btn--current-projects-filter-tag').forEach(button => {
+            button.addEventListener('click',filterTagOnClickEventHandler)
+        })
+
+        // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
+        if(!document.querySelector('.clear-filter-tags')){
+            document.querySelector('.btn--current-projects-filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
+
+            //Attach an event handler to the clear all button
+            document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
+        }
+    }
+   }
+
+
 
   /**
    * If there are no url parameter
