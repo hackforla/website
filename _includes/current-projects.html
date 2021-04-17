@@ -245,6 +245,7 @@
     for(const [key,value] of Object.entries(filterParams)){
         value.forEach(item =>{
             document.querySelector('.filter-list').insertAdjacentHTML('afterend', filterTagComponent(key,item ) );
+            
         })
 
     }
