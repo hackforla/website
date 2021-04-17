@@ -2,8 +2,16 @@ name: Update GitHub Data
 
 # Run this action every day at 3am Pacific (11 am UTC)
 on:
-  schedule:
-    - cron:  '0 11 * * *'
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Person to greet'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
 
 jobs:
   github_data:
