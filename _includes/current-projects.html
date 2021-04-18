@@ -60,7 +60,7 @@
   */
   function retrieveProjectDataFromCollection(){
       {% assign visible_projects = site.projects | where: "visible", "true" %}
-      let projectData = [{%- for project in visible_projects -%}{ "project": {{project | jsonify}}}{%- unless forloop.last -%},{% endunless %} {% endfor %}];
+      let projectData = [{%- for project in visible_projects -%} { "project": {{project | jsonify}}}, {% endfor %}]
       return projectData;
   }
 
@@ -145,11 +145,14 @@
       // Filters listed in the url parameter are checked or unchecked based on filter params
       updateCheckBoxState(filterParams);
 
+      //update category counter
+      updateCategoryCounter(filterParams)
+
       // Card is shown/hidden based on filters listed in the url parameter
       updateProjectCardDisplayState(filterParams);
 
       // The function updates the frequency of each filter based on the cards that are displayed on the page.
-      updateFilterFrequency();
+      updateFilterFrequency(filterParams);
 
       // Updates the filter tags show on the page based on the url paramenter
       updateFilterTagDisplayState(filterParams);
@@ -208,6 +211,19 @@
       })
    }
 
+   /**
+    * 
+   */
+  function updateCategoryCounter(filterParams){
+    let container = []
+    for(const [key,value] of Object.entries(filterParams)){
+        container.push([`counter_${key}`,value.length]);
+    }
+    
+    for(const [key,value] of container){
+        document.querySelector(`#${key}`).innerHTML = ` (${value})`;
+    }
+  }
    /**
     * Card is shown/hidden based on filters listed in the url parameter
    */
@@ -416,6 +432,7 @@
       <li class='filter-item'>
       <a class='category-title' style='text-transform: capitalize;'>
           ${categoryName}
+          <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
           <span class='labelArrow'> ∟ </span>
       </a>
       <ul class='dropdown' id='${categoryName.toLowerCase()}'>
