@@ -145,7 +145,7 @@
       // Filters listed in the url parameter are checked or unchecked based on filter params
       updateCheckBoxState(filterParams);
 
-      //update category counter
+      // Update category counter based on filter params
       updateCategoryCounter(filterParams)
 
       // Card is shown/hidden based on filters listed in the url parameter
@@ -212,7 +212,7 @@
    }
 
    /**
-    * 
+    * Update category counter based on filter params
    */
   function updateCategoryCounter(filterParams){
     let container = []
@@ -297,16 +297,19 @@
   */
   function noUrlParameterUpdate(){
       // Display all cards
-      document.querySelectorAll('.project-card').forEach(projectCard => {  projectCard.style.display = 'list-item'  })
+      document.querySelectorAll('.project-card').forEach(projectCard => {  projectCard.style.display = 'list-item'  });
 
       // Clear all checkboxes
-      document.querySelectorAll("input[type='checkbox']").forEach(checkBox => {checkBox.checked = false})
+      document.querySelectorAll("input[type='checkbox']").forEach(checkBox => {checkBox.checked = false});
+
+      // Clear all number of checkbox counters
+      document.querySelectorAll('.number-of-checked-boxes').forEach(checkBoxCounter => {checkBoxCounter.innerHTML = ''} );
 
       // Clear all filter tags
-      document.querySelectorAll('.btn--current-projects-filter-tag') && document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.remove() )
+      document.querySelectorAll('.btn--current-projects-filter-tag') && document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.remove() );
 
       // Remove Clear All Button
-      document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
+      document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove();
       return;
   }
 
