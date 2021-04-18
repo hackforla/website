@@ -59,13 +59,50 @@
    * The function returns a javascript array of objects representing all the projects under the _projects directory
   */
   function retrieveProjectDataFromCollection(){
+      // { "project": {"id":"/projects/311-data","relative_path":"_projects/311-data.md","excerpt"
       {% assign visible_projects = site.projects | where: "visible", "true" %}
-      let projectData = [{%- for project in visible_projects -%} { "project": {{project | jsonify}}}, {% endfor %}]
+      let projectData = [{%- for project in visible_projects -%}
+            {
+                "project": {
+                            'id': "{{project.id | default: 0}}",
+                            'identification': {{project.identification | default: 0}},
+                            "status": "{{ project.status }}"
+                            {%- if project.location -%},
+                            "location": {{ project.location | jsonify }}
+                            {%- endif -%}
+                            {%- if project.image -%},
+                            "image": '{{ project.image }}'
+                            {%- endif -%}
+                            {%- if project.alt -%},
+                            "alt": `{{ project.alt }}`
+                            {%- endif -%}
+                            {%- if project.title -%},
+                            "title": `{{ project.title }}`
+                            {%- endif -%}
+                            {%- if project.description -%},
+                            "description": `{{ project.description }}`
+                            {%- endif -%}
+                            {%- if project.partner -%},
+                            "partner": `{{ project.partner }}`
+                            {%- endif -%}
+                            {%- if project.looking -%},
+                            "looking": {{ project.looking | jsonify }}
+                            {%- endif -%}
+                            {%- if project.links -%},
+                            "links": {{ project.links | jsonify }}
+                            {%- endif -%}
+                            {%- if project.technologies -%},
+                            "technologies": {{ project.technologies | jsonify }}
+                            {%- endif -%}
+                           }
+            }{%- unless forloop.last -%}, {% endunless %}
+      {%- endfor -%}] 
+
       return projectData; 
   }
 
   /**
-   * Given an input of a project data array object as returned by the function `retrieveProjectDataFromCollection()`, this
+   * Given an input hehe of a project data array object as returned by the function `retrieveProjectDataFromCollection()`, this
    * function sorts the project twice.
    *  1. It sort all projects in the array alphabetically on their `status` value
    *  2. It sort all project by title for each status type
