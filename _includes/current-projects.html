@@ -61,7 +61,7 @@
   function retrieveProjectDataFromCollection(){
       {% assign visible_projects = site.projects | where: "visible", "true" %}
       let projectData = [{%- for project in visible_projects -%} { "project": {{project | jsonify}}}, {% endfor %}]
-      return projectData;
+      return projectData; 
   }
 
   /**
