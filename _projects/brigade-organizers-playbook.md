@@ -5,7 +5,7 @@ description: Each of the 80+ Code for America Brigades is an experiment which ge
 image: /assets/images/projects/brigade-organizers-playbook.png
 alt: "Brigade Organizer's Playbook Extension Project"
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
-alt-hero: 'A dark blue background.'
+alt-hero: ''
 leadership:
   - name: Bonnie Wolfe
     role: Agile Mentor & CfA National Advisory Council BOP project Co-Lead
@@ -89,7 +89,7 @@ links:
   - name: Effective Practices
     url: 'https://docs.google.com/spreadsheets/d/1N0VSDhYyy5WhX_z18Q0RvLlGO29JGGdMxVsD4X3nFYs/edit#gid=1425278717'
 looking:
-tools: Zoom, Calendly, Otter.ai, Google Docs (Doc, Sheet, Slide, Forms), HackforLA.org guides
+tools: Zoom, Calendly, Otter.ai, Google Docs, HackforLA.org guides
 technologies:
   - Markdown
 location:

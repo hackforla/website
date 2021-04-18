@@ -133,7 +133,7 @@ Docker is the recommended approach to quickly getting started with local develop
 
 There are two pre-requisites: Docker and Docker Compose.
 The recommended installation method is [Docker Desktop](https://docs.docker.com/install/) for Windows 10 64-bit,
-Mac, and Linux users. Users of unsupported operating systems may check out [Docker Toolbox](https://docs.docker.com/compose/gettingstarted/) instead.
+Mac, and Linux users.
 
 More on using Docker and the concepts of containerization:
 
@@ -420,7 +420,6 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 ### Supported Platforms
 
-- [dockertoolbox](https://docs.docker.com/toolbox/overview/)
 - [ghpages](https://pages.github.com/)
 - [jekyll](https://jekyllrb.com)
 - [jekyllcli](https://jekyllrb.com/docs/usage/)
