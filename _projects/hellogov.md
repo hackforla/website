@@ -3,9 +3,9 @@ identification: '76137532'
 title: HelloGOV
 description: HelloGOV is helping grassroots organizations connect supporters to their state assembly and state senate representatives for call campaigns to advocate on the legislation that matters most to their work. The HelloGOV webapp generates a campaign shortlink that can be used in texts, social posts, and more.
 image: /assets/images/projects/hellogov.jpg
-alt: 'Smartphones using hellogo app'
+alt: 'helloGOV log on top, three mobile devices displaying different areas of the helloGOV application'
 image-hero: /assets/images/projects/hellogov-hero.jpg
-alt-hero: 'Sky blue background'
+alt-hero: ''
 leadership:
   - name: Kate Rose
     links:

@@ -104,6 +104,7 @@ ul.filter-list li ul li {
   border-radius: 5px;
   color: $color-white;
   font-weight: 700;
+  text-transform: capitalize;
 
   &::after {
     content: "\00d7";
@@ -126,9 +127,6 @@ a.clear-filter-tags {
   &:hover{
     cursor: pointer;
   }
-}
-div.page-contain {
-
 }
 
 .number-of-checked-boxes {
@@ -165,9 +163,7 @@ div.page-contain {
     font-size: 20px;
   }
 
-  .btn--current-projects-filter-tag{
-    display: none;
-  }
+
   .clear-filter-tags{
     display: none;
   }
