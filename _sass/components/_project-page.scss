@@ -66,6 +66,10 @@
   }
 }
 
+.getting-page-card-title {
+  color: #333;
+}
+
 .project-page-card-title {
   color: #333;
 }
@@ -165,10 +169,10 @@
 }
 
 #getting-started-section {
-  max-height: 0px;
-  padding: 0px 30px;
+  max-height: 294px;
+  padding: 30px;
   transition: max-height 1s, padding 1s;
-  margin-top: 0px;
+  margin-top: 28px;
 }
 
 #help-getting-started {
