@@ -116,9 +116,9 @@
     justify-content: center;
 }
 
-.outer-link {
-    width: 1.5rem;
-}
+// .outer-link {
+//     width: 1.5rem;
+// }
 
 .toolkit-flex-item.section-container {
     position: relative;
@@ -127,6 +127,10 @@
     height: auto;
     margin: 1.2rem 1rem;
     overflow: hidden;
+
+    a {
+        width: 1.5rem;
+    }
 }
 
 .toolkit-flex-item-img-container {
@@ -163,9 +167,9 @@
     width: 100%;
 }
 
-.not-clickable {
-    color: black !important;
-}
+// .not-clickable {
+//     color: black !important;
+// }
 
 .toolkit-flex-item-status {
     position: absolute;

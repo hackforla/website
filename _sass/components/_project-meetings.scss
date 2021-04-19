@@ -1,46 +1,73 @@
-.project-meetings-banner {
-    background: no-repeat url('/assets/images/project-meetings-page/project-meetings-banner-image.png'), $color-white;
-    background-position: center bottom 40px;
-    background-size: auto 45%;
-    height: 500px;
-    margin-top: 20px;
+.header-container--project-meetings {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    background: #fff;
+    padding: 32px;
+    height: fit-content;
+    margin: 37px auto 0;
+    font-family: "Roboto" sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+
+    @media #{$bp-desktop-up}  {
+        flex-direction: row;
+        align-items: center;
+        padding: 64px;
+        justify-content: center;
+    }
 
     @media (max-width: $screen-mobile) {
         height: 80vh;
         background-size: auto 30%;
     }
 
+    & .project-meetings-banner-icon {
+        max-height: 240px;
+        padding: 0 15px;
+        
+        @media #{$bp-desktop-up}  {
+            margin: auto 1rem auto 0;
+        }
+
+    }
+
     .project-meetings-header-text-container {
-        padding: 70px 0 0 0px;
         display: flex;
-        flex-direction:column; 
-        align-items: center;
+        flex-direction:column;
+        font-size: 1.125rem;
+        
+        @media #{$bp-desktop-up}  {
+            margin: auto 5rem;
+        }
 
         h1 {
-            color: #000000;
-            font-weight: normal;
-            text-align: center;
+            color: #333;
+            font-weight: 700;
+            font-size: 24px;
+            padding-bottom: 28px;
+
+            @media #{$bp-desktop-up}  {
+                font-size: 48px;
+                padding-bottom: 0;
+            }
         }
         p {
-            width: 80%;
+            font-size: 18px;
             margin:auto;
+            max-width: 300px;
+            margin-bottom: 1rem;
+            text-align: start;
 
-            @media (min-width: $screen-desktop) {
-                width: 65%;
+            @media #{$bp-desktop-up} {
+              margin-bottom: 0;
             }
 
-            @media (min-width: 1300px) {
-                width: 40%;
-            }
-
-            @media (max-width: $screen-mobile) {
-                font-size: .9rem;
+            @media #{$bp-tablet-up} {
+                max-width: 508px;
             }
         }
-
     }
 
 }
@@ -100,7 +127,7 @@
 }
 
 .day-header {
-    margin-block-end: 0.25em;
+    margin-block-end: 16px;
 }
 
 .team-meetings-title {

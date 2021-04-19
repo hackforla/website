@@ -25,6 +25,7 @@ li.filter-item {
   padding: 10px 15px;
   position: relative;
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 //category names
@@ -58,6 +59,7 @@ ul.filter-list li ul {
   position: absolute;
   left: 0;
   top: 100%;
+  cursor: default;
 }
 
 ul.filter-list li:hover > ul,
@@ -104,6 +106,7 @@ ul.filter-list li ul li {
   border-radius: 5px;
   color: $color-white;
   font-weight: 700;
+  text-transform: capitalize;
 
   &::after {
     content: "\00d7";
@@ -126,9 +129,6 @@ a.clear-filter-tags {
   &:hover{
     cursor: pointer;
   }
-}
-div.page-contain {
-
 }
 
 .number-of-checked-boxes {
@@ -165,9 +165,7 @@ div.page-contain {
     font-size: 20px;
   }
 
-  .btn--current-projects-filter-tag{
-    display: none;
-  }
+
   .clear-filter-tags{
     display: none;
   }

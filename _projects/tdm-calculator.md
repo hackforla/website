@@ -69,7 +69,7 @@ technologies:
   - SCSS
   - Figma
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: LA Department of Transportation and Los Angeles City Planning
 vertical: 'Environment'
