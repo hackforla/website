@@ -1,0 +1,11 @@
+<div class='page-card--about page-card--ed'>
+    <div class="about-us-section-header--ED"><span class="sec-head-img-ed">
+        <img src="/assets/images/about/section-header-elements/letter.svg" alt="" /></span><span id="letterBR">Letter from the Executive Director</span>
+    </div>
+    <div>
+        {% for item in site.data.internal.about %}
+           <p> {{item.executive_letter | markdownify}} </p> 
+        {% endfor %}                
+    </div>
+
+</div>
