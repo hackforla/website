@@ -38,35 +38,71 @@ permalink: /wins/
   const overview = "Give us a brief overview"
   const display = "Display?"
 
-
+  const badgeIcons = {
+		"I got a new job": "briefcase.svg",
+		"I produced something for my portfolio": "file.svg",
+		"I improved my LinkedIn": "linkedin.svg",
+		"I learned how to work better on a team": "team.svg",
+		"I increased the number of commits on my Github profile": "github.svg",
+		"I learned a new language": "code.svg",
+		"I setup 2FA": "twofa.svg",
+	    "I became part of a a caring community": "community.svg",
+		"I worked on an enterprise project": "enterprise.svg",
+		"I worked on a project that will help the people of Los Angeles": "giving.svg",
+		"I worked on two or more projects": "hammers.svg",
+		"I taught or mentored a person on my team": "mentor.svg",
+		"I taught or mentored a person on another team": "mentor.svg",
+		"My team delivered software to a stakeholder": "deliverable.svg",
+		"My team launched our MVP": "launch.svg",
+		"Other": "star.svg"
+	}
 
   function main() {
   	{% assign localData = site.data.external.wins-data | jsonify %}
-  	let localData = {{ localData }};
-  	const rawData = localData.values;
-  	//creates an array of objects where each question is the key and the answer is the value
-  	//cardData[index][question_str] = answer_str
+	  let localData = {{ localData }};
+	//   console.log(localData)
+	  const rawData = localData.values;
+	//   rawData.map(data => console.log(data))
   	let cardData = []
-  	const keys = rawData[0]
-  	rawData.slice(1).forEach((data) => {
+	  const keys = rawData[0]
+	//   console.log(keys)
+  	rawData.slice(1).forEach(data => {
   		let cardObj = {}
   		for (let i = 0; i < keys.length; i++) {
   			cardObj[keys[i]] = data[i];
   		}
-  		cardData.push(cardObj)
-
-
-
+		  cardData.push(cardObj)
+		
+		getBadgeIcon(data, badgeIcons)
   	})
 
   	//createFilter();
   	window.localStorage.setItem('data', JSON.stringify(cardData));
   	makeCards(cardData);
   	ifPageEmpty();
-
-
-
   }
+
+/**
+ * Takes badgeIcon related question, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
+ ** If key matches, returns related SVG value
+ * @param {array} data
+ * @param {object} badgeIcons
+ * @return {value} badgeSVG
+ */
+function getBadgeIcon(data, badgeIcons) {
+	data[11].split(',').map(d => {
+		d
+		Object.keys(badgeIcons).map(key => {
+			if (key === d) {
+				Object.entries(badgeIcons).map(keyValue => {
+					if (keyValue[0] == d) {
+						console.log(keyValue[1])
+					}
+				})
+			}
+		})
+	})
+}
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
