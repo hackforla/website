@@ -20,70 +20,69 @@ permalink: /wins/
 
 <script>
 
-  //assigning the google form questions to variables for readability
-  //these variables correspond with a question on the google form
-  //these variables can be used as a key to access the data
-  const time = "Timestamp"
-  const email = "Email Address"
-  const name = "Full name"
-  const linkedin_url = "Linkedin URL (optional)"
-  const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
-  const github_url = "Github URL (optional)"
-  const github_permission = "Could we use your Github profile picture next to your story?"
-  const team = "Select the team(s) you're on"
-  const role = "Select your role(s) on the team"
-  const specific_role = "What is/was your specific role? (optional)"
-  const join_date = "When did you join Hack for LA? (optional)"
-  const win = "What do you want to celebrate (select all that apply)?"
-  const overview = "Give us a brief overview"
-  const display = "Display?"
+//assigning the google form questions to variables for readability
+//these variables correspond with a question on the google form
+//these variables can be used as a key to access the data
+const time = "Timestamp"
+const email = "Email Address"
+const name = "Full name"
+const linkedin_url = "Linkedin URL (optional)"
+const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
+const github_url = "Github URL (optional)"
+const github_permission = "Could we use your Github profile picture next to your story?"
+const team = "Select the team(s) you're on"
+const role = "Select your role(s) on the team"
+const specific_role = "What is/was your specific role? (optional)"
+const join_date = "When did you join Hack for LA? (optional)"
+const win = "What do you want to celebrate (select all that apply)?"
+const overview = "Give us a brief overview"
+const display = "Display?"
 
-  const badgeIcons = {
-		"I got a new job": "briefcase.svg",
-		"I produced something for my portfolio": "file.svg",
-		"I improved my LinkedIn": "linkedin.svg",
-		"I learned how to work better on a team": "team.svg",
-		"I increased the number of commits on my Github profile": "github.svg",
-		"I learned a new language": "code.svg",
-		"I setup 2FA": "twofa.svg",
-	    "I became part of a a caring community": "community.svg",
-		"I worked on an enterprise project": "enterprise.svg",
-		"I worked on a project that will help the people of Los Angeles": "giving.svg",
-		"I worked on two or more projects": "hammers.svg",
-		"I taught or mentored a person on my team": "mentor.svg",
-		"I taught or mentored a person on another team": "mentor.svg",
-		"My team delivered software to a stakeholder": "deliverable.svg",
-		"My team launched our MVP": "launch.svg",
-		"Other": "star.svg"
-	}
+const badgeIcons = {
+	"I got a new job": "briefcase.svg",
+	"I produced something for my portfolio": "file.svg",
+	"I improved my LinkedIn": "linkedin.svg",
+	"I learned how to work better on a team": "team.svg",
+	"I increased the number of commits on my Github profile": "github.svg",
+	"I learned a new language": "code.svg",
+	"I setup 2FA": "twofa.svg",
+	"I became part of a a caring community": "community.svg",
+	"I worked on an enterprise project": "enterprise.svg",
+	"I worked on a project that will help the people of Los Angeles": "giving.svg",
+	"I worked on two or more projects": "hammers.svg",
+	"I taught or mentored a person on my team": "mentor.svg",
+	"I taught or mentored a person on another team": "mentor.svg",
+	"My team delivered software to a stakeholder": "deliverable.svg",
+	"My team launched our MVP": "launch.svg",
+	"Other": "star.svg"
+}
 
-  function main() {
-  	{% assign localData = site.data.external.wins-data | jsonify %}
-	  let localData = {{ localData }};
-	//   console.log(localData)
-	  const rawData = localData.values;
-	//   rawData.map(data => console.log(data))
-  	let cardData = []
-	  const keys = rawData[0]
-	//   console.log(keys)
-  	rawData.slice(1).forEach(data => {
-  		let cardObj = {}
-  		for (let i = 0; i < keys.length; i++) {
-  			cardObj[keys[i]] = data[i];
-  		}
-		  cardData.push(cardObj)
-		
+function main() {
+{% assign localData = site.data.external.wins-data | jsonify %}
+	let localData = {{ localData }};
+	const rawData = localData.values;
+
+	let cardData = []
+	const keys = rawData[0]
+
+	rawData.slice(1).forEach(data => {
+		let cardObj = {}
+		for (let i = 0; i < keys.length; i++) {
+			cardObj[keys[i]] = data[i];
+		}
+			cardData.push(cardObj)
+
 		getBadgeIcon(data, badgeIcons)
-  	})
+	})
 
-  	//createFilter();
-  	window.localStorage.setItem('data', JSON.stringify(cardData));
-  	makeCards(cardData);
-  	ifPageEmpty();
-  }
+	//createFilter();
+	window.localStorage.setItem('data', JSON.stringify(cardData));
+	makeCards(cardData);
+	ifPageEmpty();
+}
 
 /**
- * Takes badgeIcon related question, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
+ * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
  ** If key matches, returns related SVG value
  * @param {array} data
  * @param {object} badgeIcons
@@ -91,7 +90,6 @@ permalink: /wins/
  */
 function getBadgeIcon(data, badgeIcons) {
 	data[11].split(',').map(d => {
-		d
 		Object.keys(badgeIcons).map(key => {
 			if (key === d) {
 				Object.entries(badgeIcons).map(keyValue => {
