@@ -16,9 +16,9 @@ links:
   - name: Site
     url: 'http://www.workfor.la/'
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
-partner: Department of Personnel
+partner: LA City Department of Personnel
 visible: true
 status: Completed
 completed-contact: WorkForLA@googlegroups.com

@@ -5,7 +5,7 @@
 lsi: false # Produce an index for related posts. Requires the classifier-reborn plugin. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 safe: true # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 
-
+exclude: [github-actions ]
 source: . # Change the directory where Jekyll will read files
 
 title: Hack for LA
@@ -24,12 +24,9 @@ collections:
 # which then redirects to `github.com/hackforla/website` and `https://www.codeforamerica.org/donate` respecitively
   redirections:
     output: true
-  communities:
-  credits:
-  guide-pages:
-    output: true
-  press:
   projects:
+    output: true
+  guide-pages:
     output: true
 
 # Please refer to the documentation here[https://jekyllrb.com/docs/configuration/front-matter-defaults/] before modifying defaults
@@ -54,3 +51,8 @@ defaults: # The `defaults` key holds an array of scope/values pairs that define 
       type: "guide-pages"
     values:
       layout: "guide-pages"
+
+plugins:
+  - jekyll-sitemap
+
+

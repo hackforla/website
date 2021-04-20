@@ -4,7 +4,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 140vh;
+  height: 80vh;
   justify-content: flex-end;
   max-height: 700px;
   min-height: 100vh;
@@ -55,13 +55,23 @@
 
   h1 {
     font-size: 2.5rem;
-    margin-bottom: 0;
+    font-weight: bold;
+    margin-bottom: .65rem;
 
     @media #{$bp-tablet-up} {
       font-size: 3rem;
     }
   }
+
+  p {
+    margin-bottom: .65rem;
+  }
+  
+  span {
+    border-bottom: 3px solid $color-red;
+  }
 }
+
 
 .hero-signup {
   .form-input {

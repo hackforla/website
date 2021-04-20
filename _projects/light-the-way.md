@@ -12,7 +12,7 @@ looking:
   - category: UI/UX
     skill: UX Designers
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
 visible: false
 status: On Hold
