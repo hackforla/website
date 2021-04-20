@@ -59,6 +59,7 @@
 .page-card--project-description-page {
   padding: 30px;
   margin-bottom: 0;
+  margin-top: 28px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
