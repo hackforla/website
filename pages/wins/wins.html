@@ -66,6 +66,7 @@ function main() {
 	const keys = rawData[0]
 
 	rawData.slice(1).forEach(data => {
+		// console.log(data)
 		let cardObj = {}
 		for (let i = 0; i < keys.length; i++) {
 			cardObj[keys[i]] = data[i];
@@ -74,13 +75,14 @@ function main() {
 
 		getBadgeIcon(data, badgeIcons)
 	})
-
+	
 	//createFilter();
 	window.localStorage.setItem('data', JSON.stringify(cardData));
 	makeCards(cardData);
 	ifPageEmpty();
 }
 
+//TODO: How to know input is in 'other' 
 /**
  * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
  ** If key matches, returns related SVG value
@@ -88,19 +90,85 @@ function main() {
  * @param {object} badgeIcons
  * @return {value} badgeSVG
  */
+// function getBadgeIcon(data, badgeIcons) {
+// 	data[11].split(',').map(d => {
+// 		//certain outputs had a ' ' at beginning of string
+// 		const dataString = d.trim()
+// 		// console.log(dataString)
+// 		Object.keys(badgeIcons).map(key => {
+// 			if (key === dataString) {
+// 				Object.values(badgeIcons).map(value => {
+// 					console.log(dataString)
+// 					console.log(key)
+// 				}) 
+// 			}
+// 		})
+// 	})
+// }
+
+// Takes in badgeIcons object, creates array of values, take out value of "star.svg" to use on answers that don't fall into the "Other" category in the form. 
+
+let otherIcon
+function getOtherIcon(badgeIcons){
+	let values = []
+	Object.values(badgeIcons).forEach(icon => { values.push(icon) })
+	otherIcon = values.slice(-1).pop()
+	return otherIcon
+}
+// console.log(otherIcon)
+
+//is there a different way to return the otherIcon?
+
 function getBadgeIcon(data, badgeIcons) {
+	getOtherIcon(badgeIcons)
 	data[11].split(',').map(d => {
-		Object.keys(badgeIcons).map(key => {
-			if (key === d) {
-				Object.entries(badgeIcons).map(keyValue => {
-					if (keyValue[0] == d) {
-						console.log(keyValue[1])
-					}
-				})
-			}
-		})
+		//certain outputs had a ' ' at beginning of string
+		let dataString = d.trim()
+		if(badgeIcons.hasOwnProperty(`${dataString}`)){
+			console.log(`I HAVE THIS PROP: ${dataString}`)
+		} else if (dataString == '') // If data is empty do nothing
+		{console.log(` ~ ~ ~ ~ empty: ${dataString} ~ ~ ~ ~`) }
+		else {
+			console.log(`!!!!!!!! does not exist: ${otherIcon}`)}
+			//If it doesnt match .. give it "Other"
 	})
 }
+
+
+	// const cardHTML = `
+	// 		<li class="project-card wins-card id='card${index}'">
+	// 			<div class="wins-card-top">
+	// 			<img class="wins-card-profile-img" src=${profileImgSrc} id='ghImg-${index}'/>
+	// 			<div class="project-inner wins-card-top-right">
+	// 				<div class="wins-card-title project-card-inner">
+	// 				<span class="wins-card-name">${card[name]}</span>
+	// 				<span class="wins-card-icons">
+	// 					${linkedinIcon}
+	// 					${githubIcon}
+	// 				</span>
+	// 				</div>
+	// 				<div class="project-inner wins-card-team">Team(s): ${card[team]}</div>
+	// 				<div class="project-inner wins-card-role">Role(s): ${card[role]}</div>
+	// 			</div>
+	// 			</div>
+	// 			<div class="wins-card-bottom">
+	// 			<img class="wins-card-big-quote" src='/assets/images/wins-page/quote-icon.svg'/>
+	// 			<div class="project-inner wins-card-text">
+	// 				<p class="wins-card-overview">${card[overview]}</p>
+	// 				<p class="wins-card-info">${card[win]}</p>
+	// 				<div class="project-inner wins-see-more-div">
+	// 				<span
+	// 					id="${index}"
+	// 					onclick="seeMore(id)"
+	// 					expandable
+	// 					class="see-more-div"
+	// 					>...see more</span>
+	// 				</div>
+	// 			</div>
+	// 			</div>
+	// 		</li>
+	// 	`
+	// winsCardContainer.insertAdjacentHTML('beforeend', cardHTML);
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -341,6 +409,7 @@ function getBadgeIcon(data, badgeIcons) {
 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
+		// Remove 345, query the funky class / new div, then parse badgeIcon key and value 
 		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
