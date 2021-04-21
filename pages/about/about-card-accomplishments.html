@@ -6,14 +6,14 @@
             <div class="top-left-column top-left-column--acc">
                 <p class="text-bold accomplishment-highlights">Highlights from 2020</p>
                 {% for accomplishment in site.data.internal.accomplishments limit:4 %}
-                    <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
+                    <div class="accomplishment-title"><a href="{{accomplishment.link}}" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
                     <div> {{ accomplishment.description }} </div>                                    
                 {% endfor %} 
             </div> 
 
             <div class="bottom-right-column bottom-right-column--acc">
                 {% for accomplishment in site.data.internal.accomplishments limit:4 offset:4 %}
-                    <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
+                    <div class="accomplishment-title"><a href="{{accomplishment.link}}" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
                     <div> {{ accomplishment.description }} </div>                                    
                 {% endfor %} 
             </div>
