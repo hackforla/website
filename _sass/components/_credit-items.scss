@@ -11,21 +11,13 @@
   font-weight: normal;
 }
 
-.credits-header-container {
+.header-container--credits {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: $color-white;
   padding: 64px;
-  height: fit-content;
-  margin: 37px auto 0;
-  font-family: "Roboto" sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-
   img {
-    max-width: 350px;
+    max-width: 20%;
   }
 
   @media #{$bp-below-mobile} {
