@@ -100,6 +100,7 @@ function scrollHandler() {
 
 };
 
+
 /***********************************************************/
 /* ************** Script 4: Mobile accordian ************* */
 /***********************************************************/
@@ -224,7 +225,6 @@ function resizeHandler() {
 
     if (accordionFlag === 0 && window.innerWidth >= 960) {
         removeAccordionEventListener(accordionList);
-        expandAccordion(accordionExpandList);
         accordionFlag = 1;
  
         // find current mobile viewing content before resizing
@@ -238,7 +238,6 @@ function resizeHandler() {
     if (accordionFlag === 1 && window.innerWidth < 960) {
         createAccordionEventListener(accordionList);
         closeAccordion(accordionList);
-        letterBackToMobile (readMoreToMobile, readLessToMobile);
         accordionFlag = 0;
     } 
 
@@ -250,12 +249,6 @@ function resizeHandler() {
 // Get the list of elements for the accordion
 let accordionList = document.querySelectorAll(".about-us-section-header");
 
-// Get the elements to expand when going from mobile to desktop
-let accordionExpandList = document.querySelectorAll(".about-us-section-header, .read-more");
-
-// This is to close the letter to the editor on going to mobile
-let readMoreToMobile = document.querySelector(".read-more");
-let readLessToMobile = document.querySelector(".read-less");
 
 // Create event listeners on page load if in mobile
 if (window.innerWidth < 960) {
@@ -267,49 +260,9 @@ if (window.innerWidth < 960) {
 window.addEventListener('resize', resizeHandler);
 
 
-/*********************************************************************************/
-/* ************** Script 5: Mobile accordian - Read more/Read less ************* */
-/*********************************************************************************/
 
 
-function createReadMoreReadLessEventListener(classToAdd, accordionElements) {
 
-    for (let el of accordionElements) {
-
-        el.addEventListener("click", function () {
-
-            // Declare variables!
-            let accordionContainer = this.previousElementSibling;
-            let readMore = document.querySelector(".read-more");
-            let readLess = document.querySelector(".read-less");
-
-            // This toggles "Read more" and "Read less" so one comes on and the other goes off
-            readMore.classList.toggle(classToAdd);
-            readLess.classList.toggle(classToAdd);
-
-            // if it is read-more and not read-less, do this
-            if (this.className.includes("read-more")) {
-                accordionContainer = this.nextElementSibling;
-            }
-
-            // Open and close panel
-            if (accordionContainer.style.display === "block") {
-                accordionContainer.style.display = "none"
-            } else {
-                accordionContainer.style.display = "block"
-            }
-            event.stopPropagation()
-        })
-    }
-} // end function
-
-// Add event listeners
-
-// Get the list of elements for the accordion
-let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
-
-// Create event listeners
-createReadMoreReadLessEventListener("more-less", letterFromExecDir);
 
 /*******************************************************/
 /***** Script 6: Add a break tag to certain headers ****/
@@ -332,12 +285,6 @@ if (window.innerWidth < 960) {
 // If it's mobile, if href has #, open content
 if(window.innerWidth <960) {
     if (location.href.includes("#letter")) {
-        readMore = readMoreToMobile.nextElementSibling;
-        readMore.style.display = "block";
-        if (readMore.style.display === "block") {
-            readMoreToMobile.classList.add("more-less")
-            readLessToMobile.classList.remove("more-less")
-        }
 
     } else if(location.href.includes("#")) {
         const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
@@ -345,10 +292,5 @@ if(window.innerWidth <960) {
     }
 }
 
-function hashLetter() {
-    if (readMoreToMobile.nextElementSibling.style.display = "block"){
-        location.href = "#letter";
-    }
-}
 
-readMoreToMobile.addEventListener("click", hashLetter);
+
