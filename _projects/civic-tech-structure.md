@@ -7,9 +7,9 @@ description: "Each of the 80+ Code for America Brigades is an experiment which g
 The Civic Tech Structure's first project seeks to improve the existing Code for America Brigade Organizer’s Playbook (BOP) into a communal, high-value resource for sharing. We will be performing an intensive UX Research phase with the BOP end users to understand their priorities, infrastructure, and potential contributions."
 
 image: /assets/images/projects/civic-tech-structure.png
-alt: "A network of lines within lines, with nodes, and a large dot in the center."
+alt: "A network of lines and nodes, and the lines converge to a large dot in the center."
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
-alt-hero: "A network of lines within lines, with nodes, and a large dot in the center."
+alt-hero: "A network of lines and nodes, and the lines converge to a large dot in the center."
 leadership:
   - name: Bonnie Wolfe
     role: Co-Product Manager
@@ -41,7 +41,7 @@ links:
   - name: Slack
     url: "https://hackforla.slack.com/archives/C01A789GTNZ"
   - name: Overview
-    url: "https://docs.google.com/document/d/1GkvbJ9byBWBpZklYE6YL5nqa-KbIRz32PnMCeroV_1g/edit?usp=sharing"
+    url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Structure-Product-One-Sheet.pdf"
   - name: BOP Github
     url: "https://github.com/codeforamerica/brigade-playbook"
   - name: BOP CfA Slack
@@ -58,7 +58,7 @@ looking:
   - category: UI/UX
     skill: UX Team Manager / Lead
 technologies:
-  - Google Docs (Doc, Sheet, Slide, Forms)
+  - Google Docs
   - HackforLA.org guides
 location:
   - Remote

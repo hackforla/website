@@ -17,17 +17,26 @@
     &__text-group {
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: center;
+        justify-content: space-evenly;
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
-    }
+    
+    
+            a {
+                font-weight: 300;
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                color: $color-mediumvioletred;
+                transform: scale(1.01);
+            }
 
-    &__banner-item {
-        margin-block-end: 0;
-        font-weight: 300;
-        font-size: 1.25rem;
-        margin: 0 4.5rem;
+            .selected-category {
+            color: $color-mediumvioletred;
+            }
+
     }
     
     &__p {
@@ -99,25 +108,29 @@
 }
 
 .toolkit-flex-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
     padding-left: 2rem;
     padding-right: 2rem;
     align-items: stretch;
-    justify-content: start;
+    justify-content: center;
 }
 
-.outer-link {
-    width: 1.5rem;
-}
+// .outer-link {
+//     width: 1.5rem;
+// }
 
-.toolkit-flex-item {
+.toolkit-flex-item.section-container {
     position: relative;
     max-width: 23rem;
     padding: 0rem;
     height: auto;
     margin: 1.2rem 1rem;
     overflow: hidden;
+
+    a {
+        width: 1.5rem;
+    }
 }
 
 .toolkit-flex-item-img-container {
@@ -154,9 +167,9 @@
     width: 100%;
 }
 
-.not-clickable {
-    color: black !important;
-}
+// .not-clickable {
+//     color: black !important;
+// }
 
 .toolkit-flex-item-status {
     position: absolute;
@@ -179,8 +192,8 @@
         }
 
         &__banner-item {
-            font-size: 1.2rem;
-            margin: 0 2.9rem;
+            font-size: 1.1rem;
+            margin: 0 2.5rem;
         }
     }
 }
@@ -196,7 +209,7 @@
 
         &__banner-item {
             font-size: .9rem;
-            margin: 0 .7rem;
+            margin: 0 .6rem;
             max-width: 6rem;
             text-align: center;
         }
@@ -229,12 +242,12 @@
         padding-bottom: 3rem;
 
         &__banner-item {
-            font-size: .65rem;
-            max-width: 4rem;
+            font-size: .5rem;
+            max-width: 3.6rem;
         }
 
         &__p {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 

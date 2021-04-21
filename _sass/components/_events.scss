@@ -8,20 +8,24 @@
   }
 }
 
-.hacknights--header-container {
-  padding: 6rem 6rem 5rem 8rem;
+.header-container--events {
+  padding: .2rem 4rem 5.5rem 4rem;
 }
 
-.hacknights--head-content {
+.events--head-content {
   margin: 2% 0 0% 4%;
   text-align: initial;
+}
+
+.header-text-margin--events{
+  max-width: 520px;
+  margin: 0;
 }
 
 .header-desc {
   text-align: initial;
   font-weight: 530;
-  font-size: 25px;
-  line-height: 29px;
+  font-size: 1.125rem;
   margin: 2% 0 20px 5%;
 
   @media #{$bp-below-tablet} {
@@ -44,6 +48,7 @@
   flex-direction: row-reverse;
   margin-left: 40px;
   margin-bottom: -7%;
+  justify-content: center;
   @media #{$bp-below-tablet} {
     flex-direction: row-reverse;
     flex-grow: 6;
@@ -105,7 +110,7 @@
   content: "\226A";
   float: left;
   transition: transform 0.25s ease-in;
-  color: #000000;
+  color: $color-black;
   font-weight: normal;
   font-size: 18px;
   margin: 0 6px;
@@ -129,8 +134,17 @@
   max-width: 150px;
 }
 
+.fullwidth-background-container {
+  background-color: $color-gold;
+  margin: 0 -2em;
+}
+.add-padding-container {
+  padding: 0 2.5em;
+}
+
 .getting-started-mobile-page {
   @media #{$bp-below-mobile} {
+    pading: 0 2em;
     display: inline;
     margin: 20px;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -195,7 +209,7 @@
 }
 
 .notification-banner {
-  background-color: #f2c94d;
+  background-color: $color-gold;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -214,9 +228,8 @@
   font-weight: 700;
 
   @media #{$bp-below-mobile} {
-    text-align: justify;
-    padding: 12px;
     margin: 0;
+    padding: 1em 2em; 
     font-size: 16px;
     line-height: 19px;
   }
@@ -378,7 +391,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -411,7 +424,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -439,7 +452,7 @@
 .mobile-locations-dropdown {
   @media #{$bp-below-tablet} {
     display: none;
-    background: #f2c94d;
+    background: $color-gold;
   }
 }
 
@@ -493,7 +506,7 @@
 /* These styles are for the mobile view of the events page */
 
 @media #{$bp-below-desktop} {
-  .hacknights--header-container {
+  .header-container--events {
     padding: 2rem 2rem 2rem 2rem;
   }
 
@@ -515,7 +528,7 @@
 }
 
 .fullscreen-video {
-  width: 100%;
+  margin-right: 5rem;
 }
 
 .events-video-fullscreen-container {
@@ -533,8 +546,8 @@
 
 
 
-.events-page{
-  background: #030c2c;
+.events-page, .content-section--events{
+  background: $color-blue-dark;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -550,7 +563,7 @@
 }
 
 .events-page-header {
-  color: #ffffff; 
+  color: $color-white; 
   margin-top: 48px; 
   font-size: 36px;
 }

@@ -4,7 +4,7 @@ identification: '241519642'
 title: Civic Tech Index
 description: Our goal of the project is to create a comprehensive, searchable index of all civic tech open source software projects around the world. We have created the framework and an interest list. We are currently working on building out the website and other marketing tools that demonstrate the power of the index.
 image: /assets/images/projects/civic-tech-index.png
-alt: 'Civic tech index logo layered on top of the world map. Paired with a globe icon and a magnifying glass.'
+alt: 'Civic Tech Index logo. A magnifying glass over the outline of the world map on the left "Civic Tech Index" on the right.'
 image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
@@ -82,7 +82,7 @@ technologies:
   - Code Climate
   - Cypress
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 visible: true

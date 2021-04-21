@@ -3,9 +3,9 @@ identification: '226157870'
 title: VRMS
 description: VRMS is a tool used for the engagement, support, and retention of a network of volunteers.
 image: /assets/images/projects/vrms.png
-alt: 'VRMS homepage showing the check-in buttons.'
+alt: 'VRMS logo. VRMS homepage.'
 image-hero: /assets/images/projects/vrms-hero.png
-alt-hero: 'City of LA skyline.'
+alt-hero: 'City of LA skyline at dusk.'
 leadership:
   - name: Alex Anakin
     role: Software Architect / Tech Lead
@@ -31,6 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U015MG4LK99'
       github: 'https://github.com/OlgaBilogurova'
     picture: https://avatars.githubusercontent.com/OlgaBilogurova
+  - name: Khushboo Shah
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01EW21842X'
+      github: 'https://github.com/khushbooshah-PM'
+    picture: 'https://avatars.githubusercontent.com/khushbooshah-PM'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'

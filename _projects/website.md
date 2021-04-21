@@ -5,7 +5,7 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating.'
+alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -49,12 +49,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
       github: 'https://github.com/pawan92'
     picture: https://avatars.githubusercontent.com/pawan92
-  - name: Ahdithan Uthayakumar
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FDAPULJE'
-      github: 'https://github.com/ahdithebomb'
-    picture: https://avatars.githubusercontent.com/ahdithebomb
   - name: Tarang Gupta
     role: Product Manager
     links:
@@ -87,8 +81,8 @@ technologies:
   - Docker
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
-  - Santa Monica
-  - Downtown LA
+  # - Santa Monica
+  # - Downtown LA
   - Remote
 visible: true
 status: Active

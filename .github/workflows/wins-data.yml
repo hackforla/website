@@ -15,12 +15,12 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Save wins-data.json
-      run: curl -o _data/wins-data.json https://sheets.googleapis.com/v4/spreadsheets/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/values/Responses?key=${{ secrets.WINS_API_KEY }}
+      run: curl -o _data/external/wins-data.json https://sheets.googleapis.com/v4/spreadsheets/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/values/Responses?key=${{ secrets.WINS_API_KEY }}
 
     - uses: stefanzweifel/git-auto-commit-action@v3.0.0
       with:
         # Optional glob pattern of files which should be added to the commit
-        file_pattern: _data/wins-data.json
+        file_pattern: _data/external/wins-data.json
 
         commit_message: Update wins data
 

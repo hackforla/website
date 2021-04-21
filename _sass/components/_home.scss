@@ -66,7 +66,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 140vh;
+  height: 80vh;
   justify-content: flex-end;
   max-height: 700px;
   min-height: 100vh;
@@ -117,11 +117,19 @@
 
   h1 {
     font-size: 2.5rem;
-    margin-bottom: 0;
+    font-weight: bold;
+    margin-bottom: .65rem;
 
     @media #{$bp-tablet-up} {
       font-size: 3rem;
     }
+  }
+  p {
+    margin-bottom: .65rem;
+  }
+  
+  span {
+    border-bottom: 3px solid $color-red;
   }
 }
 
@@ -213,10 +221,6 @@ button {
   font-size: #{map-get($font-size-small, print)};
   margin: 5px 0;
 
-  &:hover {
-    background: $color-red;
-    color: $color-white;
-  }
 }
 //***************************************************************************************************
 
@@ -311,7 +315,7 @@ button {
   text-align: center;
   margin-left: 10px;
   background-color: rgb(255, 255, 151);
-  width: 82px;
+  width: 92px;
   padding: 2px 7px;
   border-radius: 6px;
   box-shadow: 0 0 8px 0 rgba($color-black, 0.1);
@@ -1104,7 +1108,7 @@ padding-top: 10px;
   "bottom-left bottom-right"
   ;
   column-gap: 80px;
-  row-gap: 10px;
+  
 }
 
 .platform-sec-impact {
@@ -1117,6 +1121,10 @@ padding-top: 10px;
 
 .platform-sec-diversity {
   grid-area: mid-left;
+  @media only screen and (min-width:1306px) {
+    grid-row-start: 2;
+    margin-top: 3rem;
+  }
 }
 
 .platform-sec-giving {
@@ -1129,11 +1137,14 @@ padding-top: 10px;
 
 .platform-sec-scalability {
   grid-area: bottom-left;
+  @media only screen and (min-width:1316px) {
+    grid-row-start: 6;
+    margin-top: 8rem;
+  }
 }
 
 .platform-sec-sustainability {
   grid-area: bottom-right;
-  align-self: center;
 }
 
 .flex-container-reverse {
@@ -1216,7 +1227,7 @@ padding-top: 10px;
 }
 
 .news-cells p {
-  padding-top: 60px;
+  padding-top: 48.33px;
   margin: 0 20px 0 20px;
 }
 
@@ -1325,12 +1336,9 @@ width: 88%;
 //***************************************************************************************************
 
 //_contact-us************************************************************************************
-.contactus {
+.page-card--home  {
   text-align: center;
-  background: $color-pink;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding: 20px;
+
 }
 
 .btn--home-subscribe {
@@ -1391,7 +1399,7 @@ width: 88%;
 @media only screen and (max-device-width: 550px) {
 
   //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
-  .volunteerWithUs .btn--home-survey {
+  .page-card--home-volunteer .btn--home-survey {
     margin: 0 0 15px 0 !important;
   }
 

@@ -3,9 +3,9 @@ identification: '222602391'
 title: New Schools Today
 description: We’re building a platform for students across LA County to create more accessible school-related apps and web apps. Our desired impact is to make students feel more welcomed and included in their community through an online academic environment created by peers, for peers
 image: /assets/images/projects/new-schools-today.jpg
-alt: 'Team working a during meeting.'
+alt: 'Team of students each with a laptop sitting around the conference table, attentively engege in a video conference call meeting.'
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
-alt-hero: 'Team working during a meeting.'
+alt-hero: 'Team students and teachers working during a meeting.'
 leadership:
   - name: Ben Swerdlow
     role: Tech Team Lead
@@ -46,7 +46,7 @@ technologies:
   - Flutter
 partner: Seeking
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 visible: true
 status: On Hold

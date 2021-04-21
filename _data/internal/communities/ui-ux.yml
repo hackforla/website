@@ -1,0 +1,35 @@
+---
+name: UI/UX
+description: This group creates a space where UI/UX designers and researchers from different projects can come together to share effective practices, give and get mentorship, set standards, and create guides for new projects.
+visible: true
+status: Active
+location:
+  - Remote
+
+image: /assets/images/communities-of-practice/uiux.jpg
+alt: 'A board full of Post-it notes is used as a communication tool'
+
+meeting-times: Mondays 6:00-7:00 PM PT
+
+leadership-type: Peer Led
+leadership:
+  - name: Danielle Nedivi
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U013U4VN8V7
+      github: https://github.com/daniellex0
+    picture: https://avatars.githubusercontent.com/u/67400366
+  - name: Tan Zhou
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/UPMSC27G8
+      github: https://github.com/tan-zhou
+    picture: https://avatars.githubusercontent.com/u/50305762
+links:
+  - name: Slack
+    url: https://app.slack.com/client/T04502KQX/C017ESHSMNG/
+  - name: Github
+    url: 
+  
+recruiting-message:
+---
