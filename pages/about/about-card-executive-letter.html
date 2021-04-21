@@ -3,9 +3,7 @@
         <img src="/assets/images/about/section-header-elements/letter.svg" alt="" /></span><span id="letterBR">Letter from the Executive Director</span>
     </div>
     <div>
-        {% for item in site.data.internal.about %}
-           <p> {{item.executive_letter | markdownify}} </p> 
-        {% endfor %}                
+           <p> {{site.data.internal.executive_letter | markdownify}} </p>           
     </div>
 
 </div>

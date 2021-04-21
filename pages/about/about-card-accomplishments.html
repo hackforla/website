@@ -5,23 +5,17 @@
             <!--This is the top and then right cell-->
             <div class="top-left-column top-left-column--acc">
                 <p class="text-bold accomplishment-highlights">Highlights from 2020</p>
-
-                {% for item in site.data.internal.about %}
-                    {% for accomplishment in item.accomplishments.left_col_accomplishments%}
-                        <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
-                        <div> {{ accomplishment.description }} </div>                                    
-                    {% endfor %}
+                {% for accomplishment in site.data.internal.accomplishments limit:4 %}
+                    <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
+                    <div> {{ accomplishment.description }} </div>                                    
                 {% endfor %} 
             </div> 
 
             <div class="bottom-right-column bottom-right-column--acc">
-                {% for item in site.data.internal.about %}
-                {% for accomplishment in item.accomplishments.right_col_accomplishments%}
+                {% for accomplishment in site.data.internal.accomplishments limit:4 offset:4 %}
                     <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
                     <div> {{ accomplishment.description }} </div>                                    
-                {% endfor %}
-            {% endfor %} 
-
+                {% endfor %} 
             </div>
         </div>
         <div class="flex-container flex-container--wins">
