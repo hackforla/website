@@ -40,25 +40,23 @@ const display = "Display?"
 
 
 //TODO: grab svg's straight from folder without making Location snatches 
-const svgFilePath = 'assets/images/wins-page/wins-badges/'
-
 const badgeIcons = {
-	"I got a new job": `${svgFilePath}briefcase.svg`,
-	"I produced something for my portfolio": `${svgFilePath}file.svg`,
-	"I improved my LinkedIn": `${svgFilePath}linkedin.svg`,
-	"I learned how to work better on a team": `${svgFilePath}team.svg`,
-	"I increased the number of commits on my Github profile": `${svgFilePath}github.svg`,
-	"I learned a new language": `${svgFilePath}code.svg`,
-	"I setup 2FA": `${svgFilePath}twofa.svg`,
-	"I became part of a a caring community": `${svgFilePath}community.svg`,
-	"I worked on an enterprise project": `${svgFilePath}enterprise.svg`,
-	"I worked on a project that will help the people of Los Angeles": `${svgFilePath}giving.svg`,
-	"I worked on two or more projects": `${svgFilePath}hammers.svg`,
-	"I taught or mentored a person on my team": `${svgFilePath}mentor.svg`,
-	"I taught or mentored a person on another team": `${svgFilePath}mentor.svg`,
-	"My team delivered software to a stakeholder": `${svgFilePath}deliverable.svg`,
-	"My team launched our MVP": `${svgFilePath}launch.svg`,
-	"Other": `${svgFilePath}star.svg`
+	"I got a new job": `briefcase.svg`,
+	"I produced something for my portfolio": `file.svg`,
+	"I improved my LinkedIn": `linkedin.svg`,
+	"I learned how to work better on a team": `team.svg`,
+	"I increased the number of commits on my Github profile": `github.svg`,
+	"I learned a new language": `code.svg`,
+	"I setup 2FA": `twofa.svg`,
+	"I became part of a a caring community": `$community.svg`,
+	"I worked on an enterprise project": `enterprise.svg`,
+	"I worked on a project that will help the people of Los Angeles": `giving.svg`,
+	"I worked on two or more projects": `hammers.svg`,
+	"I taught or mentored a person on my team": `mentor.svg`,
+	"I taught or mentored a person on another team": `mentor.svg`,
+	"My team delivered software to a stakeholder": `deliverable.svg`,
+	"My team launched our MVP": `launch.svg`,
+	"Other": `star.svg`
 }
 
 function main() {
@@ -70,14 +68,13 @@ function main() {
 	const keys = rawData[0]
 
 	rawData.slice(1).forEach(data => {
-		// console.log(data)
 		let cardObj = {}
 		for (let i = 0; i < keys.length; i++) {
 			cardObj[keys[i]] = data[i];
 		}
 			cardData.push(cardObj)
 
-		getBadgeIcon(data, badgeIcons)
+		inputWins(data, badgeIcons)
 	})
 	
 	//createFilter();
@@ -98,78 +95,59 @@ function getOtherIcon(badgeIcons) {
 
 	return otherIcon
 }
-
+ 
 /**
  * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
  * If key matches, returns related SVG value
  * @param {array} data
  * @param {object} badgeIcons
- * @return {value} badgeSVG
+ * @return {HTML} badgeIcon and String
  */
-function getBadgeIcon(data, badgeIcons) {
+ function getBadgeIcons(badgeIcons, trimmedMsg, otherIcon){
+	 if (badgeIcons.hasOwnProperty(`${trimmedMsg}`)) {
+		return badgeIcons[trimmedMsg]
+	 } else if (trimmedMsg === '') {
+		 console.log(false)
+	 } else {
+		return otherIcon
+	 }
+ }
+/**
+ * Puts each win, from a single form, into its own array
+ * This allows multiple entries to be split and still retained as a unit
+ * i.e: "I did this, I did that" becomes ["I did this", "I did that"]
+ **/
+function inputWins(data, badgeIcons) {
 	getOtherIcon(badgeIcons)
-	data[11].split(',').map(d => {
-		//certain outputs had a ' ' at beginning of string
-		let dataString = d.trim()
-		if (badgeIcons.hasOwnProperty(`${dataString}`)){
-			const icon = badgeIcons[dataString]
-			winsHTML(icon, dataString)
-		}
-		else if (dataString === ''){
-			console.log(false)
-		}
-		else {
-			winsHTML(otherIcon, dataString)
-		}
+
+	const dataPairing = new Object(data[11].split(','))
+	let dataHTML = []
+
+	for (dataMsg of dataPairing){
+		const trimmedMsg = dataMsg.trim()
+		const badge = document.createElement('img')
+		const badgeSVG = document.createElement('img')
+		const pString = document.createElement('p')
+
+		const icon = getBadgeIcons(badgeIcons, trimmedMsg, otherIcon)
+		const SVG_FILE_PATH = `assets/images/wins-page/wins-badges/${icon}`
+
+		pString.textContent = trimmedMsg
+		badge.src = SVG_FILE_PATH
+
+		
+		dataHTML.push(badge, pString)
+	}
+	renderToDom(dataHTML) 
+}
+
+function renderToDom(dataHTML){
+	const winContainer = document.createElement('div')
+	dataHTML.forEach(data => {
+		winContainer.textContent += data
 	})
+	document.querySelector('.wins-page-contain').insertAdjacentHTML('beforebegin', winContainer)
 }
-
-	/**
-	 * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
-	 * If key matches, returns related SVG value
-	 * @param {string} iconFilePath
-	 * @param {string} badgeIcons
-	 * @return {HTML}
-	 */
-function winsHTML(icon, dataString){
-	const p = document.createElement('p')
-	p.textContent = `<img src=${icon} alt='to be added'></img> ${dataString}`
-}
-
-// TODO: put on page 
-// const cardHTML = `
-// 		<li class="project-card wins-card id='card${index}'">
-// 			<div class="wins-card-top">
-// 			<img class="wins-card-profile-img" src=${profileImgSrc} id='ghImg-${index}'/>
-// 			<div class="project-inner wins-card-top-right">
-// 				<div class="wins-card-title project-card-inner">
-// 				<span class="wins-card-name">${card[name]}</span>
-// 				<span class="wins-card-icons">
-// 					${linkedinIcon}
-// 					${githubIcon}
-// 				</span>
-// 				</div>
-// 				<div class="project-inner wins-card-team">Team(s): ${card[team]}</div>
-// 				<div class="project-inner wins-card-role">Role(s): ${card[role]}</div>
-// 			</div>
-// 			</div>
-// 			<div class="wins-card-bottom">
-// 			<img class="wins-card-big-quote" src='/assets/images/wins-page/quote-icon.svg'/>
-// 			<div class="project-inner wins-card-text">
-// 				<p class="wins-card-overview">${card[overview]}</p>
-// 				<div class="project-inner wins-see-more-div">
-// 				<span
-// 					id="${index}"
-// 					onclick="seeMore(id)"
-// 					expandable
-// 					class="see-more-div"
-// 					>...see more</span>
-// 				</div>
-// 			</div>
-// 			</div>
-// 		</li>
-// 	`
-// winsCardContainer.insertAdjacentHTML('beforeend', cardHTML);
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -350,7 +328,6 @@ function winsHTML(icon, dataString){
   		p.innerHTML = "No one has shared a win yet...be the first!";
   	}
   }
-
 
 
 
