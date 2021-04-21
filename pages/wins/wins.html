@@ -99,7 +99,6 @@ function getOtherIcon(badgeIcons) {
 	return otherIcon
 }
 
-//TODO: How to know input is in 'other' 
 /**
  * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
  * If key matches, returns related SVG value
@@ -113,27 +112,31 @@ function getBadgeIcon(data, badgeIcons) {
 		//certain outputs had a ' ' at beginning of string
 		let dataString = d.trim()
 		if (badgeIcons.hasOwnProperty(`${dataString}`)){
-					// console.log(badgeIcons[dataString])
-					const icon = badgeIcons[dataString]
-					console.log(renderWins(icon, dataString))
+			const icon = badgeIcons[dataString]
+			winsHTML(icon, dataString)
 		}
-		else if (dataString === '') 
-					{console.log(false)}
-		else		{
-					// console.log(otherIcon)
-					console.log(renderWins(otherIcon, dataString))
+		else if (dataString === ''){
+			console.log(false)
+		}
+		else {
+			winsHTML(otherIcon, dataString)
 		}
 	})
 }
 
-function renderWins(icon, dataString){
+	/**
+	 * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
+	 * If key matches, returns related SVG value
+	 * @param {string} iconFilePath
+	 * @param {string} badgeIcons
+	 * @return {HTML}
+	 */
+function winsHTML(icon, dataString){
 	const p = document.createElement('p')
 	p.textContent = `<img src=${icon} alt='to be added'></img> ${dataString}`
-
-	console.log(p)
 }
 
-
+// TODO: put on page 
 // const cardHTML = `
 // 		<li class="project-card wins-card id='card${index}'">
 // 			<div class="wins-card-top">
@@ -352,86 +355,85 @@ function renderWins(icon, dataString){
 
 
 
-//   function makeCards(data) {
-//   	{% assign githubData = site.data.external.github-data | jsonify %}
-//   	let githubData = {{ githubData }};
+  function makeCards(data) {
+  	{% assign githubData = site.data.external.github-data | jsonify %}
+  	let githubData = {{ githubData }};
 
-// 	const cards = data.reverse();
-// 	const cardTemplate = document.getElementById("wins-card-template");
-// 	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
-// 	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
-// 	const GITHUB_ICON = '/assets/images/wins-page/icon-github-small.svg';
-// 	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
-// 	const winsCardContainer  = document.querySelector('#responses');
+	const cards = data.reverse();
+	const cardTemplate = document.getElementById("wins-card-template");
+	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
+	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
+	const GITHUB_ICON = '/assets/images/wins-page/icon-github-small.svg';
+	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
+	const winsCardContainer  = document.querySelector('#responses');
 
-// 	cards.forEach((card, index) => {
-// 		if (card[display] != "TRUE") return;
-// 		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
-// 		let ghId;
-// 		if(card[github_url] && card[github_permission] === "Yes"){
-// 			githubData.slice(1).map(item=>{
-// 				item.contributorsComplete.data.map(contributors=>{
-// 					if(contributors.github_url == card[github_url]){
-// 						ghId = contributors.id;
-// 					}
-// 				})
+	cards.forEach((card, index) => {
+		if (card[display] != "TRUE") return;
+		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
+		let ghId;
+		if(card[github_url] && card[github_permission] === "Yes"){
+			githubData.slice(1).map(item=>{
+				item.contributorsComplete.data.map(contributors=>{
+					if(contributors.github_url == card[github_url]){
+						ghId = contributors.id;
+					}
+				})
 
-// 			})
+			})
 
-// 		} 
-// 		let profileImgSrc = ghId ?
-// 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
-// 			AVATAR_DEFAULT_PATH;
+		} 
+		let profileImgSrc = ghId ?
+			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
+			AVATAR_DEFAULT_PATH;
 		
-// 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
-// 		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
+		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
+		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
 
-// 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
-// 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
+		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
+		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
 	
-// 		if (card[linkedin_url].length > 0) {
-// 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
-// 			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
-// 		} else {
-// 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
-// 		};
+		if (card[linkedin_url].length > 0) {
+			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
+			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
+		};
 
-// 		if (card[github_url].length > 0){
-// 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
-// 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
-// 		} else {
-// 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
-// 		}
+		if (card[github_url].length > 0){
+			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
+			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+		} else {
+			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
+		}
 
-// 		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
-// 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
-// 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
-// 		// Remove 345, query the funky class / new div, then parse badgeIcon key and value 
-// 		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
-// 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
+		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
+		// Remove 345, query the funky class / new div, then parse badgeIcon key and value 
+		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
 		
-// 		winsCardContainer.append(cloneCardTemplate);
+		winsCardContainer.append(cloneCardTemplate);
 		
-// 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
-// 		function addSeeMore() {
-// 			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
+		const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		function addSeeMore() {
+			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
-// 			//makes the see more span on the bottom of the card
-// 			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
-// 				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
-// 			} else {
-// 				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
-// 			}
-// 		}
-// 		addSeeMore()
+			//makes the see more span on the bottom of the card
+			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
+				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+			} else {
+				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+			}
+		}
+		addSeeMore()
 
-// 		new ResizeObserver(addSeeMore).observe(winText)
-// 	})
+		new ResizeObserver(addSeeMore).observe(winText)
+	})
+  }
 
-
-//   }
   function seeMore(id){
   	screenWidth = window.innerWidth;
   	if (screenWidth > 960){
