@@ -172,15 +172,6 @@ function openOneAccordion(currentAnchor){
 };
 //end function
 
-// This adjusts the letter when it goes back to mobile
-// It should leave it open if it was open, and closed if it was closed
-function letterBackToMobile(readMoreElement, readLessElement) {
-    if (readLessElement.classList.contains("more-less")) {
-        readMoreElement.nextElementSibling.style.display = "none";
-    } else {
-        readMoreElement.nextElementSibling.style.display = "block";
-    }
-} // end function
 
 // Initialize Current Mobile Viewing Content
 let currentMobileContent;
