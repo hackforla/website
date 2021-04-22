@@ -216,6 +216,7 @@ function resizeHandler() {
 
     if (accordionFlag === 0 && window.innerWidth >= 960) {
         removeAccordionEventListener(accordionList);
+        expandAccordion(accordionExpandList);
         accordionFlag = 1;
  
         // find current mobile viewing content before resizing
@@ -235,11 +236,13 @@ function resizeHandler() {
     if (accordionFlag === 0 && window.innerWidth < 960){
         currentMobileContent = locateMobileContent();
     }
-} // end function 
+}
 
 // Get the list of elements for the accordion
 let accordionList = document.querySelectorAll(".about-us-section-header");
 
+// Get the elements to expand when going from mobile to desktop
+let accordionExpandList = document.querySelectorAll(".about-us-section-header");
 
 // Create event listeners on page load if in mobile
 if (window.innerWidth < 960) {
