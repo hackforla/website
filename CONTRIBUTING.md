@@ -16,7 +16,7 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 5. [Read Hack for LA's Site Architecture to get acquainted with how the website is structured](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
 
-6. [Switch to new issue branch before you start making changes](#step-6-change-to-a-new-branch)
+6. [Switch to new issue branch before you start making changes](#step-6-work-on-an-issue-using-git)
 
 
 **After you've worked on your issue and before you make a pull request:**
@@ -181,7 +181,7 @@ docker-compose up
 
 #### Step 5: Read [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture) to get acquainted with how the website is structured
 
-#### Step 6: Work on an issue using git
+#### Step 6:  Work on an issue using git  
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
