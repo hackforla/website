@@ -331,7 +331,10 @@ function insertIcons(cloneCardTemplate, cardString){
 	cardList.map(function(item){
 		if (badgeIcons.hasOwnProperty(item)){
 			cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
-				`<img src="${SVG_FILE_PATH}${badgeIcons[item]}">`)
+				`<div class='wins-item-container'>
+					<img class="wins-badge-icon" "alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<div class="wins-text-bubble">${item}</div>
+				</div>`)
 		}
 	})
 }
