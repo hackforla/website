@@ -95,6 +95,25 @@ function getOtherIcon(badgeIcons) {
 
 	return otherIcon
 }
+
+/**
+ * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
+ * If key matches, returns related SVG value
+ * @param {string} iconFilePath
+ * @param {string} badgeIcons
+ * @return {HTML}
+ */
+function winsHTML(icon, dataString) {
+	const SVG_FILE_PATH = `assets/images/wins-page/wins-badges/${icon}`
+
+	const winsInfoHTML = `
+	<div class="wins-container">
+		<img src='${SVG_FILE_PATH}' class="badge-icon">
+		<p class="win-info">${dataString}</p>
+	</div>
+`
+	document.querySelector('.wins-page-contain').insertAdjacentHTML('beforebegin', winsInfoHTML)
+}
  
 /**
  * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
@@ -119,35 +138,9 @@ function getOtherIcon(badgeIcons) {
  **/
 function inputWins(data, badgeIcons) {
 	getOtherIcon(badgeIcons)
-
 	const dataPairing = new Object(data[11].split(','))
-	let dataHTML = []
+} 
 
-	for (dataMsg of dataPairing){
-		const trimmedMsg = dataMsg.trim()
-		const badge = document.createElement('img')
-		const badgeSVG = document.createElement('img')
-		const pString = document.createElement('p')
-
-		const icon = getBadgeIcons(badgeIcons, trimmedMsg, otherIcon)
-		const SVG_FILE_PATH = `assets/images/wins-page/wins-badges/${icon}`
-
-		pString.textContent = trimmedMsg
-		badge.src = SVG_FILE_PATH
-
-		
-		dataHTML.push(badge, pString)
-	}
-	renderToDom(dataHTML) 
-}
-
-function renderToDom(dataHTML){
-	const winContainer = document.createElement('div')
-	dataHTML.forEach(data => {
-		winContainer.textContent += data
-	})
-	document.querySelector('.wins-page-contain').insertAdjacentHTML('beforebegin', winContainer)
-}
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -331,6 +324,17 @@ function renderToDom(dataHTML){
 
 
 
+function insertIcons(cloneCardTemplate, cardString){
+	let cardList = cardString.split(',').map(item => item.trim())
+	const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
+
+	cardList.map(function(item){
+		if (badgeIcons.hasOwnProperty(item)){
+			cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
+				`<img src="${SVG_FILE_PATH}${badgeIcons[item]}">`)
+		}
+	})
+}
 
   function makeCards(data) {
   	{% assign githubData = site.data.external.github-data | jsonify %}
@@ -357,12 +361,11 @@ function renderToDom(dataHTML){
 				})
 
 			})
-
 		} 
 		let profileImgSrc = ghId ?
 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
 			AVATAR_DEFAULT_PATH;
-		
+
 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
 		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
 
@@ -388,7 +391,9 @@ function renderToDom(dataHTML){
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		// Remove 345, query the funky class / new div, then parse badgeIcon key and value 
-		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		insertIcons(cloneCardTemplate, card[win])
+
+		// cloneCardTemplate.querySelector('.wins-icon-container').textContent = card[win];
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
 		
