@@ -59,6 +59,8 @@ const badgeIcons = {
 	"Other": `star.svg`
 }
 
+let otherIcon
+
 function main() {
 {% assign localData = site.data.external.wins-data | jsonify %}
 	let localData = {{ localData }};
@@ -73,8 +75,6 @@ function main() {
 			cardObj[keys[i]] = data[i];
 		}
 			cardData.push(cardObj)
-
-		inputWins(data, badgeIcons)
 	})
 	
 	//createFilter();
@@ -86,7 +86,6 @@ function main() {
 
 // Takes in badgeIcons object, creates array of values, take out value of "star.svg" to use on answers that don't fall into the "Other" category in the form. 
 //TODO: is there a different way to return the otherIcon? where Variable can sit inside of Function
-let otherIcon
 function getOtherIcon(badgeIcons) {
 	let values = []
 
@@ -95,52 +94,6 @@ function getOtherIcon(badgeIcons) {
 
 	return otherIcon
 }
-
-/**
- * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
- * If key matches, returns related SVG value
- * @param {string} iconFilePath
- * @param {string} badgeIcons
- * @return {HTML}
- */
-function winsHTML(icon, dataString) {
-	const SVG_FILE_PATH = `assets/images/wins-page/wins-badges/${icon}`
-
-	const winsInfoHTML = `
-	<div class="wins-container">
-		<img src='${SVG_FILE_PATH}' class="badge-icon">
-		<p class="win-info">${dataString}</p>
-	</div>
-`
-	document.querySelector('.wins-page-contain').insertAdjacentHTML('beforebegin', winsInfoHTML)
-}
- 
-/**
- * Takes badgeIcon related answers, checks if badgeIcons.key is the same — e.g. "I setup 2FA"
- * If key matches, returns related SVG value
- * @param {array} data
- * @param {object} badgeIcons
- * @return {HTML} badgeIcon and String
- */
- function getBadgeIcons(badgeIcons, trimmedMsg, otherIcon){
-	 if (badgeIcons.hasOwnProperty(`${trimmedMsg}`)) {
-		return badgeIcons[trimmedMsg]
-	 } else if (trimmedMsg === '') {
-		 console.log(false)
-	 } else {
-		return otherIcon
-	 }
- }
-/**
- * Puts each win, from a single form, into its own array
- * This allows multiple entries to be split and still retained as a unit
- * i.e: "I did this, I did that" becomes ["I did this", "I did that"]
- **/
-function inputWins(data, badgeIcons) {
-	getOtherIcon(badgeIcons)
-	const dataPairing = new Object(data[11].split(','))
-} 
-
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -154,21 +107,17 @@ function inputWins(data, badgeIcons) {
   		let team = value.split(",").map(x=>x.trim());
 
   		Array.isArray(team) ? teamArr.push(...team)  :  teamArr.push(team);
-
-  	})
+	  })
+	  
   	responses.querySelectorAll('.wins-card-role:not([style*="display:none"]):not([style*="display: none"]').forEach(item =>{
   		let value = item.textContent.replace("Role(s):","").trim();
   		let role = value.split(",").map(x=>x.trim());
   		Array.isArray(role) ? roleArr.push(...role)  :  roleArr.push(role);
-
-
   	})
-
 
   	//Create dropdown key,values where the keys are name of the drops downs and the values are the number of occurences of each key
   	const roleHash =  Object.fromEntries([ ...roleArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
   	const teamHash =  Object.fromEntries([ ...teamArr.reduce((map, key) => map.set(key, (map.get(key) || 0) + 1), new Map()) ]);
-
 
 	const filterTemplate = document.getElementById("wins-filter-template-repeat");
   	const roleDropwDown =  document.getElementById("role-dropdown");
@@ -193,7 +142,6 @@ function inputWins(data, badgeIcons) {
   		teamDropDown.append(cloneFilterTemplate);
 
   	}
-
   }
 
   //Update History State / URL on checkbox click
@@ -237,10 +185,6 @@ function inputWins(data, badgeIcons) {
 
   	//Update URL parameters
   	window.history.replaceState(null, '', urlParameter.replaceAll(" ","+"));
-
-
-
-
   }
 
   //Update UI on URL history change and on DomContent loaded
@@ -268,7 +212,6 @@ function inputWins(data, badgeIcons) {
   	}
   	})
 
-
   	//Card Display/Hide Logic
   	winsCards.forEach(card=>{
   		let teamsInCard = (card.querySelector('.wins-card-team').textContent.replace("Team(s):","")).trim();
@@ -294,12 +237,8 @@ function inputWins(data, badgeIcons) {
   			let teamInURL = filterParams.team.split(',');
   			let teamIntersection = teamsInCard.filter(x => teamInURL.includes(x));
   			teamIntersection.length == 0 ? card.style.display='none' : card.style.display='flex';
-
   		}
-
-
   	})
-
   }
 
   function formatMessage(win) {
@@ -322,21 +261,40 @@ function inputWins(data, badgeIcons) {
   	}
   }
 
-
-
 function insertIcons(cloneCardTemplate, cardString){
 	let cardList = cardString.split(',').map(item => item.trim())
 	const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
+
+	getOtherIcon(badgeIcons)
 
 	cardList.map(function(item){
 		if (badgeIcons.hasOwnProperty(item)){
 			cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
 				`<div class='wins-item-container'>
-					<img class="wins-badge-icon" "alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<div class="wins-text-bubble">${item}</div>
+				</div>`
+			)
+			return 
+		} else if (item === '') {
+			return 
+		} else {
+			console.log(item)
+			cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
+				`<div class='wins-item-container'>
+					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
 					<div class="wins-text-bubble">${item}</div>
 				</div>`)
+			return 
 		}
 	})
+}
+
+function winsHTML(string, icon, SVG_FILE_PATH){
+	`<div class='wins-item-container'>
+		<img class="wins-badge-icon" "alt="${badgeIcons[icon]}" src="${SVG_FILE_PATH}${icon}">
+		<div class="wins-text-bubble">${string}</div>
+	</div>`
 }
 
   function makeCards(data) {
@@ -362,9 +320,9 @@ function insertIcons(cloneCardTemplate, cardString){
 						ghId = contributors.id;
 					}
 				})
-
 			})
 		} 
+		
 		let profileImgSrc = ghId ?
 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
 			AVATAR_DEFAULT_PATH;
@@ -393,13 +351,10 @@ function insertIcons(cloneCardTemplate, cardString){
 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
-		// Remove 345, query the funky class / new div, then parse badgeIcon key and value 
+		
 		insertIcons(cloneCardTemplate, card[win])
 
-		// cloneCardTemplate.querySelector('.wins-icon-container').textContent = card[win];
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
-
-		
 		winsCardContainer.append(cloneCardTemplate);
 		
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
