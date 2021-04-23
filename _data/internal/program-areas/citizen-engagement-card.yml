@@ -1,0 +1,30 @@
+---
+name: Citizen Engagement 
+description: >
+  By increasing the accessibility of city council meetings and democratizing data, 
+  these projects empower local residents to impact policymaking in their communities. 
+
+
+image: /assets/images/program-areas/citizen-engagement.png
+
+image_alt: Two guys holding hands
+
+SDG: 
+  - Peace
+  - Justice
+  - Strong Institutions
+
+projects: 
+  - id: 202051333
+    name: Not Today
+    image: /assets/images/projects/not-today.png
+    image_alt: Not Today logo. A person embrace another person with full support. Art by C.W. Moss
+  - id: 228981080
+    name: Home Unite Us
+    image: /assets/images/projects/home-heart.png
+    image_alt: Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.
+  - id: 215666884
+    name: Food Oasis
+    image: /assets/images/projects/food-oasis.jpg
+    image_alt: Stacks of freshly harvested beets
+---
