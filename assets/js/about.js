@@ -126,12 +126,14 @@ function toggleAccordion() {
 
     // Which panel to open/close
     let accordionContainer = this.nextElementSibling;
+    let accordionID = this.parentElement.previousElementSibling.id;
 
     // Open and close panel
     if (accordionContainer.style.display === "block") {
         accordionContainer.style.display = "none"
     } else {
         accordionContainer.style.display = "block"
+        location.href = "#"+ accordionID;
     }
 } // end function
 
@@ -323,6 +325,30 @@ let letterHeadText = document.getElementById("letterBR").innerText;
 let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
 
 // If it's mobile, add a break tag and put it back
-if (windowWidth < 960) {
+if (window.innerWidth < 960) {
     document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
 }
+
+// If it's mobile, if href has #, open content
+if(window.innerWidth <960) {
+    if (location.href.includes("#letter")) {
+        readMore = readMoreToMobile.nextElementSibling;
+        readMore.style.display = "block";
+        if (readMore.style.display === "block") {
+            readMoreToMobile.classList.add("more-less")
+            readLessToMobile.classList.remove("more-less")
+        }
+
+    } else if(location.href.includes("#")) {
+        const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
+        openOneAccordion(currentURLHashId);
+    }
+}
+
+function hashLetter() {
+    if (readMoreToMobile.nextElementSibling.style.display = "block"){
+        location.href = "#letter";
+    }
+}
+
+readMoreToMobile.addEventListener("click", hashLetter);

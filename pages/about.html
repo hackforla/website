@@ -25,39 +25,11 @@ permalink: /about/
                     <img src="/assets/images/about/section-header-elements/letter.svg" alt="" /></span><span id="letterBR">Letter from the Executive Director</span>
                 </div>
                 <div>
-                    <!-- This will show on mobile with closed accordion -->
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum nisi congue posuere imperdiet. 
-                    Mauris ac libero nec tortor eleifend pulvinar in eget est. Phasellus eget feugiat nisl, euismod sodales lacus. 
-                    Duis at hendrerit orci. 
-                    </p> 
+                    {% for item in site.data.internal.about %}
+                       <p> {{item.executive_letter | markdownify}} </p> 
+                    {% endfor %}                
                 </div>
-                <div class="read-more">Read More</div>
-                <div class="about-us-section-content">    
-                    <!-- This will show on mobile with open accordion -->
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum nisi congue posuere imperdiet. 
-                    Mauris ac libero nec tortor eleifend pulvinar in eget est. Phasellus eget feugiat nisl, euismod sodales lacus. 
-                    Duis at hendrerit orci. Mauris a varius lorem. Sed a nibh nibh. Vestibulum maximus, magna at vulputate feugiat, 
-                    leo nisi dictum neque, sit amet ullamcorper mauris lectus ac augue. Curabitur tincidunt cursus diam eget pharetra.
-                    Aliquam non leo ut urna vehicula commodo. Suspendisse ultrices elit et dui accumsan, et vestibulum sapien egestas. 
-                    Nam mollis erat ante, ac tincidunt sem molestie quis.
-                    </p>
-                    <p>
-                    Pellentesque elementum tellus eu convallis gravida. Duis fermentum felis elementum odio semper, sit amet dictum tortor iaculis. 
-                    Maecenas eu pretium lectus. Phasellus tempor risus vitae sem sodales mattis. Integer ex leo, ultrices sit amet vulputate a, 
-                    consectetur id lacus. Proin pharetra tortor quam. Aenean egestas ligula sit amet pharetra maximus. Nunc ultrices est mauris, 
-                    non tempor mi suscipit ac.
-                    </p>
-                    <p>
-                    Aliquam erat volutpat. Aenean enim orci, venenatis vehicula dolor nec, dictum auctor erat. Nulla ac odio quis mauris porta pretium 
-                    vel ut turpis. Morbi cursus et lorem nec suscipit. Suspendisse potenti. Etiam nec libero sed lacus pharetra lacinia. Sed ac nisi 
-                    finibus, pellentesque ante non, ornare mauris. Class aptent taciti sociosqu ad litora torquent per conubia 
-                    nostra, per inceptos himenaeos. Vivamus eu risus et eros congue pulvinar vitae et lorem. Vestibulum et lorem orci. 
-                    Etiam et justo et quam imperdiet congue. Maecenas sit amet faucibus libero. Maecenas a quam ut purus cursus imperdiet iaculis quis libero. 
-                    </p>
-                </div>
-                <div class="read-less more-less">Read Less</div>
+
             </div>
 
             <a class="anchor" id='platform'></a>
@@ -216,43 +188,23 @@ permalink: /about/
                         <!--This is the top and then right cell-->
                         <div class="top-left-column top-left-column--acc">
                             <p class="text-bold accomplishment-highlights">Highlights from 2020</p>
-                            <div class="accomplishment-title"><a href="https://www.codeforamerica.org/events/national-day-of-civic-hacking-2020" target="_blank" rel="noopener noreferrer">National Day of Civic Hacking (NdoCH)</a></div>
-                            <div>In 9/2020 Hack for LA joined over 40 Code for America brigades in bringing together civic leaders, 
-                                public servants, designers, coders, and engaged citizens to partner with local government and community 
-                                groups to help those most in need of a social safety net services during COVID-19.
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer">Food Oasis</a></div>
-                            <div>Launched 8/2020 the most comprehensive lising of Food Pantries and Meals to address food 
-                                insecurity in Los Angeles (listed as a resource on LA County Public Health website).
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/tdm-calculator" target="_blank" rel="noopener noreferrer">LA TDM Calculator</a></div>
-                            <div>Hack for LA’s first software application in CI/CD on LA City Department of Transportation’s  
-                                Azure servers - launching publicly in Q4 2020
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/311-data" target="_blank" rel="noopener noreferrer">311-DATA</a></div>
-                            <div>Launched 8/2020 a comprensive 311 service report Neighborhood Council (NC) and City Council district 
-                                comparison tool using 311 data provided by LA City’s data portal.  The product was created through extensive 
-                                Design thinking workshops with NC board members and LA Department of Neighborhood Empowerment
-                            </div>
-                        </div>
+ 
+                            {% for item in site.data.internal.about %}
+                                {% for accomplishment in item.accomplishments.left_col_accomplishments%}
+                                    <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
+                                    <div> {{ accomplishment.description }} </div>                                    
+                                {% endfor %}
+                            {% endfor %} 
+                        </div> 
 
                         <div class="bottom-right-column bottom-right-column--acc">
-                            <div class="accomplishment-title"><a href="https://www.collabathon.openclimate.earth/" target="_blank" rel="noopener noreferrer">Climate Collabathon</a></div>
-                            <div>Launched 4/2020 the Online Climate Collabathon in partnership with Yale Open Labs, Sensorica, 
-                                ESMT Berlin, and CoMakery.  15 speakers, and over 20 breakout and working sessions with experts 
-                                and professionals from across the sector all on Zoom.
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/undebate.html" target="_blank" rel="noopener noreferrer">Undebate</a></div>
-                            <div>Hack for LA has provided labor to this important tool which continues to increase engagment at local elections 
-                                thorughout the country from the San Francisco City Attorney race, to Student Association Elections on College Campuses.
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/writeforall" target="_blank" rel="noopener noreferrer">Write for All</a></div>
-                            <div>Launched 04/2020.  The Write For All project proof of concept finds exclusive langugage where inclusive language should exist.
-                            </div>
-                            <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/new-schools-today" target="_blank" rel="noopener noreferrer">New Schools Today</a></div>
-                            <div>Created and Presented 3/2020 three technical workshops for Title 1 school students at the UCLA Exploretech Conference.  
-                                The project from conception to delivery was executed by Hack for LA’s first team of all high school students.
-                            </div>
+                            {% for item in site.data.internal.about %}
+                            {% for accomplishment in item.accomplishments.right_col_accomplishments%}
+                                <div class="accomplishment-title"><a href="https://www.hackforla.org/projects/food-oasis" target="_blank" rel="noopener noreferrer"> {{accomplishment.title}} </a></div>
+                                <div> {{ accomplishment.description }} </div>                                    
+                            {% endfor %}
+                        {% endfor %} 
+
                         </div>
                     </div>
                     <div class="flex-container flex-container--wins">
@@ -312,85 +264,20 @@ permalink: /about/
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <a class="anchor" id='partners'></a>
             <div class='page-card--about'>
                 <div class="about-us-section-header"><span class="sec-head-img"><img src="/assets/images/about/section-header-elements/partners.svg" alt="" /></span>Partners</div>
                 <div class="about-us-section-content">
                     <div class="flex-container-row flex-container-row--partners">
-                        <a href="https://empowerla.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/empower-la.png" alt="Empower LA" />
-                        </a>
-                        <a href="https://www.codeforamerica.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/sponsors/code-for-america.svg" alt="Code for America" />
-                        </a>
-                        <a href="https://openlab.yale.edu/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/yale-open-labs.svg" alt="Yale Open Lab" />
-                        </a>
-                        <a href="https://www.metro.net/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/m.svg" alt="Metro" />
-                        </a>
-                        <a href="https://www.santamonica.gov/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/city-of-santa-monica.png" alt="City of Santa Monica" />
-                        </a>
-                        <a href="https://www.foodcyclela.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/food-cycle-la.png" alt="FoodCycle LA" />
-                        </a>
-                        <a href="https://foodforward.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/food-forward.png" alt="Food forward" />
-                        </a>
-                        <a href="https://www.goodfoodla.org/food-waste" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/good-food-la.png" alt="Good Food LA" />
-                        </a>
-                        <a href="https://www.lafoodbank.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/la-food-bank.png" alt="Los Angeles Regional Food Bank" />
-                        </a>
-                        <a href="https://www.safeplaceforyouth.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/safe-place-for-youth.png" alt="Safe Place for Youth" />
-                        </a>
-                        <a href="https://www.pointsourceyouth.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/point-source-youth.svg" alt="Point Source Youth" />
-                        </a>
-                        <a href="https://www.lacityattorney.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/la-city-attorney.png" alt="Los Angeles City Attorney" />
-                        </a>
-                        <a href="https://ladot.lacity.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/la-dot.png" alt="LADOT" />
-                        </a>
-                        <a href="https://planning.lacity.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/la-city-planning.png" alt="Los Angeles City Planning" />
-                        </a>
-                        <a href="https://www.thendica.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/ndica.png" alt="The National Diversity & Inclusion Cannabis Alliance" />
-                        </a>
-                        <a href="https://ballotpedia.org/Main_Page" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/bp.png" alt="Ballotpedia" />
-                        </a>
-                        <a href="https://enciv.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/enciv.svg" alt="EnCiv" />  
-                        </a>
-                        <a href="https://law.ucla.edu/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/ucla-law.png" alt="UCLA Law" />
-                        </a>
-                        <a href="https://law.ggu.edu/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/ggu-school-of-law.png" alt="Golden Gate University School of Law" />
-                        </a>
-                        <a href="https://da.lacounty.gov/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/da-county-of-la.png" alt="Los Angeles County District Attorney" />
-                        </a>
-                        <a href="https://digitaldefensefund.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/digital-defense-fund.png" alt="Digital Defense Fund" />
-                        </a>
-                        <a href="https://personnel.lacity.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/la-department-of-personnel.png" alt="City of Los Angeles Personnel Department" />
-                        </a>
-                        <a href="https://homeless.lacounty.gov/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/real-help-lasting-change.svg" alt="The Los Angeles County Homeless Initiative" />
-                        </a>
-                        <a href="https://www.hopeofthevalley.org/" target="_blank" rel="noopener noreferrer">
-                            <img class="partner-logo" src="/assets/images/about/partners/hope-of-the-valley.png" alt="Hope of the Valley" />
-                        </a>
+
+                        {% for partner in site.data.internal.partners%}
+                            <a href="{{partner.link}}" target="_blank" rel="noopener noreferrer">
+                                <img class="partner-logo" src="{{partner.image}}" alt="{{partner.name}}" />
+                            </a>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -411,7 +298,7 @@ permalink: /about/
                             </div>
                         </div>
                         <div class="bottom-right-column top-paragraph">
-                            <img class="donation-gif-box-shadow" src="/assets/images/about/HfLA-Donate.gif" alt="Video guide on how to donate for Hack for LA" />
+                            <img class="donation-gif-box-shadow" src="/assets/images/about/hfla-donate.gif" alt="Video guide on how to donate for Hack for LA" />
                         </div>
                     </div>
                 </div>
@@ -423,6 +310,13 @@ permalink: /about/
                     alt="Make your donation for Hack for LA Brigade on codeforamerica.org/donate. Choose the amount and select the payment frequency, then enter 'Hack for LA' under 'if your donation is for a Brigade, please select the Brigade Name(Optional)'." /></span>Sponsors</div>
                 <div class="about-us-section-content">
                     <div class="flex-container-row flex-container-row--partners">
+                        {% comment %}
+                        {%for sponsor in site.data.internal.sponsors%}
+                            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}">
+                                <img width="150px" height="150px" src="{{sponsor.img_url}}">
+                            </a>
+                        {% endfor %}
+                        {% endcomment %}
                         <a href="https://www.codeforamerica.org" target="_blank" alt="Code for America">
                             <img src="/assets/images/about/sponsors/code-for-america.svg">
                         </a>
@@ -443,25 +337,22 @@ permalink: /about/
                 <div class="about-us-section-header"><span class="sec-head-img"><img src="/assets/images/about/section-header-elements/news.svg"></span>HfLA in the News</div>
                 <div class="about-us-section-content">
                     <div class="flex-container">
-                        <div class="news-cells">
-                            <img src="/assets/images/about/news-images/cnn.svg" alt="CNN" />
-                            <p class="more-padding"><a href="https://money.cnn.com/2017/04/19/technology/la-food-deserts/" target="_blank" rel="noopener noreferrer">Why LA’s Tech Community is Trying to Hack Hunger</a></p>
-                        </div>
-                        <div class="news-cells news-cells--govtech">
-                            <img src="/assets/images/about/news-images/gt.svg" alt="Government Technology" />
-                            <p><a href="https://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html" target="_blank" rel="noopener noreferrer">March 4 Declared “Open Data Day” in Los Angeles</a></p>
-                        </div>
-                        <div class="news-cells">
-                            <img src="/assets/images/about/news-images/la-times.svg" alt="Los Angeles Times" />
-                            <p class="more-padding"><a href="https://www.latimes.com/local/california/la-me-hackathon-20150607-story.html" target="_blank" rel="noopener noreferrer">At L.A. ‘hackathon,’ civic- minded coders aim to put city data to good use</a></p>
-                        </div>
+                        {% for item in site.data.internal.press %}
+                            <div class="news-cells">
+                                <img src="{{item[1].image}}" alt="{{item[1].image_alt}}" />
+                                <p class="more-padding"><a href="{{item[1].link_url}}" target="_blank" rel="noopener noreferrer">{{item[1].title}}</a></p>
+                            </div>
+                        {% endfor %}
                     </div>
-                    <div class="garcetti-quote"><div class="entire-quote"><img class="quote-marks" src="/assets/images/about/quotes.png" alt="" /> 
-                        <p class="quote-text">Hack for LA is a great example of how we can harness technology and our city's creativity to solve everyday problems. As Mayor, I will closely partner with our tech industry to create jobs and bring innovation to City Hall so government works faster and more efficiently.</p>
-                    </div>
-                        <cite class="mayor-cite">&#8212; Mayor Eric Garcetti</cite>
-                        <img id="quote-tmc" src="/assets/images/testimonials/quote-garcetti.jpg" alt="Mayor Eric Garcetti">
-                    </div>
+                    {% for testemonial in site.data.internal.testimonials %}
+                        <div class="garcetti-quote"><div class="entire-quote"><img class="quote-marks" src="/assets/images/about/quotes.png" alt="" /> 
+                            <p class="quote-text"> {{testemonial.quote}}</p>
+                        </div>
+                            <cite class="mayor-cite">&#8212; {{testemonial.source}}</cite>
+                            <img id="quote-tmc" src="{{testemonial.img_url}}" alt="{{testemonial.source}}">
+                        </div>
+                    {% endfor %}
+
                     
                     
                 </div>

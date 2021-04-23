@@ -89,17 +89,18 @@ layout: default
             </div>
         </div>
         {% if page.status != "Completed" %}
-        <div class="getting-started">
+        <!-- <div class="getting-started">
             <p class='getting-started-button-text'>Getting Started</p>
             <button onClick='gettingStarted()' class='getting-started-button'>
-                {% include svg/_ionicons_svg_ios-arrow-down.svg %}
+                {% comment %} include svg/_ionicons_svg_ios-arrow-down.svg  {% endcomment %}
             </button>
-        </div>
+        </div> -->
         {% endif %}
     </div>
 
     <!--Getting Started Card-->
     <div id="getting-started-section" class='page-card-base card-primary page-card-lg page-card--project-description-page'>
+        <h4 class='getting-page-card-title'>Getting Started</h4>
         <ul class="resource-list unstyled-list">
             <!-- Hfla Start Guide -->
             {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
@@ -138,10 +139,23 @@ layout: default
             {% endif %}
         </ul>
     </div>
+    <!--Project Resources Card-->
+    <div class='page-card-base card-primary page-card-lg page-card--project-description-page'>
+        <h4 class='project-page-card-title'>Resources</h4>
+        <ul class="resource-list unstyled-list">
+            {%- for item in page.links -%}
+                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% else %}
+                    {%- include resource-card.html name=item.name url=item.url -%}
+                {% endif %}
+            {%- endfor -%}
+        </ul>
+    </div>
 
     <!-- Project Team Card -->
     <div id='project-team-card' class='page-card-base card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Project Leadership</h4>
+        <h4 class='project-page-card-title'>Current Project Team</h4>
         {% if page.leadership %}
             <div class='resource-list'>
                 {% for item in page.leadership %}
@@ -149,7 +163,7 @@ layout: default
                         <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
                         <div class='leader-description'>
                             {% if page.status == "Completed" and item.links.linkedin %}
-                                <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
+                                <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
                             {% elsif page.status == "Completed" %}
                                <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
                             {% else %}
@@ -165,22 +179,8 @@ layout: default
                 <p>Looks like this project has not revealed specific leadership roles yet!</p>
             </div>
         {% endif %}
-        <h4 id='contributor-header' class='project-page-card-title'>Contributors</h4>
+        <h4 id='contributor-header' class='project-page-card-title'>All-Time Contributors</h4>
         <div id='contributors-list' class='resource-list'></div>
-    </div>
-
-    <!--Project Resources Card-->
-    <div class='page-card-base card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Resources</h4>
-        <ul class="resource-list unstyled-list">
-            {%- for item in page.links -%}
-                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
-                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% else %}
-                    {%- include resource-card.html name=item.name url=item.url -%}
-                {% endif %}
-            {%- endfor -%}
-        </ul>
     </div>
 </div>
 

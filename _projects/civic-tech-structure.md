@@ -41,7 +41,7 @@ links:
   - name: Slack
     url: "https://hackforla.slack.com/archives/C01A789GTNZ"
   - name: Overview
-    url: "https://docs.google.com/document/d/1GkvbJ9byBWBpZklYE6YL5nqa-KbIRz32PnMCeroV_1g/edit?usp=sharing"
+    url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Structure-Product-One-Sheet.pdf"
   - name: BOP Github
     url: "https://github.com/codeforamerica/brigade-playbook"
   - name: BOP CfA Slack
@@ -58,7 +58,7 @@ looking:
   - category: UI/UX
     skill: UX Team Manager / Lead
 technologies:
-  - Google Docs (Doc, Sheet, Slide, Forms)
+  - Google Docs
   - HackforLA.org guides
 location:
   - Remote
