@@ -38,6 +38,7 @@ permalink: /wins/
   const overview = "Give us a brief overview"
   const display = "Display?"
 
+  const otherIcon = `star.svg`
   const badgeIcons = {
 		"I got a new job": `briefcase.svg`,
 		"I produced something for my portfolio": `file.svg`,
@@ -54,10 +55,7 @@ permalink: /wins/
 		"I taught or mentored a person on another team": `mentor.svg`,
 		"My team delivered software to a stakeholder": `deliverable.svg`,
 		"My team launched our MVP": `launch.svg`,
-		"Other": `star.svg`
 	}
-
-	let otherIcon
 
   function main() {
   	{% assign localData = site.data.external.wins-data | jsonify %}
@@ -87,14 +85,6 @@ permalink: /wins/
 
   }
 
-  function getOtherIcon(badgeIcons) {
-		let values = []
-
-		Object.values(badgeIcons).forEach(icon => { values.push(icon) })
-		otherIcon = values.pop()
-
-		return otherIcon
-	}
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -284,24 +274,22 @@ permalink: /wins/
 		let cardList = cardString.split(',').map(item => item.trim())
 		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
-		getOtherIcon(badgeIcons)
 		cardList.map(function (item) {
 			if (badgeIcons.hasOwnProperty(item)) {
 				cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
 					`<div class='wins-item-container'>
 					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-					<div class="wins-text-bubble">${item}</div>
+					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
 				return
 			} else if (item === '') {
 				return
 			} else {
-				console.log(item)
 				cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
 					`<div class='wins-item-container'>
 					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-					<div class="wins-text-bubble">${item}</div>
+					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
 				return
@@ -366,12 +354,10 @@ permalink: /wins/
 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
-		// cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
 		insertIcons(cloneCardTemplate, card[win])
 
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
-		
 		winsCardContainer.append(cloneCardTemplate);
 		
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')

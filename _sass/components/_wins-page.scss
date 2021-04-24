@@ -48,7 +48,7 @@
 }
 .wins-text-bubble {
     display: none;
-    font-weight: normal !important;
+    // font-weight: normal !important;
     border-radius: 7px;
     width: 279%;
     left: -108%;
@@ -61,6 +61,9 @@
     position: absolute;
     z-index: 100;
 }
+[data-wins]{
+    font-weight: normal 
+}
 .wins-text-bubble:before{
     content: "";
     width: 0px;
@@ -68,7 +71,6 @@
     position: absolute;
     border-left: 10px solid $color-black;
     border-right: 10px solid transparent;
-    /* border-top: 10px solid #00bfb6; */
     transform: rotate(45deg);
     border-bottom: 10px solid transparent;
     right: 40%;
