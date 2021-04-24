@@ -23,15 +23,17 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 7. [Check upstream before you push](#step-7-check-upstream-before-you-push).
 
-8. [No changes in the upstream repo](#step-7a-no-changes-in-the-upstream-repository)
+7a. [No changes in the upstream repo](#step-7a-no-changes-in-the-upstream-repository)
 
 **Or**
 
-9. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
+7b. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
               
-**Okay. You're good to go!**        
+**Okay. You're good to go!**   
+
+8. [Status updates](#step-8-status-updates)
  
-10. [Complete the pull request](#step-8-complete-the-pull-request)
+9. [Complete the pull request](#step-9-complete-the-pull-request)
 
 ---
 
