@@ -39,6 +39,50 @@
     }
 }
 
+.wins-icon-container {
+    margin: 1.5em 0 0 20%;
+}
+.wins-item-container{
+    display: inline-block;
+    position: relative;
+}
+.wins-text-bubble {
+    display: none;
+    font-weight: normal !important;
+    border-radius: 7px;
+    width: 279%;
+    left: -108%;
+    padding: .6em .5em;
+    background: $color-black;
+    text-align: center;
+    font-weight: 900;
+    color: $color-white;
+    font-family: arial;
+    position: absolute;
+    z-index: 100;
+}
+.wins-text-bubble:before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid $color-black;
+    border-right: 10px solid transparent;
+    /* border-top: 10px solid #00bfb6; */
+    transform: rotate(45deg);
+    border-bottom: 10px solid transparent;
+    right: 40%;
+    top: 0;
+}
+
+.wins-badge-icon {
+    width: 2.4em;
+    margin: .5em 1.5em .5em 0;
+}
+
+.wins-badge-icon:hover + .wins-text-bubble{
+    display: block;
+}
 
 @media #{$bp-below-tablet} {
     .wins-hero{
@@ -88,7 +132,9 @@
 .wins-card{
     padding: 45px;
     display: flex;
+    position: relative;
     flex-direction: column;
+    overflow: visible;
 }
 .wins-card-top{
     display: flex;
