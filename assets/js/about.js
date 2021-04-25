@@ -1,25 +1,80 @@
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    setupAccordionEventLiteners();
+    window.addEventListener('resize', setupAccordionEventLiteners);
+
+    document.addEventListener('scroll', stickItHere);
+
+
+
+})
+
+function setupAccordionEventLiteners(){
+    if (window.innerWidth < 960) {
+        //make everything accordion view
+        //add on click event
+        console.log('Less than 960')
+        document.querySelectorAll('.page-card--about:nth-child(n+3)').forEach(pageCard=>{
+            pageCard.addEventListener('click',accordionclicked)
+        })
+    } else {
+        console.log('Not less that 960')
+        document.querySelectorAll('.page-card--about:nth-child(n+3)').forEach(pageCard => {
+            pageCard.lastElementChild.style.display = 'block';
+            pageCard.removeEventListener('click',accordionclicked);
+        })
+
+    }
+
+}
+// function resizeHandler(){
+//     if (window.innerWidth < 960) {
+//         //make everything accordion view
+//         //add on click event
+//         console.log('Less than 960')
+//         document.querySelectorAll('.page-card--about:nth-child(n+3)').forEach(pageCard=>{
+//             pageCard.addEventListener('click',accordionclicked)
+//         })
+//     } else {
+//         console.log('Not less that 960')
+//         document.querySelectorAll('.page-card--about:nth-child(n+3)').forEach(pageCard => {
+//             pageCard.lastElementChild.style.display = 'block';
+//             pageCard.removeEventListener('click',accordionclicked);
+//         })
+
+//     }
+// }
+
+function accordionclicked(){
+    console.log('clicked')
+    window.getComputedStyle(this.querySelector('.about-us-section-content'), null).display == 'block' ? 
+        this.lastElementChild.style.display = 'none' : 
+        this.lastElementChild.style.display = 'block';
+}
 /**************************************/
 /**** Script 1: Sticky Navigation *****/
 /**************************************/
 
-//Initialize and set defaults
 
-let stickyNav = document.querySelector("#sticky-nav");
-let stickyNavTop = 343;
 
-// When the menu reaches the position we want it to stick at, this adds a class and some padding.
+//When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() {
-    if (window.scrollY >= stickyNavTop) {
+
+    const STICKYNAVTOP = 343;
+
+    if (window.scrollY >= STICKYNAVTOP) {
         //stickyNav.style.paddingTop = nav.offsetHeight + 'px';
-        stickyNav.classList.add('stick-it');
+        document.querySelector("#sticky-nav").classList.add('stick-it');
     } else {
         //stickyNav.style.paddingTop = 0;
-        stickyNav.classList.remove('stick-it');
+        document.querySelector("#sticky-nav").classList.remove('stick-it');
     }
 }
 
 // Listen to the scrolling to find when it reaches the sticky spot
-window.addEventListener('scroll', stickItHere);
+// window.addEventListener('scroll', stickItHere);
 
 /*************************************************/
 /**** Script 2: Highlight Links when clicked *****/
@@ -200,91 +255,65 @@ function locateMobileContent(){
 }
  //end function
 
-// accordionFlag tracks the state of the window | mobile = 0; desktop = 1
-let accordionFlag;
+// // accordionFlag tracks the state of the window | mobile = 0; desktop = 1
+// let accordionFlag;
 
-//Initialize
-if (window.innerWidth < 960) {
-    accordionFlag = 0;
-} else {
-    accordionFlag = 1;
-}
+// //Initialize
+// if (window.innerWidth < 960) {
+//     accordionFlag = 0;
+// } else {
+//     accordionFlag = 1;
+// }
 
-// This function checks for when the window crosses the threshold between mobile and desktop
-// When it does, it either adds or removes the event handlers and resets the flag
-function resizeHandler() {
+// // This function checks for when the window crosses the threshold between mobile and desktop
+// // When it does, it either adds or removes the event handlers and resets the flag
+// function resizeHandler() {
 
-    if (accordionFlag === 0 && window.innerWidth >= 960) {
-        removeAccordionEventListener(accordionList);
-        expandAccordion(accordionExpandList);
-        accordionFlag = 1;
+//     if (accordionFlag === 0 && window.innerWidth >= 960) {
+//         removeAccordionEventListener(accordionList);
+//         expandAccordion(accordionExpandList);
+//         accordionFlag = 1;
  
-        // find current mobile viewing content before resizing
-    if(currentMobileContent !== null){
-        currentMobileContentParent = currentMobileContent.parentElement;
-        currentMobileContentAnchor = currentMobileContentParent.previousElementSibling;
-        location.href = "#"+currentMobileContentAnchor.id; 
-        }
-    }
+//         // find current mobile viewing content before resizing
+//     if(currentMobileContent !== null){
+//         currentMobileContentParent = currentMobileContent.parentElement;
+//         currentMobileContentAnchor = currentMobileContentParent.previousElementSibling;
+//         location.href = "#"+currentMobileContentAnchor.id; 
+//         }
+//     }
 
-    if (accordionFlag === 1 && window.innerWidth < 960) {
-        createAccordionEventListener(accordionList);
-        closeAccordion(accordionList);
-        accordionFlag = 0;
-    } 
+//     if (accordionFlag === 1 && window.innerWidth < 960) {
+//         createAccordionEventListener(accordionList);
+//         closeAccordion(accordionList);
+//         accordionFlag = 0;
+//     } 
 
-    if (accordionFlag === 0 && window.innerWidth < 960){
-        currentMobileContent = locateMobileContent();
-    }
-}
+//     if (accordionFlag === 0 && window.innerWidth < 960){
+//         currentMobileContent = locateMobileContent();
+//     }
+// }
 
-// Get the list of elements for the accordion
-let accordionList = document.querySelectorAll(".about-us-section-header");
+// // Get the list of elements for the accordion
+// let accordionList = document.querySelectorAll(".about-us-section-header");
 
-// Get the elements to expand when going from mobile to desktop
-let accordionExpandList = document.querySelectorAll(".about-us-section-header");
+// // Get the elements to expand when going from mobile to desktop
+// let accordionExpandList = document.querySelectorAll(".about-us-section-header");
 
-// Create event listeners on page load if in mobile
-if (window.innerWidth < 960) {
-    // Create event listeners
-    createAccordionEventListener(accordionList);
-}
+// // Create event listeners on page load if in mobile
+// if (window.innerWidth < 960) {
+//     // Create event listeners
+//     createAccordionEventListener(accordionList);
+// }
 
-// Add or remove event listeners on resize or orientation change
-window.addEventListener('resize', resizeHandler);
-
-
+// // Add or remove event listeners on resize or orientation change
+// window.addEventListener('resize', resizeHandler);
 
 
 
 
-/*******************************************************/
-/***** Script 6: Add a break tag to certain headers ****/
-/*******************************************************/
 
-// There certain headers need to be split into two lines on mobile
-// This adds a br tag at the designated spot in the string. 
 
-// Get the header text
-let letterHeadText = document.getElementById("letterBR").innerText;
 
-// Function to add something within a string
-let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
-
-// If it's mobile, add a break tag and put it back
-if (window.innerWidth < 960) {
-    document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
-}
-
-// If it's mobile, if href has #, open content
-if(window.innerWidth <960) {
-    if (location.href.includes("#letter")) {
-
-    } else if(location.href.includes("#")) {
-        const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
-        openOneAccordion(currentURLHashId);
-    }
-}
 
 
 
