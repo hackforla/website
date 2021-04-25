@@ -38,7 +38,24 @@ permalink: /wins/
   const overview = "Give us a brief overview"
   const display = "Display?"
 
-
+  const otherIcon = `star.svg`
+  const badgeIcons = {
+		"I got a new job": `briefcase.svg`,
+		"I produced something for my portfolio": `file.svg`,
+		"I improved my LinkedIn": `linkedin.svg`,
+		"I learned how to work better on a team": `team.svg`,
+		"I increased the number of commits on my Github profile": `github.svg`,
+		"I learned a new language": `code.svg`,
+		"I setup 2FA": `twofa.svg`,
+		"I became part of a a caring community": `$community.svg`,
+		"I worked on an enterprise project": `enterprise.svg`,
+		"I worked on a project that will help the people of Los Angeles": `giving.svg`,
+		"I worked on two or more projects": `hammers.svg`,
+		"I taught or mentored a person on my team": `mentor.svg`,
+		"I taught or mentored a person on another team": `mentor.svg`,
+		"My team delivered software to a stakeholder": `deliverable.svg`,
+		"My team launched our MVP": `launch.svg`,
+	}
 
   function main() {
   	{% assign localData = site.data.external.wins-data | jsonify %}
@@ -67,6 +84,7 @@ permalink: /wins/
 
 
   }
+
 
   //Create The Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
@@ -252,7 +270,32 @@ permalink: /wins/
   	}
   }
 
+	function insertIcons(cloneCardTemplate, cardString) {
+		let cardList = cardString.split(',').map(item => item.trim())
+		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
+		cardList.map(function (item) {
+			if (badgeIcons.hasOwnProperty(item)) {
+				cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
+					`<div class='wins-item-container'>
+					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+				</div>`
+				)
+				return
+			} else if (item === '') {
+				return
+			} else {
+				cloneCardTemplate.querySelector('.wins-icon-container').insertAdjacentHTML('beforeend',
+					`<div class='wins-item-container'>
+					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+				</div>`
+				)
+				return
+			}
+		})
+	}
 
 
 
@@ -311,10 +354,10 @@ permalink: /wins/
 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
-		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		insertIcons(cloneCardTemplate, card[win])
+
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
-		
 		winsCardContainer.append(cloneCardTemplate);
 		
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
