@@ -2,8 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    setupAccordionEventLiteners();
-    window.addEventListener('resize', setupAccordionEventLiteners);
+    window.addEventListener('resize', setupAccordionEventLitseners);
 
     document.addEventListener('scroll', stickItHere);
 
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 })
 
-function setupAccordionEventLiteners(){
+(function setupAccordionEventLitseners() { 
     if (window.innerWidth < 960) {
         //make everything accordion view
         //add on click event
@@ -28,7 +27,8 @@ function setupAccordionEventLiteners(){
 
     }
 
-}
+})();
+
 // function resizeHandler(){
 //     if (window.innerWidth < 960) {
 //         //make everything accordion view
