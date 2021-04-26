@@ -469,11 +469,9 @@
   font-size: 16px;
   line-height: 19px;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: .92fr 1.08fr;
   display: grid;
-
-
-
+  padding-left: 0;
 
   @media #{$bp-below-tablet} {
     font-size: 13px;
