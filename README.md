@@ -7,7 +7,7 @@ Please refer to the [wiki](https://github.com/hackforla/website/wiki) to learn m
 1. Project Definition
 2. Joining the Team
 3. Tools by Role
-4. Resources by Role
+4. Resources by Role - > test prose
 5. Agendas
 6. Project Terminology
 
