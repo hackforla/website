@@ -27,25 +27,21 @@
 
 .gs-link {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 20px;
   text-align: center;
-
-  @media #{$bp-below-mobile} {
-    font-size: 1.25rem;
-  }
 }
 
 .getting-started-step-title-overview {
   text-align: center; 
+  font-size: 20px;
+}
+
+.getting-started-step-title-header {
   font-size: 1.5rem;
 
   @media #{$bp-below-mobile} {
     font-size: 1.25rem;
   }
-}
-
-.getting-started-step-title-header {
-  font-size: 25px;
 }
 
 .getting-started-step-subheader {
