@@ -16,22 +16,24 @@ To develop the site, you'll need to first clone the repository on to your comput
 
 5. [Read Hack for LA's Site Architecture to get acquainted with how the website is structured](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
 
-6. [Switch to new issue branch before you start making changes](#step-6-change-to-a-new-branch)
+6. [Switch to new issue branch before you start making changes](#step-6-work-on-an-issue-using-git)
 
 
 **After you've worked on your issue and before you make a pull request:**
 
 7. [Check upstream before you push](#step-7-check-upstream-before-you-push).
 
-8. [No changes in the upstream repo](#step-7a-no-changes-in-the-upstream-repository)
+7a. [No changes in the upstream repo](#step-7a-no-changes-in-the-upstream-repository)
 
 **Or**
 
-9. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
+7b. [Conflicting changes in the upstream repo](#step-7b-conflicting-changes-in-the-upstream-repository) and how to resolve them
               
-**Okay. You're good to go!**        
+**Okay. You're good to go!**   
+
+8. [Status updates](#step-8-status-updates)
  
-10. [Complete the pull request](#step-8-complete-the-pull-request)
+9. [Complete the pull request](#step-9-complete-the-pull-request)
 
 ---
 
@@ -181,7 +183,7 @@ docker-compose up
 
 #### Step 5: Read [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture) to get acquainted with how the website is structured
 
-#### Step 6: Work on an issue using git
+#### Step 6: Work on an issue using git  
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
@@ -387,7 +389,7 @@ https://github.com/hackforla/website/pulls and click on "New pull
 request". Please rename your pull request something descriptive i.e. "building a project card for civic opportunity project".
 Also, since your changes are not in the hackforla/website
 repository, you need to click the "compare across forks" link in the
-first paragraph to make you repository and your new branch
+first paragraph to make your repository and your new branch
 available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made. Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
 pull request message so the issue will be closed automatically once
