@@ -16,8 +16,15 @@
   flex-direction: row;
   justify-content: center;
   padding: 64px;
+
   img {
-    max-width: 20%;
+    max-height: 240px;
+  }
+
+  @media #{$bp-below-tablet}{
+    img {
+      max-height: 170px;
+    }
   }
 
   @media #{$bp-below-mobile} {
