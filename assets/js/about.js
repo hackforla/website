@@ -135,7 +135,8 @@ function highlightNavOnScroll() {
         currentActive.classList.remove("is-active");
       }
       NAVIGATION_LINK_ELEMENTS[i].classList.add("is-active");
-      window.location.hash = NAVIGATION_LINK_ELEMENTS[i].href.split("#")[1];
+      //window.location.hash = NAVIGATION_LINK_ELEMENTS[i].href.split("#")[1];
+      //window.history.replaceState(null, '',  NAVIGATION_LINK_ELEMENTS[i].href);
       return;
     }
   }
@@ -143,5 +144,39 @@ function highlightNavOnScroll() {
     currentActive.classList.remove("is-active");
   }
   NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].classList.add("is-active");
-  window.location.hash = NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].href.split('#')[1]
+  //window.history.replaceState(null, '',  NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].href);
+  //window.location.hash = NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].href.split('#')[1]
 }
+
+
+(() => {
+  var onScrollStop = (evt) => {
+    // you have scroll event as evt (for any additional info)
+    var scrollStopEvt = new CustomEvent('scrolling-stopped', {detail: 'foobar stopped :)'});
+    window.dispatchEvent(scrollStopEvt);
+  }
+  var scrollStopLag = 300 // the duration to wait before onScrollStop is triggerred.
+  var timerID = 0;
+  const handleScroll = (evt) => {
+    clearInterval(timerID);
+    timerID = setTimeout(
+      () => onScrollStop(evt),
+      scrollStopLag
+    )
+  }
+  window.addEventListener('wheel', handleScroll);
+})()
+
+window.addEventListener(
+  'scrolling-stopped', 
+  (evt) => {
+
+    let navIsActive = document.querySelector('.is-active').href;
+    let hashInNavIsActive  = navIsActive.substring(navIsActive.lastIndexOf('/') + 1)
+    if(window.location.hash != hashInNavIsActive){
+      window.history.replaceState(null, '', hashInNavIsActive);
+    }
+
+  
+  }
+)
