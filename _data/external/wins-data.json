@@ -1,5 +1,5 @@
 {
-  "range": "Responses!A1:S121",
+  "range": "Responses!A1:S122",
   "majorDimension": "ROWS",
   "values": [
     [
@@ -385,6 +385,21 @@
       "9/1/2020",
       "I got a new job, I learned how to work better on a team, I increased the number of commits on my Github profile, I learned a new language, I worked on a project that will help the people of Los Angeles, I found mulitple mentors",
       "I could never commit to contributing to open source. The fear of not knowing enough kept me from applying my skills and full of imposter syndrome, until I began volunteering for Hack for LA. In addition to being able to help my community, I also gained access to a treasure-trove of resources through my colleagues, and found mentors that would've been inaccessible otherwise. I can only describe my experience with Hack for LA as feeling very lucky and look forward to continuing to contributing in the future."
+    ],
+    [
+      "4/18/2021 18:56:47",
+      "sierka@gmail.com",
+      "slaksdjfa",
+      "",
+      "",
+      "",
+      "",
+      "Not Today",
+      "Development",
+      "",
+      "",
+      "I produced something for my portfolio, I setup 2FA",
+      "kkkkkkkk"
     ]
   ]
 }

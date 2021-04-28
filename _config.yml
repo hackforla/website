@@ -5,8 +5,7 @@
 lsi: false # Produce an index for related posts. Requires the classifier-reborn plugin. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 safe: true # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 
-
-
+exclude: [github-actions ]
 source: . # Change the directory where Jekyll will read files
 
 title: Hack for LA
@@ -52,3 +51,8 @@ defaults: # The `defaults` key holds an array of scope/values pairs that define 
       type: "guide-pages"
     values:
       layout: "guide-pages"
+
+plugins:
+  - jekyll-sitemap
+
+
