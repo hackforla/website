@@ -1,354 +1,182 @@
-/**************************************/
-/**** Script 1: Sticky Navigation *****/
-/**************************************/
-
-//Initialize and set defaults
-
-let stickyNav = document.querySelector("#sticky-nav");
-let stickyNavTop = 343;
-
-// When the menu reaches the position we want it to stick at, this adds a class and some padding.
-function stickItHere() {
-    if (window.scrollY >= stickyNavTop) {
-        //stickyNav.style.paddingTop = nav.offsetHeight + 'px';
-        stickyNav.classList.add('stick-it');
-    } else {
-        //stickyNav.style.paddingTop = 0;
-        stickyNav.classList.remove('stick-it');
-    }
+// Constant setups for reuse throughout document
+const ANCHOR_LINKS_ID = [...document.querySelectorAll(".anchor")].map((anchor) => anchor.id);
+const NAVIGATION_LINK_ELEMENTS = document.querySelectorAll(".sticky-nav a");
+const VIEWPORT_HEIGHT = Math.max(document.documentElement.clientHeight || 0,  window.innerHeight || 0);
+const STICKYNAVTOP = 343;
+const BREAK_POINT = 960;
+const FLAGS = {
+    'displayChanged': true,
+    'listenerNotAttached': true
 }
 
-// Listen to the scrolling to find when it reaches the sticky spot
-window.addEventListener('scroll', stickItHere);
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // UI components are updated on page load
+  updateUI();
+  
+  // UI components are updated on location change
+  window.addEventListener("locationchange", updateUI);
 
-/*************************************************/
-/**** Script 2: Highlight Links when clicked *****/
-/*************************************************/
+  window.addEventListener("resize", resizeHandler);
 
-//locate all the navigation links and arrows
-let navLinks = document.querySelectorAll(".sticky-nav a");
+  document.addEventListener("wheel", scrollHandler);
 
-for (let i = 0; i < navLinks.length; i++) {
+  document.querySelectorAll("#sticky-nav li a").forEach((navlink) => { navlink.addEventListener("click", toggleNavClass); });
+});
 
-    navLinks[i].addEventListener('click', function (event) {
-
-        // Disable scroll handler when click on navigation link if using smooth scroll
-        document.removeEventListener('scroll', scrollHandler, true);
-
-        //check if a link is currently selected, remove is-active class if yes
-        isActive = document.getElementsByClassName('is-active')[0];
-
-        if (isActive != undefined) {
-            isActive.classList.remove('is-active');
-        }
-
-        //then add is-active class to the most recent selected link
-        this.classList.add('is-active');
-
-        //re-enable scroll event 1 second after is-active class is added
-        setTimeout(function () {
-            document.addEventListener("scroll", scrollHandler, true);
-        }, 1000);
-
-    });
-}
-
-
-/***************************************************/
-/**** Script 3: Highlight links when scrolling *****/
-/***************************************************/
-
-// Initialize
-//locate all the navigation links
-let quickLinks = document.querySelectorAll(".sticky-nav a");
-let qlArray = [];
-let positionArray = [];
-
-for (let i = 0; i < quickLinks.length; i++) {
-
-    // Create an array of ids
-    qlArray.push(quickLinks[i].href.substring(quickLinks[i].href.indexOf('#') + 1));
-}
-
-// create an array of the position of each id
-for (var i = 0; i < qlArray.length; i++) {
-    positionArray.push(document.getElementById(qlArray[i]).getBoundingClientRect().top);
-}
-
-document.addEventListener("scroll", scrollHandler, true);
-
-// alignment of page card with its corresponding link on the sticky navigation 
-function scrollHandler() {
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
-    currentActive = document.getElementsByClassName('is-active')[0];
-    for (let i = 0; i < qlArray.length - 1; i++) {
-        const top = document.getElementById(qlArray[i]).getBoundingClientRect().top
-        const bottom = document.getElementById(qlArray[i + 1]).getBoundingClientRect().top
-        if (top > 0 && top < vh * 0.8 || bottom >= vh * 0.8) {
-            if (currentActive != undefined) {
-                currentActive.classList.remove('is-active');
-            }
-            quickLinks[i].classList.add('is-active');
-            return;
-        }
-    }
-    if (currentActive != undefined) {
-        currentActive.classList.remove('is-active');
-    }
-    quickLinks[qlArray.length - 1].classList.add('is-active');
-
-};
-
-/***********************************************************/
-/* ************** Script 4: Mobile accordian ************* */
-/***********************************************************/
-
-// This function creates the event listeners
-function createAccordionEventListener(accordionElements) {
-    for (let el of accordionElements) {
-        el.addEventListener("click", toggleAccordion, false)
-    }
-} // end function
-
-// This removes the event listeners.  
-// This is used when the display was loaded in mobile view and then switched to full display.  
-function removeAccordionEventListener(accordionElements) {
-    for (let el of accordionElements) {
-        el.removeEventListener("click", toggleAccordion, false);
-    }
-} // end function
-
-// This opens and closes the sections to make it accordion-like
-function toggleAccordion() {
-    // Toggles adding and removing the class from the class list
-    this.classList.toggle('au_active');
-
-    // Which panel to open/close
-    let accordionContainer = this.nextElementSibling;
-    let accordionID = this.parentElement.previousElementSibling.id;
-
-    // Open and close panel
-    if (accordionContainer.style.display === "block") {
-        accordionContainer.style.display = "none"
-    } else {
-        accordionContainer.style.display = "block"
-        location.href = "#"+ accordionID;
-    }
-} // end function
-
-// This expands all sections when it goes from mobile to desktop
-function expandAccordion(accordionElements) {
-    for (let el of accordionElements) {
-        el.nextElementSibling.style.display = "block";
-    }
-} // end function
-
-// This closes all sections when it goes from desktop to mobile
-// if the element was active (open) it leaves it open
-function closeAccordion(accordionElements) {
-
-    // Create event listeners to current highlighted content
-    // find the element that correlates to reading content
-    const currentHighlight = document.getElementsByClassName('is-active')[0].getAttribute('href');
-    const currentAnchor = currentHighlight.split("#")[1];
-    openOneAccordion(currentAnchor);
-    
-    for (let el of accordionElements) {
-        if (el.classList.contains("au_active")) {
-            // Do nothing
-        } else {
-            el.nextElementSibling.style.display = "none";
-        }
-    }
-
-} // end function
-
-// Open current highlighted content
-function openOneAccordion(currentAnchor){
-    document.getElementById(currentAnchor).nextElementSibling.children[0].classList.add("au_active");
-    document.getElementById(currentAnchor).nextElementSibling.children[1].style.display = "block";
-};
-//end function
-
-// This adjusts the letter when it goes back to mobile
-// It should leave it open if it was open, and closed if it was closed
-function letterBackToMobile(readMoreElement, readLessElement) {
-    if (readLessElement.classList.contains("more-less")) {
-        readMoreElement.nextElementSibling.style.display = "none";
-    } else {
-        readMoreElement.nextElementSibling.style.display = "block";
-    }
-} // end function
-
-// Initialize Current Mobile Viewing Content
-let currentMobileContent;
-
-// This remembers the element for mobile to desktop
-// Find where the element is on screen
-function locateMobileContent(){
-    const currentViewingContent = document.getElementsByClassName("au_active");
-    let elementClosestToViewport = {top: Number.MAX_SAFE_INTEGER};
-
-    for (let element of currentViewingContent) {
-        const rectangleRelativeToViewport = element.getBoundingClientRect();
-        if(rectangleRelativeToViewport.top < 0 && rectangleRelativeToViewport.bottom >0){
-            return element;
-        } else if (rectangleRelativeToViewport.top >= 0) {
-            if(rectangleRelativeToViewport.top < elementClosestToViewport.top) {
-                elementClosestToViewport = element;
-            }
-        } 
-    }
-    
-    if (elementClosestToViewport.top !== Number.MAX_SAFE_INTEGER) {
-        return elementClosestToViewport;
-    }
-    return null;
-}
- //end function
-
-// accordionFlag tracks the state of the window | mobile = 0; desktop = 1
-let accordionFlag;
-
-//Initialize
-if (window.innerWidth < 960) {
-    accordionFlag = 0;
-} else {
-    accordionFlag = 1;
-}
-
-// This function checks for when the window crosses the threshold between mobile and desktop
-// When it does, it either adds or removes the event handlers and resets the flag
+/**
+ * Functions that are called on every page resize event
+ */
 function resizeHandler() {
-
-    if (accordionFlag === 0 && window.innerWidth >= 960) {
-        removeAccordionEventListener(accordionList);
-        expandAccordion(accordionExpandList);
-        accordionFlag = 1;
- 
-        // find current mobile viewing content before resizing
-    if(currentMobileContent !== null){
-        currentMobileContentParent = currentMobileContent.parentElement;
-        currentMobileContentAnchor = currentMobileContentParent.previousElementSibling;
-        location.href = "#"+currentMobileContentAnchor.id; 
-        }
-    }
-
-    if (accordionFlag === 1 && window.innerWidth < 960) {
-        createAccordionEventListener(accordionList);
-        closeAccordion(accordionList);
-        letterBackToMobile (readMoreToMobile, readLessToMobile);
-        accordionFlag = 0;
-    } 
-
-    if (accordionFlag === 0 && window.innerWidth < 960){
-        currentMobileContent = locateMobileContent();
-    }
-} // end function 
-
-// Get the list of elements for the accordion
-let accordionList = document.querySelectorAll(".about-us-section-header");
-
-// Get the elements to expand when going from mobile to desktop
-let accordionExpandList = document.querySelectorAll(".about-us-section-header, .read-more");
-
-// This is to close the letter to the editor on going to mobile
-let readMoreToMobile = document.querySelector(".read-more");
-let readLessToMobile = document.querySelector(".read-less");
-
-// Create event listeners on page load if in mobile
-if (window.innerWidth < 960) {
-    // Create event listeners
-    createAccordionEventListener(accordionList);
+  setupAccordionEventLitseners();
+  setScrollPosition();
+  changeDisplayMode();
 }
 
-// Add or remove event listeners on resize or orientation change
-window.addEventListener('resize', resizeHandler);
-
-
-/*********************************************************************************/
-/* ************** Script 5: Mobile accordian - Read more/Read less ************* */
-/*********************************************************************************/
-
-
-function createReadMoreReadLessEventListener(classToAdd, accordionElements) {
-
-    for (let el of accordionElements) {
-
-        el.addEventListener("click", function () {
-
-            // Declare variables!
-            let accordionContainer = this.previousElementSibling;
-            let readMore = document.querySelector(".read-more");
-            let readLess = document.querySelector(".read-less");
-
-            // This toggles "Read more" and "Read less" so one comes on and the other goes off
-            readMore.classList.toggle(classToAdd);
-            readLess.classList.toggle(classToAdd);
-
-            // if it is read-more and not read-less, do this
-            if (this.className.includes("read-more")) {
-                accordionContainer = this.nextElementSibling;
-            }
-
-            // Open and close panel
-            if (accordionContainer.style.display === "block") {
-                accordionContainer.style.display = "none"
-            } else {
-                accordionContainer.style.display = "block"
-            }
-            event.stopPropagation()
-        })
-    }
-} // end function
-
-// Add event listeners
-
-// Get the list of elements for the accordion
-let letterFromExecDir = document.querySelectorAll(".read-more, .read-less");
-
-// Create event listeners
-createReadMoreReadLessEventListener("more-less", letterFromExecDir);
-
-/*******************************************************/
-/***** Script 6: Add a break tag to certain headers ****/
-/*******************************************************/
-
-// There certain headers need to be split into two lines on mobile
-// This adds a br tag at the designated spot in the string. 
-
-// Get the header text
-let letterHeadText = document.getElementById("letterBR").innerText;
-
-// Function to add something within a string
-let insertSomething = (str, ins_str, pos) => { return str.slice(0, pos) + ins_str + str.slice(pos) };
-
-// If it's mobile, add a break tag and put it back
-if (window.innerWidth < 960) {
-    document.getElementById("letterBR").innerHTML = insertSomething(letterHeadText, '<br />', 15);
+/**
+ * Functions that are called on every wheel scroll event
+ */
+function scrollHandler() {
+  stickItHere();
+  highlightNavOnScroll();
 }
 
-// If it's mobile, if href has #, open content
-if(window.innerWidth <960) {
-    if (location.href.includes("#letter")) {
-        readMore = readMoreToMobile.nextElementSibling;
-        readMore.style.display = "block";
-        if (readMore.style.display === "block") {
-            readMoreToMobile.classList.add("more-less")
-            readLessToMobile.classList.remove("more-less")
-        }
-
-    } else if(location.href.includes("#")) {
-        const currentURLHashId = location.href.substring(location.href.indexOf("#")+1);
-        openOneAccordion(currentURLHashId);
-    }
+function updateUI() {
+  if (window.location.hash) {
+    //Remove current highlighted nav link
+    document.querySelector(".sticky-nav a.is-active").classList.toggle("is-active");
+    //Apply new highlted nav link based on location hash
+    document.querySelector(`[href*="${window.location.hash.split("#")[1]}"]`).classList.toggle("is-active");
+  }
+  setupAccordionEventLitseners();
+  changeDisplayMode();
+  stickItHere();
 }
 
-function hashLetter() {
-    if (readMoreToMobile.nextElementSibling.style.display = "block"){
-        location.href = "#letter";
-    }
+function changeDisplayMode() {
+  if (window.innerWidth < BREAK_POINT && FLAGS.displayChanged) {
+    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {pageCard.lastElementChild.style.display = "none"; });
+    document.querySelector(`div[data-hash="${window.location.hash.split("#")[1]}"]`).parentElement.lastElementChild.style.display = "block";
+    FLAGS.displayChanged = false;
+  } 
+  else if (window.innerWidth > BREAK_POINT && !FLAGS.displayChanged) {
+    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => { pageCard.lastElementChild.style.display = "block"; });
+    document.querySelector(".au_active") &&  document.querySelector(".au_active").classList.toggle("au_active");
+    FLAGS.displayChanged = true;
+  }
 }
 
-readMoreToMobile.addEventListener("click", hashLetter);
+function setScrollPosition() {
+  if (window.location.hash) {
+    window.scrollTo(0, document.querySelector(window.location.hash).offsetTop);
+  }
+}
+
+function toggleNavClass(event) {
+  document.querySelectorAll(".sticky-nav a").forEach((link) => { link.classList.remove(...link.classList); });
+  event.target.classList.toggle("is-active");
+}
+
+
+function setupAccordionEventLitseners() {
+  if (window.innerWidth < BREAK_POINT && FLAGS.listenerNotAttached) {
+    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {pageCard.firstElementChild.addEventListener("click", accordionclicked);});
+    FLAGS.listenerNotAttached = false;
+  } 
+  else if (window.innerWidth > BREAK_POINT && !FLAGS.listenerNotAttached) {
+    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => { pageCard.firstElementChild.removeEventListener("click",accordionclicked); });
+    FLAGS.listenerNotAttached = true;
+  }
+}
+
+/**
+ *  Function that gets called when an accordion gets clicked on mobile view
+ */
+function accordionclicked(event) {
+  if (window.getComputedStyle(this.parentElement.lastElementChild, null).display == "block") {
+    event.target.classList.toggle("au_active");
+    this.parentElement.lastElementChild.style.display = "none";
+    window.location.hash = event.target.dataset.hash;
+  } 
+  else {
+    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {
+        pageCard.firstElementChild.classList.remove("au_active");
+        pageCard.lastElementChild.style.display = "none";
+    });
+    event.target.classList.toggle("au_active");
+    this.parentElement.lastElementChild.style.display = "block";
+    window.location.hash = event.target.dataset.hash;
+  }
+}
+
+//When the menu reaches the position we want it to stick at, this adds a class and some padding.
+function stickItHere() {
+
+  if (window.scrollY >= STICKYNAVTOP) {
+    //stickyNav.style.paddingTop = nav.offsetHeight + 'px';
+    document.querySelector("#sticky-nav").classList.add("stick-it");
+  } else {
+    //stickyNav.style.paddingTop = 0;
+    document.querySelector("#sticky-nav").classList.remove("stick-it");
+  }
+}
+
+
+/**
+ * Alignment of page card with its corresponding link on the sticky navigation
+ */
+function highlightNavOnScroll() {
+  let currentActive = document.querySelector(".is-active");
+  for (let i = 0; i < ANCHOR_LINKS_ID.length - 1; i++) {
+    const top = document.getElementById(ANCHOR_LINKS_ID[i]).getBoundingClientRect().top;
+    const bottom = document.getElementById(ANCHOR_LINKS_ID[i + 1]).getBoundingClientRect().top;
+    if ((top > 0 && top < VIEWPORT_HEIGHT * 0.8) || bottom >= VIEWPORT_HEIGHT * 0.8) {
+      if (currentActive != undefined) {
+        currentActive.classList.remove("is-active");
+      }
+      NAVIGATION_LINK_ELEMENTS[i].classList.add("is-active");
+      //window.location.hash = NAVIGATION_LINK_ELEMENTS[i].href.split("#")[1];
+      //window.history.replaceState(null, '',  NAVIGATION_LINK_ELEMENTS[i].href);
+      return;
+    }
+  }
+  if (currentActive != undefined) {
+    currentActive.classList.remove("is-active");
+  }
+  NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].classList.add("is-active");
+  //window.history.replaceState(null, '',  NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].href);
+  //window.location.hash = NAVIGATION_LINK_ELEMENTS[ANCHOR_LINKS_ID.length - 1].href.split('#')[1]
+}
+
+
+(() => {
+  var onScrollStop = (evt) => {
+    // you have scroll event as evt (for any additional info)
+    var scrollStopEvt = new CustomEvent('scrolling-stopped', {detail: 'foobar stopped :)'});
+    window.dispatchEvent(scrollStopEvt);
+  }
+  var scrollStopLag = 300 // the duration to wait before onScrollStop is triggerred.
+  var timerID = 0;
+  const handleScroll = (evt) => {
+    clearInterval(timerID);
+    timerID = setTimeout(
+      () => onScrollStop(evt),
+      scrollStopLag
+    )
+  }
+  window.addEventListener('wheel', handleScroll);
+})()
+
+window.addEventListener(
+  'scrolling-stopped', 
+  (evt) => {
+
+    let navIsActive = document.querySelector('.is-active').href;
+    let hashInNavIsActive  = navIsActive.substring(navIsActive.lastIndexOf('/') + 1)
+    if(window.location.hash != hashInNavIsActive){
+      window.history.replaceState(null, '', hashInNavIsActive);
+    }
+
+  
+  }
+)
