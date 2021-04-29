@@ -40,7 +40,11 @@
 }
 
 .wins-icon-container {
-    margin: 1.5em 0 0 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    margin: 2em 6.5em 0;
 }
 .wins-item-container{
     display: inline-block;
@@ -78,12 +82,35 @@
 }
 
 .wins-badge-icon {
-    width: 2.4em;
+    min-width: 2em;
+    max-width: 2em;
+    min-height: 2em;
+    max-height: 2em;
     margin: .5em 1.5em .5em 0;
 }
 
 .wins-badge-icon:hover + .wins-text-bubble{
     display: block;
+}
+
+#overlay-info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 2.6em;
+}
+.overlay-item-container{
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+}
+.overlay-badge-icon{
+    max-width: 1rem;
+    margin-top: .2em;
+    margin-right: .7em;
+}
+.overlay-wins-text{
+    margin: 0;
+    max-width: 14em;
 }
 
 @media #{$bp-below-tablet} {
@@ -192,10 +219,6 @@
 .wins-card-icons{
     display: flex;
 }
-.wins-card-info{
-    font-weight: bold;
-}
-
 .wins-card-overview{
     margin-top: 1em;
 }
