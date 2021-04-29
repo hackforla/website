@@ -123,6 +123,9 @@
     }
   }
   .page-card-content h3 {
+    @media #{$bp-below-mobile} {
+      font-size: 1.25rem
+    }
     @media #{$bp-mobile-up} {
       font-size: 1.25rem;
     }
