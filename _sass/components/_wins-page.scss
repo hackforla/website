@@ -105,6 +105,7 @@
     display: flex;
     align-items: start;
     margin-bottom: 1em;
+    margin-right: 1.5em;
 }
 .overlay-badge-icon{
     max-width: 1rem;
@@ -425,7 +426,7 @@
     }
 
     .wins-tablet{
-        margin-top: 1.5em;
+        margin-left: 0em;
 
         .wins-icon-container{
             margin: 2em 0 0 3.5rem;
@@ -457,6 +458,17 @@
         }
         .wins-text-bubble::before{
             border: none;
+        }
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .wins-icon-container{
+        margin-left: 3.5em
+    }
+    .wins-tablet {
+        .wins-item-container{
+            margin-left: 0;
         }
     }
 }
