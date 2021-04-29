@@ -297,8 +297,6 @@ permalink: /wins/
 		})
 	}
 
-
-
   function makeCards(data) {
   	{% assign githubData = site.data.external.github-data | jsonify %}
   	let githubData = {{ githubData }};
@@ -386,6 +384,14 @@ permalink: /wins/
   	}
   }
 
+  function winsBelowDesktop() {
+		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
+			const container = event.target.parentElement.parentElement
+			container.setAttribute('class', 'wins-tablet wins-icon-container')
+
+		}))
+	}
+
   function mobileSeeMore(id){
 		let span = document.getElementById(id);
 		let parent = span.parentElement.parentElement
@@ -394,11 +400,12 @@ permalink: /wins/
 		parent.classList.toggle('expanded')
 		if (parent.classList.contains('expanded')) {
 			span.innerHTML = "see less"
-			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet')
+			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container')
 		}
 		else {
 			span.innerHTML = "...see more"
 			winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet')
+			
 		}
   }
   // need to delete makeElement and makeIcon
@@ -459,6 +466,7 @@ permalink: /wins/
 	  overlayProjectCard.parentNode.classList.remove("display-initial");
 	  overlayInfo.innerHTML = '';
   }
+
   function insertOverlay(cloneCardTemplate, cardString) {
 		const cardArr = cardString.split(',')
 
