@@ -1,4 +1,7 @@
 //Hero styling
+
+//mobile for wins info
+
 .wins-hero{
     margin-top: 40px;
     display: flex;
@@ -44,7 +47,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: start;
-    margin: 2em 6.5em 0;
+    margin: 2em 0 0 6.5rem;
 }
 .wins-item-container{
     display: inline-block;
@@ -145,6 +148,36 @@
             font-size: 12px;
             line-height: 14px;
         }
+    }
+    .wins-icon-container{
+        margin: 2em 0 0 3.5rem;
+        display: block;
+    }
+    .wins-item-container{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 1em;
+    }
+    .wins-badge-icon{
+        margin-top: .05em;
+        min-width: 1.5em;
+        max-width: 1.5em;
+        min-height: 1.5em;
+        max-height: 1.5em;
+    }
+    .wins-text-bubble{
+        display: block;
+        width: 72%;
+        text-align: left;
+        position: relative;
+        left: 0;
+        padding: 0;
+        background: inherit;
+        color: $color-black;
+    }
+    .wins-text-bubble::before{
+        border: none;
     }
 }
 
@@ -419,6 +452,6 @@
 	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
-	}
+    }
 }
 //wins page filter override section end
