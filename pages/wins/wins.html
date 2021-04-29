@@ -375,9 +375,8 @@ permalink: /wins/
 
 		new ResizeObserver(addSeeMore).observe(winText)
 	})
-
-
   }
+
   function seeMore(id){
   	screenWidth = window.innerWidth;
   	if (screenWidth > 960){
@@ -386,16 +385,21 @@ permalink: /wins/
 		  mobileSeeMore(id);
   	}
   }
+
   function mobileSeeMore(id){
-  	let span = document.getElementById(id);
-  	let parent = span.parentElement.parentElement
-  	parent.classList.toggle('expanded')
-  	if (parent.classList.contains('expanded')) {
-  		span.innerHTML = "see less"
-  	}
-  	else {
-  		span.innerHTML = "...see more"
-  	}
+		let span = document.getElementById(id);
+		let parent = span.parentElement.parentElement
+		let winsInfo = span.parentElement.parentElement.parentElement.parentElement //I know this is ugly
+
+		parent.classList.toggle('expanded')
+		if (parent.classList.contains('expanded')) {
+			span.innerHTML = "see less"
+			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet')
+		}
+		else {
+			span.innerHTML = "...see more"
+			winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet')
+		}
   }
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
@@ -442,35 +446,6 @@ permalink: /wins/
 		//   overlayInfo.innerHTML = formatMessage(data[i][win]);
 		insertOverlay(overlayInfo, data[i][win])
 
-		function insertOverlay(cloneCardTemplate, cardString) {
-			const cardArr = cardString.split(',')
-
-			cardArr.forEach(string => {
-				const item = string.trim()
-				const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
-				
-				if (badgeIcons.hasOwnProperty(item)) {
-					cloneCardTemplate.insertAdjacentHTML('beforeend',
-						`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
-						</div>`
-					)
-					return
-				} else if (item === '') {
-					return
-				} else {
-					cloneCardTemplate.insertAdjacentHTML('beforeend',
-						`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-							<p class="overlay-wins-text" data-wins="font-styling">Other</p>
-						</div>`
-					)
-					return
-				}
-			})
-	  }
-
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
   	}
@@ -484,6 +459,34 @@ permalink: /wins/
 	  overlayProjectCard.parentNode.classList.remove("display-initial");
 	  overlayInfo.innerHTML = '';
   }
+  function insertOverlay(cloneCardTemplate, cardString) {
+		const cardArr = cardString.split(',')
+
+		cardArr.forEach(string => {
+			const item = string.trim()
+			const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
+
+			if (badgeIcons.hasOwnProperty(item)) {
+				cloneCardTemplate.insertAdjacentHTML('beforeend',
+					`<div class='overlay-item-container'>
+							<img class="overlay-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
+						</div>`
+				)
+				return
+			} else if (item === '') {
+				return
+			} else {
+				cloneCardTemplate.insertAdjacentHTML('beforeend',
+					`<div class='overlay-item-container'>
+							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+							<p class="overlay-wins-text" data-wins="font-styling">Other</p>
+						</div>`
+				)
+				return
+			}
+		})
+	}
 
   main();
 
