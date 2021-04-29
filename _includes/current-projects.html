@@ -421,7 +421,7 @@
 
               <div class="project-links">
               <strong>Links: </strong>
-              ${project.links.map(item => `<a href=${ item.url } rel="noopener" target='_blank'> ${ item.name }</a>`).join("")}
+              ${project.links.map(item => `<a href=${ item.url } rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
               </div>
 
               ${project.partner ?
@@ -437,7 +437,7 @@
               `
               <div class="project-needs">
                   <strong>Looking for: </strong>
-                  ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join("")}
+                  ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
               </div>
               `:""
               }
@@ -455,7 +455,7 @@
               `
               <div class="project-technologies">
               <strong>Technologies: </strong>
-              ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join("")}
+              ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
               </div>
               `:""
               }
@@ -498,7 +498,7 @@
                   data-filter='${filterName},${filterValue}'
                   class='btn--current-projects-filter-tag'
               >
-                  ${filterName}: ${filterValue}
+                  ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
               </button>`
   }
 </script>

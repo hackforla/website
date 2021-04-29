@@ -99,18 +99,19 @@ ul.filter-list li ul li {
 //filter tags
 .btn--current-projects-filter-tag {
   box-sizing: border-box;
-  margin: 0em 1em 1em;
+  margin: 0em .5em 1em;
   padding: .3em 1em;
   background: $color-red;
   border: none;
   border-radius: 5px;
   color: $color-white;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 15px;
   text-transform: capitalize;
 
   &::after {
     content: "\00d7";
-    padding-left: .7em;
+    padding-left: .5em;
   }
 
   &:hover,
@@ -125,6 +126,8 @@ ul.filter-list li ul li {
 a.clear-filter-tags {
   margin-left: 1em;
   text-decoration: underline;
+  color: #767676;
+
 
   &:hover{
     cursor: pointer;
