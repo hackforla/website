@@ -34,9 +34,9 @@ technologies:
   - Node.js
 location:
   # - Santa Monica
-  - Remote
+  # - Remote
 partner: EnCiv.org, Ballotpedia.org
 visible: true
-status: Active
+status: Completed
 vertical: "Vote / Representation"
 ---

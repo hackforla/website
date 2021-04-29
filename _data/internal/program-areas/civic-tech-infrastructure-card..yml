@@ -1,0 +1,47 @@
+---
+name: Civic Tech Infrastructure
+description: >
+  Hack for LA is creating replicable blueprints for processes and practices to be 
+  shared across Code for America brigades and support other similar organizations 
+  around the world.
+
+image: /assets/images/program-areas/civic-tech-infrastructure.png
+
+image_alt: An ipad on a table with graph papers
+
+SDG: 
+  - Zero Hunger
+  - Peace
+  - Justice
+  - Strong Institutions
+
+projects: 
+  - id: 202051333
+    name: Not Today
+    image: /assets/images/projects/not-today.png
+    image_alt: Not Today logo. A person embrace another person with full support. Art by C.W. Moss
+  - id: 228981080
+    name: Home Unite Us
+    image: /assets/images/projects/home-heart.png
+    image_alt: Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.
+  - id: 215666884
+    name: Food Oasis
+    image: /assets/images/projects/food-oasis.jpg
+    image_alt: Stacks of freshly harvested beets
+  - id: 202051333
+    name: Not Today
+    image: /assets/images/projects/not-today.png
+    image_alt: Not Today logo. A person embrace another person with full support. Art by C.W. Moss
+  - id: 228981080
+    name: Home Unite Us
+    image: /assets/images/projects/home-heart.png
+    image_alt: Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.
+  - id: 215666884
+    name: Food Oasis
+    image: /assets/images/projects/food-oasis.jpg
+    image_alt: Stacks of freshly harvested beets
+  - id: 215666884
+    name: Food Oasis
+    image: /assets/images/projects/food-oasis.jpg
+    image_alt: Stacks of freshly harvested beets
+---
