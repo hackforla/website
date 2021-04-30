@@ -367,6 +367,7 @@ permalink: /wins/
 				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
 			} else {
 				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+				winsBelowDesktop()
 			}
 		}
 		addSeeMore()
@@ -384,28 +385,29 @@ permalink: /wins/
   	}
   }
 
+  //TODO: expands written paragraph and changes "see more" to "see less"
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
-			const container = event.target.parentElement.parentElement
-			container.setAttribute('class', 'wins-tablet wins-icon-container')
+			const container = event.target.parentElement.parentElement;
 
+			container.setAttribute('class', 'wins-tablet wins-icon-container');
 		}))
 	}
 
   function mobileSeeMore(id){
 		let span = document.getElementById(id);
-		let parent = span.parentElement.parentElement
-		let winsInfo = span.parentElement.parentElement.parentElement.parentElement //I know this is ugly
+		let parent = span.parentElement.parentElement;
+		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
 
-		parent.classList.toggle('expanded')
+		parent.classList.toggle('expanded');
+
 		if (parent.classList.contains('expanded')) {
-			span.innerHTML = "see less"
-			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container')
+			span.innerHTML = "see less";
+			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container');
 		}
 		else {
-			span.innerHTML = "...see more"
-			winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet')
-			
+			span.innerHTML = "...see more";
+			winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet');
 		}
   }
   // need to delete makeElement and makeIcon

@@ -448,7 +448,7 @@
         }
         .wins-text-bubble{
             display: block;
-            width: 72%;
+            width: 50%;
             text-align: left;
             position: relative;
             left: 0;
@@ -469,6 +469,9 @@
     .wins-tablet {
         .wins-item-container{
             margin-left: 0;
+        }
+        .wins-text-bubble{
+            width: 100%;
         }
     }
 }
