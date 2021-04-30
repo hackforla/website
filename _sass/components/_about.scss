@@ -440,6 +440,13 @@ a.anchor {
   width:  85%;
 }
 
+// Used for aligning contents of sdg left column
+.sdg-left-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .text-bold {
   font-weight: 700;
 }
@@ -765,14 +772,6 @@ a.anchor {
   .flex-container {
     display: flex;
     flex-direction: row;
-  }
-
-  .sdg-left {
-    width: 10%;
-  }
-
-  .sdg-right {
-    width:  90%;
   }
 
   .sdg-left-column {
