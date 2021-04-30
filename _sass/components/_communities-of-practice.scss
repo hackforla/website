@@ -26,7 +26,7 @@
       margin-top: 8px;
       text-align: left;
       @media #{$bp-below-tablet} {
-        width:100%;
+        max-width: 300px;
         margin: auto;
         font-size: 16px;
         }
@@ -55,15 +55,17 @@
   .header-self-invite--communities {
     display:flex;
     align-items: flex-start;
-    max-width: 550px;
+    max-width: 508px;
     margin-top: 31px;
     @media #{$bp-below-tablet} {
+      max-width: 300px;
       margin-bottom: 30px;
     }
 
     .alert--communities {
       font-size: 16px;
       font-weight: bold;
+      max-width: 450px;
     }
   }
   .self-invite-img {
