@@ -377,7 +377,7 @@
   @media #{$bp-below-tablet} {
     font-size: 17px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 16px;
 
   }
@@ -469,11 +469,9 @@
   font-size: 16px;
   line-height: 19px;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: .95fr 1.15fr;
   display: grid;
-
-
-
+  padding-left: 0;
 
   @media #{$bp-below-tablet} {
     font-size: 13px;
