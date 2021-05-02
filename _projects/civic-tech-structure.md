@@ -46,10 +46,6 @@ links:
     url: "https://github.com/hackforla/civic-tech-structure"
   - name: Overview
     url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Structure-Product-One-Sheet.pdf"
-  - name: BOP Github
-    url: "https://github.com/codeforamerica/brigade-playbook"
-  - name: BOP CfA Slack
-    url: "https://cfa.slack.com/archives/C019RCM15FE"
   - name: README
     url: "https://github.com/hackforla/civic-tech-structure/blob/main/README.md"
 looking:
