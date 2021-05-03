@@ -270,6 +270,10 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
    - Use the `git status` command to see what files are staged
 
       This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you find you have included unrelated changes, please unstage them before making this commit - and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
+      
+      ```bash
+      git status
+      ```
 
 
    - Use the `git reset HEAD` command to remove a staged file. 
