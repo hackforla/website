@@ -128,9 +128,14 @@ The following steps will create a local copy of the repository on your machine.
       </details>
 ## Set up Docker
 
-Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request
+Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
 The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <sub><i>Feel free to reach out in the hfla slack channel if you have trouble installing docker on your system</i></sub>
+
+More on using Docker and the concepts of containerization:
+
+* [Get started with Docker](https://docs.docker.com/get-docker/)
+* [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
 
 <details>
 <summary>Docker Installation Troubleshooting</summary>
