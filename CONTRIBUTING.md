@@ -4,11 +4,11 @@
 
 The following is a set of guidelines for contributing to the website repository, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-** <sub>The guide below assumes that you already have a github account. If you do not have a github account yet, [Sign Up Here](https://github.com/join)</sub>
+** <sub>The guide below assumes that you have completed the onboarding process which includes joining the Hack for LA Slack, GitHub, and Google Drive. If you have not been onboarded, please refer to the [Getting Started Page](https://www.hackforla.org/getting-started).</sub>
 <br><br>
 
 # Table of Contents
-### Setting up the development envirnoment
+### Setting up the development environment
 1. [Join the repository team](#Join-the-repository-team)
 2. [Fork the repository](#Fork-the-repository)
 3. [Clone the forked repository](#Clone-the-forked-repository)
@@ -34,16 +34,16 @@ The following is a set of guidelines for contributing to the website repository,
    - [Docker Desktop](https://docs.docker.com/install/)
 
 
-# Setting up the development envirnoment
+# Setting up the development environment
 ## Join the repository team
 
-In the `hfla-site` slack channel, send your GitHub name to the project manager (or on the slack channel thread) and we'll add you as a member to the GitHub repository Team.
+In the `hfla-site` Slack channel, send an introductory message with your GitHub handle/username asking to be added to the Hack for LA website GitHub repository (this repository).
 
 Once you have accepted the GitHub invite (comes via email or in your GitHub notifications), please do the following:
 
-1. Mark your own membership public following this [guide](https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership)
+1. Make your own Hack for LA GitHub organization membership public by following this [guide](https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership).
 
-2. Setup two factor authentication on your account following [this](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication)
+2. Set up two-factor authentication on your account by following this [guide](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication).
 
 
 ## Fork the repository
@@ -51,23 +51,37 @@ Once you have accepted the GitHub invite (comes via email or in your GitHub noti
 You can fork the hackforla/website repository by clicking <a href="https://github.com/hackforla/website/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
 . A fork is a copy of the repository that will be placed on your GitHub account.
 
-It should create a copy here -> `https://github.com/your_GitHub_user_name/website`,
-where `your_GitHub_user_name` is replaced with exactly that.
+It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/website`.
 
-Note that this copy is on a remote server on the GitHub website and not on your computer yet.
+For example -> `https://github.com/octocat/website`.
 
-If you click the icon again, it will not create a new fork but instead give you the URL associated with your fork.
+Note that this forked copy is a remote version on GitHub. It is not yet on your local machine :octocat:.
 
 ## Clone the forked repository
 
-The assumption from here on out is you have git installed on your system. If that is not the case. You can find instructions for installing git on your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).The following steps will create a third copy of the repository on your local desktop.
+Before cloning your forked repository to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
 
-   1. Create a new folder on your desktop that will contain `hackforla` projects.
+The following steps will create a local copy of the repository on your machine.
 
-      In your shell, navigate there then run the following commands:
+   1. Create a new folder on your machine that will contain `hackforla` projects.
 
+      In your command line interface (Terminal, Git Bash, Powershell), navigate into the folder(directory) you just created.
+      
+      For example: 
       ```bash
-      git clone https://github.com/your_GitHub_user_name/website.git
+      cd Desktop
+      cd hackforla
+      ```
+      
+      and run the following commands:
+      
+      ```bash
+      git clone https://github.com/<your_GitHub_user_name>/website.git
+      ```
+      
+      For example:
+      ```bash
+      git clone https://github.com/octocat/website.git
       ```
 
       You should now have a new folder in your `hackforla` folder called `website`. Verify this by changing into the new directory:
