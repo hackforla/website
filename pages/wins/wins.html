@@ -245,7 +245,6 @@ permalink: /wins/
 
   		}
 
-
   	})
 
   }
@@ -322,7 +321,6 @@ permalink: /wins/
 				})
 
 			})
-
 		} 
 		let profileImgSrc = ghId ?
 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
@@ -352,6 +350,7 @@ permalink: /wins/
 		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
+		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
 		insertIcons(cloneCardTemplate, '.wins-icon-container', card[win])
 
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
@@ -385,11 +384,14 @@ permalink: /wins/
   	}
   }
 
-  //TODO: expands written paragraph and changes "see more" to "see less"
+  //Adds event listener to badge icons when viewers interface is below desktop size
+  //Click expands wins text and removes "see more"
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
+			const id = container.dataset.index
 
+			mobileSeeMore(id)
 			container.setAttribute('class', 'wins-tablet wins-icon-container');
 		}))
 	}
@@ -399,16 +401,17 @@ permalink: /wins/
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
 
-		parent.classList.toggle('expanded');
+		parent.classList.add('expanded');
 
-		if (parent.classList.contains('expanded')) {
-			span.innerHTML = "see less";
-			winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container');
-		}
-		else {
-			span.innerHTML = "...see more";
-			winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet');
-		}
+		//FIXME: this is here for when see more/see less logic is added
+		// if (parent.classList.contains('expanded')) {
+		// 	span.innerHTML = "see less";
+		// 	winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container');
+		// }
+		// else {
+		// 	span.innerHTML = "...see more";
+		// 	winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet');
+		// }
   }
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
