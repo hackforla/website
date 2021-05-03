@@ -432,7 +432,7 @@ git branch -d <your-feature-branch>
 ```
 Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
-Now you are all set to work on a new PR. Start over [here](#Working-on-your-first-issue).
+Now you are all set to work on a new PR. Start over [here](#Working-on-an-issue).
 
 #### Edits to a pull request
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
