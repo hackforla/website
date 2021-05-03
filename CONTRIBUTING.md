@@ -94,7 +94,7 @@ The following steps will create a local copy of the repository on your machine.
      ```bash
      git remote -v
      ```
-     You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/YOURUSERNAME/website.git`). You are all set to make working changes to the website on your local machine.
+     You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/<your_GitHub_user_name>/website.git`). You are all set to make working changes to the website on your local machine.
 
      However, we still need a way to keep our local repo up to date with the deployed website. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
 
@@ -105,8 +105,8 @@ The following steps will create a local copy of the repository on your machine.
 
      After adding the upstream remote, you should now see it if you again run `git remote -v` :
      ```bash
-      origin  https://github.com/YOURUSERNAME/website.git (fetch)
-      origin  https://github.com/YOURUSERNAME/website.git (push)
+      origin  https://github.com/<your_GitHub_user_name>/website.git (fetch)
+      origin  https://github.com/<your_GitHub_user_name>/website.git (push)
       upstream        https://github.com/hackforla/website.git (fetch)
       upstream        https://github.com/hackforla/website.git (push)
       ```
@@ -117,7 +117,7 @@ The following steps will create a local copy of the repository on your machine.
       1) Set your forked repo on your Github as an `origin` remote:
 
       ```bash
-      git remote set-url origin https://github.com/your_user_name/website.git
+      git remote set-url origin https://github.com/<your_GitHub_user_name>/website.git
       ```
 
       2) Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
