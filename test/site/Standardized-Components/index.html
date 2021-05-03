@@ -1,0 +1,1012 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Standardized Components - HackforLA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HackforLA Docs" class="md-header__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HackforLA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Standardized Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HackforLA Docs" class="md-nav__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HackforLA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-Quick-Overview-of-FullStory/" class="md-nav__link">
+        A Quick Overview of FullStory
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10/" class="md-nav__link">
+        Adding local user accounts to the docker users group on Windows 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Agendas/" class="md-nav__link">
+        Agendas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Copywriter/" class="md-nav__link">
+        Copywriter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Scientist/" class="md-nav__link">
+        Data Scientist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../December-2019-Agenda/" class="md-nav__link">
+        December 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Digital-Marketing-Overview/" class="md-nav__link">
+        Digital Marketing Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide-to-the-Project-Layout-File/" class="md-nav__link">
+        Guide to the Project Layout File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hack-for-LA%27s-Site-Architecture/" class="md-nav__link">
+        Hack for LA's Site Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How-to-create-a-page-on-Hack-for-LA-website/" class="md-nav__link">
+        How to create a page on Hack for LA website
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions-for-adding-Status-Labels-to-issues/" class="md-nav__link">
+        Instructions for adding Status Labels to issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-the-Project/" class="md-nav__link">
+        Introduction to the Project
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Joining-the-HackforLA.org-Website-Team/" class="md-nav__link">
+        Joining the HackforLA.org Website Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../November-2019-Agenda/" class="md-nav__link">
+        November 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Other-Volunteer/" class="md-nav__link">
+        Other Volunteer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Manager-and-Owner/" class="md-nav__link">
+        Product Manager and Owner
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Requirements-Document/" class="md-nav__link">
+        Product Requirements Document
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Terminology/" class="md-nav__link">
+        Project Terminology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Updates/" class="md-nav__link">
+        Security Updates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Standardized Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Standardized Components
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusability" class="md-nav__link">
+    Reusability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-class" class="md-nav__link">
+    Base class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-class" class="md-nav__link">
+    Size Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-class" class="md-nav__link">
+    Color Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-specific-class" class="md-nav__link">
+    Page-Specific Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Success-Metrics/" class="md-nav__link">
+        Success Metrics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Team/" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-communities.md-file-%28for-Communities-of-Practice-page%29/" class="md-nav__link">
+        Template of a communities.md file (for Communities of Practice page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-credit.md-file-%28for-Credits-page%29/" class="md-nav__link">
+        Template of a credit.md file (for Credits page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-project.md-file/" class="md-nav__link">
+        Template of a project.md file
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI-UX-Designer/" class="md-nav__link">
+        UI UX Designer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-Git-GUI-%28Graphical-user-Interface%29-in-Visual-Studios-Code/" class="md-nav__link">
+        Using Git GUI (Graphical user Interface) in Visual Studios Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WCAG-2.0-Compliance/" class="md-nav__link">
+        WCAG 2.0 Compliance
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-Developer/" class="md-nav__link">
+        Web Developer
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusability" class="md-nav__link">
+    Reusability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-class" class="md-nav__link">
+    Base class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-class" class="md-nav__link">
+    Size Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-class" class="md-nav__link">
+    Color Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-specific-class" class="md-nav__link">
+    Page-Specific Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Standardized Components</h1>
+                
+                <h2 id="overview"><strong>Overview</strong></h2>
+<p>We are standardizing the buttons, page cards, and other reusable components across all pages on the HfLA website. This is to:</p>
+<ol>
+<li>Prevent the slight differences we found between components on different pages during our site audit</li>
+<li>Make the site’s code more scalable and easier to manage</li>
+<li>Help designers pull from existing standard designs when creating new pages</li>
+<li>Help developers build new pages with existing styles instead of starting from scratch on each new page</li>
+</ol>
+<p>We are following bootstrap and other class standards and naming conventions, as well as input from the HfLA team.</p>
+<p>This is a work in progress and we want to make sure this is actually useful and usable, so please feel free to provide any feedback on the #hfla-site slack channel or DM <strong>@daniellenedivi</strong> who worked on the design system.</p>
+<p><br /></p>
+<h3 id="reusability"><strong>Reusability</strong></h3>
+<p><br /></p>
+<p>To make our reusable components available across the site, we made their CSS classes more universal and less page-specific. </p>
+<p>These reusable classes now live in common .scss files (<code>_buttons,scss</code>,  <code>_page-cards.scss</code>,  etc), instead of in specific pages’ scss files (<code>_wins-page.scss</code>, etc), to make them easier to find and available for all pages.</p>
+<p><br /></p>
+<p><img alt="Image of Buttons CSS Code" src="https://i.imgur.com/nWaiLaw.png" /></p>
+<p><br /></p>
+<p>Each of the reusable components on our site now have several class names - one for their size, one for color, etc. This way if any style changes need to be made later on - i.e. to change every pink button to blue - the change can be made only to the CSS color class and will update all of the buttons that share that class, without having to edit every single button’s unique class separately. </p>
+<p>For this reason the class names are also more generic. Similar to Bootstrap, the button class related to color is called .btn-primary instead of .btn-pink to allow for future color changes.</p>
+<p>Now the style of a specific button is also easy to quickly adjust, by switching class names in the html depending on the component size, color, etc. that you want. If you want to switch from a pink to a black button, change the class names attached to that button in the HTML from <code>.btn-primary</code> (pink) to <code>.btn-dark</code> (black).</p>
+<p><br /></p>
+<p><img alt="Example of standardized button CSS classes " src="https://i.imgur.com/btlqxzC.png" /></p>
+<p><br /></p>
+<p>Reusable component class names include:</p>
+<ul>
+<li>
+<p><strong>Base class:</strong> used in every single instance of a component, this is the foundational class with properties they all share (ex: <code>.btn</code>, <code>.page-card</code>)</p>
+</li>
+<li>
+<p><strong>Size class:</strong> from xs to xl, this class sets and relates to the size of the component (ex: <code>.btn-xl</code>, <code>.page-card-lg</code>)</p>
+</li>
+<li>
+<p><strong>Color class:</strong> Sets the color of the component (ex: <code>.btn-primary</code>, <code>.page-card-secondary</code>)</p>
+</li>
+<li>
+<p><strong>Page-specific class:</strong> Includes any features that are unique to a component on a specific page - usually its placement (ex: <code>.btn--about-us</code>)</p>
+</li>
+</ul>
+<p>Additional standard classes may be added in the future as new components and variations are created.</p>
+<p><br /></p>
+<h2 id="getting-started"><strong>Getting started</strong></h2>
+<p>Insert all of the class names that apply to the button component you are building in HTML. This often leads to a long list of classes, but this is common when working with reusable components.</p>
+<p><br /></p>
+<h3 id="base-class"><strong>Base class</strong></h3>
+<p><br /></p>
+<p>Start with adding the base class of the component. Using buttons as an example, the base class <code>.btn</code> should be used in all buttons and includes the properties they all share, no matter the size or color:</p>
+<p><br /></p>
+<p><img alt="Base button CSS class" src="https://i.imgur.com/i3feJ3w.png" /></p>
+<p><br /></p>
+<p>Next, add the standard button classes (that currently relate to <strong>color</strong> and <strong>size</strong>) :</p>
+<p><br /></p>
+<h3 id="size-class"><strong>Size Class</strong></h3>
+<p><br /></p>
+<p>Continuing with the button example, the size classes <code>.btn-xl</code>, <code>.btn-lg</code>, <code>.btn-md</code> etc. should be used depending on the standard size of the button in the page you are developing:</p>
+<p><br /></p>
+<p><img alt="Button Size Classes" src="https://i.imgur.com/nmo4cJc.png" /></p>
+<p><br /></p>
+<h3 id="color-class"><strong>Color Class</strong></h3>
+<p><br /></p>
+<p>The color classes <code>.btn-primary</code>, <code>.btn-primary-on-dark</code>, and <code>.btn-dark</code> etc. should be used depending on the color of the button in the page you are developing:</p>
+<p><br /></p>
+<p><img alt="Button Color Classes" src="https://i.imgur.com/irAoLiZ.png" /></p>
+<p><br /></p>
+<h3 id="page-specific-class"><strong>Page-Specific Class</strong></h3>
+<p><br /></p>
+<p>Finally, add the page-specific class name, which in this case usually relates to the placement of the button on the page. The class naming standard <code>.btn--page-name</code> should be used in the dedicated scss file for a specific page, for instance in <code>_wins-page.scss</code>. </p>
+<p>If there is more than one type of the same component in a page and they both require different page-specific classes, the class names can also include more specifics about the components- i.e. <code>.btn--wins-page-submit</code> and <code>.btn--wins-page-survey</code>.</p>
+<p><br /></p>
+<p><img alt="Page-specific button class" src="https://i.imgur.com/riRgHgj.png" /></p>
+<p><br /></p>
+<p>In the end, the classes you selected and added to your component in HTML should look something like this:</p>
+<p><br /></p>
+<p><img alt="Example of standardized button CSS classes " src="https://i.imgur.com/btlqxzC.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Security-Updates/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Security Updates
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Success-Metrics/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Success Metrics
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>

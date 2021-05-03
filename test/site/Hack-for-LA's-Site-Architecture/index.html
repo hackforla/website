@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Hack for LA's Site Architecture - HackforLA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HackforLA Docs" class="md-header__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HackforLA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hack for LA's Site Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HackforLA Docs" class="md-nav__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HackforLA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-Quick-Overview-of-FullStory/" class="md-nav__link">
+        A Quick Overview of FullStory
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10/" class="md-nav__link">
+        Adding local user accounts to the docker users group on Windows 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Agendas/" class="md-nav__link">
+        Agendas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Copywriter/" class="md-nav__link">
+        Copywriter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Scientist/" class="md-nav__link">
+        Data Scientist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../December-2019-Agenda/" class="md-nav__link">
+        December 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Digital-Marketing-Overview/" class="md-nav__link">
+        Digital Marketing Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide-to-the-Project-Layout-File/" class="md-nav__link">
+        Guide to the Project Layout File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hack for LA's Site Architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hack for LA's Site Architecture
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    Contents:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-overview" class="md-nav__link">
+    Repository Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jekyll-folders" class="md-nav__link">
+    Jekyll Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collections-folders" class="md-nav__link">
+    Collections Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-asset-folders" class="md-nav__link">
+    Other Asset Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pages" class="md-nav__link">
+    Pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirections" class="md-nav__link">
+    Redirections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-related-folders" class="md-nav__link">
+    Github-related folders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    Includes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-the-project-cards-and-project-pages" class="md-nav__link">
+    Structure of the Project Cards and Project Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guide-pages" class="md-nav__link">
+    Guide Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styling" class="md-nav__link">
+    Styling
+  </a>
+  
+    <nav class="md-nav" aria-label="Styling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-sass" class="md-nav__link">
+    Why Sass?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sass-basics-summary" class="md-nav__link">
+    Sass Basics Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-files" class="md-nav__link">
+    Styling Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Styling Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainscss-and-normalizescss-files" class="md-nav__link">
+    Main.scss and Normalize.scss Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    Elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layouts" class="md-nav__link">
+    Layouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    API Endpoints
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How-to-create-a-page-on-Hack-for-LA-website/" class="md-nav__link">
+        How to create a page on Hack for LA website
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions-for-adding-Status-Labels-to-issues/" class="md-nav__link">
+        Instructions for adding Status Labels to issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-the-Project/" class="md-nav__link">
+        Introduction to the Project
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Joining-the-HackforLA.org-Website-Team/" class="md-nav__link">
+        Joining the HackforLA.org Website Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../November-2019-Agenda/" class="md-nav__link">
+        November 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Other-Volunteer/" class="md-nav__link">
+        Other Volunteer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Manager-and-Owner/" class="md-nav__link">
+        Product Manager and Owner
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Requirements-Document/" class="md-nav__link">
+        Product Requirements Document
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Terminology/" class="md-nav__link">
+        Project Terminology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Updates/" class="md-nav__link">
+        Security Updates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Standardized-Components/" class="md-nav__link">
+        Standardized Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Success-Metrics/" class="md-nav__link">
+        Success Metrics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Team/" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-communities.md-file-%28for-Communities-of-Practice-page%29/" class="md-nav__link">
+        Template of a communities.md file (for Communities of Practice page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-credit.md-file-%28for-Credits-page%29/" class="md-nav__link">
+        Template of a credit.md file (for Credits page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-project.md-file/" class="md-nav__link">
+        Template of a project.md file
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI-UX-Designer/" class="md-nav__link">
+        UI UX Designer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-Git-GUI-%28Graphical-user-Interface%29-in-Visual-Studios-Code/" class="md-nav__link">
+        Using Git GUI (Graphical user Interface) in Visual Studios Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WCAG-2.0-Compliance/" class="md-nav__link">
+        WCAG 2.0 Compliance
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-Developer/" class="md-nav__link">
+        Web Developer
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    Contents:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-overview" class="md-nav__link">
+    Repository Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jekyll-folders" class="md-nav__link">
+    Jekyll Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collections-folders" class="md-nav__link">
+    Collections Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-asset-folders" class="md-nav__link">
+    Other Asset Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pages" class="md-nav__link">
+    Pages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirections" class="md-nav__link">
+    Redirections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-related-folders" class="md-nav__link">
+    Github-related folders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#includes" class="md-nav__link">
+    Includes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-the-project-cards-and-project-pages" class="md-nav__link">
+    Structure of the Project Cards and Project Pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guide-pages" class="md-nav__link">
+    Guide Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styling" class="md-nav__link">
+    Styling
+  </a>
+  
+    <nav class="md-nav" aria-label="Styling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-sass" class="md-nav__link">
+    Why Sass?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sass-basics-summary" class="md-nav__link">
+    Sass Basics Summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-files" class="md-nav__link">
+    Styling Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Styling Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mainscss-and-normalizescss-files" class="md-nav__link">
+    Main.scss and Normalize.scss Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    Elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layouts" class="md-nav__link">
+    Layouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    API Endpoints
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Hack for LA's Site Architecture</h1>
+                
+                <p>Hack for LA uses <a href="https://jekyllrb.com/">Jekyll</a>, which is a Content Management System (CMS), to generate the HfLA website. In a nutshell, Jekyll takes a bunch of building blocks (HTML, SCSS, and Markdown), and compiles (organizes/combines) these building blocks into the many pages that you see on the site.</p>
+<p>This guide provides a description of the folders and files in the <a href="https://github.com/hackforla/website">Hack for LA Website repository</a> and how to work with them. </p>
+<p><strong>Helpful documentation if you're new to Jekyll or front-end development:</strong>
+* <a href="https://jekyllrb.com/docs/step-by-step/01-setup/">Jekyll</a> - the CMS we're using
+* <a href="https://shopify.github.io/liquid/tags/control-flow/">Liquid</a> - a templating language used to program Jekyll's HTML output
+* <a href="https://markdown-guide.readthedocs.io/en/latest/">Markdown</a> - a plain text markup language used in .md files, which Jekyll converts to HTML format
+* <a href="https://sass-lang.com/documentation">Sass</a> - a stylesheet language used in .scss files, which Jekyll compiles into CSS</p>
+<p><strong>If you're ready to skip to creating a page:</strong>
+<a href="https://github.com/hackforla/website/wiki/How-to-create-a-page-on-Hack-for-LA-website">Creating a page for Hack for LA</a> </p>
+<h3 id="contents">Contents:</h3>
+<ol>
+<li><a href="#repository-overview">Repository Overview</a><ol>
+<li><a href="#configuration-files">Configuration Files</a></li>
+<li><a href="#jekyll-folders">Jekyll Folders</a></li>
+<li><a href="#collections-folders">Collections Folders</a></li>
+<li><a href="#other-asset-folders">Other Asset Folders</a></li>
+<li><a href="#pages-files">Pages</a></li>
+<li><a href="#redirections">Redirections</a></li>
+</ol>
+</li>
+<li><a href="#collections">Collections</a></li>
+<li><a href="#includes">Includes</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#guide-pages">Guide Pages</a></li>
+<li><a href="#styling">Styling</a></li>
+<li><a href="#api-endpoints">API Endpoints</a></li>
+</ol>
+<h2 id="repository-overview">Repository Overview</h2>
+<h3 id="configuration-files">Configuration Files</h3>
+<ul>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/_config.yml">_config.yml</a>: stores <em>site-wide</em> configuration data (variables). This may be: </p>
+<ul>
+<li>information that Jekyll uses to render our site (for example: whether pages should be accessed as page.html or page/), or</li>
+<li>information we can use on web pages using Liquid. (See the <a href="https://jekyllrb.com/docs/liquid/">Jekyll documentation</a> and <a href="https://shopify.github.io/liquid/tags/control-flow/">Liquid reference</a> for more information on Liquid.)<br />
+For example, <code>title: Hack for LA</code> sets "Hack for LA" as the value for the variable <code>title</code>. We can use the Liquid tag <code>{{ site.title }}</code> in our HTML, and Jekyll will output "Hack for LA" at that location.  </li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/.gitignore">_.gitignore</a>: Tells git which files shouldn't be tracked for changes. Most if not all repos have a .gitignore file. You probably won't need to touch it unless you're a lead dev. 
+.dockerignore has a similar function.</p>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/CNAME">CNAME</a>: part of the setup that allows the domain name "hackforla.org" point to our repo on the GitPages servers. You don't need to touch this.</p>
+</li>
+</ul>
+<h3 id="jekyll-folders">Jekyll Folders</h3>
+<p>Standard Jekyll builds include the following folders:
+* _site/: When you run Jekyll on your local machine (e.g., using Docker), Jekyll compiles your local code and outputs the website to _site/. Note that _site/ is listed in .gitignore and doesn't exist on the github repo - it's only there for your local viewing. Don't edit code in the site folder; nobody will be able to see your hard work.</p>
+<ul>
+<li>
+<p><a href="https://github.com/hackforla/website/tree/gh-pages/_data">_data/</a>: Data files (possible formats include CSV, JSON, XML) can be stored here, and referenced in pages using Liquid via <code>site.data.[filename]</code></p>
+<ul>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_data/navigation">Navigation</a>: Contains yml files for the navigation bar for different sections of the home page/individual site pages, as well as social media links. </li>
+<li>Github-data.json: Contains contributor information for each project, which is automatically pulled from Github.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/tree/gh-pages/_includes">_includes/</a>: Best place to put HTML building blocks that are repeated on multiple pages.</p>
+<ul>
+<li>Forms: Includes HTML files for the Contact Us section and a generic sign up form (for email subscriptions). The Contact Us form can be edited to change the look of the section on the home page.</li>
+<li>Svg: Contains svg files for all the icons used on the site.</li>
+<li>The remaining HTML files correspond to various HTML snippets seen on every page of the site. When the Liquid tag (i.e. <code>{% include [filename].html %}</code>) is used in a page file (HTML or Markdown), the content from the included HTML snippet gets pulled in at that point. For more details on each include, see the <a href="#includes">Includes</a> section below. </li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/tree/gh-pages/_layouts">_layouts/</a>: A .md or HTML file can call a layout in its front matter (the section between the <code>---</code> bars). The Layout determines the HTML shell of the page. The content of the .md file (anything after the front matter) gets inserted into the shell at the point where the layout says <code>{{ content }}</code>. We use layouts when we want different pages to have the same overall shell (e.g., header, footer, etc.).</p>
+<ol>
+<li><code>default.html</code>: layout used for most pages (including project pages). Includes page elements such as the head, header, and footer, which are pulled from the _includes folder.</li>
+<li><code>guide-pages.html</code>: is based on the default layout, and sets additional layout for the header content - such as the hero image, title of the page, description of the page, and a list of contents. (See additional details in the <a href="#guide-pages">Guide Pages</a> section).</li>
+<li><code>project.html</code>: is based on the default layout, and sets additional layout and styling for individual project pages. (See additional details in the <a href="#projects">Projects</a> section).</li>
+<li><code>redirect.html</code>: includes the header and footer HTML files, as well as a message to the user that they are being redirected to an external page. This layout is primarily used for our surveys, which uses Google Forms.</li>
+</ol>
+</li>
+</ul>
+<h3 id="collections-folders">Collections Folders</h3>
+<p><a href="https://jekyllrb.com/docs/collections/">Collections</a> are always folders with a preceding underscore (_), and are used to group related content. Usually the items in a collection are .md files. Jekyll is able to process items in a collection iteratively - for example, <code>_projects/</code> contains an .md file containing information for each H4LA project. With just a few lines of Liquid code on our front page file, we're able to publish information for our 20+ projects.</p>
+<p>To use a collection, it must be defined in the _config.yml file, under the <code>collections:</code> section. Set <code>output: true</code> if and only if you want Jekyll to generate separate HTML pages for each item within the collection. Output is set to true for the Project pages, because we want each Project to have its own page.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82394442-e9697680-99fd-11ea-9862-d6835e81ed66.png" /></p>
+<p>See <a href="#collections">Collections</a> for an explanation of each collection.</p>
+<h3 id="other-asset-folders">Other Asset Folders</h3>
+<ul>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_sass">_sass/</a>: All sass (.scss) files are imported to the <code>main.scss file</code>, which Jekyll processes into a single stylesheet, <code>main.css</code>, which defines all the styles used on the site. <ul>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_sass/components">_sass/components/</a>: Because each page has at least some own custom styling, page-specific .scss files live in this subdirectory.</li>
+<li>For more information on styling, see the <a href="#styling">Styling</a> section).</li>
+</ul>
+</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/assets/images">assets/images/</a>: All images displayed on the website are stored in this folder. Each project or page has a subfolder for slightly better organization.</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/assets/js">assets/js/</a>: Externally-referenced javascripts can live here.  <ul>
+<li>One of the files is for the Action Network API, Hack for LA is currently using Action Network to collect and maintain emails for users who are interested in receiving updates and Hack for LA's email subscription. </li>
+<li>The second file is for the Google Calendar API, which currently redirects to Google Calendars, displaying Hack Night events (which are currently held remotely). </li>
+</ul>
+</li>
+</ul>
+<h3 id="pages">Pages</h3>
+<p>All pages that aren't automatically generated within a Collection are organized in this directory.</p>
+<ul>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/pages/index.html">index.html</a>: is where all the sections (i.e. project cards, about, contact, etc.) of the home page are laid out. The files that are "included" are from the <code>_includes</code> folder. Note: You'll also notice there is this condition <code>{% assign remote-only = 'true' %}</code>:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82394556-39e0d400-99fe-11ea-99a2-5cf3525a5f56.png" /></p>
+<p>This is here to filter between two views - one displaying Hack Nights (when we do have in-person meetings), and one without (to accomodate for working remotely due to Covid-19). </p>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/pages/getting-started.html">getting-started.html</a>: The 'Getting Started' button on the home page leads to this page. Thus, this HTML file is using the default layout. The page is divided into four sections/cards, including the introduction, Self Onboarding, Guided Onboarding, and the Once you have joined a team section. </p>
+</li>
+<li>
+<p><a href="https://github.com/hackforla/website/blob/gh-pages/pages/project-meetings.html">project-meetings.html</a>: New Volunteers on the 'Getting Started' page are prompted to check the 'Team Meeting Overview' page. <br>
+    <img alt="image" src="https://user-images.githubusercontent.com/49918375/83339948-a6be5e80-a287-11ea-8e5f-2d3344c681cd.png" /> <br>
+The link will lead to the <code>https://www.hackforla.org/project-meetings</code> page.</p>
+<p>The Project Meetings page is similar to the 'Getting Started' because they are standalone HTML files that are deployed as their own page (unlike project pages which derive their information from markdown files). </p>
+<p>Currently, the page is generated through a two-step process to load the meeting times. We're doing this process in two-steps to ensure that the user will always see a page loaded with meeting times. Otherwise, the page may indicate that there are no meetings available as a placeholder message while the page is loading, despite the actual meeting information. 
+1. The first step in the process is to load the page using a static JSON file,  <a href="https://github.com/hackforla/website/blob/gh-pages/_data/project-meetings-from-vrms.json">project-meetings-from-vrms.json</a> in the <code>_data</code> folder. The logic <code>{% assign localData = site.data.project-meetings-from-vrms | jsonify %}</code> is pulling information from the static JSON file located in the data folder and converting the JSON into a more usable form, then loading the information onto the page using DOM manipulation, all executed within the <code>schedule</code> function.<br><br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/83339970-ec7b2700-a287-11ea-8b09-fbfd8ab87c9d.png" /></p>
+</li>
+<li>
+<p>The next step is to check the information on the loaded page with up-to-date information from VRMS. The data is being pulled from <a href="https://www.vrms.io/api/recurringevents">https://www.vrms.io/api/recurringevents</a>. After the data is fetched from the API url, the information inside the new JSON is also converted into a usable form, is checked for differences between the static JSON that was initially loaded onto the page, and any differences that were found will be replaced with the updated VRMS information. <br><br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/83339985-0caae600-a288-11ea-9af2-182a5af21590.png" /></p>
+</li>
+</ul>
+<p><strong>Return to <a href="#contents">Contents</a></strong> 
+<br><br></p>
+<h3 id="redirections">Redirections</h3>
+<p>The .md files in this directory are converted to placeholder HTML files, which automatically redirect the viewer to another page. Each file uses the redirect layout (called in the front matter) and includes a custom front matter tag, <code>redirect-to</code>, that specifies the destination URL. The redirect layout then calls this tag using e.g.,<code>&lt;a href="{{ page.redirect_to }}"&gt;</code>.
+    <img alt="image" src="https://user-images.githubusercontent.com/49918375/83370867-72c16700-a375-11ea-955b-79a6672c6307.png" /></p>
+<p>The <code>redirect.html</code> layout file also includes code for the Google Analytics API, in order to analyze user interaction with redirected pages.  </p>
+<p>The files using the redirect layout include: 
+* <code>conduct.md</code>: links to Hack for LA's Code of Conduct 
+* <code>donate.md</code>: links to https://www.codeforamerica.org/donate
+* <code>github.md</code>: Hack for LA's Website Github page
+* <code>meetup.md</code>: Hack for LA's Meetup page
+* <code>nationalday.md</code>: Hack for LA's 2019 Day of Civic Hacking
+* <code>slack.md</code>: Hack for LA's Slack 
+* <code>survey.md</code>files: redirects to various Google Forms surveys
+* <code>calendar.md</code>:  redirects to Hack for LA's Google Calendar with workshops that run outside of regular Hack Nights. These workshops are currently onhold, due to Covid-19, with the possibility of being held remotely. </p>
+<h3 id="github-related-folders">Github-related folders</h3>
+<ul>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/.github/">.github/</a>: holds a couple of files that interact with the Github API and help us keep our repo secure and up to date.</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/github-actions">github-actions</a>: includes a couple of scripts<ul>
+<li><code>action.yml</code>: contains front matter for pulling Github API data into a JSON with information relating to project contributors and languages used.</li>
+<li><code>get-project-data.js</code>: script to run Github API.</li>
+<li><code>package-lock.json</code>: JSON with project contributors and languages used in each project.</li>
+<li><code>package.json</code>: JSON for dependencies.</li>
+</ul>
+</li>
+</ul>
+<h2 id="collections">Collections</h2>
+<p><em>help us out by making .md templates in the wiki and linking them here</em></p>
+<ul>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_hack-nights">Hack-Nights</a>: Locations for Hack for LA's in-person meetings (before Covid-19).</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_press">Press</a>: Press releases related to Hack for LA. The markdown files include front matter for the link, title, and source of the article. The press.html in the includes folder uses Liquid to extract the front matter from these markdown files to display this information onto the home page.</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_projects">Projects</a>: Each markdown file represents each project listed on the home page's Projects section. (See additional details in the <a href="#projects">Projects</a> section). <a href="https://github.com/hackforla/website/wiki/Template-of-a-project.md-file">TEMPLATE</a></li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_sponsors">Sponsors</a>: Hack for LA's Sponsors, and include each sponsor's name, link, logo, and order/position to be displayed on the webpage. </li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_testimonials">Testimonials</a>: Includes Mayor Garcetti's testimonial of Hack for LA's amazing work! :)</li>
+<li><a href="#guide-pages">Guide Pages</a>: Markdown files in the Guide Pages folder represent each guide page. The guide pages are structured using the <code>guide-page.html</code> layout (to consistently format the header content) with additional HTML under the front matter to display content unique to each page. (See additional details in the <a href="#guide-pages">Guide Pages</a> section).</li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_credits">Credits</a>: If you use an image that was generated by someone else, credit them here. <a href="https://github.com/hackforla/website/wiki/Template-of-a-credit.md-file-(for-Credits-page)">TEMPLATE</a></li>
+<li><a href="https://github.com/hackforla/website/tree/gh-pages/_communities">Communities</a>: for Communities of Practice groups. <a href="https://github.com/hackforla/website/wiki/Template-of-a-communities.md-file-(for-Communities-of-Practice-page)">TEMPLATE</a></li>
+</ul>
+<p><strong>Return to <a href="#contents">Contents</a></strong> 
+<br><br></p>
+<h2 id="includes">Includes</h2>
+<ul>
+<li><code>about.html</code>: Includes description of Hack for LA for the About section on the home page.</li>
+<li><code>calendar.html</code>: (Currently disabled) Contains upcoming events.</li>
+<li><code>current-projects.html</code>: Populates the project cards' markdown files (from the <code>_projects</code> folder onto the home page in the order of project status and project names. </li>
+<li><code>footer.html</code>: Footer navigation bar, includes social media links which are populated from the front matter located in <a href="https://github.com/hackforla/website/blob/gh-pages/_data/navigation/social.yml">_data\navigation\social.yml</a>. </li>
+<li><code>hack-nights.html</code>: (Currently disabled) Displays weekly Hack Nights information. Hack Night location and other information are populated from the <a href="https://github.com/hackforla/website/tree/gh-pages/_hack-nights">_hack-nights</a> folder. </li>
+<li><code>head.html</code>: Includes page title and API scripts for Google Analytics and Hotjar. Google Analytics is the primary analysis tool, but our legacy tool, <a href="https://www.hotjar.com/">Hotjar</a> provides us heatmaps of the Home page and the Getting Started page.</li>
+<li><code>header.html</code>: Includes Hack for LA's logo, navigation bar, <code>main-nav.html</code> and social media links/icons ( <code>social.html</code>). </li>
+<li><code>hero.html</code>: Introduction to Hack for LA on the home page.</li>
+<li><code>home-getting-started.html</code>: 'Getting Started' button linking to the Getting Started page. There are two of these buttons, one located beneath the hero introductory message and one located in the 'Contact Us' section on the home page. </li>
+<li><code>main-nav.html</code>: Navigation bar with page links and icons, information is flowing from front matter located in <a href="https://github.com/hackforla/website/blob/gh-pages/_data/navigation/main.yml">_data\navigation\main.yml</a>. The <code>main-nav.html</code> is embedded inside <code>header.html</code>.</li>
+<li><code>press.html</code>: Populates Press information such as the article title, news source, and link from the markdown files in the <code>_press</code> folder. </li>
+<li><code>project-card.html</code>: Populates the relevant information for each project card based on the project's markdown file. More details in the <a href="#projects">Projects</a> section. </li>
+<li>
+<p><code>resource-card.html</code>: Populates the 'Getting Started' panel on individual project pages. The Liquid in the code is determining what resources the project is using, and looking up the corresponding svg icon in the <a href="https://github.com/ye-susan/website/tree/gh-pages/_includes/svg">_includes\svg</a> folder. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82748391-4777c000-9d56-11ea-89d2-5a089db78286.png" /></p>
+</li>
+<li>
+<p><code>social.html</code>: Populates linked social media icons in the header navigation bar. The front matter comes from <a href="https://github.com/hackforla/website/blob/gh-pages/_data/navigation/social.yml">_data\navigation\social.yml</a>.</p>
+</li>
+<li><code>sponsors.html</code>: Populates linked icons for Sponsors on the home page. </li>
+</ul>
+<p><strong>Return to <a href="#contents">Contents</a></strong>
+<br><br></p>
+<h2 id="projects">Projects</h2>
+<h3 id="structure-of-the-project-cards-and-project-pages">Structure of the Project Cards and Project Pages</h3>
+<ol>
+<li>
+<p>See the <a href="https://github.com/hackforla/website/blob/gh-pages/index.html">index.html</a> located in the root directory.
+This is where all the sections (i.e. project cards, about, contact, etc.) of the home page are laid out. You'll see the following code:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82393021-2469ab00-99fa-11ea-88a9-7b3c4766d073.png" /></p>
+<p>All the items listed after '{%- include ' are individual HTML files for each separate section, located in the '_includes' folder, which is standard in Jekyll. </p>
+</li>
+<li>
+<p>If you follow the link to <a href="https://github.com/hackforla/website/blob/gh-pages/_includes/current-projects.html">current-projects.html</a> in the <code>_includes</code> folder, you'll see that it contains a looping structure for displaying the project cards. The projects are sorted based on the front matter (by status and project name) determined in each individual project's markdown file located in the <code>_projects</code> folder.</p>
+<p>a) The primary level of sorting places the projects that are "Active" first, followed by "Rebooting", "Completed", and "On-Hold", in this order.</p>
+<p>b) The secondary level of sorting is alphabetically by the projects' name, so projects are sorted alphabetically within each status group.
+For example, the ordering of projects would look like this: </p>
+<ol>
+<li>311-Data (Status: Active)</li>
+<li>Civic Tech Index (Status: Active)</li>
+<li>Write for All (Status: Active)</li>
+<li>Food Oasis (Status: Rebooting)</li>
+</ol>
+<p>Projects with the front matter <code>hide: true</code> will not appear on the home page.</p>
+</li>
+<li>
+<p>Front matter/information for each project is located in the <a href="https://github.com/hackforla/website/tree/gh-pages/_projects">_projects</a> folder. This folder contains the markdown files for each project. To update status, location, leadership, links, recruiting, and other information - simply edit the front matter (the information between the  <code>---</code>. This information will flow through to the project cards as well as the project pages. See the <a href="https://github.com/hackforla/website/wiki/Template-of-a-project.md-file">Template of a project.md file</a> for more detail. </p>
+</li>
+<li>
+<p>To update logic, styling, and layout of ALL <strong>project cards</strong>, see the <a href="https://github.com/hackforla/website/blob/gh-pages/_includes/project-card.html">project-card.html</a> in the _includes file. All the information extracted through the Liquid logic is coming from the markdown files in the <code>_projects</code> folder. Specifically, the following information is being extracted: </p>
+<ul>
+<li>Project image link (actual images are stored in the <a href="https://github.com/hackforla/website/tree/gh-pages/assets/images/projects">asset\images\projects</a> folder)</li>
+<li>Project name and link to project page</li>
+<li>Status of project</li>
+<li>Project links (i.e. Github, website, Slack, etc.)</li>
+<li>Project partner (if any)</li>
+<li>Roles that the project is looking for (if the project is active or rebooting)</li>
+<li>Project location, and</li>
+<li>Technologies used for the project</li>
+</ul>
+</li>
+<li>
+<p>To update the logic, styling, and layout of ALL <strong>project pages</strong>, see <a href="https://github.com/hackforla/website/blob/gh-pages/_layouts/project.html">project.html</a> layout in the _layout folder. For a walk-through of the project layout, see the <a href="https://github.com/hackforla/website/wiki/Guide-to-the-Project-Layout-File">Guide to the Project Layout</a>.</p>
+</li>
+</ol>
+<p><strong>Return to <a href="#contents">Contents</a></strong> 
+<br><br></p>
+<h2 id="guide-pages">Guide Pages</h2>
+<p>The guide pages are a collection of pages that use the <code>guide-page.html</code> layout to format the header content. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/86847713-9c9b3700-c061-11ea-9be9-27753e729542.png" /></p>
+<p>The header content uses the front matter in the markdown files from the _guide-pages folder to populate the title, description of the page, and the list of contents. An example of the markdown file is show below: </p>
+<pre><code>---
+title: Getting the Most Out of GitHub Issues
+description: Each of Hack for LA’s GitHub project repositories (repos) use &lt;a href=&quot;https://guides.github.com/features/issues/&quot;&gt;issues&lt;/a&gt; to track and organize ideas, enhancements, and tasks. All team members will use GitHub issues to communicate in our multifunctional teams. &lt;br&gt;&lt;br&gt; When creating a new GitHub issue, the following tips will help you provide consistent formatting, a clear and concise overview, actionable tasks, explanatory resources, and resumé items to add value for all volunteers. &lt;br&gt;&lt;br&gt;        &lt;em&gt;All GitHub Issues use &lt;strong&gt;markdown&lt;/strong&gt; for formatting. View GitHub’s &lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot;&gt;Mastering Markdown&lt;/a&gt; for a simple guide.&lt;/em&gt;
+in-this-guide: 
+  - name: Example of a Good End-to-End Issue
+    link: '#example-issue'
+  - name: Issue Sections - Description and Tips
+    link: '#issue-sections'
+  - name: Issue Template
+    link: '#issue-template'
+  - name: Member Analytics
+    link: '#member-analytics'
+---
+
+&lt;HTML CODE GOES HERE&gt;
+</code></pre>
+<p>HTML is placed after the front matter to populate the content, as each guide page is uniquely structured. In the <code>guide-pages.html</code> layout file, you'll see 
+<code>{{ content | markdownify }}</code>, which is a Liquid filter that helps with converting the code below the front matter into HTML. </p>
+<p>To help keep the guide page elements consistent and DRY, styling for the majority of elements have been created in the <code>_guide-pages.scss</code> file, and are demonstrated below. Please note the tags and classes used as you create your guide page. </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/86847740-af157080-c061-11ea-829e-3fa1ad5edf60.png" />
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/86416674-72bbcc00-bc7f-11ea-8add-47c92c66639f.png" />
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/86416685-7a7b7080-bc7f-11ea-99de-087ce01be6ec.png" /></p>
+<p>To add unique formats or styles, create a Sass file inside the <code>_sass/components/guide-pages</code> folder, with a name that corresponds to your markdown file. Don't forget to import your new Sass file in the main  <code>_sass/main.scss</code> file with the other guide pages.</p>
+<p>To add images, or to reuse images (such as arrows), see the 
+<code>assets/images/guides</code> folder. Create a folder to add the images for your guide page.</p>
+<p><strong>Return to <a href="#contents">Contents</a></strong> 
+<br><br></p>
+<h2 id="styling">Styling</h2>
+<p>If you're new or unfamiliar with SASS, take a look at these links below: 
+1. <a href="https://jekyllrb.com/docs/assets/">Sass in Jekyll</a>
+2. Sass Language: <a href="https://sass-lang.com/guide">Sass Basics</a> and <a href="https://sass-lang.com/documentation">Documentation</a></p>
+<h4 id="why-sass">Why Sass?</h4>
+<ul>
+<li>(From Sass Basics Guide): "Sass lets you use features that don't exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again."</li>
+</ul>
+<h4 id="sass-basics-summary">Sass Basics Summary</h4>
+<ul>
+<li>Variables: CSS values can be stored in variables, variables are denoted with <code>$</code>.</li>
+<li>Nesting: CSS selectors can be nested in a similar hierarchy as HTML.</li>
+<li>Partials: Partial Sass files are snippets of CSS that you can include in other Sass files. It can be used with the <code>@use</code> rule and the name of a partial must be prefixed with an <code>_</code>, doing so notifies Sass that it is a partial file, as to prevent it from being generated into a CSS file.</li>
+<li>Modules: Modules can also be used with the  <code>@use</code> rule (you can pass in the module name without the extension: i.e. <code>@use 'example';</code>). The rule also allows you to use the variables, mixins, and functions of the module passed in.</li>
+<li>Mixins: Similar to variables, mixins are a good way to keep code DRY. However, instead of using a variable to store a small piece of information, mixins are used to store chunks of code to be reused over and over. Mixins can be used with <code>@include mixin-name</code>. A good use of mixins would be to store values for vendor prefixes.</li>
+<li>Extend/Inheritance: The use of <code>@extend</code> allows you to share a set of CSS properties from one selector to another. A selector that is to be shared will be prefixed with <code>%</code>.</li>
+<li>Operators: Sass allows the use of standard math operators such as +, -, *, /, and %.</li>
+</ul>
+<h3 id="styling-files">Styling Files</h3>
+<p>All of Hack for LA's styling files are contained in <a href="https://github.com/hackforla/website/tree/gh-pages/_sass">_sass</a>.
+1. <a href="#main.scss-and-normalize.scss-files">Main.scss and Normalize.scss Files</a>
+3. <a href="#components">Components</a>
+4. <a href="#elements">Elements</a>
+5. <a href="#layouts">Layouts</a>
+6. <a href="#variables">Variables</a> </p>
+<h4 id="mainscss-and-normalizescss-files">Main.scss and Normalize.scss Files</h4>
+<p><code>Main.scss</code> is the primary file that imports all the other stylesheets within the various subfolders contained in the main <code>_sass</code> folder. It is also the file that Jekyll will use to compile into CSS within the <code>_site</code> folder. </p>
+<p><code>Normalize.scss</code> helps normalize styling across all browsers to preserve consistency.</p>
+<h4 id="components">Components</h4>
+<p>This folder contains stylesheets for specific pages or page components. Any styling that is unique to a page or component should be made in these stylesheets.</p>
+<h4 id="elements">Elements</h4>
+<p>The elements folder contains the reusable styles for basic elements of a page such as the base of a page (including styles for elements that may be included in a page such as images), buttons, forms, icons, lists, and typography. Please read about how to implement reusable components <a href="https://github.com/hackforla/website/wiki/Standardized-Components">HERE</a>.</p>
+<h4 id="layouts">Layouts</h4>
+<p>The layouts folder contains <code>_main.scss</code> which is different from the primary _main.scss, although it does act as a global file in that it affects all pages on the website. The styles within this <code>_main.scss</code> are used to push the footer to the bottom of the page. Also included in the layouts folder is the  <code>_redirect.scss</code> which makes adjustments to pages that use the 'redirect' layout.</p>
+<h4 id="variables">Variables</h4>
+<p>The variables folder holds a list of variables that we use throughout the website. For example, the <code>_colors.scss</code> defines the various colors that are used in the site's color scheme. The <code>_layout.scss</code> file contains various width values for different screen sizes (i.e. mobile, tablet, desktop). The last file, <code>_typography.scss</code> defines the various styles for fonts and the styling of fonts based on HTML tags.</p>
+<p><strong>Return to <a href="#contents">Contents</a></strong>
+<br><br></p>
+<h2 id="api-endpoints">API Endpoints</h2>
+<p>This section aggregates all the API endpoints used throughout the project. </p>
+<ol>
+<li><strong>Project Meetings</strong><br>
+    Project meetings display all the meetings times of each project team. Currently, it is using a static JSON file to load meeting times onto the page and then updating meeting times using an API linking to VRMS data. See the Files section for more information about <a href="#files">project meetings</a>.</li>
+<li><strong>Project Languages</strong><br>
+    While most information for a project is pulled from its markdown file, languages for projects are pulled from a project's Github API. See the <a href="https://github.com/hackforla/website/wiki/Guide-to-the-Project-Layout-File">project layout wiki</a> for additional detail. </li>
+<li><strong>Project Contributors</strong><br>
+    Similar to project languages, project contributors are also pulled from Github's list. Currently, the contributors list is showing members based on commits (individuals who have made more Github commits show up on top of the list). We are working on a way to use Github to also include members who contribute to discussions or project issues (i.e. UI/UX designers) without commiting code. See the <a href="https://github.com/hackforla/website/wiki/Guide-to-the-Project-Layout-File">project layout wiki</a> for additional detail on how the contributor information is pulled from the API. </li>
+<li><strong>Action Network</strong><br>
+    Hack for LA is currently using Action Network to collect and store an email subscription list for users who are interested in receiving updates from Hack for LA. The script for embedding the API into the sign up forms can be found in <a href="https://github.com/hackforla/website/blob/gh-pages/assets/js/api-actionnetwork.js">assets\js\api-actionnetwork.js</a>. The script is using the DOM to create and embed Action Network into the signup form, and sending any submissions to Action Network. </li>
+<li><strong>Hotjar</strong><br>
+    <a href="https://www.hotjar.com/">Hotjar</a> is a behavior analytics tool that we are using to analyze how visitors are interacting with the Hack for LA site. However, since the free tier of Hotjar provides 3 funnels, we are limited to tracking only Home page and the Getting Started page. We've also chosen to use Google Analytics in conjunction with Hotjar. The script for the Hotjar API can be found in the <a href="https://github.com/hackforla/website/blob/gh-pages/_includes/head.html">head.html</a> file which sets the <code>&lt;head&gt;</code> for every site page. </li>
+<li><strong>Google Analytics</strong><br>
+    Google Analytics is our primary tool for analyzing user interaction and traffic to the Hack for LA website. The script for the Google Analytics API can be found in the <a href="https://github.com/hackforla/website/blob/gh-pages/_includes/head.html">head.html</a> file as well as the <a href="https://github.com/hackforla/website/blob/gh-pages/_layouts/redirect.html">redirect.html</a> layout file, to ensure that every page will be analyzed. </li>
+<li><strong>Google Calendar</strong><br>
+    Prior to Covid-19, we utilized Google Calendars to display recurring Hack Night events. Now that meetings and events are held remotely, the calendar is not being displayed. The script for embedding the Google Calendar can be found in <a href="https://github.com/hackforla/website/blob/gh-pages/assets/js/api-calendar.js">assets\js\api-calendar.js</a>.</li>
+</ol>
+<p><strong>Return to <a href="#contents">Contents</a></strong>
+<br><br></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Guide-to-the-Project-Layout-File/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Guide to the Project Layout File
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Home/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Home
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>

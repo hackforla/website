@@ -1,0 +1,1519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+    
+    
+      
+        <title>Guide to the Project Layout File - HackforLA Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HackforLA Docs" class="md-header__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HackforLA Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guide to the Project Layout File
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HackforLA Docs" class="md-nav__button md-logo" aria-label="HackforLA Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HackforLA Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-Quick-Overview-of-FullStory/" class="md-nav__link">
+        A Quick Overview of FullStory
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10/" class="md-nav__link">
+        Adding local user accounts to the docker users group on Windows 10
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Agendas/" class="md-nav__link">
+        Agendas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Copywriter/" class="md-nav__link">
+        Copywriter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Scientist/" class="md-nav__link">
+        Data Scientist
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../December-2019-Agenda/" class="md-nav__link">
+        December 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Digital-Marketing-Overview/" class="md-nav__link">
+        Digital Marketing Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Guide to the Project Layout File
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Guide to the Project Layout File
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    ## Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visible" class="md-nav__link">
+    Visible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hero-image" class="md-nav__link">
+    Hero Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-status" class="md-nav__link">
+    Project Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-links" class="md-nav__link">
+    Project Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-technologies" class="md-nav__link">
+    Tools and Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-roles" class="md-nav__link">
+    Open Roles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-button" class="md-nav__link">
+    Getting Started Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-panel" class="md-nav__link">
+    Getting Started Panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-leadership" class="md-nav__link">
+    Project Leadership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-contributors" class="md-nav__link">
+    Project Contributors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-card" class="md-nav__link">
+    Resource Card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-code" class="md-nav__link">
+    JavaScript Code
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetching-correct-project" class="md-nav__link">
+    Fetching Correct Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-languages" class="md-nav__link">
+    Adding Languages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-team-card" class="md-nav__link">
+    Constructing Team Card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-drop-down" class="md-nav__link">
+    Getting Started Drop Down
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-to-action-message" class="md-nav__link">
+    Call to Action Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hack-for-LA%27s-Site-Architecture/" class="md-nav__link">
+        Hack for LA's Site Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Home/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../How-to-create-a-page-on-Hack-for-LA-website/" class="md-nav__link">
+        How to create a page on Hack for LA website
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions-for-adding-Status-Labels-to-issues/" class="md-nav__link">
+        Instructions for adding Status Labels to issues
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-the-Project/" class="md-nav__link">
+        Introduction to the Project
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Joining-the-HackforLA.org-Website-Team/" class="md-nav__link">
+        Joining the HackforLA.org Website Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../November-2019-Agenda/" class="md-nav__link">
+        November 2019 Agenda
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Other-Volunteer/" class="md-nav__link">
+        Other Volunteer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Manager-and-Owner/" class="md-nav__link">
+        Product Manager and Owner
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Product-Requirements-Document/" class="md-nav__link">
+        Product Requirements Document
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Terminology/" class="md-nav__link">
+        Project Terminology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Updates/" class="md-nav__link">
+        Security Updates
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Standardized-Components/" class="md-nav__link">
+        Standardized Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Success-Metrics/" class="md-nav__link">
+        Success Metrics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Team/" class="md-nav__link">
+        Team
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-communities.md-file-%28for-Communities-of-Practice-page%29/" class="md-nav__link">
+        Template of a communities.md file (for Communities of Practice page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-credit.md-file-%28for-Credits-page%29/" class="md-nav__link">
+        Template of a credit.md file (for Credits page)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-of-a-project.md-file/" class="md-nav__link">
+        Template of a project.md file
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI-UX-Designer/" class="md-nav__link">
+        UI UX Designer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Using-Git-GUI-%28Graphical-user-Interface%29-in-Visual-Studios-Code/" class="md-nav__link">
+        Using Git GUI (Graphical user Interface) in Visual Studios Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WCAG-2.0-Compliance/" class="md-nav__link">
+        WCAG 2.0 Compliance
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-Developer/" class="md-nav__link">
+        Web Developer
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    ## Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visible" class="md-nav__link">
+    Visible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hero-image" class="md-nav__link">
+    Hero Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-status" class="md-nav__link">
+    Project Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-links" class="md-nav__link">
+    Project Links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-technologies" class="md-nav__link">
+    Tools and Technologies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-roles" class="md-nav__link">
+    Open Roles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-button" class="md-nav__link">
+    Getting Started Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-panel" class="md-nav__link">
+    Getting Started Panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-leadership" class="md-nav__link">
+    Project Leadership
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-contributors" class="md-nav__link">
+    Project Contributors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-card" class="md-nav__link">
+    Resource Card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-code" class="md-nav__link">
+    JavaScript Code
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetching-correct-project" class="md-nav__link">
+    Fetching Correct Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-languages" class="md-nav__link">
+    Adding Languages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-team-card" class="md-nav__link">
+    Constructing Team Card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started-drop-down" class="md-nav__link">
+    Getting Started Drop Down
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call-to-action-message" class="md-nav__link">
+    Call to Action Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Guide to the Project Layout File</h1>
+                
+                <h3 id="contents">## Contents</h3>
+<ol>
+<li><a href="#visible">Visible</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#hero-image">Hero Image</a></li>
+<li><a href="#Project-Status">Project Status</a></li>
+<li><a href="#Project-Links">Project Links</a> </li>
+<li><a href="#Tools-and-Technologies">Tools and Technologies</a></li>
+<li><a href="#Open-Roles">Open Roles</a></li>
+<li><a href="#Getting-Started-Button">Getting Started Button</a></li>
+<li><a href="#Getting-Started-Panel">Getting Started Panel</a></li>
+<li><a href="#Project-Leadership">Project Leadership</a></li>
+<li><a href="#Project-Contributors">Project Contributors</a></li>
+<li><a href="#Resource-Card">Resource Card</a></li>
+</ol>
+<p><strong>JavaScript Code</strong></p>
+<ol>
+<li><a href="#Fetching-Correct-Project">Fetching Correct Project</a></li>
+<li><a href="#Adding-Languages">Adding Languages</a></li>
+<li><a href="#Constructing-Team-Card">Constructing Team Card</a></li>
+<li><a href="#Getting-Started-Drop-Down">Getting Started Drop Down</a></li>
+<li><a href="#Call-to-Action-Message">Call to Action Message</a>
+<br></li>
+</ol>
+<p>content markdownify - 
+page.hero-image
+looping thru that for leadership - variables defined in markdown 
+for text underneath front matter, and content of blog post - markdownify would take all text outside of front matter and dump it into page
+-take it out and test it to see if it braks or not, if everythingis ok - delete/remove it</p>
+<hr />
+<h3 id="visible">Visible</h3>
+<p>To include a page on the site's project listing, your card should contain the following line. If you do not want the project to be listed, change visible to "false".</p>
+<pre><code>---
+visible: true
+---
+</code></pre>
+<p><br></p>
+<h3 id="layout">Layout</h3>
+<p>The project layout incorporates the default layout, which contains the head, header, and footer elements.</p>
+<pre><code>---
+layout: default
+---
+</code></pre>
+<p><br></p>
+<h3 id="hero-image">Hero Image</h3>
+<p>If a hero-image for the project is available - the project markdown file will, for example, include: <br></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82959291-3a341e80-9f6c-11ea-853c-9c101afd6546.png" />
+which will be displayed on top of the project page. If the image is not available, an image of a color block will serve as its placeholder. When compiled, the color block will be shown as a gradient because a gradient effect has been styled into the project layout via <a href="https://github.com/hackforla/website/blob/gh-pages/_sass/components/_project-page.scss">_project-page.scss</a>. <br></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82959406-78c9d900-9f6c-11ea-8693-ad6f9301d9ad.png" /><br></p>
+<p>A note about image naming conventions: <br>
+ In the <code>assets\images\projects</code> folder, you'll see the images for all the projects. Images for the project cards are named after the project itself, images to be displayed on the project page will have a <code>-hero</code> appended to the project name. Use <code>-</code> instead of spaces for projects with longer names: for example, <code>food-oasis</code>.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82959339-533ccf80-9f6c-11ea-9d6a-0a42c98acd53.png" /></p>
+<pre><code>{% if page.image-hero %}
+    &lt;header style='background: url({{ page.image-hero }}) center center no-repeat;' class='project-hero'&gt;
+{% else %}
+    &lt;header style='background: url(/assets/images/hero/hacknight-women.jpg) center center no-repeat;' class='project-hero'&gt;
+{% endif %}
+        &lt;h1 class='hero-inner'&gt;{{ page.title }}&lt;/h1&gt;
+    &lt;/header&gt;
+
+&lt;div class='content-section project-home-page'&gt;
+    &lt;!--Project Description Card--&gt;
+    &lt;div id='project-description-card' class='project-page-card' style='padding-bottom: 19px;'&gt;
+        &lt;h4 style='color:#333'&gt;Project Overview&lt;/h4&gt;
+        &lt;!--Project Details--&gt;
+        &lt;div class='project-page-description'&gt;
+</code></pre>
+<p><br></p>
+<h3 id="project-status">Project Status</h3>
+<p>Depending on the project status, the filter will change the status background-color according to the CSS in <a href="https://github.com/ye-susan/website/blob/gh-pages/_sass/components/_projects.scss">_sass\components_projects.scss</a> using the classes <code>status-indicator</code> and <code>status-text</code> (with 'text' being replaced with the status from the front matter declared in the markdown file).</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82959466-a31b9680-9f6c-11ea-8074-6738279c9cf6.png" />
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82959493-b3cc0c80-9f6c-11ea-8913-a6137544a8b9.png" /></p>
+<pre><code>            &lt;!--Project Properties--&gt;
+            &lt;div class='description-grid-item'&gt;
+                {% if page.status %}
+                    &lt;div&gt;
+                        &lt;p style='display:inline-block'&gt;&lt;strong&gt;Status: &lt;/strong&gt;&lt;/p&gt;
+                        &lt;div style='display:inline-block; float:none' class='status-indicator {{ &quot;status-&quot; | append: page.status }}'&gt;
+                            &lt;h5 class='status-text'&gt;{{ page.status }}&lt;/h5&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                {% endif %}
+                {% if page.partner %}&lt;p&gt;&lt;strong&gt;Partner: &lt;/strong&gt;{{ page.partner }}&lt;/p&gt;{% endif %}
+                {% if page.location %}&lt;p&gt;&lt;strong&gt;Location: &lt;/strong&gt;{{ page.location }}&lt;/p&gt;{% endif %}
+
+</code></pre>
+<p><br></p>
+<h3 id="project-links">Project Links</h3>
+<p>The following code is for placing project links. First, we'll count the number of links listed in the markdown file. For lists over the length of 1, we'll add commas to the list, using the counter to keep our count and as to avoid adding a comma after the last link. This list is prioritizing Github and Site links for the Project Overview section of the project page. All other links are placed into the Resource section at the bottom of the project page.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82959595-f1309a00-9f6c-11ea-8c2f-8b44005a847c.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82748435-ae957480-9d56-11ea-88db-51b800164214.png" /></p>
+<pre><code>                &lt;!-- Links Logic to filter prioritized links and to correct comma placement --&gt;
+                {% if page.links %}
+                    {% assign counter = 0 %}
+                    {% for item in page.links %}
+                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
+                            {% assign counter = counter | plus:1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if counter &gt; 0 %}
+                        &lt;p&gt;
+                            &lt;strong&gt;Links: &lt;/strong&gt;
+                            {% for item in page.links %}
+                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
+                                    {% if counter &gt; 1 %}
+                                        &lt;a target=&quot;_blank&quot; href='{{ item.url }}'&gt; {{ item.name }}&lt;/a&gt;,
+                                        {% assign counter = counter | minus:1 %}
+                                    {% elsif counter &lt;= 1 %}
+                                        &lt;a target=&quot;_blank&quot; href='{{ item.url }}'&gt; {{ item.name }}&lt;/a&gt;
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        &lt;/p&gt;
+                    {% endif %}
+                {% endif %}
+</code></pre>
+<p><br></p>
+<h3 id="tools-and-technologies">Tools and Technologies</h3>
+<p>The following code compiles the lists of the tools and technologies used in the project. As tools are in a string-list format in the front matter, there is no need for a loop. <br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82959675-26d58300-9f6d-11ea-860e-20cdabdba570.png" /></p>
+<p>The technologies have to be looped through as they in the markdown list format, and an if condition is needed because not all projects have listed their technologies used. <br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82959750-58e6e500-9f6d-11ea-9de7-b01d3722657c.png" /></p>
+<p>Lastly, languages are pulled from Github instead of the project markdown file. Therefore, a script for <a href="#adding-languages">Adding Languages</a> is used instead.</p>
+<pre><code>                {% if page.tools %}&lt;p&gt;&lt;strong&gt;Tools: &lt;/strong&gt;{{ page.tools }}&lt;/p&gt;{% endif %}
+                &lt;p id='languages'&gt;&lt;strong&gt;Languages: &lt;/strong&gt;&lt;/p&gt;
+                {% if page.technologies %}
+                &lt;p id='technologies'&gt;&lt;strong&gt;Technologies: &lt;/strong&gt;
+                  {% for tech in page.technologies %}
+                    {{ tech }}{% if forloop.last == false %},{% endif %}
+                  {% endfor %}
+                &lt;/p&gt;
+                {% endif %}            
+             &lt;/div&gt;
+</code></pre>
+<p><br></p>
+<h3 id="open-roles">Open Roles</h3>
+<p>Description and open roles for the project, with open roles structured as list items. This list is pulling from the <code>looking:</code> front matter of the project markdown file.</p>
+<p><img src="https://user-images.githubusercontent.com/58455740/86554284-07cdf780-bf02-11ea-8ed6-5713a010d0b6.png" width="250px">
+<img src="https://user-images.githubusercontent.com/58455740/86554282-06043400-bf02-11ea-9b86-2fe6b7065ebe.png" width="250px"></p>
+<pre><code>            &lt;!--Project Summary and Getting Started Button--&gt;
+            &lt;div class='description-grid-item'&gt;
+                &lt;p&gt;{{page.description}}&lt;/p&gt;
+                {% if page.status == &quot;Completed&quot; and page.completed-contact %}
+                    &lt;p&gt;If you would like to talk to us about this completed project, please reach out to &lt;a href=&quot;mailto:{{ page.completed-contact }}?subject=Question%20about%20{{ page.title }}&quot;&gt;{{ page.completed-contact }}&lt;/a&gt;&lt;/p&gt;
+                {% elsif page.status == &quot;Completed&quot; %}
+                    &lt;p&gt;If you would like to talk to us about this completed project, please reach out to &lt;a href=&quot;mailto:team@hackforla.org?subject=Question%20about%20{{ page.title }}&quot;&gt;team@hackforla.org&lt;/a&gt;&lt;/p&gt;
+                {% elsif page.looking %}
+                &lt;p class='open-roles'&gt;&lt;strong&gt;Open roles:&lt;/strong&gt;&lt;/p&gt;
+                &lt;ul id='open-roles-list'&gt;
+                    {% for item in page.looking %}
+                        &lt;li&gt;&lt;p class='role-paragraph'&gt;{% if item.skill %}{{ item.skill }}{% endif %}&lt;/p&gt;&lt;/li&gt;
+                    {% endfor %}
+                &lt;/ul&gt;
+                {% endif %}
+            &lt;/div&gt;
+        &lt;/div&gt;
+</code></pre>
+<p><br></p>
+<h3 id="getting-started-button">Getting Started Button</h3>
+<p>Getting started accordion panel button.<br>
+ <img alt="image" src="https://user-images.githubusercontent.com/49918375/82748464-eef4f280-9d56-11ea-8b43-19c1d8220e44.png" /></p>
+<pre><code>        &lt;div class=&quot;getting-started&quot;&gt;
+            &lt;p style='margin-bottom:0px; white-space: nowrap;'&gt;Getting Started&lt;/p&gt;
+            &lt;button onClick='gettingStarted()' class='getting-started-button'&gt;
+                {% include svg/_ionicons_svg_ios-arrow-down.svg %}
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<p><br></p>
+<h3 id="getting-started-panel">Getting Started Panel</h3>
+<p>When the getting started button is clicked, the panel will open to show this section. This section is using the <code>resource-card.html</code> from the <code>_includes</code> folder to create the layout. If the project has a Wiki and/or Readme, those files will appear on the page with an icon and link. If neither of those are defined in <code>links</code> in the project markdown file, the page will display a message: "Looks like this project doesn't have their own Getting Started guide."</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82748487-1350cf00-9d57-11ea-825f-635f05dfa217.png" /></p>
+<pre><code>    &lt;!--Getting Started Card--&gt;
+    &lt;div id=&quot;getting-started-section&quot; class='project-page-card'&gt;
+        &lt;ul class=&quot;resource-list unstyled-list&quot;&gt;
+            &lt;!-- Hfla Start Guide --&gt;
+            {%- include resource-card.html name='Getting Started' url='https://github.com/hackforla/getting-started' -%}
+
+            {% assign hasGettingStarted = false %}
+
+            &lt;!-- Check for Project Wiki --&gt;
+            {% for item in page.links %}
+                {% if item.name == 'Wiki' %}
+                    {% assign hasGettingStarted = true %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
+
+            &lt;!-- Check for Project Readme --&gt;
+            {% for item in page.links %}
+                {% if item.name == 'Readme' %}
+                    {% assign hasGettingStarted = true %}
+                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% endif %}
+            {% endfor %}
+            {% if hasGettingStarted == false %}
+                &lt;div id='help-getting-started'&gt;
+                    &lt;p style='margin: 0px 15px 13px 15px;'&gt;Looks like this project doesn't have their own Getting Started guide.&lt;/p&gt;
+                    &lt;button onClick='helpMakeGuide()' class=&quot;btn btn-primary help-make-button&quot; style='margin: 0 0 0 0;'&gt;Help Make One!&lt;/button onClick=''&gt;
+                &lt;/div&gt;
+            {% endif %}
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+<p><br></p>
+<h3 id="project-leadership">Project Leadership</h3>
+<p>Project leadership is also defined in the project markdown file, the code below loops through the leadership list and outputs the cards, in the case the leadership is not listed, a message will be outputted instead. <br>
+Most project leaders will have links for their Github and Slack direct message, but in some cases, only their LinkedIn is provided. The code below checks for LinkedIn profiles for completed projects first, before it checks for the users' Github links. The rule for leadership cards is to link an individual's name to their Slack or LinkedIn, and for their photo/Github avatar to link to their Github or nothing (if clicked, a new tab will open to the project page).</p>
+<pre><code>    &lt;!-- Project Team Card --&gt;
+    &lt;div id='project-team-card' class='project-page-card'&gt;
+        &lt;h4 style='color:#333'&gt;Project Leadership&lt;/h4&gt;
+        {% if page.leadership %}
+            &lt;div class='resource-list'&gt;
+                {% for item in page.leadership %}
+                    &lt;div class='leader-card'&gt;
+                        &lt;a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'&gt;&lt;img class='leader-img' src='{{ item.picture }}'/&gt;&lt;/a&gt;
+                        &lt;div class='leader-description'&gt;
+                            {% if page.status == &quot;Completed&quot; and item.links.linkedin %}
+                                &lt;p style='margin-block-end: 0.25em;'&gt;&lt;strong&gt;Name: &lt;/strong&gt;&lt;a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'&gt;{{ item.name }}&lt;/a&gt;&lt;/p&gt;
+                            {% elsif page.status == &quot;Completed&quot; %}
+                               &lt;p style='margin-block-end: 0.25em;'&gt;&lt;strong&gt;Name: &lt;/strong&gt;&lt;a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'&gt;{{ item.name }}&lt;/a&gt;&lt;/p&gt;
+                            {% else %}
+                                &lt;p style='margin-block-end: 0.25em;'&gt;&lt;strong&gt;Name: &lt;/strong&gt;&lt;a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'&gt;{{ item.name }}&lt;/a&gt;&lt;/p&gt;
+                            {%  endif %}
+                            &lt;p style='margin-block-end: 0.25em;'&gt;&lt;strong&gt;Role: &lt;/strong&gt;{{ item.role }}&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                {% endfor %}
+            &lt;/div&gt;
+        {% else %}
+            &lt;div class='empty-content-message'&gt;
+                &lt;p&gt;Looks like this project has not revealed specific leadership roles yet!&lt;/p&gt;
+            &lt;/div&gt;
+        {% endif %}
+
+</code></pre>
+<p><br></p>
+<h3 id="project-contributors">Project Contributors</h3>
+<p>The Contributors section with volunteers' Github avatar/profile picture and links are populated through DOM manipulation with JavaScript in the <a href="#constructing-team-card">Constructing Team Card</a> below. The script is using data being pulled through our <a href="https://github.com/hackforla/website/tree/gh-pages/github-actions">github-actions</a> with the data being stored in <a href="https://github.com/hackforla/website/blob/gh-pages/_data/github-data.json">_data/github-data.json</a> with objects of each project and their identification number, name, languages, url, and contributor list. The contributors' data includes their Github id number, github url, avator url, and a count of their contributions.</p>
+<pre><code>        &lt;h4 id='contributor-header'style='color:#333'&gt;Contributors&lt;/h4&gt;
+        &lt;div id='contributors-list' class='resource-list'&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+<p><br></p>
+<h3 id="resource-card">Resource Card</h3>
+<p>The code below populates the Resource card, using <code>resource-card.html</code> from the <code>_includes</code> to create icons and links to the project's links (i.e. Github, Wiki, Slack, Project website, etc.).</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/49918375/82748558-be618880-9d57-11ea-9ddc-8e7393af0323.png" /></p>
+<pre><code>    &lt;!--Project Resources Card--&gt;
+    &lt;div class='project-page-card'&gt;
+        &lt;h4 style='color:#333'&gt;Resources&lt;/h4&gt;
+        &lt;ul class=&quot;resource-list unstyled-list&quot;&gt;
+            {%- for item in page.links -%}
+                {% if item.name == 'Readme' or item.name == 'Wiki' %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% else %}
+                    {%- include resource-card.html name=item.name url=item.url -%}
+                {% endif %}
+            {%- endfor -%}
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code>{{ content | markdownify }}
+</code></pre>
+<p><strong>Return to <a href="#contents">Contents</a></strong></p>
+<hr />
+<p><br><br></p>
+<h2 id="javascript-code">JavaScript Code</h2>
+<h3 id="fetching-correct-project">Fetching Correct Project</h3>
+<p>The script is using data being pulled through our <a href="https://github.com/hackforla/website/tree/gh-pages/github-actions">github-actions</a> with the data being stored in <a href="https://github.com/hackforla/website/blob/gh-pages/_data/github-data.json">_data/github-data.json</a> with objects of each project and their identification number, name, languages, url, and contributor list. The contributors' data includes their Github id number, github url, avator url, and a count of their contributions. This script fetches the identification number and compares it against to markdown file to make sure it's correct. Within <a href="https://github.com/hackforla/website/blob/gh-pages/.github/workflows/main.yml">github\workflows\main.yml</a>, you'll see that the JSON file is updated every day at 3am Pacific time. 
+<br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82959194-fccf9100-9f6b-11ea-8a8d-a6d4a62ca42f.png" /></p>
+<pre><code>&lt;!--Script for fetching the correct project--&gt;
+&lt;script&gt;
+    {% assign projects = site.data.github-data | jsonify %}
+    let projects = {{ projects }};
+    let projectId = '{{ page.identification }}';
+    // Search for correct project
+    let project = null;
+    for(item of projects){
+        let itemId = item.id.toString();
+        if(itemId == projectId){
+            project = item;
+            break;
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+<p><br></p>
+<h3 id="adding-languages">Adding Languages</h3>
+<p>Using the <code>project</code> variable defined in the Fetching Correct Project script, we'll loop through the document for the languages used in the project and output them.<br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82959127-db6ea500-9f6b-11ea-975d-bff9d31fc210.png" /></p>
+<pre><code>&lt;!--Script for adding languages to &quot;Languages&quot; Section--&gt;
+&lt;script&gt;
+    let languagesSection = document.getElementById('languages');
+    if(project != null &amp;&amp; project.languages.data.length &gt; 0){
+        let languages = project.languages.data.join(', ');
+        let languagesParagraph = document.createElement('p');
+        languagesParagraph.style.display = 'inline';
+        let languagesText = document.createTextNode(languages);
+        languagesParagraph.appendChild(languagesText);
+        languagesSection.appendChild(languagesParagraph);
+    } else {
+        languagesSection.remove();
+    }
+&lt;/script&gt;
+</code></pre>
+<p><br></p>
+<h3 id="constructing-team-card">Constructing Team Card</h3>
+<p>Again, using the <code>project</code> variable defined in the Fetching Correct Project script, we're looping through the contributors list to create miniature cards with their links and Github avatars to append to the project page.</p>
+<pre><code>&lt;!--Script for constructing Team Card--&gt;
+&lt;script&gt;
+    let contributors = document.getElementById('contributors-list');
+    if(project != null){
+        for(contributor of project.contributors.data){
+            let contributorDiv = document.createElement('div');
+            contributorDiv.classList.add('contributor-div');
+
+            let contributorProfile = document.createElement('a');
+            contributorProfile.classList.add('contributor-link');
+            contributorProfile.setAttribute('href', contributor.github_url);
+            contributorProfile.setAttribute('target', '_blank');
+            let contributorUrl = contributor.github_url.split('/');
+            let contributorName = contributorUrl.pop();
+            contributorProfile.setAttribute('title', contributorName);
+
+            let contributorImg = document.createElement('img');
+            contributorImg.style['border-radius'] = '12px';
+            contributorImg.setAttribute('src', contributor.avatar_url);
+
+            contributorProfile.appendChild(contributorImg);
+            contributorDiv.appendChild(contributorProfile);
+            contributors.appendChild(contributorDiv);
+        }
+    } else {
+        let messageDiv = document.createElement('div');
+        messageDiv.classList.add('empty-content-message');
+        let messageText = document.createElement('p');
+        messageText.appendChild(document.createTextNode('Looks like this project has not connected a GitHub repository yet!'));
+        messageDiv.appendChild(messageText);
+        contributors.parentNode.appendChild(messageDiv);
+        contributors.parentNode.removeChild(contributors);
+    }
+&lt;/script&gt;
+</code></pre>
+<p><br></p>
+<h3 id="getting-started-drop-down">Getting Started Drop Down</h3>
+<p>Creates the 'Getting Started' drop down button, and adjusting its styling.<br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82748464-eef4f280-9d56-11ea-8b43-19c1d8220e44.png" /></p>
+<pre><code>&lt;!--Script for Getting Started drop down functionality--&gt;
+&lt;script&gt;
+    let dropDownOpen = false;
+    function gettingStarted(){
+        if(!dropDownOpen){
+            dropDownOpen = true;
+            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
+            gettingStartedButton.style.transform = 'rotate(180deg)';
+
+            let gettingStartedCard = document.getElementById('getting-started-section');
+            let maxHeight = gettingStartedCard.children[0].offsetHeight * 1.5; // Adding pixels for good measure and pop up message
+            gettingStartedCard.style['max-height'] = maxHeight + 'px';
+            gettingStartedCard.style.padding = '30px 30px';
+        }
+        else {
+            dropDownOpen = false;
+            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
+            gettingStartedButton.style.transform = 'rotate(0deg)';
+
+            let gettingStartedCard = document.getElementById('getting-started-section');
+            gettingStartedCard.style['max-height'] = '0px';
+            gettingStartedCard.style.padding = '0px 30px';
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+<p><br></p>
+<h3 id="call-to-action-message">Call to Action Message</h3>
+<p>When the 'Help Make One!' button is clicked, a message will pop out. <br>
+<img alt="image" src="https://user-images.githubusercontent.com/49918375/82958812-2936dd80-9f6b-11ea-9c00-3e380554c76a.png" /> <br></p>
+<p>This code allows the output of this message when a project does not have links for its Getting Started section. </p>
+<pre><code>&lt;!--Script for constructing Getting Started call to action message--&gt;
+&lt;script&gt;
+    let helpGettingStarted = document.getElementById('help-getting-started');
+    let textDiv = document.createElement('div');
+    textDiv.setAttribute('id', 'help-make-text-section');
+
+    let hflaSlack = document.createElement('a');
+    hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
+    hflaSlack.setAttribute('target', '_blank');
+    let hflaSlackText = document.createTextNode('Hack for LA');
+    hflaSlack.appendChild(hflaSlackText);
+
+    let projectSlack = document.createElement('a');
+    {% for item in page.links %}
+        {% if item.name == 'Slack' %}
+            projectSlack.setAttribute('href', '{{ item.url }}')
+            projectSlack.setAttribute('target', '_blank');
+        {% endif %}
+    {% endfor %}
+    let projectSlackText = document.createTextNode('our');
+    projectSlack.appendChild(projectSlackText);
+
+    let message = document.createElement('p');
+    message.style.width = '200px';
+    let text1 = document.createTextNode('Once you are on the ');
+    let text2 = document.createTextNode(' slack channel, please post a note in ');
+    let text3 = document.createTextNode(' channel indicating your interest.');
+
+    message.appendChild(text1);
+    message.appendChild(hflaSlack);
+    message.appendChild(text2);
+    message.appendChild(projectSlack);
+    message.appendChild(text3);
+    textDiv.appendChild(message);
+    helpGettingStarted.insertAdjacentElement('afterend', textDiv);
+
+    function helpMakeGuide(){
+        let textDiv = document.getElementById('help-make-text-section');
+        textDiv.style['min-width'] = '225px';
+        textDiv.style.padding = '35px 15px';
+    }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Return to <a href="#contents">Contents</a></strong></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Glossary/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Glossary
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Hack-for-LA%27s-Site-Architecture/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Hack for LA's Site Architecture
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
