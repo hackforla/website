@@ -14,8 +14,8 @@ The following is a set of guidelines for contributing to the website repository,
 3. [Clone the forked repository](#Clone-the-forked-repository)
 4. [Set up Docker](#Set-up-Docker-[4])
 5. [Build and serve the website locally](#Build-and-serve-the-website-locally)
-### Working on your first issue and making your first pull request
-1. [Working on your first issue](#Working-on-your-first-issue)
+### Working on an issue and making a pull request
+1. [Working on an issue](#Working-on-an-issue)
    - [Check current branch](#Check-current-branch)
    - [Create a new branch where you will work on your issue](#Create-a-new-branch-where-you-will-work-on-your-issue)
    - [Prepare your changes to push to your repository](#Prepare-your-changes-to-push-to-your-repository)
@@ -23,7 +23,7 @@ The following is a set of guidelines for contributing to the website repository,
    - [Check upstream before you push](#Check-upstream-before-you-push)
       - [No conflicting changes in upstream repository]()
       - [Conflicting changes in upstream respoitory]() 
-2. [Making your first pull request](#Making-your-first-pull-request)
+2. [Making a pull request](#Making-a-pull-request)
 ### Resources and Documentation
 1. [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
 2. [GitHub Pages](https://pages.github.com/)
@@ -210,9 +210,9 @@ the source files and rebuilds and refreshes the site automatically in your brows
    docker-compose up
    ```
 
-# Working on your first issue and making your first pull request
+# Working on an issue and making a pull request
 
-## Working on your first issue
+## Working on an issue
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
@@ -398,7 +398,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
         ```
       </details>
 
-## Making your first pull request
+## Making a pull request
 
 Start with pushing your changes to your remote repository
 
@@ -434,7 +434,7 @@ Managing branches this way will keep the commit logs cleaner on the Hack For LA 
 
 Now you are all set to work on a new PR. Start over [here](#Working-on-your-first-issue).
 
-#### Edits to pull request
+#### Edits to a pull request
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
