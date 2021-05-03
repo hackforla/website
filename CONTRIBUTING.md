@@ -444,5 +444,5 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 </details>
 
-<br><p align="center">🎉🎉🎉<b>Congratulations!  You have successfully made your first pull request. Thank you for contributing !</b>🎉🎉🎉 </p><br>
+<br><p align="center">🎉🎉🎉<b>Congratulations!  You have successfully made a pull request. Thank you for contributing !</b>🎉🎉🎉 </p><br>
 
