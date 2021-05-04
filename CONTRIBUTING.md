@@ -55,7 +55,7 @@ It should create a URL that looks like the following -> `https://github.com/<you
 
 For example -> `https://github.com/octocat/website`.
 
-Note that this forked copy is a remote version on GitHub. It is not yet on your local machine :octocat:.
+Note that this forked copy is a remote version on GitHub. It is not yet on your local machine.
 
 ## Clone the forked repository
 
