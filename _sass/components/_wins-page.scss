@@ -85,15 +85,21 @@
 }
 
 .wins-badge-icon {
-    min-width: 2em;
-    max-width: 2em;
-    min-height: 2em;
-    max-height: 2em;
+    min-width: 1.7em;
+    max-width: 1.7em;
+    min-height: 1.7em;
+    max-height: 1.7em;
     margin: .5em 1.5em .5em 0;
+    filter: invert(13%) sepia(4%) saturate(16%) hue-rotate(336deg) brightness(96%) contrast(81%);
+}
+
+.wins-badge-icon:hover{
+    filter: invert(79%) sepia(0%) saturate(4%) hue-rotate(139deg) brightness(89%) contrast(90%);
 }
 
 .wins-badge-icon:hover + .wins-text-bubble{
     display: block;
+    font-family: $font-family-body;
 }
 
 #overlay-info{
@@ -108,7 +114,7 @@
     margin-right: 1.5em;
 }
 .overlay-badge-icon{
-    max-width: 1rem;
+    max-width: 1.5em;
     margin-top: .2em;
     margin-right: .7em;
 }
@@ -429,7 +435,7 @@
         margin-left: 0em;
 
         .wins-icon-container{
-            margin: 2em 0 0 3.5rem;
+            margin: 1.5em 0 0 6.5rem;
             display: block;
         }
         .wins-item-container{
