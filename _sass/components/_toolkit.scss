@@ -26,15 +26,16 @@
             a {
                 font-weight: 300;
                 text-decoration: none;
-                color: black;
+                color: $color-black;
             }
             a:hover {
-                color: $color-mediumvioletred;
+                color: $color-red;
                 transform: scale(1.01);
             }
 
             .selected-category {
-            color: $color-mediumvioletred;
+                font-weight: 700;
+                color: $color-red;
             }
 
     }

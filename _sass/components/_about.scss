@@ -66,7 +66,6 @@
 .stick-it {
   position: fixed;
   top:45px;
-  z-index: 1;
   left: 1070px;
 }
 
@@ -124,6 +123,7 @@ a.anchor {
   width: 250px;
   padding: 35px 30px 15px 18px;
   margin-top: 30px;
+
 }
 
 .sticky-nav-inner-grid {
@@ -209,9 +209,6 @@ a.anchor {
   display: none;
 }
 
-.about-us-section-content {
-  display: none;
-}
 
 .sec-head-img-ed {
   padding: 0 25 0 0;
@@ -441,6 +438,13 @@ a.anchor {
 
 .sdg-right {
   width:  85%;
+}
+
+// Used for aligning contents of sdg left column
+.sdg-left-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-bold {
@@ -683,6 +687,7 @@ a.anchor {
 
   .about-us-section-content {
     display: block;
+    transition: display 0s, opacity 2.5s linear;
   }
 
   .about-us-section-header:after {
@@ -767,14 +772,6 @@ a.anchor {
   .flex-container {
     display: flex;
     flex-direction: row;
-  }
-
-  .sdg-left {
-    width: 10%;
-  }
-
-  .sdg-right {
-    width:  90%;
   }
 
   .sdg-left-column {

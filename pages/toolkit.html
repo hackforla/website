@@ -18,7 +18,11 @@ permalink: /toolkit/
 <div class="toolkit-header__text-group">
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
-      <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item">{{ category }}</a>
+        {% if category == "All" %}
+            <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item selected-category">{{category}}</a>
+        {% else %}
+            <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item">{{ category }}</a>    
+        {% endif %}
     {% endfor %}
 </div>
 

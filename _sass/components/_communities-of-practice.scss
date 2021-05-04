@@ -18,14 +18,15 @@
   .header-text--communities {
     display: flex;
     flex-direction: column;
+    align-items: center;
     
     p{
       font-size: 18px;
-      max-width: 550px;
+      max-width: 508px;
       margin-top: 8px;
       text-align: left;
       @media #{$bp-below-tablet} {
-        width:100%;
+        max-width: 300px;
         margin: auto;
         font-size: 16px;
         }
@@ -34,12 +35,13 @@
       font-size: 48px;
       @media #{$bp-below-tablet} {
         font-size: 24px;
+        margin-bottom: 28px;
       }
     }
   }
 
   .header-img--communities {
-    width:320px;
+    max-height: 240px;
     margin-left: 80px;
     @media #{$bp-below-desktop} {
       margin: auto;
@@ -53,18 +55,23 @@
   .header-self-invite--communities {
     display:flex;
     align-items: flex-start;
-    max-width: 550px;
+    max-width: 508px;
+    margin-top: 31px;
     @media #{$bp-below-tablet} {
-      margin: 30px;
+      max-width: 300px;
+      margin-bottom: 30px;
     }
 
     .alert--communities {
       font-size: 16px;
       font-weight: bold;
+      max-width: 450px;
     }
   }
   .self-invite-img {
-    margin: 15px;
+    /*Note "margin-top: 15px" is needed to keep this img aligned with neighboring text*/
+    margin-top: 15px;
+    margin-right: 27px;
     width: 24px;
     height: 24px;
   }
@@ -123,6 +130,9 @@
     }
   }
   .page-card-content h3 {
+    @media #{$bp-below-mobile} {
+      font-size: 1.25rem
+    }
     @media #{$bp-mobile-up} {
       font-size: 1.25rem;
     }

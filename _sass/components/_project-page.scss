@@ -59,6 +59,7 @@
 .page-card--project-description-page {
   padding: 30px;
   margin-bottom: 0;
+  margin-top: 28px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -66,8 +67,12 @@
   }
 }
 
+.getting-page-card-title {
+  color: $color-black;
+}
+
 .project-page-card-title {
-  color: #333;
+  color: $color-black;
 }
 
 #project-description-card {
@@ -165,10 +170,10 @@
 }
 
 #getting-started-section {
-  max-height: 0px;
-  padding: 0px 30px;
+  max-height: 294px;
+  padding: 30px;
   transition: max-height 1s, padding 1s;
-  margin-top: 0px;
+  margin-top: 28px;
 }
 
 #help-getting-started {
