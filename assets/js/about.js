@@ -57,12 +57,16 @@ function changeDisplayMode() {
   if (window.innerWidth < BREAK_POINT && FLAGS.displayChanged) {
     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {pageCard.lastElementChild.style.display = "none"; });
     document.querySelector(`div[data-hash="${window.location.hash.split("#")[1]}"]`).parentElement.lastElementChild.style.display = "block";
+    document.querySelector(`div[data-hash="${window.location.hash.split("#")[1]}"]`).parentElement.children[0].classList.toggle("au_active")
+
     FLAGS.displayChanged = false;
+    console.log("window width less")
   } 
   else if (window.innerWidth > BREAK_POINT && !FLAGS.displayChanged) {
     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => { pageCard.lastElementChild.style.display = "block"; });
-    document.querySelector(".au_active") &&  document.querySelector(".au_active").classList.toggle("au_active");
+    document.querySelectorAll(".au_active").forEach((pageCard) => { pageCard.classList.remove("au_active"); });
     FLAGS.displayChanged = true;
+    console.log("window width greater");
   }
 }
 
@@ -92,22 +96,44 @@ function setupAccordionEventLitseners() {
 /**
  *  Function that gets called when an accordion gets clicked on mobile view
  */
+
+/* New code */
+
 function accordionclicked(event) {
-  if (window.getComputedStyle(this.parentElement.lastElementChild, null).display == "block") {
+    console.log(event.target.dataset.hash);
+  if (
+    window.getComputedStyle(this.parentElement.lastElementChild, null)
+      .display == "block"
+    
+  ) {
     event.target.classList.toggle("au_active");
     this.parentElement.lastElementChild.style.display = "none";
     window.location.hash = event.target.dataset.hash;
-  } 
-  else {
-    document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {
-        pageCard.firstElementChild.classList.remove("au_active");
-        pageCard.lastElementChild.style.display = "none";
-    });
-    event.target.classList.toggle("au_active");
+  } else {
+        event.target.classList.toggle("au_active");
     this.parentElement.lastElementChild.style.display = "block";
     window.location.hash = event.target.dataset.hash;
+
   }
 }
+
+ /* Complicated old code */ 
+// function accordionclicked(event) {
+//   if (window.getComputedStyle(this.parentElement.lastElementChild, null).display == "block") {
+//     event.target.classList.toggle("au_active");
+//     this.parentElement.lastElementChild.style.display = "none";
+//     window.location.hash = event.target.dataset.hash;
+//   } 
+//   else {
+//     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {
+//         pageCard.firstElementChild.classList.remove("au_active");
+//         pageCard.lastElementChild.style.display = "none";
+//     });
+//     event.target.classList.toggle("au_active");
+//     this.parentElement.lastElementChild.style.display = "block";
+//     window.location.hash = event.target.dataset.hash;
+//   }
+// }
 
 //When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() {
