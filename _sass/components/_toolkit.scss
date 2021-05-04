@@ -250,6 +250,10 @@
         &__p {
             font-size: 1rem;
         }
+
+        &__toolkit-svg {
+            max-width: 250px;
+        }
     }
 
     .toolkit-flex-container {
@@ -284,4 +288,16 @@
             margin-bottom: 1rem;
         }
     }
-}  
+}
+
+@media #{$bp-below-tablet} {
+    .toolkit-svg {
+        max-width: 350px;
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .toolkit-svg {
+        max-width: 250px;
+    }
+}
