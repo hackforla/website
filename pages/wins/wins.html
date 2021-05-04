@@ -400,9 +400,9 @@ permalink: /wins/
 		let span = document.getElementById(id);
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
-
+		let winsIconContainer = winsInfo.nextElementSibling
 		parent.classList.add('expanded');
-
+		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
 		//FIXME: this is here for when see more/see less logic is added
 		// if (parent.classList.contains('expanded')) {
 		// 	span.innerHTML = "see less";
