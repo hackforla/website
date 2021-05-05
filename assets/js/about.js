@@ -58,15 +58,12 @@ function changeDisplayMode() {
     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {pageCard.lastElementChild.style.display = "none"; });
     document.querySelector(`div[data-hash="${window.location.hash.split("#")[1]}"]`).parentElement.lastElementChild.style.display = "block";
     document.querySelector(`div[data-hash="${window.location.hash.split("#")[1]}"]`).parentElement.children[0].classList.toggle("au_active")
-
     FLAGS.displayChanged = false;
-    console.log("window width less")
   } 
   else if (window.innerWidth > BREAK_POINT && !FLAGS.displayChanged) {
     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => { pageCard.lastElementChild.style.display = "block"; });
     document.querySelectorAll(".au_active").forEach((pageCard) => { pageCard.classList.remove("au_active"); });
     FLAGS.displayChanged = true;
-    console.log("window width greater");
   }
 }
 
