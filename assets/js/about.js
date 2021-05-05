@@ -117,24 +117,6 @@ function accordionclicked(event) {
   }
 }
 
- /* Complicated old code */ 
-// function accordionclicked(event) {
-//   if (window.getComputedStyle(this.parentElement.lastElementChild, null).display == "block") {
-//     event.target.classList.toggle("au_active");
-//     this.parentElement.lastElementChild.style.display = "none";
-//     window.location.hash = event.target.dataset.hash;
-//   } 
-//   else {
-//     document.querySelectorAll(".page-card--about:nth-child(n+3)").forEach((pageCard) => {
-//         pageCard.firstElementChild.classList.remove("au_active");
-//         pageCard.lastElementChild.style.display = "none";
-//     });
-//     event.target.classList.toggle("au_active");
-//     this.parentElement.lastElementChild.style.display = "block";
-//     window.location.hash = event.target.dataset.hash;
-//   }
-// }
-
 //When the menu reaches the position we want it to stick at, this adds a class and some padding.
 function stickItHere() {
 
