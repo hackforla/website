@@ -238,6 +238,8 @@
     }
 }
 
+
+
 @media #{$bp-below-mobile} {
     .toolkit-header {
         padding-bottom: 3rem;
@@ -251,6 +253,7 @@
             font-size: 1rem;
         }
     }
+}
 
     .toolkit-flex-container {
         display: flex;
@@ -284,4 +287,15 @@
             margin-bottom: 1rem;
         }
     }
-}  
+
+    @media #{$bp-below-tablet} {
+        .toolkit-svg {
+            max-width: 350px;
+        }
+    }
+
+    @media #{$bp-below-mobile} {
+        .toolkit-svg {
+            max-width: 250px;
+        }
+    }
