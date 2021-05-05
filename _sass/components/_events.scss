@@ -298,12 +298,14 @@
 #mini-img {
   width: 90px;
   height: 66px;
+  border-radius: 5px 5px 0 0;
 }
 .img-dis {
   width: 92px;
   border: 1px solid gray;
   margin: 10px;
   height: 120px;
+  border-radius: 5px;
 }
 .proj-desc {
   text-align: center;
@@ -500,6 +502,7 @@
   @media #{$bp-below-mobile} {
     text-align: initial;
     margin: 57px;
+    font-size: 16px;
   }
 }
 
