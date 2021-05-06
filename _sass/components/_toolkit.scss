@@ -238,6 +238,8 @@
     }
 }
 
+
+
 @media #{$bp-below-mobile} {
     .toolkit-header {
         padding-bottom: 3rem;
@@ -255,6 +257,7 @@
             max-width: 250px;
         }
     }
+}
 
     .toolkit-flex-container {
         display: flex;
@@ -288,6 +291,7 @@
             margin-bottom: 1rem;
         }
     }
+<<<<<<< HEAD
 }
 
 @media #{$bp-below-tablet} {
@@ -301,3 +305,17 @@
         max-width: 250px;
     }
 }
+=======
+
+    @media #{$bp-below-tablet} {
+        .toolkit-svg {
+            max-width: 350px;
+        }
+    }
+
+    @media #{$bp-below-mobile} {
+        .toolkit-svg {
+            max-width: 250px;
+        }
+    }
+>>>>>>> upstream-gh-pages

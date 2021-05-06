@@ -50,6 +50,7 @@
 
 .getting-started-onboarding-instructions {
   text-align: initial;
+  padding-top: 20px;
 }
 
 .step-img {
@@ -195,6 +196,7 @@
 
 }
 
+
 .ordered-list-steps-1 {
   display: flex;
   flex-direction: row;
@@ -216,6 +218,18 @@
 
 .project-position-2 {
   text-align: center;
+}
+
+.project-position-3 {
+  margin: 0px 30px;
+  width: 50%;
+ 
+
+  @media #{$bp-below-mobile} {
+    flex-direction: column;
+    width: auto;
+  }
+
 }
 
 hr {
