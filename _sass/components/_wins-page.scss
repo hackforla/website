@@ -1,4 +1,7 @@
 //Hero styling
+
+//mobile for wins info
+
 .wins-hero{
     margin-top: 40px;
     display: flex;
@@ -40,7 +43,11 @@
 }
 
 .wins-icon-container {
-    margin: 1.5em 0 0 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    margin: 2em 0 0 6.5rem;
 }
 .wins-item-container{
     display: inline-block;
@@ -78,12 +85,42 @@
 }
 
 .wins-badge-icon {
-    width: 2.4em;
+    min-width: 1.7em;
+    max-width: 1.7em;
+    min-height: 1.7em;
+    max-height: 1.7em;
     margin: .5em 1.5em .5em 0;
+    filter: invert(13%) sepia(4%) saturate(16%) hue-rotate(336deg) brightness(96%) contrast(81%);
+}
+
+.wins-badge-icon:hover{
+    filter: invert(79%) sepia(0%) saturate(4%) hue-rotate(139deg) brightness(89%) contrast(90%);
 }
 
 .wins-badge-icon:hover + .wins-text-bubble{
     display: block;
+    font-family: $font-family-body;
+}
+
+#overlay-info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 2.6em;
+}
+.overlay-item-container{
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    margin-right: 1.5em;
+}
+.overlay-badge-icon{
+    max-width: 1.5em;
+    margin-top: .2em;
+    margin-right: .7em;
+}
+.overlay-wins-text{
+    margin: 0;
+    max-width: 14em;
 }
 
 @media #{$bp-below-tablet} {
@@ -192,10 +229,6 @@
 .wins-card-icons{
     display: flex;
 }
-.wins-card-info{
-    font-weight: bold;
-}
-
 .wins-card-overview{
     margin-top: 1em;
 }
@@ -396,6 +429,56 @@
 	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
-	}
+    }
+
+    .wins-tablet{
+        margin-left: 0em;
+
+        .wins-icon-container{
+            margin: 1.5em 0 0 6.5rem;
+            display: block;
+        }
+        .wins-item-container{
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            margin-left: 6.5em;
+            margin-bottom: 1em;
+        }
+        .wins-badge-icon{
+            margin-top: .05em;
+            min-width: 1.5em;
+            max-width: 1.5em;
+            min-height: 1.5em;
+            max-height: 1.5em;
+        }
+        .wins-text-bubble{
+            display: block;
+            width: 50%;
+            text-align: left;
+            position: relative;
+            left: 0;
+            padding: 0;
+            background: inherit;
+            color: $color-black;
+        }
+        .wins-text-bubble::before{
+            border: none;
+        }
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .wins-icon-container{
+        margin-left: 3.5em
+    }
+    .wins-tablet {
+        .wins-item-container{
+            margin-left: 0;
+        }
+        .wins-text-bubble{
+            width: 100%;
+        }
+    }
 }
 //wins page filter override section end
