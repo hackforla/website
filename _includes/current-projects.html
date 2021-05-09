@@ -495,16 +495,6 @@
      * and creates a html string representing a button
     */
 
-    // a tag => div tag with class styles filter tag => two span, span1: populating filter tag name. span2: x
-  //   function filterTagComponent(filterName,filterValue){
-  //       return `<button
-  //                   data-filter='${filterName},${filterValue}'
-  //                   class='filter-tag'
-  //               >
-  //                   ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
-  //               </button>`
-  //   }
-
     function filterTagComponent(filterName,filterValue){
         return `<div
                     data-filter='${filterName},${filterValue}'
@@ -515,4 +505,5 @@
                     </span>
                 </div>`
     }
+
 </script>
