@@ -293,7 +293,7 @@
      */
      function updateFilterTagDisplayState(filterParams){
       // Clear all filter tags
-      document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
+      document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
 
       //Filter tags display hide logic
       for(const [key,value] of Object.entries(filterParams)){
@@ -309,16 +309,16 @@
       * Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
      */
      function attachEventListenerToFilterTags(){
-      if(document.querySelectorAll('.btn--current-projects-filter-tag').length > 0){
+      if(document.querySelectorAll('.filter-tag').length > 0){
 
           // Attach event handlers to button
-          document.querySelectorAll('.btn--current-projects-filter-tag').forEach(button => {
+          document.querySelectorAll('.filter-tag').forEach(button => {
               button.addEventListener('click',filterTagOnClickEventHandler)
           })
 
           // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
           if(!document.querySelector('.clear-filter-tags')){
-              document.querySelector('.btn--current-projects-filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
+              document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
 
               //Attach an event handler to the clear all button
               document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
@@ -344,7 +344,7 @@
         document.querySelectorAll('.number-of-checked-boxes').forEach(checkBoxCounter => {checkBoxCounter.innerHTML = ''} );
 
         // Clear all filter tags
-        document.querySelectorAll('.btn--current-projects-filter-tag') && document.querySelectorAll('.btn--current-projects-filter-tag').forEach(filterTag => filterTag.remove() );
+        document.querySelectorAll('.filter-tag') && document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.remove() );
 
         // Remove Clear All Button
         document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove();
@@ -499,7 +499,7 @@
   //   function filterTagComponent(filterName,filterValue){
   //       return `<button
   //                   data-filter='${filterName},${filterValue}'
-  //                   class='btn--current-projects-filter-tag'
+  //                   class='filter-tag'
   //               >
   //                   ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
   //               </button>`
