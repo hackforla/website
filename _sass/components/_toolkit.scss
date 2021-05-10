@@ -255,12 +255,7 @@
     }
 }
 
-    .toolkit-flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        flex-direction: column;
-    }
+
 
     .toolkit-flex-item {
         margin-bottom: 1.5rem;
@@ -297,5 +292,11 @@
     @media #{$bp-below-mobile} {
         .toolkit-svg {
             max-width: 250px;
+        }
+        .toolkit-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            flex-direction: column;
         }
     }
