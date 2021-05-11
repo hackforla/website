@@ -108,6 +108,10 @@
     margin-bottom: 0;
 }
 
+.toolkit-flex-container :first-child {
+  grid-column: 1 / -1; 
+}
+
 .toolkit-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
