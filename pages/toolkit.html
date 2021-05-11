@@ -28,40 +28,41 @@ permalink: /toolkit/
 
 <div class="toolkit-background content-section">
     <div class="toolkit__card-list">
-        <div class="suggest-guide-group"><h2>Guides</h2><button class="btn btn-primary btn-md-narrow">Suggest a guide</button></div>
-
-    <div class="toolkit-flex-container">
-        <!-- Iterating through toolkitPages collection -->
+        <div class="toolkit-flex-container">
+            <div class="suggest-guide-group">
+                <h2>Guides</h2>
+                <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
+            </div>
+            <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
                 {%- if item.display == true -%}
                     {%- include guide-card.html guide=item -%}
                 {%- endif -%}
             {%- endfor -%}
+        </div>
     </div>
 
-</div>
+    <script>
+        //add listener for click in banner, and toggle classes for filters.
+        document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
+            filter.addEventListener('click', function(event) {
+                let thisCategory = event.currentTarget;
+                let otherCategories = event.currentTarget.parentElement.children;
+                
+                if (thisCategory.classList.contains('selected-category')) {
+                    return;
+                } else {
+                    Array.from(otherCategories).forEach((category) => {
+                    if (category.classList.contains('selected-category')) {
+                        category.classList.remove('selected-category');
+                    return; }
+                    });
 
-<script>
-    //add listener for click in banner, and toggle classes for filters.
-    document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
-        filter.addEventListener('click', function(event) {
-            let thisCategory = event.currentTarget;
-            let otherCategories = event.currentTarget.parentElement.children;
-            
-            if (thisCategory.classList.contains('selected-category')) {
-                return;
-            } else {
-                Array.from(otherCategories).forEach((category) => {
-                if (category.classList.contains('selected-category')) {
-                    category.classList.remove('selected-category');
-                return; }
-                });
-
-            thisCategory.classList.toggle('selected-category');  
-            }
+                thisCategory.classList.toggle('selected-category');  
+                }
+            });
         });
-    });
         //add listener for url change and toggle visible cards.
         window.addEventListener("hashchange", hashFilter);
         function hashFilter(e) {
@@ -76,7 +77,7 @@ permalink: /toolkit/
                 card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
             });
         } 
-</script>
+    </script>
 
     <div class="toolkit__card-list">
         <div class="suggest-guide-group"><h2>External Resources</h2><button class="btn btn-primary btn-md-narrow">Suggest a resource</button></div>
