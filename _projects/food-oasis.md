@@ -56,7 +56,7 @@ links:
     url: "https://devla.foodoasis.net/"
 looking:
 technologies:
-  - ReactJS
+  - React
   - Express
   - Node.js
   - PostgreSQL

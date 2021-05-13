@@ -54,7 +54,7 @@ looking:
   - category: Ops
     skill: Product Owner
 technologies:
-  - ReactJS
+  - React
   - Redux
   - Material-UI
   - Mapbox

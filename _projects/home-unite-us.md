@@ -46,9 +46,9 @@ looking:
   - category: Development
     skill: React Expert
 technologies:
-  - ReactJS
+  - React
   - NoSQL
-  - Python 3
+  - Python
   - Flask
   - TypeScript
   - Auth0 / OIDC / OAuth2

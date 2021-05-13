@@ -60,7 +60,7 @@ looking:
   - category: Development
     skill: Experienced Back End Developers
 technologies:
-  - ReactJS
+  - React
   - Express
   - Node.js
   - Microsoft SQL Server

@@ -75,7 +75,7 @@ looking:
   - category: UI/UX
     skill: UX specialist for testing and conducting interviews with stakeholders
 technologies:
-  - ReactJS
+  - React
   - Django
   - PostgreSQL
   - ESLint
