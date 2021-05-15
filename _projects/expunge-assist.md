@@ -46,7 +46,7 @@ looking:
   - category: PM
     skill: Product Manager
 technologies:
-  - ReactJS
+  - React
 location:
   # - Santa Monica
   - Remote

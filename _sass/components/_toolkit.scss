@@ -255,12 +255,7 @@
     }
 }
 
-    .toolkit-flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        flex-direction: column;
-    }
+
 
     .toolkit-flex-item {
         margin-bottom: 1.5rem;
@@ -281,8 +276,6 @@
     }
 
     .suggest-guide-group {
-        flex-direction: column;
-
         h2 {
             margin-bottom: 1rem;
         }
@@ -298,4 +291,15 @@
         .toolkit-svg {
             max-width: 250px;
         }
+        .suggest-guide-group {
+            flex-direction: column;
+        }
+        .toolkit-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            flex-direction: column;
+        }
+
+
     }

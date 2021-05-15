@@ -56,7 +56,7 @@ looking:
   - category: Data
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
-  - ReactJS
+  - React
   - PostgreSQL
   - Node.js
   - Mapbox

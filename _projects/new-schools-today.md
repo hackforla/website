@@ -42,7 +42,7 @@ links:
       url: 'https://github.com/hackforla/new-schools-today/wiki'
 looking:
 technologies:
-  - ReactJS
+  - React
   - Flutter
 partner: Seeking
 location:
