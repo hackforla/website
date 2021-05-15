@@ -43,7 +43,7 @@ permalink: /wins/
   function main() {
   	{% assign localData = site.data.external.wins-data | jsonify %}
   	let localData = {{ localData }};
-  	const rawData = localData.values;
+  	const rawData = localData;
   	//creates an array of objects where each question is the key and the answer is the value
   	//cardData[index][question_str] = answer_str
   	let cardData = []
