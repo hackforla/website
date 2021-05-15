@@ -56,13 +56,13 @@ looking:
   - category: UI/UX
     skill: UI/UX Designer
 technologies:
-  - Node
+  - Node.js
   - Express
   - MongoDB
   - Docker
   - React
   - Redux
-  - Sass
+  - SASS
   - Jest
   - React Testing Library
 location:

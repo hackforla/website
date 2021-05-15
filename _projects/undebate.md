@@ -30,7 +30,7 @@ looking:
 technologies:
   - MongoDB
   - Express
-  - ReactJS
+  - React
   - Node.js
 location:
   # - Santa Monica

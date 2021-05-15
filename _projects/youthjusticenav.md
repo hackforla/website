@@ -48,13 +48,12 @@ looking:
   - category: UI/UX
     skill: UX Researcher
 technologies:
-  - Google Docs
-  - Google Sheets
   - Figma
   - Miro
 location:
   - Remote
 partner: UCLA School of Law, Golden Gate University School of Law
+tools: Google Docs, Google Sheets
 vertical: 'Justice'
 visible: true
 sdg: 16.3
