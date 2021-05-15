@@ -1,7 +1,4 @@
-{
-  "range": "Responses!A1:S32",
-  "majorDimension": "ROWS",
-  "values": [
+ [
     [
       "Timestamp",
       "Email Address",
@@ -417,4 +414,3 @@
       "I got a job at TCS as a Software Developer."
     ]
   ]
-}
