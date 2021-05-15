@@ -386,6 +386,15 @@ permalink: /wins/
 		iconImg.setAttribute("src", src);
 	}
   function updateOverlay(i) {
+
+	window.addEventListener('keydown', (e) => {
+		  if (e.key == 'Escape') {
+			  console.log(`I am a ${e.key}`)
+			  hideOverlay(e.key)
+		  }
+		  else { console.log(`no go`) }
+	  });
+
   		let stringData = window.localStorage.getItem("data");
   		let data = JSON.parse(stringData).reverse();
 
@@ -419,8 +428,9 @@ permalink: /wins/
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
   	}
-  function hideOverlay(e) {
-  	e = e || window.event;
+function hideOverlay(e) {
+	  e = e || window.event || e.key == 'Escape';
+	  
   	if (e.target !== e.currentTarget)
   		return;
 
