@@ -228,7 +228,7 @@ c) Prepare your changes to push to your repository
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
 > - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
-> Alternatively you can follow the intstructions below to stage changes through the terminal.
+> Alternatively you can follow the instructions below to stage changes through the terminal.
 
 
 -Use the `git add` command to stage your changes.  
@@ -255,7 +255,7 @@ git reset HEAD “filename.ext”
 
 -Use the `git commit` command
 
-This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to reisst the temptation to be overly cryptic.
+This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to resist the temptation to be overly cryptic.
 
 To commit your changes with a message, run:
 ```bash
@@ -312,7 +312,7 @@ to bring your fork up to date with the main repository.
 ### Incorporating changes from upstream
 
 Your fork of this repository on GitHub, and your local clone of that fork, will
-get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+get out of sync with this (upstream) repository from time to time.  (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
 One way to keep your fork up to date with this repository is to follow
 these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)

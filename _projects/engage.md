@@ -34,7 +34,7 @@ looking:
   - category: Development
     skill: NLP engineers
 technologies:
-  - ReactJS
+  - React
   - Django
   - PostgreSQL
 location:
