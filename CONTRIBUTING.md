@@ -5,7 +5,12 @@
 The following is a set of guidelines for contributing to the website repository, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ** <sub>The guide below assumes that you have completed the onboarding process which includes joining the Hack for LA Slack, GitHub, and Google Drive. If you have not been onboarded, please refer to the [Getting Started Page](https://www.hackforla.org/getting-started).</sub>
+
+** <sub>If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.</sub>
+
+** <sub>If you have any other questions about your contributing process, feel free to reach out to the team in the #hfla-site slack channel.</sub>
 <br><br>
+
 
 # Table of Contents
 ### Setting up the development environment
@@ -285,7 +290,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
 
     - Use the `git commit` command
 
-      This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to reisst the temptation to be overly cryptic.
+      This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to resist the temptation to be overly cryptic.
 
       To commit your changes with a message, run:
       ```bash
@@ -337,66 +342,65 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
         incorporate those changes into your repository before merging or
         rebasing your issue branch. Use the [instructions below](#incorporating-changes-from-upstream)
         to bring your fork up to date with the main repository.
-
-
-        ### Incorporating changes from upstream
-
-        Your fork of this repository on GitHub, and your local clone of that fork, will
-        get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
-
-        One way to keep your fork up to date with this repository is to follow
-        these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
-
-        You can also update your fork via the local clone of your fork, using
-        these instructions. Assuming you have a local clone with remotes
-        `upstream` (this repo) and `origin` (your GitHub fork of this repo):
-
-        First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes. 
-
-        Run the following two commands: 
-
-        ```bash
-        git fetch upstream
-        git checkout -b upstream-gh-pages --track upstream/gh-pages
-        ```
-
-        If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes: 
-
-        ```bash
-        git checkout upstream-gh-pages # Move to the branch you want to merge with. 
-        git pull  # This updates your tracking branch to match the gh-pages branch in this repository
-        git checkout gh-pages  # Move back to your gh-pages branch
-        git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
-        ```
-        If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
-
-        Then push the merge changes to your GitHub fork:  
-
-        ```bash
-        git push
-        ```
-        If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
-
-        #### Incorporating changes into your topic branch
-
-        To incorporate these updates from the main GitHub repository into your
-        topic branch, you can 'rebase' your branch onto your updated gh-pages
-        branch. NOTE you should only rebase if you have never pushed your
-        topic branch to GitHub (or shared it with another collaborator).
-
-        ```bash
-        git checkout fix-logo-width-311
-        git rebase gh-pages
-        ```
-
-        If you receive warnings about conflicts, abort the rebase with `git
-        rebase --abort` and instead merge gh-pages into your branch.
-
-        ```bash
-        git checkout fix-logo-width-311
-        git merge gh-pages
-        ```
       </details>
+
+5.  ### Incorporating changes from upstream
+
+      Your fork of this repository on GitHub, and your local clone of that fork, will
+      get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+
+      One way to keep your fork up to date with this repository is to follow
+      these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
+
+      You can also update your fork via the local clone of your fork, using
+      these instructions. Assuming you have a local clone with remotes
+      `upstream` (this repo) and `origin` (your GitHub fork of this repo):
+
+      First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes. 
+
+      Run the following two commands: 
+
+      ```bash
+      git fetch upstream
+      git checkout -b upstream-gh-pages --track upstream/gh-pages
+      ```
+
+      If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes: 
+
+      ```bash
+      git checkout upstream-gh-pages # Move to the branch you want to merge with. 
+      git pull  # This updates your tracking branch to match the gh-pages branch in this repository
+      git checkout gh-pages  # Move back to your gh-pages branch
+      git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
+      ```
+      If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
+
+      Then push the merge changes to your GitHub fork:  
+
+      ```bash
+      git push
+      ```
+      If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
+
+      #### Incorporating changes into your topic branch
+
+      To incorporate these updates from the main GitHub repository into your
+      topic branch, you can 'rebase' your branch onto your updated gh-pages
+      branch. NOTE you should only rebase if you have never pushed your
+      topic branch to GitHub (or shared it with another collaborator).
+
+      ```bash
+      git checkout fix-logo-width-311
+      git rebase gh-pages
+      ```
+
+      If you receive warnings about conflicts, abort the rebase with `git
+      rebase --abort` and instead merge gh-pages into your branch.
+
+      ```bash
+      git checkout fix-logo-width-311
+      git merge gh-pages
+      ```
 
 ## Making a pull request
 
@@ -444,5 +448,5 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 </details>
 
-<br><p align="center">🎉🎉🎉<b>Congratulations!  You have successfully made a pull request. Thank you for contributing !</b>🎉🎉🎉 </p><br>
+<br><p align="center">🎉🎉🎉<b>Congratulations!  You have successfully made a pull request. Thank you for contributing!</b>🎉🎉🎉 </p><br>
 
