@@ -239,7 +239,7 @@
   text-align: center;
 }
 .location-image {
-  margin: -3px;
+  margin: -5px;
   border-radius: 5px;
   max-width: 372px;
 
@@ -253,6 +253,7 @@
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+  overflow: hidden;
   max-width: 996px;
   margin-bottom: 0;
   padding: 20px;
@@ -267,7 +268,7 @@
 
 .locations-1 {
   display: flex;
-  height: auto;
+  height: 388px ;
   margin: -17px;
 
   @media #{$bp-below-tablet} {
@@ -278,6 +279,8 @@
 }
 .location-content {
   margin: 34px;
+  overflow: scroll;
+  overflow-x: hidden;
   @media #{$bp-below-mobile} {
     margin: 40px 0;
     padding: 0;
