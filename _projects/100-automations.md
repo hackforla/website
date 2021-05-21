@@ -70,6 +70,6 @@ location:
   - Remote
 # partner: N/A
 visible: true
-vertical: 'Civic Tech Infrastructure'
+program area: 'Civic Tech Infrastructure'
 status: Active
 ---

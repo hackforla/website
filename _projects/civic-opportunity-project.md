@@ -43,6 +43,6 @@ location:
 # tools:
 partner: Undisclosed
 visible: true
-vertical: 'Civic Tech Infrastructure'
+program area: 'Civic Tech Infrastructure'
 status: Active
 ---
