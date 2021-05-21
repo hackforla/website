@@ -63,7 +63,7 @@ location:
   # must choose one of the above (closest)
 partner: Department of Neighborhood Empowerment
 tools: figma, photoshop, sketch, phone calls.
-vertical: Citizen Engament
+program area: Citizen Engament
 status: Active
 # If the card should not be included on the site, change visible to "false"
 visible: true

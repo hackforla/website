@@ -38,5 +38,5 @@ location:
 partner: EnCiv.org, Ballotpedia.org
 visible: true
 status: Completed
-vertical: "Vote / Representation"
+program area: "Vote / Representation"
 ---
