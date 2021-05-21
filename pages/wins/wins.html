@@ -269,8 +269,23 @@ permalink: /wins/
   	}
   }
 
+ 
 	function insertIcons(cloneCardTemplate, cardClass, cardString) {
-		let cardList = cardString.split(',').map(item => item.trim())
+		let initialCardList = cardString.split(',').map(item => item.trim())
+		let otherWinsText = [];
+		let cardList = [];
+		
+		initialCardList.forEach(win => {
+			if (badgeIcons.hasOwnProperty(win)){
+				cardList.push(win);
+			} else if (win === " "){
+				return
+			} else {
+				otherWinsText.push(win);
+			}
+		});
+		cardList.push(otherWinsText.join(", "));
+
 		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
 		cardList.map(function (item) {
@@ -479,6 +494,7 @@ permalink: /wins/
 			const item = string.trim()
 			const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
+			
 			if (badgeIcons.hasOwnProperty(item)) {
 				cloneCardTemplate.insertAdjacentHTML('beforeend',
 					`<div class='overlay-item-container'>
@@ -498,6 +514,7 @@ permalink: /wins/
 				)
 				return
 			}
+			
 		})
 	}
 
