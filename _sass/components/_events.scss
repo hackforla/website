@@ -569,4 +569,11 @@
   color: $color-white; 
   margin-top: 48px; 
   font-size: 36px;
+  @media #{$bp-below-desktop} {
+    font-size: 1.75rem;
+  }
+  @media #{$bp-below-tablet} {
+    font-size: 2rem;
+    margin: 44px;
+    }
 }
