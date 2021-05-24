@@ -18,7 +18,12 @@ permalink: /wins/
 	</div>
 </section>
 
+
+<script src="/node_modules/wicg-inert/dist/inert.min.js"></script>
+
 <script>
+
+
 
   //assigning the google form questions to variables for readability
   //these variables correspond with a question on the google form
@@ -387,12 +392,19 @@ permalink: /wins/
 	}
   function updateOverlay(i) {
 
+	//let previousActiveElement = document.activeElement;
+	const modal = document.querySelector(".modal-container");
+	console.log(modal);
+
+	Array.from(document.body.children).forEach(child => {
+			if (child !== modal);
+			child.tabindex="-1";
+	});
+
 	window.addEventListener('keydown', (e) => {
 		  if (e.key == 'Escape') {
-			  console.log(`I am a ${e.key}`)
 			  hideOverlay(e.key)
 		  }
-		  else { console.log(`no go`) }
 	  });
 
   		let stringData = window.localStorage.getItem("data");
@@ -431,6 +443,10 @@ permalink: /wins/
 function hideOverlay(e) {
 	  e = e || window.event || e.key == 'Escape';
 	  
+	  Array.from(document.body.children).forEach(child => {
+			child.inert = false;
+		})
+
   	if (e.target !== e.currentTarget)
   		return;
 
