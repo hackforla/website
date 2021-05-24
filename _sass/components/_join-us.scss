@@ -252,3 +252,24 @@
     }
   }
 }
+
+@media #{$bp-below-tablet}  {
+  .join-us-banner .join-us-banner-text  {
+    h1 {
+      font-size: 32px;
+      padding-bottom: 0px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .header-container--join {
+    h1{
+      padding-bottom: 0px;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
