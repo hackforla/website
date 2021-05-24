@@ -942,3 +942,23 @@ a.anchor {
     margin-left:3vw;
   }
 }
+
+@media #{$bp-below-tablet} {
+
+  .about-header-text-margin h1 {
+    font-size: 1rem; // equal to 16px
+    margin-bottom: 28px;
+  }
+  
+  .header-text--about-us {
+    margin-bottom: 36px;
+  }
+
+  .page-content-container-grid {
+    grid-template-columns: none; 
+  }
+  .sticky-nav-content-container {
+    margin-left: 0px;
+  }
+
+}
