@@ -13,6 +13,24 @@
             margin-bottom: 3.125rem;
         }
     }
+    
+    @media #{$bp-below-tablet} {
+      h1 {
+        margin-top: 0px;
+        margin-bottom: 28px;
+      }
+      p {
+        margin-top: 0px;
+      }
+      .program-areas-header__text {
+        margin-bottom: 36px;
+      }
+
+      .program-areas-hero-svg {
+        margin-top: 0px;
+        max-width: 350px;
+      }
+    }
 
     &__text-group {
         display: flex; 
@@ -63,10 +81,6 @@
 
         &__text {
             margin-right: 0;
-
-            h1 {
-                margin-bottom: 0.4rem;
-            }
         }
 
         &__p {
