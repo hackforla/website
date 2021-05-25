@@ -600,6 +600,20 @@ a.anchor {
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
+// Below tablet - 768px
+@media #{$bp-below-tablet} {
+  .about-header-text-margin h1 {
+    margin-bottom: 28px;
+  }
+  .header-text--about-us {
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+  .page-content-container-grid {
+    margin-top: 0; 
+  }
+} // End below tablet
+
 // Bigger than mobile - 480px
 @media #{$bp-mobile-up} {
 
@@ -854,6 +868,7 @@ a.anchor {
 } // End desktop-up
 
 // These are to control the responsive location of the sticky nav
+
 @media only screen and (max-width: 1321px) {
   .page-content-container-grid {
     grid-template-columns: auto auto;
@@ -942,23 +957,11 @@ a.anchor {
     margin-left:3vw;
   }
 }
-
-@media #{$bp-below-tablet} {
-
-  .about-header-text-margin h1 {
-    font-size: 1rem; // equal to 16px
-    margin-bottom: 28px;
-  }
-  
-  .header-text--about-us {
-    margin-bottom: 36px;
-  }
-
+@media only screen and (max-width: 960px) {
   .page-content-container-grid {
     grid-template-columns: none; 
   }
   .sticky-nav-content-container {
     margin-left: 0px;
   }
-
 }
