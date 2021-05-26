@@ -79,8 +79,13 @@
     }
 
     .header-container {
-        padding: 2rem;
+        padding: 2;
         margin-top: 10%;
+    }
+    .toolkit-header__text{
+      h1 {
+        margin: 0 0 36px 0;
+      }
     }
 }
 
