@@ -51,8 +51,13 @@
     margin: auto;
     margin-bottom: 36px;
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 1.625rem;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
     }
   }
 }
