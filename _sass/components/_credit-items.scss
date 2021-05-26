@@ -47,6 +47,13 @@
   h1 {
     font-size: 48px;
   }
+
+  @media only screen and (max-width: #{$screen-desktop - 1}) and (min-width: #{$screen-mobile}) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
   @media #{$bp-below-mobile} {
     margin: auto;
     margin-bottom: 36px;
