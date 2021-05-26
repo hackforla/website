@@ -6,7 +6,7 @@ Engage is a platform to help connect residents (and other stakeholders) to local
 image: /assets/images/projects/engage-logo.png
 alt: 'Engage logo.'
 image-hero: /assets/images/projects/engage-hero-2.png
-alt-hero: 'Neon sign for the Santa Monica pier. Palm trees and sunset in the background.'
+alt-hero: 'Engage logo and people of different ages, gender and ethnicity coming together concept illustration'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -58,7 +58,7 @@ technologies:
 location:
   - Remote
 tools: Hotjar, Google Analytics
-vertical: 'Citizen Engagement'
+program area: 'Citizen Engagement'
 partner: Various Los Angeles Neighborhood Councils
 visible: true
 status: Active
