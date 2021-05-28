@@ -602,12 +602,15 @@ a.anchor {
 
 // Below tablet - 768px
 @media #{$bp-below-tablet} {
-  .about-header-text-margin h1 {
-    margin-bottom: 28px;
+  .about-header-text-margin{
+    margin-bottom: 36px;
+    
+    h1 {
+      margin-bottom: 28px;
+    }
   }
   .header-text--about-us {
     font-size: 16px;
-    margin-bottom: 36px;
   }
   .page-content-container-grid {
     margin-top: 0; 
