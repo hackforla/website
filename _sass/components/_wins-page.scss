@@ -480,5 +480,19 @@
             width: 100%;
         }
     }
+    // when card is collapsed in mobile, icons will be 1.4em
+    .wins-badge-icon {
+        min-width: 1.4em;
+        max-width: 1.4em;
+        min-height: 1.4em;
+        max-height: 1.4em;
+    }
+    // when card is opened with "See More", icons will shrink to 1em
+    .wins-tablet .wins-badge-icon {
+        min-width: 1em;
+        max-width: 1em;
+        min-height: 1em;
+        max-height: 1em;
+    }
 }
 //wins page filter override section end
