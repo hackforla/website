@@ -60,7 +60,7 @@ looking:
   - category: Development
     skill: Experienced Back End Developers
 technologies:
-  - ReactJS
+  - React
   - Express
   - Node.js
   - Microsoft SQL Server
@@ -72,7 +72,7 @@ location:
   # - Downtown LA
   - Remote
 partner: LA Department of Transportation and Los Angeles City Planning
-vertical: 'Environment'
+program area: 'Environment'
 visible: true
 status: Active
 ---

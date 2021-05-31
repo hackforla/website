@@ -86,5 +86,5 @@ location:
   - Remote
 visible: true
 status: Active
-vertical: Workforce Development
+program area: Workforce Development
 ---

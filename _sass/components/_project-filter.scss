@@ -2,7 +2,7 @@ a.filter-item {
   text-decoration: none;
 }
 .project-list {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 //filter container
 ul.filter-list {
@@ -96,21 +96,32 @@ ul.filter-list li ul li {
   right: 10%;
 }
 
-//filter tags
-.btn--current-projects-filter-tag {
+.filter-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.filter-tag {
+  flex: auto;
+  align-self: flex-start;
+  height: 24px;
   box-sizing: border-box;
-  margin: 0em 1em 1em;
-  padding: .3em 1em;
+  max-width: fit-content;
+
+  margin: 0em 0.5em 1em;
+  padding: 0.15em 1em;
   background: $color-red;
   border: none;
   border-radius: 5px;
   color: $color-white;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 15px;
   text-transform: capitalize;
 
   &::after {
     content: "\00d7";
-    padding-left: .7em;
+    padding-left: 0.5em;
   }
 
   &:hover,
@@ -119,14 +130,21 @@ ul.filter-list li ul li {
     background: darken($color-red, 10%);
     color: $color-white;
     text-decoration: none;
+    cursor: pointer;
   }
+}
+
+.filter-tag span {
+  margin: 0 0 0 5px;
+  min-height: 20px;
 }
 
 a.clear-filter-tags {
   margin-left: 1em;
   text-decoration: underline;
+  color: #767676;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -143,7 +161,7 @@ a.clear-filter-tags {
   }
 }
 
-@media (max-width:659px) {
+@media (max-width: 659px) {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.filter-list {
     display: grid;
@@ -165,10 +183,8 @@ a.clear-filter-tags {
     font-size: 20px;
   }
 
-
-  .clear-filter-tags{
+  .clear-filter-tags {
     display: none;
   }
-
 }
 

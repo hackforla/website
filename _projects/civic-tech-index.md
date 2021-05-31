@@ -75,7 +75,7 @@ looking:
   - category: UI/UX
     skill: UX specialist for testing and conducting interviews with stakeholders
 technologies:
-  - ReactJS
+  - React
   - Django
   - PostgreSQL
   - ESLint
@@ -86,6 +86,6 @@ location:
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 visible: true
-vertical: 'Civic Tech Infrastructure'
+program area: 'Civic Tech Infrastructure'
 status: Active
 ---

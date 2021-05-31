@@ -54,7 +54,7 @@ looking:
   - category: Ops
     skill: Product Owner
 technologies:
-  - ReactJS
+  - React
   - Redux
   - Material-UI
   - Mapbox
@@ -73,7 +73,7 @@ location:
   - Remote
 
 partner: EmpowerLA
-vertical: 'Citizen Engagement'
+program area: 'Citizen Engagement'
 visible: true
 status: Active
 ---
