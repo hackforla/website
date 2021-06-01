@@ -144,7 +144,7 @@
 
 .getting-started-mobile-page {
   @media #{$bp-below-mobile} {
-    pading: 0 2em;
+    padding: 0 2em;
     display: inline;
     margin: 20px;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -268,7 +268,7 @@
 
 .locations-1 {
   display: flex;
-  height: 388px;
+  height: 388px ;
   margin: -17px;
 
   @media #{$bp-below-tablet} {
@@ -278,7 +278,9 @@
   }
 }
 .location-content {
-  margin: 34px;
+  margin: 24px;
+  overflow: scroll;
+  overflow-x: hidden;
   @media #{$bp-below-mobile} {
     margin: 40px 0;
     padding: 0;

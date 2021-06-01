@@ -58,6 +58,6 @@ location:
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
-vertical: 'Social Safety Net'
+program area: 'Social Safety Net'
 status: Active
 ---

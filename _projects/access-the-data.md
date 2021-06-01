@@ -34,7 +34,7 @@ links:
   #- name: Site
   #  url: 'https://live.example.com'
   #- name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/accessthedata-Project-One-Sheet.pdf
+    # url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/accessthedata-Project-One-Sheet.pdf
   # unused links can be commented out
   # - name: Showcase deck
   #   url: ''
@@ -63,7 +63,7 @@ location:
   # must choose one of the above (closest)
 partner: Department of Neighborhood Empowerment
 tools: figma, photoshop, sketch, phone calls.
-vertical: Citizen Engament
+program area: Citizen Engament
 status: Active
 # If the card should not be included on the site, change visible to "false"
 visible: true
