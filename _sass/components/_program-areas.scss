@@ -143,27 +143,31 @@
   }
 }
 
-.project-card-mini {
-  width: 92px;
-  height: 120px;
-  border: 1px solid #c4c4c4;
-  box-sizing: border-box;
-  border-radius: 3px;
+.project-card-mini{
+    width: 92px;
+    height: 120px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 13px 26px 13px 0px;
+    font-size: 13px;
+    line-height: 15.23px;
+    text-align: center;
 
   .project-card-mini-image {
     width: inherit;
     height: 67.83px;
   }
 
-  .project-card-mini-title {
-    text-align: center;
-  }
-}
-
-.join-us-footer h3 {
-  margin-top: 72px;
-  margin-left: 547px;
-}
+    .project-card-mini-title{
+        text-align: center;
+    }
+    &-list-alignment{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-inline-start: 0px;
+    }
 
 .join-us-footer-description {
   font-family: "Roboto", sans-serif;

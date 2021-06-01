@@ -34,14 +34,14 @@ looking:
   - category: Development
     skill: NLP engineers
 technologies:
-  - ReactJS
+  - React
   - Django
   - PostgreSQL
 location:
   # - Santa Monica
   - Remote
 tools: Hotjar, Google Analytics
-vertical: 'Citizen Engagement'
+program area: 'Citizen Engagement'
 partner: City of Santa Monica
 visible: true
 status: Active
