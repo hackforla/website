@@ -392,28 +392,16 @@ permalink: /wins/
 		// icon.setAttribute("tabindex", 0);
 	}
   function updateOverlay(i) {
+	
+	// const modal = document.querySelector(".modal-container");
+	// console.log(modal);
 
-	//let previousActiveElement = document.activeElement;
-	const modal = document.querySelector(".modal-container");
-	console.log(modal);
-
-	// Array.from(document.body.children).forEach(child => {
-	// 		if (child !== modal);
-	// 		child.inert = true;
-	// });
 	document.querySelector(".main-header").inert=true;
 	document.querySelector(".content-section.projects").inert=true;
 	document.querySelector(".main-footer").inert=true;
 	document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert=true;
 	document.querySelector(".sr-only-focusable").inert=true;	
-				
-	// Array.from(document.querySelector("main").children).forEach(child => {
-	// 		console.log(child);
-	// 		if (child !== modal){
-	// 			child.inert = true;
-	// 		}
-			
-	// });
+
 
 	window.addEventListener('keydown', (e) => {
 		  if (e.key == 'Escape') {
@@ -456,53 +444,21 @@ permalink: /wins/
   	}
 
 
-	// window.onclick = function (event) {
+	function hideOverlay(e) {
+		e = e || window.event || e.key == 'Escape';
 
-	// 	// if (event.target == document.querySelector()) {
+		if (e.target !== e.currentTarget)
+			return;
 
-	// 	// 	images_modal.style.display = "none";
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.remove("display-initial");
 
-	// 	// }
-
-	// 	if (event.target !== document.querySelector(".overlay")) {
-
-	// 		document.querySelector(".overlay").style.display = "none";
-	// 		document.querySelector(".home-getting-started-container").inert = false;
-	// 		document.querySelector(".content-section").inert = false;
-	// 		document.querySelector(".main-footer").inert = false;
-
-	// 	}
-
-// }
-
-function hideOverlay(e) {
-	  e = e || window.event || e.key == 'Escape';
-
-	  
-	document.querySelector(".main-header").inert=false;
-	document.querySelector(".content-section.projects").inert=false;
-	document.querySelector(".main-footer").inert=false;
-	document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert=false;
-	document.querySelector(".sr-only-focusable").inert=false;
-
-	//   Array.from(document.querySelector("main").children).forEach(child => {
-	// 		child.inert = false;
-	// 	})
-
-  	if (e.target !== e.currentTarget)
-  		return;
-
-  	const overlayProjectCard = document.querySelector('#overlay-project-card');
-  	overlayProjectCard.parentNode.classList.remove("display-initial");
-  }
-
-//   const modal = document.querySelector(".modal-container");
-  
-//   window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+		document.querySelector(".main-header").inert = false;
+		document.querySelector(".content-section.projects").inert = false;
+		document.querySelector(".main-footer").inert = false;
+		document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
+		document.querySelector(".sr-only-focusable").inert = false;
+	}
 
   main();
 
