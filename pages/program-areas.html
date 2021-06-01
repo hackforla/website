@@ -2,57 +2,83 @@
 layout: default
 title: Program Areas
 permalink: /program-areas
---- 
+---
+
 <section class="program-areas-header header-container">
-    <div class="program-areas-header__text">
-        <h1>Program Areas</h1>
-        <p class="toolkit-header__p">
-            Hack for LA’s nonprofit civic tech projects support a wide variety of important social causes, 
-            from environmental justice to voter representation, in Los Angeles and far beyond.
-        </p> 
-    </div>
-    <div class="program-areas-header__hero-image">
-        {% include svg/program-areas-hero.svg %}
-    </div>
-</section> 
+  <div class="program-areas-header__text">
+    <h1>Program Areas</h1>
+    <p class="toolkit-header__p">
+      Hack for LA’s nonprofit civic tech projects support a wide variety of
+      important social causes, from environmental justice to voter
+      representation, in Los Angeles and far beyond.
+    </p>
+  </div>
+  <div class="program-areas-header__hero-image">
+    {% include svg/program-areas-hero.svg %}
+  </div>
+</section>
 <section class="content-section content--program-areas">
-    {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
-    {% for program_areas in sorted_program_areas %}
-        {% if program_areas[1].size > 0%}
-            <div class="page-card-base card-primary page-card-lg page-card-container">
-                <div class="page-card-image-container">
-                    <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}"/>
-                </div>
-                <div class="page-card-content">
-                    <h3>{{program_areas[1].name}}</h3>
-                    <p>{{program_areas[1].description}}</p>
-                    <p>
-                        <strong>SDGs: </strong> 
-                        {% if program_areas[1].SDG %}
-                            {% for sdg in program_areas[1].SDG %}
-                                {% if forloop.last == true %}
-                                    and {{sdg}}
-                                {% else %}
-                                    {{sdg}},
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}<br> 
-                    </p>
-                    <ul>
-                        {% for project in program_areas[1].projects%}
-                        <li class="project-card-mini inline-list" id="{{project.id}}">
-                            <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}"/>
-                            <a class="project-card-mini-title" 
-                            href="">{{project.name}}</a>
-                        </li> 
-                    {% endfor %}
-                    </ul>
- 
+  {% assign sorted_program_areas = site.data.internal.program-areas | sort %} {%
+  for program_areas in sorted_program_areas %} {% if program_areas[1].size > 0%}
+  <div class="page-card-base card-primary page-card-lg page-card-container">
+    <div class="page-card-image-container">
+      <img
+        class="page-card-image"
+        src="{{ program_areas[1].image }}"
+        alt="{{ program_areas[1].image_alt }}"
+      />
+    </div>
+    <div class="page-card-content">
+      <h3>{{program_areas[1].name}}</h3>
+      <p>{{program_areas[1].description}}</p>
+      <p>
+        <strong>SDGs: </strong>
+        {% if program_areas[1].SDG %} {% for sdg in program_areas[1].SDG %} {%
+        if forloop.last == true %} and {{sdg}} {% else %} {{sdg}}, {% endif %}
+        {% endfor %} {% endif %}<br />
+      </p>
+      <ul>
+        {% for project in program_areas[1].projects%}
+        <li class="project-card-mini inline-list" id="{{project.id}}">
+          <img
+            class="project-card-mini-image"
+            src="{{project.image}}"
+            alt="{{project.image_alt}}"
+          />
+          <a class="project-card-mini-title" href="">{{project.name}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 
-                </div>
-            </div>
+  {% endif %} {% endfor %}
+</section>
 
-        {% endif %}
-    {% endfor %}
-
+<section class="join-us-footer">
+  <h3>Join a Project</h3>
+  <div class="join-us-footer-body">
+    <div class="join-us-grid-container">
+      <img
+        class="join-us-footer-img"
+        src="/assets/images/join-us/volunteer-with-us-icon.svg"
+        alt="join us card image"
+      />
+      <div class="join-us-footer-description">
+        <p>
+          To join any of the projects click through thier project pages for
+          details on getting started.
+        </p>
+        <p>
+          The Projects that are in formation are not yet on our website. To
+          connect with the current project team <a href="https://hackforla-slack.herokuapp.com/"> join our slack </a> and browse thier
+          channel name.
+        </p>
+        <a href="https://www.hackforla.org/join" target="_blank">
+          <button class="btn btn-primary btn-md">Join Us</button>
+      </div>
+      
+      </a>
+    </div>
+  </div>
 </section>
