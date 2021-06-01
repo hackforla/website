@@ -1,12 +1,11 @@
 ---
 identification: '138791772'
 title: Engage
-description: 'Engage facilitates and streamlines the preparation of meeting agendas, getting word out to the local residents and compiling feedback from the public.
-Engage is a platform to help connect residents (and other stakeholders) to local government. Instead of requiring constituents to be present at meetings, which presents a host of challenges: work schedules, childcare, accessibility, fear that their voice would not be heard, or not understanding the meeting agenda.'
+description: 'Engage is a civic participation platform that makes it easier for constituents to offer their feedback on policy issues that local Councils are considering. Engage aims to increase access for community stakeholders who are unable to attend public meetings or may otherwise feel unheard by their local government.'
 image: /assets/images/projects/engage-logo.png
-alt: 'Engage logo.'
-image-hero: /assets/images/projects/engage-hero-2.png
-alt-hero: 'Engage logo and people of different ages, gender and ethnicity coming together concept illustration'
+alt: 'Engage logo'
+image-hero: /assets/images/projects/engage-hero-2.jpeg
+alt-hero: 'People of different ages, gender and ethnicity coming together concept illustration'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
