@@ -32,6 +32,6 @@ location:
 partner: LA Metro
 tools: Docker, AWS, Observable
 visible: true
-vertical: 'Environment'
+program area: 'Environment'
 status: Completed
 ---

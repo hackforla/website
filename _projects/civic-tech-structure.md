@@ -52,12 +52,11 @@ looking:
   - category: UI/UX
     skill: UI/UX Designer
 technologies:
-  - Google Docs
-  - HackforLA.org guides
 location:
   - Remote
 partner:
+tools: Google Docs, HackforLA.org guides
 visible: true
-vertical: 'Civic Tech Infrastructure'
+program area: 'Civic Tech Infrastructure'
 status: Active
 ---

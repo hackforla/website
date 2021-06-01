@@ -20,8 +20,10 @@ projects:
     name: Write for All&#8482;
     image: /assets/images/projects/writeforall.png
     image_alt: A rainbow document searcher icon, the words &quot;Write for All TM&quot;, and a rainbow-like border.
+    link: https://www.hackforla.org/projects/writeforall
   - id: 222602391
     name: New Schools Today
     image: /assets/images/projects/new-schools-today.jpg
     image_alt: Team of students each with a laptop sitting around the conference table, attentively engege in a video conference call meeting.
+    link: https://www.hackforla.org/projects/new-schools-today
 ---

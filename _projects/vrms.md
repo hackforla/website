@@ -56,19 +56,19 @@ looking:
   - category: UI/UX
     skill: UI/UX Designer
 technologies:
-  - Node
+  - Node.js
   - Express
   - MongoDB
   - Docker
   - React
   - Redux
-  - Sass
+  - SASS
   - Jest
   - React Testing Library
 location:
   - Remote
 partner: TBD
 visible: true
-vertical: 'Civic Tech Infrastructure'
+program area: 'Civic Tech Infrastructure'
 status: Active
 ---

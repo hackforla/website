@@ -46,11 +46,11 @@ looking:
   - category: PM
     skill: Product Manager
 technologies:
-  - ReactJS
+  - React
 location:
   # - Santa Monica
   - Remote
 visible: true
-vertical: 'Justice'
+program area: 'Justice'
 status: Active
 ---
