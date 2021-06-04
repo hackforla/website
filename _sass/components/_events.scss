@@ -548,8 +548,11 @@
     }
 
 
+.events-page.content-section {
+  padding-top: 0px;
+}
 
-.events-page, .content-section--events{
+.events-page, .content-section--events {
   background: $color-blue-dark;
   display: flex;
   flex-direction: column;
@@ -573,7 +576,6 @@
   }
   @media #{$bp-below-tablet} {
     font-size: 1.75rem;
-    margin-top: 12px;
-    margin-bottom: 44px;
+    margin: 44px;
     }
 }
