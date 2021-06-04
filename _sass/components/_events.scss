@@ -551,7 +551,6 @@
 
 .events-page, .content-section--events{
   background: $color-blue-dark;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -574,6 +573,7 @@
   }
   @media #{$bp-below-tablet} {
     font-size: 1.75rem;
-    margin: 44px;
+    margin-top: 12px;
+    margin-bottom: 44px;
     }
 }
