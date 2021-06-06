@@ -203,6 +203,7 @@ the source files and rebuilds and refreshes the site automatically in your brows
    docker-compose down
    ```
 
+
    To stop the server, but not destroy it (often sufficient for day-to-day work):
 
    ```bash
@@ -218,6 +219,9 @@ the source files and rebuilds and refreshes the site automatically in your brows
 # Working on an issue and making a pull request
 
 ## Working on an issue
+
+  > - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+  > Alternatively you can follow the instructions below to stage changes through the terminal.
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
@@ -250,6 +254,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
    ```
 
    The text after the `-b`, in the example `fix-logo-width-311`, will be the name of your new branch. Choose a branch name that relates to the issue you're working on. (No spaces!)
+
 
    The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
 
@@ -336,6 +341,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
           5773ebe..0c86ecd  gh-pages   -> hackforla/gh-pages
         ```
 
+
         You can safely ignore changes in other issue branches, such as
         `bonnie` above. But if you see changes in gh-pages, as in
         `5773ebe..0c86ecd  gh-pages   -> hackforla/gh-pages`, you should
@@ -343,6 +349,9 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
         rebasing your issue branch. Use the [instructions below](#incorporating-changes-from-upstream)
         to bring your fork up to date with the main repository.
       </details>
+  
+Your fork of this repository on GitHub, and your local clone of that fork, will
+get out of sync with this (upstream) repository from time to time.  (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
 5.  ### Incorporating changes from upstream
 
@@ -416,7 +425,7 @@ https://github.com/hackforla/website/pulls and click on "New pull
 request". Please rename your pull request something descriptive i.e. "building a project card for civic opportunity project".
 Also, since your changes are not in the hackforla/website
 repository, you need to click the "compare across forks" link in the
-first paragraph to make you repository and your new branch
+first paragraph to make your repository and your new branch
 available. Make sure to include pictures of any visual changes made to the site and document your edits on the pull request so that the reviewer can understand the changes made. Review the changes that will be included in the pull
 request and, if it fixes a specific issue, include `Fixes #140` in the
 pull request message so the issue will be closed automatically once

@@ -38,12 +38,30 @@ permalink: /wins/
   const overview = "Give us a brief overview"
   const display = "Display?"
 
-
+	const dataKeys = [
+			"Timestamp",
+			"Email Address",
+			"Full name",
+			"Linkedin URL (optional)",
+			"Could we use your Linkedin profile picture next to your story?",
+			"Github URL (optional)",
+			"Could we use your Github profile picture next to your story?",
+			"Select the team(s) you're on",
+			"Select your role(s) on the team",
+			"What is/was your specific role? (optional)",
+			"When did you join Hack for LA? (optional)",
+			"What do you want to celebrate (select all that apply)?",
+			"Give us a brief overview",
+			"Could we use your Linkedin profile picture next to your story?",
+			"Display?"
+		]
 
   function main() {
   	{% assign localData = site.data.external.wins-data | jsonify %}
-  	let localData = {{ localData }};
-  	const rawData = localData.values;
+	  let localData = {{ localData }};
+	  localData.unshift(dataKeys)
+	  const rawData = localData;
+	  
   	//creates an array of objects where each question is the key and the answer is the value
   	//cardData[index][question_str] = answer_str
   	let cardData = []
@@ -269,7 +287,7 @@ permalink: /wins/
 	const winsCardContainer  = document.querySelector('#responses');
 
 	cards.forEach((card, index) => {
-		if (card[display] != "TRUE") return;
+		if (card[display] != true) return;
 		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
 		let ghId;
 		if(card[github_url] && card[github_permission] === "Yes"){

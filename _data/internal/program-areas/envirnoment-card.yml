@@ -20,16 +20,20 @@ projects:
     name: LA TDM Calculator
     image: /assets/images/projects/not-today.png
     image_alt: LA TDM Calculator Landing Page (Mock Up)
+    link: https://www.hackforla.org/projects/tdm-calculator
   - id: 128148093
     name: Public Tree Map
     image: /assets/images/projects/public-tree-map.png
     image_alt: Zoomed-in map showing ten streets of the neighborhood. Each dot on the map displaying a tree from the urban forest
+    link: https://www.hackforla.org/projects/public-tree-map
   - id: 00000000
     name: Climate
     image: /assets/images/projects/placeholder.jpg
     image_alt: placeholder
+    link: 
   - id: 155295655
     name: Railstats LA
     image: /assets/images/projects/metro-ontime.png
     image_alt: LA Metro Rail logo
+    link: https://www.hackforla.org/projects/metro-ontime
 ---

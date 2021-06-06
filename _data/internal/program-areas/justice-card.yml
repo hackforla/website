@@ -18,19 +18,23 @@ SDG:
 
 projects: 
   - id: 218391110
-    name: Record Clearance Project
-    image: /assets/images/projects/record-clearance.jpg
-    image_alt: Record clearance project logo
+    name: Expunge Assist
+    image: /assets/images/projects/expunge-assist.png
+    image_alt: Expunge Assist logo
+    link: https://www.hackforla.org/projects/expunge-assist
   - id: 159286729
     name: Heart
     image: /assets/images/projects/heart.png
     image_alt: Programming code icon that reads helping the homeless with code.
+    link: https://www.hackforla.org/projects/heart
   - id: 00000000
     name: Racial Justice
     image: /assets/images/projects/placeholder.jpg
     image_alt: placeholder
+    link: 
   - id: 324048462
     name: Youth Justice Nav
     image: /assets/images/projects/youthjusticenav.png
     image_alt: All capital letters spelling out title of project - YOUTH JUSTICE NAV
+    link: https://www.hackforla.org/projects/youthjusticenav
 ---

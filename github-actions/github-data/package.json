@@ -8,7 +8,7 @@
     "@actions/github": "^2.0.0",
     "@actions/http-client": ">=1.0.8",
     "@octokit/rest": "^18.0.6",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "true-github-contributors": "^1.0.1"
   },
   "devDependencies": {},

@@ -30,7 +30,7 @@ looking:
 technologies:
   - MongoDB
   - Express
-  - ReactJS
+  - React
   - Node.js
 location:
   # - Santa Monica
@@ -38,5 +38,5 @@ location:
 partner: EnCiv.org, Ballotpedia.org
 visible: true
 status: Completed
-vertical: "Vote / Representation"
+program area: "Vote / Representation"
 ---
