@@ -584,7 +584,7 @@ a.anchor {
 .news-cells {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 25px 0 15px 0;
   align-items: center;
 }
@@ -788,7 +788,11 @@ a.anchor {
 
   .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .flex-container-about-news {
+    display: flex;
   }
 
   .sdg-left-column {
