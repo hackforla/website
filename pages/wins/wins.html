@@ -19,7 +19,7 @@ permalink: /wins/
 </section>
 
 
-<script src="/node_modules/wicg-inert/dist/inert.min.js"></script>
+<script src="/assets/js/inert.min.js"></script>
 
 <script>
 
@@ -389,19 +389,14 @@ permalink: /wins/
 		icon.setAttribute("href", href);
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
-		// icon.setAttribute("tabindex", 0);
 	}
   function updateOverlay(i) {
-	
-	// const modal = document.querySelector(".modal-container");
-	// console.log(modal);
 
 	document.querySelector(".main-header").inert=true;
 	document.querySelector(".content-section.projects").inert=true;
 	document.querySelector(".main-footer").inert=true;
 	document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert=true;
-	document.querySelector(".sr-only-focusable").inert=true;	
-
+	document.querySelector(".sr-only-focusable").inert=true;
 
 	window.addEventListener('keydown', (e) => {
 		  if (e.key == 'Escape') {
