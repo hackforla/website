@@ -361,8 +361,8 @@ permalink: /wins/
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
-		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
-		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-team').innerHTML = `<span class="wins-team-role-color">Team(s): </span> ${card[team]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-role').innerHTML = `<span class="wins-team-role-color">Role(s): </span> ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
