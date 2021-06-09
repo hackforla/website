@@ -377,12 +377,9 @@ permalink: /wins/
 			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
 			//makes the see more span on the bottom of the card
-			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
-				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
-			} else {
-				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+			if (innerHeight => winText.offsetHeight) { //checks if see more is needed.
 				winsBelowDesktop()
-			}
+			} 
 		}
 		addSeeMore()
 
@@ -395,39 +392,39 @@ permalink: /wins/
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
-		  mobileSeeMore(id);
+		toggleSeeMoreLess(id);
   	}
   }
 
   //Adds event listener to badge icons when viewers interface is below desktop size
-  //Click expands wins text and removes "see more"
+  //Click to toggle "see more" and "see less" to expand and collapse wins text
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
-			const id = container.dataset.index
+			const id = container.dataset.index;
 
-			mobileSeeMore(id)
-			container.setAttribute('class', 'wins-tablet wins-icon-container');
+			toggleSeeMoreLess(id);
 		}))
 	}
 
-  function mobileSeeMore(id){
+  function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
-		let winsIconContainer = winsInfo.nextElementSibling
-		parent.classList.add('expanded');
-		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-		//FIXME: this is here for when see more/see less logic is added
-		// if (parent.classList.contains('expanded')) {
-		// 	span.innerHTML = "see less";
-		// 	winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container');
-		// }
-		// else {
-		// 	span.innerHTML = "...see more";
-		// 	winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet');
-		// }
+		let winsIconContainer = winsInfo.nextElementSibling;
+
+		if (!parent.classList.contains('expanded')) {
+			parent.setAttribute('class','project-inner wins-card-text expanded');
+			span.innerHTML = "see less";
+			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+		}
+		else {
+			parent.setAttribute('class','project-inner wins-card-text');
+			span.innerHTML = "...see more";
+			winsIconContainer.setAttribute('class', 'wins-icon-container');
+		}
   }
+
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
 		let child = document.createElement(elementType);
