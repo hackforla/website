@@ -393,17 +393,17 @@ permalink: /wins/
 
   function updateOverlay(i) {
 
-	document.querySelector(".main-header").inert=true;
-	document.querySelector(".content-section.projects").inert=true;
-	document.querySelector(".main-footer").inert=true;
-	document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert=true;
-	document.querySelector(".sr-only-focusable").inert=true;
-
 	window.addEventListener('keydown', (e) => {
 		  if (e.key == 'Escape') {
 			  hideOverlay(e.key)
 		  }
 	  });
+
+	  document.querySelector(".main-header").inert = true;
+	  document.querySelector(".content-section.projects").inert = true;
+	  document.querySelector(".main-footer").inert = true;
+	  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
+	  document.querySelector(".sr-only-focusable").inert = true;
 
 	  window.addEventListener('resize', (e) => {
 		  widthOutput = window.innerWidth;
@@ -413,6 +413,13 @@ permalink: /wins/
 			  document.querySelector(".main-footer").inert = false;
 			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
 			  document.querySelector(".sr-only-focusable").inert = false;
+		  }
+		  else {
+			  document.querySelector(".main-header").inert = true;
+			  document.querySelector(".content-section.projects").inert = true;
+			  document.querySelector(".main-footer").inert = true;
+			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
+			  document.querySelector(".sr-only-focusable").inert = true;
 		  }
 	  });
 
