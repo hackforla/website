@@ -49,12 +49,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
       github: 'https://github.com/pawan92'
     picture: https://avatars.githubusercontent.com/pawan92
-  - name: Tarang Gupta
+  - name: Sihem Gourou
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01FN9BAYTY'
-      github: 'https://github.com/tarang100'
-    picture: https://avatars.githubusercontent.com/tarang100
+      slack: 'https://hackforla.slack.com/team/U021GM545UG'
+      github: 'https://github.com/Sihemgourou'
+    picture: https://avatars.githubusercontent.com/Sihemgourou
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
