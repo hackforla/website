@@ -390,6 +390,7 @@ permalink: /wins/
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}
+
   function updateOverlay(i) {
 
 	document.querySelector(".main-header").inert=true;
@@ -401,6 +402,17 @@ permalink: /wins/
 	window.addEventListener('keydown', (e) => {
 		  if (e.key == 'Escape') {
 			  hideOverlay(e.key)
+		  }
+	  });
+
+	  window.addEventListener('resize', (e) => {
+		  widthOutput = window.innerWidth;
+		  if (widthOutput < 960) {
+			  document.querySelector(".main-header").inert = false;
+			  document.querySelector(".content-section.projects").inert = false;
+			  document.querySelector(".main-footer").inert = false;
+			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
+			  document.querySelector(".sr-only-focusable").inert = false;
 		  }
 	  });
 
