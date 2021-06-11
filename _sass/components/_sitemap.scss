@@ -47,12 +47,15 @@
   }
   h1 {
     font-size: 48px;
+    @media #{$bp-tablet-up} {
+      font-size: 40px;
+    }
   }
   @include mobile {
     margin: auto;
     margin-bottom: 36px;
     h1 {
-      font-size: 24px;
+      font-size: 32px;
       margin-bottom: 20px;
     }
   }
