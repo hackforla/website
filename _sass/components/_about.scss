@@ -143,12 +143,9 @@ a.anchor {
 }
 
 .page-card--about {
-  background: #fff;
+  overflow: hidden;
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  overflow: hidden;
-  max-width: 896px;
   margin-bottom: 0;
   padding: 22px;
   height: fit-content;
@@ -157,6 +154,7 @@ a.anchor {
 
 // Make the Letter page card have square corners
 .page-card--ed {
+  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
   border-radius: 0;
 }
 
