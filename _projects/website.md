@@ -13,12 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Kian Badie
-    role: Technical Advisor
+  - name: Akib Rahman
+    role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UNAQGKW91'
-      github: 'https://github.com/KianBadie'
-    picture: https://avatars.githubusercontent.com/KianBadie
+      slack: 'https://hackforla.slack.com/team/U01L4FXN1T7'
+      github: 'https://github.com/akibrhast'
+    picture: https://avatars.githubusercontent.com/akibrhast
   - name: Cynthia Kiser
     role: Technical Advisor
     links:
