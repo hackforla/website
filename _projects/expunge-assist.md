@@ -14,12 +14,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01GC5HU9AB'
       github: 'https://github.com/ggrrettcchhenn'
     picture: 'https://avatars.githubusercontent.com/ggrrettcchhenn'
-  - name: Myranda Pierce
+  - name: Apurva Barve
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01E521NT2L'
-      github: 'https://github.com/myrandi'
-    picture: 'https://avatars.githubusercontent.com/myrandi'
+      slack: 'https://hackforla.slack.com/team/U01Q1P81HGB'
+      github: 'https://github.com/apurvabarve'
+    picture: 'https://avatars.githubusercontent.com/apurvabarve'
   - name: Andan Eddy
     role: Product Manager
     links:
@@ -43,14 +43,14 @@ looking:
     skill: Graphic Designer
   - category: UI/UX
     skill: UI Designer
-  - category: PM
-    skill: Product Manager
+  - category: Development
+    skill: React Developer
 technologies:
   - React
 location:
   # - Santa Monica
   - Remote
 visible: true
-vertical: 'Justice'
+program area: 'Justice'
 status: Active
 ---

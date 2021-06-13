@@ -65,7 +65,7 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-vertical: 'Citizen Engagement'
+program area: 'Citizen Engagement'
 visible: true
 status: Active
 ---

@@ -25,16 +25,16 @@ leadership:
 links: 
   - name: Github
     url: 'https://github.com/hackforla/access-the-data/'
-  #- name: Slack
-  #  url: 'https://www.example.com'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/C01L2ANCG6M'
   #- name: Test Site
   #  url: 'https://test.example.com'
   #- name: Demo Site
   #  url: 'https://demo.example.com'
   #- name: Site
   #  url: 'https://live.example.com'
-  #- name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/accessthedata-Project-One-Sheet.pdf
+  - name: Overview
+    url: 'https://docs.google.com/document/d/1bWWhI0Zuas22sdEEDC6sSuRYZ3gXiBZ8LuyNUmD_s7o/edit?usp=sharing'
   # unused links can be commented out
   # - name: Showcase deck
   #   url: ''
@@ -63,7 +63,7 @@ location:
   # must choose one of the above (closest)
 partner: Department of Neighborhood Empowerment
 tools: figma, photoshop, sketch, phone calls.
-vertical: Citizen Engament
+program area: Citizen Engament
 status: Active
 # If the card should not be included on the site, change visible to "false"
 visible: true

@@ -39,6 +39,6 @@ location:
 partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
 tools: 'ArcGIS surveys, Google Docs, Zoom'
 visible: true
-vertical: 'Citizen Engagement'
+program area: 'Citizen Engagement'
 status: Active
 ---
