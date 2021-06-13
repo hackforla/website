@@ -372,18 +372,18 @@ permalink: /wins/
 
 		winsCardContainer.append(cloneCardTemplate);
 		
-		const winText = cloneCardTemplate.querySelector('.wins-card-text')
-		function addSeeMore() {
-			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
+		// const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		// function addSeeMore() {
+		// 	let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
-			//makes the see more span on the bottom of the card
-			if (innerHeight => winText.offsetHeight) { //checks if see more is needed.
-				winsBelowDesktop()
-			} 
-		}
-		addSeeMore()
+		// 	//makes the see more span on the bottom of the card
+		// 	if (innerHeight => winText.offsetHeight) { //checks if see more is needed.
+		// 		winsBelowDesktop()
+		// 	} 
+		// }
+		// addSeeMore()
 
-		new ResizeObserver(addSeeMore).observe(winText)
+		// new ResizeObserver(addSeeMore).observe(winText)
 	})
   }
 
