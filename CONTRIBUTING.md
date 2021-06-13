@@ -356,7 +356,7 @@ get out of sync with this (upstream) repository from time to time.  (That's what
 5.  ### Incorporating changes from upstream
 
       Your fork of this repository on GitHub, and your local clone of that fork, will
-      get out of sync with this (upstream) repository from time to time.  (That's what has happend when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+      get out of sync with this (upstream) repository from time to time.  (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
       One way to keep your fork up to date with this repository is to follow
       these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
@@ -434,9 +434,19 @@ your pull request is accepted and merged.
 Once you have finished working on the issue you have chosen, commit
 the changes to your local branch (e.g. `fix-logo-width-311`).
 
-<p align="center"><i><b>NOTE</b>: After you completed your assignment and committed all of the changes, before moving onto your next issue and creating a new branch, you must leave your current branch and return to the `gh-pages` branch. From there you can checkout into a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch).</i></p>
+<p align="center"><i><b>NOTE</b>: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch. 
 
-Run `git checkout gh-pages` to return to the `gh-pages` branch:
+Run the following command to return to the `gh-pages` branch:
+
+```bash
+git checkout `gh-pages`
+```
+Once your pull request is merged you can delete your branch with the following command:
+   
+```bash
+git branch -d fix-logo-width-311
+```
+Now you can move on to your next issue and create a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch) </i></p>
 
 From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
 ```bash
