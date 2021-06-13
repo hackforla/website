@@ -2,7 +2,7 @@
   min-height: calc(100vh - 223px);
   display: flex;
   align-items: center;
-  background: #030c2c;
+  background: $color-blue-dark;
   .wins-form-title {
     font-size: 35px;
     font-weight: 400;
@@ -64,18 +64,16 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    background-color: $color-white;
     background-clip: padding-box;
-    border-bottom: 1.5px solid #585a5c; //need to change color
+    border-bottom: 1.5px solid $color-black;
     border-radius: 0;
     box-shadow: inset 0px 0px 0px 0px;
-    // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   .form-control:focus {
     outline: none;
-    border-bottom: 2px solid #117fee; //need to change color
-    background-color: #f6f8f9;
+    border-bottom: 2px solid $color-blue; //need to change color
+    background-color: $color-grey-light;
   }
   .container-fluid {
     width: 100%;
