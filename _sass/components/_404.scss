@@ -1,0 +1,15 @@
+
+.grid-container--404{
+    display: grid;
+    grid-template-areas: 
+        'notFoundMessage notFoundImage';
+        
+    .col-left{
+        grid-area: notFoundMessage;
+    }
+
+    .col-right{
+        grid-area: notFoundImage;
+
+    }
+}
