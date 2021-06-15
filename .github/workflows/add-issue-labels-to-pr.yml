@@ -1,5 +1,5 @@
 # Name that appears on the workflow
-name: Pull Request Comment Test
+name: Add Linked Issue Labels to Pull Request
 on:
   pull_request:
     types: [opened, edited]
