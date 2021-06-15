@@ -287,7 +287,7 @@ permalink: /wins/
 	const winsCardContainer  = document.querySelector('#responses');
 
 	cards.forEach((card, index) => {
-		if (card[display] != true) return;
+		// if (card[display] != true) return;
 		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
 		let ghId;
 		if(card[github_url] && card[github_permission] === "Yes"){
