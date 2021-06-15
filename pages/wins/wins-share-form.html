@@ -41,7 +41,7 @@ permalink: /share-your-wins/
           type="text"
           class="form-control"
           id="linkedinurl"
-          pattern="https:\/\/www\.linkedin\.com\/.+"
+          pattern="https:\/\/(www\.)?linkedin\.com\/.+"
           title="https://www.linkedin.com/in/<your-username>"
         />
       </div>
@@ -75,7 +75,7 @@ permalink: /share-your-wins/
           type="text"
           class="form-control"
           id="githuburl"
-          pattern='https:\/\/www\.github\.com\/.+'
+          pattern='https:\/\/(www\.)?github\.com\/.+'
           title="https://www.github.com/<your-username>"
         />
       </div>
@@ -160,6 +160,7 @@ permalink: /share-your-wins/
           id="winsOverview" 
           form="celebrationsForm"
           placeholder="Enter text here..."
+          required
         ></textarea>
       </div>
       <div class="btn-container">
@@ -441,7 +442,7 @@ permalink: /share-your-wins/
       .addEventListener("input", function (e) {
         //If it is a valid linkedin url
         const str = e.target.value;
-        if (str.match(/https:\/\/www\.linkedin\.com\/.+/g).length >0) {
+        if (str.match(/https:\/\/(www\.)?linkedin\.com\/.+/g).length >0) {
           //display the linkedIn photo permission question
           document.querySelector("#linkedinPhotoPermission").style.display =
             "block";
@@ -466,7 +467,7 @@ permalink: /share-your-wins/
       .addEventListener("input", function (e) {
         //If it is a valid linkedin url
         const str = e.target.value;
-        if (str.match(/https:\/\/www\.github\.com\/.+/g).length >0) {
+        if (str.match(/https:\/\/(www\.)?github\.com\/.+/g).length >0) {
           //display the github photo permission question
           document.querySelector("#githubPhotoPermission").style.display =
             "block";
