@@ -1,0 +1,121 @@
+# Name that appears on the workflow
+name: Pull Request Comment Test
+on:
+  pull_request:
+    types: [opened, edited]
+jobs:
+# Adds linked issue labels to pull request
+# Step1: Reads pull request comment and return the linked issue
+# Step2: Perform a GET request to retrieve labels from linked issue
+# Step3: Perform a PUT request to apply labels to original pull request
+  Add-Linked-Issue-Labels-to-Pull-Request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve Linked Issue From Comment
+        # https://github.com/actions/github-script
+        uses: actions/github-script@v4
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+        id: issue-number
+        with:
+          result-encoding: string
+          script: |
+            // Retrieve comments
+            const { BODY } = process.env
+            
+            // RegEx for capturing linked issue
+            const KEYWORDS = ['close', 'closes', 'closed', 'fix', 'fixes', 'fixed', 'resolve', 'resolves', 'resolved']
+            let reArr = []
+            for (const word of KEYWORDS) {
+              reArr.push(`[\\n|\\s|^]${word} #\\d*\\s|^${word} #\\d*\\s|\\s${word} #\\d*$|^${word} #\\d*$`)
+            }
+            let re = new RegExp(reArr.join('|'), 'gi')
+            
+            // Receive and unpack matches into an Array of Array objs
+            let match = BODY.matchAll(re)
+            match = [...match]
+            
+            // If only one match is found, return the issue number. Else return false. Also console.log results.
+            if (match.length == 1) {
+              const linkedIssue = match[0][0]
+              const issueNumber = match[0][0].match(/\d+/)
+              console.log(`Issue number found for PR #${context.payload.number}. Issue #${issueNumber}`)
+              return issueNumber[0]
+            } else {
+              console.log('Make sure there is only one issue!')
+              return false
+            }
+
+
+      # https://docs.github.com/en/rest/reference/issues#list-labels-for-an-issue
+      - name: Get Labels from Linked Issue
+        uses: actions/github-script@v4
+        id: linked-labels
+        with:
+          script: |
+            // Set up request URL.
+            const issueNum = ${{ steps.issue-number.outputs.result }}
+            if (!issueNum) {
+              return false
+            }
+            const getLabelsAPIURL = `https://api.github.com/repos/${{ github.repository }}/issues/${issueNum}/labels`
+            
+            // GET request to retrieve data from results of request
+            const results = await github.request(getLabelsAPIURL)
+            let data;
+            if (results['data']) {
+              data = results.data
+            } else {
+              console.log('Error with GET Request')
+              console.log(results)
+              return false
+            }
+            
+            // Gather all label names into an array of strings and return the array
+            let labelNameArray = []
+            for (const label of data) {
+              labelNameArray.push(label.name)
+            }
+            console.log(`Labels found on Issue #${issueNum}: ${labelNameArray.join(', ')}`)
+            return labelNameArray
+
+
+      # https://docs.github.com/en/rest/reference/issues#set-labels-for-an-issue
+      - name: Put Labels to Pull Request
+        uses: actions/github-script@v4
+        id: final-result
+        with:
+          script: |
+            // Retrieve labels
+            const arrayOfLabels = ${{ steps.linked-labels.outputs.result }}
+            if (!arrayOfLabels) {
+              return false
+            }
+            
+            // PUT request to apply labels to pull request
+            const pullRequestNum = ${{ github.event.number }}
+            const putLabelsAPIURL = `https://api.github.com/repos/${{ github.repository }}/issues/${pullRequestNum}}/labels`
+            const results = await github.request(putLabelsAPIURL, {
+              method: 'PUT',
+              labels: arrayOfLabels,
+            })
+            
+            console.log(results)
+            
+            if (results.status == 200) {
+              return true
+            } else {
+              return false
+            }
+
+            
+      # For use if there are follow-up actions following script success or failure.
+      - name: Return Failure
+        if: steps.final-result.outputs.result == 'false'
+        run: |
+          echo "Please expand above outputs for errors."
+          exit 1
+      - name: Return Success
+        run: |
+          echo "${{ steps.final-result.outputs.result }}"
+          echo "Success"
