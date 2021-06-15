@@ -1,15 +1,33 @@
+.grid-container--404 {
+  .col-left {
+    grid-area: notFoundMessage;
+    margin-left: 240px ;
+    margin-top: 253px;
+    margin-bottom: 156px;
 
-.grid-container--404{
-    display: grid;
-    grid-template-areas: 
-        'notFoundMessage notFoundImage';
-        
-    .col-left{
-        grid-area: notFoundMessage;
-    }
+  }
 
-    .col-right{
-        grid-area: notFoundImage;
+  .col-right {
+    grid-area: notFoundImage;
+    margin-right: 154px;
+    margin-top: 226px;
+    margin-bottom: 185.11px;
+  }
+  .header-message-404{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 76px;
+    line-height: 137%;
+    /* or 104px */
+    
+    
+    /* Text/Dark-I */
+    
+    color: #333333;
+    
+  }
 
-    }
+  display: grid;
+  grid-template-areas: "notFoundMessage notFoundMessage notFoundMessage notFoundImage";
 }
