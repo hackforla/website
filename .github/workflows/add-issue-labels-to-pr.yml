@@ -8,6 +8,7 @@ jobs:
 # Step1: Reads pull request comment and return the linked issue
 # Step2: Perform a GET request to retrieve labels from linked issue
 # Step3: Perform a PUT request to apply labels to original pull request
+# Note: Step1 uses RegEx to extract linked issues. This is not the best choice, but is required as GitHub does not include linked issues in the context. If this changes in the future, please revise Step1 ASAP for a more robust code.
   Add-Linked-Issue-Labels-to-Pull-Request:
     runs-on: ubuntu-latest
     steps:
