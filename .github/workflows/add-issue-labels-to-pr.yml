@@ -15,6 +15,7 @@ jobs:
       - name: Retrieve Linked Issue From Comment
         # https://github.com/actions/github-script
         uses: actions/github-script@v4
+        # Escapes user input for injection attacks
         env:
           BODY: ${{ github.event.pull_request.body }}
         id: issue-number
@@ -101,8 +102,8 @@ jobs:
               labels: arrayOfLabels,
             })
             
+            // Logs result of script
             console.log(results)
-            
             if (results.status == 200) {
               return true
             } else {
