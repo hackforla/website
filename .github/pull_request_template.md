@@ -1,17 +1,16 @@
-### All Submissions:
+Fixes #replace_this_text_with_the_issue_number
 
-* [ ] Have you followed the guidelines in our Contributing document?
-* [ ] Have you checked to ensure there aren't other open [Pull Requests](../../../pulls) for the same update/change?
+## What changes did you make and why did you make them ?
 
-<!-- You can erase any parts of this template not applicable to your Pull Request. -->
+  -
+  -
+  -
 
-### New Feature Submissions:
+# Screenshots of Proposed Changes (if any)
 
-1. [ ] Does your submission pass tests?
-2. [ ] Have you lint your code locally prior to submission?
+<details>
+<summary>Edit_This_To_Add_Image_Description</summary>
 
-### Changes to Core Features:
+Paste_Your_Image_Link_Here
 
-* [ ] Have you added an explanation of what your changes do and why you'd like us to include them?
-* [ ] Have you written new tests for your core changes, as applicable?
-* [ ] Have you successfully ran tests with your changes locally?
+</details>
