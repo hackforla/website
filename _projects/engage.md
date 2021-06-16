@@ -58,7 +58,7 @@ location:
   - Remote
 tools: Hotjar, Google Analytics
 program area: 'Citizen Engagement'
-partner: City of Santa Monica
+partner: Various Los Angeles Neighborhood Councils
 visible: true
 status: Active
 ---
