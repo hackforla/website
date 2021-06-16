@@ -433,5 +433,8 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 - [dockercompose](https://docs.docker.com/compose/gettingstarted/)
 - [dockerdesktop](https://docs.docker.com/install/)
 
+### Other Documentation
+
+For new volunteers, check this [Wiki](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) for more ways to contribute to the project.
 
 [Back to Top](#overview)
