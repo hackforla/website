@@ -1,7 +1,7 @@
 # Name that appears on the workflow
 name: Add Linked Issue Labels to Pull Request
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, edited]
 jobs:
 # Adds linked issue labels to pull request
