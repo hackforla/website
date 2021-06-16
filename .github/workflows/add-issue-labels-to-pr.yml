@@ -9,6 +9,7 @@ jobs:
 # Step2: Perform a GET request to retrieve labels from linked issue
 # Step3: Perform a PUT request to apply labels to original pull request
 # Note: Step1 uses RegEx to extract linked issues. This is not the best choice, but is required as GitHub does not include linked issues in the context. If this changes in the future, please revise Step1 ASAP for a more robust code.
+# Note2: Below you will see ${{ github }} and the github variable used. The former is a context from GitHub actions and the latter is an object argument of the actions/github-script@v4 workflow. These two are not the same and should not be treated as such!
   Add-Linked-Issue-Labels-to-Pull-Request:
     runs-on: ubuntu-latest
     steps:
@@ -25,15 +26,15 @@ jobs:
             // Retrieve comments
             const { BODY } = process.env
             
-            // RegEx for capturing linked issue
+            // Create RegEx for capturing KEYWORD #ISSUE-NUMBER syntax (i.e. resolves #1234)
             const KEYWORDS = ['close', 'closes', 'closed', 'fix', 'fixes', 'fixed', 'resolve', 'resolves', 'resolved']
             let reArr = []
             for (const word of KEYWORDS) {
               reArr.push(`[\\n|\\s|^]${word} #\\d*\\s|^${word} #\\d*\\s|\\s${word} #\\d*$|^${word} #\\d*$`)
             }
-            let re = new RegExp(reArr.join('|'), 'gi')
             
             // Receive and unpack matches into an Array of Array objs
+            let re = new RegExp(reArr.join('|'), 'gi')
             let match = BODY.matchAll(re)
             match = [...match]
             
@@ -47,29 +48,34 @@ jobs:
               console.log('Make sure there is only one issue!')
               return false
             }
-
-
+            
+            
       # https://docs.github.com/en/rest/reference/issues#list-labels-for-an-issue
       - name: Get Labels from Linked Issue
         uses: actions/github-script@v4
         id: linked-labels
         with:
           script: |
-            // Set up request URL.
+            // Retrieve issue number from previous step.
             const issueNum = ${{ steps.issue-number.outputs.result }}
             if (!issueNum) {
               return false
             }
-            const getLabelsAPIURL = `https://api.github.com/repos/${{ github.repository }}/issues/${issueNum}/labels`
             
             // GET request to retrieve data from results of request
-            const results = await github.request(getLabelsAPIURL)
+            // https://octokit.github.io/rest.js/v18#issues-list-labels-on-issue
             let data;
-            if (results['data']) {
+            try {
+              const results = await github.issues.listLabelsOnIssue({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNum,
+              });
               data = results.data
-            } else {
-              console.log('Error with GET Request')
-              console.log(results)
+            }
+            catch(err) {
+              console.log('Error with GET Request to get labels')
+              console.log(err)
               return false
             }
             
@@ -80,36 +86,45 @@ jobs:
             }
             console.log(`Labels found on Issue #${issueNum}: ${labelNameArray.join(', ')}`)
             return labelNameArray
-
-
+            
+            
       # https://docs.github.com/en/rest/reference/issues#set-labels-for-an-issue
       - name: Put Labels to Pull Request
         uses: actions/github-script@v4
         id: final-result
         with:
           script: |
-            // Retrieve labels
+            // Retrieve labels from previous step
             const arrayOfLabels = ${{ steps.linked-labels.outputs.result }}
             if (!arrayOfLabels) {
               return false
             }
             
             // PUT request to apply labels to pull request
-            const pullRequestNum = ${{ github.event.number }}
-            const putLabelsAPIURL = `https://api.github.com/repos/${{ github.repository }}/issues/${pullRequestNum}}/labels`
-            const results = await github.request(putLabelsAPIURL, {
-              method: 'PUT',
-              labels: arrayOfLabels,
-            })
+            // https://octokit.github.io/rest.js/v18#issues-add-labels
+            let results;
+            try {
+              results = await github.issues.setLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: ${{ github.event.number }},
+                labels: arrayOfLabels,
+              })
+            }
+            catch(err) {
+              console.log('Error with PUT Request to edit labels')
+              console.log(err)
+              return false
+            }
             
-            // Logs result of script
+            // Log result of script
             console.log(results)
             if (results.status == 200) {
               return true
             } else {
               return false
             }
-
+            
             
       # For use if there are follow-up actions following script success or failure.
       - name: Return Failure
