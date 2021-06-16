@@ -5,6 +5,8 @@ This is the contributing guide, it is going to assist you with
 - Setting Up Docker
 - Working On Your First Issue
 
+You should also read [this](https://github.com/hackforla/website/wiki/Being-a-Part-of-the-Hack-For-LA-Team) article in the wiki in tandem with this guide
+
 ## Getting Your Local Git Setup Ready
 1. [Fork](https://github.com/hackforla/website/for) the repository
 2. Clone the forked repository from your terminal by running 
