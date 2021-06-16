@@ -93,7 +93,7 @@ jobs:
         uses: actions/github-script@v4
         id: final-result
         with:
-          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          github-token: ${{ secrets.GH_BOT_TOKEN_1 }}
           script: |
             // Retrieve labels from previous step
             const arrayOfLabels = ${{ steps.linked-labels.outputs.result }}
