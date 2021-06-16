@@ -102,6 +102,7 @@ jobs:
             
             // PUT request to apply labels to pull request
             // https://octokit.github.io/rest.js/v18#issues-add-labels
+            github.auth = ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
             let results;
             try {
               results = await github.issues.setLabels({
