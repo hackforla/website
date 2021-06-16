@@ -91,6 +91,8 @@ jobs:
       # https://docs.github.com/en/rest/reference/issues#set-labels-for-an-issue
       - name: Put Labels to Pull Request
         uses: actions/github-script@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         id: final-result
         with:
           script: |
@@ -102,7 +104,6 @@ jobs:
             
             // PUT request to apply labels to pull request
             // https://octokit.github.io/rest.js/v18#issues-add-labels
-            github.auth = ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
             let results;
             try {
               results = await github.issues.setLabels({
