@@ -168,7 +168,14 @@
       flex-wrap: wrap;
       padding-inline-start: 0px;
     }
+  }
 
+.join-us-footer h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-right: 190px;
+}
 .join-us-footer-description {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
@@ -198,10 +205,5 @@ margin-bottom: 50px;
 
 .join-us-grid-container img {
   width: 70%;
-  // max-width: 500px;
-}
-
-.join-us-grid-container button {
-  
-  
+  // max-width: 500px;  
 }
