@@ -401,6 +401,9 @@
     }
     .expanded{
         height: auto;
+        .wins-see-more-div {
+            z-index: 10;
+        }
     }
     
 }
