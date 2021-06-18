@@ -127,6 +127,19 @@
   }
 }
 
+/* X-Large Button --- More Padding */
+
+.btn-xl-long {
+height: 72px;
+padding: 0 80px;
+border-radius: 100px;
+font-size: 1.5rem;
+
+@media #{$bp-below-tablet} {
+height: 60px;
+padding: 0 70px;
+border-radius: 60px;
+font-size: 1.25rem; }}
 
 /*   Large Button   */
 
@@ -157,7 +170,6 @@
   font-size: 1rem;
   line-height: 40px; /* Centers the text */
 }
-
 
 /*----------------------------------------------------
   Page-Specific Button Classes
