@@ -26,8 +26,6 @@ The following is a set of guidelines for contributing to the website repository,
    - [Prepare your changes to push to your repository](#Prepare-your-changes-to-push-to-your-repository)
       </details>
    - [Check upstream before you push](#Check-upstream-before-you-push)
-      - [No conflicting changes in upstream repository]()
-      - [Conflicting changes in upstream respoitory]() 
 2. [Making a pull request](#Making-a-pull-request)
 ### Resources and Documentation
 1. [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
@@ -139,8 +137,7 @@ The recommended installation method for your operating system can be found [here
 
 More on using Docker and the concepts of containerization:
 
-* [Get started with Docker](https://docs.docker.com/get-docker/)
-* [Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)
+* [Get started with Docker](https://docs.docker.com/get-started/)
 
 <details>
 <summary>Docker Installation Troubleshooting</summary>
@@ -301,7 +298,8 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
       ```bash
       git commit -m “insert message here”
       ```
-
+** If you do not see the changes you applied when you run `docker-compose up`, delete `_site` directory and `.jekyll-metadata` file and restart docker. This will force docker to rebuild the whole site. 
+  
 4. ### Check upstream before you push
 
    Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
@@ -467,5 +465,6 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 </details>
 
-<br><p align="center">🎉🎉🎉<b>Congratulations!  You have successfully made a pull request. Thank you for contributing!</b>🎉🎉🎉 </p><br>
+For new volunteers, check this [Wiki](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) for more ways to contribute to the project.
 
+[Back to Top](#overview)

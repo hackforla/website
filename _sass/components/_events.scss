@@ -548,10 +548,16 @@
     }
 
 
+/* This specific selector is created to maintain a total top-margin + top-padding of 44px for .events-page-header (below) without altering 
+or overriding .content-section. See Issue #1609. If this comment is no longer relevant, please remove. */
+.content-section--events + .events-page-header {
+  @media #{$bp-below-tablet} {
+    padding-top: 12px;
+  }
+}
 
-.events-page, .content-section--events{
+.events-page, .content-section--events {
   background: $color-blue-dark;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -569,4 +575,12 @@
   color: $color-white; 
   margin-top: 48px; 
   font-size: 36px;
+  @media #{$bp-below-desktop} {
+    font-size: 2rem;
+  }
+  @media #{$bp-below-tablet} {
+    font-size: 1.75rem;
+    margin-top: 32px;
+    margin-bottom: 44px;
+    }
 }
