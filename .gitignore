@@ -12,8 +12,8 @@ dist
 
 .jekyll-metadata
 _site
-Gemfile
-Gemfile.lock
+#Gemfile
+#Gemfile.lock
 
 # Ignore OS and IDE tracking files
 .DS_store
