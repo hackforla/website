@@ -1,6 +1,11 @@
 # Name that appears on the workflow
 name: Add Linked Issue Labels to Pull Request
 on:
+  # github actions triggered by a pull request runs with only read only context due to security and safety reasons(this is the expected behaviour),
+  # as such the event trigger `pull_request` could not be used in this action, since this action needs to make a repository edit.
+  # To bypass this github has provided the event trigger `pull_request_target`, more information regarding this can be found here
+  #       - https://github.blog/changelog/2021-02-19-github-actions-workflows-triggered-by-dependabot-prs-will-run-with-read-only-permissions/
+  #       - https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
   pull_request_target:
     types: [opened, edited]
 jobs:
