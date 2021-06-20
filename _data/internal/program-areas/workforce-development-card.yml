@@ -20,12 +20,15 @@ projects:
     name: Work for LA
     image: /assets/images/projects/work-for-la.jpg
     image_alt: Los Angeles City Hall building
+    link: https://www.hackforla.org/projects/work-for-la
   - id: 130000551
     name: Hackforla.org Website
     image: /assets/images/projects/website.png
     image_alt: Five women in tech collaborating, engaging in a joyful conversation.
+    link: https://www.hackforla.org/projects/website
   - id: 000000000
-    name: Streaming
+    name: '#streaming'
     image: /assets/images/projects/project-in-formation.png
     alt: placeholder image
+    link: 
 ---
