@@ -21,7 +21,7 @@
     h1 {
       font-size: 24px;
       padding-bottom: 28px;
-      @media only screen and (max-width: 500px) {
+      @media #{$bp-mobile-up} {
         font-size: 32px;
       }
     }
@@ -32,7 +32,7 @@
       @media #{$bp-tablet-up} {
         max-width: 500px;
       }
-      @media only screen and (max-width: 500px) {
+      @media #{$bp-mobile-up} {
         font-size: 16px;
       }
     }
@@ -230,7 +230,7 @@
 -----------*/
 
 @media #{$bp-desktop-up} {
-  .join-us-banner {
+  .header-container--join {
     flex-direction: row;
     max-width: 1200px;
     margin: 37px auto 0;
