@@ -36,36 +36,6 @@
     line-height: #{map-get($line-height-h4, print)};
   }
 
-  Title1,
-  .type-Title1 {
-    font-size: #{map-get($font-size-Title1, print)};
-  }
-
-  Title2,
-  .type-Title2 {
-    font-size: #{map-get($font-size-Title2, print)};
-  }
-
-  Title3,
-  .type-Title3 {
-    font-size: #{map-get($font-size-Title3, print)};
-  }
-
-  Title4,
-  .type-Title4 {
-    font-size: #{map-get($font-size-Title4, print)};
-  }
-
-  Title5,
-  .type-Title5 {
-    font-size: #{map-get($font-size-Title5, print)};
-  }
-
-  Title6,
-  .type-Title6 {
-    font-size: #{map-get($font-size-Title6, print)};
-  }
-
   blockquote p,
   .type-featured {
     font-size: #{map-get($font-size-blockquote, print)};
