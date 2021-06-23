@@ -432,6 +432,10 @@
     font-weight: bolder;
     font-size: 24px;
   }
+
+  .event-title span span {
+    display: block;
+  }
   .active::after {
     content: "\221F";
     transform: rotate(135deg);
