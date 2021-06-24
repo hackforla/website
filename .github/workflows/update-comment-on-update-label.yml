@@ -18,5 +18,5 @@ jobs:
             @${{ github.event.issue.assignee.login }} Please add update
             1. Progress
             2. Blockers
-            3. Avaibility
+            3. Availability
             4. ETA
