@@ -95,15 +95,16 @@
     @media #{$bp-below-desktop} {
       flex-direction: column;
     }
-  }
+  
+    .page-card-image-container {
+      flex: 0 0 auto;
+      width: 327px;
+      overflow: hidden;
 
-  .page-card-image-container {
-    flex: 0 0 auto;
-    width: 327px;
-    overflow: hidden;
-    @media #{$bp-below-desktop} {
-      width: 100%;
-      max-height: 40vh;
+      @media #{$bp-below-desktop} {
+        width: 100%;
+        max-height: 40vh;
+      }
     }
   }
 
@@ -111,12 +112,12 @@
     /*moved this to the container so I could use object-fit to accomodate random heights
       margin: -5px;
       max-width: 372px;*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    @media #{$bp-below-tablet} {
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    
+      @media #{$bp-below-tablet} {
+        height: 231px;
       /*  width: 100%;
         max-height: 40vh;
         overflow: hidden;*/
@@ -146,9 +147,9 @@
 .project-card-mini{
     width: 92px;
     height: 120px;
-    border: 1px solid #C4C4C4;
+    border: 1px solid #AEAEAE;
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 13px 26px 13px 0px;
     font-size: 13px;
     line-height: 15.23px;
@@ -171,29 +172,19 @@
   }
 
 .join-us-footer {
-  background-color: white;
+  background-color: $color-white;
   padding: 36px;
 
-  //  h3 {
-  //   display: flex;
-  //   justify-content: center;
-  //   margin-top: 100px;
-  //   margin-right: 190px;
-  // }
-}
+  }
 .join-us-footer-description {
-  // font-family: "Roboto", sans-serif;
-  // font-weight: normal;
-  // font-style: normal;
+  
   font-size: 18px;
   line-height: 137%;
   
   max-width: 722px;
 }
 
-// .join-us-footer-description p {
-// margin-bottom: 50px;
-// }
+
 
 .join-us-footer-body {
   
