@@ -19,9 +19,10 @@ PASTE_YOUR_IMAGE_HERE
 
 ### Action Items
 Design: 
-- [ ] Check the mobile responsiveness of the page (use your mobile to do it) 
-- [ ] If there are any bugs, edit this issue and list all the bugs with screenshots in the Overview section. If there is more than 1 bug, duplicate this issue and create one bug/issue. 
-- [ ] List all the changes to implement to correct the bug (eg: resizing..) in the development action items below. (don't hesitate to create 1 checkbox for each changes)
+- [ ] Check the mobile responsiveness of the page (use your mobile to do it ;) ) 
+- [ ] If there is any bug, edit this issue and list the bug with screenshots in the Overview section above :arrow_up:. _You have more than one bug? duplicate this issue and create one issue per bug. 
+- [ ] List all the changes to implement to correct the bug (eg: resizing..) in the development action items below :arrow_down:. (don't hesitate to create 1 checkbox for each changes)
+- [ ] Put the issue(s) in the review column to check the faisability with the devs. 
 
 Development 
 - [ ] Implement the following changes : "_list your changes here_ "
