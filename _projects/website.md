@@ -13,12 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Kian Badie
-    role: Technical Advisor
+  - name: Akib Rahman
+    role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UNAQGKW91'
-      github: 'https://github.com/KianBadie'
-    picture: https://avatars.githubusercontent.com/KianBadie
+      slack: 'https://hackforla.slack.com/team/U01L4FXN1T7'
+      github: 'https://github.com/akibrhast'
+    picture: https://avatars.githubusercontent.com/akibrhast
   - name: Cynthia Kiser
     role: Technical Advisor
     links:
@@ -49,12 +49,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
       github: 'https://github.com/pawan92'
     picture: https://avatars.githubusercontent.com/pawan92
-  - name: Tarang Gupta
+  - name: Sihem Gourou
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01FN9BAYTY'
-      github: 'https://github.com/tarang100'
-    picture: https://avatars.githubusercontent.com/tarang100
+      slack: 'https://hackforla.slack.com/team/U021GM545UG'
+      github: 'https://github.com/Sihemgourou'
+    picture: https://avatars.githubusercontent.com/Sihemgourou
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
