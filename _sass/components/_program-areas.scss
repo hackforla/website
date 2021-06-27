@@ -182,6 +182,10 @@
   line-height: 137%;
   
   max-width: 722px;
+
+  p{
+    margin-bottom: 57px;
+  }
 }
 
 
@@ -193,9 +197,15 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: 314px;
+  margin-top: 72px;
+  margin-bottom: 84px;
+  
   img.desktop-img {
     display: block;
+    height: 230px;
+    width:auto;
   }
+
   img.mobile-img {
     display: none;
   }
@@ -205,11 +215,28 @@
       flex-direction: column;
       align-items: center;
     }
+
+    .join-us-footer-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      min-height: 314px;
+      margin-top: 60px;
+      margin-bottom: 84px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  
     img.desktop-img {
       display: none;
     }
     img.mobile-img {
       display: block;
+      height: 230px;
+      width:auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
   }
 }
