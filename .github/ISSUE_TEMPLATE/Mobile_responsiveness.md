@@ -2,10 +2,11 @@
 name: 'Responsiveness on mobile '
 about: 'Standard HackforLA issue template '
 title: 'Mobile Responsiveness on [name of the page] : [quick recap of the bug here]'
-labels: 'Bug'
+labels: 'role: design'
 assignees: ''
 
 ---
+
 ### Overview
 We need to check the mobile version of every pages on the website  so that we correct any bug that is appearing on mobile. 
 
@@ -31,4 +32,4 @@ Development
 
 
 ### Resources/Instructions
-REPLACE THIS TEXT - Provide links to the figma file (if there is one), and to the page where the bug is observed. 
+REPLACE THIS TEXT - Provide links to the figma file (if there is one), and to the page where the bug is observed.
