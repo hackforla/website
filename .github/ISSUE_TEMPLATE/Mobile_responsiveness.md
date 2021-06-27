@@ -7,7 +7,8 @@ assignees: ''
 
 ---
 ### Overview
-We need to check the mobile changes of all the website pages so that we correct any bug that is appearing on mobile. 
+We need to check the mobile changes of evry pages on the website  so that we correct any bug that is appearing on mobile. 
+
 REPLACE THIS TEXT - 
 1. Explain the bug that you have observed 
 2. Put a screenshot of the bug: you can use the following template to create a drop down image
@@ -19,7 +20,7 @@ PASTE_YOUR_IMAGE_HERE
 
 ### Action Items
 Design: 
-- [ ] Check the mobile responsiveness of the page (use your mobile to do it ;) ) 
+- [ ] Check the mobile responsiveness of this page (use your mobile to do it ;) ) 
 - [ ] If there is any bug, edit this issue and list the bug with screenshots in the Overview section above :arrow_up:. _You have more than one bug? duplicate this issue and create one issue per bug. 
 - [ ] List all the changes to implement to correct the bug (eg: resizing..) in the development action items below :arrow_down:. (don't hesitate to create 1 checkbox for each changes)
 - [ ] Put the issue(s) in the review column to check the faisability with the devs. 
