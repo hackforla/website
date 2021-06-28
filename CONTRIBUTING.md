@@ -212,22 +212,6 @@ the source files and rebuilds and refreshes the site automatically in your brows
    ```bash
    docker-compose up
    ```
-
-### Can't see your changes locally?
-
-  <details>
-  <summary>If you are having trouble viewing your changes locally after running docker, click here to see instructions on how to resolve this issue</summary>
-  
-  1. The first thing to do if you do not see your changes while starting docker or live reloading, stop docker from running. 
-  2. Next, go into the files and look for the '_site' folder and delete this folder.
-  3. Next, look for a file called '.jekyll-metadata' and delete this file.
-  4. Finally, try running docker again and you should see your changes.
-
-  - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-  - If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
-
-  </details>
-
 # Working on an issue and making a pull request
 
 ## Working on an issue
@@ -273,6 +257,21 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
    <sub>*No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.*</sub>
 
    When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
+
+   ### Can't see your changes locally?
+
+   <details>
+   <summary>If you are having trouble viewing your changes locally after running docker, click here to see instructions on how to resolve this issue</summary>
+   
+   1. The first thing to do if you do not see your changes while starting docker or live reloading, stop docker from running. 
+   2. Next, go into the files and look for the '_site' folder and delete this folder.
+   3. Next, look for a file called '.jekyll-metadata' and delete this file.
+   4. Finally, try running docker again and you should see your changes.
+
+   - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
+   - If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
+
+   </details>
 
 3. ### Prepare your changes to push to your repository
 
