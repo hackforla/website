@@ -17,12 +17,12 @@ h6,
 p,
 ul,
 ol,
-Title1,
-Title2,
-Title3,
-Title4,
-Title5,
-Title6
+title1,
+title2,
+title3,
+title4,
+title5,
+title6
 
 gh-pages
  {
@@ -71,38 +71,38 @@ h4,
 map-get($font-family, decorative);
 }
 
-Title1,
-.type-Title1 {
+title1,
+.type-title1 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title1, mobile)}
   map-get($font-family, decorative);
 }
 
-Title2,
-.type-Title2 {
+title2,
+.type-title2 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title2, mobile)}
   map-get($font-family, decorative);
 }
 
-Title3,
-.type-Title3 {
+title3,
+.type-title3 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title3, mobile)}
   map-get($font-family, decorative);
 }
 
-Title4,
-.type-Title4 {
+title4,
+.type-title4 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title4, mobile)}
   map-get($font-family, decorative);
 }
 
-Title5,
-.type-Title5 {
+title5,
+.type-title5 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title5, mobile)}
   map-get($font-family, decorative);
 }
 
-Title6,
-.type-Title6 {
+title6,
+.type-title6 {
   font: map-get($font-weight, bold) #{map-get($font-size-Title6, mobile)}
   map-get($font-family, decorative);
 }
@@ -180,34 +180,34 @@ map-get($font-family, body);
     line-height: #{map-get($line-height-h4, tablet)};
   }
 
-  Title1,
-  .type-Title1 {
+  title1,
+  .type-title1 {
     font-size: #{map-get($font-size-Title1, tablet)};
   }
 
-  Title2,
-  .type-Title2 {
+  title2,
+  .type-title2 {
     font-size: #{map-get($font-size-Title2, tablet)};
   }
 
-  Title3,
-  .type-Title3 {
+  title3,
+  .type-title3 {
     font-size: #{map-get($font-size-Title3, tablet)};
   }
   
 
-  Title4,
+  title4,
   .type-Title4 {
     font-size: #{map-get($font-size-Title4, tablet)};
   }
 
-  Title5,
-  .type-Title5 {
+  title5,
+  .type-title5 {
     font-size: #{map-get($font-size-Title5, tablet)};
   }
 
-  Title6,
-  .type-Title6 {
+  title6,
+  .type-title6 {
     font-size: #{map-get($font-size-Title6, tablet)};
   }
 
@@ -255,33 +255,33 @@ map-get($font-family, body);
     line-height: #{map-get($line-height-h4, desktop)};
   }
 
-  Title1,
+  title1,
   .type-Title1 {
     font-size: #{map-get($font-size-Title1, desktop)};
   }
 
-  Title2,
+  title2,
   .type-Title2 {
     font-size: #{map-get($font-size-Title2, desktop)};
   }
 
-  Title3,
+  title3,
   .type-Title3 {
     font-size: #{map-get($font-size-Title3, desktop)};
   }
   
 
-  Title4,
+  title4,
   .type-Title4 {
     font-size: #{map-get($font-size-Title4, desktop)};
   }
 
-  Title5,
+  title5,
   .type-Title5 {
     font-size: #{map-get($font-size-Title5, desktop)};
   }
 
-  Title6,
+  title6,
   .type-Title6 {
     font-size: #{map-get($font-size-Title6, desktop)};
   }
