@@ -73,37 +73,37 @@ map-get($font-family, decorative);
 
 title1,
 .type-title1 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title1, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title1, mobile)}
   map-get($font-family, decorative);
 }
 
 title2,
 .type-title2 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title2, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title2, mobile)}
   map-get($font-family, decorative);
 }
 
 title3,
 .type-title3 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title3, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title3, mobile)}
   map-get($font-family, decorative);
 }
 
 title4,
 .type-title4 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title4, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title4, mobile)}
   map-get($font-family, decorative);
 }
 
 title5,
 .type-title5 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title5, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title5, mobile)}
   map-get($font-family, decorative);
 }
 
 title6,
 .type-title6 {
-  font: map-get($font-weight, bold) #{map-get($font-size-Title6, mobile)}
+  font: map-get($font-weight, bold) #{map-get($font-size-title6, mobile)}
   map-get($font-family, decorative);
 }
 
@@ -182,33 +182,33 @@ map-get($font-family, body);
 
   title1,
   .type-title1 {
-    font-size: #{map-get($font-size-Title1, tablet)};
+    font-size: #{map-get($font-size-title1, tablet)};
   }
 
   title2,
   .type-title2 {
-    font-size: #{map-get($font-size-Title2, tablet)};
+    font-size: #{map-get($font-size-title2, tablet)};
   }
 
   title3,
   .type-title3 {
-    font-size: #{map-get($font-size-Title3, tablet)};
+    font-size: #{map-get($font-size-title3, tablet)};
   }
   
 
   title4,
   .type-Title4 {
-    font-size: #{map-get($font-size-Title4, tablet)};
+    font-size: #{map-get($font-size-title4, tablet)};
   }
 
   title5,
   .type-title5 {
-    font-size: #{map-get($font-size-Title5, tablet)};
+    font-size: #{map-get($font-size-title5, tablet)};
   }
 
   title6,
   .type-title6 {
-    font-size: #{map-get($font-size-Title6, tablet)};
+    font-size: #{map-get($font-size-title6, tablet)};
   }
 
   blockquote p,
@@ -257,33 +257,33 @@ map-get($font-family, body);
 
   title1,
   .type-Title1 {
-    font-size: #{map-get($font-size-Title1, desktop)};
+    font-size: #{map-get($font-size-title1, desktop)};
   }
 
   title2,
   .type-Title2 {
-    font-size: #{map-get($font-size-Title2, desktop)};
+    font-size: #{map-get($font-size-title2, desktop)};
   }
 
   title3,
   .type-Title3 {
-    font-size: #{map-get($font-size-Title3, desktop)};
+    font-size: #{map-get($font-size-title3, desktop)};
   }
   
 
   title4,
   .type-Title4 {
-    font-size: #{map-get($font-size-Title4, desktop)};
+    font-size: #{map-get($font-size-title4, desktop)};
   }
 
   title5,
   .type-Title5 {
-    font-size: #{map-get($font-size-Title5, desktop)};
+    font-size: #{map-get($font-size-title5, desktop)};
   }
 
   title6,
   .type-Title6 {
-    font-size: #{map-get($font-size-Title6, desktop)};
+    font-size: #{map-get($font-size-title6, desktop)};
   }
 
   blockquote p,
