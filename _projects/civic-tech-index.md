@@ -9,11 +9,17 @@ image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Portfolio Owner
+    role: Agile Coach/Acting Technical Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Jonathan Shin
+    role: Technical Mentor
+    links:
+      slack: 'https://hackforla.slack.com/team/U01ASHCHSP2'
+      github: 'https://github.com/shinjonathan'
+    picture: https://avatars.githubusercontent.com/shinjonathan
   - name: Olivia Chiong
     role: Product Manager
     links:
@@ -32,6 +38,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
+<<<<<<< HEAD
   - name: Cynthia Kiser
     role: Architectural Advisor
     links: 
@@ -128,6 +135,26 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01V4HESR1S'
       github: 'https://github.com/BoyanLiuu'
     picture: https://avatars.githubusercontent.com/BoyanLiuu
+=======
+  - name: Sean Flores
+    role: Frontend Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U012CG71VD1'
+      github: 'https://github.com/codewilling'
+    picture: https://avatars.githubusercontent.com/codewilling
+  - name: Bo Yang
+    role: Data Analyst
+    links:
+      slack: 'https://hackforla.slack.com/team/UTW4ZPXDK'
+      github: 'https://github.com/ddkbky'
+    picture: https://avatars.githubusercontent.com/ddkbky
+  - name: Gwendolyn Snapp
+    role: Illustrator/Visual Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/UTL09G68Z'
+      github: 'https://github.com/Gsnapp'
+    picture: https://avatars.githubusercontent.com/GSnapp
+>>>>>>> parent of e2dd559... 1748, civic index profile page
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
@@ -140,6 +167,12 @@ links:
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Index-Product-One-Sheet.pdf'
 looking:
+  - category: Development
+    skill: Fullstack Developer with Node/React knowledge
+  - category: Development
+    skill: Front end React developers
+  - category: UI/UX
+    skill: UX specialist for testing and conducting interviews with stakeholders
 technologies:
   - React
   - Django
