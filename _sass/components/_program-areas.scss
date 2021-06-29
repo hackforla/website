@@ -193,12 +193,11 @@
 .join-us-footer-body {
   
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   min-height: 314px;
-  margin-top: 72px;
-  margin-bottom: 84px;
+  max-width: 1050px;
+  margin: 75px auto;
   
   img.desktop-img {
     display: block;
