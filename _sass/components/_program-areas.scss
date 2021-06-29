@@ -169,7 +169,11 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      padding-inline-start: 50px;
-    }
+      padding-inline-start: 0px;
 
+      @media #{$bp-below-mobile} {
+        padding-inline-start: 58px;
+      }
+    }
+    
 }
