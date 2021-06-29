@@ -53,8 +53,13 @@
 }
 
 .program-areas-hero-svg {
-    width: 100%;
+    width: auto;
     height: 240px;
+
+    @media #{$bp-below-mobile} {
+      width: 300px;
+      height: 180.17px;
+    }
 }
 
 @media(max-width: 850px) {
