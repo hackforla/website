@@ -38,7 +38,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
-<<<<<<< HEAD
   - name: Cynthia Kiser
     role: Architectural Advisor
     links: 
@@ -135,26 +134,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01V4HESR1S'
       github: 'https://github.com/BoyanLiuu'
     picture: https://avatars.githubusercontent.com/BoyanLiuu
-=======
-  - name: Sean Flores
-    role: Frontend Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U012CG71VD1'
-      github: 'https://github.com/codewilling'
-    picture: https://avatars.githubusercontent.com/codewilling
-  - name: Bo Yang
-    role: Data Analyst
-    links:
-      slack: 'https://hackforla.slack.com/team/UTW4ZPXDK'
-      github: 'https://github.com/ddkbky'
-    picture: https://avatars.githubusercontent.com/ddkbky
-  - name: Gwendolyn Snapp
-    role: Illustrator/Visual Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/UTL09G68Z'
-      github: 'https://github.com/Gsnapp'
-    picture: https://avatars.githubusercontent.com/GSnapp
->>>>>>> parent of e2dd559... 1748, civic index profile page
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
