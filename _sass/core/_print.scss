@@ -25,7 +25,7 @@
   }
 
   h3,
-  .type-h3{ 
+  .type-h3 { 
     font-size: #{map-get($font-size-h3, print)};
     line-height: #{map-get($line-height-h3, print)};
   }
@@ -36,8 +36,7 @@
     line-height: #{map-get($line-height-h4, print)};
   }
 
-  title1,
-  .type-title1 {
+  .title1 {
     font-size: #{map-get($font-size-title1, print)};
   }
 
