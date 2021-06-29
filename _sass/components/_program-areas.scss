@@ -57,6 +57,12 @@
     height: 240px;
 }
 
+@media #{$bp-mobile-up} {
+.program-areas-hero-svg {
+    width: 75%;
+    height: 240px;
+}
+}
 @media(max-width: 850px) {
     .program-areas-header {
         flex-flow: column;
