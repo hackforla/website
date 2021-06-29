@@ -49,7 +49,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/U013JA9H62E'
       github: 'https://github.com/nrrao'
-    picture:https://avatars.githubusercontent.com/nrrao
+    picture: https://avatars.githubusercontent.com/nrrao
   - name: Maria Studnicka
     role: Product Manager
     links:
