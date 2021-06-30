@@ -9,17 +9,11 @@ image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Agile Coach/Acting Technical Project Manager
+    role: Portfolio Owner
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Jonathan Shin
-    role: Technical Mentor
-    links:
-      slack: 'https://hackforla.slack.com/team/U01ASHCHSP2'
-      github: 'https://github.com/shinjonathan'
-    picture: https://avatars.githubusercontent.com/shinjonathan
   - name: Olivia Chiong
     role: Product Manager
     links:
@@ -133,7 +127,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/U01V4HESR1S'
       github: 'https://github.com/BoyanLiuu'
-    picture: https://avatars.githubusercontent.com/BoyanLiuu 
+    picture: https://avatars.githubusercontent.com/BoyanLiuu
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
