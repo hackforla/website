@@ -44,6 +44,10 @@
         max-width: 508px;
         text-align: left;
         margin: 12px auto;
+
+        @media #{$bp-below-tablet} {
+            margin-top: 1.35rem;
+        }
     }
 
     &__hero-image {
