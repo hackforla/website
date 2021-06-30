@@ -56,8 +56,8 @@
     width: auto;
     height: 240px;
 
-    @media #{$bp-below-mobile} {
-      width: 300px;
+    @media #{$bp-below-tablet} {
+      max-width: 300px;
       height: 180.17px;
     }
 }
@@ -176,7 +176,7 @@
       flex-wrap: wrap;
       padding-inline-start: 0px;
 
-      @media #{$bp-below-mobile} {
+      @media #{$bp-below-tablet} {
         padding-inline-start: 58px;
       }
     }
