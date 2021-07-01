@@ -1,4 +1,7 @@
 //Hero styling
+
+//mobile for wins info
+
 .wins-hero{
     margin-top: 40px;
     display: flex;
@@ -39,6 +42,86 @@
     }
 }
 
+.wins-icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    margin: 1em 0 0 6.5rem;
+}
+.wins-item-container{
+    display: inline-block;
+    position: relative;
+}
+.wins-text-bubble {
+    display: none;
+    // font-weight: normal !important;
+    border-radius: 7px;
+    width: 279%;
+    left: -108%;
+    padding: .6em .5em;
+    background: $color-black;
+    text-align: center;
+    font-weight: 900;
+    color: $color-white;
+    font-family: arial;
+    position: absolute;
+    z-index: 100;
+}
+[data-wins]{
+    font-weight: normal 
+}
+.wins-text-bubble:before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid $color-black;
+    border-right: 10px solid transparent;
+    transform: rotate(45deg);
+    border-bottom: 10px solid transparent;
+    right: 40%;
+    top: 0;
+}
+
+.wins-badge-icon {
+    min-width: 1.7em;
+    max-width: 1.7em;
+    min-height: 1.7em;
+    max-height: 1.7em;
+    margin: .5em 1.5em .5em 0;
+    filter: invert(13%) sepia(4%) saturate(16%) hue-rotate(336deg) brightness(96%) contrast(81%);
+}
+
+.wins-badge-icon:hover{
+    filter: invert(79%) sepia(0%) saturate(4%) hue-rotate(139deg) brightness(89%) contrast(90%);
+}
+
+.wins-badge-icon:hover + .wins-text-bubble{
+    display: block;
+    font-family: $font-family-body;
+}
+
+#overlay-info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 2.6em;
+}
+.overlay-item-container{
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    margin-right: 1.5em;
+}
+.overlay-badge-icon{
+    max-width: 1.5em;
+    margin-top: .2em;
+    margin-right: .7em;
+}
+.overlay-wins-text{
+    margin: 0;
+    max-width: 14em;
+}
 
 @media #{$bp-below-tablet} {
     .wins-hero{
@@ -88,7 +171,9 @@
 .wins-card{
     padding: 45px;
     display: flex;
+    position: relative;
     flex-direction: column;
+    overflow: visible;
 }
 .wins-card-top{
     display: flex;
@@ -127,12 +212,17 @@
     font-size: 20px;
     padding-bottom: .4em;
 }
-.wins-card-team{
+.wins-card-team, .wins-card-role {
     font-weight: normal;
     font-size: 16px;
     line-height: 18px;
     display: flex;
-    align-items: center;
+    margin-bottom: 6px;
+    // align-items: center;
+}
+.wins-team-role-color {
+    color: #767676;
+    margin-right: 7px;
 }
 .wins-card-title{
     display: flex;
@@ -144,10 +234,6 @@
 .wins-card-icons{
     display: flex;
 }
-.wins-card-info{
-    font-weight: bold;
-}
-
 .wins-card-overview{
     margin-top: 1em;
 }
@@ -353,6 +439,70 @@
 	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
-	}
+    }
+
+    .wins-tablet{
+        margin-left: 0em;
+
+        .wins-icon-container{
+            margin: 1.5em 0 0 6.5rem;
+            display: block;
+        }
+        .wins-item-container{
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            margin-left: 6.5em;
+            margin-bottom: 1em;
+        }
+        .wins-badge-icon{
+            margin-top: .05em;
+            min-width: 1.5em;
+            max-width: 1.5em;
+            min-height: 1.5em;
+            max-height: 1.5em;
+        }
+        .wins-text-bubble{
+            display: block;
+            width: 50%;
+            text-align: left;
+            position: relative;
+            left: 0;
+            padding: 0;
+            background: inherit;
+            color: $color-black;
+        }
+        .wins-text-bubble::before{
+            border: none;
+        }
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .wins-icon-container{
+        margin-left: 3.5em
+    }
+    .wins-tablet {
+        .wins-item-container{
+            margin-left: 0;
+        }
+        .wins-text-bubble{
+            width: 100%;
+        }
+    }
+    // when card is collapsed in mobile, icons will be 1.4em
+    .wins-badge-icon {
+        min-width: 1.4em;
+        max-width: 1.4em;
+        min-height: 1.4em;
+        max-height: 1.4em;
+    }
+    // when card is opened with "See More", icons will shrink to 1em
+    .wins-tablet .wins-badge-icon {
+        min-width: 1em;
+        max-width: 1em;
+        min-height: 1em;
+        max-height: 1em;
+    }
 }
 //wins page filter override section end
