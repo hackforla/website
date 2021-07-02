@@ -1,7 +1,7 @@
 .main-footer {
   background: $color-blue-dark;
   color: $color-white;
-  padding: 32px 16px 100px;
+  padding: 32px 25px 10px;
 
   @media #{$bp-tablet-up} {
     padding-bottom: 32px;
@@ -12,22 +12,32 @@
     text-decoration: none;
   }
 
+  @media (max-device-width: 600px) {
+    .btn--donate-footer {
+      margin: 0 auto 25px auto !important;
+    }
+
+    .footer-links {
+      flex-wrap: wrap-reverse; 
+      justify-content: center !important;
+    }
+  }
+
   .header-list {
     align-items: center;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    padding-bottom: 10px;
   }
   
   .btn--donate-footer {
-    position: absolute;
-    right: 0;
-    margin-right: 0;
-    margin-top: -5px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 25px;
   }
 
-  .footer-header {
-    position: relative;
-    color: #fa114f;
-    margin-bottom: 54px;
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
   }
 }
