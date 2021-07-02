@@ -38,69 +38,16 @@
     */
     (async function main(){
 
-        //Runs only if storedDate exists in users localStorage
-        if(localStorage.getItem('storedDate')) {
-            const storedData = JSON.parse(localStorage.getItem('storedData'));
+        const response_data = await sendGetRequest(API_ENDPOINT);
+        let filteredData = filterDataFromApi(response_data);
+        let sortedData = sortData(filteredData);
 
-            //Displays/Inserts event schedule to DOM
-            document.addEventListener('DOMContentLoaded', insertEventSchedule(storedData));
-            //Displays/Inserts the user's time zone in the DOM
-            document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
+        //Displays/Inserts event schedule to DOM
+        document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
+        //Displays/Inserts the user's time zone in the DOM
+        document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
 
-            //After storedData is rendered, checks if API has been updated
-            const response_data = await sendGetRequest(API_ENDPOINT);
-            compareDates(response_data);
-        } else {
-            //Initial fetch to render data
-            const response_data = await sendGetRequest(API_ENDPOINT);
-            let filteredData = filterDataFromApi(response_data);
-            let sortedData = sortData(filteredData);
-
-            //Displays/Inserts event schedule to DOM
-            document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
-            //Displays/Inserts the user's time zone in the DOM
-            document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-
-            //Initial store of data to users localStorage
-            storeData(sortedData);
-        }
     })()   
-
-    /**
-     * Stores data and users date-time locally
-     * @param {Object} sortedData — 2 key : value pairs in localStorage
-    */
-     function storeData(sortedData){
-        const dataString = JSON.stringify(sortedData);
-        const userDate = new Date().toISOString(Date()); 
-        
-        localStorage.setItem('storedDate', `${userDate}`)
-        localStorage.setItem('storedData', `${dataString}`)
-    }
-
-    /**
-     * Compares users storedDate to all updatedDates in the API
-     * @param {Object} responseData — will update localStorage and page with new data, if found
-    */
-    function compareDates(responseData){
-        let updatedDates = responseData.map(data => (data.updatedDate));
-        const userDate = localStorage.getItem('storedDate');
-        
-        for(const date of updatedDates){
-            if(date > userDate){
-                let filteredData = filterDataFromApi(parseData)
-                let sortedData = sortData(filteredData);
-                
-                //Displays/Inserts event schedule to DOM
-                document.addEventListener('DOMContentLoaded', insertEventSchedule(sortedData));
-                //Displays/Inserts the user's time zone in the DOM
-                document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-
-                //Updates users storedData and storedDate locally
-                storeData(sortedData)
-            }
-        }
-    }
 
     /**
      * Retrieves data from the wins excel sheet provided a valid excel url
