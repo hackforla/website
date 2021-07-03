@@ -295,11 +295,9 @@ permalink: /wins/
 		let cardList = [];
 		
 		initialCardList.forEach(win => {
-			if (badgeIcons.hasOwnProperty(win)){
+			if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) > -1){
 				cardList.push(win);
-			} else if (win === " "){
-				return
-			} else {
+			} else if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) === -1) {
 				otherWinsText.push(win);
 			}
 		});
