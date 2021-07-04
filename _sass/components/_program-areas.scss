@@ -1,102 +1,99 @@
 .program-areas-header {
+  display: flex;
+  justify-content: center;
+
+  &__text {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 5rem;
 
-    &__text {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-right: 5rem;
+    h1 {
+      margin-top: 2.25rem;
+      margin-bottom: 3.125rem;
+    }
+  }
 
-        h1 {
-            margin-top: 2.25rem;
-            margin-bottom: 3.125rem;
-        }
+  &__text-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 1.4rem 0;
+    background-color: $color-pink;
+
+    a {
+      font-weight: 300;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: $color-mediumvioletred;
+      transform: scale(1.01);
     }
 
-    &__text-group {
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: space-evenly;
-        text-align: center;
-        padding: 1.4rem 0;
-        background-color: $color-pink;
-    
-    
-            a {
-                font-weight: 300;
-                text-decoration: none;
-                color: black;
-            }
-            a:hover {
-                color: $color-mediumvioletred;
-                transform: scale(1.01);
-            }
-
-            .selected-category {
-            color: $color-mediumvioletred;
-            }
-
+    .selected-category {
+      color: $color-mediumvioletred;
     }
-    
-    &__p {
-        font-size: 1.125rem;
-        max-width: 508px;
-        text-align: left;
-        margin: 12px auto;
-    }
+  }
 
-    &__hero-image {
-        margin: 33px 0px;
-        max-width: 100%;
-    }
+  &__p {
+    font-size: 1.125rem;
+    max-width: 508px;
+    text-align: left;
+    margin: 12px auto;
+  }
+
+  &__hero-image {
+    margin: 33px 0px;
+    max-width: 100%;
+  }
 }
 
 .program-areas-hero-svg {
-    width: auto;
-    height: 240px;
+  width: auto;
+  height: 240px;
 }
 
-@media(max-width: 850px) {
-    .program-areas-header {
-        flex-flow: column;
+@media (max-width: 850px) {
+  .program-areas-header {
+    flex-flow: column;
 
-        &__text {
-            margin-right: 0;
+    &__text {
+      margin-right: 0;
 
-            h1 {
-                margin-bottom: 0.4rem;
-            }
-        }
-
-        &__p {
-            margin-bottom: 0;
-        }
-
-        &__hero-image {
-            margin: 10px 0;
-        }
+      h1 {
+        margin-bottom: 0.4rem;
+      }
     }
 
-    .header-container {
-        padding: 2rem;
-        margin-top: 10%;
+    &__p {
+      margin-bottom: 0;
     }
+
+    &__hero-image {
+      margin: 10px 0;
+    }
+  }
+
+  .header-container {
+    padding: 2rem;
+    margin-top: 10%;
+  }
 }
 
 .content--program-areas {
-    background: $color-pink;
+  background: $color-pink;
+  display: flex;
+  flex-direction: column;
+
+  .page-card-container {
     display: flex;
-    flex-direction: column;
-  
-    .page-card-container {
-      display: flex;
-      min-height: 454px;
-      height: fit-content;
-  
-      @media #{$bp-below-desktop} {
-        flex-direction: column;
-      }
+    min-height: 454px;
+    height: fit-content;
+
+    @media #{$bp-below-desktop} {
+      flex-direction: column;
     }
   
     .page-card-image-container {
@@ -109,9 +106,10 @@
         max-height: 40vh;
       }
     }
-  
-    .page-card-image {
-      /*moved this to the container so I could use object-fit to accomodate random heights
+  }
+
+  .page-card-image {
+    /*moved this to the container so I could use object-fit to accomodate random heights
       margin: -5px;
       max-width: 372px;*/
       width: 100%;
@@ -123,28 +121,28 @@
       /*  width: 100%;
         max-height: 40vh;
         overflow: hidden;*/
-      }
-    }
-  
-    .page-card-content {
-      flex: 0 1 auto;
-      margin: 34px;
-      height: -moz-fit-content;
-      height: fit-content;
-      @media #{$bp-below-tablet} {
-        margin: 40px 0;
-        padding: 0 16px;
-      }
-    }
-    .page-card-content h3 {
-      @media #{$bp-mobile-up} {
-        font-size: 1.25rem;
-      }
-      @media #{$bp-desktop-up} {
-        font-size: 1.5rem;
-      }
     }
   }
+
+  .page-card-content {
+    flex: 0 1 auto;
+    margin: 34px;
+    height: -moz-fit-content;
+    height: fit-content;
+    @media #{$bp-below-tablet} {
+      margin: 40px 0;
+      padding: 0 16px;
+    }
+  }
+  .page-card-content h3 {
+    @media #{$bp-mobile-up} {
+      font-size: 1.25rem;
+    }
+    @media #{$bp-desktop-up} {
+      font-size: 1.5rem;
+    }
+  }
+}
 
 .project-card-mini{
     width: 92px;
@@ -157,10 +155,10 @@
     line-height: 15.23px;
     text-align: center;
 
-    .project-card-mini-image{
-        width: inherit;
-        height: 67.83px;
-    }
+  .project-card-mini-image {
+    width: inherit;
+    height: 67.83px;
+  }
 
     .project-card-mini-title{
         text-align: center;
@@ -171,5 +169,75 @@
       flex-wrap: wrap;
       padding-inline-start: 0px;
     }
+  }
 
+.join-us-footer {
+  background-color: $color-white;
+  padding: 36px;
+
+  }
+.join-us-footer-description {
+  
+  font-size: 18px;
+  line-height: 137%;
+  
+  max-width: 722px;
+
+  p{
+    margin-bottom: 57px;
+  }
 }
+
+
+
+.join-us-footer-body {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 314px;
+  max-width: 1050px;
+  margin: 75px auto;
+  
+  img.desktop-img {
+    display: block;
+    height: 230px;
+    width:auto;
+  }
+
+  img.mobile-img {
+    display: none;
+  }
+  @media #{$bp-below-tablet} {
+    .join-us-footer-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .join-us-footer-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      min-height: 314px;
+      margin-top: 60px;
+      margin-bottom: 84px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  
+    img.desktop-img {
+      display: none;
+    }
+    img.mobile-img {
+      display: block;
+      height: 230px;
+      width:auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+

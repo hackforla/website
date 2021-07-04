@@ -11,8 +11,27 @@ permalink: /program-areas
             from environmental justice to voter representation, in Los Angeles and far beyond.
         </p>
     </div>
-    <div class="program-areas-header__hero-image">
-        {% include svg/program-areas-hero.svg %}
+    <div class="page-card-content">
+      <h3>{{program_areas[1].name}}</h3>
+      <p>{{program_areas[1].description}}</p>
+      <p>
+        <strong>SDGs: </strong>
+        {% if program_areas[1].SDG %} {% for sdg in program_areas[1].SDG %} {%
+        if forloop.last == true %} and {{sdg}} {% else %} {{sdg}}, {% endif %}
+        {% endfor %} {% endif %}<br />
+      </p>
+      <ul>
+        {% for project in program_areas[1].projects%}
+        <li class="project-card-mini inline-list" id="{{project.id}}">
+          <img
+            class="project-card-mini-image"
+            src="{{project.image}}"
+            alt="{{project.image_alt}}"
+          />
+          <a class="project-card-mini-title" href="">{{project.name}}</a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
 </section>
 <section class="content-section content--program-areas">
@@ -53,5 +72,36 @@ permalink: /program-areas
 
     {% endif %}
     {% endfor %}
+  </section>
+<section class="join-us-footer">
+  <div class="join-us-footer-body">
+      <img
+        class="join-us-footer-img desktop-img"
+        src="/assets/images/join-us/volunteer-with-us-icon.svg"
+        alt="join us card image"
+      />
+      <div class="join-us-footer-description">
+        <h3>Join a Project</h3>
+        <img
+        class="join-us-footer-img mobile-img"
+        src="/assets/images/join-us/volunteer-with-us-icon.svg"
+        alt="join us card image"
+      />
+        <p class="first-paragraph">
+          To join any of the projects click through thier project pages for
+          details on getting started.
+        </p>
+        <p cloass="second-paragraph">
+          The Projects that are in formation are not yet on our website. To
+          connect with the current project team <a href="https://hackforla-slack.herokuapp.com/"> join our slack </a><strong> and browse for thier
+          channel name.</strong>
+        </p>
+        <a href="https://www.hackforla.org/join" target="_blank">
+          <button class="btn btn-primary btn-md">Join Us</button>
+      </a>
 
+      </div>
+      
+
+  </div>
 </section>
