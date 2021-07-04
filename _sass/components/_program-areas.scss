@@ -172,7 +172,7 @@
       padding-inline-start: 0px;
 
       @media #{$bp-below-tablet} {
-        padding-inline-start: 58px;
+        align-content: center;
       }
 
     }
