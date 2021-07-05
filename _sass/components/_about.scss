@@ -79,7 +79,7 @@
 // Make the active link different
 .is-active {
   font-weight: 700;
-  color:#333 !important;
+  color: $color-black !important;
   a {
     font-weight: 700;
     &:link,
@@ -175,7 +175,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -196,7 +196,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -230,7 +230,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(-45deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }
@@ -247,7 +247,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(135deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }
@@ -362,12 +362,12 @@ a.anchor {
 
 // SDG Colors
 .color-goldenrod-2 {
-  color: #d49f28;
+  color: $color-mustard;
   font-weight: 700;
 }
 
 .color-orangered {
-  color: #ee412a;
+  color: $color-orangered;
   font-weight: 700;
 }
 
