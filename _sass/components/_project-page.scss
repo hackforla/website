@@ -38,7 +38,7 @@
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
-      background: linear-gradient(to bottom, rgba(3,13,45,0.3) 30%, #030d2d 100%);
+      background: linear-gradient(to bottom, rgba($color-blue-dark,0.3) 30%, #030d2d 100%);
     }
   }
 }
@@ -113,7 +113,7 @@
   padding-left: 18px;
   li:before {
     content: "\2022";
-    color: #fa114f;
+    color: $color-red;
     font-weight: bold;
     font-size: 28px;
     display: inline-block;
@@ -183,7 +183,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  border: 1px solid rgba(51,51,51,0.1);
+  border: 1px solid rgba($color-black,0.1);
   border-radius: 16px;
   padding: 5px 15px;
   text-align: left;
@@ -233,13 +233,13 @@
 .resource-link {
   text-decoration: none;
   &:link{
-    color: #333;
+    color: $color-black;
   }
   &:visited{
-    color: #333;
+    color: $color-black;
   }
   &:hover{
-    color: #fa114f;
+    color: $color-black;
   }
 }
 
@@ -281,7 +281,7 @@
 
 .resource-body {
   padding: 10px;
-  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 12px 0px rgba($color-black, 0.1);
   border-top: 2px solid #ececec;
 }
 
@@ -304,7 +304,7 @@
   grid-template-rows: auto;
   grid-template-columns: 24% auto;
   border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+  box-shadow: 0 0 8px 0 rgba($color-black,0.2);
   margin: auto 32px auto 0px;
   margin-bottom: 25px;
   width: 46%;
@@ -339,7 +339,7 @@
   max-width: 229px;
   margin: 0px 0px 30px 21px;
   text-align: center;
-  border: 1px solid rgba(51,51,51,0.1);
+  border: 1px solid rgba($color-black,0.1);
   border-radius: 16px;
   padding: 5px 15px;
   text-align: left;
@@ -357,7 +357,7 @@
 }
 
 .contributor-div {
-  box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+  box-shadow: 0 0 8px 0 rgba($color-black,0.2);
   border-radius: 16px;
   margin: 13px 30px 13px 0px;
   width: 94px;
