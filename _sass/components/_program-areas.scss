@@ -156,7 +156,7 @@
     font-size: 13px;
     line-height: 15.23px;
     text-align: center;
-
+  
     .project-card-mini-image{
         width: inherit;
         height: 67.83px;
@@ -171,10 +171,17 @@
       flex-wrap: wrap;
       padding-inline-start: 0px;
 
+
       @media #{$bp-below-tablet} {
-        align-content: center;
+        justify-content: center;
+        padding-inline-start: 26px; // Offsets 26px margin 
+        .project-card-mini-spacer { // Blank card mini class that is used as a spacer for centering purposes.
+          width: 118px; // 
+          list-style: none;
+        }
       }
 
     }
 
 }
+
