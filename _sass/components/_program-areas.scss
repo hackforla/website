@@ -172,13 +172,14 @@
       padding-inline-start: 0px;
 
 
+      .project-card-mini-spacer { // Blank card mini class that is used as a spacer for centering purposes.
+        width: 118px; // Width of the project card mini + margin
+        list-style: none;
+      }
+      
       @media #{$bp-below-tablet} {
         justify-content: center;
         padding-inline-start: 26px; // Offsets 26px margin 
-        .project-card-mini-spacer { // Blank card mini class that is used as a spacer for centering purposes.
-          width: 118px; // Width of the project card mini + margin
-          list-style: none;
-        }
       }
 
     }
