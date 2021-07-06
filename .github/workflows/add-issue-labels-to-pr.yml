@@ -1,30 +1,30 @@
 # Name that appears on the workflow
+# Note: Below you will see ${{ github }} and the github variable used. The former is an env from GitHub actions and the latter is an object argument of the actions/github-script@v4 workflow. These two are not the same and should not be treated as such!
 name: Add Linked Issue Labels to Pull Request
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, edited]
+    branches:
+      - 'gh-pages'
+      - 'wins-feature-1'
 jobs:
-# Adds linked issue labels to pull request
-# Step1: Reads pull request comment and return the linked issue
-# Step2: Perform a GET request to retrieve labels from linked issue
-# Step3: Perform a PUT request to apply labels to original pull request
-# Note: Step1 uses RegEx to extract linked issues. This is not the best choice, but is required as GitHub does not include linked issues in the context. If this changes in the future, please revise Step1 ASAP for a more robust code.
-# Note2: Below you will see ${{ github }} and the github variable used. The former is a context from GitHub actions and the latter is an object argument of the actions/github-script@v4 workflow. These two are not the same and should not be treated as such!
   Add-Linked-Issue-Labels-to-Pull-Request:
     runs-on: ubuntu-latest
     steps:
+      # Note: This portion uses RegEx to extract linked issues. This is not the best choice, but is required as GitHub does not include linked issues in its env. If this changes in the future, please revise this code.
       - name: Retrieve Linked Issue From Comment
         # https://github.com/actions/github-script
         uses: actions/github-script@v4
         # Escapes user input for injection attacks
         env:
           BODY: ${{ github.event.pull_request.body }}
-        id: issue-number
+          PRNUMBER: ${{ github.event.number }}
+        # Variable that stores result of script
+        id: linked-issue-result
         with:
-          result-encoding: string
           script: |
-            // Retrieve comments
-            const { BODY } = process.env
+            // Retrieve pull request body and pull request number
+            const { BODY, PRNUMBER } = process.env
             
             // Create RegEx for capturing KEYWORD #ISSUE-NUMBER syntax (i.e. resolves #1234)
             const KEYWORDS = ['close', 'closes', 'closed', 'fix', 'fixes', 'fixed', 'resolve', 'resolves', 'resolved']
@@ -35,105 +35,39 @@ jobs:
             
             // Receive and unpack matches into an Array of Array objs
             let re = new RegExp(reArr.join('|'), 'gi')
-            let match = BODY.matchAll(re)
-            match = [...match]
+            let matches = BODY.matchAll(re)
+            matches = [...matches]
             
             // If only one match is found, return the issue number. Else return false. Also console.log results.
-            if (match.length == 1) {
-              const linkedIssue = match[0][0]
-              const issueNumber = match[0][0].match(/\d+/)
-              console.log(`Issue number found for PR #${context.payload.number}. Issue #${issueNumber}`)
-              return issueNumber[0]
+            if (matches.length == 1) {
+              const issueNumber = matches[0][0].match(/\d+/)
+              console.log(`Issue number found for PR #${PRNUMBER}. Issue #${issueNumber}`)
+              return JSON.stringify({ prNumber: PRNUMBER, issueNumber: issueNumber[0] })
             } else {
-              console.log('Make sure there is only one issue!')
+              console.log(`Make sure there is only one issue on PR#${PRNUMBER}!`)
               return false
             }
             
             
-      # https://docs.github.com/en/rest/reference/issues#list-labels-for-an-issue
-      - name: Get Labels from Linked Issue
-        uses: actions/github-script@v4
-        id: linked-labels
-        with:
-          script: |
-            // Retrieve issue number from previous step.
-            const issueNum = ${{ steps.issue-number.outputs.result }}
-            if (!issueNum) {
-              return false
-            }
-            
-            // GET request to retrieve data from results of request
-            // https://octokit.github.io/rest.js/v18#issues-list-labels-on-issue
-            let data;
-            try {
-              const results = await github.issues.listLabelsOnIssue({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issueNum,
-              });
-              data = results.data
-            }
-            catch(err) {
-              console.log('Error with GET Request to get labels')
-              console.log(err)
-              return false
-            }
-            
-            // Gather all label names into an array of strings and return the array
-            let labelNameArray = []
-            for (const label of data) {
-              labelNameArray.push(label.name)
-            }
-            console.log(`Labels found on Issue #${issueNum}: ${labelNameArray.join(', ')}`)
-            return labelNameArray
-            
-            
-      # https://docs.github.com/en/rest/reference/issues#set-labels-for-an-issue
-      - name: Put Labels to Pull Request
-        uses: actions/github-script@v4
-        id: final-result
-        with:
-          github-token: ${{ secrets.GH_BOT_TOKEN_1 }}
-          script: |
-            // Retrieve labels from previous step
-            const arrayOfLabels = ${{ steps.linked-labels.outputs.result }}
-            if (!arrayOfLabels) {
-              return false
-            }
-            
-            // PUT request to apply labels to pull request
-            // https://octokit.github.io/rest.js/v18#issues-add-labels
-            let results;
-            try {
-              results = await github.issues.setLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: ${{ github.event.number }},
-                labels: arrayOfLabels,
-              })
-            }
-            catch(err) {
-              console.log('Error with PUT Request to edit labels')
-              console.log(err)
-              return false
-            }
-            
-            // Log result of script
-            console.log(results)
-            if (results.status == 200) {
-              return true
-            } else {
-              return false
-            }
-            
-            
-      # For use if there are follow-up actions following script success or failure.
+      # Returns loudly if previous step failed.
       - name: Return Failure
-        if: steps.final-result.outputs.result == 'false'
+        if: steps.linked-issue-result.outputs.result == 'false'
         run: |
           echo "Please expand above outputs for errors."
           exit 1
-      - name: Return Success
+            
+          
+      # Create an artifact with the results of the script
+      - name: Create Artifacts
+        # Escapes user input for injection attacks
+        env:
+          ARTIFACT: ${{ steps.linked-issue-result.outputs.result }}
         run: |
-          echo "${{ steps.final-result.outputs.result }}"
-          echo "Success"
+          mkdir -p addingLabelsAction/artifact
+          echo ${{ env.ARTIFACT }} > addingLabelsAction/artifact/artifact.txt
+          
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: adding-labels-action-artifact
+          path: addingLabelsAction/artifact/
