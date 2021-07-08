@@ -1,43 +1,42 @@
 .main-footer {
   background: $color-blue-dark;
   color: $color-white;
-  padding: 32px 25px 10px;
-
-  @media #{$bp-tablet-up} {
-    padding-bottom: 32px;
-  }
+  padding: 42px 25px 20px;
 
   a {
     color: $color-white;
     text-decoration: none;
   }
 
-  @media (max-device-width: 600px) {
-    .btn--donate-footer {
-      margin: 0 auto 25px auto !important;
-    }
-
-    .footer-links {
-      flex-wrap: wrap-reverse; 
-      justify-content: center !important;
-    }
-  }
-
-  .header-list {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-  }
-  
   .btn--donate-footer {
     display: block;
-    margin-left: auto;
-    margin-bottom: 25px;
+    margin: 0 auto;
+
+    @media #{$bp-mobile-up} {
+      margin: 0 0 25px auto;
+    }
   }
 
   .footer-links {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap-reverse; 
+    justify-content: center;
+    margin: 15px 0 15px 0;
+
+    @media #{$bp-mobile-up} {
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  .header-list {
+    margin: 0 0 15px 6px;
+
+    @media #{$bp-mobile-up} {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
   }
 }
