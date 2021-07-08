@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GH_BOT_TOKEN_1 }}
 
     # Use an action (`my-action`) in your repository
     - name: Save vrms_data.json
