@@ -31,6 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D025891DF41'
       github: 'https://github.com/AdesinaBernard'
     picture: https://avatars.githubusercontent.com/AdesinaBernard
+  - name: Kevin Wang
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
+      github: 'https://github.com/kvnw2020'
+    picture: https://avatars.githubusercontent.com/kvnw2020
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
