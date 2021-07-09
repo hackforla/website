@@ -13,12 +13,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Phoebe Ng
-    role: UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U01GTRX0H7X'
-      github: 'https://github.com/phoebeng'
-    picture: https://avatars.githubusercontent.com/phoebeng
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
