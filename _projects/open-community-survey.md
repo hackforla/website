@@ -26,6 +26,8 @@ links:
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
   - name: Getting Started
     url: 'https://github.com/hackforla/community-survey-nc-websites/projects/1#card-51519391'
+technologies:
+  - Markdown
 location:
   # - Los Angeles
   - Remote
