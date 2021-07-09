@@ -21,7 +21,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/phoebeng
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/community-survey-nc-websites'
+    url: 'https://github.com/hackforla/open-community-survey'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
   - name: Getting Started
