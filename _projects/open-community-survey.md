@@ -30,7 +30,7 @@ location:
   # - Los Angeles
   - Remote
 partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
-tools: 'ArcGIS surveys, Google Docs, Zoom'
+tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
 visible: true
 program area: 'Citizen Engagement'
 status: Active
