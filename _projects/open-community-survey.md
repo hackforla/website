@@ -19,6 +19,12 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
       github: 'https://github.com/ebele-oputa'
     picture: https://avatars.githubusercontent.com/ebele-oputa
+  - name: Chianta Dorsey
+    role: UI/UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U022B5EJFME'
+      github: 'https://github.com/csdorsey'
+    picture: https://avatars.githubusercontent.com/csdorsey
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
