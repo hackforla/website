@@ -25,6 +25,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U022B5EJFME'
       github: 'https://github.com/csdorsey'
     picture: https://avatars.githubusercontent.com/csdorsey
+  - name: Bernard Adesina
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/archives/D025891DF41'
+      github: 'https://github.com/AdesinaBernard'
+    picture: https://avatars.githubusercontent.com/AdesinaBernard
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
