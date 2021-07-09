@@ -1,7 +1,7 @@
 (function(){
 function getCalendar() {
-  const CALENDAR_ID = '';
-  const CALENDAR_API = '';
+  const CALENDAR_ID = 'rt7upiraveki91ackkut994pds@group.calendar.google.com';
+  const CALENDAR_API = 'AIzaSyDYFeOpGG5KZ20hxmswJzZh3snZpGtfga4';
   const googleURL = 'https://www.googleapis.com/calendar/v3/calendars/';
   const timeMin = new Date(new Date().setHours(0, 0, 0, 0)).toISOString();
 
