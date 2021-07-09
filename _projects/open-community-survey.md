@@ -13,6 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Ebele O.
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
+      github: 'https://github.com/ebele-oputa'
+    picture: https://avatars.githubusercontent.com/ebele-oputa
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
