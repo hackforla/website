@@ -1,0 +1,21 @@
+# This workflow is triggered every day at 2 am Pacific (10 am UTC)
+
+name: Update Contributors 
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  schedule:
+    - cron: '0 10 * * *'
+
+
+jobs:
+  # This workflow contains a single job called "trim"
+  trim:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell      
+    - uses: actions/checkout@v2
+#       with: 
