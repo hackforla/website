@@ -57,7 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem;
+    padding: 48px;
 
     @media #{$bp-below-mobile} {
       padding: 32px 20px;
@@ -158,6 +158,7 @@
       display: grid;
       grid-template-columns: 2fr 3fr;
       grid-template-rows: auto;
+      padding-left: 0;
 
       h1 {
         grid-column: 2 / span 1;
@@ -202,6 +203,7 @@
         align-items: center;
         grid-column: 1 / span 2;
         grid-row: 3 / span 1;
+        margin-left: 48px;
 
         img {
           width: 318px;
