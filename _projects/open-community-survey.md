@@ -49,7 +49,7 @@ technologies:
 location:
   # - Los Angeles
   - Remote
-partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
+partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
 tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
 visible: true
 program area: 'Citizen Engagement'
