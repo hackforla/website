@@ -277,6 +277,10 @@
 @media #{$bp-below-mobile} {
     .wins-card-text{
         height: 80px;
+        margin-top: 16px;
+    }
+    .wins-card-overview{
+        height: 100%;
     }
     .wins-card{
         padding: 24px;
@@ -313,9 +317,6 @@
         height: 20px;
         width: 20px;
     }
-    .wins-card-text{
-        margin-top: 16px;
-    }
 
     .wins-card-overview{
         margin-top: 0;
@@ -328,6 +329,7 @@
 //modal overlay
 @media #{$bp-desktop-up} {
     .wins-card-overview{
+        height: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -405,10 +407,10 @@
     .expanded{
         height: auto;
         .wins-see-more-div {
-            position: relative;
-            text-align: right;
+            z-index: 10;
         }
     }
+    
 }
 
 .wins-card-content > * {
