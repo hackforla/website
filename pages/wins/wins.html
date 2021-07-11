@@ -90,9 +90,6 @@ permalink: /wins/
   			cardObj[keys[i]] = data[i];
   		}
   		cardData.push(cardObj)
-
-
-
   	})
 
   	//createFilter();
@@ -266,17 +263,6 @@ permalink: /wins/
 
   	})
 
-  }
-
-  function formatMessage(win) {
-  	let str = '';
-  	let lastCommaIndex = win.lastIndexOf(",");
-  	if (lastCommaIndex != -1) {
-  		str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
-  	} else {
-  		str += win + '!';
-  	}
-  	return str;
   }
 
   function ifPageEmpty() {
@@ -510,7 +496,7 @@ permalink: /wins/
 				cloneCardTemplate.insertAdjacentHTML('beforeend',
 					`<div class='overlay-item-container'>
 							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-							<p class="overlay-wins-text" data-wins="font-styling">Other</p>
+							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
 						</div>`
 				)
 				return
