@@ -20,6 +20,11 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: GitHub Action for install npm dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        working-directory: ./github-actions/github-data
+
     - name: Work with contributors-data
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
