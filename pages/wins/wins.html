@@ -90,9 +90,6 @@ permalink: /wins/
   			cardObj[keys[i]] = data[i];
   		}
   		cardData.push(cardObj)
-
-
-
   	})
 
   	//createFilter();
@@ -268,17 +265,6 @@ permalink: /wins/
 
   }
 
-  function formatMessage(win) {
-  	let str = '';
-  	let lastCommaIndex = win.lastIndexOf(",");
-  	if (lastCommaIndex != -1) {
-  		str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
-  	} else {
-  		str += win + '!';
-  	}
-  	return str;
-  }
-
   function ifPageEmpty() {
   	if (document.querySelectorAll('.wins-card').length == 0) {
   		const page = document.querySelector('.wins-page-contain');
@@ -388,18 +374,23 @@ permalink: /wins/
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
 		winsCardContainer.append(cloneCardTemplate);
-		
+
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
 		function addSeeMore() {
-			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
+			const winInfo = winText.querySelector('.wins-card-overview')
 
 			//makes the see more span on the bottom of the card
-			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
+			if (
+				!winText.classList.contains('expanded') && 
+				winInfo.offsetHeight <= winText.offsetHeight 
+			) { //checks if see more is needed.
 				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+				// winText.classList.remove('relative')
 			} else {
 				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
-				winsBelowDesktop()
 			}
+			if (!winText.classList.contains('expanded'))
+				winText.classList.add('relative')
 		}
 		addSeeMore()
 
@@ -412,39 +403,39 @@ permalink: /wins/
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
-		  mobileSeeMore(id);
+		toggleSeeMoreLess(id);
   	}
   }
 
   //Adds event listener to badge icons when viewers interface is below desktop size
-  //Click expands wins text and removes "see more"
+  //Click to toggle "see more" and "see less" to expand and collapse wins text
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
-			const id = container.dataset.index
+			const id = container.dataset.index;
 
-			mobileSeeMore(id)
-			container.setAttribute('class', 'wins-tablet wins-icon-container');
+			toggleSeeMoreLess(id);
 		}))
 	}
 
-  function mobileSeeMore(id){
+  function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
-		let winsIconContainer = winsInfo.nextElementSibling
-		parent.classList.add('expanded');
-		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-		//FIXME: this is here for when see more/see less logic is added
-		// if (parent.classList.contains('expanded')) {
-		// 	span.innerHTML = "see less";
-		// 	winsInfo.nextElementSibling.setAttribute('class', 'wins-tablet wins-icon-container');
-		// }
-		// else {
-		// 	span.innerHTML = "...see more";
-		// 	winsInfo.nextElementSibling.removeAttribute('class', 'wins-tablet');
-		// }
+		let winsIconContainer = winsInfo.nextElementSibling;
+
+		if (!parent.classList.contains('expanded')) {
+			parent.setAttribute('class','project-inner wins-card-text expanded');
+			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
+			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+		}
+		else {
+			parent.setAttribute('class','project-inner wins-card-text relative');
+			span.innerHTML = "...see more";
+			winsIconContainer.setAttribute('class', 'wins-icon-container');
+		}
   }
+
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
 		let child = document.createElement(elementType);
@@ -526,7 +517,7 @@ permalink: /wins/
 				cloneCardTemplate.insertAdjacentHTML('beforeend',
 					`<div class='overlay-item-container'>
 							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-							<p class="overlay-wins-text" data-wins="font-styling">Other</p>
+							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
 						</div>`
 				)
 				return
