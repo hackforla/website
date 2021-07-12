@@ -27,7 +27,7 @@ jobs:
     #   with:
     #     token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
-    - name: Work with contributors-data.json
+    - name: Work with contributors-data
       env:
         token: ${{ secrets.TEST_TOKEN }}
       run: node github-actions/github-data/contributors-data.js
