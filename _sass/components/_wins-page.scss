@@ -283,9 +283,6 @@
         height: 80px;
         margin-top: 16px;
     }
-    // .wins-card-overview{
-    //     height: 100%;
-    // }
     .wins-card{
         padding: 24px;
     }
@@ -333,9 +330,7 @@
 //modal overlay
 @media #{$bp-desktop-up} {
     .wins-card-overview{
-        // height: 100%;
         overflow: hidden;
-        // text-overflow: ellipsis;
     }
 
     .overlay {
