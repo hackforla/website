@@ -1,5 +1,3 @@
-# This workflow is triggered every day at 2 am Pacific (10 am UTC)
-
 name: Update Contributors 
 
 on:
@@ -12,25 +10,25 @@ jobs:
   # This workflow contains a single job called "trim_contirbutors"
   trim_contributors:
     runs-on: ubuntu-latest
-    if: github.repository == 'alexeysergeev-cm/website'
+    # if: github.repository == 'alexeysergeev-cm/website'
 
 
     steps:
     # Runs a single command using the runners shell      
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.TEST_TOKEN }}
+    # - name: Checkout repository
+    #   uses: actions/checkout@v2
+    #   with:
+    #     token: ${{ secrets.TEST_TOKEN }}
 
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.TEST_TOKEN }}
+    # - name: Checkout repository
+    #   uses: actions/checkout@v2
+    #   with:
+    #     token: ${{ secrets.TEST_TOKEN }}
 
     - name: Work with contributors-data
       env:
         token: ${{ secrets.TEST_TOKEN }}
-      # run: node github-actions/github-data/contributors-data.js
-      runs:
-        using: 'node12'
-        main: 'github-actions/github-data/contributors-data.js'
+      run: node github-actions/github-data/contributors-data.js
+      # runs:
+      #   using: 'node12'
+      #   main: 'github-actions/github-data/contributors-data.js'
