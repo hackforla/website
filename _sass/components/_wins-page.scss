@@ -12,7 +12,7 @@
         max-height: 360px;
     }
     h1{
-        margin-bottom: 32px;
+        margin-bottom: 56px;
     }
 }
 
@@ -155,6 +155,9 @@
     .wins-hero{
         img{
             height: 105px;
+        }
+        h1 {
+            margin-bottom: 32px;
         }
         .wins-btn{
             max-width: 134px;
