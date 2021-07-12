@@ -37,6 +37,13 @@
 	height: 88px;
 	overflow: hidden;
 	position: relative;
+    &.relative {
+        position: relative;
+        .wins-see-more-div {
+            bottom: 0;
+            right: 0;
+        }
+    }
     p {
         margin: 0;
     }

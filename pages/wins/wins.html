@@ -381,11 +381,17 @@ permalink: /wins/
 			console.log(index, winInfo.offsetHeight, winText.offsetHeight)
 
 			//makes the see more span on the bottom of the card
-			if (winInfo.offsetHeight + 20 <= winText.offsetHeight && !winText.classList.contains('expanded')) { //checks if see more is needed.
+			if (
+				!winText.classList.contains('expanded') && 
+				winInfo.offsetHeight <= winText.offsetHeight 
+			) { //checks if see more is needed.
 				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+				// winText.classList.remove('relative')
 			} else {
 				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
 			}
+			if (!winText.classList.contains('expanded'))
+				winText.classList.add('relative')
 		}
 		addSeeMore()
 
@@ -425,7 +431,7 @@ permalink: /wins/
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
 		}
 		else {
-			parent.setAttribute('class','project-inner wins-card-text');
+			parent.setAttribute('class','project-inner wins-card-text relative');
 			span.innerHTML = "...see more";
 			winsIconContainer.setAttribute('class', 'wins-icon-container');
 		}
