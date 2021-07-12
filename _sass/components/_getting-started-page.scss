@@ -77,7 +77,7 @@
 .step-header {
   display: flex;
   justify-content: center;
-  color: #000000;
+  color: $color-black;
   font-family: "Roboto"sans-serif;
 
   @media #{$bp-below-mobile} {
@@ -151,7 +151,7 @@
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }

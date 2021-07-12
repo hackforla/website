@@ -43,7 +43,7 @@
         }
 
         h1 {
-            color: #333;
+            color: $color-black;
             font-weight: 700;
             font-size: 24px;
             padding-bottom: 28px;
@@ -73,7 +73,7 @@
 }
 
 .covid-notification-banner {
-    background-color: #f2c94d;
+    background-color: $color-gold;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -110,7 +110,7 @@
 
     li:before {
         content: "\2022";
-        color: #fa114f;
+        color: $color-red;
         font-weight: bold;
         font-size: 28px;
         display: inline-block;
@@ -131,7 +131,7 @@
 }
 
 .team-meetings-title {
-    color: #fff;
+    color: $color-white;
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {

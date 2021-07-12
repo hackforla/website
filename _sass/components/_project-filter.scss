@@ -17,7 +17,7 @@ ul.filter-list {
 
 //category boxes
 li.filter-item {
-  border: 1px solid rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba($color-black, 0.24);
   border-radius: 5px;
   color: black;
   background: white;
@@ -46,7 +46,7 @@ li.filter-item:focus-within a {
 //dropdown
 ul.filter-list li ul {
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba($color-black, 0.24);
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease;
@@ -141,7 +141,7 @@ ul.filter-list li ul li {
 a.clear-filter-tags {
   margin-left: 1em;
   text-decoration: underline;
-  color: #767676;
+  color: $color-cement;
 
   &:hover {
     cursor: pointer;
