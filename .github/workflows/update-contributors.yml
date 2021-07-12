@@ -1,5 +1,7 @@
 name: Update Contributors 
 
+
+# Run this action every day at 3am Pacific (11 am UTC)
 on:
   schedule:
     # - cron: '0 10 * * *'
@@ -10,25 +12,42 @@ jobs:
   # This workflow contains a single job called "trim_contirbutors"
   trim_contributors:
     runs-on: ubuntu-latest
+
+    # change to hackfrola/website
     if: github.repository == 'alexeysergeev-cm/website'
 
 
     steps:
-    # Runs a single command using the runners shell      
+    # checkout repo
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+
+    # install dependencies to run js file
 
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
         working-directory: ./github-actions/github-data
 
+    # run js file
     - name: Work with contributors-data
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
       run: node github-actions/github-data/contributors-data.js
-      # runs:
-      #   using: 'node12'
-      #   main: 'github-actions/github-data/contributors-data.js'
+
+
+      # do I need auto commit here with help of the BOT? 
+      # If yes => check tokens above!
+
+    # - name: Auto Commit
+    #   uses: stefanzweifel/git-auto-commit-action@v3.0.0
+    #   with:
+    #     # Optional glob pattern of files which should be added to the commit
+    #     file_pattern: _data/external/github-data.json
+
+    #     commit_message: Update contributor and language data
+
+    #     # Commit author settings
+    #     commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>
