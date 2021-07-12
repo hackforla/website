@@ -37,6 +37,13 @@
 	height: 88px;
 	overflow: hidden;
 	position: relative;
+    &.relative {
+        position: relative;
+        .wins-see-more-div {
+            bottom: 0;
+            right: 0;
+        }
+    }
     p {
         margin: 0;
     }
@@ -66,7 +73,7 @@
     color: $color-white;
     font-family: arial;
     position: absolute;
-    z-index: 100;
+    z-index: 1;
 }
 [data-wins]{
     font-weight: normal 
@@ -249,11 +256,8 @@
     }
 
     .wins-see-more-div {
-        height: 0;
-        margin-top: 4px;
-        padding: 0;
-        right: 7%;
-        top: 88.5%;
+        right: 24px;
+        bottom: 10px;
     }
 
     .home-getting-started-container {
@@ -277,6 +281,7 @@
 @media #{$bp-below-mobile} {
     .wins-card-text{
         height: 80px;
+        margin-top: 16px;
     }
     .wins-card{
         padding: 24px;
@@ -313,9 +318,6 @@
         height: 20px;
         width: 20px;
     }
-    .wins-card-text{
-        margin-top: 16px;
-    }
 
     .wins-card-overview{
         margin-top: 0;
@@ -329,7 +331,6 @@
 @media #{$bp-desktop-up} {
     .wins-card-overview{
         overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     .overlay {
@@ -364,6 +365,11 @@
         position: absolute;
         width: 60%;
         left: 20%;
+    }
+    .overlay-close-icon {
+        float: right;  
+        padding: 20px 20px 0 0; 
+        cursor: pointer;
     }
     .center-screen {
         opacity: 1;
@@ -405,10 +411,10 @@
     .expanded{
         height: auto;
         .wins-see-more-div {
-            position: relative;
-            text-align: right;
+            z-index: 10;
         }
     }
+    
 }
 
 .wins-card-content > * {

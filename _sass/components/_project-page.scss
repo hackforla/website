@@ -170,7 +170,6 @@
 }
 
 #getting-started-section {
-  max-height: 294px;
   padding: 30px;
   transition: max-height 1s, padding 1s;
   margin-top: 28px;
@@ -327,6 +326,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media #{$bp-below-mobile} {
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+  }
 }
 
 .leader-description-field {
