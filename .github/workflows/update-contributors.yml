@@ -18,11 +18,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.TEST_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Work with contributors-data
       env:
-        token: ${{ secrets.TEST_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
       run: node github-actions/github-data/contributors-data.js
       # runs:
       #   using: 'node12'
