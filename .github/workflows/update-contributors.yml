@@ -10,20 +10,20 @@ jobs:
   # This workflow contains a single job called "trim_contirbutors"
   trim_contributors:
     runs-on: ubuntu-latest
-    # if: github.repository == 'alexeysergeev-cm/website'
+    if: github.repository == 'alexeysergeev-cm/website'
 
 
     steps:
-    # Runs a single command using the runners shell      
-    # - name: Checkout repository
-    #   uses: actions/checkout@v2
-    #   with:
-    #     token: ${{ secrets.TEST_TOKEN }}
+    Runs a single command using the runners shell      
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.TEST_TOKEN }}
 
-    # - name: Checkout repository
-    #   uses: actions/checkout@v2
-    #   with:
-    #     token: ${{ secrets.TEST_TOKEN }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.TEST_TOKEN }}
 
     - name: Work with contributors-data
       env:
