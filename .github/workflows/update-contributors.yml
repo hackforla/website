@@ -14,12 +14,7 @@ jobs:
 
 
     steps:
-    Runs a single command using the runners shell      
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.TEST_TOKEN }}
-
+    # Runs a single command using the runners shell      
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
