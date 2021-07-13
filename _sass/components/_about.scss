@@ -508,6 +508,10 @@ a.anchor {
 
 .wins-card-mobile {
   display: block;
+  width: 308px;
+  height: 222px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
 }
 .wins-card-desktop {
   display: none;
