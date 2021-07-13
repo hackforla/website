@@ -15,9 +15,14 @@ const octokit = new Octokit({ auth: process.env.token });
   // const userRepos = await octokit.rest.repos.listForUser({
   //   username,
   // });
-  const userRepos = await octokit.request(`GET /users/${username}/repos`, {
-    username: username,
-  });
+  // const userRepos = await octokit.request(`GET /users/${username}/repos`, {
+  //   username: username,
+  // });
   
-  console.log(userRepos)
+
+  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/contributors', {
+    owner: 'alexeysergeev-cm',
+    repo: 'website'
+  })
+  console.log(contributorsList)
 })()
