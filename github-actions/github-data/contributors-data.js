@@ -15,7 +15,7 @@ const octokit = new Octokit({ auth: process.env.token });
   // const userRepos = await octokit.rest.repos.listForUser({
   //   username,
   // });
-  const userRepos = await octokit.request(`GET user/${username}/repos`, {
+  const userRepos = await octokit.request(`GET /users/${username}/repos`, {
     username: username,
   });
   
