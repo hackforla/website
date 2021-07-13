@@ -12,7 +12,7 @@ const octokit = new Octokit({ auth: process.env.token });
   console.log('hello');
 
   let username = 'alexeysergeev-cm'
-  const userRepos = octokit.rest.repos.listForUser({
+  const userRepos = await octokit.rest.repos.listForUser({
     username,
   });
   

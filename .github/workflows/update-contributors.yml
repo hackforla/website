@@ -25,7 +25,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
 
     # install dependencies to run js file
-
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
