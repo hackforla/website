@@ -71,7 +71,7 @@ layout: default
                 </div>
              </div>
 
-            <!--Project Summary and Getting Started Button-->
+            <!--Project Summary-->
             <div class='description-grid-item'>
                 <p>{{page.description}}</p>
                 {% if page.status == "Completed" and page.completed-contact %}
@@ -88,57 +88,8 @@ layout: default
                 {% endif %}
             </div>
         </div>
-        {% if page.status != "Completed" %}
-        <!-- <div class="getting-started">
-            <p class='getting-started-button-text'>Getting Started</p>
-            <button onClick='gettingStarted()' class='getting-started-button'>
-                {% comment %} include svg/_ionicons_svg_ios-arrow-down.svg  {% endcomment %}
-            </button>
-        </div> -->
-        {% endif %}
     </div>
 
-    <!--Getting Started Card-->
-    <div id="getting-started-section" class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='getting-page-card-title'>Getting Started</h4>
-        <ul class="resource-list unstyled-list">
-            <!-- Hfla Start Guide -->
-            {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
-
-            {% assign hasGettingStarted = false %}
-
-            <!-- Check for Project Wiki -->
-            {% for item in page.links %}
-                {% if item.name == 'Wiki' %}
-                    {% assign hasGettingStarted = true %}
-                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            <!-- Check for Project Readme -->
-            {% for item in page.links %}
-                {% if item.name == 'Readme' %}
-                    {% assign hasGettingStarted = true %}
-                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            <!-- Check for Project Overview -->
-            {% for item in page.links %}
-                {% if item.name == 'Overview' %}
-                    {% assign hasGettingStarted = true %}
-                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            {% if hasGettingStarted == false %}
-                <div id='help-getting-started'>
-                    <p class='help-getting-started-text'>Looks like this project doesn't have their own Getting Started guide.</p>
-                    <button onClick='helpMakeGuide()' class="btn btn-primary btn-md-narrow btn--project-help-make-guide">Help Make One!</button onClick=''>
-                </div>
-            {% endif %}
-        </ul>
-    </div>
     <!--Project Resources Card-->
     <div class='page-card card-primary page-card-lg page-card--project-description-page'>
         <h4 class='project-page-card-title'>Resources</h4>
@@ -150,6 +101,8 @@ layout: default
                     {%- include resource-card.html name=item.name url=item.url -%}
                 {% endif %}
             {%- endfor -%}
+            <!-- Hfla Start Guide -->
+            {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
         </ul>
     </div>
 
@@ -276,77 +229,6 @@ layout: default
     }
 </script>
 
-<!--Script for Getting Started drop down functionality-->
-<script>
-    let dropDownOpen = false;
-    function gettingStarted(){
-        if(!dropDownOpen){
-            dropDownOpen = true;
-            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
-            gettingStartedButton.style.transform = 'rotate(180deg)';
-
-            let gettingStartedCard = document.getElementById('getting-started-section');
-            let maxHeight = gettingStartedCard.children[0].offsetHeight * 1.5; // Adding pixels for good measure and pop up message
-            gettingStartedCard.style['max-height'] = maxHeight + 'px';
-            gettingStartedCard.style.padding = '30px 30px';
-        }
-        else {
-            dropDownOpen = false;
-            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
-            gettingStartedButton.style.transform = 'rotate(0deg)';
-
-            let gettingStartedCard = document.getElementById('getting-started-section');
-            gettingStartedCard.style['max-height'] = '0px';
-            gettingStartedCard.style.padding = '0px 30px';
-        }
-    }
-</script>
-
-<!--Script for constructing Getting Started call to action message-->
-<script>
-    let helpGettingStarted = document.getElementById('help-getting-started');
-    if (helpGettingStarted) {
-        let textDiv = document.createElement('div');
-        textDiv.setAttribute('id', 'help-make-text-section');
-
-        let hflaSlack = document.createElement('a');
-        hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
-        hflaSlack.setAttribute('target', '_blank');
-        let hflaSlackText = document.createTextNode('Hack for LA');
-        hflaSlack.appendChild(hflaSlackText);
-
-        let projectSlack = document.createElement('a');
-        {% for item in page.links %}
-            {% if item.name == 'Slack' %}
-                projectSlack.setAttribute('href', '{{ item.url }}')
-                projectSlack.setAttribute('target', '_blank');
-            {% endif %}
-        {% endfor %}
-        let projectSlackText = document.createTextNode('our');
-        projectSlack.appendChild(projectSlackText);
-
-        let message = document.createElement('p');
-        message.style.width = '200px';
-        let text1 = document.createTextNode('Once you are on the ');
-        let text2 = document.createTextNode(' slack channel, please post a note in ');
-        let text3 = document.createTextNode(' channel indicating your interest.');
-
-        message.appendChild(text1);
-        message.appendChild(hflaSlack);
-        message.appendChild(text2);
-        message.appendChild(projectSlack);
-        message.appendChild(text3);
-        textDiv.appendChild(message);
-        helpGettingStarted.insertAdjacentElement('afterend', textDiv);
-    }
-
-    function helpMakeGuide(){
-        let textDiv = document.getElementById('help-make-text-section');
-        textDiv.style['min-width'] = '225px';
-        textDiv.style.padding = '35px 15px';
-    }
-
-</script>
 <script>
 // Script for adding meeting times to "meetings" Section
 let meetingsList = document.querySelector('.meeting-times-list');

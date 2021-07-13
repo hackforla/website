@@ -42,8 +42,13 @@ links:
     url: 'https://github.com/hackforla/open-community-survey'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
-  - name: Getting Started
-    url: 'https://github.com/hackforla/community-survey-nc-websites/projects/1#card-51519391'
+looking:
+  - category: PM
+    skill: Product Manager
+  - category: PM
+    skill: Product Owner
+  - category: Data
+    skill: Data Scientists
 technologies:
   - Markdown
 location:
