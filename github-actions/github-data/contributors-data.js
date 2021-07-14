@@ -26,6 +26,7 @@ const octokit = new Octokit({ auth: process.env.token });
     repo: 'website',
     since: dayAgo
   })
+  
   console.log(contributorsList.url)
   console.log(dayAgo)
   for(const contributorInfo of contributorsList.data){
