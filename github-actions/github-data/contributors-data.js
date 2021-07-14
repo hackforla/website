@@ -28,6 +28,6 @@ const octokit = new Octokit({ auth: process.env.token });
   })
 
   for(const ele in contributorsList){
-    console.log(ele.commit.author.login)
+    console.log(ele)
   }
 })()
