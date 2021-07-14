@@ -20,18 +20,22 @@ const octokit = new Octokit({ auth: process.env.token });
   const today = new Date();
   // const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
   const dayAgo = new Date(today.setDate(today.getDate() - 1));
-  // monthAgo = monthAgo.slice(0,10);
 
   const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
-    since: dayAgo.toString()
+    since: dayAgo
   })
-  console.log(contributorsList.url)
-  console.log(dayAgo.toString())
+
   for(const contributorInfo of contributorsList.data){
     console.log(contributorInfo.author.login)
     console.log(contributorInfo.commit.author)
     console.log(contributorInfo.commit.message)
   }
+
+  const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
+    org: 'hackforla'
+  })
+
+  console.log(teamsHFLA)
 })()
