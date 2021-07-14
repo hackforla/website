@@ -25,12 +25,13 @@ const octokit = new Octokit({ auth: process.env.token });
   const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
-    since: dayAgo
+    since: dayAgo.toString()
   })
   console.log(contributorsList.url)
   console.log(dayAgo)
   for(const contributorInfo of contributorsList.data){
     console.log(contributorInfo.author.login)
     console.log(contributorInfo.commit.author)
+    console.log(contributorInfo.commit.message)
   }
 })()
