@@ -22,7 +22,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
     # install dependencies to run js file
     - name: GitHub Action for install npm dependencies
