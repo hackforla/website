@@ -27,7 +27,7 @@ const octokit = new Octokit({ auth: process.env.token });
     since: monthAgo,
   })
 
-  for(const commit in contributorsList){
-    console.log(commit.author.login)
+  for(const ele in contributorsList){
+    console.log(ele.commit.author.login)
   }
 })()
