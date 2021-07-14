@@ -20,9 +20,8 @@ const octokit = new Octokit({ auth: process.env.token });
   const today = new Date();
   // const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
   const dayAgo = new Date(today.setDate(today.getDate() - 1));
-  // monthAgo = monthAgo.slice(0,10);
 
-  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits?{since}', {
+  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits?since={since}', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
     since: dayAgo
