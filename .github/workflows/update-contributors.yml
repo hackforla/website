@@ -6,7 +6,7 @@ name: Update Contributors
 #   schedule:
 #     # - cron: '0 10 * * *'
 #     - cron: '*/1 * * * *'
-on: [push, pull]
+on: [push]
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"
