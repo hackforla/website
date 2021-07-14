@@ -20,7 +20,7 @@ const octokit = new Octokit({ auth: process.env.token });
   // });
   
 
-  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/contributors', {
+  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/teams', {
     owner: 'alexeysergeev-cm',
     repo: 'website'
   })
