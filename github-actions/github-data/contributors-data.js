@@ -27,7 +27,7 @@ const octokit = new Octokit({ auth: process.env.token });
     repo: 'website',
     since: dayAgo,
   })
-
+  console.log(contributorsList.url)
   for(const contributorInfo of contributorsList.data){
     console.log(contributorInfo.author.login)
     console.log(contributorInfo.commit.author)
