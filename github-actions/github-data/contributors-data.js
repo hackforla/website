@@ -18,12 +18,13 @@ const octokit = new Octokit({ auth: process.env.token });
   // });
   
   const today = new Date();
-  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
+  let monthAgo = new Date(today.setMonth(today.getMonth() - 1));
+  // monthAgo = monthAgo.slice(0,10);
 
-
-  const contributorsList = await octokit.request(`GET /repos/{owner}/{repo}/commits?since=${monthAgo}`, {
+  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits?since={monthAgo}', {
     owner: 'alexeysergeev-cm',
-    repo: 'website'
+    repo: 'website',
+    since: monthAgo,
   })
   console.log(contributorsList)
 })()
