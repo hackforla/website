@@ -1,0 +1,138 @@
+# Name that appears on the workflow
+# Note: This workflow runs once Add Linked Issue Labels to Pull Request is completed
+name: WR Add Linked Issue Labels to Pull Request
+on:
+  workflow_run:
+    workflows: ["Add Linked Issue Labels to Pull Request"]
+    types: [completed]
+
+jobs:
+  Last-Workflow-Success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Download artifact
+        uses: actions/github-script@v4
+        with:
+          script: |
+            // Retrieve metadata about the artifacts of the last workflow
+            // https://octokit.github.io/rest.js/v18#actions-list-workflow-run-artifacts
+            const artifacts = await github.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: context.payload.workflow_run.id,
+            });
+            const artifactData = artifacts.data.artifacts[0]
+            
+            // Download artifact with GET API
+            // https://octokit.github.io/rest.js/v18#actions-download-artifact
+            var download = await github.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: artifactData.id,
+               archive_format: 'zip',
+            });
+            const fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/artifact.zip', Buffer.from(download.data));
+      - run: unzip artifact.zip
+          
+    
+      - name: Get Labels from Linked Issue
+        uses: actions/github-script@v4
+        # Variable that stores result of script
+        id: labels-result
+        with:
+          script: |
+            // Retrieve pull request and issue number from downloaded artifact
+            const fs = require('fs')
+            const artifact = fs.readFileSync('artifact.txt')
+            const artifactJSON = JSON.parse(artifact)
+            const issueNum = artifactJSON.issueNumber
+            const prNumber = artifactJSON.prNumber
+            
+            // GET request to retrieve data from results of request
+            // https://octokit.github.io/rest.js/v18#issues-list-labels-on-issue
+            let data
+            try {
+              const results = await github.issues.listLabelsOnIssue({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNum,
+              });
+              data = results.data
+            }
+            catch(err) {
+              console.log('Error with GET Request to get labels')
+              console.log(err)
+              return false
+            }
+            // Gather all label names into an array of strings and return the array
+            let labelNameArray = []
+            for (const label of data) {
+                labelNameArray.push(label.name)
+            }
+            console.log(`Labels found on Issue #${issueNum}: ${labelNameArray.join(', ')}`)
+            return { prNumber: prNumber, labelNameArray: labelNameArray }
+      
+          
+      - name: Put Labels to Pull Request
+        uses: actions/github-script@v4
+        # Variable that stores result of script
+        id: final-result
+        with:
+          script: |
+            let prNumber
+            let labelNameArray
+            
+            // Retrieve pull request number and labels from previous step
+            const labelsResult = ${{ steps.labels-result.outputs.result }}
+            if (labelsResult) {
+              prNumber = labelsResult.prNumber
+              labelNameArray = labelsResult.labelNameArray
+            } else {
+              return false
+            }
+            
+            // PUT request to apply labels to pull request
+            // https://octokit.github.io/rest.js/v18#issues-add-labels
+            let results;
+            try {
+              results = await github.issues.setLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                labels: labelNameArray,
+              })
+            }
+            catch(err) {
+              console.log('Error with PUT Request to edit labels')
+              console.log(err)
+              return false
+            }
+            
+            // Log result of script
+            console.log(results)
+            if (results.status == 200) {
+              return true
+            } else {
+              return false
+            }
+            
+            
+      # For use if there are follow-up actions following script success or failure.
+      - name: Return Failure
+        if: steps.final-result.outputs.result == 'false'
+        run: |
+          echo "Please expand above outputs for errors."
+          exit 1
+      - name: Return Success
+        run: |
+          echo "${{ steps.final-result.outputs.result }}"
+          echo "Success"
+          
+  Last-Workflow-Failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: Failed Run
+        run: echo "The previous GitHub Action failed. Please check the logs for the previous action."
