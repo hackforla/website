@@ -9,9 +9,7 @@ const octokit = new Octokit({ auth: process.env.token });
 
 
 (async function main(){
-  console.log('hello');
 
-  let username = 'alexeysergeev-cm'
   // const userRepos = await octokit.rest.repos.listForUser({
   //   username,
   // });
@@ -19,8 +17,11 @@ const octokit = new Octokit({ auth: process.env.token });
   //   username: username,
   // });
   
+  const today = new Date();
+  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
 
-  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
+
+  const contributorsList = await octokit.request(`GET /repos/{owner}/{repo}/commits?since=${monthAgo}`, {
     owner: 'alexeysergeev-cm',
     repo: 'website'
   })
