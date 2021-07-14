@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # change to hackfrola/website
-    if: github.repository == 'alexeysergeev-cm/website'
+    # if: github.repository == 'alexeysergeev-cm/website'
 
 
     steps:
