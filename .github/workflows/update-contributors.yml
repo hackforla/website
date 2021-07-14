@@ -2,11 +2,11 @@ name: Update Contributors
 
 
 # Run this action every day at 3am Pacific (11 am UTC)
-on:
-  schedule:
-    # - cron: '0 10 * * *'
-    - cron: '*/1 * * * *'
-
+# on:
+#   schedule:
+#     # - cron: '0 10 * * *'
+#     - cron: '*/1 * * * *'
+on: [push]
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"
