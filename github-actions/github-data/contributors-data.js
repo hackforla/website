@@ -15,30 +15,32 @@ const octokit = new Octokit({ auth: process.env.token });
   // const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
   const dayAgo = new Date(today.setDate(today.getDate() - 1));
 
-  const contributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
+  const commentCommitWikiContributors = {};
+
+  //fetch commit contirbutors;
+  const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
     since: dayAgo.toISOString()
   })
 
-
-  for(const contributorInfo of contributorsList.data){
-    console.log(contributorInfo.author.login)
-    console.log(contributorInfo.commit.author)
-    console.log(contributorInfo.commit.message)
+  for(const contributorInfo of commitContributorsList.data){
+    commentCommitWikiContributors[contributorInfo.author.login] = true;
   }
 
-  const commentsContr = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
+  //fetch comments contributors
+  const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
     since: dayAgo.toISOString()
   })
 
-  console.log(commentsContr)
-  for(const contributorInfo of commentsContr.data){
-    console.log(contributorInfo.user.login)
+  for(const contributorInfo of commentsContributorsList.data){
+    commentCommitWikiContributors[contributorInfo.user.login] = true;
   }
   
+
+  console.log(commentCommitWikiContributors);
   // const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
   //   org: 'hackforla'
   // })
