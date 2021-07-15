@@ -37,17 +37,10 @@
     margin-top: 8px;
     text-align: left;
   }
-  h1 {
-    font-size: 48px;
-    @media #{$bp-tablet-up} {
-      font-size: 40px;
-    }
-  }
   @include mobile {
     margin: auto;
     margin-bottom: 36px;
-    h1 {
-      font-size: 32px;
+    .title1 {
       margin-bottom: 20px;
     }
   }
@@ -61,8 +54,7 @@
   justify-content: center;
   text-align: center;
 
-  h3 {
-    font-size: 24px;
+  .title4 {
     margin-bottom: 32px;
   }
   p {
@@ -72,9 +64,6 @@
     margin-bottom: 40px;
   }
   @include mobile {
-    h3 {
-      font-size: 20px;
-    }
     p {
       font-size: 16px;
       max-width: 300px;
@@ -112,7 +101,7 @@
       display: none;
     }
     @include mobile {
-      h3 {
+      .title4 {
         text-align: center;
       }
       .card-desktop-icon {
