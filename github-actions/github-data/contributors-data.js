@@ -69,11 +69,11 @@ async function removeInactiveMembers(recentContributors){
   const removedMembers = []
 
   //fetch all team members
-  // const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
-  //   org: 'alexeysergeev-cm',
-  //   team_slug: 'banana'  //??
-  // })
-  // console.log(teamMembers.data)
+  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
+    org: 'hackforla',
+    team_slug: 'website-write'  //??
+  })
+  console.log(teamMembers.data)
 
   // loop over team members and remove them from team if they are not in recentContributors
   // for(const member of teamMembers.data){
