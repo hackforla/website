@@ -1,4 +1,4 @@
-name: Update Contributors 
+name: Update Team Members
 
 
 # Run this action every day at 3am Pacific (11 am UTC)
@@ -33,7 +33,7 @@ jobs:
     # run js file
     - name: Work with contributors-data
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT }}
       run: node github-actions/github-data/contributors-data.js
 
 

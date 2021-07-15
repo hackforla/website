@@ -9,63 +9,107 @@ const octokit = new Octokit({ auth: process.env.token });
 
 
 (async function main(){
-
-
   const today = new Date();
-  // const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
-  const dayAgo = new Date(today.setDate(today.getDate() - 1));
+  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
+  // const dayAgo = new Date(today.setDate(today.getDate() - 1));
 
-  const commentCommitWikiContributors = {};
+  const commentCommitWikiContributors = await fetchContributors(monthAgo.toISOString());
 
-  //fetch commit contirbutors;
+  console.log('-------------------------------------------------------')
+  console.log('List of active contributors since' + ' ⏰ ' + monthAgo.toISOString().slice(0, 10) + ':');
+  console.log(commentCommitWikiContributors);
+
+  const removedContributors = await removeInactiveMembers(commentCommitWikiContributors);
+
+  console.log('-------------------------------------------------------')
+  console.log('Removed members: ')
+  console.log(removedContributors);
+})()
+
+
+/**
+ * Function to fetch comment/commit/wiki contributors since 'date'
+ * @param {String} date     [since]
+ * @return {Object}     [List of active contributors since 'date']
+ */
+async function fetchContributors(date){
+  const allContributorsSince = {}
+
+  // fetch commit contirbutors;
   const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
-    since: dayAgo.toISOString()
+    since: date
   })
-
   for(const contributorInfo of commitContributorsList.data){
-    commentCommitWikiContributors[contributorInfo.author.login] = true;
+    allContributorsSince[contributorInfo.author.login] = true;
   }
 
-  //fetch comments contributors
+  // fetch comments contributors
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'alexeysergeev-cm',
     repo: 'website',
-    since: dayAgo.toISOString()
+    since: date
   })
-
   for(const contributorInfo of commentsContributorsList.data){
-    commentCommitWikiContributors[contributorInfo.user.login] = true;
-  }
-  
-
-  console.log(commentCommitWikiContributors);
-
-  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
-    org: 'org', //change to hackforla
-    team_slug: 'team_slug' ///?
-  })
-
-  const removedContributors = []
-
-  for(const member of teamMembers.data){
-    if (!commentCommitWikiContributors[member.login]){
-      await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-        org: 'org', //change to hackforla
-        team_slug: 'team_slug', //?
-        username: member.login
-      })
-
-      removedContributors.push(member.login)
-    }
+    allContributorsSince[contributorInfo.user.login] = true;
   }
 
-  console.log(removedContributors);
+  //how to fetch Wiki contributors?
+  return allContributorsSince;
+}
 
 
-  // const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
-  //   org: 'hackforla'
+/**
+ * Function to remove inactive members from a team
+ * @param {Object} recentContributors     [List of active contributors]
+ * @return {Array}     [removed members]
+ */
+async function removeInactiveMembers(recentContributors){
+  const removedMembers = []
+
+  //fetch all team members
+  // const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
+  //   org: 'alexeysergeev-cm',
+  //   team_slug: 'banana'  //??
   // })
-  // console.log(teamsHFLA)
-})()
+  // console.log(teamMembers.data)
+
+  // loop over team members and remove them from team if they are not in recentContributors
+  // for(const member of teamMembers.data){
+  //   const username = member.login
+  //   //if team member is not in recentContributors => remove
+  //   if (!recentContributors[username]){
+  //     await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+  //       org: 'actions-team-test', 
+  //       team_slug: 'banana', 
+  //       username: username
+  //     })
+  //     removedMembers.push(username)
+  //     // break; //remove if approved
+  //   }
+  // }
+
+  // --- TO TEST ---
+  // add user back 
+  // await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+  //   org: 'actions-team-test',
+  //   team_slug: 'banana',
+  //   username: 'bcdguz',
+  //   role: 'member'
+  // })
+  // await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+  //   org: 'actions-team-test',
+  //   team_slug: 'banana',
+  //   username: 'EdwinHongCheng',
+  //   role: 'member'
+  // })
+
+  return removedMembers;
+}
+
+
+
+
+
+
