@@ -34,6 +34,7 @@ const octokit = new Octokit({ auth: process.env.token });
     since: dayAgo.toISOString()
   })
 
+  console.log(commentsContr)
   for(const contributorInfo of commentsContr.data){
     console.log(contributorInfo.user.login)
   }
