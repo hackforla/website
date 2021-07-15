@@ -10,7 +10,7 @@ const octokit = new Octokit({ auth: process.env.token });
 
 (async function main(){
   const today = new Date();
-  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
+  const monthAgo = new Date(today.setMonth(today.getMonth() - 2));
   // const dayAgo = new Date(today.setDate(today.getDate() - 1));
 
   const commentCommitWikiContributors = await fetchContributors(monthAgo.toISOString());
