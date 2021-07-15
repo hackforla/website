@@ -69,7 +69,7 @@ async function removeInactiveMembers(recentContributors){
   const removedMembers = []
 
   //fetch all team members
-  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
+  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members?per_page=100&page=10', {
     org: 'hackforla',
     team_slug: 'website-write'  //??
   })
