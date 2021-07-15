@@ -31,7 +31,7 @@ jobs:
         working-directory: ./github-actions/github-data
 
     # run js file
-    - name: Work with contributors-data
+    - name: Trim Members
       env:
         token: ${{ secrets.PAT }}
       run: node github-actions/github-data/contributors-data.js

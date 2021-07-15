@@ -37,7 +37,7 @@ async function fetchContributors(date){
 
   // fetch commit contirbutors;
   const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-    owner: 'alexeysergeev-cm',
+    owner: 'hackforla',
     repo: 'website',
     since: date
   })
@@ -47,7 +47,7 @@ async function fetchContributors(date){
 
   // fetch comments contributors
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
-    owner: 'alexeysergeev-cm',
+    owner: 'hackforla',
     repo: 'website',
     since: date
   })
