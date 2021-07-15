@@ -28,9 +28,18 @@ const octokit = new Octokit({ auth: process.env.token });
     console.log(contributorInfo.commit.message)
   }
 
-  const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
-    org: 'hackforla'
+  const commentsContr = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
+    owner: 'alexeysergeev-cm',
+    repo: 'website',
+    since: dayAgo.toISOString()
   })
 
-  console.log(teamsHFLA)
+  for(const contributorInfo of commentsContr.data){
+    console.log(contributorInfo.user.login)
+  }
+  
+  // const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
+  //   org: 'hackforla'
+  // })
+  // console.log(teamsHFLA)
 })()

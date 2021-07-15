@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # change to hackfrola/website
-    # if: github.repository == 'alexeysergeev-cm/website'
+    if: github.repository == 'alexeysergeev-cm/website'
 
 
     steps:
@@ -33,7 +33,7 @@ jobs:
     # run js file
     - name: Work with contributors-data
       env:
-        token: ${{ secrets.GH_BOT_TOKEN_1 }}
+        token: ${{ secrets.GITHUB_TOKEN }}
       run: node github-actions/github-data/contributors-data.js
 
 
