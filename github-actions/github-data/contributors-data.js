@@ -41,6 +41,29 @@ const octokit = new Octokit({ auth: process.env.token });
   
 
   console.log(commentCommitWikiContributors);
+
+  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
+    org: 'org', //change to hackforla
+    team_slug: 'team_slug' ///?
+  })
+
+  const removedContributors = []
+
+  for(const member of teamMembers.data){
+    if (!commentCommitWikiContributors[member.login]){
+      await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+        org: 'org', //change to hackforla
+        team_slug: 'team_slug', //?
+        username: member.login
+      })
+
+      removedContributors.push(member.login)
+    }
+  }
+
+  console.log(removedContributors);
+
+
   // const teamsHFLA = await octokit.request('GET /orgs/{org}/teams', {
   //   org: 'hackforla'
   // })
