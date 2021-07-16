@@ -46,14 +46,13 @@ async function fetchContributors(date){
   for(const contributorInfo of commitContributorsList.data){
     allContributorsSince[contributorInfo.author.login] = true;
   }
+  console.log(commitContributorsList);
 
   // fetch comments contributors
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'hackforla',
     repo: 'website',
-    since: date,
-    per_page: 100,
-    page: 10
+    since: date
   })
   for(const contributorInfo of commentsContributorsList.data){
     allContributorsSince[contributorInfo.user.login] = true;
@@ -76,8 +75,7 @@ async function removeInactiveMembers(recentContributors){
   const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: 'hackforla',
     team_slug: 'website-write',  //??
-    per_page: 100,
-    page: 10
+    per_page: 100
   })
   console.log(teamMembers)
 
