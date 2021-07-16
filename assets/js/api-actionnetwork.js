@@ -15,7 +15,7 @@
   );
 
   // API CONNECTION INFO
-  var ACTION_NETWORK_API = "6ff91ed1255d1966758bf3449043077a";
+  var ACTION_NETWORK_API = "";
   var url = "https://actionnetwork.org/api/v2/people/";
 
   // FORM SUBMISSION HELPER FUNCTIONS
