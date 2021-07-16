@@ -39,7 +39,7 @@ function createMessage() {
 `git checkout -b ${nameOfCollaborator}-${nameOfFromBranch} ${nameOfIntoBranch}
 git pull ${cloneURL} ${nameOfFromBranch}`
 
-    const text = fs.readFileSync("./pr-instructions-template.md").toString('utf-8');
+    const text = fs.readFileSync("./github-actions/pr-instructions/pr-instructions-template.md.md").toString('utf-8');
     const completedInstuctions = text.replace('${commandlineInstructions}', instructionString)
 
     return completedInstuctions
