@@ -128,6 +128,7 @@
     Template for page cards with large icons
     --- use with .page-card-lg
 
+    Sample structure: refer to sitemap.html or join-us.html
   ---------------------------*/
 
   /*---------
@@ -141,14 +142,14 @@
     padding: 3rem;
     text-align: left;
 
-    h1 {
+    .page-card--large-icon-header {
       grid-column: 2 / span 1;
       grid-row: 1 / span 1;
       font-size: 1.5rem;
       margin-bottom: 2rem;
     }
 
-    h2 {
+    .page-card--large-icon-header-secondary {
       font-size: 16px;
       width: 100%;
     }
@@ -209,7 +210,7 @@
         padding: 32px 20px;
       }
 
-      h1 {
+      .page-card--large-icon-header {
         font-size: 1.25rem;
         margin-bottom: 1rem;
         // Fixes title wrap at smallest mobile size
@@ -217,6 +218,10 @@
           padding: 0 43px;
           text-align: center;
         }
+      }
+
+      .page-card--large-icon-header-secondary {
+        text-align: center;
       }
 
       ol {
