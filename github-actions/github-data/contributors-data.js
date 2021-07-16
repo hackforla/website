@@ -41,7 +41,6 @@ async function fetchContributors(date){
     repo: 'website',
     since: date,
     per_page: 100,
-    page: 10
   })
   for(const contributorInfo of commitContributorsList.data){
     allContributorsSince[contributorInfo.author.login] = true;
