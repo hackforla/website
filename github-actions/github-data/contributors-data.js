@@ -45,16 +45,18 @@ async function fetchContributors(date){
   for(const contributorInfo of commitContributorsList.data){
     allContributorsSince[contributorInfo.author.login] = true;
   }
-  console.log(commitContributorsList);
 
   // fetch comments contributors
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'hackforla',
     repo: 'website',
-    since: date
+    since: date,
+    per_page: 100
   })
   for(const contributorInfo of commentsContributorsList.data){
-    allContributorsSince[contributorInfo.user.login] = true;
+    if(!allContributorsSince[contributorInfo.user.login]){
+      allContributorsSince[contributorInfo.user.login] = true;
+    }
   }
 
   //how to fetch Wiki contributors?
@@ -76,7 +78,12 @@ async function removeInactiveMembers(recentContributors){
     team_slug: 'website-write',  //??
     per_page: 100
   })
-  console.log(teamMembers)
+
+  const allMembers = {}
+  for(const contributorInfo of teamMembers.data){
+    allMembers[contributorInfo.login] = true;
+  }
+  console.log(allMembers)
 
   // loop over team members and remove them from team if they are not in recentContributors
   // for(const member of teamMembers.data){
