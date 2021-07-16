@@ -10,7 +10,7 @@ const octokit = new Octokit({ auth: process.env.token });
 
 (async function main(){
   const today = new Date();
-  const monthAgo = new Date(today.setMonth(today.getMonth() - 2));
+  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
   // const dayAgo = new Date(today.setDate(today.getDate() - 1));
 
   const commentCommitWikiContributors = await fetchContributors(monthAgo.toISOString());
@@ -54,9 +54,7 @@ async function fetchContributors(date){
     per_page: 100
   })
   for(const contributorInfo of commentsContributorsList.data){
-    if(!allContributorsSince[contributorInfo.user.login]){
-      allContributorsSince[contributorInfo.user.login] = true;
-    }
+    allContributorsSince[contributorInfo.user.login] = true;
   }
 
   //how to fetch Wiki contributors?
@@ -80,9 +78,12 @@ async function removeInactiveMembers(recentContributors){
   })
 
   const allMembers = {}
-  for(const contributorInfo of teamMembers.data){
-    allMembers[contributorInfo.login] = true;
+  for(const members of teamMembers.data){
+    allMembers[members.login] = true;
   }
+
+  console.log('---------------------------------------')
+  console.log('Members:')
   console.log(allMembers)
 
   // loop over team members and remove them from team if they are not in recentContributors
