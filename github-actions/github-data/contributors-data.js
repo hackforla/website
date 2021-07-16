@@ -39,7 +39,9 @@ async function fetchContributors(date){
   const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'hackforla',
     repo: 'website',
-    since: date
+    since: date,
+    per_page: 100,
+    page: 10
   })
   for(const contributorInfo of commitContributorsList.data){
     allContributorsSince[contributorInfo.author.login] = true;
@@ -49,7 +51,9 @@ async function fetchContributors(date){
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'hackforla',
     repo: 'website',
-    since: date
+    since: date,
+    per_page: 100,
+    page: 10
   })
   for(const contributorInfo of commentsContributorsList.data){
     allContributorsSince[contributorInfo.user.login] = true;
@@ -69,11 +73,13 @@ async function removeInactiveMembers(recentContributors){
   const removedMembers = []
 
   //fetch all team members
-  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members?per_page=100&page=10', {
+  const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: 'hackforla',
-    team_slug: 'website-write'  //??
+    team_slug: 'website-write',  //??
+    per_page: 100,
+    page: 10
   })
-  console.log(teamMembers.data)
+  console.log(teamMembers)
 
   // loop over team members and remove them from team if they are not in recentContributors
   // for(const member of teamMembers.data){
