@@ -40,7 +40,7 @@ function createMessage() {
 git pull ${cloneURL} ${nameOfFromBranch}`
 
 
-    const path = './'
+    const path = './github-actions/pr-instructions'
     fs.readdir(path, function (err, files) {
         //handling error
         if (err) {
