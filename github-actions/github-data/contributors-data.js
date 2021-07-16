@@ -73,7 +73,7 @@ async function removeInactiveMembers(recentContributors){
   //fetch all team members
   const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: 'hackforla',
-    team_slug: 'website-write',  //??
+    team_slug: 'website-write', 
     per_page: 100
   })
 
@@ -107,12 +107,6 @@ async function removeInactiveMembers(recentContributors){
   //   org: 'actions-team-test',
   //   team_slug: 'banana',
   //   username: 'bcdguz',
-  //   role: 'member'
-  // })
-  // await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-  //   org: 'actions-team-test',
-  //   team_slug: 'banana',
-  //   username: 'EdwinHongCheng',
   //   role: 'member'
   // })
 
