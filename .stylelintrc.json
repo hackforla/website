@@ -1,7 +1,6 @@
 {
   "rules": {
     "color-no-invalid-hex": true,
-    "named-grid-areas-no-invalid": true,
     "unit-no-unknown": true,
     "property-no-unknown": true,
     "declaration-block-no-duplicate-properties": true,
