@@ -2,7 +2,7 @@ name: Add Pull Request Instructions
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, edited]
 
 jobs:
   Add-Pull-Request-Instructions:

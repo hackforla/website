@@ -22,7 +22,7 @@ async function postComment() {
             issue_number: context.payload.number,
             body: body,
         });
-    } catch(err) {
+    } catch (err) {
         throw new Error(err);
     }
 
@@ -36,8 +36,22 @@ function createMessage() {
     const cloneURL = context.payload.pull_request.head.repo.clone_url;
 
     const instructionString =
-`git checkout -b ${nameOfCollaborator}-${nameOfFromBranch} ${nameOfIntoBranch}
+        `git checkout -b ${nameOfCollaborator}-${nameOfFromBranch} ${nameOfIntoBranch}
 git pull ${cloneURL} ${nameOfFromBranch}`
+
+
+    const path = './'
+    fs.readdir(path, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file);
+        });
+    });
 
     const text = fs.readFileSync("./github-actions/pr-instructions/pr-instructions-template.md.md").toString('utf-8');
     const completedInstuctions = text.replace('${commandlineInstructions}', instructionString)
