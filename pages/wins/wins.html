@@ -295,28 +295,26 @@ permalink: /wins/
 		cardList.push(otherWinsText.join(", "));
 
 		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
+		const iconContainer = cloneCardTemplate.querySelector(cardClass);
 
-		cardList.map(function (item) {
+		cardList.forEach(function (item) {
 			if (badgeIcons.hasOwnProperty(item)) {
-				cloneCardTemplate.querySelector(cardClass).insertAdjacentHTML('beforeend',
+				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='wins-item-container'>
 					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
 					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
-				return
-			} else if (item === '') {
-				return
-			} else {
-				cloneCardTemplate.querySelector(cardClass).insertAdjacentHTML('beforeend',
+			} else if (item !== '') {
+				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='wins-item-container'>
 					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
 					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
-				return
 			}
 		})
+		return iconContainer
 	}
 
   function makeCards(data) {
@@ -374,8 +372,8 @@ permalink: /wins/
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
-		insertIcons(cloneCardTemplate, '.wins-icon-container', card[win])
-
+		const iconContainer = insertIcons(cloneCardTemplate, '.wins-icon-container', card[win])
+		iconContainer.id = `icons-${index}`
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
 		winsCardContainer.append(cloneCardTemplate);
@@ -401,23 +399,27 @@ permalink: /wins/
 
 		new ResizeObserver(addSeeMore).observe(winText)
 	})
-  }
+}
 
-  function seeMore(id){
+function seeMore(id){
   	screenWidth = window.innerWidth;
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
 		toggleSeeMoreLess(id);
   	}
-  }
+}
 
   //Adds event listener to badge icons when viewers interface is below desktop size
   //Click to toggle "see more" and "see less" to expand and collapse wins text
+  document.addEventListener("DOMContentLoaded", winsBelowDesktop);
+
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
+			console.log('container:', container)
 			const id = container.dataset.index;
+			console.log(id)
 
 			toggleSeeMoreLess(id);
 		}))
