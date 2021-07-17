@@ -402,7 +402,7 @@ permalink: /wins/
 }
 
 function seeMore(id){
-  	screenWidth = window.innerWidth;
+  	let screenWidth = window.innerWidth;
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
@@ -417,9 +417,7 @@ function seeMore(id){
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
-			console.log('container:', container)
 			const id = container.dataset.index;
-			console.log(id)
 
 			toggleSeeMoreLess(id);
 		}))
@@ -427,6 +425,11 @@ function seeMore(id){
 
   function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
+		let screenWidth = window.innerWidth;
+	  	if (screenWidth > 960) {
+			span.innerHTML = "...see more";
+			return
+		}
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
 		let winsIconContainer = winsInfo.nextElementSibling;
