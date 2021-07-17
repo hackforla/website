@@ -54,7 +54,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: start;
-    // margin: 1em 0 0 6.5rem;
 }
 .wins-item-container{
     display: inline-block;
@@ -450,7 +449,6 @@
         margin-left: 0em;
 
         .wins-icon-container{
-            // margin: 1.5em 0 0 6.5rem;
             display: block;
         }
         .wins-item-container{
@@ -484,9 +482,6 @@
 }
 
 @media #{$bp-below-mobile} {
-    // .wins-icon-container{
-    //     // margin-left: 3.5em
-    // }
     .wins-tablet {
         .wins-item-container{
             margin-left: 0;
