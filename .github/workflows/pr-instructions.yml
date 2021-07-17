@@ -1,0 +1,16 @@
+name: Add Pull Request Instructions
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  Add-Pull-Request-Instructions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            const script = require('./github-actions/pr-instructions/pr-instructions.js')
+            console.log(await script({g: github, c: context}))
