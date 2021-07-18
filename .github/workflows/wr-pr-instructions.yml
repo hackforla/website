@@ -1,5 +1,4 @@
 name: WR Add Pull Request Instructions
-
 on:
   workflow_run:
     workflows: ["Add Pull Request Instructions"]
@@ -54,4 +53,11 @@ jobs:
             const artifact = ${{ steps.artifact.outputs.result }};
 
             const script = require('./github-actions/pr-instructions/post-comment.js')
-            console.log(await script({g: github, c: context}, artifact))
+            script({g: github, c: context}, artifact)
+
+  Last-Workflow-Failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: Failed Run
+        run: echo "The previous GitHub Action failed. Please check the logs for the previous action."

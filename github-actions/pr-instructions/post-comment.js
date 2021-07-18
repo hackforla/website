@@ -5,13 +5,19 @@ var fs = require("fs");
 var github;
 var context;
 
+/**
+ * Formats the commandline instructions into a template, then posts it to the pull request.
+ * @param {Object} g - github object  
+ * @param {Object} c - context object 
+ * @param {Number} issueNum - the number of the issue where the post will be made 
+ * @param {String} instruction - commandline instructions
+ */
 async function main({ g, c }, { issueNum, instruction }) {
     github = g;
     context = c;
 
     const instructions = formatComment(instruction)
     postComment(issueNum, instructions);
-    return true;
 }
 
 function formatComment(instruction) {

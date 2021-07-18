@@ -1,10 +1,13 @@
-// Importing modules
-var fs = require("fs");
-
 // Global variables
 var github;
 var context;
 
+/**
+ * Uses information from the pull request to create commandline instructions.
+ * @param {Object} g - github object
+ * @param {Object} c - context object
+ * @returns {string} string containing commandline instructions
+ */
 function main({ g, c }) {
     github = g;
     context = c;
