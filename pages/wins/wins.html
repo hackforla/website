@@ -280,11 +280,12 @@ permalink: /wins/
   }
 
  
-	function insertIcons(cloneCardTemplate, cardClass, cardString) {
+	function insertIcons(cardSelector, cardString, viewType, cloneCardTemplate = document) {
 		let initialCardList = cardString.split(',').map(item => item.trim())
 		let otherWinsText = [];
 		let cardList = [];
-		
+		const view = viewType;
+
 		initialCardList.forEach(win => {
 			if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) > -1){
 				cardList.push(win);
@@ -295,21 +296,22 @@ permalink: /wins/
 		cardList.push(otherWinsText.join(", "));
 
 		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
-		const iconContainer = cloneCardTemplate.querySelector(cardClass);
 
-		cardList.forEach(function (item) {
+		const iconContainer = cloneCardTemplate.querySelector(cardSelector);
+
+		cardList.forEach( (item) => {
 			if (badgeIcons.hasOwnProperty(item)) {
 				iconContainer.insertAdjacentHTML('beforeend',
-					`<div class='wins-item-container'>
-					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+					`<div class='${view}-item-container'>
+					<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
 			} else if (item !== '') {
 				iconContainer.insertAdjacentHTML('beforeend',
-					`<div class='wins-item-container'>
-					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+					`<div class='${view}-item-container'>
+					<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
 			}
@@ -372,7 +374,7 @@ permalink: /wins/
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
-		const iconContainer = insertIcons(cloneCardTemplate, '.wins-icon-container', card[win])
+		const iconContainer = insertIcons('.wins-icon-container', card[win], 'wins', cloneCardTemplate)
 		iconContainer.id = `icons-${index}`
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
@@ -511,7 +513,8 @@ function seeMore(id){
 
   		const overlayInfo = document.querySelector('#overlay-info');
 		//   overlayInfo.innerHTML = formatMessage(data[i][win]);
-		insertOverlay(overlayInfo, data[i][win])
+		// insertOverlay(overlayInfo, data[i][win])
+		const iconContainer = insertIcons('#overlay-info', data[i][win], 'overlay')
 
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
@@ -538,37 +541,6 @@ function seeMore(id){
 	  overlayInfo.innerHTML = '';
   }
 
-
-  function insertOverlay(cloneCardTemplate, cardString) {
-		const cardArr = cardString.split(',')
-
-		cardArr.forEach(string => {
-			const item = string.trim()
-			const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
-
-			
-			if (badgeIcons.hasOwnProperty(item)) {
-				cloneCardTemplate.insertAdjacentHTML('beforeend',
-					`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
-						</div>`
-				)
-				return
-			} else if (item === '') {
-				return
-			} else {
-				cloneCardTemplate.insertAdjacentHTML('beforeend',
-					`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
-						</div>`
-				)
-				return
-			}
-			
-		})
-	}
 
   main();
 
