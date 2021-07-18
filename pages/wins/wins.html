@@ -381,19 +381,22 @@ permalink: /wins/
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
 		function addSeeMore() {
 			const winInfo = winText.querySelector('.wins-card-overview')
-
+			const seeMoreDiv = winText.querySelector('.wins-see-more-div')
 			//makes the see more span on the bottom of the card
 			if (
 				!winText.classList.contains('expanded') && 
 				winInfo.offsetHeight <= winText.offsetHeight 
 			) { //checks if see more is needed.
-				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+				seeMoreDiv.setAttribute('hidden', 'true')
 				// winText.classList.remove('relative')
 			} else {
-				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+				seeMoreDiv.removeAttribute('hidden')
 			}
 			if (!winText.classList.contains('expanded'))
 				winText.classList.add('relative')
+			if (window.innerWidth > 960){
+				seeMoreDiv.children[0].innerHTML = "...see more"
+			}
 		}
 		addSeeMore()
 
