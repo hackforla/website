@@ -394,8 +394,12 @@ permalink: /wins/
 			}
 			if (!winText.classList.contains('expanded'))
 				winText.classList.add('relative')
+				// ! does not work yet
 			if (window.innerWidth > 960){
-				seeMoreDiv.children[0].innerHTML = "...see more"
+				const winsCardTextContainer = seeMoreDiv.parentElement
+				if (winsCardTextContainer.classList.contains("expanded")){
+					toggleSeeMoreLess(seeMoreDiv.children[0].id)
+				}
 			}
 		}
 		addSeeMore()
@@ -429,23 +433,17 @@ function seeMore(id){
   function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
 		let screenWidth = window.innerWidth;
-	  	if (screenWidth > 960) {
-			span.innerHTML = "...see more";
-			return
-		}
 		let parent = span.parentElement.parentElement;
 		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
 		let winsIconContainer = winsInfo.nextElementSibling;
-
-		if (!parent.classList.contains('expanded')) {
+	  	if (parent.classList.contains('expanded') || screenWidth > 960) {
+			parent.setAttribute('class', 'project-inner wins-card-text relative');
+			span.innerHTML = "...see more";
+			winsIconContainer.setAttribute('class', 'wins-icon-container');
+		} else {
 			parent.setAttribute('class','project-inner wins-card-text expanded');
 			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-		}
-		else {
-			parent.setAttribute('class','project-inner wins-card-text relative');
-			span.innerHTML = "...see more";
-			winsIconContainer.setAttribute('class', 'wins-icon-container');
 		}
   }
 
