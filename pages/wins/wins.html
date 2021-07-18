@@ -478,18 +478,7 @@ function seeMore(id){
 	  window.addEventListener('resize', (e) => {
 		  widthOutput = window.innerWidth;
 		  if (widthOutput < 960) {
-			  document.querySelector(".main-header").inert = false;
-			  document.querySelector(".content-section.projects").inert = false;
-			  document.querySelector(".main-footer").inert = false;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
-			  document.querySelector(".sr-only-focusable").inert = false;
-		  }
-		  else {
-			  document.querySelector(".main-header").inert = true;
-			  document.querySelector(".content-section.projects").inert = true;
-			  document.querySelector(".main-footer").inert = true;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
-			  document.querySelector(".sr-only-focusable").inert = true;
+			  hideOverlay(e)
 		  }
 	  });
 
@@ -530,6 +519,7 @@ function seeMore(id){
 
 
 	function hideOverlay(e) {
+		console.log("in the hide overlay")
 		e = e || window.event || e.key == 'Escape';
 
 		if (e.target !== e.currentTarget) return;
