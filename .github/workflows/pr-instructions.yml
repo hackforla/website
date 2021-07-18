@@ -5,7 +5,6 @@ on:
     branches:
       - 'gh-pages'
       - 'wins-feature-1'
-      - 'pull-instructions-restore'
 
 jobs:
   Add-Pull-Request-Instructions:
