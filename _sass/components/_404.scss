@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center; 
   padding: 120px;
-  margin: 70px 100px;
+  margin: 100px 100px;
 
   @media #{$bp-below-tablet} {
     display: flex;
@@ -12,6 +12,8 @@
     justify-content: center;
     align-items: center;
     margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   @media #{$bp-below-desktop} {
@@ -20,6 +22,19 @@
     padding-right: 0;
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+
+  ul, li {
+    padding: 0;
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 2.5;
+    color: #FA114F;
+  }
+  
+  a { 
+    text-decoration: none; 
   }
 }
 
@@ -88,17 +103,4 @@
   font-weight: bold;
   font-size: 16px;
   color: #333333;
-}
-
-ul, li {
-  padding: 0;
-  list-style-type: none;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 2.5;
-  color: #FA114F;
-}
-
-a { 
-  text-decoration: none; 
 }
