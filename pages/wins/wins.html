@@ -390,13 +390,11 @@ permalink: /wins/
 				winInfo.offsetHeight <= winText.offsetHeight 
 			) { //checks if see more is needed.
 				seeMoreDiv.setAttribute('hidden', 'true')
-				// winText.classList.remove('relative')
 			} else {
 				seeMoreDiv.removeAttribute('hidden')
 			}
 			if (!winText.classList.contains('expanded'))
 				winText.classList.add('relative')
-				// ! does not work yet
 			if (window.innerWidth > 960){
 				const winsCardTextContainer = seeMoreDiv.parentElement
 				if (winsCardTextContainer.classList.contains("expanded")){
@@ -436,8 +434,7 @@ function seeMore(id){
 		let span = document.getElementById(id);
 		let screenWidth = window.innerWidth;
 		let parent = span.parentElement.parentElement;
-		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
-		let winsIconContainer = winsInfo.nextElementSibling;
+		let winsIconContainer = document.getElementById(`icons-${id}`)
 	  	if (parent.classList.contains('expanded') || screenWidth > 960) {
 			parent.setAttribute('class', 'project-inner wins-card-text relative');
 			span.innerHTML = "...see more";
@@ -511,10 +508,7 @@ function seeMore(id){
   		const overlayOverview = document.querySelector('#overlay-overview');
   		overlayOverview.innerHTML = data[i][overview];
 
-  		const overlayInfo = document.querySelector('#overlay-info');
-		//   overlayInfo.innerHTML = formatMessage(data[i][win]);
-		// insertOverlay(overlayInfo, data[i][win])
-		const iconContainer = insertIcons('#overlay-info', data[i][win], 'overlay')
+		insertIcons('#overlay-info', data[i][win], 'overlay')
 
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
