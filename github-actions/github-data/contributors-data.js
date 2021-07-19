@@ -105,7 +105,7 @@ async function removeInactiveMembers(recentContributors, date){
     const username = member.login
     //if team member is not in recentContributors => remove
     if (!recentContributors[username]){
-      const repos = octokit.request('GET /users/{username}/repos', {
+      const repos = await octokit.request('GET /users/{username}/repos', {
         username: username,
         per_page: 100
       })
