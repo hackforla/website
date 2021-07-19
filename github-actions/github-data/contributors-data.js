@@ -110,7 +110,7 @@ async function removeInactiveMembers(recentContributors, date){
         per_page: 100
       })
       //if user joined a team within past month, dont consider for deletion 
-      for(const repo in repos){
+      for(const repo in repos.data){
         if(repo.name === 'website'){
           console.log(repo.created_at)
           console.log(date)
