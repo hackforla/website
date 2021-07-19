@@ -6,22 +6,22 @@
   padding: 120px;
   margin: 100px 100px;
 
+  @media #{$bp-below-desktop} {
+    margin: 70px 30px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
   @media #{$bp-below-tablet} {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  @media #{$bp-below-desktop} {
-    margin: 130px 30px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    margin: 0px 20px;
+    padding-top: 80px;
+    padding-bottom: 20px;
   }
 
   ul, li {
