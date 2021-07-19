@@ -145,12 +145,10 @@
     .page-card--large-icon-header {
       grid-column: 2 / span 1;
       grid-row: 1 / span 1;
-      font-size: 1.5rem;
       margin-bottom: 2rem;
     }
 
     .page-card--large-icon-header-secondary {
-      font-size: 16px;
       width: 100%;
     }
 
@@ -211,7 +209,6 @@
       }
 
       .page-card--large-icon-header {
-        font-size: 1.25rem;
         margin-bottom: 1rem;
         // Fixes title wrap at smallest mobile size
         @media (max-width: #{$screen-mobile - 160}) {
