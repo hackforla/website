@@ -57,6 +57,20 @@ async function fetchContributors(date){
     allContributorsSince[contributorInfo.user.login] = true;
   }
 
+  // fetch issue contributors
+  const issuesContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+    owner: 'hackforla',
+    repo: 'website',
+    since: date,
+    per_page: 100
+  })
+  for(const contributorInfo of issuesContributorsList.data){
+    allContributorsSince[contributorInfo.user.login] = true;
+    if(contributorInfo.assignees.length){
+      contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
+    }
+  }
+
   //how to fetch Wiki contributors?
   return allContributorsSince;
 }
@@ -83,7 +97,7 @@ async function removeInactiveMembers(recentContributors){
   }
 
   console.log('---------------------------------------')
-  console.log('Members:')
+  console.log('Team Members of website-write:')
   console.log(allMembers)
 
   // loop over team members and remove them from team if they are not in recentContributors
@@ -100,16 +114,6 @@ async function removeInactiveMembers(recentContributors){
   //     // break; //remove if approved
   //   }
   // }
-  
-
-  // --- TO TEST ---
-  // add user back 
-  // await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-  //   org: 'actions-team-test',
-  //   team_slug: 'banana',
-  //   username: 'bcdguz',
-  //   role: 'member'
-  // })
 
   return removedMembers;
 }
