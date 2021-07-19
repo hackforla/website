@@ -113,7 +113,7 @@ async function removeInactiveMembers(recentContributors, date){
 
       for(const repo of repos.data){
         if(repo.name === 'website'){
-          if(repo.created_at > date) {
+          if(repo.created_at < date) {
             console.log(username + ' is not for deletion')
             break;
           }
