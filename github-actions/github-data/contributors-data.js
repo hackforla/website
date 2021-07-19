@@ -45,7 +45,7 @@ async function fetchContributors(date){
       per_page: 100,
       page: commitPageCount
     })
-    if(!commitContributorsList.length){
+    if(!commitContributorsList.data.length){
       commitPageCount--;
       break;
     } else {
@@ -73,29 +73,80 @@ async function fetchContributors(date){
   }
 
   // fetch comments contributors
+  commitPageCount = 1;
+  while(true){
+    const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
+      owner: 'hackforla',
+      repo: 'website',
+      since: date,
+      per_page: commitPageCount
+    })
+    if(!commentsContributorsList.data.length){
+      commitPageCount--;
+      break;
+    } else {
+      commitPageCount++;
+    }
+  }
   const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
     owner: 'hackforla',
     repo: 'website',
     since: date,
-    per_page: 100
+    per_page: 100,
+    page: commitPageCount
   })
+  console.log(commentsContributorsList.data.length)
   for(const contributorInfo of commentsContributorsList.data){
     allContributorsSince[contributorInfo.user.login] = true;
   }
+  const comments = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
+    owner: 'hackforla',
+    repo: 'website',
+    since: date,
+    per_page: 100,
+  })
+  console.log(comments.data.length)
+
 
   // fetch issue contributors
+
+  commitPageCount = 1;
+  while(true){
+    const issuesContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+      owner: 'hackforla',
+      repo: 'website',
+      since: date,
+      per_page: commitPageCount
+    })
+    if(!issuesContributorsList.data.length){
+      commitPageCount--;
+      break;
+    } else {
+      commitPageCount++;
+    }
+  }
   const issuesContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues', {
     owner: 'hackforla',
     repo: 'website',
     since: date,
-    per_page: 100
+    per_page: 100,
+    page: commitPageCount
   })
+  console.log(issuesContributorsList.data.length)
   for(const contributorInfo of issuesContributorsList.data){
     allContributorsSince[contributorInfo.user.login] = true;
     if(contributorInfo.assignees.length){
       contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
     }
   }
+
+  const issues = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+    owner: 'hackforla',
+    repo: 'website',
+    since: date,
+    per_page: 100,
+  })
+  console.log(issues.data.length)
 
   //how to fetch Wiki contributors?
   return allContributorsSince;
