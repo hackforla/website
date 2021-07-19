@@ -16,7 +16,9 @@ h5,
 h6,
 p,
 ul,
-ol {
+ol
+
+ {
   margin-top: 0;
 }
 
@@ -60,6 +62,30 @@ h4,
 }
 
 map-get($font-family, decorative);
+}
+
+.title1 {
+  font-size: #{map-get($font-size-title1, mobile)};
+}
+
+.title2 {
+  font-size: #{map-get($font-size-title2, mobile)};
+}
+
+.title3 {
+  font-size: #{map-get($font-size-title3, mobile)};
+}
+
+.title4 {
+  font-size: #{map-get($font-size-title4, mobile)};
+}
+
+.title5 {
+  font-size: #{map-get($font-size-title5, mobile)};
+}
+
+.title6 {
+  font-size: #{map-get($font-size-title6, mobile)};
 }
 
 blockquote p,
@@ -135,6 +161,31 @@ map-get($font-family, body);
     line-height: #{map-get($line-height-h4, tablet)};
   }
 
+  .title1 {
+    font-size: #{map-get($font-size-title1, tablet)};
+  }
+
+  .title2 {
+    font-size: #{map-get($font-size-title2, tablet)};
+  }
+
+  .title3 {
+    font-size: #{map-get($font-size-title3, tablet)};
+  }
+  
+
+  .title4 {
+    font-size: #{map-get($font-size-title4, tablet)};
+  }
+
+  .title5 {
+    font-size: #{map-get($font-size-title5, tablet)};
+  }
+
+  .title6 {
+    font-size: #{map-get($font-size-title6, tablet)};
+  }
+
   blockquote p,
   .type-featured {
     font-size: #{map-get($font-size-blockquote, tablet)};
@@ -177,6 +228,31 @@ map-get($font-family, body);
   .type-h4 {
     font-size: #{map-get($font-size-h4, desktop)};
     line-height: #{map-get($line-height-h4, desktop)};
+  }
+
+  .title1 {
+    font-size: #{map-get($font-size-title1, desktop)};
+  }
+
+  .title2 {
+    font-size: #{map-get($font-size-title2, desktop)};
+  }
+
+  .title3 {
+    font-size: #{map-get($font-size-title3, desktop)};
+  }
+  
+
+  .title4 {
+    font-size: #{map-get($font-size-title4, desktop)};
+  }
+
+  .title5 {
+    font-size: #{map-get($font-size-title5, desktop)};
+  }
+
+  .title6 {
+    font-size: #{map-get($font-size-title6, desktop)};
   }
 
   blockquote p,

@@ -6,7 +6,7 @@
   min-height: 100vh;
 }
 
-.join-us-banner {
+.header-container--join {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +21,21 @@
     h1 {
       font-size: 24px;
       padding-bottom: 28px;
+      @media #{$bp-mobile-up} {
+        font-size: 32px;
+      }
     }
 
     p {
       font-size: 18px;
       max-width: 300px;
+      text-align: left;
       @media #{$bp-tablet-up} {
         max-width: 500px;
+      }
+      @media #{$bp-mobile-up} {
+        font-size: 16px;
+        text-align: left;
       }
     }
   }
@@ -75,7 +83,7 @@
       padding: 40px 0;
     }
 
-    .join-us-donation-png {
+    .join-us-donation-img {
       width: 100%;
       margin: 20px auto;
     }
@@ -182,7 +190,7 @@
           max-width: 480px;
         }
 
-        .join-us-donation-png {
+        .join-us-donation-img {
           max-width: 419px;
           padding-bottom: 20px;
         }
@@ -224,7 +232,7 @@
 -----------*/
 
 @media #{$bp-desktop-up} {
-  .join-us-banner {
+  .header-container--join {
     flex-direction: row;
     max-width: 1200px;
     margin: 37px auto 0;
