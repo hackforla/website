@@ -10,16 +10,16 @@ const octokit = new Octokit({ auth: process.env.token });
 
 (async function main(){
   const today = new Date();
-  const monthAgo = new Date(today.setMonth(today.getMonth() - 1));
-  // const dayAgo = new Date(today.setDate(today.getDate() - 1));
+  let monthAgo = new Date(today.setMonth(today.getMonth() - 1));
+  monthAgo = monthAgo.toISOString();
 
-  const commentCommitWikiContributors = await fetchContributors(monthAgo.toISOString());
+  const commentCommitWikiContributors = await fetchContributors(monthAgo);
 
   console.log('-------------------------------------------------------')
-  console.log('List of active contributors since' + ' ⏰ ' + monthAgo.toISOString().slice(0, 10) + ':');
+  console.log('List of active contributors since' + ' ⏰ ' + monthAgo.slice(0, 10) + ':');
   console.log(commentCommitWikiContributors);
 
-  const removedContributors = await removeInactiveMembers(commentCommitWikiContributors, monthAgo.toISOString());
+  const removedContributors = await removeInactiveMembers(commentCommitWikiContributors, monthAgo);
 
   console.log('-------------------------------------------------------')
   console.log('Removed members: ')
@@ -36,12 +36,38 @@ async function fetchContributors(date){
   const allContributorsSince = {}
 
   // fetch commit contirbutors;
+  let commitPageCount = 1;
+  while(true){
+    const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
+      owner: 'hackforla',
+      repo: 'website',
+      since: date,
+      per_page: 100,
+      page: commitPageCount
+    })
+    if(!commitContributorsList.length){
+      commitPageCount--;
+      break;
+    } else {
+      commitPageCount++;
+    }
+  }
+
   const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
     owner: 'hackforla',
     repo: 'website',
     since: date,
     per_page: 100,
+    page: commitPageCount
   })
+  console.log(commitContributorsList.data.length);
+  const commit = await octokit.request('GET /repos/{owner}/{repo}/commits', {
+    owner: 'hackforla',
+    repo: 'website',
+    since: date,
+    per_page: 100,
+  })
+  console.log(commit.data.length);
   for(const contributorInfo of commitContributorsList.data){
     allContributorsSince[contributorInfo.author.login] = true;
   }
@@ -109,12 +135,11 @@ async function removeInactiveMembers(recentContributors, date){
         username: username,
         per_page: 100
       })
-      //if user joined a team within past month, dont consider for deletion 
-
+      //if user joined a team within past month they are not consider for removal since they are new
       for(const repo of repos.data){
         if(repo.name === 'website'){
-          if(repo.created_at < date) {
-            console.log(username + ' is not for deletion')
+          if(repo.created_at > date) {
+            console.log(username + ' is new member and not consideren for removal')
             break;
           }
         }
