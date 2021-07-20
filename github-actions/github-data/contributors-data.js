@@ -108,31 +108,36 @@ async function removeInactiveMembers(recentContributors, date){
     const username = member.login
 
     if (!recentContributors[username]){
+      
       // check user repos and see if they joined hackforla/website recently
       // user might have > 100 repos (this will need adjustment)
       const repos = await octokit.request('GET /users/{username}/repos', {
         username: username,
         per_page: 100
       })
+
       //if user joined a team within last 30 days, they are not consider for removal since they are new
+      let skip = false;
       for(const repo of repos.data){
-        if(repo.name === 'website'){
-          if(repo.created_at > date) {
-            console.log(username + ' is new member and not consideren for removal')
-            break;
-          }
+        if(repo.name === 'website' && repo.created_at > date){
+          console.log(username + ' is a new member and not consideren for removal')
+          skip = true;
+          break;
         }
       }
 
       // esle this user is a member of a team for more than 1 month and without contributions
       // => remove
-      // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-      //   org: 'actions-team-test', 
-      //   team_slug: 'banana', 
-      //   username: username
-      // })
-      // removedMembers.push(username)
-      // break; //remove if approved
+      if(!skip){
+        console.log(username + " will be removed from website team!")
+        // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+        //   org: 'actions-team-test', 
+        //   team_slug: 'banana', 
+        //   username: username
+        // })
+        // removedMembers.push(username)
+        // break; //remove if approved
+      }
     }
   }
 
