@@ -2,19 +2,18 @@ name: Update Team Members
 
 
 # Run this action every day at 3am Pacific (11 am UTC)
-# on:
-#   schedule:
-#     # - cron: '0 10 * * *'
-#     - cron: '*/1 * * * *'
-on: [push]
+on:
+  schedule:
+    - cron: '0 11 * * *'
+
+# on: [push]
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"
   trim_contributors:
     runs-on: ubuntu-latest
 
-    # change to hackfrola/website
-    if: github.repository == 'alexeysergeev-cm/website'
+    if: github.repository == 'hackfrola/website'
 
 
     steps:
@@ -33,12 +32,11 @@ jobs:
     # run js file
     - name: Trim Members
       env:
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
       run: node github-actions/github-data/contributors-data.js
 
 
-      # do I need auto commit here with help of the BOT? 
-      # If yes => check tokens above!
+    # do I need auto commit here with help of the BOT? 
 
     # - name: Auto Commit
     #   uses: stefanzweifel/git-auto-commit-action@v3.0.0

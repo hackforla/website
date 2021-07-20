@@ -30,7 +30,7 @@ const octokit = new Octokit({ auth: process.env.token });
 /**
  * Function to fetch comment/commit/wiki contributors since 'date'
  * @param {String} date     [since]
- * @return {Object}     [List of active contributors since 'date']
+ * @return {Object}     [List of active contributors]
  */
 async function fetchContributors(date){
   const allContributorsSince = {}
@@ -42,6 +42,7 @@ async function fetchContributors(date){
     let pageNum = 1;
     let result = [];
 
+    //since Github only allows to fetch data 100 items per request, we need to 'flip' pages
     while(true){
       const contributors = await octokit.request(api[0], {
         owner: 'hackforla',
@@ -73,7 +74,7 @@ async function fetchContributors(date){
     }
 
   }
-  //how to fetch Wiki contributors?
+  // how to fetch Wiki contributors?
   return allContributorsSince;
 }
 
@@ -86,8 +87,7 @@ async function fetchContributors(date){
 async function removeInactiveMembers(recentContributors, date){
   const removedMembers = []
 
-  //fetch all team members (now we know that the total of members is 83, once passed code below need adjustments);
-
+  //fetch all team members (now we know that the total of members is 83, once passed code below need adjustments('flip' pages));
   const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: 'hackforla',
     team_slug: 'website-write', 
@@ -108,9 +108,8 @@ async function removeInactiveMembers(recentContributors, date){
     const username = member.login
 
     if (!recentContributors[username]){
-
       // check user repos and see if they joined hackforla/website recently
-      // user might have > 100 repos (this will need adjustment)
+      // user might have > 100 repos (this will need adjustment('flip' pages))
       const repos = await octokit.request('GET /users/{username}/repos', {
         username: username,
         per_page: 100
@@ -132,23 +131,23 @@ async function removeInactiveMembers(recentContributors, date){
         team_slug: 'website-write',
         username: username,
       })
-      console.log(userMembership);
+      if(userMembership.data.role === 'maintainer') skip = true;
 
       // esle this user is a member of a team for more than 1 month and without contributions
       // => remove
       if(!skip){
         console.log(username + " will be removed from website team!")
-        // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-        //   org: 'actions-team-test', 
-        //   team_slug: 'banana', 
-        //   username: username
-        // })
-        // removedMembers.push(username)
-        // break; //remove if approved
+
+        await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+          org: 'hackforla',
+          team_slug: 'website-write',
+          username: username,
+        })
+
+        removedMembers.push(username)
       }
     }
   }
-
   return removedMembers;
 }
 
