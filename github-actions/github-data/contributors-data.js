@@ -79,7 +79,8 @@ async function fetchContributors(date){
       owner: 'hackforla',
       repo: 'website',
       since: date,
-      per_page: commitPageCount
+      per_page: 100,
+      page: commitPageCount
     })
     if(!commentsContributorsList.data.length){
       commitPageCount--;
@@ -116,7 +117,8 @@ async function fetchContributors(date){
       owner: 'hackforla',
       repo: 'website',
       since: date,
-      per_page: commitPageCount
+      per_page: 100,
+      page: commitPageCount
     })
     if(!issuesContributorsList.data.length){
       commitPageCount--;
