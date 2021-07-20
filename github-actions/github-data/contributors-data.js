@@ -41,7 +41,7 @@ async function fetchContributors(date){
   for(const api of APIs){
     let pageNum = 1;
     let result = [];
-    console.log(api)
+
     while(true){
       const contributors = await octokit.request(api[0], {
         owner: 'hackforla',
@@ -108,7 +108,7 @@ async function removeInactiveMembers(recentContributors, date){
     const username = member.login
 
     if (!recentContributors[username]){
-      
+
       // check user repos and see if they joined hackforla/website recently
       // user might have > 100 repos (this will need adjustment)
       const repos = await octokit.request('GET /users/{username}/repos', {
@@ -125,6 +125,14 @@ async function removeInactiveMembers(recentContributors, date){
           break;
         }
       }
+
+      // check if a user is a maintainer of a team
+      const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+        org: 'hackforla',
+        team_slug: 'website-write',
+        username: username,
+      })
+      console.log(userMembership);
 
       // esle this user is a member of a team for more than 1 month and without contributions
       // => remove
