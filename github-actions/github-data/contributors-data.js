@@ -35,121 +35,45 @@ const octokit = new Octokit({ auth: process.env.token });
 async function fetchContributors(date){
   const allContributorsSince = {}
 
-  // fetch commit contirbutors;
-  let commitPageCount = 1;
-  while(true){
-    const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-      owner: 'hackforla',
-      repo: 'website',
-      since: date,
-      per_page: 100,
-      page: commitPageCount
-    })
-    if(!commitContributorsList.data.length){
-      commitPageCount--;
-      break;
-    } else {
-      commitPageCount++;
+  // fetch commit, comment, issues contirbutors;
+  const APIs = [['GET /repos/{owner}/{repo}/commits', 0], ['GET /repos/{owner}/{repo}/issues/comments', 1], ['GET /repos/{owner}/{repo}/issues', 2]];
+
+  for(const api of APIs){
+    let pageNum = 1;
+    let result = [];
+
+    while(true){
+      const contributors = await octokit.request(api[0], {
+        owner: 'hackforla',
+        repo: 'website',
+        since: date,
+        per_page: 100,
+        page: pageNum
+      })
+
+      result.concat(contributors.data);
+
+      if(!contributors.data.length){
+        break;
+      } else {
+        pageNum++;
+      }
     }
-  }
 
-  const commitContributorsList = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-    page: commitPageCount
-  })
-  console.log(commitContributorsList.data.length);
-  const commit = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-  })
-  console.log(commit.data.length);
-  for(const contributorInfo of commitContributorsList.data){
-    allContributorsSince[contributorInfo.author.login] = true;
-  }
-
-  // fetch comments contributors
-  commitPageCount = 1;
-  while(true){
-    const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
-      owner: 'hackforla',
-      repo: 'website',
-      since: date,
-      per_page: 100,
-      page: commitPageCount
-    })
-    if(!commentsContributorsList.data.length){
-      commitPageCount--;
-      break;
-    } else {
-      commitPageCount++;
+    for(const contributorInfo of result){
+      if(api[1] === 0){
+        allContributorsSince[contributorInfo.author.login] = true;
+      } else if (api[1] === 1){
+        allContributorsSince[contributorInfo.user.login] = true;
+      } else {
+        allContributorsSince[contributorInfo.user.login] = true;
+        if(contributorInfo.assignees.length){
+          contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
+        }
+      }
     }
+
   }
-  const commentsContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-    page: commitPageCount
-  })
-  console.log(commentsContributorsList.data.length)
-  for(const contributorInfo of commentsContributorsList.data){
-    allContributorsSince[contributorInfo.user.login] = true;
-  }
-  const comments = await octokit.request('GET /repos/{owner}/{repo}/issues/comments', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-  })
-  console.log(comments.data.length)
-
-
-  // fetch issue contributors
-
-  commitPageCount = 1;
-  while(true){
-    const issuesContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-      owner: 'hackforla',
-      repo: 'website',
-      since: date,
-      per_page: 100,
-      page: commitPageCount
-    })
-    if(!issuesContributorsList.data.length){
-      commitPageCount--;
-      break;
-    } else {
-      commitPageCount++;
-    }
-  }
-  const issuesContributorsList = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-    page: commitPageCount
-  })
-  console.log(issuesContributorsList.data.length)
-  for(const contributorInfo of issuesContributorsList.data){
-    allContributorsSince[contributorInfo.user.login] = true;
-    if(contributorInfo.assignees.length){
-      contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
-    }
-  }
-
-  const issues = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-    owner: 'hackforla',
-    repo: 'website',
-    since: date,
-    per_page: 100,
-  })
-  console.log(issues.data.length)
-
   //how to fetch Wiki contributors?
   return allContributorsSince;
 }
@@ -163,7 +87,8 @@ async function fetchContributors(date){
 async function removeInactiveMembers(recentContributors, date){
   const removedMembers = []
 
-  //fetch all team members
+  //fetch all team members (now we know that the total of members is 83, once passed code below need adjustments);
+
   const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: 'hackforla',
     team_slug: 'website-write', 
@@ -182,13 +107,15 @@ async function removeInactiveMembers(recentContributors, date){
   // loop over team members and remove them from team if they are not in recentContributors
   for(const member of teamMembers.data){
     const username = member.login
-    //if team member is not in recentContributors => remove
+
     if (!recentContributors[username]){
+      // check user repos and see if they joined hackforla/website recently
+      // user might have > 100 repos (this will need adjustment)
       const repos = await octokit.request('GET /users/{username}/repos', {
         username: username,
         per_page: 100
       })
-      //if user joined a team within past month they are not consider for removal since they are new
+      //if user joined a team within last 30 days, they are not consider for removal since they are new
       for(const repo of repos.data){
         if(repo.name === 'website'){
           if(repo.created_at > date) {
@@ -198,7 +125,8 @@ async function removeInactiveMembers(recentContributors, date){
         }
       }
 
-      //esle user in org more than 1 month and without contributions
+      // esle this user is a member of a team for more than 1 month and without contributions
+      // => remove
       // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
       //   org: 'actions-team-test', 
       //   team_slug: 'banana', 
