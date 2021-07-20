@@ -51,17 +51,14 @@ async function fetchContributors(date){
         page: pageNum
       })
 
-      result.concat(contributors.data);
-      console.log(contributors)
-      console.log(contributors.data)
-      
       if(!contributors.data.length){
         break;
       } else {
+        result = result.concat(contributors.data);
         pageNum++;
       }
     }
-    console.log(result)
+
     for(const contributorInfo of result){
       if(api[1] === 0){
         allContributorsSince[contributorInfo.author.login] = true;
