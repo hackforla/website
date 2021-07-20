@@ -59,7 +59,7 @@ async function fetchContributors(date){
         pageNum++;
       }
     }
-
+    console.log(result)
     for(const contributorInfo of result){
       if(api[1] === 0){
         allContributorsSince[contributorInfo.author.login] = true;
