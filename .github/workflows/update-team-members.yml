@@ -1,20 +1,17 @@
 name: Update Team Members
 
 
-# Run this action every day at 3am Pacific (11 am UTC)
+# Run this action at 11:00 (3 am Pacific) on day-of-month 1 and 15.
 on:
   schedule:
-    - cron: '0 11 * * *'
-
-# on: [push]
+    - cron:  '0 11 1,15 * *'
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"
   trim_contributors:
     runs-on: ubuntu-latest
 
-    if: github.repository == 'hackfrola/website'
-
+    if: github.repository == 'hackforla/website'
 
     steps:
     # checkout repo
