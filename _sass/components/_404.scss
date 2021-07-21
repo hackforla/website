@@ -84,6 +84,7 @@
 
   @media #{$bp-below-desktop} {
     font-size: 39px;
+    line-height: 1.8;
   }
 }
 
@@ -95,7 +96,7 @@
   margin-bottom: 80px;  
 
   @media #{$bp-below-desktop} {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
 }
 
