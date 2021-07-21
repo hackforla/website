@@ -1,0 +1,114 @@
+.projects {
+    background: $color-pink;
+    padding: 32px 16px;
+  }
+  
+  .projects-inner {
+    display: flex;
+    flex-direction: column;
+  
+    @media #{$bp-mobile-up} {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  
+  .project-list {
+    margin-bottom: 24px;
+    order: 2;
+  
+    @media #{$bp-tablet-up} {
+      display: grid;
+      grid-gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      order: 3;
+      width: 100%;
+    }
+  }
+  
+  .project-card {
+    background: $color-white;
+    border: 0 solid rgba($color-black, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+    margin-bottom: 24px;
+    overflow: hidden;
+  
+    @media #{$bp-tablet-up} {
+      margin-bottom: 0;
+    }
+  }
+  
+  .project-title-no-page {
+    color: $color-black;
+  }
+  
+  .project-tmb-img {
+    display: block;
+    width: 100%;
+  }
+  
+  .project-body {
+    padding: 16px;
+  }
+  
+  .project-header {
+    color: $color-black;
+    margin-bottom: 16px;
+    margin-right: auto;
+    order: 1;
+  }
+  
+  .project-pitch {
+    order: 3;
+  
+    @media #{$bp-tablet-up} {
+      align-self: flex-end;
+      margin-bottom: 16px;
+      margin-left: auto;
+      order: 2;
+    }
+  
+    @media #{$bp-below-mobile} {
+      font-size: 0.9em;
+    }
+  
+    .btn {
+      margin: 0 0 0 12px;
+    }
+  }
+  
+  .project-tmb {
+    position: relative;
+  }
+  
+  .status-indicator {
+    float: right;
+    text-align: center;
+    margin-left: 10px;
+    background-color: rgb(255, 255, 151);
+    width: 92px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.1);
+  }
+  
+  .status-text {
+    margin: 0px 0px;
+  }
+  
+  .status-Active {
+    background-color: rgb(187, 255, 187);
+  }
+  
+  .status-Rebooting {
+    background-color: rgb(164, 213, 255);
+  }
+  
+  .status-Completed {
+    background-color: rgb(255, 173, 173);
+  }
+  
+  .project-card-field-inline {
+    display: inline;
+  }
