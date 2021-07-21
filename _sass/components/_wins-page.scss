@@ -21,6 +21,24 @@
     max-height: 75px;
 }
 
+.win-list{
+    margin-bottom: 24px;
+    order: 2;
+
+  @media #{$bp-desktop-up} {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+}
+
+.project-card.wins-card{
+    @media #{$bp-below-desktop} {
+        margin-bottom: 24px;
+    }
+}
 
 .wins-see-more-div {
     position: absolute;
@@ -55,6 +73,7 @@
     align-items: center;
     justify-content: start;
 }
+
 .wins-item-container{
     margin-top: .95rem;
     display: inline-block;
@@ -125,7 +144,7 @@
     margin-top: .2em;
     margin-right: .7em;
 }
-.overlay-wins-text{
+.overlay-text-bubble{
     margin: 0;
     max-width: 14em;
 }
@@ -248,7 +267,7 @@
     margin-top: 1em;
 }
 
-@media #{$bp-below-tablet} {
+@media #{$bp-below-desktop} {
     .wins-card {
         position: relative;
     }
@@ -440,7 +459,7 @@
 	width: 100%;
 }
 
-@media #{$bp-below-tablet}{
+@media #{$bp-below-desktop}{
 	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;

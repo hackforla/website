@@ -14,7 +14,7 @@ permalink: /wins/
 		{% include_relative wins-filter-template.html %}
 		{% include_relative wins-card-template.html %}
 
-		<ul id="responses" class="project-list unstyled-list"></ul>
+		<ul id="responses" class="win-list unstyled-list"></ul>
 	</div>
 </section>
 
@@ -97,12 +97,9 @@ permalink: /wins/
   		cardData.push(cardObj)
   	})
 
-  	//createFilter();
   	window.localStorage.setItem('data', JSON.stringify(cardData));
   	makeCards(cardData);
   	ifPageEmpty();
-
-
 
   }
 
@@ -280,11 +277,12 @@ permalink: /wins/
   }
 
  
-	function insertIcons(cloneCardTemplate, cardClass, cardString) {
+	function insertIcons(cardSelector, cardString, viewType, cloneCardTemplate = document) {
 		let initialCardList = cardString.split(',').map(item => item.trim())
 		let otherWinsText = [];
 		let cardList = [];
-		
+		const view = viewType;
+
 		initialCardList.forEach(win => {
 			if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) > -1){
 				cardList.push(win);
@@ -296,27 +294,26 @@ permalink: /wins/
 
 		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
-		cardList.map(function (item) {
+		const iconContainer = cloneCardTemplate.querySelector(cardSelector);
+
+		cardList.forEach( (item) => {
 			if (badgeIcons.hasOwnProperty(item)) {
-				cloneCardTemplate.querySelector(cardClass).insertAdjacentHTML('beforeend',
-					`<div class='wins-item-container'>
-					<img class="wins-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+				iconContainer.insertAdjacentHTML('beforeend',
+					`<div class='${view}-item-container'>
+					<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
-				return
-			} else if (item === '') {
-				return
-			} else {
-				cloneCardTemplate.querySelector(cardClass).insertAdjacentHTML('beforeend',
-					`<div class='wins-item-container'>
-					<img class="wins-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-					<div class="wins-text-bubble" data-wins="font-styling">${item}</div>
+			} else if (item !== '') {
+				iconContainer.insertAdjacentHTML('beforeend',
+					`<div class='${view}-item-container'>
+					<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 				</div>`
 				)
-				return
 			}
 		})
+		return iconContainer
 	}
 
   function makeCards(data) {
@@ -374,8 +371,8 @@ permalink: /wins/
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
-		insertIcons(cloneCardTemplate, '.wins-icon-container', card[win])
-
+		const iconContainer = insertIcons('.wins-icon-container', card[win], 'wins', cloneCardTemplate)
+		iconContainer.id = `icons-${index}`
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
 		winsCardContainer.append(cloneCardTemplate);
@@ -383,61 +380,68 @@ permalink: /wins/
 		const winText = cloneCardTemplate.querySelector('.wins-card-text')
 		function addSeeMore() {
 			const winInfo = winText.querySelector('.wins-card-overview')
-
+			const seeMoreDiv = winText.querySelector('.wins-see-more-div')
 			//makes the see more span on the bottom of the card
 			if (
 				!winText.classList.contains('expanded') && 
 				winInfo.offsetHeight <= winText.offsetHeight 
 			) { //checks if see more is needed.
-				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
-				// winText.classList.remove('relative')
+				seeMoreDiv.setAttribute('hidden', 'true')
 			} else {
-				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+				seeMoreDiv.removeAttribute('hidden')
 			}
 			if (!winText.classList.contains('expanded'))
 				winText.classList.add('relative')
+			if (window.innerWidth > 960){
+				const winsCardTextContainer = seeMoreDiv.parentElement
+				if (winsCardTextContainer.classList.contains("expanded")){
+					toggleSeeMoreLess(seeMoreDiv.children[0].id)
+				}
+			}
 		}
 		addSeeMore()
 
 		new ResizeObserver(addSeeMore).observe(winText)
 	})
-  }
+}
 
-  function seeMore(id){
-  	screenWidth = window.innerWidth;
+function seeMore(id){
+  	let screenWidth = window.innerWidth;
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
 		toggleSeeMoreLess(id);
   	}
-  }
+}
 
   //Adds event listener to badge icons when viewers interface is below desktop size
   //Click to toggle "see more" and "see less" to expand and collapse wins text
+  document.addEventListener("DOMContentLoaded", winsBelowDesktop);
+
   function winsBelowDesktop() {
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
 			const id = container.dataset.index;
-
-			toggleSeeMoreLess(id);
+			let span = document.getElementById(id);
+			let parent = span.parentElement.parentElement;
+			if (!parent.classList.contains('expanded'))
+				toggleSeeMoreLess(id);
 		}))
 	}
 
   function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
+		let screenWidth = window.innerWidth;
 		let parent = span.parentElement.parentElement;
-		let winsInfo = span.parentElement.parentElement.parentElement.parentElement;
-		let winsIconContainer = winsInfo.nextElementSibling;
-
-		if (!parent.classList.contains('expanded')) {
+		let winsIconContainer = document.getElementById(`icons-${id}`)
+	  	if (parent.classList.contains('expanded') || screenWidth > 960) {
+			parent.setAttribute('class', 'project-inner wins-card-text relative');
+			span.innerHTML = "...see more";
+			winsIconContainer.setAttribute('class', 'wins-icon-container');
+		} else {
 			parent.setAttribute('class','project-inner wins-card-text expanded');
 			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-		}
-		else {
-			parent.setAttribute('class','project-inner wins-card-text relative');
-			span.innerHTML = "...see more";
-			winsIconContainer.setAttribute('class', 'wins-icon-container');
 		}
   }
 
@@ -472,18 +476,7 @@ permalink: /wins/
 	  window.addEventListener('resize', (e) => {
 		  widthOutput = window.innerWidth;
 		  if (widthOutput < 960) {
-			  document.querySelector(".main-header").inert = false;
-			  document.querySelector(".content-section.projects").inert = false;
-			  document.querySelector(".main-footer").inert = false;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
-			  document.querySelector(".sr-only-focusable").inert = false;
-		  }
-		  else {
-			  document.querySelector(".main-header").inert = true;
-			  document.querySelector(".content-section.projects").inert = true;
-			  document.querySelector(".main-footer").inert = true;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
-			  document.querySelector(".sr-only-focusable").inert = true;
+			  hideOverlay(e)
 		  }
 	  });
 
@@ -514,9 +507,7 @@ permalink: /wins/
   		const overlayOverview = document.querySelector('#overlay-overview');
   		overlayOverview.innerHTML = data[i][overview];
 
-  		const overlayInfo = document.querySelector('#overlay-info');
-		//   overlayInfo.innerHTML = formatMessage(data[i][win]);
-		insertOverlay(overlayInfo, data[i][win])
+		insertIcons('#overlay-info', data[i][win], 'overlay')
 
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
@@ -542,37 +533,6 @@ permalink: /wins/
 	  overlayInfo.innerHTML = '';
   }
 
-
-  function insertOverlay(cloneCardTemplate, cardString) {
-		const cardArr = cardString.split(',')
-
-		cardArr.forEach(string => {
-			const item = string.trim()
-			const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
-
-			
-			if (badgeIcons.hasOwnProperty(item)) {
-				cloneCardTemplate.insertAdjacentHTML('beforeend',
-					`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
-						</div>`
-				)
-				return
-			} else if (item === '') {
-				return
-			} else {
-				cloneCardTemplate.insertAdjacentHTML('beforeend',
-					`<div class='overlay-item-container'>
-							<img class="overlay-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-							<p class="overlay-wins-text" data-wins="font-styling">${item}</p>
-						</div>`
-				)
-				return
-			}
-			
-		})
-	}
 
   main();
 
