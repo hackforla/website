@@ -84,7 +84,7 @@ async function fetchContributors(){
         // this check is done for issues API (3rd element in the APIs array). Sometimes a user who created
         // an issue is not the same who got assigned to that issue so we want to make sure that we count 
         // all assignees as active contributors as well.
-        if(contributorInfo.assignees.length){
+        if(contributorInfo.assignees && contributorInfo.assignees.length){
           contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
         }
       }
