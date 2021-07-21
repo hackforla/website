@@ -104,7 +104,7 @@ async function fetchContributors(){
 async function removeInactiveMembers(recentContributors){
   const removedMembers = []
 
-  // fetch all team members. Now we know that the total of members is 83, once 
+  // fetch all team members. Note: now we know that the total of members is 83, once 
   // we have over 100 members, code below need adjustments (see 'flip' pages above);
   const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
     org: org,
@@ -124,53 +124,59 @@ async function removeInactiveMembers(recentContributors){
   // loop over team members and remove them from the team if they are not in recentContributors
   for(const member of teamMembers.data){
     const username = member.login
-
     if (!recentContributors[username]){
-      // check user repos and see if they joined hackforla/website recently
-      // user might have > 100 repos (this will need adjustment('flip' pages))
-      // const repos = await octokit.request('GET /users/{username}/repos', {
-      //   username: username,
-      //   per_page: 100
-      // })
-
-      // //if user joined a team within last 30 days, they are not consider for removal since they are new
-      // let skip = false;
-      // for(const repo of repos.data){
-      //   if(repo.name === 'website' && repo.created_at > date){
-      //     console.log(username + ' is a new member and not consideren for removal')
-      //     skip = true;
-      //     break;
-      //   }
-      // }
-
-      // // check if a user is a maintainer of a team
-      // const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-      //   org: 'hackforla',
-      //   team_slug: 'website-write',
-      //   username: username,
-      // })
-      // if(userMembership.data.role === 'maintainer') skip = true;
-
-      // // esle this user is a member of a team for more than 1 month and without contributions
-      // // => remove
-      // if(!skip){
-      //   console.log(username + " will be removed from website team!")
-
-      //   await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-      //     org: 'hackforla',
-      //     team_slug: 'website-write',
-      //     username: username,
-      //   })
-
-      //   removedMembers.push(username)
-      // }
+      // Remove contributor from a team if they don't pass additional checks in 'toRemove' function
+      console.log(toRemove(username));
+      if(await toRemove(username)){
+        console.log(username + " will be removed from the website-write team!")
+        // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+        //   org: org,
+        //   team_slug: team,
+        //   username: username,
+        // })
+        removedMembers.push(username)
+      }
     }
   }
   return removedMembers;
 }
 
+/**
+ * Function to check if a member is set for removal
+ * @param {String} member     [member's username]
+ * @return {Boolean}     [true/false]
+ */
+async function toRemove(member){
+  // collect user's repos and see if they recently joined hackforla/website;
+  // Note: user might have > 100 repos, the code below will need adjustment (see 'flip' pages);
+  const repos = await octokit.request('GET /users/{username}/repos', {
+    username: member,
+    per_page: 100
+  })
 
+  // if a user recently cloned 'website' repo (within the last 30 days), they are 
+  // not consider for removal as they are new;
+  for(const repository of repos.data){
+    // if repo is recently cloned, return 'false' or member is not be removed;
+    if(repository.name === repo && repository.created_at > date){
+      console.log(username + ' is a new member and not considered for removal')
+      return false;
+    }
+  }
 
+  // get user's membership status 
+  const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+    org: org,
+    team_slug: team,
+    username: member,
+  })
+
+  // if a user is the team's maintainer, return 'false'. We do not remove maintainers;
+  if(userMembership.data.role === 'maintainer') return false;
+
+  // else this user is an inactive member of the team thus remove;
+  return true;
+}
 
 
 

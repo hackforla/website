@@ -2,9 +2,10 @@ name: Update Team Members
 
 
 # Run this action at 11:00 (3 am Pacific) on day-of-month 1 and 15.
-on:
-  schedule:
-    - cron:  '0 11 1,15 * *'
+# on:
+#   schedule:
+#     - cron:  '0 11 1,15 * *'
+on: [push]
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"
@@ -12,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     if: github.repository == 'hackforla/website'
+    if: github.repository == 'alexeysergeev-cm/website'
 
     steps:
     # checkout repo
@@ -29,7 +31,7 @@ jobs:
     # run js file
     - name: Trim Members
       env:
-        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+        token: ${{ secrets.PAT }}
       run: node github-actions/github-data/contributors-data.js
 
 
