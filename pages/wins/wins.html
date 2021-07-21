@@ -97,12 +97,9 @@ permalink: /wins/
   		cardData.push(cardObj)
   	})
 
-  	//createFilter();
   	window.localStorage.setItem('data', JSON.stringify(cardData));
   	makeCards(cardData);
   	ifPageEmpty();
-
-
 
   }
 
@@ -425,8 +422,10 @@ function seeMore(id){
 		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
 			const container = event.target.parentElement.parentElement;
 			const id = container.dataset.index;
-
-			toggleSeeMoreLess(id);
+			let span = document.getElementById(id);
+			let parent = span.parentElement.parentElement;
+			if (!parent.classList.contains('expanded'))
+				toggleSeeMoreLess(id);
 		}))
 	}
 
