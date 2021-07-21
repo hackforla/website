@@ -27,6 +27,7 @@
   - Base class
   - Color classes
   - Size classes
+  - Page card templates
   - Page-specific classes
   - Note about page card spacing
 
@@ -113,8 +114,128 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); 
   }
   
+
+  /*----------------------------------------------------
+    Page Card Templates
+
+    * Use when a common styling is needed for page cards
+    on different pages
+  -----------------------------------------------------*/
   
   
+  /*---------------------------
+
+    Template for page cards with large icons
+    --- use with .page-card-lg
+
+    Sample structure: refer to sitemap.html or join-us.html
+  ---------------------------*/
+
+  /*---------
+  | Tablet & Desktop
+  -----------*/
+
+  .page-card--large-icon-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto;
+    padding: 3rem;
+    text-align: left;
+
+    .page-card--large-icon-header {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      margin-bottom: 2rem;
+    }
+
+    .page-card--large-icon-header-secondary {
+      width: 100%;
+    }
+
+    img {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+      margin: auto;
+      width: 150px;
+      padding: 40px 0;
+    }
+
+    ol {
+      padding-left: 20px;
+      max-width: 480px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .page-card--large-icon-body {
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 1;
+      align-items: flex-start;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        max-width: 480px;
+        padding-bottom: 20px;
+      }
+
+      li {
+        padding: 3px 0;
+      }
+
+      li::marker {
+        padding: 3px 0;
+      } 
+    }
+  }
+
+
+  /*--------
+  | Mobile 
+  ----------*/
+
+  @media #{$bp-below-tablet} {
+    .page-card--large-icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px;
+
+      @media #{$bp-below-mobile} {
+        padding: 32px 20px;
+      }
+
+      .page-card--large-icon-header {
+        margin-bottom: 1rem;
+        // Fixes title wrap at smallest mobile size
+        @media (max-width: #{$screen-mobile - 160}) {
+          padding: 0 43px;
+          text-align: center;
+        }
+      }
+
+      .page-card--large-icon-header-secondary {
+        text-align: center;
+      }
+
+      ol {
+        max-width: 300px;
+      }
+
+      .page-card--large-icon-body {
+        align-items: center;
+
+        p {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+
+
   /*----------------------------------------------------
     Page Card Page-Specific Classes
   

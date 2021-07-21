@@ -13,19 +13,35 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Phoebe Ng
-    role: UX Researcher
+  - name: Ebele O.
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01GTRX0H7X'
-      github: 'https://github.com/phoebeng'
-    picture: https://avatars.githubusercontent.com/phoebeng
+      slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
+      github: 'https://github.com/ebele-oputa'
+    picture: https://avatars.githubusercontent.com/ebele-oputa
+  - name: Chianta Dorsey
+    role: UI/UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U022B5EJFME'
+      github: 'https://github.com/csdorsey'
+    picture: https://avatars.githubusercontent.com/csdorsey
+  - name: Bernard Adesina
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/archives/D025891DF41'
+      github: 'https://github.com/AdesinaBernard'
+    picture: https://avatars.githubusercontent.com/AdesinaBernard
+  - name: Kevin Wang
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
+      github: 'https://github.com/kvnw2020'
+    picture: https://avatars.githubusercontent.com/kvnw2020
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/community-survey-nc-websites'
+    url: 'https://github.com/hackforla/open-community-survey'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
-  - name: Getting Started
-    url: 'https://github.com/hackforla/community-survey-nc-websites/projects/1#card-51519391'
 looking:
   - category: PM
     skill: Product Manager
@@ -33,11 +49,13 @@ looking:
     skill: Product Owner
   - category: Data
     skill: Data Scientists
+technologies:
+  - Markdown
 location:
   # - Los Angeles
   - Remote
-partner: EmpowerLA, various Neighborhood Councils (e.g., Westlake NC)
-tools: 'ArcGIS surveys, Google Docs, Zoom'
+partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
+tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
 visible: true
 program area: 'Citizen Engagement'
 status: Active
