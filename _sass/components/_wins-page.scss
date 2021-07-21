@@ -52,7 +52,7 @@
 
 .wins-card-text {
 	margin-top: 40px;
-	height: 88px;
+	max-height: 88px;
 	overflow: hidden;
 	position: relative;
     &.relative {
@@ -72,10 +72,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: start;
-    margin: 1em 0 0 6.5rem;
 }
 
 .wins-item-container{
+    margin-top: .95rem;
     display: inline-block;
     position: relative;
 }
@@ -273,7 +273,7 @@
     }
 
     .wins-card-text{
-        height: 81px;
+        max-height: 81px;
         position: inherit;
     }
 
@@ -302,7 +302,7 @@
 
 @media #{$bp-below-mobile} {
     .wins-card-text{
-        height: 80px;
+        max-height: 80px;
         margin-top: 16px;
     }
     .wins-card{
@@ -431,6 +431,7 @@
         display: none;
     }
     .expanded{
+        max-height: none;
         height: auto;
         .wins-see-more-div {
             z-index: 10;
@@ -468,14 +469,12 @@
         margin-left: 0em;
 
         .wins-icon-container{
-            margin: 1.5em 0 0 6.5rem;
             display: block;
         }
         .wins-item-container{
             display: flex;
             justify-content: start;
             align-items: start;
-            margin-left: 6.5em;
             margin-bottom: 1em;
         }
         .wins-badge-icon{
@@ -502,9 +501,6 @@
 }
 
 @media #{$bp-below-mobile} {
-    .wins-icon-container{
-        margin-left: 3.5em
-    }
     .wins-tablet {
         .wins-item-container{
             margin-left: 0;
