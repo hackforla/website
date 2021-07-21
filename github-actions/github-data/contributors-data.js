@@ -126,7 +126,7 @@ async function removeInactiveMembers(recentContributors){
     const username = member.login
     if (!recentContributors[username]){
       // Remove contributor from a team if they don't pass additional checks in 'toRemove' function
-      console.log(toRemove(username));
+      console.log(await toRemove(username));
       if(await toRemove(username)){
         console.log(username + " will be removed from the website-write team!")
         // await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
@@ -158,7 +158,7 @@ async function toRemove(member){
   // not consider for removal as they are new;
   for(const repository of repos.data){
     // if repo is recently cloned, return 'false' or member is not be removed;
-    if(repository.name === repo && repository.created_at > date){
+    if(repository.name === repo && repository.created_at > monthAgo){
       console.log(username + ' is a new member and not considered for removal')
       return false;
     }
