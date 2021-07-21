@@ -12,7 +12,7 @@ jobs:
   trim_contributors:
     runs-on: ubuntu-latest
 
-    if: github.repository == 'hackforla/website'
+    # if: github.repository == 'hackforla/website'
     if: github.repository == 'alexeysergeev-cm/website'
 
     steps:
