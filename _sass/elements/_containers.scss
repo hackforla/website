@@ -1,20 +1,90 @@
 .header-container {
     background: #fff;
-    padding: 40px;
+    padding:  64px; // many different top margins. 80, 40, 36, etc? 
     height: fit-content;
     margin: 61px auto 0;
-    font-family: "Roboto"sans-serif;
-    font-style: normal;
-    font-weight: normal;
     text-align: center;
-  
-    @media #{$bp-below-mobile} {
-      padding: 87px 15px 0px 15px;
-      margin-top: 10%;
-    }
-  }
+    justify-content: center;
 
-  .flex-container {
+    .header-text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 5rem;
+    }
+
+    .header-title {
+        margin-bottom: 38px;
+    }
+
+    .header-p {
+        font-size: 1.125rem;
+        max-width: 508px;
+        text-align: left;
+
+        a {
+            text-decoration: none;
+            font-weight: 700;
+        
+            &:link,
+            &:visited {
+              color: $color-black;
+            }
+        
+            &:hover,
+            &:active,
+            &:focus {
+              color: $color-red;
+            }
+          }
+    }
+
+    .header-hero-image {
+        height: 240px;
+        width: auto;
+        align-self: center;
+    }
+
+    @media #{$bp-below-desktop} {
+        flex-flow: column;
+
+        .header-text {
+            margin-right: 0;
+        }
+
+        .header-p {
+            margin-bottom: 16px;
+        }
+
+        .header-hero-image {
+            margin-top: 20px;
+        }
+    }
+
+    @media #{$bp-below-tablet} {
+        flex-flow: column;
+        padding: 32px;
+        margin: 54px auto 0;
+
+        .header-text {
+            margin-right: 0;
+        }
+
+        .header-title {
+            margin-bottom: 28px;
+        }
+
+        .header-p {
+            max-width: 300px;
+            line-height: 1.5rem;
+        }
+
+        .header-hero-image {
+            height: 155px;
+        }
+    }
+}
+
+.flex-container {
     display: flex;
-    flex-direction: column;
-  }
+}
