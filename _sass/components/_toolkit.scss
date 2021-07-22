@@ -109,7 +109,7 @@
 }
 
 /*
-  Refer to issue #1491. This part, the accompanying divs in toolkit.html (lines 89 and 109),
+  Refer to issue #1999. This part, the accompanying divs in toolkit.html (lines 89 and 109),
   and $screen-desktop-large under _layout.scss were added to take into account how the external
   resources look at a certain breakpoint ($bp-desktop-large-up). As of 7/22/2021, there are only three resources in the list.
   Since suggest-site-group div was added to the grid and takes up the entire first row, the rows that
