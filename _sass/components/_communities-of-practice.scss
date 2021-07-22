@@ -1,73 +1,9 @@
-.header--communities {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  background: #fff;
-  height: fit-content;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  align-items: center;
-  /*This page has a lot more text than the others, so it starts looking weird earlier*/
-  @media #{$bp-below-desktop} {
-    flex-direction: column;
-  }
+.header-self-invite--communities {
+  display:flex;
+  align-items: flex-start;
+  max-width: 508px;
+  margin-top: 31px;
 
-  .header-text--communities {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    p{
-      font-size: 18px;
-      max-width: 508px;
-      margin-top: 8px;
-      text-align: left;
-      @media #{$bp-below-tablet} {
-        max-width: 300px;
-        font-size: 16px;
-        }
-    }
-    h1 {
-      font-size: 48px;
-      @media #{$bp-below-tablet} {
-        font-size: 40px;
-        margin-bottom: 28px;
-      }
-      @media #{$bp-below-mobile} {
-        font-size: 32px;
-      }
-    }
-  }
-
-  .header-img--communities {
-    max-height: 240px;
-    margin-left: 80px;
-    @media #{$bp-below-desktop} {
-      margin: auto;
-
-    }
-    @media #{$bp-below-tablet} {
-      width:100%;
-    }
-  }
-
-  .header-self-invite--communities {
-    display:flex;
-    align-items: flex-start;
-    max-width: 508px;
-    margin-top: 31px;
-    @media #{$bp-below-tablet} {
-      max-width: 300px;
-      margin-bottom: 30px;
-    }
-
-    .alert--communities {
-      font-size: 16px;
-      font-weight: bold;
-      max-width: 450px;
-    }
-  }
   .self-invite-img {
     /*Note "margin-top: 15px" is needed to keep this img aligned with neighboring text*/
     margin-top: 15px;
@@ -75,7 +11,21 @@
     width: 24px;
     height: 24px;
   }
+
+  .alert--communities {
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 450px;
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  @media #{$bp-below-tablet} {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
 }
+
 
 .content--communities {
   background: $color-pink;
