@@ -11,32 +11,16 @@
         align-items: center;
         flex-direction: column;
         margin-right: 5rem;
-    }
 
-    .header-title {
-        margin-bottom: 38px;
-    }
-
-    .header-p {
-        font-size: 1.125rem;
-        max-width: 508px;
-        text-align: left;
-
-        a {
-            text-decoration: none;
-            font-weight: 700;
-        
-            &:link,
-            &:visited {
-              color: $color-black;
-            }
-        
-            &:hover,
-            &:active,
-            &:focus {
-              color: $color-red;
-            }
-          }
+        h1 {
+            margin-bottom: 38px;
+        }
+    
+        p {
+            font-size: 1.125rem;
+            max-width: 508px;
+            text-align: left;
+        }
     }
 
     .header-hero-image {
@@ -50,10 +34,10 @@
 
         .header-text {
             margin-right: 0;
-        }
 
-        .header-p {
-            margin-bottom: 16px;
+            p {
+                margin-bottom: 16px;
+            }
         }
 
         .header-hero-image {
@@ -68,15 +52,15 @@
 
         .header-text {
             margin-right: 0;
-        }
 
-        .header-title {
-            margin-bottom: 28px;
-        }
-
-        .header-p {
-            max-width: 300px;
-            line-height: 1.5rem;
+            h1 {
+                margin-bottom: 28px;
+            }
+    
+            p {
+                max-width: 300px;
+                line-height: 1.5rem;
+            }
         }
 
         .header-hero-image {
