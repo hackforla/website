@@ -1,5 +1,21 @@
 /* This page is built using a mobile first method.  Plain tags apply to mobile. Breakpoints below for larger sizes. */
 
+.header-link--about {
+    text-decoration: none;
+    font-weight: 700;
+
+    &:link,
+    &:visited {
+      color: $color-black;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-red;
+    }
+}
+
 .donation-gif-box-shadow {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.12);
 }
