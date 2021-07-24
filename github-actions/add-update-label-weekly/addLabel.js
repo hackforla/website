@@ -56,16 +56,16 @@ async function getIssueNumsFromColumn(columnId) {
   // Processes results of every page of an api call.
   function processor(results) {
     if (results.data.length) {
-      let urls = [];
+      let issueNums = [];
       for (card of results.data) {
         if (card.hasOwnProperty('content_url')) {
           // Isolates the issue number from the rest of the url
           const arr = card.content_url.split('/');
           // Pushes the last item in arr, which is the issue number
-          urls.push(arr.pop());
+          issueNums.push(arr.pop());
         }
       }
-      return urls;
+      return issueNums;
     } else {
       return false;
     }
