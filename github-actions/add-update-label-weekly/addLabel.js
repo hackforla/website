@@ -1,6 +1,5 @@
 // Import modules
 const findLinkedIssue = require('../utils/findLinkedIssue');
-const { paginatePage } = require('../utils/paginateAPI');
 
 // Global variables
 var github;
@@ -48,39 +47,34 @@ async function main({ g, c, columnId }) {
  * @returns an Array of issue numbers
  */
 async function getIssueNumsFromColumn(columnId) {
-  const payload = {
-    column_id: columnId,
-    per_page: 100,
-  }
-
-  // Processes results of every page of an api call.
-  function processor(results) {
-    if (results.data.length) {
-      let issueNums = [];
-      for (card of results.data) {
-        if (card.hasOwnProperty('content_url')) {
-          // Isolates the issue number from the rest of the url
-          const arr = card.content_url.split('/');
-          // Pushes the last item in arr, which is the issue number
-          issueNums.push(arr.pop());
+  let page = 1;
+  let issueNums = [];
+  while (page < 100) {
+    try {
+      const results = await github.projects.listCards({
+        column_id: columnId,
+        per_page: 100,
+        page: page
+      });
+      if (results.data.length) {
+        for (card of results.data) {
+          if (card.hasOwnProperty('content_url')) {
+            // Isolates the issue number from the rest of the url
+            const arr = card.content_url.split('/');
+            // Pushes the last item in arr, which is the issue number
+            issueNums.push(arr.pop());
+          }
         }
+      } else {
+        break
       }
-      return issueNums;
-    } else {
-      return false;
+    } catch (err) {
+      throw new Error(err);
+    } finally {
+      page++
     }
   }
-
-  // Paginate through an api to retrieve all of its data.
-  const results = await paginatePage({
-    // https://octokit.github.io/rest.js/v18#projects-list-cards
-    apicall: github.projects.listCards,
-    payload: payload,
-    processor: processor,
-  })
-
-  // Collects the results of every page into a single array.
-  return collectPages(results);
+  return issueNums
 }
 
 /**
@@ -89,33 +83,30 @@ async function getIssueNumsFromColumn(columnId) {
  * @returns an Array of Objects containing the issue's timeline of events
  */
 async function getTimeline(issueNum) {
-  const payload = {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNum,
-    per_page: 100,
-  }
-
-  function processor(results) {
-    if (results.data.length) {
-      return results.data;
-    } else {
-      return false;
-    }
-  }
-
-  const timeline = await paginatePage({
-    // https://octokit.github.io/rest.js/v18#issues-list-events-for-timeline
-    apicall: github.issues.listEventsForTimeline,
-    payload: payload,
-    processor: processor,
-    failure: err => {
+  let page = 1;
+  let timeline = [];
+  while (page < 100) {
+    try {
+      const results = await github.issues.listEventsForTimeline({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: issueNum,
+        per_page: 100,
+        page: page,
+      });
+      if (results.data.length) {
+        timeline.push(...results.data);
+      } else {
+        break;
+      }
+    } catch (err) {
       console.error(`Could not retrieve timeline for #${issueNum}`);
-      return true;
+      break;
+    } finally {
+      page++
     }
-  })
-
-  return collectPages(timeline);
+  }
+  return timeline
 }
 
 /**
@@ -173,14 +164,6 @@ async function addUpdateLabel(issueNum) {
 /***********************
 *** HELPER FUNCTIONS ***
 ***********************/
-
-function collectPages(results) {
-  let collection = []
-  for (page of results) {
-    collection.push(...page.result);
-  }
-  return collection
-}
 
 function isMomentRecent(dateString, limit) {
   const dateStringObj = new Date(dateString);
