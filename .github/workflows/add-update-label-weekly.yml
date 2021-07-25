@@ -12,6 +12,6 @@ jobs:
           IN_PROGRESS_COLUMN_ID: ${{ secrets.IN_PROGRESS_COLUMN_ID }}
         with:
           script: |
-            const { IN_PROGRESS_COLUMN_ID: columnId } = process.env;
+            const { IN_PROGRESS_COLUMN_ID } = process.env;
             const script = require('./github-actions/add-update-label-weekly/addLabel.js');
-            script({g: github, c: context, columnId: columnId });
+            script({g: github, c: context, columnId: IN_PROGRESS_COLUMN_ID });
