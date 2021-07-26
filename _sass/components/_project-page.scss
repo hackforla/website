@@ -51,9 +51,9 @@
   background: #030d2d;
 
   // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-mobile} {
+  // @media #{$bp-below-mobile} {
     
-  }
+  // }
 }
 
 .page-card--project-description-page {
@@ -154,7 +154,7 @@
 
 .getting-started-button {
   width: 38px;
-  height: 34px;;
+  height: 34px;
   margin: 0 5px;
   border: none;
   background: transparent;
@@ -181,11 +181,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;
-  text-align: left;
 }
 
 .help-getting-started-text {
@@ -205,10 +204,9 @@
   max-width: 0px;
   padding: 35px 0px;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   min-width: 0px;
   transition: min-width 1s, padding 1s;
-  text-align: left;
 }
 
 .project-start-guide-img {
@@ -347,11 +345,10 @@
   max-height: 175px;
   max-width: 229px;
   margin: 0px 0px 30px 21px;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;
-  text-align: left;
 }
 
 .empty-content-message p {
