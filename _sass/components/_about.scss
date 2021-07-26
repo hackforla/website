@@ -580,20 +580,25 @@ a.anchor {
 
 .news-cells {
   display: flex;
-  flex-flow: column nowrap;
+  // flex-flow: column nowrap;
+  flex-direction: column;
   justify-content: center;
   padding: 25px 0 15px 0;
   align-items: center;
 }
 
-.news-cells p {
+.more-padding {
   padding-top: 40px;
   margin: 0 20px 0 20px;
+  padding-bottom: 10px;
 }
 
-.more-padding {
-  padding-top: 10px;
+.news-images {
+  height: 100px;
+  width: 70%;
+  object-fit: contain;
 }
+
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
