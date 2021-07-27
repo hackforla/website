@@ -36,15 +36,15 @@ links:
     - name: Overview
       url: 'https://docs.google.com/document/d/1JFZGKxeEBWVak_GATgIt0Knyr9_gJ15CBirynebb4tg/preview'
 partner: NDICA
-looking:
-  - category: Marketing
-    skill: Marketing & Communications
-  - category: Graphic Designer
-    skill: Graphic Designer
-  - category: UI/UX
-    skill: UI Designer
-  - category: Development
-    skill: React Developer
+# looking:
+#   - category: Marketing
+#     skill: Marketing & Communications
+#   - category: Graphic Designer
+#     skill: Graphic Designer
+#   - category: UI/UX
+#     skill: UI Designer
+#   - category: Development
+#     skill: React Developer
 technologies:
   - React
 location:

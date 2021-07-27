@@ -48,9 +48,9 @@ links:
     url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Structure-Product-One-Sheet.pdf"
   - name: README
     url: "https://github.com/hackforla/civic-tech-structure/blob/main/README.md"
-looking:
-  - category: UI/UX
-    skill: UI/UX Designer
+# looking:
+#   - category: UI/UX
+#     skill: UI/UX Designer
 technologies:
 location:
   - Remote

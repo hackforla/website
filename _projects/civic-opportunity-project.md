@@ -28,15 +28,15 @@ links:
     url: 'https://github.com/hackforla/civic-opportunity/blob/master/README.md'
   - name: Overview
     url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
-looking:
-  - category: PM
-    skill: Special Projects Coordinators
-  - category: PM
-    skill: Project/Pilot Management
-  - category: UI/UX
-    skill: UI Designer
-  - category: UI/UX
-    skill: UX Researcher
+# looking:
+#   - category: PM
+#     skill: Special Projects Coordinators
+#   - category: PM
+#     skill: Project/Pilot Management
+#   - category: UI/UX
+#     skill: UI Designer
+#   - category: UI/UX
+#     skill: UX Researcher
 # technologies:
 location:
   - Remote

@@ -52,17 +52,17 @@ links:
     url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/100-Automations-Project-One-Sheet.pdf'
-looking:
-  - category: Development
-    skill: Anyone who wants to write open source automations
-  - category: Development
-    skill: API writers
-  - category: Development
-    skill: API integrators
-  - category: Development
-    skill: Frontend Javascript Developers
-  - category: UI/UX
-    skill: UI/UX Designer
+# looking:
+#   - category: Development
+#     skill: Anyone who wants to write open source automations
+#   - category: Development
+#     skill: API writers
+#   - category: Development
+#     skill: API integrators
+#   - category: Development
+#     skill: Frontend Javascript Developers
+#   - category: UI/UX
+#     skill: UI/UX Designer
 technologies:
   - GitHub Pages
   - Jekyll

@@ -22,7 +22,7 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/not-today'
-looking:
+# looking:
 technologies:
   - React
 location:

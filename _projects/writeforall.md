@@ -24,21 +24,21 @@ links:
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
   - name: Demo link
     url: 'http://writeforall.org/'
-looking:
-  - category: Content
-    skill: Gender researcher
-  - category: Content
-    skill: Communications writer
-  - category: SEO/Marketing
-    skill: Videographer
-  - category: UI/UX
-    skill: UX developer
-  - category: Development
-    skill: JavaScript programmer
-  - category: QA
-    skill: QA coder
-  - category: Ops
-    skill: DevOps engineer
+# looking:
+#   - category: Content
+#     skill: Gender researcher
+#   - category: Content
+#     skill: Communications writer
+#   - category: SEO/Marketing
+#     skill: Videographer
+#   - category: UI/UX
+#     skill: UX developer
+#   - category: Development
+#     skill: JavaScript programmer
+#   - category: QA
+#     skill: QA coder
+#   - category: Ops
+#     skill: DevOps engineer
 location:
   # - Downtown LA
   - Remote

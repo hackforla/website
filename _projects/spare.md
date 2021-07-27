@@ -11,15 +11,15 @@ links:
     url: 'https://github.com/hackforla/spare'
   - name: Site
     url: 'http://whatcanyouspare.org'
-looking: 
-  - category: Development
-    skill: Front-end development 
-  - category: Development
-    skill: Back-end development 
-  - category: PM
-    skill: Product Management 
-  - category: SEO/Marketing
-    skill: Marketing
+# looking: 
+#   - category: Development
+#     skill: Front-end development 
+#   - category: Development
+#     skill: Back-end development 
+#   - category: PM
+#     skill: Product Management 
+#   - category: SEO/Marketing
+#     skill: Marketing
 location: 
   # - Santa Monica
   - Remote

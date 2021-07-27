@@ -44,11 +44,11 @@ links:
     url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Engage-Product-One-Sheet.pdf.pdf'
-looking:
-  - category: UI/UX
-    skill: UX Program Designer
-  - category: PM
-    skill: Product Manager
+# looking:
+#   - category: UI/UX
+#     skill: UX Program Designer
+#   - category: PM
+#     skill: Product Manager
 technologies:
   - React
   - Node.js

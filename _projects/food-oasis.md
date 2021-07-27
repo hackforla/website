@@ -54,7 +54,7 @@ links:
     url: "https://hackforla.slack.com/archives/C6JBH478W"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
-looking:
+# looking:
 technologies:
   - React
   - Express

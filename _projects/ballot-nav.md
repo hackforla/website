@@ -66,15 +66,15 @@ links:
     url: 'https://github.com/hackforla/ballotnav/blob/master/README.md'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/BallotNav-Project-One-Sheet.pdf'
-looking:
-  - category: UI/UX
-    skill: UX Researcher
-  - category: SEO/Marketing
-    skill: Marketing, PR & Partnerships
-  - category: SEO/Marketing
-    skill: Fundraising
-  - category: Content
-    skill: Translators (Spanish especially)
+# looking:
+#   - category: UI/UX
+#     skill: UX Researcher
+#   - category: SEO/Marketing
+#     skill: Marketing, PR & Partnerships
+#   - category: SEO/Marketing
+#     skill: Fundraising
+#   - category: Content
+#     skill: Translators (Spanish especially)
 location:
   - Remote
 partner: Code for America, Other Brigades

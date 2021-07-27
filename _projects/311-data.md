@@ -42,17 +42,17 @@ links:
     url: 'https://github.com/hackforla/311-data/wiki/Joining-the-311-Team'
   - name: Site
     url: 'https://www.311-data.org/'
-looking:
-  - category: Business Analyst
-    skill: Business Analyst
-  - category: Ops
-    skill: Project Manager
-  - category: Development
-    skill: Frontend Developers
-  - category: Development
-    skill: Backend Developers
-  - category: Ops
-    skill: Product Owner
+# looking:
+#   - category: Business Analyst
+#     skill: Business Analyst
+#   - category: Ops
+#     skill: Project Manager
+#   - category: Development
+#     skill: Frontend Developers
+#   - category: Development
+#     skill: Backend Developers
+#   - category: Ops
+#     skill: Product Owner
 technologies:
   - React
   - Redux

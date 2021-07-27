@@ -46,15 +46,15 @@ links:
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
     url: 'http://www.luckyparking.info/'
-looking:
-  - category: Development
-    skill: Experienced Frontend Software Engineer (Mapbox experience)
-  - category: Development
-    skill: Experienced Backend Software Engineer
-  - category: UI/UX
-    skill: Early UI/UX product development
-  - category: Data
-    skill: Data Analyst/Data Scientist (data cleaning)
+# looking:
+#   - category: Development
+#     skill: Experienced Frontend Software Engineer (Mapbox experience)
+#   - category: Development
+#     skill: Experienced Backend Software Engineer
+#   - category: UI/UX
+#     skill: Early UI/UX product development
+#   - category: Data
+#     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
   - React
   - PostgreSQL

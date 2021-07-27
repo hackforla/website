@@ -31,7 +31,7 @@ links:
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CMER3R1RD'
-looking:
+# looking:
 location: 
   # - Santa Monica
   - Remote

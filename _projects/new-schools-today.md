@@ -40,7 +40,7 @@ links:
       url: 'https://github.com/hackforla/new-schools-today/blob/master/README.md'
     - name: Wiki
       url: 'https://github.com/hackforla/new-schools-today/wiki'
-looking:
+# looking:
 technologies:
   - React
   - Flutter
