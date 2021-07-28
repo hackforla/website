@@ -5,7 +5,7 @@ name: Update Team Members
 on:
   schedule:
     # - cron:  0 11 * * 4 
-    - cron:  * * * * * [ $(date +\%d) -le 28 ] && command
+    - cron:  '* * * * *' [ $(date +\%d) -le 28 ] && command
 
 
 jobs:
