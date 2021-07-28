@@ -1,10 +1,11 @@
 name: Update Team Members
 
 
-# Run this action at 11:00 (3 am Pacific) on day-of-month 1 and 15.
-on:
-  schedule:
-    - cron:  '0 11 1,15 * *'
+# Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
+# on:
+#   schedule:
+#     - cron:  '0 11 * * 4 [ $(date +\%d) -le 7 ] && command'
+on: [push]
 
 
 jobs:
@@ -12,7 +13,8 @@ jobs:
   trim_contributors:
     runs-on: ubuntu-latest
 
-    if: github.repository == 'hackforla/website'
+    # if: github.repository == 'hackforla/website'
+    if: github.repository == 'alexeysergeev-cm/website'
 
     steps:
     # checkout repo
@@ -30,19 +32,5 @@ jobs:
     # run js file
     - name: Trim Members
       env:
-        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+        token: ${{ secrets.PAT }}
       run: node github-actions/github-data/contributors-data.js
-
-
-    # do I need auto commit here with help of the BOT? 
-
-    # - name: Auto Commit
-    #   uses: stefanzweifel/git-auto-commit-action@v3.0.0
-    #   with:
-    #     # Optional glob pattern of files which should be added to the commit
-    #     file_pattern: _data/external/github-data.json
-
-    #     commit_message: Update contributor and language data
-
-    #     # Commit author settings
-    #     commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>
