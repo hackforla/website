@@ -37,5 +37,5 @@ jobs:
     - name: Trim Members
       env:
         token: ${{ secrets.PAT }}
-      if: ${{ steps.date.outputs.date <= 7 }}
+      if: ${{ steps.date.outputs.date <= 28 }}
       run: node github-actions/github-data/contributors-data.js
