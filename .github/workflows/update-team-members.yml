@@ -4,8 +4,8 @@ name: Update Team Members
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
 on:
   schedule:
-    - cron:  0 11 * * 4 
-    # - cron:  0 11 * * 4 [ $(date +\%d) -le 7 ] && command
+    # - cron:  0 11 * * 4 
+    - cron:  '* * * * * [ $(date +\%d) -le 28 ] && command'
 
 
 jobs:
@@ -37,5 +37,5 @@ jobs:
     - name: Trim Members
       env:
         token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
-      if: ${{ steps.date.outputs.date <= 7 }}
+      # if: ${{ steps.date.outputs.date <= 7 }}
       run: node github-actions/github-data/contributors-data.js
