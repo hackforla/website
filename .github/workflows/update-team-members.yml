@@ -4,8 +4,12 @@ name: Update Team Members
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
 # on:
 #   schedule:
-#     - cron:  '0 11 * * 4 [ $(date +\%d) -le 7 ] && command'
-on: [push] if: '[ $(date +\%d) -le 7 ] && command'
+    # - cron:  0 11 * * 4 [ $(date +\%d) -le 7 ] && command
+now=$(date +\%d)
+
+if: $now <= 7
+
+on: [push] 
 
 
 jobs:
