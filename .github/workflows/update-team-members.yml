@@ -5,9 +5,14 @@ name: Update Team Members
 # on:
 #   schedule:
     # - cron:  0 11 * * 4 [ $(date +\%d) -le 7 ] && command
-now=$(date +\%d)
+# now=$(date +\%d)
 
-if: $now <= 7
+steps:
+  - name: Get current date
+    id: date
+    run: echo "::set-output name=date::$(date +\%d)"
+
+if: ${{ steps.date.outputs.date }} <= 7
 
 on: [push] 
 
