@@ -17,9 +17,9 @@ jobs:
     if: github.repository == 'alexeysergeev-cm/website'
 
     steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +\%d)"
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +\%d)"
 
     # checkout repo
     - name: Checkout repository
@@ -37,5 +37,5 @@ jobs:
     - name: Trim Members
       env:
         token: ${{ secrets.PAT }}
-      if: ${{ steps.date.outputs.date }} <= 7
+      if: ${{ steps.date.outputs.date <= 7 }}
       run: node github-actions/github-data/contributors-data.js
