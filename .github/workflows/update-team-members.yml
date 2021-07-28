@@ -4,8 +4,7 @@ name: Update Team Members
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
 on:
   schedule:
-    # - cron:  0 11 * * 4 
-    - cron:  '* * * * *' '[ $(date +\%d) -le 28 ] && command'
+    - cron:  0 11 * * 4 
 
 
 jobs:
@@ -13,8 +12,7 @@ jobs:
   trim_contributors:
     runs-on: ubuntu-latest
 
-    # if: github.repository == 'hackforla/website'
-    if: github.repository == 'alexeysergeev-cm/website'
+    if: github.repository == 'hackforla/website'
 
     steps:
     # get day number of the month
@@ -37,6 +35,6 @@ jobs:
     # run js file if it is the first Thursday of the month
     - name: Trim Members
       env:
-        token: ${{ secrets.PAT }}
-      # if: ${{ steps.date.outputs.date <= 7 }}
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+      if: ${{ steps.date.outputs.date <= 7 }}
       run: node github-actions/github-data/contributors-data.js
