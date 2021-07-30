@@ -305,12 +305,6 @@
     }
 }
 
-.suggest-guide-group {
-    h2 {
-        margin-bottom: 1rem;
-    }
-}
-
 @media #{$bp-below-mobile} {
     .toolkit-svg {
         max-width: 250px;
@@ -319,6 +313,10 @@
         flex-direction: column;
         padding: 0;
         margin: 0;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
     }
     .toolkit-flex-container {
         display: flex;
