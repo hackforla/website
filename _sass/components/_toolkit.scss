@@ -266,6 +266,10 @@
     .toolkit-svg {
         max-width: 350px;
     }
+
+    .external-resources-text {
+      text-align: left;
+    }
 }
 
 @media #{$bp-below-mobile} {
@@ -321,5 +325,8 @@
         flex-wrap: wrap;
         align-content: center;
         flex-direction: column;
+    }
+    .external-resources-text {
+      text-align: center;
     }
 }
