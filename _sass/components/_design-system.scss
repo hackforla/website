@@ -1,0 +1,43 @@
+.design-system-wrapper {
+    min-height: 100vh;
+    padding-top: 61px;
+    background-color: #f7f5f5;
+}
+
+
+// sidebar section
+.sidenav--design-system {
+    width: 230px;
+    position: fixed;
+    z-index: 2;
+    overflow-x: hidden;
+    padding: 80px 20px 36px 36px;
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
+}
+
+// main section
+.page-card--design-system {
+    overflow: hidden;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    border-radius: 0;
+    margin: 80px 60px 160px 290px;
+    height: fit-content;
+
+    &--header {
+        color: $color-white;
+        background-color: $color-blue-dark;
+        width: 100%;
+        padding-top: 13px;
+        padding-bottom: 14px;
+        padding-left: 49px;
+    }
+}
