@@ -434,13 +434,13 @@
                 `:""
                 }
 
-                ${project.looking ?
-                `
-                <div class="project-needs">
-                    <strong>Looking for: </strong>
-                    ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
-                </div>
-                `:""
+                ${project.looking ? "" : ""
+                // `
+                // <div class="project-needs">
+                //     <strong>Looking for: </strong>
+                //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
+                // </div>
+                // `:""
                 }
 
                 ${project.location ?
