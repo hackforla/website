@@ -6,11 +6,11 @@ alt: 'Veteran returned from service to civilian life.'
 links: 
   - name: Site
     url: 'https://lighttheway.herokuapp.com/'
-# looking: 
-#   - category: Development
-#     skill: Front-end Developers 
-#   - category: UI/UX
-#     skill: UX Designers
+looking: 
+  - category: Development
+    skill: Front-end Developers 
+  - category: UI/UX
+    skill: UX Designers
 location: 
   # - Downtown LA
   - Remote

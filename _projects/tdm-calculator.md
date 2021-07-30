@@ -52,13 +52,13 @@ links:
     url: 'https://hackforla.slack.com/archives/CKY65G266'
   - name: Overview
     url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/TDM-Calculator-Product-One-Sheet.pdf
-# looking:
-#   - category: UI/UX
-#     skill:  UI/UX Designers and Researchers
-#   - category: Development
-#     skill: Front End Developers 
-#   - category: Development
-#     skill: Experienced Back End Developers
+looking:
+  - category: UI/UX
+    skill:  UI/UX Designers and Researchers
+  - category: Development
+    skill: Front End Developers 
+  - category: Development
+    skill: Experienced Back End Developers
 technologies:
   - React
   - Express

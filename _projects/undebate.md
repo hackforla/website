@@ -18,15 +18,15 @@ links:
     url: 'https://github.com/EnCiv/undebate'
   - name: Demo Site
     url: 'https://undebate.herokuapp.com/san-francisco-district-attorney'
-# looking:
-#   - category: Development
-#     skill: Node Developer
-#   - category: Development
-#     skill: React Developer
-#   - category: UI/UX
-#     skill: UI/UX
-#   - category: SEO/Marketing
-#     skill: Marketing/Branding/Social Media
+looking:
+  - category: Development
+    skill: Node Developer
+  - category: Development
+    skill: React Developer
+  - category: UI/UX
+    skill: UI/UX
+  - category: SEO/Marketing
+    skill: Marketing/Branding/Social Media
 technologies:
   - MongoDB
   - Express

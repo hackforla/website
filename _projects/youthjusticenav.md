@@ -40,13 +40,13 @@ links:
     url: 'https://github.com/hackforla/YouthJusticeNav/blob/main/README.md'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Youth-Justice-Nav-Product-One-Sheet.pdf'
-# looking:
-#   - category: Content
-#     skill: Content Writer
-#   - category: UI/UX
-#     skill: UI Designer
-#   - category: UI/UX
-#     skill: UX Researcher
+looking:
+  - category: Content
+    skill: Content Writer
+  - category: UI/UX
+    skill: UI Designer
+  - category: UI/UX
+    skill: UX Researcher
 technologies:
   - Figma
   - Miro

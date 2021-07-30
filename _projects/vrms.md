@@ -48,13 +48,13 @@ links:
     url: 'https://hackforla.slack.com/archives/CRGH5HM0Q'
   - name: Wiki
     url: 'https://github.com/hackforla/VRMS/wiki'
-# looking:
-#   - category: Development
-#     skill: Front End Devs (from mid level)
-#   - category: Development
-#     skill: Back End Devs (from mid level)
-#   - category: UI/UX
-#     skill: UI/UX Designer
+looking:
+  - category: Development
+    skill: Front End Devs (from mid level)
+  - category: Development
+    skill: Back End Devs (from mid level)
+  - category: UI/UX
+    skill: UI/UX Designer
 technologies:
   - Node.js
   - Express

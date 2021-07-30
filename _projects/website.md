@@ -64,17 +64,17 @@ links:
     url: 'https://github.com/hackforla/website'
   - name: Site
     url: 'https://www.hackforla.org'
-# looking:
-#   - category: UI/UX
-#     skill: UI (wireframes)
-#   - category: UI/UX
-#     skill: UX Researcher
-#   - category: Development
-#     skill: Junior JavaScript developers
-#   - category: Development
-#     skill: Javascript Mentor / PR reviewer
-#   - category: Development
-#     skill: anyone wanting to learn how to do Git commits in a collaborative work environment
+looking:
+  - category: UI/UX
+    skill: UI (wireframes)
+  - category: UI/UX
+    skill: UX Researcher
+  - category: Development
+    skill: Junior JavaScript developers
+  - category: Development
+    skill: Javascript Mentor / PR reviewer
+  - category: Development
+    skill: anyone wanting to learn how to do Git commits in a collaborative work environment
 technologies:
   - GitHub Pages
   - Jekyll

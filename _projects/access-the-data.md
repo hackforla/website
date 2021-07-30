@@ -39,17 +39,17 @@ links:
   # - name: Showcase deck
   #   url: ''
   #   alt: ''
-# looking:
-#   - category: PM
-#     skill: Product Manager
-#   - category: Data
-#     skill: Data (research, topic identification, and workshop material development)
-#   - category: UI/UX
-#     skill: UX Lead to build surveys  
-#   - category: UI/UX
-#     skill: Instructional Designer
-#   - category: UI/UX
-#     skill: Logo and Design System
+looking:
+  - category: PM
+    skill: Product Manager
+  - category: Data
+    skill: Data (research, topic identification, and workshop material development)
+  - category: UI/UX
+    skill: UX Lead to build surveys  
+  - category: UI/UX
+    skill: Instructional Designer
+  - category: UI/UX
+    skill: Logo and Design System
 technologies: 
   #- Node.js 
   #- ReactJS 

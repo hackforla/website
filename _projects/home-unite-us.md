@@ -38,13 +38,13 @@ links:
     url: "https://test.homeunite.us/"
   - name: Site
     url: 'https://homeunite.us/'
-# looking: 
-#   - category: UI/UX
-#     skill: UI (including wireframes, familiar with Figma)
-#   - category: PM
-#     skill: Product Manager
-#   - category: Development
-#     skill: React Expert
+looking: 
+  - category: UI/UX
+    skill: UI (including wireframes, familiar with Figma)
+  - category: PM
+    skill: Product Manager
+  - category: Development
+    skill: React Expert
 technologies:
   - React
   - NoSQL
