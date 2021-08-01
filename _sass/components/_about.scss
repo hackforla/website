@@ -13,7 +13,7 @@
 }
 
 .donation-gif-box-shadow {
-  box-shadow: 0px 8px 16px rgba($color-black,0.12);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.12);
 }
 
 .header-text--about-us {
@@ -79,7 +79,7 @@
 // Make the active link different
 .is-active {
   font-weight: 700;
-  color: $color-black !important;
+  color:#333 !important;
   a {
     font-weight: 700;
     &:link,
@@ -116,9 +116,9 @@ a.anchor {
   grid-area: nav;
   display: none;
   background: #fff;
-  border: 0px solid rgba($color-black, 0.06);
+  border: 0px solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
   width: 250px;
   padding: 35px 30px 15px 18px;
@@ -143,12 +143,6 @@ a.anchor {
 }
 
 .page-card--about {
-  background: #fff;
-  border: 0 solid rgba($color-black, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
-  overflow: hidden;
-  max-width: 896px;
   overflow: hidden;
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
@@ -179,7 +173,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: $color-red;
+  color: rgb(250, 17, 79);
   font-weight: bolder;
   font-size: 24px;
 }
@@ -200,7 +194,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: $color-red;
+  color: rgb(250, 17, 79);
   font-weight: bolder;
   font-size: 24px;
 }
@@ -234,7 +228,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(-45deg);
-  color: $color-red;
+  color: rgb(250, 17, 79);
   font-weight: bolder;
   font-size: 16px;
 }
@@ -251,7 +245,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(135deg);
-  color: $color-red;
+  color: rgb(250, 17, 79);
   font-weight: bolder;
   font-size: 16px;
 }
@@ -366,37 +360,37 @@ a.anchor {
 
 // SDG Colors
 .color-goldenrod-2 {
-  color: $color-mustard;
+  color: #d49f28;
   font-weight: 700;
 }
 
 .color-orangered {
-  color: $color-orangered;
+  color: #ee412a;
   font-weight: 700;
 }
 
 .color-brown {
-  color: $color-redpurple;
+  color: #8e1737;
   font-weight: 700;
 }
 
 .color-goldenrod-11 {
-  color: $color-lightorange; 
+  color: #fa9c25; 
   font-weight: 700;
   }
 
 .color-darkolivegreen {
-  color: $color-darkolive;
+  color: #48763e;
   font-weight: 700;
 }
 
 .color-teal {
-  color: $color-dark-royalblue;
+  color: #01548a;
   font-weight: 700;
 }
 
 .color-midnightblue {
-  color: $color-midnightblue;
+  color: #173567;
   font-weight: 700;
 }
 
@@ -926,7 +920,7 @@ a.anchor {
   position: relative;
   bottom: 50px;
   left: 20px;
-  color: $color-cement;
+  color: #767676;
   font-style: normal;
 }
 .quote-text{
@@ -954,7 +948,7 @@ a.anchor {
     position: relative;
     left:125px;
     bottom: 90px;
-    color: $color-cement;
+    color: #767676;
     font-style: normal;
   }
   .garcetti-quote{
