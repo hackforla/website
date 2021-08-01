@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: $color-blue-dark;
+  background-color: #030d2d;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,7 @@
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: $color-red;
+  background-color: #fa114f;
   animation: loader-inner 2s infinite ease-in;
 }
 

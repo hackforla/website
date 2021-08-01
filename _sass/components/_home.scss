@@ -314,7 +314,7 @@ button {
   float: right;
   text-align: center;
   margin-left: 10px;
-  background-color: $color-lightyellow;
+  background-color: rgb(255, 255, 151);
   width: 92px;
   padding: 2px 7px;
   border-radius: 6px;
@@ -326,15 +326,15 @@ button {
 }
 
 .status-Active {
-  background-color: $color-lightgreen;
+  background-color: rgb(187, 255, 187);
 }
 
 .status-Rebooting {
-  background-color: $color-babyblue;
+  background-color: rgb(164, 213, 255);
 }
 
 .status-Completed {
-  background-color: $color-salmon;
+  background-color: rgb(255, 173, 173);
 }
 
 .project-card-field-inline {

@@ -38,7 +38,7 @@
   
       // NEW MOBILE FRIENDLY RULES
       @media #{$bp-below-mobile} {
-        background: linear-gradient(to bottom, rgba($color-blue-dark,0.3) 30%, #030d2d 100%);
+        background: linear-gradient(to bottom, rgba(3,13,45,0.3) 30%, #030d2d 100%);
       }
     }
 }
@@ -78,7 +78,7 @@
 //only show header divider if screen is bigger than mobile
 @media #{$bp-mobile-up} {
   .border-right {
-    border-right: 1px solid rgba($color-black, 0.3);
+    border-right: 1px solid rgba(0,0,0, 0.3);
     align-self: center;
     max-height: 150px;
     height: 280px;
@@ -138,7 +138,7 @@
 
 .section-container {
   background: $color-white;
-  box-shadow: 0px 4px 8px rgba($color-black, 0.2);
+  box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.2);
   border-radius: 10px;
   margin: 2% 12%;
   padding: 5% 12.5%;
