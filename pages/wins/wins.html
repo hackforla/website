@@ -89,7 +89,7 @@ permalink: /wins/
   	//cardData[index][question_str] = answer_str
   	let cardData = []
   	const keys = rawData[0]
-  	rawData.slice(1).forEach( data => {
+  	rawData.slice(1).forEach(data => {
   		let cardObj = {}
   		for (let i = 0; i < keys.length; i++) {
   			cardObj[keys[i]] = data[i];
@@ -167,7 +167,7 @@ permalink: /wins/
   	let queryObj = { };
 
   	//Calculate and Create Updated Query String
-  	incomingFilterData.forEach( e => {
+  	incomingFilterData.forEach(e => {
   		//Find boxes that are checked
   		if(e.checked){
   			let data = e.value.split("_");
@@ -290,7 +290,7 @@ permalink: /wins/
 
 		const iconContainer = cloneCardTemplate.querySelector(cardSelector);
 
-		cardList.forEach( item => {
+		cardList.forEach(item => {
 			if (badgeIcons.hasOwnProperty(item)) {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
