@@ -64,13 +64,14 @@
     width: auto;
     height: 240px;
 
-    @media #{$bp-below-desktop} {
+    @media #{$bp-below-tablet} {
       height: auto;
-      max-width: 16rem;
+      max-width: 500px;
+      width: 80%;
     }
 }
 
-@media(max-width: 850px) {
+@media(max-width: 960px) {
     .program-areas-header {
         flex-flow: column;
 
