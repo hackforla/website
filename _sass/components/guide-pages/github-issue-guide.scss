@@ -22,7 +22,7 @@
   height: 30px;
   right: 1%;
   top: 1%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 4px rgba($color-black, 0.15);
 }
 
 .copy-button:hover {
@@ -37,11 +37,11 @@
 }
 
 .green-text {
-  color: #58915b;
+  color: $color-forestgreen;
 }
 
 .blue-text {
-  color: #407BFF;
+  color: $color-azure;
 }
 
 //

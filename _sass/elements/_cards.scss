@@ -78,7 +78,7 @@
   // X-Large
   
   .page-card-xl {
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.2); 
     margin: 14px auto;
     max-width: 1080px;
   
@@ -92,7 +92,7 @@
   
   .page-card-lg {
     max-width: 896px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    box-shadow: 0 0 8px 0 rgba($color-blackl, 0.2); 
     margin: 14px auto;
   
     // NEW MOBILE FRIENDLY RULES
@@ -111,7 +111,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); 
+    box-shadow: 0 2px 4px rgba($color-black, 0.25); 
   }
   
 
@@ -288,7 +288,7 @@
 
 .small-card {
     height: 180px;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 25px rgba($color-black, 0.15);
     border-radius: 20px;
     margin: 30px 0 45px 0;
     padding: 10px 0 10px 0;
