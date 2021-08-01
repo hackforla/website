@@ -1,10 +1,13 @@
 /**
  * Breakpoints
  */
+$screen-desktop-large: 1632px;
 $screen-desktop: 960px;
 $screen-tablet: 768px;
 $screen-mobile: 480px;
 
+$bp-desktop-large-up: '(min-width: #{$screen-desktop-large})';
+$bp-below-desktop-large: '(max-width: #{$screen-desktop-large - 1})';
 $bp-desktop-up: '(min-width: #{$screen-desktop})';
 $bp-below-desktop: '(max-width: #{$screen-desktop - 1})';
 $bp-tablet-up: '(min-width: #{$screen-tablet})';
