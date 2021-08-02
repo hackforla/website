@@ -40,7 +40,8 @@ jobs:
         cache: 'npm'
     - run: npm install
       working-directory: ./github-actions/github-data
-    # - run: npm test
+    - run: npm test
+      working-directory: ./github-actions/github-data
 
     # run js file if it is the first Thursday of the month
     - name: Trim Members
