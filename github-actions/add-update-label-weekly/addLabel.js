@@ -185,12 +185,18 @@ async function postComment(issueNum, assignees) {
   try {
     const assigneeString = createAssigneeString(assignees);
     const instructions = formatComment(assigneeString);
+    
+    // here only for the purposes of testing
+    console.log(assigneeString)
+    // commented out for the purposes of testing
+    /*
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issueNum,
       body: instructions,
     });
+    */
   } catch (err) {
     console.error(`Could not post a comment for issue #${issueNum}`);
   }
