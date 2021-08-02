@@ -185,7 +185,7 @@ async function postComment(issueNum, assignees) {
   try {
     const assigneeString = createAssigneeString(assignees);
     const instructions = formatComment(assigneeString);
-    
+
     // here only for the purposes of testing
     console.log(assigneeString)
     // commented out for the purposes of testing
@@ -263,7 +263,14 @@ function createAssigneeString(assignees) {
 function formatComment(assignees) {
   const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
-  const cutoffTimeString = cutoffTime.toLocaleString('en-US', { timeZone: 'America/Los_Angeles'});
+  const options = {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'America/Los_Angeles',
+    timeZoneName: 'short',
+  }
+
+  const cutoffTimeString = cutoffTime.toLocaleString('en-US', options);
   let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
   return completedInstuctions
 }
