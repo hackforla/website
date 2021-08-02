@@ -139,7 +139,7 @@ links:
     url: 'http://civictechindex.org/'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Index-Product-One-Sheet.pdf'
-# looking:
+looking:
 technologies:
   - React
   - Django

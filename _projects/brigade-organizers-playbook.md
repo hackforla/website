@@ -88,7 +88,7 @@ links:
     url: 'https://github.com/codeforamerica/brigade-playbook/wiki'
   - name: Effective Practices
     url: 'https://docs.google.com/spreadsheets/d/1N0VSDhYyy5WhX_z18Q0RvLlGO29JGGdMxVsD4X3nFYs/edit#gid=1425278717'
-# looking:
+looking:
 tools: Zoom, Calendly, Otter.ai, Google Docs, HackforLA.org guides
 technologies:
   - Markdown
