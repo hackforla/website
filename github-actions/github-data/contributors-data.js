@@ -39,7 +39,7 @@ async function fetchContributors(){
   const allContributorsSince = {}
 
   // fetch commit, comment, issues contirbutors;
-  const APIs = [['GET /repos/{owner}/{repo}/commits', 0], ['GET /repos/{owner}/{repo}/issues/comments', 1], ['GET /repos/{owner}/{repo}/issues', 2]];
+  const APIs = ['GET /repos/{owner}/{repo}/commits', 'GET /repos/{owner}/{repo}/issues/comments', 'GET /repos/{owner}/{repo}/issues'];
 
   for(const api of APIs){
     let pageNum = 1;
@@ -49,7 +49,7 @@ async function fetchContributors(){
     while(true){
       // fetch 100 items from page number (pageNum)
       // monthAgo is a variable defined on top of the file
-      const contributors = await octokit.request(api[0], {
+      const contributors = await octokit.request(api, {
         owner: org,
         repo: repo,
         since: monthAgo,
