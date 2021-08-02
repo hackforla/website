@@ -1,6 +1,6 @@
 ${assignees}
 
-Please add update
+Please add update (even if you have a pull request)
 1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
 2. Blockers: "Difficulties or errors encountered."
 3. Availability: "How much time will you have this week to work on this issue?"
