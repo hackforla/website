@@ -29,9 +29,18 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
 
     # install dependencies to run js file
-    - name: GitHub Action for install npm dependencies
-      uses: bahmutov/npm-install@v1
+    # - name: GitHub Action for install npm dependencies
+    #   uses: bahmutov/npm-install@v1
+    #   with:
+    #     working-directory: ./github-actions/github-data
+
+    - uses: actions/setup-node@v2
       with:
+        node-version: '14'
+        cache: 'npm'
+    - run: npm install
+        working-directory: ./github-actions/github-data
+    - run: npm test
         working-directory: ./github-actions/github-data
 
     # run js file if it is the first Thursday of the month
