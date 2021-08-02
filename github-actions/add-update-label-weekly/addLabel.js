@@ -26,21 +26,21 @@ async function main({ g, c, columnId }) {
 
   for await (issueNum of issueNums) {
     const timeline = getTimeline(issueNum);
-    const assignee = await getAssignee(issueNum);
+    const assignees = await getAssignees(issueNum);
 
     // Error catching.
-    if (!assignee) {
+    if (!assignees) {
       console.log(`Assignee not found, skipping issue #${issueNum}`)
       continue
     }
 
     // Adds label if the issue's timeline indicates the issue is outdated.
-    if (await isTimelineOutdated(timeline, issueNum, assignee)) {
+    if (await isTimelineOutdated(timeline, issueNum, assignees)) {
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, statusUpdatedLabel, toUpdateLabel);
       await addLabels(issueNum, toUpdateLabel);
       // FOR TRIAL STAGE. SEE #2006
-      await postComment(issueNum);
+      await postComment(issueNum, assignees);
     } else {
       console.log(`No updates needed for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel);
@@ -121,12 +121,12 @@ async function* getTimeline(issueNum) {
  * @returns true if timeline indicates the issue is outdated, false if not
  * Note: Outdated means that the assignee did not make a linked PR or comment within the last updateLimit (see global variables) days.
  */
-async function isTimelineOutdated(timeline, issueNum, assignee) {
+async function isTimelineOutdated(timeline, issueNum, assignees) {
   for await (moment of timeline) {
     if (isMomentRecent(moment.created_at)) {
       if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) {
         return false
-      } else if (moment.event == 'commented' && isCommentByAssignee(moment, assignee)) {
+      } else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) {
         return false
       }
     }
@@ -181,11 +181,10 @@ async function addLabels(issueNum, ...labels) {
 *** PART OF TRIAL STAGE: MAIN CODE ***
 *************************************/
 
-async function postComment(issueNum) {
+async function postComment(issueNum, assignees) {
   try {
-    const assignees = await createAssigneeString(issueNum);
-    const instructions = formatComment(assignees);
-
+    const assigneeString = createAssigneeString(assignees);
+    const instructions = formatComment(assigneeString);
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -215,18 +214,20 @@ function isLinkedIssue(data, issueNum) {
   return findLinkedIssue(data.source.issue.body) == issueNum
 }
 
-function isCommentByAssignee(data, assignee) {
-  return data.actor.login == assignee
+function isCommentByAssignees(data, assignees) {
+  return assignees.includes(data.actor.login)
 }
 
-async function getAssignee(issueNum) {
+async function getAssignees(issueNum) {
   try {
     const results = await github.issues.get({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issueNum,
     });
-    return results.data.assignee.login
+    const assigneesData = results.data.assignees;
+    assigneesLogins = filterForAssigneesLogins(assigneesData);
+    return assigneesLogins
   } catch (err) {
     console.error(`Failed request to get assignee from issue: #${issueNum}`)
     return false
@@ -237,21 +238,20 @@ async function getAssignee(issueNum) {
 *** PART OF TRIAL STAGE: HELPERS ***
 ***********************************/
 
-async function createAssigneeString(issueNum) {
-  try {
-    const results = await github.rest.issues.get({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      issue_number: issueNum,
-    });
-    const assignees = []
-    for (assignee of results.data.assignees) {
-      assignees.push(`@${assignee.login}`);
-    }
-    return assignees.join(', ')
-  } catch {
-    console.error(`Could not find assignees for issue #${issueNum}`);
+function filterForAssigneesLogins(data) {
+  logins = [];
+  for (item of data) {
+    logins.push(item.login);
   }
+  return logins
+}
+
+function createAssigneeString(assignees) {
+  const assigneeString = [];
+  for (assignee of assignees) {
+    assigneeString.push(`@${assignee}`);
+  }
+  return assigneeString.join(', ')
 }
 
 function formatComment(assignees) {
