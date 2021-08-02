@@ -45,5 +45,5 @@ jobs:
       env:
         # token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         token: ${{ secrets.PAT }}
-      if: ${{ steps.date.outputs.date <= 7 }}
+      if: ${{ steps.date.outputs.date > 7 }}
       run: node github-actions/github-data/contributors-data.js
