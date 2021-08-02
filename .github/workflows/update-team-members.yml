@@ -29,11 +29,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
 
     # setup node and install dependencies to run js file
-    - uses: actions/setup-node@v2
+    - name: Setup node and run npm install 
+      uses: actions/setup-node@v2
       with:
         node-version: '14'
         cache: 'npm'
-    - run: npm install
+      run: npm install
       working-directory: ./github-actions/github-data
 
     # run js file if it is the first Thursday of the month
