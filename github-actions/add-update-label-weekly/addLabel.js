@@ -1,12 +1,15 @@
 // Import modules
 const findLinkedIssue = require('../utils/findLinkedIssue');
+var fs = require("fs");
 
 // Global variables
 var github;
 var context;
 const statusUpdatedLabel = 'Status: Updated';
-const toUpdateLabel = 'To Update !';
+const toUpdateLabel = 'Test: Update Label';
 const updatedByDays = 3; // number of days ago to check for updates
+const cutoffTime = new Date()
+cutoffTime.setDate(cutoffTime.getDate() - updatedByDays)
 
 /**
  * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. If outdated, the old status label is removed, and an updated is requested.
@@ -21,25 +24,27 @@ async function main({ g, c, columnId }) {
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
 
-  for await (num of issueNums) {
-    const timeline = getTimeline(num);
-    const assignee = await getAssignee(num);
+  for await (issueNum of issueNums) {
+    const timeline = getTimeline(issueNum);
+    const assignee = await getAssignee(issueNum);
 
     // Error catching.
     if (!assignee) {
-      console.log(`Assignee not found, skipping issue #${num}`)
+      console.log(`Assignee not found, skipping issue #${issueNum}`)
       continue
     }
 
     // Adds label if the issue's timeline indicates the issue is outdated.
-    if (await isTimelineOutdated(timeline, num, assignee)) {
-      console.log(`Going to ask for an update now for issue #${num}`);
-      await removeLabels(num, statusUpdatedLabel, toUpdateLabel);
-      await addLabels(num, toUpdateLabel);
+    if (await isTimelineOutdated(timeline, issueNum, assignee)) {
+      console.log(`Going to ask for an update now for issue #${issueNum}`);
+      await removeLabels(issueNum, statusUpdatedLabel, toUpdateLabel);
+      await addLabels(issueNum, toUpdateLabel);
+      // FOR TRIAL STAGE. SEE #2006
+      await postComment(issueNum);
     } else {
-      console.log(`No updates needed for issue #${num}`);
-      await removeLabels(num, toUpdateLabel);
-      await addLabels(num, statusUpdatedLabel);
+      console.log(`No updates needed for issue #${issueNum}`);
+      await removeLabels(issueNum, toUpdateLabel);
+      await addLabels(issueNum, statusUpdatedLabel);
     }
   }
 }
@@ -118,7 +123,7 @@ async function* getTimeline(issueNum) {
  */
 async function isTimelineOutdated(timeline, issueNum, assignee) {
   for await (moment of timeline) {
-    if (isMomentRecent(moment.created_at, updatedByDays)) {
+    if (isMomentRecent(moment.created_at)) {
       if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) {
         return false
       } else if (moment.event == 'commented' && isCommentByAssignee(moment, assignee)) {
@@ -144,9 +149,9 @@ async function removeLabels(issueNum, ...labels) {
         issue_number: issueNum,
         name: label,
       });
-      console.log(`Removed "${label}" from issue #${num}`);
+      console.log(`Removed "${label}" from issue #${issueNum}`);
     } catch (err) {
-      console.error(`No "${label}" label to remove for issue #${num}`);
+      console.error(`No "${label}" label to remove for issue #${issueNum}`);
     }
   }
 }
@@ -165,10 +170,30 @@ async function addLabels(issueNum, ...labels) {
       issue_number: issueNum,
       labels: labels,
     });
-    console.log(`Added these labels to issue #${num}: ${labels}`);
+    console.log(`Added these labels to issue #${issueNum}: ${labels}`);
     // If an error is found, the rest of the script does not stop.
   } catch {
-    console.error(`Could not add these labels for issue #${num}: ${labels}`);
+    console.error(`Could not add these labels for issue #${issueNum}: ${labels}`);
+  }
+}
+
+/*************************************
+*** PART OF TRIAL STAGE: MAIN CODE ***
+*************************************/
+
+async function postComment(issueNum) {
+  try {
+    const assignees = await createAssigneeString(issueNum);
+    const instructions = formatComment(assignees);
+
+    await github.issues.createComment({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: issueNum,
+      body: instructions,
+    });
+  } catch (err) {
+    console.error(`Could not post a comment for issue #${issueNum}`);
   }
 }
 
@@ -176,12 +201,10 @@ async function addLabels(issueNum, ...labels) {
 *** HELPER FUNCTIONS ***
 ***********************/
 
-function isMomentRecent(dateString, limit) {
+function isMomentRecent(dateString) {
   const dateStringObj = new Date(dateString);
-  const dateWeekBefore = new Date()
-  dateWeekBefore.setDate(dateWeekBefore.getDate() - limit)
 
-  if (dateStringObj >= dateWeekBefore) {
+  if (dateStringObj >= cutoffTime) {
     return true
   } else {
     return false
@@ -208,6 +231,35 @@ async function getAssignee(issueNum) {
     console.error(`Failed request to get assignee from issue: #${issueNum}`)
     return false
   }
+}
+
+/***********************************
+*** PART OF TRIAL STAGE: HELPERS ***
+***********************************/
+
+async function createAssigneeString(issueNum) {
+  try {
+    const results = await github.rest.issues.get({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: issueNum,
+    });
+    const assignees = []
+    for (assignee of results.data.assignees) {
+      assignees.push(`@${assignee.login}`);
+    }
+    return assignees.join(', ')
+  } catch {
+    console.error(`Could not find assignees for issue #${issueNum}`);
+  }
+}
+
+function formatComment(assignees) {
+  const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
+  const text = fs.readFileSync(path).toString('utf-8');
+  const cutoffTimeString = cutoffTime.toLocaleString();
+  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
+  return completedInstuctions
 }
 
 module.exports = main
