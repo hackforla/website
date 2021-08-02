@@ -39,7 +39,7 @@ jobs:
         node-version: '14'
         cache: 'npm'
     - run: npm install
-        working-directory: ./github-actions/github-data
+      working-directory: ./github-actions/github-data
     # - run: npm test
 
     # run js file if it is the first Thursday of the month
