@@ -15,7 +15,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            @${{ github.event.issue.assignees.login }} Please add update
+            @${{ github.event.issue.assignees.*.login }} Please add update
             1. Progress
             2. Blockers
             3. Availability
