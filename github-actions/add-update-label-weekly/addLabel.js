@@ -24,7 +24,7 @@ async function main({ g, c, columnId }) {
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
 
-  for await (issueNum of issueNums) {
+  for await (let issueNum of issueNums) {
     const timeline = getTimeline(issueNum);
     const assignees = await getAssignees(issueNum);
 
@@ -65,7 +65,7 @@ async function* getIssueNumsFromColumn(columnId) {
       });
 
       if (results.data.length) {
-        for (card of results.data) {
+        for (let card of results.data) {
           if (card.hasOwnProperty('content_url')) {
             const arr = card.content_url.split('/');
             yield arr.pop()
@@ -122,7 +122,7 @@ async function* getTimeline(issueNum) {
  * Note: Outdated means that the assignee did not make a linked PR or comment within the last updateLimit (see global variables) days.
  */
 async function isTimelineOutdated(timeline, issueNum, assignees) {
-  for await (moment of timeline) {
+  for await (let moment of timeline) {
     if (isMomentRecent(moment.created_at)) {
       if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) {
         return false
@@ -140,7 +140,7 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
  * @param {Array} labels an array containing the labels to remove
  */
 async function removeLabels(issueNum, ...labels) {
-  for (label of labels) {
+  for (let label of labels) {
     try {
       // https://octokit.github.io/rest.js/v18#issues-remove-label
       await github.issues.removeLabel({
@@ -230,7 +230,7 @@ async function getAssignees(issueNum) {
     return assigneesLogins
   } catch (err) {
     console.error(`Failed request to get assignee from issue: #${issueNum}`)
-    return false
+    return null
   }
 }
 
@@ -240,7 +240,7 @@ async function getAssignees(issueNum) {
 
 function filterForAssigneesLogins(data) {
   logins = [];
-  for (item of data) {
+  for (let item of data) {
     logins.push(item.login);
   }
   return logins
@@ -248,7 +248,7 @@ function filterForAssigneesLogins(data) {
 
 function createAssigneeString(assignees) {
   const assigneeString = [];
-  for (assignee of assignees) {
+  for (let assignee of assignees) {
     assigneeString.push(`@${assignee}`);
   }
   return assigneeString.join(', ')
