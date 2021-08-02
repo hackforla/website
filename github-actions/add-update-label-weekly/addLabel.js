@@ -263,7 +263,7 @@ function createAssigneeString(assignees) {
 function formatComment(assignees) {
   const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
-  const cutoffTimeString = cutoffTime.toLocaleString();
+  const cutoffTimeString = cutoffTime.toLocaleString('en-US', { timeZone: 'America/Los_Angeles'});
   let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
   return completedInstuctions
 }
