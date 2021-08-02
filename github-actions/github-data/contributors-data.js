@@ -17,13 +17,13 @@ monthAgo = monthAgo.toISOString();
 
 
 (async function main(){
-  const commentCommitWikiContributors = await fetchContributors();
+  const commentCommitIssueContributors = await fetchContributors();
 
   console.log('-------------------------------------------------------')
   console.log('List of active contributors since' + ' ⏰ ' + monthAgo.slice(0, 10) + ':');
-  console.log(commentCommitWikiContributors);
+  console.log(commentCommitIssueContributors);
 
-  const removedContributors = await removeInactiveMembers(commentCommitWikiContributors);
+  const removedContributors = await removeInactiveMembers(commentCommitIssueContributors);
 
   console.log('-------------------------------------------------------')
   console.log('Removed members: ')
@@ -32,7 +32,7 @@ monthAgo = monthAgo.toISOString();
 
 
 /**
- * Function to fetch comment/commit/wiki/issue contributors since 'date'
+ * Function to fetch comment/commit/issue contributors since 'date'
  * @return {Object}     [List of active contributors]
  */
 async function fetchContributors(){
@@ -91,7 +91,6 @@ async function fetchContributors(){
     }
   }
 
-  // how to fetch Wiki contributors?
   return allContributorsSince;
 }
 
