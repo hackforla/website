@@ -1,5 +1,5 @@
 // Importing modules
-
+var fs = require("fs");
 
 // Global variables
 var github;
@@ -19,11 +19,11 @@ function main({ g, c }) {
 }
 
 function checkLabels() {
-/*   const issueNum = context.issue.number
+  console.log('test')
+  const issueNum = context.issue.number
   const labels = context.labels
   console.log(issueNum)
-  console.log(labels) */
-  console.log('test')
+  console.log(labels)
 }
 
 module.exports = main
