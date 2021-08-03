@@ -26,7 +26,7 @@ async function main({ g, c }) {
   const labelsToAdd = checkLabels(filteredLabels)
   console.log('Labels to add: ', labelsToAdd)
 
-  const results = await addLabels(labelsToAdd, filterLabels)
+  const results = await addLabels(labelsToAdd, filteredLabels)
   console.log(results)
   return results
 }
