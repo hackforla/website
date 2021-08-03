@@ -8,17 +8,17 @@ permalink: /design-system
     <div class="card-primary sidenav--design-system">
         <h1 class="title5">Hack For LA Site Design System</h1>
         <ul>
-            <li>
-                <span>Components</span>
-                <ul>
-                    <li>
-                        <span>Buttons</span>
-                    </li>
-                    <li>
-                        <span>Page Cards</span>
-                    </li>
-                </ul>
-            </li>
+            {% for item in site.data.internal.design-system.sidebar-nav %}
+                <li>
+                    <span>{{ item.title }}</span>
+                    <ul>
+                        <li>
+                            
+                        </li>
+
+                    </ul>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 

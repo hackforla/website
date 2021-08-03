@@ -1,0 +1,5 @@
+---
+group: components
+
+title: Buttons
+---
