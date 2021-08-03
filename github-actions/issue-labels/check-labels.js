@@ -62,10 +62,9 @@ async function filterLabels(labels) {
 
 // Check for missing labels
 function checkLabels(labels) {
-  console.log('new function with current labels: ', labels)
   let labelsToAdd = []
   REQUIRED_LABELS.forEach(requiredLabel => {
-    const regExp = new RegExp(`/\b${requiredLabel}\b/g`)
+    const regExp = new RegExp(`\b${requiredLabel}\b`, 'g')
     const isLabelPresent = labels.some(label => regExp.test(label))
     console.log('regex: ', regExp)
     console.log(isLabelPresent)
