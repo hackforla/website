@@ -1,5 +1,5 @@
 // Importing modules
-var fs = require("fs");
+
 
 // Global variables
 var github;
