@@ -2,9 +2,7 @@ name: Update Team Members
 
 
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
-on:
-  schedule:
-    - cron:  0 11 * * 4 
+on: workflow_dispatch
 
 
 jobs:
