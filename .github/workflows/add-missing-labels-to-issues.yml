@@ -1,0 +1,14 @@
+name: Add Missing Labels To Issues
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  Add-Missing-Labels-To-Issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Labels
+        uses: actions/github-script@v4
+        id: check-labels
+        with:
+          script: |
