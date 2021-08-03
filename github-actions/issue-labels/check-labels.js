@@ -93,11 +93,11 @@ async function addLabels(labelsToAdd, currentLabels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
-  const labels = new Set([
+  const labels = [...new Set([
     ...labelsToAdd,
     ...currentLabels
-  ])
-
+  ])]
+  console.log('flattened set: ', labels)
   try {
     const results = await github.issues.setLabels({
       owner: owner,
