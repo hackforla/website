@@ -20,9 +20,8 @@ function main({ g, c }) {
 
 function checkLabels() {
   console.log('context:', context)
-  console.log('github:', github)
   const issueNum = context.issue.number
-  const labels = context.labels
+  const labels = context.issue.labels
   console.log(issueNum)
   console.log(labels)
 }
