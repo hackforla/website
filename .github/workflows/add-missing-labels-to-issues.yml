@@ -12,6 +12,6 @@ jobs:
         id: check-labels
         with:
           script: |
-            const script = require('./github-actions/check-labels/check-labels.js')
+            const script = require('./github-actions/issue-labels/check-labels.js')
             const checkLabels = script({g: github, c: context})
             return checkLabels
