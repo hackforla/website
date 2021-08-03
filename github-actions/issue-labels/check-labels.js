@@ -26,7 +26,7 @@ async function main({ g, c }) {
   const labelsToAdd = checkLabels(filteredLabels)
   console.log('Labels to add: ', labelsToAdd)
 
-  const results = await addLabels(labelsToAdd)
+  const results = await addLabels(labelsToAdd, filterLabels)
   console.log(results)
   return results
 }
@@ -82,16 +82,17 @@ function checkLabels(labels) {
 }
 
 // Add missing labels
-async function addLabels(labels) {
+async function addLabels(labelsToAdd, currentLabels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
+
   try {
     const results = await github.issues.setLabels({
       owner: owner,
       repo: repo,
       issue_number: issueNum,
-      labels: labels
+      labels: currentLabels.concat(labelsToAdd)
     })
     return results
   }
