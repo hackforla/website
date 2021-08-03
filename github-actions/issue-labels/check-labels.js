@@ -22,7 +22,7 @@ async function main({ g, c }) {
   const labels = obtainLabels()
   const filteredLabels = await filterLabels(labels)
   console.log('Current labels: ', filteredLabels)
-  return checkLabels(labels)
+  return checkLabels(filteredLabels)
 }
 
 // Get labels from issue
@@ -67,7 +67,8 @@ function checkLabels(labels) {
   REQUIRED_LABELS.forEach(requiredLabel => {
     const regExp = new RegExp(`/\b${requiredLabel}\b/g`)
     const isLabelPresent = labels.some(label => regExp.test(label))
-
+    console.log('regex: ', regExp)
+    console.log(isLabelPresent)
     if (isLabelPresent === false){
       labelsToAdd.push(requiredLabel)
     }
