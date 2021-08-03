@@ -7,8 +7,8 @@ jobs:
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
+      - uses: actions/checkout@v2
+
       - name: Check Labels
         uses: actions/github-script@v4
         id: check-labels
