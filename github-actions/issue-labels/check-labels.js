@@ -49,12 +49,18 @@ async function filterLabels(labels) {
   const mappedLabels = await Promise.all(labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
       console.log(`Detected unwanted label: ${label}. Removing...`)
-      await github.issues.removeLabel({
-        owner: owner,
-        repo: repo,
-        issue_number: issueNum,
-        name: label
-      })
+
+      try{
+        await github.issues.removeLabel({
+          owner: owner,
+          repo: repo,
+          issue_number: issueNum,
+          name: label
+        })
+      }
+      catch(err) {
+        console.log('Error editing labels: ', err)
+      }
     }
     else{
       return label
