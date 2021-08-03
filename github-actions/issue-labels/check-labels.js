@@ -4,9 +4,6 @@ var fs = require("fs")
 // Constant variables
 const REQUIRED_LABELS = ['Size', 'role', 'Feature']
 const LABEL_MISSING = ['size: missing', 'role missing', 'Feature Missing']
-const issueNum = context.payload.issue.number
-const owner = context.payload.repository.owner.login
-const repo = context.payload.repository.name
 
 // Global variables
 var github
@@ -46,6 +43,9 @@ Ensure that the issue was not created with labels from LABEL_MISSING array.
 If so, remove the label(s) so the script can add them properly later, if needed.
 */
 async function filterLabels(labels) {
+  const issueNum = context.payload.issue.number
+  const owner = context.payload.repository.owner.login
+  const repo = context.payload.repository.name
   const mappedLabels = await Promise.all(labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
       console.log(`Detected unwanted label: ${label}. Removing...`)
@@ -83,6 +83,9 @@ function checkLabels(labels) {
 
 // Add missing labels
 async function addLabels(labels) {
+  const issueNum = context.payload.issue.number
+  const owner = context.payload.repository.owner.login
+  const repo = context.payload.repository.name
   try {
     const results = await github.issues.setLabels({
       owner: owner,
