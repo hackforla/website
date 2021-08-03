@@ -36,7 +36,7 @@ async function checkLabels(labels) {
   /*  Ensure that the issue was not created with labels from LABEL_MISSING array.
       If so, remove the label(s) so the script can add them properly later, if needed.
   */
-  const filteredLabels = await Promise.all(labels.map(async (label) => {
+  const filteredLabels = await Promise.all(labels.filter(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
       console.log(`Detected unwanted label: ${label}. Removing...`)
       await github.issues.removeLabel({
