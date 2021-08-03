@@ -22,8 +22,8 @@ async function checkLabels() {
   console.log('context:', context)
   const issueNum = context.payload.issue.number
   const labels = context.payload.issue.labels
-  const owner = context.repository.owner
-  const repo = context.repository.full_name
+  const owner = context.payload.repository.owner
+  const repo = context.payload.repository.full_name
   console.log(issueNum)
   console.log(labels)
   console.log(labels[0])
