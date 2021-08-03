@@ -38,7 +38,7 @@ async function checkLabels(labels) {
   /*  Ensure that the issue was not already created with labels from LABEL_MISSING array.
       If so, remove that label to avoid redundancy
   */
-  const filteredLabels = labels.map(label => {
+  const filteredLabels = labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
       await github.issues.removeLabel({
         owner: owner,
