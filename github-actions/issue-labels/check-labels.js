@@ -19,7 +19,8 @@ function main({ g, c }) {
 }
 
 function checkLabels() {
-  console.log('test')
+  console.log('context:', context)
+  console.log('github:', github)
   const issueNum = context.issue.number
   const labels = context.labels
   console.log(issueNum)
