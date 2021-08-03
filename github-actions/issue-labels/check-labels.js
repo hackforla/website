@@ -18,12 +18,26 @@ function main({ g, c }) {
   return checkLabels();
 }
 
-function checkLabels() {
+async function checkLabels() {
   console.log('context:', context)
-  const issueNum = context.issue.number
-  const labels = context.issue.labels
+  const issueNum = context.payload.issue.number
+  const labels = context.payload.issue.labels
+  const owner = context.repository.owner
+  const repo = context.repository.full_name
   console.log(issueNum)
   console.log(labels)
+  console.log(labels[0])
+  console.log(owner)
+  console.log(repo)
+  console.log('####')
+
+  const results = await github.issues.listLabelsOnIssue({
+    owner: owner,
+    repo: repo,
+    issue_number: issueNum
+  })
+  const data = results.data
+  console.log(data)
 }
 
 module.exports = main
