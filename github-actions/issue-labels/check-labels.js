@@ -32,8 +32,9 @@ function obtainLabels() {
   return labels
 }
 
-/*  Ensure that the issue was not created with labels from LABEL_MISSING array.
-|   If so, remove the label(s) so the script can add them properly later, if needed.
+/*
+Ensure that the issue was not created with labels from LABEL_MISSING array.
+If so, remove the label(s) so the script can add them properly later, if needed.
 */
 async function filterLabels(labels) {
   const issueNum = context.payload.issue.number
@@ -59,11 +60,19 @@ async function filterLabels(labels) {
   return mappedLabels.filter(label => label !== undefined)
 }
 
-  //todo: regex to check each label and ensure that the proper labels are there
+// Check for missing labels
+function checkLabels(labels) {
+  console.log('new function with current labels: ', labels)
+  let labelsToAdd = []
+  REQUIRED_LABELS.forEach(requiredLabel => {
+    const regExp = new RegExp(`/\b${requiredLabel}\b/g`)
+    const isLabelPresent = labels.some(label => regExp.test(label))
 
-  //if labels are not there, add labels labelled missing
-async function checkLabels(labels) {
-  console.log('here')
+    if (isLabelPresent === false){
+      labelsToAdd.push(requiredLabel)
+    }
+  })
+  console.log('labels to add: ', labelsToAdd)
 }
 
 module.exports = main
