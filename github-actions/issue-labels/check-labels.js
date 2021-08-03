@@ -33,8 +33,8 @@ async function checkLabels(labels) {
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
 
-  /*  Ensure that the issue was not already created with labels from LABEL_MISSING array.
-      If so, remove that label to avoid redundancy
+  /*  Ensure that the issue was not created with labels from LABEL_MISSING array.
+      If so, remove the label(s) so the script can add them properly later, if needed.
   */
   const filteredLabels = await Promise.all(labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
@@ -46,7 +46,9 @@ async function checkLabels(labels) {
         name: label
       })
     }
-    return label
+    else{
+      return label
+    }
   }))
 
   console.log('Current labels: ', filteredLabels)
