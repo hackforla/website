@@ -9,7 +9,7 @@ var context;
  *
  * @param {Object} g - github object  
  * @param {Object} c - context object 
- * @returns {Boolean}
+ * 
  */
 
 function main({ g, c }) {
