@@ -4,9 +4,9 @@ title: Expunge Assist
 description: 'Expunge Assist aims to help people in California with criminal records accomplish record clearance, expungement or reduction and subsequently a second chance as a part of society.
 <br /><br />We work with verifiable non-profits, the government and partners to build digital tools that can affect changes in the lives of these justice impacted individuals.'
 image: /assets/images/projects/expunge-assist.png
-alt: 'Expunge Assist project logo'
+alt: 'Image of a criminal record'
 image-hero: /assets/images/projects/expunge-assist-hero.png
-alt: 'Expunge Assist project logo'
+alt-hero: 'Expunge Assist project logo'
 leadership:
   - name: Gretchen Howard
     role: Product Manager

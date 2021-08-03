@@ -112,7 +112,7 @@
     object-fit: cover;
   
     @media #{$bp-below-tablet} {
-      height: auto;
+      height: 231px;
     /*  width: 100%;
       max-height: 40vh;
       overflow: hidden;*/
