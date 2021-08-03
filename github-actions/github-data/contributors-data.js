@@ -127,13 +127,13 @@ async function removeInactiveMembers(recentContributors){
       // Remove contributor from a team if they don't pass additional checks in 'toRemove' function
       if(await toRemove(username)){
         // TODO Remove the commented out code after testing
-        /*
+        
         await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
           org: org,
           team_slug: team,
           username: username,
         })
-        */
+        
         removedMembers.push(username)
       }
     }
