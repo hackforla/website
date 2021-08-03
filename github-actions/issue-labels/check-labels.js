@@ -46,7 +46,7 @@ async function filterLabels(labels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
-  const mappedLabels = await Promise.all(labels.map(async (label) => {
+/*   const mappedLabels = await Promise.all(labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
       console.log(`Detected unwanted label: ${label}. Removing...`)
 
@@ -65,10 +65,11 @@ async function filterLabels(labels) {
     else{
       return label
     }
-  }))
+  })) */
+  return labels.filter(label => LABEL_MISSING.includes(label) === false)
 
   // After removing the unwanted labels, remove them from the array
-  return mappedLabels.filter(label => label !== undefined)
+  //return mappedLabels.filter(label => label !== undefined)
 }
 
 // Check for missing labels
@@ -92,13 +93,17 @@ async function addLabels(labelsToAdd, currentLabels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
+  const labels = new Set([
+    ...labelsToAdd,
+    ...currentLabels
+  ])
 
   try {
     const results = await github.issues.setLabels({
       owner: owner,
       repo: repo,
       issue_number: issueNum,
-      labels: currentLabels.concat(labelsToAdd)
+      labels: labels
     })
     return results
   }
