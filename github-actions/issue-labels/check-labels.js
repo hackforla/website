@@ -24,3 +24,5 @@ function checkLabels() {
   console.log(issueNum)
   console.log(labels)
 }
+
+module.exports = main
