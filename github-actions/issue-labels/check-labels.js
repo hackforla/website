@@ -19,6 +19,7 @@ function main({ g, c }) {
   return checkLabels(labels)
 }
 
+// Get labels from issue
 function obtainLabels() {
   const labelsObject = context.payload.issue.labels
   const labels = labelsObject.map(label => label.name)
@@ -31,15 +32,13 @@ async function checkLabels(labels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login
   const repo = context.payload.repository.name
-  console.log('issue: ', issueNum)
-  console.log('owner: ', owner)
-  console.log('repo: ', repo)
 
   /*  Ensure that the issue was not already created with labels from LABEL_MISSING array.
       If so, remove that label to avoid redundancy
   */
-  const filteredLabels = labels.map(async (label) => {
+  const filteredLabels = await Promise.all(labels.map(async (label) => {
     if (LABEL_MISSING.includes(label) === true){
+      console.log(`Detected unwanted label: ${label}. Removing...`)
       await github.issues.removeLabel({
         owner: owner,
         repo: repo,
@@ -48,9 +47,9 @@ async function checkLabels(labels) {
       })
     }
     return label
-  })
+  }))
 
-  console.log(filteredLabels)
+  console.log('Current labels: ', filteredLabels)
 }
 
 module.exports = main
