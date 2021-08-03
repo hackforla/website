@@ -52,7 +52,7 @@ async function checkLabels(labels) {
   }))
 
   // After removing the unwanted labels, remove them from the array
-  const filteredLabels = mappedLabels.filter(label => label !== 'undefined')
+  const filteredLabels = mappedLabels.filter(label => label !== undefined)
 
   console.log('Current labels: ', filteredLabels)
 }
