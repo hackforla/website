@@ -19,10 +19,11 @@ function main({ g, c }) {
 }
 
 function checkLabels() {
-  const issueNum = context.issue.number
+/*   const issueNum = context.issue.number
   const labels = context.labels
   console.log(issueNum)
-  console.log(labels)
+  console.log(labels) */
+  console.log('test')
 }
 
 module.exports = main
