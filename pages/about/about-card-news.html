@@ -4,7 +4,7 @@
         <div class="flex-container">
             {% for item in site.data.internal.press %}
                 <div class="news-cells">
-                    <img src="{{item[1].image}}" alt="{{item[1].image_alt}}" />
+                    <img class="news-images" src="{{item[1].image}}" alt="{{item[1].image_alt}}" />
                     <p class="more-padding"><a href="{{item[1].link_url}}" target="_blank" rel="noopener noreferrer">{{item[1].title}}</a></p>
                 </div>
             {% endfor %}
