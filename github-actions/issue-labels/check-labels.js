@@ -16,11 +16,11 @@ var context
  * 
  */
 
-function main({ g, c }) {
+async function main({ g, c }) {
   github = g
   context = c
   const labels = obtainLabels()
-  const filteredLabels = filterLabels(labels)
+  const filteredLabels = await filterLabels(labels)
   console.log('Current labels: ', filteredLabels)
   return checkLabels(labels)
 }
