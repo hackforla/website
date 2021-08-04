@@ -19,3 +19,5 @@ function main({ g, c }, { actionResult, addedLabels }) {
   console.log('result: ', actionResult)
   console.log('added labels: ', addedLabels)
 }
+
+module.exports = main
