@@ -21,7 +21,7 @@ var context
  * @param {Number} issueNum - 
  */
 
-function main({ g, c }, { actionResult, addedLabels, issueNum }) {
+async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   github = g
   context = c
   console.log('added labels: ', addedLabels)
