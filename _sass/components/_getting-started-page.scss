@@ -27,6 +27,7 @@
   @media #{$bp-below-mobile} {
     font-size: 18px;
     text-align: left;
+    padding: 0px;
   }
 }
 
@@ -60,14 +61,18 @@
   font-size: 16px;
   max-width: 140px;
   padding-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 7px;
 }
 
 .getting-started-step-title-header {
   font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0px;
 
   @media #{$bp-below-mobile} {
+    padding: 0 .5em 0 .5em;
     font-size: 1.25rem;
+    text-align: center;
   }
 }
 
@@ -80,12 +85,220 @@
   padding-top: 20px;
 }
 
+.g-s-list {
+  font-size: 16px;
+}
+
+.step-img-intro {
+  height: 100px;
+  text-align: center;
+}
+
+.rsvp-button {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #fa114f;
+  border-radius: 20px;
+  box-shadow: 0 0 3px #ccc;
+  height: 2.6em;
+  width: 13em;
+  margin-left: 2em;
+  margin-top: -.2em;
+
+  @media #{$bp-below-mobile} {
+    display: none;
+  }
+}
+
+.rsvp-anchor {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.rsvp-button2 {
+  visibility: hidden;
+  max-height: 0;
+
+  @media #{$bp-below-mobile} {
+    visibility: visible;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fa114f;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #ccc;
+    height: 2.6em;
+    width: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 1em;
+    text-decoration: none;
+    max-height: 100%;
+  }
+}
+
+.strong-text {
+  margin-left: -1.7em;
+  margin-top: .5em;
+}
+
+.card-intro {
+  @media #{$bp-below-mobile} {
+    padding: 0 1em 0 1em;
+  }
+  
+}
+
+.list-container {
+  display: flex;
+}
+
+.column-ol-list {
+  list-style-position: inside;
+  padding-top: 2.5em;
+  padding-left: 1.3em;
+
+  @media #{$bp-below-mobile} {
+    padding-top: 1.5em;
+    max-width: 90%
+  }
+}
+
+.column {
+  float: left;
+ }
+ 
+ .left {
+   width: 32%;
+ 
+   @media #{$bp-below-mobile} {
+     width: 100%;
+     text-align: left;
+   }
+ }
+ 
+ .right {
+   width: 68%;
+   padding-left: 60px;
+ 
+   @media #{$bp-below-mobile} {
+     width: 100%;
+     padding-left: 20px;
+   }
+ }
+ 
+ .info-icon {
+   width: .75em;
+ }
+
 .step-img {
-  transform: scale(0.2);
-  height: 200px;
-  width: 200px;
-  // height: 10px;
-  // text-align: center;
+  transform: scale(.6);
+
+  @media #{$bp-below-mobile} {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+}
+
+.step-img-wide {
+  transform: scale(.7);
+  padding-top: 1em;
+
+  @media #{$bp-below-mobile} {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+}
+
+.step-img-icon-attend-git {
+  margin-left: -1.9em;
+  margin-right: 1em;
+  width: 2.1em;
+  float: left;
+  align-self: center;
+  margin-top: -.4em;
+}
+
+.step-img-icon-git {
+  margin-left: -1.9em;
+  margin-right: 1em;
+  width: 2.1em;
+  float: left;
+  align-self: center;
+}
+
+.step-img-icon-board {
+  margin-left: -1.8em;
+  margin-right: 1.1em;
+  float: left;
+  align-self: center;
+  width: 1.7em;
+  margin-top: -.2em;
+}
+
+.step-img-icon-cop {
+  margin-left: -2.1em; 
+  margin-right: 1em;
+  width: 2.3em;
+  float: left;
+  align-self: center;
+}
+
+.step-img-icon-cop-small {
+    margin-left: -2.1em; 
+    margin-right: 1.7em;
+    float: left;
+    align-self: center;
+    width: 1.6em;
+    position: relative;
+    left: 7px;
+}
+
+.step-img-icon {
+  margin-left: -1.4em; 
+  margin-right: 1.1em;
+  float: left;
+  align-self: center;
+  width: 1.7em;
+}
+
+.step-img-icon-attend-slack {
+  margin-left: -2.1em;
+  margin-right: 1em;
+  width: 2.3em;
+  float: left;
+  align-self: center;
+  margin-top: -.2em;
+}
+
+.step-img-icon-choose-slack {
+  margin-left: -1.9em;
+    margin-right: .9em;
+    width: 2.3em;
+    float: left;
+    align-self: center;
+    margin-top: .4em;
+}
+
+.step-img-icon-join-slack {
+  margin-left: -1.8em;
+    margin-right: .9em;
+    width: 2.3em;
+    float: left;
+    align-self: center;
+}
+
+.step-img-icon-join {
+  margin-left: -1.4em;
+  margin-right: 1.1em;
+  float: left;
+  align-self: center;
+  width: 1.7em;
 }
 
 .step-links {
@@ -98,8 +311,9 @@
   justify-content: space-evenly;
 
   @media #{$bp-below-mobile} {
-    flex-direction: column;
-    text-align: -webkit-center;
+    // flex-direction: column;
+    // text-align: -webkit-center;
+    display: none;
   }
 }
 
@@ -129,10 +343,6 @@
   margin: 11px;
 }
 
-.getting-started-guide-content-section {
-  text-align: justify;
-}
-
 .zoom-pictures {
   display: flex;
   justify-content: space-evenly;
@@ -149,6 +359,23 @@
   margin: 30px auto;
 }
 
+.github-sign-up-text {
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.getting-started-step-title-faq {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 2px;
+
+  @media #{$bp-below-mobile} {
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
 .accordion {
   color: black;
   cursor: pointer;
@@ -156,7 +383,6 @@
   font-size: 1.25rem;
   text-align: left;
   border-bottom: 0.5px solid gray;
-  min-width: 835px;
   margin-top: 45px;
 
   @media #{$bp-below-mobile} {
@@ -166,13 +392,8 @@
   }
 }
 
-
-.svg-accordion {
-  float: right;
-}
-
-.svg-accordion:hover {
-  opacity: 0.5;
+.getting-started-guide-content-section p {
+  padding-bottom: 1.2rem;
 }
 
 .accordion:after {
@@ -180,9 +401,13 @@
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
   font-weight: bolder;
-  font-size: 24px;
+  font-size: 20px;
+  margin-top: -.1em;
+
+  @media #{$bp-below-mobile} {
+    color: rgb(250, 17, 79);
+  }
 }
 
 .active::after {
@@ -193,7 +418,6 @@
 
 .panel {
   display: none;
-  overflow: hidden;
   text-align: left;
   margin-top: 40px;
 }
@@ -223,9 +447,7 @@
     flex-direction: column;
     width: auto;
   }
-
 }
-
 
 .ordered-list-steps-1 {
   display: flex;
@@ -269,30 +491,4 @@ hr {
   width: 80%;
   margin-top: 8%;
   margin-bottom: 8%;
-}
-
-.g-s-list {
-  // text-align: initial;
-  margin: 5px 0;
-}
-
-.column {
- float: left;
-}
-
-.left {
-  width: 30%;
-
-  @media #{$bp-below-mobile} {
-    width: 100%;
-  }
-}
-
-.right {
-  width: 60%;
-  padding-left: 75px;
-
-  @media #{$bp-below-mobile} {
-    width: 100%;
-  }
 }
