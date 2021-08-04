@@ -14,4 +14,4 @@ jobs:
           script: |
             const { IN_PROGRESS_COLUMN_ID } = process.env;
             const script = require('./github-actions/add-update-label-weekly/add-label.js');
-            script({ g: github, c: context }, columnId: IN_PROGRESS_COLUMN_ID);
+            script({ g: github, c: context }, IN_PROGRESS_COLUMN_ID);
