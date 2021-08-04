@@ -5,7 +5,7 @@ var fs = require("fs")
 const LABELS_OBJ = {
   'size: missing': 'Size',
   'role missing': 'Role',
-  'Feature missing': 'Feature'
+  'Feature Missing': 'Feature'
 }
 
 // Global variables
