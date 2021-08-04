@@ -8,6 +8,7 @@
 
     .header-text {
         display: flex;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
         margin-right: 5rem;
@@ -20,6 +21,11 @@
             font-size: 1.125rem;
             max-width: 508px;
             text-align: left;
+            margin-bottom: 0
+        }
+
+        .sub-p {
+            margin-top: 1rem;
         }
     }
 
