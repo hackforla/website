@@ -14,6 +14,8 @@ var context
 async function main({ g, c }) {
   github = g
   context = c
+  const issueNum = context.payload.issue.number
+
   const labels = obtainLabels()
   const filteredLabels = await filterLabels(labels)
   const labelsToAdd = checkLabels(filteredLabels)
@@ -23,6 +25,7 @@ async function main({ g, c }) {
   return {
     actionResult: result,
     addedLabels: labelsToAdd,
+    issueNum: issueNum
   }
 }
 

@@ -1,6 +1,13 @@
 // Importing modules
 var fs = require("fs")
 
+// Constant variables
+const LABELS_OBJ = {
+  'size: missing': 'Size',
+  'role missing': 'Role',
+  'Feature missing': 'Feature'
+}
+
 // Global variables
 var github
 var context
@@ -11,9 +18,10 @@ var context
  * @param {Object} c - context object 
  * @param {Boolean} actionResult - 
  * @param {Array} addedLabels -
+ * @param {Number} issueNum - 
  */
 
-function main({ g, c }, { actionResult, addedLabels }) {
+function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   github = g
   context = c
   console.log('added labels: ', addedLabels)
@@ -24,16 +32,48 @@ function main({ g, c }, { actionResult, addedLabels }) {
     return
   }
 
-  const issueCreator = context.payload.issue.user
-  console.log('issue creator: ', issueCreator)
+  const instructions = makeComment(addedLabels)
+  const formattedInstructions = formatComment(instructions)
+  await postComment(issueNum, formattedInstructions)
+}
+
+// Create the comment based on the labels array
+function makeComment(labels) {
+  const issueCreator = context.payload.issue.user.login
+
+  if (labels.length === 0) {
+    return `Good job @${issueCreator} for adding the required labels to this issue.`
+  }
+
+  return `Hi @${issueCreator}. Please don't forget to add the proper labels to this issue.
+  Currently, the labels for the following are missing:
+  ${labels.map(label => LABELS_OBJ[label])}
+  To add a label, take a look at Github's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
+  Also, don't forget to remove the following labels: ${labels.map(label => label)} once you add the proper labels.
+  To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.
+  Thanks!`
 }
 
 // Format the comment to be posted
-function formatComment(instruction) {
+function formatComment(instructions) {
   const path = './github-actions/issue-labels/labels-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8')
-  const completedInstuctions = text.replace('${labelInstructions}', instruction)
+  const completedInstuctions = text.replace('${labelInstructions}', instructions)
   return completedInstuctions
+}
+
+// Post comment on github
+async function postComment(issueNum, instructions) {
+  try {
+      await github.issues.createComment({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          issue_number: issueNum,
+          body: instructions,
+      })
+  } catch (err) {
+      throw new Error(err);
+  }
 }
 
 module.exports = main
