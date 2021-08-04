@@ -16,8 +16,26 @@ var context
 function main({ g, c }, { actionResult, addedLabels }) {
   github = g
   context = c
-  console.log('result: ', actionResult)
   console.log('added labels: ', addedLabels)
+  const actionResult = actionResult
+  const addedLabels = addedLabels
+
+  // If the previous action failed, stop here
+  if (actionResult === false){
+    console.log('Previous gh-action failed. The current gh-action will end.')
+    return
+  }
+
+  const issueCreator = context.payload.issue.user
+  console.log('issue creator: ', issueCreator)
+}
+
+// Format the comment to be posted
+function formatComment(instruction) {
+  const path = './github-actions/issue-labels/labels-instructions-template.md'
+  const text = fs.readFileSync(path).toString('utf-8')
+  const completedInstuctions = text.replace('${labelInstructions}', instruction)
+  return completedInstuctions
 }
 
 module.exports = main
