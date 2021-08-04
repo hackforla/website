@@ -24,6 +24,6 @@ jobs:
         id: post-comment
         with:
             script: |
-              const results = steps.check-labels.outputs.result
+              const results = ${{ steps.check-labels.outputs.result }}
               const script = require('./github-actions/issue-labels/post-labels-comment.js')
               script({g: github, c:context}, results)
