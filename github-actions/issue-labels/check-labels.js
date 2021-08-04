@@ -21,9 +21,11 @@ async function main({ g, c }) {
   const labelsToAdd = checkLabels(filteredLabels)
   console.log('Labels to add: ', labelsToAdd)
 
-  const results = await addLabels(labelsToAdd, filteredLabels)
-  console.log(results)
-  return results
+  const result = await addLabels(labelsToAdd, filteredLabels)
+  return {
+    actionResult: result,
+    addedLabels: labelsToAdd,
+  }
 }
 
 // Get labels from issue
@@ -76,10 +78,12 @@ async function addLabels(labelsToAdd, currentLabels) {
       issue_number: issueNum,
       labels: labels
     })
-    return results
+    console.log('Succesfully added labels. Results:\n', results)
+    return true
   }
   catch(err) {
     console.log('Error editing labels: ', err)
+    return false
   }
 }
 
