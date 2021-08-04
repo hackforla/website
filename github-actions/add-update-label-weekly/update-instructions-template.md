@@ -11,4 +11,6 @@ If you need help, be sure to either: 1) ask for help at a Tuesday or Sunday meet
 
 <sub>You are receiving this comment because your last comment was before ${cutoffTime}.</sub>
 
+---
+
 Note: This comment was created as part of a GitHub Action during it's trial phase. If you find this GitHub Action to be disruptive/unhelpful, or if you believe there might be a bug, please leave a comment on [this issue](https://github.com/hackforla/website/issues/2032). All feedback will be used to further improve it.
