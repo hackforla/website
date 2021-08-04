@@ -19,6 +19,7 @@ jobs:
             const checkLabels = script({g: github, c: context})
             return checkLabels
 
+      # Post comment based on the previous action's results
       - name: Post Comment
         uses: actions/github-script@v4
         id: post-comment

@@ -13,18 +13,17 @@ var github
 var context
 
 /**
- * Formats the commandline instructions into a template, then posts it to the pull request.
+ * Formats the label instructions into a template, then posts it to the issue.
  * @param {Object} g - github object  
  * @param {Object} c - context object 
- * @param {Boolean} actionResult - 
- * @param {Array} addedLabels -
- * @param {Number} issueNum - 
+ * @param {Boolean} actionResult - the previous gh-action's result
+ * @param {Array} addedLabels - the labels added to the issue
+ * @param {Number} issueNum - the number of the issue where the post will be made 
  */
 
 async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   github = g
   context = c
-  console.log('added labels: ', addedLabels)
 
   // If the previous action failed, stop here
   if (actionResult === false){
@@ -47,11 +46,10 @@ function makeComment(labels) {
 
   return `Hi @${issueCreator}. Please don't forget to add the proper labels to this issue.
   Currently, the labels for the following are missing:
-  ${labels.map(label => LABELS_OBJ[label])}
+  ${labels.map(label => ` ${LABELS_OBJ[label]} `)}
   To add a label, take a look at Github's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
-  Also, don't forget to remove the following labels: ${labels.map(label => label)} once you add the proper labels.
-  To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.
-  Thanks!`
+  Also, don't forget to remove the "missing labels" after you add the proper labels.
+  To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.`
 }
 
 // Format the comment to be posted
@@ -62,7 +60,7 @@ function formatComment(instructions) {
   return completedInstuctions
 }
 
-// Post comment on github
+// Post comment on the proper issue
 async function postComment(issueNum, instructions) {
   try {
       await github.issues.createComment({
