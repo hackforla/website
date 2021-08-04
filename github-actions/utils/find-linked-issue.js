@@ -16,7 +16,7 @@ function findLinkedIssue(text) {
         const issueNumber = matches[0][0].match(/\d+/)
         return issueNumber[0]
     } else {
-        return false
+        return null
     }
 }
 

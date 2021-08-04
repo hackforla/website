@@ -1,5 +1,5 @@
 // Import modules
-const findLinkedIssue = require('../utils/findLinkedIssue');
+const findLinkedIssue = require('../utils/find-linked-issue');
 var fs = require("fs");
 
 // Global variables
@@ -12,12 +12,12 @@ const cutoffTime = new Date()
 cutoffTime.setDate(cutoffTime.getDate() - updatedByDays)
 
 /**
- * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. If outdated, the old status label is removed, and an updated is requested.
+ * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. If outdated, the old status label is removed, and an updated is requested. Otherwise, the issue is labeled as updated.
  * @param {Object} g github object from actions/github-script 
  * @param {Object} c context object from actions/github-script 
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
-async function main({ g, c, columnId }) {
+async function main({ g, c }, columnId) {
   github = g;
   context = c;
 
@@ -50,7 +50,7 @@ async function main({ g, c, columnId }) {
 }
 
 /**
- * Generator that returns issue numbers.
+ * Generator that returns issue numbers from cards in a column.
  * @param {Number} columnId the id of the column in GitHub's database
  * @returns an Array of issue numbers
  */
@@ -83,7 +83,7 @@ async function* getIssueNumsFromColumn(columnId) {
 }
 
 /**
- * Generator that returns a timeline.
+ * Generator that returns the timeline of an issue.
  * @param {Number} issueNum the issue's number 
  * @returns an Array of Objects containing the issue's timeline of events
  */
@@ -115,11 +115,11 @@ async function* getTimeline(issueNum) {
 
 /**
  * Assesses whether the timeline is outdated.
- * @param {Array} timeline a list of events of an issue, retrieved from the issues API
+ * @param {Array} timeline a list of events in the timeline of an issue, retrieved from the issues API
  * @param {Number} issueNum the issue's number
- * @param {String} assignee the issue's assignee's username
+ * @param {String} assignees a list of the issue's assignee's username
  * @returns true if timeline indicates the issue is outdated, false if not
- * Note: Outdated means that the assignee did not make a linked PR or comment within the last updateLimit (see global variables) days.
+ * Note: Outdated means that the assignee did not make a linked PR or comment within the cutoffTime (see global variables).
  */
 async function isTimelineOutdated(timeline, issueNum, assignees) {
   for await (let moment of timeline) {
@@ -137,7 +137,7 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 /**
  * Removes labels from a specified issue
  * @param {Number} issueNum an issue's number
- * @param {Array} labels an array containing the labels to remove
+ * @param {Array} labels an array containing the labels to remove (captures the rest of the parameters)
  */
 async function removeLabels(issueNum, ...labels) {
   for (let label of labels) {
@@ -159,7 +159,7 @@ async function removeLabels(issueNum, ...labels) {
 /**
  * Adds labels to a specified issue
  * @param {Number} issueNum an issue's number
- * @param {Array} labels an array containing the labels to add
+ * @param {Array} labels an array containing the labels to add (captures the rest of the parameters)
  */
 async function addLabels(issueNum, ...labels) {
   try {
