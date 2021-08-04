@@ -17,8 +17,6 @@ function main({ g, c }, { actionResult, addedLabels }) {
   github = g
   context = c
   console.log('added labels: ', addedLabels)
-  const actionResult = actionResult
-  const addedLabels = addedLabels
 
   // If the previous action failed, stop here
   if (actionResult === false){

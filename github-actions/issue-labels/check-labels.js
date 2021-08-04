@@ -7,10 +7,8 @@ var github
 var context
 
 /**
- *
  * @param {Object} g - github object  
  * @param {Object} c - context object 
- * 
  */
 
 async function main({ g, c }) {
