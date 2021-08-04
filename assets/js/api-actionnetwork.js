@@ -1,3 +1,5 @@
+//random comment to clarify what this is about
+
 (function (window, document, undefined) {
   //capture all DOM Elements
   var heroForm = document.querySelector(".hero-signup");
