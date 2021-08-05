@@ -1,42 +1,79 @@
-/**
- * Formats event data 
- * @param  {Object} data - array of event objects
- * @return {Object} filtered and sorted data
- */
-function formatEventData(data) {
-  let filteredData = filterDataFromApi(data);
-  let sortedData = sortData(filteredData);
-  return sortedData
-}
+const API_ENDPOINT = "https://www.vrms.io/api/recurringevents";
 
 /**
- * Fetches data from VRMS API
+ * Fetches event data from VRMS API, then sorts and filters the data
  * @param  {URL} url
  * @return {Object} response data
  */
-async function sendGetRequest(url) {
+async function getEventData() {
   try {
-    const resp = await fetch(url);
-    return resp.json();
+    const resp = await fetch(API_ENDPOINT);
+    const responseData = await resp.json();
+    return formatEventData(responseData);
   } catch (err) {
-    // Handle Error Here
     console.error(err);
   }
 }
 
 /**
+ * Inserts the recurring events into the html
+ * @param {Object} eventData - An array objects of the type returned by displayObject()
+ * @param {String} page - page that is using eventData ("events" or "project-meetings")
+ */
+function insertEventSchedule(eventData, page) {
+  for (const [key, value] of Object.entries(eventData)) {
+    let placeToInsert = document.querySelector(`#${key}-List`);
+    placeToInsert.innerHTML = "";
+    // check if the day has any events
+    if (!value.length) {
+      placeToInsert.insertAdjacentHTML(
+        "beforeend",
+        `<li>There are no meetings scheduled.</li>`
+      );
+    } else {
+      value.forEach((event) => {
+        let eventHtml;
+        // insert the correct html for the current page
+        if ( page === "events" ) {
+          eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+        } else {
+          eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+        }
+        placeToInsert.insertAdjacentHTML(
+          "beforeend", eventHtml
+        );
+      });
+    }
+  }
+}
+
+/**
+ * Formats event data
+ * @param  {Object} data - array of event objects
+ * @return {Object} filtered and sorted data
+ */
+function formatEventData(data) {
+  const filteredData = filterDataFromApi(data);
+  const sortedData = sortData(filteredData);
+  return sortedData;
+}
+
+/**
  * Filters out the needed data from the api endpoint
  */
-function filterDataFromApi(response_data) {
-  const return_obj = {};
-  response_data.forEach((item) => {
+function filterDataFromApi(responseData) {
+  const return_obj = {
+    Monday: [],
+    Tuesday: [],
+    Wednesday: [],
+    Thursday: [],
+    Friday: [],
+    Saturday: [],
+    Sunday: [],
+  };
+  responseData.forEach((item) => {
     let day_of_week = getDayString(item.date);
-    if (!(day_of_week in return_obj)) {
-      return_obj[day_of_week] = [];
-      return_obj[day_of_week].push(display_object(item));
-    } else {
-      return_obj[day_of_week].push(display_object(item));
-    }
+    return_obj[day_of_week].push(display_object(item));
   });
   return return_obj;
 }
@@ -55,18 +92,20 @@ function sortData(filteredData) {
 
 /**
  * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
- * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 PM"
+ * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 pm"
  */
 function localeTimeIn12Format(time) {
-  return new Date(time).toLocaleTimeString(
-    {},
-    {
-      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      hour12: true,
-      hour: "2-digit",
-      minute: "numeric",
-    }
-  );
+  return new Date(time)
+    .toLocaleTimeString(
+      {},
+      {
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        hour12: true,
+        hour: "numeric",
+        minute: "numeric",
+      }
+    )
+    .toLowerCase();
 }
 
 /**
@@ -114,4 +153,4 @@ function display_object(item) {
   return rv_object;
 }
 
-export { formatEventData, sendGetRequest };
+export { getEventData, insertEventSchedule };
