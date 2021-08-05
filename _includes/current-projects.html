@@ -134,7 +134,8 @@
     function createFilter(sortedProjectData){
         return {
                 'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
-                'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
+                // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
+                // ^ See issue #1997 for more info on why this is commented out
                 'technologies': [...new Set(sortedProjectData.map(item => item.project.technologies ? item.project.technologies.map(tech => tech) : '').flat() ) ].filter(v=>v!='').sort(),
                 'location': ['Remote']
             }
@@ -434,13 +435,14 @@
                 `:""
                 }
 
-                ${project.looking ?
-                `
-                <div class="project-needs">
-                    <strong>Looking for: </strong>
-                    ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
-                </div>
-                `:""
+                ${project.looking ? "" : ""
+                // `
+                // <div class="project-needs">
+                //     <strong>Looking for: </strong>
+                //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
+                // </div>
+                // `:""
+                // ^ See issue #1997 for more info on why this is commented out
                 }
 
                 ${project.location ?
