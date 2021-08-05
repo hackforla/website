@@ -25,6 +25,7 @@ const octokit = new Octokit({ auth: process.env.token });
   // Fetch GitHub Data for each repository and add it to overall data
   console.log(`Fetching data since: ${dateLastRan.toString()}`);
   for(let repo of allRepos) {
+
     let repoLanguages = await octokit.repos.listLanguages({ owner: repo.owner.login, repo: repo.name });
     let commitContributors = await getCommitContributors(repo);
     if(commitContributors){
