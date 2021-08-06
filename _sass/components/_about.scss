@@ -628,7 +628,10 @@ a.anchor {
 
 // Bigger than tablet - 768px
 @media #{$bp-tablet-up} {
-
+  .wins-card-mobile{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 //Bigger than desktop - 960px
