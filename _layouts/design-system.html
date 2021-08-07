@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="design-system-wrapper">
+    <div class="card-primary sidenav--design-system">
+        <h1 class="title5">Hack For LA Site Design System LEYOUT</h1>
+        <ul>
+                <li>
+                    <span>Components</span>
+                    <ul>
+                        {%- assign components = site.design-system | sort: "title" -%}
+                        {%- for component in components -%}
+                            <a href="{{component.url}}">
+                                <li>
+                                    <span>{{ component.title }}</span>
+                                </li>
+                            </a>
+                        {%- endfor -%}
+                    </ul>
+                </li>
+        </ul>
+    </div>
+
+    <div class="card-primary page-card--design-system">
+        <h2 class="title4 page-card--design-system--header">{{ page.title }}</h2>
+        <p>{{ page.description | markdownify }}</p>
+
+        {% for subgroup in page.subgroups %}
+            <h3>{{ subgroup.title }}</h3>
+            <p>{{ subgroup.description | markdownify }}</p>
+            {% for variation in subgroup.variations %}
+                <h4>{{ variation.title }}</h4>
+                <p>{{ variation.description }}</p>
+                <div>{{ variation.pattern }}</div>
+                <div class="code-preview">{% highlight markdown %}{{ variation.pattern }}{% endhighlight %}</div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
