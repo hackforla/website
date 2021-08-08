@@ -37,7 +37,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   const instructions = makeComment(addedLabels)
   const formattedInstructions = comments.formatComment(instructions, instructionsPlaceholder, path, null)
   const instructionsWithIssueCreator = comments.formatComment(issueCreator, issueCreatorPlaceholder, null, formattedInstructions)
-  await comments.postComment(issueNum, instructionsWithIssueCreator)
+  await comments.postComment(github, context, issueNum, instructionsWithIssueCreator)
 }
 
 /**

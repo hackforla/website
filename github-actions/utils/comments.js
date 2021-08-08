@@ -17,10 +17,12 @@ var fs = require("fs")
 
 /**
  * Posts a comment on github
+ * @param {Object} github - github object  
+ * @param {Object} context - context object 
  * @param {Number} issueNum - the issue number where the comment should be posted
  * @param {String} comment - the comment to be posted
  */
- async function postComment(issueNum, comment) {
+ async function postComment(github, context, issueNum, comment) {
   try {
     await github.issues.createComment({
       owner: context.repo.owner,
