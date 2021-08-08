@@ -11,6 +11,24 @@
   font-weight: normal;
 }
 
+.mobile-image {
+  @media #{$bp-below-mobile} {
+    padding: 0;
+  }
+}
+
+.credit-hero {
+  padding: 33px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-evenly;
+
+  @media #{$bp-below-mobile} {
+    flex-direction: column;
+    text-align: -webkit-center;
+  }
+}
+
 .credits-item {
   margin: 15px;
   padding-bottom: 15px;
