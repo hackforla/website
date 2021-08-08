@@ -1,43 +1,23 @@
 /* This page is built using a mobile first method.  Plain tags apply to mobile. Breakpoints below for larger sizes. */
 
-.header-container--about-us {
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    padding: 25px 15px 20px 15px;    
-}
+.header-link--about {
+    text-decoration: none;
+    font-weight: 700;
 
-.header-container--about-us h1 {
-  font-weight: 900;
-  margin-bottom: 30px;
+    &:link,
+    &:visited {
+      color: $color-black;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-red;
+    }
 }
 
 .donation-gif-box-shadow {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.12);
-}
-
-.header-text--about-us {
-    font-size: 18px;
-    max-width: 500px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-
-    a {
-        text-decoration: none;
-        font-weight: 700;
-    
-        &:link,
-        &:visited {
-          color: $color-black;
-        }
-    
-        &:hover,
-        &:active,
-        &:focus {
-          color: $color-red;
-        }
-      }
 }
 
 // CSS Grid 
@@ -599,16 +579,6 @@ a.anchor {
 
 // Below tablet - 768px
 @media #{$bp-below-tablet} {
-  .about-header-text-margin{
-    margin-bottom: 36px;
-    
-    h1 {
-      margin-bottom: 28px;
-    }
-  }
-  .header-text--about-us {
-    font-size: 16px;
-  }
   .page-content-container-grid {
     margin-top: 0; 
   }
@@ -626,16 +596,6 @@ a.anchor {
 
 //Bigger than desktop - 960px
 @media #{$bp-desktop-up} {
-
-  .header-container--about-us {
-    flex-flow: row;
-    padding: 3rem 1rem 0 1rem;
-  } 
-
-  .about-header-text-margin {
-    margin-right: 100px;
-  }
-
   // The next two tags turn on and off the sticky nav sidebar
   .page-content-container-grid {
     grid-template-columns: 996px auto;
