@@ -32,7 +32,12 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   }
 
   const instructions = makeComment(addedLabels)
-  const formattedInstructions = formatComment(instructions)
+  console.log('initial comment: ', instructions)
+
+  const path = './github-actions/issue-labels/labels-instructions-template.md'
+  const instructionsPlaceholder = '${labelInstructions}'
+  const formattedInstructions = formatComment(instructions, path, instructionsPlaceholder)
+  console.log('final comment: ', formattedInstructions)
   await postComment(issueNum, formattedInstructions)
 }
 
@@ -41,23 +46,28 @@ function makeComment(labels) {
   const issueCreator = context.payload.issue.user.login
 
   if (labels.length === 0) {
-    return `Good job @${issueCreator} for adding the required labels to this issue.`
+    const path = './github-actions/issue-labels/no-labels-template.md'
+    return formatComment(null, path, null)
   }
 
-  return `Hi @${issueCreator}. Please don't forget to add the proper labels to this issue.
-  Currently, the labels for the following are missing:
-  ${labels.map(label => ` ${LABELS_OBJ[label]} `)}
-  To add a label, take a look at Github's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
-  Also, don't forget to remove the "missing labels" after you add the proper labels.
-  To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.`
+  const path = './github-actions/issue-labels/add-labels-template.md'
+  const labelsPlaceholder = '${labels}'
+  const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
+  return formatComment(labelsToAdd, path, labelsPlaceholder)
 }
 
 // Format the comment to be posted
-function formatComment(instructions) {
+/* function formatComment(instructions) {
   const path = './github-actions/issue-labels/labels-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8')
   const completedInstuctions = text.replace('${labelInstructions}', instructions)
   return completedInstuctions
+} */
+
+function formatComment(comment, path, placeholderString) {
+  const text = fs.readFileSync(path).toString('utf-8')
+  const commentToPost = text.replace(placeholderString, comment)
+  return commentToPost
 }
 
 // Post comment on the proper issue

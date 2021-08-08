@@ -1,4 +1,5 @@
 <!-- Note: Label instructions are added into where the placeholder string first appears --->
+Hi @${issueCreator}.
 
 ${labelInstructions}
 
