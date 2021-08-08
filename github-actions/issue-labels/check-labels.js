@@ -17,7 +17,7 @@ async function main({ g, c }) {
   const issueNum = context.payload.issue.number
 
   const labels = obtainLabels()
-  const filteredLabels = await filterLabels(labels)
+  const filteredLabels = filterLabels(labels)
   const labelsToAdd = checkLabels(filteredLabels)
   console.log('Labels to add: ', labelsToAdd)
 
@@ -40,7 +40,7 @@ function obtainLabels() {
 Ensure that the issue was not created with labels from LABEL_MISSING array.
 If so, they will be filtered and dealt with under the addLabels function
 */
-async function filterLabels(labels) {
+function filterLabels(labels) {
   return labels.filter(label => LABEL_MISSING.includes(label) === false)
 }
 
