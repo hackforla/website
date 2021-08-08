@@ -1,7 +1,5 @@
-<!-- 
-Template for a comment to be posted after an issue is created.
-The issue creator's handle replaces the ${issueCreator} placeholder and the instructions replace the ${labelInstructions} placeholder.
- --->
+<!-- Template for a comment to be posted after an issue is created. --->
+<!-- The issue creator's handle replaces the ${issueCreator} placeholder and the instructions replace the ${labelInstructions} placeholder. --->
 
 Hi @${issueCreator}.
 
