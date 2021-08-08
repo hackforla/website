@@ -20,7 +20,6 @@ var context
  * @param {Array} addedLabels - the labels added to the issue
  * @param {Number} issueNum - the number of the issue where the post will be made 
  */
-
 async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   github = g
   context = c
@@ -31,43 +30,32 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
     return
   }
 
-  const instructions = makeComment(addedLabels)
-
   const issueCreator = context.payload.issue.user.login
   const path = './github-actions/issue-labels/labels-instructions-template.md'
   const instructionsPlaceholder = '${labelInstructions}'
   const issueCreatorPlaceholder = '${issueCreator}'
 
-  const formattedInstructions = formatComment(instructions, path, instructionsPlaceholder, null)
-  const instructionsWithIssueCreator = formatComment(issueCreator, null, issueCreatorPlaceholder, formattedInstructions)
-  console.log('final comment: ', instructionsWithIssueCreator)
+  const instructions = makeComment(addedLabels)
+  const formattedInstructions = formatComment(instructions, instructionsPlaceholder, path, null)
+  const instructionsWithIssueCreator = formatComment(issueCreator, issueCreatorPlaceholder, null, formattedInstructions)
   await postComment(issueNum, instructionsWithIssueCreator)
 }
 
 // Create the comment based on the labels array
 function makeComment(labels) {
-  
-
   if (labels.length === 0) {
     const path = './github-actions/issue-labels/no-labels-template.md'
-    return formatComment(null, path, null, null)
+    return formatComment(null, null, path, null)
   }
 
   const path = './github-actions/issue-labels/add-labels-template.md'
   const labelsPlaceholder = '${labels}'
   const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
-  return formatComment(labelsToAdd, path, labelsPlaceholder, null)
+  return formatComment(labelsToAdd, labelsPlaceholder, path, null)
 }
 
 // Format the comment to be posted
-/* function formatComment(instructions) {
-  const path = './github-actions/issue-labels/labels-instructions-template.md'
-  const text = fs.readFileSync(path).toString('utf-8')
-  const completedInstuctions = text.replace('${labelInstructions}', instructions)
-  return completedInstuctions
-} */
-
-function formatComment(replacementString, path, placeholderString, textToFormat) {
+function formatComment(replacementString, placeholderString, path, textToFormat) {
   const text = textToFormat === null ? fs.readFileSync(path).toString('utf-8') : textToFormat
   const commentToPost = text.replace(placeholderString, replacementString)
   return commentToPost
@@ -76,14 +64,14 @@ function formatComment(replacementString, path, placeholderString, textToFormat)
 // Post comment on the proper issue
 async function postComment(issueNum, instructions) {
   try {
-      await github.issues.createComment({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          issue_number: issueNum,
-          body: instructions,
-      })
+    await github.issues.createComment({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: issueNum,
+      body: instructions,
+    })
   } catch (err) {
-      throw new Error(err);
+    throw new Error(err);
   }
 }
 
