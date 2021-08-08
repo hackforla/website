@@ -41,7 +41,11 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   await postComment(issueNum, instructionsWithIssueCreator)
 }
 
-// Create the comment based on the labels array
+/**
+ * Create the comment based on the labels array
+ * @param {Array} labels - the labels added to the issue
+ * @returns {String} - returns a string of instructions to be used for the comment
+ */
 function makeComment(labels) {
   if (labels.length === 0) {
     const path = './github-actions/issue-labels/no-labels-template.md'
@@ -54,21 +58,32 @@ function makeComment(labels) {
   return formatComment(labelsToAdd, labelsPlaceholder, path, null)
 }
 
-// Format the comment to be posted
+/**
+ * Formats the comment to be posted
+ * @param {String} replacementString - the string to replace the placeholder in the md file
+ * @param {String} placeholderString - the placeholder to be replaced in the md file
+ * @param {String} path - the path of the md file to be formatted
+ * @param {String} textToFormat - the text to be formatted. If null, use the md file provided in the path. If provided, format that text
+ * @returns {String} - returns a formatted comment to be posted on github
+ */
 function formatComment(replacementString, placeholderString, path, textToFormat) {
   const text = textToFormat === null ? fs.readFileSync(path).toString('utf-8') : textToFormat
   const commentToPost = text.replace(placeholderString, replacementString)
   return commentToPost
 }
 
-// Post comment on the proper issue
-async function postComment(issueNum, instructions) {
+/**
+ * Posts a comment on github
+ * @param {Number} issueNum - the issue number where the comment should be posted
+ * @param {String} comment - the comment to be posted
+ */
+async function postComment(issueNum, comment) {
   try {
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issueNum,
-      body: instructions,
+      body: comment,
     })
   } catch (err) {
     throw new Error(err);
