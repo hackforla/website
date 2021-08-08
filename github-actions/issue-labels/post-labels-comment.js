@@ -32,28 +32,31 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   }
 
   const instructions = makeComment(addedLabels)
-  console.log('initial comment: ', instructions)
 
+  const issueCreator = context.payload.issue.user.login
   const path = './github-actions/issue-labels/labels-instructions-template.md'
   const instructionsPlaceholder = '${labelInstructions}'
-  const formattedInstructions = formatComment(instructions, path, instructionsPlaceholder)
-  console.log('final comment: ', formattedInstructions)
-  await postComment(issueNum, formattedInstructions)
+  const issueCreatorPlaceholder = '${issueCreator}'
+
+  const formattedInstructions = formatComment(instructions, path, instructionsPlaceholder, null)
+  const instructionsWithIssueCreator = formatComment(issueCreator, null, issueCreatorPlaceholder, formattedInstructions)
+  console.log('final comment: ', instructionsWithIssueCreator)
+  await postComment(issueNum, instructionsWithIssueCreator)
 }
 
 // Create the comment based on the labels array
 function makeComment(labels) {
-  const issueCreator = context.payload.issue.user.login
+  
 
   if (labels.length === 0) {
     const path = './github-actions/issue-labels/no-labels-template.md'
-    return formatComment(null, path, null)
+    return formatComment(null, path, null, null)
   }
 
   const path = './github-actions/issue-labels/add-labels-template.md'
   const labelsPlaceholder = '${labels}'
   const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
-  return formatComment(labelsToAdd, path, labelsPlaceholder)
+  return formatComment(labelsToAdd, path, labelsPlaceholder, null)
 }
 
 // Format the comment to be posted
@@ -64,9 +67,9 @@ function makeComment(labels) {
   return completedInstuctions
 } */
 
-function formatComment(comment, path, placeholderString) {
-  const text = fs.readFileSync(path).toString('utf-8')
-  const commentToPost = text.replace(placeholderString, comment)
+function formatComment(replacementString, path, placeholderString, textToFormat) {
+  const text = textToFormat === null ? fs.readFileSync(path).toString('utf-8') : textToFormat
+  const commentToPost = text.replace(placeholderString, replacementString)
   return commentToPost
 }
 
