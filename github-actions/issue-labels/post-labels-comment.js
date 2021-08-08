@@ -12,7 +12,7 @@ var github
 var context
 
 /**
- * Formats the label instructions into a template, then posts it to the issue.
+ * Format the label instructions into a template, then post it to the issue
  * @param {Object} g - github object  
  * @param {Object} c - context object 
  * @param {Boolean} actionResult - the previous gh-action's result
@@ -43,7 +43,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
 /**
  * Create the comment based on the labels array
  * @param {Array} labels - the labels added to the issue
- * @returns {String} - returns a string of instructions to be used for the comment
+ * @return {String} - returns a string of instructions to be used for the comment
  */
 function makeComment(labels) {
   if (labels.length === 0) {

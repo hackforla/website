@@ -7,10 +7,11 @@ var github
 var context
 
 /**
+ * Check the labels of an issue, and add/remove labels as necessary
  * @param {Object} g - github object  
  * @param {Object} c - context object 
+ * @returns - returns an object with the action's result, which is passed on to the next action
  */
-
 async function main({ g, c }) {
   github = g
   context = c
@@ -29,22 +30,31 @@ async function main({ g, c }) {
   }
 }
 
-// Get labels from issue
+/**
+ * Get all labels from the issue
+ * @return {Array} - returns an array of all the labels
+ */
 function obtainLabels() {
   const labelsObject = context.payload.issue.labels
   const labels = labelsObject.map(label => label.name)
   return labels
 }
 
-/*
-Ensure that the issue was not created with labels from LABEL_MISSING array.
-If so, they will be filtered and dealt with under the addLabels function
-*/
+/**
+ * Ensure that the issue was not created with labels from LABEL_MISSING array
+ * If so, they will be filtered and dealt with under the addLabels function
+ * @param {Array} labels - array of labels to filter
+ * @return {Array} - returns a filtered array without the extraneous labels
+ */
 function filterLabels(labels) {
   return labels.filter(label => LABEL_MISSING.includes(label) === false)
 }
 
-// Check for missing labels
+/**
+ * Check for missing labels
+ * @param {Array} labels - array of labels to check
+ * @return {Array} - returns an array of the labels to add
+ */
 function checkLabels(labels) {
   let labelsToAdd = []
 
@@ -60,7 +70,12 @@ function checkLabels(labels) {
   return labelsToAdd
 }
 
-// Add missing labels and remove labels under LABEL_MISSING if necessary
+/**
+ * For the correct issue on github, add any missing labels and remove labels under LABEL_MISSING if necessary
+ * @param {Array} labelsToAdd - array of labels to add
+ * @param {Array} currentLabels- array of all current labels
+ * @return {Boolean} - boolean that states if the function succeeds
+ */
 async function addLabels(labelsToAdd, currentLabels) {
   const issueNum = context.payload.issue.number
   const owner = context.payload.repository.owner.login

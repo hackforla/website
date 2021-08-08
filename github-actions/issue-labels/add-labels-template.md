@@ -1,4 +1,7 @@
-<!-- Note: Label instructions are added into where the placeholder string first appears --->
+<!-- 
+Template for a comment that requires the user to add any missing labels.
+The proper labels replace the ${labels} placeholder string
+--->
 
 Please don't forget to add the proper labels to this issue. Currently, the labels for the following are missing:
 ${labels}
