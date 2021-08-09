@@ -1,5 +1,4 @@
 <!-- Template for a comment that requires the user to add any missing labels. --->
-<!-- The proper labels replace the first placeholder string --->
 
 Hi @${issueCreator}.
 
