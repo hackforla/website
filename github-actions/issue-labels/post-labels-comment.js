@@ -29,14 +29,22 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
     return
   }
 
-  const issueCreator = context.payload.issue.user.login
-  const path = './github-actions/issue-labels/labels-instructions-template.md'
-  const instructionsPlaceholder = '${labelInstructions}'
-  const issueCreatorPlaceholder = '${issueCreator}'
-
   const instructions = makeComment(addedLabels)
-  const formattedInstructions = formatComment(instructions, instructionsPlaceholder, path, null)
-  const instructionsWithIssueCreator = formatComment(issueCreator, issueCreatorPlaceholder, null, formattedInstructions)
+  const instructionsObject = {
+    replacementString: instructions,
+    placeholderString: '${labelInstructions}',
+    filePathToFormat: './github-actions/issue-labels/labels-instructions-template.md',
+    textToFormat: null
+  }
+  const formattedInstructions = formatComment(instructionsObject)
+  const issueCreator = context.payload.issue.user.login
+  const formattedInstructionsObject = {
+    replacementString: issueCreator,
+    placeholderString: '${issueCreator}',
+    filePathToFormat: null,
+    textToFormat: formattedInstructions
+  }
+  const instructionsWithIssueCreator = formatComment(formattedInstructionsObject)
   await postComment(issueNum, instructionsWithIssueCreator)
 }
 
@@ -47,26 +55,35 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
  */
 function makeComment(labels) {
   if (labels.length === 0) {
-    const path = './github-actions/issue-labels/no-labels-template.md'
-    return formatComment(null, null, path, null)
+    const commentObject = {
+      replacementString: null,
+      placeholderString: null,
+      filePathToFormat: './github-actions/issue-labels/no-labels-template.md',
+      textToFormat: null
+    }
+    return formatComment(commentObject)
   }
 
-  const path = './github-actions/issue-labels/add-labels-template.md'
-  const labelsPlaceholder = '${labels}'
   const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
-  return formatComment(labelsToAdd, labelsPlaceholder, path, null)
+  const commentObject = {
+    replacementString: labelsToAdd,
+    placeholderString: '${labels}',
+    filePathToFormat: './github-actions/issue-labels/add-labels-template.md',
+    textToFormat: null
+  }
+  return formatComment(commentObject)
 }
 
 /**
- * Formats the comment to be posted
+ * Formats the comment to be posted based on an object input
  * @param {String} replacementString - the string to replace the placeholder in the md file
  * @param {String} placeholderString - the placeholder to be replaced in the md file
  * @param {String} path - the path of the md file to be formatted
  * @param {String} textToFormat - the text to be formatted. If null, use the md file provided in the path. If provided, format that text
  * @returns {String} - returns a formatted comment to be posted on github
  */
- function formatComment(replacementString, placeholderString, path, textToFormat) {
-  const text = textToFormat === null ? fs.readFileSync(path).toString('utf-8') : textToFormat
+ function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }) {
+  const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat
   const commentToPost = text.replace(placeholderString, replacementString)
   return commentToPost
 }
