@@ -59,7 +59,7 @@ function checkLabels(labels) {
   let labelsToAdd = []
 
   REQUIRED_LABELS.forEach((requiredLabel, i) => {
-    const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'g')
+    const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'gi')
     const isLabelPresent = labels.some(label => regExp.test(label))
 
     if (isLabelPresent === false){
