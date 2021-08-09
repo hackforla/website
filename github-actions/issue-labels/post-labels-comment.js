@@ -30,22 +30,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   }
 
   const instructions = makeComment(addedLabels)
-  const instructionsObject = {
-    replacementString: instructions,
-    placeholderString: '${labelInstructions}',
-    filePathToFormat: './github-actions/issue-labels/labels-instructions-template.md',
-    textToFormat: null
-  }
-  const formattedInstructions = formatComment(instructionsObject)
-  const issueCreator = context.payload.issue.user.login
-  const formattedInstructionsObject = {
-    replacementString: issueCreator,
-    placeholderString: '${issueCreator}',
-    filePathToFormat: null,
-    textToFormat: formattedInstructions
-  }
-  const instructionsWithIssueCreator = formatComment(formattedInstructionsObject)
-  await postComment(issueNum, instructionsWithIssueCreator)
+  await postComment(issueNum, instructions)
 }
 
 /**
@@ -54,24 +39,36 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
  * @return {String} - returns a string of instructions to be used for the comment
  */
 function makeComment(labels) {
+  const issueCreator = context.payload.issue.user.login
+
   if (labels.length === 0) {
     const commentObject = {
-      replacementString: null,
-      placeholderString: null,
+      replacementString: issueCreator,
+      placeholderString: '${issueCreator}',
       filePathToFormat: './github-actions/issue-labels/no-labels-template.md',
       textToFormat: null
     }
     return formatComment(commentObject)
   }
 
-  const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
+  // Replace the issue creator placeholder first
   const commentObject = {
-    replacementString: labelsToAdd,
-    placeholderString: '${labels}',
+    replacementString: issueCreator,
+    placeholderString: '${issueCreator}',
     filePathToFormat: './github-actions/issue-labels/add-labels-template.md',
     textToFormat: null
   }
-  return formatComment(commentObject)
+  const commentWithIssueCreator = formatComment(commentObject)
+
+  // Replace the labels placeholder
+  const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
+  const labelsCommentObject = {
+    replacementString: labelsToAdd,
+    placeholderString: '${labels}',
+    filePathToFormat: null,
+    textToFormat: commentWithIssueCreator
+  }
+  return formatComment(labelsCommentObject)
 }
 
 /**
