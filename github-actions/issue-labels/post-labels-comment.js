@@ -37,7 +37,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   const instructions = makeComment(addedLabels)
   const formattedInstructions = formatComment(instructions, instructionsPlaceholder, path, null)
   const instructionsWithIssueCreator = formatComment(issueCreator, issueCreatorPlaceholder, null, formattedInstructions)
-  await postComment(github, context, issueNum, instructionsWithIssueCreator)
+  await postComment(issueNum, instructionsWithIssueCreator)
 }
 
 /**
@@ -73,12 +73,10 @@ function makeComment(labels) {
 
 /**
  * Posts a comment on github
- * @param {Object} github - github object  
- * @param {Object} context - context object 
  * @param {Number} issueNum - the issue number where the comment should be posted
  * @param {String} comment - the comment to be posted
  */
- async function postComment(github, context, issueNum, comment) {
+ async function postComment(issueNum, comment) {
   try {
     await github.issues.createComment({
       owner: context.repo.owner,
