@@ -453,7 +453,6 @@ a.anchor {
 }
 
 .accomplishment-wins {
-  color: #333;
   text-decoration: none;
   margin: 25px 0 10px 0;
   display: flex;
@@ -488,6 +487,10 @@ a.anchor {
 
 .wins-card-mobile {
   display: block;
+  width: 308px;
+  height: 222px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
 }
 .wins-card-desktop {
   display: none;
@@ -582,6 +585,10 @@ a.anchor {
   .page-content-container-grid {
     margin-top: 0; 
   }
+  .wins-card-mobile{
+    margin-left: auto;
+    margin-right: auto;
+  }
 } // End below tablet
 
 // Bigger than mobile - 480px
@@ -591,7 +598,10 @@ a.anchor {
 
 // Bigger than tablet - 768px
 @media #{$bp-tablet-up} {
-
+  .wins-card-mobile{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 //Bigger than desktop - 960px
