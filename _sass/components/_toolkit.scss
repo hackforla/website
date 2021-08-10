@@ -1,18 +1,4 @@
 .toolkit-header {
-    display: flex;
-    justify-content: center;
-
-    &__text {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-right: 5rem;
-
-        h1 {
-            margin-bottom: 3.125rem;
-        }
-    }
-
     &__text-group {
         display: flex; 
         flex-wrap: wrap; 
@@ -20,67 +6,21 @@
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
-    
-    
-            a {
-                font-weight: 400;
-                text-decoration: none;
-                color: $color-black;
-            }
-            a:hover {
-                color: $color-red;
-                transform: scale(1.01);
-            }
 
-            .selected-category {
-                font-weight: 700;
-                color: $color-red;
-            }
-
-    }
-    
-    &__p {
-        font-size: 1.125rem;
-        max-width: 508px;
-        text-align: left;
-        margin: 12px auto;
-    }
-
-    &__hero-image {
-        margin: 33px 0px;
-        max-width: 100%;
-    }
-}
-
-.toolkit-svg {
-    width: auto;
-    height: 240px;
-}
-
-@media(max-width: 850px) {
-    .toolkit-header {
-        flex-flow: column;
-
-        &__text {
-            margin-right: 0;
-
-            h1 {
-                margin-bottom: 2.25rem;
-            }
+        a {
+            font-weight: 400;
+            text-decoration: none;
+            color: $color-black;
+        }
+        a:hover {
+            color: $color-red;
+            transform: scale(1.01);
         }
 
-        &__p {
-            margin-bottom: 0;
+        .selected-category {
+            font-weight: 700;
+            color: $color-red;
         }
-
-        &__hero-image {
-            margin: 10px 0;
-        }
-    }
-
-    .header-container {
-        padding: 2rem;
-        margin-top: 10%;
     }
 }
 
@@ -274,15 +214,10 @@
 
 @media #{$bp-below-mobile} {
     .toolkit-header {
-        padding-bottom: 3rem;
 
         &__banner-item {
             font-size: .5rem;
             max-width: 3.6rem;
-        }
-
-        &__p {
-            font-size: 1rem;
         }
     }
 }
