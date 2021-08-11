@@ -5,7 +5,7 @@ on:
       - labeled
 jobs:
   update-comment:
-    if: "${{ github.event.label.name == 'P-Feature: Wins Page' }}"
+    if: "${{ github.event.label.name == 'Feature: Feature Branch' }}"
     runs-on: ubuntu-latest
     permissions:
       issues: write
