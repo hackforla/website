@@ -1,0 +1,45 @@
+name: Update Team Members
+
+
+# Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
+on:
+  schedule:
+    - cron:  0 11 * * 4 
+
+jobs:
+  # This workflow contains a single job called "trim_contirbutors"
+  trim_contributors:
+    runs-on: ubuntu-latest
+
+    if: github.repository == 'hackforla/website'
+
+    steps:
+    # get the day number of the current month
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +\%d)"
+
+    # checkout repo
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    # setup node 
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+        cache: 'npm'
+
+    # install dependencies to run js file
+    - name: Install npm dependencies
+      run: npm install
+      working-directory: ./github-actions/github-data
+
+    # run js file if it is the first Thursday of the month
+    - name: Trim Members
+      env:
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+      if: ${{ steps.date.outputs.date <= 7 }}
+      run: node github-actions/github-data/contributors-data.js
