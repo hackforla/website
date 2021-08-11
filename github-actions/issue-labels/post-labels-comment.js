@@ -30,6 +30,9 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   }
 
   const instructions = makeComment(addedLabels)
+  if (instructions === false) {
+    return
+  }
   await postComment(issueNum, instructions)
 }
 
@@ -51,6 +54,11 @@ function makeComment(labels) {
     return formatComment(commentObject)
   }
 
+/*
+As per the comments at the end of PR # 2060, the action won't post a comment yet if the required labels are not added
+because of am unforeseen use case. A new issue will be opened to decide the wanted behavior for that particular use case.
+This part can be revisited and fixed afterwards.
+ 
   // Replace the issue creator placeholder first
   const commentObject = {
     replacementString: issueCreator,
@@ -68,7 +76,8 @@ function makeComment(labels) {
     filePathToFormat: null,
     textToFormat: commentWithIssueCreator
   }
-  return formatComment(labelsCommentObject)
+  return formatComment(labelsCommentObject) */
+  return false
 }
 
 /**
