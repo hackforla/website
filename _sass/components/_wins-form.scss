@@ -2,7 +2,7 @@
   min-height: calc(100vh - 223px);
   display: flex;
   align-items: center;
-  background: $color-blue-dark;
+  background: $color-darkblue;
   .wins-form-title {
     font-size: 35px;
     font-weight: 400;
@@ -73,7 +73,7 @@
   .form-control:focus {
     outline: none;
     border-bottom: 2px solid $color-blue; //need to change color
-    background-color: $color-grey-light;
+    background-color: $color-lightgrey;
   }
   .container-fluid {
     width: 100%;
