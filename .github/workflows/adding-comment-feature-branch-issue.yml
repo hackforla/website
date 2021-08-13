@@ -18,7 +18,7 @@ jobs:
           body-includes: 'Overview'
      - name: Dump GitHub context
        env:
-          GITHUB_CONTEXT: ${{steps.fc.outputs}}
+          GITHUB_CONTEXT: ${{ steps.fc.outputs }}
        run: echo "$GITHUB_CONTEXT"
      - name: Update comment
        uses: peter-evans/create-or-update-comment@v1
