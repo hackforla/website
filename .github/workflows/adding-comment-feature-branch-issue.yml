@@ -15,7 +15,7 @@ jobs:
        id: fc
        with:
           issue-number: 1
-          body-includes: 'Overview'
+          body-includes: Overview
      - name: Check outputs
        run: |
           echo "Comment ID - ${{ steps.fc.outputs.comment-id }}"
