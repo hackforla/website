@@ -24,4 +24,4 @@ jobs:
         body: |
          0123456789
          ${{github.event}}
-        edit-mode: replace
+ 
