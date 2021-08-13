@@ -20,7 +20,7 @@ jobs:
        uses: peter-evans/create-or-update-comment@v1
        with:
         comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
          0123456789
          ${{github.event}}
