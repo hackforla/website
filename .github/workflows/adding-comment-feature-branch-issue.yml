@@ -16,10 +16,9 @@ jobs:
        with:
           issue-number: 1
           body-includes: 'Overview'
-     - name: Dump GitHub context
-       env:
-          GITHUB_CONTEXT: ${{ steps.fc.outputs }}
-       run: echo "$GITHUB_CONTEXT"
+     - name: Check outputs
+       run: |
+          echo "Comment ID - ${{ steps.fc.outputs.comment-id }}"
      - name: Update comment
        uses: peter-evans/create-or-update-comment@v1
        with:
