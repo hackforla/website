@@ -344,19 +344,3 @@ provider-link: '/guide-pages/survey-reporting-dashboard-guide'
   <p class="additional-resources-bold-text">Google Data Studio</p>
   <p class="guidepage-pink-underline-link"><a href="https://support.google.com/datastudio/answer/6283323?hl=en">Data Studio Training</a></p>
 </div>
-<script>
-    const issueTemplate = document.querySelector('.issue-template-code');
-    const code = document.querySelector('.template-code');
-    const copyButton = document.querySelector('.copy-button');
-
-    copyButton.addEventListener("click", copyText);
-
-    function copyText() {
-        issueTemplate.focus();
-        document.execCommand("selectAll");
-        const text = code.value;
-        document.execCommand("copy");
-        copyButton.style.border = "0.5px solid #7A7A7A";
-        copyButton.style.boxShadow = "inset 0px 0px 6px rgba(0, 0, 0, 0.39)";
-    }
-</script>
