@@ -15,7 +15,7 @@ jobs:
        id: fc
        with:
           issue-number: ${{ github.event.issue.number }}
-          body-includes: '### Overview'
+          body-includes: REPLACE THIS TEXT 
      - name: Check outputs
        run: |
           echo "Comment ID - ${{ steps.fc.outputs.comment-id }}"
