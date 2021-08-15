@@ -15,7 +15,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            @${{ join(github.event.issue.assignees.*.login, ' @') }} Please add update
+            @${{ join(github.event.issue.assignees.*.login, ' @') }} Please add update using this template
             1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
             2. Blockers: "Difficulties or errors encountered."
             3. Availability: "How much time will you have this week to work on this issue?"
