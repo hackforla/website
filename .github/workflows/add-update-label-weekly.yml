@@ -1,8 +1,8 @@
 name: Add Update Label to Issues Weekly
 
 on:
-  schedule:
-    - cron:  '0 7 * * 5'
+  #schedule:
+   # - cron:  '0 7 * * 5'
 
 jobs:
   Add-Update-Label-to-Issues-Weekly:
