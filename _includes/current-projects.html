@@ -481,10 +481,10 @@
         <ul class='dropdown' id='${categoryName.toLowerCase()}'>
             ${filterArray.map(item =>
                 `
-                <div>
+                <li>
                     <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
                     <label for='${item}'>${item} <span></span></label>
-                </div>
+                </li>
                 `
             ).join("")}
         </ul>
