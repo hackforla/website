@@ -1,33 +1,42 @@
 .main-footer {
-  background: $color-blue-dark;
+  background: $color-darkblue;
   color: $color-white;
-  padding: 32px 16px 100px;
-
-  @media #{$bp-tablet-up} {
-    padding-bottom: 32px;
-  }
+  padding: 42px 25px 20px;
 
   a {
     color: $color-white;
     text-decoration: none;
   }
 
-  .header-list {
-    align-items: center;
-    display: flex;
-    justify-content: center;;
-  }
-  
   .btn--donate-footer {
-    position: absolute;
-    right: 0;
-    margin-right: 0;
-    margin-top: -5px;
+    display: block;
+    margin: 0 auto;
+
+    @media #{$bp-mobile-up} {
+      margin: 0 0 25px auto;
+    }
   }
 
-  .footer-header {
-    position: relative;
-    color: #fa114f;
-    margin-bottom: 54px;
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap-reverse; 
+    justify-content: center;
+    margin: 15px 0 15px 0;
+
+    @media #{$bp-mobile-up} {
+      justify-content: space-between;
+      margin: 0;
+    }
+  }
+
+  .header-list {
+    margin: 0 0 15px 6px;
+
+    @media #{$bp-mobile-up} {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
   }
 }

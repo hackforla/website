@@ -2,7 +2,7 @@
 name: Suggest a guide
 about: 'For guides that could be helpful and listed on the toolkit page. '
 title: ''
-labels: Feature - Toolkit, documentation, enhancement
+labels: documentation, enhancement
 assignees: ''
 
 ---

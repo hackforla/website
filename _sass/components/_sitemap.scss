@@ -6,58 +6,6 @@
   }
 }
 
-.header-container--sitemap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background: #fff;
-  padding: 64px;
-  height: fit-content;
-  margin: 37px auto 0;
-  font-family: 'Roboto' sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-
-  img {
-    max-width: 252.14px;
-  }
-  @include mobile {
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
-  }
-}
-
-// .header-container{
-//   @include mobile{
-//     padding: 32px auto ;
-//   }
-// }
-
-.header-text-margin--sitemap {
-  display: flex;
-  flex-direction: column;
-  margin-right: 80px;
-  p {
-    font-size: 18px;
-    max-width: 508px;
-    margin-top: 8px;
-    text-align: left;
-  }
-  h1 {
-    font-size: 48px;
-  }
-  @include mobile {
-    margin: auto;
-    margin-bottom: 36px;
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-  }
-}
-
 .sitemap-page {
   background: #f7f5f5;
   min-height: 100vh;
@@ -66,8 +14,7 @@
   justify-content: center;
   text-align: center;
 
-  h3 {
-    font-size: 24px;
+  .title4 {
     margin-bottom: 32px;
   }
   p {
@@ -77,27 +24,9 @@
     margin-bottom: 40px;
   }
   @include mobile {
-    h3 {
-      font-size: 20px;
-    }
     p {
       font-size: 16px;
       max-width: 300px;
-    }
-  }
-
-  .page-card--sitemap-flex {
-    padding: 48px;
-    text-align: left;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  @media #{$bp-tablet-up} {
-    .page-card-lg:nth-child(1n + 2) {
-      padding-left: 0;
     }
   }
 
@@ -111,29 +40,20 @@
   
     img {
       margin: auto;
-      margin-left: auto;
     }
-    .card-mobile-icon {
-      display: none;
-    }
+
     @include mobile {
-      h3 {
+      .title4 {
         text-align: center;
       }
-      .card-desktop-icon {
-        display: none;
-      }
-      .card-mobile-icon {
-        display: flex;
-        margin: 58px auto;
-      }
+
       a {
         display: flex;
         justify-content: center;
       }
     }
   }
-  
+
   /*   Page-specific button  */
 
   .btn--site-map-suggest {

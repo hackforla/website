@@ -1,24 +1,23 @@
 <h2 class="event-title">
-  <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="image of an m" />
-  Meetup Events
+    <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="meetup logo" /> Meetup Events
 </h2>
 <div class="mobile-dropdown">
 
-{% for event in site.data.internal.events %}
-  <div class="meetup-steps">
-    <div id="img-content">
-      <img class="step-img-1" src="{{event.link}}" alt=""/>
+    {% for event in site.data.internal.events %}
+    <div class="meetup-steps">
+        <div id="img-content">
+            <img class="step-img-1" src="{{event.link}}" alt="" />
+        </div>
+        <div id="text-content">
+            <h2 class="title-meetup">{{event.name}}</h2>
+            <p>{{event.text}}</p>
+        </div>
     </div>
-    <div id="text-content">
-      <h2 class="title-meetup">{{event.name}}</h2>
-      <p>{{event.text}}</p>
-    </div>
-  </div>
-{% endfor %}
+    {% endfor %}
 
-  <div class="class-btn">
-    <a href="https://www.meetup.com/hackforla/events" target="_blank">
-      <button class="btn btn-primary btn-lg btn--events">View on Meetup</button></a>
-  </div>
+    <div class="class-btn">
+        <a href="https://www.meetup.com/hackforla/events" target="_blank">
+            <button class="btn btn-primary btn-lg btn--events">View on Meetup</button></a>
+    </div>
 
 </div>

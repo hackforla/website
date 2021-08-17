@@ -25,7 +25,7 @@
   }
 
   h3,
-  .type-h3 {
+  .type-h3 { 
     font-size: #{map-get($font-size-h3, print)};
     line-height: #{map-get($line-height-h3, print)};
   }
@@ -34,6 +34,30 @@
   .type-h4 {
     font-size: #{map-get($font-size-h4, print)};
     line-height: #{map-get($line-height-h4, print)};
+  }
+
+  .title1 {
+    font-size: #{map-get($font-size-title1, print)};
+  }
+
+  .title2 {
+    font-size: #{map-get($font-size-title2, print)};
+  }
+
+  .title3 {
+    font-size: #{map-get($font-size-title3, print)};
+  }
+
+  .title4 {
+    font-size: #{map-get($font-size-title4, print)};
+  }
+
+  .title5 {
+    font-size: #{map-get($font-size-title5, print)};
+  }
+
+  .title6 {
+    font-size: #{map-get($font-size-title6, print)};
   }
 
   blockquote p,

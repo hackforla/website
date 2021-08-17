@@ -1,0 +1,23 @@
+name: Add Update Comment
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  add-comment:
+    if: "${{ github.event.label.name == 'To Update !' }}"
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @${{ join(github.event.issue.assignees.*.login, ' @') }} Please add update using this template
+            1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
+            2. Blockers: "Difficulties or errors encountered."
+            3. Availability: "How much time will you have this week to work on this issue?"
+            4. ETA: "When do you expect this issue to be completed?"
+            5. Pictures: "Add any pictures of the visual changes made to the site so far."

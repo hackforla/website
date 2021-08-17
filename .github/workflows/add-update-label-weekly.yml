@@ -1,0 +1,19 @@
+name: Add Update Label to Issues Weekly
+
+on:
+  #schedule:
+   # - cron:  '0 7 * * 5'
+
+jobs:
+  Add-Update-Label-to-Issues-Weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v4
+        env:
+          IN_PROGRESS_COLUMN_ID: ${{ secrets.IN_PROGRESS_COLUMN_ID }}
+        with:
+          script: |
+            const { IN_PROGRESS_COLUMN_ID } = process.env;
+            const script = require('./github-actions/add-update-label-weekly/add-label.js');
+            script({ g: github, c: context }, IN_PROGRESS_COLUMN_ID);

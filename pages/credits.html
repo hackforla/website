@@ -3,20 +3,20 @@ layout: default
 title: Credits
 permalink: /credits/
 ---
-<div class="header-container header-container--credits">
-  <div class="credits-text-margin">
-    <h1>Credits</h1>
-    <p class="header-text">Thank you to all of the artists who have made our page look great.
+<!-- Header banner -->
+<div class="header-container flex-container">
+  <div class="header-text">
+    <h1 class="title1">Credits</h1>
+    <p>Thank you to all of the artists who have made our page look great.
       Check out all of the iconography and imagery we have used on our site.
     </p>
   </div>
-    <img src="/assets/images/credits/credits-hero.svg">
-  </div>
+  <img class="header-hero-image" src="/assets/images/credits/credits-hero.svg">
 </div>
 
 <div class='content-section wide-div'>
 <a class='anchor' id='step-1'></a>
-          <div class='page-card-base card-primary page-card-lg page-card--credits'>
+          <div class='page-card card-primary page-card-lg page-card--credits'>
             <div class="page-contain credits-inner">
                 <ul class="credits-list unstyled-list">
                   {%- for item in site.data.internal.credits -%}
@@ -31,7 +31,7 @@ permalink: /credits/
                              <p>
                               <strong>Name: </strong>
                               <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'-->
-                                <a href="{{item[1].provider-link}}">{{ item[1].title }}</a>
+                                <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
                               </p>
                             {%- endif -%}
                             {%- if item[1].used-in -%}
