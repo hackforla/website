@@ -40,8 +40,8 @@ links:
     url: 'https://smstaging.engage.town'
   - name: Site
     url: 'https://sm.engage.town'
-  - name: Wiki
-    url: 'https://github.com/hackla-engage/start-here/wiki'
+  # - name: Wiki
+  #   url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Engage-Product-One-Sheet.pdf.pdf'
 looking:
