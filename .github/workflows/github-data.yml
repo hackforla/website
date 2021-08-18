@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
     
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1

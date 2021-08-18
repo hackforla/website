@@ -14,7 +14,7 @@
 }
 
 .getting-started-page {
-  background: $color-blue-dark;
+  background: $color-darkblue;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -185,7 +185,8 @@
 }
 
 .project-position-1 {
-  padding: 40px 28px;
+
+  padding: 40px 28px 0px 28px;
   margin: 0px 30px;
   width: 50%;
 
@@ -201,7 +202,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5px;
+  //padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: center;
 
   @media #{$bp-below-mobile} {
@@ -221,6 +224,7 @@
 }
 
 .project-position-3 {
+  padding: 0px 28px 45px 28px;
   margin: 0px 30px;
   width: 50%;
  
@@ -234,6 +238,7 @@
 
 hr {
   width: 80%;
+  margin-top: 8%;
   margin-bottom: 8%;
 }
 

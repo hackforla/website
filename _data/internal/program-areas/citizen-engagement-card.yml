@@ -15,19 +15,19 @@ SDG:
   - Strong Institutions
 
 projects: 
-  - id: 202051333
-    name: Not Today
-    image: /assets/images/projects/not-today.png
-    image_alt: Not Today logo. A person embrace another person with full support. Art by C.W. Moss
-    link: https://www.hackforla.org/projects/not-today.html
-  - id: 228981080
-    name: Home Unite Us
-    image: /assets/images/projects/home-heart.png
-    image_alt: Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.
-    link: https://www.hackforla.org/projects/home-unite-us
-  - id: 215666884
-    name: Food Oasis
-    image: /assets/images/projects/food-oasis.jpg
-    image_alt: Stacks of freshly harvested beets
-    link: https://www.hackforla.org/projects/food-oasis
+  - id: 190321758
+    name: 311 Data
+    image: /assets/images/projects/311_data.png
+    image_alt: 311 data logo.
+    link: https://www.hackforla.org/projects/311-data
+  - id: 138791772
+    name: Engage
+    image: /assets/images/projects/engage.jpg
+    image_alt: Santa Monica city council closed in session on CityTV channel.
+    link: https://www.hackforla.org/projects/engage
+  - id: 216854923
+    name: Lucky Parking
+    image: /assets/images/projects/lucky-parking.png
+    image_alt: Lucky Parking Logo
+    link: https://www.hackforla.org/projects/lucky-parking
 ---

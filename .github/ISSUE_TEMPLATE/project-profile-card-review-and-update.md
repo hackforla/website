@@ -2,7 +2,7 @@
 name: Project Profile Card review and update
 about: To track project profile card updates
 title: 'Update Project Profile: [Project Name]'
-labels: Feature - Project Info and Page
+labels: ''
 assignees: ''
 
 ---

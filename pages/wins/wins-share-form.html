@@ -1,68 +1,23 @@
 ---
-layout: null
+layout: default
 permalink: /share-your-wins/
 ---
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      #professionalLinkForm {
-        display: none;
-      }
-      #teamsRolesForm {
-        display: none;
-      }
-      #celebrationsForm {
-        display: none;
-      }
-
-      #linkedinPhotoPermission {
-        display: none;
-      }
-      #githubPhotoPermission {
-        display: none;
-      }
-      .form-group {
-        margin-bottom: 1rem;
-      }
-      label {
-        display: inline-block;
-        margin-bottom: 0.5rem;
-      }
-      .form-control {
-        display: block;
-        width: 100%;
-        height: calc(1.5em + 0.75rem + 2px);
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      }
-      .container-fluid {
-        width: 100%;
-        padding-right: 30px;
-        padding-left: 30px;
-      }
-    </style>
     <title>Share your wins with us!</title>
-  </head>
+  </head> -->
 
-  <body class="container-fluid">
-    <form id="nameEmailForm">
+  <div class="container-fluid wins-form content-section">
+    <form id="nameEmailForm" class="page-card-lg page-card">
+      <h1 class="wins-form-title">Share your wins with us!</h1>
       <div class="form-group">
         <label for="fullName">Full name</label>
         <input
           type="text"
           class="form-control"
           id="fullName"
-          placeholder="Enter fullname"
           required
         />
       </div>
@@ -72,7 +27,6 @@ permalink: /share-your-wins/
           type="email"
           class="form-control"
           id="email"
-          placeholder="Enter email"
           required
         />
       </div>
@@ -80,15 +34,14 @@ permalink: /share-your-wins/
       <button type="submit" id="nameEmailNextButton">Next</button>
     </form>
 
-    <form id="professionalLinkForm">
+    <form id="professionalLinkForm" class="page-card-lg page-card">
       <div class="form-group">
         <label for="linkedinurl">LinkedIn URL(optional)</label>
         <input
           type="text"
           class="form-control"
           id="linkedinurl"
-          placeholder="Enter LinkedIn URL"
-          pattern="https:\/\/www\.linkedin\.com\/.+"
+          pattern="https:\/\/(www\.)?linkedin\.com\/.+"
           title="https://www.linkedin.com/in/<your-username>"
         />
       </div>
@@ -122,8 +75,7 @@ permalink: /share-your-wins/
           type="text"
           class="form-control"
           id="githuburl"
-          placeholder="Enter GitHub URL"
-          pattern='https:\/\/www\.github\.com\/.+'
+          pattern='https:\/\/(www\.)?github\.com\/.+'
           title="https://www.github.com/<your-username>"
         />
       </div>
@@ -154,7 +106,7 @@ permalink: /share-your-wins/
       </button>
     </form>
 
-    <form id="teamsRolesForm">
+    <form id="teamsRolesForm" class="page-card-lg page-card">
       <section id="teams">
         <p>Select the team(s) you're on</p>
         <template id="teamsCheckBoxTemplate">
@@ -170,7 +122,7 @@ permalink: /share-your-wins/
         </template>
       </section>
       <div class="form-group">
-        <label for="specificRole">What is/was your specific role</label>
+        <label for="specificRole"><p>What is/was your specific role</p></label>
         <input
           type="text"
           class="form-control"
@@ -180,9 +132,10 @@ permalink: /share-your-wins/
         />
       </div>
       <section id="joinDate">
-        <label for="joinDateInput">Join date</label>
+        <label for="joinDateInput"><p>Join date</p></label>
         <input
           type="date"
+          class="date"
           id="joinDateInput"
           name="join-date-input"
           min="2018-01-01"
@@ -192,7 +145,7 @@ permalink: /share-your-wins/
       <button type="submit" id="teamsRolesNextButton">Next</button>
     </form>
 
-    <form id="celebrationsForm">
+    <form id="celebrationsForm" class="page-card-lg page-card">
       <section id="wins">
         <p>What do you want to celebrate (select all that apply)?</p>
         <template id="winsCheckboxTemplate">
@@ -201,17 +154,30 @@ permalink: /share-your-wins/
         </template>
       </section>
       <div class="form-group">
-        <label for="winsOverview">Give us a brief overview</label>
-        <textarea name="winsOverview" id="winsOverview" form="celebrationsForm">
-Enter text here...</textarea
-        >
+        <label for="winsOverview"><p>Give us a brief overview</p></label>
+        <textarea 
+          name="winsOverview" 
+          id="winsOverview" 
+          form="celebrationsForm"
+          placeholder="Enter text here..."
+          required
+        ></textarea>
       </div>
-
-      <button id="submitButton" type="submit" class="btn btn-primary">
-        Submit
-      </button>
+      <div class="btn-container">
+        <button id="submitButton" type="submit" class="btn btn-lg btn-primary">
+          Submit
+        </button>
+      </div>
     </form>
-  </body>
+    <div id="successMessage" class="page-card-lg page-card">
+      <h2>Thank you for sharing your win with us!</h2>
+      <p>Our process for adding it to the website is:</p>
+      <ol>
+      <li>Review and Approve</li>
+      <li>Chron job runs nightly and adds reviewed wins to the site</li>
+      </ol>
+    </div>
+  </div>
   <script>
     /**
      * Resources:
@@ -476,7 +442,7 @@ Enter text here...</textarea
       .addEventListener("input", function (e) {
         //If it is a valid linkedin url
         const str = e.target.value;
-        if (str.match(/https:\/\/www\.linkedin\.com\/.+/g).length >0) {
+        if (str.match(/https:\/\/(www\.)?linkedin\.com\/.+/g).length >0) {
           //display the linkedIn photo permission question
           document.querySelector("#linkedinPhotoPermission").style.display =
             "block";
@@ -501,7 +467,7 @@ Enter text here...</textarea
       .addEventListener("input", function (e) {
         //If it is a valid linkedin url
         const str = e.target.value;
-        if (str.match(/https:\/\/www\.github\.com\/.+/g).length >0) {
+        if (str.match(/https:\/\/(www\.)?github\.com\/.+/g).length >0) {
           //display the github photo permission question
           document.querySelector("#githubPhotoPermission").style.display =
             "block";
@@ -537,14 +503,16 @@ Enter text here...</textarea
         .then((response) => {
           response.json().then((data) => {
             console.log(data);
-            alert(
-              `This is submission success debug alert that you can comment out: ${JSON.stringify(
-                data
-              )}`
-            );
+            // alert(
+            //   `This is submission success debug alert that you can comment out: ${JSON.stringify(
+            //     data
+            //   )}`
+            // );
+            document.querySelector("#celebrationsForm").style.display = "none";
+            document.querySelector("#successMessage").style.display = "block";
           });
         })
         .catch((error) => console.error("Error!", error.message));
     }
   </script>
-</html>
+<!-- </html> -->

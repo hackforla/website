@@ -24,7 +24,7 @@ links:
     url: 'https://github.com/hackforla/not-today'
 looking:
 technologies:
-  - React Native
+  - React
 location:
   # - Santa Monica
   - Remote

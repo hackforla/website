@@ -12,7 +12,9 @@ ul.filter-list {
   padding-left: 0;
   grid-auto-flow: column;
   grid-column-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
+  // ^ See issue #1997 for more info on why this is commented out and changed to 3
+  grid-template-columns: repeat(3, 1fr);
 }
 
 //category boxes
@@ -103,7 +105,6 @@ ul.filter-list li ul li {
 }
 
 .filter-tag {
-  flex: auto;
   align-self: flex-start;
   height: 24px;
   box-sizing: border-box;

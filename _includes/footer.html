@@ -1,20 +1,23 @@
 <footer class="main-footer">
-  <div class="page-contain">
+  <div class="footer-contain">
     <nav class="footer-nav">
       <div class="header-links">
-        <h2 class="footer-header">Follow us&mdash;<a href="/donate/" target="_blank" ><button class="btn btn-primary-on-dark btn-md-narrow btn--donate-footer">Donate</button></a></h2>
-        <ul class="inline-list header-list">
-          {% for item in site.data.navigation.social %} {% if item.footer %}
-          <li>
-            <a href="{{ item.link }}" rel="noopener" target="_blank" class="js-inline-link js-inline-link-{{ item.name | downcase }}">
-              {% if item.icon %}
-              {%- include {{ site.baseurl }}{{ item.icon }} -%}
-              {% endif %}
-              <span class="sr-only">{{ item.name }}</span>
-            </a>
-          </li>
-          {% endif %} {% endfor %}
-        </ul>
+        <a href="/donate/" target="_blank"><button class="btn btn-primary-on-dark btn-md-narrow btn--donate-footer">Donate</button></a>
+        <div class="footer-links">
+          <div class="credits-page"><a href="/credits">Credits</a>&nbsp;|&nbsp;<a href="/sitemap">Sitemap</a>&nbsp;|&nbsp;<a href="/join">Join Us</a></div>
+          <ul class="inline-list header-list">
+            {% for item in site.data.navigation.social %} {% if item.footer %}
+            <li>
+              <a href="{{ item.link }}" rel="noopener" target="_blank" class="js-inline-link js-inline-link-{{ item.name | downcase }}">
+                {% if item.icon %}
+                {%- include {{ site.baseurl }}{{ item.icon }} -%}
+                {% endif %}
+                <span class="sr-only">{{ item.name }}</span>
+              </a>
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
       </div>
     </nav>
   </div>

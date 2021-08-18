@@ -1,4 +1,4 @@
-/**
+/*
  * Typography
  */
 $font-family-body: 'Roboto', sans-serif;
@@ -67,6 +67,48 @@ $font-size-h1: (
   mobile: 2rem,
   /* 32px*/ tablet: 2.5rem,
   /* 40px*/ desktop: 3rem /* 48px*/
+);
+
+$font-size-title1: (
+  print: 36pt,
+  /* 32px*/ mobile: 2rem,
+  /* 40px*/ tablet: 2.5rem,
+  /* 48px*/ desktop: 3rem
+);
+
+$font-size-title2: (
+  print: 27pt,
+  /* 28px*/ mobile: 1.75rem,
+  /* 32px*/ tablet: 2rem,
+  /* 36px*/ desktop: 2.25rem
+);
+
+$font-size-title3: (
+  print: 21pt,
+  /* 24px*/ mobile: 1.5rem,
+  /* 24px*/ tablet: 1.5rem,
+  /* 28px*/ desktop: 1.75rem
+);
+
+$font-size-title4: (
+  print: 18pt,
+  /* 20px*/ mobile: 1.25rem,
+  /* 20px*/ tablet: 1.25rem,
+  /* 24px*/ desktop: 1.5rem
+);
+
+$font-size-title5: (
+  print: 15pt,
+  /* 18px*/ mobile: 1.125rem,
+  /* 18px*/ tablet: 1.125rem,
+  /* 20px*/ desktop: 1.25rem
+);
+
+$font-size-title6: (
+  print: 12pt,
+  /* 16px*/ mobile: 1rem,
+  /* 16px*/ tablet: 1rem,
+  /* 16px*/ desktop: 1rem
 );
 
 $line-height-small: (

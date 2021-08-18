@@ -18,7 +18,12 @@ permalink: /wins/
 	</div>
 </section>
 
+
+<script src="/assets/js/inert.min.js"></script>
+
 <script>
+
+
 
   //assigning the google form questions to variables for readability
   //these variables correspond with a question on the google form
@@ -287,7 +292,7 @@ permalink: /wins/
 	const winsCardContainer  = document.querySelector('#responses');
 
 	cards.forEach((card, index) => {
-		if (card[display] != true) return;
+		// if (card[display] != true) return;
 		let cloneCardTemplate = cardTemplate.content.firstElementChild.cloneNode(true);
 		let ghId;
 		if(card[github_url] && card[github_permission] === "Yes"){
@@ -385,7 +390,39 @@ permalink: /wins/
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}
+
   function updateOverlay(i) {
+
+	window.addEventListener('keydown', (e) => {
+		  if (e.key == 'Escape') {
+			  hideOverlay(e.key)
+		  }
+	  });
+
+	  document.querySelector(".main-header").inert = true;
+	  document.querySelector(".content-section.projects").inert = true;
+	  document.querySelector(".main-footer").inert = true;
+	  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
+	  document.querySelector(".sr-only-focusable").inert = true;
+
+	  window.addEventListener('resize', (e) => {
+		  widthOutput = window.innerWidth;
+		  if (widthOutput < 960) {
+			  document.querySelector(".main-header").inert = false;
+			  document.querySelector(".content-section.projects").inert = false;
+			  document.querySelector(".main-footer").inert = false;
+			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
+			  document.querySelector(".sr-only-focusable").inert = false;
+		  }
+		  else {
+			  document.querySelector(".main-header").inert = true;
+			  document.querySelector(".content-section.projects").inert = true;
+			  document.querySelector(".main-footer").inert = true;
+			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
+			  document.querySelector(".sr-only-focusable").inert = true;
+		  }
+	  });
+
   		let stringData = window.localStorage.getItem("data");
   		let data = JSON.parse(stringData).reverse();
 
@@ -419,14 +456,23 @@ permalink: /wins/
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
   	}
-  function hideOverlay(e) {
-  	e = e || window.event;
-  	if (e.target !== e.currentTarget)
-  		return;
 
-  	const overlayProjectCard = document.querySelector('#overlay-project-card');
-  	overlayProjectCard.parentNode.classList.remove("display-initial");
-  }
+
+	function hideOverlay(e) {
+		e = e || window.event || e.key == 'Escape';
+
+		if (e.target !== e.currentTarget)
+			return;
+
+		const overlayProjectCard = document.querySelector('#overlay-project-card');
+		overlayProjectCard.parentNode.classList.remove("display-initial");
+
+		document.querySelector(".main-header").inert = false;
+		document.querySelector(".content-section.projects").inert = false;
+		document.querySelector(".main-footer").inert = false;
+		document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
+		document.querySelector(".sr-only-focusable").inert = false;
+	}
 
   main();
 
