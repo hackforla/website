@@ -1,16 +1,22 @@
 .design-system-wrapper {
+    display: grid;
+    grid-template-columns: 230px auto;
+    grid-template-areas: "nav content";
     min-height: 100vh;
+    width: 100vw;
     margin-top: 61px;
     padding-bottom: 160px;
     background-color: #f7f5f5;
-    display: inline-flex;
+
+    @media #{$bp-below-mobile} {
+        margin-top: 54px;
+    }
 }
 
 
 // sidebar section
-
 .design-system-nav {
-    min-width: 230px;
+    grid-area: nav;
     height: fit-content;
     padding: 80px 20px 80px 36px;
 
@@ -50,6 +56,7 @@
 
 // main section
 .page-card--design-system {
+    grid-area: content;
     overflow: hidden;
     border: 0 solid rgba(51, 51, 51, 0.06);
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
@@ -134,101 +141,4 @@ figure {
 // .highlight .s {
 //     color:
 //     "example" (class name)
-// }
-
-
-
-
-
-
-
-
-
-
-
-// ***** USES GRID AND STICKY. STICKY WILL NOT WORK UNLESS html, body HAVE overflow-x:hidden REMOVED
-
-// .design-system-wrapper {
-//     min-height: 100vh;
-//     display: grid;
-//     grid-template-columns: 230px auto;
-//     grid-template-areas: "nav content";
-//     margin-top: 61px;
-//     padding-bottom: 160px;
-//     background-color: #f7f5f5;
-// }
-
-// .design-system-nav {
-//     grid-area: nav;
-//     position: sticky;
-//     top: 61px;
-//     height: calc(100vh - 61px);
-//     padding: 80px 20px 36px 36px;
-//     overflow-y: auto;
-
-//     &--list {
-//         padding: 0;
-//         list-style-type: none;
-//     }
-
-//     &--item {
-//         margin-top: 2.5rem;
-//     }
-
-//     &--title {
-//         text-transform: uppercase;
-//         font-size: .875rem;
-//         font-weight: 500;
-//     }
-
-//     &--sublist {
-//         padding-left: 18px;
-//         list-style-type: none;
-//     }
-
-//     &--subitem {
-//         margin-top: 1rem;
-//     }
-
-//     &--link {
-//         text-decoration: none;
-//     }
-
-//     .active-group {
-//         color: $color-black;
-//         font-weight: 500;
-//     }
-    
-// }
-
-// // main section
-// .page-card--design-system {
-//     grid-area: content;
-//     overflow: hidden;
-//     border: 0 solid rgba(51, 51, 51, 0.06);
-//     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
-//     border-radius: 0;
-//     margin: 80px 60px auto 60px;
-
-//     &--header {
-//         color: $color-white;
-//         background-color: $color-blue-dark;
-//         width: 100%;
-//         margin: 0;
-//         padding-top: 13px;
-//         padding-bottom: 14px;
-//         padding-left: 49px;
-//     }
-
-//     &--content-container {
-//         margin: 36px 47px;
-
-//         .page-description {
-//             padding-bottom: 64px;
-//         }
-
-//         .subgroup-description {
-//             padding-bottom: 48px;
-//         }
-//     }
 // }
