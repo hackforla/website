@@ -140,10 +140,14 @@ layout: default
 
 {{ content | markdownify }}
 
+<script>
+    window._DATA = JSON.parse(decodeURIComponent("{{ page.data | jsonify | uri_escape  }}"));
+</script>
+
 <!--Script for fetching the correct project-->
 <script>
-    {% assign projects = site.data.external.github-data | jsonify %}
-    let projects = {{ projects }};
+    {% assign projects = site.data.external.github-data %}
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape  }}"));
     let projectId = '{{ page.identification }}';
     // Search for correct project
     let project = null;
