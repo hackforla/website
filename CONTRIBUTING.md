@@ -15,10 +15,11 @@ The following is a set of guidelines for contributing to the website repository,
 # Table of Contents
 ### Setting up the development environment
 1. [Join the repository team](#Join-the-repository-team)
-2. [Fork the repository](#Fork-the-repository)
-3. [Clone the forked repository](#Clone-the-forked-repository)
-4. [Set up Docker](#Set-up-Docker-[4])
-5. [Build and serve the website locally](#Build-and-serve-the-website-locally)
+2. [Installing Git](#Installing-Git)
+3. [Fork the repository](#Fork-the-repository)
+4. [Clone the forked repository](#Clone-the-forked-repository)
+5. [Set up Docker](#Set-up-Docker-[4])
+6. [Build and serve the website locally](#Build-and-serve-the-website-locally)
 ### Working on an issue and making a pull request
 1. [Working on an issue](#Working-on-an-issue)
    - [Check current branch](#Check-current-branch)
