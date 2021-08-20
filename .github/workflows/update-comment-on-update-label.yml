@@ -16,7 +16,8 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             @${{ github.event.issue.assignee.login }} Please add update
-            1. Progress
-            2. Blockers
-            3. Availability
-            4. ETA
+            1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
+            2. Blockers: "Difficulties or errors encountered."
+            3. Availability: "How much time will you have this week to work on this issue?"
+            4. ETA: "When do you expect this issue to be completed?"
+            5. Pictures: "Add any pictures of the visual changes made to the site so far."

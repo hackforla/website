@@ -8,9 +8,17 @@
         flex-direction: column;
         margin-right: 5rem;
 
+        @media #{$bp-below-desktop} {
+          margin-bottom: 1.625rem;
+        }
+
         h1 {
             margin-top: 2.25rem;
             margin-bottom: 3.125rem;
+
+          @media #{$bp-below-desktop} {
+            margin-top: 2rem;
+          }  
         }
     }
 
@@ -55,9 +63,15 @@
 .program-areas-hero-svg {
     width: auto;
     height: 240px;
+
+    @media #{$bp-below-tablet} {
+      height: auto;
+      max-width: 500px;
+      width: 80%;
+    }
 }
 
-@media(max-width: 850px) {
+@media(max-width: 960px) {
     .program-areas-header {
         flex-flow: column;
 
@@ -65,7 +79,7 @@
             margin-right: 0;
 
             h1 {
-                margin-bottom: 0.4rem;
+                margin-bottom: 1rem;
             }
         }
 
@@ -157,6 +171,7 @@
     line-height: 15.23px;
     text-align: center;
 
+
     .project-card-mini-image{
         width: inherit;
         height: 67.83px;
@@ -170,6 +185,18 @@
       flex-direction: row;
       flex-wrap: wrap;
       padding-inline-start: 0px;
+
+
+      .project-card-mini-spacer { // Blank card mini class that is used as a spacer for centering purposes.
+        width: 118px; // Width of the project card mini + margin
+        list-style: none;
+      }
+      
+      @media #{$bp-below-tablet} {
+        justify-content: center;
+        padding-inline-start: 26px; // Offsets 26px margin 
+      }
+
     }
 
 }
