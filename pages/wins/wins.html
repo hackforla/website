@@ -371,21 +371,23 @@ permalink: /wins/
 
 		winsCardContainer.append(cloneCardTemplate);
 
-		const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		const winTextContainer = cloneCardTemplate.querySelector('.wins-card-text')
 		function addSeeMore() {
-			const winInfo = winText.querySelector('.wins-card-overview')
-			const seeMoreDiv = winText.querySelector('.wins-see-more-div')
+			const winText = winTextContainer.querySelector('.wins-card-overview')
+			const seeMoreDiv = winTextContainer.querySelector('.wins-see-more-div')
 			//makes the see more span on the bottom of the card
 			if (
-				!winText.classList.contains('expanded') && 
-				winInfo.offsetHeight <= winText.offsetHeight 
-			) { //checks if see more is needed.
+				!winTextContainer.classList.contains('expanded') && 
+				winText.offsetHeight <= winTextContainer.offsetHeight 
+			) {
+        // Adds see more
 				seeMoreDiv.setAttribute('hidden', 'true')
 			} else {
+        // Removes see more if not needed
 				seeMoreDiv.removeAttribute('hidden')
 			}
-			if (!winText.classList.contains('expanded'))
-				winText.classList.add('relative')
+			if (!winTextContainer.classList.contains('expanded'))
+				winTextContainer.classList.add('relative')
 			if (window.innerWidth > 960){
 				const winsCardTextContainer = seeMoreDiv.parentElement
 				if (winsCardTextContainer.classList.contains("expanded")){
@@ -395,7 +397,7 @@ permalink: /wins/
 		}
 		addSeeMore()
 
-		new ResizeObserver(addSeeMore).observe(winText)
+		new ResizeObserver(addSeeMore).observe(winTextContainer)
 	})
 }
 
@@ -423,6 +425,7 @@ function seeMore(id){
 		}))
 	}
 
+  // Toggles between see more and see less in tablet and mobile view
   function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
 		let screenWidth = window.innerWidth;
@@ -436,6 +439,7 @@ function seeMore(id){
 			parent.setAttribute('class','project-inner wins-card-text expanded');
 			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+      span.parentElement.removeAttribute('hidden')
 		}
   }
 
