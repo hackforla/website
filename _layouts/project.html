@@ -140,14 +140,11 @@ layout: default
 
 {{ content | markdownify }}
 
-<script>
-    window._DATA = JSON.parse(decodeURIComponent("{{ page.data | jsonify | uri_escape  }}"));
-</script>
-
 <!--Script for fetching the correct project-->
 <script>
     {% assign projects = site.data.external.github-data %}
-    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape  }}"));
+    // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
     let projectId = '{{ page.identification }}';
     // Search for correct project
     let project = null;
@@ -242,8 +239,9 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.external.vrms_data | jsonify %}
-let localData = {{ localData }};
+{% assign localData = site.data.external.vrms_data %}
+// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in
