@@ -72,6 +72,7 @@ layout: default
              </div>
 
             <!--Project Summary-->
+            <!-- See issue #1997 for more info on why open-roles is commented out -->
             <div class='description-grid-item'>
                 <p>{{page.description}}</p>
                 {% if page.status == "Completed" and page.completed-contact %}
@@ -79,12 +80,12 @@ layout: default
                 {% elsif page.status == "Completed" %}
                     <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:team@hackforla.org?subject=Question%20about%20{{ page.title }}">team@hackforla.org</a></p>
                 {% elsif page.looking %}
-                <p class='open-roles'><strong>Open roles:</strong></p>
+                <!-- <p class='open-roles'><strong>Open roles:</strong></p>
                 <ul id='open-roles-list'>
                     {% for item in page.looking %}
                         <li><p class='role-paragraph'>{% if item.skill %}{{ item.skill }}{% endif %}</p></li>
                     {% endfor %}
-                </ul>
+                </ul> -->
                 {% endif %}
             </div>
         </div>
@@ -141,8 +142,9 @@ layout: default
 
 <!--Script for fetching the correct project-->
 <script>
-    {% assign projects = site.data.external.github-data | jsonify %}
-    let projects = {{ projects }};
+    {% assign projects = site.data.external.github-data %}
+    // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
     let projectId = '{{ page.identification }}';
     // Search for correct project
     let project = null;
@@ -237,8 +239,9 @@ let projectTitle = '{{ page.title }}';
 let meetingsFound = [];
 
 // Assigns local JSON Data to localData variable
-{% assign localData = site.data.external.vrms_data | jsonify %}
-let localData = {{ localData }};
+{% assign localData = site.data.external.vrms_data %}
+// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
 const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in

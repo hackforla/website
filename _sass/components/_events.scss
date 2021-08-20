@@ -547,7 +547,7 @@
 /* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake. 
     They have been saved because they are still being used in other places on the site. */
     .section-hack-nights {
-      background: $color-blue-dark;
+      background: $color-darkblue;
       color: $color-white;
     }
 
@@ -561,7 +561,7 @@ or overriding .content-section. See Issue #1609. If this comment is no longer re
 }
 
 .events-page, .content-section--events {
-  background: $color-blue-dark;
+  background: $color-darkblue;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,4 +1,4 @@
-// Importing modules
+// Import modules
 var fs = require("fs");
 
 // Global variables
