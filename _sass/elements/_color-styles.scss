@@ -1,36 +1,58 @@
-.color-dodgerblue {
-    color: $color-dodgerblue; 
-}
+/**
+ * Colors
+ */
 
-.color-lightseagreen {
-    color: $color-lightseagreen;
-}
+// Reds
+.color-red { color: $color-red; }
+.color-firebrick { color: $color-firebrick; }
+.color-mediumvioletred { color: $color-mediumvioletred; }
+.color-deeppink { color: $color-deeppink; }
+.color-orangered { color: $color-orangered; }
+.color-salmon { color: $color-salmon; }
 
-.color-orange {
-    color: $color-orange;
-}
+// Oranges
+.color-chocolate { color: $color-chocolate; }
+.color-lightorange { color: $color-lightorange; }
+.color-orange { color: $color-orange; }
+.color-gold { color: $color-gold; }
 
-.color-chocolate {
-    color: $color-chocolate; 
-}
+// Yellows
+.color-mustard { color: $color-mustard; }
+.color-lightyellow { color: $color-lightyellow; }
+.color-papayawhip { color: $color-papayawhip; }
 
-.color-firebrick {
-    color: $color-firebrick; 
-}
+// Greens
+.color-forestgreen { color: $color-forestgreen; }
+.color-darkolive { color: $color-darkolive; }
+.color-teal { color: $color-teal; }
+.color-lightseagreen { color: $color-lightseagreen; }
+.color-lightgreen { color: $color-lightgreen; }
 
-.color-deeppink {
-    color: $color-deeppink;
-}
+// Blues
+.color-midnightblue { color: $color-midnightblue; }
+.color-darkroyalblue { color: $color-darkroyalblue; }
+.color-blue { color: $color-blue; }
+.color-royalblue { color: $color-royalblue; }
+.color-brightblue { color: $color-brightblue; }
+.color-azure { color: $color-azure; }
+.color-dodgerblue { color: $color-dodgerblue; }
+.color-babyblue { color: $color-babyblue; }
+.color-skyblue { color: $color-skyblue; }
 
-.color-mediumvioletred {
-    color: $color-mediumvioletred; 
-}
+// Violets
+.color-blueviolet { color: $color-blueviolet; }
+.color-redpurple { color: $color-redpurple; }
+.color-darkorchid { color: $color-darkorchid; }
 
-.color-darkorchid {
-    color: $color-darkorchid; 
-}
+// Browns
 
-.color-blueviolet {
-    color: $color-blueviolet; 
-}
-
+// Blacks, Greys, White
+.color-black { color: $color-black; }
+.color-darkblue { color: $color-darkblue; }
+.color-darkgrey { color: $color-darkgrey; }
+.color-cement { color: $color-cement; }
+.color-mediumgrey { color: $color-mediumgrey; }
+.color-lightgrey { color: $color-lightgrey; }
+.color-pink { color: $color-pink; }
+.color-whitesmoke { color: $color-whitesmoke; }
+.color-white { color: $color-white; }

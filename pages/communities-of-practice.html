@@ -3,14 +3,14 @@ layout: default
 title: Communities of Practice
 permalink: /communities-of-practice
 ---
-
-<section class="header-container header--communities">
-    <div class="header-text--communities">
-        <h1>Communities of Practice</h1>
+<!-- Header banner -->
+<div class="header-container flex-container">
+    <div class="header-text">
+        <h1 class="title1">Communities of Practice</h1>
         <p>
             Communities of Practice started at Hack for LA in 2020, post-Covid. These communities have been a vital connection point in our fully remote organization. They have enabled us to connect people across projects in ways that are both meaningful for the individuals, and have helped the organization build professional infrastructure to support our community, nonprofit and government project partnerships. These communities have also enabled Hack for LA to provide rapid response to the evolving crises of 2020.
         </p>
-        <p>
+        <p class="sub-p">
             If you'd like to join one of the Communities of Practice that has a regular meeting time, join their Slack channel and look for the meeting details, usually pinned or in the description. Otherwise, see the "How to get started" sections below.
         </p>
             <div class="header-self-invite--communities">
@@ -18,8 +18,9 @@ permalink: /communities-of-practice
                 <p class="alert--communities">To join the Slack channels below, you first need to be a member of our Hack for LA Slack Community – you can self-invite <a href="https://hackforla-slack.herokuapp.com" target="_blank">here</a>.
             </p></div>
     </div>
-    <img class="header-img--communities" src="/assets/images/communities-of-practice/comm-prac-header.svg" alt="commmunity of practice header" />
-</section>
+    <img class="header-hero-image" src="/assets/images/communities-of-practice/comm-prac-header.svg" alt="commmunity of practice header" />
+</div>
+
 <section class="content-section content--communities">
     {% assign sorted_communities = site.data.internal.communities | sort %}
     {% for community in sorted_communities %}
