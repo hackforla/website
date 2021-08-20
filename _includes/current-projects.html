@@ -4,7 +4,7 @@
     <h2 class="project-header">Current Projects</h2>
     <p class="project-pitch">
       Have an idea?
-      <a href="mailto:team@hackforla.org" class="btn btn-primary btn-md-narrow"
+      <a href="mailto:team@hackforla.org?subject=Submitting my pitch to Hack for LA" class="btn btn-primary btn-md-narrow"
         >Submit your pitch</a
       >
     </p>
@@ -481,10 +481,10 @@
         <ul class='dropdown' id='${categoryName.toLowerCase()}'>
             ${filterArray.map(item =>
                 `
-                <div>
+                <li>
                     <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
                     <label for='${item}'>${item} <span></span></label>
-                </div>
+                </li>
                 `
             ).join("")}
         </ul>
