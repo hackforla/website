@@ -89,7 +89,7 @@ permalink: /wins/
   	//cardData[index][question_str] = answer_str
   	let cardData = []
   	const keys = rawData[0]
-  	rawData.slice(1).forEach((data) => {
+  	rawData.slice(1).forEach(data => {
   		let cardObj = {}
   		for (let i = 0; i < keys.length; i++) {
   			cardObj[keys[i]] = data[i];
@@ -100,11 +100,10 @@ permalink: /wins/
   	window.localStorage.setItem('data', JSON.stringify(cardData));
   	makeCards(cardData);
   	ifPageEmpty();
-
   }
 
 
-  //Create The Filters From The Displayed Cards On Page Load
+  //Create The "Role" and "Team" Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
   function createFilter(){
 
@@ -118,12 +117,11 @@ permalink: /wins/
   		Array.isArray(team) ? teamArr.push(...team)  :  teamArr.push(team);
 
   	})
+	//Assign Role for each Wins-Card  
   	responses.querySelectorAll('.wins-card-role:not([style*="display:none"]):not([style*="display: none"]').forEach(item =>{
   		let value = item.textContent.replace("Role(s):","").trim();
   		let role = value.split(",").map(x=>x.trim());
   		Array.isArray(role) ? roleArr.push(...role)  :  roleArr.push(role);
-
-
   	})
 
 
@@ -169,7 +167,7 @@ permalink: /wins/
   	let queryObj = { };
 
   	//Calculate and Create Updated Query String
-  	incomingFilterData.forEach(function(e){
+  	incomingFilterData.forEach(e => {
   		//Find boxes that are checked
   		if(e.checked){
   			let data = e.value.split("_");
@@ -203,10 +201,6 @@ permalink: /wins/
 
   	//Update URL parameters
   	window.history.replaceState(null, '', urlParameter.replaceAll(" ","+"));
-
-
-
-
   }
 
   //Update UI on URL history change and on DomContent loaded
@@ -296,20 +290,20 @@ permalink: /wins/
 
 		const iconContainer = cloneCardTemplate.querySelector(cardSelector);
 
-		cardList.forEach( (item) => {
+		cardList.forEach(item => {
 			if (badgeIcons.hasOwnProperty(item)) {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-					<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
-					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
-				</div>`
+						<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
+					</div>`
 				)
 			} else if (item !== '') {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-					<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
-					<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
-				</div>`
+						<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
+					</div>`
 				)
 			}
 		})
@@ -377,21 +371,23 @@ permalink: /wins/
 
 		winsCardContainer.append(cloneCardTemplate);
 
-		const winText = cloneCardTemplate.querySelector('.wins-card-text')
+		const winTextContainer = cloneCardTemplate.querySelector('.wins-card-text')
 		function addSeeMore() {
-			const winInfo = winText.querySelector('.wins-card-overview')
-			const seeMoreDiv = winText.querySelector('.wins-see-more-div')
+			const winText = winTextContainer.querySelector('.wins-card-overview')
+			const seeMoreDiv = winTextContainer.querySelector('.wins-see-more-div')
 			//makes the see more span on the bottom of the card
 			if (
-				!winText.classList.contains('expanded') && 
-				winInfo.offsetHeight <= winText.offsetHeight 
-			) { //checks if see more is needed.
+				!winTextContainer.classList.contains('expanded') && 
+				winText.offsetHeight <= winTextContainer.offsetHeight 
+			) {
+        // Adds see more
 				seeMoreDiv.setAttribute('hidden', 'true')
 			} else {
+        // Removes see more if not needed
 				seeMoreDiv.removeAttribute('hidden')
 			}
-			if (!winText.classList.contains('expanded'))
-				winText.classList.add('relative')
+			if (!winTextContainer.classList.contains('expanded'))
+				winTextContainer.classList.add('relative')
 			if (window.innerWidth > 960){
 				const winsCardTextContainer = seeMoreDiv.parentElement
 				if (winsCardTextContainer.classList.contains("expanded")){
@@ -401,7 +397,7 @@ permalink: /wins/
 		}
 		addSeeMore()
 
-		new ResizeObserver(addSeeMore).observe(winText)
+		new ResizeObserver(addSeeMore).observe(winTextContainer)
 	})
 }
 
@@ -429,6 +425,7 @@ function seeMore(id){
 		}))
 	}
 
+  // Toggles between see more and see less in tablet and mobile view
   function toggleSeeMoreLess(id){
 		let span = document.getElementById(id);
 		let screenWidth = window.innerWidth;
@@ -442,6 +439,7 @@ function seeMore(id){
 			parent.setAttribute('class','project-inner wins-card-text expanded');
 			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+      span.parentElement.removeAttribute('hidden')
 		}
   }
 
