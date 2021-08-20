@@ -62,8 +62,9 @@ permalink: /wins/
 		]
 
   function main() {
-  	{% assign localData = site.data.external.wins-data | jsonify %}
-	  let localData = {{ localData }};
+	{% assign localData = site.data.external.wins-data %}
+	  // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+	  let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
 	  localData.unshift(dataKeys)
 	  const rawData = localData;
 	  
@@ -280,8 +281,9 @@ permalink: /wins/
 
 
   function makeCards(data) {
-  	{% assign githubData = site.data.external.github-data | jsonify %}
-  	let githubData = {{ githubData }};
+	{% assign githubData = site.data.external.github-data %}
+	// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+  	let githubData = JSON.parse(decodeURIComponent("{{ githubData | jsonify | uri_escape }}"));
 
 	const cards = data.reverse();
 	const cardTemplate = document.getElementById("wins-card-template");
