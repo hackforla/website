@@ -580,25 +580,34 @@ a.anchor {
 
 .news-cells {
   display: flex;
-  // flex-flow: column nowrap;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   padding: 25px 0 15px 0;
-  align-items: center;
+  
+}
+
+// .more-padding {
+//   padding-top: 40px;
+//   margin: 0 20px 0 20px;
+//   padding-bottom: 10px;
+// }
+
+.news-images {
+  height: 150px;
+  width: 150px;
+  object-fit:contain;
+}
+
+
+.news-cells p {
+  padding-top: 40px;
+  margin: 0 20px 0 20px;
 }
 
 .more-padding {
-  padding-top: 40px;
-  margin: 0 20px 0 20px;
-  padding-bottom: 10px;
+  padding-top: 10px;
 }
-
-.news-images {
-  height: 100px;
-  width: 70%;
-  object-fit: contain;
-}
-
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
@@ -617,6 +626,10 @@ a.anchor {
   .page-content-container-grid {
     margin-top: 0; 
   }
+  .news-cells {
+    align-items: center;
+  }
+  
 } // End below tablet
 
 // Bigger than mobile - 480px
@@ -626,6 +639,9 @@ a.anchor {
 
 // Bigger than tablet - 768px
 @media #{$bp-tablet-up} {
+  .news-cells {
+    align-items: center;
+  }
 
 }
 
@@ -969,4 +985,5 @@ a.anchor {
   .sticky-nav-content-container {
     margin-left: 0px;
   }
+   
 }
