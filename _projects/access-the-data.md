@@ -17,7 +17,7 @@ leadership:
       linkedin: 'https://linkedin.com/linkedin-username'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Sarah Nabelsi
-    role: Product Manager
+    role: Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01J9V1H63F'
       github: 'https://github.com/snooravi'
