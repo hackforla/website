@@ -20,11 +20,10 @@ jobs:
        run: |
           echo "Comment ID - ${{ steps.fc.outputs.comment-id }}"
      - name: Update comment
-       uses: peter-evans/create-or-update-comment@v1
-       with:
-        comment-id: ${{ steps.fc.outputs.comment-id }}
-        issue-number: ${{ github.event.issue.number }}
-        body: |
-         0123456789
-         ${{github.event}}
- 
+       run: |
+        await octokit.request('PATCH /repos/Zak234/website/issues/comments/${{ steps.fc.outputs.comment-id }}', {
+        owner: 'Zak234',
+        repo: 'website',
+        comment_id: ${{ steps.fc.outputs.comment-id }},
+        body: 'body'
+        })
