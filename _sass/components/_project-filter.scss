@@ -83,11 +83,17 @@ ul.filter-list li ul li {
   display: none;
 }
 
+.dropdown label {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
 .filter-checkbox {
   border: 1px solid #000000;
   border-radius: 4px;
   margin: 0px 5px;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .labelArrow {
