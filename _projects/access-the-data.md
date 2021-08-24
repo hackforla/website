@@ -14,7 +14,7 @@ leadership:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Sarah Nabelsi
     role: Project Manager
@@ -26,31 +26,31 @@ leadership:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U025WJ8CHFC'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/lrchang2'
     picture: https://avatars.githubusercontent.com/lrchang2
   - name: Alyssa Bryant
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U026DETL43B'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/abryant35'
     picture: https://avatars.githubusercontent.com/abryant35
   - name: Jeremy DeCarvalho
     role: Data Analyst
     links:
       slack: 'https://hackforla.slack.com/team/UFDG06RJQ'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/Jeremy-D'
     picture: https://avatars.githubusercontent.com/Jeremy-D
   - name: Assel Abilova
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U026G6WV49K'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/asselabilova'
     picture: https://avatars.githubusercontent.com/asselabilova
   - name: Malak Hmimy
     role: Data Analyst
     links:
       slack: 'https://hackforla.slack.com/team/U01TL5WE7G8'
-      linkedin: 'https://linkedin.com/linkedin-username'
+      github: 'https://github.com/MalakH21'
     picture: https://avatars.githubusercontent.com/MalakH21
 links: 
   - name: Github
