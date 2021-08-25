@@ -4,7 +4,7 @@ title: Engage
 description: 'Engage is a civic participation platform that makes it easier for constituents to offer their feedback on policy issues that local Councils are considering. Engage aims to increase access for community stakeholders who are unable to attend public meetings or may otherwise feel unheard by their local government.'
 image: /assets/images/projects/engage-logo.png
 alt: 'Engage logo'
-image-hero: /assets/images/projects/engage-hero-2.jpeg
+image-hero: /assets/images/projects/engage-hero.png
 alt-hero: 'People of different ages, gender and ethnicity coming together concept illustration'
 leadership:
   - name: Bonnie Wolfe
@@ -40,8 +40,8 @@ links:
     url: 'https://smstaging.engage.town'
   - name: Site
     url: 'https://sm.engage.town'
-  - name: Wiki
-    url: 'https://github.com/hackla-engage/start-here/wiki'
+  # - name: Wiki
+  #   url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Engage-Product-One-Sheet.pdf.pdf'
 looking:
