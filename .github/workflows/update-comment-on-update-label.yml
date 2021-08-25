@@ -1,8 +1,8 @@
 name: Add Update Comment
-on:
-  issues:
-    types:
-      - labeled
+on: workflow_dispatch
+  #issues:
+   # types:
+    #  - labeled
 jobs:
   add-comment:
     if: "${{ github.event.label.name == 'To Update !' }}"
