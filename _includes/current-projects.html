@@ -68,9 +68,6 @@
                               'id': "{{project.id | default: 0}}",
                               'identification': {{project.identification | default: 0}},
                               "status": "{{ project.status }}"
-                              {%- if project.location -%},
-                              "location": {{ project.location | jsonify }}
-                              {%- endif -%}
                               {%- if project.image -%},
                               "image": '{{ project.image }}'
                               {%- endif -%}
@@ -94,6 +91,9 @@
                               {%- endif -%}
                               {%- if project.technologies -%},
                               "technologies": {{ project.technologies | jsonify }}
+                              {%- endif -%}
+                              {%- if project.programs -%},
+                              "programs": {{ project.programs | jsonify }}
                               {%- endif -%}
                              }
               }{%- unless forloop.last -%}, {% endunless %}
@@ -132,12 +132,14 @@
      * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
     */
     function createFilter(sortedProjectData){
+    console.log(sortedProjectData);
         return {
-                'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
                 // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
                 // ^ See issue #1997 for more info on why this is commented out
+                'programs': [...new Set(sortedProjectData.map(item => item.project.programs ? item.project.programs.map(program => program) : '').flat() ) ].filter(v=>v!='').sort(),
                 'technologies': [...new Set(sortedProjectData.map(item => item.project.technologies ? item.project.technologies.map(tech => tech) : '').flat() ) ].filter(v=>v!='').sort(),
-                'location': ['Remote']
+                'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
+
             }
     }
 
@@ -220,6 +222,8 @@
       document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
           allFilters.push(`${checkbox.name}_${checkbox.id}`)
       })
+
+      console.log(allFilters);
 
       // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
       let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
@@ -395,14 +399,13 @@
      * Takes a single project object and returns the html string representing the project card
     */
     function projectCardComponent(project){
-
-
     return `
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
                 data-technologies="${project.technologies ? [... new Set(project.technologies.map(tech => tech)) ] : '' }"
                 data-location="${project.location? project.location.map(city => city) : '' }"
+                data-programs="${project.programs ? project.programs.map(program => program) : '' }"
             >
             <div class="project-card-inner">
 
@@ -445,20 +448,20 @@
                 // ^ See issue #1997 for more info on why this is commented out
                 }
 
-                ${project.location ?
-                `
-                <div class="project-location">
-                <strong>Location: </strong>
-                ${project.location.map(city => `<p class='project-card-field-inline'> ${ city }</p>`).join("")}
-                </div>
-                `:""
-                }
-
                 ${project.technologies ?
                 `
                 <div class="project-technologies">
                 <strong>Technologies: </strong>
                 ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
+                </div>
+                `:""
+                }
+
+                ${project.programs ?
+                `
+                <div class="project-programs">
+                <strong>Program Areas: </strong>
+                ${project.programs.map(program => `<p class='project-card-field-inline'> ${ program }</p>`).join(", ")}
                 </div>
                 `:""
                 }

@@ -45,5 +45,6 @@ location:
 partner: Seeking
 visible: true
 status: Active
-program area: 'Diversity, Equity & Inclusion'
+programs: 
+  - Diversity, Equity & Inclusion
 ---

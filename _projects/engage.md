@@ -57,7 +57,8 @@ technologies:
 location:
   - Remote
 tools: Hotjar, Google Analytics
-program area: 'Citizen Engagement'
+programs: 
+  - Citizen Engagement
 partner: Various Los Angeles Neighborhood Councils
 visible: true
 status: Active

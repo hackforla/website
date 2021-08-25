@@ -152,6 +152,7 @@ location:
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 visible: true
-program area: 'Civic Tech Infrastructure'
+programs: 
+  - Civic Tech Infrastructure
 status: Active
 ---
