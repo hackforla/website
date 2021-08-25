@@ -1,7 +1,7 @@
 .design-system-wrapper {
     display: grid;
-    grid-template-columns: 230px auto;
-    grid-template-areas: "nav content";
+    grid-template:
+        "nav content" / 230px auto;
     min-height: 100vh;
     width: 100vw;
     margin-top: 61px;
@@ -10,6 +10,9 @@
 
     @media #{$bp-below-mobile} {
         margin-top: 54px;
+        grid-template:
+            "nav" auto
+            "content" auto;
     }
 }
 
@@ -18,7 +21,7 @@
 .design-system-nav {
     grid-area: nav;
     height: fit-content;
-    padding: 80px 20px 80px 36px;
+    padding: 80px 20px 60px 36px;
 
     &--list {
         padding: 0;
@@ -52,12 +55,35 @@
         color: $color-black;
         font-weight: 500;
     }
+
+    @media #{$bp-below-mobile} {
+        padding: 50px 20px 40px;
+
+        h1:after {
+            content: "\221F";
+            float: right;
+            transform: rotate(-45deg);
+            transition: transform 0.25s ease-in;
+            color: #fa114f;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        
+        .nav-dropdown {
+            display: none;
+        }
+
+        .active-dropdown {
+            display: block;
+        }
+    }
 }
 
-// main section
+// content section
 .page-card--design-system {
     grid-area: content;
     overflow: hidden;
+    max-width: 1080px;
     border: 0 solid rgba(51, 51, 51, 0.06);
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
     border-radius: 0;
@@ -65,7 +91,7 @@
 
     &--header {
         color: $color-white;
-        background-color: $color-blue-dark;
+        background-color: #030d2d;
         width: 100%;
         margin: 0;
         padding-top: 13px;
@@ -74,26 +100,35 @@
     }
 
     &--content-container {
-        margin: 36px 47px;
+        margin: 36px 47px 60px;
 
-        .page-description {
-            padding-bottom: 64px;
+        .subgroup-title, .variation-title {
+            padding-top: 64px;
+            margin-bottom: 24px;
         }
 
-        .subgroup-description {
-            padding-bottom: 48px;
+        .page-description p, .subgroup-description p {
+            margin-bottom: 0;
         }
 
-        // used to offset section of page linked to so it doesn't get hidden under header
+        .code-example {
+            margin-top: 42px;
+            margin-bottom: 42px;
+        }
+
+        // used to offset section of page linked so it doesn't get hidden under header
         .anchor {
             display: block;
             position: relative;
-            top: -80px;
+            top: -70px;
             visibility: hidden;
         }
     }
-}
 
+    @media #{$bp-below-mobile} {
+        margin: 40px 30px;
+    }
+}
 
 
 // must set height for page-card class since it has no content
@@ -103,12 +138,12 @@
 
 // must set background color of parent div for primary on dark buttons
 .primary-on-dark-example {
-    background-color: $color-blue-dark;
+    background-color: #030d2d;
     width: fit-content;
     padding: 20px 23px;
 }
 
-// code blocks
+// code block styling
 figure {
     margin: 0;
 }
@@ -117,28 +152,16 @@ figure {
     padding: 18px 24px;
 }
 
-
-
-
-
-
-
-// highlight coloring. should these be colors that already exist in our design system?
-// to be filled in once decided. parts of code they effect included for clarification, but must be deleted after comment is removed.
-
+// code block coloring
+// using color variable close to the figma
 // .highlight .nt {
-//     color:
-//     <button
-//     >
-//     </button>
+//     color: $color-blueviolet;
 // }
 
 // .highlight .na {
-//     color:
-//     class=
+//     color: $color-chocolate;
 // }
 
 // .highlight .s {
-//     color:
-//     "example" (class name)
+//     color: $color-brightblue;
 // }

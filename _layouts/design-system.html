@@ -7,7 +7,7 @@ layout: default
     <!-- Side nav -->
     <div class="card-primary design-system-nav">
         <h1 class="title5">Hack For LA Site Design System</h1>
-        <ul class="design-system-nav--list">
+        <ul class="design-system-nav--list nav-dropdown">
             
             {% for group in site.data.navigation.design-system %}
                 <li class="design-system-nav--item">
@@ -58,7 +58,7 @@ layout: default
     <div class="card-primary page-card--design-system">
         <h2 class="title4 page-card--design-system--header">{{ page.title }}</h2>
         <div class="page-card--design-system--content-container">
-            <div class="page-decription">{{ page.description | markdownify }}</div>
+            <div class="page-description">{{ page.description | markdownify }}</div>
 
             {% for subgroup in page.subgroups %}
                 <a class="anchor" id="{{ subgroup.title }}"></a>
