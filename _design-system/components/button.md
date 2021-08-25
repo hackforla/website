@@ -12,9 +12,6 @@ subgroups:
             - title: Medium
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
               example: examples/buttons/size-medium.html
-            - title: Medium-Long
-              description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-medium-long.html
             - title: Medium-Narrow
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
               example: examples/buttons/size-medium-narrow.html
