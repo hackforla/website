@@ -1,11 +1,21 @@
 /**
  * Breakpoints
+ *
+ * These are the most commonly used breakpoints for different device widths.
  */
 $screen-desktop-large: 1632px;
 $screen-desktop: 960px;
 $screen-tablet: 768px;
 $screen-mobile: 480px;
 
+/**
+ * Breakpoint Start and End Declaration
+ *
+ * These are generally used for declaring media queries.
+ * As an example, if a developer wants to make a media query for   
+ * anything above a tablet, use the variable $bp-tablet-up. For  
+ * anything below a tablet (excluding mobile), use $bp-below-tablet.
+ */
 $bp-desktop-large-up: '(min-width: #{$screen-desktop-large})';
 $bp-below-desktop-large: '(max-width: #{$screen-desktop-large - 1})';
 $bp-desktop-up: '(min-width: #{$screen-desktop})';
@@ -17,5 +27,7 @@ $bp-below-mobile: '(max-width: #{$screen-mobile - 1})';
 
 /**
  * Magic Numbers
+ *
+ * This is a list of any reusable length values
  */
 $max-content-width: 800px;
