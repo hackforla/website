@@ -14,7 +14,7 @@ $screen-mobile: 480px;
  * These are generally used for declaring media queries.
  * As an example, if a developer wants to make a media query for   
  * anything above a tablet, use the variable $bp-tablet-up. For  
- * anything below a tablet (excluding mobile), use $bp-below-tablet.
+ * anything below a tablet, use $bp-below-tablet.
  */
 $bp-desktop-large-up: '(min-width: #{$screen-desktop-large})';
 $bp-below-desktop-large: '(max-width: #{$screen-desktop-large - 1})';
