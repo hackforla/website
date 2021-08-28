@@ -11,29 +11,29 @@ subgroups:
       variations:
             - title: Medium
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-medium.html
+              example: design-system-page/examples/buttons/size-medium.html
             - title: Medium-Narrow
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-medium-narrow.html
+              example: design-system-page/examples/buttons/size-medium-narrow.html
             - title: Large
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-large.html
+              example: design-system-page/examples/buttons/size-large.html
             - title: X-Large
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-x-large.html
+              example: design-system-page/examples/buttons/size-x-large.html
             - title: X-Large-Long
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/size-x-large-long.html
+              example: design-system-page/examples/buttons/size-x-large-long.html
     - title: Colors
       description: These are all of the current potential options for button sizes, determined by the `btn-size` classes (`btn-md` etc.). Make sure to switch out the color class (`btn-primary`) if you intend to use a different color button (see colors section further down).
       variations:
             - title: Primary
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/color-primary.html
+              example: design-system-page/examples/buttons/color-primary.html
             - title: Primary on Dark
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/color-primary-on-dark.html
+              example: design-system-page/examples/buttons/color-primary-on-dark.html
             - title: Dark
               description: FPO Short write up on guidance for when to use these vs other buttons. Pages used in.
-              example: examples/buttons/color-dark.html
+              example: design-system-page/examples/buttons/color-dark.html
 ---
