@@ -191,7 +191,11 @@
  }
  
  .info-icon {
-   width: .75em;
+    width: .875rem;
+    position: relative;
+    top: 2px;
+    max-height: 100%;
+    max-width: 100%;
  }
 
 .step-img {
@@ -366,7 +370,7 @@
 
 .getting-started-step-title-faq {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-left: 2px;
 
   @media #{$bp-below-mobile} {
