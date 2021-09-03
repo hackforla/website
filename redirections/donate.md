@@ -3,5 +3,5 @@
 layout: redirect
 title: Donate
 permalink: /donate/
-redirect_to: https://www.codeforamerica.org/donate
+redirect_to: https://www.hackforla.org/donate
 ---
