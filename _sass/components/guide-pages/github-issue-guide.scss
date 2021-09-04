@@ -17,14 +17,26 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: white;
-  border: 0.5px solid white;
+  background: $color-white;
+  border: 0.5px solid $color-white;
   border-radius: 4px;
-  color: black;
+  color: $color-black;
   width: 85px;
   height: 30px;
   right: 1%;
   top: 1%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.copy-err {
+  position: absolute;
+  z-index: 10;
+  background: $color-darkgrey;
+  border-radius: 4px;
+  color: $color-white;
+  padding: 0.3rem;
+  right: 1%;
+  top: -6%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -34,7 +46,7 @@
 }
 
 .copy-button:active {
-  border: 0.5px solid #7A7A7A;
+  border: 0.5px solid $color-cement;
   box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.39);
 }
 
