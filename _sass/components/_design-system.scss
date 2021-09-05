@@ -1,0 +1,167 @@
+.design-system-wrapper {
+    display: grid;
+    grid-template:
+        "nav content" / 230px auto;
+    min-height: 100vh;
+    width: 100vw;
+    margin-top: 61px;
+    padding-bottom: 160px;
+    background-color: #f7f5f5;
+
+    @media #{$bp-below-mobile} {
+        margin-top: 54px;
+        grid-template:
+            "nav" auto
+            "content" auto;
+    }
+}
+
+
+// sidebar section
+.design-system-nav {
+    grid-area: nav;
+    height: fit-content;
+    padding: 80px 20px 60px 36px;
+
+    &--list {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &--item {
+        margin-top: 2.5rem;
+    }
+
+    &--title {
+        text-transform: uppercase;
+        font-size: .875rem;
+        font-weight: 500;
+    }
+
+    &--sublist {
+        padding-left: 18px;
+        list-style-type: none;
+    }
+
+    &--subitem {
+        margin-top: 1rem;
+    }
+
+    &--link {
+        text-decoration: none;
+    }
+
+    .active-group {
+        color: $color-black;
+        font-weight: 500;
+    }
+
+    @media #{$bp-below-mobile} {
+        padding: 50px 20px 40px;
+
+        h1:after {
+            content: "\221F";
+            float: right;
+            transform: rotate(-45deg);
+            transition: transform 0.25s ease-in;
+            color: #fa114f;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        
+        .nav-dropdown {
+            display: none;
+        }
+
+        .active-dropdown {
+            display: block;
+        }
+    }
+}
+
+// content section
+.page-card--design-system {
+    grid-area: content;
+    overflow: hidden;
+    max-width: 1080px;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    border-radius: 0;
+    margin: 80px 60px auto 60px;
+
+    &--header {
+        color: $color-white;
+        background-color: #030d2d;
+        width: 100%;
+        margin: 0;
+        padding-top: 13px;
+        padding-bottom: 14px;
+        padding-left: 49px;
+    }
+
+    &--content-container {
+        margin: 36px 47px 60px;
+
+        .subgroup-title, .variation-title {
+            padding-top: 64px;
+            margin-bottom: 24px;
+        }
+
+        .page-description p, .subgroup-description p {
+            margin-bottom: 0;
+        }
+
+        .code-example {
+            margin-top: 42px;
+            margin-bottom: 42px;
+        }
+
+        // used to offset section of page linked so it doesn't get hidden under header
+        .anchor {
+            display: block;
+            position: relative;
+            top: -70px;
+            visibility: hidden;
+        }
+    }
+
+    @media #{$bp-below-mobile} {
+        margin: 40px 30px;
+    }
+}
+
+
+// must set height for page-card class since it has no content
+.code-example .page-card {
+    min-height: 200px;
+}
+
+// must set background color of parent div for primary on dark buttons
+.primary-on-dark-example {
+    background-color: #030d2d;
+    width: fit-content;
+    padding: 20px 23px;
+}
+
+// code block styling
+figure {
+    margin: 0;
+}
+
+.highlight pre {
+    padding: 18px 24px;
+}
+
+// code block coloring
+// using color variable close to the figma
+// .highlight .nt {
+//     color: $color-blueviolet;
+// }
+
+// .highlight .na {
+//     color: $color-chocolate;
+// }
+
+// .highlight .s {
+//     color: $color-brightblue;
+// }
