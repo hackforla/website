@@ -64,7 +64,7 @@ links:
   #- name: Site
   #  url: 'https://live.example.com'
   - name: Overview
-    url: 'https://docs.google.com/document/d/1bWWhI0Zuas22sdEEDC6sSuRYZ3gXiBZ8LuyNUmD_s7o/edit?usp=sharing'
+    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Access-the-Data-One-Sheet.pdf'
   # unused links can be commented out
   # - name: Showcase deck
   #   url: ''
