@@ -1,10 +1,10 @@
 <a class="anchor" id="projects"></a>
 <section class="content-section projects">
   <div class="page-contain projects-inner">
-    <h2 class="project-header">Current Projects</h2>
+    <h2 class="project-header title2">Current Projects</h2>
     <p class="project-pitch">
       Have an idea?
-      <a href="mailto:team@hackforla.org" class="btn btn-primary btn-md-narrow"
+      <a href="mailto:team@hackforla.org?subject=Submitting my pitch to Hack for LA" class="btn btn-primary btn-md-narrow"
         >Submit your pitch</a
       >
     </p>
@@ -55,9 +55,10 @@
 
     })
 
-    /**
+     /**
      * Retieves project data from jekyll _projects collection using liquid and transforms it into a javascript object
      * The function returns a javascript array of objects representing all the projects under the _projects directory
+     * JSON.parse(decodeURIComponent("{{ project.location | jsonify | uri_escape }}")) and such is here to escape the JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
     */
     function retrieveProjectDataFromCollection(){
         // { "project": {"id":"/projects/311-data","relative_path":"_projects/311-data.md","excerpt"
@@ -69,7 +70,7 @@
                               'identification': {{project.identification | default: 0}},
                               "status": "{{ project.status }}"
                               {%- if project.location -%},
-                              "location": {{ project.location | jsonify }}
+                              "location": JSON.parse(decodeURIComponent("{{ project.location | jsonify | uri_escape }}"))
                               {%- endif -%}
                               {%- if project.image -%},
                               "image": '{{ project.image }}'
@@ -87,13 +88,13 @@
                               "partner": `{{ project.partner }}`
                               {%- endif -%}
                               {%- if project.looking -%},
-                              "looking": {{ project.looking | jsonify }}
+                              "looking": JSON.parse(decodeURIComponent("{{ project.looking | jsonify | uri_escape }}"))
                               {%- endif -%}
                               {%- if project.links -%},
-                              "links": {{ project.links | jsonify }}
+                              "links": JSON.parse(decodeURIComponent("{{ project.links | jsonify | uri_escape }}"))
                               {%- endif -%}
                               {%- if project.technologies -%},
-                              "technologies": {{ project.technologies | jsonify }}
+                              "technologies": JSON.parse(decodeURIComponent("{{ project.technologies | jsonify | uri_escape }}"))
                               {%- endif -%}
                              }
               }{%- unless forloop.last -%}, {% endunless %}
@@ -417,7 +418,7 @@
                 <h5 class='status-text'>${ project.status }</h5>
                 </div>
 
-                <a href='${ project.id }'><h4 class="project-title">${ project.title }</h4></a>
+                <a href='${ project.id }'><h6 class="project-title title6">${ project.title }</h6></a>
 
                 <p class="project-description">${ project.description }</p>
 
@@ -481,10 +482,10 @@
         <ul class='dropdown' id='${categoryName.toLowerCase()}'>
             ${filterArray.map(item =>
                 `
-                <div>
+                <li>
                     <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
                     <label for='${item}'>${item} <span></span></label>
-                </div>
+                </li>
                 `
             ).join("")}
         </ul>

@@ -14,7 +14,7 @@ permalink: /wins/
 		{% include_relative wins-filter-template.html %}
 		{% include_relative wins-card-template.html %}
 
-		<ul id="responses" class="project-list unstyled-list"></ul>
+		<ul id="responses" class="win-list unstyled-list"></ul>
 	</div>
 </section>
 
@@ -60,10 +60,29 @@ permalink: /wins/
 			"Could we use your Linkedin profile picture next to your story?",
 			"Display?"
 		]
+  const otherIcon = `star.svg`
+  const badgeIcons = {
+		"I got a new job": `briefcase.svg`,
+		"I produced something for my portfolio": `file.svg`,
+		"I improved my LinkedIn": `linkedin.svg`,
+		"I learned how to work better on a team": `team.svg`,
+		"I increased the number of commits on my Github profile": `github.svg`,
+		"I learned a new language": `code.svg`,
+		"I set up 2FA": `twofa.svg`,
+		"I became part of a a caring community": `$community.svg`,
+		"I worked on an enterprise project": `enterprise.svg`,
+		"I worked on a project that will help the people of Los Angeles": `giving.svg`,
+		"I worked on two or more projects": `hammers.svg`,
+		"I taught or mentored a person on my team": `mentor.svg`,
+		"I taught or mentored a person on another team": `mentor.svg`,
+		"My team delivered software to a stakeholder": `deliverable.svg`,
+		"My team launched our MVP": `launch.svg`,
+	}
 
   function main() {
-  	{% assign localData = site.data.external.wins-data | jsonify %}
-	  let localData = {{ localData }};
+	{% assign localData = site.data.external.wins-data %}
+	  // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+	  let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
 	  localData.unshift(dataKeys)
 	  const rawData = localData;
 	  
@@ -71,27 +90,21 @@ permalink: /wins/
   	//cardData[index][question_str] = answer_str
   	let cardData = []
   	const keys = rawData[0]
-  	rawData.slice(1).forEach((data) => {
+  	rawData.slice(1).forEach(data => {
   		let cardObj = {}
   		for (let i = 0; i < keys.length; i++) {
   			cardObj[keys[i]] = data[i];
   		}
   		cardData.push(cardObj)
-
-
-
   	})
 
-  	//createFilter();
   	window.localStorage.setItem('data', JSON.stringify(cardData));
   	makeCards(cardData);
   	ifPageEmpty();
-
-
-
   }
 
-  //Create The Filters From The Displayed Cards On Page Load
+
+  //Create The "Role" and "Team" Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
   function createFilter(){
 
@@ -105,12 +118,11 @@ permalink: /wins/
   		Array.isArray(team) ? teamArr.push(...team)  :  teamArr.push(team);
 
   	})
+	//Assign Role for each Wins-Card  
   	responses.querySelectorAll('.wins-card-role:not([style*="display:none"]):not([style*="display: none"]').forEach(item =>{
   		let value = item.textContent.replace("Role(s):","").trim();
   		let role = value.split(",").map(x=>x.trim());
   		Array.isArray(role) ? roleArr.push(...role)  :  roleArr.push(role);
-
-
   	})
 
 
@@ -156,7 +168,7 @@ permalink: /wins/
   	let queryObj = { };
 
   	//Calculate and Create Updated Query String
-  	incomingFilterData.forEach(function(e){
+  	incomingFilterData.forEach(e => {
   		//Find boxes that are checked
   		if(e.checked){
   			let data = e.value.split("_");
@@ -190,10 +202,6 @@ permalink: /wins/
 
   	//Update URL parameters
   	window.history.replaceState(null, '', urlParameter.replaceAll(" ","+"));
-
-
-
-
   }
 
   //Update UI on URL history change and on DomContent loaded
@@ -250,20 +258,8 @@ permalink: /wins/
 
   		}
 
-
   	})
 
-  }
-
-  function formatMessage(win) {
-  	let str = '';
-  	let lastCommaIndex = win.lastIndexOf(",");
-  	if (lastCommaIndex != -1) {
-  		str += win.slice(0, lastCommaIndex + 1) + " and" + win.slice(lastCommaIndex + 1) + '!';
-  	} else {
-  		str += win + '!';
-  	}
-  	return str;
   }
 
   function ifPageEmpty() {
@@ -275,13 +271,50 @@ permalink: /wins/
   	}
   }
 
+ 
+	function insertIcons(cardSelector, cardString, viewType, cloneCardTemplate = document) {
+		let initialCardList = cardString.split(',').map(item => item.trim())
+		let otherWinsText = [];
+		let cardList = [];
+		const view = viewType;
 
+		initialCardList.forEach(win => {
+			if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) > -1){
+				cardList.push(win);
+			} else if (win.length > 0 && Object.keys(badgeIcons).indexOf(win) === -1) {
+				otherWinsText.push(win);
+			}
+		});
+		cardList.push(otherWinsText.join(", "));
 
+		const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`
 
+		const iconContainer = cloneCardTemplate.querySelector(cardSelector);
+
+		cardList.forEach(item => {
+			if (badgeIcons.hasOwnProperty(item)) {
+				iconContainer.insertAdjacentHTML('beforeend',
+					`<div class='${view}-item-container'>
+						<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
+					</div>`
+				)
+			} else if (item !== '') {
+				iconContainer.insertAdjacentHTML('beforeend',
+					`<div class='${view}-item-container'>
+						<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
+					</div>`
+				)
+			}
+		})
+		return iconContainer
+	}
 
   function makeCards(data) {
-  	{% assign githubData = site.data.external.github-data | jsonify %}
-  	let githubData = {{ githubData }};
+	{% assign githubData = site.data.external.github-data %}
+	// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
+  	let githubData = JSON.parse(decodeURIComponent("{{ githubData | jsonify | uri_escape }}"));
 
 	const cards = data.reverse();
 	const cardTemplate = document.getElementById("wins-card-template");
@@ -304,7 +337,6 @@ permalink: /wins/
 				})
 
 			})
-
 		} 
 		let profileImgSrc = ghId ?
 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
@@ -330,53 +362,89 @@ permalink: /wins/
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
-		cloneCardTemplate.querySelector('.project-inner.wins-card-team').textContent = `Team(s): ${card[team]}`;
-		cloneCardTemplate.querySelector('.project-inner.wins-card-role').textContent = `Role(s): ${card[role]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-team').innerHTML = `<span class="wins-team-role-color">Team(s): </span> ${card[team]}`;
+		cloneCardTemplate.querySelector('.project-inner.wins-card-role').innerHTML = `<span class="wins-team-role-color">Role(s): </span> ${card[role]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
-		cloneCardTemplate.querySelector('.wins-card-info').textContent = card[win];
+		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
+		const iconContainer = insertIcons('.wins-icon-container', card[win], 'wins', cloneCardTemplate)
+		iconContainer.id = `icons-${index}`
 		cloneCardTemplate.querySelector('span.see-more-div').id = index;
 
-		
 		winsCardContainer.append(cloneCardTemplate);
-		
-		const winText = cloneCardTemplate.querySelector('.wins-card-text')
-		function addSeeMore() {
-			let innerHeight = Array.from(winText.childNodes).reduce((acc, el) => (el.offsetHeight || 0) + acc, 0) - 22
 
+		const winTextContainer = cloneCardTemplate.querySelector('.wins-card-text')
+		function addSeeMore() {
+			const winText = winTextContainer.querySelector('.wins-card-overview')
+			const seeMoreDiv = winTextContainer.querySelector('.wins-see-more-div')
 			//makes the see more span on the bottom of the card
-			if (innerHeight <= winText.offsetHeight) { //checks if see more is needed.
-				winText.querySelector('.wins-see-more-div').setAttribute('hidden', 'true')
+			if (
+				!winTextContainer.classList.contains('expanded') && 
+				winText.offsetHeight <= winTextContainer.offsetHeight 
+			) {
+        // Adds see more
+				seeMoreDiv.setAttribute('hidden', 'true')
 			} else {
-				winText.querySelector('.wins-see-more-div').removeAttribute('hidden')
+        // Removes see more if not needed
+				seeMoreDiv.removeAttribute('hidden')
+			}
+			if (!winTextContainer.classList.contains('expanded'))
+				winTextContainer.classList.add('relative')
+			if (window.innerWidth > 960){
+				const winsCardTextContainer = seeMoreDiv.parentElement
+				if (winsCardTextContainer.classList.contains("expanded")){
+					toggleSeeMoreLess(seeMoreDiv.children[0].id)
+				}
 			}
 		}
 		addSeeMore()
 
-		new ResizeObserver(addSeeMore).observe(winText)
+		new ResizeObserver(addSeeMore).observe(winTextContainer)
 	})
+}
 
-
-  }
-  function seeMore(id){
-  	screenWidth = window.innerWidth;
+function seeMore(id){
+  	let screenWidth = window.innerWidth;
   	if (screenWidth > 960){
   		updateOverlay(id);
   	}else{
-  		mobileSeeMore(id);
+		toggleSeeMoreLess(id);
   	}
+}
+
+  //Adds event listener to badge icons when viewers interface is below desktop size
+  //Click to toggle "see more" and "see less" to expand and collapse wins text
+  document.addEventListener("DOMContentLoaded", winsBelowDesktop);
+
+  function winsBelowDesktop() {
+		document.querySelectorAll('.wins-badge-icon').forEach(img => img.addEventListener('click', function (event) {
+			const container = event.target.parentElement.parentElement;
+			const id = container.dataset.index;
+			let span = document.getElementById(id);
+			let parent = span.parentElement.parentElement;
+			if (!parent.classList.contains('expanded'))
+				toggleSeeMoreLess(id);
+		}))
+	}
+
+  // Toggles between see more and see less in tablet and mobile view
+  function toggleSeeMoreLess(id){
+		let span = document.getElementById(id);
+		let screenWidth = window.innerWidth;
+		let parent = span.parentElement.parentElement;
+		let winsIconContainer = document.getElementById(`icons-${id}`)
+	  	if (parent.classList.contains('expanded') || screenWidth > 960) {
+			parent.setAttribute('class', 'project-inner wins-card-text relative');
+			span.innerHTML = "...see more";
+			winsIconContainer.setAttribute('class', 'wins-icon-container');
+		} else {
+			parent.setAttribute('class','project-inner wins-card-text expanded');
+			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
+			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+      span.parentElement.removeAttribute('hidden')
+		}
   }
-  function mobileSeeMore(id){
-  	let span = document.getElementById(id);
-  	let parent = span.parentElement.parentElement
-  	parent.classList.toggle('expanded')
-  	if (parent.classList.contains('expanded')) {
-  		span.innerHTML = "see less"
-  	}
-  	else {
-  		span.innerHTML = "...see more"
-  	}
-  }
+
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
 		let child = document.createElement(elementType);
@@ -408,23 +476,12 @@ permalink: /wins/
 	  window.addEventListener('resize', (e) => {
 		  widthOutput = window.innerWidth;
 		  if (widthOutput < 960) {
-			  document.querySelector(".main-header").inert = false;
-			  document.querySelector(".content-section.projects").inert = false;
-			  document.querySelector(".main-footer").inert = false;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
-			  document.querySelector(".sr-only-focusable").inert = false;
-		  }
-		  else {
-			  document.querySelector(".main-header").inert = true;
-			  document.querySelector(".content-section.projects").inert = true;
-			  document.querySelector(".main-footer").inert = true;
-			  document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = true;
-			  document.querySelector(".sr-only-focusable").inert = true;
+			  hideOverlay(e)
 		  }
 	  });
 
   		let stringData = window.localStorage.getItem("data");
-  		let data = JSON.parse(stringData).reverse();
+		  let data = JSON.parse(stringData).reverse();
 
 		const overlayProfileImg = document.querySelector('#overlay-profile-img');
 		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
@@ -450,8 +507,7 @@ permalink: /wins/
   		const overlayOverview = document.querySelector('#overlay-overview');
   		overlayOverview.innerHTML = data[i][overview];
 
-  		const overlayInfo = document.querySelector('#overlay-info');
-  		overlayInfo.innerHTML = formatMessage(data[i][win]);
+		insertIcons('#overlay-info', data[i][win], 'overlay')
 
   		const overlayProjectCard = document.querySelector('#overlay-project-card');
   		overlayProjectCard.parentNode.classList.add("display-initial");
@@ -461,8 +517,7 @@ permalink: /wins/
 	function hideOverlay(e) {
 		e = e || window.event || e.key == 'Escape';
 
-		if (e.target !== e.currentTarget)
-			return;
+		if (e.target !== e.currentTarget) return;
 
 		const overlayProjectCard = document.querySelector('#overlay-project-card');
 		overlayProjectCard.parentNode.classList.remove("display-initial");
@@ -472,7 +527,12 @@ permalink: /wins/
 		document.querySelector(".main-footer").inert = false;
 		document.querySelector(".home-getting-started-container.content-section.section-hack-nights.wins-hero").inert = false;
 		document.querySelector(".sr-only-focusable").inert = false;
-	}
+
+	  const overlayInfo = document.querySelector('#overlay-info');
+
+	  overlayInfo.innerHTML = '';
+  }
+
 
   main();
 
