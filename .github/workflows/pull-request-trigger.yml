@@ -1,0 +1,12 @@
+name: Pull Request Trigger
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - 'gh-pages'
+
+jobs:
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
