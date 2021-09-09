@@ -45,23 +45,14 @@ async function main({ g, c }, columnId) {
       await removeLabels(issueNum, statusUpdatedLabel, toUpdateLabel);
       await addLabels(issueNum, toUpdateLabel);
       await postComment(issueNum, assignees);
+    } else if (await isInactiveTimelineOutdated(timeline, issueNum, assignees) && isTimelineOutdated(timeline, issueNum, assignees)) {
+      await addLabels(issueNum, inactiveLabel);
     } else {
       console.log(`No updates needed for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel);
       await addLabels(issueNum, statusUpdatedLabel);
+	  await removeLabels(issueNum, inactiveLabel);
     }
-	
-	// Adds inactive label if the issue's timeline indicates the issue is outdated.
-    if (await isInactiveTimelineOutdated(timeline, issueNum, assignees)) {
-      console.log(`Going to add inactive label for issue #${issueNum}`);
-      await addLabels(issueNum, inactiveLabel);
-    } else {
-      console.log(`No updates needed for issue #${issueNum}`);
-      await removeLabels(issueNum, inactiveLabel);
-    }
-		
-  }
-}
 
 /**
  * Generator that returns issue numbers from cards in a column.
@@ -149,21 +140,14 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 }
 
 /**
- * Assesses whether the timeline is outdated.
- * @param {Array} timeline a list of events in the timeline of an issue, retrieved from the issues API
- * @param {Number} issueNum the issue's number
- * @param {String} assignees a list of the issue's assignee's username
- * @returns true if timeline indicates the issue is outdated, false if not
- * Note: Outdated means that the assignee did not make a linked PR or comment within the cutoffTime (see global variables).
+ * Note: Here outdated means that the assignee did not make a comment within the inactiveCutoffTime (see global variables).
  */
 async function isInactiveTimelineOutdated(timeline, issueNum, assignees) {
   for await (let moment of timeline) {
-    if (isInactiveMomentRecent(moment.created_at)) {
-      if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) {
+    if (isMomentRecent.isInactiveMomentRecent(moment.created_at)) {
+      if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) {
         return false
-      } else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) {
-        return false
-      }
+      } 
     }
   }
   return true
@@ -233,23 +217,21 @@ async function postComment(issueNum, assignees) {
 ***********************/
 
 function isMomentRecent(dateString) {
-  const dateStringObj = new Date(dateString);
-
-  if (dateStringObj >= cutoffTime) {
-    return true
-  } else {
-    return false
-  }
-}
-
-function isInactiveMomentRecent(dateString) {
-  const dateStringObj = new Date(dateString);
-
-  if (dateStringObj >= inactiveCutoffTime) {
-    return true
-  } else {
-    return false
-  }
+	const dateStringObj = new Date(dateString);
+	if (dateStringObj >= cutoffTime) {
+		return true
+	}
+	function isInactiveMomentRecent(dateString) {
+		const dateStringObj = new Date(dateString);
+		if (dateStringObj >= inactiveCutoffTime) {
+			return true
+		}
+		else {
+			return false
+		}
+	}
+	isMomentRecent.isInactiveMomentRecent = isInactiveMomentRecent;
+	return false
 }
 
 function isLinkedIssue(data, issueNum) {
