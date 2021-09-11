@@ -35,10 +35,17 @@
 
             // create filter dictionary from sorted project data
             let filters = createFilter(sortedProjectData);
-
+            
             // Insert Checkbox Filter Into The Dom
             for(const [filtername,filtervalue] of Object.entries(filters)){
-                document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filtername,filtervalue) );
+                // Add displayed filter title
+                let filterTitle = ""
+                if(filtername !== "programs"){
+                    filterTitle = filtername
+                } else {
+                    filterTitle = "program areas"
+                }
+                document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filtername,filtervalue,filterTitle) );
             }
 
             document.querySelectorAll("input[type='checkbox']").forEach(item =>{
@@ -132,7 +139,6 @@
      * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
     */
     function createFilter(sortedProjectData){
-    console.log(sortedProjectData);
         return {
                 // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
                 // ^ See issue #1997 for more info on why this is commented out
@@ -211,7 +217,6 @@
       const onPageFilters = []
       // Push the filters present on the displayed cards on the page into an array.
       document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
-
           for(const [key,value] of Object.entries(card.dataset)){
               value.split(",").map(item => onPageFilters.push(`${key}_${item}`) );
           }
@@ -222,8 +227,6 @@
       document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
           allFilters.push(`${checkbox.name}_${checkbox.id}`)
       })
-
-      console.log(allFilters);
 
       // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
       let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
@@ -473,11 +476,11 @@
     /**
      * Takes a filter category name and array of filter stirings and returns the html string representing a single filter component
     */
-    function dropDownFilterComponent(categoryName,filterArray){
+    function dropDownFilterComponent(categoryName,filterArray,filterTitle){
         return `
         <li class='filter-item'>
         <a class='category-title' style='text-transform: capitalize;'>
-            ${categoryName}
+            ${filterTitle}
             <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
             <span class='labelArrow'> ∟ </span>
         </a>
