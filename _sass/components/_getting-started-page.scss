@@ -50,14 +50,14 @@
 }
 
 .getting-started-step-title-overview {
-  text-align: center; 
+  text-align: center;
   font-size: 16px;
   max-width: 140px;
   padding: 10px 0;
 }
 
 .getting-started-step-title-overview-no-padding {
-  text-align: center; 
+  text-align: center;
   font-size: 16px;
   max-width: 140px;
   padding-top: 10px;
@@ -90,7 +90,7 @@
 }
 
 .step-img-intro {
-  height: 100px;
+  max-height: 100px;
   text-align: center;
 }
 
@@ -149,7 +149,7 @@
   @media #{$bp-below-mobile} {
     padding: 0 1em 0 1em;
   }
-  
+
 }
 
 .list-container {
@@ -170,26 +170,26 @@
 .column {
   float: left;
  }
- 
+
  .left {
    width: 32%;
- 
+
    @media #{$bp-below-mobile} {
      width: 100%;
      text-align: left;
    }
  }
- 
+
  .right {
    width: 68%;
    padding-left: 60px;
- 
+
    @media #{$bp-below-mobile} {
      width: 100%;
      padding-left: 20px;
    }
  }
- 
+
  .info-icon {
     width: .875rem;
     position: relative;
@@ -246,7 +246,7 @@
 }
 
 .step-img-icon-cop {
-  margin-left: -2.1em; 
+  margin-left: -2.1em;
   margin-right: 1em;
   width: 2.3em;
   float: left;
@@ -254,7 +254,7 @@
 }
 
 .step-img-icon-cop-small {
-    margin-left: -2.1em; 
+    margin-left: -2.1em;
     margin-right: 1.7em;
     float: left;
     align-self: center;
@@ -264,7 +264,7 @@
 }
 
 .step-img-icon {
-  margin-left: -1.4em; 
+  margin-left: -1.4em;
   margin-right: 1.1em;
   float: left;
   align-self: center;
@@ -483,7 +483,7 @@
   padding: 0px 28px 45px 28px;
   margin: 0px 30px;
   width: 50%;
- 
+
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
