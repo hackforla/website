@@ -1,0 +1,88 @@
+---
+layout: default
+title: Design System
+permalink: /design-system
+published: false
+---
+
+<div class="design-system-wrapper">
+
+    <!-- Side nav -->
+    <div class="card-primary design-system-nav">
+        <h1 class="title5">Hack For LA Site Design System</h1>
+        <ul class="design-system-nav--list nav-dropdown">
+            
+            {% for group in site.data.navigation.design-system %}
+                <li class="design-system-nav--item">
+                    <span class="design-system-nav--title">{{ group.title }}</span>
+
+                    <ul class="design-system-nav--list">
+                        {% assign sorted_items = site.design-system | where: "group", group.group | sort: "title" %}
+                        {%- for item in sorted_items -%}
+                            <a class="design-system-nav--link {% if item.url == page.url %}active-group{% endif %}" href="{{item.url}}">
+                                <li class="design-system-nav--subitem">
+                                    <span class="design-system-nav--sub-title">{{ item.title }}</span>
+
+                                    {% if item.url == page.url %}
+                                    <ul class="design-system-nav--sublist">
+                                        {%- for subgroup in item.subgroups -%}
+                                            <a class="design-system-nav--link" href="#{{ subgroup.title }}">
+                                                <li class="design-system-nav--subitem">
+                                                    <span class="design-system-nav--sub-title">{{ subgroup.title }}</span>
+
+                                                    <ul class="design-system-nav--sublist">
+                                                        {%- for variation in subgroup.variations -%}
+                                                            <a class="design-system-nav--link" href="#{{ variation.title }}">
+                                                                <li class="design-system-nav--subitem">
+                                                                    <span class="design-system-nav--sub-title">{{ variation.title }}</span>
+                                                                </li>
+                                                            </a>
+                                                        {%- endfor -%}
+                                                    </ul>
+
+                                                </li>
+                                            </a>
+                                        {%- endfor -%}
+                                    </ul>
+                                    {% endif %}
+
+                                </li>
+                            </a>
+                        {%- endfor -%}
+                    </ul>
+
+                </li>
+		    {% endfor %}
+
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="card-primary page-card--design-system">
+        <h2 class="title4 page-card--design-system--header">{{ page.title }}</h2>
+        <div class="page-card--design-system--content-container">
+            <div class="page-description">{{ page.description | markdownify }}</div>
+
+            {% for subgroup in page.subgroups %}
+                <a class="anchor" id="{{ subgroup.title }}"></a>
+                <h3 class="subgroup-title title2">{{ subgroup.title }}</h3>
+                <div class="subgroup-description">{{ subgroup.description | markdownify }}</div>
+
+                {% for variation in subgroup.variations %}
+                    <a class="anchor" id="{{ variation.title }}"></a>
+                    <h4 class="variation-title title5">{{ variation.title }}</h4>
+                    <div class="variation-description">{{ variation.description | markdownify }}</div>
+                    <div class="code-example">{% include {{variation.example}} %}</div>
+                    <div class="code-preview">{% highlight html %}{% include {{variation.example}} %}{% endhighlight %}</div>
+                {% endfor %}
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Include javaScript -->
+<script src="{{ '/assets/js/design-system.js' | absolute_url }}"></script>

@@ -1,77 +1,3 @@
-.header-container--project-meetings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    padding: 32px;
-    height: fit-content;
-    margin: 37px auto 0;
-    font-family: "Roboto" sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    text-align: center;
-
-    @media #{$bp-desktop-up}  {
-        flex-direction: row;
-        align-items: center;
-        padding: 64px;
-        justify-content: center;
-    }
-
-    @media (max-width: $screen-mobile) {
-        height: 80vh;
-        background-size: auto 30%;
-    }
-
-    & .project-meetings-banner-icon {
-        max-height: 240px;
-        padding: 0 15px;
-        
-        @media #{$bp-desktop-up}  {
-            margin: auto 1rem auto 0;
-        }
-
-    }
-
-    .project-meetings-header-text-container {
-        display: flex;
-        flex-direction:column;
-        font-size: 1.125rem;
-        
-        @media #{$bp-desktop-up}  {
-            margin: auto 5rem;
-        }
-
-        h1 {
-            color: #333;
-            font-weight: 700;
-            font-size: 24px;
-            padding-bottom: 28px;
-
-            @media #{$bp-desktop-up}  {
-                font-size: 48px;
-                padding-bottom: 0;
-            }
-        }
-        p {
-            font-size: 18px;
-            margin:auto;
-            max-width: 300px;
-            margin-bottom: 1rem;
-            text-align: start;
-
-            @media #{$bp-desktop-up} {
-              margin-bottom: 0;
-            }
-
-            @media #{$bp-tablet-up} {
-                max-width: 508px;
-            }
-        }
-    }
-
-}
-
 .covid-notification-banner {
     background-color: #f2c94d;
     width: 100%;
@@ -128,15 +54,6 @@
 
 .day-header {
     margin-block-end: 16px;
-}
-
-.team-meetings-title {
-    color: #fff;
-
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
-        margin-top: 60px;
-    }
 }
 
 .meetings-message {

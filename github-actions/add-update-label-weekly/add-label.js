@@ -6,7 +6,7 @@ var fs = require("fs");
 var github;
 var context;
 const statusUpdatedLabel = 'Status: Updated';
-const toUpdateLabel = 'Test: Update Label';
+const toUpdateLabel = 'To Update !';
 const updatedByDays = 3; // number of days ago to check for updates
 const cutoffTime = new Date()
 cutoffTime.setDate(cutoffTime.getDate() - updatedByDays)
@@ -39,7 +39,6 @@ async function main({ g, c }, columnId) {
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, statusUpdatedLabel, toUpdateLabel);
       await addLabels(issueNum, toUpdateLabel);
-      // FOR TRIAL STAGE. SEE #2006
       await postComment(issueNum, assignees);
     } else {
       console.log(`No updates needed for issue #${issueNum}`);
@@ -177,10 +176,6 @@ async function addLabels(issueNum, ...labels) {
   }
 }
 
-/*************************************
-*** PART OF TRIAL STAGE: MAIN CODE ***
-*************************************/
-
 async function postComment(issueNum, assignees) {
   try {
     const assigneeString = createAssigneeString(assignees);
@@ -234,10 +229,6 @@ async function getAssignees(issueNum) {
     return null
   }
 }
-
-/***********************************
-*** PART OF TRIAL STAGE: HELPERS ***
-***********************************/
 
 function filterForAssigneesLogins(data) {
   logins = [];
