@@ -46,5 +46,5 @@ partner: Seeking
 visible: true
 status: Active
 programs: 
-  - Diversity, Equity & Inclusion
+  - Diversity / Equity and Inclusion
 ---
