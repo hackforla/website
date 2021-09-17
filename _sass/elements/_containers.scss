@@ -11,6 +11,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-right: 5rem;
 
         h1 {
             margin-bottom: 38px;
@@ -78,15 +79,6 @@
     display: flex;
     flex-direction: column;
   }
-
-.header-text {
-  font-size: 26px;
-  display: flex;
-  max-width: 895px;
-  text-align: center;
-  padding: 30px;
-  font-family: "Roboto" sans-serif;
-}
 
 .header-container--projscredits {
   display: flex;
