@@ -1,5 +1,5 @@
 ---
-title: my js file
+title: hamburger nav file
 ---
 
  //Retrieve svg string from _includes
