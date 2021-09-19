@@ -24,8 +24,8 @@ The following is a set of guidelines for contributing to the website repository,
 1. [Working on an issue](#Working-on-an-issue)
    - [Check current branch](#Check-current-branch)
    - [Create a new branch where you will work on your issue](#Create-a-new-branch-where-you-will-work-on-your-issue)
+     - [What if you cannot see your changes locally within Docker?](#what-if-you-cannot-see-your-changes-locally-within-docker)
    - [Prepare your changes to push to your repository](#Prepare-your-changes-to-push-to-your-repository)
-      </details>
    - [Check upstream before you push](#Check-upstream-before-you-push)
 2. [Making a pull request](#Making-a-pull-request)
 ### Resources and Documentation
@@ -267,20 +267,17 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
 
    When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
 
-   ### Can't see your changes locally?
+   ### What if you cannot see your changes locally within Docker?
 
-   <details>
-   <summary>If you are having trouble viewing your changes locally after running docker, click here to see instructions on how to resolve this issue</summary>
-   
-   1. The first thing to do if you do not see your changes while starting docker or live reloading, stop docker from running. 
-   2. Next, go into the files and look for the '_site' folder and delete this folder.
-   3. Next, look for a file called '.jekyll-metadata' and delete this file.
-   4. Finally, try running docker again and you should see your changes.
+   If you do not see the changes you applied when you run docker-compose up, **do the following**:
+
+   **1.** Stop running your Docker application (if still running).
+   **2.** Delete the `_site` directory in the root folder (`website`)
+   **3.** Delete the `.jekyll-metadata` file in the root folder (`website`)
+   **4.** Finally, restart docker (run `docker-compose up` in the terminal) and you should see your changes.
 
    - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
    - If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
-
-   </details>
 
 3. ### Prepare your changes to push to your repository
 
