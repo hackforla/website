@@ -269,7 +269,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
 
    ### What if you cannot see your changes locally within Docker?
 
-   If you do not see the changes you applied when you run docker-compose up, **do the following**:
+   If you do not see the changes you applied when you run `docker-compose up`, **do the following**:
 
    1. Stop running your Docker application (if still running).
    2. Delete the `_site` directory in the root folder (`website`)
@@ -278,7 +278,7 @@ Create a new branch for each issue you work on. Doing all your work on topic bra
    <br><br>
    - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
    - If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
-   <br><br>
+   <br>
 3. ### Prepare your changes to push to your repository
 
    Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
