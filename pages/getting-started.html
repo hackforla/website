@@ -281,23 +281,4 @@ permalink: /getting-started
         </div>
     </div>
 </div>
-
-<!-- //script for FAQ dropdown -->
-
-<script>
-    var showAnswer = document.getElementsByClassName('accordion');
-
-    for (var i = 0; i < showAnswer.length; i++) {
-        showAnswer[i].addEventListener("click", function () {
-
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none"
-            } else {
-                panel.style.display = "block"
-            }
-        })
-
-    }
-</script>
+<script src="/assets/js/elements/accordion.js"></script>
