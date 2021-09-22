@@ -1,6 +1,7 @@
 // Constant variables
 const REQUIRED_LABELS = ['Size', 'role', 'Feature']
 const LABEL_MISSING = ['size: missing', 'role missing', 'Feature Missing']
+const SIZE_EXCEPTIONS = ['good first issue']
 
 // Global variables
 var github
@@ -60,7 +61,14 @@ function checkLabels(labels) {
 
   REQUIRED_LABELS.forEach((requiredLabel, i) => {
     const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'gi')
-    const isLabelPresent = labels.some(label => regExp.test(label))
+    const isLabelPresent = labels.some(label => {
+      // If the label is in the size exceptions array, it also fulfills the size requirements
+      if (SIZE_EXCEPTIONS.includes(label) && requiredLabel === 'Size') {
+        return true
+      }
+
+      return regExp.test(label)
+    })
 
     if (isLabelPresent === false){
       labelsToAdd.push(LABEL_MISSING[i])
