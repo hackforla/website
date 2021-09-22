@@ -3,7 +3,7 @@ function findLinkedIssue(text) {
     const KEYWORDS = ['close', 'closes', 'closed', 'fix', 'fixes', 'fixed', 'resolve', 'resolves', 'resolved']
     let reArr = []
     for (const word of KEYWORDS) {
-        reArr.push(`[\\n|\\s|^]${word} #\\d*\\s|^${word} #\\d*\\s|\\s${word} #\\d*$|^${word} #\\d*$`)
+        reArr.push(`[\\n|\\s|^]${word} #\\d+\\s|^${word} #\\d+\\s|\\s${word} #\\d+$|^${word} #\\d+$`)
     }
 
     // Receive and unpack matches into an Array of Array objs
