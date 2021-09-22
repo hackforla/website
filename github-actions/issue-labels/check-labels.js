@@ -61,6 +61,7 @@ function checkLabels(labels) {
   REQUIRED_LABELS.forEach((requiredLabel, i) => {
     const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'gi')
     const isLabelPresent = labels.some(label => {
+      // The label 'good first issue' fulfills the size requirement for labels
       if (label === 'good first issue' && requiredLabel === 'Size') {
         return true
       }
