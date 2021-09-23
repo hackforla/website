@@ -1,0 +1,10 @@
+name: Issue Trigger
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."

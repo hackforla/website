@@ -1,5 +1,6 @@
 /**
- * Event Listener `locationchange` that gets triggered on
+ * Creates an event listener called 'locationchange' that gets triggered on
+ * see the following link for details: https://dirask.com/posts/JavaScript-on-location-changed-event-on-url-changed-event-DKeyZj 
  *      - history.pushState
  *      - history.replaceState
  *      - window.popstate
