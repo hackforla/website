@@ -13,7 +13,7 @@ jobs:
         id: sort-closed-issues
         with:
           script: |
-            const script = require('./github-actions/sort-closed-issues.js')
+            const script = require('./github-actions/move-closed-issues/sort-closed-issues.js')
             const sortIssues = script({context})
             return sortIssues
           result-encoding: string
