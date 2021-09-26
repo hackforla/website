@@ -48,7 +48,7 @@ function makeComment(labels) {
     const commentObject = {
       replacementString: issueCreator,
       placeholderString: '${issueCreator}',
-      filePathToFormat: './github-actions/issue-labels/no-labels-template.md',
+      filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/no-labels-template.md',
       textToFormat: null
     }
     return formatComment(commentObject)
@@ -63,7 +63,7 @@ This part can be revisited and fixed afterwards.
   const commentObject = {
     replacementString: issueCreator,
     placeholderString: '${issueCreator}',
-    filePathToFormat: './github-actions/issue-labels/add-labels-template.md',
+    filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/add-labels-template.md',
     textToFormat: null
   }
   const commentWithIssueCreator = formatComment(commentObject)
