@@ -71,9 +71,9 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-
 partner: EmpowerLA
-program area: 'Citizen Engagement'
+programs:
+  - Citizen Engagement
 visible: true
 status: Active
 ---
