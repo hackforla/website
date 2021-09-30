@@ -70,7 +70,8 @@ location:
   # - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
-program area: 'Citizen Engagement'
+programs: 
+  - Social Safety Net
 partner: seeking
 visible: true
 status: Active
