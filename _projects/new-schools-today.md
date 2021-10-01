@@ -50,4 +50,6 @@ location:
   - Remote
 visible: true
 status: On Hold
+programs: 
+  - Diversity / Equity and Inclusion
 ---
