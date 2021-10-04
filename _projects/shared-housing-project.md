@@ -15,6 +15,8 @@ looking:
 location:
   # - Downtown LA
   - Remote
+programs:  
+  - Social Safety Net
 visible: false
 status: On Hold
 ---
