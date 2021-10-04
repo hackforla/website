@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded",function(){
         for(const [filtername,filtervalue] of Object.entries(filters)){
             // Add displayed filter title, resloves issue of "program areas" not being valid html attribute name due to spacing
             let filterTitle = ""
-            if(filtername !== "program-area"){
+            if(filtername !== "programs"){
                 filterTitle = filtername
             } else {
                 filterTitle = "program areas"
@@ -89,7 +89,6 @@ function retrieveProjectDataFromCollection(){
     {%- endfor -%}]
 
     return projectData;
-    console.log(projectData);
 }
 
 /**
