@@ -38,6 +38,6 @@ location:
 partner: EnCiv.org, Ballotpedia.org
 visible: true
 status: Completed
-programs: 
+program-area: 
   - Vote / Representation
 ---

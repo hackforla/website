@@ -12,6 +12,7 @@ location:
   - Remote
 partner: County of Los Angeles
 visible: false
-programs:  'Citizen Engagement'
+program-area:  
+  - Citizen Engagement
 status: On Hold
 ---
