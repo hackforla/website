@@ -70,7 +70,7 @@ location:
   # - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
-programs: 
+program-area: 
   - Social Safety Net
 partner: seeking
 visible: true

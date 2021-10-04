@@ -72,7 +72,7 @@ location:
   # - Downtown LA
   - Remote
 partner: EmpowerLA
-programs:
+program-area:
   - Citizen Engagement
 visible: true
 status: Active

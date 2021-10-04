@@ -39,6 +39,6 @@ partner: Digital Defense Fund
 tools: Mongo, Angular, Node, JS
 visible: true
 status: Completed
-programs: 
+program-area: 
   - Vote / Representation
 ---

@@ -43,7 +43,7 @@ location:
 # tools:
 partner: Undisclosed
 visible: true
-programs: 
+program-area: 
   - Civic Tech Infrastructure
 status: Active
 ---
