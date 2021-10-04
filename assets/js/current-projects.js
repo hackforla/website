@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",function(){
         
         // Insert Checkbox Filter Into The Dom
         for(const [filtername,filtervalue] of Object.entries(filters)){
-            // Add displayed filter title, resloves issue of "program areas" not being valid html attribute name due to spacing
+            // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
             let filterTitle = ""
             if(filtername !== "programs"){
                 filterTitle = filtername
