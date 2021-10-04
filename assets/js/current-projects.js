@@ -82,7 +82,7 @@ function retrieveProjectDataFromCollection(){
                             "technologies": {{ project.technologies | jsonify }}
                             {%- endif -%}
                             {%- if project.program-area -%},
-                            "programs": {{ project.program-area | jsonify }}
+                            "programAreas": {{ project.program-area | jsonify }}
                             {%- endif -%}
                             }
             }{%- unless forloop.last -%}, {% endunless %}
@@ -124,7 +124,7 @@ function createFilter(sortedProjectData){
     return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
-            'programs': [...new Set(sortedProjectData.map(item => item.project.programs ? item.project.programs.map(program => program) : '').flat() ) ].filter(v=>v!='').sort(),
+            'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
             'technologies': [...new Set(sortedProjectData.map(item => item.project.technologies ? item.project.technologies.map(tech => tech) : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
@@ -164,7 +164,7 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-
+  
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
@@ -390,7 +390,7 @@ return `
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
             data-technologies="${project.technologies ? [... new Set(project.technologies.map(tech => tech)) ] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
-            data-programs="${project.programs ? project.programs.map(program => program) : '' }"
+            data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
         <div class="project-card-inner">
 
@@ -442,11 +442,11 @@ return `
             `:""
             }
 
-            ${project.programs ?
+            ${project.programAreas ?
             `
             <div class="project-programs">
             <strong>Program Areas: </strong>
-            ${project.programs.map(program => `<p class='project-card-field-inline'> ${ program }</p>`).join(", ")}
+            ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
             </div>
             `:""
             }
