@@ -363,6 +363,23 @@
   margin: 30px auto;
 }
 
+.github-sign-up-text {
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.getting-started-step-title-faq {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 2px;
+
+  @media #{$bp-below-mobile} {
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
 .ordered-list-steps {
   display: flex;
   flex-direction: row;
