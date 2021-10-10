@@ -82,6 +82,30 @@
 
   //Create The "Role" and "Team" Filters From The Displayed Cards On Page Load
   document.addEventListener("DOMContentLoaded", createFilter);
+
+  document.addEventListener('click', event => {
+	// if the .see-more-div element is clicked
+	if (event.target.closest('.see-more-div')) {
+	  // open the seeMore with the id of the selected target 
+	  seeMore(event.target.id)
+	}
+	if (event.target.matches('.overlay') || event.target.closest('.overlay-close-icon') || event.target.closest('.top-buffer') || event.target.closest('.bottom-buffer')) {
+	  hideOverlay();
+	}
+	// else, do nothing
+	return false;
+  }, false);
+  
+  document.addEventListener('keydown', function(event) {
+	// if its the enter key and the .see-more-div element is currently tabbed on
+	if (event.key === "Enter" && document.activeElement.classList.contains('see-more-div')) {
+	  // run seeMore with the active tab element id
+	  seeMore(document.activeElement.id);
+	}
+	// else, do nothing
+	return false;
+  }, false);
+  
   function createFilter(){
 
   	const roleArr = [];
@@ -450,7 +474,7 @@ function seeMore(id){
 	  document.querySelector(".sr-only-focusable").inert = true;
 
 	  window.addEventListener('resize', (e) => {
-		  widthOutput = window.innerWidth;
+		 let widthOutput = window.innerWidth;
 		  if (widthOutput < 960) {
 			  hideOverlay(e)
 		  }
@@ -492,8 +516,6 @@ function seeMore(id){
 
 	function hideOverlay(e) {
 		e = e || window.event || e.key == 'Escape';
-
-		if (e.target !== e.currentTarget) return;
 
 		const overlayProjectCard = document.querySelector('#overlay-project-card');
 		overlayProjectCard.parentNode.classList.remove("display-initial");
