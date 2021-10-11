@@ -13,24 +13,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Akib Rahman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01L4FXN1T7'
-      github: 'https://github.com/akibrhast'
-    picture: https://avatars.githubusercontent.com/akibrhast
   - name: Cynthia Kiser
     role: Technical Advisor
     links:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: David Rubinstein
-    role: Technical Lead
+  - name: Adam Abundis
+    role: Team and Front End Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U015FP47R5G'
-      github: 'https://github.com/drubgrubby'
-    picture: https://avatars.githubusercontent.com/drubgrubby
+      slack: 'https://hackforla.slack.com/team/UJML6CY49'
+      github: 'https://github.com/abuna1985'
+    picture: https://avatars.githubusercontent.com/abuna1985
+  - name: Matthew Cacho
+    role: Back End Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
+    picture: https://avatars.githubusercontent.com/macho-catt
   - name: Danielle Nedivi
     role: Design Lead
     links:
