@@ -91,7 +91,8 @@ location:
   # must choose one of the above (closest)
 partner: Department of Neighborhood Empowerment
 tools: figma, photoshop, sketch, phone calls.
-program area: Citizen Engament
+program-area: 
+  - Citizen Engagement
 status: Active
 # If the card should not be included on the site, change visible to "false"
 visible: true

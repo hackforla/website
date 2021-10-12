@@ -46,5 +46,6 @@ partner: City of Santa Monica
 tools: Zeplin
 visible: true
 status: Completed
-program area: 'Environment'
+program-area: 
+  - Environment
 ---
