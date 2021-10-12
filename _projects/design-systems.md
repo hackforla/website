@@ -32,7 +32,8 @@ location:
   # must choose one of the above (closest)
 partner:
 tools: 
-program area: Civic Tech Infrastructure
+program-area:
+  - Civic Tech Infrastructure
 status: Active 
 # If the card should not be included on the site, change visible to "false"
 visible: true
