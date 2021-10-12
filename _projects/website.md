@@ -31,12 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
       github: 'https://github.com/macho-catt'
     picture: https://avatars.githubusercontent.com/macho-catt
-  - name: Danielle Nedivi
-    role: Design Lead
+  - name: Kristine Eudey
+    role: UX Design Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013U4VN8V7'
-      github: 'https://github.com/daniellex0'
-    picture: https://avatars.githubusercontent.com/daniellex0
+      slack: 'https://hackforla.slack.com/team/U0252CHL678'
+      github: 'https://github.com/kristine-eudey'
+    picture: https://avatars.githubusercontent.com/kristine-eudey
   - name: Ibraheem Agbaje
     role: Product Manager
     links:
