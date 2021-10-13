@@ -529,6 +529,7 @@
 //tablet view mode media query
 @media screen and (max-width: $screen-tablet) and (min-width: $screen-mobile){
     .wins-tablet{
+        align-items: flex-start;
         display: grid;
         grid-template-columns: 50% 50%;
 
