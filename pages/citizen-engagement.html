@@ -1,0 +1,309 @@
+---
+layout: default
+title: Citizen Engagement
+permalink: /citizen-engagement
+---
+<!-- Header banner -->
+<div class="header-container flex-container">
+    <div class="header-text">
+        <h1 class="title1">Citizen Engagement</h1>
+        <p>
+            We at Hack for LA are volunteers that believe in building technology
+            and analyzing data to make it easier to participate effectively in your community.
+        </p>
+        <p class="sub-p">
+            Below are our products that are making that happen.
+            If you have a new idea, want to submit feedback that will guide the next iteration
+            of an existing tool, or want to start working on a project team with us, please contact
+            us at <a href="mailto: citizenengagement@hackforla.org">citizenengagement@hackforla.org.</a>
+        </p>
+        <p class="bottom-header-paragraph">
+            Read more about <a href="https://sdg.lamayor.org/about/global-goals">LA’s Sustainable Development Goals</a>.
+        </p>
+    </div>
+    <img class="header-hero-image" src="/assets/images/citizen-engagement/citizen-engagement-header.svg"
+        alt="Image of people together in community" />
+</div>
+<!-- Header banner -->
+
+<!-- Page body -->
+<section class="content-section project-wrapper">
+    <div class="page-contain projects">
+        <h2>Current Projects</h2>
+        <!-- Card -->
+        <!-- Cards have been standardized and can be found in _sass/elements/_cards-->
+        <!-- These cards utilize the previous standardized elements, plus new elements that I have integrated. -->
+        <!-- Specifically I have added data attributes to the page-card container, and the dropdown arrow.
+             We use the data attributes in JS to expand and close the cards. -->
+        <div class="page-card card-primary page-card-lg card-body card-width" data-dropdown>
+                <!-- These three divs contain the image, a div that contains navigation and project info,
+                     and the sustainable goals div -->
+                    
+                <img class="card-image" src="/assets/images/projects/311.jpg" alt="311 project card"/>
+
+                    <!-- When the card is closed in mobile, we only see the image and the navigation. When the card is 
+                         open, we see the project information. -->
+                <div class="mobile-card-info-container">
+                    <div class="mobile-card-nav">
+                        <h3>311 Data</h3>
+                        <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                    </div>
+                    <div class="project-dropdown">
+                        <div class="problem-info">
+                            <h4>Problem</h4>
+                            <p>The city produces a data set from all the 311 tickets placed.  
+                                This data is useful if you are a data scientist, but for 
+                                citizens without this training it has little value.</p>
+                        </div>
+                        <div class="solution-info">
+                            <h4>Solution</h4>
+                            <p>We partnered with the Los Angeles Department of Neighborhood 
+                                Empowerment and LA Neighborhood Councils to co-create and 
+                                iterate analysis and tools (see 311-Data.org) to provide 
+                                neighborhoods with actionable information at the local level 
+                                through real time visualizations and comparison tools.</p>
+                        </div>
+                        <div class="impact-info">
+                            <h4>Impact</h4>
+                            <p>Neighborhood Councils are able to use visualizations to 
+                                demonstrate and discuss the city service levels with 
+                                constituents and determine where to send mailings to 
+                                target information to those parts of their community not 
+                                availing themselves of specific city services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- The div below is controlled by the dropdown arrow. It is outside of the above container so it can
+                     span the entire card  -->
+            <div class="sustainable-dev-goal">
+                <h4>Sustainable Development Goal</h4>
+                <div class="card-bottom-info">
+                    <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
+                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
+                        and local communities, especially those traditionally underserved and marginalized,
+                         in the institutions of local and global governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-card card-primary page-card-lg card-body card-width" data-dropdown>
+            <img class="card-image" src="/assets/images/projects/access-the-data.png" alt="access the data project card"/>
+            <div class="mobile-card-info-container">
+                <div class="mobile-card-nav">
+                    <h3>Access the Data</h3>
+                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                </div>
+                <div class="project-dropdown">
+                    <div class="problem-info">
+                        <h4>Problem</h4>
+                        <p>Policies that impact the public are increasingly advised 
+                            by surveys and other means of data collection. To ensure 
+                            that citizens are empowered advocates of their community, 
+                            we are looking to identify the areas where data literacy 
+                            education within our communities is needed most.</p>
+                    </div>
+                    <div class="solution-info">
+                        <h4>Solution</h4>
+                        <p>Hack for LA’s Access the Data team, in partnership with the 
+                            Los Angeles Department of Neighborhood Empowerment, Neighborhood 
+                            Councils, and the Los Angeles Mayor’s office, will be developing 
+                            modules to address those areas.</p>
+                    </div>
+                    <div class="impact-info">
+                        <h4>Impact</h4>
+                        <p>
+                            Citizens will be empowered to advocate for change in their communities
+                             by using publicly available data and asking for data to be made available 
+                             when it is required for advocacy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainable-dev-goal">
+                <h4>Sustainable Development Goal</h4>
+                <div class="card-bottom-info">
+                    <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
+                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
+                        and local communities, especially those traditionally underserved and marginalized,
+                         in the institutions of local and global governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-card card-primary page-card-lg card-body card-width" data-dropdown>
+            <img class="card-image" src="/assets/images/projects/engage.jpg" alt="engage project card" />
+            <div class="mobile-card-info-container">
+                <div class="mobile-card-nav">
+                    <h3>Engage</h3>
+                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                </div>
+                <div class="project-dropdown">
+                    <div class="problem-info">
+                        <h4>Problem</h4>
+                        <p>Everyone should be able to have a voice in their 
+                            community’s issues, but not everyone has access 
+                            or is easily able to follow an issue’s details. 
+                            For example, not everyone has time to attend a 
+                            city council meeting!</p>
+                    </div>
+                    <div class="solution-info">
+                        <h4>Solution</h4>
+                        <p>On Engage, all users can view, read, and comment 
+                            on agenda items their city council is currently 
+                            debating. This makes it much easier to participate 
+                            in discussions on government policies.</p>
+                    </div>
+                    <div class="impact-info">
+                        <h4>Impact</h4>
+                        <p>Our platform will make important local conversations 
+                            much more representative of the actual community, 
+                            boosting the representation of the most marginalized 
+                            and underserved members. Being able to hear their 
+                            perspective will lead to more inclusive, considerate 
+                            decision-making that will truly benefit all of us rather 
+                            than just some.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainable-dev-goal">
+                <h4>Sustainable Development Goal</h4>
+                <div class="card-bottom-info">
+                    <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
+                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
+                        and local communities, especially those traditionally underserved and marginalized,
+                         in the institutions of local and global governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-card card-primary page-card-lg card-body card-width" data-dropdown>
+            <img class="card-image" src="/assets/images/projects/open-community-survey.jpg" alt="open community project card"/>
+            <div class="mobile-card-info-container">
+                <div class="mobile-card-nav">
+                    <h3>Open Community Survey</h3>
+                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                </div>
+                <div class="project-dropdown">
+                    <div class="problem-info">
+                        <h4>Problem</h4>
+                        <p>Most Neighborhood Councils do not have access
+                             or resources to hire technical experts necessary 
+                             to create a citywide survey so that they can use 
+                             the data to create inclusive websites targeted towards 
+                             the needs of their specific communities.</p>
+                    </div>
+                    <div class="solution-info">
+                        <h4>Solution</h4>
+                        <p>The Open Community Survey project creates transparent reports 
+                            supported by a direct collection of personal perspectives from 
+                            LA residents to help The LA Department of Neighborhood Empowerment 
+                            (empowerla.org) and the Los Angeles Neighborhood Councils to understand 
+                            how constituents are interacting with, and what they need from, their websites.</p>
+                    </div>
+                    <div class="impact-info">
+                        <h4>Impact</h4>
+                        <p>Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainable-dev-goal">
+                <h4>Sustainable Development Goal</h4>
+                <div class="card-bottom-info">
+                    <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
+                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
+                        and local communities, especially those traditionally underserved and marginalized,
+                         in the institutions of local and global governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-card card-primary page-card-lg card-body card-width" data-dropdown>
+            <img class="card-image" src="/assets/images/projects/lucky-parking.png" alt="lucky parking project card"/>
+            <div class="mobile-card-info-container">
+                <div class="mobile-card-nav">
+                    <h3>Lucky Parking</h3>
+                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                </div>
+                <div class="project-dropdown">
+                    <div class="problem-info">
+                        <h4>Problem</h4>
+                        <p>Parking citations are distributed unevenly across 
+                            different socio-economic strata of the cities 
+                            residents as they use  public parking  during the course 
+                            of business or because enough off-street parking is not 
+                            provided at their residence. The current publicly available Los 
+                            Angeles parking citation dataset can be used as a basis for discussions 
+                            about this disparity, but the unwieldy size and inconsistency of this data has been enough of a 
+                            barrier to make it inaccessible to non-researchers.</p>
+                    </div>
+                    <div class="solution-info">
+                        <h4>Solution</h4>
+                        <p>Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a webapp 
+                            that is easy to use yet powerful enough to make meaningful insights about parking citations 
+                            accessible to the public at large.</p>
+                    </div>
+                    <div class="impact-info">
+                        <h4>Impact</h4>
+                        <p>Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ 
+                            parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sustainable-dev-goal">
+                <h4>Sustainable Development Goal</h4>
+                <div class="card-bottom-info">
+                    <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/sustainable-cities.svg" alt="sustainable cities bottom sustainable dev goal"/>
+                    <p><strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport 
+                        systems for all, improving road safety, notably by expanding public transport, 
+                        with special attention to the needs of those in vulnerable 
+                        situations, women, children, persons with disabilities and older persons.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-card card-primary page-card-lg card-body card-width organizations">
+                <div class="organizations-info">
+                    <h3>Organizations We Work With</h3>
+                    <p>None of what we do would be possible without the generous 
+                        support of many organizations throughout out our communities.
+                        A big thank you to:</p>
+                </div>
+                <div class="organizations-images">
+                    <img class="org-img" src="/assets/images/sponsors/logo-cfa.svg" alt="code for america logo"/>
+                    <img class="org-img" src="/assets/images/citizen-engagement/la_neighborhood_councils.svg" alt="neighborhood councils empower LA: department of neighborhood empowerment logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/palms_neighborhood_council.svg" alt="palms neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/echo_park_neighborhood_council.svg" alt="echo park neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/la_county_open_data.svg" alt="county of los angeles open data logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/voices_neighborhood_council.svg" alt="voices of neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/mid_city_neighborhood_council.svg" alt="MINC mid-city neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/mar_vista_community_council.svg" alt="Join Us! marvista.org | mar vista community college logo">
+                </div>
+        </div>
+    </div>
+    <!-- Card -->
+</section>
+
+<!-- Include javaScript -->
+<script>
+
+    document.addEventListener('click', (e) => {
+        // <- Dropdown functionality 
+        const isDropdownArrow = e.target.closest("[data-dropdown-arrow");
+        let currentDropown;
+
+        if (isDropdownArrow) {
+            currentDropdown = e.target.closest("[data-dropdown]");
+            currentDropdown.classList.toggle("activated");
+        }
+
+        document.querySelectorAll("[data-dropdown].activated").forEach(dropdown => {
+            if (dropdown === currentDropdown) return;
+            dropdown.classList.remove("activated");
+        })
+        // Dropdown functionality ->
+    })
+
+</script>
