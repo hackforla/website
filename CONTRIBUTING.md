@@ -15,51 +15,56 @@ The following is a set of guidelines for contributing to the website repository,
 - [**How to Contribute to Hack for LA**](#how-to-contribute-to-hack-for-la)
   - [**Table of Contents**](#table-of-contents)
   - [**Part 1: Setting up the development environment**](#part-1-setting-up-the-development-environment)
-    - [**Dev setup step 1: Join the repository team**](#dev-setup-step-1-join-the-repository-team)
-    - [**Dev setup step 2: Installing Git**](#dev-setup-step-2-installing-git)
-    - [**Dev setup step 3: Fork the repository**](#dev-setup-step-3-fork-the-repository)
-    - [**Dev setup step 4: Clone the forked repository**](#dev-setup-step-4-clone-the-forked-repository)
-      - [**1. Create a new folder on your machine that will contain `hackforla` projects.**](#1-create-a-new-folder-on-your-machine-that-will-contain-hackforla-projects)
-      - [**2. Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):**](#2-verify-that-your-local-cloned-repository-is-pointing-to-the-correct-origin-url-that-is-the-forked-repo-on-your-own-github-account)
-      - [**If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)**](#if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
-        - [**1. Set your forked repo on your Github as an `origin` remote:**](#1-set-your-forked-repo-on-your-github-as-an-origin-remote)
-        - [**2. Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:**](#2-add-another-remote-called-upstream-that-points-to-the-hackforla-version-of-the-repository-this-will-allow-you-to-incorporate-changes-later)
-    - [**Dev setup step 5: Set up Docker**](#dev-setup-step-5-set-up-docker)
-      - [**Docker installation troubleshooting**](#docker-installation-troubleshooting)
-    - [**Dev setup step 6: Build and serve the website locally**](#dev-setup-step-6-build-and-serve-the-website-locally)
-      - [**Staring Docker**](#staring-docker)
-      - [**Stopping Docker**](#stopping-docker)
+    - [**1.1 Dev setup (1): Join the repository team**](#11-dev-setup-1-join-the-repository-team)
+    - [**1.2 Dev setup (2): Installing Git**](#12-dev-setup-2-installing-git)
+    - [**1.3 Dev setup (3): Fork the repository**](#13-dev-setup-3-fork-the-repository)
+    - [**1.4 Dev setup (4): Clone (Create) a copy on your computer**](#14-dev-setup-4-clone-create-a-copy-on-your-computer)
+      - [**1.4.a Clone repo (1): Create  `hackforla` folder**](#14a-clone-repo-1-create--hackforla-folder)
+      - [**1.4.b Clone repo (2): Verify `origin` remote url**](#14b-clone-repo-2-verify-origin-remote-url)
+      - [**1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**](#14c-what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
+        - [**i. Resolve remote (1): reset `origin` remote url**](#i-resolve-remote-1-reset-origin-remote-url)
+        - [**ii. Resolve remote (2): Add an `upstream` remote**](#ii-resolve-remote-2-add-an-upstream-remote)
+    - [**1.5 Dev setup (5): Set up Docker**](#15-dev-setup-5-set-up-docker)
+      - [**1.5.a Docker installation troubleshooting**](#15a-docker-installation-troubleshooting)
+    - [**1.6 Dev setup (6): Build and serve the website locally**](#16-dev-setup-6-build-and-serve-the-website-locally)
+      - [**1.6.a Starting Docker**](#16a-starting-docker)
+      - [**1.6.b Stopping Docker**](#16b-stopping-docker)
   - [**Part 2: Working on an issue and making a pull request**](#part-2-working-on-an-issue-and-making-a-pull-request)
-    - [**1. How we organize issues**](#1-how-we-organize-issues)
-      - [**Hack for LA contribution expectations**](#hack-for-la-contribution-expectations)
-    - [**2. Where can I find issues?**](#2-where-can-i-find-issues)
-      - [**New members (Front-End/Back-End)**](#new-members-front-endback-end)
-      - [**Returning members (Front-End)**](#returning-members-front-end)
-      - [**Returning members (Back-End)**](#returning-members-back-end)
-    - [**3. Claiming an Issue**](#3-claiming-an-issue)
-    - [**4. Reporting progress on your issue**](#4-reporting-progress-on-your-issue)
-    - [**5. What to do when you need to stop mid issue**](#5-what-to-do-when-you-need-to-stop-mid-issue)
-      - [Reasons for having to stop:](#reasons-for-having-to-stop)
-      - [What to do if you have to stop working mid issue:](#what-to-do-if-you-have-to-stop-working-mid-issue)
-      - [Assign & Unassign yourself to this issue](#assign--unassign-yourself-to-this-issue)
-      - [Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back](#move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
-    - [**6. Working on an issue**](#6-working-on-an-issue)
-      - [**Working on an issue step 1: Check current branch**](#working-on-an-issue-step-1-check-current-branch)
-      - [**Working on an issue step 2: Create a new branch where you will work on your issue**](#working-on-an-issue-step-2-create-a-new-branch-where-you-will-work-on-your-issue)
-        - [**What if you cannot see your changes locally within Docker?**](#what-if-you-cannot-see-your-changes-locally-within-docker)
-      - [**Working on an issue step 3: Prepare your changes to push to your repository**](#working-on-an-issue-step-3-prepare-your-changes-to-push-to-your-repository)
-      - [**Working on an issue step 4: Check upstream before you push**](#working-on-an-issue-step-4-check-upstream-before-you-push)
-          - [**No changes in the upstream repository**](#no-changes-in-the-upstream-repository)
-        - [**Conflicting changes in the upstream repository**](#conflicting-changes-in-the-upstream-repository)
-      - [**Working on an issue step 5: Incorporating changes from upstream**](#working-on-an-issue-step-5-incorporating-changes-from-upstream)
-        - [**Incorporating changes into your topic branch**](#incorporating-changes-into-your-topic-branch)
-    - [**5. Making a pull request**](#5-making-a-pull-request)
-        - [**Edits to a pull request**](#edits-to-a-pull-request)
+    - [**2.1 How we organize issues**](#21-how-we-organize-issues)
+      - [**2.1.a Hack for LA contribution expectations**](#21a-hack-for-la-contribution-expectations)
+    - [**2.2 Where can I find issues to work on?**](#22-where-can-i-find-issues-to-work-on)
+      - [**2.2.a Issues for new members (Front-End/Back-End)**](#22a-issues-for-new-members-front-endback-end)
+      - [**2.2.b Issues for returning members (Front-End)**](#22b-issues-for-returning-members-front-end)
+      - [**2.2.c Issues for returning members (Back-End)**](#22c-issues-for-returning-members-back-end)
+      - [**2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#22d-issues-for-hacktoberfest-contributors-front-endback-end)
+      - [**2.2.e What if you don't see an issue that interest you?**](#22e-what-if-you-dont-see-an-issue-that-interest-you)
+    - [**2.3 Claiming an Issue**](#23-claiming-an-issue)
+      - [**2.3.a Assign & Unassign yourself to this issue**](#23a-assign--unassign-yourself-to-this-issue)
+      - [**2.3.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**](#23b-move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
+    - [**2.4 Reporting progress on your issue**](#24-reporting-progress-on-your-issue)
+    - [**2.5 What to do when you need to stop mid issue**](#25-what-to-do-when-you-need-to-stop-mid-issue)
+      - [**2.5.a Reasons for having to stop:**](#25a-reasons-for-having-to-stop)
+      - [**2.5.b What to do if you have to stop working mid issue:**](#25b-what-to-do-if-you-have-to-stop-working-mid-issue)
+    - [**2.6 Working on an issue**](#26-working-on-an-issue)
+      - [**2.6.a Working on an issue (1): Verify current branch is `gh-pages`**](#26a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
+      - [**2.6.b Working on an issue (2): Create a new branch where you will work on your issue**](#26b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
+        - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
+      - [**2.6.c Working on an issue(3): Prepare your changes to push to your repository**](#26c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
+      - [**2.6.d Working on an issue (4): Check upstream before you push**](#26d-working-on-an-issue-4-check-upstream-before-you-push)
+          - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
+        - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
+      - [**2.6.e Working on an issue (5): Incorporating changes from upstream**](#26e-working-on-an-issue-5-incorporating-changes-from-upstream)
+        - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
+    - [**2.7 Making a pull request**](#27-making-a-pull-request)
+        - [**2.7.a Editing a submitted pull request**](#27a-editing-a-submitted-pull-request)
   - [**Part 3: Resources and Documentation**](#part-3-resources-and-documentation)
-    - [**1. Where to get help**](#1-where-to-get-help)
+    - [**3.1 What do I do if I need help?**](#31-what-do-i-do-if-i-need-help)
+    - [**3.2 Resources and Documentation**](#32-resources-and-documentation)
+      - [**3.2.a Hack For LA resources**](#32a-hack-for-la-resources)
+      - [**3.2.b Tools Documentation**](#32b-tools-documentation)
 
 ## **Part 1: Setting up the development environment**
-### **Dev setup step 1: Join the repository team**
+### **1.1 Dev setup (1): Join the repository team**
 
 In the `hfla-site` Slack channel, send an introductory message with your GitHub handle/username asking to be added to the Hack for LA website GitHub repository (this repository).
 
@@ -70,7 +75,7 @@ In the `hfla-site` Slack channel, send an introductory message with your GitHub 
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **Dev setup step 2: Installing Git**
+### **1.2 Dev setup (2): Installing Git**
 
 Before cloning your forked repository to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Please note that if you have a Mac the page offers several options (see other option, if you need to conserve hard drive space) including:
 
@@ -80,7 +85,7 @@ Before cloning your forked repository to your local machine, you must have Git i
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **Dev setup step 3: Fork the repository**
+### **1.3 Dev setup (3): Fork the repository**
 
 You can fork the hackforla/website repository by clicking <a href="https://github.com/hackforla/website/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
 . A fork is a copy of the repository that will be placed on your GitHub account.
@@ -101,19 +106,21 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **Dev setup step 4: Clone the forked repository**
+### **1.4 Dev setup (4): Clone (Create) a copy on your computer**
 
-Before cloning your forked repository to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+Before creating a copy to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
 
-The following steps will create a local copy of the repository on your machine.
+The following steps will clone (create) a local copy of the repository on your computer.
 
-#### **1. Create a new folder on your machine that will contain `hackforla` projects.**
+#### **1.4.a Clone repo (1): Create  `hackforla` folder**
 
-In your command line interface (Terminal, Git Bash, Powershell), navigate into the folder(directory) you just created.
+Create a new folder in your computer that will contain `hackforla` projects.
+
+In your command line interface (Terminal, Git Bash, Powershell), move to where you want your new folder to be placed and create a new folder in your computer that will contain `hackforla` projects. After that, navigate into the folder(directory) you just created.
       
 For example: 
 ```bash
-cd Desktop
+mkdir hackforla
 cd hackforla
 ```
       
@@ -123,7 +130,7 @@ and run the following commands:
 git clone https://github.com/<your_GitHub_user_name>/website.git
 ```
       
-For example:
+For example if your GitHub username was `octocat`:
 ```bash
 git clone https://github.com/octocat/website.git
 ```
@@ -134,8 +141,9 @@ You should now have a new folder in your `hackforla` folder called `website`. Ve
 cd website
 ```
 
-#### **2. Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):**
+#### **1.4.b Clone repo (2): Verify `origin` remote url**
 
+Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
 ```bash
 git remote -v
 ```
@@ -155,23 +163,30 @@ origin  https://github.com/<your_GitHub_user_name>/website.git (push)
 upstream        https://github.com/hackforla/website.git (fetch)
 upstream        https://github.com/hackforla/website.git (push)
 ```
-#### **If you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)**
+#### **1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**
 
-##### **1. Set your forked repo on your Github as an `origin` remote:**
+##### **i. Resolve remote (1): reset `origin` remote url**
 
+Set your forked repo on your Github as an `origin` remote:
 ```bash
 git remote set-url origin https://github.com/<your_GitHub_user_name>/website.git
 ```
 
-##### **2. Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:**
+For example if your GitHub username was `octocat`:
+```bash
+git remote set-url origin https://github.com/octocat/website.git
+```
 
+##### **ii. Resolve remote (2): Add an `upstream` remote**
+
+Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
 ```bash
 git remote add upstream https://github.com/hackforla/website.git
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **Dev setup step 5: Set up Docker**
+### **1.5 Dev setup (5): Set up Docker**
 
 Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
@@ -181,7 +196,7 @@ More on using Docker and the concepts of containerization:
 
 * [Get started with Docker](https://docs.docker.com/get-started/)
 
-#### **Docker installation troubleshooting**
+#### **1.5.a Docker installation troubleshooting**
 
 If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
 - [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
@@ -191,8 +206,9 @@ Installing WSL2 on windows
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **Dev setup step 6: Build and serve the website locally**
-#### **Staring Docker**
+### **1.6 Dev setup (6): Build and serve the website locally**
+
+#### **1.6.a Starting Docker**
 
 - This command starts a jekyll server locally. The server watches for changes to
 the source files and rebuilds and refreshes the site automatically in your browser.
@@ -232,7 +248,7 @@ Running the above command will result in the following output in your terminal
 
 When you see the above output, it means the site is now running and now you can browse to http://localhost:4000
 
-#### **Stopping Docker**
+#### **1.6.b Stopping Docker**
 
  - To stop and completely remove the jekyll server (i.e. the running Docker container):
 
@@ -258,7 +274,7 @@ docker-compose up
 
 ## **Part 2: Working on an issue and making a pull request**
 
-### **1. How we organize issues**
+### **2.1 How we organize issues**
 
 We currently have issues with the following size labels:
 
@@ -268,12 +284,11 @@ We currently have issues with the following size labels:
 * `size: Medium`
 * `size: Large`
 
-#### **Hack for LA contribution expectations**
-
+#### **2.1.a Hack for LA contribution expectations**
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **2. Where can I find issues?**
+### **2.2 Where can I find issues to work on?**
 
 The best way to view the issues available is our [GitHub Project Board](https://github.com/hackforla/website/projects/7)
 
@@ -286,69 +301,80 @@ The best way to view the issues available is our [GitHub Project Board](https://
 There are only 2 columns that you will be consistently referencing:
 
 1. `Onboarding infos/links` - Some helpful card information examples:
-  * [Website team meeting times/links](https://github.com/hackforla/website/projects/7#card-47984166)
-  * [Website team leadership contact information](https://github.com/hackforla/website/projects/7#card-69730135)
+  * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
+  * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
   * Filters to show the project issues by a specific size:
-    * [Front-end filters](https://github.com/hackforla/website/projects/7#card-63001626)
-    * [Back-end filters](https://github.com/hackforla/website/projects/7#card-65620159)
-  * [Figma links from the design team](https://github.com/hackforla/website/projects/7#card-38820969)
+    * [Front-end filters card](https://github.com/hackforla/website/projects/7#card-63001626)
+    * [Back-end filters card](https://github.com/hackforla/website/projects/7#card-65620159)
+  * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **New members (Front-End/Back-End)**
+#### **2.2.a Issues for new members (Front-End/Back-End)**
 
 We recommend you visit this [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) that will highlight the `Prioritized Backlog` column (where the available issues are located) and only shows issues with the `good first issue` label. 
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **Returning members (Front-End)**
+#### **2.2.b Issues for returning members (Front-End)**
 
 * [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
 * [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
 * [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
 * [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
 
-#### **Returning members (Back-End)**
+#### **2.2.c Issues for returning members (Back-End)**
 
 * [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
 * [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
 * [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
 * [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
 
+#### **2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
+
+#### **2.2.e What if you don't see an issue that interest you?**
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **3. Claiming an Issue**
+### **2.3 Claiming an Issue**
+
+#### **2.3.a Assign & Unassign yourself to this issue**
+<!-- add a gif -->
+<details>
+  <summary><strong>Click here</strong> to see how you assign & unassign yourself to an issue</summary>
+</details>
+
+####  **2.3.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**
+<!-- add a gif -->
+<details>
+  <summary><strong>Click here</strong> to see how to move an issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back</summary>
+</details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **4. Reporting progress on your issue**
+### **2.4 Reporting progress on your issue**
 - Be sure to check the box when you finish an action item.
 - Report your progress weekly in a comment below using the following format:
-     - Progress:
-     - Blockers:
-     - Availability:
-     - Estimated date of completion:
+    1. `Progress`: "What is the current status of your project? What have you completed and what is left to do?"
+    2. `Blockers`: "Difficulties or errors encountered."
+    3. `Availability`: "How much time will you have this week to work on this issue?"
+    4. `ETA`: "When do you expect this issue to be completed?"
+    5. `Pictures` (**optional**): "Add any pictures of the visual changes made to the site so far."
 
-### **5. What to do when you need to stop mid issue**
-#### Reasons for having to stop: 
+### **2.5 What to do when you need to stop mid issue**
+#### **2.5.a Reasons for having to stop:**
 - Got personally busy, can’t finish
 - Only want to do a specific type of front-end or back-end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
-#### What to do if you have to stop working mid issue:
+#### **2.5.b What to do if you have to stop working mid issue:**
 - Remove the progress in the checkboxes (all checkboxes should be empty)
 - Add a note in the comments with details and progress for the next developer
-- Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see animated GIF below) 
-- Unassign yourself from this issue (see animated GIF below) 
-
-#### Assign & Unassign yourself to this issue
-![Assign & Unassign](http://g.recordit.co/MkwqNlnWWO.gif)
-
-####  Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back
-![Prioritized to In progress & back](http://g.recordit.co/wvXm85TR1Q.gif)
+- Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see animated GIF above) 
+- Unassign yourself from this issue (see animated GIF above) 
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **6. Working on an issue**
+### **2.6 Working on an issue**
 
 - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
 
@@ -356,7 +382,7 @@ We recommend you visit this [filtered Project Board `good first issues` link](ht
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
-#### **Working on an issue step 1: Check current branch**
+#### **2.6.a Working on an issue (1): Verify current branch is `gh-pages`**
 
 The `git branch` command will let you know what branch you are in, and what branch names are already in use.
 
@@ -375,11 +401,11 @@ git checkout gh-pages
 ```
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **Working on an issue step 2: Create a new branch where you will work on your issue**
+#### **2.6.b Working on an issue (2): Create a new branch where you will work on your issue**
 
 The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
 
-Here is an example of creating a  new issue branch:
+Here is an example of creating a new issue branch:
 
 ```bash
 git checkout -b fix-logo-width-311
@@ -393,7 +419,7 @@ The format should look like the scheme above where the words are a brief descrip
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
 
-##### **What if you cannot see your changes locally within Docker?**
+##### **i. What if you cannot see your changes locally within Docker?**
 
 If you do not see the changes you applied when you run `docker-compose up`, **do the following**:
 
@@ -408,7 +434,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **Working on an issue step 3: Prepare your changes to push to your repository**
+#### **2.6.c Working on an issue(3): Prepare your changes to push to your repository**
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
@@ -452,16 +478,15 @@ git commit -m “insert message here”
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
   
-#### **Working on an issue step 4: Check upstream before you push**
+#### **2.6.d Working on an issue (4): Check upstream before you push**
 
 Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
 
 ```bash
 git fetch upstream
 ```
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-###### **No changes in the upstream repository**
+###### **i. If there are no changes in the upstream repository**
 
 If you do not see any output, there have not been any changes in the main Hack for LA website repository since the last time you
 checked. So it is safe to push your local commits to your fork.
@@ -472,7 +497,7 @@ If you just type `git push` you will be prompted to create a new branch in your 
 git push --set-upstream origin fix-logo-width-311
 ```
 
-##### **Conflicting changes in the upstream repository**
+##### **ii. If there are conflicting changes in the upstream repository**
 
 When you check the upstream repository, you may see output like this:
 
@@ -494,7 +519,7 @@ From https://github.com/hackforla/website
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **Working on an issue step 5: Incorporating changes from upstream**
+#### **2.6.e Working on an issue (5): Incorporating changes from upstream**
 
 Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
@@ -529,7 +554,7 @@ git push
 
 If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
 
-##### **Incorporating changes into your topic branch**
+##### **i. Incorporating changes into your topic branch**
 
 To incorporate these updates from the main GitHub repository into your topic branch, you can 'rebase' your branch onto your updated gh-pages branch. NOTE you should only rebase if you have never pushed your topic branch to GitHub (or shared it with another collaborator).
 
@@ -547,7 +572,7 @@ git merge gh-pages
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-### **5. Making a pull request**
+### **2.7 Making a pull request**
 
 Start with pushing your changes to your remote repository
 
@@ -617,7 +642,7 @@ Managing branches this way will keep the commit logs cleaner on the Hack For LA 
 
 Now you are all set to work on a new PR. Start over [here](#Working-on-an-issue).
 
-##### **Edits to a pull request**
+##### **2.7.a Editing a submitted pull request**
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
@@ -627,9 +652,16 @@ For new volunteers, check this [Wiki](https://github.com/hackforla/website/wiki/
 
 ## **Part 3: Resources and Documentation**
 
-### **1. Where to get help**
+### **3.1 What do I do if I need help?**
 
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+
+### **3.2 Resources and Documentation**
+
+#### **3.2.a Hack For LA resources**
 * [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
+
+#### **3.2.b Tools Documentation**
 * [GitHub Pages](https://pages.github.com/)
 * [Jekyll Docs](https://jekyllrb.com/docs/)
 * [Github Guides](https://guides.github.com/) 
