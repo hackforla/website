@@ -33,9 +33,9 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.1 How we organize issues**](#21-how-we-organize-issues)
       - [**2.1.a Hack for LA contribution expectations**](#21a-hack-for-la-contribution-expectations)
     - [**2.2 Where can I find issues to work on?**](#22-where-can-i-find-issues-to-work-on)
-      - [**2.2.a Issues for new members (Front-End/Back-End)**](#22a-issues-for-new-members-front-endback-end)
-      - [**2.2.b Issues for returning members (Front-End)**](#22b-issues-for-returning-members-front-end)
-      - [**2.2.c Issues for returning members (Back-End)**](#22c-issues-for-returning-members-back-end)
+      - [**2.2.a Available issues for new members (front end/back end)**](#22a-available-issues-for-new-members-front-endback-end)
+      - [**2.2.b Available issues for returning members (front end)**](#22b-available-issues-for-returning-members-front-end)
+      - [**2.2.c Available issues for returning members (back end)**](#22c-available-issues-for-returning-members-back-end)
       - [**2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#22d-issues-for-hacktoberfest-contributors-front-endback-end)
       - [**2.2.e What if you don't see an issue that interest you?**](#22e-what-if-you-dont-see-an-issue-that-interest-you)
     - [**2.3 Claiming an Issue**](#23-claiming-an-issue)
@@ -50,6 +50,10 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.6.b Working on an issue (2): Create a new branch where you will work on your issue**](#26b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
         - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
       - [**2.6.c Working on an issue(3): Prepare your changes to push to your repository**](#26c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
+        - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
+        - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
+        - [**iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**](#iii-prepare-repos-changes-3-use-the-git-reset-head-command-to-remove-a-staged-file)
+        - [**iv. Prepare repos changes (4): Use the `git commit` command**](#iv-prepare-repos-changes-4-use-the-git-commit-command)
       - [**2.6.d Working on an issue (4): Check upstream before you push**](#26d-working-on-an-issue-4-check-upstream-before-you-push)
           - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
@@ -74,6 +78,7 @@ In the `hfla-site` Slack channel, send an introductory message with your GitHub 
 2. Set up two-factor authentication on your account by following this [guide](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication).
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **1.2 Dev setup (2): Installing Git**
 
@@ -84,6 +89,7 @@ Before cloning your forked repository to your local machine, you must have Git i
 - Other option: If your computer is low on space, you can use this [tutorial](https://www.datacamp.com/community/tutorials/homebrew-install-use) to install XCode Command Tools and a lighter version of Homebrew and then install Git using this command: ```$ brew install git```  which in total only uses 300MB.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **1.3 Dev setup (3): Fork the repository**
 
@@ -105,6 +111,7 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
 **Be Aware:** What you have created is a forked copy in a remote version on GitHub. It is not yet on your local machine yet.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **1.4 Dev setup (4): Clone (Create) a copy on your computer**
 
@@ -185,6 +192,7 @@ git remote add upstream https://github.com/hackforla/website.git
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **1.5 Dev setup (5): Set up Docker**
 
@@ -205,6 +213,7 @@ Installing WSL2 on windows
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **1.6 Dev setup (6): Build and serve the website locally**
 
@@ -272,8 +281,9 @@ docker-compose up
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-## **Part 2: Working on an issue and making a pull request**
+***
 
+## **Part 2: Working on an issue and making a pull request**
 ### **2.1 How we organize issues**
 
 We currently have issues with the following size labels:
@@ -286,7 +296,23 @@ We currently have issues with the following size labels:
 
 #### **2.1.a Hack for LA contribution expectations**
 
+In order to join a [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Size: Small`/`Size: Medium`/`Size: Large` label issue within this repo, you need to complete the following:
+
+1. `good first issue`
+   * Self-assign an issue with the `good first issue` label. 
+   * Complete steps in [**2.6 Working on an issue**](#26-working-on-an-issue) to create a solution for the issue
+   * Complete steps in [**2.7 Making a pull request**](#27-making-a-pull-request) to get your solution reviewed by the `website-merge` team.
+   * Once your pull request is merged, you can work on your next issue.
+2. `size: Good second issue`
+  *  Self-assign an issue with the `Size: Good second issue` label. 
+  * Complete steps in [**2.6 Working on an issue**](#26-working-on-an-issue) to create a solution for the issue
+  * Complete steps in [**2.7 Making a pull request**](#27-making-a-pull-request) to get your solution reviewed by the `website-merge` team
+  * Once your pull request is merged, you can work on your next issue.
+
+**Note:** If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website team leadership](https://github.com/hackforla/website/projects/7#card-69730135)and they will help you create an issue you can resolve.
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **2.2 Where can I find issues to work on?**
 
@@ -311,39 +337,58 @@ There are only 2 columns that you will be consistently referencing:
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.2.a Issues for new members (Front-End/Back-End)**
+#### **2.2.a Available issues for new members (front end/back end)**
 
-We recommend you visit this [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) that will highlight the `Prioritized Backlog` column (where the available issues are located) and only shows issues with the `good first issue` label. 
+We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
+
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.2.b Issues for returning members (Front-End)**
+#### **2.2.b Available issues for returning members (front end)**
 
-* [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
-* [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
-* [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
-* [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
 
-#### **2.2.c Issues for returning members (Back-End)**
+#### **2.2.c Available issues for returning members (back end)**
 
-* [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
-* [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
-* [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
-* [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
 
 #### **2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
+
+Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
+
+**Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
 #### **2.2.e What if you don't see an issue that interest you?**
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **2.3 Claiming an Issue**
+
+Once you find an issue you want to work on, you need to self-assign to claim it and then move the issue from the `Prioritized Backlog` to the `In progress`. Both of these tasks can be accomplished within the issue. Please see the examples below.
 
 #### **2.3.a Assign & Unassign yourself to this issue**
 <!-- add a gif -->
 <details>
   <summary><strong>Click here</strong> to see how you assign & unassign yourself to an issue</summary>
+  <p><strong>Assign/Unassign demo</strong></p>
+  <img src="https://user-images.githubusercontent.com/21162229/137636320-e96ef70d-3c85-405e-90d2-ee7b3bba071f.gif" />
 </details>
 
+**If you want to to self assign an issue:**
+* Go to the issue you want to work on
+* Go to the right hand menu under `Assignees`
+   *  Click the `assign yourself` link
+
+**If you want to to remove yourself an issue:**
+* Go to the issue you are assigned to
+* Go to the right hand menu and click on the gear wheel (:gear:) to the right of `Assignees`
+  * Click on the `X clear assignees` link
 ####  **2.3.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**
 <!-- add a gif -->
 <details>
@@ -351,6 +396,7 @@ We recommend you visit this [filtered Project Board `good first issues` link](ht
 </details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **2.4 Reporting progress on your issue**
 - Be sure to check the box when you finish an action item.
@@ -361,10 +407,13 @@ We recommend you visit this [filtered Project Board `good first issues` link](ht
     4. `ETA`: "When do you expect this issue to be completed?"
     5. `Pictures` (**optional**): "Add any pictures of the visual changes made to the site so far."
 
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
 ### **2.5 What to do when you need to stop mid issue**
 #### **2.5.a Reasons for having to stop:**
 - Got personally busy, can’t finish
-- Only want to do a specific type of front-end or back-end task
+- Only want to do a specific type of front end or back end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
 #### **2.5.b What to do if you have to stop working mid issue:**
 - Remove the progress in the checkboxes (all checkboxes should be empty)
@@ -373,6 +422,7 @@ We recommend you visit this [filtered Project Board `good first issues` link](ht
 - Unassign yourself from this issue (see animated GIF above) 
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **2.6 Working on an issue**
 
@@ -440,7 +490,7 @@ Once you are done with the work on your issue you will push it to your repositor
 
 **Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
    
-- Use the `git add` command to stage your changes.  
+##### **i. Prepare repo changes (1): Use the `git add` command to stage your changes.** 
 
 This command prepares your changes before you commit them. You can stage files one at a time using the filename. 
 
@@ -449,14 +499,14 @@ Run the command:
 git add “filename.ext”
 ```
 
-- Use the `git status` command to see what files are staged.
+##### **ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**
 
 This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you accidentally included unrelated changes, please unstage them before making this commit, and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
       
 ```bash
 git status
 ```
-- Use the `git reset HEAD` command to remove a staged file. 
+##### **iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**
 
 This command will remove a file that has been staged.  This file will not be committed (saved) when you run the next command, `git commit`. This only works if the wrong files were added, but they were not yet committed. The file will be removed from the staging area, but not actually deleted:
 
@@ -464,7 +514,7 @@ This command will remove a file that has been staged.  This file will not be com
 git reset HEAD “filename.ext” 
 ```
 
-- Use the `git commit` command
+##### **iv. Prepare repos changes (4): Use the `git commit` command**
 
 This command saves your work, and prepares it to push to your repository.  Use the `-m` flag to quickly add a message to your commit. Your message should be a short description of the issue you are working.  It will be extremely helpful if other people can understand your message, so try to resist the temptation to be overly cryptic.
 
@@ -571,6 +621,7 @@ git merge gh-pages
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **2.7 Making a pull request**
 
@@ -649,12 +700,14 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 For new volunteers, check this [Wiki](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) for more ways to contribute to the project.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ## **Part 3: Resources and Documentation**
 
 ### **3.1 What do I do if I need help?**
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **3.2 Resources and Documentation**
 
@@ -670,3 +723,4 @@ For new volunteers, check this [Wiki](https://github.com/hackforla/website/wiki/
   - [Docker Desktop](https://docs.docker.com/install/)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
