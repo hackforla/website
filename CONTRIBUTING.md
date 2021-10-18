@@ -375,7 +375,8 @@ We recommend you visit the `Prioritized Backlog` column in the [filtered Project
 
 Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
 
-**Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
+**Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
+**Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
 #### **2.2.e What if you don't see any bugs/errors that is not connected to an issue?**
 
