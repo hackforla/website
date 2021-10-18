@@ -1,5 +1,5 @@
 ---
-name: 'Blank Issue Template'
+name: Blank Issue Template
 about: 'Standard HackforLA issue template '
 title: ''
 labels: ''
