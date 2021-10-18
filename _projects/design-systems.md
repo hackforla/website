@@ -14,7 +14,7 @@ alt-hero: 'Design Systems hero background'
 leadership:
 links: 
   - name: Github
-    url: 'https://github.com/hackforla/design-systems/projects/1'
+    url: 'https://github.com/hackforla/design-systems/'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CH2U1CB9Q'
   - name: Wiki
