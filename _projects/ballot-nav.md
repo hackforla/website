@@ -80,5 +80,6 @@ location:
 partner: Code for America, Other Brigades
 visible: true
 status: Active
-program area: 'Vote / Representation'
+program-area: 
+  - Vote / Representation
 ---

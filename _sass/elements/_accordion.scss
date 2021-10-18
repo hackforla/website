@@ -1,0 +1,63 @@
+.accordion {
+    color: black;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 1.25rem;
+    text-align: left;
+    border-bottom: 0.5px solid gray;
+    max-width: 1000px;
+    margin-top: 45px;
+  
+    @media #{$bp-below-mobile} {
+      margin-top: 20px;
+      min-width: 255px;
+      font-size: 1.125rem;
+    }
+  }
+  
+  
+  .svg-accordion {
+    float: right;
+  }
+  
+  .svg-accordion:hover {
+    opacity: 0.5;
+  }
+  
+  .accordion:after {
+    content: "\221F";
+    float: right;
+    transform: rotate(-45deg);
+    transition: transform 0.25s ease-in;
+    color: $color-red;
+    font-weight: bolder;
+    font-size: 24px;
+  }
+
+  .accordion {
+    padding: 0.2rem;
+    
+}
+
+.active::after {
+  content: "\221F";
+  transform: rotate(135deg);
+  transition: transform 0.25s ease-in;
+}
+
+.panel {
+  display: none;
+  overflow: hidden;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.show {
+  display: block;
+}
+
+@media #{$bp-below-desktop} {
+    .accordion {
+        min-width: 150px;
+    }
+}

@@ -1,0 +1,99 @@
+---
+layout: default
+title: Events - Hack for LA
+permalink: /events/
+---
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMQK7VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="header-container header-container--events">
+  {% include events-page/header-container-content.html %}
+</div>
+
+<section class="events-page content-section content-section--events">
+
+    <h1 class="events-page-header">Our Events</h1>
+    <div class="flex-page-card">
+      <div class="column-card-lg--events">
+        {% include events-page/left-col-content.html %}
+      </div>
+
+      <div class="column-card-lg--events">
+        {% include events-page/right-col-content.html%}
+      </div>
+    </div>
+  
+    <h1 class="events-page-header">
+      Our Locations
+    </h1>
+    
+    <div class="fullwidth-background-container">
+      <div class="notification-banner">
+        <p class="meetings-message">
+          In light of the COVID-19 pandemic, Hack for LA has suspended its in-person
+          events below. The organization remains fully active, and all events are
+          now being conducted remotely using Zoom at the days/times listed above.
+        </p>
+    </div>
+  
+      <div class="getting-started-mobile-page">
+        <h2 class="event-title-1">
+          <img class="vector-img" src="../assets/images/hack-nights/locations.svg" alt="" />
+          See our Locations
+        </h2>
+      </div>
+    </div>
+  
+    <div class="mobile-locations-dropdown">
+      {% include events-page/our-locations-content.html %}
+    </div>
+
+</section>
+
+<script>
+  const locationsDropDown = document.querySelector(".getting-started-mobile-page");
+  const showingLocations = document.querySelector(".mobile-locations-dropdown");
+  const showContent = document.querySelectorAll(".event-title");
+  const showLocations = document.querySelector(".event-title-1");
+
+  showLocations.addEventListener("click", function () {
+    this.classList.toggle("active");
+    if (showingLocations.style.display == "block") {
+      showingLocations.style.display = "none";
+    } else {
+      showingLocations.style.display = "block";
+    }
+  });
+
+  for (let i = 0; i < showContent.length; i++) {
+    showContent[i].addEventListener("click", showingDropDown);
+  }
+
+  function showingDropDown() {
+    if(document.body.clientWidth<767){
+    this.classList.toggle("active");
+      let dropDown = this.nextElementSibling;
+      if (dropDown.style.display === "block") {
+        dropDown.style.display = "none";
+      } else {
+        dropDown.style.display = "block";
+      }
+    }
+  }
+  document.querySelector('.flex-page-card').addEventListener('resize',handleScreenResize)
+  function handleScreenResize(){
+    if(document.body.clientWidth>767){
+      const columns = document.querySelectorAll('.mobile-dropdown');
+      for(let column of columns){
+        column.style.display='block';
+        column.previousElementSibling.classList.remove('active');
+      }
+    }
+    else{
+      const columns = document.querySelectorAll('.mobile-dropdown');
+      for(let column of columns){
+        column.style.display='none';
+    }
+  }
+}
+</script>

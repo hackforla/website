@@ -51,6 +51,7 @@ location:
   # - Santa Monica
   - Remote
 visible: true
-program area: 'Justice'
+program-area: 
+  - Justice
 status: Active
 ---
