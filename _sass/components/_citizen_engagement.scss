@@ -1,7 +1,15 @@
+//New class names:
+//program-header-container
+//project-wrapper
+//program-area-contain
+//program-area
+
+
+
 // This contains the image and three paragraphs within the header. I added (bottom-header-paragraph)
 // to help align it with other paragraph elements in the header. It is not typical throughout the site
 // to have more than two paragraph elements.
-.header-container {
+.program-header-container {
     p {
         width: 100%;
     }
@@ -20,7 +28,7 @@
 
 //This is the default styling for the cards when they are in mobile view.
 //project-dropdown and sustainable-dev-goal are defaulted to display:none until given the "activated" class attribute
-.page-card {
+.program-area {
     .mobile-card-info-container {
         display: flex;
         flex-direction: column;
@@ -80,7 +88,7 @@
 }
 
 //This is the styling when an individual card is given the "activated" class attribute from JS
-.page-card.activated {
+.program-area.activated {
     
     .dropdown-arrow {
         transform: rotate(180deg)
@@ -129,7 +137,7 @@
 //The styling for the card is column based until we reach desktop width
 @media #{$bp-mobile-up} {
     
-    .page-card {
+    .program-area {
         display: flex;
         padding: 44px;
         flex-direction: column;
@@ -194,10 +202,10 @@
 }
 
 @media #{$bp-tablet-up} {
-    .page-contain {
+    .program-area-container {
         max-width: 1080px !important;
     }
-    .page-card {
+    .program-area {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap:2em;
