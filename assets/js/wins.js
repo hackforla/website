@@ -19,23 +19,6 @@
   const overview = "Give us a brief overview"
   const display = "Display?"
 
-	const dataKeys = [
-			"Timestamp",
-			"Email Address",
-			"Full name",
-			"Linkedin URL (optional)",
-			"Could we use your Linkedin profile picture next to your story?",
-			"Github URL (optional)",
-			"Could we use your Github profile picture next to your story?",
-			"Select the team(s) you're on",
-			"Select your role(s) on the team",
-			"What is/was your specific role? (optional)",
-			"When did you join Hack for LA? (optional)",
-			"What do you want to celebrate (select all that apply)?",
-			"Give us a brief overview",
-			"Could we use your Linkedin profile picture next to your story?",
-			"Display?"
-		]
   const otherIcon = `star.svg`
   const badgeIcons = {
 		"I got a new job": `briefcase.svg`,
@@ -56,27 +39,12 @@
 	}
 
   function main() {
-	{% assign localData = site.data.external.wins-data %}
-	  // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-	  let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
-	  localData.unshift(dataKeys)
-	  const rawData = localData;
-	  
-  	//creates an array of objects where each question is the key and the answer is the value
-  	//cardData[index][question_str] = answer_str
-  	let cardData = []
-  	const keys = rawData[0]
-  	rawData.slice(1).forEach(data => {
-  		let cardObj = {}
-  		for (let i = 0; i < keys.length; i++) {
-  			cardObj[keys[i]] = data[i];
-  		}
-  		cardData.push(cardObj)
-  	})
-
-  	window.localStorage.setItem('data', JSON.stringify(cardData));
-  	makeCards(cardData);
-  	ifPageEmpty();
+    {% assign localData = site.data.external._wins-data %}
+    // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment
+    const cardData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
+    window.localStorage.setItem('data', JSON.stringify(cardData));
+    makeCards(cardData);
+    ifPageEmpty();
   }
 
 
