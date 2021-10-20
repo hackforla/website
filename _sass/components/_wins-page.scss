@@ -229,7 +229,6 @@
 .wins-card-content{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -525,3 +524,17 @@
     }
 }
 //wins page filter override section end
+
+
+//tablet view mode media query
+@media screen and (max-width: $screen-desktop) and (min-width: $screen-mobile){
+    .wins-tablet{
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .wins-text-bubble{
+            width: 70%;
+        }
+    }
+}
