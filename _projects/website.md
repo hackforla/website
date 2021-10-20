@@ -26,7 +26,7 @@ leadership:
       github: 'https://github.com/abuna1985'
     picture: https://avatars.githubusercontent.com/abuna1985
   - name: Matthew Cacho
-    role: Back End Lead
+    role: Back End and Dev Ops Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
       github: 'https://github.com/macho-catt'
