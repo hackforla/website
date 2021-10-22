@@ -222,6 +222,8 @@
   }
 
   .communities-links {
+    border-radius: 20px;
+    
     ul {
       display: flex;
       justify-content: center;
@@ -344,6 +346,7 @@
 }
 
 .join-heading {
+  border-radius: 20px;
   display: none;
   justify-content: center;
   align-items: center;
