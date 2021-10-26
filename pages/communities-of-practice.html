@@ -66,9 +66,9 @@ permalink: /communities-of-practice
             {% endif %}
             <div class="align-center">
                 {% if community[1].links[0].url %}
-                    <a href="{{ community[1].links[0].url }}"><button class="btn btn-primary btn-md">Join Meeting Slack Channel</button></a>
+                    <a href="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default" target="_blank" title="{{community[1].name}} Slack channel">Join Meeting Slack Channel</a>
                 {% elsif community[1].links[1].url %}
-                    <a href="{{ community[1].links[1].url }}"><button class="btn btn-primary btn-md">View GitHub</button></a>
+                    <a href="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default" target="_blank" title="{{community[1].name}} Github Repo">View GitHub</a>
                 {% else %}
                     <button class="btn btn-primary btn-md">Coming soon...</button>
                 {% endif %}
