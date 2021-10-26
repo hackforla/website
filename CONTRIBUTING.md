@@ -29,54 +29,55 @@ The following is a set of guidelines for contributing to the website repository,
     - [**1.6 Dev setup (6): Build and serve the website locally**](#16-dev-setup-6-build-and-serve-the-website-locally)
       - [**1.6.a Starting Docker**](#16a-starting-docker)
       - [**1.6.b Stopping Docker**](#16b-stopping-docker)
-  - [**Part 2: Working on an issue and making a pull request**](#part-2-working-on-an-issue-and-making-a-pull-request)
-    - [**2.1 How we organize issues**](#21-how-we-organize-issues)
-      - [**2.1.a Hack for LA contribution expectations**](#21a-hack-for-la-contribution-expectations)
-    - [**2.2 Where can I find issues to work on?**](#22-where-can-i-find-issues-to-work-on)
-      - [**2.2.a Available issues for new members (front end/back end)**](#22a-available-issues-for-new-members-front-endback-end)
-      - [**2.2.b Available issues for returning members (front end)**](#22b-available-issues-for-returning-members-front-end)
-      - [**2.2.c Available issues for returning members (back end)**](#22c-available-issues-for-returning-members-back-end)
-      - [**2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#22d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.2.e What if you don't see any bugs/errors that is not connected to an issue?**](#22e-what-if-you-dont-see-any-bugserrors-that-is-not-connected-to-an-issue)
-    - [**2.3 Claiming an Issue**](#23-claiming-an-issue)
-      - [**2.3.a Assign & Unassign yourself to this issue**](#23a-assign--unassign-yourself-to-this-issue)
+  - [**Part 2: How the Website team works with GitHub issues**](#part-2-how-the-website-team-works-with-github-issues)
+    - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
+    - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
+    - [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on)
+      - [**2.3.a Available issues for new members (front end/back end)**](#23a-available-issues-for-new-members-front-endback-end)
+      - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
+      - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
+      - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
+      - [**2.3.e What if you don't see any bugs/errors that is not connected to an issue?**](#23e-what-if-you-dont-see-any-bugserrors-that-is-not-connected-to-an-issue)
+    - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
+      - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
         - [**ii. If you want to to remove yourself an issue:**](#ii-if-you-want-to-to-remove-yourself-an-issue)
-      - [**2.3.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**](#23b-move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
+      - [**2.4.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**](#24b-move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
         - [**i. After you claim an issue:**](#i-after-you-claim-an-issue)
-      - [**ii. After you unassign yourself from an issue:**](#ii-after-you-unassign-yourself-from-an-issue)
-    - [**2.4 Reporting progress on your issue**](#24-reporting-progress-on-your-issue)
-    - [**2.5 What to do when you need to stop mid issue**](#25-what-to-do-when-you-need-to-stop-mid-issue)
-      - [**2.5.a Reasons for having to stop:**](#25a-reasons-for-having-to-stop)
-      - [**2.5.b What to do if you have to stop working mid issue:**](#25b-what-to-do-if-you-have-to-stop-working-mid-issue)
-    - [**2.6 Working on an issue**](#26-working-on-an-issue)
-      - [**2.6.a Working on an issue (1): Verify current branch is `gh-pages`**](#26a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
-      - [**2.6.b Working on an issue (2): Create a new branch where you will work on your issue**](#26b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
+        - [**ii. After you unassign yourself from an issue:**](#ii-after-you-unassign-yourself-from-an-issue)
+    - [**2.5 Reporting progress on your issue**](#25-reporting-progress-on-your-issue)
+    - [**2.6 What to do when you need to stop mid issue**](#26-what-to-do-when-you-need-to-stop-mid-issue)
+      - [**2.6.a Reasons for having to stop:**](#26a-reasons-for-having-to-stop)
+      - [**2.6.b What to do if you have to stop working mid issue:**](#26b-what-to-do-if-you-have-to-stop-working-mid-issue)
+    - [**2.7 Working on an issue**](#27-working-on-an-issue)
+      - [**2.7.a Working on an issue (1): Verify current branch is `gh-pages`**](#27a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
+      - [**2.7.b Working on an issue (2): Create a new branch where you will work on your issue**](#27b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
         - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
-      - [**2.6.c Working on an issue(3): Prepare your changes to push to your repository**](#26c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
+      - [**2.7.c Working on an issue(3): Prepare your changes to push to your repository**](#27c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
         - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
         - [**iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**](#iii-prepare-repos-changes-3-use-the-git-reset-head-command-to-remove-a-staged-file)
         - [**iv. Prepare repos changes (4): Use the `git commit` command**](#iv-prepare-repos-changes-4-use-the-git-commit-command)
-      - [**2.6.d Working on an issue (4): Check upstream before you push**](#26d-working-on-an-issue-4-check-upstream-before-you-push)
-          - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
+      - [**2.7.d Working on an issue (4): Check upstream before you push**](#27d-working-on-an-issue-4-check-upstream-before-you-push)
+        - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
-      - [**2.6.e Working on an issue (5): Incorporating changes from upstream**](#26e-working-on-an-issue-5-incorporating-changes-from-upstream)
+      - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
-    - [**2.7 Making a pull request**](#27-making-a-pull-request)
-      - [**2.7.a Push all changes to your issue branch**](#27a-push-all-changes-to-your-issue-branch)
-      - [**2.7.b Complete pull request on Hack for LA `website` repo**](#27b-complete-pull-request-on-hack-for-la-website-repo)
+  - [**Part 3: Pull Requests**](#part-3-pull-requests)
+    - [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request)
+      - [**3.1.a Push all changes to your issue branch**](#31a-push-all-changes-to-your-issue-branch)
+      - [**3.1.b Complete pull request on Hack for LA `website` repo**](#31b-complete-pull-request-on-hack-for-la-website-repo)
         - [**i. Complete pull request (1): Update pull request title**](#i-complete-pull-request-1-update-pull-request-title)
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
         - [**v. After pull request is submitted/merged**](#v-after-pull-request-is-submittedmerged)
-      - [**2.7.c Editing a submitted pull request**](#27c-editing-a-submitted-pull-request)
-  - [**Part 3: Resources and Documentation**](#part-3-resources-and-documentation)
-    - [**3.1 What do I do if I need help?**](#31-what-do-i-do-if-i-need-help)
-    - [**3.2 Resources and Documentation**](#32-resources-and-documentation)
-      - [**3.2.a Hack For LA resources**](#32a-hack-for-la-resources)
-      - [**3.2.b Tools Documentation**](#32b-tools-documentation)
+      - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
+  - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
+    - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
+    - [**4.2 Resources and Documentation**](#42-resources-and-documentation)
+      - [**4.2.a Hack For LA resources**](#42a-hack-for-la-resources)
+      - [**4.2.b Tools Documentation**](#42b-tools-documentation)
 
 ## **Part 1: Setting up the development environment**
 ### **1.1 Dev setup (1): Join the repository team**
@@ -230,6 +231,8 @@ Installing WSL2 on windows
 
 #### **1.6.a Starting Docker**
 
+**IMPORTANT:** Please make sure the `Docker Desktop` application is **running on your computer** before you run the bash commands below.
+
 - This command starts a jekyll server locally. The server watches for changes to
 the source files and rebuilds and refreshes the site automatically in your browser.
 
@@ -294,8 +297,27 @@ docker-compose up
 
 ***
 
-## **Part 2: Working on an issue and making a pull request**
-### **2.1 How we organize issues**
+## **Part 2: How the Website team works with GitHub issues**
+
+### **2.1 Hack for LA Contributor expectations**
+
+In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Size: Small`/`Size: Medium`/`Size: Large` label issue within this repo, you need to complete the following:
+
+1. `good first issue`
+   * Self-assign an issue with the `good first issue` label. 
+   * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
+   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
+   * Once your pull request is merged, you can work on your next issue.
+2. `size: Good second issue`
+  *  Self-assign an issue with the `Size: Good second issue` label. 
+  * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
+  * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
+  * Once your pull request is merged, you can work on your next issue.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **2.2 How Hack for LA organizes issues**
 
 We currently have issues with the following **role** labels:
 
@@ -310,25 +332,12 @@ And the following **size** labels:
 * `size: Medium`
 * `size: Large`
 
-#### **2.1.a Hack for LA contribution expectations**
-
-In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Size: Small`/`Size: Medium`/`Size: Large` label issue within this repo, you need to complete the following:
-
-1. `good first issue`
-   * Self-assign an issue with the `good first issue` label. 
-   * Complete steps in [**2.6 Working on an issue**](#26-working-on-an-issue) to create a solution for the issue
-   * Complete steps in [**2.7 Making a pull request**](#27-making-a-pull-request) to get your solution reviewed by the `website-merge` team.
-   * Once your pull request is merged, you can work on your next issue.
-2. `size: Good second issue`
-  *  Self-assign an issue with the `Size: Good second issue` label. 
-  * Complete steps in [**2.6 Working on an issue**](#26-working-on-an-issue) to create a solution for the issue
-  * Complete steps in [**2.7 Making a pull request**](#27-making-a-pull-request) to get your solution reviewed by the `website-merge` team
-  * Once your pull request is merged, you can work on your next issue.
+**Note:** if you would like to learn more about our label system you can read this [wiki on how to read and interpret our repo labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.2 Where can I find issues to work on?**
+### **2.3 Where can I find GitHub issues to work on?**
 
 The best way to view the issues available is our [GitHub Project Board](https://github.com/hackforla/website/projects/7)
 
@@ -351,45 +360,45 @@ There are only 2 columns that you will be consistently referencing:
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.2.a Available issues for new members (front end/back end)**
+#### **2.3.a Available issues for new members (front end/back end)**
 
 We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
 
 **Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.2.b Available issues for returning members (front end)**
+#### **2.3.b Available issues for returning members (front end)**
 
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
 
-#### **2.2.c Available issues for returning members (back end)**
+#### **2.3.c Available issues for returning members (back end)**
 
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
 
-#### **2.2.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
+#### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
 
 Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
 
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.2.e What if you don't see any bugs/errors that is not connected to an issue?**
+#### **2.3.e What if you don't see any bugs/errors that is not connected to an issue?**
 
 If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.3 Claiming an Issue**
+### **2.4 Claiming an Issue**
 
 Once you find an issue you want to work on, you need to self-assign to claim it and then move the issue from the `Prioritized Backlog` to the `In progress`. Both of these tasks can be accomplished within the issue. Please see the examples below.
 
-#### **2.3.a Assign & Unassign yourself to this issue**
+#### **2.4.a Assign & Unassign yourself to this issue**
 <details>
   <summary><strong>Click here</strong> to see how you assign & unassign yourself to an issue</summary>
   <p><strong>Assign/Unassign demo</strong></p>
@@ -405,7 +414,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 * Go to the issue you are assigned to
 * Go to the right hand menu and click on the gear wheel (:gear:) to the right of `Assignees`
   * Click on the `X clear assignees` link
-####  **2.3.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**
+####  **2.4.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**
 <details>
   <summary><strong>Click here</strong> to see how to move an issue from the ‘Prioritized Backlog’ to the ‘In progress (actively working)’ & back</summary>
   <p><strong>Project Board column demo</strong></p>
@@ -416,14 +425,14 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 * Click on the dropdown menu within the `Projects` section of the right-hand menu (value will show `Prioritized Backlog` if unclaimed)
   * Select `In progress (actively working)`
 
-#### **ii. After you unassign yourself from an issue:**
+##### **ii. After you unassign yourself from an issue:**
 * Click on the dropdown menu within the `Projects` section of the right-hand menu (value will show `In progress (actively working)` if unclaimed)
   * Select `Prioritized Backlog`
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.4 Reporting progress on your issue**
+### **2.5 Reporting progress on your issue**
 - Be sure to check the box when you finish an action item.
 - Report your progress weekly in a comment below using the following format:
     1. `Progress`: "What is the current status of your project? What have you completed and what is left to do?"
@@ -432,34 +441,36 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
     4. `ETA`: "When do you expect this issue to be completed?"
     5. `Pictures` (**optional**): "Add any pictures of the visual changes made to the site so far."
 
-**Note**: We currently have a GitHub action action that requests an update via a comment after 7 days of inactivity within an issue. Please be sure to provide weekly updates on progress and/or blockers so we can help you resolve them.
+**Note:** We currently have a GitHub action action that requests an update via a comment after 7 days of inactivity within an issue. Please be sure to provide weekly updates on progress and/or blockers so we can help you resolve them.
+
+**Note:** If you would like to know more about how we provide updates within the website team, please read this [wiki on how to communicate with our website team](https://github.com/hackforla/website/wiki/How-to-communicate-with-the-team)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.5 What to do when you need to stop mid issue**
-#### **2.5.a Reasons for having to stop:**
+### **2.6 What to do when you need to stop mid issue**
+#### **2.6.a Reasons for having to stop:**
 - Got personally busy, can’t finish
 - Only want to do a specific type of front end or back end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
-#### **2.5.b What to do if you have to stop working mid issue:**
+#### **2.6.b What to do if you have to stop working mid issue:**
 - Remove the progress in the checkboxes (all checkboxes should be empty)
 - Add a note in the comments with details and progress for the next developer
 - Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue)) 
-- Unassign yourself from this issue (see the [unassign example above](#23a-assign--unassign-yourself-to-this-issue)) 
+- Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue)) 
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.6 Working on an issue**
+### **2.7 Working on an issue**
 
 - If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki] (https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
 
-**Note:** Alternatively you can follow the instructions below to stage changes through the terminal. We will be using #2093 as an example issue we are working on.
+**Note:** Alternatively you can follow the instructions below to stage changes through the terminal. We will be using [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093) as an example issue we will be following.
 
 Create a new branch for each issue you work on. Doing all your work on topic branches leaves your repository's main branch (named `gh-pages`) unmodified and greatly simplifies keeping your fork in sync with the main project.
 
-#### **2.6.a Working on an issue (1): Verify current branch is `gh-pages`**
+#### **2.7.a Working on an issue (1): Verify current branch is `gh-pages`**
 
 The `git branch` command will let you know what branch you are in, and what branch names are already in use.
 
@@ -478,11 +489,11 @@ git checkout gh-pages
 ```
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.6.b Working on an issue (2): Create a new branch where you will work on your issue**
+#### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
 The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
 
-For example,if we creating a new issue branch off [Update ‘Give’ image credit link and information #2093](https://github.com/hackforla/website/issues/2093):
+For example,if we creating a new issue branch off [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
 
 ```bash
 git checkout -b update-give-link-2093
@@ -515,7 +526,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.6.c Working on an issue(3): Prepare your changes to push to your repository**
+#### **2.7.c Working on an issue(3): Prepare your changes to push to your repository**
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
@@ -564,7 +575,7 @@ git commit -m “insert message here”
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
   
-#### **2.6.d Working on an issue (4): Check upstream before you push**
+#### **2.7.d Working on an issue (4): Check upstream before you push**
 
 Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
 
@@ -572,7 +583,7 @@ Before you push your local commits to your repository, check to see if there hav
 git fetch upstream
 ```
 
-###### **i. If there are no changes in the upstream repository**
+##### **i. If there are no changes in the upstream repository**
 
 If you do not see any output, there have not been any changes in the main Hack for LA website repository since the last time you
 checked. So it is safe to push your local commits to your fork.
@@ -605,7 +616,7 @@ From https://github.com/hackforla/website
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.6.e Working on an issue (5): Incorporating changes from upstream**
+#### **2.7.e Working on an issue (5): Incorporating changes from upstream**
 
 Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
 
@@ -659,17 +670,21 @@ git merge gh-pages
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **2.7 Making a pull request**
+## **Part 3: Pull Requests**
 
-#### **2.7.a Push all changes to your issue branch**
+### **3.1 How to make a pull request**
 
-Once you are satisfied with your changes, push them to the feature branch you made within your remote repository. We will continue to the use #2093 as an example.
+#### **3.1.a Push all changes to your issue branch**
+
+Once you are satisfied with your changes, push them to the feature branch you made within your remote repository. 
 
 ```bash
 git push --set-upstream origin update-give-link-2093
 ```
 
-#### **2.7.b Complete pull request on Hack for LA `website` repo**
+**Note:** We will use the pull request [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131) as an example. This is tied to issue [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093)
+
+#### **3.1.b Complete pull request on Hack for LA `website` repo**
 
 <details>
   <summary><strong>Click here</strong> to see a notification for a pull request</summary>
@@ -719,7 +734,7 @@ git push --set-upstream origin update-give-link-2093
 * When the pull request is opened, the title input box will be the where the cursor defaults to.
 * The default title will be your last commit message from your branch. 
   * Please change it to provide a summary of what you did.
-  * For our example (#2093), @adrian-zaragoza provided the following title:
+  * For our example (PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131)), [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following title:
 
   ```
   Update Care Link in Credits Page
@@ -729,7 +744,7 @@ git push --set-upstream origin update-give-link-2093
 
 ##### **ii. Complete pull request (2): Add issue number to the pull request**
 
-We have a GitHub action that automatically closes all issues connected to a pull request. So for our example (#2093) we need to make the changes:
+We have a GitHub action that automatically closes all issues connected to a pull request. So for our example (PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131)) we need to make the following changes:
 
 **From**
 ```
@@ -744,7 +759,7 @@ Fixes #2093
 
 ##### **iii. Complete pull request (3): What changes did you make**
 
-In bullet point form, notate the changes you made to be in order to complete the action items within your issue. @adrian-zaragoza provided the following summary in #2093:
+In bullet point form, notate the changes you made to be in order to complete the action items within your issue. [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following summary in PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131):
 
 ```
 ### What changes did you make and why did you make them ?
@@ -759,7 +774,7 @@ In bullet point form, notate the changes you made to be in order to complete the
 
 ##### **iv. Complete pull request (4): Include images (if available)**
 
-in the gif example [near the top  of this part (2.7.b)](#27b-complete-pull-request-on-hack-for-la-website-repo), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
+in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
@@ -815,20 +830,20 @@ git branch -d update-give-link-2093
 
 Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
-Now you are all set to work on a new PR. Start over at [Part 2: Working on an issue and making a pull request](#part-2-working-on-an-issue-and-making-a-pull-request).
+Now you are all set to work on a new PR. Start over at [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on) and repeat completing parts 2 and 3.
 
-#### **2.7.c Editing a submitted pull request**
+#### **3.1.c Editing a submitted pull request**
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
-For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) for more ways to contribute to the project.
+For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-## **Part 3: Resources and Documentation**
+## **Part 4: Resources and Documentation**
 
-### **3.1 What do I do if I need help?**
+### **4.1 What do I do if I need help?**
 
 The best way to ask for help and provide as much information to the team is to do the following:
 
@@ -854,14 +869,18 @@ The best way to ask for help and provide as much information to the team is to d
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **3.2 Resources and Documentation**
+### **4.2 Resources and Documentation**
 
-#### **3.2.a Hack For LA resources**
+#### **4.2.a Hack For LA resources**
 * [Hack for LA's Wiki](https://github.com/hackforla/website/wiki)
-* [Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
-* [Being a Part of the Hack For LA Team](https://github.com/hackforla/website/wiki/Being-a-Part-of-the-Hack-For-LA-Team)
+* [Wiki - Hack for LA's Site Architecture](https://github.com/hackforla/website/wiki/Hack-for-LA's-Site-Architecture)
+* [Wiki - Being a Part of the Hack For LA Team](https://github.com/hackforla/website/wiki/Being-a-Part-of-the-Hack-For-LA-Team)
+* [Wiki - How to review pull requests](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests)
+* [Wiki - How to Create Issues](https://github.com/hackforla/website/wiki/How-to-create-issues)
+* [Wiki - How to read and interpret issue labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
+* [Wiki - How to communicate with the HfLA Website Team](https://github.com/hackforla/website/wiki/How-to-communicate-with-the-team)
 
-#### **3.2.b Tools Documentation**
+#### **4.2.b Tools Documentation**
 * [GitHub Pages](https://pages.github.com/)
 * [Jekyll Docs](https://jekyllrb.com/docs/)
 * [Liquid Documentation](https://shopify.github.io/liquid/)
