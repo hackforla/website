@@ -11,7 +11,8 @@ const dateRan = new Date();
 // 277577906 -> https://github.com/codeforamerica/brigade-playbook
 // 302142959 -> https://github.com/hackforla/GreenEarthOS
 // 385751884 -> https://github.com/hackforla/design-systems
-const untaggedRepoIds = [79977929, 277577906, 302142959, 385751884];
+// 354140311 -> https://github.com/hackforla/open-community-survey
+const untaggedRepoIds = [79977929, 277577906, 302142959, 385751884, 354140311];
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 
 Object.assign(Octokit.prototype, trueContributorsMixin);
