@@ -19,12 +19,6 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
       github: 'https://github.com/ebele-oputa'
     picture: https://avatars.githubusercontent.com/ebele-oputa
-  - name: Chianta Dorsey
-    role: UI/UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U022B5EJFME'
-      github: 'https://github.com/csdorsey'
-    picture: https://avatars.githubusercontent.com/csdorsey
   - name: Bernard Adesina
     role: UX Designer
     links:
@@ -37,6 +31,42 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
       github: 'https://github.com/kvnw2020'
     picture: https://avatars.githubusercontent.com/kvnw2020
+  - name: Sonu 
+    role: Data Analyst
+    links:
+      slack: 'https://hackforla.slack.com/team/U027JBTAGSX'
+      github: 'https://github.com/sonu-k'
+    picture: https://avatars.githubusercontent.com/sonu-k
+  - name: Snow
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U029J3LT0TS'
+      github: 'https://github.com/LAStorm'
+    picture: https://avatars.githubusercontent.com/LAStorm
+  - name: Amy Wilkins
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U0231JD5BC2'
+      github: 'https://github.com/amy-c-w'
+    picture: https://avatars.githubusercontent.com/amy-c-w
+  - name: Jasmine Kim
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AYE78X1Q'
+      github: 'https://github.com/jaskim20'
+    picture: https://avatars.githubusercontent.com/jaskim20
+  - name: JoAnne Narcisse
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AHBLDJ15'
+      github: 'https://github.com/jonarcisse'
+    picture: https://avatars.githubusercontent.com/jonarcisse
+  - name: Shika Zhou
+    role: Data Analyst
+    links:
+      slack: 'https://hackforla.slack.com/team/ U029BAPRTA8'
+      github: 'https://github.com/ShikaZzz'
+    picture: https://avatars.githubusercontent.com/ShikaZzz
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
