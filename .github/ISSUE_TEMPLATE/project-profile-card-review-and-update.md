@@ -2,7 +2,8 @@
 name: Project Profile Card review and update
 about: To track project profile card updates
 title: 'Update Project Profile: [Project Name]'
-labels: ''
+labels: 'P-Feature: Project Info and Page, role: back end/devOps, role: front end,
+  Size: Small'
 assignees: ''
 
 ---
@@ -21,6 +22,10 @@ _insert url of their card here before sending - their cards can be found in this
       - [ ] description
       - [ ] image
       - [ ] leadership
+         - [ ] Name
+         - [ ] GitHub hand
+         - [ ] Role
+         - [ ] SLACK ID
       - [ ] links
          - [ ] Github
          - [ ] Slack
