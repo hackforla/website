@@ -7,7 +7,7 @@ image: /assets/images/projects/guides-team.jpg
 alt: 'Globe Map made of dots and hackforla logo and text reading Guides Team'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/guides-team-hero.jpg
-alt-hero: Globe Map made of dots'
+alt-hero: 'Globe Map made of dots'
 leadership:
   # - name: First Last
   #   role: Product Manager
