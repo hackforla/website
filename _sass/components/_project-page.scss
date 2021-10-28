@@ -5,7 +5,7 @@
   justify-content: flex-end;
   padding: 20px;
   position: relative;
-  margin-top: 29px;
+  margin-top: 61px;
   width: 100vw;
   height: 46vw;
   max-height: 74vh;
@@ -20,8 +20,8 @@
     right: 0;
     background: linear-gradient(
       to bottom,
-      rgba($color-blue-dark, 0.3) 0%,
-      rgba($color-blue-dark, 1) 100%
+      rgba($color-darkblue, 0.3) 0%,
+      rgba($color-darkblue, 1) 100%
     );
     content: "";
     display: block;
@@ -30,8 +30,8 @@
     @media #{$bp-tablet-up} {
       background: linear-gradient(
         to bottom,
-        rgba($color-blue-dark, 0) 30%,
-        rgba($color-blue-dark, 1) 100%
+        rgba($color-darkblue, 0) 30%,
+        rgba($color-darkblue, 1) 100%
       );
       opacity: 1;
     }

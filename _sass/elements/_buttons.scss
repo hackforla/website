@@ -25,7 +25,6 @@
 
 ---------------------------*/
 
-
 .btn {
   border: 0;
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
@@ -36,6 +35,12 @@
   white-space: nowrap;
 }
 
+.btn--default {
+  align-items: center;
+  display: inline-flex; 
+  justify-content: center;
+  margin: 5px 0;
+}
 
 /*---------------------------
 

@@ -72,7 +72,8 @@ location:
   # - Downtown LA
   - Remote
 partner: LA Department of Transportation and Los Angeles City Planning
-program area: 'Environment'
+program-area: 
+  - Environment
 visible: true
 status: Active
 ---

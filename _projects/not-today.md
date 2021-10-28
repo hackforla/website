@@ -30,6 +30,7 @@ location:
   - Remote
 partner: Seeking
 visible: true
-program area: 'Social Safety Net'
+program-area: 
+  - Social Safety Net
 status: On Hold
 ---
