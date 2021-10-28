@@ -438,9 +438,11 @@
     text-align: center;
     width: 100%;
     max-width: 1090px;
-    border-bottom: 1px solid #706E6E;
-    padding-bottom: 27px;
     margin-bottom: 27px;
+  }
+
+  &--tablet-up-only {
+    display: none;
   }
 
   .contact-links {
@@ -458,6 +460,17 @@
       a {
         font-weight: 700;
       }
+    }
+  }
+
+  @media #{$bp-tablet-up} {
+    h2 {
+      border-bottom: 1px solid #706E6E;
+      padding-bottom: 27px;
+    }
+
+    &--tablet-up-only {
+      display: revert;
     }
   }
 
