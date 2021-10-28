@@ -406,9 +406,17 @@
     margin-bottom: 0;
   }
 
+  &--desktop-only {
+    display: none;
+  }
+
   @media #{$bp-tablet-up} {
     &--sub {
       font-size: 20px;
+    }
+
+    &--desktop-only {
+      display: revert;
     }
   }
 }
