@@ -14,25 +14,43 @@
 }
 
 // HERO SECTION
+.hero {
+  background-color: $color-darkblue;
+}
+
 .hero--header {
-  background: linear-gradient(to bottom, rgba($color-darkblue, 0) 0%, rgba($color-darkblue, 1) 100%), url($absolute_url + "/assets/images/hero/hacknight-women.jpg") center no-repeat;
-  background-size: cover;
+  background: linear-gradient(to bottom, rgba(3,13,45,0) 0%, rgba(53, 61, 87, 0.13) 20%, rgba(11, 21, 52, 0.9037) 55%,#030d2d 100%),url(http://localhost:4000/assets/images/hero/hacknight-women.jpg);
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center top;
   display: flex;
-  align-items: flex-end;
-  color: $color-white;
-  height: 80vh;
-  max-height: 680px;
-  min-height: 100vh;
-  padding: 20px 36px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
+  height: 374px;
+  padding: 36px;
+  margin-top: 50px;
 
   h1 {
     line-height: 1.35em;
     max-width: 900px;
   }
 
-  @media #{$bp-desktop-up} {
-    min-height: 0;
+  @media #{$bp-tablet-up} {
+    background: linear-gradient(to bottom, rgba($color-darkblue, 0) 0%, rgba($color-darkblue, 1) 100%), url($absolute_url + "/assets/images/hero/hacknight-women.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 80vh;
+    max-height: 680px;
     margin: 61px auto 0;
+
+    a {
+      display: none;
+    }
+  }
+
+  @media #{$bp-desktop-up} {
     padding: {
       left: 176px;
       right: 176px;
@@ -42,9 +60,11 @@
 
 .hero--embrace {
   padding: 36px;
+  background-color: $color-white;
 
   h2 {
     text-align: center;
+    margin-bottom: 36px;
   }
 
   p {
