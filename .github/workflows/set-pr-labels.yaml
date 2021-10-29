@@ -1,0 +1,44 @@
+name: Set PR Labels
+
+on: pull_request
+  types: [opened, edited]
+  branches:
+    - 'gh-pages'
+    - 'wins-feature-1'
+
+jobs:
+  generate-labels-artifact:
+    runs-on: ubuntu-latest
+    env:
+      ARTIFACT_PATH: './artifacts/pr-labels.json'
+      PR_NUMBER: ${{ github.event.number }}
+      SCRIPT_PATH: './github-actions/set-pr-labels.js'
+    steps:
+      - uses: actions/checkout@v2
+      - id: parse-pr-body
+        name: 'Parse the pull request body for all linked issues'
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { listIssuesFromPRBody } = require('${{ env.SCRIPT_PATH }}');
+            return listIssuesFromPRBody({ context, core });
+      - id: compile-labels
+        name: 'Compile labels from linked issues'
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { listLabelsFromIssues } = require('${{ env.SCRIPT_PATH }}');
+            const issues = ${{ steps.parse-pr-body.outputs.result }};
+            return await listLabelsFromIssues({ github, context, core }, issues);
+      - id: save-labels
+        name: 'Save labels'
+        run: |
+          mkdir -p ./artifacts
+          echo ${{ steps.compile-labels.outputs.result }} > '${{ env.ARTIFACT_PATH }}'
+      - id: upload-labels-artifact
+        name: 'Upload labels artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr-labels
+          path: ${{ env.ARTIFACT_PATH }}
+          retention-days: 1
