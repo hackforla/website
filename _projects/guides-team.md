@@ -28,7 +28,7 @@ location:
   # - Santa Monica
   # - Downtown LA
   - Remote
-partner: N/A
+partner:
 tools: 
 program area:
   - Civic Tech Infrastructure
