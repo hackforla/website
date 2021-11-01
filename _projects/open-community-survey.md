@@ -13,6 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: JoAnne Narcisse
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AHBLDJ15'
+      github: 'https://github.com/jonarcisse'
+    picture: https://avatars.githubusercontent.com/jonarcisse
   - name: Ebele O.
     role: Product Manager
     links:
@@ -55,12 +61,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02AYE78X1Q'
       github: 'https://github.com/jaskim20'
     picture: https://avatars.githubusercontent.com/jaskim20
-  - name: JoAnne Narcisse
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02AHBLDJ15'
-      github: 'https://github.com/jonarcisse'
-    picture: https://avatars.githubusercontent.com/jonarcisse
   - name: Shika Zhou
     role: Data Analyst
     links:
