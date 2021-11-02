@@ -13,6 +13,14 @@
   }
 }
 
+.desktop-up-only {
+  display: none;
+
+  @media #{$bp-desktop-up} {
+    display: revert;
+  }
+}
+
 // HERO SECTION
 .hero {
   background-color: $color-darkblue;
@@ -161,58 +169,90 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  h2 {
+    margin-bottom: 32px;
+  }
 }
 
 .technology-metrics-container {
-  max-width: 1070px;
+  max-width: 342px;
   width: 100%;
-  
-  .metric {
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(51, 51, 51, 0.2);
+  padding: 0 25px 10px;
+
+  ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    p {
-      font-size: 28px;
-      font-weight: 700;
-      max-width: 269px;
-      margin-bottom: 0;
-    }
-    
-    .metric-number {
-      font-size: 132px;
-      font-weight: 900;
-      margin: 0;
-      height: 180px;
+    justify-content: space-between;
+
+    .metric {
       display: flex;
+      flex-direction: column;
       align-items: center;
 
-      img {
-        flex: 1;
-        transform: scale(0.9);
+      p {
+        font-size: 16px;
+        font-weight: 700;
+        max-width: 269px;
+        margin-bottom: 0;
       }
 
-      @media #{$bp-desktop-up} {
-        font-size: 144px;
+      .metric-number {
+        font-size: 28px;
+        font-weight: 900;
+        margin: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: .9em;
+          transform: scale(0.9);
+        }
       }
     }
   }
   
   hr {
-    width: 100%;
-    max-width: 305px;
-    border: none;
-    border-top: 1px solid #706E6E;
-    margin: 30px auto 0;
+    display: none;
   }
 
   @media #{$bp-tablet-up} {
+  max-width: 1070px;
+
     ul {
-      display: flex;
-      justify-content: space-between;
+      .metric {
+        p {
+          font-size: 24px;
+        }
+
+        .metric-number {
+          font-size: 120px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  @media #{$bp-desktop-up} {
+    box-shadow: none;
+
+    ul {
+      .metric {
+        p {
+          font-size: 28px;
+        }
+  
+        .metric-number {
+          font-size: 144px;
+          height: 180px;
+        }
+      }
     }
 
     hr {
+      display: revert;
       margin: 25px 0;
       height: 146px;
       width: 1px;
