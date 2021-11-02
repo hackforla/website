@@ -106,12 +106,11 @@
 
 .program-areas--cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  width: 100%;
-  max-width: 1328px;
+  max-width: 100%;
   margin: 0 auto;
+  overflow-x: scroll;
   padding-inline-start: 0px;
 
   .program-area-card {
@@ -120,6 +119,7 @@
 
     .program-area-img {
       height: 160px;
+      width: 160px;
       overflow: hidden;
       border-radius: 20px;
       background-color: rgb(3, 13, 45);
@@ -147,12 +147,16 @@
 
   @media #{$bp-tablet-up} {
     gap: 20px;
+    flex-wrap: wrap;
+    overflow-x: initial;
+    max-width: 1328px;
 
     .program-area-card {
       width: 254px;
 
       .program-area-img {
         height: 245px;
+        width: 245px;
       }
 
       a {
