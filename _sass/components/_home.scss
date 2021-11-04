@@ -299,7 +299,7 @@
       display: flex;
       gap: 60px;     
       max-width: fit-content;
-      margin: 0;
+      margin: 0 auto;
       padding: 0 10px;
 
       li {
@@ -307,6 +307,9 @@
         width: 77px;
         min-width: 77px;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         a {
           color: #333333;
@@ -316,9 +319,6 @@
             height: 50px;
             font-size: 20px;
             font-weight: 700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
           }
         }
       }
@@ -375,8 +375,13 @@
       background: none;
 
       ul {
-        background:
-        linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
+        width: fit-content;
+      }
+
+      .communities-links--icons {
+        border-radius: 20px;
+        padding: 20px 10px;
+        background: linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
         justify-content: center;
       }
     }
