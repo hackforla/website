@@ -176,6 +176,16 @@ font-size: 1.25rem; }}
   line-height: 40px; /* Centers the text */
 }
 
+
+/*   Small Button   */
+
+.btn-sm {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 20px;
+  font-size: .875rem;
+}
+
 /*----------------------------------------------------
   Page-Specific Button Classes
 
