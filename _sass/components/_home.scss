@@ -106,7 +106,6 @@
 
 .program-areas--cards {
   display: flex;
-  justify-content: center;
   gap: 12px;
   max-width: 100%;
   margin: 0 auto;
@@ -146,6 +145,7 @@
   }
 
   @media #{$bp-tablet-up} {
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     overflow-x: initial;
@@ -286,24 +286,26 @@
   }
 
   .communities-links {
+    margin: 0 auto;
+    padding: 17px 22px;
     border-radius: 20px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: scroll;
+    background:
+        linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
     
     ul {
       display: flex;
-      justify-content: center;
-      gap: 40px;
+      gap: 60px;     
       max-width: fit-content;
-      margin: 25px auto 0;
+      margin: 0;
       padding: 0 10px;
 
       li {
         list-style-type: none;
-        flex: 1;
-        width: 143px;
-        min: {
-          height: 0;
-          width: 0;
-        }
+        width: 77px;
+        min-width: 77px;
         text-align: center;
 
         a {
@@ -316,9 +318,18 @@
             font-weight: 700;
             display: flex;
             justify-content: center;
+            align-items: center;
           }
         }
       }
+    }
+
+    .communities-links--names {
+      border-radius: 20px 20px 0 0;
+    }
+
+    .communities-links--icons {
+      border-radius: 0 0 20px 20px;
     }
   }
 
@@ -335,18 +346,16 @@
     }
 
     .communities-links {
-      gap: 60px;
-      background: 
-        linear-gradient(to bottom, $color-whitesmoke 35%, transparent 0%),
-        linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
-        
-      .communities-link {
-        p {
-          align-items: center;
+
+      ul {
+
+        li {
+          width: 143px;
+          min-width: 143px;}
         }
       }
     }
-  }
+
 
   @media #{$bp-desktop-up} {
     .communities-heading {
@@ -359,6 +368,16 @@
 
       p {
         align-items: center;
+      }
+    }
+
+    .communities-links {
+      background: none;
+
+      ul {
+        background:
+        linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
+        justify-content: center;
       }
     }
   }
