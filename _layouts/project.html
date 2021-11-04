@@ -3,13 +3,13 @@ layout: default
 ---
 
 <header class='project-hero'>
-    <h1 class='hero-inner'>{{ page.title }}</h1>
+    <h1 class='hero-inner title1'>{{ page.title }}</h1>
 </header>
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
     <div id='project-description-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Project Overview</h4>
+        <h2 class='project-page-card-title title6'>Project Overview</h2>
         <!--Project Details-->
         <div class='project-page-description'>
             <!--Project Properties-->
@@ -93,7 +93,7 @@ layout: default
 
     <!--Project Resources Card-->
     <div class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Resources</h4>
+        <h2 class='project-page-card-title title6'>Resources</h2>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
                 {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
@@ -109,7 +109,7 @@ layout: default
 
     <!-- Project Team Card -->
     <div id='project-team-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Current Project Team</h4>
+        <h2 class='project-page-card-title title6'>Current Project Team</h2>
         {% if page.leadership %}
             <div class='resource-list'>
                 {% for item in page.leadership %}
@@ -133,7 +133,7 @@ layout: default
                 <p>Looks like this project has not revealed specific leadership roles yet!</p>
             </div>
         {% endif %}
-        <h4 id='contributor-header' class='project-page-card-title'>All-Time Contributors</h4>
+        <h2 id='contributor-header' class='project-page-card-title title6'>All-Time Contributors</h2>
         <div id='contributors-list' class='resource-list'></div>
     </div>
 </div>
