@@ -111,6 +111,12 @@
   margin: 0 auto;
   overflow-x: scroll;
   padding-inline-start: 0px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .program-area-card {
     list-style-type: none;
@@ -292,9 +298,15 @@
     width: fit-content;
     max-width: 100%;
     overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
     background:
         linear-gradient(270deg, #FA114F 0%, #FE4498 16.43%, #E973D4 30.73%, #C69CFC 46.88%, #A5BCFF 61%, #9AD6FF 74%, #AEEAFF 86%, #D4F9FF 100%);
-    
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     ul {
       display: flex;
       gap: 60px;     
