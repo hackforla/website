@@ -23,8 +23,8 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Meet with team lead to receive first assignment
 - [ ] Once you accept an assignment (issue), please add the following in a comment
 ```
-3. Availability for this week:
-4. My estimated ETA for completing this issue:
+Availability for this week:
+My estimated ETA for completing this issue:
 ```
 - [ ] Weekly, please also provide an update on the issue
 ```
