@@ -1,8 +1,8 @@
 ---
-name: 'Pre-work Checklist'
-about: 'All new Research team members should start by making this issue '
+name: Pre-work Checklist
+about: All new Research team members should start by making this issue
 title: 'Pre-work Checklist: Researcher: [replace brackets with your name]'
-labels: 'role: ux researcher', 'good first issue'
+labels: 'role: ux researcher good first issue'
 assignees: ''
 
 ---
