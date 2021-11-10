@@ -6,6 +6,8 @@ image: /assets/images/projects/brigade-organizers-playbook.png
 alt: "Brigade Organizer's Playbook Extension Project"
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
 alt-hero: ''
+program-area: 
+  - Civic Tech Infrastructure
 leadership:
   - name: Bonnie Wolfe
     role: Agile Mentor & CfA National Advisory Council BOP project Co-Lead
