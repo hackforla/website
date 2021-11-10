@@ -2,7 +2,7 @@
 name: Pre-work Template - Developers
 about: New Developer team members should start with by making this issue for themselves.
 title: 'Pre-work Checklist: Developer: [replace brackets with your name]'
-labels: 'good first issue, role: front end, role: back end, Feature: Onboarding/Contributing.md'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, role: front end'
 assignees: ''
 
 ---

@@ -21,7 +21,19 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
    - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
 - [ ] Review the prioritized Backlog to see what Design Issues are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
 - [ ] Meet with team lead to receive first assignment
-
+- [ ] Once you accept an assignment (issue), please add the following in a comment
+```
+3. Availability for this week:
+4. My estimated ETA for completing this issue:
+```
+- [ ] Weekly, please also provide an update on the issue
+```
+provide update
+1. Progress
+2. Blockers
+3. Availability
+4. ETA
+```
 ### Resources/Instructions
 [GitHub Project Board - Hack for LA ](https://github.com/hackforla/website/projects/7)
 [GitHub Project Board Prioritized Backlog highlighted and sorted by Design](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+design%22#column-7198257)
