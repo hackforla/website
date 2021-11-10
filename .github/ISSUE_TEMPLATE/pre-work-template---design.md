@@ -20,7 +20,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
    - [ ] UX weekly team meeting, Thursdays 5pm PST
    - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
 - [ ] Review the prioritized Backlog to see what Design Issues are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
-- [ ] Meet with team lead to receive first assignment
+- [ ] Meet with team lead to introduce you to the project, introduce you to the GitHub board, and receive your first assignment.
 - [ ] Once you accept an assignment (issue), please add the following in a comment
 ```
 Availability for this week:
