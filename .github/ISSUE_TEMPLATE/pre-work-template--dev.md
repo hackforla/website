@@ -2,7 +2,7 @@
 name: Pre-work Template - Developers
 about: New Developer team members should start with by making this issue for themselves.
 title: 'Pre-work Checklist: Developer: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, good first issue, role: front end'
+labels: Feature: Onboarding/Contributing.md, good first issue
 assignees: ''
 
 ---
@@ -11,7 +11,8 @@ assignees: ''
 As a new developer on the HfLA website team, fill in the following fields as you complete each onboarding item.
 
 ### Action Items
-- [ ] Add yourself to the #hfla-site-pr and #hfla-site Slack channels
+- [ ] Add the "role: front end" label to this issue
+- [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
 - [ ] Share your Gmail address with the team lead
 - [ ] (once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
 - [ ] Confirm with the team lead that they have added you to the meeting invites and GitHub repo
