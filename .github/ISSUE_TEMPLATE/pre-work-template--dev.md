@@ -1,6 +1,6 @@
 ---
 name: Pre-work Template - Developers
-about: New Developer team members should start with by making this issue for themselves.
+about: New developer team members should start by making this issue for themselves
 title: "Pre-work Checklist: Developer: [replace brackets with your name]"
 labels: "Feature: Onboarding/Contributing.md, good first issue"
 assignees: ""
@@ -11,11 +11,11 @@ assignees: ""
 As a new developer on the HfLA website team, fill in the following fields as you complete each onboarding item.
 
 ### Action Items
-- [ ] Add the "role: front end" label to this issue
+- [ ] Add the "role: front end" label to this issue and remove the "role missing" label
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead
-- [ ] (once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
-- [ ] Confirm with the team lead that they have added you to the meeting invites and GitHub repo
+- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
+- [ ] Confirm with the team lead that they have added you to the zoom meeting invites and GitHub repository
 - [ ] Attend weekly team meetings: 
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7pm PST
   - [ ] (Optional) Office Hours, Thursdays 7pm PST
