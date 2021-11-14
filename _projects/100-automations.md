@@ -70,7 +70,7 @@ location:
   - Remote
 # partner: N/A
 visible: true
-programs:
+program-area:
   - Civic Tech Infrastructure
 status: Active
 ---

@@ -69,7 +69,7 @@ location:
   - Remote
 partner: TBD
 visible: true
-programs: 
+program-area: 
   - Civic Tech Infrastructure
 status: Active
 ---

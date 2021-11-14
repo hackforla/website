@@ -57,7 +57,7 @@ location:
 partner:
 tools: Google Docs, HackforLA.org guides
 visible: true
-programs: 
+program-area: 
   - Civic Tech Infrastructure
 status: Active
 ---
