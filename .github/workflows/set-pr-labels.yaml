@@ -1,18 +1,19 @@
 name: Set PR Labels
 
-on: pull_request
-  types: [opened, edited]
-  branches:
-    - 'gh-pages'
-    - 'wins-feature-1'
+on:
+  pull_request:
+    types: [opened, edited]
+    branches:
+      - 'gh-pages'
 
 jobs:
   generate-labels-artifact:
     runs-on: ubuntu-latest
     env:
-      ARTIFACT_PATH: './artifacts/pr-labels.json'
+      ARTIFACT_DIR: './set-pr-labels/artifacts'
+      ARTIFACT_FILE: 'pr-labels.json'
       PR_NUMBER: ${{ github.event.number }}
-      SCRIPT_PATH: './github-actions/set-pr-labels.js'
+      SCRIPT_PATH: './github-actions/trigger-pr/set-pr-labels.js'
     steps:
       - uses: actions/checkout@v2
       - id: parse-pr-body
@@ -33,12 +34,12 @@ jobs:
       - id: save-labels
         name: 'Save labels'
         run: |
-          mkdir -p ./artifacts
-          echo ${{ steps.compile-labels.outputs.result }} > '${{ env.ARTIFACT_PATH }}'
+          mkdir -p '${{ env.ARTIFACT_DIR }}'
+          echo ${{ steps.compile-labels.outputs.result }} > '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
       - id: upload-labels-artifact
         name: 'Upload labels artifact'
         uses: actions/upload-artifact@v2
         with:
           name: pr-labels
-          path: ${{ env.ARTIFACT_PATH }}
+          path: '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
           retention-days: 1
