@@ -4,6 +4,7 @@ on:
     types: [closed]
     branches:
       - 'gh-pages'
+      - 'feature-homepage-launch'
 
 jobs:
   Hello-World:
