@@ -1,13 +1,40 @@
 name: Pull Request Trigger
 on:
   pull_request:
-    types: [closed]
-    branches:
-      - 'gh-pages'
-      - 'feature-homepage-launch'
-
+    types: [opened, closed, reopened]
+    branches: [gh-pages]
+    
 jobs:
-  Hello-World:
+  createCard:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' || github.event.action == 'reopened'}}
     steps:
-     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Create or Update Project Card
+        uses: peter-evans/create-or-update-project-card@v1
+        with:
+          project-name: Project Board
+          column-name: PR Needs review (Automated Column, do not place items here manually)
+          issue-number: ${{ github.event.number }}
+
+      - name: Check output
+        run: echo ${{ steps.coupc.outputs.card-id }}
+      
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: 'Sucessfully added PR to "PR Needs Review" column'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify Linked Issue
+        uses: hattan/verify-linked-issue-action@v1.1.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: 'Error! This is a custom error'
+
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            const script = require('./github-actions/trigger-pr/trigger-pr.js');
+            script({ g: github, c: context });
