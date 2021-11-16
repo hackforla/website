@@ -32,9 +32,4 @@ jobs:
         with:
           message: 'Error! This is a custom error'
 
-      - uses: actions/checkout@v2
-      - uses: actions/github-script@v5
-        with:
-          script: |
-            const script = require('./github-actions/trigger-pr/trigger-pr.js');
-            script({ g: github, c: context });
+     
