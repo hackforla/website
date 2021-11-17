@@ -411,7 +411,7 @@ return `
 
             <div class="project-links">
             <strong>Links: </strong>
-            ${project.links.map(item => `<a href=${ item.url } rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
+            ${project.links.map(item => `<a href="${ item.url }" rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
             </div>
 
             ${project.partner ?

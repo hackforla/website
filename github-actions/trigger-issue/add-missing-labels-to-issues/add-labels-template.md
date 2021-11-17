@@ -11,5 +11,4 @@ Also, don't forget to remove the "missing labels" afterwards.
 To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.
 
 **Additional Resources:**
-Wiki: How to add status labels to issues (_WIP. Link will be updated when the wiki is done_)
-Wiki: How to create issues (_WIP. Link will be updated when the wiki is done_)
+- [Wiki: How to read and interpret labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)

@@ -75,4 +75,7 @@ program-area:
 partner: seeking
 visible: true
 status: Active
+iframe:
+  available: true
+  src: "https://la.foodoasis.net/widget"
 ---
