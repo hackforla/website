@@ -35,9 +35,9 @@ provide update
 4. ETA
 ```
 ### Resources/Instructions
-[GitHub Project Board - Hack for LA ](https://github.com/hackforla/website/projects/7)
-[GitHub Project Board Prioritized Backlog highlighted and sorted by Design](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+design%22#column-7198257)
-[Figma - Hack for LA](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website)
-[Miro](https://miro.com/app/board/o9J_l6zD0JA=/)
-[Google Drive - Hack for LA website team](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT?usp=sharing)
-[Agenda / Notes - UX Team weekly meeting](https://github.com/hackforla/website/issues/2106)
+- [GitHub Project Board - Hack for LA ](https://github.com/hackforla/website/projects/7)
+- [GitHub Project Board Prioritized Backlog highlighted and sorted by Design](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+design%22#column-7198257)
+- [Figma - Hack for LA](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website)
+- [Miro](https://miro.com/app/board/o9J_l6zD0JA=/)
+- [Google Drive - Hack for LA website team](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT?usp=sharing)
+- [Agenda / Notes - UX Team weekly meeting](https://github.com/hackforla/website/issues/2106)
