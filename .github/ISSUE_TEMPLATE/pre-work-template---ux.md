@@ -37,10 +37,10 @@ provide update
 ```
 
 ### Resources/Instructions
-[Project Board filtered to show role: user research](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+user+research%22)
-[Miro](https://miro.com/app/board/o9J_l6zD0JA=/)
-[Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=2009%3A26149)
-[Googledrive-UI/UX](https://drive.google.com/drive/folders/1Jq24FlOJTEmRD09M5xOgpWuHcKswH5Dk)
-[Googledrive-HackforLA website](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT)
-[UX Research Presentations](https://drive.google.com/drive/folders/1yV9YRrjVKmVLU_xSM_BjtdIaNITRhP5j)
-[Weekly Meeting Agendas](https://github.com/hackforla/website/issues/2106)
+- [Project Board filtered to show role: user research](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+user+research%22)
+- [Miro](https://miro.com/app/board/o9J_l6zD0JA=/)
+- [Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=2009%3A26149)
+- [Googledrive-UI/UX](https://drive.google.com/drive/folders/1Jq24FlOJTEmRD09M5xOgpWuHcKswH5Dk)
+- [Googledrive-HackforLA website](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT)
+- [UX Research Presentations](https://drive.google.com/drive/folders/1yV9YRrjVKmVLU_xSM_BjtdIaNITRhP5j)
+- [Weekly Meeting Agendas](https://github.com/hackforla/website/issues/2106)
