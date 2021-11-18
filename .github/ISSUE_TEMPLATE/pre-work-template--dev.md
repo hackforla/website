@@ -15,7 +15,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
 - [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
-- [ ] Confirm with the team lead that they have added you to the zoom meeting invites and GitHub repository
+- [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
 - [ ] Attend weekly team meetings: 
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7pm PST
   - [ ] (Optional) Office Hours, Thursdays 7pm PST
@@ -27,12 +27,12 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Once all tasks are completed, close this issue
 
 ### Resources/Instructions
-[Contributing.md - Hack for LA](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)
-[GitHub Project Board - Hack for LA](https://github.com/hackforla/website/projects/7)
-[GitHub Project Board Prioritized Backlog highlighted and sorted by Front End](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22)
-[GitHub Project Board Prioritized Backlog highlighted and sorted by Back End/DevOps](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22)
-[Figma - Hack for LA](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website)
-[Google Drive - Hack for LA website team](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT?usp=sharing)
-[Agenda / Notes - Dev Team Tuesday meeting](https://github.com/hackforla/website/issues/2010)
-[Agenda / Notes - All Team meeting](https://github.com/hackforla/website/issues/2027)
-[How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests)
+- [Contributing.md - Hack for LA](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)
+- [GitHub Project Board - Hack for LA](https://github.com/hackforla/website/projects/7)
+- [GitHub Project Board Prioritized Backlog highlighted and sorted by Front End](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22)
+- [GitHub Project Board Prioritized Backlog highlighted and sorted by Back End/DevOps](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22)
+- [Figma - Hack for LA](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website)
+- [Google Drive - Hack for LA website team](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT?usp=sharing)
+- [Agenda / Notes - Dev Team Tuesday meeting](https://github.com/hackforla/website/issues/2010)
+- [Agenda / Notes - All Team meeting](https://github.com/hackforla/website/issues/2027)
+- [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests)
