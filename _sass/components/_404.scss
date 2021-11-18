@@ -4,11 +4,8 @@
   justify-content: center;
   align-items: center; 
   padding: 120px;
-  margin: 100px 100px;
-  height: 100vh;
 
   @media #{$bp-below-desktop} {
-    margin: 70px 30px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 130px;
