@@ -15,6 +15,7 @@ jobs:
           project-name: Project Board
           column-name: PR Needs review (Automated Column, do not place items here manually)
           issue-number: ${{ github.event.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check output
         run: echo ${{ steps.coupc.outputs.card-id }}
@@ -30,6 +31,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: 'Error! This is a custom error'
+          message: 'Error! Cannot find a linked issue associated with this PR'
 
      
