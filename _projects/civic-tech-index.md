@@ -9,53 +9,65 @@ image-hero: /assets/images/projects/civic-tech-index-hero.png
 alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
-    role: Portfolio Owner
+    role: Agile Coach and Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Olivia Chiong
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
-      github: 'https://github.com/Olivia-Chiong'
-    picture: https://avatars.githubusercontent.com/Olivia-Chiong
-  - name: Gio Sce
-    role: Technical Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01CU8059BL'
-      github: 'https://github.com/giosce'
-    picture: https://avatars.githubusercontent.com/giosce
-  - name: Chali Prasertsri
-    role: UX Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/USLBE6X4M'
-      github: 'https://github.com/chalimar'
-    picture: https://avatars.githubusercontent.com/chalimar
   - name: Cynthia Kiser
     role: Architectural Advisor
     links: 
       slack: 'https://hackforla.slack.com/team/U04MFPQDN'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Brent Hengeveld
-    role: Developer
+  - name: Levi Adissi 
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01BYHYNS6B'
-      github: 'https://github.com/JafarIronclad'
-    picture: https://avatars.githubusercontent.com/JafarIronclad
-  - name: Nandana Rao
-    role: Full Stack Developer
+      slack: 'https://hackforla.slack.com/team/UD9MQDARJ'
+      github: 'https://github.com/ladissi'
+    picture: https://avatars.githubusercontent.com/ladissi
+  - name: Kevin Phan
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U013JA9H62E'
-      github: 'https://github.com/nrrao'
-    picture: https://avatars.githubusercontent.com/nrrao
+      slack: 'https://hackforla.slack.com/team/U02B90U9FPS'
+      github: 'https://github.com/kevindphan'
+    picture: https://avatars.githubusercontent.com/kevindphan
+  - name: Iffath Sultana
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01JQ2V3NRZ'
+      github: 'https://github.com/DrIffathsultana'
+    picture: https://avatars.githubusercontent.com/DrIffathsultana
   - name: Maria Studnicka
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01FREFQ99B'
       github: 'https://github.com/mariastudnicka'
     picture: https://avatars.githubusercontent.com/mariastudnicka
+  - name: Chali Prasertsri
+    role: UX Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/USLBE6X4M'
+      github: 'https://github.com/chalimar'
+    picture: https://avatars.githubusercontent.com/chalimar
+  - name: Shipra Prakash
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01TUA963NZ'
+      github: 'https://github.com/shipranj'
+    picture: https://avatars.githubusercontent.com/shipranj
+  - name: Farzana Prianka
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01FUP87W3U'
+      github: 'https://github.com/FarzanaPrianka'
+    picture: https://avatars.githubusercontent.com/FarzanaPrianka
+  - name: Nandana Rao
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U013JA9H62E'
+      github: 'https://github.com/nrrao'
+    picture: https://avatars.githubusercontent.com/nrrao
   - name: Emerson Castaneda
     role: Full Stack Developer
     links:
@@ -68,24 +80,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01JS81CCFL'
       github: 'https://github.com/e0marina'
     picture: https://avatars.githubusercontent.com/e0marina
-  - name: Meiliwati Smith
-    role: UI/UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01HZK4KU8M'
-      github: 'https://github.com/meismith'
-    picture: https://avatars.githubusercontent.com/meismith
-  - name: Kevin Ashworth
-    role: Web Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/UAPQEPCMQ'
-      github: 'https://github.com/kevinashworth'
-    picture: https://avatars.githubusercontent.com/kevinashworth
-  - name: Samantha Del Rosario
-    role: UI/UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01MWUZM947'
-      github: 'https://github.com/samdelros'
-    picture: https://avatars.githubusercontent.com/samdelros
   - name: Bruce Lai
     role: Full Stack Developer
     links:
@@ -104,30 +98,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01R6RWQR3L'
       github: 'https://github.com/maxskewes'
     picture: https://avatars.githubusercontent.com/maxskewes
-  - name: Iffath Sultana
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01JQ2V3NRZ'
-      github: 'https://github.com/DrIffathsultana'
-    picture: https://avatars.githubusercontent.com/DrIffathsultana
-  - name: Connie Yu
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01QTAQFS7Q'
-      github: 'https://github.com/connie-yu-dotcom'
-    picture: https://avatars.githubusercontent.com/connie-yu-dotcom
-  - name: Travis Liang
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01SG597SKB'
-      github: 'https://github.com/Travisliang001'
-    picture: https://avatars.githubusercontent.com/Travisliang001
-  - name: Boyan Liu
-    role: Front End Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01V4HESR1S'
-      github: 'https://github.com/BoyanLiuu'
-    picture: https://avatars.githubusercontent.com/BoyanLiuu
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
