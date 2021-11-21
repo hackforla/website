@@ -1,7 +1,5 @@
-name: Demo Communities of Practice information updates
-description: Template for CoP leads to review and update the Name, Description. Leadership
-  Type, Leadership members, Slack in order keep the community of practice page on
-  the website up to date.
+name: Communities of Practice information updates
+description: CoP leads use this issue to make changes to Leadership members and contact info
 title: 'Communities of Practice information updates: [INSERT NAME OF Community of
   Practice]'
 labels: ['role: product']
