@@ -19,14 +19,8 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Adam Abundis
-    role: Front End Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/UJML6CY49'
-      github: 'https://github.com/abuna1985'
-    picture: https://avatars.githubusercontent.com/abuna1985
   - name: Matthew Cacho
-    role: Back End/Dev Ops and Technical Lead
+    role: Technical Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
       github: 'https://github.com/macho-catt'
@@ -37,18 +31,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0252CHL678'
       github: 'https://github.com/kristine-eudey'
     picture: https://avatars.githubusercontent.com/kristine-eudey
-  - name: Ibraheem Agbaje
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FKL1DN48'
-      github: 'https://github.com/IAgbaje'
-    picture: https://avatars.githubusercontent.com/IAgbaje
-  - name: Pawan Murthy
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
-      github: 'https://github.com/pawan92'
-    picture: https://avatars.githubusercontent.com/pawan92
   - name: Sihem Gourou
     role: Product Manager
     links:
