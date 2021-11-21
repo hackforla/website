@@ -1,9 +1,9 @@
 ---
 name: Pre-work Template - UX
 about: All new Research team members should start by making this issue
-title: "Pre-work Checklist: Researcher: [replace brackets with your name]"
-labels: "Feature: Onboarding/Contributing.md, good first issue, role:user research"
-assignees: ""
+title: 'Pre-work Checklist: Researcher: [replace brackets with your name]'
+labels: 'Feature: Onboarding/Contributing.md, good first issue'
+assignees: ''
 
 ---
 

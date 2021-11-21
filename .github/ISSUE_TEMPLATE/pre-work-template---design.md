@@ -1,9 +1,9 @@
 ---
 name: Pre-work Template - Design
 about: New Design team members should start with by making this issue for themselves.
-title: "Pre-work Checklist: Designer: [replace brackets with your name]"
-labels: "Feature: Onboarding/Contributing.md, good first issue, role: design"
-assignees: ""
+title: 'Pre-work Checklist: Designer: [replace brackets with your name]'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, role: design'
+assignees: ''
 
 ---
 
