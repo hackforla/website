@@ -1,8 +1,8 @@
 name: Add Update Label to Issues Weekly
 
-on: workflow_dispatch
-#   schedule:
-#     - cron:  '0 7 * * 5'
+on:
+  schedule:
+    - cron:  '0 7 * * 5'
 
 jobs:
   Add-Update-Label-to-Issues-Weekly:
