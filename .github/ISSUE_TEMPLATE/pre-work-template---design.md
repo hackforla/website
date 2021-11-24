@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
+### Prerequisite
+We are looking forward to having you on our team.  Please make sure to attend the general Hack for LA onboarding to get the process started https://meetup.com/hackforla/events
+
 ### Overview
 As a new designer on the HfLA website UX team, fill in the following fields as you complete each onboarding item.
 
