@@ -12,11 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
       - name: Create or Update Project Card
         uses: peter-evans/create-or-update-project-card@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         with:
           project-name: Project Board
           column-name: PR Needs review (Automated Column, do not place items here manually)
