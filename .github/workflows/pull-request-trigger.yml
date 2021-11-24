@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create or Update Project Card
         uses: peter-evans/create-or-update-project-card@v1
         env:
