@@ -9,17 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' || github.event.action == 'reopened'}}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create or Update Project Card
         uses: peter-evans/create-or-update-project-card@v1
         with:
           project-name: Project Board
           column-name: PR Needs review (Automated Column, do not place items here manually)
           issue-number: ${{ github.event.number }}
-          token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          # token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
       - name: Check output
         run: echo ${{ steps.coupc.outputs.card-id }}
