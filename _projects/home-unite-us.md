@@ -26,18 +26,12 @@ leadership:
       github: 'https://github.com/javaprincess'
     picture: https://avatars.githubusercontent.com/javaprincess
 links:
-  - name: Demo
-    url: 'https://lacommunity.site/hosthome'
   - name: GitHub
     url: 'https://github.com/hackforla/homeuniteus'
   - name: Wiki
     url: 'https://github.com/hackforla/HomeUniteUs/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CRWUG7X0C'  
-  - name: Test site
-    url: "https://test.homeunite.us/"
-  - name: Site
-    url: 'https://homeunite.us/'
 looking: 
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
