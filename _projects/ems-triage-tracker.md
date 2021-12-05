@@ -2,10 +2,8 @@
 identification: '221542759'
 title: EMS Triage Tracker
 description: 'The EMS Triage Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
-# card image should be 600px wide x 400px high
 image: /assets/images/projects/ems-triage-tracker.png
 alt: 'EMS Triage Tracker Logo'
-# hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 alt-hero: 'EMS Triage Tracker dashboard with breakdown of casualty numbers and a satellite view of the street grid with blue casualty location markers.'
 leadership:
@@ -68,44 +66,15 @@ links:
     url: 'https://hackforla.slack.com/archives/CQ5J1DA72'
   - name: Clickable Prototype
     url: 'https://drive.google.com/file/d/1WWxADa3aBKtTk47Fx1vzoMSn0-yWKp3X/view?usp=sharing'
-  # - name: Test Site
-  #   url: ''
-  # - name: Demo Site
-  #   url: ''
-  # - name: Site
-  #   url: ''
   - name: Overview
     url: '../assets/pdfs/EMS-Triage-Tracker-One-Sheet.pdf'
-  # unused links can be commented out
-  # - name: Showcase deck
-  #   url: ''
-  #   alt: ''
-# looking:
-#   - category: Development
-#     skill: one skill
-#   - category: UI/UX
-#     skill: another skill
-#   - category: Content
-#     skill: Researcher
-# technologies: 
-#   - Node.js 
-#   - ReactJS 
-#   - Ruby on Rails
-#   - other etc.
 location: 
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
 tools: Figma, video production
-program area: Civic Tech Infrastructure
+program area: 
+  - Civic Tech Infrastructure
 status: Completed
-# If the card should not be included on the site, change visible to "false"
 visible: true
-# If the project should not have a project homepage for any given reason, add the following line (uncommented):
-# project-homepage: false
-# For completed projects. Uncomment and add contact info if provided
 completed-contact: team@hackforla.org
-# If the project has an iframe to link to a widget of their app, uncomment below and provide a source link (indents matter):
-#iframe:
-#  available: true
-#  src: ""
 ---
