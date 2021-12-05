@@ -14,7 +14,7 @@ Please make sure you have read our **[Hack for LA Contributing Guide](https://gi
 As a developer, we need to provide clear and descriptive alt text on the `[INSERT PAGE HERE]` page so that we adhere to the Web Content Accessibility Guidelines (WCAG) and we can achieve our mission of inclusivity.
 
 ### Action Items
-- [ ] Change the image_alt property value within `[INSERT PATH OF FILE HERE]` (lines `[INSERT LINE NUMBER IN CODE HERE]`):
+- [ ] Change the image alt property value within `[INSERT PATH OF FILE HERE]` (lines `[INSERT LINE NUMBER IN CODE HERE]`):
 
 **From**
 `[INSERT ORIGINAL LINE OF CODE HERE]`
