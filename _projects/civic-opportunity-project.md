@@ -21,7 +21,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/tan-zhou
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/civic-opportunity/projects/1'
+    url: 'https://github.com/hackforla/civic-opportunity'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C016CJZ8VTN'
   - name: Readme
@@ -43,7 +43,7 @@ location:
 # tools:
 partner: Undisclosed
 visible: true
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 status: Active
 ---
