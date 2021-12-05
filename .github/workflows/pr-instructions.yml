@@ -4,7 +4,7 @@ on:
     types: [opened]
     branches:
       - 'gh-pages'
-      - 'wins-feature-1'
+      - 'feature-homepage-launch'
 
 jobs:
   Add-Pull-Request-Instructions:

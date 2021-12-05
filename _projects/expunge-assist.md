@@ -32,7 +32,7 @@ links:
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
-      url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
+      url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
     - name: Overview
       url: 'https://docs.google.com/document/d/1JFZGKxeEBWVak_GATgIt0Knyr9_gJ15CBirynebb4tg/preview'
 partner: NDICA

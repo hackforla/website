@@ -51,7 +51,7 @@ links:
   - name: Readme
     url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
-    url: "https://hackforla.slack.com/archives/C6JBH478W"
+    url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
 looking:
@@ -75,4 +75,7 @@ program-area:
 partner: seeking
 visible: true
 status: Active
+iframe:
+  available: true
+  src: "https://la.foodoasis.net/widget"
 ---
