@@ -17,25 +17,6 @@ const overview = "Give us a brief overview";
 const display = "Display?";
 const homepage = "Homepage?";
 
-const dataKeys = [
-    "Timestamp",
-    "Email Address",
-    "Full name",
-    "Linkedin URL (optional)",
-    "Could we use your Linkedin profile picture next to your story?",
-    "Github URL (optional)",
-    "Could we use your Github profile picture next to your story?",
-    "Select the team(s) you're on",
-    "Select your role(s) on the team",
-    "What is/was your specific role? (optional)",
-    "When did you join Hack for LA? (optional)",
-    "What do you want to celebrate (select all that apply)?",
-    "Give us a brief overview",
-    "Could we use your Linkedin profile picture next to your story?",
-    "Display?",
-    "Homepage?"
-];
-
 const otherIcon = `star.svg`;
 
 const badgeIcons = {
@@ -59,26 +40,14 @@ const badgeIcons = {
 let randomWin;
 
 function initWinCard() {
-    {% assign localData = site.data.external._wins-data %}
-
-    let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
-    localData.unshift(dataKeys)
-    const rawData = localData;
-
-    let cardData = []
-    const keys = rawData[0]
-    rawData.slice(1).forEach(data => {
-        let cardObj = {}
-        for (let i = 0; i < keys.length; i++) {
-            cardObj[keys[i]] = data[i];
-        }
-        cardData.push(cardObj)
-    })
+    {% assign winsData = site.data.external._wins-data %}
+    
+    let winsData = JSON.parse(decodeURIComponent("{{ winsData | jsonify | uri_escape }}"));
 
     let homePageWins = [];
 
-    cardData.forEach(win => {
-        win[name] === "Josh Bubar" ? homePageWins.push(win) : null;
+    winsData.forEach(win => {
+        win[homepage] ? homePageWins.push(win) : null;
     });
 
     randomWin = homePageWins[Math.floor(Math.random()*homePageWins.length)];
