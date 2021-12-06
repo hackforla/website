@@ -59,7 +59,7 @@ const badgeIcons = {
 let randomWin;
 
 function initWinCard() {
-    {% assign localData = site.data.external.wins-data %}
+    {% assign localData = site.data.external._wins-data %}
 
     let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
     localData.unshift(dataKeys)
@@ -182,7 +182,6 @@ function insertIcons(containerClass, winString, viewType, homepageWinsCard = doc
     const SVG_FILE_PATH = `/assets/images/wins-page/wins-badges/`;
 
     const iconContainer = homepageWinsCard.querySelector(containerClass);
-    console.log(iconContainer)
 
     winList.forEach(win => {
         if (badgeIcons.hasOwnProperty(win)) {
