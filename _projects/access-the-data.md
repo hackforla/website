@@ -52,7 +52,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01TL5WE7G8'
       github: 'https://github.com/MalakH21'
     picture: https://avatars.githubusercontent.com/MalakH21
-links: 
+links:
   - name: Github
     url: 'https://github.com/hackforla/access-the-data/'
   - name: Slack
@@ -64,7 +64,7 @@ links:
   #- name: Site
   #  url: 'https://live.example.com'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Access-the-Data-One-Sheet.pdf'
+    url: '../assets/pdfs/Access-the-Data-One-Sheet.pdf'
   # unused links can be commented out
   # - name: Showcase deck
   #   url: ''
@@ -78,12 +78,12 @@ looking:
     skill: Instructional Designer
   - category: UI/UX
     skill: Logo and Design System
-technologies: 
-  #- Node.js 
-  #- ReactJS 
+technologies:
+  #- Node.js
+  #- ReactJS
   #- Ruby on Rails
   #- other etc.
-location: 
+location:
   #- Downtown LA
   #- Santa Monica
   #- South LA
@@ -91,7 +91,7 @@ location:
   # must choose one of the above (closest)
 partner: Department of Neighborhood Empowerment
 tools: figma, photoshop, sketch, phone calls.
-program-area: 
+program-area:
   - Citizen Engagement
 status: Active
 # If the card should not be included on the site, change visible to "false"
