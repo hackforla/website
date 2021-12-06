@@ -15,7 +15,7 @@ const join_date = "When did you join Hack for LA? (optional)";
 const win = "What do you want to celebrate (select all that apply)?";
 const overview = "Give us a brief overview";
 const display = "Display?";
-const homepage = "Homepage";
+const homepage = "Homepage?";
 
 const dataKeys = [
     "Timestamp",
@@ -33,7 +33,7 @@ const dataKeys = [
     "Give us a brief overview",
     "Could we use your Linkedin profile picture next to your story?",
     "Display?",
-    "Homepage"
+    "Homepage?"
 ];
 
 const otherIcon = `star.svg`;
