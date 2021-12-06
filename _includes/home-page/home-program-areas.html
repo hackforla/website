@@ -8,7 +8,7 @@
     {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_area in sorted_program_areas %}
         <li class="program-area-card">
-            <a href="javascript:void(0)" data-panel-id="#{{ program_area[0] }}">
+            <a href="/program-areas/#{{ program_area[0] }}">
                 <div class="program-area-img">
                     <img class="program-area-gradient" src="{{program_area[1].image}}" alt="{{program_area[1].image_alt}}"/>
                 </div>
