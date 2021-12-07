@@ -14,7 +14,7 @@ leadership:
   - name: Hana Stevenson
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/DJ32EQPSL'
+      slack: 'https://hackforla.slack.com/team/UJ32EQ9LG'
       github: 'https://github.com/hanastevenson'
     picture: 'https://avatars.githubusercontent.com/hanastevenson'
   - name: Nasim Biglari
