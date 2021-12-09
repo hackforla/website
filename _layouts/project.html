@@ -29,7 +29,7 @@ layout: default
                     {% endfor %}
                 </p>{% endif %}
 
-                <!-- Links Logic to filter prioritized links and to correct comma placement -->
+                <!-- Links Logic to filter prioritized links and to correct comma placement -->        
                 {% if page.links %}
                     {% assign counter = 0 %}
                     {% for item in page.links %}
@@ -41,14 +41,16 @@ layout: default
                         <p>
                             <strong>Links: </strong>
                             {% for item in page.links %}
-                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
+                            {% if item.name == 'GitHub' or item.name == 'Slack' or item.name == 'Readme'  or item.name == 'Overview'  or item.name == 'Demo Site' or item.name == 'Site' %}
                                     {% if counter > 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
+                                        <a target="_blank" href='{{ item.url }}'> {{item.name}}</a>,
                                         {% assign counter = counter | minus:1 %}
                                     {% elsif counter <= 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                                   
+                                        <a target="_blank" href='{{ item.url }}'>{{item.name}}</a>{% if forloop.last == false%}, {% endif %}
+                                       
                                     {% endif %}
-                                {% endif %}
+                                    {% endif %}
                             {% endfor %}
                         </p>
                     {% endif %}
