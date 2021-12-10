@@ -9,7 +9,11 @@
  }
 
  #content {
-   padding-bottom: 160px;
+  padding-bottom: 160px;
+
+  @media #{$bp-below-mobile} {
+    padding-bottom: 200px;
+  }
  }
 
 .page-wrapper {
