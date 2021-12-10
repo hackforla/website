@@ -51,7 +51,7 @@ links:
   - name: Readme
     url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
-    url: "https://hackforla.slack.com/archives/C6JBH478W"
+    url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
 looking:
@@ -70,8 +70,12 @@ location:
   # - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
-program area: 'Citizen Engagement'
+program-area: 
+  - Social Safety Net
 partner: seeking
 visible: true
 status: Active
+iframe:
+  available: true
+  src: "https://la.foodoasis.net/widget"
 ---

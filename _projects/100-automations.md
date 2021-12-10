@@ -49,7 +49,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
   - name: Readme
-    url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
+    url: 'https://github.com/100Automations/Website/blob/gh-pages/README.md'
   - name: Overview
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/100-Automations-Project-One-Sheet.pdf'
 looking:
@@ -70,6 +70,7 @@ location:
   - Remote
 # partner: N/A
 visible: true
-program area: 'Civic Tech Infrastructure'
+program-area:
+  - Civic Tech Infrastructure
 status: Active
 ---

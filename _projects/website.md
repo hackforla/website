@@ -13,42 +13,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Akib Rahman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01L4FXN1T7'
-      github: 'https://github.com/akibrhast'
-    picture: https://avatars.githubusercontent.com/akibrhast
   - name: Cynthia Kiser
     role: Technical Advisor
     links:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: David Rubinstein
+  - name: Matthew Cacho
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U015FP47R5G'
-      github: 'https://github.com/drubgrubby'
-    picture: https://avatars.githubusercontent.com/drubgrubby
-  - name: Danielle Nedivi
-    role: Design Lead
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
+    picture: https://avatars.githubusercontent.com/macho-catt
+  - name: Kristine Eudey
+    role: UX Design Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013U4VN8V7'
-      github: 'https://github.com/daniellex0'
-    picture: https://avatars.githubusercontent.com/daniellex0
-  - name: Ibraheem Agbaje
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FKL1DN48'
-      github: 'https://github.com/IAgbaje'
-    picture: https://avatars.githubusercontent.com/IAgbaje
-  - name: Pawan Murthy
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
-      github: 'https://github.com/pawan92'
-    picture: https://avatars.githubusercontent.com/pawan92
+      slack: 'https://hackforla.slack.com/team/U0252CHL678'
+      github: 'https://github.com/kristine-eudey'
+    picture: https://avatars.githubusercontent.com/kristine-eudey
   - name: Sihem Gourou
     role: Product Manager
     links:
@@ -86,5 +68,7 @@ location:
   - Remote
 visible: true
 status: Active
-program area: Workforce Development
+program-area: 
+  - Workforce Development 
+  - Civic Tech Infrastructure
 ---

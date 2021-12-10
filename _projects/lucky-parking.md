@@ -5,7 +5,7 @@ description: Visualization of parking data to assist in understanding of the eff
 image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking Logo'
 image-hero: /assets/images/projects/lucky-parking-hero.png
-alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagon.'
+alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen.'
 leadership:
   - name: Greg Pawin
     role: Product Owner / Data Science Lead
@@ -47,7 +47,8 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-program area: 'Citizen Engagement'
+program-area: 
+  - Citizen Engagement
 visible: true
 status: Active
 ---
