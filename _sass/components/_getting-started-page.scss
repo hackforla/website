@@ -233,7 +233,7 @@
   margin-right: 1em;
   width: 2.1em;
   float: left;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .step-img-icon-board {
@@ -250,14 +250,14 @@
   margin-right: 1em;
   width: 2.3em;
   float: left;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .step-img-icon-cop-small {
     margin-left: -2.1em;
     margin-right: 1.7em;
     float: left;
-    align-self: center;
+    align-self: flex-start;
     width: 1.6em;
     position: relative;
     left: 7px;
