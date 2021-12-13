@@ -37,7 +37,7 @@ function main({ context }) {
     return doneColumn;
   }
 
-  /** if issue does not include a hard label, but does contain an override label - move to UAT */
+  /** if issue does not include a hard label, but does contain an override label - move to QA */
   if (issueLabels.some(isOverrideLabel)) {
     return QAColumn;
   }
@@ -47,7 +47,7 @@ function main({ context }) {
     return doneColumn;
   }
 
-  // all other issues go to UAT column
+  // all other issues go to QA column
   return QAColumn;
 }
 
