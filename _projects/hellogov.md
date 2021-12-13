@@ -30,7 +30,7 @@ links:
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/CMER3R1RD'
+    url: 'https://hackforla.slack.com/messages/CDA23KHKP'
 looking:
 location: 
   # - Santa Monica
