@@ -7,12 +7,6 @@ assignees: ''
 
 ---
 
-title: Alt Text Audit - Design
-description: Template issue to create page audit issues for designers
-default title: Review alt text for WCAG compliance on [insert page name here] page
-default labels: design, feature: Accessibility, size: small
----
-
 ### Overview
 We need to ensure that alt text for images adhere to Web Content Accessibility Guidelines (WCAG). For this issue, we will tackle the images under the  [NAME OF PAGE] page.
 
