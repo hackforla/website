@@ -1,5 +1,5 @@
 ---
-name: Project/Product Management
+name: Product Management
 description: PMs from different projects come together in this group to share effective practices, give and get mentorship, set product management standards, and create guides and templates for new projects.
 visible: true
 status: Active
@@ -8,6 +8,8 @@ location:
 
 image: /assets/images/communities-of-practice/product.jpg
 alt: 'Several people around a small table listen intently as one person speaks.'
+
+icon: /assets/images/hero/communities-icons/product-management.png
 
 meeting-times: Tuesdays 6:00-7:00 pm PT
 

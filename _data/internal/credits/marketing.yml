@@ -1,5 +1,6 @@
 ---
 title: Marketing
+<<<<<<< HEAD
 title-link: https://thenounproject.com/search/?q=marketing&i=3154527
 content: icon
 used-in: Homepage
@@ -8,5 +9,15 @@ provider: Noun Project
 provider-link: https://thenounproject.com/
 image-url: /assets/images/marketing/noun-marketing-3154527.svg
 
+=======
+title-link: https://thenounproject.com/iconpai19/collection/business-finance/?i=3154527
+content: icon
+used-in: Home
+artist: IconPai
+provider: Noun Project 
+provider-link: https://thenounproject.com/
+image-url: /assets/images/hero/communities-icons/marketing.png
+alt: 'Marketing Icon'
+>>>>>>> feature-homepage-launch
 type: icon
 ---

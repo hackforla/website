@@ -1,5 +1,6 @@
 ---
 title: Operations
+<<<<<<< HEAD
 title-link: https://thenounproject.com/icon/operations-1819014/
 content: icon
 used-in: Homepage
@@ -10,3 +11,15 @@ image-url: /assets/images/operations/noun-operations-1819014.svg
 alt: 'Operations'
 type: icon
 ---
+=======
+title-link: https://thenounproject.com/made.somewhere/collection/work/?i=1819014
+content: icon
+used-in: Home
+artist: Made by Made
+provider: Noun Project 
+provider-link: https://thenounproject.com/
+image-url: /assets/images/hero/communities-icons/operations.png
+alt: 'Operations Icon'
+type: icon
+---
+>>>>>>> feature-homepage-launch

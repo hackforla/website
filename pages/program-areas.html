@@ -19,6 +19,7 @@ permalink: /program-areas
     {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_areas in sorted_program_areas %}
     {% if program_areas[1].size > 0 %}
+    <a class="anchor"  id="{{ program_areas[0] }}"></a>
     <div class="page-card card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}" />
