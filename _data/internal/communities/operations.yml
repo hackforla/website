@@ -1,5 +1,5 @@
 ---
-name: Ops
+name: Operations
 description: This group covers all areas of dev-ops and has been the spot for coordination on infrastructure improvements such as AWS hosting, password vaults, multi-tenant product architecture, etc.
 visible: true
 status: Active
@@ -8,6 +8,8 @@ location:
 
 image: /assets/images/communities-of-practice/ops.jpg
 alt: 'A dramatic closeup of a screen filled with code'
+
+icon: /assets/images/hero/communities-icons/operations.png
 
 meeting-times: Tuesdays 8:00-9:00 pm PT
 

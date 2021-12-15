@@ -11,11 +11,13 @@ permalink: /
     {%- include forms/contact-us.html -%}
     {%- include sponsors.html -%}
 {% else %}
-    {%- include hero.html -%}
-    {%- include home-getting-started.html -%}
-    {%- include current-projects.html -%}
-    {%- include press.html -%}
-    {%- include about.html -%}
+    {%- include home-page/hero.html -%}
+    {%- include home-page/home-program-areas.html -%}
+    {%- include home-page/home-technologies.html -%}
+    {%- include home-page/home-communities.html -%}
+    {%- include home-page/home-wins.html -%}
+    {%- include home-page/home-join-us.html -%}
     {%- include forms/contact-us.html -%}
-    {%- include sponsors.html -%}
-{% endif %}   
+{% endif %}
+
+<script src="/assets/js/home.js"></script>
