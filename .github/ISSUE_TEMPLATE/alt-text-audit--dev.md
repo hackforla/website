@@ -1,8 +1,9 @@
 ---
-name: 'Alt Text Audit - Dev'
-about: 'Developer template to update an alt text'
-title: 'Update [INSERT PAGE HERE] alt text for images to adhere to WCAG'
-labels: 'good first issue, role: front end, role: back end/devOps, Feature: Accessibility'
+name: Alt Text Audit - Dev
+about: Developer template to update an alt text
+title: Update [INSERT PAGE HERE] alt text for images to adhere to WCAG
+labels: 'Feature: Accessibility, good first issue, role: back end/devOps, role: front
+  end'
 assignees: ''
 
 ---
