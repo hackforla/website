@@ -18,10 +18,14 @@ As a developer, we need to provide clear and descriptive alt text on the `[INSER
 - [ ] Change the image alt property value within `[INSERT PATH OF FILE HERE]` (lines `[INSERT LINE NUMBER IN CODE HERE]`):
 
 **From**
-`[INSERT ORIGINAL LINE OF CODE HERE]`
+```
+[INSERT ORIGINAL LINE OF CODE HERE]
+```
 
 **To:**
-`[INSERT NEW LINE OF CODE HERE]`
+```
+[INSERT NEW LINE OF CODE HERE]
+```
 
 - [ ] Ensure that the corresponding `[INSERT LINKED PAGE HERE]` stays the same after the change
 - [ ] Ensure that the new alt text gets incorporated after the change
