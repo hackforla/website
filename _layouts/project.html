@@ -33,22 +33,18 @@ layout: default
                 {% if page.links %}
                     {% assign counter = 0 %}
                     {% for item in page.links %}
-                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
-                            {% assign counter = counter | plus:1 %}
-                        {% endif %}
+                        {% assign counter = counter | plus:1 %}  
                     {% endfor %}
                     {% if counter > 0 %}
                         <p>
                             <strong>Links: </strong>
                             {% for item in page.links %}
-                                {% if item.name == 'GitHub' or item.name == 'Slack' or item.name == 'Readme'  or item.name == 'Overview'  or item.name == 'Demo Site' or item.name == 'Site' %}
-                                    {% if counter > 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
+                                    {% if counter == 1 %}
+                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
                                         {% assign counter = counter | minus:1 %}
-                                    {% elsif counter <= 1 %}
+                                    {% elsif counter > 1 %}
                                         <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
                                     {% endif %}
-                                {% endif %}
                             {% endfor %}
                         </p>
                     {% endif %}
