@@ -21,7 +21,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C028T9XU9S5'
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/Guides-Team-One-Sheet.pdf
+    url: '../assets/pdfs/Guides-Team-One-Sheet.pdf'
 looking:
 technologies: 
 location:
