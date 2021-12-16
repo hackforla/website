@@ -66,6 +66,8 @@ links:
     url: 'https://hackforla.slack.com/archives/CRGH5HM0Q'
   - name: Wiki
     url: 'https://github.com/hackforla/VRMS/wiki'
+  - name: Overview
+    url: 'assets/pdfs/VRMS-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Front End Devs (from mid level)
