@@ -1,7 +1,7 @@
 ---
 identification: '226157870'
 title: VRMS
-description: VRMS is a tool used for the engagement, support, and retention of a network of volunteers.
+description: VRMS is a browser-based software tool created by Hack for LA (HfLA) for volunteer organizations to curate participant journeys and further organizational goals of workforce development and project impact. By collecting and using relevant data, VRMS is able to automate repetitive tasks; match volunteers with projects, relevant training and job opportunities; measure engagement with projects and activities; and surface insights to improve organizational effectiveness and the volunteer experience over time.
 image: /assets/images/projects/vrms.png
 alt: 'VRMS logo. VRMS homepage.'
 image-hero: /assets/images/projects/vrms-hero.png
@@ -25,18 +25,36 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Olga Bilogurova
-    role: Frontend Engineer
+  - name: Katiuska Alicea de Leon
+    role: Full Stack Web Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U015MG4LK99'
-      github: 'https://github.com/OlgaBilogurova'
-    picture: https://avatars.githubusercontent.com/OlgaBilogurova
-  - name: Khushboo Shah
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U0100R46ESC'
+      github: 'https://github.com/chukalicious'
+    picture: 'https://avatars.githubusercontent.com/chukalicious'
+  - name: Glen Paul Florendo
+    role: Full Stack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U01EW21842X'
-      github: 'https://github.com/khushbooshah-PM'
-    picture: 'https://avatars.githubusercontent.com/khushbooshah-PM'
+      slack: 'https://hackforla.slack.com/team/DFPQ91VHN'
+      github: 'https://github.com/glenflorendo'
+    picture: 'https://avatars.githubusercontent.com/glenflorendo'
+  - name: Walter (JunJie) Tang
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U02KAPGUZ0T'
+      github: 'https://github.com/WalterT-MK'
+    picture: 'https://avatars.githubusercontent.com/WalterT-MK'
+  - name: Josh Bubar
+    role: Shows up to meetings
+    links:
+      slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
+      github: 'https://github.com/jbubar'
+    picture: 'https://avatars.githubusercontent.com/jbubar'
+  - name: David Rubinstein
+    role: Engineer for the People
+    links:
+      slack: 'https://hackforla.slack.com/team/U015FP47R5G'
+      github: 'https://github.com/drubgrubby'
+    picture: 'https://avatars.githubusercontent.com/drubgrubby'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
@@ -65,6 +83,9 @@ technologies:
   - SASS
   - Jest
   - React Testing Library
+  - MongoDB Atlas
+  - Insomnia
+  - Postman
 location:
   - Remote
 partner: TBD
