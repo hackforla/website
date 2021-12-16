@@ -6,7 +6,7 @@ lsi: false # Produce an index for related posts. Requires the classifier-reborn 
 safe: true # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
 
 # Exclude files that do not need to be rendered and included in the final build of the website
-exclude: [github-actions, docker-compose.yml]
+exclude: [github-actions, docker-compose.yml, package-lock.json]
 source: . # Change the directory where Jekyll will read files
 
 title: Hack for LA
