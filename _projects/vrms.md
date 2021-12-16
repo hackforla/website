@@ -34,7 +34,7 @@ leadership:
   - name: Glen Paul Florendo
     role: Full Stack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/DFPQ91VHN'
+      slack: 'https://hackforla.slack.com/team/UFQGH8JH0'
       github: 'https://github.com/glenflorendo'
     picture: 'https://avatars.githubusercontent.com/glenflorendo'
   - name: Walter (JunJie) Tang
