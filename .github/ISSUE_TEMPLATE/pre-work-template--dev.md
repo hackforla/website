@@ -42,6 +42,12 @@ Provide Update
 ```
 - [ ] Once all tasks are completed, close this issue
 
+### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
+- First, you should post the question or blocker as a comment on your assigned issue, so it can be easily referred to in the next bullet points
+- Then, add the issue to the "Questions / In Review" column of the Project Board so that it can be addressed in the next development meeting
+- You may also add the label "Status: Help Wanted" so other developers can see it and potentially help answer your question
+- Lastly, you can post your question in the hfla slack channel and link the issue you're working on, so other volunteers can see and respond
+
 ### Resources/Instructions
 - [Contributing.md - Hack for LA](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)
 - [GitHub Project Board - Hack for LA](https://github.com/hackforla/website/projects/7)

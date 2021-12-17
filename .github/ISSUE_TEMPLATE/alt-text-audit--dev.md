@@ -1,8 +1,9 @@
 ---
-name: 'Alt Text Audit - Dev'
-about: 'Developer template to update an alt text'
-title: 'Update [INSERT PAGE HERE] alt text for images to adhere to WCAG'
-labels: 'good first issue, role: front end, role: back end/devOps, Feature: Accessibility'
+name: Alt Text Audit - Dev
+about: Developer template to update an alt text
+title: Update [INSERT PAGE HERE] alt text for images to adhere to WCAG
+labels: 'Feature: Accessibility, good first issue, role: back end/devOps, role: front
+  end'
 assignees: ''
 
 ---
@@ -17,10 +18,14 @@ As a developer, we need to provide clear and descriptive alt text on the `[INSER
 - [ ] Change the image alt property value within `[INSERT PATH OF FILE HERE]` (lines `[INSERT LINE NUMBER IN CODE HERE]`):
 
 **From**
-`[INSERT ORIGINAL LINE OF CODE HERE]`
+```
+[INSERT ORIGINAL LINE OF CODE HERE]
+```
 
 **To:**
-`[INSERT NEW LINE OF CODE HERE]`
+```
+[INSERT NEW LINE OF CODE HERE]
+```
 
 - [ ] Ensure that the corresponding `[INSERT LINKED PAGE HERE]` stays the same after the change
 - [ ] Ensure that the new alt text gets incorporated after the change
