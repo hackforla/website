@@ -163,17 +163,32 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 				console.log('between 3 and 7 commented');
 				return {result: false, labels: statusUpdatedLabel}
 			}
+			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
+				return {result: true, labels: inactiveLabel}
+			}
+			else if (index === timeline.length-1) { // returns true if the latest event created is between 3 and 7 days  
+				return {result: true, labels: toUpdateLabel}
+			}
 		}
 		else if (isMomentRecent(moment.created_at, fourteenDayCutoffTime)) { // all the events of an issue between seven and fourteen days will return true
 			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced between 7 and 14 days
 				console.log('between 7 and 14 cross referenced');
 				return {result: false, labels: statusUpdatedLabel}
 			}
+			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
+				return {result: true, labels: inactiveLabel}
+			}
+			else if (index === timeline.length-1) { // returns true if the latest event created is between 7 and 14 days  
+				return {result: true, labels: toUpdateLabel}
+			}
 		}
 		else    { // all the events of an issue older than fourteen days will be processed here
 			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced older than fourteen days
 				console.log('14 day event cross referenced');
 				return {result: false, labels: statusUpdatedLabel}
+			}
+			else if (index === timeline.length-1) { // returns true if the latest event created is older than 14 days  
+				return {result: true, labels: inactiveLabel}
 			}
 		}
 	}
