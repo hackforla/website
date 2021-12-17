@@ -106,6 +106,13 @@ $font-size-title5: (
 
 $font-size-title6: (
   print: 12pt,
+  /* 18px*/ mobile: 1.125rem,
+  /* 18px*/ tablet: 1.125rem,
+  /* 18px*/ desktop: 1.125rem
+);
+
+$font-size-title7: (
+  print: 9pt,
   /* 16px*/ mobile: 1rem,
   /* 16px*/ tablet: 1rem,
   /* 16px*/ desktop: 1rem

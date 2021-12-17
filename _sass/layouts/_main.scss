@@ -1,7 +1,21 @@
 /**
- * This combination of styles pushes the footer to the botto of the page even
+ * This combination of styles pushes the footer to the bottom of the page even
  * when the content is short.
  */
+
+ #app {
+   position: relative;
+   min-height: 100vh;
+ }
+
+ #content {
+  padding-bottom: 160px;
+
+  @media #{$bp-below-mobile} {
+    padding-bottom: 200px;
+  }
+ }
+
 .page-wrapper {
   display: flex;
   flex-direction: column;

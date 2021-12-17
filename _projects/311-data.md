@@ -59,7 +59,6 @@ technologies:
   - Material-UI
   - Mapbox
   - AWS
-  - Python
   - FastAPI
   - Redis
   - PostgreSQL
@@ -71,9 +70,9 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-
 partner: EmpowerLA
-program area: 'Citizen Engagement'
+program-area:
+  - Citizen Engagement
 visible: true
 status: Active
 ---

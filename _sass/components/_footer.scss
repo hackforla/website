@@ -1,7 +1,10 @@
 .main-footer {
+  position: absolute;
+  width: 100%;
   background: $color-darkblue;
   color: $color-white;
   padding: 42px 25px 20px;
+  bottom: 0;
 
   a {
     color: $color-white;

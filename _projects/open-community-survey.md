@@ -1,5 +1,5 @@
 ---
-identification: '321544578'
+identification: '354140311'
 title: Open Community Survey
 description: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils (NCs) to understand how constituents are interacting with, and what they need from, their websites.<br /><br /> Current project&#58 NC website survey; Most NCs do not have access or resources to hire technical experts necessary to create a citywide survey so that they can use the data to create inclusive websites targeted towards the needs of their specific communities. Working with EmpowerLA and NCs, Hack for LA is providing the workforce and expertise to design and implement this survey that will give NCs a tool to understand the overall needs of their community -- beyond the people already involved in NCs.
 image: /assets/images/projects/open-community-survey.jpg
@@ -13,18 +13,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: JoAnne Narcisse
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AHBLDJ15'
+      github: 'https://github.com/jonarcisse'
+    picture: https://avatars.githubusercontent.com/jonarcisse
   - name: Ebele O.
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
       github: 'https://github.com/ebele-oputa'
     picture: https://avatars.githubusercontent.com/ebele-oputa
-  - name: Chianta Dorsey
-    role: UI/UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U022B5EJFME'
-      github: 'https://github.com/csdorsey'
-    picture: https://avatars.githubusercontent.com/csdorsey
   - name: Bernard Adesina
     role: UX Designer
     links:
@@ -37,6 +37,36 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
       github: 'https://github.com/kvnw2020'
     picture: https://avatars.githubusercontent.com/kvnw2020
+  - name: Sonu 
+    role: Data Analyst
+    links:
+      slack: 'https://hackforla.slack.com/team/U027JBTAGSX'
+      github: 'https://github.com/sonu-k'
+    picture: https://avatars.githubusercontent.com/sonu-k
+  - name: Snow
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U029J3LT0TS'
+      github: 'https://github.com/LAStorm'
+    picture: https://avatars.githubusercontent.com/LAStorm
+  - name: Amy Wilkins
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U0231JD5BC2'
+      github: 'https://github.com/amy-c-w'
+    picture: https://avatars.githubusercontent.com/amy-c-w
+  - name: Jasmine Kim
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AYE78X1Q'
+      github: 'https://github.com/jaskim20'
+    picture: https://avatars.githubusercontent.com/jaskim20
+  - name: Shika Zhou
+    role: Data Analyst
+    links:
+      slack: 'https://hackforla.slack.com/team/ U029BAPRTA8'
+      github: 'https://github.com/ShikaZzz'
+    picture: https://avatars.githubusercontent.com/ShikaZzz
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
@@ -57,6 +87,7 @@ location:
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
 tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
 visible: true
-program area: 'Citizen Engagement'
+program-area: 
+  - Vote / Representation
 status: Active
 ---

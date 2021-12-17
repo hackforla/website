@@ -65,7 +65,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/ballotnav/blob/master/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/BallotNav-Project-One-Sheet.pdf'
+    url: '/assets/pdfs/BallotNav-Project-One-Sheet.pdf'
 looking:
   - category: UI/UX
     skill: UX Researcher
@@ -80,5 +80,6 @@ location:
 partner: Code for America, Other Brigades
 visible: true
 status: Active
-program area: 'Vote / Representation'
+program-area: 
+  - Vote / Representation
 ---

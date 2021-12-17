@@ -56,7 +56,7 @@ looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers
   - category: Development
-    skill: Front End Developers 
+    skill: Front End Developers
   - category: Development
     skill: Experienced Back End Developers
 technologies:
@@ -66,13 +66,13 @@ technologies:
   - Microsoft SQL Server
   - Docker
   - Azure App Service
-  - SCSS
   - Figma
 location:
   # - Downtown LA
   - Remote
 partner: LA Department of Transportation and Los Angeles City Planning
-program area: 'Environment'
+program-area:
+  - Environment
 visible: true
 status: Active
 ---
