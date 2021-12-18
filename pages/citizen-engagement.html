@@ -38,10 +38,10 @@ permalink: /citizen-engagement
         <div class="page-card card-primary page-card-lg card-body card-width program-area" data-dropdown>
                 <!-- These three divs contain the image, a div that contains navigation and project info,
                      and the sustainable goals div -->
-                    
+
                 <img class="card-image" src="/assets/images/projects/311.jpg" alt="311 project card"/>
 
-                    <!-- When the card is closed in mobile, we only see the image and the navigation. When the card is 
+                    <!-- When the card is closed in mobile, we only see the image and the navigation. When the card is
                          open, we see the project information. -->
                 <div class="mobile-card-info-container">
                     <div class="mobile-card-nav">
@@ -51,26 +51,27 @@ permalink: /citizen-engagement
                     <div class="project-dropdown">
                         <div class="problem-info">
                             <h4>Problem</h4>
-                            <p>The city produces a data set from all the 311 tickets placed.  
-                                This data is useful if you are a data scientist, but for 
-                                citizens without this training it has little value.</p>
+                            {% for item in site.projects %}
+                                {% if item.title == "311 Data" %}
+                                    <p>{{ item.problem }}</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="solution-info">
                             <h4>Solution</h4>
-                            <p>We partnered with the Los Angeles Department of Neighborhood 
-                                Empowerment and LA Neighborhood Councils to co-create and 
-                                iterate analysis and tools (see 311-Data.org) to provide 
-                                neighborhoods with actionable information at the local level 
-                                through real time visualizations and comparison tools.</p>
+                            {% for item in site.projects %}
+                                {% if item.title == "311 Data" %}
+                                    <p>{{ item.solution }}</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="impact-info">
                             <h4>Impact</h4>
-                            <p>Neighborhood Councils are able to use visualizations to 
-                                demonstrate and discuss the city service levels with 
-                                constituents and determine where to send mailings to 
-                                target information to those parts of their community not 
-                                availing themselves of specific city services.
-                            </p>
+                            {% for item in site.projects %}
+                                {% if item.title == "311 Data" %}
+                                    <p>{{ item.impact }}</p>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -80,10 +81,11 @@ permalink: /citizen-engagement
                 <h4>Sustainable Development Goal</h4>
                 <div class="card-bottom-info">
                     <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
-                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
-                        and local communities, especially those traditionally underserved and marginalized,
-                         in the institutions of local and global governance.
-                    </p>
+                    {% for item in site.projects %}
+                        {% if item.title == "311 Data" %}
+                            <p>{{ item.sdg }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -97,26 +99,27 @@ permalink: /citizen-engagement
                 <div class="project-dropdown">
                     <div class="problem-info">
                         <h4>Problem</h4>
-                        <p>Policies that impact the public are increasingly advised 
-                            by surveys and other means of data collection. To ensure 
-                            that citizens are empowered advocates of their community, 
-                            we are looking to identify the areas where data literacy 
-                            education within our communities is needed most.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Access The Data" %}
+                                <p>{{ item.problem }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="solution-info">
                         <h4>Solution</h4>
-                        <p>Hack for LA’s Access the Data team, in partnership with the 
-                            Los Angeles Department of Neighborhood Empowerment, Neighborhood 
-                            Councils, and the Los Angeles Mayor’s office, will be developing 
-                            modules to address those areas.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Access The Data" %}
+                                <p>{{ item.solution }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="impact-info">
                         <h4>Impact</h4>
-                        <p>
-                            Citizens will be empowered to advocate for change in their communities
-                             by using publicly available data and asking for data to be made available 
-                             when it is required for advocacy.
-                        </p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Access The Data" %}
+                                <p>{{ item.impact }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -124,10 +127,11 @@ permalink: /citizen-engagement
                 <h4>Sustainable Development Goal</h4>
                 <div class="card-bottom-info">
                     <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
-                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
-                        and local communities, especially those traditionally underserved and marginalized,
-                         in the institutions of local and global governance.
-                    </p>
+                    {% for item in site.projects %}
+                        {% if item.title == "Access The Data" %}
+                            <p>{{ item.sdg }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -141,28 +145,27 @@ permalink: /citizen-engagement
                 <div class="project-dropdown">
                     <div class="problem-info">
                         <h4>Problem</h4>
-                        <p>Everyone should be able to have a voice in their 
-                            community’s issues, but not everyone has access 
-                            or is easily able to follow an issue’s details. 
-                            For example, not everyone has time to attend a 
-                            city council meeting!</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Engage" %}
+                                <p>{{ item.problem }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="solution-info">
                         <h4>Solution</h4>
-                        <p>On Engage, all users can view, read, and comment 
-                            on agenda items their city council is currently 
-                            debating. This makes it much easier to participate 
-                            in discussions on government policies.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Engage" %}
+                                <p>{{ item.solution }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="impact-info">
                         <h4>Impact</h4>
-                        <p>Our platform will make important local conversations 
-                            much more representative of the actual community, 
-                            boosting the representation of the most marginalized 
-                            and underserved members. Being able to hear their 
-                            perspective will lead to more inclusive, considerate 
-                            decision-making that will truly benefit all of us rather 
-                            than just some.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Engage" %}
+                                <p>{{ item.impact }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -170,10 +173,11 @@ permalink: /citizen-engagement
                 <h4>Sustainable Development Goal</h4>
                 <div class="card-bottom-info">
                     <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
-                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
-                        and local communities, especially those traditionally underserved and marginalized,
-                         in the institutions of local and global governance.
-                    </p>
+                    {% for item in site.projects %}
+                        {% if item.title == "Engage" %}
+                            <p>{{ item.sdg }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -187,25 +191,27 @@ permalink: /citizen-engagement
                 <div class="project-dropdown">
                     <div class="problem-info">
                         <h4>Problem</h4>
-                        <p>Most Neighborhood Councils do not have access
-                             or resources to hire technical experts necessary 
-                             to create a citywide survey so that they can use 
-                             the data to create inclusive websites targeted towards 
-                             the needs of their specific communities.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Open Community Survey" %}
+                                <p>{{ item.problem }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="solution-info">
                         <h4>Solution</h4>
-                        <p>The Open Community Survey project creates transparent reports 
-                            supported by a direct collection of personal perspectives from 
-                            LA residents to help The LA Department of Neighborhood Empowerment 
-                            (empowerla.org) and the Los Angeles Neighborhood Councils to understand 
-                            how constituents are interacting with, and what they need from, their websites.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Open Community Survey" %}
+                                <p>{{ item.solution }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="impact-info">
                         <h4>Impact</h4>
-                        <p>Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Open Community Survey" %}
+                                <p>{{ item.impact }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -213,10 +219,11 @@ permalink: /citizen-engagement
                 <h4>Sustainable Development Goal</h4>
                 <div class="card-bottom-info">
                     <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
-                    <p><strong>16.8:</strong> Broaden and strengthen the awareness and participation of City 
-                        and local communities, especially those traditionally underserved and marginalized,
-                         in the institutions of local and global governance.
-                    </p>
+                    {% for item in site.projects %}
+                        {% if item.title == "Open Community Survey" %}
+                            <p>{{ item.sdg }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -230,25 +237,27 @@ permalink: /citizen-engagement
                 <div class="project-dropdown">
                     <div class="problem-info">
                         <h4>Problem</h4>
-                        <p>Parking citations are distributed unevenly across 
-                            different socio-economic strata of the cities 
-                            residents as they use  public parking  during the course 
-                            of business or because enough off-street parking is not 
-                            provided at their residence. The current publicly available Los 
-                            Angeles parking citation dataset can be used as a basis for discussions 
-                            about this disparity, but the unwieldy size and inconsistency of this data has been enough of a 
-                            barrier to make it inaccessible to non-researchers.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Lucky Parking" %}
+                                <p>{{ item.problem }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="solution-info">
                         <h4>Solution</h4>
-                        <p>Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a webapp 
-                            that is easy to use yet powerful enough to make meaningful insights about parking citations 
-                            accessible to the public at large.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Lucky Parking" %}
+                                <p>{{ item.solution }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="impact-info">
                         <h4>Impact</h4>
-                        <p>Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ 
-                            parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.</p>
+                        {% for item in site.projects %}
+                            {% if item.title == "Lucky Parking" %}
+                                <p>{{ item.impact }}</p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -256,18 +265,18 @@ permalink: /citizen-engagement
                 <h4>Sustainable Development Goal</h4>
                 <div class="card-bottom-info">
                     <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/sustainable-cities.svg" alt="sustainable cities bottom sustainable dev goal"/>
-                    <p><strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport 
-                        systems for all, improving road safety, notably by expanding public transport, 
-                        with special attention to the needs of those in vulnerable 
-                        situations, women, children, persons with disabilities and older persons.
-                    </p>
+                    {% for item in site.projects %}
+                        {% if item.title == "Lucky Parking" %}
+                            <p>{{ item.sdg }}</p>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div class="page-card card-primary page-card-lg card-body card-width organizations">
                 <div class="organizations-info">
                     <h3>Organizations We Work With</h3>
-                    <p>None of what we do would be possible without the generous 
+                    <p>None of what we do would be possible without the generous
                         support of many organizations throughout out our communities.
                         A big thank you to:</p>
                 </div>
@@ -290,7 +299,7 @@ permalink: /citizen-engagement
 <script>
 
     document.addEventListener('click', (e) => {
-        // <- Dropdown functionality 
+        // <- Dropdown functionality
         const isDropdownArrow = e.target.closest("[data-dropdown-arrow");
         let currentDropown;
 

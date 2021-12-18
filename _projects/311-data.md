@@ -6,6 +6,11 @@ image: /assets/images/projects/311_data.png
 alt: '311 data logo.'
 image-hero: /assets/images/projects/311data-beta.png
 alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
+problem: The city produces a data set from all the 311 tickets placed. This data is useful if you are a data scientist, but for citizens without this training it has little value.
+solution: We partnered with the Los Angeles Department of Neighborhood Empowerment and LA Neighborhood Councils to co-create and iterate analysis and tools (see 311-Data.org) to provide neighborhoods with actionable information at the local level through real time visualizations and comparison tools.
+impact: Neighborhood Councils are able to use visualizations to demonstrate and discuss the city service levels with constituents and determine where to send mailings to target information to those parts of their community not availing themselves of specific city services.
+sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
+sdg-image: /assets/images/about/sdg-elements/peace-justice.svg
 leadership:
   - name: Dana Chen
     role: UI/UX Senior Lead
