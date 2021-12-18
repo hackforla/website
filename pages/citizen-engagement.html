@@ -49,30 +49,22 @@ permalink: /citizen-engagement
                         <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                     </div>
                     <div class="project-dropdown">
-                        <div class="problem-info">
-                            <h4>Problem</h4>
                             {% for item in site.projects %}
                                 {% if item.title == "311 Data" %}
+                                <div class="problem-info">
+                                    <h4>Problem</h4>
                                     <p>{{ item.problem }}</p>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="solution-info">
-                            <h4>Solution</h4>
-                            {% for item in site.projects %}
-                                {% if item.title == "311 Data" %}
+                                </div>
+                                <div class="solution-info">
+                                    <h4>Solution</h4>
                                     <p>{{ item.solution }}</p>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="impact-info">
-                            <h4>Impact</h4>
-                            {% for item in site.projects %}
-                                {% if item.title == "311 Data" %}
+                                </div>
+                                <div class="impact-info">
+                                    <h4>Impact</h4>
                                     <p>{{ item.impact }}</p>
+                                </div>
                                 {% endif %}
                             {% endfor %}
-                        </div>
                     </div>
                 </div>
                 <!-- The div below is controlled by the dropdown arrow. It is outside of the above container so it can
@@ -97,30 +89,22 @@ permalink: /citizen-engagement
                     <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                 </div>
                 <div class="project-dropdown">
-                    <div class="problem-info">
-                        <h4>Problem</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Access The Data" %}
-                                <p>{{ item.problem }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="solution-info">
-                        <h4>Solution</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Access The Data" %}
-                                <p>{{ item.solution }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="impact-info">
-                        <h4>Impact</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Access The Data" %}
-                                <p>{{ item.impact }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% for item in site.projects %}
+                        {% if item.title == "Access The Data" %}
+                        <div class="problem-info">
+                            <h4>Problem</h4>
+                            <p>{{ item.problem }}</p>
+                        </div>
+                        <div class="solution-info">
+                            <h4>Solution</h4>
+                            <p>{{ item.solution }}</p>
+                        </div>
+                        <div class="impact-info">
+                            <h4>Impact</h4>
+                            <p>{{ item.impact }}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="sustainable-dev-goal">
@@ -143,30 +127,22 @@ permalink: /citizen-engagement
                     <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                 </div>
                 <div class="project-dropdown">
-                    <div class="problem-info">
-                        <h4>Problem</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Engage" %}
-                                <p>{{ item.problem }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="solution-info">
-                        <h4>Solution</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Engage" %}
-                                <p>{{ item.solution }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="impact-info">
-                        <h4>Impact</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Engage" %}
-                                <p>{{ item.impact }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% for item in site.projects %}
+                        {% if item.title == "Engage" %}
+                        <div class="problem-info">
+                            <h4>Problem</h4>
+                            <p>{{ item.problem }}</p>
+                        </div>
+                        <div class="solution-info">
+                            <h4>Solution</h4>
+                            <p>{{ item.solution }}</p>
+                        </div>
+                        <div class="impact-info">
+                            <h4>Impact</h4>
+                            <p>{{ item.impact }}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="sustainable-dev-goal">
@@ -189,30 +165,22 @@ permalink: /citizen-engagement
                     <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                 </div>
                 <div class="project-dropdown">
-                    <div class="problem-info">
-                        <h4>Problem</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Open Community Survey" %}
-                                <p>{{ item.problem }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="solution-info">
-                        <h4>Solution</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Open Community Survey" %}
-                                <p>{{ item.solution }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="impact-info">
-                        <h4>Impact</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Open Community Survey" %}
-                                <p>{{ item.impact }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% for item in site.projects %}
+                        {% if item.title == "Open Community Survey" %}
+                        <div class="problem-info">
+                            <h4>Problem</h4>
+                            <p>{{ item.problem }}</p>
+                        </div>
+                        <div class="solution-info">
+                            <h4>Solution</h4>
+                            <p>{{ item.solution }}</p>
+                        </div>
+                        <div class="impact-info">
+                            <h4>Impact</h4>
+                            <p>{{ item.impact }}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="sustainable-dev-goal">
@@ -235,30 +203,22 @@ permalink: /citizen-engagement
                     <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                 </div>
                 <div class="project-dropdown">
-                    <div class="problem-info">
-                        <h4>Problem</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Lucky Parking" %}
-                                <p>{{ item.problem }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="solution-info">
-                        <h4>Solution</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Lucky Parking" %}
-                                <p>{{ item.solution }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="impact-info">
-                        <h4>Impact</h4>
-                        {% for item in site.projects %}
-                            {% if item.title == "Lucky Parking" %}
-                                <p>{{ item.impact }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% for item in site.projects %}
+                        {% if item.title == "Lucky Parking" %}
+                        <div class="problem-info">
+                            <h4>Problem</h4>
+                            <p>{{ item.problem }}</p>
+                        </div>
+                        <div class="solution-info">
+                            <h4>Solution</h4>
+                            <p>{{ item.solution }}</p>
+                        </div>
+                        <div class="impact-info">
+                            <h4>Impact</h4>
+                            <p>{{ item.impact }}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="sustainable-dev-goal">
