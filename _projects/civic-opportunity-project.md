@@ -27,7 +27,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/civic-opportunity/blob/master/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
+    url: '/assets/pdfs/Civic-Opportunity-Project-One-Sheet.pdf'
 looking:
   - category: PM
     skill: Special Projects Coordinators

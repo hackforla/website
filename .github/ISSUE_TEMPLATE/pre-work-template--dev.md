@@ -27,7 +27,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues) 
   - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
-- [ ] Once you take a good first issue, please add the following in a comment
+- [ ] Once you take a good first issue, please post the following as a comment in your new issue
 ```
 Availability for this week:
 My estimated ETA for completing this issue:
@@ -41,6 +41,12 @@ Provide Update
 4. ETA
 ```
 - [ ] Once all tasks are completed, close this issue
+
+### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
+- First, you should post the question or blocker as a comment on your assigned issue, so it can be easily referred to in the next bullet points
+- Then, add the issue to the "Questions / In Review" column of the Project Board so that it can be addressed in the next development meeting
+- You may also add the label "Status: Help Wanted" so other developers can see it and potentially help answer your question
+- Lastly, you can post your question in the hfla slack channel and link the issue you're working on, so other volunteers can see and respond
 
 ### Resources/Instructions
 - [Contributing.md - Hack for LA](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)

@@ -82,7 +82,6 @@ technologies:
   - Docker
   - React
   - Redux
-  - SASS
   - Jest
   - React Testing Library
   - MongoDB Atlas
@@ -92,7 +91,7 @@ location:
   - Remote
 partner: TBD
 visible: true
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 status: Active
 ---
