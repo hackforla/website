@@ -73,7 +73,7 @@ links:
   - name: Wiki
     url: 'https://github.com/hackforla/design-systems/wiki'
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/Design-Systems-One-Sheet.pdf
+    url: '../assets/pdfs/Design-Systems-One-Sheet.pdf'
 looking:
 technologies: 
 location: 

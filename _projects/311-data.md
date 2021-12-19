@@ -64,7 +64,6 @@ technologies:
   - Material-UI
   - Mapbox
   - AWS
-  - Python
   - FastAPI
   - Redis
   - PostgreSQL
