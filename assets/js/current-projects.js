@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         // create filter dictionary from sorted project data
         let filters = createFilter(sortedProjectData);
+        console.log(filters)
         
         // Insert Checkbox Filter Into The Dom
         for(const [filtername,filtervalue] of Object.entries(filters)){
@@ -150,7 +151,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => item.project.technologies ? item.project.technologies.map(tech => tech) : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages / technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
         }
