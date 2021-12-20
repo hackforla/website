@@ -112,7 +112,6 @@ function retrieveProjectDataFromCollection(){
         if(matchingProject) {
             project.languages = matchingProject.languages
         }
-        console.log(project.languages)
     })
     return projectData;
 }
