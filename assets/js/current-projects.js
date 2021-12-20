@@ -458,7 +458,7 @@ return `
             // ^ See issue #1997 for more info on why this is commented out
             }
 
-            ${project.languages ? 
+            ${project.languages?.length > 0 ? 
             `
             <div class="project-languages">
             <strong>Languages: </strong>
