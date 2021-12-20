@@ -50,7 +50,23 @@ document.addEventListener("DOMContentLoaded",function(){
 */
 function retrieveProjectDataFromCollection(){
     // { "project": {"id":"/projects/311-data","relative_path":"_projects/311-data.md","excerpt"
+    {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
+    // const scriptTag = document.getElementById("projectScript");
+    // const projectId = scriptTag.getAttribute("projectId");
+    // Search for correct project
+    let projectLanguagesArr = [];
+    projects.forEach(project=> {
+        if(project.languages){
+            const projectLanguages = {
+                id: project.id,
+                languages: project.languages
+            };
+            projectLanguagesArr.push(projectLanguages);
+        }
+    })
+
     let projectData = [{%- for project in visible_projects -%}
             {
                 "project": {
@@ -84,10 +100,20 @@ function retrieveProjectDataFromCollection(){
                             {%- if project.program-area -%},
                             "programAreas": {{ project.program-area | jsonify }}
                             {%- endif -%}
+                            {%- if project.languages -%},
+                            "languages": {{ project.languages }}
+                            {%- endif -%}
                             }
             }{%- unless forloop.last -%}, {% endunless %}
     {%- endfor -%}]
-
+    projectData.forEach((data,i) => {
+        const { project } = data;
+        const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
+        if(matchingProject) {
+            project.languages = matchingProject.languages
+        }
+        console.log(project.languages)
+    })
     return projectData;
 }
 
@@ -431,6 +457,15 @@ return `
             // </div>
             // `:""
             // ^ See issue #1997 for more info on why this is commented out
+            }
+
+            ${project.languages ? 
+            `
+            <div class="project-languages">
+            <strong>Languages: </strong>
+            ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
+            </div>
+            `: ""
             }
 
             ${project.technologies ?
