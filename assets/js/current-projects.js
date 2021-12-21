@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
         // create filter dictionary from sorted project data
         let filters = createFilter(sortedProjectData);
-        console.log(filters)
         
         // Insert Checkbox Filter Into The Dom
         for(const [filtername,filtervalue] of Object.entries(filters)){
@@ -190,7 +189,12 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-  
+    if(filterParams['languages / technologies']) {
+        const searchTerm = filterParams['languages / technologies']
+        filterParams['languages'] = searchTerm;
+        filterParams['technologies'] = searchTerm;
+        delete filterParams['languages / technologies']
+    }
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
