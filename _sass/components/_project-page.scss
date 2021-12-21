@@ -185,7 +185,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;
@@ -208,7 +208,7 @@
   max-width: 0px;
   padding: 35px 0px;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   min-width: 0px;
   transition: min-width 1s, padding 1s;
 }
@@ -348,7 +348,7 @@
   max-height: 175px;
   max-width: 229px;
   margin: 0px 0px 30px 21px;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;

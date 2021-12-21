@@ -84,7 +84,7 @@
 a.anchor {
   display: block;
   position: relative;
-  top: -75x;
+  top: -75px;
   visibility: hidden;
 }
 
@@ -126,10 +126,9 @@ a.anchor {
   overflow: hidden;
   border: 0 solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
-  margin-bottom: 0;
+  margin: 12px;
   padding: 22px;
   height: fit-content;
-  margin: 12px;
 }
 
 // Make the Letter page card have square corners
@@ -253,8 +252,7 @@ a.anchor {
 }
 
 .sub-card-content {
-  padding-left: 5px;
-  padding-left: 23px;
+  padding-left: 10px;
   margin-left: 8px;
 }
 
@@ -592,17 +590,11 @@ a.anchor {
 } // End below tablet
 
 // Bigger than mobile - 480px
-@media #{$bp-mobile-up} {
-
-} // End mobile up
+// @media #{$bp-mobile-up} {} 
+// End mobile up
 
 // Bigger than tablet - 768px
-@media #{$bp-tablet-up} {
-  .wins-card-mobile{
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+// @media #{$bp-tablet-up} {}
 
 //Bigger than desktop - 960px
 @media #{$bp-desktop-up} {

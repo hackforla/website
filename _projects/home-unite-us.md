@@ -31,8 +31,8 @@ links:
   - name: Wiki
     url: 'https://github.com/hackforla/HomeUniteUs/wiki'
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/CRWUG7X0C'  
-looking: 
+    url: 'https://hackforla.slack.com/archives/CRWUG7X0C'
+looking:
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
   - category: PM
@@ -42,9 +42,7 @@ looking:
 technologies:
   - React
   - NoSQL
-  - Python
   - Flask
-  - TypeScript
   - Auth0 / OIDC / OAuth2
   - MongoDB
 location:
@@ -52,7 +50,7 @@ location:
 tools: Figma, Miro, AWS, Nginx, Terraform, Docker, DynamoDB, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
-program-area: 
+program-area:
   - Social Safety Net
 status: Active
 ---
