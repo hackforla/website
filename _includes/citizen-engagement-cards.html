@@ -4,33 +4,33 @@
 
                             <!-- QUESTIONS HOW TO MAKE THIS REUSEABLE -->
                             <!-- src, alt -->
-                        <img class="card-image" src="/assets/images/projects/311.jpg" alt="311 project card"/>
+                        <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
                                    <h3>{{ item.title }}</h3>
                                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                                </div>
                                <div class="project-dropdown">
-                                           <div class="problem-info">
-                                               <h4>Problem</h4>
-                                               <p>{{ item.problem }}</p>
-                                           </div>
-                                           <div class="solution-info">
-                                               <h4>Solution</h4>
-                                               <p>{{ item.solution }}</p>
-                                           </div>
-                                           <div class="impact-info">
-                                               <h4>Impact</h4>
-                                               <p>{{ item.impact }}</p>
-                                           </div>
+                                    <div class="problem-info">
+                                        <h4>Problem</h4>
+                                        <p>{{ item.problem }}</p>
+                                    </div>
+                                    <div class="solution-info">
+                                        <h4>Solution</h4>
+                                        <p>{{ item.solution }}</p>
+                                    </div>
+                                    <div class="impact-info">
+                                        <h4>Impact</h4>
+                                        <p>{{ item.impact }}</p>
+                                    </div>
                                </div>
                            </div>
                        <div class="sustainable-dev-goal">
                            <h4>Sustainable Development Goal</h4>
                            <div class="card-bottom-info">
                             <!-- QUESTIONS HOW TO MAKE THIS REUSEABLE-->
-                            <!-- src, alt -->
-                               <img class="card-bottom-icon" src="/assets/images/about/sdg-elements/peace-justice.svg" alt="peace justice bottom sustainable dev goal"/>
+                            <!-- alt -->
+                               <img class="card-bottom-icon" src="{{ item.sdg-image-src }}" alt="{{ item.sdg-image-alt }}" />
                                        <p>{{ item.sdg }}</p>
                            </div>
                        </div>

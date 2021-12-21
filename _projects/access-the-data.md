@@ -9,11 +9,6 @@ alt: 'description of the card image'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
 alt-hero: 'description of the hero image'
-problem: Policies that impact the public are increasingly advised by surveys and other means of data collection. To ensure that citizens are empowered advocates of their community, we are looking to identify the areas where data literacy education within our communities is needed most.
-solution: Hack for LA’s Access the Data team, in partnership with the Los Angeles Department of Neighborhood Empowerment, Neighborhood Councils, and the Los Angeles Mayor’s office, will be developing modules to address those areas.
-impact: Citizens will be empowered to advocate for change in their communities by using publicly available data and asking for data to be made available when it is required for advocacy.
-sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image: /assets/images/about/sdg-elements/peace-justice.svg
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -105,4 +100,13 @@ visible: true
 # project-homepage: false
 # For completed projects. Uncomment and add contact info if provided
 # completed-contact:
+# citizen engagement card data
+problem: Policies that impact the public are increasingly advised by surveys and other means of data collection. To ensure that citizens are empowered advocates of their community, we are looking to identify the areas where data literacy education within our communities is needed most.
+solution: Hack for LA’s Access the Data team, in partnership with the Los Angeles Department of Neighborhood Empowerment, Neighborhood Councils, and the Los Angeles Mayor’s office, will be developing modules to address those areas.
+impact: Citizens will be empowered to advocate for change in their communities by using publicly available data and asking for data to be made available when it is required for advocacy.
+sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
+card-image-src: /assets/images/projects/access-the-data.png
+card-image-alt: access the data project card
+sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-alt: peace justice bottom sustainable dev goal
 ---

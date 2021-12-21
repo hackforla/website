@@ -6,11 +6,6 @@ image: /assets/images/projects/engage-logo.png
 alt: 'Engage logo'
 image-hero: /assets/images/projects/engage-hero.png
 alt-hero: 'People of different ages, gender and ethnicity coming together concept illustration'
-problem: Everyone should be able to have a voice in their community’s issues, but not everyone has access or is easily able to follow an issue’s details. For example, not everyone has time to attend a city council meeting!
-solution: On Engage, all users can view, read, and comment on agenda items their city council is currently debating. This makes it much easier to participate in discussions on government policies.
-impact: Our platform will make important local conversations much more representative of the actual community, boosting the representation of the most marginalized and underserved members. Being able to hear their perspective will lead to more inclusive, considerate decision-making that will truly benefit all of us rather than just some.
-sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image: /assets/images/about/sdg-elements/peace-justice.svg
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -67,4 +62,14 @@ program-area:
 partner: Various Los Angeles Neighborhood Councils
 visible: true
 status: Active
+# citizen engagement card data
+problem: Everyone should be able to have a voice in their community’s issues, but not everyone has access or is easily able to follow an issue’s details. For example, not everyone has time to attend a city council meeting!
+solution: On Engage, all users can view, read, and comment on agenda items their city council is currently debating. This makes it much easier to participate in discussions on government policies.
+impact: Our platform will make important local conversations much more representative of the actual community, boosting the representation of the most marginalized and underserved members. Being able to hear their perspective will lead to more inclusive, considerate decision-making that will truly benefit all of us rather than just some.
+sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
+card-image-src: /assets/images/projects/engage.jpg
+card-image-alt: engage project card
+sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-alt: peace justice bottom sustainable dev goal
+
 ---
