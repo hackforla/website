@@ -1,9 +1,6 @@
 {% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
              {% for item in visible_projects %}
                    <div class="page-card card-primary page-card-lg card-body card-width program-area" data-dropdown>
-
-                            <!-- QUESTIONS HOW TO MAKE THIS REUSEABLE -->
-                            <!-- src, alt -->
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
@@ -28,8 +25,6 @@
                        <div class="sustainable-dev-goal">
                            <h4>Sustainable Development Goal</h4>
                            <div class="card-bottom-info">
-                            <!-- QUESTIONS HOW TO MAKE THIS REUSEABLE-->
-                            <!-- alt -->
                                <img class="card-bottom-icon" src="{{ item.sdg-image-src }}" alt="{{ item.sdg-image-alt }}" />
                                        <p>{{ item.sdg }}</p>
                            </div>
