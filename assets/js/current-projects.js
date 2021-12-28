@@ -19,15 +19,18 @@ document.addEventListener("DOMContentLoaded",function(){
         let filters = createFilter(sortedProjectData);
         
         // Insert Checkbox Filter Into The Dom
-        for(const [filtername,filtervalue] of Object.entries(filters)){
+        for(const [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
             let filterTitle = ""
-            if(filtername !== "programs"){
-                filterTitle = filtername
-            } else {
+            console.log(filterName)
+            if(filterName === "programs"){
                 filterTitle = "program areas"
+            } else if(filterName === 'languages') {
+                filterTitle = 'languages / technologies'
+            } else {
+                filterTitle = filterName
             }
-            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filtername,filtervalue,filterTitle) );
+            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
         }
 
         document.querySelectorAll("input[type='checkbox']").forEach(item =>{
@@ -150,7 +153,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'languages / technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
         }
@@ -189,7 +192,7 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-    console.log(filterParams)
+
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
@@ -274,8 +277,7 @@ function updateCategoryCounter(filterParams){
     }
 
     for(const [key,value] of container){
-        console.log(key, value)
-        // document.querySelector(`#${key}`).innerHTML = ` (${value})`;
+        document.querySelector(`#${key}`).innerHTML = ` (${value})`;
     }
 }
     /**
