@@ -21,11 +21,10 @@ document.addEventListener("DOMContentLoaded",function(){
         // Insert Checkbox Filter Into The Dom
         for(const [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
-            let filterTitle = ""
-            console.log(filterName)
+            let filterTitle = "";
             if(filterName === "programs"){
                 filterTitle = "program areas"
-            } else if(filterName === 'languages') {
+            } else if(filterName === 'technologies') {
                 filterTitle = 'languages / technologies'
             } else {
                 filterTitle = filterName
@@ -153,7 +152,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'languages': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
         }
@@ -228,7 +227,13 @@ function updateFilterFrequency(){
     // Push the filters present on the displayed cards on the page into an array.
     document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
         for(const [key,value] of Object.entries(card.dataset)){
-            value.split(",").map(item => onPageFilters.push(`${key}_${item}`) );
+            value.split(",").map(item => {
+                if(key==='languages') {
+                    onPageFilters.push(`technologies_${item}`)
+                } else {
+                    onPageFilters.push(`${key}_${item}`)
+                }
+            });
         }
     });
 
