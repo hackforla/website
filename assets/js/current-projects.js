@@ -189,12 +189,7 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-    if(filterParams['languages / technologies']) {
-        const searchTerm = filterParams['languages / technologies']
-        filterParams['languages'] = searchTerm;
-        filterParams['technologies'] = searchTerm;
-        delete filterParams['languages / technologies']
-    }
+    console.log(filterParams)
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
@@ -279,7 +274,8 @@ function updateCategoryCounter(filterParams){
     }
 
     for(const [key,value] of container){
-        document.querySelector(`#${key}`).innerHTML = ` (${value})`;
+        console.log(key, value)
+        // document.querySelector(`#${key}`).innerHTML = ` (${value})`;
     }
 }
     /**
