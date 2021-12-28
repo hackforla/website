@@ -1,11 +1,11 @@
 ---
 identification: '221542759'
-title: EMS Triage Tracker
-description: 'The EMS Triage Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
+title: Tracker
+description: 'The  Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
 image: /assets/images/projects/ems-triage-tracker.png
-alt: 'EMS Triage Tracker Logo'
+alt: ' Tracker Logo'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
-alt-hero: 'EMS Triage Tracker dashboard with breakdown of casualty numbers and a satellite view of the street grid with blue casualty location markers.'
+alt-hero: ' Tracker dashboard with breakdown of casualty numbers and a satellite view of the street grid with blue casualty location markers.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -59,7 +59,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/UPNR0KG00'
     picture: /assets/images/misc/no-photo.png
-links: 
+links:
   - name: Github
     url: 'https://github.com/hackforla/ems-triage-tracker'
   - name: Slack
@@ -68,11 +68,11 @@ links:
     url: 'https://drive.google.com/file/d/1WWxADa3aBKtTk47Fx1vzoMSn0-yWKp3X/view?usp=sharing'
   - name: Overview
     url: '../assets/pdfs/EMS-Triage-Tracker-One-Sheet.pdf'
-location: 
+location:
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
 tools: Figma, video production
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 status: Completed
 visible: true
