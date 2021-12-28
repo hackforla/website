@@ -1,9 +1,9 @@
 ---
 identification: '221542759'
-title: Tracker
-description: 'The  Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
+title: EMS Triage Tracker
+description: 'The EMS Triage Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
 image: /assets/images/projects/ems-triage-tracker.png
-alt: ' Tracker Logo'
+alt: ' EMS Triage Tracker Logo'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 alt-hero: ' Tracker dashboard with breakdown of casualty numbers and a satellite view of the street grid with blue casualty location markers.'
 leadership:
