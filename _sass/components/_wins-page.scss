@@ -92,6 +92,7 @@
     color: $color-white;
     font-family: arial;
     position: absolute;
+    bottom: 50px;
     z-index: 1;
 }
 [data-wins]{
@@ -104,10 +105,10 @@
     position: absolute;
     border-left: 10px solid $color-black;
     border-right: 10px solid transparent;
-    transform: rotate(45deg);
+    transform: rotate(225deg);
     border-bottom: 10px solid transparent;
-    right: 40%;
-    top: 0;
+    right: 47%;
+    bottom: 0;
 }
 
 .wins-badge-icon {
@@ -490,6 +491,7 @@
             text-align: left;
             position: relative;
             left: 0;
+            bottom: 0px;
             padding: 0;
             background: inherit;
             color: $color-black;
