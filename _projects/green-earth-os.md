@@ -42,7 +42,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/U027NG94TQB'
       github: 'https://github.com/maria-ines-montes'
-    picture: https://avatars.githubusercontent.com/maria-ines-montes                    
+    picture: https://avatars.githubusercontent.com/maria-ines-montes
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/climate-project'
@@ -52,8 +52,10 @@ links:
     url: 'https://github.com/hackforla/GreenEarthOS/blob/main/README.md'
   - name: Overview
     url: '../assets/pdfs/GreenEarthOS-One-Sheet.pdf'
-location: 
+location:
   - Remote
 visible: true
 status: Active
+program-area:
+    - Environment
 ---
