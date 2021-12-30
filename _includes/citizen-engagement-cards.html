@@ -1,0 +1,33 @@
+{% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
+             {% for item in visible_projects %}
+                   <div class="page-card card-primary page-card-lg card-body card-width program-area" data-dropdown>
+                        <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
+                           <div class="mobile-card-info-container">
+                               <div class="mobile-card-nav">
+                                   <h3>{{ item.title }}</h3>
+                                   <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                               </div>
+                               <div class="project-dropdown">
+                                    <div class="problem-info">
+                                        <h4>Problem</h4>
+                                        <p>{{ item.problem }}</p>
+                                    </div>
+                                    <div class="solution-info">
+                                        <h4>Solution</h4>
+                                        <p>{{ item.solution }}</p>
+                                    </div>
+                                    <div class="impact-info">
+                                        <h4>Impact</h4>
+                                        <p>{{ item.impact }}</p>
+                                    </div>
+                               </div>
+                           </div>
+                       <div class="sustainable-dev-goal">
+                           <h4>Sustainable Development Goal</h4>
+                           <div class="card-bottom-info">
+                               <img class="sdg-image" src="{{ item.sdg-image-src }}" alt="{{ item.sdg-image-alt }}" />
+                                       <p>{{ item.sdg }}</p>
+                           </div>
+                       </div>
+                   </div>
+            {% endfor %}
