@@ -228,11 +228,7 @@ function updateFilterFrequency(){
     document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
         for(const [key,value] of Object.entries(card.dataset)){
             value.split(",").map(item => {
-                if(key==='languages') {
-                    onPageFilters.push(`technologies_${item}`)
-                } else {
-                    onPageFilters.push(`${key}_${item}`)
-                }
+                onPageFilters.push(`${key}_${item}`)
             });
         }
     });
@@ -421,8 +417,8 @@ return `
         <li class="project-card" id="${ project.identification }"
             data-status="${project.status}"
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-            data-technologies="${project.technologies ? [... new Set(project.technologies.map(tech => tech)) ] : '' }"
-            data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang)) ] : '' }"
+            data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
+
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
