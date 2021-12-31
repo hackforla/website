@@ -29,7 +29,7 @@ leadership:
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/UVA3VD727
-      github: https://github.com/carolzjy
+      github: https://github.com/carolzjy  
     picture: https://avatars.githubusercontent.com/u/11308388
   - name: Ebele Oputa
     role: Co-lead
@@ -38,10 +38,11 @@ leadership:
       github: https://github.com/ebele-oputa
     picture: https://avatars.githubusercontent.com/u/67303685
     
-
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C010LNXH2JY/details/
-  
+  - name: Github
+    url: https://github.com/hackforla/product-management
+
 recruiting-message:
 ---
