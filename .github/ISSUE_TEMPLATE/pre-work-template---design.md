@@ -16,7 +16,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 ### Action Items
 - [ ] Add yourself to the #hfla-site-ux and #hfla-site Slack channels
 - [ ] Share your Gmail address with the team lead
-- [ ] (once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
+- [ ] (Once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
 - [ ] Confirm with the team lead, that they have added you to the meeting invites and [added you to the GitHub team](https://github.com/orgs/hackforla/teams/website-write/members) and GitHub repo
 - [ ] Confirm that team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Meet with team lead to introduce you to the project, introduce you to the GitHub board, and receive your first assignment.
