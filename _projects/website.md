@@ -19,24 +19,30 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Matthew Cacho
+  - name: Tomas Gonzalez
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
-      github: 'https://github.com/macho-catt'
-    picture: https://avatars.githubusercontent.com/macho-catt
-  - name: Kristine Eudey
+      slack: 'https://hackforla.slack.com/team/U02DF1PPQUA'
+      github: 'https://github.com/R-Tomas-Gonzalez'
+    picture: https://avatars.githubusercontent.com/R-Tomas-Gonzalez
+  - name: Saumil Dhankar
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
+      github: 'https://github.com/SAUMILDHANKAR'
+    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
+  - name: Isaac Cruz
     role: UX Design Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U0252CHL678'
-      github: 'https://github.com/kristine-eudey'
-    picture: https://avatars.githubusercontent.com/kristine-eudey
-  - name: Sihem Gourou
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U0255408P8Q'
+      github: 'https://github.com/IsaacDesigns'
+    picture: https://avatars.githubusercontent.com/IsaacDesigns
+  - name: Simone Campbell
+    role: UX Research Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U021GM545UG'
-      github: 'https://github.com/Sihemgourou'
-    picture: https://avatars.githubusercontent.com/Sihemgourou
+      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
+      github: 'https://github.com/sacamp'
+    picture: https://avatars.githubusercontent.com/sacamp
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -68,7 +74,7 @@ location:
   - Remote
 visible: true
 status: Active
-program-area: 
-  - Workforce Development 
+program-area:
+  - Workforce Development
   - Civic Tech Infrastructure
 ---
