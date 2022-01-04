@@ -33,12 +33,12 @@
         display: flex;
         flex-direction: column;
         padding: 24px 22px;
-    
+
         .mobile-card-nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
+
             h3 {
                 margin: 0;
                 color: $color-red;
@@ -47,12 +47,12 @@
                 transition: transform .5s;
             }
         }
-    
+
         .project-dropdown {
             display: none;
         }
     }
- 
+
     .sustainable-dev-goal {
         display: none;
     }
@@ -63,12 +63,12 @@
     display: flex;
     flex-direction: column;
     max-width: 1080px;
-    
+
     .organizations-info {
         display: flex;
         flex-direction: column;
         text-align: center;
-        
+
         h3 {
             color: $color-darkgrey;
         }
@@ -90,7 +90,7 @@
 
 //This is the styling when an individual card is given the "activated" class attribute from JS
 .program-area.activated {
-    
+
     .dropdown-arrow {
         transform: rotate(180deg)
     }
@@ -98,7 +98,7 @@
     .project-dropdown {
         display: block;
         margin-top: 24px;
-        
+
         h4 {
             margin-bottom: 10px;
             font-style: bold;
@@ -111,7 +111,7 @@
         display: block;
         background: $color-pink;
         padding: 24px 22px;
-        
+
         h4 {
             margin-bottom: 10px;
             font-style: bold;
@@ -125,19 +125,19 @@
             margin-top:20px;
         }
 
-        .card-bottom-icon {
+        .sdg-image {
             height: 100%;
             margin-right: 20px;
             border-radius: 10px;
         }
     }
-    
+
 }
 
 //We maintain mobile styling until we reach 480px, then we switch to this styling for tablet.
 //The styling for the card is column based until we reach desktop width
 @media #{$bp-mobile-up} {
-    
+
     .program-area {
         display: flex;
         padding: 44px;
@@ -165,7 +165,7 @@
         .project-dropdown {
             display: block !important;
             margin-top: 24px;
-            
+
             h4 {
                 margin-bottom: 10px;
                 font-style: bold;
@@ -180,7 +180,7 @@
         padding: 24px 22px;
         border-radius: 10px;
         align-self: center;
-        
+
         h4 {
             margin-bottom: 10px;
             font-style: bold;
@@ -194,7 +194,7 @@
             margin-top:20px;
         }
 
-        .card-bottom-icon {
+        .sdg-image {
             height: 100%;
             margin-right: 20px;
             border-radius: 10px;
@@ -211,7 +211,7 @@
         grid-template-columns: 1fr 1fr;
         grid-gap:2em;
         padding: 44px;
- 
+
         img {
             border-radius: 10px;
         }
@@ -219,7 +219,7 @@
             min-width: 100%;
             max-height: 308px;
         }
-        
+
         .mobile-card-info-container {
             padding: 0px;
             grid-row: 1/3;
@@ -229,7 +229,7 @@
                     display: none;
                 }
             }
-    
+
             .project-dropdown {
                 display: flex !important;
                 margin-top: 24px;
@@ -251,21 +251,21 @@
             background: $color-pink;
             border-radius: 10px;
             grid-row: 2/3;
-            
+
             h4 {
                 margin-bottom: 10px;
                 font-style: bold;
                 font-size: 20px;
                 color: $color-darkgrey;
             }
-    
+
             .card-bottom-info {
                 display: flex;
                 flex-direction: row;
                 margin-top:20px;
             }
-    
-            .card-bottom-icon {
+
+            .sdg-image {
                 height: 100%;
                 margin-right: 20px;
                 border-radius: 10px;
@@ -277,12 +277,12 @@
     .organizations {
         display:flex;
         max-width: 1080px;
-        
+
             .organizations-info {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                
+
                 h3 {
                     color: $color-darkgrey;
                 }
@@ -292,7 +292,7 @@
                     align-self: center;
                 }
             }
-        
+
             .organizations-images {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -13,4 +13,5 @@ To remove a label, the process is similar to adding a label, but you select a cu
 After the proper labels are added, the merge team will review the issue and add a "Ready for Milestone" label once it is ready for prioritization.
 
 **Additional Resources:**
+- [Wiki: How to create issues](https://github.com/hackforla/website/wiki/How-to-create-issues)
 - [Wiki: How to read and interpret labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)

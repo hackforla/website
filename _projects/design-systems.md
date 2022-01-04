@@ -11,6 +11,60 @@ alt: 'Hack for LA logo and the title of the project, Design Systems'
 image-hero: /assets/images/projects/design-systems-hero.jpg
 alt-hero: 'Design Systems hero background'
 leadership:
+  - name: Hana Stevenson
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/UJ32EQ9LG'
+      github: 'https://github.com/hanastevenson'
+    picture: 'https://avatars.githubusercontent.com/hanastevenson'
+  - name: Nasim Biglari
+    role: Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U01N30TK76W'
+      github: 'https://github.com/nasimbiglari'
+    picture: 'https://avatars.githubusercontent.com/nasimbiglari'
+  - name: Ryan Curtis
+    role: UX/UI Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U01UPE4RNHZ'
+      github: 'https://github.com/rcurtis2'
+    picture: 'https://avatars.githubusercontent.com/rcurtis2'
+  - name: Anh Hoang
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U025DUAKAPK'
+      github: 'https://github.com/ahoang94'
+    picture: 'https://avatars.githubusercontent.com/ahoang94'
+  - name: Jeanette Renema
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02HE00UDQS'
+      github: 'https://github.com/JeannyRen'
+    picture: 'https://avatars.githubusercontent.com/JeannyRen'
+  - name: Anthony Navarro-Liu
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02H764K6D8'
+      github: 'https://github.com/navarroliuanthony'
+    picture: 'https://avatars.githubusercontent.com/navarroliuanthony'
+  - name: Anna Knutson
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02HDMN9JD9'
+      github: 'https://github.com/avknutson'
+    picture: 'https://avatars.githubusercontent.com/avknutson'
+  - name: Bernard Adesina
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01FAP6GL23'
+      github: 'https://github.com/AdesinaBernard'
+    picture: 'https://avatars.githubusercontent.com/AdesinaBernard'
+  - name: Anastasia Nekrasova
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U028E4B7JSC'
+      github: 'https://github.com/anekkk'
+    picture: 'https://avatars.githubusercontent.com/anekkk'
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/design-systems'
@@ -19,7 +73,7 @@ links:
   - name: Wiki
     url: 'https://github.com/hackforla/design-systems/wiki'
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/Design-Systems-One-Sheet.pdf
+    url: '../assets/pdfs/Design-Systems-One-Sheet.pdf'
 looking:
 technologies: 
 location: 

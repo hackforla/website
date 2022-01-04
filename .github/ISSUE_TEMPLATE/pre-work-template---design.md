@@ -1,11 +1,14 @@
 ---
 name: Pre-work Template - Design
 about: New Design team members should start with by making this issue for themselves.
-title: "Pre-work Checklist: Designer: [replace brackets with your name]"
-labels: "Feature: Onboarding/Contributing.md, good first issue, role: design"
-assignees: ""
+title: 'Pre-work Checklist: Designer: [replace brackets with your name]'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, role: design'
+assignees: ''
 
 ---
+
+### Prerequisite
+We are looking forward to having you on our team.  Please make sure to attend the general Hack for LA onboarding to get the process started https://meetup.com/hackforla/events
 
 ### Overview
 As a new designer on the HfLA website UX team, fill in the following fields as you complete each onboarding item.
@@ -14,7 +17,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Add yourself to the #hfla-site-ux and #hfla-site Slack channels
 - [ ] Share your Gmail address with the team lead
 - [ ] (once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
-- [ ] Confirm with the team lead, that they have added you to the meeting invites and GitHub repo
+- [ ] Confirm with the team lead, that they have added you to the meeting invites and [added you to the GitHub team](https://github.com/orgs/hackforla/teams/website-write/members) and GitHub repo
 - [ ] Confirm that team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings: 
    - [ ] UX weekly team meeting, Thursdays 5pm PST

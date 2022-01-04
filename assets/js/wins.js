@@ -423,6 +423,7 @@ function seeMore(id){
   function makeIcon(href, parent, className, src) {
 		let icon = makeElement('a', parent, 'wins-card-icon');
 		icon.setAttribute("href", href);
+		icon.setAttribute("target", "_blank");
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
 	}

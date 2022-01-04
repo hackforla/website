@@ -1,11 +1,14 @@
 ---
 name: Pre-work Template - UX
 about: All new Research team members should start by making this issue
-title: "Pre-work Checklist: Researcher: [replace brackets with your name]"
-labels: "Feature: Onboarding/Contributing.md, good first issue, role:user research"
-assignees: ""
+title: 'Pre-work Checklist: Researcher: [replace brackets with your name]'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, role: user research'
+assignees: ''
 
 ---
+
+### Prerequisite
+We are looking forward to having you on our team. Please make sure to attend the general Hack for LA onboarding to get the process started https://meetup.com/hackforla/events
 
 ### Overview
 As a new researcher on the HfLA website UX team, fill in the following fields as you complete each onboarding item.
@@ -19,7 +22,7 @@ As a new researcher on the HfLA website UX team, fill in the following fields as
 - [ ] Attend weekly team meetings:
    - UX weekly team meeting, Thursdays 5 pm PST
    - All team meetings (UX, Development, Product), Sunday 10 am PST
-   - Research team meetings, Mondays, 11:30 am PST
+   - Research team meetings, Wednesdays, 2:00 pm PST
 - [ ] Review the  [prioritized backlog](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+user+research%22) to see what Research Issues are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
 - [ ] Meet with team lead to receive first assignment
 - [ ] Once you accept an assignment (issue), please add the following in a comment
