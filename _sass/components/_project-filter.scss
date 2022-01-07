@@ -192,12 +192,7 @@ a.clear-filter-tags {
 // sizing for technologies from an ipad and up
 @media (min-width: 1024px) {
   #technologies {
-    display: grid;
-    grid-auto-flow: column; // flows the data from top to bottom rather than left to right
-    grid-template-rows: repeat(10, 1fr); // ensures the list is 10 rows
-    list-style: none;
     width: 768px;
-    left: -18em;
   }
 }
 
