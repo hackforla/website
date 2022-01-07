@@ -63,16 +63,6 @@ ul.filter-list li ul {
   cursor: default;
 }
 
-// technologies dropdown only
-// #technologies {
-//   display: grid;
-//   grid-auto-flow: column; // flows the data from top to bottom rather than left to right
-//   grid-template-rows: repeat(10, 1fr); // ensures the list is 10 rows
-//   list-style: none;
-//   width: 768px;
-//   left: -18em;
-// }
-
 ul.filter-list li:hover > ul,
 ul.filter-list li:focus-within > ul,
 ul.filter-list li ul:hover,
