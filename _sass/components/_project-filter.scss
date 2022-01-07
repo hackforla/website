@@ -7,10 +7,9 @@ a.filter-item {
 //filter container
 ul.filter-list {
   background: $color-pink;
-  display: grid;
-  list-style: none;
   padding-left: 0;
-  grid-auto-flow: column;
+  list-style: none;
+  display: grid;
   grid-column-gap: 20px;
   // grid-template-columns: repeat(4, 1fr);
   // ^ See issue #1997 for more info on why this is commented out and changed to 3
@@ -62,6 +61,15 @@ ul.filter-list li ul {
   left: 0;
   top: 100%;
   cursor: default;
+}
+
+// technologies dropdown only
+#technologies {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(10, 1fr);
+  list-style: none;
+  width: 768px;
 }
 
 ul.filter-list li:hover > ul,
