@@ -16,9 +16,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
 ### Action Items
 - [ ] Add the "role: front end" label to this issue and remove the "role missing" label
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive and Figma
+- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
 - [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
+- [ ] Signup for a [Figma](https://Figma.com) account
 - [ ] Attend weekly team meetings: 
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7pm PST
   - [ ] (Optional) Office Hours, Thursdays 7pm PST
