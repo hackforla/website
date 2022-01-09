@@ -16,7 +16,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 ### Action Items
 - [ ] Add the "role: front end" label to this issue and remove the "role missing" label
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive and Figma
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
 - [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
 - [ ] Attend weekly team meetings: 
@@ -40,6 +40,7 @@ Provide Update
 3. Availability
 4. ETA
 ```
+- [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue
 
 ### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
