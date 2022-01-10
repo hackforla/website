@@ -28,9 +28,10 @@ document.addEventListener("DOMContentLoaded",function(){
                 filterTitle = 'languages / technologies'
                 const lowercaseValues = filterValue.map(value => value.toLowerCase())
                 lowercaseValues.sort()
+                const originaljQueryIndex = filterValue.findIndex(value => value ==='jQuery');
+                filterValue.splice(originaljQueryIndex,1);
                 const sortedjQueryIndex = lowercaseValues.findIndex(value => value === 'jquery') 
                 filterValue.splice(sortedjQueryIndex, 0, 'jQuery')
-                filterValue.pop()
             } else {
                 filterTitle = "program areas"
             }
