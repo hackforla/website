@@ -26,12 +26,13 @@ document.addEventListener("DOMContentLoaded",function(){
                 filterTitle = "program areas"
             } else if(filterName === 'technologies') {
                 filterTitle = 'languages / technologies'
-                const lowercaseValues = filterValue.map(value => value.toLowerCase())
-                lowercaseValues.sort()
-                const originaljQueryIndex = filterValue.findIndex(value => value ==='jQuery');
-                filterValue.splice(originaljQueryIndex,1);
-                const sortedjQueryIndex = lowercaseValues.findIndex(value => value === 'jquery') 
-                filterValue.splice(sortedjQueryIndex, 0, 'jQuery')
+                filterValue.sort((a,b)=> {
+                    a = a.toLowerCase()
+                    b = b.toLowerCase()
+                    if(a < b) return -1;
+                    if(a > b) return 1;
+                    return 0;
+                })
             } else {
                 filterTitle = "program areas"
             }
