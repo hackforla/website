@@ -168,7 +168,7 @@ a.clear-filter-tags {
 }
 
 // sizing for technologies dropdown up to an ipad
-@media (min-width: 768px) {
+@media #{$bp-tablet-up} {
   #technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
@@ -180,7 +180,7 @@ a.clear-filter-tags {
 }
 
 // sizing for technologies dropdown from an ipad and up
-@media (min-width: 1024px) {
+@media #{$bp-desktop-up} {
   #technologies {
     width: 768px;
   }
