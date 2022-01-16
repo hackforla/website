@@ -164,18 +164,28 @@ a.clear-filter-tags {
   ul.filter-list li ul {
     width: 105%;
     padding: 15px;
+    overflow: auto;
+  }
+}
+
+@media #{$bp-below-mobile} {
+  #technologies {
+    height: 370px;
+    overflow: auto;
   }
 }
 
 // sizing for technologies dropdown up to an ipad
-@media #{$bp-tablet-up} {
+@media #{$bp-mobile-up} {
   #technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
-    grid-template-rows: repeat(10, 1fr); // ensures the list is 10 rows
+    grid-template-rows: repeat(16, 1fr); // ensures the list is 16 rows
     list-style: none;
-    width: 748px;
     left: -18em;
+    width: 748px;
+    height: 370px;
+    overflow: auto;
   }
 }
 
