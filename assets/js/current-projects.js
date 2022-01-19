@@ -19,11 +19,18 @@ document.addEventListener("DOMContentLoaded",function(){
         let filters = createFilter(sortedProjectData);
         
         // Insert Checkbox Filter Into The Dom
-        for(const [filtername,filtervalue] of Object.entries(filters)){
+        for(let [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
-            let filterTitle = ""
-            if(filtername !== "programs"){
-                filterTitle = filtername
+            let filterTitle = "";
+            if(filterName === "programs"){
+                filterTitle = "program areas"
+            } else if(filterName === 'technologies') {
+                filterTitle = 'languages / technologies'
+                const lowercaseValues = filterValue.map(value => value.toLowerCase())
+                lowercaseValues.sort()
+                const sortedjQueryIndex = lowercaseValues.findIndex(value => value === 'jquery') 
+                filterValue.splice(sortedjQueryIndex, 0, 'jQuery')
+                filterValue.pop()
             } else {
                 filterTitle = "program areas"
             }
