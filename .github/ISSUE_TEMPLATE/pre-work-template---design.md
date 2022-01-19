@@ -14,16 +14,18 @@ We are looking forward to having you on our team.  Please make sure to attend th
 As a new designer on the HfLA website UX team, fill in the following fields as you complete each onboarding item.
 
 ### Action Items
+- [ ] Meet with team lead to introduce you to the project, introduce you to the GitHub board, and receive your first assignment.
 - [ ] Add yourself to the #hfla-site-ux and #hfla-site Slack channels
 - [ ] Share your Gmail address with the team lead
-- [ ] (once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
+- [ ] (Once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
 - [ ] Confirm with the team lead, that they have added you to the meeting invites and [added you to the GitHub team](https://github.com/orgs/hackforla/teams/website-write/members) and GitHub repo
 - [ ] Confirm that team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings: 
    - [ ] UX weekly team meeting, Thursdays 5pm PST
    - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
+- [ ] Review [Design_Short Term Goals, Plan, and Tasks](https://docs.google.com/document/d/1FxwgdnWBbbQ8Pi3tspnukZTWwXtqnRXfNkNhVMEloY0/edit)
+- [ ] Review the [Start Here](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=8561%3A72465) and [Design System](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3) pages in Figma
 - [ ] Review the prioritized Backlog to see what Design Issues are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
-- [ ] Meet with team lead to introduce you to the project, introduce you to the GitHub board, and receive your first assignment.
 - [ ] Once you accept an assignment (issue), please add the following in a comment
 ```
 Availability for this week:

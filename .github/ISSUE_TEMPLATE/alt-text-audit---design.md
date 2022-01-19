@@ -18,6 +18,7 @@ Developers identified that some alt texts in the [NAME OF PAGE] page should be r
 - [ ] With the copied tab replace [Page Name] with the page you are reviewing and [Status] with "Audit in Progress". Don't forget to remove brackets "[ ]"
 - [ ] Add a link of the page your working on at the bottom in the Resources/Instructions section of this issue where it says "Google sheet Tab for your page".
 - [ ] For each image on the page, identify if the alt text needs to be changed or not using the recourses below and fill out the google sheet. To locate the alt text use the Google Chrome browser, right click "inspect" to view pages code.
+#### You don't have to fill out these columns: "Location in code", "Issue created Y/N", "Issue Link (if created)". 
 - [ ] After completing auditing each image of the page change your google sheet tabs [Status] to Audit Complete.
 - [ ] Review your completed work with Design Lead or another member of the team
 - [ ] Mark issue as done
@@ -26,6 +27,7 @@ Development
 - [ ]  Create issues for that particular alt text should be created (preferably labelled good first issue) for new developers to fix
 
 ### Resources/Instructions
+For examples see the tabs of other pages completed alt text audits
 [NAME of PAGE on the hackforla.org site](url)
 [WCAG section on alt text](https://www.w3.org/WAI/WCAG21/Techniques/html/H37.html)
 [FAE rule 4: alt text should be less than 100 characters](https://fae.disability.illinois.edu/rulesets/IMAGE_4_EN/)
