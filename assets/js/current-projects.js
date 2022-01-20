@@ -34,10 +34,6 @@ document.addEventListener("DOMContentLoaded",function(){
                     return 0;
                 })
             } else {
-                filterTitle = "program areas"
-            } else if(filterName === 'technologies') {
-                filterTitle = 'languages / technologies'
-            } else {
                 filterTitle = filterName
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
