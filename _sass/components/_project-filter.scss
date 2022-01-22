@@ -167,31 +167,32 @@ a.clear-filter-tags {
     overflow: auto;
   }
 }
-
-@media #{$bp-below-mobile} {
+// tablet down
+@media #{$bp-below-tablet} {
   #technologies {
     height: 370px;
     overflow: auto;
   }
 }
 
-// sizing for technologies dropdown up to an ipad
-@media #{$bp-mobile-up} {
+// tablet up
+@media #{$bp-tablet-up} {
   #technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
     grid-template-rows: repeat(16, 1fr); // ensures the list is 16 rows
     list-style: none;
-    left: -18em;
-    width: 748px;
+    left: -17em;
+    width: 718px;
     height: 380px;
     overflow: auto;
   }
 }
 
-// sizing for technologies dropdown from an ipad and up
-@media #{$bp-desktop-up} {
+// iPad Air to Desktop
+@media (min-width: 820px) {
   #technologies {
+    left: -18em;
     width: 768px;
   }
 }
