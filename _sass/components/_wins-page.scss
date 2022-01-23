@@ -197,12 +197,20 @@
 }
 
 //card styling
+.project-card {
+    background: $color-white;
+    border: 0 solid rgba($color-black, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+    margin-bottom: 24px;
+}
+
 .wins-card{
     padding: 45px;
     display: flex;
     position: relative;
     flex-direction: column;
-    overflow: visible !important;
+    overflow: visible ;
 }
 .wins-card-top{
     display: flex;
