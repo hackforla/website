@@ -202,7 +202,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    overflow: visible;
+    overflow: visible !important;
 }
 .wins-card-top{
     display: flex;
