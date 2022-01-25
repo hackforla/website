@@ -190,7 +190,7 @@ a.clear-filter-tags {
 }
 
 // iPad Air to Desktop
-@media #{$bp-ipadair-up} {
+@media #{$bp-desktop-up} {
   #technologies {
     left: -18em;
     width: 768px;

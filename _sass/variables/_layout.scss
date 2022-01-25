@@ -5,7 +5,6 @@
  */
 $screen-desktop-large: 1632px;
 $screen-desktop: 960px;
-$screen-ipadair: 820px;
 $screen-tablet: 768px;
 $screen-mobile: 480px;
 
@@ -25,10 +24,6 @@ $bp-below-desktop-large: '(max-width: #{$screen-desktop-large - 1})';
 // Desktop
 $bp-desktop-up: '(min-width: #{$screen-desktop})';
 $bp-below-desktop: '(max-width: #{$screen-desktop - 1})';
-
-// Ipad Air
-$bp-ipadair-up: '(min-width: #{$screen-ipadair - 1})';
-$bp-below-ipadair: '(max-width: #{$screen-ipadair - 1})';
 
 // Tablets
 $bp-tablet-up: '(min-width: #{$screen-tablet})';
