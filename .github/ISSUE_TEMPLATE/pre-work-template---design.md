@@ -19,6 +19,8 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Share your Gmail address with the team lead
 - [ ] (Once added to the drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0). 
 - [ ] Confirm with the team lead, that they have added you to the meeting invites and [added you to the GitHub team](https://github.com/orgs/hackforla/teams/website-write/members) and GitHub repo
+- [ ] Self Assign this issue (gear in right side panel)
+- [ ] Add issue to Projects: Project Board (gear in right side panel)
 - [ ] Confirm that team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings: 
    - [ ] UX weekly team meeting, Thursdays 5pm PST

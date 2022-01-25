@@ -19,6 +19,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
 - [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
+- [ ] Self Assign this issue (gear in right side panel)
+- [ ] Add issue to Projects: Project Board (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
 - [ ] Attend weekly team meetings: 
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7pm PST
