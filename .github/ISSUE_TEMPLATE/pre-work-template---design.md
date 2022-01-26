@@ -28,18 +28,13 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Review [Design_Short Term Goals, Plan, and Tasks](https://docs.google.com/document/d/1FxwgdnWBbbQ8Pi3tspnukZTWwXtqnRXfNkNhVMEloY0/edit)
 - [ ] Review the [Start Here](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=8561%3A72465) and [Design System](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3) pages in Figma
 - [ ] Review the prioritized Backlog to see what Design Issues are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
-- [ ] Once you accept an assignment (issue), please add the following in that new issue's comment section
+- [ ] Once you accept an assignment (issue), please add the following in that new issue's comment section every week.
 ```
 Availability for this week:
-My estimated ETA for completing this issue:
-```
-- [ ] Weekly, please also provide an update on the issue
-```
-provide update
 1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
-Blockers: "Difficulties or errors encountered."
-Availability: "How much time will you have this week to work on this issue?"
-ETA: "When do you expect this issue to be completed?"
+2. Blockers: "Difficulties or errors encountered."
+3. Availability: "How much time will you have this week to work on this issue?"
+4. ETA: "When do you expect this issue to be completed?"
 Pictures: "Add any pictures of the visual changes made to the site so far."
 ```
 ### Resources/Instructions
