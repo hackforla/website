@@ -22,7 +22,7 @@
         "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," %}
         {% for day in days-of-week %}
         <div id="{{day}}">
-            <h5 class="day-header-1 title7">{{day}}</h5>
+            <h4 class="day-header-1 title7">{{day}}</h4>
             <ul id="{{day}}-List" class="schedule-list-1"></ul>
         </div>
         {% endfor %}
