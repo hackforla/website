@@ -10,64 +10,64 @@ leadership:
   - name: Syed Danish Imran
     role: Product Manager
     links:
-      slack: U020Z27JB1S
+      slack: https://hackforla.slack.com/team/U020Z27JB1S
       github: https://github.com/sdimran
     picture: https://avatars.githubusercontent.com/sdimran
   - name: Sharad Gaurav
     role: Product Manager
     links:
-      slack: U01RETBMLKS
+      slack: https://hackforla.slack.com/team/U01RETBMLKS
       github: https://github.com/SharadGaurav7
     picture: https://avatars.githubusercontent.com/SharadGaurav7
   - name: Ava Li
     role: Full Stack Developer
     links:
-      slack: U01B73XGCKV
+      slack: https://hackforla.slack.com/team/U01B73XGCKV
       github: https://github.com/Aveline-art
     picture: https://avatars.githubusercontent.com/Aveline-art
   - name: Sarah Williams
     role: Software Developer
     links:
-      slack: U01S1S75NLW
+      slack: https://hackforla.slack.com/team/U01S1S75NLW
       github: https://github.com/arghmatey
     picture: https://avatars.githubusercontent.com/arghmatey
   - name: Jen Chung
     role: UX/UI Designer
     links:
-      slack: U02A6H5PVAA
+      slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Grace Lin
     role: UX/UI Designer
     links:
-      slack: U02AE5H5BJ9
+      slack: https://hackforla.slack.com/team/U02AE5H5BJ9
       github: https://github.com/graceerya
     picture: https://avatars.githubusercontent.com/graceerya
   - name: Patty Costello
     role: UX Researcher
     links:
-      slack: U01UTFC17L4
+      slack: https://hackforla.slack.com/team/U01UTFC17L4
       github: https://github.com/patula006
     picture: https://avatars.githubusercontent.com/patula006
   - name: Stephanie G. Stahlberg
     role: UX Researcher
     links:
-      slack: U02H06YBR7F
+      slack: https://hackforla.slack.com/team/U02H06YBR7F
       github: https://github.com/stephaniestahlberg
     picture: https://avatars.githubusercontent.com/stephaniestahlberg
   - name: Helene Dendor
     role: UX Researcher
     links:
-      slack: U02C41H7919
+      slack: https://hackforla.slack.com/team/U02C41H7919
       github: https://github.com/dendorable
     picture: https://avatars.githubusercontent.com/dendorable
 links: 
-  - name: Github
+  - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
     url: https://hackforla.slack.com/messages/C02509WHFQQ
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/Civic-Tech-Jobs-One-Sheet.pdf
+    url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
 looking: 
 technologies: 
   - Django
