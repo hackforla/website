@@ -488,6 +488,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin: 30px 0 10px 0;
+  color: $color-black; 
   padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;
