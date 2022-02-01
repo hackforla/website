@@ -32,9 +32,7 @@ _insert url of their card here before sending - their cards can be found in this
          - [ ] Test Site
          - [ ] Demo Site
          - [ ] Site
-      - [ ] looking
       - [ ] technologies
-      - [ ] location
       - [ ] partner
       - [ ] tools
       - [ ] status
