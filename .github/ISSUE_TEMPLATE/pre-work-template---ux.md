@@ -18,6 +18,8 @@ As a new researcher on the HfLA website UX team, fill in the following fields as
 - [ ] Share your Gmail address with the research team lead
 - [ ]  (once added to the drive) Add yourself to the team roster.
 - [ ]  Confirm with the research team lead that they have added you to the meeting invites and Github repo
+- [ ] Self Assign this issue (gear in right side panel)
+- [ ] Add this issue to Projects: Project Board (gear in right side panel)
 - [ ]  Confirm that the research team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings:
    - UX weekly team meeting, Thursdays 5 pm PST
