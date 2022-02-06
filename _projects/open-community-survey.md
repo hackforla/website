@@ -37,7 +37,7 @@ leadership:
       slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
       github: 'https://github.com/kvnw2020'
     picture: https://avatars.githubusercontent.com/kvnw2020
-  - name: Sonu 
+  - name: Sonu
     role: Data Analyst
     links:
       slack: 'https://hackforla.slack.com/team/U027JBTAGSX'
@@ -87,7 +87,16 @@ location:
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
 tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
 visible: true
-program-area: 
-  - Vote / Representation
+program-area:
+  - Citizen Engagement
 status: Active
+# citizen engagement card data
+problem: Most Neighborhood Councils do not have access or resources to hire technical experts necessary to create a citywide survey so that they can use the data to create inclusive websites targeted towards the needs of their specific communities.
+solution: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils to understand how constituents are interacting with, and what they need from, their websites.
+impact: Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
+card-image-src: /assets/images/projects/open-community-survey.jpg
+card-image-alt: open community project card
+sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-alt: peace justice bottom sustainable dev goal
 ---

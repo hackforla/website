@@ -19,15 +19,24 @@ document.addEventListener("DOMContentLoaded",function(){
         let filters = createFilter(sortedProjectData);
         
         // Insert Checkbox Filter Into The Dom
-        for(const [filtername,filtervalue] of Object.entries(filters)){
+        for(let [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
-            let filterTitle = ""
-            if(filtername !== "programs"){
-                filterTitle = filtername
-            } else {
+            let filterTitle = "";
+            if(filterName === "programs"){
                 filterTitle = "program areas"
+            } else if(filterName === 'technologies') {
+                filterTitle = 'languages / technologies'
+                filterValue.sort((a,b)=> {
+                    a = a.toLowerCase()
+                    b = b.toLowerCase()
+                    if(a < b) return -1;
+                    if(a > b) return 1;
+                    return 0;
+                })
+            } else {
+                filterTitle = filterName
             }
-            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filtername,filtervalue,filterTitle) );
+            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
         }
 
         document.querySelectorAll("input[type='checkbox']").forEach(item =>{
@@ -50,7 +59,23 @@ document.addEventListener("DOMContentLoaded",function(){
 */
 function retrieveProjectDataFromCollection(){
     // { "project": {"id":"/projects/311-data","relative_path":"_projects/311-data.md","excerpt"
+    {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
+    // const scriptTag = document.getElementById("projectScript");
+    // const projectId = scriptTag.getAttribute("projectId");
+    // Search for correct project
+    let projectLanguagesArr = [];
+    projects.forEach(project=> {
+        if(project.languages){
+            const projectLanguages = {
+                id: project.id,
+                languages: project.languages
+            };
+            projectLanguagesArr.push(projectLanguages);
+        }
+    })
+
     let projectData = [{%- for project in visible_projects -%}
             {
                 "project": {
@@ -84,10 +109,19 @@ function retrieveProjectDataFromCollection(){
                             {%- if project.program-area -%},
                             "programAreas": {{ project.program-area | jsonify }}
                             {%- endif -%}
+                            {%- if project.languages -%},
+                            "languages": {{ project.languages }}
+                            {%- endif -%}
                             }
             }{%- unless forloop.last -%}, {% endunless %}
     {%- endfor -%}]
-
+    projectData.forEach((data,i) => {
+        const { project } = data;
+        const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
+        if(matchingProject) {
+            project.languages = matchingProject.languages
+        }
+    })
     return projectData;
 }
 
@@ -125,7 +159,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => item.project.technologies ? item.project.technologies.map(tech => tech) : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
         }
@@ -164,7 +198,7 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-  
+
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
@@ -200,7 +234,9 @@ function updateFilterFrequency(){
     // Push the filters present on the displayed cards on the page into an array.
     document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
         for(const [key,value] of Object.entries(card.dataset)){
-            value.split(",").map(item => onPageFilters.push(`${key}_${item}`) );
+            value.split(",").map(item => {
+                onPageFilters.push(`${key}_${item}`)
+            });
         }
     });
 
@@ -388,7 +424,8 @@ return `
         <li class="project-card" id="${ project.identification }"
             data-status="${project.status}"
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-            data-technologies="${project.technologies ? [... new Set(project.technologies.map(tech => tech)) ] : '' }"
+            data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
+
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
@@ -431,6 +468,15 @@ return `
             // </div>
             // `:""
             // ^ See issue #1997 for more info on why this is commented out
+            }
+
+            ${project.languages?.length > 0 ? 
+            `
+            <div class="project-languages">
+            <strong>Languages: </strong>
+            ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
+            </div>
+            `: ""
             }
 
             ${project.technologies ?
