@@ -35,6 +35,7 @@
 }
 
 .project-card.wins-card{
+    overflow: visible;
     @media #{$bp-below-desktop} {
         margin-bottom: 24px;
     }
@@ -201,7 +202,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    overflow: visible !important;
+    overflow: visible;
 }
 .wins-card-top{
     display: flex;
