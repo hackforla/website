@@ -464,7 +464,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 
 ### **2.7 Working on an issue**
 
-- If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki](https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+- If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git gui wiki](https://github.com/hackforla/website/wiki/How-to-Use-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
 
 **Note:** Alternatively you can follow the instructions below to stage changes through the terminal. We will be using [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093) as an example issue we will be following.
 
