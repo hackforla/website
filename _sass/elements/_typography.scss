@@ -277,3 +277,26 @@ map-get($font-family, body);
     line-height: map-get($line-height-small, desktop);
   }
 }
+
+
+%paragraph-class {
+  line-height: $line-height-paragraph-class;
+  font-family: $font-family-body;
+  font-weight: map-get($font-weight, normal);
+  color: $color-black;
+}
+
+.paragraph1 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph1;
+}
+
+.paragraph2 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph2;
+}
+
+.paragraph3 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph3;
+}
