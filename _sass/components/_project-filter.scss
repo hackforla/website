@@ -7,9 +7,10 @@ a.filter-item {
 //filter container
 ul.filter-list {
   background: $color-pink;
-  padding-left: 0;
-  list-style: none;
   display: grid;
+  list-style: none;
+  padding-left: 0;
+  grid-auto-flow: column;
   grid-column-gap: 20px;
   // grid-template-columns: repeat(4, 1fr);
   // ^ See issue #1997 for more info on why this is commented out and changed to 3
@@ -164,36 +165,6 @@ a.clear-filter-tags {
   ul.filter-list li ul {
     width: 105%;
     padding: 15px;
-    overflow: auto;
-  }
-}
-// tablet down
-@media #{$bp-below-tablet} {
-  #technologies {
-    height: 370px;
-    overflow: auto;
-  }
-}
-
-// tablet up
-@media #{$bp-tablet-up} {
-  #technologies {
-    display: grid;
-    grid-auto-flow: column; // flows the data from top to bottom rather than left to right
-    grid-template-rows: repeat(16, 1fr); // ensures the list is 16 rows
-    list-style: none;
-    left: -17em;
-    width: 718px;
-    height: 380px;
-    overflow: auto;
-  }
-}
-
-// iPad Air to Desktop
-@media #{$bp-desktop-up} {
-  #technologies {
-    left: -18em;
-    width: 768px;
   }
 }
 
