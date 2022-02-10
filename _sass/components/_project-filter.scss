@@ -159,6 +159,7 @@ a.clear-filter-tags {
   color: $color-red;
 }
 
+// Below tablet size, including mobile size
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   ul.filter-list li ul {
@@ -166,18 +167,16 @@ a.clear-filter-tags {
     padding: 15px;
     overflow: auto;
   }
-}
-// tablet down
-@media #{$bp-below-tablet} {
-  #technologies {
+
+  ul.dropdown#technologies {
     height: 370px;
     overflow: auto;
   }
 }
 
-// tablet up
+// Tablet size and up
 @media #{$bp-tablet-up} {
-  #technologies {
+  ul.dropdown#technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
     grid-template-rows: repeat(16, 1fr); // ensures the list is 16 rows
@@ -189,9 +188,9 @@ a.clear-filter-tags {
   }
 }
 
-// iPad Air to Desktop
+// Desktop size and up
 @media #{$bp-desktop-up} {
-  #technologies {
+  ul.dropdown#technologies {
     left: -18em;
     width: 768px;
   }
