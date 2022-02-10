@@ -161,13 +161,14 @@ a.clear-filter-tags {
 
 // Below tablet size, including mobile size
 @media #{$bp-below-tablet} {
-  //resize dropdown on tablet and mobile view
+  // Resize dropdown
   ul.filter-list li ul {
     width: 105%;
     padding: 15px;
     overflow: auto;
   }
 
+  // Adds scrollbar and limits height
   ul.dropdown#technologies {
     height: 370px;
     overflow: auto;
@@ -176,6 +177,7 @@ a.clear-filter-tags {
 
 // Tablet size and up
 @media #{$bp-tablet-up} {
+  // Adds scrollbar and makes dropdown four columns
   ul.dropdown#technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
@@ -190,6 +192,7 @@ a.clear-filter-tags {
 
 // Desktop size and up
 @media #{$bp-desktop-up} {
+  // Adjusts placement of dropdown and increases dropdown width
   ul.dropdown#technologies {
     left: -18em;
     width: 768px;
