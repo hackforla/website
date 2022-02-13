@@ -13,18 +13,18 @@ assignees: ''
 2. Please make sure you have read our **[Hack for LA Contributing Guide](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)** before you claim/start working on an issue.
 
 ### Overview
-We want to edit the content and remove type texts from the [INSERT FILE NAME HERE].yml file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file.
+We want to edit the content field and remove the type field from the [INSERT FILE NAME HERE].yml file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file.
 
 
 ### Action Items
-- [ ] Edit line [ADD LINE NUMBER WHICH HAS CONTENT] for the content text within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
+- [ ] Edit line [ADD LINE NUMBER WHICH HAS CONTENT] for the content field within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
 
 From
 ` content: [INSERT THE CURRENT TEXT ON THE FILE HERE]`
 To
 ` content-type: image`
 
-- [ ] Remove line [ADD LINE NUMBER WHICH HAS TYPE] for the type text within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
+- [ ] Remove line [ADD LINE NUMBER WHICH HAS TYPE] for the type field within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
 
 ` type: [INSERT THE CURRENT TEXT ON THE FILE HERE]`
 
