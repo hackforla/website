@@ -13,7 +13,7 @@ assignees: ''
 2. Please make sure you have read our **[Hack for LA Contributing Guide](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)** before you claim/start working on an issue.
 
 ### Overview
-We want to edit the content field and remove the type field from the [INSERT FILE NAME HERE].yml file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file.
+We want to edit the content field and remove the type field from the [INSERT FILE NAME HERE].yml file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file. This issue is tracked in the epic #2775.
 
 
 ### Action Items
