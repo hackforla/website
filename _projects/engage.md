@@ -43,7 +43,7 @@ links:
   # - name: Wiki
   #   url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Engage-Product-One-Sheet.pdf.pdf'
+    url: '../assets/pdfs/Engage-Product-One-Sheet.pdf'
 looking:
   - category: UI/UX
     skill: UX Program Designer

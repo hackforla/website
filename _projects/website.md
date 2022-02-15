@@ -19,18 +19,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Tomas Gonzalez
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U02DF1PPQUA'
-      github: 'https://github.com/R-Tomas-Gonzalez'
-    picture: https://avatars.githubusercontent.com/R-Tomas-Gonzalez
   - name: Saumil Dhankar
     role: Technical Lead
     links:
       slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
       github: 'https://github.com/SAUMILDHANKAR'
     picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
+  - name: Jessica Cheng
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
+      github: 'https://github.com/JessicaLucindaCheng'
+    picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
   - name: Isaac Cruz
     role: UX Design Lead
     links:
@@ -43,6 +43,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
       github: 'https://github.com/sacamp'
     picture: https://avatars.githubusercontent.com/sacamp
+  - name: Providence Onyenekwe
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
+      github: 'https://github.com/Providence-o'
+    picture: https://avatars.githubusercontent.com/Providence-o    
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -67,6 +73,9 @@ technologies:
   - GitHub Pages
   - Jekyll
   - Docker
+  - Google Apps Script
+  - GitHub Actions
+  - VRMS API
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
   # - Santa Monica
