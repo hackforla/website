@@ -168,7 +168,7 @@ a.clear-filter-tags {
     overflow: auto;
   }
 
-  // Adds scrollbar and limits height
+  // Adds scrollbar and limits height for Languages/Technologies dropdown
   ul.dropdown#technologies {
     height: 370px;
     overflow: auto;
@@ -177,11 +177,11 @@ a.clear-filter-tags {
 
 // Tablet size and up
 @media #{$bp-tablet-up} {
-  // Adds scrollbar and makes dropdown four columns
+  // Adds scrollbar and makes Languages/Technologies dropdown three columns
   ul.dropdown#technologies {
     display: grid;
     grid-auto-flow: column; // flows the data from top to bottom rather than left to right
-    grid-template-rows: repeat(16, 1fr); // ensures the list is 16 rows
+    grid-template-rows: repeat(23, 1fr); // ensures the list is 23 rows
     list-style: none;
     left: -17em;
     width: 718px;
@@ -192,7 +192,7 @@ a.clear-filter-tags {
 
 // Desktop size and up
 @media #{$bp-desktop-up} {
-  // Adjusts placement of dropdown and increases dropdown width
+  // Adjusts placement of Languages/Technologies dropdown and adjusts dropdown width
   ul.dropdown#technologies {
     left: -18em;
     width: 768px;
