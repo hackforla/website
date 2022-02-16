@@ -51,7 +51,6 @@ links:
   - name: Readme
     url: 'https://github.com/100Automations/Website/blob/gh-pages/README.md'
   - name: Overview
-    # url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/100-Automations-Project-One-Sheet.pdf'
     url: '../assets/pdfs/100-Automations-Project-One-Sheet.pdf'
 looking:
   - category: Development
