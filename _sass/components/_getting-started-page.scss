@@ -8,7 +8,7 @@
   padding-top: 20px;
   font-family: "Roboto"sans-serif;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     font-size: 18px;
     text-align: left;
   }
@@ -24,7 +24,7 @@
   margin: 12px auto;
   font-family: "Roboto"sans-serif;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     font-size: 18px;
     text-align: left;
     padding: 0px;
@@ -69,7 +69,7 @@
   font-weight: 500;
   margin-bottom: 0px;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     padding: 0 .5em 0 .5em;
     font-size: 1.25rem;
     text-align: center;
@@ -106,7 +106,7 @@
   margin-left: 2em;
   margin-top: -.2em;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     display: none;
   }
 }
@@ -120,7 +120,7 @@
   visibility: hidden;
   max-height: 0;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     visibility: visible;
     color: #fff !important;
     font-size: 15px;
@@ -146,7 +146,7 @@
 }
 
 .card-intro {
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     padding: 0 1em 0 1em;
   }
 
@@ -161,7 +161,7 @@
   padding-top: 2.5em;
   padding-left: 1.3em;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     padding-top: 1.5em;
     max-width: 90%
   }
@@ -174,7 +174,7 @@
  .left {
    width: 32%;
 
-   @media #{$bp-below-mobile} {
+   @media #{$bp-below-tablet} {
      width: 100%;
      text-align: left;
    }
@@ -184,7 +184,7 @@
    width: 68%;
    padding-left: 60px;
 
-   @media #{$bp-below-mobile} {
+   @media #{$bp-below-tablet} {
      width: 100%;
      padding-left: 20px;
    }
@@ -201,7 +201,7 @@
 .step-img {
   transform: scale(.6);
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     width: 60%;
     display: block;
     margin: auto;
@@ -212,7 +212,7 @@
   transform: scale(.7);
   padding-top: 1em;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     width: 60%;
     display: block;
     margin: auto;
@@ -314,7 +314,7 @@
   display: flex;
   justify-content: space-evenly;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     // flex-direction: column;
     // text-align: -webkit-center;
     display: none;
@@ -327,7 +327,7 @@
   color: #000000;
   font-family: "Roboto"sans-serif;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     justify-content: center;
   }
 }
@@ -336,7 +336,7 @@
   padding: 40px 80px;
 
   // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     padding: 32px 16px;
   }
 }
@@ -373,7 +373,7 @@
   font-weight: 700;
   margin-left: 2px;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     font-size: 1.25rem;
     text-align: center;
     font-weight: bold;
@@ -388,7 +388,7 @@
   margin-left: 26px;
   text-align: center;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     flex-direction: column;
     flex-wrap: wrap;
     padding: 8px 5px;
@@ -401,7 +401,7 @@
   margin: 0px 30px;
   width: 50%;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     flex-direction: column;
     width: auto;
   }
@@ -416,7 +416,7 @@
   padding-right: 5px;
   text-align: center;
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -438,7 +438,7 @@
   width: 50%;
 
 
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     flex-direction: column;
     width: auto;
   }
