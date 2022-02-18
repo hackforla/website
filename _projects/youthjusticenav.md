@@ -39,7 +39,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/YouthJusticeNav/blob/main/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Youth-Justice-Nav-Product-One-Sheet.pdf'
+    url: '/assets/pdfs/Youth-Justice-Nav-Product-One-Sheet.pdf'
 looking:
   - category: Content
     skill: Content Writer
