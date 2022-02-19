@@ -17,16 +17,20 @@ We want to edit the content field and remove the type field from the [INSERT FIL
 
 
 ### Action Items
-- [ ] Edit line [ADD LINE NUMBER WHICH HAS CONTENT] for the content field within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
+For the file `_data/internal/credits/[INSERT FILE NAME HERE].yml`, do the following:
+- [ ] Change line [ADD LINE NUMBER WHICH HAS CONTENT] for the content field from
+  ```
+  content: [INSERT THE CURRENT TEXT ON THE FILE HERE]
+  ```
+  to
+  ```
+  content-type: image
+  ```
 
-From
-` content: [INSERT THE CURRENT TEXT ON THE FILE HERE]`
-To
-` content-type: image`
-
-- [ ] Remove line [ADD LINE NUMBER WHICH HAS TYPE] for the type field within `_data/internal/credits/[INSERT FILE NAME HERE].yml`
-
-` type: [INSERT THE CURRENT TEXT ON THE FILE HERE]`
+- [ ] Remove line [ADD LINE NUMBER WHICH HAS TYPE] for the type field
+  ```
+  type: [INSERT THE CURRENT TEXT ON THE FILE HERE]
+  ```
 
 ### Resources/Instructions
 
