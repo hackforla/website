@@ -41,3 +41,6 @@ For the file `_data/internal/credits/[INSERT FILE NAME HERE].yml`, do the follow
 - Click on the links below to see the source file code:
 [INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS THE CONTENT FIELD] 
 [INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS THE TYPE FIELD]
+
+<!-- To see an example of a permalink for a line of code, uncomment the line below -->
+<!-- https://github.com/hackforla/website/blob/598f33399cc81f3e095fe047a726eca09a595465/_data/internal/credits/act.yml#L4 -->
