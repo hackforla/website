@@ -38,5 +38,5 @@ For the file `_data/internal/credits/[INSERT FILE NAME HERE].yml`, do the follow
 - Directory to find the page in once you have it in your IDE: `_data/internal/credits/[INSERT FILE NAME HERE].yml`
 
 - Click on the links below to see the source file code:
-[INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS CONTENT] 
-[INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS TYPE]
+[INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS THE CONTENT FIELD] 
+[INSERT PERMALINK FOR THE LINE NUMBER WHICH HAS THE TYPE FIELD]
