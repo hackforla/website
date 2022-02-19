@@ -1,7 +1,8 @@
 ---
 name: 'Credits file template: Edit content field and remove type field'
 about: Template for editing content field and removing type field in a credits file
-title: Edit content field and remove type field from [INSERT FILE NAME HERE].yml file
+title: Edit content field and remove type field from [INSERT FILE NAME HERE].yml credits
+  file
 labels: 'good first issue, P-Feature: Credit, role: back end/devOps, role: front end,
   size: 0.5pt'
 assignees: ''
@@ -13,7 +14,7 @@ assignees: ''
 2. Please make sure you have read our **[Hack for LA Contributing Guide](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)** before you claim/start working on an issue.
 
 ### Overview
-We want to edit the content field and remove the type field from the [INSERT FILE NAME HERE].yml file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file in the future. This issue is tracked in the epic #2775.
+We want to edit the content field and remove the type field from the [INSERT FILE NAME HERE].yml credits file so they can be better utilized in the [credits.html](https://github.com/hackforla/website/blob/gh-pages/pages/credits.html) file in the future. This issue is tracked in the epic #2775.
 
 
 ### Action Items
