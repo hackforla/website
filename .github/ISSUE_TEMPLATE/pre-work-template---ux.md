@@ -49,3 +49,4 @@ provide update
 - [Googledrive-HackforLA website](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT)
 - [UX Research Presentations](https://drive.google.com/drive/folders/1yV9YRrjVKmVLU_xSM_BjtdIaNITRhP5j)
 - [Weekly Meeting Agendas](https://github.com/hackforla/website/issues/2106)
+- [Example of an issue with really good updates](https://github.com/hackforla/website/issues/2537), this issue also is a good example of when you have finished an issue, but there is still more work to be done, so it leads to a new issue being made instead of changing the scope of the original issue.

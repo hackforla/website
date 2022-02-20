@@ -9,8 +9,7 @@ alt-hero: ''
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/spare'
-  - name: Site
-    url: 'http://whatcanyouspare.org'
+
 looking: 
   - category: Development
     skill: Front-end development 
