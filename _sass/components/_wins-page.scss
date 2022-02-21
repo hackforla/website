@@ -35,6 +35,7 @@
 }
 
 .project-card.wins-card{
+    overflow: visible;
     @media #{$bp-below-desktop} {
         margin-bottom: 24px;
     }
@@ -196,7 +197,6 @@
     margin: 18px 60px;
 }
 
-//card styling
 .wins-card{
     padding: 45px;
     display: flex;
