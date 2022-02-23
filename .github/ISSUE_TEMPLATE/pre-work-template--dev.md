@@ -28,7 +28,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
 - [ ] Complete steps 1.1 - 1.6 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
-- [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues) 
+- [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
+  - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
   - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
 - [ ] Once you take a good first issue, you will providing estimates and progress reports. 
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
