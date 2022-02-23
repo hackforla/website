@@ -7,10 +7,9 @@ a.filter-item {
 //filter container
 ul.filter-list {
   background: $color-pink;
-  display: grid;
-  list-style: none;
   padding-left: 0;
-  grid-auto-flow: column;
+  list-style: none;
+  display: grid;
   grid-column-gap: 20px;
   // grid-template-columns: repeat(4, 1fr);
   // ^ See issue #1997 for more info on why this is commented out and changed to 3
@@ -160,11 +159,43 @@ a.clear-filter-tags {
   color: $color-red;
 }
 
+// Below tablet size, including mobile size
 @media #{$bp-below-tablet} {
-  //resize dropdown on tablet and mobile view
+  // Resize dropdown
   ul.filter-list li ul {
     width: 105%;
     padding: 15px;
+    overflow: auto;
+  }
+
+  // Adds scrollbar and limits height for Languages/Technologies dropdown
+  ul.dropdown#technologies {
+    height: 370px;
+    overflow: auto;
+  }
+}
+
+// Tablet size and up
+@media #{$bp-tablet-up} {
+  // Adds scrollbar and makes Languages/Technologies dropdown three columns
+  ul.dropdown#technologies {
+    display: grid;
+    grid-auto-flow: column; // flows the data from top to bottom rather than left to right
+    grid-template-rows: repeat(23, 1fr); // ensures the list is 23 rows
+    list-style: none;
+    left: -17em;
+    width: 718px;
+    height: 380px;
+    overflow: auto;
+  }
+}
+
+// Desktop size and up
+@media #{$bp-desktop-up} {
+  // Adjusts placement of Languages/Technologies dropdown and adjusts dropdown width
+  ul.dropdown#technologies {
+    left: -18em;
+    width: 768px;
   }
 }
 
