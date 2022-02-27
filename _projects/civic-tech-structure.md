@@ -45,7 +45,7 @@ links:
   - name: GitHub
     url: "https://github.com/hackforla/civic-tech-structure"
   - name: Overview
-    url: "https://github.com/riddle015/website/blob/update-overview-link-2238/assets/pdfs/Civic-Tech-Structure-Product-One-Sheet.pdf"
+    url: "localhost:4000/assets/pdfs/Civic-Tech-Structure-Product-One-Sheet.pdf"
   - name: README
     url: "https://github.com/hackforla/civic-tech-structure/blob/main/README.md"
 looking:
