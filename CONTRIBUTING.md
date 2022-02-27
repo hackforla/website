@@ -37,7 +37,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
       - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
       - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.3.e What if you don't see any bugs/errors that is not connected to an issue?**](#23e-what-if-you-dont-see-any-bugserrors-that-is-not-connected-to-an-issue)
+       - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -387,7 +387,7 @@ Please use the `Prioritized Backlog` column in the [filtered Project Board - **H
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.e What if you don't see any bugs/errors that is not connected to an issue?**
+#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
 
 If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
 
