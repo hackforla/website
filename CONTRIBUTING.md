@@ -358,13 +358,13 @@ There are only 2 columns that you will be consistently referencing:
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.a Available issues for new members (front end/back end)**
 
 We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
 
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.b Available issues for returning members (front end)**
 
