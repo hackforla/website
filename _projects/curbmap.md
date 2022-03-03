@@ -18,6 +18,8 @@ looking:
 location: 
   # - Downtown LA
   - Remote
+program-area:  
+  - Citizen Engagement
 visible: false
 status: On Hold
 ---
