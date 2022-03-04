@@ -22,7 +22,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Self Assign this issue (gear in right side panel)
 - [ ] Add this issue to Projects: Project Board (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
-- [ ] Attend weekly team meetings
+- [ ] Attend weekly team meetings:
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
   - [ ] (Optional) Office Hours, Thursdays 7-8pm PST
   - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm PST
