@@ -22,10 +22,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Self Assign this issue (gear in right side panel)
 - [ ] Add this issue to Projects: Project Board (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
-- [ ] Attend weekly team meetings: 
-  - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7pm PST
-  - [ ] (Optional) Office Hours, Thursdays 7pm PST
-  - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
+- [ ] Attend weekly team meetings
+  - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
+  - [ ] (Optional) Office Hours, Thursdays 7-8pm PST
+  - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm PST
 - [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 - [ ] Complete steps 1.1 - 1.6 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
