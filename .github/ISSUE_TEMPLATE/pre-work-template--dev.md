@@ -32,7 +32,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
   - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
-- [ ] Once you take a good first issue, you will providing estimates and progress reports. 
+- [ ] Once you take a good first issue, you will provide estimates and progress reports. 
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
  Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment.
     ```
@@ -47,10 +47,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
     3. Availability
     4. ETA
     ```
-- [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a PR for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
+- [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a pull request (PR) for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
 - [ ] Additional notes:
-    - [ ] Please don't forget to review pull requests [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests), whenever you are able to, which we will teach you how to do.
-    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up on another issue.
+    - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
+    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
