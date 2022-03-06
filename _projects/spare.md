@@ -26,3 +26,6 @@ partner: Hope of the Valley and hopefully others in the near future.
 visible: true
 status: On Hold
 ---
+
+program-area:  
+    - Social Safety Net
