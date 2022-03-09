@@ -15,7 +15,9 @@ As a developer, I want to make sure unused code is removed from the codebase in 
 - time to review the code is reduced.
 
 ### Details
-In project md files, `image-hero` is a decorative background image and `alt-hero` is the alt text associated with `image-hero`. However, `alt-hero` text is not used anywhere in our codebase since the `image-hero` is used as an SCSS background image. Moreover, if the `image-hero` images were to be used in an image HTML tag in the future, the alt text for all the `image-hero` images would be `alt=""`, which could be set programmatically for all the alt properties associated with each `image-hero` image.  
+In project md files, `image-hero` is a decorative background image and `alt-hero` is the alt text associated with `image-hero`. However, `alt-hero` text is not used anywhere in our codebase since the `image-hero` is used as an SCSS background image.
+
+Moreover, if the `image-hero` were to be used in an img HTML tag in the future, the alt text for all the `image-hero` images would be `alt=""`, which could be set programmatically for all the alt properties associated with each `image-hero`.   
 
 ### Action Items
 - [ ] For the file `_projects/[INSERT FILE NAME HERE].md`, remove line [INSERT LINE NUMBER HERE] for the alt-hero
