@@ -1,7 +1,7 @@
 name: Issue Trigger
 on:
   issues:
-    types: [opened]
+    types: [opened, assigned]
 
 jobs:
   Add-Missing-Labels-To-Issues:
@@ -29,3 +29,12 @@ jobs:
               const results = ${{ steps.check-labels.outputs.result }}
               const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
               script({g: github, c:context}, results)
+
+  #Asking for preliminary update when issue is assigned
+  Ask-For-Preliminary-update:
+    #Triggers when the issue is newly assigned
+    if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
+    steps:
+      - uses: actions/checkout@v2  
+      # Check if the issue has the required roles
+
