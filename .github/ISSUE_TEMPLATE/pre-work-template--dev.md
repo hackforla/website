@@ -15,13 +15,14 @@ We are looking forward to having you on our team. Please make sure to attend the
 As a new developer on the HfLA website team, fill in the following fields as you complete each onboarding item.
 
 ### Action Items
-- [ ] Add the "role: front end" or "role: back end" label*(s) to this issue and remove the "role missing" label
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Share your Gmail address and GitHub handle with the team lead so you can be added to the Google Drive and the website-write team
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
 - [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
-- [ ] Self Assign this issue (gear in right side panel)
-- [ ] Add this issue to Projects: Project Board (gear in right side panel)
+- [ ] Once added to the website-write team:
+  - [ ] Self Assign this issue (gear in right side panel)
+  - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label
+  - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
 - [ ] Attend weekly team meetings:
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
@@ -50,8 +51,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
     ```
 - [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a pull request (PR) for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
 - [ ] Additional notes:
-    - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
-    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
+   - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
+   - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Progress through issues with increasing complexity in the following order:
   - Good first issue
   - Good second issue
