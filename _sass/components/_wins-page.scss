@@ -54,18 +54,44 @@
 .wins-card-text {
 	margin-top: 40px;
 	max-height: 88px;
-	overflow: hidden;
-	position: relative;
-    &.relative {
-        position: relative;
-        .wins-see-more-div {
-            bottom: 0;
-            right: 0;
-        }
-    }
-    p {
-        margin: 0;
-    }
+	// overflow: hidden;
+	position: inherit;
+	// &.relative {
+	//     position: relative;
+	//     .wins-see-more-div {
+	//         bottom: 0;
+	//         right: 0;
+	//     }
+	// }
+	// p {
+	// 	margin: 0;
+	// 	text-overflow: ellipsis;
+	// 	overflow: hidden;
+	// 	display: -webkit-box !important;
+	// 	-webkit-line-clamp: 3;
+	// 	-webkit-box-orient: vertical;
+	// 	white-space: normal;
+	// }
+}
+
+.wins-card-overview{
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.see-more-div {
+	.caret {
+		width: 12px;
+	}
+
+	@media #{$bp-below-desktop} {
+		padding: 5px 16px;
+	}
 }
 
 .wins-icon-container {

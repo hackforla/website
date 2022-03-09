@@ -404,15 +404,13 @@ function seeMore(id){
 		let screenWidth = window.innerWidth;
 		let parent = span.parentElement.parentElement;
 		let winsIconContainer = document.getElementById(`icons-${id}`)
-	  	if (parent.classList.contains('expanded') && screenWidth > 960) {
-			// parent.setAttribute('class', 'project-inner wins-card-text relative');
-			span.innerHTML = "See more";
+		if (parent.classList.contains('expanded') || screenWidth > 960) {
+			parent.setAttribute('class', 'project-inner wins-card-text relative');
+			span.innerHTML = `<img src="/assets/images/wins-page/caret.svg" class="caret" alt="caret" style="transform: rotate(180deg);">`;
 			winsIconContainer.setAttribute('class', 'wins-icon-container');
-		} else if(parent.classList.contains('expanded') && screenWidth < 960) {
-			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;transform: rotate(180deg);">'
-		}else {
+		} else {
 			parent.setAttribute('class','project-inner wins-card-text expanded');
-			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;">';
+			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" class="caret" alt="caret">&nbsp';
 			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
       span.parentElement.removeAttribute('hidden')
 		}
