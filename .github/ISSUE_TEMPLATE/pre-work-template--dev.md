@@ -2,7 +2,8 @@
 name: Pre-work Template - Developers
 about: New developer team members should start by making this issue for themselves
 title: 'Pre-work Checklist: Developer: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, good first issue, Ready for Milestone'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, Ready for Milestone,
+  size: 1pt'
 assignees: ''
 
 ---
@@ -51,6 +52,17 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Additional notes:
     - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
     - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
+- [ ] Progress through issues with increasing complexity in the following order:
+  - Good first issue
+  - Good second issue
+  - Small 
+  - Medium 
+  - Large
+
+  The reasons for this progression are:
+   - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
+   - We are trying to teach you the team methodology through the issues themselves.
+   - It ensures you understand what we expect and the quality of contributions.
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 

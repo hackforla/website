@@ -3,7 +3,7 @@ name: 'Project md file: Removing unused `alt-hero` field'
 about: Issue template for removing unused `alt-hero` field from a project md file
 title: Remove unused `alt-hero` field from [INSERT FILE NAME HERE].md project file
 labels: 'P-Feature: Project Info and Page, role: back end/devOps, role: front end,
-  Size: Good second issue, size: 1pt'
+  Size: Good second issue, size: 0.5pt'
 assignees: ''
 
 ---
