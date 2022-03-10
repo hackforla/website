@@ -16,11 +16,9 @@ const issueNum = context.payload.issue.number
 //Find out what the existing labels in the issue are:-
 var existinglabels = obtainlabels()
 
-//We run checks on the exisiting label names to see if the checks of the issue match 
-var filteredlabels = filterlabels(existinglabels)
 
-//With the filtered role labels we see if we are to post the comment or not and return it as a boolean
-var shouldpost = postcomment(filteredlabels)
+//With the existing labels we see if we are to post the comment or not(based on whether there exists a role:Backend/devOps tag or not) and return it as a boolean
+var shouldpost = postcomment(existinglabels)
 
 return({shouldpost,issueNum})
 }
@@ -33,41 +31,24 @@ return({shouldpost,issueNum})
 function obtainlabels(){
     var currentlabels = context.payload.issue.labels
     //from the labels we currently have we extract the name property of each of them and return it in an array
-    var namesofcurrentlabels = currentlabels.map(label = label.name)
+    var namesofcurrentlabels = currentlabels.map(label => label.name)
     return namesofcurrentlabels
 }
 
 /**
  * 
- * @param {array} labelsnamearray //contains the array of label names returned by obtainlabels
- * @returns {array} //an array of label containing the word "role"
- */
-function filterlabels(labelsnamearray){
-    var regexp = new RegExp(`\\brole\\b`, 'gi')
-    let rolesarray = []
-    labelsnamearray.foreach((label)=>{
-        if(regexp.test(label)){
-            rolesarray.push(label)
-        }
-    })
-    return rolesarray
-}
-
-
-/**
- * 
- * @param {array} rolesarray //takes in as an argument the array of role tags returned by filterlabels function
+ * @param {array} namesarray //takes in as an argument the array of role tags returned by filterlabels function
  * @returns //A boolean which tells whether we are supposed to post a preliminary update based on the given issue checks
  */
-function postcomment(rolesarray)
+function postcomment(namesarray)
 {
     //issue states that only if the roles contain back end/devOps ...(continued on next comment)
-    if(rolesarray.contains("role: back end/devOps" )){
+    if(namesarray.includes("role: back end/devOps" )){
         return true
     }
 
     // or if the roles contain both front end and design are we supposed to post the comment
-    else if(rolesarray.contains("role: front end") && rolesarray.contains("role: design" )){
+    else if(namesarray.includes("role: front end") && namesarray.includes("role: design" )){
         return true
     }
 
