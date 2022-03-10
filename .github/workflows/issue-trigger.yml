@@ -36,5 +36,25 @@ jobs:
     if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
     steps:
       - uses: actions/checkout@v2  
+
       # Check if the issue has the required roles
+      - name: Check Labels Prelim
+        uses: actions/github-script@v4
+        id: check-labels-prelim
+        with:
+          script: |
+            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-label-preliminary-update.js')
+            const checklabels = script({g: github, c: context})
+            return checklabels
+
+
+      # Post the comment based on the result of the previous step
+      - name: Post assigning issue comment
+        id: assigned-comment
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const result = ${{ steps.check-labels-prelim.outputs.result }}
+            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/preliminary-update-comment.js')
+            script({g: github, c:context},result)
 
