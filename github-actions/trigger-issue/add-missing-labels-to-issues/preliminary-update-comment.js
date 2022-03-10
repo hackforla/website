@@ -39,7 +39,7 @@ function makeComment(){
     // Setting all the variables which formatcomment is to be called with
     const issueCreator = context.payload.issue.user.login
 
-    const commentobject = {
+    const commentObject = {
         replacementString: issueCreator,
         placeholderString: '${issueCreator}',
         filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/preliminary-update.md',
