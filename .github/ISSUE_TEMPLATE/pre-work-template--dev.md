@@ -59,11 +59,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - Small 
   - Medium 
   - Large
-
-  The reasons for this progression are:
-   - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
-   - We are trying to teach you the team methodology through the issues themselves.
-   - It ensures you understand what we expect and the quality of contributions.
+    - The reasons for this progression are:
+      - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
+      - We are trying to teach you the team methodology through the issues themselves.
+      - It ensures you understand what we expect and the quality of contributions.
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
