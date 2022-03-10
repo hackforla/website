@@ -32,6 +32,7 @@ jobs:
 
   #Asking for preliminary update when issue is assigned
   Ask-For-Preliminary-update:
+    runs-on: ubuntu-latest
     #Triggers when the issue is newly assigned
     if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
     steps:
