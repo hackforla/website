@@ -1,6 +1,6 @@
 <!-- Template for a user to add their availability, and the estimated time for completion of the issue they have taken up-->
 
-Hi ${issuecreator}, thank you for taking up this issue! Hfla appreciates you :)
+Hi ${issueCreator}, thank you for taking up this issue! Hfla appreciates you :)
 
 Do let fellow developers know about your:-
 i. Availability
