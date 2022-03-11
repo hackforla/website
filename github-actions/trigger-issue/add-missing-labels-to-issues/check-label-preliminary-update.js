@@ -18,7 +18,7 @@ var existinglabels = obtainlabels()
 
 
 //With the existing labels we see if we are to post the comment or not(based on whether there exists a role:Backend/devOps tag or not) and return it as a boolean
-var shouldpost = postcomment(existinglabels)
+var shouldepost = postcomment(existinglabels)
 
 return({shouldpost,issueNum})
 }
