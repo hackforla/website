@@ -11,13 +11,11 @@ var context
  * @param {Boolean} actionResult - the previous gh-action's result
  * @param {Number} issueNum - the number of the issue where the post will be made 
  */
-async function main({ g, c }, { actionResult, issueNum }) {
+async function main({ g, c }, { shouldpost, issueNum }) {
     github = g
     context = c
-    console.log(actionResult)
-    console.log(issueNum)
     // If the previous action returns a false, stop here
-    if (actionResult === false){
+    if (shouldpost === false){
       console.log('No need to post comment.')
       return
     }

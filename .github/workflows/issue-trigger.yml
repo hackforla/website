@@ -56,7 +56,6 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
-            console.log(results)
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/preliminary-update-comment.js')
             script({g: github, c:context},results)
 
