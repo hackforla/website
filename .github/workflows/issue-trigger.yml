@@ -46,7 +46,6 @@ jobs:
           script: |
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-label-preliminary-update.js')
             const checklabels = script({g: github, c: context})
-            console.log(checklabels)
             return checklabels
 
 
