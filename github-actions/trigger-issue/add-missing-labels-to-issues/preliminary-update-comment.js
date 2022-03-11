@@ -14,14 +14,14 @@ var context
 async function main({ g, c }, { actionResult, issueNum }) {
     github = g
     context = c
-    console.log({actionResult,issueNum})
-    // If the previous action return a false, stop here
+    // If the previous action returns a false, stop here
     if (actionResult === false){
       console.log('No need to post comment.')
       return
     }
     
     //We make the comment with the issuecreator's github handle instead of the placeholder
+    else if(actionResult === true){
     const instructions = makeComment()
     if (instructions === null) {
       return
@@ -30,6 +30,7 @@ async function main({ g, c }, { actionResult, issueNum }) {
     // the actual creation of the comment in github
     await postComment(issueNum, instructions)
   }
+}
 
 /**
  * @returns {string} //Comment to be posted with the issue creator's name in it!!!
