@@ -14,7 +14,6 @@ var context
 async function main({ g, c }, { actionResult, issueNum }) {
     github = g
     context = c
-    console.log(actionResult)
     // If the previous action returns a false, stop here
     if (actionResult === false){
       console.log('No need to post comment.')
