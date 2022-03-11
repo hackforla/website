@@ -21,7 +21,7 @@ async function main({ g, c }, { actionResult, issueNum }) {
     }
     
     //We make the comment with the issuecreator's github handle instead of the placeholder
-    else if(actionResult === true){
+    else{
     const instructions = makeComment()
     if (instructions === null) {
       return
