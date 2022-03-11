@@ -53,9 +53,6 @@ links:
   - name: Overview
 <<<<<<< HEAD
     url: ../assets/pdfs/TDM-Calculator-Product-One-Sheet.pdf
-=======
-    [embed]url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/TDM-Calculator-Product-One-Sheet.pdf[/embed]
->>>>>>> 5277539778f9c03ef1a6839d8feb01a4179324b5
 looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers
