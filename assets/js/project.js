@@ -71,6 +71,7 @@ if(project != null){
     let projectTeam = document.querySelectorAll('.leader-card')
 
     if (contributorsArray.length < projectTeam.length) {
+        // Hides all-time contributors if number of contributors is less than size of current project team
         let contributorSection = document.getElementById('contributor-header');
         contributorSection.style.display = 'none';
     } else {
