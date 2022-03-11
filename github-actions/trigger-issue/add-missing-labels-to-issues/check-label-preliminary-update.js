@@ -48,7 +48,11 @@ function postcomment(namesarray)
     }
 
     // or if the roles contain both front end and design are we supposed to post the comment
-    else if(namesarray.includes("role: front end") && namesarray.includes("role: design" )){
+    else if(namesarray.includes("role: front end")){
+        return true
+    }
+
+    else if(namesarray.includes("role: design" )){
         return true
     }
 
