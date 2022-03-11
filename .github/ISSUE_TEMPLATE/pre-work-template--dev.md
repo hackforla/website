@@ -2,7 +2,8 @@
 name: Pre-work Template - Developers
 about: New developer team members should start by making this issue for themselves
 title: 'Pre-work Checklist: Developer: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, good first issue, Ready for Milestone'
+labels: 'Feature: Onboarding/Contributing.md, good first issue, Ready for Milestone,
+  size: 1pt'
 assignees: ''
 
 ---
@@ -14,13 +15,14 @@ We are looking forward to having you on our team. Please make sure to attend the
 As a new developer on the HfLA website team, fill in the following fields as you complete each onboarding item.
 
 ### Action Items
-- [ ] Add the "role: front end" or "role: back end" label*(s) to this issue and remove the "role missing" label
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Share your Gmail address and GitHub handle with the team lead so you can be added to the Google Drive and the website-write team
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
 - [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
-- [ ] Self Assign this issue (gear in right side panel)
-- [ ] Add this issue to Projects: Project Board (gear in right side panel)
+- [ ] Once added to the website-write team:
+  - [ ] Self Assign this issue (gear in right side panel)
+  - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label
+  - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
 - [ ] Attend weekly team meetings:
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
@@ -49,19 +51,18 @@ As a new developer on the HfLA website team, fill in the following fields as you
     ```
 - [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a pull request (PR) for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
 - [ ] Additional notes:
-    - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
-    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
+   - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
+   - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Progress through issues with increasing complexity in the following order:
   - Good first issue
   - Good second issue
   - Small 
   - Medium 
   - Large
-
-  The reasons for this progression are:
-   - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
-   - We are trying to teach you the team methodology through the issues themselves.
-   - It ensures you understand what we expect and the quality of contributions.
+    - The reasons for this progression are:
+      - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
+      - We are trying to teach you the team methodology through the issues themselves.
+      - It ensures you understand what we expect and the quality of contributions.
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
