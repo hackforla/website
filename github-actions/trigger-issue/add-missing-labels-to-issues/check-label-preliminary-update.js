@@ -52,6 +52,10 @@ function postcomment(namesarray)
         return true
     }
 
+    else if(namesarray.includes("role: user research")){
+        return true
+    }
+
     return false
 }
 
