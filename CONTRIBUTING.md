@@ -314,6 +314,10 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
 
+All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis.
+
+Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
