@@ -400,21 +400,25 @@ function seeMore(id){
 
   // Toggles between see more and see less in tablet and mobile view
   function toggleSeeMoreLess(id){
-		let span = document.getElementById(id);
-		let screenWidth = window.innerWidth;
-		let parent = span.parentElement.parentElement;
-		let winsIconContainer = document.getElementById(`icons-${id}`)
-		if (parent.classList.contains('expanded') || screenWidth > 960) {
-			parent.setAttribute('class', 'project-inner wins-card-text relative');
-			span.innerHTML = `<img src="/assets/images/wins-page/caret.svg" class="caret" alt="caret" style="transform: rotate(180deg);">`;
-			winsIconContainer.setAttribute('class', 'wins-icon-container');
-		} else {
-			parent.setAttribute('class','project-inner wins-card-text expanded');
-			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" class="caret" alt="caret">&nbsp';
-			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-      span.parentElement.removeAttribute('hidden')
-		}
-  }
+	let span = document.getElementById(id);
+	let screenWidth = window.innerWidth;
+	let parent = span.parentElement.parentElement;
+	let winsIconContainer = document.getElementById(`icons-${id}`)
+	  if (parent.classList.contains('expanded') && screenWidth > 960) {
+		parent.setAttribute('class', 'project-inner wins-card-text');
+		span.innerHTML = "See More";
+		winsIconContainer.setAttribute('class', 'wins-icon-container');
+	} else if(parent.classList.contains('expanded') && screenWidth < 960) {
+		parent.setAttribute('class', 'project-inner wins-card-text');
+		span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;transform: rotate(180deg);">'
+		winsIconContainer.setAttribute('class', 'wins-icon-container');
+	}else {
+		parent.setAttribute('class','project-inner wins-card-text expanded');
+		span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;">';
+		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+  		span.parentElement.removeAttribute('hidden');
+	}
+}
 
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
