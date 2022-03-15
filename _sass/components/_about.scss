@@ -564,7 +564,7 @@ a.anchor {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: 33.3%;
+  width: 55.733vw;
   padding-bottom: 45px; 
 }
 .image-news-container{
@@ -828,6 +828,7 @@ a.anchor {
   .news-cells {
     justify-content: unset;
     padding-bottom: unset;
+    width: 33.3%;
   }
 
   .news-cells--govtech {
