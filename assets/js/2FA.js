@@ -102,7 +102,7 @@ let myPiechart = new Piechart(
     {
         canvas:myCanvas,
         data:userData,
-        colors:["#89cff0", "#0000ff"],
+        colors:["$color-skyblue", "$color-brightblue"],
         doughnutHoleSize:0.4
     }
 );
