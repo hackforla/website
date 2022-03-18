@@ -13,12 +13,18 @@ meeting-times: Tuesdays 8:00-9:00 pm PT
 
 leadership-type: Community Led
 leadership:
-  - name:
-    role:
+  - name: Jason Ebueng
+    role: Co-lead
     links:
-      slack:
-      github:
-    picture:
+      slack: https://hackforla.slack.com/team/U02CA3CAK7Z
+      github: https://github.com/JasonEb
+    picture: https://avatars.githubusercontent.com/u/6300995
+  - name: Nicole Dubin
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U02LL2XK486
+      github: https://github.com/Neecolaa
+    picture: https://avatars.githubusercontent.com/u/7437035
 
 links:
   - name: Slack

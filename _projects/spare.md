@@ -9,8 +9,7 @@ alt-hero: ''
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/spare'
-  - name: Site
-    url: 'http://whatcanyouspare.org'
+
 looking: 
   - category: Development
     skill: Front-end development 
@@ -26,4 +25,7 @@ location:
 partner: Hope of the Valley and hopefully others in the near future.
 visible: true
 status: On Hold
+program-area:  
+  - Social Safety Net
 ---
+
