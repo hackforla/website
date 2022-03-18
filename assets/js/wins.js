@@ -345,22 +345,6 @@
 		function addSeeMore() {
 			const winText = winTextContainer.querySelector('.wins-card-overview')
 			const seeMoreDiv = winTextContainer.querySelector('.wins-see-more-div')
-			//makes the see more span on the bottom of the card
-			if (
-				!winTextContainer.classList.contains('expanded') && 
-				winText.offsetHeight <= winTextContainer.offsetHeight 
-			) {
-        // Adds see more
-				seeMoreDiv.setAttribute('hidden', 'true')
-			} else {
-        // Removes see more if not needed
-				seeMoreDiv.removeAttribute('hidden')
-			}
-			
-			// remove added relative class on click
-			// if (!winTextContainer.classList.contains('expanded'))
-			// 	winTextContainer.classList.add('relative')
-
 			if (window.innerWidth > 960){
 				const winsCardTextContainer = seeMoreDiv.parentElement
 				if (winsCardTextContainer.classList.contains("expanded")){
@@ -397,6 +381,18 @@ function seeMore(id){
 				toggleSeeMoreLess(id);
 		}))
 	}
+
+	let query = window.matchMedia('max-width: 500px')
+	function render(e){
+			// if the viewport is 960px or less
+		if(e.matches){
+			console.log('change');
+		} else{
+			console.log('nope', e.matches, e)
+		}
+	};
+	render(query);
+	query.addEventListener('change', render);
 
   // Toggles between see more and see less in tablet and mobile view
   function toggleSeeMoreLess(id){
