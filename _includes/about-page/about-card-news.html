@@ -1,11 +1,13 @@
 <div class='card-primary page-card-lg page-card--about last-card'>
     <div class="about-us-section-header" data-hash="news"><span class="sec-head-img"><img src="/assets/images/about/section-header-elements/news.svg"></span>HfLA in the News</div>
     <div class="about-us-section-content">
-        <div class="flex-container">
+        <div class="flex-container news-container ">
             {% for item in site.data.internal.press %}
                 <div class="news-cells">
-                    <img src="{{item[1].image}}" alt="{{item[1].image_alt}}" />
-                    <p class="more-padding"><a href="{{item[1].link_url}}" target="_blank" rel="noopener noreferrer">{{item[1].title}}</a></p>
+                    <div class="image-news-container">
+                        <img src="{{item[1].image}}" alt="{{item[1].image_alt}}" />
+                    </div>
+                    <p><a href="{{item[1].link_url}}" target="_blank" rel="noopener noreferrer">{{item[1].title}}</a></p>
                 </div>
             {% endfor %}
         </div>

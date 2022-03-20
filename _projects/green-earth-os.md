@@ -54,6 +54,8 @@ links:
     url: '../assets/pdfs/GreenEarthOS-One-Sheet.pdf'
 location: 
   - Remote
+program-area:  
+  - Environment
 visible: true
 status: Active
 ---
