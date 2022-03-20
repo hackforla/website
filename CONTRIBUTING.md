@@ -314,6 +314,10 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
 
+All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis.
+
+Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
@@ -358,13 +362,13 @@ There are only 2 columns that you will be consistently referencing:
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.a Available issues for new members (front end/back end)**
 
 We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
 
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.b Available issues for returning members (front end)**
 
