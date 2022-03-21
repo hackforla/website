@@ -3,8 +3,8 @@
 Hi @${issueCreator}, thank you for taking up this issue! Hfla appreciates you :)
 
 Do let fellow developers know about your:-
-i. **Availability:**(When would you be available to work on the issue/answer questions other programmers might have about your issue)
-ii. **ETA:**(When do you think you would be able to resolve this issue by)
+i. **Availability:**(When are you available to work on the issue/answer questions other programmers might have about your issue?)
+ii. **ETA:**(When do you expect this issue to be completed?)
 
 You're awesome!
 

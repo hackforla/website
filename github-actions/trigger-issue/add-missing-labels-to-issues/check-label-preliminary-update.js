@@ -9,18 +9,18 @@ var context
  */
 
 
-function main({g, c}){
-github = g
-context = c
-const issueNum = context.payload.issue.number
-//Find out what the existing labels in the issue are:-
-var existinglabels = obtainlabels()
+function main({g, c})
+{
+    github = g
+    context = c
+    const issueNum = context.payload.issue.number
+    //Find out what the existing labels in the issue are:-
+    var existingLabels = obtainlabels()
 
+    //With the existing labels we see if we are to post the comment or not(based on whether there exists a relevant role tag or not) and return it as a boolean
+    var shouldPost = postcomment(existingLabels)
 
-//With the existing labels we see if we are to post the comment or not(based on whether there exists a role:Backend/devOps tag or not) and return it as a boolean
-var shouldpost = postcomment(existinglabels)
-
-return({shouldpost,issueNum})
+    return({shouldPost,issueNum})
 }
 
 
@@ -29,37 +29,40 @@ return({shouldpost,issueNum})
  * @returns {array} // return an array of just label names
  */
 function obtainlabels(){
-    var currentlabels = context.payload.issue.labels
+    var currentLabels = context.payload.issue.labels
     //from the labels we currently have we extract the name property of each of them and return it in an array
-    var namesofcurrentlabels = currentlabels.map(label => label.name)
-    return namesofcurrentlabels
+    var namesOfCurrentLabels = currentLabels.map(label => label.name)
+    return namesOfCurrentLabels
 }
 
 /**
  * 
- * @param {array} namesarray //takes in as an argument the array of role tags returned by filterlabels function
+ * @param {array} existingLabels //takes in as an argument the array of role tags returned by filterlabels function
  * @returns //A boolean which tells whether we are supposed to post a preliminary update based on the given issue checks
  */
-function postcomment(namesarray)
+function postcomment(existingLabels)
 {
-    //issue states that only if the roles contain back end/devOps ...(continued on next comment)
-    if(namesarray.includes("role: back end/devOps" )){
+    //issue states that we are to post the comment if--> there is a role: back end/devOps tag...(continued on next comment)
+    if(existingLabels.includes("role: back end/devOps" )){
         return true
     }
 
-    // or if the roles contain both front end and design are we supposed to post the comment
-    else if(namesarray.includes("role: front end")){
+    // or if there is a role: front end tag
+    else if(existingLabels.includes("role: front end")){
         return true
     }
 
-    else if(namesarray.includes("role: design" )){
+    //or if there is a role: design tag
+    else if(existingLabels.includes("role: design" )){
         return true
     }
 
-    else if(namesarray.includes("role: user research")){
+    //or if there is a role: user research
+    else if(existingLabels.includes("role: user research")){
         return true
     }
 
+    //otherwise we return a false
     return false
 }
 
