@@ -11,11 +11,11 @@ var context
  * @param {Number} issueNum - the number of the issue where the post will be made 
  */
 //This function formats the label instructions into a template, then post it to the issue
-async function main({ g, c }, { shouldpost, issueNum }) {
+async function main({ g, c }, { shouldPost, issueNum }) {
     github = g
     context = c
     // If the previous action returns a false, stop here
-    if (shouldpost === false)
+    if (shouldPost === false)
     {
       console.log('No need to post comment.')
       return
