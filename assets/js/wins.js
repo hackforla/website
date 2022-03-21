@@ -382,18 +382,6 @@ function seeMore(id){
 		}))
 	}
 
-	let query = window.matchMedia('max-width: 500px')
-	function render(e){
-			// if the viewport is 960px or less
-		if(e.matches){
-			console.log('change');
-		} else{
-			console.log('nope', e.matches, e)
-		}
-	};
-	render(query);
-	query.addEventListener('change', render);
-
   // Toggles between see more and see less in tablet and mobile view
   function toggleSeeMoreLess(id){
 	let span = document.getElementById(id);
@@ -402,19 +390,36 @@ function seeMore(id){
 	let winsIconContainer = document.getElementById(`icons-${id}`)
 	  if (parent.classList.contains('expanded') && screenWidth > 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
-		span.innerHTML = "See More";
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
 	} else if(parent.classList.contains('expanded') && screenWidth < 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
-		span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;transform: rotate(180deg);">'
+		span.setAttribute('class', 'see-more-div');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
 	}else {
 		parent.setAttribute('class','project-inner wins-card-text expanded');
-		span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret" style="width: 12px;">';
+		span.setAttribute('class', 'see-more-div show-less-btn');
 		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
   		span.parentElement.removeAttribute('hidden');
 	}
 }
+
+function changeSeeMoreBtn(x) {
+	const span = document.querySelectorAll(".see-more-div");
+	if (x.matches) { 
+		for(let i = 0; i < span.length; i++ ){
+			span[i].innerHTML = ''
+		}
+	} else {
+		for(let i = 0; i < span.length; i++ ){
+			// removes show-less-btn class
+			span[i].setAttribute('class', 'see-more-div');	
+			span[i].innerHTML = "See More";
+		}
+	}
+  }
+  
+  const x = window.matchMedia("(max-width: 960px)")
+  x.addListener(changeSeeMoreBtn) // Attach listener function on state changes
 
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
@@ -505,4 +510,5 @@ function seeMore(id){
 
 
   main();
+  changeSeeMoreBtn(x)
 

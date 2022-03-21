@@ -76,12 +76,20 @@
 }
 
 .see-more-div {
-	.caret {
-		width: 12px;
-	}
 
 	@media #{$bp-below-desktop} {
-		padding: 5px 16px;
+        display: inline-block;
+        width: 44px;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 12px;
+        background-image: url(../../assets/images/wins-page/caret.svg);
+        transform: rotate(180deg);
+        
+        &.show-less-btn{
+            transform: rotate(0deg);
+        }
 	}
 }
 
