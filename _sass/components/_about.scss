@@ -563,18 +563,20 @@ a.anchor {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  padding: 25px 0 15px 0;
+  align-items: center;
+  width: 55.733vw;
+  padding-bottom: 45px; 
+}
+.image-news-container{
+  height: 100px;
+  display: flex;
+  align-content: center;
+  margin-bottom: 30px;
+}
+.flex-container.news-container{
   align-items: center;
 }
 
-.news-cells p {
-  padding-top: 40px;
-  margin: 0 20px 0 20px;
-}
-
-.more-padding {
-  padding-top: 10px;
-}
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
@@ -811,9 +813,21 @@ a.anchor {
     padding-left: 25px;
   }
 
-  .news-cells p {
-    padding-top: 48.33px;
-    margin: 0 20px 0 20px;
+  .flex-container.news-container{
+    flex-basis: auto;
+    column-gap: 2.863vw;
+    align-items: baseline;
+    margin-bottom: 67px;
+  }
+  .image-news-container{
+      margin-bottom: 48px;
+      height: 100px;
+  }
+
+  .news-cells {
+    justify-content: unset;
+    padding-bottom: unset;
+    width: 33.3%;
   }
 
   .news-cells--govtech {
