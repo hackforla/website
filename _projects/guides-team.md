@@ -15,24 +15,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Carol Zhu
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/UVA3VD727'
-      github: 'https://github.com/carolzjy'
-    picture: https://avatars.githubusercontent.com/carolzjy
   - name: Bukola Ogunleye
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02617GM7QX'
       github: 'https://github.com/SheIsBukki'
     picture: https://avatars.githubusercontent.com/SheIsBukki
-  - name: Thuy Le
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02GGGF26D9'
-      github: 'https://github.com/thuyhle193'
-    picture: https://avatars.githubusercontent.com/thuyhle193
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
