@@ -1,7 +1,7 @@
 ---
 identification: "228981080"
 title: Home Unite Us
-description: We're working with community non-profits who have a Host Home initiative to develop a workflow management tool to make the process scaleable (across all providers), reduce institutional bias, and effectively capture data. <br /><br />Host Home programs are centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
+description: The Home Unite Us project is developing a workflow management tool for community non-profits to automate and scale their existing Host Home initiatives, prioritizing streamlining of caseworkers' repetitive workloads, reducing institutional bias, and effectively capturing crucial data. <br /><br />Host Home programs are centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
 image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.'
 image-hero: /assets/images/projects/home-unite-us-hero.png
@@ -49,6 +49,7 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
+
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
@@ -56,10 +57,10 @@ links:
     url: "https://github.com/hackforla/HomeUniteUs/wiki"
   - name: Slack
     url: "https://hackforla.slack.com/archives/CRWUG7X0C"
+  - name: Overview
+    url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Home-Unite-Us-One-Sheet.pdf"
   - name: Site
-    url: 'https://homeunite.us/'
- - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Home-Unite-Us-One-Sheet.pdf'
+    url: "https://homeunite.us/"
 looking:
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
@@ -75,7 +76,7 @@ technologies:
   - MongoDB
 location:
   - Remote
-tools: Figma, AWS, Nginx, Docker,Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
+tools: Figma, AWS, Nginx, Docker, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
 program-area:
