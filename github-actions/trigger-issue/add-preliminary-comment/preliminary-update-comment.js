@@ -45,7 +45,7 @@ function makeComment(){
     const commentObject = {
         replacementString: issueCreator,
         placeholderString: '${issueCreator}',
-        filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/preliminary-update.md',
+        filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
         textToFormat: null
     }
 

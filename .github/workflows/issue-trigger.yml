@@ -44,7 +44,7 @@ jobs:
         id: check-labels-prelim
         with:
           script: |
-            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-label-preliminary-update.js')
+            const script = require('./github-actions/trigger-issue/add-preliminary-comment/check-label-preliminary-update.js')
             const checklabels = script({g: github, c: context})
             return checklabels
 
@@ -56,6 +56,6 @@ jobs:
         with:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
-            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/preliminary-update-comment.js')
+            const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results)
 
