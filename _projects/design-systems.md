@@ -9,7 +9,6 @@ image: /assets/images/projects/design-systems.jpg
 alt: 'Hack for LA logo and the title of the project, Design Systems'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/design-systems-hero.jpg
-alt-hero: 'Design Systems hero background'
 leadership:
   - name: Hana Stevenson
     role: Product Manager
