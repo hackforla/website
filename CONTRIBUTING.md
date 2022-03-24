@@ -458,7 +458,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 - Only want to do a specific type of front end or back end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
 #### **2.6.b What to do if you have to stop working mid issue:**
-- Remove the progress in the checkboxes (all checkboxes should be empty)
+- For your issue, uncheck the checkboxes for any action items that have to be redone by the next developer picking up the issue.
 - Add a note in the comments with details and progress for the next developer
 - Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue)) 
 - Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue)) 
