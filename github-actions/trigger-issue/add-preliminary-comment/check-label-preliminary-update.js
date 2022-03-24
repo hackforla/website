@@ -3,45 +3,46 @@ var github
 var context
 
 /**
- * @param {Object} github //github object
- * @param {Object} context //context object
- * @returns {object} //An object deciding whether we need to post the comment in the next action or not
+ * @param {Object} github - github object
+ * @param {Object} context - context object
+ * @returns {object} - An object deciding whether we need to post the comment in the next action or not
+ * @description - entry point of the whole javascript file, finds out whether we need to post the comment or not and returns in the boolean variable shouldpost.
  */
 
-
-function main({g, c})
-{
+function main({g, c}){
     github = g
     context = c
     const issueNum = context.payload.issue.number
     //Find out what the existing labels in the issue are:-
-    var existingLabels = obtainlabels()
+    var existingLabels = obtainLabels()
 
     //With the existing labels we see if we are to post the comment or not(based on whether there exists a relevant role tag or not) and return it as a boolean
-    var shouldPost = postcomment(existingLabels)
+    var shouldPost = postComment(existingLabels)
 
     return({shouldPost,issueNum})
 }
 
 
 /**
- * 
- * @returns {array} // return an array of just label names
+ * @returns {array} - return an array of just label names
+ * @description - this function gets the current label names and returns it in the array nameOfCurrentLabels
  */
-function obtainlabels(){
+
+function obtainLabels(){
     var currentLabels = context.payload.issue.labels
     //from the labels we currently have we extract the name property of each of them and return it in an array
     var namesOfCurrentLabels = currentLabels.map(label => label.name)
     return namesOfCurrentLabels
 }
 
+
 /**
- * 
- * @param {array} existingLabels //takes in as an argument the array of role tags returned by filterlabels function
- * @returns //A boolean which tells whether we are supposed to post a preliminary update based on the given issue checks
+ * @param {array} existingLabels - takes in as an argument the array of role tags returned by obtainLabels function
+ * @returns - A boolean which tells whether we are supposed to post a preliminary update based on the given issue checks
+ * @description - this function returns a boolean depending on whether the existing labels contain a relevant role tag 
  */
-function postcomment(existingLabels)
-{
+
+function postComment(existingLabels){
     //issue states that we are to post the comment if--> there is a role: back end/devOps tag...(continued on next comment)
     if(existingLabels.includes("role: back end/devOps" )){
         return true
