@@ -66,7 +66,8 @@
 }
 
 .wins-card-overview{
-    margin: 0;
+    margin: 1em 0 0;
+    margin-top: 1em;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -287,9 +288,6 @@
 }
 .wins-card-icons{
     display: flex;
-}
-.wins-card-overview{
-    margin-top: 1em;
 }
 
 @media #{$bp-below-desktop} {
