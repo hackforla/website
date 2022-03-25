@@ -19,7 +19,6 @@
         align-items: center;
 
         h1 {
-            font-size: 48px;
             padding-bottom: 28px;
             @media #{$bp-mobile-up} {
                 font-size: 32px;
@@ -63,7 +62,6 @@
         }
         
         h1 {
-            font-size: 1.25rem;
             margin-bottom: 1rem;
             // Fixes title wrap at smallest mobile size 
             @media (max-width: #{$screen-mobile - 160}) {
@@ -210,7 +208,6 @@
                     padding: 0 32px 0 16px;
 
                     h2 {
-                        font-size: 18px;
                     }
 
                     ol {
@@ -244,7 +241,7 @@
             h1 {
                 font-size: 48px;
                 padding-bottom: 0;
-                margin-left: -30px;
+                // margin-left: -30px;
             }
 
             p {
