@@ -63,7 +63,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/U03753VQBSR'
       github: 'https://github.com/sandraberjan'
-    picture: 'https://avatars.githubusercontent.com/sandraberjan'              
+    picture: 'https://avatars.githubusercontent.com/sandraberjan'
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/design-systems'
