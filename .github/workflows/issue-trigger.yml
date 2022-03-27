@@ -25,10 +25,10 @@ jobs:
         uses: actions/github-script@v4
         id: post-comment
         with:
-            script: |
-              const results = ${{ steps.check-labels.outputs.result }}
-              const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
-              script({g: github, c:context}, results)
+          script: |
+            const results = ${{ steps.check-labels.outputs.result }}
+            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
+            script({g: github, c:context}, results)
 
   #Asking for preliminary update when issue is assigned
   Ask-For-Preliminary-update:

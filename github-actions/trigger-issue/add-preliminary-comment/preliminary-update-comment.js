@@ -16,16 +16,17 @@ async function main({ g, c }, { shouldPost, issueNum }){
     github = g
     context = c
     // If the previous action returns a false, stop here
-    if (shouldPost === false){
+    if(shouldPost === false){
       console.log('No need to post comment.')
       return
     }
     //Else we make the comment with the issuecreator's github handle instead of the placeholder.
     else{
       const instructions = makeComment()
-      if (instructions !== null){
+      if(instructions !== null){
       // the actual creation of the comment in github
-      await postComment(issueNum, instructions)}
+      await postComment(issueNum, instructions)
+    }
     }
 }
 
@@ -83,7 +84,7 @@ function formatComment({ replacementString, placeholderString, filePathToFormat,
       body: comment,
     })
   } 
-  catch (err){
+  catch(err){
     throw new Error(err);
   }
 }
