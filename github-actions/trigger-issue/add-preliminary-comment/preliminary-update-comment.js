@@ -75,7 +75,7 @@ function formatComment({ replacementString, placeholderString, filePathToFormat,
  * @description - this function is called by main() with the result of makeComment() as the comment argument and it does the actual posting of the comment.
  */
 
- async function postComment(issueNum, comment) {
+ async function postComment(issueNum, comment){
   try{
     await github.issues.createComment({
       owner: context.repo.owner,
