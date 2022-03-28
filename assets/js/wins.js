@@ -383,19 +383,19 @@ function seeMore(id){
 	}
 
   // Toggles between see more and see less in tablet and mobile view
-  function toggleSeeMoreLess(id){
+  function toggleSeeMoreLess(id) {
 	let span = document.getElementById(id);
 	let screenWidth = window.innerWidth;
 	let parent = span.parentElement.parentElement;
 	let winsIconContainer = document.getElementById(`icons-${id}`)
-	  if (parent.classList.contains('expanded') && screenWidth > 960) {
+	if (parent.classList.contains('expanded') && screenWidth > 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
 	} else if(parent.classList.contains('expanded') && screenWidth < 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		span.setAttribute('class', 'see-more-div');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
-	}else {
+	} else {
 		parent.setAttribute('class','project-inner wins-card-text expanded');
 		span.setAttribute('class', 'see-more-div show-less-btn');
 		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
@@ -406,11 +406,11 @@ function seeMore(id){
 function changeSeeMoreBtn(x) {
 	const span = document.querySelectorAll(".see-more-div");
 	if (x.matches) { 
-		for(let i = 0; i < span.length; i++ ){
+		for(let i = 0; i < span.length; i++) {
 			span[i].innerHTML = ''
 		}
 	} else {
-		for(let i = 0; i < span.length; i++ ){
+		for(let i = 0; i < span.length; i++) {
 			// removes show-less-btn class
 			span[i].setAttribute('class', 'see-more-div');	
 			span[i].innerHTML = "See More";
@@ -418,8 +418,8 @@ function changeSeeMoreBtn(x) {
 	}
   }
   
-  const x = window.matchMedia("(max-width: 960px)")
-  x.addListener(changeSeeMoreBtn) // Attach listener function on state changes
+  const x = window.matchMedia("(max-width: 960px)");
+  x.addListener(changeSeeMoreBtn);
 
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
@@ -510,5 +510,5 @@ function changeSeeMoreBtn(x) {
 
 
   main();
-  changeSeeMoreBtn(x)
+  changeSeeMoreBtn(x);
 
