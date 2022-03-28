@@ -9,7 +9,6 @@ Our Civic Tech Structure project is responsible for publishing all of our guides
 image: /assets/images/projects/civic-tech-structure.png
 alt: "A network of lines and nodes, and the lines converge to a large dot in the center."
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
-alt-hero: "A network of lines and nodes, and the lines converge to a large dot in the center."
 leadership:
   - name: Bonnie Wolfe
     role: Executive Director
