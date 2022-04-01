@@ -466,7 +466,7 @@ return `
             ${project.tools ?
             `
             <div class="project-tools">
-            <strong>tools: </strong>
+            <strong>Tools: </strong>
             ${ project.tools }
             </div>
             `:""
