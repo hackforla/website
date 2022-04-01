@@ -15,7 +15,7 @@ location:
   # - Downtown LA
   - Remote
 program-area:
-    - Social Safety Net
+  - Social Safety Net
 partner: LA County Homeless Initiative; 
 visible: true
 status: On Hold
