@@ -55,7 +55,7 @@ links:
   - name: Test Site
     url: "https://devla.foodoasis.net/"
   - name: Overview
-    url: '../assets/pdfs/Food-Oasis-Project-One-Sheet.pdf'
+    url: '../assets/pdfs/Food-Oasis-One-Sheet.pdf'
 looking:
 technologies:
   - React
