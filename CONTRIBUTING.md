@@ -71,7 +71,8 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
-        - [**v. After pull request is submitted/merged**](#v-after-pull-request-is-submittedmerged)
+        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-How-to-add-a-pull-request-to-the-project-board)
+        - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
     - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
@@ -822,8 +823,19 @@ in the gif example [near the top  of this part within the gif of completing pull
 
 Moving files to another directory. No visual changes to the website.
 ```
+##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-##### **v. After pull request is submitted/merged**
+**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+
+After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
+
+<details>
+  <summary><strong>Click here</strong> to see how to add a pull request to the project board</summary>
+  <h4>Our GitHub project board</h4>
+  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png"/>
+</details>
+
+##### **vi. After pull request is submitted/merged**
 
 **NOTE**: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch. 
 
