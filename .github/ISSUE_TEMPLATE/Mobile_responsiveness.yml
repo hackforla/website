@@ -1,0 +1,48 @@
+name: 'Responsiveness on mobile '
+description: 'Standard HackforLA issue template '
+title: 'Mobile Responsiveness on [name of the page] : [quick recap of the bug here]'
+labels: ['role: design']
+# assignees:
+
+body:
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: |
+        We need to check the mobile version of every pages on the website so that we correct any bug that is appearing on mobile.
+        1. Explain the bug that you have observed
+        2. Put a screenshot of the bug: you can use the following template to create a drop down image
+      value: |
+        <details>
+        <summary>TITLE IMAGE </summary>
+        ![image](https://user-images.githubusercontent.com/77212035/134111368-bc5dfa08-0dd3-47be-a0e2-a60c6a362bf7.png)
+        </details>
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "## Action Items"
+  - type: checkboxes
+    id: action-design
+    attributes:
+      label: "Design:"
+      options:
+        - label: "Check the mobile responsiveness of this page (use your mobile to do it ;) )"
+        - label: "If there is any bug/any inconsistency or problem, however small or large, edit this issue and list the bug with screenshots in the Overview section above. _You have more than one bug? duplicate this issue and create one issue per bug. "
+        - label: "List all the changes to implement to correct the bug (eg: resizing..) in the development action items below. (don't hesitate to create 1 checkbox for each changes)"
+        - label: "Put the issue(s) in the review column to check the feasibility with the devs. "
+  - type: textarea
+    id: action-development
+    attributes:
+      label: Development
+      value: |
+        - [ ] Implement the following changes : '_list your changes here_ '
+        - [ ] Ensure that the correction doesn't break any other pages that is connected to the one your changing. For that, check  [the sitemap](https://www.hackforla.org/sitemap.xml)
+  - type: textarea
+    id: resources-instructions
+    attributes:
+      label: Resources/Instructions
+      description: Provide links to the figma file (if there is one), and to the page where the bug is observed.
+    validations:
+      required: true

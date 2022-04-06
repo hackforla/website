@@ -1,7 +1,7 @@
 document.addEventListener('click', (e) => {
     // <- Dropdown functionality
     const isDropdownArrow = e.target.closest("[data-dropdown-arrow");
-    let currentDropown;
+    let currentDropdown;
     if (isDropdownArrow) {
         currentDropdown = e.target.closest("[data-dropdown]");
         currentDropdown.classList.toggle("activated");
