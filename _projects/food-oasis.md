@@ -54,6 +54,8 @@ links:
     url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
+  - name: Overview
+    url: '../assets/pdfs/Food-Oasis-One-Sheet.pdf'
 looking:
 technologies:
   - React
