@@ -15,3 +15,5 @@ After the proper labels are added, the merge team will review the issue and add 
 **Additional Resources:**
 - [Wiki: How to create issues](https://github.com/hackforla/website/wiki/How-to-create-issues)
 - [Wiki: How to read and interpret labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
+
+**NOTE: Please ignore the adding proper labels comment if you do not have 'write' access to this directory.**
