@@ -9,62 +9,61 @@ image: /assets/images/projects/design-systems.jpg
 alt: 'Hack for LA logo and the title of the project, Design Systems'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/design-systems-hero.jpg
-alt-hero: 'Design Systems hero background'
 leadership:
-  - name: Hana Stevenson
+  - name: Yasaman Roostaeian
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/UJ32EQ9LG'
-      github: 'https://github.com/hanastevenson'
-    picture: 'https://avatars.githubusercontent.com/hanastevenson'
-  - name: Nasim Biglari
-    role: Research Lead
+      slack: 'https://hackforla.slack.com/team/U033GFQ1UQM'
+      github: 'https://github.com/allthatyazz'
+    picture: 'https://avatars.githubusercontent.com/allthatyazz'
+  - name: Wataru Inoue
+    role: Lead UX/UI Designer
     links:
-      slack: 'https://hackforla.slack.com/team/U01N30TK76W'
-      github: 'https://github.com/nasimbiglari'
-    picture: 'https://avatars.githubusercontent.com/nasimbiglari'
-  - name: Ryan Curtis
-    role: UX/UI Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01UPE4RNHZ'
-      github: 'https://github.com/rcurtis2'
-    picture: 'https://avatars.githubusercontent.com/rcurtis2'
-  - name: Anh Hoang
+      slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'
+      github: 'https://github.com/winoue90'
+    picture: 'https://avatars.githubusercontent.com/winoue90'
+  - name: Tammy Trinh
     role: UX/UI Designer
     links:
-      slack: 'https://hackforla.slack.com/team/U025DUAKAPK'
-      github: 'https://github.com/ahoang94'
-    picture: 'https://avatars.githubusercontent.com/ahoang94'
-  - name: Jeanette Renema
-    role: UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02HE00UDQS'
-      github: 'https://github.com/JeannyRen'
-    picture: 'https://avatars.githubusercontent.com/JeannyRen'
+      slack: 'https://hackforla.slack.com/team/U02RZRF34DA'
+      github: 'https://github.com/tamalatrinh'
+    picture: 'https://avatars.githubusercontent.com/tamalatrinh'
   - name: Anthony Navarro-Liu
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U02H764K6D8'
       github: 'https://github.com/navarroliuanthony'
     picture: 'https://avatars.githubusercontent.com/navarroliuanthony'
-  - name: Anna Knutson
-    role: UX Researcher
+  - name: Kelene Lee
+    role: Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U02HDMN9JD9'
-      github: 'https://github.com/avknutson'
-    picture: 'https://avatars.githubusercontent.com/avknutson'
-  - name: Bernard Adesina
-    role: UX/UI Designer
+      slack: 'https://hackforla.slack.com/team/U02U49VDV2L'
+      github: 'https://github.com/kelenelee'
+    picture: 'https://avatars.githubusercontent.com/kelenelee'
+  - name: Dongchen Hou
+    role: Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U01FAP6GL23'
-      github: 'https://github.com/AdesinaBernard'
-    picture: 'https://avatars.githubusercontent.com/AdesinaBernard'
-  - name: Anastasia Nekrasova
-    role: UX/UI Designer
+      slack: 'https://hackforla.slack.com/team/U02QPKCB7UN'
+      github: 'https://github.com/hdchangie'
+    picture: 'https://avatars.githubusercontent.com/hdchangie'
+  - name: Eric J Cunningham
+    role: Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U028E4B7JSC'
-      github: 'https://github.com/anekkk'
-    picture: 'https://avatars.githubusercontent.com/anekkk'
+      slack: 'https://hackforla.slack.com/team/U02V6PA5NJY'
+      github: 'https://github.com/cunninghamej'
+    picture: 'https://avatars.githubusercontent.com/cunninghamej'
+  - name: Joyce Chang
+    role: Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02U727NYM9'
+      github: 'https://github.com/tfeng95725'
+    picture: 'https://avatars.githubusercontent.com/tfeng95725'
+  - name: Sandra Berjan
+    role: UX Writer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03753VQBSR'
+      github: 'https://github.com/sandraberjan'
+    picture: 'https://avatars.githubusercontent.com/sandraberjan'
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/design-systems'
@@ -79,7 +78,7 @@ technologies:
 location: 
   - Remote
 partner:
-tools: 
+tools: Figma, Google Docs, Zoom, Otter.ai
 program-area:
   - Civic Tech Infrastructure
 status: Active 

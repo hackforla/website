@@ -71,7 +71,8 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
-        - [**v. After pull request is submitted/merged**](#v-after-pull-request-is-submittedmerged)
+        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-How-to-add-a-pull-request-to-the-project-board)
+        - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
     - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
@@ -314,6 +315,24 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
 
+Progress through issues with increasing complexity in the following order:
+  1. Good first issue
+  2. Good second issue
+  3. Small 
+  4. Medium 
+  5. Large
+
+The reasons for this progression are:
+  * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
+  * We are trying to teach you the team methodology through the issues themselves.
+  * It ensures you understand what we expect and the quality of contributions.
+  
+All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis.
+
+All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
+
+Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
@@ -454,7 +473,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 - Only want to do a specific type of front end or back end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
 #### **2.6.b What to do if you have to stop working mid issue:**
-- Remove the progress in the checkboxes (all checkboxes should be empty)
+- For your issue, uncheck the checkboxes for any action items that have to be redone by the next developer picking up the issue.
 - Add a note in the comments with details and progress for the next developer
 - Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue)) 
 - Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue)) 
@@ -804,8 +823,19 @@ in the gif example [near the top  of this part within the gif of completing pull
 
 Moving files to another directory. No visual changes to the website.
 ```
+##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-##### **v. After pull request is submitted/merged**
+**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+
+After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
+
+<details>
+  <summary><strong>Click here</strong> to see how to add a pull request to the project board</summary>
+  <h4>Our GitHub project board</h4>
+  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png"/>
+</details>
+
+##### **vi. After pull request is submitted/merged**
 
 **NOTE**: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch. 
 

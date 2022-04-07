@@ -13,12 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
-  - name: Matthew Ginther
+  - name: Matthew Cacho
     role: Full-Stack Developer Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013GNM93U1'
-      github: 'https://github.com/mg78856'
-    picture: https://avatars.githubusercontent.com/mg78856
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
+    picture: https://avatars.githubusercontent.com/macho-catt
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -27,7 +27,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
-    url: 'http://www.luckyparking.info/'
+    url: 'http://www.luckyparking.org/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)

@@ -97,6 +97,9 @@ function retrieveProjectDataFromCollection(){
                             {%- if project.partner -%},
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
+                            {%- if project.tools -%},
+                            "tools": `{{ project.tools }}`
+                            {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
                             {%- endif -%}
@@ -456,6 +459,15 @@ return `
             <div class="project-partner">
             <strong>Partner: </strong>
             ${ project.partner }
+            </div>
+            `:""
+            }
+
+            ${project.tools ?
+            `
+            <div class="project-tools">
+            <strong>Tools: </strong>
+            ${ project.tools }
             </div>
             `:""
             }
