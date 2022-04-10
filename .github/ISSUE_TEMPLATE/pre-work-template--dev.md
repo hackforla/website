@@ -34,12 +34,16 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
   - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
-- [ ] Once you take a good first issue, you will provide estimates and progress reports. 
+- [ ] Once you take a good first issue, you will provide estimates and progress reports. Also, once you finish providing your "Estimate" action item below, please answer the question in the "Time spent so far" action item (also below).
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
  Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment.
     ```
    Availability for this week:
    My estimated ETA for completing this issue:
+    ```
+   - [ ] Time spent so far: Copy the question below into a new comment below and answer it. This is just to get feedback on how long it took you to get to this point on this pre-work. There is no right or wrong answers. There is no judgement. It is ok if you take a long time or if you do it really fast or at any pace.
+    ```
+    How many hours did it take you to finish the pre-work up to and including adding your initial ETA and availability for your good first issue, including attending your first meetings?
     ```
    - [ ] Progress Reports: Copy the below and put it in the issue once you have been assigned to the issue at least 5 days (we check weekly on Fridays), or sooner if you have something to report.  If you finish this issue before 5 days are reached, Yeah!!, do it on your next issue.  This update should be done every week for every issue.  The checkbox here is meant for us to see if you understood the instructions when you end up doing your first weekly progress update.
     ```
