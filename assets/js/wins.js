@@ -345,19 +345,6 @@
 		function addSeeMore() {
 			const winText = winTextContainer.querySelector('.wins-card-overview')
 			const seeMoreDiv = winTextContainer.querySelector('.wins-see-more-div')
-			//makes the see more span on the bottom of the card
-			if (
-				!winTextContainer.classList.contains('expanded') && 
-				winText.offsetHeight <= winTextContainer.offsetHeight 
-			) {
-        // Adds see more
-				seeMoreDiv.setAttribute('hidden', 'true')
-			} else {
-        // Removes see more if not needed
-				seeMoreDiv.removeAttribute('hidden')
-			}
-			if (!winTextContainer.classList.contains('expanded'))
-				winTextContainer.classList.add('relative')
 			if (window.innerWidth > 960){
 				const winsCardTextContainer = seeMoreDiv.parentElement
 				if (winsCardTextContainer.classList.contains("expanded")){
@@ -396,22 +383,43 @@ function seeMore(id){
 	}
 
   // Toggles between see more and see less in tablet and mobile view
-  function toggleSeeMoreLess(id){
-		let span = document.getElementById(id);
-		let screenWidth = window.innerWidth;
-		let parent = span.parentElement.parentElement;
-		let winsIconContainer = document.getElementById(`icons-${id}`)
-	  	if (parent.classList.contains('expanded') || screenWidth > 960) {
-			parent.setAttribute('class', 'project-inner wins-card-text relative');
-			span.innerHTML = "...see more";
-			winsIconContainer.setAttribute('class', 'wins-icon-container');
-		} else {
-			parent.setAttribute('class','project-inner wins-card-text expanded');
-			span.innerHTML = '<img src="/assets/images/wins-page/caret.svg" alt="caret">&nbsp; see less';
-			winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-      span.parentElement.removeAttribute('hidden')
+  function toggleSeeMoreLess(id) {
+	let span = document.getElementById(id);
+	let screenWidth = window.innerWidth;
+	let parent = span.parentElement.parentElement;
+	let winsIconContainer = document.getElementById(`icons-${id}`)
+	if (parent.classList.contains('expanded') && screenWidth > 960) {
+		parent.setAttribute('class', 'project-inner wins-card-text');
+		winsIconContainer.setAttribute('class', 'wins-icon-container');
+	} else if(parent.classList.contains('expanded') && screenWidth < 960) {
+		parent.setAttribute('class', 'project-inner wins-card-text');
+		span.setAttribute('class', 'see-more-div');
+		winsIconContainer.setAttribute('class', 'wins-icon-container');
+	} else {
+		parent.setAttribute('class','project-inner wins-card-text expanded');
+		span.setAttribute('class', 'see-more-div show-less-btn');
+		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
+  		span.parentElement.removeAttribute('hidden');
+	}
+}
+
+function changeSeeMoreBtn(x) {
+	const span = document.querySelectorAll(".see-more-div");
+	if (x.matches) { 
+		for(let i = 0; i < span.length; i++) {
+			span[i].innerHTML = ''
 		}
+	} else {
+		for(let i = 0; i < span.length; i++) {
+			// removes show-less-btn class
+			span[i].setAttribute('class', 'see-more-div');	
+			span[i].innerHTML = "See More";
+		}
+	}
   }
+  
+  const x = window.matchMedia("(max-width: 960px)");
+  x.addListener(changeSeeMoreBtn);
 
   // need to delete makeElement and makeIcon
   function makeElement(elementType, parent, className) {
@@ -502,4 +510,5 @@ function seeMore(id){
 
 
   main();
+  changeSeeMoreBtn(x);
 
