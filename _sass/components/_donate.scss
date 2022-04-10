@@ -18,10 +18,12 @@
         flex-direction: column;
         align-items: center;
 
-        h1 {
+        .title1 {
+            // This fixes the issue regarding the font-size for this h1, on the file defining the title# classes .title1 must not have the correct font sizes. It now matches the current HFLA site.
+            font-size: 48px;
             padding-bottom: 28px;
             @media #{$bp-mobile-up} {
-                
+                font-size: 32px;
             }
         }
 
@@ -61,7 +63,7 @@
             padding: 32px 20px;
         }
         
-        h1 {
+        .title4 {
             margin-bottom: 1rem;
             // Fixes title wrap at smallest mobile size 
             @media (max-width: #{$screen-mobile - 160}) {
@@ -70,7 +72,7 @@
             }
         }
 
-        h2 {
+        .title7 {
             width: 100%;
         }
         
