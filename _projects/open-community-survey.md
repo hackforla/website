@@ -31,6 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U029J3LT0TS'
       github: 'https://github.com/LAStorm'
     picture: https://avatars.githubusercontent.com/LAStorm
+  - name: Tugba Metinyurt
+    role: Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U02NF293BRQ'
+      github: 'https://github.com/Tugba'
+    picture: https://avatars.githubusercontent.com/Tugba
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
