@@ -44,8 +44,8 @@
 .wins-see-more-div {
     position: absolute;
     background-color: white;
-    right: 0px;
-    bottom: 0px;
+    right: 32px;
+    bottom: 26px;
     color: $color-red;
     padding: 0px 3px;
     cursor: pointer;
@@ -54,18 +54,34 @@
 .wins-card-text {
 	margin-top: 40px;
 	max-height: 88px;
-	overflow: hidden;
-	position: relative;
-    &.relative {
-        position: relative;
-        .wins-see-more-div {
-            bottom: 0;
-            right: 0;
+	position: inherit;
+}
+
+.wins-card-overview{
+    margin: 1em 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.see-more-div {
+
+	@media #{$bp-below-desktop} {
+        display: inline-block;
+        width: 44px;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 12px;
+        background-image: url(../../assets/images/wins-page/caret.svg);
+        transform: rotate(180deg);
+        &.show-less-btn {
+            transform: rotate(0deg);
         }
-    }
-    p {
-        margin: 0;
-    }
+	}
 }
 
 .wins-icon-container {
@@ -263,9 +279,6 @@
 .wins-card-icons{
     display: flex;
 }
-.wins-card-overview{
-    margin-top: 1em;
-}
 
 @media #{$bp-below-desktop} {
     .wins-card {
@@ -433,6 +446,9 @@
     .expanded{
         max-height: none;
         height: auto;
+        .wins-card-overview {
+            display: block;
+        }
         .wins-see-more-div {
             z-index: 10;
         }
@@ -443,8 +459,6 @@
 .wins-card-content > * {
     flex: 0 0 auto;
 }
-
-
 
 //wins page filter override section begin
 .wins-page-contain > ul.filter-list{
