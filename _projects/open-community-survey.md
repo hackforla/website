@@ -14,7 +14,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Kalyani Raman
-    role: Project Manager
+    role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02QW65RU1M'
       github: 'https://github.com/kalyaniraman'
@@ -35,8 +35,8 @@ leadership:
     role: Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U02NF293BRQ'
-      github: 'https://github.com/Tugba'
-    picture: https://avatars.githubusercontent.com/Tugba
+      github: 'https://github.com/TugbaMet'
+    picture: https://avatars.githubusercontent.com/TugbaMet
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
