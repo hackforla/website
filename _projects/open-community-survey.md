@@ -42,6 +42,8 @@ links:
     url: 'https://github.com/hackforla/open-community-survey'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
+  - name: Overview
+    url: '../assets/pdfs/Open-Community-Survey-One-Sheet.pdf'
 looking:
   - category: PM
     skill: Product Manager
