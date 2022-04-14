@@ -5,6 +5,8 @@ tool-provider: SoGoSurvey
 provider-link: https://www.sogosurvey.com/
 # Location in our GitHub repo of the tool's logo
 logo-url: /assets/images/credits/so-go-survey.png
+# Alt in accordance with WCAG requirements
+alt: ''
 # The type of tool, such as a survey
 tool-type: survey
 # The area it is used in - Research, Development, Design, Product Management, etc
