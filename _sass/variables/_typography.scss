@@ -118,6 +118,12 @@ $font-size-title7: (
   /* 16px*/ desktop: 1rem
 );
 
+$font-size-paragraph1: 1.25rem; /* Equivalent to 20px if base font-size is 16px */
+
+$font-size-paragraph2: 1.125rem; /* Equivalent to 18px if base font-size is 16px */
+
+$font-size-paragraph3: 1rem; /* Equivalent to 16px if base font-size is 16px */
+
 $line-height-small: (
   print: 1.25,
   mobile: 1.25,
@@ -166,3 +172,5 @@ $line-height-h1: (
   tablet: 1.125,
   desktop: 1.05
 );
+
+$line-height-paragraph-class: 1.375; /* Equivalent to 137% */

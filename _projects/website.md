@@ -19,42 +19,30 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Adam Abundis
-    role: Front End Lead
+  - name: Saumil Dhankar
+    role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/UJML6CY49'
-      github: 'https://github.com/abuna1985'
-    picture: https://avatars.githubusercontent.com/abuna1985
-  - name: Matthew Cacho
-    role: Back End/Dev Ops and Technical Lead
+      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
+      github: 'https://github.com/SAUMILDHANKAR'
+    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
+  - name: Jessica Cheng
+    role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
-      github: 'https://github.com/macho-catt'
-    picture: https://avatars.githubusercontent.com/macho-catt
-  - name: Kristine Eudey
-    role: UX Design Lead
+      slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
+      github: 'https://github.com/JessicaLucindaCheng'
+    picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
+  - name: Simone Campbell
+    role: UX Research Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U0252CHL678'
-      github: 'https://github.com/kristine-eudey'
-    picture: https://avatars.githubusercontent.com/kristine-eudey
-  - name: Ibraheem Agbaje
+      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
+      github: 'https://github.com/sacamp'
+    picture: https://avatars.githubusercontent.com/sacamp
+  - name: Providence Onyenekwe
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01FKL1DN48'
-      github: 'https://github.com/IAgbaje'
-    picture: https://avatars.githubusercontent.com/IAgbaje
-  - name: Pawan Murthy
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
-      github: 'https://github.com/pawan92'
-    picture: https://avatars.githubusercontent.com/pawan92
-  - name: Sihem Gourou
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U021GM545UG'
-      github: 'https://github.com/Sihemgourou'
-    picture: https://avatars.githubusercontent.com/Sihemgourou
+      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
+      github: 'https://github.com/Providence-o'
+    picture: https://avatars.githubusercontent.com/Providence-o    
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -79,6 +67,9 @@ technologies:
   - GitHub Pages
   - Jekyll
   - Docker
+  - Google Apps Script
+  - GitHub Actions
+  - VRMS API
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
   # - Santa Monica
@@ -86,7 +77,7 @@ location:
   - Remote
 visible: true
 status: Active
-program-area: 
-  - Workforce Development 
+program-area:
+  - Workforce Development
   - Civic Tech Infrastructure
 ---

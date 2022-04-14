@@ -2,9 +2,8 @@
   margin: 40px 0px 83px 0px;
   padding: 25px;
   @media #{$bp-below-tablet} {
-    margin-top: 52px;
+    margin: 0;
     padding: 0;
-    margin: 0px;
   }
 }
 
@@ -273,9 +272,8 @@
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
   max-width: 996px;
-  margin-bottom: 0;
-  padding: 20px;
   margin: 45px;
+  padding: 20px;
   font-family: "Roboto" sans-serif;
   height: fit-content;
 
@@ -347,36 +345,11 @@
 
 .title-meetup {
   font-size: 1.25rem;
-  text-align: center;
-  font-weight: 700;
   text-align: left;
+  font-weight: 700;
   margin-bottom: 16px;
-
-
+  color: $color-black;
 }
-
-// .btn-meet {
-//   background: #fa114f;
-//   border: 2;
-//   border-radius: 60px;
-//   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-//   color: #fff;
-//   display: inline-block;
-//   font-size: 25px;
-//   font-weight: 400;
-//   height: 86px;
-
-//   padding: 0 20px;
-//   text-decoration: none;
-//   transition: all 100ms ease-in;
-//   white-space: nowrap;
-//   width: 62%;
-
-//   @media #{$bp-below-mobile} {
-//     font-size: 1.1rem;
-//     width: 70%;
-//   }
-// }
 
 .class-btn {
   text-align: center;
@@ -515,6 +488,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin: 30px 0 10px 0;
+  color: $color-black; 
   padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;

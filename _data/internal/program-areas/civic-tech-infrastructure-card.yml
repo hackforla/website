@@ -37,6 +37,11 @@ projects:
     image: /assets/images/projects/civic-tech-structure.png
     image_alt: A network of lines and nodes, and the lines converge to a large dot in the center.
     link: https://www.hackforla.org/projects/civic-tech-structure
+  - id: 221542759
+    name: EMS Triage Tracker
+    image: /assets/images/projects/ems-triage-tracker.png
+    alt: 'EMS Triage Tracker Logo'
+    link: https://www.hackforla.org/projects/ems-triage-tracker
   - id: 226157870
     name: VRMS
     image: /assets/images/projects/vrms.png

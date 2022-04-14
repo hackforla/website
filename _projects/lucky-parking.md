@@ -13,12 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
-  - name: Matthew Ginther
+  - name: Matthew Cacho
     role: Full-Stack Developer Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013GNM93U1'
-      github: 'https://github.com/mg78856'
-    picture: https://avatars.githubusercontent.com/mg78856
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
+    picture: https://avatars.githubusercontent.com/macho-catt
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -27,7 +27,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
-    url: 'http://www.luckyparking.info/'
+    url: 'http://www.luckyparking.org/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
@@ -47,8 +47,17 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-program-area: 
+program-area:
   - Citizen Engagement
 visible: true
 status: Active
+# citizen engagement card data
+problem: Parking citations are distributed unevenly across different socio-economic strata of the city's residents as they use public parking during the course of business or because enough off-street parking is not provided at their residence. The current publicly available Los Angeles parking citation dataset can be used as a basis for discussions about this disparity, but the unwieldy size and inconsistency of this data has been enough of a barrier to make it inaccessible to non-researchers.
+solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a webapp that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
+impact: Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.
+sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
+card-image-src: /assets/images/projects/lucky-parking.png
+card-image-alt: lucky parking project card
+sdg-image-src: /assets/images/about/sdg-elements/sustainable-cities.svg
+sdg-image-alt: sustainable cities bottom sustainable dev goal
 ---

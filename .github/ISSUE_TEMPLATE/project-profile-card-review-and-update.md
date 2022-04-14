@@ -3,7 +3,7 @@ name: Project Profile Card review and update
 about: To track project profile card updates
 title: 'Update Project Profile: [Project Name]'
 labels: 'P-Feature: Project Info and Page, role: back end/devOps, role: front end,
-  Size: Small'
+  Size: Small, size: 0.5pt'
 assignees: ''
 
 ---
@@ -23,7 +23,7 @@ _insert url of their card here before sending - their cards can be found in this
       - [ ] image
       - [ ] leadership
          - [ ] Name
-         - [ ] GitHub hand
+         - [ ] GitHub handle
          - [ ] Role
          - [ ] SLACK ID
       - [ ] links
@@ -32,9 +32,11 @@ _insert url of their card here before sending - their cards can be found in this
          - [ ] Test Site
          - [ ] Demo Site
          - [ ] Site
-      - [ ] looking
       - [ ] technologies
-      - [ ] location
       - [ ] partner
       - [ ] tools
       - [ ] status
+ - [ ] Open an issue on VRMS to update the meeting times and provide the link to the new issue in the comment below
+
+### Resources
+[VRMS Add/edit team meeting time template issue](https://github.com/hackforla/VRMS/issues/new?assignees=&labels=1+week+change+request&template=add-edit-team-meeting-time.md&title=Meeting+time+change+request+for+%5BProject+Name%5D)

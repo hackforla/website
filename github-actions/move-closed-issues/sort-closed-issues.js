@@ -7,7 +7,7 @@ const obtainLabels = require('../utils/obtain-labels')
  */
 function main({ context }) {
   const doneColumn = "Done"
-  const UATColumn = "UAT"
+  const QAColumn = "QA"
 
   const hardLabels = [
     "Feature: Refactor CSS",
@@ -37,9 +37,9 @@ function main({ context }) {
     return doneColumn;
   }
 
-  /** if issue does not include a hard label, but does contain an override label - move to UAT */
+  /** if issue does not include a hard label, but does contain an override label - move to QA */
   if (issueLabels.some(isOverrideLabel)) {
-    return UATColumn;
+    return QAColumn;
   }
 
   /** if issue includes soft labels (no hard or override) - move to Done */
@@ -47,8 +47,8 @@ function main({ context }) {
     return doneColumn;
   }
 
-  // all other issues go to UAT column
-  return UATColumn;
+  // all other issues go to QA column
+  return QAColumn;
 }
 
 module.exports = main;

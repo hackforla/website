@@ -51,9 +51,11 @@ links:
   - name: Readme
     url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
-    url: "https://hackforla.slack.com/archives/C6JBH478W"
+    url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
+  - name: Overview
+    url: '../assets/pdfs/Food-Oasis-One-Sheet.pdf'
 looking:
 technologies:
   - React
@@ -65,12 +67,11 @@ technologies:
   - Docker
   - Mapbox
   - Material-UI
-  - SCSS
 location:
   # - Downtown LA
   - Remote
 tools: figma, photoshop, sketch, pencil and paper, phone calls.
-program-area: 
+program-area:
   - Social Safety Net
 partner: seeking
 visible: true

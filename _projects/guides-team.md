@@ -9,19 +9,25 @@ alt: 'Globe Map made of dots and hackforla logo and text reading Guides Team'
 image-hero: /assets/images/projects/guides-team-hero.jpg
 alt-hero: 'Globe Map made of dots'
 leadership:
-  # - name: First Last
-  #   role: Product Manager
-  #   links:
-  #     slack: 'https://hackforla.slack.com/team/xxxxxx'
-  #     github: 'https://github.com/githubusername'
-  #   picture: https://avatars.githubusercontent.com/githubusername
+  - name: Bonnie Wolfe
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
+      github: 'https://github.com/ExperimentsInHonesty'
+    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Bukola Ogunleye
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U02617GM7QX'
+      github: 'https://github.com/SheIsBukki'
+    picture: https://avatars.githubusercontent.com/SheIsBukki
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C028T9XU9S5'
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/Guides-Team-One-Sheet.pdf
+    url: '../assets/pdfs/Guides-Team-One-Sheet.pdf'
 looking:
 technologies: 
 location:
