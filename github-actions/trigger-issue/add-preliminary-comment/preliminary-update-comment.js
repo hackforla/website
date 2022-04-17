@@ -12,7 +12,7 @@ var context
  * @param {Number} issueNum - the number of the issue where the post will be made 
  */
 
-async function main({ g, c }, { shouldPost, issueNum },assignee){
+async function main({ g, c }, { shouldPost, issueNum }){
   github = g
   context = c
   // If the previous action returns a false, stop here
@@ -35,10 +35,10 @@ async function main({ g, c }, { shouldPost, issueNum },assignee){
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
-function makeComment(assignee){
+function makeComment(){
   // Setting all the variables which formatComment is to be called with
-  //const issueAssignee = context.payload.issue.assignee.login
-  const issueAssignee = assignee
+  const issueAssignee = context.payload.issue.assignee.login
+  //const issueAssignee = assignee
   const commentObject = {
     replacementString: issueAssignee,
     placeholderString: '${issueAssignee}',
