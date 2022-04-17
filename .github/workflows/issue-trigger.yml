@@ -44,6 +44,7 @@ jobs:
         id: check-labels-prelim
         with:
           script: |
+            
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/check-label-preliminary-update.js')
             const checklabels = script({g: github, c: context})
             return checklabels
@@ -55,7 +56,8 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
+            const assignee = github.event.assignee
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
-            script({g: github, c:context},results)
+            script({g: github, c:context},results,assignee)
 
