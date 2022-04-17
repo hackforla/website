@@ -32,11 +32,11 @@ async function main({ g, c }, { shouldPost, issueNum }){
 
 /**
  * @description - This function makes the comment with the issue assignee's github handle using the raw preliminary.md file
- * @returns {string} - Comment to be posted with the issue creator's name in it!!!
+ * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
 function makeComment(){
-  // Setting all the variables which formatcomment is to be called with
+  // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.user.login
 
   const commentObject = {
@@ -46,7 +46,7 @@ function makeComment(){
     textToFormat: null
   }
 
-  // creating the comment with issue creator's name and returning it!
+  // creating the comment with issue assignee's name and returning it!
   const commentWithIssueCreator = formatComment(commentObject)
 
   return commentWithIssueCreator
