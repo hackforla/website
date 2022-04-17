@@ -34,12 +34,16 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
   - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
-- [ ] Once you take a good first issue, you will provide estimates and progress reports. 
+- [ ] Once you take a good first issue, you will provide estimates and progress reports. Also, once you finish providing your "Estimate" action item below, please answer the question in the "Time spent so far" action item (also below).
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
  Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment.
     ```
    Availability for this week:
    My estimated ETA for completing this issue:
+    ```
+   - [ ] Time spent so far: Copy the question below into a new comment below and answer it. This is just to get feedback on how long it took you to get to this point on this pre-work. There is no right or wrong answers. There is no judgement. It is ok if you take a long time or if you do it really fast or at any pace.
+    ```
+    How many hours did it take you to finish the pre-work up to and including adding your initial ETA and availability for your good first issue, including attending your first meetings?
     ```
    - [ ] Progress Reports: Copy the below and put it in the issue once you have been assigned to the issue at least 5 days (we check weekly on Fridays), or sooner if you have something to report.  If you finish this issue before 5 days are reached, Yeah!!, do it on your next issue.  This update should be done every week for every issue.  The checkbox here is meant for us to see if you understood the instructions when you end up doing your first weekly progress update.
     ```
@@ -53,16 +57,20 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Additional notes:
    - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
-- [ ] Progress through issues with increasing complexity in the following order:
-  - Good first issue
-  - Good second issue
-  - Small 
-  - Medium 
-  - Large
+- [ ] Read and understand how we progress through issues. Then, you can check this off.
+Progress through issues with increasing complexity in the following order:
+  - Good first issue (one per person)
+  - Good second issue (one per person)
+  - Small (one per person, with some exceptions, see below)
+  - Medium (you can work on more than one medium issue, but only one at a time)
+  - Large (you can work on more than one large issue, but only one at a time)
     - The reasons for this progression are:
       - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
       - We are trying to teach you the team methodology through the issues themselves.
       - It ensures you understand what we expect and the quality of contributions.
+    - You can work on back-to-back small issues if it meets the following criteria:
+      - You are learning something new and need to work on an issue of a lesser complexity
+      - Special request by a lead or pm
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
