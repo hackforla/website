@@ -56,7 +56,7 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            const assignee = github.event.assignee
+            const assignee = github.event.pull_request.assignee
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results,assignee)
