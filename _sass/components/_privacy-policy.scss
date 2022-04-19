@@ -1,0 +1,44 @@
+@media #{$bp-desktop-up} {
+  .header-container {
+    .header-hero-image--privacy-policy {
+      align-self: start;
+    }
+  }
+}
+
+.content-section--privacy-policy {
+  background: $color-pink;
+
+  .page-card--privacy-policy {
+    padding: 36px 57px;
+  }
+
+  .title-spacing {
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+
+  .after-subtitle-spacing {
+    margin-bottom: 18px;
+  }
+
+  .before-list-spacing {
+    margin-bottom: 0px;
+  }
+}
+
+@media #{$bp-below-tablet} {
+
+  /* 
+  This class has the same definition as .paragraph3 class.
+  However, it is duplicated here so it can be used for the Privacy Policy page in mobile screen sizes,
+  which is a different font-size than the paragraph2 classes used for desktop size screens.
+  */
+  .paragraph--privacy-policy {
+    line-height: $line-height-paragraph-class;
+    font-family: $font-family-body;
+    font-weight: map-get($font-weight, normal);
+    color: $color-black;
+    font-size: $font-size-paragraph3;
+  }
+}
