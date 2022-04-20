@@ -36,6 +36,9 @@ For the file `_data/internal/credits/[INSERT FILE NAME HERE].yml`, do the follow
   ```
   type: [INSERT THE CURRENT TEXT ON THE FILE HERE]
   ```
+- [ ] Once the pull request associated with this issue is approved and merged, please update and edit epic #2775 by
+  - [ ] Checking off the dependency for this issue
+  - [ ] If all dependencies are checked off, please move issue #2775 to the New Issue Approval column and remove the Dependency label
 
 ### Resources/Instructions
 - This issue is tracked in the epic #2775.
