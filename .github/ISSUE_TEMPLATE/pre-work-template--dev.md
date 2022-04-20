@@ -16,9 +16,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
 
 ### Action Items
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address and GitHub handle with the team lead so you can be added to the Google Drive and the website-write team
-- [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
-- [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
+- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Also, confirm with the team lead that they have added you to the Zoom meeting calendar invites
+- [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
+- [ ] After you have finished adding yourself to the roster, let a team lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Once added to the website-write team:
   - [ ] Self Assign this issue (gear in right side panel)
   - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label
@@ -71,7 +72,7 @@ Progress through issues with increasing complexity in the following order:
     - You can work on back-to-back small issues if it meets the following criteria:
       - You are learning something new and need to work on an issue of a lesser complexity
       - Special request by a lead or pm
-- [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
+- [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their SCSS classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
 ### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
