@@ -21,7 +21,7 @@ permalink: /credits/
 <a class='anchor' id='step-1'></a>
     <div class='page-card card-primary page-card-lg page-card--credits'>
       <h2 class="title2 credits-heading">Iconography & Imagery</h2>
-      <div class="page-contain credits-inner">
+      <div class="credits-inner">
           <ul class="credits-list unstyled-list">
             {%- for item in site.data.internal.credits -%}
               {%- if item[1].image-url -%}
@@ -71,12 +71,12 @@ permalink: /credits/
     </div>
     <div class="page-card card-primary page-card-lg page-card--credits">
       <h2 class="title2 credits-heading">Tools</h2>
-      <div class="page-contain credits-inner">
+      <div class="credits-inner">
           <ul class="credits-list unstyled-list">
             {%- for item in site.data.internal.credits.tools -%}
               {%- if item[1].logo-url -%}
-                  <li>
-                    <!-- originally class="project-card-inner" -->
+              <li>
+                <!-- originally class="project-card-inner" -->
                   <div class="credits-tool">
                     <div class="icon-center">
                       <img class="icon-center-image" src={{ item[1].logo-url | absolute_url }} alt="">

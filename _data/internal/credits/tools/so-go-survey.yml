@@ -12,7 +12,7 @@ used-in: Research
 # A list of the project team(s) using the tool
 used-by:
     # Name of a project team
-    project-name: Design System's Team
+  - project-name: Design System's Team
     # Link to the project team's page
     project-link: https://www.hackforla.org/projects/design-systems
 ---

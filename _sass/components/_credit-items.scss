@@ -52,6 +52,7 @@
   
   @media #{$bp-below-mobile} {
     margin: 5px;
+    padding-left: 15px;
   }
 }
 
@@ -70,7 +71,7 @@
 
   @media #{$bp-tablet-up} {
     display: grid;
-    grid-gap: 32px 100px;
+    grid-gap: 32px 54px;
     grid-template-columns: repeat(2, 1fr);
     order: 3;
     width: 100%;
@@ -88,11 +89,11 @@
 }
 
 .credits-heading {
-  padding-left: 30px;
+  padding-left: 15px;
   margin-bottom: 15px;
   @media #{$bp-below-mobile} {
-   padding-left: 5px;
-   font-size: 20px;
+    padding-left: 20px;
+    font-size: 20px;
   }
 }
 
