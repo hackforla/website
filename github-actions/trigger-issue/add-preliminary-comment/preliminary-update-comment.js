@@ -47,9 +47,9 @@ function makeComment(){
   }
 
   // creating the comment with issue assignee's name and returning it!
-  const commentWithIssueCreator = formatComment(commentObject)
+  const commentWithIssueAssignee = formatComment(commentObject)
 
-  return commentWithIssueCreator
+  return commentWithIssueAssignee
 }
 
 
