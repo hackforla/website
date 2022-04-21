@@ -31,7 +31,6 @@ For the file `_data/internal/credits/[INSERT FILE NAME HERE].yml`, do the follow
   ```
   content-type: image
   ```
-
 - [ ] Remove line [ADD LINE NUMBER WHICH HAS TYPE] for the type field
   ```
   type: [INSERT THE CURRENT TEXT ON THE FILE HERE]
