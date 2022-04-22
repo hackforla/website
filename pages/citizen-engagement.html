@@ -38,11 +38,11 @@ permalink: /citizen-engagement
 
             {% include citizen-engagement-cards.html %}
 
-            <div class="page-card card-primary page-card-lg card-body card-width organizations">
+            <div class="page-card card-primary page-card-lg organizations">
                 <div class="organizations-info">
                     <h3>Organizations We Work With</h3>
                     <p>None of what we do would be possible without the generous
-                        support of many organizations throughout out our communities.
+                        support of many organizations throughout our communities.
                         A big thank you to:</p>
                 </div>
                 <div class="organizations-images">
@@ -61,23 +61,4 @@ permalink: /citizen-engagement
 </section>
 
 <!-- Include javaScript -->
-<script>
-
-    document.addEventListener('click', (e) => {
-        // <- Dropdown functionality
-        const isDropdownArrow = e.target.closest("[data-dropdown-arrow");
-        let currentDropown;
-
-        if (isDropdownArrow) {
-            currentDropdown = e.target.closest("[data-dropdown]");
-            currentDropdown.classList.toggle("activated");
-        }
-
-        document.querySelectorAll("[data-dropdown].activated").forEach(dropdown => {
-            if (dropdown === currentDropdown) return;
-            dropdown.classList.remove("activated");
-        })
-        // Dropdown functionality ->
-    })
-
-</script>
+<script src="{{ '/assets/js/citizen-engagement.js' | absolute_url }}"></script>

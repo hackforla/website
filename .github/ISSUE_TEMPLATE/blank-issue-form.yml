@@ -1,0 +1,38 @@
+name: 'Blank Issue '
+description: 'Standard HackforLA issue template '
+
+body:
+  - type: input
+    id: overview
+    attributes:
+      label: Overview
+      description: Clearly state the purpose of this issue in 2 sentences or less
+    validations:
+      required: true
+  - type: textarea
+    id: action-items
+    attributes:
+      label: Action Items
+      description: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
+    validations:
+      required: true
+  - type: textarea
+    id: resources-instructions
+    attributes:
+      label: "Resources/Instructions"
+      description: "Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc."
+    validations:
+      required: true
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: dependency-explanation
+    attributes:
+      label: If Yes, please explain

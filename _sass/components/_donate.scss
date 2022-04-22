@@ -22,9 +22,6 @@
             // This fixes the issue regarding the font-size for this h1, on the file defining the title# classes .title1 must not have the correct font sizes. It now matches the current HFLA site.
             font-size: 48px;
             padding-bottom: 28px;
-            @media #{$bp-mobile-up} {
-                font-size: 32px;
-            }
         }
 
         p {
@@ -237,7 +234,6 @@
 
             h1 {
                 padding-bottom: 0;
-                // margin-left: -30px;
             }
 
             p {
