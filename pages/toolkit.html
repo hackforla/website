@@ -11,7 +11,8 @@ permalink: /toolkit/
             What you will find here are tools we have found to be effective. Think of this as the most awesome
             collective tool shed!
             Here you can find, share, and suggest tools that are of use to the open source civic tech software
-            community.</p>
+            community.
+        </p>
     </div>
     <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="" />
 </div>
@@ -19,16 +20,16 @@ permalink: /toolkit/
 <div class="toolkit-header__text-group">
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
-    {% if category == "All" %}
-    <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item selected-category">{{category}}</a>
-    {% else %}
-    <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item">{{ category }}</a>
-    {% endif %}
+        {% if category == "All" %}
+            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item selected-category">{{category}}</a>
+        {% else %}
+            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item">{{ category }}</a>
+        {% endif %}
     {% endfor %}
 </div>
 
 <div class="toolkit-background content-section">
-    <a class="anchor" id='guides' data-name="guides"></a>
+    <a class="anchor" id="guides" data-name="guides"></a>
     <div class="toolkit__card-list">
         <div class="toolkit-flex-container">
             <div class="suggest-guide-group">
@@ -38,9 +39,9 @@ permalink: /toolkit/
             <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
-            {%- if item.display == true -%}
-            {%- include guide-card.html guide=item -%}
-            {%- endif -%}
+                {%- if item.display == true -%}
+                    {%- include guide-card.html guide=item -%}
+                {%- endif -%}
             {%- endfor -%}
         </div>
     </div>
@@ -82,7 +83,7 @@ permalink: /toolkit/
         } 
     </script>
 
-    <a class="anchor" id='external-resources' data-name="external-resources"></a>
+    <a class="anchor" id="external-resources" data-name="external-resources"></a>
     <div class="toolkit__card-list">
         <div class="toolkit-flex-container">
             <div class="suggest-guide-group">
