@@ -55,9 +55,9 @@ permalink: /credits/
                         <p>
                           <strong>Provider: </strong>
                           {%- if item[1].provider-link -%}
-                          <a href="{{item[1].provider-link}}">{{ item[1].provider }}</a>
+                            <a href="{{item[1].provider-link}}">{{ item[1].provider }}</a>
                           {%- else -%}
-                          {{ item[1].provider }}
+                            {{ item[1].provider }}
                           {%- endif -%}
                         </p>
                       {%- endif -%}
@@ -75,8 +75,8 @@ permalink: /credits/
           <ul class="credits-list unstyled-list">
             {%- for item in site.data.internal.credits.tools -%}
               {%- if item[1].logo-url -%}
-              <li>
-                <!-- originally class="project-card-inner" -->
+                <li>
+                  <!-- originally class="project-card-inner" -->
                   <div class="credits-tool">
                     <div class="icon-center">
                       <img class="icon-center-image" src={{ item[1].logo-url | absolute_url }} alt="">
@@ -84,27 +84,29 @@ permalink: /credits/
                     <div class="icon-info">
                       {%- if item[1].used-in -%}
                         <p>
-                        <strong>Used in: </strong>
+                          <strong>Used in: </strong>
                           {{ item[1].used-in }}
                         </p>
                       {%- endif -%}
                       {%- if item[1].used-by -%}
-                      <p>
-                        <strong>By: </strong>
-                        {%- if item[1].used-by -%}
-                        <a href="{{item[1].used-by.project-link}}">{{ item[1].used-by.project-name}}</a>
-                        {%- else -%}
-                        {{ item[1].used-by }}
-                        {%- endif -%}
-                      </p>
-                    {%- endif -%}
+                        <p>
+                          <strong>By: </strong>
+                          {% for team in item[1].used-by %}
+                            {% if forloop.last == true %}
+                              <a href="{{team.project-link}}">{{ team.project-name}}</a>
+                            {% else %}
+                              <a href="{{team.project-link}}">{{ team.project-name}}</a>, 
+                            {% endif %}
+                          {% endfor %}
+                        </p>
+                      {%- endif -%}
                       {%- if item[1].provider-link -%}
                         <p>
                           <strong>Provider: </strong>
                           {%- if item[1].provider-link -%}
-                          <a href="{{item[1].provider-link}}">{{ item[1].tool-provider}}</a>
+                            <a href="{{item[1].provider-link}}">{{ item[1].tool-provider}}</a>
                           {%- else -%}
-                          {{ item[1].provider }}
+                            {{ item[1].tool-provider }}
                           {%- endif -%}
                         </p>
                       {%- endif -%}
