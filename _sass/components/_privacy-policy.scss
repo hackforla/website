@@ -1,21 +1,22 @@
-@media #{$bp-desktop-up} {
-  .header-container {
-    .header-hero-image--privacy-policy {
-      align-self: start;
-    }
+.header-container {
+  .header-hero-image--privacy-policy {
+    object-fit: contain;
+    height: 240px;
+    width: 236.41px;
   }
 }
 
 .content-section--privacy-policy {
   background: $color-pink;
-
-  .page-card--privacy-policy {
-    padding: 36px 57px;
-  }
+  padding-top: 34px;
+  padding-bottom: 34px;
 
   .title-spacing {
-    margin-top: 48px;
     margin-bottom: 24px;
+  }
+
+  .title-spacing.first-title-spacing {
+    margin-top: 0px;
   }
 
   .after-subtitle-spacing {
@@ -27,10 +28,26 @@
   }
 }
 
-@media #{$bp-below-tablet} {
+@media #{$bp-desktop-up} {
+  .header-container {
+    .header-hero-image--privacy-policy {
+      align-self: start;
+    }
+  }
+
+  .page-card--privacy-policy {
+    padding: 36px 57px;
+  }
+
+  .title-spacing {
+    margin-top: 48px;
+  }
+}
+
+@media #{$bp-below-desktop} {
 
   /* 
-  This class has the same definition as .paragraph3 class.
+  This class has the same definition as .paragraph3 class as of Apr 25, 2022.
   However, it is duplicated here so it can be used for the Privacy Policy page in mobile screen sizes,
   which is a different font-size than the paragraph2 classes used for desktop size screens.
   */
@@ -40,5 +57,17 @@
     font-weight: map-get($font-weight, normal);
     color: $color-black;
     font-size: $font-size-paragraph3;
+  }
+
+  .header-container--privacy-policy {
+    padding: 32px 37.5px;
+  }
+
+  .title-spacing {
+    margin-top: 32px;
+  }
+
+  .page-card--privacy-policy {
+    padding: 28px 21.5px;
   }
 }
