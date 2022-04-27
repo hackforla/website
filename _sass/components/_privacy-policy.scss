@@ -8,8 +8,6 @@
 
 .content-section--privacy-policy {
   background: $color-pink;
-  padding-top: 34px;
-  padding-bottom: 34px;
 
   .subsection-spacing--privacy-policy {
     margin-bottom: 24px;
@@ -37,6 +35,11 @@
     .header-hero-image--privacy-policy {
       align-self: start;
     }
+  }
+
+  .content-section.content-section--privacy-policy {
+    padding-top: 34px;
+    padding-bottom: 34px;
   }
 
   .page-card--privacy-policy {
