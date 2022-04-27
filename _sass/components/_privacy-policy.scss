@@ -11,6 +11,10 @@
   padding-top: 34px;
   padding-bottom: 34px;
 
+  .subsection-spacing--privacy-policy {
+    margin-bottom: 24px;
+  }
+    
   .title-spacing {
     margin-bottom: 24px;
   }
@@ -19,11 +23,11 @@
     margin-top: 0px;
   }
 
-  .after-subtitle-spacing {
+  .subtitle-spacing {
     margin-bottom: 18px;
   }
 
-  .before-list-spacing {
+  .no-bottom-margin-spacing {
     margin-bottom: 0px;
   }
 }
@@ -39,32 +43,29 @@
     padding: 36px 57px;
   }
 
-  .title-spacing {
-    margin-top: 48px;
+  .section-spacing--privacy-policy {
+    margin-bottom: 48px;
   }
 }
 
 @media #{$bp-below-desktop} {
 
   /* 
-  This class has the same definition as .paragraph3 class as of Apr 25, 2022.
-  However, it is duplicated here so it can be used for the Privacy Policy page in mobile screen sizes,
+  This has the same font-size as paragraph3 so it can be used for the Privacy Policy page in mobile screen sizes,
   which is a different font-size than the paragraph2 classes used for desktop size screens.
   */
-  .paragraph--privacy-policy {
-    line-height: $line-height-paragraph-class;
-    font-family: $font-family-body;
-    font-weight: map-get($font-weight, normal);
-    color: $color-black;
-    font-size: $font-size-paragraph3;
+  section {
+    .paragraph2.paragraph--privacy-policy {
+      font-size: $font-size-paragraph3;
+    }
   }
 
   .header-container--privacy-policy {
     padding: 32px 37.5px;
   }
 
-  .title-spacing {
-    margin-top: 32px;
+  .section-spacing--privacy-policy {
+    margin-bottom: 32px;
   }
 
   .page-card--privacy-policy {
