@@ -9,7 +9,7 @@ on:
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'ryancahela/website'
     
     steps:
     - name: Checkout repository
