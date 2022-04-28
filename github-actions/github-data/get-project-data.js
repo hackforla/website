@@ -163,7 +163,7 @@ async function getCommentContributors(repo, dateLastRan) {
  */
 function constructContributorParams(repo) {
   let requestParams = {};
-  let isOrg = (repo.owner.type == "Organization" && repo.owner.login != "hackforla" && repo.owner.login != "cfa");
+  let isOrg = (repo.owner.type == "Organization" && repo.owner.login != "hackforla" && repo.owner.login != "codeforamerica");
   if(isOrg) {
     requestParams.org = repo.owner.login;
   } else {
