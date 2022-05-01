@@ -10,24 +10,24 @@ leadership:
   - name: Greg Pawin
     role: Product Owner / Data Science Lead
     links:
-      slack: "https://hackforla.slack.com/team/UUEQF3AJG"
-      github: "https://github.com/gregpawin"
+      slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
+      github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
   - name: Matthew Cacho
     role: Full-Stack Developer Lead
     links:
-      slack: "https://hackforla.slack.com/team/U0262GA4DD2"
-      github: "https://github.com/macho-catt"
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
     picture: https://avatars.githubusercontent.com/macho-catt
 links:
   - name: GitHub
-    url: "https://github.com/hackforla/lucky-parking"
+    url: 'https://github.com/hackforla/lucky-parking'
   - name: Readme
-    url: "https://github.com/hackforla/lucky-parking/blob/master/README.md"
+    url: 'https://github.com/hackforla/lucky-parking/blob/master/README.md'
   - name: Slack
-    url: "https://hackforla.slack.com/archives/CPFDMSV6V"
+    url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
-    url: "http://www.luckyparking.org/"
+    url: 'http://www.luckyparking.org/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
