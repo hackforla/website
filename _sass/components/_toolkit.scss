@@ -87,6 +87,12 @@
     }
 }
 
+a.anchor {
+    @media #{$bp-desktop-large-up} {
+        padding-bottom: 1.7rem;
+    }
+}
+
 .toolkit-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
