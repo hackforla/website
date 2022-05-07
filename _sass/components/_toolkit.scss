@@ -154,6 +154,9 @@
     @media (min-width: 1232px) and (max-width: 1400px) {
         padding-top: 1.7rem;
     }
+    @media #{$bp-desktop-large-up} {
+        padding-top: 1.7rem;
+    }
 }
 
 @media only screen and (max-width: 1430px) {
