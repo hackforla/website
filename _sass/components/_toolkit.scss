@@ -87,12 +87,6 @@
     }
 }
 
-a.anchor {
-    @media #{$bp-desktop-large-up} {
-        padding-bottom: 1.7rem;
-    }
-}
-
 .toolkit-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
@@ -157,6 +151,9 @@ a.anchor {
 
 .toolkit__card-list {
     margin-bottom: 10rem;
+    @media (min-width: 1232px) and (max-width: 1400px) {
+        padding-top: 1.7rem;
+    }
 }
 
 @media only screen and (max-width: 1430px) {
