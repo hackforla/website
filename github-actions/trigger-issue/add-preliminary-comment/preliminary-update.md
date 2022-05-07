@@ -8,4 +8,4 @@ ii. **ETA:** (When do you expect this issue to be completed?)
 
 You're awesome!
 
-P.S. - You may not take up another issue until this issue gets merged with the main gh-pages (or closed). Thanks again :)
+P.S. - You may not take up another issue until this issue gets merged (or closed). Thanks again :)
