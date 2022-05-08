@@ -86,12 +86,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
-  - name: Nandana Rao
-    role: Full Stack Developer
-    links:
-      slack: https://hackforla.slack.com/team/U013JA9H62E
-      github: https://github.com/nrrao
-    picture: https://avatars.githubusercontent.com/nrrao
   - name: Ron Fu
     role: Full Stack Developer
     links:
