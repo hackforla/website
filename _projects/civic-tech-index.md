@@ -20,42 +20,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MFPQDN'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Levi Adissi 
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/UD9MQDARJ'
-      github: 'https://github.com/ladissi'
-    picture: https://avatars.githubusercontent.com/ladissi
   - name: Kevin Phan
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02B90U9FPS'
       github: 'https://github.com/kevindphan'
     picture: https://avatars.githubusercontent.com/kevindphan
-  - name: Iffath Sultana
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01JQ2V3NRZ'
-      github: 'https://github.com/DrIffathsultana'
-    picture: https://avatars.githubusercontent.com/DrIffathsultana
-  - name: Maria Studnicka
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FREFQ99B'
-      github: 'https://github.com/mariastudnicka'
-    picture: https://avatars.githubusercontent.com/mariastudnicka
   - name: Chali Prasertsri
     role: UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
-  - name: Shipra Prakash
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01TUA963NZ'
-      github: 'https://github.com/shipranj'
-    picture: https://avatars.githubusercontent.com/shipranj
   - name: Farzana Prianka
     role: UX/UI Designer
     links:
@@ -74,12 +50,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01CSPAFEBV'
       github: 'https://github.com/emecas'
     picture: https://avatars.githubusercontent.com/emecas
-  - name: Emily Marinaro
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01JS81CCFL'
-      github: 'https://github.com/e0marina'
-    picture: https://avatars.githubusercontent.com/e0marina
   - name: Bruce Lai
     role: Full Stack Developer
     links:
