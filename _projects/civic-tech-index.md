@@ -118,11 +118,11 @@ leadership:
     picture: https://avatars.githubusercontent.com/mealthebear
 links:
   - name: GitHub
-    url: 'https://github.com/civictechindex/website'
+    url: 'https://github.com/civictechindex/CTI-website-frontend'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
   - name: Wiki
-    url: 'https://github.com/civictechindex/website/wiki'
+    url: 'https://github.com/civictechindex/CTI-website-frontend/wiki'
   - name: Site
     url: 'http://civictechindex.org/'
   - name: Overview
@@ -135,10 +135,12 @@ technologies:
   - ESLint
   - Code Climate
   - Cypress
+  - AWS
 location:
   # - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
+tools: Google docs, Figma, Usability Hub
 visible: true
 program-area: 
   - Civic Tech Infrastructure
