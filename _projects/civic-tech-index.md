@@ -26,6 +26,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02B90U9FPS'
       github: 'https://github.com/kevindphan'
     picture: https://avatars.githubusercontent.com/kevindphan
+  - name: Sean Sada
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U016XE06ZS5
+      github: https://github.com/smsada
+    picture: https://avatars.githubusercontent.com/smsada
+  - name: Briana Bennett
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U031BRKV59C'
+      github: 'https://github.com/bribenn'
+    picture: https://avatars.githubusercontent.com/bribenn
   - name: Chali Prasertsri
     role: UX Lead
     links:
@@ -38,6 +50,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FUP87W3U'
       github: 'https://github.com/FarzanaPrianka'
     picture: https://avatars.githubusercontent.com/FarzanaPrianka
+  - name: Joyce Kim
+    role: UI/UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U022B355CF2'
+      github: 'https://github.com/joycekimdesigns'
+    picture: https://avatars.githubusercontent.com/joycekimdesigns
+  - name: Adaeze Nwaezeigwe
+    role: UI/UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U0336CC3T9B'
+      github: 'https://github.com/AdaezeMN'
+    picture: https://avatars.githubusercontent.com/AdaezeMN
   - name: Nandana Rao
     role: Full Stack Developer
     links:
@@ -62,12 +86,42 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
+  - name: Nandana Rao
+    role: Full Stack Developer
+    links:
+      slack: https://hackforla.slack.com/team/U013JA9H62E
+      github: https://github.com/nrrao
+    picture: https://avatars.githubusercontent.com/nrrao
+  - name: Ron Fu
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/UGWDHDF46'
+      github: 'https://github.com/rfvisuals'
+    picture: https://avatars.githubusercontent.com/rfvisuals
+  - name: Vance Dubberly
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U0336CC3T9B'
+      github: 'https://github.com/deserat'
+    picture: https://avatars.githubusercontent.com/deserat
+  - name: Isaiah Ozadhe
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U034X04V2H5'
+      github: 'https://github.com/Tekkieware'
+    picture: https://avatars.githubusercontent.com/Tekkieware
   - name: Maxwell Countryman Skewes
     role: Front End Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01R6RWQR3L'
       github: 'https://github.com/maxskewes'
     picture: https://avatars.githubusercontent.com/maxskewes
+  - name: Dennis Chatkhan
+    role: Frontend Developer
+    links:
+      slack: https://hackforla.slack.com/team/U01B4S459CZ
+      github: https://github.com/mealthebear
+    picture: https://avatars.githubusercontent.com/mealthebear
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/website'
