@@ -5,7 +5,6 @@ description: The 311 Data project seeks to empower local Neighborhood Councils t
 image: /assets/images/projects/311_data.png
 alt: '311 data logo.'
 image-hero: /assets/images/projects/311data-beta.png
-alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
 leadership:
   - name: Eric Cho
     role: Product Manager

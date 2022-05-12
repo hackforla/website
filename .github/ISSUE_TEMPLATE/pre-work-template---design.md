@@ -23,7 +23,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Add this issue to Projects: Project Board (gear in right side panel)
 - [ ] Confirm that team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings: 
-   - [ ] UX weekly team meeting, Thursdays 5pm PST
+   - [ ] UX weekly team meeting, Wednesday 2:30 pm PST
    - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
 - [ ] Review [Design_Short Term Goals, Plan, and Tasks](https://docs.google.com/document/d/1FxwgdnWBbbQ8Pi3tspnukZTWwXtqnRXfNkNhVMEloY0/edit)
 - [ ] Review the [Start Here](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=8561%3A72465) and [Design System](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3) pages in Figma

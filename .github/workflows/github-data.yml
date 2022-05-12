@@ -2,13 +2,14 @@ name: Update GitHub Data
 
 # Run this action every day at 3am Pacific (11 am UTC)
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 11 * * *'
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'ryancahela/website'
     
     steps:
     - name: Checkout repository
