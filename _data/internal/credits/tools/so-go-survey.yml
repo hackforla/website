@@ -1,0 +1,18 @@
+---
+# The company, organization, or individual providing the tool
+tool-provider: SoGoSurvey
+# Please give the general site URL for the tool provider
+provider-link: https://www.sogosurvey.com/
+# Location in our GitHub repo of the tool's logo
+logo-url: /assets/images/credits/so-go-survey.png
+# The type of tool, such as a survey
+tool-type: survey
+# The area it is used in - Research, Development, Design, Product Management, etc
+used-in: Research
+# A list of the project team(s) using the tool
+used-by:
+    # Name of a project team
+  - project-name: Design System's Team
+    # Link to the project team's page
+    project-link: https://www.hackforla.org/projects/design-systems
+---
