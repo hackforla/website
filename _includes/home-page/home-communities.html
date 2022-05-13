@@ -1,0 +1,36 @@
+<section class="home--communities home--section">
+
+    <div class="communities-heading">
+        <h2 class="title2">Find your people with our <a href="./communities-of-practice.html">Communities of Practice</a></h2>
+        <p>Connect with people in your field of practice across projects, join talks by career professionals, and help the organization build professional infrastructure to support our community.</p>
+    </div>
+
+    <div class="communities-links">
+    {% assign sorted_communities = site.data.internal.communities | sort %}
+        <ul class="communities-links--names">
+            {% for community in sorted_communities %}
+            {% if community[1].visible == true %}
+            <li class="community-name">
+                <a href="/communities-of-practice/#{{ community[0] }}">
+                    <p>{{ community[1].name }}</p>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="communities-links--icons">
+            {% for community in sorted_communities %}
+            {% if community[1].visible == true %}
+            <li class="community-icon">
+                <a href="/communities-of-practice/#{{ community[0] }}">
+                    <img src="{{ community[1].icon }}" />
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+
+    </div>
+    
+</section>

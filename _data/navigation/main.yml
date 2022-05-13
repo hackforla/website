@@ -4,8 +4,9 @@
 - name: Projects
   link: /projects
 
-- name: Press
-  link: /#press
+# Link below to remain inactive until About page is completed and live
+# - name: About Us
+#   link: /about
 
 - name: Join Us
   link: /join
