@@ -17,7 +17,7 @@ _insert url of their card here before sending - their cards can be found in this
 ### Action Items
 
 - [ ] [INSERT TEAM NAME HERE] Team Leadership
-   - [ ] Please check off everything that is ok the way that it is, and if not, please provide the updated information in the comments below:
+   - [ ] Please check off everything that is ok the way that it is, and if not, please provide the updated information in a new comment below:
       - [ ] title
       - [ ] description
       - [ ] image
@@ -36,7 +36,7 @@ _insert url of their card here before sending - their cards can be found in this
       - [ ] partner
       - [ ] tools
       - [ ] status
- - [ ] Open an issue on VRMS to update the meeting times and provide the link to the new issue in the comment below
+ - [ ] If you need updates to your meeting times, open an issue on VRMS to update the meeting times and provide the link to the new issue in a new comment below
 
 ### Resources
 [VRMS Add/edit team meeting time template issue](https://github.com/hackforla/VRMS/issues/new?assignees=&labels=1+week+change+request&template=add-edit-team-meeting-time.md&title=Meeting+time+change+request+for+%5BProject+Name%5D)

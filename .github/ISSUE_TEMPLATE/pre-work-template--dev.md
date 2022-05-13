@@ -16,9 +16,10 @@ As a new developer on the HfLA website team, fill in the following fields as you
 
 ### Action Items
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address and GitHub handle with the team lead so you can be added to the Google Drive and the website-write team
-- [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0) 
-- [ ] Confirm with the team lead that they have added you to the zoom meeting calendar invites and GitHub repository
+- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Also, confirm with the team lead that they have added you to the Zoom meeting calendar invites
+- [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
+- [ ] After you have finished adding yourself to the roster, let a team lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Once added to the website-write team:
   - [ ] Self Assign this issue (gear in right side panel)
   - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label
@@ -32,8 +33,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Complete steps 1.1 - 1.6 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
+  - [ ] Follow the steps in section [2.3 Where can I find GitHub issues to work on?](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#23-where-can-i-find-github-issues-to-work-on) to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
-  - [ ] Use the information from part 2 to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
 - [ ] Once you take a good first issue, you will provide estimates and progress reports. Also, once you finish providing your "Estimate" action item below, please answer the question in the "Time spent so far" action item (also below).
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
  Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment.
@@ -59,16 +60,19 @@ As a new developer on the HfLA website team, fill in the following fields as you
    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Read and understand how we progress through issues. Then, you can check this off.
 Progress through issues with increasing complexity in the following order:
-  - Good first issue
-  - Good second issue
-  - Small 
-  - Medium 
-  - Large
+  - Good first issue (one per person)
+  - Good second issue (one per person)
+  - Small (one per person, with some exceptions, see below)
+  - Medium (you can work on more than one medium issue, but only one at a time)
+  - Large (you can work on more than one large issue, but only one at a time)
     - The reasons for this progression are:
       - The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
       - We are trying to teach you the team methodology through the issues themselves.
       - It ensures you understand what we expect and the quality of contributions.
-- [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their classes)
+    - You can work on back-to-back small issues if it meets the following criteria:
+      - You are learning something new and need to work on an issue of a lesser complexity
+      - Special request by a lead or pm
+- [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their SCSS classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
 ### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
