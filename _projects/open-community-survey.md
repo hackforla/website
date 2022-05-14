@@ -20,7 +20,7 @@ leadership:
       github: 'https://github.com/kalyaniraman'
     picture: https://avatars.githubusercontent.com/kalyaniraman
   - name: Mary Kate Leibman
-    role: Researcher
+    role: UI/UX Designer/Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U031V93CYB0'
       github: 'https://github.com/mkleibman'
