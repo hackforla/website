@@ -5,6 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'feature-tech-dropdown'
 
 jobs:
   Hello-World:

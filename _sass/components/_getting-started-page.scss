@@ -14,18 +14,14 @@
   }
 }
 .header-p {
-  font-size: 16px;
-  font-weight: 500;
   display: flex;
   max-width: 580px;
   text-align: center;
   padding: 0 30px 10px 30px;
   // padding-bottom: 10px;
   margin: 12px auto;
-  font-family: "Roboto"sans-serif;
 
   @media #{$bp-below-tablet} {
-    font-size: 18px;
     text-align: left;
     padding: 0px;
   }

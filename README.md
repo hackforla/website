@@ -15,9 +15,13 @@ This is a standard [Jekyll](https://jekyllrb.com/) site hosted right here on [Gi
 
 ## Contributing
 
-Once you have gone through onboarding, go to the [WIKI](https://github.com/hackforla/website/wiki). For developers looking for the standard README, see the [CONTRIBUTING](./CONTRIBUTING.md) document for more details on how to get started. Also see our [Code of Conduct](./CODEOFCONDUCT.md) and [License](./LICENSE.txt) documents.
+We require all Code Contributors to
+
+1. Join our organization by going through [Hack for LA onboarding](https://www.hackforla.org/getting-started). It's free to join!
+2. Read the [onboarding section of our WIKI](https://github.com/hackforla/website/wiki/Joining-the-HackforLA.org-Website-Team).
+3. Read our [CONTRIBUTING](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md) document and follow the steps.
 
 ## We Love Our Stars ⭐⭐⭐
 
-Thanks to the following people who have given us a star on our repo: 
+Thanks to the following people who have given us a star on our repo:
 [![Stargazers repo roster for @hackforla/website](https://reporoster.com/stars/hackforla/website)](https://github.com/hackforla/website/stargazers)

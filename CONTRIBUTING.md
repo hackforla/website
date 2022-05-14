@@ -37,7 +37,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
       - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
       - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.3.e What if you don't see any bugs/errors that is not connected to an issue?**](#23e-what-if-you-dont-see-any-bugserrors-that-is-not-connected-to-an-issue)
+       - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -71,7 +71,8 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
-        - [**v. After pull request is submitted/merged**](#v-after-pull-request-is-submittedmerged)
+        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-How-to-add-a-pull-request-to-the-project-board)
+        - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
     - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
@@ -271,6 +272,8 @@ Running the above command will result in the following output in your terminal
 
 When you see the above output, it means the site is now running and now you can browse to http://localhost:4000
 
+**NOTE:** If it takes longer than 2 minutes to build your website using `docker-compose up`, please let the [technical leads](https://github.com/hackforla/website/wiki/Meet-the-Team) know about this and add your website build time in a comment to [issue #1443](https://github.com/hackforla/website/issues/1443). Also, once you are part of the merge team, you can work on [issue #1443](https://github.com/hackforla/website/issues/1443) and fix it (if you want).
+
 #### **1.6.b Stopping Docker**
 
  - To stop and completely remove the jekyll server (i.e. the running Docker container):
@@ -313,6 +316,24 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
   * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
+
+Progress through issues with increasing complexity in the following order:
+  1. Good first issue
+  2. Good second issue
+  3. Small 
+  4. Medium 
+  5. Large
+
+The reasons for this progression are:
+  * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
+  * We are trying to teach you the team methodology through the issues themselves.
+  * It ensures you understand what we expect and the quality of contributions.
+  
+All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis.
+
+All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
+
+Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -358,13 +379,13 @@ There are only 2 columns that you will be consistently referencing:
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.a Available issues for new members (front end/back end)**
 
 We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
 
-**Note:**: The column is filtered so the first (top) issue has the highest priority and should be worked on next.
+**Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.b Available issues for returning members (front end)**
 
@@ -387,7 +408,7 @@ Please use the `Prioritized Backlog` column in the [filtered Project Board - **H
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.e What if you don't see any bugs/errors that is not connected to an issue?**
+#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
 
 If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
 
@@ -454,7 +475,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 - Only want to do a specific type of front end or back end task
 - There is a blocker in the way of finishing and you would like the opportunity to work on other issues
 #### **2.6.b What to do if you have to stop working mid issue:**
-- Remove the progress in the checkboxes (all checkboxes should be empty)
+- For your issue, uncheck the checkboxes for any action items that have to be redone by the next developer picking up the issue.
 - Add a note in the comments with details and progress for the next developer
 - Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue)) 
 - Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue)) 
@@ -804,8 +825,19 @@ in the gif example [near the top  of this part within the gif of completing pull
 
 Moving files to another directory. No visual changes to the website.
 ```
+##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-##### **v. After pull request is submitted/merged**
+**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+
+After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
+
+<details>
+  <summary><strong>Click here</strong> to see how to add a pull request to the project board</summary>
+  <h4>Our GitHub project board</h4>
+  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png"/>
+</details>
+
+##### **vi. After pull request is submitted/merged**
 
 **NOTE**: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch. 
 
