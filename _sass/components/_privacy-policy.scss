@@ -1,0 +1,77 @@
+.header-container {
+  .header-hero-image--privacy-policy {
+    object-fit: contain;
+    height: 240px;
+    width: 236.41px;
+  }
+}
+
+.content-section--privacy-policy {
+  background: $color-pink;
+
+  .subsection-spacing--privacy-policy {
+    margin-bottom: 24px;
+  }
+    
+  .title-spacing {
+    margin-bottom: 24px;
+  }
+
+  .title-spacing.first-title-spacing {
+    margin-top: 0px;
+  }
+
+  .subtitle-spacing {
+    margin-bottom: 18px;
+  }
+
+  .no-bottom-margin-spacing {
+    margin-bottom: 0px;
+  }
+}
+
+@media #{$bp-desktop-up} {
+  .header-container {
+    .header-hero-image--privacy-policy {
+      align-self: start;
+    }
+  }
+
+  .content-section.content-section--privacy-policy {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .page-card--privacy-policy {
+    padding: 36px 57px;
+  }
+
+  .section-spacing--privacy-policy {
+    margin-bottom: 48px;
+  }
+}
+
+@media #{$bp-below-desktop} {
+
+  /* 
+  This has the same font-size as paragraph3 so it can be used for the Privacy Policy page in mobile screen sizes,
+  which is a different font-size than the paragraph2 classes used for desktop size screens.
+  */
+  section {
+    .paragraph2.paragraph--privacy-policy {
+      font-size: $font-size-paragraph3;
+    }
+  }
+
+  .header-container--privacy-policy {
+    padding: 32px 37.5px;
+  }
+
+  .section-spacing--privacy-policy {
+    margin-bottom: 32px;
+  }
+
+  .page-card--privacy-policy {
+    padding: 28px 21.5px;
+  }
+}
