@@ -8,17 +8,71 @@ image-hero: /assets/images/projects/lucky-parking-hero.png
 alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen.'
 leadership:
   - name: Greg Pawin
-    role: Product Owner / Data Science Lead
+    role: Data Lead
     links:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
+  - name: Gordon Ruby 
+    role: Product Manager Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U02AJ61CSQP'
+      github: 'https://github.com/gordonruby'
+    picture: https://avatars.githubusercontent.com/gordonruby
   - name: Matthew Cacho
     role: Full-Stack Developer Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
       github: 'https://github.com/macho-catt'
     picture: https://avatars.githubusercontent.com/macho-catt
+  - name: Yen Phan 
+    role: Lead User Research
+    links:
+      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
+      github: 'https://github.com/ymphan'
+    picture: https://avatars.githubusercontent.com/ymphan
+  - name: Yujin Chang 
+    role: Lead UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
+      github: 'https://github.com/eugenecha'
+    picture: https://avatars.githubusercontent.com/eugenecha
+  - name: Marie Li
+    role: Data Science Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U01S72NLGAC'
+      github: 'https://github.com/zhao-li-github'
+    picture: https://avatars.githubusercontent.com/zhao-li-github
+  - name: Michael Morgan 
+    role: UX/UI Design
+    links:
+      slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
+      github: 'https://github.com/mklmrgn'
+    picture: https://avatars.githubusercontent.com/mklmrgn
+  - name: Glen Florendo 
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/UFQGH8JH0'
+      github: 'https://github.com/glenflorendo'
+    picture: https://avatars.githubusercontent.com/glenflorendo
+  - name: Diedrich Chavarria 
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
+      github: 'https://github.com/DCH-CH'
+    picture: https://avatars.githubusercontent.com/DCH-CH
+  - name: Seymour Liao 
+    role: Data Scientist
+    links:
+      slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
+      github: 'https://github.com/Seymour100'
+    picture: https://avatars.githubusercontent.com/Seymour100
+  - name: David Lam 
+    role: Data Scientist
+    links:
+      slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
+      github: 'https://github.com/davidlamcanada'
+    picture: https://avatars.githubusercontent.com/davidlamcanada
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
