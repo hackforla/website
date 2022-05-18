@@ -73,13 +73,16 @@ permalink: /toolkit/
             let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
 
             let cardContainers = document.querySelectorAll("[data-article-type]");
-            cardContainers.forEach((card) => {
-                if (currentHash == 'all') {
-                    card.style.display = 'block';
-                    return;
-                }
-                card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
-            });
+            let guidesCategories = ["all", "development", "design", "projectmanagement", "professionaldevelopment"]
+            if(guidesCategories.includes(currentHash)){
+                cardContainers.forEach((card) => {
+                    if (currentHash == 'all') {
+                        card.style.display = 'block';
+                        return;
+                    }
+                    card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
+                });
+            }
         } 
     </script>
 
