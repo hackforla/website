@@ -1,0 +1,120 @@
+---
+layout: default
+---
+
+<head>
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- Header Banner -->
+<div class="header-container--guides">
+  {% if page.layout == 'guides' %}
+  <img class="page-hero--guides" src="../assets/images/guides/guide-page-hero.svg">
+  <div class="hero-left--guides">
+    <h3 class="hero-heading--guides">Guide</h3>
+    <h1 class="hero-title--guides">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+  </div>
+  {% endif %}
+</div>
+ 
+
+<div class="bg-color">
+  <div class="page-content-container-grid--guides"> 
+    <!-- Side Nav -->
+    <div class="sticky-nav-container--guides">
+      <div class="stick-it--guides">
+        <a class=anchor></a>
+        <nav class="sticky-nav--guides">
+          <!-- <ul>
+            <li>What's in the Guide?</li>
+          </ul> -->
+          {% include toc.html html=content %}
+          <!-- <ul>
+            <li>Guide Authors</li>
+          </ul> -->
+        </div>
+      </nav>
+    </div>
+    <!-- Content -->
+    <div class="card-primary--guides page-card--guides overview--guides">
+    <!-- This page card contains the guide"s overview and direct links -->
+          <h1>What's in the Guide?</h1>
+          {{ page.overview | markdownify }}
+          <div class="guide-links">
+            {% if page.sections %}
+            <h2>In This Guide</h2>
+            <ul>
+              {% for section in page.sections %}
+              <li><a href="{{ section.href }}"> {{ section.title }} </a><br>
+                {% if section.subsection[0] %}
+                <ul style="padding-left: 20px;">
+                  {% for subsection in section.subsection %}
+                  <li><a href="{{ subsection.href }}">{{ subsection.title }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+      </div>
+      
+      <div class="card-primary--guides page-card--guides content--guides">
+        {{content}}
+      </div>
+      
+      <div class="card-primary--guides page-card--guides authors--guides">
+        <h1>Guide Authors</h1>
+        <p>Peer-created guides are an important part of Hack for LA's Culture.  They are created by our Volunteer Members based on effective processes developed on our projects.</p>
+        <p>This guide was created and contributed to by:</p>
+        <div class="authors-container">
+          {% for item in page.guide-author %}
+          <div class="authors-profile">
+            <p>{{ item.name }}</p>
+          </div>
+          <div class="authors-contact">
+            {% if item.links.linked-in and item.links.github %}
+            <a href="{{ item.links.linked-in }}" target="_blank" title="Linkedin Profile" class="fa fa-linkedin fa-xl" style="margin-right: 13px;
+            text-decoration: none;"></a>
+            <a href="{{ item.links.github }}" target="_blank" title="GitHub Profile" class="fa fa-github fa-xl" style="margin-right: 13px; 
+            text-decoration: none;"></a>
+            {% elsif item.links.linked-in %}
+            <a href="{{ item.links.linked-in }}" target="_blank" title="Linkedin Profile" class="fa fa-linkedin fa-xl" style="margin-right: 13px;
+            text-decoration: none;"></a>
+            <div class="no-github"></div>
+            <div></div>
+            {% else %}
+            <div class="no-linked-in"></div>
+            <a href="{{ item.links.github }}" target="_blank" title="GitHub Profile" class="fa fa-github fa-xl" style="margin-right: 13px; 
+            text-decoration: none;"></a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        
+        <p><b>Help us make this guide better:</b></p>
+        <p>If you are a member of the Hack for LA community you can post any comments directly in the iterative version of this guide: <a href="https://www.google.com/"style="color: #fa114f;" >{{page.title}}</a>.</p>
+        
+        <p>If you are outside the Hack for LA community, please use this feedback form to provide suggestions for improvement or how the guide is useful for you.</p>
+  
+      </div>
+  
+    </div>
+</div>
+
+  <!-- Return to Top -->
+  <div class="top-scroll">
+    <button onclick="topFunction()" id="return-to-top" class="icon-chevron-up"></button>
+    </div>  
+
+<!-- Font Awesome for Return to the Top Button -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  
+<!-- Include JavaScript -->
+<script src="{{ '/assets/js/guidepages.js' | absolute_url }}"></script> 
+ 
+ 
+
+
