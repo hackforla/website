@@ -1,0 +1,31 @@
+name: Issue Trigger
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  Add-Missing-Labels-To-Issues:
+    runs-on: ubuntu-latest
+    # Only trigger this action when an issue is newly created
+    if: ${{ github.event_name == 'issues' && github.event.action == 'opened'}}
+    steps:
+      - uses: actions/checkout@v2      
+      # Check if the issue has required labels
+      - name: Check Labels
+        uses: actions/github-script@v4
+        id: check-labels
+        with:
+          script: |
+            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
+            const checkLabels = script({g: github, c: context})
+            return checkLabels
+
+      # Post comment based on the previous action's results
+      - name: Post Comment
+        uses: actions/github-script@v4
+        id: post-comment
+        with:
+            script: |
+              const results = ${{ steps.check-labels.outputs.result }}
+              const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
+              script({g: github, c:context}, results)

@@ -1,0 +1,102 @@
+/*--------
+| Mobile 
+----------*/
+
+.join-us-wrapper {
+  min-height: 100vh;
+}
+
+.join-us-card-container {
+  background: #f7f5f5;
+  display: flex;
+  flex-direction: column;
+
+  .join-us-donation-img {
+    width: 100%;
+    margin: 20px auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .join-us-remove-p-padding {
+    padding-bottom: 0;
+  }
+
+  .btn-partner-with-us {
+    margin-bottom: 27px;
+    width: 175px;
+  }
+
+  .join-us-donation {
+    margin: 20px auto;
+    background: #f6f6f6;
+    padding: 20px;
+    border-radius: 20px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    li {
+      font-size: 1.125rem;
+      padding: 8px 0;
+    }
+
+    #donation-footer {
+      padding-left: 20px;
+      font-size: 15px;
+    }
+  }
+}
+
+/*---------
+| Tablet
+-----------*/
+@media #{$bp-tablet-up} {
+  .join-us-card-container {
+    .page-card--join {
+
+      #join-us-donation-icon {
+        margin: 1rem auto;
+        align-self: flex-start;
+      }
+
+      .join-us-donation-img {
+        max-width: 419px;
+        padding-bottom: 20px;
+      }
+
+      .join-us-donation {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+
+        img {
+          width: 318px;
+        }
+
+        .join-us-donation-body {
+          padding: 0 32px 0 16px;
+
+          h2 {
+            font-size: 18px;
+          }
+
+          ol {
+            line-height: 24px;
+          }
+
+          li {
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*---------
+| Desktop
+-----------*/

@@ -1,0 +1,165 @@
+.content--program-areas {
+    background: $color-pink;
+    display: flex;
+    flex-direction: column;
+  
+    .page-card-container {
+      display: flex;
+      min-height: 454px;
+      height: fit-content;
+  
+      @media #{$bp-below-desktop} {
+        flex-direction: column;
+      }
+    }
+  
+    .page-card-image-container {
+      flex: 0 0 auto;
+      width: 327px;
+      overflow: hidden;
+
+      @media #{$bp-below-desktop} {
+        width: 100%;
+        max-height: 40vh;
+      }
+    }
+  
+    .page-card-image {
+      /*moved this to the container so I could use object-fit to accomodate random heights
+      margin: -5px;
+      max-width: 372px;*/
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    
+      @media #{$bp-below-tablet} {
+        height: 231px;
+      /*  width: 100%;
+        max-height: 40vh;
+        overflow: hidden;*/
+      }
+    }
+  
+    .page-card-content {
+      flex: 0 1 auto;
+      margin: 34px;
+      height: -moz-fit-content;
+      height: fit-content;
+      @media #{$bp-below-tablet} {
+        margin: 40px 0;
+        padding: 0 16px;
+      }
+    }
+    .page-card-content h3 {
+      @media #{$bp-mobile-up} {
+        font-size: 1.25rem;
+      }
+      @media #{$bp-desktop-up} {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+.project-card-mini{
+    width: 92px;
+    height: 120px;
+    border: 1px solid #AEAEAE;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 13px 26px 13px 0px;
+    font-size: 13px;
+    line-height: 15.23px;
+    text-align: center;
+
+
+    .project-card-mini-image{
+        width: inherit;
+        height: 67.83px;
+    }
+
+    .project-card-mini-title{
+        text-align: center;
+    }
+    &-list-alignment{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-inline-start: 0px;
+
+
+      .project-card-mini-spacer { // Blank card mini class that is used as a spacer for centering purposes.
+        width: 118px; // Width of the project card mini + margin
+        list-style: none;
+      }
+      
+      @media #{$bp-below-tablet} {
+        justify-content: center;
+        padding-inline-start: 26px; // Offsets 26px margin 
+      }
+
+    }
+
+}
+
+.join-us-footer {
+  background-color: $color-white;
+  padding: 36px;
+
+  }
+.join-us-footer-description {
+  
+  font-size: 18px;
+  line-height: 137%;
+  
+  max-width: 722px;
+
+}
+
+
+
+.join-us-footer-body {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 314px;
+  max-width: 1050px;
+  margin: 75px auto;
+  
+  img.desktop-img {
+    display: block;
+    height: 230px;
+    width:auto;
+  }
+
+  img.mobile-img {
+    display: none;
+  }
+  @media #{$bp-below-tablet} {
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 314px;
+    margin: 0 auto;
+
+    .join-us-footer-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    img.desktop-img {
+      display: none;
+    }
+    img.mobile-img {
+      display: block;
+      height: 230px;
+      width:auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.join-us-footer-paragraphs {
+margin-bottom: 48px;
+}

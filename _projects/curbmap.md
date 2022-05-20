@@ -16,8 +16,10 @@ looking:
   - category: UI/UX
     skill: UI designers
 location: 
-  - Downtown LA
+  # - Downtown LA
   - Remote
+program-area:  
+  - Citizen Engagement
 visible: false
 status: On Hold
 ---

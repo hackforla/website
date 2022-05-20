@@ -1,28 +1,290 @@
-/* This was originally created for the about-us page which has a separate column for sticky nav 
-It is, however, not actually being used on that page so that there isn't a problem when we change
-the .page-card class as part of the standardization process. I have commented it out so there is no
-confusion...about this.  */
+/*---------------------------
 
-/*
+  Cards
+
+  The following classes style reusable cards on the HfLA website
+
+  Index:
+
+  - Page Cards
+  - Small Cards
+
+---------------------------*/
+
+
+/*================================================================
+
+  Page Cards
+
+  The following classes style all page cards (the very large cards 
+  that contain much of the content on the HfLA site). To create 
+  a page card: add the base page card class, a color class, a size 
+  class, and a page-specific class.
+
+
+  Index:
+
+  - Base class
+  - Color classes
+  - Size classes
+  - Page card templates
+  - Page-specific classes
+  - Note about page card spacing
+
+=================================================================*/
+
+
+/*---------------------------
+
+  Page Card Base class
+
+---------------------------*/
+
+
 .page-card {
-    background: #fff;
-    border: 0 solid rgba(51, 51, 51, 0.06);
-    border-radius: 16px;
-    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    border-radius: 20px;
     overflow: hidden;
+    width: 100%;
+  }
+  
+  
+  /*---------------------------
+  
+    Page Card Colors
+  
+  ---------------------------*/
+  
+  
+  // White Page Card
+  
+  .card-primary {
+    background: $color-white;
+  }
+  
+  // Beige / Pink Page Card 
+  
+  .card-secondary {
+    background: $color-pink;
+  }
+  
+  
+  /*---------------------------
+  
+    Page Card Sizes
+  
+  ---------------------------*/
+  
+  
+  // X-Large
+  
+  .page-card-xl {
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    margin: 14px auto;
+    max-width: 1080px;
+  
+    @media #{$bp-below-tablet} { 
+        padding: 12.5% 10%;
+    }
+  }
+  
+  
+  // Large 
+  
+  .page-card-lg {
     max-width: 896px;
-    margin-bottom: 0;
-    padding: 22px;
-    height: fit-content;
-    margin: 12px;
-
-    @media #{$bp-tablet-up} {
-        margin: 12px 12px 40px;
-        max-width: 896px;
-        padding: 40px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
+    margin: 14px auto;
+  
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-mobile} {
+        margin: 12px auto;
+        p.accordion {
+        display: inline-block;
+        width: 100%;
+        }
     }
 }
-*/
+  
+  
+  // Medium 
+  .page-card-md {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); 
+  }
+  
+
+  /*----------------------------------------------------
+    Page Card Templates
+
+    * Use when a common styling is needed for page cards
+    on different pages
+  -----------------------------------------------------*/
+  
+  
+  /*---------------------------
+
+    Template for page cards with large icons
+    --- use with .page-card-lg
+
+    Sample structure: refer to sitemap.html or join-us.html
+  ---------------------------*/
+
+  /*---------
+  | Tablet & Desktop
+  -----------*/
+
+  .page-card--large-icon-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto;
+    padding: 3rem;
+    text-align: left;
+
+    .page-card--large-icon-header {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      margin-bottom: 2rem;
+    }
+
+    .page-card--large-icon-header-secondary {
+      width: 100%;
+    }
+
+    img {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+      margin: auto;
+      width: 150px;
+      padding: 40px 0;
+    }
+
+    ol {
+      padding-left: 20px;
+      max-width: 480px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .page-card--large-icon-body {
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 1;
+      align-items: flex-start;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        max-width: 480px;
+        padding-bottom: 20px;
+      }
+
+      li {
+        padding: 3px 0;
+      }
+
+      li::marker {
+        padding: 3px 0;
+      } 
+    }
+  }
+
+
+  /*--------
+  | Mobile 
+  ----------*/
+
+  @media #{$bp-below-tablet} {
+    .page-card--large-icon-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px;
+
+      @media #{$bp-below-mobile} {
+        padding: 32px 20px;
+      }
+
+      .page-card--large-icon-header {
+        margin-bottom: 1rem;
+        // Fixes title wrap at smallest mobile size
+        @media (max-width: #{$screen-mobile - 160}) {
+          padding: 0 43px;
+          text-align: center;
+        }
+      }
+
+      .page-card--large-icon-header-secondary {
+        text-align: center;
+      }
+
+      ol {
+        max-width: 300px;
+      }
+
+      .page-card--large-icon-body {
+        align-items: center;
+
+        p {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+
+
+  /*----------------------------------------------------
+    Page Card Page-Specific Classes
+  
+    * Use when special styling is needed for a page card 
+    on a specific page (for instance, padding)
+  -----------------------------------------------------*/
+  
+  /*   
+  
+  - Page-specific class naming convention should be:
+  
+    page-card--page-name
+    EXAMPLE: page-card--join
+
+  - If there is more than one type of page card styling in the page, class naming convention for each page card should be:
+
+    page-card--page-name-section
+    EXAMPLE: page-card--join-volunteer
+
+  - While generic page card classes live in this .scss file, page-specific classes 
+    should live in the specific page's .scss file
+
+  */
+
+  /*---------------------------
+  
+    Note about Page Card Spacing
+  
+  ---------------------------*/
+
+  /*   
+
+    The margins below one page card and above the page card beneath it are usually supposed to 
+    add up (so if they have 14px margin, there should be combined 24px between the page cards). 
+    
+    However, sometimes the margins collapse into one combined margin (in this case, that would be 
+    just 14px between the page cards). 
+    
+    To fix this, wrap these page cards in a div with flexbox property, which will separate the 
+    collapsed margins again.
+
+  */   
+
+/*================================================================
+
+  Small Cards
+
+=================================================================*/
+
 
 .small-card {
     height: 180px;

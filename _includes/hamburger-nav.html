@@ -1,91 +1,9 @@
 <div id="swapButton">
   <ul class="inline-list">
     <li>
-      <button onclick="burgerSwap()" id="burgerImage">{% include svg/icon-hamburger-nav.svg %}</button>
-      <button onclick="burgerSwap()" id="burgerImageX">{% include svg/icon-hamburger-nav-x.svg %}</button> 
+      <button id="burgerImage" >{% include svg/icon-hamburger-nav.svg %}</button>
     </li>
   </ul>
 </div>
 
-<script>
-
-  // visibleBurger marks the state of the icon.  if 'true' the burger icon is showing
-  let visibleBurger = true;
-
-  function burgerSwap() {
-    // Initialize
-    let burgerImage = document.getElementById("burgerImage");
-    let burgerImageX = document.getElementById("burgerImageX");
-    let burgerMenu = document.getElementById("headerNav");
-    
-    //Test to see the current state of the image
-    if (visibleBurger == true) {
-      // If the burger is showing, swap for the X and show the menu.
-      burgerImage.style.display = "none"; 
-      burgerImageX.style.display = "block";
-      burgerMenu.style.display = "flex";
-
-      //Change the state marker
-      visibleBurger = false; 
-
-    } else {
-      //If the X and menu is showing, swap for burger and close the menu.
-      burgerImage.style.display = "block"; 
-      burgerImageX.style.display = "none";
-      burgerMenu.style.display = "none"; 
-    
-      //Change the state marker
-      visibleBurger = true;
-    }
-    event.stopPropagation();
-  }
-  // When you click anywhere on the page, other than the menu, if the menu is open, this closes it. 
-  function clickOutsideToClose() {
-    if (visibleBurger == false) {
-      let eventID = event.target.id;
-
-      // If the click is on the navigation menu, it does nothing.  If it is not on the navmenu it runs burgerSwap and closes the menu. 
-      if (eventID != "headerNav") {
-        burgerSwap();
-        event.stopPropagation();
-      }
-    }
-  }
-
-  // If this is mobile, it adds event listeners to close the menus. 
-  let windowWidth = window.innerWidth;
-  if (windowWidth < 768) {
-    //Listen for someone clicking a link from the mobile nav.
-    document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
-
-    //Listen for someone clicking anywhere on the page to close the menus.
-    window.addEventListener("click", clickOutsideToClose);
-  }
-
-  // There was bug where if you go from portrait to landscape on a really tall phone, you lose the navigation links.  
-  // This was caused by hiding the links in portrait and they're still hidden in landscape.  
-  // This code fixes that bug
-  window.addEventListener("orientationchange", handleOrientationChange, true);
-
-  function handleOrientationChange (event) {
-    let windowHeight = window.innerHeight;
-    let windowWidth = window.innerWidth;
-    let burgerMenu = document.getElementById("headerNav");
-    // "if statements" only affect tall phones
-    if(windowHeight >= 768) {
-      // Should display original nav bar for large phones
-      document.getElementById("mobileNavLink").removeEventListener("click", burgerSwap);
-      window.removeEventListener("click", clickOutsideToClose);
-      burgerMenu.style.display = "block";
-    } else if (windowWidth >= 768) {
-      // Reset things to mobile nav bar
-      document.getElementById("mobileNavLink").addEventListener("click", burgerSwap);
-      window.addEventListener("click", clickOutsideToClose);
-      // Trigger burger swap to set things to initial view
-      visibleBurger = false;
-      burgerSwap();
-    }
-    event.stopPropagation();
-  }
-
-</script>
+<script src="../assets/js/hamburger-nav.js"></script>

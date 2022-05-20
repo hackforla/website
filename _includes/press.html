@@ -1,24 +1,24 @@
 <a class="anchor" id="press"></a>
 <section class="content-section press">
   <div class="page-contain">
-    {% for item in site.testimonials %}
+    {% for item in site.data.internal.testimonials %}
     <blockquote class="quote">
       <p>{{ item.quote }}</p>
       <cite class="type-h4">{{ item.source }}</cite>
       <img class="quote-tmb" src="{{ item.img_url | absolute_url }}" alt="{{ item.source }}" />
     </blockquote>
     {% endfor %}
-    <h2>Press</h2>
+    <h2 class="title2">Press</h2>
     <ul class="news-cards unstyled-list">
-      {% for item in site.press %}
+      {% for item in site.data.internal.press %}
       <li>
         <div class="news-card">
           <div class="news-card-inner">
             <div class="news-body">
               <h4 class="news-title">
-                <a href="{{ item.link_url }}" rel="noopener" target="_blank">{{ item.title }}</a>
+                <a href="{{ item[1].link_url }}" rel="noopener" target="_blank">{{ item[1].title }}</a>
               </h4>
-              <p>{{ item.source }}</p>
+              <p>{{ item[1].source }}</p>
             </div>
           </div>
         </div>

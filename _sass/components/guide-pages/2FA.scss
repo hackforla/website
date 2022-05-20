@@ -1,7 +1,3 @@
-.accordion {
-    padding: 0.2rem;
-    
-}
 
 #myCanvas {
     justify-content: center;
@@ -27,11 +23,11 @@
 }
 
 .used {
-    background-color: #89cff0;
+    background-color: $color-skyblue;
 }
 
 .never-used {
-    background-color: #0000ff;
+    background-color: $color-brightblue;
 }
 
 .indent {
@@ -80,10 +76,6 @@
 }
 
 @media #{$bp-below-desktop} {
-    .accordion {
-        min-width: 150px;
-    }
-
     .screenshot-2FA img {
         min-width: 200px;
         width: 100%;

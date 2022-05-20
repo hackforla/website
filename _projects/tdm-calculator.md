@@ -1,6 +1,6 @@
 ---
 identification: '197452459'
-title: The LA TDM Calculator
+title: LA TDM Calculator
 description: The LA TDM Calculator is a web app, created in conjunction with the L.A. Department of Transportation (LADOT) and Los Angeles City Planning, to help real estate developers design better projects for Los Angeles. The Calculator is being implemented alongside a new ordinance reducing over-parking and improving the infrastructure to incentivize public transportation and discourage single occupancy vehicle trips.
 image: /assets/images/projects/tdm-calculator.jpg
 alt: 'LA TDM Calculator Landing Page (Mock Up)'
@@ -50,27 +50,29 @@ links:
     url: 'https://github.com/hackforla/tdm-calculator/wiki'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CKY65G266'
+  - name: Overview
+    url: ../assets/pdfs/TDM-Calculator-Product-One-Sheet.pdf
 looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers
   - category: Development
-    skill: Front End Developers 
+    skill: Front End Developers
   - category: Development
     skill: Experienced Back End Developers
 technologies:
-  - ReactJS
+  - React
   - Express
   - Node.js
   - Microsoft SQL Server
   - Docker
   - Azure App Service
-  - SCSS
   - Figma
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
-partner: LA Department of Transportation and Los Angeles City Planning (https://ladot.lacity.org/)
-vertical: 'Environment'
+partner: LA Department of Transportation and Los Angeles City Planning
+program-area:
+  - Environment
 visible: true
 status: Active
 ---

@@ -1,27 +1,30 @@
 .content-hack-night {
-  margin: 83px 0px;
+  margin: 40px 0px 83px 0px;
   padding: 25px;
   @media #{$bp-below-tablet} {
-    margin-top: 52px;
+    margin: 0;
     padding: 0;
-    margin: 0px;
   }
 }
 
-.hacknights--header-container {
-  padding: 6rem 6rem 5rem 8rem;
+.header-container--events {
+  padding: .2rem 4rem 5.5rem 4rem;
 }
 
-.hacknights--head-content {
+.events--head-content {
   margin: 2% 0 0% 4%;
   text-align: initial;
+}
+
+.header-text-margin--events{
+  max-width: 520px;
+  margin: 0;
 }
 
 .header-desc {
   text-align: initial;
   font-weight: 530;
-  font-size: 25px;
-  line-height: 29px;
+  font-size: 1.125rem;
   margin: 2% 0 20px 5%;
 
   @media #{$bp-below-tablet} {
@@ -44,6 +47,7 @@
   flex-direction: row-reverse;
   margin-left: 40px;
   margin-bottom: -7%;
+  justify-content: center;
   @media #{$bp-below-tablet} {
     flex-direction: row-reverse;
     flex-grow: 6;
@@ -53,18 +57,59 @@
 
 .flex-page-card {
   display: flex;
+  justify-content: center;
+  margin-left: 45px;
+  margin-right: 45px;
 
   @media #{$bp-below-tablet} {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
+  
+  @media #{$bp-below-mobile}{
+    width: 95%;
+  }
+
+  & > .column-card-lg--events {
+    background: #fff;
+    border: 0 solid rgba(51, 51, 51, 0.06);
+    border-radius: 20px;
+    box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+    max-width: 489px;
+    width: 100%;
+    padding: 32px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: "Roboto" sans-serif;
+    
+    &:first-child{
+      margin-right: 8px;
+    }
+  
+    &:last-child{
+      margin-left: 8px;
+    }
+  
+    // NEW MOBILE FRIENDLY RULES
+    @media #{$bp-below-tablet} {
+      padding: 5px 15px;
+      max-width: 100%;
+
+      &:first-child, &:last-child{
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
 }
 
 #head-content::before {
   content: "\226A";
   float: left;
   transition: transform 0.25s ease-in;
-  color: #000000;
+  color: $color-black;
   font-weight: normal;
   font-size: 18px;
   margin: 0 6px;
@@ -87,26 +132,18 @@
   text-align: center;
   max-width: 150px;
 }
-.getting-started-page-card-hack-nights {
-  background: #fff;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  overflow: hidden;
-  max-width: 489px;
-  margin-bottom: 0;
-  padding: 18px;
-  margin: 8px;
-  font-family: "Roboto" sans-serif;
 
-  // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-tablet} {
-    padding: 30px 15px;
-  }
+.fullwidth-background-container {
+  background-color: $color-gold;
+  margin: 0 -2em;
+}
+.add-padding-container {
+  padding: 0 2.5em;
 }
 
 .getting-started-mobile-page {
   @media #{$bp-below-mobile} {
+    padding: 0 2em;
     display: inline;
     margin: 20px;
     border: 0 solid rgba(51, 51, 51, 0.06);
@@ -129,7 +166,8 @@
 
 .meetup-steps {
   display: flex;
-  margin: 17px 0;
+  align-items: center;
+  margin: 24px 0;
 
   @media #{$bp-below-mobile} {
     flex-direction: column;
@@ -138,6 +176,8 @@
 }
 .meetup-steps-2 {
   display: flex;
+  align-items: center;
+  margin: 24px 0;
   @media #{$bp-below-mobile} {
     flex-direction: column;
     text-align: center;
@@ -151,8 +191,6 @@
 
   @media #{$bp-below-mobile} {
     padding: 0;
-    font-size: 12px;
-    line-height: 14px;
     text-align: initial;
     margin: 37px;
   }
@@ -164,15 +202,13 @@
 
   @media #{$bp-below-mobile} {
     padding: 8px;
-    font-size: 12px;
-    line-height: 14px;
     text-align: initial;
     margin-bottom: 25px;
   }
 }
 
 .notification-banner {
-  background-color: #f2c94d;
+  background-color: $color-gold;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -185,16 +221,14 @@
 
 .notification-banner p {
   text-align: center;
-  margin: auto 18%;
+  margin: auto 29%;
   padding: 20px;
-  font-size: 25px;
-  line-height: 29px;
-  font-weight: normal;
+  font-size: 1rem;
+  font-weight: 700;
 
   @media #{$bp-below-mobile} {
-    text-align: justify;
-    padding: 12px;
     margin: 0;
+    padding: 1em 2em; 
     font-size: 16px;
     line-height: 19px;
   }
@@ -203,13 +237,31 @@
 .meetings-message {
   text-align: center;
 }
-.location-image {
-  margin: -5px;
-  border-radius: 5px;
-  max-width: 372px;
 
+.location-img-pos {
+  flex: 0 0 auto;
+  width: 372px;
+  overflow: hidden;
+  margin: -5px;
+
+  @media #{$bp-below-tablet} {
+    margin: 0;
+    width: 100%;
+    height: 40vh;
+  }
   @media #{$bp-below-mobile} {
-    height: auto;
+    height: 231px;
+  }
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media #{$bp-below-tablet} {
+    /* Positions image so location text is visible */
+    object-position: center 80%;
   }
 }
 
@@ -220,14 +272,16 @@
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
   max-width: 996px;
-  margin-bottom: 0;
-  padding: 20px;
   margin: 45px;
+  padding: 20px;
   font-family: "Roboto" sans-serif;
   height: fit-content;
 
   @media #{$bp-below-tablet} {
     padding: 16px 16px;
+  }
+  @media #{$bp-below-mobile} {
+    margin: 45px 16px;
   }
 }
 
@@ -243,7 +297,9 @@
   }
 }
 .location-content {
-  margin: 34px;
+  margin: 24px;
+  overflow: scroll;
+  overflow-x: hidden;
   @media #{$bp-below-mobile} {
     margin: 40px 0;
     padding: 0;
@@ -263,12 +319,14 @@
 #mini-img {
   width: 90px;
   height: 66px;
+  border-radius: 5px 5px 0 0;
 }
 .img-dis {
   width: 92px;
   border: 1px solid gray;
   margin: 10px;
   height: 120px;
+  border-radius: 5px;
 }
 .proj-desc {
   text-align: center;
@@ -286,42 +344,16 @@
 }
 
 .title-meetup {
-  font-size: 25px;
-  text-align: center;
-  margin: 30px;
-  font-weight: normal;
-
-  @media #{$bp-below-mobile} {
-    margin: 0;
-  }
+  font-size: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: $color-black;
 }
-
-// .btn-meet {
-//   background: #fa114f;
-//   border: 2;
-//   border-radius: 60px;
-//   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-//   color: #fff;
-//   display: inline-block;
-//   font-size: 25px;
-//   font-weight: 400;
-//   height: 86px;
-
-//   padding: 0 20px;
-//   text-decoration: none;
-//   transition: all 100ms ease-in;
-//   white-space: nowrap;
-//   width: 62%;
-
-//   @media #{$bp-below-mobile} {
-//     font-size: 1.1rem;
-//     width: 70%;
-//   }
-// }
 
 .class-btn {
   text-align: center;
-  // margin-top: 33%;
+  margin-top: 8px;
 
   @media #{$bp-below-mobile} {
     margin: 0;
@@ -329,7 +361,7 @@
 }
 
 .btn--events {
-  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .event-title-1 {
@@ -343,7 +375,9 @@
   @media #{$bp-below-tablet} {
     font-size: 17px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 16px;
+
   }
 }
 
@@ -355,7 +389,7 @@
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
   }
@@ -369,10 +403,11 @@
 }
 .event-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5rem;
   margin-top: 20px;
-  line-height: 35px;
-  font-weight: normal;
+  font-weight: 700;
+  margin-bottom: 15px;
+
 }
 
 @media #{$bp-below-tablet} {
@@ -380,15 +415,20 @@
     font-size: 17px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .event-title::after {
     content: "\221F";
     float: right;
     transform: rotate(-45deg);
     transition: transform 0.25s ease-in;
-    color: #fa114f;
+    color: $color-red;
     font-weight: bolder;
     font-size: 24px;
+  }
+
+  .event-title span span {
+    display: block;
   }
   .active::after {
     content: "\221F";
@@ -414,7 +454,8 @@
 .mobile-locations-dropdown {
   @media #{$bp-below-tablet} {
     display: none;
-    background: #f2c94d;
+    background: $color-gold;
+    width: 100vw;
   }
 }
 
@@ -430,6 +471,11 @@
   list-style: none;
   font-size: 16px;
   line-height: 19px;
+
+  grid-template-columns: .95fr 1.15fr;
+  display: grid;
+  padding-left: 0;
+
   @media #{$bp-below-tablet} {
     font-size: 13px;
     line-height: 15px;
@@ -437,10 +483,13 @@
 }
 
 .day-header-1 {
+  text-transform: uppercase;
   margin-block-end: 0.25em;
-  font-size: 16px;
-  line-height: 21px;
-
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 30px 0 10px 0;
+  color: $color-black; 
+  padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;
     line-height: 18px;
@@ -453,13 +502,14 @@
   @media #{$bp-below-mobile} {
     text-align: initial;
     margin: 57px;
+    font-size: 16px;
   }
 }
 
 /* These styles are for the mobile view of the events page */
 
 @media #{$bp-below-desktop} {
-  .hacknights--header-container {
+  .header-container--events {
     padding: 2rem 2rem 2rem 2rem;
   }
 
@@ -481,7 +531,7 @@
 }
 
 .fullscreen-video {
-  width: 100%;
+  margin-right: 5rem;
 }
 
 .events-video-fullscreen-container {
@@ -493,7 +543,44 @@
 /* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake. 
     They have been saved because they are still being used in other places on the site. */
     .section-hack-nights {
-      background: $color-blue-dark;
+      background: $color-darkblue;
       color: $color-white;
     }
 
+
+/* This specific selector is created to maintain a total top-margin + top-padding of 44px for .events-page-header (below) without altering 
+or overriding .content-section. See Issue #1609. If this comment is no longer relevant, please remove. */
+.content-section--events + .events-page-header {
+  @media #{$bp-below-tablet} {
+    padding-top: 12px;
+  }
+}
+
+.events-page, .content-section--events {
+  background: $color-darkblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto"sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.userTimeZone {
+  font-weight: 700;
+}
+
+.events-page-header {
+  color: $color-white; 
+  margin-top: 48px; 
+  font-size: 36px;
+  @media #{$bp-below-desktop} {
+    font-size: 2rem;
+  }
+  @media #{$bp-below-tablet} {
+    font-size: 1.75rem;
+    margin-top: 32px;
+    margin-bottom: 44px;
+    }
+}

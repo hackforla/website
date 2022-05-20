@@ -1,0 +1,23 @@
+---
+layout: default
+title: Wins
+permalink: /wins/
+
+---
+
+{%- include wins-page/wins-hero.html -%}
+{% include wins-page/wins-overlay.html %}
+<a class="anchor" id="projects"></a>
+<section class="content-section projects">
+	<div   class="wins-page-contain projects-inner" >
+
+		{% include wins-page/wins-filter-template.html %}
+		{% include wins-page/wins-card-template.html %}
+
+		<ul id="responses" class="win-list unstyled-list"></ul>
+	</div>
+</section>
+
+
+<script src="/assets/js/inert.min.js"></script>
+<script src="/assets/js/wins.js" type="module"></script>

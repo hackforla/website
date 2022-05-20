@@ -3,13 +3,13 @@ layout: default
 ---
 
 <header class='project-hero'>
-    <h1 class='hero-inner'>{{ page.title }}</h1>
+    <h1 class='hero-inner title1'>{{ page.title }}</h1>
 </header>
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
-    <div id='project-description-card' class='project-page-card'>
-        <h4 class='project-page-card-title'>Project Overview</h4>
+    <div id='project-description-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
+        <h2 class='project-page-card-title title6'>Project Overview</h2>
         <!--Project Details-->
         <div class='project-page-description'>
             <!--Project Properties-->
@@ -29,26 +29,22 @@ layout: default
                     {% endfor %}
                 </p>{% endif %}
 
-                <!-- Links Logic to filter prioritized links and to correct comma placement -->
+                <!-- Links Logic to filter prioritized links and to correct comma placement -->        
                 {% if page.links %}
                     {% assign counter = 0 %}
                     {% for item in page.links %}
-                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
-                            {% assign counter = counter | plus:1 %}
-                        {% endif %}
+                        {% assign counter = counter | plus:1 %}  
                     {% endfor %}
                     {% if counter > 0 %}
                         <p>
                             <strong>Links: </strong>
                             {% for item in page.links %}
-                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
-                                    {% if counter > 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
-                                        {% assign counter = counter | minus:1 %}
-                                    {% elsif counter <= 1 %}
+                                    {% if counter == 1 %}
                                         <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                                        {% assign counter = counter | minus:1 %}
+                                    {% elsif counter > 1 %}
+                                        <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
                                     {% endif %}
-                                {% endif %}
                             {% endfor %}
                         </p>
                     {% endif %}
@@ -64,13 +60,15 @@ layout: default
                 </p>
                 {% endif %}
                 <p class="meetingsHeader"></p>
+                <div id="userTimeZone" class="userTimeZone--project-page"></div>
                 <div id="meetings">
                     <ul class="meeting-times-list">
                     </ul>
                 </div>
              </div>
 
-            <!--Project Summary and Getting Started Button-->
+            <!--Project Summary-->
+            <!-- See issue #1997 for more info on why open-roles is commented out -->
             <div class='description-grid-item'>
                 <p>{{page.description}}</p>
                 {% if page.status == "Completed" and page.completed-contact %}
@@ -78,69 +76,40 @@ layout: default
                 {% elsif page.status == "Completed" %}
                     <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:team@hackforla.org?subject=Question%20about%20{{ page.title }}">team@hackforla.org</a></p>
                 {% elsif page.looking %}
-                <p class='open-roles'><strong>Open roles:</strong></p>
+                <!-- <p class='open-roles'><strong>Open roles:</strong></p>
                 <ul id='open-roles-list'>
                     {% for item in page.looking %}
                         <li><p class='role-paragraph'>{% if item.skill %}{{ item.skill }}{% endif %}</p></li>
                     {% endfor %}
-                </ul>
+                </ul> -->
                 {% endif %}
             </div>
         </div>
-        {% if page.status != "Completed" %}
-        <div class="getting-started">
-            <p class='getting-started-button-text'>Getting Started</p>
-            <button onClick='gettingStarted()' class='getting-started-button'>
-                {% include svg/_ionicons_svg_ios-arrow-down.svg %}
-            </button>
-        </div>
-        {% endif %}
     </div>
 
-    <!--Getting Started Card-->
-    <div id="getting-started-section" class='project-page-card'>
+    <!--Project Resources Card-->
+    <div class='page-card card-primary page-card-lg page-card--project-description-page'>
+        <h2 class='project-page-card-title title6'>Resources</h2>
         <ul class="resource-list unstyled-list">
+            {%- for item in page.links -%}
+                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
+                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+                {% else %}
+                    {%- include resource-card.html name=item.name url=item.url -%}
+                {% endif %}
+            {%- endfor -%}
             <!-- Hfla Start Guide -->
             {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
-
-            {% assign hasGettingStarted = false %}
-
-            <!-- Check for Project Wiki -->
-            {% for item in page.links %}
-                {% if item.name == 'Wiki' %}
-                    {% assign hasGettingStarted = true %}
-                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            <!-- Check for Project Readme -->
-            {% for item in page.links %}
-                {% if item.name == 'Readme' %}
-                    {% assign hasGettingStarted = true %}
-                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            <!-- Check for Project Overview -->
-            {% for item in page.links %}
-                {% if item.name == 'Overview' %}
-                    {% assign hasGettingStarted = true %}
-                        {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% endif %}
-            {% endfor %}
-
-            {% if hasGettingStarted == false %}
-                <div id='help-getting-started'>
-                    <p class='help-getting-started-text'>Looks like this project doesn't have their own Getting Started guide.</p>
-                    <button onClick='helpMakeGuide()' class="btn btn-primary btn-md-narrow btn--project-help-make-guide">Help Make One!</button onClick=''>
-                </div>
-            {% endif %}
         </ul>
     </div>
 
     <!-- Project Team Card -->
-    <div id='project-team-card' class='project-page-card'>
-        <h4 class='project-page-card-title'>Project Leadership</h4>
+    <div id='project-team-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
+        {% if page.status == "Completed" %}
+            <h2 class='project-page-card-title title6'>Project Team</h2>
+        {% else %}
+            <h2 class='project-page-card-title title6'>Current Project Team</h2>
+        {% endif %}
         {% if page.leadership %}
             <div class='resource-list'>
                 {% for item in page.leadership %}
@@ -148,7 +117,7 @@ layout: default
                         <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
                         <div class='leader-description'>
                             {% if page.status == "Completed" and item.links.linkedin %}
-                                <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
+                                <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
                             {% elsif page.status == "Completed" %}
                                <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
                             {% else %}
@@ -164,305 +133,35 @@ layout: default
                 <p>Looks like this project has not revealed specific leadership roles yet!</p>
             </div>
         {% endif %}
-        <h4 id='contributor-header' class='project-page-card-title'>Contributors</h4>
+        <h2 id='contributor-header' class='project-page-card-title title6'>All-Time Contributors</h2>
         <div id='contributors-list' class='resource-list'></div>
     </div>
 
-    <!--Project Resources Card-->
-    <div class='project-page-card'>
-        <h4 class='project-page-card-title'>Resources</h4>
-        <ul class="resource-list unstyled-list">
-            {%- for item in page.links -%}
-                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
-                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% else %}
-                    {%- include resource-card.html name=item.name url=item.url -%}
-                {% endif %}
-            {%- endfor -%}
-        </ul>
-    </div>
+    <!-- Show iFrame Card for project, if available -->
+    {% if page.iframe.available == true %}
+    <div class='page-card card-primary page-card-lg page-card--iframe'>
+      <iframe
+      src='{{ page.iframe.src }}'
+      width="100%"
+      height="100%"
+      style="margin: 0; border: 2px solid #336699; box-sizing: border-box">
+      </iframe>
+    </div>    
+    {% endif %}
 </div>
 
 {{ content | markdownify }}
 
-<!--Script for fetching the correct project-->
-<script>
-    {% assign projects = site.data.github-data | jsonify %}
-    let projects = {{ projects }};
-    let projectId = '{{ page.identification }}';
-    // Search for correct project
-    let project = null;
-    // Starts at 1 now since the first element is a time stamp
-    for(i = 1; i < projects.length; i++){
-        let itemId = projects[i].id.toString();
-        if(itemId == projectId){
-            project = projects[i];
-            break;
-        }
-    }
-</script>
-
-<!--Script for assigning hero background image-->
-<script>
-    let heroSection = document.getElementsByClassName('project-hero')[0];
-    {% if page.image-hero %}
-        heroSection.style.background = 'url({{ page.image-hero }}) center center no-repeat';
-    {% else %}
-        heroSection.style.background = 'url(/assets/images/hero/hacknight-women.jpg) center center no-repeat';
-    {% endif %}
-</script>
-
-<!--Script for adding languages to "Languages" Section-->
-<script>
-    let languagesSection = document.getElementById('languages');
-    if(project != null && project.languages.length > 0){
-        let languages = project.languages.join(', ');
-        let languagesParagraph = document.createElement('p');
-        languagesParagraph.style.display = 'inline';
-        let languagesText = document.createTextNode(languages);
-        languagesParagraph.appendChild(languagesText);
-        languagesSection.appendChild(languagesParagraph);
-    } else {
-        languagesSection.remove();
-    }
-</script>
-<!--Script for constructing Team Card-->
-<script>
-    let contributors = document.getElementById('contributors-list');
-    // Empty array for valid contributors
-    let contributorsArray = [];
-
-    if(project != null){
-        for (contributor of project.contributorsComplete.data) {
-            // Checking for valid data
-            if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
-                // Pushing valid data to contributorsArray
-                contributorsArray.push(contributor);
-            }
-        }
-
-        // Creates DOM elements for contributors
-        for(contributor of contributorsArray){
-            if (contributorsArray.length >= 1) {
-                let contributorDiv = document.createElement('div');
-                contributorDiv.classList.add('contributor-div');
-
-                let contributorProfile = document.createElement('a');
-                contributorProfile.classList.add('contributor-link');
-                contributorProfile.setAttribute('href', contributor.github_url);
-                contributorProfile.setAttribute('target', '_blank');
-                let contributorUrl = contributor.github_url.split('/');
-                let contributorName = contributorUrl.pop();
-                contributorProfile.setAttribute('title', contributorName);
-
-                let contributorImg = document.createElement('img');
-                contributorImg.style['border-radius'] = '12px';
-                contributorImg.setAttribute('src', contributor.avatar_url);
-
-                contributorProfile.appendChild(contributorImg);
-                contributorDiv.appendChild(contributorProfile);
-                contributors.appendChild(contributorDiv);
-            }
-        }
-    } else {
-        let messageDiv = document.createElement('div');
-        messageDiv.classList.add('empty-content-message');
-        let messageText = document.createElement('p');
-        messageText.appendChild(document.createTextNode('Looks like this project has not connected a GitHub repository yet!'));
-        messageDiv.appendChild(messageText);
-        contributors.parentNode.appendChild(messageDiv);
-        contributors.parentNode.removeChild(contributors);
-    }
-</script>
-
-<!--Script for Getting Started drop down functionality-->
-<script>
-    let dropDownOpen = false;
-    function gettingStarted(){
-        if(!dropDownOpen){
-            dropDownOpen = true;
-            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
-            gettingStartedButton.style.transform = 'rotate(180deg)';
-
-            let gettingStartedCard = document.getElementById('getting-started-section');
-            let maxHeight = gettingStartedCard.children[0].offsetHeight * 1.5; // Adding pixels for good measure and pop up message
-            gettingStartedCard.style['max-height'] = maxHeight + 'px';
-            gettingStartedCard.style.padding = '30px 30px';
-        }
-        else {
-            dropDownOpen = false;
-            let gettingStartedButton = document.getElementsByClassName('getting-started-button')[0];
-            gettingStartedButton.style.transform = 'rotate(0deg)';
-
-            let gettingStartedCard = document.getElementById('getting-started-section');
-            gettingStartedCard.style['max-height'] = '0px';
-            gettingStartedCard.style.padding = '0px 30px';
-        }
-    }
-</script>
-
-<!--Script for constructing Getting Started call to action message-->
-<script>
-    let helpGettingStarted = document.getElementById('help-getting-started');
-    if (helpGettingStarted) {
-        let textDiv = document.createElement('div');
-        textDiv.setAttribute('id', 'help-make-text-section');
-
-        let hflaSlack = document.createElement('a');
-        hflaSlack.setAttribute('href', 'https://hackforla.slack.com/archives/C4UM52W93');
-        hflaSlack.setAttribute('target', '_blank');
-        let hflaSlackText = document.createTextNode('Hack for LA');
-        hflaSlack.appendChild(hflaSlackText);
-
-        let projectSlack = document.createElement('a');
-        {% for item in page.links %}
-            {% if item.name == 'Slack' %}
-                projectSlack.setAttribute('href', '{{ item.url }}')
-                projectSlack.setAttribute('target', '_blank');
-            {% endif %}
-        {% endfor %}
-        let projectSlackText = document.createTextNode('our');
-        projectSlack.appendChild(projectSlackText);
-
-        let message = document.createElement('p');
-        message.style.width = '200px';
-        let text1 = document.createTextNode('Once you are on the ');
-        let text2 = document.createTextNode(' slack channel, please post a note in ');
-        let text3 = document.createTextNode(' channel indicating your interest.');
-
-        message.appendChild(text1);
-        message.appendChild(hflaSlack);
-        message.appendChild(text2);
-        message.appendChild(projectSlack);
-        message.appendChild(text3);
-        textDiv.appendChild(message);
-        helpGettingStarted.insertAdjacentElement('afterend', textDiv);
-    }
-
-    function helpMakeGuide(){
-        let textDiv = document.getElementById('help-make-text-section');
-        textDiv.style['min-width'] = '225px';
-        textDiv.style.padding = '35px 15px';
-    }
-
-</script>
-<script>
-// Script for adding meeting times to "meetings" Section
-let meetingsList = document.querySelector('.meeting-times-list');
-let meetingsHeader = document.querySelector('.meetingsHeader');
-let projectTitle = '{{ page.title }}';
-let meetingsFound = [];
-
-// Assigns local JSON Data to localData variable
-{% assign localData = site.data.vrms_data | jsonify %}
-let localData = {{ localData }};
-const API_URL = 'https://www.vrms.io/api/recurringevents';
-
-// Function schedules data that is passed in
-function schedule(scheduleData) {
-
-    // Loops through data and assigns information to variables in a readable format
-    for (let i = 0; i <= scheduleData.length - 1; i++) {
-        let startTime = timeFormat(new Date(scheduleData[i].startTime));
-        let endTime = timeFormat(new Date(scheduleData[i].endTime));
-        let webURL = scheduleData[i].project.hflaWebsiteUrl;
-        let projectName = scheduleData[i].project.name;
-        let description = scheduleData[i].description;
-        let day = new Date(scheduleData[i].date).toString().substring(0,3);
-        let scheduleClass;
-
-        // Function that adds data to proper header
-        function scheduleDay() {
-            // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-            if (scheduleData == localData) {
-                scheduleClass = "localData";
-            } else {
-                scheduleClass = "updated";
-            }
-            if (projectTitle === projectName) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
-                meetingsFound.push(day);
-            }
-        }
-        scheduleDay(day);
-    }
-}
-
-// Function checks for differences between two arrays
-function arr_diff (a1, a2) {
-
-    let a = [], diff = [];
-
-    for (let i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (let i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (let k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-}
-
-// Function clears the schedule
-function clearSchedule() {
-    let prevDayList = meetingsList.getElementsByClassName("localData");
-
-    while (prevDayList[0]) {
-        prevDayList[0].parentNode.removeChild(prevDayList[0]);
-    }
-}
-
-// Executes schedule with localData
-schedule(localData);
-
-// Fetchs JSON file from VRMS_API
-fetch(API_URL, {method: 'GET'})
-    .then(response => response.json())
-    .then((data) => {
-    // Checks for differences between localData and VRMS data
-    if (arr_diff(data, localData)) {
-        clearSchedule();
-        schedule(data);
-    }
-})
-.catch(err => {
-    console.log(err);
-})
-
-if (meetingsFound.length >= 1) {
-    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings: </strong>');
-}
-
-// Formats time to be readable
-function timeFormat(time) {
-    hours = time.getHours();
-    minutes = time.getMinutes();
-
-    if (minutes == 0) {
-        minutes = minutes + "0";
-    }
-
-    if (hours < 12) {
-        return `${hours}:${minutes} am`;
-    }
-    else if (hours > 12){
-        hours = hours - 12;
-        return `${hours}:${minutes} pm`;
-    }
-    else if (hours = 12){
-        return `${hours}:${minutes} pm`;
-    } else {
-        return `${hours}:${minutes} am`;
-    }
-
-}
+<!-- 
+  Passing script attributes from html script tag to JS file
+  https://www.gun.io/blog/pass-arguments-to-embedded-javascript-tutorial-example
+-->
+<script 
+  id="projectScript"
+  src="/assets/js/project.js"
+  type="module"
+  projectId="{{ page.identification }}"
+  imageHero="{{ page.image-hero }}"
+  projectTitle="{{ page.title }}"
+>
 </script>

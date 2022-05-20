@@ -1,0 +1,177 @@
+.header-self-invite--communities {
+  display:flex;
+  align-items: flex-start;
+  max-width: 508px;
+  margin-top: 31px;
+
+  .self-invite-img {
+    /*Note "margin-top: 15px" is needed to keep this img aligned with neighboring text*/
+    margin-top: 15px;
+    margin-right: 27px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .alert--communities {
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 450px;
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  @media #{$bp-below-tablet} {
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+}
+
+
+.content--communities {
+  background: $color-pink;
+  display: flex;
+  flex-direction: column;
+
+  .page-card-container {
+    display: flex;
+    min-height: 454px;
+    height: fit-content;
+
+    @media #{$bp-below-desktop} {
+      flex-direction: column;
+    }
+  }
+
+  .page-card-image-container {
+    flex: 0 0 auto;
+    width: 327px;
+    overflow: hidden;
+    @media #{$bp-below-desktop} {
+      width: 100%;
+      max-height: 40vh;
+
+    }
+  }
+
+  .page-card-image {
+    /*moved this to the container so I could use object-fit to accomodate random heights
+    margin: -5px;
+    max-width: 372px;*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+    @media #{$bp-below-tablet} {
+      height: 231px;
+    /*  width: 100%;
+      max-height: 40vh;
+      overflow: hidden;*/
+    }
+  }
+
+  .page-card-content {
+    flex: 0 1 auto;
+    margin: 34px;
+    height: -moz-fit-content;
+    height: fit-content;
+    @media #{$bp-below-tablet} {
+      margin: 40px 0;
+      padding: 0 16px;
+    }
+  }
+  .page-card-content h3 {
+    @media #{$bp-below-mobile} {
+      font-size: 1.25rem
+    }
+    @media #{$bp-mobile-up} {
+      font-size: 1.25rem;
+    }
+    @media #{$bp-desktop-up} {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/*leader card styling - adapted from project page, mostly wrt sizing */
+.leader-list--communities {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  margin: 20px 0px;
+
+  @media #{$bp-below-desktop} {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0px;
+    align-items: center;
+  }
+}
+
+.leader-img--communities {
+  margin: 10px;
+  width: 50px;
+  min-width: 40px;
+  border-radius: 10px;
+}
+
+.leader-card--communities {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 24% auto;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(51,51,51,0.2);
+  width: 240px;
+  height: 70px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+
+//styling for join slack and view github buttons
+.page-card-content{
+  .link-buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+
+  .button-icon{
+    margin-right: 5px;
+  }
+  
+  #slack-icon{
+    width: 22px;
+    height: 22px;
+  }
+
+  #github-icon{
+    width: 29px;
+    height: 26px;
+  }
+}
+
+@media #{$bp-mobile-up} {
+  .link-buttons{
+    margin-top: 60px;
+
+  }
+  .cop-btn{
+    width: 232px;
+  }
+}
+
+@media #{$bp-below-mobile} {
+  .link-buttons{
+    margin-top: 38px;
+  }
+
+  .cop-btn{
+      width: 203px;
+  }
+
+  .link-buttons a:nth-child(2){
+    margin-top: 20px;
+  }
+}

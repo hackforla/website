@@ -1,0 +1,35 @@
+---
+name: UI/UX
+description: This group creates a space where UI/UX designers and researchers from different projects can come together to share effective practices, give and get mentorship, set standards, and create guides for new projects.
+visible: true
+status: Active
+location:
+  - Remote
+
+image: /assets/images/communities-of-practice/uiux.jpg
+alt: 'A board full of Post-it notes is used as a communication tool'
+
+meeting-times: Mondays 6:00-7:00 PM PT
+
+leadership-type: Peer Led
+leadership:
+  - name: Felicia Swafford
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U0252LV021F
+      github: https://github.com/feswafford
+    picture: https://avatars.githubusercontent.com/u/85914618
+  - name: Kevin Wang
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U01GZHT5CM8
+      github: https://github.com/kvnw202
+    picture: https://avatars.githubusercontent.com/u/47463544
+links:
+  - name: Slack
+    url: https://app.slack.com/client/T04502KQX/C017ESHSMNG/
+  - name: Github
+    url: https://github.com/hackforla/UI-UX
+  
+recruiting-message:
+---

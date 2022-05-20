@@ -1,28 +1,37 @@
-name: Update GitHub data
+name: Update GitHub Data
 
 # Run this action every day at 3am Pacific (11 am UTC)
 on:
   schedule:
-    - cron: '0 11 * * *'
+    - cron:  '0 11 * * *'
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
     if: github.repository == 'hackforla/website'
+    
     steps:
-    - uses: actions/checkout@v2
-    - uses: bahmutov/npm-install@v1
+    - name: Checkout repository
+      uses: actions/checkout@v2
       with:
-        working-directory: github-actions
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+    
+    - name: GitHub Action for install npm dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        working-directory: ./github-actions/github-data
+    
     - name: Generate github-data.json
-      id: json
-      uses: ./github-actions
-      with:
+      env:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      run: node github-actions/github-data/get-project-data.js
+
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
       with:
         # Optional glob pattern of files which should be added to the commit
-        file_pattern: _data/github-data.json
+        file_pattern: _data/external/github-data.json
 
         commit_message: Update contributor and language data
 

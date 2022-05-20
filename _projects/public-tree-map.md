@@ -3,10 +3,10 @@ identification: '128148093'
 title: Public Tree Map
 description: Public Tree Map helps connect people to Santa Monica's urban forest. The map includes information about each of the 35,000 trees (and vacant tree sites) in Santa Monica's publicly-owned urban forest (compiled from open datasets, digitized city records, and federal ecosystem services values), as well as tools for users to share favorite trees. To reflect tree plantings and removals, the map updates every day.
 image: /assets/images/projects/public-tree-map.png
-alt: 'public tree map grid'
+alt: 'Zoomed-in map showing ten streets of the neighborhood. Each dot on the map displaying a tree from the urban forest'
 image-hero: /assets/images/projects/public-tree-map-hero.jpeg
-alt-hero: 'Coral tree - Dave Baiocchi www.studiobaiocchi.com'
-leadership:
+alt-hero: 'Coral tree from City of Santa Monica. Photo by Dave Baiocchi www.studiobaiocchi.net'
+leadership: 
   - name: Emily F.
     role: Product Owner
     links:
@@ -40,11 +40,12 @@ technologies:
   - Leaflet
   - Node.js
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: City of Santa Monica
 tools: Zeplin
 visible: true
 status: Completed
-vertical: 'Environment'
+program-area: 
+  - Environment
 ---

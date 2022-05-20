@@ -5,7 +5,7 @@ description: Visualization of parking data to assist in understanding of the eff
 image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking Logo'
 image-hero: /assets/images/projects/lucky-parking-hero.png
-alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagon.'
+alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen.'
 leadership:
   - name: Greg Pawin
     role: Product Owner / Data Science Lead
@@ -13,30 +13,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
     picture: https://avatars.githubusercontent.com/gregpawin
-  - name: Abhinav Bommakanti
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01EW24KL3V'
-      github: 'https://github.com/abhib87'
-    picture: https://avatars.githubusercontent.com/abhib87
-  - name: Matthew Ginther
+  - name: Matthew Cacho
     role: Full-Stack Developer Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013GNM93U1'
-      github: 'https://github.com/mg78856'
-    picture: https://avatars.githubusercontent.com/mg78856
-  - name: David Kim
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U3MNUEQJ3'
-      github: 'https://github.com/hyomiTheTech'
-    picture: https://avatars0.githubusercontent.com/u/38476995?s=400&u=43e9d12bf5a5df1b9347519fc1e4ef3991b9ae13&v=4
-  - name: Sam Guan
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0173AHJ004'
-      github: 'https://github.com/samreality4'
-    picture: https://avatars.githubusercontent.com/samreality4
+      slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
+      github: 'https://github.com/macho-catt'
+    picture: https://avatars.githubusercontent.com/macho-catt
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -45,7 +27,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
-    url: 'https://www.luckyparking.info/'
+    url: 'http://www.luckyparking.org/'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
@@ -56,16 +38,26 @@ looking:
   - category: Data
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
-  - ReactJS
+  - React
   - PostgreSQL
   - Node.js
   - Mapbox
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Department of Neighborhood Empowerment
 tools: Jupyter Notebooks, Google Colab, AWS
-vertical: 'Citizen Engagement'
+program-area:
+  - Citizen Engagement
 visible: true
 status: Active
+# citizen engagement card data
+problem: Parking citations are distributed unevenly across different socio-economic strata of the city's residents as they use public parking during the course of business or because enough off-street parking is not provided at their residence. The current publicly available Los Angeles parking citation dataset can be used as a basis for discussions about this disparity, but the unwieldy size and inconsistency of this data has been enough of a barrier to make it inaccessible to non-researchers.
+solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a webapp that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
+impact: Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.
+sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
+card-image-src: /assets/images/projects/lucky-parking.png
+card-image-alt: lucky parking project card
+sdg-image-src: /assets/images/about/sdg-elements/sustainable-cities.svg
+sdg-image-alt: sustainable cities bottom sustainable dev goal
 ---

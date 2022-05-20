@@ -1,16 +1,15 @@
 - name: Events
   link: /events
 
-# the link attribute should be changed to  "/hack-nights-page" after page issues have been resolved
 - name: Projects
-  link: /#projects
+  link: /projects
 
 - name: Press
   link: /#press
-  
-- name: Connect
-  link: /#about
-  
+
+- name: Join Us
+  link: /join
+
 - name: Toolkit
   link: /toolkit
 

@@ -13,8 +13,10 @@ looking:
   - category: UI/UX
     skill: Graphics Designer
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
+program-area:  
+  - Social Safety Net
 visible: false
 status: On Hold
 ---

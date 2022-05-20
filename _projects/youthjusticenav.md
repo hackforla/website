@@ -1,10 +1,11 @@
 ---
 identification: '324048462'
 title: Youth Justice Nav
-description: We are creating a know your rights tool for youth and their families when interacting with the Juvenile Justice System.  This interactive tool creates a resource for youth and their families to access information that is relevant to several different parts of the process from knowing your rights when you come into contact with law enforcement, to an explanation of the different types of hearings that take place, to knowing who various people in the courtroom are. 
+description: We are creating a know your rights tool for youth and their families when interacting with the Juvenile Justice System.  This interactive tool creates a resource for youth and their families to access information that is relevant to several different parts of the process from knowing your rights when you come into contact with law enforcement, to an explanation of the different types of hearings that take place, to knowing who various people in the courtroom are.
 image: /assets/images/projects/youthjusticenav.png
 alt: "All capital letters spelling out title of project - YOUTH JUSTICE NAV"
 image-hero: /assets/images/projects/youthjusticenav-hero.png
+alt: ''
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -37,6 +38,8 @@ links:
     url: 'https://hackforla.slack.com/archives/C01J94D6GAC'
   - name: Readme
     url: 'https://github.com/hackforla/YouthJusticeNav/blob/main/README.md'
+  - name: Overview
+    url: '/assets/pdfs/Youth-Justice-Nav-Product-One-Sheet.pdf'
 looking:
   - category: Content
     skill: Content Writer
@@ -45,14 +48,14 @@ looking:
   - category: UI/UX
     skill: UX Researcher
 technologies:
-  - Google Docs
-  - Google Sheets
   - Figma
   - Miro
 location:
   - Remote
-partner: UCLA School of Law, Code for America
-vertical: 'Justice'
+partner: UCLA School of Law, Golden Gate University School of Law
+tools: Google Docs, Google Sheets
+program-area: 
+  - Justice
 visible: true
 sdg: 16.3
 status: Active

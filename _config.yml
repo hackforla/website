@@ -1,7 +1,13 @@
-lsi: false
-safe: true
+# Default Configuration: https://jekyllrb.com/docs/configuration/default/
+# Font Matter Defaults:  https://jekyllrb.com/docs/configuration/front-matter-defaults/
+# Configuration Options: https://jekyllrb.com/docs/configuration/options/
 
-source: .
+lsi: false # Produce an index for related posts. Requires the classifier-reborn plugin. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
+safe: true # Disable non-whitelisted plugins, caching to disk, and ignore symbolic links. -> https://jekyllrb.com/docs/configuration/options/#build-command-options
+
+# Exclude files that do not need to be rendered and included in the final build of the website
+exclude: [github-actions, docker-compose.yml, package-lock.json]
+source: . # Change the directory where Jekyll will read files
 
 title: Hack for LA
 email: hello@hackforla.org
@@ -11,31 +17,45 @@ baseurl: ""
 url: https://www.hackforla.org
 
 
+# When/Before creating a new collections remember these two pieces of advice and ask yourself. Should you?
+#    1. Collections are a great way to group related content like members of a team or talks at a conference. [https://jekyllrb.com/docs/collections/]
+#    2. Collection — Will have its own page, URLs, and possibly an index page. [https://gist.github.com/akibrhast/31c7bb723d80e9efe3d28f619ef0798d]
 collections:
-  press:
+# The redirection collection exist to allow us to type urls `hackforla.org/github` or hackforla.org/donate 
+# which then redirects to `github.com/hackforla/website` and `https://www.codeforamerica.org/donate` respecitively
+  redirections:
+    output: true
   projects:
     output: true
-  credits:
-  toolkitResources:
-  sponsors:
-  testimonials:
   guide-pages:
     output: true
+  design-system:
+    output: true
 
-defaults:
+# Please refer to the documentation here[https://jekyllrb.com/docs/configuration/front-matter-defaults/] before modifying defaults
+# The settings below reads as so
+#     - Everything within the `pages` directory that is of type `pages` will be rendered using the `default` layout as defined ins `_layouts/default.html`
+#     - Everything within the `_projects` directory that is of type `projects` will be rendered using the `project` layout as defined ins `_layouts/project.html`
+#     - Everything within the `_guide-pages` directory that is of type `guide-pages` will be rendered using the `guide-pages` layout as defined ins `_layouts/guide-pages.html`
+
+defaults: # The `defaults` key holds an array of scope/values pairs that define what defaults should be set for a particular file path, and optionally, a file type in that path.
   - scope:
-      path: ""
+      path: "pages" # an empty string here means all files in the project
       type: "pages"
     values:
       layout: "default"
-
   - scope:
-      path: ""
+      path: "_projects" # an empty string here means all files in the project
       type: "projects"
     values:
       layout: "project"
   - scope:
-      path: ""
+      path: "_guide-pages" # an empty string here means all files in the project
       type: "guide-pages"
     values:
       layout: "guide-pages"
+
+plugins:
+  - jekyll-sitemap
+
+

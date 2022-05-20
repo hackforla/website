@@ -1,0 +1,20 @@
+- title: Figma
+  description: Our design team uses Figma to create wireframes and mockups.
+  svg: svg/icon-figma.svg
+  link-svg: svg/outer-link.svg
+  provider-link: 'https://www.figma.com/'
+  display: true
+
+- title: Github
+  description: We use github for our project management and to streamline development.
+  svg: svg/icon-github-small.svg
+  link-svg: svg/outer-link.svg
+  provider-link: 'https://github.com/'
+  display: true
+
+- title: Zoom
+  description: HackforLA uses zoom for onboarding and weekly meetings
+  svg: svg/icon-zoom.svg
+  link-svg: svg/outer-link.svg
+  provider-link: 'https://zoom.us/'
+  display: true

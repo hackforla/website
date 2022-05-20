@@ -1,0 +1,22 @@
+<h3 class="event-title title4">
+    <img class="vector-img" src="../assets/images/hack-nights/meetup.svg" alt="meetup logo" /> Meetup Events
+</h3>
+<div class="mobile-dropdown">
+
+    {% for event in site.data.internal.events %}
+    <div class="meetup-steps">
+        <div id="img-content">
+            <img class="step-img-1" src="{{event.link}}" alt="" />
+        </div>
+        <div id="text-content">
+            <h4 class="title-meetup title5">{{event.name}}</h4>
+            <p>{{event.text}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="class-btn">
+        <a href="https://www.meetup.com/hackforla/events" target="_blank" class="btn btn-primary btn-lg btn--events btn--default" title="Hack for LA Meetup Events">View on Meetup</a>
+    </div>
+
+</div>

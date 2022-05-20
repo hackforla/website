@@ -1,0 +1,36 @@
+name: Add Pull Request Instructions
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - 'gh-pages'
+      - 'feature-homepage-launch'
+      - 'feature-tech-dropdown'
+
+jobs:
+  Add-Pull-Request-Instructions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Create the message to post
+      - name: Create Instruction
+        uses: actions/github-script@v4
+        id: instruction
+        with:
+          script: |
+            const script = require('./github-actions/pr-instructions/create-instruction.js')
+            const instruction = script({g: github, c: context})
+            return JSON.stringify({ instruction: instruction, issueNum: context.payload.number })
+      
+      # Create an artifact with the message
+      - name: Create Artifacts
+        run: |
+          mkdir -p addingPrInstructions/artifact
+          echo ${{ steps.instruction.outputs.result }} > addingPrInstructions/artifact/artifact.txt
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: adding-pr-instructions-artifact
+          path: addingPrInstructions/artifact/

@@ -1,248 +1,434 @@
 //Hero styling
+
+//mobile for wins info
+
 .wins-hero{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    img{
+        max-height: 360px;
+    }
+    h1{
+        margin-bottom: 56px;
+    }
+}
+
+.wins-btn{
+    max-width: 300px;
+    max-height: 75px;
+}
+
+.win-list{
+    margin-bottom: 24px;
+    order: 2;
+
+  @media #{$bp-desktop-up} {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+}
+
+.project-card.wins-card{
+    overflow: visible;
+    @media #{$bp-below-desktop} {
+        margin-bottom: 24px;
+    }
+}
+
+.wins-see-more-div {
+    position: absolute;
+    background-color: white;
+    right: 32px;
+    bottom: 26px;
+    color: $color-red;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+
+.wins-card-text {
 	margin-top: 40px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-evenly;
-	img{
-		height: 366;
-	}
-	h1{
-		font-size: 59px;
-		line-height: 69px;
-		text-align: center;
-		font-style: normal;
-		font-weight: normal;
+	max-height: 88px;
+	position: inherit;
+}
+
+.wins-card-overview{
+    margin: 1em 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.see-more-div {
+
+	@media #{$bp-below-desktop} {
+        display: inline-block;
+        width: 44px;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 12px;
+        background-image: url(../../assets/images/wins-page/caret.svg);
+        transform: rotate(180deg);
+        &.show-less-btn {
+            transform: rotate(0deg);
+        }
 	}
 }
 
-.wins__see-more-div {
-	position: absolute;
-	background-color: white;
-	right: 0px;
-	bottom: 0px;
-	color: red;
-	padding: 0px 3px;
-	cursor: pointer;
+.wins-icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
 }
 
-.wins__card-text {
-	padding-top: 40px;
-	p {
-		margin: 0;
-	}
+.wins-item-container{
+    margin-top: .95rem;
+    display: inline-block;
+    position: relative;
+}
+.wins-text-bubble {
+    display: none;
+    // font-weight: normal !important;
+    border-radius: 7px;
+    width: 279%;
+    left: -108%;
+    padding: .6em .5em;
+    background: $color-black;
+    text-align: center;
+    font-weight: 900;
+    color: $color-white;
+    font-family: arial;
+    position: absolute;
+    z-index: 1;
+}
+[data-wins]{
+    font-weight: normal 
+}
+.wins-text-bubble:before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid $color-black;
+    border-right: 10px solid transparent;
+    transform: rotate(45deg);
+    border-bottom: 10px solid transparent;
+    right: 40%;
+    top: 0;
+}
 
+.wins-badge-icon {
+    min-width: 1.7em;
+    max-width: 1.7em;
+    min-height: 1.7em;
+    max-height: 1.7em;
+    margin: .5em 1.5em .5em 0;
+    filter: invert(13%) sepia(4%) saturate(16%) hue-rotate(336deg) brightness(96%) contrast(81%);
+}
+
+.wins-badge-icon:hover{
+    filter: invert(79%) sepia(0%) saturate(4%) hue-rotate(139deg) brightness(89%) contrast(90%);
+}
+
+.wins-badge-icon:hover + .wins-text-bubble{
+    display: block;
+    font-family: $font-family-body;
+}
+
+#overlay-info{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 2.6em;
+}
+.overlay-item-container{
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    margin-right: 1.5em;
+}
+.overlay-badge-icon{
+    max-width: 1.5em;
+    margin-top: .2em;
+    margin-right: .7em;
+}
+.overlay-text-bubble{
+    margin: 0;
+    max-width: 14em;
 }
 
 @media #{$bp-below-tablet} {
-	.wins-hero{
+    .wins-hero{
 
-		img{
-			height: 230px;
-		}
-		h1{
-			font-style: normal;
-			font-weight: normal;
-			font-size: 38px;
-		}
-		.btn--wins{
-			height: 60px;
-			padding: 0 50px;
-			border-radius: 60px;
-			font-size: 1.25rem;
-		}
-		
-	}
+        img{
+            height: 230px;
+        }
+        h1{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 38px;
+        }
+        .wins-btn{
+            max-width: 217px;
+            max-height: 60.5px;
+            font-size: 18.5px;
+        }
+        
+    }
 }
 
-@media #{$bp-below-mobile} {
-	.wins-hero{
 
-		img{
-			height: 105px;
-		}
-		h1{
-			font-style: normal;
-			font-weight: normal;
-			font-size: 24px;
-			line-height: 28px;
-		}
-		.btn--wins{
-			height: 40px;
-			padding: 0 32px;
-			border-radius: 20px;
-			font-size: 1rem;
-		}
-	}
+@media #{$bp-below-mobile} {
+    .wins-hero{
+        img{
+            height: 105px;
+        }
+        h1 {
+            margin-bottom: 32px;
+        }
+        .wins-btn{
+            max-width: 134px;
+            max-height: 46px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
 }
 
 // page
 .wins-page-contain{
-	margin:0 auto;
-	max-width: 1292px;
+    margin:0 auto;
+    max-width: 1292px;
 }
 .wins-page-contain > p{
-	margin: 18px 60px;
+    margin: 18px 60px;
 }
 
-//card styling
 .wins-card{
-	padding: 45px;
-	display: flex;
-	flex-direction: row;
+    padding: 45px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: visible;
 }
-.wins-card-left{
-	width: 100px;
-	margin-right: 10px;
-	display: flex;
-	align-items: flex-end;
-	flex-direction: column;
+.wins-card-top{
+    display: flex;
+}
+.wins-card-top-right{
+    flex-grow: 1;
 }
 .wins-card-profile-img{
-	border-radius: 100px;
+    width: 86px;
+    height: 86px;
+    border-radius: 100px;
+    margin-right: 20px;
 }
 .wins-card-big-quote{
-	width: 28px;
-	height: 96.05px;
-	position: relative;
-	top: -20px;
+    width: 28px;
+    height: 112px;
+    margin-right: 20px;
+    margin-left: 58px;
+    position: relative;
 }
+.wins-card-bottom{
+    display: flex;
+}
+
 .wins-card-content{
-	display: flex;
-	flex-direction: column;
-	margin-left: 20px;
-	width: 100%;
-	position: relative;
-	height: 225px;
-	overflow: hidden;
-	margin-left: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-left: 6px;
 }
 
 .wins-card-name{
-	font-weight: bold;
-	font-size: 20px;
-	line-height: 22px;
-	margin-top: 13px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: .4em;
 }
-.wins-card-team{
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 18px;
-	display: flex;
-	align-items: center;
+.wins-card-team, .wins-card-role {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    margin-bottom: 6px;
+    // align-items: center;
 }
-.wins-card-top{
-	display: flex;
-	justify-content: space-between;
+.wins-team-role-color {
+    color: #767676;
+    margin-right: 7px;
 }
-.wins-card-icon{
-	margin-left: 18px;
+.wins-card-title{
+    display: flex;
+    justify-content: space-between;
 }
-.wins-card-info{
-	font-weight: bold;
+.wins-card-icon, .wins-card-github-icon, .wins-card-linkedin-icon{
+    margin-left: 18px;
+}
+.wins-card-icons{
+    display: flex;
 }
 
-.wins-card-overview{
-	margin-top: 1em;
-}
+@media #{$bp-below-desktop} {
+    .wins-card {
+        position: relative;
+    }
 
-@media #{$bp-below-tablet} {
-	.wins-card-content{
-		height: 233px;
-	}
+    .wins-card-text{
+        max-height: 81px;
+        position: inherit;
+    }
+
+    .wins-see-more-div {
+        right: 24px;
+        bottom: 10px;
+    }
+
+    .home-getting-started-container {
+        h1 {font-size: 2rem;}
+    }
+
+    .project-inner {
+        font-size: .937rem;
+        line-height: 1.3rem;
+        margin-bottom: .3rem;
+    }
+    .btn--wins {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: 20px;
+        font-size: 1rem;
+        line-height: 40px;
+    }
 }
 
 @media #{$bp-below-mobile} {
-	.wins-card-content{
-		height: 215px;
-	}
-	.wins-card{
-		padding: 24px;
-	}
-	.wins-card-left{
-		width: 50px;
-	}
-	.wins-card-profile-img{
-		width: 50px;
-		height: 50px;
-		border-radius: 100px;
-	}
-	.wins-card-big-quote{
-		margin: 4px;    
-		height: 60px;
-		width: 18px;
-		position: static;
-	}
+    .wins-card-text{
+        max-height: 80px;
+        margin-top: 16px;
+    }
+    .wins-card{
+        padding: 24px;
+    }
+    .wins-card-left{
+        width: 50px;
+    }
+    .wins-card-profile-img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        margin-right: 6px;
+    }
+    .wins-card-big-quote{
+        margin: 0 6px 0 32px;
+        height: 54px;
+        width: 18px;
+        position: static;
+    }
 
-	.wins-card-name{
-		font-size: 19px;
-		line-height: 22px;
-		margin: 0;
-		padding-top: 5px;
-	}
-	.wins-card-team{
-		font-size: 12px;
-		line-height: 16px;
-	}
-	.wins-card-icon{
-		margin-left: 13.5px;
-	}
-	.github-icon{
-		height: 20px;
-		width: 20px;
-	}
-	.linkedin-icon{
-		height: 20px;
-		width: 20px;
-	}
-	.wins__card-text{
-		padding-top: 16px;
-	}
+    .wins-card-name{
+        font-size: 19px;
+        line-height: 22px;
+    }
 
-	.wins-card-overview{
-		margin-top: 0;
-		font-size: 16px;
-	}
+    .wins-card-icon{
+        margin-left: 13.5px;
+    }
+    .github-icon{
+        height: 20px;
+        width: 20px;
+    }
+    .linkedin-icon{
+        height: 20px;
+        width: 20px;
+    }
+
+    .wins-card-overview{
+        margin-top: 0;
+        font-size: 16px;
+    }
 }
 
 
 
 //modal overlay
 @media #{$bp-desktop-up} {
-	.wins-card-overview{
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+    .wins-card-overview{
+        overflow: hidden;
+    }
 
-	.overlay {
-		display: none;
-		z-index: 1;
-		position: fixed;
-		left: 0px;
-		top: 0px;
+    .overlay {
+        display: none;
+        z-index: 1;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: calc(100vw + 17px);
+        height: 100%;
+        background-color: rgba(70, 70, 70, 0.5);
+        padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .display-initial {
+        display: flex;
+        flex-direction: column;
+    }
+    .top-buffer{
+        height: 20vh;
+    }
+    .bottom-buffer {
+        height: 5vh;
+    }
+    .modal-container{
+        position: absolute;
+        width: 60%;
+        left: 20%;
+    }
+    .overlay-close-icon {
+        float: right;  
+        padding: 20px 20px 0 0; 
+        cursor: pointer;
+    }
+    .center-screen {
+        opacity: 1;
+	}
+	.overlay-card-text{
+		padding-top: 40px;
+	}
+	.wins-card-badges{
+		display:flex;
+		flex-flow: row wrap;
 		width: 100%;
-		height: 100%;
-		background-color: rgba(70, 70, 70, 0.5);
-		padding: 10px;
-	}
-
-	.display-none {
-		display: none;
-	}
-
-	.display-initial {
-		display: initial;
-	}
-
-	.center-screen {
-		position: fixed;
-		opacity: 1;
-		width: 60%;
-		left: 20%;
-		top: 30%;
-		.wins-card-content{
-			height: auto;
+		.badge-item{
+            flex: 1 1;
+            flex-basis: 250px;
+			// width: 100px;
+			margin: 4px;
+			display: flex;
+			.badge-icon{
+				margin: 2px 12.5px 0 0;
+				height: 15px;
+				min-width: 30px;
+				display: flex;
+				justify-content: center;
+			}
 		}
 	}
 
@@ -251,32 +437,34 @@
 
 //mobile see more
 @media #{$bp-below-desktop} {
-	.overlay {
-		display: none;
-	}
-	.display-none {
-		display: none;
-	}
-	.expanded{
-		height: auto;
-		.wins__see-more-div {
-			position: relative;
-			text-align: right;
-		}
-	}
+    .overlay {
+        display: none;
+    }
+    .display-none {
+        display: none;
+    }
+    .expanded{
+        max-height: none;
+        height: auto;
+        .wins-card-overview {
+            display: block;
+        }
+        .wins-see-more-div {
+            z-index: 10;
+        }
+    }
+    
 }
 
 .wins-card-content > * {
-	flex: 0 0 auto;
+    flex: 0 0 auto;
 }
-
-
 
 //wins page filter override section begin
 .wins-page-contain > ul.filter-list{
 	grid-template-columns: repeat(2, 1fr);
 	min-width: 216px;
-	width: 46%;
+	width: 40%;
 
 	
 }
@@ -285,10 +473,83 @@
 	width: 100%;
 }
 
-@media #{$bp-below-tablet}{
+@media #{$bp-below-desktop}{
 	.wins-page-contain > ul.wins-filter{
 		width: 100%;
 		grid-template-rows: none;
-	}
+    }
+
+    .wins-tablet{
+        margin-left: 0em;
+
+        .wins-icon-container{
+            display: block;
+        }
+        .wins-item-container{
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            margin-bottom: 1em;
+        }
+        .wins-badge-icon{
+            margin-top: .05em;
+            min-width: 1.5em;
+            max-width: 1.5em;
+            min-height: 1.5em;
+            max-height: 1.5em;
+        }
+        .wins-text-bubble{
+            display: block;
+            width: 50%;
+            text-align: left;
+            position: relative;
+            left: 0;
+            padding: 0;
+            background: inherit;
+            color: $color-black;
+        }
+        .wins-text-bubble::before{
+            border: none;
+        }
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .wins-tablet {
+        .wins-item-container{
+            margin-left: 0;
+        }
+        .wins-text-bubble{
+            width: 100%;
+        }
+    }
+    // when card is collapsed in mobile, icons will be 1.4em
+    .wins-badge-icon {
+        min-width: 1.4em;
+        max-width: 1.4em;
+        min-height: 1.4em;
+        max-height: 1.4em;
+    }
+    // when card is opened with "See More", icons will shrink to 1em
+    .wins-tablet .wins-badge-icon {
+        min-width: 1em;
+        max-width: 1em;
+        min-height: 1em;
+        max-height: 1em;
+    }
 }
 //wins page filter override section end
+
+
+//tablet view mode media query
+@media screen and (max-width: $screen-desktop) and (min-width: $screen-mobile){
+    .wins-tablet{
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .wins-text-bubble{
+            width: 70%;
+        }
+    }
+}

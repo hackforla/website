@@ -40,10 +40,11 @@ looking:
   - category: Ops
     skill: DevOps engineer
 location:
-  - Downtown LA
+  # - Downtown LA
   - Remote
 partner: Seeking
 visible: true
 status: Active
-vertical: 'Diversity, Equity & Inclusion'
+program-area: 
+  - Diversity / Equity and Inclusion
 ---

@@ -1,188 +1,76 @@
 //mobile view
+
 @mixin mobile {
-  @media #{$bp-below-tablet} { 
+  @media #{$bp-below-tablet} {
     @content;
   }
 }
 
-
-.header-container--sitemap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background: #fff;
-  padding: 64px;
-  height: fit-content;
-  margin: 37px auto 0;
-  font-family: "Roboto"sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  
-  
-  img{
-    max-width: 252.14px;
-  }
-  @include mobile{
-    flex-direction: column;
-    align-items: center;
-    padding: 32px;
-  }
-}
-
-// .header-container{
-//   @include mobile{
-//     padding: 32px auto ;
-//   }
-// }
-
-.header-text-margin--sitemap {
-  display: flex;
-  flex-direction: column;
-  margin-right: 80px;
-  p{
-    font-size: 18px;
-    max-width: 508px;
-    margin-top: 8px;
-    text-align: left;
-  }
-  h1 {
-    font-size: 48px;
-    }
-    @include mobile{
-      margin: auto;
-     margin-bottom: 36px;
-      h1{
-       font-size: 24px;
-       margin-bottom: 20px;
-     }
-    
-    }
-}
-
-
 .sitemap-page {
-  background: #f7f5f5; 
+  background: #f7f5f5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
- 
-  h3{
-    font-size: 24px;
+
+  .title4 {
     margin-bottom: 32px;
   }
-  p{
+  p {
     font-size: 16px;
     max-width: 477px;
     margin: auto;
     margin-bottom: 40px;
-  
   }
-  @include mobile{
-
-    h3{
-      font-size: 20px;
-    }
-    p{
+  @include mobile {
+    p {
       font-size: 16px;
       max-width: 300px;
     }
- 
   }
-  
-}
-.card-width{
-  width: 100%;
 
-}
-.card-body{
+  .page-card--sitemap {
+    width: 100%;
+    padding: 48px;
 
-  text-align: left;
-  img{
-    margin: auto;
-    margin-left: auto;
-  }
-  .card-mobile-icon{
-    display: none;
-  }
-  @include mobile{
-    h3{
-      text-align: center;
-    }
-    .card-desktop-icon{
-      display: none;
-    }
-    .card-mobile-icon{
-      display: flex;
-      margin: 58px auto;
-    }
-    a{
-      display: flex;
-      justify-content: center;
-    }
-  }
-}
-
-
-/*---------------------------
-| Base Page Card
----------------------------*/
-.page-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background: $color-white;
-}
-
-/*---------------------------
-| Card Color
----------------------------*/
-// White 
-.card-primary {
-  background: $color-white;
-}
-
-/*---------------------------
-| Page Card Size
----------------------------*/
-//Large
-.page-card-lg {
-  max-width: 896px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2); 
-  padding: 48px;
-  margin: 16px auto;
-  // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-tablet} {
+    @media #{$bp-below-mobile} {
       padding: 32px 16px;
-      margin: 12px auto;
+    }
+  
+    img {
+      margin: auto;
+    }
+
+    @include mobile {
+      .title4 {
+        text-align: center;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
+
+  /*   Page-specific button  */
+
+  .btn--site-map-suggest {
+    width: 224px;
+    height: 40px;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 !important;
+    border-radius: 20px;
   }
 
+  /*   Medium Long Button  - more padding */
 
-  @media #{$bp-tablet-up}{
-    .page-card-lg:nth-child(1n+2){
-      padding-left: 0;
+  .btn-md-long-2 {
+    height: 40px;
+    padding: 0 44px;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
 }
-}
-
-/*   Page-specific button  */
-
-.btn--site-map-suggest {
-  width: 224px;
-  height: 40px;
-  font-size: 1rem;
-  text-align: center;
-  margin: 0 !important;
-  border-radius: 20px;
-}
-
-/*   Medium Long Button  - more padding */
-
-.btn-md-long-2 {
-  height: 40px;
-  padding: 0 44px;
-  border-radius: 20px;
-  font-size: 1rem;
-}
-

@@ -1,0 +1,64 @@
+---
+layout: default
+title: Citizen Engagement
+permalink: /citizen-engagement
+---
+<!-- Header banner -->
+<div class="header-container flex-container program-header-container">
+    <div class="header-text">
+        <h1 class="title1">Citizen Engagement</h1>
+        <p>
+            We at Hack for LA are volunteers that believe in building technology
+            and analyzing data to make it easier to participate effectively in your community.
+        </p>
+        <p class="sub-p">
+            Below are our products that are making that happen.
+            If you have a new idea, want to submit feedback that will guide the next iteration
+            of an existing tool, or want to start working on a project team with us, please contact
+            us at <a href="mailto: citizenengagement@hackforla.org">citizenengagement@hackforla.org.</a>
+        </p>
+        <p class="bottom-header-paragraph">
+            Read more about <a href="https://sdg.lamayor.org/about/global-goals">LA’s Sustainable Development Goals</a>.
+        </p>
+    </div>
+    <img class="header-hero-image" src="/assets/images/citizen-engagement/citizen-engagement-header.svg"
+        alt="Image of people together in community" />
+</div>
+<!-- Header banner -->
+
+<!-- Page body -->
+<section class="content-section project-wrapper">
+    <div class="page-contain projects program-area-container">
+        <h2>Current Projects</h2>
+        <!-- Card -->
+        <!-- Cards have been standardized and can be found in _sass/elements/_cards-->
+        <!-- These cards utilize the previous standardized elements, plus new elements that I have integrated. -->
+        <!-- Specifically I have added data attributes to the page-card container, and the dropdown arrow.
+             We use the data attributes in JS to expand and close the cards. -->
+
+            {% include citizen-engagement-cards.html %}
+
+            <div class="page-card card-primary page-card-lg organizations">
+                <div class="organizations-info">
+                    <h3>Organizations We Work With</h3>
+                    <p>None of what we do would be possible without the generous
+                        support of many organizations throughout our communities.
+                        A big thank you to:</p>
+                </div>
+                <div class="organizations-images">
+                    <img class="org-img" src="/assets/images/sponsors/logo-cfa.svg" alt="code for america logo"/>
+                    <img class="org-img" src="/assets/images/citizen-engagement/la_neighborhood_councils.svg" alt="neighborhood councils empower LA: department of neighborhood empowerment logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/palms_neighborhood_council.svg" alt="palms neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/echo_park_neighborhood_council.svg" alt="echo park neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/la_county_open_data.svg" alt="county of los angeles open data logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/voices_neighborhood_council.svg" alt="voices of neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/mid_city_neighborhood_council.svg" alt="MINC mid-city neighborhood council logo">
+                    <img class="org-img" src="/assets/images/citizen-engagement/mar_vista_community_council.svg" alt="Join Us! marvista.org | mar vista community college logo">
+                </div>
+        </div>
+    </div>
+    <!-- Card -->
+</section>
+
+<!-- Include javaScript -->
+<script src="{{ '/assets/js/citizen-engagement.js' | absolute_url }}"></script>

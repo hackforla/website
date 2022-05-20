@@ -3,9 +3,9 @@ identification: '202051333'
 title: Not Today - Self-Defense Against Suicidal Thoughts
 description:  Not Today is an app intended to help people wait out periods of suicidal thinking without acting on their thoughts.
 image: /assets/images/projects/not-today.png
-alt: 'person being supported by another.  Art by c.w. moss'
+alt: 'Not Today logo. A person embrace another person with full support. Art by C.W. Moss'
 image-hero: /assets/images/projects/not-today-hero.png
-alt-hero: 'Blue background'
+alt-hero: ''
 leadership:
   - name: Mya Stark
     role: Product Owner & SME
@@ -24,12 +24,13 @@ links:
     url: 'https://github.com/hackforla/not-today'
 looking:
 technologies:
-  - React Native
+  - React
 location:
-  - Santa Monica
+  # - Santa Monica
   - Remote
 partner: Seeking
 visible: true
-vertical: 'Under Development'
+program-area: 
+  - Social Safety Net
 status: On Hold
 ---

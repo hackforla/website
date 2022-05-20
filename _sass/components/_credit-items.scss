@@ -11,33 +11,6 @@
   font-weight: normal;
 }
 
-.credits-header-container {
-  background: #fff;
-  padding: 30px;
-  height: fit-content;
-  margin: 12px auto;
-  padding-top: 75px;
-  font-family: "Roboto" sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-
-  @media #{$bp-below-mobile} {
-    padding: 30px 15px;
-    margin-top: 23%;
-  }
-}
-
-.header-text {
-  font-size: 26px;
-  display: flex;
-  max-width: 895px;
-  text-align: center;
-  padding: 30px;
-  margin: 12px auto;
-  font-family: "Roboto" sans-serif;
-}
-
 .mobile-image {
   @media #{$bp-below-mobile} {
     padding: 0;
@@ -56,34 +29,76 @@
   }
 }
 
-.credits-inner {
+.credits-item {
   margin: 15px;
-  @media #{$bp-below-mobile} {
-    margin: 5px;
-  }
   padding-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  
+  @media #{$bp-below-mobile} {
+    margin: 5px;
+  }
 }
 
-.white-page-card-credits {
-  background: #fff;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  margin-bottom: 0;
+.credits-tool {
+  margin: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  
+  @media #{$bp-below-mobile} {
+    margin: 5px;
+    padding-left: 15px;
+  }
+}
+
+.page-card--credits {
   padding: 30px;
-  overflow: hidden;
-  height: fit-content;
-  margin: 12px auto;
-  font-family: "Roboto" sans-serif;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  margin-top: 60px;
+
+  @media #{$bp-below-mobile} {
+    padding: 32px 16px;
+    margin-top: 12px;
+  }
 }
 
-.icon-left {
+.credits-list {
+  order: 2;
+
+  @media #{$bp-tablet-up} {
+    display: grid;
+    grid-gap: 32px 54px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+}
+
+.credits-inner {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$bp-mobile-up} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.credits-heading {
+  padding-left: 15px;
+  margin-bottom: 15px;
+  @media #{$bp-below-mobile} {
+    padding-left: 20px;
+    font-size: 20px;
+  }
+}
+
+.icon-left,
+.icon-center {
   width: 100px;
   padding-right: 20px;
   display: flex;
@@ -94,9 +109,19 @@
   }
 }
 
+.icon-center {
+  width: 200px;
+}
+
 .icon-info {
   width: 190px;
   p {
     margin: 0;
   }
 }
+
+.icon-left-image,
+.icon-center-image {
+  width: 100%;
+} 
+

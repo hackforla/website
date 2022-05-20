@@ -1,0 +1,35 @@
+---
+name: Workforce Development
+program-area: Workforce Development
+description: >
+  From demystifying the job application process at the City of LA, 
+  to providing tech training opportunities in a supportive environment, 
+  we help people develop their careers and find meaningful work.
+
+image: /assets/images/program-areas/workforce-development.png
+
+image_alt: Two guys chillin on a laptop
+
+SDG: 
+  - Zero Hunger
+  - Peace
+  - Justice
+  - Strong Institutions
+
+projects: 
+  - id: 79977929
+    name: Work for LA
+    image: /assets/images/projects/work-for-la.jpg
+    image_alt: Los Angeles City Hall building
+    link: https://www.hackforla.org/projects/work-for-la
+  - id: 130000551
+    name: Hackforla.org Website
+    image: /assets/images/projects/website.png
+    image_alt: Five women in tech collaborating, engaging in a joyful conversation.
+    link: https://www.hackforla.org/projects/website
+  - id: 000000000
+    name: '#streaming'
+    image: /assets/images/projects/project-in-formation.png
+    alt: placeholder image
+    link: 
+---

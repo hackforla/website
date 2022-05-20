@@ -1,77 +1,26 @@
 .toolkit-header {
-    display: flex;
-    justify-content: center;
-
-    &__text {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin-right: 5rem;
-
-        h1 {
-            margin-top: 2.25rem;
-            margin-bottom: 3.125rem;
-        }
-    }
-
     &__text-group {
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: center;
+        justify-content: space-evenly;
         text-align: center;
         padding: 1.4rem 0;
         background-color: $color-pink;
-    }
 
-    &__banner-item {
-        margin-block-end: 0;
-        font-weight: 300;
-        font-size: 1.25rem;
-        margin: 0 4.5rem;
-    }
-    
-    &__p {
-        font-size: 1.125rem;
-        max-width: 508px;
-        text-align: left;
-        margin: 12px auto;
-    }
-
-    &__hero-image {
-        margin: 33px 0px;
-        max-width: 100%;
-    }
-}
-
-.toolkit-svg {
-    width: auto;
-    height: 240px;
-}
-
-@media(max-width: 850px) {
-    .toolkit-header {
-        flex-flow: column;
-
-        &__text {
-            margin-right: 0;
-
-            h1 {
-                margin-bottom: 0.4rem;
-            }
+        a {
+            font-weight: 400;
+            text-decoration: none;
+            color: $color-black;
+        }
+        a:hover {
+            color: $color-red;
+            transform: scale(1.01);
         }
 
-        &__p {
-            margin-bottom: 0;
+        .selected-category {
+            font-weight: 700;
+            color: $color-red;
         }
-
-        &__hero-image {
-            margin: 10px 0;
-        }
-    }
-
-    .header-container {
-        padding: 2rem;
-        margin-top: 10%;
     }
 }
 
@@ -81,11 +30,12 @@
 }
 
 .suggest-guide-group {
+    grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -98,26 +48,63 @@
     margin-bottom: 0;
 }
 
+/*
+  Refer to issue #1999. This part, the accompanying divs in toolkit.html (lines 89 and 109),
+  and $screen-desktop-large under _layout.scss were added to take into account how the external
+  resources look at a certain breakpoint ($bp-desktop-large-up). As of 7/22/2021, there are only three resources in the list.
+  Since suggest-site-group div was added to the grid and takes up the entire first row, the rows that
+  follow does not go to the center and instead aligns to the left. The media queries here fixes that.
+  When there are four or more resources added in the future, this part (and the divs in toolkit.html)
+  can be removed.
+*/
+.external-resource-container {
+    @media #{$bp-desktop-large-up} {
+        display: flex;
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    @media #{$bp-below-desktop-large} {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
+        grid-column: 1 / -1;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    @media #{$bp-below-desktop} {
+        //display: grid;
+        grid-gap: 24px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0;
+    }
+
+    @media #{$bp-below-mobile} {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        flex-direction: column;
+    }
+}
+
 .toolkit-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
     align-items: stretch;
     justify-content: center;
 }
 
-.outer-link {
-    width: 1.5rem;
-}
-
-.toolkit-flex-item {
+.toolkit-flex-item.section-container {
     position: relative;
     max-width: 23rem;
     padding: 0rem;
     height: auto;
     margin: 1.2rem 1rem;
     overflow: hidden;
+    
+    a {
+        width: 1.5rem;
+    }
 }
 
 .toolkit-flex-item-img-container {
@@ -154,10 +141,6 @@
     width: 100%;
 }
 
-.not-clickable {
-    color: black !important;
-}
-
 .toolkit-flex-item-status {
     position: absolute;
     font-size: 1.125rem;
@@ -179,8 +162,8 @@
         }
 
         &__banner-item {
-            font-size: 1.2rem;
-            margin: 0 2.9rem;
+            font-size: 1.1rem;
+            margin: 0 2.5rem;
         }
     }
 }
@@ -196,21 +179,16 @@
 
         &__banner-item {
             font-size: .9rem;
-            margin: 0 .7rem;
+            margin: 0 .6rem;
             max-width: 6rem;
             text-align: center;
         }
     }
 
-    .suggest-guide-group {
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-
     .toolkit-flex-container {
         display: grid;
         grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, max-content));
         padding: 0;
     }
 
@@ -224,50 +202,64 @@
     }
 }
 
-@media #{$bp-below-mobile} {
-    .toolkit-header {
-        padding-bottom: 3rem;
-
-        &__banner-item {
-            font-size: .65rem;
-            max-width: 4rem;
-        }
-
-        &__p {
-            font-size: 1.1rem;
-        }
+@media #{$bp-below-tablet} {
+    .toolkit-svg {
+        max-width: 350px;
     }
 
+    .external-resources-text {
+      text-align: left;
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .toolkit-header {
+
+        &__banner-item {
+            font-size: .5rem;
+            max-width: 3.6rem;
+        }
+    }
+}
+
+.toolkit-flex-item {
+    margin-bottom: 1.5rem;
+}
+
+.resource-svg-icons {
+    height: 14.5rem;
+    width: 14.5rem;
+}
+
+.toolkit-info-container {
+    h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5rem;
+        max-height: fit-content;
+    }
+}
+
+@media #{$bp-below-mobile} {
+    .toolkit-svg {
+        max-width: 250px;
+    }
+    .suggest-guide-group {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+    }
     .toolkit-flex-container {
         display: flex;
         flex-wrap: wrap;
         align-content: center;
         flex-direction: column;
     }
-
-    .toolkit-flex-item {
-        margin-bottom: 1.5rem;
+    .external-resources-text {
+      text-align: center;
     }
-
-    .resource-svg-icons {
-        height: 14.5rem;
-        width: 14.5rem;
-    }
-
-    .toolkit-info-container {
-        h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.5rem;
-            max-height: fit-content;
-        }
-    }
-
-    .suggest-guide-group {
-        flex-direction: column;
-
-        h2 {
-            margin-bottom: 1rem;
-        }
-    }
-}  
+}

@@ -1,0 +1,30 @@
+---
+name: Engineering
+description: This group is a space where developers from different projects come together to share effective practices, give and get mentorship, set development standards, and create guides for new projects.
+visible: true
+status: Active
+location:
+  - Remote
+
+image: /assets/images/communities-of-practice/engineering.jpg
+alt: 'A computer screen shows a diagram used to manage code development'
+
+meeting-times: Wednesdays 6:00-7:00 pm PT
+
+leadership-type: Mentor Led
+leadership:
+  - name: Ava Li
+    role: Lead
+    links:
+      slack: https://hackforla.slack.com/team/U01B73XGCKV
+      github: https://github.com/Aveline-art
+    picture: https://avatars.githubusercontent.com/u/62368440?v=4
+
+links:
+  - name: Slack
+    url: https://app.slack.com/client/T04502KQX/C01CU709SER
+  - name: Github
+    url: https://github.com/hackforla/engineering
+  
+recruiting-message: 
+---

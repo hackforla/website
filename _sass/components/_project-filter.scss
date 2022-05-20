@@ -1,7 +1,9 @@
 a.filter-item {
   text-decoration: none;
 }
-
+.project-list {
+  margin-top: 0.5rem;
+}
 //filter container
 ul.filter-list {
   background: $color-pink;
@@ -10,7 +12,9 @@ ul.filter-list {
   padding-left: 0;
   grid-auto-flow: column;
   grid-column-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
+  // ^ See issue #1997 for more info on why this is commented out and changed to 3
+  grid-template-columns: repeat(3, 1fr);
 }
 
 //category boxes
@@ -23,6 +27,7 @@ li.filter-item {
   padding: 10px 15px;
   position: relative;
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 //category names
@@ -34,7 +39,6 @@ li.filter-item a {
 li.filter-item:hover,
 li.filter-item:focus-within {
   background: white;
-  cursor: pointer;
 }
 
 li.filter-item:focus-within a {
@@ -57,6 +61,7 @@ ul.filter-list li ul {
   position: absolute;
   left: 0;
   top: 100%;
+  cursor: default;
 }
 
 ul.filter-list li:hover > ul,
@@ -78,10 +83,17 @@ ul.filter-list li ul li {
   display: none;
 }
 
+.dropdown label {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
 .filter-checkbox {
   border: 1px solid #000000;
   border-radius: 4px;
   margin: 0px 5px;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .labelArrow {
@@ -92,6 +104,62 @@ ul.filter-list li ul li {
   right: 10%;
 }
 
+.filter-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.filter-tag {
+  align-self: flex-start;
+  height: 24px;
+  box-sizing: border-box;
+  max-width: fit-content;
+
+  margin: 0em 0.5em 1em;
+  padding: 0.15em 1em;
+  background: $color-red;
+  border: none;
+  border-radius: 5px;
+  color: $color-white;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: capitalize;
+
+  &::after {
+    content: "\00d7";
+    padding-left: 0.5em;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-red, 10%);
+    color: $color-white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.filter-tag span {
+  margin: 0 0 0 5px;
+  min-height: 20px;
+}
+
+a.clear-filter-tags {
+  margin-left: 1em;
+  text-decoration: underline;
+  color: #767676;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.number-of-checked-boxes {
+  color: $color-red;
+}
+
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   ul.filter-list li ul {
@@ -100,7 +168,7 @@ ul.filter-list li ul li {
   }
 }
 
-@media (max-width:659px) {
+@media (max-width: 659px) {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.filter-list {
     display: grid;
@@ -121,4 +189,9 @@ ul.filter-list li ul li {
     right: 5%;
     font-size: 20px;
   }
+
+  .clear-filter-tags {
+    display: none;
+  }
 }
+

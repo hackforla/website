@@ -5,7 +5,7 @@
   justify-content: flex-end;
   padding: 20px;
   position: relative;
-  margin-top: 29px;
+  margin-top: 61px;
   width: 100vw;
   height: 46vw;
   max-height: 74vh;
@@ -20,8 +20,8 @@
     right: 0;
     background: linear-gradient(
       to bottom,
-      rgba($color-blue-dark, 0.3) 0%,
-      rgba($color-blue-dark, 1) 100%
+      rgba($color-darkblue, 0.3) 0%,
+      rgba($color-darkblue, 1) 100%
     );
     content: "";
     display: block;
@@ -30,8 +30,8 @@
     @media #{$bp-tablet-up} {
       background: linear-gradient(
         to bottom,
-        rgba($color-blue-dark, 0) 30%,
-        rgba($color-blue-dark, 1) 100%
+        rgba($color-darkblue, 0) 30%,
+        rgba($color-darkblue, 1) 100%
       );
       opacity: 1;
     }
@@ -51,21 +51,15 @@
   background: #030d2d;
 
   // NEW MOBILE FRIENDLY RULES
-  @media #{$bp-below-mobile} {
+  // @media #{$bp-below-mobile} {
     
-  }
+  // }
 }
 
-.project-page-card {
-  background: $color-white;
-  border: 0 solid rgba($color-black, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
-  overflow: hidden;
-  max-width: 896px;
-  margin: 12px auto;
-  margin-bottom: 0;
+.page-card--project-description-page {
   padding: 30px;
+  margin-bottom: 0;
+  margin-top: 28px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -73,8 +67,16 @@
   }
 }
 
+.page-card--iframe {
+  height: 80vh;
+}
+
+.getting-page-card-title {
+  color: $color-black;
+}
+
 .project-page-card-title {
-  color: #333;
+  color: $color-black;
 }
 
 #project-description-card {
@@ -156,7 +158,7 @@
 
 .getting-started-button {
   width: 38px;
-  height: 34px;;
+  height: 34px;
   margin: 0 5px;
   border: none;
   background: transparent;
@@ -172,10 +174,9 @@
 }
 
 #getting-started-section {
-  max-height: 0px;
-  padding: 0px 30px;
+  padding: 30px;
   transition: max-height 1s, padding 1s;
-  margin-top: 0px;
+  margin-top: 28px;
 }
 
 #help-getting-started {
@@ -184,11 +185,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;
-  text-align: left;
 }
 
 .help-getting-started-text {
@@ -208,10 +208,9 @@
   max-width: 0px;
   padding: 35px 0px;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   min-width: 0px;
   transition: min-width 1s, padding 1s;
-  text-align: left;
 }
 
 .project-start-guide-img {
@@ -329,6 +328,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media #{$bp-below-mobile} {
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+  }
 }
 
 .leader-description-field {
@@ -340,11 +348,10 @@
   max-height: 175px;
   max-width: 229px;
   margin: 0px 0px 30px 21px;
-  text-align: center;
+  text-align: left;
   border: 1px solid rgba(51,51,51,0.1);
   border-radius: 16px;
   padding: 5px 15px;
-  text-align: left;
 }
 
 .empty-content-message p {
@@ -369,4 +376,10 @@
   @media #{$bp-below-mobile} {
     margin: 0px 10px 26px 0px;
   }
+}
+
+
+.userTimeZone--project-page {
+  font-size: 15px;
+  margin-bottom: 20px;
 }

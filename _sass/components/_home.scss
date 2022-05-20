@@ -1,0 +1,471 @@
+.contact-form {
+  border-bottom: 2px solid rgba($color-teal, 0.25);
+  padding-bottom: 32px;
+
+  textarea {
+    min-height: 200px;
+  }
+
+  .form-controls {
+    @media #{$bp-tablet-up} {
+      display: flex;
+
+      .form-input {
+        flex-grow: 1;
+      }
+
+      .btn {
+        margin: 0 0 24px 12px;
+      }
+    }
+  }
+}
+
+.logo-garden {
+  li {
+    margin-bottom: 12px;
+    display:  flex;
+    justify-content: center; 
+
+    @media #{$bp-mobile-up} {
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .unstyled-list {
+    @media #{$bp-mobile-up} {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .logo {
+    img {
+      display: block;
+      height: 50px;
+      margin: 10px 80px;
+
+      @media #{$bp-mobile-up} {
+        height: 70px;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+
+
+//hero************************************************************************************************** 
+.hero {
+  background: $color-darkblue url($absolute_url + "/assets/images/hero/hacknight-women.jpg") center
+    center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: flex-end;
+  max-height: 700px;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+
+  @media #{$bp-tablet-up} {
+    min-height: 0;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-darkblue, 0.3) 0%,
+      rgba($color-darkblue, 1) 100%
+    );
+    content: "";
+    display: block;
+    z-index: 1;
+
+    @media #{$bp-tablet-up} {
+      background: linear-gradient(
+        to bottom,
+        rgba($color-darkblue, 0) 30%,
+        rgba($color-darkblue, 1) 100%
+      );
+      opacity: 1;
+    }
+  }
+}
+
+.hero-inner {
+  color: $color-white;
+  margin: 60px auto 0px;
+  max-width: $max-content-width;
+  position: relative;
+  z-index: 2;
+
+  @media #{$bp-tablet-up} {
+    margin-bottom: 0;
+    margin-top: 150px;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: .65rem;
+  }
+  p {
+    margin-bottom: .65rem;
+  }
+  
+  span {
+    border-bottom: 3px solid $color-red;
+  }
+}
+
+.hero-signup {
+  .form-input {
+    width: 100%;
+  }
+
+  @media #{$bp-tablet-up} {
+    display: flex;
+
+    .form-input {
+      margin-right: 10px;
+    }
+  }
+
+  .form-confirmation {
+    margin: 10px 0;
+  }
+}
+//***************************************************************************************************** 
+
+//calender*********************************************************************************************
+.cal-title {
+  color: $color-red;
+}
+
+.cal-container {
+  background-color: $color-white;
+  border-radius: 16px;
+  padding: 5px;
+
+  @media #{$bp-mobile-up} {
+    padding: 10px;
+  }
+}
+
+.cal {
+  margin: 0 auto;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 5px;
+  width: 100%;
+
+  @media #{$bp-mobile-up} {
+    padding: 10px;
+  }
+}
+.cal-item {
+  background: $color-white;
+  border-top: 1px solid $color-mediumgrey;
+  color: $color-black;
+  margin: 0;
+  padding: 10px;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  @media #{$bp-mobile-up} {
+    padding: 20px;
+  }
+
+  &--title {
+    color: $color-red;
+    font-size: #{map-get($font-size-h4, mobile)};
+
+    @media #{$bp-tablet-up} {
+      font-size: #{map-get($font-size-h3, print)};
+    }
+  }
+
+  &--description {
+    margin: 5px 0;
+  }
+
+  &--details {
+    font-size: #{map-get($font-size-base, print)};
+    font-weight: #{map-get($font-weight, light)};
+    font-style: normal;
+  }
+}
+
+button {
+  background: $color-white;
+  border: 2px solid $color-red;
+  color: $color-red;
+  cursor: pointer;
+  font-size: #{map-get($font-size-small, print)};
+  margin: 5px 0;
+
+}
+//***************************************************************************************************
+
+//_projects******************************************************************************
+
+.projects {
+  background: $color-pink;
+  padding: 32px 16px;
+}
+
+.projects-inner {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$bp-mobile-up} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.project-list {
+  margin-bottom: 24px;
+  order: 2;
+
+  @media #{$bp-tablet-up} {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+}
+
+.project-card {
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  @media #{$bp-tablet-up} {
+    margin-bottom: 0;
+  }
+}
+
+.project-title-no-page {
+  color: $color-black;
+}
+
+.project-tmb-img {
+  display: block;
+  width: 100%;
+}
+
+.project-body {
+  padding: 16px;
+}
+
+.project-header {
+  color: $color-black;
+  margin-bottom: 16px;
+  margin-right: auto;
+  order: 1;
+}
+
+.project-pitch {
+  order: 3;
+
+  @media #{$bp-tablet-up} {
+    align-self: flex-end;
+    margin-bottom: 16px;
+    margin-left: auto;
+    order: 2;
+  }
+
+  @media #{$bp-below-mobile} {
+    font-size: 0.9em;
+  }
+
+  .btn {
+    margin: 0 0 0 12px;
+  }
+}
+
+.project-tmb {
+  position: relative;
+}
+
+.status-indicator {
+  float: right;
+  text-align: center;
+  margin-left: 10px;
+  background-color: rgb(255, 255, 151);
+  width: 92px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.1);
+}
+
+.status-text {
+  margin: 0px 0px;
+}
+
+.status-Active {
+  background-color: rgb(187, 255, 187);
+}
+
+.status-Rebooting {
+  background-color: rgb(164, 213, 255);
+}
+
+.status-Completed {
+  background-color: rgb(255, 173, 173);
+}
+
+.project-card-field-inline {
+  display: inline;
+}
+
+//***************************************************************************************************
+
+//_press***********************************************************************************************
+.press {
+  padding: 32px 16px;
+}
+
+.news-cards {
+  border-bottom: 2px solid rgba($color-teal, 0.25);
+  margin: 0;
+  padding: 0 0 32px;
+
+  @media #{$bp-mobile-up} {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    order: 3;
+    width: 100%;
+  }
+
+  @media #{$bp-tablet-up} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.news-title {
+  margin-bottom: 0;
+
+  a {
+    &:link,
+    &:visited {
+      color: $color-black;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($color-red, 10%);
+    }
+  }
+}
+//***************************************************************************************************
+
+
+//_contact-us************************************************************************************
+.page-card--home  {
+  text-align: center;
+
+}
+
+.btn--home-subscribe {
+  margin: 0 !important;
+}
+
+.btn--home-survey {
+  width: 175px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 !important;
+  border-radius: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+  text-align: initial;
+  margin-left: 20%;
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.volunteerWithUs {
+  margin: 0 5%;
+}
+
+.row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 83%;
+  margin-left: 8%;
+}
+
+.volunteerWithUs .row {
+  width: 90%;
+}
+
+@media only screen and (max-device-width: 550px) {
+
+  //For adding spacing between 'Getting Started' and 'Transportation' buttons on mobile devices
+  .page-card--home-volunteer .btn--home-survey {
+    margin: 0 0 15px 0 !important;
+  }
+
+  .btn--home-subscribe {
+    margin: 5px 0 10px 0 !important;
+  }
+}
+//***************************************************************************************************
+
+//home-getting-started********************************************************************************
+
+.home-getting-started-container {
+  text-align: center;
+}
+
+.btn--home-getting-started {
+  margin: 0 20px 20px 0;
+
+  @media #{$bp-below-tablet} {
+      margin: 0 0 20px 0;
+  }
+}
+
+//***************************************************************************************************
+
