@@ -31,12 +31,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02FMMKPG7M"
       github: "https://github.com/kpoints"
     picture: https://avatars.githubusercontent.com/kpoints
-  - name: Abiha Ali
-    role: Product Management
-    links:
-      slack: "https://hackforla.slack.com/team/U02RW9T17PY"
-      github: "https://github.com/abiha1234"
-    picture: https://avatars.githubusercontent.com/abiha1234
   - name: Erik Guntner
     role: Front End Developer
     links:
@@ -49,7 +43,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
-
+  - name: Ben Ross
+    role: Product Management
+    links:
+      slack: "https://hackforla.slack.com/team/U03BZ5WL8GY"
+      github: "https://github.com/rossbb"
+    picture: https://avatars.githubusercontent.com/abiha1234
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
