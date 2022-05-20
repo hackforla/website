@@ -3,7 +3,7 @@ name: Project Profile Card review and update
 about: To track project profile card updates
 title: 'Update Project Profile: [Project Name]'
 labels: 'P-Feature: Project Info and Page, role: back end/devOps, role: front end,
-  Size: Small, size: 0.5pt'
+  Size: Small, size: 0.5pt, time sensitive'
 assignees: ''
 
 ---
@@ -12,7 +12,7 @@ assignees: ''
 As a product manager of [INSERT PROJECT NAME] I want my project's details to be up to date on the HackforLA website
 
 ### Project card
-_insert url of their card here before sending - their cards can be found in this folder: https://github.com/hackforla/website/tree/gh-pages/_projects_
+Insert url of your project card here before sending; your card(s) can be found in this folder: https://github.com/hackforla/website/tree/gh-pages/_projects
 
 ### Action Items
 
