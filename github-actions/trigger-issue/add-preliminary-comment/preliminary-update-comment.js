@@ -36,12 +36,12 @@ async function main({ g, c }, { shouldPost, issueNum }){
  * @returns an Array of Objects containing the issue's timeline of events
  */
 
-  function getTimeline(issueNum) {
-  let arra = []
+ async function getTimeline(issueNum) {
+	let arra = []
 	let page = 1
   while (true) {
     try {
-      const results =  github.issues.listEventsForTimeline({
+      const results = await github.issues.listEventsForTimeline({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: issueNum,
@@ -54,7 +54,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
         break
       }
     } catch (err) {
-      console.log(err);
+      console.log(error);
 			continue
     }
     finally {
@@ -72,7 +72,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
-  const eventdescriptions = getTimeline(context.payload.issue.number)
+  const eventdescriptions = await getTimeline(context.payload.issue.number)
   console.log(eventdescriptions)
   //const issueAssignee = assignee
   const commentObject = {
