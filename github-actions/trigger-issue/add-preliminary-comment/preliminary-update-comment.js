@@ -61,6 +61,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
       page++
     }
   }
+  console.log(arra)
 	return arra
 }
 
@@ -72,7 +73,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
-  const eventdescriptions = await getTimeline(context.payload.issue.number)
+  const eventdescriptions =  getTimeline(context.payload.issue.number)
   console.log(eventdescriptions)
   //const issueAssignee = assignee
   const commentObject = {
