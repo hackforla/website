@@ -36,12 +36,12 @@ async function main({ g, c }, { shouldPost, issueNum }){
  * @returns an Array of Objects containing the issue's timeline of events
  */
 
- async function getTimeline(issueNum) {
-	let arra = []
+  function getTimeline(issueNum) {
+  let arra = []
 	let page = 1
   while (true) {
     try {
-      const results = await github.issues.listEventsForTimeline({
+      const results =  github.issues.listEventsForTimeline({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: issueNum,
