@@ -54,7 +54,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
         break
       }
     } catch (err) {
-      console.log(error);
+      console.log(err);
 			continue
     }
     finally {
