@@ -74,7 +74,7 @@ async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
   const eventdescriptions = await getTimeline(context.payload.issue.number)
-  console.log(eventdescriptions)
+  //console.log(eventdescriptions)
   //const issueAssignee = assignee
   const commentObject = {
     replacementString: issueAssignee,
