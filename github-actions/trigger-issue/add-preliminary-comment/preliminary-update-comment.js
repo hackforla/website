@@ -23,7 +23,6 @@ async function main({ g, c }, { shouldPost, issueNum }){
   //Else we make the comment with the issuecreator's github handle instead of the placeholder.
   else{
     const instructions = await makeComment()
-    console.log(instructions)
     if(instructions !== null){
       // the actual creation of the comment in github
       await postComment(issueNum, instructions)
@@ -75,8 +74,7 @@ async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
   const eventdescriptions = await getTimeline(context.payload.issue.number)
-  //console.log(eventdescriptions)
-  //const issueAssignee = assignee
+  console.log(eventdescriptions)
   const commentObject = {
     replacementString: issueAssignee,
     placeholderString: '${issueAssignee}',
