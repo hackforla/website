@@ -22,7 +22,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
   }
   //Else we make the comment with the issuecreator's github handle instead of the placeholder.
   else{
-    const instructions = makeComment()
+    const instructions = await makeComment()
     console.log(instructions)
     if(instructions !== null){
       // the actual creation of the comment in github
