@@ -61,7 +61,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
       page++
     }
   }
-  console.log(arra)
+  //console.log(arra)
 	return arra
 }
 
