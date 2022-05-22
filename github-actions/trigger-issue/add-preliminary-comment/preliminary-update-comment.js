@@ -70,10 +70,10 @@ async function main({ g, c }, { shouldPost, issueNum }){
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
-function makeComment(){
+async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
-  const eventdescriptions =  getTimeline(context.payload.issue.number)
+  const eventdescriptions = await getTimeline(context.payload.issue.number)
   console.log(eventdescriptions)
   //const issueAssignee = assignee
   const commentObject = {
