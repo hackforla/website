@@ -36,7 +36,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
  * @returns an Array of Objects containing the issue's timeline of events
  */
 
- async function getTimeline(issueNum) {
+ async function getTimeline(issueNum){
 	let arra = []
 	let page = 1
   while (true) {
@@ -48,16 +48,16 @@ async function main({ g, c }, { shouldPost, issueNum }){
         per_page: 100,
         page: page,
       });
-      if (results.data.length) {
+      if (results.data.length){
 	      arra = arra.concat(results.data);
       } else {
         break
       }
-    } catch (err) {
+    } catch (err){
       console.log(error);
 			continue
     }
-    finally {
+    finally{
       page++
     }
   }
@@ -74,7 +74,15 @@ async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   const issueAssignee = context.payload.issue.assignee.login
   const eventdescriptions = await getTimeline(context.payload.issue.number)
-  console.log(eventdescriptions)
+  //adding the code to find out the latest person assigned the issue
+  for(var i = eventdescriptions.length ; i>=0; i-=1){
+    if(eventdescriptions[i].event == 'assigned'){
+      issueAssignee = eventdescriptions[i].assignee.login
+      break
+    }
+  }
+
+
   const commentObject = {
     replacementString: issueAssignee,
     placeholderString: '${issueAssignee}',
