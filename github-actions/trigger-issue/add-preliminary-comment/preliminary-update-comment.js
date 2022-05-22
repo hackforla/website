@@ -72,7 +72,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 
 async function makeComment(){
   // Setting all the variables which formatComment is to be called with
-  const issueAssignee = context.payload.issue.assignee.login
+  var issueAssignee = context.payload.issue.assignee.login
   const eventdescriptions = await getTimeline(context.payload.issue.number)
   console.log(eventdescriptions.length)
   //adding the code to find out the latest person assigned the issue
