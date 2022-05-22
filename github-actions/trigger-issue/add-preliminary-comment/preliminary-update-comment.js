@@ -76,7 +76,7 @@ async function makeComment(){
   const eventdescriptions = await getTimeline(context.payload.issue.number)
   console.log(eventdescriptions.length)
   //adding the code to find out the latest person assigned the issue
-  for(var i = eventdescriptions.length ; i>=0; i-=1){
+  for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
     if(eventdescriptions[i].event == 'assigned'){
       issueAssignee = eventdescriptions[i].assignee.login
       break
