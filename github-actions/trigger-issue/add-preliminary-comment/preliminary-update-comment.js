@@ -23,6 +23,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
   //Else we make the comment with the issuecreator's github handle instead of the placeholder.
   else{
     const instructions = makeComment()
+    console.log(instructions)
     if(instructions !== null){
       // the actual creation of the comment in github
       await postComment(issueNum, instructions)
@@ -85,8 +86,6 @@ async function makeComment(){
 
   // creating the comment with issue assignee's name and returning it!
   const commentWithIssueAssignee = formatComment(commentObject)
-  console.log(commentObject)
-  console.log(commentWithIssueAssignee)
   return commentWithIssueAssignee
 }
 
@@ -103,7 +102,6 @@ async function makeComment(){
 function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }){
   const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat
   const commentToPost = text.replace(placeholderString, replacementString)
-  console.log(commentToPost)
   return commentToPost
 }
 
