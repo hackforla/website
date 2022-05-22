@@ -85,7 +85,7 @@ async function makeComment(){
 
   // creating the comment with issue assignee's name and returning it!
   const commentWithIssueAssignee = formatComment(commentObject)
-
+  console.log(commentObject)
   return commentWithIssueAssignee
 }
 
