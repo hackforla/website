@@ -102,6 +102,7 @@ async function makeComment(){
 function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }){
   const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat
   const commentToPost = text.replace(placeholderString, replacementString)
+  console.log(commentToPost)
   return commentToPost
 }
 
