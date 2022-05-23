@@ -91,15 +91,12 @@
   }
 
   @media #{$bp-below-tablet}{
-    img {
-      max-height: 170px;
-    }
-  }
-
-  @media #{$bp-below-mobile} {
     flex-direction: column;
     align-items: center;
     padding: 32px;
+    img {
+      max-height: 170px;
+    }
   }
 }
 
@@ -118,7 +115,7 @@
   h1 {
     font-size: 48px;
   }
-  @media #{$bp-below-mobile} {
+  @media #{$bp-below-tablet} {
     margin: auto;
     margin-bottom: 36px;
     h1 {
