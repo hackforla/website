@@ -8,7 +8,6 @@ image: /assets/images/projects/access-the-data.png
 alt: 'description of the card image'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
-alt-hero: 'description of the hero image'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
