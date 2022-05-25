@@ -32,6 +32,14 @@ permalink: /toolkit/
         <h2 class="title3">Guides</h2>
         <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
       </div>
+    <div class="dropdown"> 
+        {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
+        <select id ="dropdown-select">
+        {% for category in category_list %}
+        <option value="#{{category | replace: ' ', '+'}}">{{category}}</option>
+        {% endfor %}
+        </select>
+    </div>
         <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
@@ -62,6 +70,11 @@ permalink: /toolkit/
               }
           });
       });
+      //add handler for dropdown navigation selection
+        document.getElementById("dropdown-select").onchange = function() {
+            window.location.href = this.value;
+        }
+
           //add listener for url change and toggle visible cards.
           window.addEventListener("hashchange", hashFilter);
           function hashFilter(e) {
