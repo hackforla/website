@@ -20,13 +20,13 @@ leadership:
       github: "https://github.com/javaprincess"
     picture: https://avatars.githubusercontent.com/javaprincess
   - name: Regan Hutson
-    role: Product Management
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U0602E4LA"
       github: "https://github.com/JRHutson"
     picture: https://avatars.githubusercontent.com/JRHutson
   - name: Kristy Points
-    role: Product Management
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02FMMKPG7M"
       github: "https://github.com/kpoints"
@@ -44,11 +44,11 @@ leadership:
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
   - name: Ben Ross
-    role: Product Management
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U03BZ5WL8GY"
       github: "https://github.com/rossbb"
-    picture: https://avatars.githubusercontent.com/abiha1234
+    picture: https://avatars.githubusercontent.com/u/5248025?v=4
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
