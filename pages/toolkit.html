@@ -29,14 +29,22 @@ permalink: /toolkit/
 </div>
 
 <div class="toolkit-background content-section">
-    <a class="anchor" id="guides"></a>
-    <div class="toolkit__card-list">
-        <div class="toolkit-flex-container">
-            <div class="suggest-guide-group">
-                <h2 class="title3">Guides</h2>
-                <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
-            </div>
-            <!-- Iterating through toolkitPages collection -->
+  <a class="anchor" id="guides"></a>
+  <div class="toolkit__card-list">
+    <div class="toolkit-flex-container">
+      <div class="suggest-guide-group">
+        <h2 class="title3">Guides</h2>
+        <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
+      </div>
+    <div class="dropdown"> 
+        {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
+        <select id ="dropdown-select">
+        {% for category in category_list %}
+        <option value="#{{category | replace: ' ', '+'}}">{{category}}</option>
+        {% endfor %}
+        </select>
+    </div>
+        <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
                 {%- if item.display == true -%}
@@ -63,10 +71,15 @@ permalink: /toolkit/
                         }
                     });
 
-                    thisCategory.classList.toggle('selected-category');
+                    thisCategory.classList.toggle('selected-category');  
                 }
             });
         });
+        //add handler for dropdown navigation selection
+        document.getElementById("dropdown-select").onchange = function() {
+            window.location.href = this.value;
+        }
+
         //add listener for url change and toggle visible cards.
         window.addEventListener("hashchange", hashFilter);
         function hashFilter(e) {
