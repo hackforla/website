@@ -42,4 +42,12 @@
       margin: 0;
     }
   }
+  .footer-columns{
+    display: flex;
+    flex-wrap: wrap-reverse; 
+    justify-content: center;
+    margin: 15px 0 15px 0;
+    list-style-type: none;
+    white-space: nowrap;
+  }
 }
