@@ -4,7 +4,10 @@
   background: $color-darkblue;
   color: $color-white;
   padding: 42px 25px 20px;
-  bottom: 0;
+  bottom: -500px;
+  @media #{$bp-mobile-up} {
+    bottom: -200px;
+  }
 
   a {
     color: $color-white;
@@ -31,9 +34,21 @@
       flex: 0 0 50%;
       padding: 10px;
     }
-    
+
     li{
       margin: 10px
+    }
+    
+    @media #{$bp-mobile-up} {
+      align-items:flex-start;
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+
+      .column{
+        flex: none;
+        padding-right: 150px;
+      }
     }
   }
 
