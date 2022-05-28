@@ -1,5 +1,6 @@
 - name: Join Us
   link: /join
+  bolded: true
 
 - name: Donate
   link: /donate

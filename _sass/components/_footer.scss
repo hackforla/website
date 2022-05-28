@@ -19,6 +19,23 @@
       margin: 0 0 25px auto;
     }
   }
+  .footer-columns{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 20px;
+
+    .column{
+      margin-bottom: 10px;
+      flex: 0 0 50%;
+      padding: 10px;
+    }
+    
+    li{
+      margin: 10px
+    }
+  }
 
   .footer-links {
     display: flex;
@@ -42,12 +59,5 @@
       margin: 0;
     }
   }
-  .footer-columns{
-    display: flex;
-    flex-wrap: wrap-reverse; 
-    justify-content: center;
-    margin: 15px 0 15px 0;
-    list-style-type: none;
-    white-space: nowrap;
-  }
+
 }
