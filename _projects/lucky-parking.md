@@ -8,7 +8,7 @@ image-hero: /assets/images/projects/lucky-parking-hero.png
 alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen.'
 leadership:
   - name: Greg Pawin
-    role: Data Lead
+    role: Data Scientist Lead
     links:
       slack: 'https://hackforla.slack.com/team/UUEQF3AJG'
       github: 'https://github.com/gregpawin'
@@ -20,7 +20,7 @@ leadership:
       github: 'https://github.com/gordonruby'
     picture: https://avatars.githubusercontent.com/gordonruby
   - name: Matthew Cacho
-    role: Full-Stack Developer Lead
+    role: Full Stack Developer Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0262GA4DD2'
       github: 'https://github.com/macho-catt'
@@ -37,12 +37,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0270QURQCD'
       github: 'https://github.com/eugenecha'
     picture: https://avatars.githubusercontent.com/eugenecha
-  - name: Marie Li
-    role: Data Science Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01S72NLGAC'
-      github: 'https://github.com/zhao-li-github'
-    picture: https://avatars.githubusercontent.com/zhao-li-github
   - name: Michael Morgan 
     role: UX/UI Design
     links:
@@ -67,6 +61,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
+  - name: Marie Li
+    role: Data Scientist
+    links:
+      slack: 'https://hackforla.slack.com/team/U01S72NLGAC'
+      github: 'https://github.com/zhao-li-github'
+    picture: https://avatars.githubusercontent.com/zhao-li-github
   - name: David Lam 
     role: Data Scientist
     links:
@@ -82,6 +82,8 @@ links:
     url: 'https://hackforla.slack.com/archives/CPFDMSV6V'
   - name: Test Site
     url: 'http://www.luckyparking.org/'
+  - name: Overview
+    url: '../assets/pdfs/Lucky-Parking-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Experienced Frontend Software Engineer (Mapbox experience)
