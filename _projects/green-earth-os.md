@@ -13,36 +13,23 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Akila Sankaran
+  - name: Sanya Nijhawan
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U02462CCJK0'
-      github: 'https://github.com/akila-git'
-    picture: https://avatars.githubusercontent.com/akila-git
+      slack: 'https://hackforla.slack.com/team/U031FLYS561'
+      github: 'https://github.com/sanya301'
   - name: Puneet Loiya
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01QN0GEY6R'
       github: 'https://github.com/PLoiya'
     picture: https://avatars.githubusercontent.com/PLoiya
-  - name: Samay Nathani
+  - name: Raji Pradheap
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U02ATEG7TFA'
-      github: 'https://github.com/samaynathani'
-    picture: https://avatars.githubusercontent.com/samaynathani
-  - name: Jessica Forrest-Baldini
-    role: Data Scientist, Consultant
-    links:
-      slack: 'https://hackforla.slack.com/team/U0251A1KNP4'
-      github: 'https://github.com/JessicaFB'
-    picture: https://avatars.githubusercontent.com/JessicaFB
-  - name: María-Inés Montes
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U027NG94TQB'
-      github: 'https://github.com/maria-ines-montes'
-    picture: https://avatars.githubusercontent.com/maria-ines-montes                    
+      slack: 'https://hackforla.slack.com/team/U02R9MKA6KH'
+      github: 'https://github.com/rpradheap'
+    picture: https://avatars.githubusercontent.com/samaynathani          
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/climate-project'
@@ -54,6 +41,7 @@ links:
     url: '../assets/pdfs/GreenEarthOS-One-Sheet.pdf'
 location: 
   - Remote
+tools: google sheets, google forms, figma, figjam.  
 program-area:  
   - Environment
 visible: true
