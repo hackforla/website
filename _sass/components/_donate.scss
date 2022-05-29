@@ -18,12 +18,8 @@
         flex-direction: column;
         align-items: center;
 
-        h1 {
-            font-size: 48px;
+        .title1 {
             padding-bottom: 28px;
-            @media #{$bp-mobile-up} {
-                font-size: 32px;
-            }
         }
 
         p {
@@ -62,8 +58,7 @@
             padding: 32px 20px;
         }
         
-        h1 {
-            font-size: 1.25rem;
+        .title4 {
             margin-bottom: 1rem;
             // Fixes title wrap at smallest mobile size 
             @media (max-width: #{$screen-mobile - 160}) {
@@ -72,8 +67,7 @@
             }
         }
 
-        h2 {
-            font-size: 16px;
+        .title7 {
             width: 100%;
         }
         
@@ -135,7 +129,7 @@
         h2 {
             margin-bottom: 24px;
         }
-        
+
         li {
             font-size: 1.125rem;
             padding: 8px 0;
@@ -161,7 +155,6 @@
             h1 {
                 grid-column: 2 / span 1;
                 grid-row: 1 / span 1;
-                font-size: 1.5rem;
                 margin-bottom: 2rem;
             }
             
@@ -209,10 +202,6 @@
                 .donate-donation-body {
                     padding: 0 32px 0 16px;
 
-                    h2 {
-                        font-size: 18px;
-                    }
-
                     ol {
                         line-height: 24px;
                     }
@@ -242,7 +231,6 @@
             margin: auto 5rem auto 8rem;
 
             h1 {
-                font-size: 48px;
                 padding-bottom: 0;
             }
 

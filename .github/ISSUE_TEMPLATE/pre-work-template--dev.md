@@ -2,8 +2,7 @@
 name: Pre-work Template - Developers
 about: New developer team members should start by making this issue for themselves
 title: 'Pre-work Checklist: Developer: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, prework, Ready for Milestone, size:
-  1pt'
+labels: 'Feature: Onboarding/Contributing.md, prework, size: 1pt'
 assignees: ''
 
 ---
@@ -16,7 +15,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 
 ### Action Items
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your Gmail address with the team lead so you can be added to the Google Drive
+- [ ] Share your GitHub handle and Gmail address with the team lead so you can be added to the Google Drive
 - [ ] Also, confirm with the team lead that they have added you to the Zoom meeting calendar invites
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
 - [ ] After you have finished adding yourself to the roster, let a team lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
