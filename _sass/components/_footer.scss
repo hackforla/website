@@ -1,14 +1,15 @@
 .main-footer {
-  position: absolute;
+  position: sticky;
   width: 100%;
   background: $color-darkblue;
   color: $color-white;
   padding: 42px 25px 20px;
-  bottom: -500px;
+  bottom: 0;
+  margin-top: -205px;
   @media #{$bp-mobile-up} {
-    bottom: -200px;
+    margin-top: -165px;
   }
-
+  
   a {
     color: $color-white;
     text-decoration: none;
@@ -33,6 +34,11 @@
       margin-bottom: 10px;
       flex: 0 0 50%;
       padding: 10px;
+      @media #{$bp-mobile-up} {
+        flex: none;
+        padding-right: 150px;
+      }
+      
     }
 
     li{
@@ -40,15 +46,12 @@
     }
     
     @media #{$bp-mobile-up} {
-      align-items:flex-start;
+      align-items: flex-start;
       display: flex;
       justify-content: flex-start;
       margin: 0;
 
-      .column{
-        flex: none;
-        padding-right: 150px;
-      }
+
     }
   }
 
