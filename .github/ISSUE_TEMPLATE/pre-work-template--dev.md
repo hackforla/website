@@ -21,7 +21,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] After you have finished adding yourself to the roster, let a team lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Once added to the website-write team:
   - [ ] Self Assign this issue (gear in right side panel)
-  - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label
+  - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
   - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
 - [ ] Signup for a [Figma](https://Figma.com) account
 - [ ] Attend weekly team meetings:
