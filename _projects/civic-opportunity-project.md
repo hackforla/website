@@ -5,7 +5,6 @@ description: The mission of the Civic Opportunity project is to develop and cura
 image: /assets/images/projects/civic-opportunity-project.jpg
 alt: 'Wireframing and designing process for Civic Opportunity Project, there are hands pointing to a tablet and papers of the low fidelity prototyping.'
 image-hero: /assets/images/projects/civic-opportunity-project-hero.png
-alt-hero: 'Wireframing and designing process for Civic Opportunity Project, there are hands pointing to a tablet and papers of the low fidelity prototyping.'
 leadership:
   - name: Ray Fambro
     role: Product Manager
