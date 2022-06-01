@@ -16,6 +16,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 ### Action Items
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
 - [ ] Share your GitHub handle and Gmail address with the team lead so you can be added to the Google Drive
+  - [ ] To find contact information for the team lead, please take a look at our [project's listing](https://www.hackforla.org/projects/website) on the website 
 - [ ] Also, confirm with the team lead that they have added you to the Zoom meeting calendar invites
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
 - [ ] After you have finished adding yourself to the roster, let a team lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
