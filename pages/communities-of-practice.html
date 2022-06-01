@@ -26,6 +26,7 @@ permalink: /communities-of-practice
     {% assign sorted_communities = site.data.internal.communities | sort %}
     {% for community in sorted_communities %}
     {% if community[1].visible == true %}
+    <a class="anchor"  id="{{ community[0] }}"></a>
     <div class="page-card card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ community[1].image }}" alt="{{ community[1].alt }}"/>

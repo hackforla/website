@@ -151,6 +151,12 @@
 
 .toolkit__card-list {
     margin-bottom: 10rem;
+    @media (min-width: 1232px) and (max-width: 1400px) {
+        padding-top: 1.7rem;
+    }
+    @media #{$bp-desktop-large-up} {
+        padding-top: 1.7rem;
+    }
 }
 
 @media only screen and (max-width: 1430px) {
@@ -208,17 +214,7 @@
     }
 
     .external-resources-text {
-      text-align: left;
-    }
-}
-
-@media #{$bp-below-mobile} {
-    .toolkit-header {
-
-        &__banner-item {
-            font-size: .5rem;
-            max-width: 3.6rem;
-        }
+    text-align: left;
     }
 }
 
@@ -245,9 +241,7 @@
         max-width: 250px;
     }
     .suggest-guide-group {
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
+        margin: 1.2rem 1rem;
 
         h2 {
             margin-bottom: 1rem;
@@ -260,6 +254,52 @@
         flex-direction: column;
     }
     .external-resources-text {
-      text-align: center;
+    text-align: center;
+    }   
+}
+
+@media #{$bp-below-mobile} {
+
+    .toolkit-header {
+
+        &__text-group {
+            display: none;
+        }
+
+        &__banner-item {
+            display: none;
+        }
+    }
+}
+
+.dropdown {
+    margin: 0 auto;
+}
+#dropdown-select {
+    width: 310px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+@media #{$bp-mobile-up} {
+    .dropdown {
+        display: none;
+    }
+    #dropdown-select {
+        display: none;
+        }
+    }
+
+// For display on very narrow screens such as Galaxy Fold. There are currently
+// no sitewide settings for this size screen:
+@media (max-width: 281px) {
+    .suggest-guide-group {
+        display: block;    
+    }
+    #dropdown-select {
+        width: 216px;
     }
 }
