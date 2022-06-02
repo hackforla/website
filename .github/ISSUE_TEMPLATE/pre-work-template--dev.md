@@ -37,16 +37,16 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
 - [ ] Once you take a good first issue, you will provide estimates and progress reports. Also, once you finish providing your "Estimate" action item below, please answer the question in the "Time spent so far" action item (also below).
    - [ ] Estimate: Copy the below and put it in the "good first issue" that you picked.
- Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment.
+ Check this box when you have completed this task so that we can identify if you understood the instructions and know what to do on all subsequent issues upon assignment. (Note: Please provide estimates on all the issues that you pick up, going forward.)
     ```
    Availability for this week:
    My estimated ETA for completing this issue:
     ```
-   - [ ] Time spent so far: Copy the question below into a new comment below and answer it. This is just to get feedback on how long it took you to get to this point on this pre-work. There is no right or wrong answers. There is no judgement. It is ok if you take a long time or if you do it really fast or at any pace.
+   - [ ] Time spent so far: Copy the question below into a new comment below (in this pre-work issue only) and answer it. This is just to get feedback on how long it took you to get to this point on this pre-work. There is no right or wrong answers. There is no judgement. It is ok if you take a long time or if you do it really fast or at any pace.
     ```
     How many hours did it take you to finish the pre-work up to and including adding your initial ETA and availability for your good first issue, including attending your first meetings?
     ```
-   - [ ] Progress Reports: Copy the below and put it in the issue once you have been assigned to the issue at least 5 days (we check weekly on Fridays), or sooner if you have something to report.  If you finish this issue before 5 days are reached, Yeah!!, do it on your next issue.  This update should be done every week for every issue.  The checkbox here is meant for us to see if you understood the instructions when you end up doing your first weekly progress update.
+   - [ ] Progress Reports: Copy the below and put it in the issue once you have been assigned to the issue at least 5 days (we check weekly on Fridays), or sooner if you have something to report.  If you finish this issue before 5 days are reached, Yeah!!, do it on your next issue. **This update should be done every week for every issue that you are assigned to**. The checkbox here is meant for us to see if you understood the instructions when you end up doing your first weekly progress update.
     ```
     Provide Update
     1. Progress
