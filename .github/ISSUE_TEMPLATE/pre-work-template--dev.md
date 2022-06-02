@@ -72,6 +72,7 @@ Progress through issues with increasing complexity in the following order:
     - You can work on back-to-back small issues if it meets the following criteria:
       - You are learning something new and need to work on an issue of a lesser complexity
       - Special request by a lead or pm
+- [ ] Read the [Start Here - Developers](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=8583%3A0) in Figma
 - [ ] Go familiarize yourself with the [Hack for LA Design System page in Figma](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3)  (where you can see components and their SCSS classes)
 - [ ] Once all tasks are completed, close this issue.  This issue will remain open until you get through your first progress report.  Once you have done that, we are confident you know how to keep the momentum going on your issue and keep your team informed.
 
