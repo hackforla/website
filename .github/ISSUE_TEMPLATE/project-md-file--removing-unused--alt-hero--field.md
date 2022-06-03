@@ -24,6 +24,9 @@ Moreover, if the `image-hero` were to be used in an img HTML tag in the future, 
 ```
 alt-hero: [INSERT CURRENT ALT-HERO TEXT HERE]
 ```
+- [ ] Once the pull request associated with this issue is approved and merged, please update and edit epic #2722 by
+  - [ ] Checking off the dependency for this issue
+  - [ ] If all dependencies are checked off, please move issue #2722 to the New Issue Approval column and remove the Dependency label
 
 ### Resources/Instructions
 - This issue is part of epic #2722 
