@@ -383,7 +383,7 @@ There are only 2 columns that you will be consistently referencing:
 
 #### **2.3.a Available issues for new members (front end/back end)**
 
-We recommend you visit the `Prioritized Backlog` column in the [filtered Project Board `good first issues` link](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257). This filtered board will only show issues with the `good first issue` label.
+We recommend you visit the `Prioritized Backlog` column in the filtered Project Board using the following links: [`good first issues` (front end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) and [`good first issues` (back end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22good+first+issue%22+label%3A%22role%3A+back+end%2Fdevops%22#column-7198257). These links will take you to a filtered Project Board and will only show issues with the `good first issue` label for both front end and back end respectively.
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
