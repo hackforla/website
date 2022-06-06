@@ -96,6 +96,12 @@
   @media #{$bp-below-desktop} {
     margin-bottom: 0px;
   }
+
+  @media #{$bp-below-tablet} {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
 }
 
 .link-message-404 {
