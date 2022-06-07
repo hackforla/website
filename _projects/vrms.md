@@ -5,7 +5,6 @@ description: VRMS is a browser-based software tool created by Hack for LA (HfLA)
 image: /assets/images/projects/vrms.png
 alt: 'VRMS logo. VRMS homepage.'
 image-hero: /assets/images/projects/vrms-hero.png
-alt-hero: 'City of LA skyline at dusk.'
 leadership:
   - name: Alex Anakin
     role: Software Architect / Tech Lead
