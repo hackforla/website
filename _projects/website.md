@@ -5,7 +5,6 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
