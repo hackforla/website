@@ -68,27 +68,35 @@ if(project != null){
         }
     }
 
-    // Creates DOM elements for contributors
-    for(let contributor of contributorsArray){
-        if (contributorsArray.length >= 1) {
-            let contributorDiv = document.createElement('div');
-            contributorDiv.classList.add('contributor-div');
+    let projectTeam = document.querySelectorAll('.leader-card')
 
-            let contributorProfile = document.createElement('a');
-            contributorProfile.classList.add('contributor-link');
-            contributorProfile.setAttribute('href', contributor.github_url);
-            contributorProfile.setAttribute('target', '_blank');
-            let contributorUrl = contributor.github_url.split('/');
-            let contributorName = contributorUrl.pop();
-            contributorProfile.setAttribute('title', contributorName);
+    if (contributorsArray.length < projectTeam.length) {
+        // Hides all-time contributors if number of contributors is less than size of current project team
+        let contributorSection = document.getElementById('contributor-header');
+        contributorSection.style.display = 'none';
+    } else {
+        // Creates DOM elements for contributors
+        for(let contributor of contributorsArray){
+            if (contributorsArray.length >= 1) {
+                let contributorDiv = document.createElement('div');
+                contributorDiv.classList.add('contributor-div');
 
-            let contributorImg = document.createElement('img');
-            contributorImg.style['border-radius'] = '12px';
-            contributorImg.setAttribute('src', contributor.avatar_url);
+                let contributorProfile = document.createElement('a');
+                contributorProfile.classList.add('contributor-link');
+                contributorProfile.setAttribute('href', contributor.github_url);
+                contributorProfile.setAttribute('target', '_blank');
+                let contributorUrl = contributor.github_url.split('/');
+                let contributorName = contributorUrl.pop();
+                contributorProfile.setAttribute('title', contributorName);
 
-            contributorProfile.appendChild(contributorImg);
-            contributorDiv.appendChild(contributorProfile);
-            contributors.appendChild(contributorDiv);
+                let contributorImg = document.createElement('img');
+                contributorImg.style['border-radius'] = '12px';
+                contributorImg.setAttribute('src', contributor.avatar_url);
+
+                contributorProfile.appendChild(contributorImg);
+                contributorDiv.appendChild(contributorProfile);
+                contributors.appendChild(contributorDiv);
+            }
         }
     }
 } else {

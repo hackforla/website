@@ -2,14 +2,17 @@
 layout: default
 title: Toolkit
 permalink: /toolkit/
---- 
+---
 <!-- Header banner -->
 <div class="header-container flex-container">
     <div class="header-text">
         <h1 class="title1">Our Toolkit</h1>
         <p>Toolkit implies that there is one set of tools that is perfect for the job you are tackling!
-            What you will find here are tools we have found to be effective. Think of this as the most awesome collective tool shed!
-            Here you can find, share, and suggest tools that are of use to the open source civic tech software community.</p>
+            What you will find here are tools we have found to be effective. Think of this as the most awesome
+            collective tool shed!
+            Here you can find, share, and suggest tools that are of use to the open source civic tech software
+            community.
+        </p>
     </div>
     <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="" />
 </div>
@@ -18,20 +21,29 @@ permalink: /toolkit/
     {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
     {% for category in category_list %}
         {% if category == "All" %}
-            <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item selected-category">{{category}}</a>
+            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item selected-category">{{category}}</a>
         {% else %}
-            <a href="#{{category | replace: ' ', '+'}}"  class="toolkit-header__banner-item">{{ category }}</a>    
+            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item">{{ category }}</a>
         {% endif %}
     {% endfor %}
 </div>
 
 <div class="toolkit-background content-section">
+  <a class="anchor" id="guides"></a>
   <div class="toolkit__card-list">
     <div class="toolkit-flex-container">
       <div class="suggest-guide-group">
         <h2 class="title3">Guides</h2>
         <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
       </div>
+    <div class="dropdown"> 
+        {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
+        <select id ="dropdown-select">
+        {% for category in category_list %}
+        <option value="#{{category | replace: ' ', '+'}}">{{category}}</option>
+        {% endfor %}
+        </select>
+    </div>
         <!-- Iterating through toolkitPages collection -->
             {%- assign guides = site.guide-pages | sort: "title" -%}
             {%- for item in guides -%}
@@ -39,83 +51,93 @@ permalink: /toolkit/
                     {%- include guide-card.html guide=item -%}
                 {%- endif -%}
             {%- endfor -%}
-    </div>
-  </div>
-
-  <script>
-      //add listener for click in banner, and toggle classes for filters.
-      document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
-          filter.addEventListener('click', function(event) {
-              let thisCategory = event.currentTarget;
-              let otherCategories = event.currentTarget.parentElement.children;
-              
-              if (thisCategory.classList.contains('selected-category')) {
-                  return;
-              } else {
-                  Array.from(otherCategories).forEach((category) => {
-                  if (category.classList.contains('selected-category')) {
-                      category.classList.remove('selected-category');
-                  return; }
-                  });
-
-              thisCategory.classList.toggle('selected-category');  
-              }
-          });
-      });
-          //add listener for url change and toggle visible cards.
-          window.addEventListener("hashchange", hashFilter);
-          function hashFilter(e) {
-              let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
-
-              let cardContainers = document.querySelectorAll("[data-article-type]");
-              cardContainers.forEach((card) => {
-                  if(currentHash == 'all'){
-                      card.style.display = 'block';
-                  return;
-                  }
-                  card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
-              });
-          } 
-  </script>
-
-  <div class="toolkit__card-list">
-    <div class="toolkit-flex-container">
-      <div class="suggest-guide-group">
-        <h2 class="external-resources-text title3">External Resources</h2>
-        <button class="btn btn-primary btn-md-narrow">Suggest a resource</button>
-      </div>
-        <!-- Searching through toolkitResources collection -->
-      <div class="external-resource-container">
-        {%- for item in site.data.internal.toolkitresources -%}
-        {%- if item.display ==  true -%}
-        <div class="toolkit-flex-item section-container">
-          {%- if item.svg -%}
-          <div class="toolkit-flex-item-img-container resource-svg-icons">
-              {% include {{ item.svg }} %}
-          </div>
-          {%- endif -%}
-
-          <div class="toolkit-info-container">
-              <h3><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
-              <p>{{ item.description }}</p>
-          </div>
-          <a href="{{item.provider-link}}" class="toolkit-flex-item-status" target="_blank">
-              {% include {{ item.link-svg }} %}
-          </a>
         </div>
-        {%- endif -%}
-        {%- endfor -%}
-      </div>
     </div>
-  </div>
-</div>    
+
+    <script>
+        //add listener for click in banner, and toggle classes for filters.
+        document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
+            filter.addEventListener('click', function (event) {
+                let thisCategory = event.currentTarget;
+                let otherCategories = event.currentTarget.parentElement.children;
+
+                if (thisCategory.classList.contains('selected-category')) {
+                    return;
+                } else {
+                    Array.from(otherCategories).forEach((category) => {
+                        if (category.classList.contains('selected-category')) {
+                            category.classList.remove('selected-category');
+                            return;
+                        }
+                    });
+
+                    thisCategory.classList.toggle('selected-category');  
+                }
+            });
+        });
+        //add handler for dropdown navigation selection
+        document.getElementById("dropdown-select").onchange = function() {
+            window.location.href = this.value;
+        }
+
+        //add listener for url change and toggle visible cards.
+        window.addEventListener("hashchange", hashFilter);
+        function hashFilter(e) {
+            let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
+
+            let cardContainers = document.querySelectorAll("[data-article-type]");
+            let guidesCategories = ["all", "development", "design", "projectmanagement", "professionaldevelopment"]
+            if(guidesCategories.includes(currentHash)){
+                cardContainers.forEach((card) => {
+                    if (currentHash == 'all') {
+                        card.style.display = 'block';
+                        return;
+                    }
+                    card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
+                });
+            }
+        } 
+    </script>
+
+    <a class="anchor" id="external-resources"></a>
+    <div class="toolkit__card-list">
+        <div class="toolkit-flex-container">
+            <div class="suggest-guide-group">
+                <h2 class="external-resources-text title3">External Resources</h2>
+                <button class="btn btn-primary btn-md-narrow">Suggest a resource</button>
+            </div>
+            <!-- Searching through toolkitResources collection -->
+            <div class="external-resource-container">
+                {%- for item in site.data.internal.toolkitresources -%}
+                {%- if item.display == true -%}
+                <div class="toolkit-flex-item section-container">
+                    {%- if item.svg -%}
+                    <div class="toolkit-flex-item-img-container resource-svg-icons">
+                        {% include {{ item.svg }} %}
+                    </div>
+                    {%- endif -%}
+
+                    <div class="toolkit-info-container">
+                        <h3><a href="{{item.provider-link}}" target="_blank">{{ item.title }}</a></h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    <a href="{{item.provider-link}}" class="toolkit-flex-item-status" target="_blank">
+                        {% include {{ item.link-svg }} %}
+                    </a>
+                </div>
+                {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-// Add margin to the bottom of cards with status text
-let statusElements = document.getElementsByClassName("toolkit-flex-item-status");
-for(let i = 0; i < statusElements.length; i++){
-    let parent = statusElements[i].parentElement;
-    let infoContainer = parent.getElementsByClassName("toolkit-info-container");
-    infoContainer[0].style["margin-bottom"] = "3.5rem";
-}
+    // Add margin to the bottom of cards with status text
+    let statusElements = document.getElementsByClassName("toolkit-flex-item-status");
+    for (let i = 0; i < statusElements.length; i++) {
+        let parent = statusElements[i].parentElement;
+        let infoContainer = parent.getElementsByClassName("toolkit-info-container");
+        infoContainer[0].style["margin-bottom"] = "3.5rem";
+    }
 </script>

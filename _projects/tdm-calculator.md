@@ -51,7 +51,7 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CKY65G266'
   - name: Overview
-    url: https://github.com/hackforla/product-management/blob/master/project-one-sheets/TDM-Calculator-Product-One-Sheet.pdf
+    url: ../assets/pdfs/TDM-Calculator-Product-One-Sheet.pdf
 looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers

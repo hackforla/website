@@ -5,7 +5,6 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -31,12 +30,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
       github: 'https://github.com/JessicaLucindaCheng'
     picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
-  - name: Isaac Cruz
-    role: UX Design Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U0255408P8Q'
-      github: 'https://github.com/IsaacDesigns'
-    picture: https://avatars.githubusercontent.com/IsaacDesigns
   - name: Simone Campbell
     role: UX Research Lead
     links:

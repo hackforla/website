@@ -5,32 +5,19 @@ description: The 311 Data project seeks to empower local Neighborhood Councils t
 image: /assets/images/projects/311_data.png
 alt: '311 data logo.'
 image-hero: /assets/images/projects/311data-beta.png
-alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
 leadership:
-  - name: Dana Chen
-    role: UI/UX Senior Lead
+  - name: Eric Cho
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U0112KZPV6C'
-      github: 'https://github.com/danarchen'
-    picture: https://avatars.githubusercontent.com/danarchen
-  - name: Kevin Perez
-    role: UI/UX Lead
+      slack: 'https://hackforla.slack.com/team/U02E95SPK4N'
+      github: 'https://github.com/echoproject'
+    picture: https://avatars.githubusercontent.com/echoproject
+  - name: Prasadh Palanichamy
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U011K0F02M9'
-      github: 'https://github.com/kevindperez'
-    picture: https://avatars.githubusercontent.com/kevindperez
-  - name: Adam Kendis
-    role: Frontend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/USNAHR0KE'
-      github: 'https://github.com/adamkendis'
-    picture: https://avatars.githubusercontent.com/adamkendis
-  - name: Matt Webster
-    role: Backend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/URLNVEEB0'
-      github: 'https://github.com/mattyweb'
-    picture: https://avatars.githubusercontent.com/mattyweb
+      slack: 'https://hackforla.slack.com/team/U0143158U80'
+      github: 'https://github.com/pras4u'
+    picture: https://avatars.githubusercontent.com/pras4u
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -70,7 +57,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-partner: EmpowerLA
+partner: Los Angeles Department of Neighborhood Empowerment
 program-area:
   - Citizen Engagement
 visible: true

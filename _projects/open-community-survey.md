@@ -13,65 +13,37 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: JoAnne Narcisse
+  - name: Kalyani Raman
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U02AHBLDJ15'
-      github: 'https://github.com/jonarcisse'
-    picture: https://avatars.githubusercontent.com/jonarcisse
-  - name: Ebele O.
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U02QW65RU1M'
+      github: 'https://github.com/kalyaniraman'
+    picture: https://avatars.githubusercontent.com/kalyaniraman
+  - name: Mary Kate Leibman
+    role: UI/UX Designer/Researcher
     links:
-      slack: 'https://hackforla.slack.com/archives/D01R3EN5DG9'
-      github: 'https://github.com/ebele-oputa'
-    picture: https://avatars.githubusercontent.com/ebele-oputa
-  - name: Bernard Adesina
-    role: UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/archives/D025891DF41'
-      github: 'https://github.com/AdesinaBernard'
-    picture: https://avatars.githubusercontent.com/AdesinaBernard
-  - name: Kevin Wang
-    role: UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/archives/D025DF0E4SJ'
-      github: 'https://github.com/kvnw2020'
-    picture: https://avatars.githubusercontent.com/kvnw2020
-  - name: Sonu
-    role: Data Analyst
-    links:
-      slack: 'https://hackforla.slack.com/team/U027JBTAGSX'
-      github: 'https://github.com/sonu-k'
-    picture: https://avatars.githubusercontent.com/sonu-k
+      slack: 'https://hackforla.slack.com/team/U031V93CYB0'
+      github: 'https://github.com/mkleibman'
+    picture: https://avatars.githubusercontent.com/mkleibman
   - name: Snow
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U029J3LT0TS'
       github: 'https://github.com/LAStorm'
     picture: https://avatars.githubusercontent.com/LAStorm
-  - name: Amy Wilkins
-    role: UX Researcher
+  - name: Tugba Metinyurt
+    role: Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U0231JD5BC2'
-      github: 'https://github.com/amy-c-w'
-    picture: https://avatars.githubusercontent.com/amy-c-w
-  - name: Jasmine Kim
-    role: UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02AYE78X1Q'
-      github: 'https://github.com/jaskim20'
-    picture: https://avatars.githubusercontent.com/jaskim20
-  - name: Shika Zhou
-    role: Data Analyst
-    links:
-      slack: 'https://hackforla.slack.com/team/ U029BAPRTA8'
-      github: 'https://github.com/ShikaZzz'
-    picture: https://avatars.githubusercontent.com/ShikaZzz
+      slack: 'https://hackforla.slack.com/team/U02NF293BRQ'
+      github: 'https://github.com/TugbaMet'
+    picture: https://avatars.githubusercontent.com/TugbaMet
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/open-community-survey'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01H0HUDMCK'
+  - name: Overview
+    url: '../assets/pdfs/Open-Community-Survey-One-Sheet.pdf'
 looking:
   - category: PM
     skill: Product Manager
