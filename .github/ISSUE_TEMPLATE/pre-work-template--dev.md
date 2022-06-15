@@ -15,11 +15,11 @@ As a new developer on the HfLA website team, fill in the following fields as you
 
 ### Action Items
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your GitHub handle and Gmail address with merge team members and technical leads so you can be added to the Google Drive
+- [ ] Share your GitHub handle and Gmail address with a merge team member or technical lead so you can be added to the Google Drive
   - [ ] To find contact information for the merge team members and technical leads, please take a look at our [Meet the Team wiki page](https://github.com/hackforla/website/wiki/Meet-the-Team)
-- [ ] Also, confirm with the technical lead that they have added you to the Zoom meeting calendar invites
+- [ ] Also, confirm with a merge team member or a technical lead that they have added you to the Google Calendar invites for our Zoom meetings
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
-- [ ] After you have finished adding yourself to the roster, let a technical lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
+- [ ] After you have finished adding yourself to the roster, let a merge team member or a technical lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Once added to the website-write team:
   - [ ] Self Assign this issue (gear in right side panel)
   - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
@@ -29,7 +29,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
   - [ ] (Optional) Office Hours, Thursdays 7-8pm PST
   - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm PST
-- [ ] Note: There are no meetings the 1st-7th of every month.
+- [ ] Note: There are no meetings on the 1st-7th of every month.
 - [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 - [ ] Complete steps 1.1 - 1.6 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
