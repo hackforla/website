@@ -50,7 +50,7 @@
       margin: 10px 80px;
 
       @media #{$bp-mobile-up} {
-        height: 70px;
+        height: 110px; //70px original
         margin: 10px;
       }
     }
