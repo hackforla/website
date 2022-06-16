@@ -37,7 +37,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
  */
 
  async function getTimeline(issueNum){
-	let arra = []
+	let history = []
 	let page = 1
   while (true) {
     try {
@@ -49,7 +49,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
         page: page,
       });
       if (results.data.length){
-	      arra = arra.concat(results.data);
+	      history = history.concat(results.data);
       } else {
         break
       }
@@ -61,8 +61,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
       page++
     }
   }
-  //console.log(arra)
-	return arra
+	return history
 }
 
 /**
