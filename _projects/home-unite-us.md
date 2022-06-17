@@ -48,7 +48,7 @@ leadership:
     links:
       slack: "https://hackforla.slack.com/team/U03BZ5WL8GY"
       github: "https://github.com/rossbb"
-    picture: https://avatars.githubusercontent.com/u/rossbb
+    picture: https://avatars.githubusercontent.com/rossbb
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
