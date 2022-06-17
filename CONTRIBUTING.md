@@ -353,6 +353,8 @@ And the following **size** labels:
 * `size: Medium`
 * `size: Large`
 
+**Note:** The Prioritized Backlog column is filtered so the first (top) issue has the highest priority and should be worked on next. <br />
+
 **Note:** if you would like to learn more about our label system you can read this [wiki on how to read and interpret our repo labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
