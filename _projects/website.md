@@ -5,6 +5,7 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
+alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -18,30 +19,36 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Saumil Dhankar
+  - name: Tomas Gonzalez
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
-      github: 'https://github.com/SAUMILDHANKAR'
-    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
-  - name: Jessica Cheng
+      slack: 'https://hackforla.slack.com/team/U02DF1PPQUA'
+      github: 'https://github.com/R-Tomas-Gonzalez'
+    picture: https://avatars.githubusercontent.com/R-Tomas-Gonzalez
+  - name: Tamara Snyder
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
-      github: 'https://github.com/JessicaLucindaCheng'
-    picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
+      slack: 'https://hackforla.slack.com/team/U02SQV06ARZ'
+      github: 'https://github.com/tamara-snyder'
+    # picture: #FIXME
+  - name: Isaac Cruz
+    role: UX Design Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U0255408P8Q'
+      github: 'https://github.com/IsaacDesigns'
+    picture: https://avatars.githubusercontent.com/IsaacDesigns
+  - name: Phuong Van
+    role: Design Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
+      github: 'https://github.com/phuonguvan'
+    # picture: #FIXME
   - name: Simone Campbell
     role: UX Research Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
       github: 'https://github.com/sacamp'
     picture: https://avatars.githubusercontent.com/sacamp
-  - name: Providence Onyenekwe
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
-      github: 'https://github.com/Providence-o'
-    picture: https://avatars.githubusercontent.com/Providence-o    
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -66,9 +73,6 @@ technologies:
   - GitHub Pages
   - Jekyll
   - Docker
-  - Google Apps Script
-  - GitHub Actions
-  - VRMS API
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
   # - Santa Monica

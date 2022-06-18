@@ -70,5 +70,5 @@ sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participat
 card-image-src: /assets/images/projects/311.jpg
 card-image-alt: 311 project card
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: '16: peace, justice and strong institutions'
+sdg-image-alt: '16: peace, justice, and strong institutions'
 ---
