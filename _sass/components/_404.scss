@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px 62px;
+    margin: 0px 60px;
     padding-top: 100px;
     padding-bottom: 20px;
   }
@@ -100,7 +100,8 @@
   @media #{$bp-below-tablet} {
     margin-top: 10px;
     margin-bottom: 5px;
-    font-size: 18px;
+    margin-right: 5px;
+    font-size: 16px;
   }
 }
 
