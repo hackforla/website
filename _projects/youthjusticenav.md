@@ -39,7 +39,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/YouthJusticeNav/blob/main/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Youth-Justice-Nav-Product-One-Sheet.pdf'
+    url: '/assets/pdfs/Youth-Justice-Nav-Product-One-Sheet.pdf'
 looking:
   - category: Content
     skill: Content Writer
@@ -54,7 +54,8 @@ location:
   - Remote
 partner: UCLA School of Law, Golden Gate University School of Law
 tools: Google Docs, Google Sheets
-program area: 'Justice'
+program-area: 
+  - Justice
 visible: true
 sdg: 16.3
 status: Active

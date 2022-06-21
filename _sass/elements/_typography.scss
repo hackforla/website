@@ -88,6 +88,10 @@ map-get($font-family, decorative);
   font-size: #{map-get($font-size-title6, mobile)};
 }
 
+.title7 {
+  font-size: #{map-get($font-size-title7, mobile)};
+}
+
 blockquote p,
 .type-featured {
   font: map-get($font-weight, bold) #{map-get($font-size-blockquote, mobile)} / #{map-get(
@@ -186,6 +190,10 @@ map-get($font-family, body);
     font-size: #{map-get($font-size-title6, tablet)};
   }
 
+  .title7 {
+    font-size: #{map-get($font-size-title7, tablet)};
+  }
+  
   blockquote p,
   .type-featured {
     font-size: #{map-get($font-size-blockquote, tablet)};
@@ -242,7 +250,6 @@ map-get($font-family, body);
     font-size: #{map-get($font-size-title3, desktop)};
   }
   
-
   .title4 {
     font-size: #{map-get($font-size-title4, desktop)};
   }
@@ -255,6 +262,10 @@ map-get($font-family, body);
     font-size: #{map-get($font-size-title6, desktop)};
   }
 
+  .title7 {
+    font-size: #{map-get($font-size-title7, desktop)};
+  }
+  
   blockquote p,
   .type-featured {
     font-size: #{map-get($font-size-blockquote, desktop)};
@@ -265,4 +276,27 @@ map-get($font-family, body);
     font-size: map-get($font-size-small, desktop);
     line-height: map-get($line-height-small, desktop);
   }
+}
+
+
+%paragraph-class {
+  line-height: $line-height-paragraph-class;
+  font-family: $font-family-body;
+  font-weight: map-get($font-weight, normal);
+  color: $color-black;
+}
+
+.paragraph1 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph1;
+}
+
+.paragraph2 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph2;
+}
+
+.paragraph3 {
+  @extend %paragraph-class;
+  font-size: $font-size-paragraph3;
 }

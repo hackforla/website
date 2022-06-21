@@ -1,6 +1,6 @@
 ---
 name: Project/Product Management
-description: PMs from different projects come together in this group to share effective practices, give and get mentorship, set product management standards, and create guides and templates for new projects.
+description: PMs from different projects come together in this group to share effective practices, give and get mentorship, set product management standards, and create guides and templates by discovering effective practices from all Hack for LA teams.
 visible: true
 status: Active
 location:
@@ -11,24 +11,20 @@ alt: 'Several people around a small table listen intently as one person speaks.'
 
 meeting-times: Tuesdays 6:00-7:00 pm PT
 
-leadership-type: Mentor Led
+leadership-type: Peer Led
 leadership:
-  - name: Niven Prasad
+  - name: Priyanka Talwar
     role: Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U015R4RTDJA
-      github: https://github.com/NivenPrasad
-    picture: https://avatars.githubusercontent.com/u/61798667
-  - name: Olivia Chiong
-    role: Co-lead
-    links:
-      slack: https://hackforla.slack.com/team/U01GJC7VC6L
-      github: https://github.com/Olivia-Chiong
-    picture: https://avatars.githubusercontent.com/u/75456721
-
+      slack: https://hackforla.slack.com/team/U029P91EY15
+      github: https://github.com/priyatalwar
+    picture: https://avatars.githubusercontent.com/u/7972395
+    
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C010LNXH2JY/details/
-  
+  - name: Github
+    url: https://github.com/hackforla/product-management
+
 recruiting-message:
 ---

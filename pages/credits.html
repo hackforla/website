@@ -3,12 +3,15 @@ layout: default
 title: Credits
 permalink: /credits/
 ---
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMQK7VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Header banner -->
 <div class="header-container flex-container">
   <div class="header-text">
     <h1 class="title1">Credits</h1>
-    <p>Thank you to all of the artists who have made our page look great.
-      Check out all of the iconography and imagery we have used on our site.
+    <p>Thank you to all of the artists and sponsors who help make our projects successful. 
+      Check out all of the iconography and imagery we have used on our site, and tools used for our projects. 
     </p>
   </div>
   <img class="header-hero-image" src="/assets/images/credits/credits-hero.svg">
@@ -16,55 +19,103 @@ permalink: /credits/
 
 <div class='content-section wide-div'>
 <a class='anchor' id='step-1'></a>
-          <div class='page-card card-primary page-card-lg page-card--credits'>
-            <div class="page-contain credits-inner">
-                <ul class="credits-list unstyled-list">
-                  {%- for item in site.data.internal.credits -%}
-                        <li>
-                          <!-- originally class="project-card-inner" -->
-                        <div class="credits-item">
-                          <div class="icon-left">
-                            <img src={{ item[1].image-url | absolute_url }} alt={{item[1].alt}}/>
-                          </div>
-                          <div class="icon-info">
-                            {%- if item[1].title -%}
-                             <p>
-                              <strong>Name: </strong>
-                              <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'-->
-                                <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
-                              </p>
-                            {%- endif -%}
-                            {%- if item[1].used-in -%}
-                             <p>
-                              <strong>Used in: </strong>
-                                {{ item[1].used-in }}
-                              </p>
-                            {%- endif -%}
-                            {%- if item[1].artist -%}
-                              <p>
-                                <strong>Artist: </strong>
-                                  {{ item[1].artist }}
-                              </p>
-                            {%- endif -%}
-                            {%- if item[1].provider -%}
-                              <p>
-                                <strong>Provider: </strong>
-                                {%- if item[1].provider-link -%}
-                                <a href="{{item[1].provider-link}}">{{ item[1].provider }}</a>
-                                {%- else -%}
-                                {{ item[1].provider }}
-                                {%- endif -%}
-                              </p>
-                            {%- endif -%}
-                          </div>
-                        </div>
-                      </li>
-                  {%- endfor -%}
-                </ul>
-            </div>
-          </div>
-
-
-        </div>
-<!-- Do not delete below-->
+    <div class='page-card card-primary page-card-lg page-card--credits'>
+      <h2 class="title2 credits-heading">Iconography & Imagery</h2>
+      <div class="credits-inner">
+          <ul class="credits-list unstyled-list">
+            {%- for item in site.data.internal.credits -%}
+              {%- if item[1].image-url -%}
+                  <li>
+                    <!-- originally class="project-card-inner" -->
+                  <div class="credits-item">
+                    <div class="icon-left">
+                      <img class="icon-left-image" src={{ item[1].image-url | absolute_url }} alt="{{ item[1].alt }}"/>
+                    </div>
+                    <div class="icon-info">
+                      {%- if item[1].title -%}
+                        <p>
+                        <strong>Name: </strong>
+                        <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'-->
+                          <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
+                        </p>
+                      {%- endif -%}
+                      {%- if item[1].used-in -%}
+                        <p>
+                        <strong>Used in: </strong>
+                          {{ item[1].used-in }}
+                        </p>
+                      {%- endif -%}
+                      {%- if item[1].artist -%}
+                        <p>
+                          <strong>Artist: </strong>
+                            {{ item[1].artist }}
+                        </p>
+                      {%- endif -%}
+                      {%- if item[1].provider -%}
+                        <p>
+                          <strong>Provider: </strong>
+                          {%- if item[1].provider-link -%}
+                            <a href="{{item[1].provider-link}}">{{ item[1].provider }}</a>
+                          {%- else -%}
+                            {{ item[1].provider }}
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+      </div>
+    </div>
+    <div class="page-card card-primary page-card-lg page-card--credits">
+      <h2 class="title2 credits-heading">Tools</h2>
+      <div class="credits-inner">
+          <ul class="credits-list unstyled-list">
+            {%- for item in site.data.internal.credits.tools -%}
+              {%- if item[1].logo-url -%}
+                <li>
+                  <!-- originally class="project-card-inner" -->
+                  <div class="credits-tool">
+                    <div class="icon-center">
+                      <img class="icon-center-image" src={{ item[1].logo-url | absolute_url }} alt="">
+                    </div>
+                    <div class="icon-info">
+                      {%- if item[1].used-in -%}
+                        <p>
+                          <strong>Used in: </strong>
+                          {{ item[1].used-in }}
+                        </p>
+                      {%- endif -%}
+                      {%- if item[1].used-by -%}
+                        <p>
+                          <strong>By: </strong>
+                          {% for team in item[1].used-by %}
+                            {% if forloop.last == true %}
+                              <a href="{{team.project-link}}">{{ team.project-name}}</a>
+                            {% else %}
+                              <a href="{{team.project-link}}">{{ team.project-name}}</a>, 
+                            {% endif %}
+                          {% endfor %}
+                        </p>
+                      {%- endif -%}
+                      {%- if item[1].provider-link -%}
+                        <p>
+                          <strong>Provider: </strong>
+                          {%- if item[1].provider-link -%}
+                            <a href="{{item[1].provider-link}}">{{ item[1].tool-provider}}</a>
+                          {%- else -%}
+                            {{ item[1].tool-provider }}
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+      </div>
+    </div>
 </div>

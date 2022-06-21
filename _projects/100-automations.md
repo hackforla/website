@@ -5,7 +5,6 @@ description: Hack for LA seeks to reduce repetitive work in our open source proj
 image: /assets/images/projects/100automations.png
 alt: '100 Automations logo depicted as a 1 and two intermeshed gears surrounded by a open left bracket, forward slash and closing right bracket to indicate the 100 automations are in code, followed by the word Automations.'
 image-hero: /assets/images/projects/100automations-hero.png
-alt-hero: 'Five intermeshed gears'
 leadership:
   - name: Niven Prasad
     role: Product Manager
@@ -49,9 +48,9 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
   - name: Readme
-    url: 'https://github.com/OpenSourceAutomations/OSA-Website/blob/master/README.md'
+    url: 'https://github.com/100Automations/Website/blob/gh-pages/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/100-Automations-Project-One-Sheet.pdf'
+    url: '../assets/pdfs/100-Automations-Project-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Anyone who wants to write open source automations
@@ -70,6 +69,7 @@ location:
   - Remote
 # partner: N/A
 visible: true
-program area: 'Civic Tech Infrastructure'
+program-area:
+  - Civic Tech Infrastructure
 status: Active
 ---

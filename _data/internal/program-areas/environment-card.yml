@@ -1,0 +1,40 @@
+---
+name: Environment
+program-area: Environment
+description: >
+  From incentivizing public transportation to promoting urban forestry, 
+  these projects support Hack for LA’s advocacy of environmentalism and sustainability.
+
+
+image: /assets/images/program-areas/envirnoment.png
+
+image_alt: Greenland with tornado
+
+SDG: 
+  - Zero Hunger
+  - Peace
+  - Justice
+  - Strong Institutions
+
+projects: 
+  - id: 197452459
+    name: LA TDM Calculator
+    image: /assets/images/projects/tdm-calculator.jpg
+    image_alt: LA TDM Calculator Landing Page (Mock Up)
+    link: https://www.hackforla.org/projects/tdm-calculator
+  - id: 128148093
+    name: Public Tree Map
+    image: /assets/images/projects/public-tree-map.png
+    image_alt: Zoomed-in map showing ten streets of the neighborhood. Each dot on the map displaying a tree from the urban forest
+    link: https://www.hackforla.org/projects/public-tree-map
+  - id: 00000000
+    name: '#climate'
+    image: /assets/images/projects/project-in-formation.png
+    image_alt: placeholder
+    link: 
+  - id: 155295655
+    name: Railstats LA
+    image: /assets/images/projects/metro-ontime.png
+    image_alt: LA Metro Rail logo
+    link: https://www.hackforla.org/projects/metro-ontime
+---

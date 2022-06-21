@@ -126,3 +126,52 @@
   margin-bottom: 10px;
   font-size: 14px;
 }
+
+
+//styling for join slack and view github buttons
+.page-card-content{
+  .link-buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+
+  .button-icon{
+    margin-right: 5px;
+  }
+  
+  #slack-icon{
+    width: 22px;
+    height: 22px;
+  }
+
+  #github-icon{
+    width: 29px;
+    height: 26px;
+  }
+}
+
+@media #{$bp-mobile-up} {
+  .link-buttons{
+    margin-top: 60px;
+
+  }
+  .cop-btn{
+    width: 232px;
+  }
+}
+
+@media #{$bp-below-mobile} {
+  .link-buttons{
+    margin-top: 38px;
+  }
+
+  .cop-btn{
+      width: 203px;
+  }
+
+  .link-buttons a:nth-child(2){
+    margin-top: 20px;
+  }
+}

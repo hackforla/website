@@ -11,8 +11,8 @@ leadership:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
-      github: 'https://github.com/experiementsinhonesty'
-    picture: https://avatars.githubusercontent.com/experiementsinhonesty
+      github: 'https://github.com/ExperimentsInHonesty'
+    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Akila Sankaran
     role: Product Manager
     links:
@@ -51,9 +51,11 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/GreenEarthOS/blob/main/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/GreenEarthOS one sheet.pdf'
+    url: '../assets/pdfs/GreenEarthOS-One-Sheet.pdf'
 location: 
   - Remote
+program-area:  
+  - Environment
 visible: true
 status: Active
 ---

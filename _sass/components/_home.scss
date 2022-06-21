@@ -50,7 +50,7 @@
       margin: 10px 80px;
 
       @media #{$bp-mobile-up} {
-        height: 70px;
+        height: 110px; //70px original
         margin: 10px;
       }
     }
@@ -116,13 +116,8 @@
   }
 
   h1 {
-    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: .65rem;
-
-    @media #{$bp-tablet-up} {
-      font-size: 3rem;
-    }
   }
   p {
     margin-bottom: .65rem;
@@ -425,7 +420,6 @@ button {
 .column {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
   flex: 1;
 }
 

@@ -3,13 +3,13 @@ layout: default
 ---
 
 <header class='project-hero'>
-    <h1 class='hero-inner'>{{ page.title }}</h1>
+    <h1 class='hero-inner title1'>{{ page.title }}</h1>
 </header>
 
 <div class='content-section project-home-page'>
     <!--Project Description Card-->
     <div id='project-description-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Project Overview</h4>
+        <h2 class='project-page-card-title title6'>Project Overview</h2>
         <!--Project Details-->
         <div class='project-page-description'>
             <!--Project Properties-->
@@ -29,26 +29,22 @@ layout: default
                     {% endfor %}
                 </p>{% endif %}
 
-                <!-- Links Logic to filter prioritized links and to correct comma placement -->
+                <!-- Links Logic to filter prioritized links and to correct comma placement -->        
                 {% if page.links %}
                     {% assign counter = 0 %}
                     {% for item in page.links %}
-                        {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
-                            {% assign counter = counter | plus:1 %}
-                        {% endif %}
+                        {% assign counter = counter | plus:1 %}  
                     {% endfor %}
                     {% if counter > 0 %}
                         <p>
                             <strong>Links: </strong>
                             {% for item in page.links %}
-                                {% if item.name == 'GitHub' or item.name == 'Test Site' or item.name == 'Demo Site' or item.name == 'Site' %}
-                                    {% if counter > 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>,
-                                        {% assign counter = counter | minus:1 %}
-                                    {% elsif counter <= 1 %}
+                                    {% if counter == 1 %}
                                         <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                                        {% assign counter = counter | minus:1 %}
+                                    {% elsif counter > 1 %}
+                                        <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
                                     {% endif %}
-                                {% endif %}
                             {% endfor %}
                         </p>
                     {% endif %}
@@ -93,7 +89,7 @@ layout: default
 
     <!--Project Resources Card-->
     <div class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Resources</h4>
+        <h2 class='project-page-card-title title6'>Resources</h2>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
                 {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
@@ -109,7 +105,11 @@ layout: default
 
     <!-- Project Team Card -->
     <div id='project-team-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
-        <h4 class='project-page-card-title'>Current Project Team</h4>
+        {% if page.status == "Completed" %}
+            <h2 class='project-page-card-title title6'>Project Team</h2>
+        {% else %}
+            <h2 class='project-page-card-title title6'>Current Project Team</h2>
+        {% endif %}
         {% if page.leadership %}
             <div class='resource-list'>
                 {% for item in page.leadership %}
@@ -133,227 +133,35 @@ layout: default
                 <p>Looks like this project has not revealed specific leadership roles yet!</p>
             </div>
         {% endif %}
-        <h4 id='contributor-header' class='project-page-card-title'>All-Time Contributors</h4>
+        <h2 id='contributor-header' class='project-page-card-title title6'>All-Time Contributors</h2>
         <div id='contributors-list' class='resource-list'></div>
     </div>
+
+    <!-- Show iFrame Card for project, if available -->
+    {% if page.iframe.available == true %}
+    <div class='page-card card-primary page-card-lg page-card--iframe'>
+      <iframe
+      src='{{ page.iframe.src }}'
+      width="100%"
+      height="100%"
+      style="margin: 0; border: 2px solid #336699; box-sizing: border-box">
+      </iframe>
+    </div>    
+    {% endif %}
 </div>
 
 {{ content | markdownify }}
 
-<!--Script for fetching the correct project-->
-<script>
-    {% assign projects = site.data.external.github-data %}
-    // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
-    let projectId = '{{ page.identification }}';
-    // Search for correct project
-    let project = null;
-    // Starts at 1 now since the first element is a time stamp
-    for(i = 1; i < projects.length; i++){
-        let itemId = projects[i].id.toString();
-        if(itemId == projectId){
-            project = projects[i];
-            break;
-        }
-    }
-</script>
-
-<!--Script for assigning hero background image-->
-<script>
-    let heroSection = document.getElementsByClassName('project-hero')[0];
-    {% if page.image-hero %}
-        heroSection.style.background = 'url({{ page.image-hero }}) center center no-repeat';
-    {% else %}
-        heroSection.style.background = 'url(/assets/images/hero/hacknight-women.jpg) center center no-repeat';
-    {% endif %}
-</script>
-
-<!--Script for adding languages to "Languages" Section-->
-<script>
-    let languagesSection = document.getElementById('languages');
-    if(project != null && project.languages.length > 0){
-        let languages = project.languages.join(', ');
-        let languagesParagraph = document.createElement('p');
-        languagesParagraph.style.display = 'inline';
-        let languagesText = document.createTextNode(languages);
-        languagesParagraph.appendChild(languagesText);
-        languagesSection.appendChild(languagesParagraph);
-    } else {
-        languagesSection.remove();
-    }
-</script>
-<!--Script for constructing Team Card-->
-<script>
-    let contributors = document.getElementById('contributors-list');
-    // Empty array for valid contributors
-    let contributorsArray = [];
-
-    if(project != null){
-        for (contributor of project.contributorsComplete.data) {
-            // Checking for valid data
-            if (contributor.github_url && contributor.github_url != "https://github.com/apps/dependabot") {
-                // Pushing valid data to contributorsArray
-                contributorsArray.push(contributor);
-            }
-        }
-
-        // Creates DOM elements for contributors
-        for(contributor of contributorsArray){
-            if (contributorsArray.length >= 1) {
-                let contributorDiv = document.createElement('div');
-                contributorDiv.classList.add('contributor-div');
-
-                let contributorProfile = document.createElement('a');
-                contributorProfile.classList.add('contributor-link');
-                contributorProfile.setAttribute('href', contributor.github_url);
-                contributorProfile.setAttribute('target', '_blank');
-                let contributorUrl = contributor.github_url.split('/');
-                let contributorName = contributorUrl.pop();
-                contributorProfile.setAttribute('title', contributorName);
-
-                let contributorImg = document.createElement('img');
-                contributorImg.style['border-radius'] = '12px';
-                contributorImg.setAttribute('src', contributor.avatar_url);
-
-                contributorProfile.appendChild(contributorImg);
-                contributorDiv.appendChild(contributorProfile);
-                contributors.appendChild(contributorDiv);
-            }
-        }
-    } else {
-        let messageDiv = document.createElement('div');
-        messageDiv.classList.add('empty-content-message');
-        let messageText = document.createElement('p');
-        messageText.appendChild(document.createTextNode('Looks like this project has not connected a GitHub repository yet!'));
-        messageDiv.appendChild(messageText);
-        contributors.parentNode.appendChild(messageDiv);
-        contributors.parentNode.removeChild(contributors);
-    }
-</script>
-
-<script>
-// Script for adding meeting times to "meetings" Section
-let meetingsList = document.querySelector('.meeting-times-list');
-let meetingsHeader = document.querySelector('.meetingsHeader');
-let projectTitle = '{{ page.title }}';
-let meetingsFound = [];
-
-// Assigns local JSON Data to localData variable
-{% assign localData = site.data.external.vrms_data %}
-// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
-const API_URL = 'https://www.vrms.io/api/recurringevents';
-
-// Function schedules data that is passed in
-function schedule(scheduleData) {
-
-    // Loops through data and assigns information to variables in a readable format
-    for (let i = 0; i <= scheduleData.length - 1; i++) {
-        let startTime = timeFormat(new Date(scheduleData[i].startTime));
-        let endTime = timeFormat(new Date(scheduleData[i].endTime));
-        let webURL = scheduleData[i].project.hflaWebsiteUrl;
-        let projectName = scheduleData[i].project.name;
-        let description = scheduleData[i].description;
-        let day = new Date(scheduleData[i].date).toString().substring(0,3);
-        let scheduleClass;
-
-        // Function that adds data to proper header
-        function scheduleDay() {
-            // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-            if (scheduleData == localData) {
-                scheduleClass = "localData";
-            } else {
-                scheduleClass = "updated";
-            }
-            if (projectTitle === projectName) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
-                meetingsFound.push(day);
-            }
-        }
-        scheduleDay(day);
-    }
-}
-
-// Function checks for differences between two arrays
-function arr_diff (a1, a2) {
-
-    let a = [], diff = [];
-
-    for (let i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (let i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (let k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-}
-
-// Function clears the schedule
-function clearSchedule() {
-    let prevDayList = meetingsList.getElementsByClassName("localData");
-
-    while (prevDayList[0]) {
-        prevDayList[0].parentNode.removeChild(prevDayList[0]);
-    }
-}
-
-// Executes schedule with localData
-schedule(localData);
-
-// Fetchs JSON file from VRMS_API
-fetch(API_URL, {method: 'GET'})
-    .then(response => response.json())
-    .then((data) => {
-    // Checks for differences between localData and VRMS data
-    if (arr_diff(data, localData)) {
-        clearSchedule();
-        schedule(data);
-    }
-})
-.catch(err => {
-    console.log(err);
-})
-
-
-if (meetingsFound.length >= 1) {
-    meetingsHeader.insertAdjacentHTML("beforeend", '<strong class="meetings">Meetings</strong>');
-    document.querySelector('#userTimeZone').insertAdjacentHTML('afterbegin', timeZoneText());
-
-}
-
-// Formats time to be readable
-function timeFormat(time) {
-    hours = time.getHours();
-    minutes = time.getMinutes();
-
-    if (minutes == 0) {
-        minutes = minutes + "0";
-    }
-
-    if (hours < 12) {
-        return `${hours}:${minutes} am`;
-    }
-    else if (hours > 12){
-        hours = hours - 12;
-        return `${hours}:${minutes} pm`;
-    }
-    else if (hours = 12){
-        return `${hours}:${minutes} pm`;
-    } else {
-        return `${hours}:${minutes} am`;
-    }
-
-}
-
-
+<!-- 
+  Passing script attributes from html script tag to JS file
+  https://www.gun.io/blog/pass-arguments-to-embedded-javascript-tutorial-example
+-->
+<script 
+  id="projectScript"
+  src="/assets/js/project.js"
+  type="module"
+  projectId="{{ page.identification }}"
+  imageHero="{{ page.image-hero }}"
+  projectTitle="{{ page.title }}"
+>
 </script>

@@ -5,7 +5,6 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -13,48 +12,36 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Akib Rahman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01L4FXN1T7'
-      github: 'https://github.com/akibrhast'
-    picture: https://avatars.githubusercontent.com/akibrhast
   - name: Cynthia Kiser
     role: Technical Advisor
     links:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: David Rubinstein
+  - name: Saumil Dhankar
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U015FP47R5G'
-      github: 'https://github.com/drubgrubby'
-    picture: https://avatars.githubusercontent.com/drubgrubby
-  - name: Danielle Nedivi
-    role: Design Lead
+      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
+      github: 'https://github.com/SAUMILDHANKAR'
+    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
+  - name: Jessica Cheng
+    role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U013U4VN8V7'
-      github: 'https://github.com/daniellex0'
-    picture: https://avatars.githubusercontent.com/daniellex0
-  - name: Ibraheem Agbaje
+      slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
+      github: 'https://github.com/JessicaLucindaCheng'
+    picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
+  - name: Simone Campbell
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
+      github: 'https://github.com/sacamp'
+    picture: https://avatars.githubusercontent.com/sacamp
+  - name: Providence Onyenekwe
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01FKL1DN48'
-      github: 'https://github.com/IAgbaje'
-    picture: https://avatars.githubusercontent.com/IAgbaje
-  - name: Pawan Murthy
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U01FMQTN8MU'
-      github: 'https://github.com/pawan92'
-    picture: https://avatars.githubusercontent.com/pawan92
-  - name: Sihem Gourou
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U021GM545UG'
-      github: 'https://github.com/Sihemgourou'
-    picture: https://avatars.githubusercontent.com/Sihemgourou
+      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
+      github: 'https://github.com/Providence-o'
+    picture: https://avatars.githubusercontent.com/Providence-o    
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -79,6 +66,9 @@ technologies:
   - GitHub Pages
   - Jekyll
   - Docker
+  - Google Apps Script
+  - GitHub Actions
+  - VRMS API
 tools: Figma, Google Drive, Zoom, Google Analytics
 location:
   # - Santa Monica
@@ -86,5 +76,7 @@ location:
   - Remote
 visible: true
 status: Active
-program area: Workforce Development
+program-area:
+  - Workforce Development
+  - Civic Tech Infrastructure
 ---

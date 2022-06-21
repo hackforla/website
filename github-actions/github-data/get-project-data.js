@@ -7,7 +7,10 @@ const _ = require('lodash');
 // Record the time this script started running so it can be stored later
 const dateRan = new Date();
 // Hard coded list of untagged repos we would like to fetch data on
-const untaggedRepoIds = [79977929];
+// 79977929 -> https://github.com/hunterowens/workfor.la
+// 277577906 -> https://github.com/codeforamerica/brigade-playbook
+const untaggedRepoIds = [79977929, 277577906];
+
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 
 Object.assign(Octokit.prototype, trueContributorsMixin);
@@ -160,7 +163,7 @@ async function getCommentContributors(repo, dateLastRan) {
  */
 function constructContributorParams(repo) {
   let requestParams = {};
-  let isOrg = (repo.owner.type == "Organization" && repo.owner.login != "hackforla" && repo.owner.login != "cfa");
+  let isOrg = (repo.owner.type == "Organization" && repo.owner.login != "hackforla" && repo.owner.login != "codeforamerica");
   if(isOrg) {
     requestParams.org = repo.owner.login;
   } else {

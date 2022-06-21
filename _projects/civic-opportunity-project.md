@@ -5,7 +5,6 @@ description: The mission of the Civic Opportunity project is to develop and cura
 image: /assets/images/projects/civic-opportunity-project.jpg
 alt: 'Wireframing and designing process for Civic Opportunity Project, there are hands pointing to a tablet and papers of the low fidelity prototyping.'
 image-hero: /assets/images/projects/civic-opportunity-project-hero.png
-alt-hero: 'Wireframing and designing process for Civic Opportunity Project, there are hands pointing to a tablet and papers of the low fidelity prototyping.'
 leadership:
   - name: Ray Fambro
     role: Product Manager
@@ -21,13 +20,13 @@ leadership:
     picture: https://avatars.githubusercontent.com/tan-zhou
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/civic-opportunity/projects/1'
+    url: 'https://github.com/hackforla/civic-opportunity'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C016CJZ8VTN'
   - name: Readme
     url: 'https://github.com/hackforla/civic-opportunity/blob/master/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/civic-opportunity/files/4843530/Civic.Opportunity.Project.pdf'
+    url: '/assets/pdfs/Civic-Opportunity-Project-One-Sheet.pdf'
 looking:
   - category: PM
     skill: Special Projects Coordinators
@@ -43,6 +42,7 @@ location:
 # tools:
 partner: Undisclosed
 visible: true
-program area: 'Civic Tech Infrastructure'
+program-area:
+  - Civic Tech Infrastructure
 status: Active
 ---

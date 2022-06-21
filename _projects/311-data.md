@@ -5,32 +5,19 @@ description: The 311 Data project seeks to empower local Neighborhood Councils t
 image: /assets/images/projects/311_data.png
 alt: '311 data logo.'
 image-hero: /assets/images/projects/311data-beta.png
-alt-hero: 'Macbook Pro showing the 311 data app display. On the left of the screen shows input options and selections for dates, neighborhood council and various requests. On the right of the screen shows a map of LA county and its corresponding checked neighborhood council and requests.'
 leadership:
-  - name: Dana Chen
-    role: UI/UX Senior Lead
+  - name: Eric Cho
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U0112KZPV6C'
-      github: 'https://github.com/danarchen'
-    picture: https://avatars.githubusercontent.com/danarchen
-  - name: Kevin Perez
-    role: UI/UX Lead
+      slack: 'https://hackforla.slack.com/team/U02E95SPK4N'
+      github: 'https://github.com/echoproject'
+    picture: https://avatars.githubusercontent.com/echoproject
+  - name: Prasadh Palanichamy
+    role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U011K0F02M9'
-      github: 'https://github.com/kevindperez'
-    picture: https://avatars.githubusercontent.com/kevindperez
-  - name: Adam Kendis
-    role: Frontend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/USNAHR0KE'
-      github: 'https://github.com/adamkendis'
-    picture: https://avatars.githubusercontent.com/adamkendis
-  - name: Matt Webster
-    role: Backend Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/URLNVEEB0'
-      github: 'https://github.com/mattyweb'
-    picture: https://avatars.githubusercontent.com/mattyweb
+      slack: 'https://hackforla.slack.com/team/U0143158U80'
+      github: 'https://github.com/pras4u'
+    picture: https://avatars.githubusercontent.com/pras4u
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -59,7 +46,6 @@ technologies:
   - Material-UI
   - Mapbox
   - AWS
-  - Python
   - FastAPI
   - Redis
   - PostgreSQL
@@ -71,9 +57,18 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-
-partner: EmpowerLA
-program area: 'Citizen Engagement'
+partner: Los Angeles Department of Neighborhood Empowerment
+program-area:
+  - Citizen Engagement
 visible: true
 status: Active
+# citizen engagement card data
+problem: The city produces a data set from all the 311 tickets placed. This data is useful if you are a data scientist, but for citizens without this training it has little value.
+solution: We partnered with the Los Angeles Department of Neighborhood Empowerment and LA Neighborhood Councils to co-create and iterate analysis and tools (see 311-Data.org) to provide neighborhoods with actionable information at the local level through real time visualizations and comparison tools.
+impact: Neighborhood Councils are able to use visualizations to demonstrate and discuss the city service levels with constituents and determine where to send mailings to target information to those parts of their community not availing themselves of specific city services.
+sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
+card-image-src: /assets/images/projects/311.jpg
+card-image-alt:
+sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-alt: peace justice bottom sustainable dev goal
 ---

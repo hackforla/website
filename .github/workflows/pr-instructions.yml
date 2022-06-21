@@ -4,7 +4,8 @@ on:
     types: [opened]
     branches:
       - 'gh-pages'
-      - 'wins-feature-1'
+      - 'feature-homepage-launch'
+      - 'feature-tech-dropdown'
 
 jobs:
   Add-Pull-Request-Instructions:

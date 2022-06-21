@@ -3,12 +3,13 @@ layout: default
 title: Communities of Practice
 permalink: /communities-of-practice
 ---
+
 <!-- Header banner -->
 <div class="header-container flex-container">
-    <div class="header-text">
+    <div class="header-text ">
         <h1 class="title1">Communities of Practice</h1>
         <p>
-            Communities of Practice started at Hack for LA in 2020, post-Covid. These communities have been a vital connection point in our fully remote organization. They have enabled us to connect people across projects in ways that are both meaningful for the individuals, and have helped the organization build professional infrastructure to support our community, nonprofit and government project partnerships. These communities have also enabled Hack for LA to provide rapid response to the evolving crises of 2020.
+             Communities of Practice started at Hack for LA in 2020, post-Covid. These communities have been a vital connection point in our fully remote organization. They have enabled us to connect people across projects in ways that are both meaningful for the individuals, and have helped the organization build professional infrastructure to support our community, nonprofit and government project partnerships. These communities have also enabled Hack for LA to provide rapid response to the evolving crises of 2020.
         </p>
         <p class="sub-p">
             If you'd like to join one of the Communities of Practice that has a regular meeting time, join their Slack channel and look for the meeting details, usually pinned or in the description. Otherwise, see the "How to get started" sections below.
@@ -30,7 +31,7 @@ permalink: /communities-of-practice
             <img class="page-card-image" src="{{ community[1].image }}" alt="{{ community[1].alt }}"/>
         </div>
         <div class="page-card-content">
-            <h3>{{ community[1].name}}</h3>
+            <h3 class = "Title4">{{ community[1].name}}</h3>
             <p>{{ community[1].description}}</p>
             <p>
                 <strong>Meeting Times:</strong> 
@@ -64,12 +65,27 @@ permalink: /communities-of-practice
             {% if community[1].status == "Seeking" and community[1].recruiting-message %}
                 <p><strong>How to get started:</strong> {{ community[1].recruiting-message }}</p>
             {% endif %}
-            <div class="align-center">
+            <div class="align-center link-buttons">
+                {% assign url_links = false %}
+
                 {% if community[1].links[0].url %}
-                    <a href="{{ community[1].links[0].url }}"><button class="btn btn-primary btn-md">Join Meeting Slack Channel</button></a>
-                {% elsif community[1].links[1].url %}
-                    <a href="{{ community[1].links[1].url }}"><button class="btn btn-primary btn-md">View GitHub</button></a>
-                {% else %}
+                    {% assign url_links = true %}
+                    <a href="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank" title="{{community[1].name}} Slack channel">
+                        <img class="button-icon" id="slack-icon" src="/assets/images/communities-of-practice/slack-join-meeting-channel.svg" alt="slack icon" />
+                        Join Slack Channel
+                    </a>
+                {% endif %}
+                
+                {% if community[1].links[1].url %}
+                    {% assign url_links = true %}
+                    <a href="{{ community[1].links[1].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank"
+                        title="{{community[1].name}} Github Repo">
+                        <img class="button-icon" id="github-icon" src="/assets/images/communities-of-practice/icon-github-small.svg" alt="github icon" />
+                        View GitHub
+                    </a>
+                {% endif %}
+
+                {% if url_links == false %}
                     <button class="btn btn-primary btn-md">Coming soon...</button>
                 {% endif %}
             </div>

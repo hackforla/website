@@ -5,7 +5,6 @@ description: BallotNav is a tool that aims to help prevent disenfranchisement by
 image: /assets/images/projects/ballotnav.jpg
 alt: "Two hands holding a mobile device with BallotNav's web application on display."
 image-hero: /assets/images/projects/ballot-nav-hero.png
-alt-hero: 'Map of the United States with each state and county outlined.'
 leadership:
   - name: Karen Coronel
     role: Product Manager
@@ -65,7 +64,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/ballotnav/blob/master/README.md'
   - name: Overview
-    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/BallotNav-Project-One-Sheet.pdf'
+    url: '/assets/pdfs/BallotNav-Project-One-Sheet.pdf'
 looking:
   - category: UI/UX
     skill: UX Researcher
@@ -80,5 +79,6 @@ location:
 partner: Code for America, Other Brigades
 visible: true
 status: Active
-program area: 'Vote / Representation'
+program-area: 
+  - Vote / Representation
 ---

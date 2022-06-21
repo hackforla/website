@@ -2,9 +2,8 @@
   margin: 40px 0px 83px 0px;
   padding: 25px;
   @media #{$bp-below-tablet} {
-    margin-top: 52px;
+    margin: 0;
     padding: 0;
-    margin: 0px;
   }
 }
 
@@ -238,13 +237,31 @@
 .meetings-message {
   text-align: center;
 }
-.location-image {
-  margin: -5px;
-  border-radius: 5px;
-  max-width: 372px;
 
+.location-img-pos {
+  flex: 0 0 auto;
+  width: 372px;
+  overflow: hidden;
+  margin: -5px;
+
+  @media #{$bp-below-tablet} {
+    margin: 0;
+    width: 100%;
+    height: 40vh;
+  }
   @media #{$bp-below-mobile} {
-    height: auto;
+    height: 231px;
+  }
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  @media #{$bp-below-tablet} {
+    /* Positions image so location text is visible */
+    object-position: center 80%;
   }
 }
 
@@ -255,20 +272,22 @@
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
   overflow: hidden;
   max-width: 996px;
-  margin-bottom: 0;
-  padding: 20px;
   margin: 45px;
+  padding: 20px;
   font-family: "Roboto" sans-serif;
   height: fit-content;
 
   @media #{$bp-below-tablet} {
     padding: 16px 16px;
   }
+  @media #{$bp-below-mobile} {
+    margin: 45px 16px;
+  }
 }
 
 .locations-1 {
   display: flex;
-  height: 388px ;
+  height: 388px;
   margin: -17px;
 
   @media #{$bp-below-tablet} {
@@ -326,36 +345,11 @@
 
 .title-meetup {
   font-size: 1.25rem;
-  text-align: center;
-  font-weight: 700;
   text-align: left;
+  font-weight: 700;
   margin-bottom: 16px;
-
-
+  color: $color-black;
 }
-
-// .btn-meet {
-//   background: #fa114f;
-//   border: 2;
-//   border-radius: 60px;
-//   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-//   color: #fff;
-//   display: inline-block;
-//   font-size: 25px;
-//   font-weight: 400;
-//   height: 86px;
-
-//   padding: 0 20px;
-//   text-decoration: none;
-//   transition: all 100ms ease-in;
-//   white-space: nowrap;
-//   width: 62%;
-
-//   @media #{$bp-below-mobile} {
-//     font-size: 1.1rem;
-//     width: 70%;
-//   }
-// }
 
 .class-btn {
   text-align: center;
@@ -461,6 +455,7 @@
   @media #{$bp-below-tablet} {
     display: none;
     background: $color-gold;
+    width: 100vw;
   }
 }
 
@@ -493,6 +488,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin: 30px 0 10px 0;
+  color: $color-black; 
   padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;
