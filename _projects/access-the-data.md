@@ -107,5 +107,5 @@ sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participat
 card-image-src: /assets/images/projects/access-the-data.png
 card-image-alt: access the data project card
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: peace justice bottom sustainable dev goal
+sdg-image-alt: '16: peace, justice and strong institutions'
 ---
