@@ -57,7 +57,7 @@ links:
   - name: Slack
     url: "https://hackforla.slack.com/archives/CRWUG7X0C"
   - name: Overview
-    url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Home-Unite-Us-One-Sheet.pdf"
+    url: '../assets/pdfs/Home-Unite-Us-One-Sheet.pdf'
   - name: Site
     url: "https://homeunite.us/"
 looking:
