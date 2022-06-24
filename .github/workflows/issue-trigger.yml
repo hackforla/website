@@ -27,7 +27,7 @@ jobs:
           username: ${{ github.actor }}
           organization: 'hackforla'
           team: 'website-write'
-          GITHUB_TOKEN: ${{ secrets.HACKFORLA }}
+          GITHUB_TOKEN: ${{ secrets.TEAMS }}
           
       # Checks if user is on the website-write-team
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
