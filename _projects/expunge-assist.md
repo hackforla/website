@@ -27,10 +27,10 @@ leadership:
       github: 'https://github.com/jamiesiu'
     picture: 'https://avatars.githubusercontent.com/jamiesiu'
 links:
-    - name: Product Website
-      url: https://expungeassist.org/
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
+    - name: Site
+      url: https://expungeassist.org/
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
