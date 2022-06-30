@@ -62,7 +62,7 @@ function retrieveProjectDataFromCollection(){
     {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
-    let visible_projects = JSON.parse(decodeURIComponent("{{ visible_projects | jsonify | uri_escape }}"));
+    let visible_projects = JSON.parse(decodeURIComponent("{{ visible_projects | jsonify | uri_escape }}").replace(/</g, '&lt;'));
     // const scriptTag = document.getElementById("projectScript");
     // const projectId = scriptTag.getAttribute("projectId");
     // Search for correct project
