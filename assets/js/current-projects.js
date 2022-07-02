@@ -62,6 +62,7 @@ function retrieveProjectDataFromCollection(){
     {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
+    let visible_projects = JSON.parse(decodeURIComponent("{{ visible_projects | jsonify | uri_escape }}").replace(/</g, '&lt;'));
     // const scriptTag = document.getElementById("projectScript");
     // const projectId = scriptTag.getAttribute("projectId");
     // Search for correct project
@@ -76,48 +77,13 @@ function retrieveProjectDataFromCollection(){
         }
     })
 
-    let projectData = [{%- for project in visible_projects -%}
-            {
-                "project": {
-                            'id': "{{project.id | default: 0}}",
-                            'identification': {{project.identification | default: 0}},
-                            "status": "{{ project.status }}"
-                            {%- if project.image -%},
-                            "image": '{{ project.image }}'
-                            {%- endif -%}
-                            {%- if project.alt -%},
-                            "alt": `{{ project.alt }}`
-                            {%- endif -%}
-                            {%- if project.title -%},
-                            "title": `{{ project.title }}`
-                            {%- endif -%}
-                            {%- if project.description -%},
-                            "description": `{{ project.description }}`
-                            {%- endif -%}
-                            {%- if project.partner -%},
-                            "partner": `{{ project.partner }}`
-                            {%- endif -%}
-                            {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
-                            {%- endif -%}
-                            {%- if project.looking -%},
-                            "looking": {{ project.looking | jsonify }}
-                            {%- endif -%}
-                            {%- if project.links -%},
-                            "links": {{ project.links | jsonify }}
-                            {%- endif -%}
-                            {%- if project.technologies -%},
-                            "technologies": {{ project.technologies | jsonify }}
-                            {%- endif -%}
-                            {%- if project.program-area -%},
-                            "programAreas": {{ project.program-area | jsonify }}
-                            {%- endif -%}
-                            {%- if project.languages -%},
-                            "languages": {{ project.languages }}
-                            {%- endif -%}
-                            }
-            }{%- unless forloop.last -%}, {% endunless %}
-    {%- endfor -%}]
+    let projectData = [];
+    visible_projects.forEach(project => {
+        projectData.push({
+            "project": project
+        })
+    })
+
     projectData.forEach((data,i) => {
         const { project } = data;
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
