@@ -16,6 +16,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 ### Special Notes
 1. It may take you a few weeks to finish this issue, because part of it is learning how to provide updates on issues that take more than a week to complete.    Please keep this issue open until you have been able to do all the steps.  
 2. Usually we don't want to you have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.
+3. The action items listed below should mostly be worked on in a sequential order. However, you don't have to wait on one if you can proceed with the others, For instance, you don't have to wait for attending a weekly meeting before setting up your dev environment.  
 
 ### Action Items
 
