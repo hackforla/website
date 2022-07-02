@@ -7,7 +7,7 @@ alt: 'Stacks of freshly harvested beets'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
 alt-hero: 'Stacks of freshly harvested carrots, beets and vegetables'
 leadership:
-  - name: John
+  - name: John Darragh
     role: Architect & Technology Lead
     links:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
@@ -29,8 +29,8 @@ leadership:
     role: UX Researcher
     links:
       slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
-      github: "https://github.com/LIlinit"
-    picture: https://avatars.githubusercontent.com/LIlinit
+      github: "https://github.com/GigiUxR"
+    picture: https://avatars.githubusercontent.com/GigiUxR
   - name: Virginia Wu
     role: Full Stack Engineer
     links:
