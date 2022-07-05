@@ -19,6 +19,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02QW65RU1M'
       github: 'https://github.com/kalyaniraman'
     picture: https://avatars.githubusercontent.com/kalyaniraman
+  - name: Ambareen Sultana
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03FQ1BBGP4'
+      github: 'https://github.com/ambersu123'
+    picture: https://avatars.githubusercontent.com/ambersu123
   - name: Mary Kate Leibman
     role: UI/UX Designer/Researcher
     links:
