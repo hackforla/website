@@ -62,6 +62,7 @@ function retrieveProjectDataFromCollection(){
     {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
+    let visible_projects = JSON.parse(decodeURIComponent("{{ visible_projects | jsonify | uri_escape }}").replace(/</g, '&lt;'));
     // const scriptTag = document.getElementById("projectScript");
     // const projectId = scriptTag.getAttribute("projectId");
     // Search for correct project
@@ -76,51 +77,16 @@ function retrieveProjectDataFromCollection(){
         }
     })
 
-    let projectData = [{%- for project in visible_projects -%}
-            {
-                "project": {
-                            'id': "{{project.id | default: 0}}",
-                            'identification': {{project.identification | default: 0}},
-                            "status": "{{ project.status }}"
-                            {%- if project.image -%},
-                            "image": '{{ project.image }}'
-                            {%- endif -%}
-                            {%- if project.alt -%},
-                            "alt": `{{ project.alt }}`
-                            {%- endif -%}
-                            {%- if project.title -%},
-                            "title": `{{ project.title }}`
-                            {%- endif -%}
-                            {%- if project.description -%},
-                            "description": `{{ project.description }}`
-                            {%- endif -%}
-                            {%- if project.partner -%},
-                            "partner": `{{ project.partner }}`
-                            {%- endif -%}
-                            {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
-                            {%- endif -%}
-                            {%- if project.looking -%},
-                            "looking": {{ project.looking | jsonify }}
-                            {%- endif -%}
-                            {%- if project.links -%},
-                            "links": {{ project.links | jsonify }}
-                            {%- endif -%}
-                            {%- if project.technologies -%},
-                            "technologies": {{ project.technologies | jsonify }}
-                            {%- endif -%}
-                            {%- if project.program-area -%},
-                            "programAreas": {{ project.program-area | jsonify }}
-                            {%- endif -%}
-                            {%- if project.languages -%},
-                            "languages": {{ project.languages }}
-                            {%- endif -%}
-                            }
-            }{%- unless forloop.last -%}, {% endunless %}
-    {%- endfor -%}]
+    let projectData = [];
+    visible_projects.forEach(project => {
+        projectData.push({
+            "project": project
+        })
+    })
+
     projectData.forEach((data,i) => {
         const { project } = data;
-        const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
+        const matchingProject = projectLanguagesArr.find(x=> x.id === parseInt(project.identification));
         if(matchingProject) {
             project.languages = matchingProject.languages
         }
@@ -161,7 +127,7 @@ function createFilter(sortedProjectData){
     return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
-            'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
+            'programs': [...new Set(sortedProjectData.map(item => item.project['program-area'] ? item.project['program-area'].map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
 
@@ -430,7 +396,7 @@ return `
             data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
 
             data-location="${project.location? project.location.map(city => city) : '' }"
-            data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
+            data-programs="${project['program-area'] ? project['program-area'].map(programArea => programArea) : '' }"
         >
         <div class="project-card-inner">
 
@@ -500,11 +466,11 @@ return `
             `:""
             }
 
-            ${project.programAreas ?
+            ${project['program-area'] ?
             `
             <div class="project-programs">
             <strong>Program Areas: </strong>
-            ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
+            ${project['program-area'].map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
             </div>
             `:""
             }
