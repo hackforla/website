@@ -19,9 +19,20 @@ jobs:
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
             const checkLabels = script({g: github, c: context})
             return checkLabels
-
+            
+      #Checks which teams the user is on 
+      - uses: tspascoal/get-user-teams-membership@v1
+        id: checkUserMember
+        with:
+          username: ${{ github.actor }}
+          organization: 'hackforla'
+          team: 'website-write'
+          GITHUB_TOKEN: ${{ secrets.TEAMS }}
+          
+      # Checks if user is on the website-write-team
+      - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's results
-      - name: Post Comment
+        name: Post Comment
         uses: actions/github-script@v4
         id: post-comment
         with:
