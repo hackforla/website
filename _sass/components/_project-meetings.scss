@@ -36,7 +36,7 @@
 
     li:before {
         content: "\2022";
-        color: #fa114f;
+        color: $color-red;
         font-weight: bold;
         font-size: 28px;
         display: inline-block;
