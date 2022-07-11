@@ -20,5 +20,8 @@ Figma:  Our design team uses Figma to create wireframes and mockups.  
 ### Link
 (Place link to resource here)
 
+### Tool category
+(Add the name of a tool if it is related.  For instance, a Figma Plugin should have the tool listed as Figma)
+
 ### Resources
 This will be the page the developer will edit https://github.com/hackforla/website/blob/39a458fe2ba70b5bc0b3d1cef4eaa48c22d0e750/_data/internal/toolkitresources.yml
