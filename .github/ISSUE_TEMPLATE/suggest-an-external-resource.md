@@ -1,13 +1,16 @@
 ---
 name: Suggest an external resource
 about: For resources that could be listed on the toolkit page.
-title: ''
-labels: documentation, enhancement
+title: Add this resource to the ToolKit External Resources section
+labels: 'P-Feature: Toolkit, role: front end, Size: Small, size: 0.5pt'
 assignees: ''
 
 ---
 
 ### Overview 
+We want to add a new external resource to the website toolkit
+
+### Details
 (Include a sentence that describes how Hack for LA teams are using this resource. For example: 
 
 Figma:  Our design team uses Figma to create wireframes and mockups.  
@@ -16,3 +19,6 @@ Figma:  Our design team uses Figma to create wireframes and mockups.  
 
 ### Link
 (Place link to resource here)
+
+### Resources
+This will be the page the developer will edit https://github.com/hackforla/website/blob/39a458fe2ba70b5bc0b3d1cef4eaa48c22d0e750/_data/internal/toolkitresources.yml
