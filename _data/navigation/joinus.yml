@@ -1,0 +1,18 @@
+- name: Join Us
+  link: /join
+  bolded: true
+
+- name: Donate
+  link: /donate
+
+- name: Advise Us
+  link: /join#advise
+
+- name: Volunteer with Us
+  link: /join#volunteer
+
+- name: Partner with  Us
+  link: /join#partner
+
+- name: Submit your Pitch
+  link: mailto:team@hackforla.org?subject=Submitting my pitch to Hack for LA 

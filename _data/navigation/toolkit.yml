@@ -1,0 +1,9 @@
+- name: Toolkit
+  link: /toolkit
+  bolded: true
+
+- name: Guides
+  link: /toolkit#guides
+
+- name: External Resources
+  link: /toolkit#external-resources
