@@ -16,18 +16,15 @@
 .desktop-up-only {
   display: none;
 
-<<<<<<< HEAD
   @media #{$bp-desktop-up} {
     display: revert;
-=======
       @media #{$bp-mobile-up} {
         height: 110px; //70px original
         margin: 10px;
       }
     }
->>>>>>> gh-pages
   }
-}
+
 
 // HERO SECTION
 .hero {
