@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   padding: 120px;
 
   @media #{$bp-below-desktop} {
@@ -17,8 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px 20px;
-    padding-top: 80px;
+    margin: 0px 60px;
+    padding-top: 100px;
     padding-bottom: 20px;
   }
 
@@ -28,11 +28,11 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 2.5;
-    color: #FA114F;
+    color: $color-red;
   }
-  
-  a { 
-    text-decoration: none; 
+
+  a {
+    text-decoration: none;
   }
 }
 
@@ -91,10 +91,17 @@
   font-size: 24px;
   color: #000000;
   opacity: 0.5;
-  margin-bottom: 80px;  
+  margin-bottom: 80px;
 
   @media #{$bp-below-desktop} {
     margin-bottom: 0px;
+  }
+
+  @media #{$bp-below-tablet} {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 16px;
   }
 }
 

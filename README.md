@@ -19,7 +19,7 @@ We require all Code Contributors to
 
 1. Join our organization by going through [Hack for LA onboarding](https://www.hackforla.org/getting-started). It's free to join!
 2. Read the [onboarding section of our WIKI](https://github.com/hackforla/website/wiki/Joining-the-HackforLA.org-Website-Team).
-3. Read our [CONTRIBUTING](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md) document and follow the steps.
+3. Read our [CONTRIBUTING](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md) document and follow the steps.
 
 ## We Love Our Stars ⭐⭐⭐
 

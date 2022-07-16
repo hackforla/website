@@ -1,11 +1,11 @@
 ---
-identification: '216854923'
+identification: "216854923"
 title: Lucky Parking
 description: Visualization of parking data to assist in understanding of the effects of parking policies on a neighborhood by neighborhood basis in the City of Los Angeles.
 image: /assets/images/projects/lucky-parking.png
-alt: 'Lucky Parking Logo'
+alt: "Lucky Parking Logo"
 image-hero: /assets/images/projects/lucky-parking-hero.png
-alt-hero: 'Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen.'
+alt-hero: "Lucky Parking Logo overlaid on a parking lot with a yellow Volkswagen."
 leadership:
   - name: Greg Pawin
     role: Product Owner / Data Science Lead
@@ -53,11 +53,11 @@ visible: true
 status: Active
 # citizen engagement card data
 problem: Parking citations are distributed unevenly across different socio-economic strata of the city's residents as they use public parking during the course of business or because enough off-street parking is not provided at their residence. The current publicly available Los Angeles parking citation dataset can be used as a basis for discussions about this disparity, but the unwieldy size and inconsistency of this data has been enough of a barrier to make it inaccessible to non-researchers.
-solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a webapp that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
+solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a web app that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
 impact: Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.
-sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
+sdg: "<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons."
 card-image-src: /assets/images/projects/lucky-parking.png
-card-image-alt: lucky parking project card
+card-image-alt: 
 sdg-image-src: /assets/images/about/sdg-elements/sustainable-cities.svg
 sdg-image-alt: sustainable cities bottom sustainable dev goal
 ---
