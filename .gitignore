@@ -1,5 +1,6 @@
 # dependencies
 node_modules
+docker-compose.yml
 
 # logs
 npm-debug.log
