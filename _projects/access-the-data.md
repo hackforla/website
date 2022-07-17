@@ -105,7 +105,7 @@ solution: Hack for LA’s Access the Data team, in partnership with the Los Ange
 impact: Citizens will be empowered to advocate for change in their communities by using publicly available data and asking for data to be made available when it is required for advocacy.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 card-image-src: /assets/images/projects/access-the-data.png
-card-image-alt: access the data project card
+card-image-alt:
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: peace justice bottom sustainable dev goal
+sdg-image-alt: '16: peace, justice and strong institutions'
 ---

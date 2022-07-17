@@ -5,7 +5,6 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -19,18 +18,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Saumil Dhankar
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
-      github: 'https://github.com/SAUMILDHANKAR'
-    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
-  - name: Jessica Cheng
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U02NWK24H3N'
-      github: 'https://github.com/JessicaLucindaCheng'
-    picture: https://avatars.githubusercontent.com/JessicaLucindaCheng  
   - name: Simone Campbell
     role: UX Research Lead
     links:
@@ -43,6 +30,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
       github: 'https://github.com/Providence-o'
     picture: https://avatars.githubusercontent.com/Providence-o    
+  - name: Phuong Van
+    role: Design Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
+      github: 'https://github.com/phuonguvan'
+    picture: https://avatars.githubusercontent.com/phuonguvan
+  - name: Tamara Snyder
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U02SQV06ARZ'
+      github: 'https://github.com/tamara-snyder'
+    picture: https://avatars.githubusercontent.com/tamara-snyder
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

@@ -50,18 +50,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01FUP87W3U'
       github: 'https://github.com/FarzanaPrianka'
     picture: https://avatars.githubusercontent.com/FarzanaPrianka
-  - name: Joyce Kim
-    role: UI/UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U022B355CF2'
-      github: 'https://github.com/joycekimdesigns'
-    picture: https://avatars.githubusercontent.com/joycekimdesigns
-  - name: Adaeze Nwaezeigwe
-    role: UI/UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0336CC3T9B'
-      github: 'https://github.com/AdaezeMN'
-    picture: https://avatars.githubusercontent.com/AdaezeMN
   - name: Nandana Rao
     role: Full Stack Developer
     links:
@@ -81,7 +69,7 @@ leadership:
       github: 'https://github.com/bruceplai'
     picture: https://avatars.githubusercontent.com/bruceplai
   - name: Bhaggyalakshmi Balasubramaniyan
-    role: Full Stack Developer 
+    role: Full Stack Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
@@ -92,12 +80,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UGWDHDF46'
       github: 'https://github.com/rfvisuals'
     picture: https://avatars.githubusercontent.com/rfvisuals
-  - name: Vance Dubberly
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0336CC3T9B'
-      github: 'https://github.com/deserat'
-    picture: https://avatars.githubusercontent.com/deserat
   - name: Isaiah Ozadhe
     role: Full Stack Developer
     links:
@@ -105,7 +87,7 @@ leadership:
       github: 'https://github.com/Tekkieware'
     picture: https://avatars.githubusercontent.com/Tekkieware
   - name: Maxwell Countryman Skewes
-    role: Front End Developer
+    role: Front End Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R6RWQR3L'
       github: 'https://github.com/maxskewes'
@@ -116,6 +98,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U01B4S459CZ
       github: https://github.com/mealthebear
     picture: https://avatars.githubusercontent.com/mealthebear
+  - name: Iffath Sultana
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U01JQ2V3NRZ
+      github: https://github.com/DrIffathsultana
+    picture: https://avatars.githubusercontent.com/driffathsultana
 links:
   - name: GitHub
     url: 'https://github.com/civictechindex/CTI-website-frontend'

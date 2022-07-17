@@ -20,23 +20,17 @@ leadership:
       github: "https://github.com/javaprincess"
     picture: https://avatars.githubusercontent.com/javaprincess
   - name: Regan Hutson
-    role: Product Management
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U0602E4LA"
       github: "https://github.com/JRHutson"
     picture: https://avatars.githubusercontent.com/JRHutson
   - name: Kristy Points
-    role: Product Management
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02FMMKPG7M"
       github: "https://github.com/kpoints"
     picture: https://avatars.githubusercontent.com/kpoints
-  - name: Abiha Ali
-    role: Product Management
-    links:
-      slack: "https://hackforla.slack.com/team/U02RW9T17PY"
-      github: "https://github.com/abiha1234"
-    picture: https://avatars.githubusercontent.com/abiha1234
   - name: Erik Guntner
     role: Front End Developer
     links:
@@ -49,7 +43,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
-
+  - name: Ben Ross
+    role: Product Manager
+    links:
+      slack: "https://hackforla.slack.com/team/U03BZ5WL8GY"
+      github: "https://github.com/rossbb"
+    picture: https://avatars.githubusercontent.com/rossbb
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
@@ -58,7 +57,7 @@ links:
   - name: Slack
     url: "https://hackforla.slack.com/archives/CRWUG7X0C"
   - name: Overview
-    url: "https://github.com/hackforla/product-management/blob/master/project-one-sheets/Home-Unite-Us-One-Sheet.pdf"
+    url: '../assets/pdfs/Home-Unite-Us-One-Sheet.pdf'
   - name: Site
     url: "https://homeunite.us/"
 looking:

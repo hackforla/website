@@ -27,7 +27,7 @@ Insert url of your project card here before sending; your card(s) can be found i
          - [ ] Role
          - [ ] SLACK ID
       - [ ] links
-         - [ ] Github
+         - [ ] GitHub
          - [ ] Slack
          - [ ] Test Site
          - [ ] Demo Site
