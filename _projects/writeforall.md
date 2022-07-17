@@ -7,7 +7,6 @@ description: We want to improve the language used in websites to be
 image: /assets/images/projects/writeforall.png
 alt: 'A rainbow document searcher icon, the words &quot;Write for All TM&quot;, and a rainbow-like border.'
 image-hero: /assets/images/projects/writeforall-hero.png
-alt-hero: 'A large rainbow-colored background with a rainbow document searcher icon in the middle.'
 leadership:
   - name: Joel Parker Henderson
     role: Project Architect

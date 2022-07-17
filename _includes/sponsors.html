@@ -2,20 +2,22 @@
   <div class="section-inner page-contain">
     <div class="section-body-full">
       <h2 class="title2">Sponsors</h2>
-      <div class="logo-garden">
-        <ul class="unstyled-list">
-          {% assign sponsors = site.data.internal.sponsors | sort: 'position' %}
-          {% for item in sponsors %}
-          <li>
-            <div class="logo">
-              <a href="{{ item.link }}" rel="noopener" target="_blank">
-                <img src="{{ baseurl }}{{ item.img_url | absolute_url }}" alt="{{ item.name }}" />
-              </a>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+        <div class="flex-container-row flex-container-row--partners">
+            <a href="https://www.codeforamerica.org" target="_blank" alt="Code for America">
+                <img src="/assets/images/sponsors/code-for-america.svg" title="Code for America">
+            </a>
+            <a href="https://laincubator.org" target="_blank" alt="LA Incubator">
+                <img src="/assets/images/sponsors/laci.svg" title="Los Angeles Cleantech Incubator">
+            </a>
+            <a href="https://www.carbonfive.com" target="_blank" alt="Carbon Five">
+                <img src="/assets/images/sponsors/carbon-five.svg" title="Carbon Five">
+            </a>
+            <a href="https://www.sipandsonder.com" target="_blank" alt="Sip and Sonder">
+                <img src="/assets/images/sponsors/sip-sonder.svg" title="Sip and Sonder">
+            </a>
+        </div>
     </div>
   </div>
 </section>
+
+
