@@ -1,0 +1,26 @@
+name: Create Issue to update GitHub Actions Dependencies
+
+on:
+  workflow_dispatch
+
+jobs:
+  Create-Update-Dependencies-Issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: github-actions/update-dependencies-issue/update-issue-template.md
+      - uses: actions/github-script@v4
+        env:
+          ISSUE_NUMBER: ${{ steps.create-issue.outputs.url }}
+          COLUMN_ID: ${{ secrets.PRIORITIZED_BACKLOG_COLUMN_ID }}
+        with:
+          script: |
+            github.request('POST /projects/columns/{column_id}/cards', {
+                column_id: process.env.COLUMN_ID,
+                content_id: process.env.ISSUE_NUMBER,
+                content_type: 'Issue'
+            });
