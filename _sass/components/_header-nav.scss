@@ -92,12 +92,14 @@ body {
 // This styles the hamburger nav and menus on mobile
 @media #{$bp-below-tablet} {
   #burgerImage { 
+    background-color: $color-white;
     display: block;
     height: 25px;
     width: 25px;
     border: none;
     padding-right: 41px;
     padding-top: 5px;
+    margin: 5px 0;
   } 
 
   #burgerImageX { 

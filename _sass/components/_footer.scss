@@ -1,11 +1,15 @@
 .main-footer {
-  position: absolute;
+  position: sticky;
   width: 100%;
   background: $color-darkblue;
   color: $color-white;
   padding: 42px 25px 20px;
   bottom: 0;
-
+  margin-top: -205px;
+  @media #{$bp-mobile-up} {
+    margin-top: -165px;
+  }
+  
   a {
     color: $color-white;
     text-decoration: none;
@@ -17,6 +21,37 @@
 
     @media #{$bp-mobile-up} {
       margin: 0 0 25px auto;
+    }
+  }
+  .footer-columns{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 20px;
+
+    .column{
+      margin-bottom: 10px;
+      flex: 0 0 50%;
+      padding: 10px;
+      @media #{$bp-mobile-up} {
+        flex: none;
+        padding-right: 150px;
+      }
+      
+    }
+
+    li{
+      margin: 10px
+    }
+    
+    @media #{$bp-mobile-up} {
+      align-items: flex-start;
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+
+
     }
   }
 
@@ -42,4 +77,5 @@
       margin: 0;
     }
   }
+
 }
