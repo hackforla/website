@@ -13,14 +13,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: github-actions/update-dependencies-issue/update-issue-template.md
+        id: create-issue
       - uses: actions/github-script@v4
         env:
-          ISSUE_NUMBER: ${{ steps.create-issue.outputs.url }}
+          ISSUE_NUMBER: ${{ steps.create-issue.outputs.number }}
           COLUMN_ID: ${{ secrets.PRIORITIZED_BACKLOG_COLUMN_ID }}
         with:
           script: |
+            const issue = await github.request(`GET /repos/${process.env.GITHUB_REPOSITORY}/issues/{issue_number}`, {
+              issue_number: process.env.ISSUE_NUMBER
+            });
             github.request('POST /projects/columns/{column_id}/cards', {
                 column_id: process.env.COLUMN_ID,
-                content_id: process.env.ISSUE_NUMBER,
+                content_id: issue.data.id,
                 content_type: 'Issue'
             });
