@@ -19,7 +19,7 @@ jobs:
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
-        working-directory: ./github-actions/github-data
+        working-directory: ./github-actions/trigger-schedule/github-data
     
     - name: Generate github-data.json
       env:
