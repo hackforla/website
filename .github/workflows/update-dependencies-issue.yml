@@ -1,7 +1,9 @@
 name: Create Issue to update GitHub Actions Dependencies
 
+# Run this action every Monday at 3:00 AM PST (11:00 UTC)
 on:
-  workflow_dispatch
+  schedule:
+    - cron: '0 11 * * 1'
 
 jobs:
   Create-Update-Dependencies-Issue:
