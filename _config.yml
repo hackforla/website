@@ -20,7 +20,6 @@ url: https://www.hackforla.org
 # When/Before creating a new collections remember these two pieces of advice and ask yourself. Should you?
 #    1. Collections are a great way to group related content like members of a team or talks at a conference. [https://jekyllrb.com/docs/collections/]
 #    2. Collection — Will have its own page, URLs, and possibly an index page. [https://gist.github.com/akibrhast/31c7bb723d80e9efe3d28f619ef0798d]
-#    3. Hello world
 collections:
 # The redirection collection exist to allow us to type urls `hackforla.org/github` or hackforla.org/donate 
 # which then redirects to `github.com/hackforla/website` and `https://www.codeforamerica.org/donate` respecitively
