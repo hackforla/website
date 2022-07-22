@@ -1,4 +1,4 @@
-name: Update GitHub Data
+name: Schedule Daily 1100
 
 # Run this action every day at 3am Pacific (11 am UTC)
 on:
@@ -19,12 +19,12 @@ jobs:
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
       with:
-        working-directory: ./github-actions/github-data
+        working-directory: ./github-actions/trigger-schedule/github-data
     
     - name: Generate github-data.json
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
-      run: node github-actions/github-data/get-project-data.js
+      run: node github-actions/trigger-schedule/github-data/get-project-data.js
 
 
     - name: Auto Commit
