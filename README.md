@@ -1,6 +1,6 @@
 # Website
 
-Hack for LA's website: https://www.hackforla.org
+Hello! Hack for LA's website: https://www.hackforla.org
 
 Please refer to the [wiki](https://github.com/hackforla/website/wiki) to learn more about the following areas.
 
