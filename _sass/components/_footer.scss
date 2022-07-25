@@ -12,7 +12,7 @@
   }
 
   .btn--donate-footer {
-    display: block;
+    display: table;
     margin: 0 auto;
 
     @media #{$bp-mobile-up} {
