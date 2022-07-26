@@ -1,6 +1,6 @@
 {% assign guide = include.guide %}
     
-    <div data-article-type={{ guide.category | downcase | remove: ' ' }} class="toolkit-flex-item section-container">
+    <div data-article-type={{ guide.practice-area | downcase | remove: ' ' }} class="toolkit-flex-item section-container">
 
         {%- if guide.svg -%}
         <div class="toolkit-flex-item-img-container">
@@ -9,21 +9,20 @@
         {%- endif -%}
 
         <div class="toolkit-info-container">
-            {%- if guide.status == 'coming-soon' -%}
-                <h3>{{ guide.title }}</h3>
+            {%- if guide.status == 'completed' -%}
+                <h3><a href={{ item.resource-url }}>{{ guide.title }}</a></h3>
+                
             {%- else -%}  
-                {%- if guide.title -%}
-                <h3><a href={{ item.provider-link }}>{{ guide.title }}</a></h3>
-                {%- endif -%}
+                <h3>{{ guide.title }}</h3>
             {%- endif -%}
 
-            {%- if guide.short-description -%}
-            <p>{{ guide.short-description }}</p>
+            {%- if guide.description -%}
+            <p>{{ guide.description }}</p>
             {%- endif -%}
 
 
         </div>
-        {%- if guide.status == 'coming-soon' -%}
-            <span class="toolkit-flex-item-status">coming soon</span>
+        {%- if guide.status == 'work-in-progress' -%}
+            <span class="toolkit-flex-item-status">work in progress</span>
         {%- endif -%}  
     </div>
