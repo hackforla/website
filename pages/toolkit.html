@@ -91,7 +91,6 @@ permalink: /toolkit/
                 <button class="btn btn-primary btn-md-narrow">Suggest a resource</button>
             </div>
             <!-- Searching through toolkitResources collection -->
-            <!--div class="external-resource-container"--><!--this class makes external resource cards centered-->
                 {%- for item in site.data.internal.toolkitresources -%}
                 {%- if item.display == true -%}
                 <div data-article-type={{ item.practice-area | downcase | remove: ' ' }} class="toolkit-flex-item section-container">
@@ -112,7 +111,6 @@ permalink: /toolkit/
                 {%- endif -%}
                 {%- endfor -%}
             </div>
-        <!--/div--><!--external-resource-container div-->
     </div>
 </div>
 
