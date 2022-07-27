@@ -234,10 +234,10 @@
 .resource-link {
   text-decoration: none;
   &:link{
-    color: #333;
+    color: $color-black;
   }
   &:visited{
-    color: #333;
+    color: $color-black;
   }
   &:hover{
     color: #fa114f;

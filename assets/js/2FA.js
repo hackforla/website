@@ -71,7 +71,7 @@ let Piechart = function(options){
                 this.options.doughnutHoleSize * Math.min(this.canvas.width/2,this.canvas.height/2),
                 0,
                 2 * Math.PI,
-                "#FFFFFF"
+                "$color-white"
             );
         }
 
