@@ -63,6 +63,7 @@
     padding: 0rem;
     height: auto;
     margin: 1.2rem 1rem;
+
     overflow: hidden;
     
     a {
@@ -78,24 +79,6 @@
 .toolkit-flex-item-img-container svg {
     width: 100%;
     height: 100%;
-}
-
-.resource-svg-icons {
-    height: 17.5rem;
-    width: 17.5rem;
-    margin: 0 auto;
-}
-
-.toolkit-info-container {
-    margin: 1rem 0rem 2rem;
-    padding: 0rem 2rem;
-
-    h3 {
-        font-weight: normal;
-        text-align: left;
-        font-size: 1.125rem;
-        height: fit-content;
-    }
 }
 
 .toolkit-info-container p {
