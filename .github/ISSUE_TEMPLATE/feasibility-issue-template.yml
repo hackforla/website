@@ -1,0 +1,45 @@
+name: 'Feasibility Issue Template '
+description: 'Used to standardize issue forms '
+title: 'Standard Feasibility Issue Template '
+
+body:
+  - type: input
+    id: overview
+    attributes:
+      label: Overview
+      description: Clearly state the purpose of this issue in 2 sentences or less
+    validations:
+      required: true
+  - type: markdown
+    id: action-items
+    aattributes:
+      label: "## Action Items"
+      description: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
+  - type: checkboxes
+    id: items
+    options: 
+      - label: Instruction example 1
+      - label: Instruction example 2
+      - label: Instruction example 3
+    validations:
+      required: true
+  - type: markdown
+    id: feasibility-checklsit
+    attributes:
+      label: "## Feasibility Checklist"
+      description: "List feasibility related issues."
+  - type: checkboxes
+    id: feasibility-items
+    options: 
+     - label: Check 1
+     - label: Check 2
+     - label: Check 3
+     validations:
+      required: true
+  - type: textarea
+    id: resources-instructions
+    attributes:
+      label: "Resources/Instructions"
+      description: "Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc."
+    validations:
+      required: true
