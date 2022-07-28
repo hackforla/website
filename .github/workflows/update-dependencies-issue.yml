@@ -19,7 +19,8 @@ jobs:
       - uses: actions/github-script@v4
         env:
           ISSUE_NUMBER: ${{ steps.create-issue.outputs.number }}
-          COLUMN_ID: ${{ secrets.PRIORITIZED_BACKLOG_COLUMN_ID }}
+          # Prioritized Backlog Column ID
+          COLUMN_ID: 7198257
         with:
           script: |
             const issue = await github.request(`GET /repos/${process.env.GITHUB_REPOSITORY}/issues/{issue_number}`, {
