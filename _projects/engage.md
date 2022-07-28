@@ -68,8 +68,8 @@ solution: On Engage, all users can view, read, and comment on agenda items their
 impact: Our platform will make important local conversations much more representative of the actual community, boosting the representation of the most marginalized and underserved members. Being able to hear their perspective will lead to more inclusive, considerate decision-making that will truly benefit all of us rather than just some.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 card-image-src: /assets/images/projects/engage.jpg
-card-image-alt: engage project card
+card-image-alt: 
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: peace justice bottom sustainable dev goal
+sdg-image-alt: '16: peace, justice and strong institutions'
 
 ---
