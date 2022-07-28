@@ -1,4 +1,4 @@
-name: Update Team Members
+name: Schedule Thursday 1100
 
 
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
@@ -35,7 +35,7 @@ jobs:
     # install dependencies to run js file
     - name: Install npm dependencies
       run: npm install
-      working-directory: ./github-actions/github-data
+      working-directory: ./github-actions/trigger-schedule/trim-contributors
 
     # run js file if it is the first Thursday of the month
     - name: Trim Members

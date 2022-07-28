@@ -418,13 +418,18 @@ button {
 }
 
 .column {
-  display: flex;
+  display: block;
   flex-direction: column;
   flex: 1;
 }
 
 .volunteerWithUs {
   margin: 0 5%;
+  padding-bottom: 40px;
+
+  @media #{$bp-below-tablet} {
+    padding-bottom: 20px;
+  }
 }
 
 .row-1 {

@@ -45,6 +45,7 @@ function makeComment(labels) {
   const issueCreator = context.payload.issue.user.login
 
   if (labels.length === 0) {
+<<<<<<< HEAD
     /*
     const commentObject = {
       replacementString: issueCreator,
@@ -53,6 +54,8 @@ function makeComment(labels) {
       textToFormat: null
     }
     return formatComment(commentObject)*/
+=======
+>>>>>>> upstream-gh-pages
     return;
   }
  

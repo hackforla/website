@@ -1,7 +1,7 @@
 version: "3"
 services:
   hfla_site:
-    image: jekyll/jekyll:pages
+    image: hackforlaops/ghpages:latest
     container_name: hfla_site
     command: jekyll serve --force_polling --livereload --config _config.yml,_config.docker.yml -I
     environment:
