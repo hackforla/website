@@ -1,6 +1,15 @@
 name: 'Feasibility Issue Template '
 description: 'Used to standardize issue forms '
 title: 'Standard Feasibility Issue Template '
+- type: markdown
+  id: dependencies
+  attributes:
+    label: "## Dependencies"
+- type: checkboxes
+  id: checkbox-items
+  options:
+    label: Dependency 1
+    label: Dependency 2
 
 body:
   - type: input
