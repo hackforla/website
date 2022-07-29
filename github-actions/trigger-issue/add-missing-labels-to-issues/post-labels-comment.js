@@ -45,17 +45,6 @@ function makeComment(labels) {
   const issueCreator = context.payload.issue.user.login
 
   if (labels.length === 0) {
-<<<<<<< HEAD
-    /*
-    const commentObject = {
-      replacementString: issueCreator,
-      placeholderString: '${issueCreator}',
-      filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/no-labels-template.md',
-      textToFormat: null
-    }
-    return formatComment(commentObject)*/
-=======
->>>>>>> upstream-gh-pages
     return;
   }
  
