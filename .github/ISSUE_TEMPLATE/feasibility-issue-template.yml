@@ -1,18 +1,10 @@
 name: 'Feasibility Issue Template '
 description: 'Used to standardize issue forms '
 title: 'Standard Feasibility Issue Template '
-- type: markdown
-  id: dependencies
-  attributes:
-    label: "## Dependencies"
-- type: checkboxes
-  id: checkbox-items
-  options:
-    label: Dependency 1
-    label: Dependency 2
+
 
 body:
-  - type: input
+  - type: textarea
     id: overview
     attributes:
       label: Overview
@@ -20,29 +12,39 @@ body:
     validations:
       required: true
   - type: markdown
+    id: dependencies
+    attributes:
+      label: "## Dependencies"
+      description: Indicate if there are dependencies associated with this issue
+  - type: checkboxes
+    id: checkbox-items
+    options:
+      label: Dependency 1
+      label: Dependency 2  
+  - type: markdown
     id: action-items
-    aattributes:
+    attributes:
       label: "## Action Items"
       description: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
   - type: checkboxes
     id: items
     options: 
-      - label: Instruction example 1
-      - label: Instruction example 2
-      - label: Instruction example 3
+      - label: "Instruction example 1"
+      - label: "Instruction example 2"
+      - label: "Instruction example 3"
     validations:
       required: true
   - type: markdown
-    id: feasibility-checklsit
+    id: feasibility-checklist
     attributes:
       label: "## Feasibility Checklist"
       description: "List feasibility related issues."
   - type: checkboxes
     id: feasibility-items
     options: 
-     - label: Check 1
-     - label: Check 2
-     - label: Check 3
+     - label: "Check 1"
+     - label: "Check 2"
+     - label: "Check 3"
      validations:
       required: true
   - type: textarea
