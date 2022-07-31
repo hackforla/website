@@ -157,7 +157,7 @@ async function getCommentContributors(repo, dateLastRan) {
 }
 
 /**
- * Fetches comment contributors for a given repo
+ * Requests owner login for a given repo.
  * @param {Object} repo     [Repository object from GitHub]
  * @return {Object}     [An object containing parameters for making a contributors data request]
  */
