@@ -42,9 +42,9 @@ body:
   - type: checkboxes
     id: feasibility-items
     options: 
-     - label: "Check 1"
-     - label: "Check 2"
-     - label: "Check 3"
+      - label: "Check 1"
+      - label: "Check 2"
+      - label: "Check 3"
      validations:
       required: true
   - type: textarea
