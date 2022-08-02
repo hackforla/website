@@ -44,7 +44,7 @@
 }
 
 .donate-card-container {
-    background: #f7f5f5;
+    background: $color-pink;
     display: flex;
     flex-direction: column;
     
@@ -122,7 +122,7 @@
     
     .donate-donation {
         margin: 20px auto;
-        background: #f6f6f6;
+        background: $color-whitesmoke;
         padding: 20px;
         border-radius: 20px;
 
