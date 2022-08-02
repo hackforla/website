@@ -41,7 +41,6 @@ body:
     attributes:
       label: "## Feasibility Checklist"
       description: "List feasibility related issues."
-    name: "Feasibility Checklist"
   - type: checkboxes
     id: feasibility-items
     attributes:
