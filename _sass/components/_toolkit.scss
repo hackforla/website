@@ -25,7 +25,7 @@
 }
 
 .toolkit-background {
-    background-color: #030D2D;
+    background-color: $color-darkblue;
     padding: 2rem;
 }
 
@@ -44,7 +44,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 1.75rem;
-    color: #FFFFFF;
+    color: $color-white;
     margin-bottom: 0;
 }
 
@@ -278,7 +278,7 @@
 #dropdown-select {
     width: 310px;
     height: 44px;
-    background: #FFFFFF;
+    background: $color-white;
     border: 1px solid rgba(0, 0, 0, 0.24);
     box-sizing: border-box;
     border-radius: 5px;
