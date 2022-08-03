@@ -7,25 +7,25 @@ body:
   - type: textarea
     id: overview
     attributes:
-      label: Overview
-      description: Clearly state the purpose of this issue in 2 sentences or less
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
     validations:
       required: true
   - type: markdown
     id: dependencies
     attributes:
-      label: "## Dependencies"
-      description: Indicate if there are dependencies associated with this issue
+      value: "## Dependencies"
+      description: "Indicate if there are dependencies associated with this issue"
   - type: checkboxes
     id: checkbox-items
     attributes:
       options:
-        label: Dependency 1
-        label: Dependency 2  
+        label: "Dependency 1"
+        label: "Dependency 2"  
   - type: markdown
     id: action-items
     attributes:
-      label: "## Action Items"
+      value: "## Action Items"
       description: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
   - type: checkboxes
     id: items
@@ -39,7 +39,7 @@ body:
   - type: markdown
     id: feasibility-checklist
     attributes:
-      label: "## Feasibility Checklist"
+      value: "## Feasibility Checklist"
       description: "List feasibility related issues."
   - type: checkboxes
     id: feasibility-items
