@@ -15,10 +15,10 @@ body:
     id: dependencies
     attributes:
       value: "## Dependencies"
-      label: "Indicate if there are dependencies associated with this issue"
   - type: checkboxes
     id: checkbox-items
     attributes:
+      label: "Indicate if there are dependencies associated with this issue"
       options:
         label: "Dependency 1"
         label: "Dependency 2"  
