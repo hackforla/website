@@ -48,7 +48,7 @@ body:
         - label: "Check 1"
         - label: "Check 2"
         - label: "Check 3"
-     validations:
+    validations:
       required: true
   - type: textarea
     id: resources-instructions
