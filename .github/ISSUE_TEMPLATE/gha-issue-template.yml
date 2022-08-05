@@ -1,5 +1,5 @@
-name: "Sample name"
-description: Sample description
+name: "Github Actions"
+description: This is to create a new GHA
 title: "Sample form for GitHub actions "
 body:
   - type: dropdown
@@ -20,7 +20,8 @@ body:
     attributes:
       label: "Overview"
       description: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
-      placeholder: "Clearly state the purpose of this issue in 2 sentences or less"
+      placeholder: |
+        Clearly state the purpose of this issue in 2 sentences or less!
   - type: checkboxes
     attributes:
       label: Psudo-code
@@ -31,7 +32,7 @@ body:
         - label:  My changes generate no lint errors
         - label:  I have added tests that prove my fix is effective or that my feature works
         - label:  New and existing unit tests pass locally with my changes
-          required: false
+          required: true
   - type: markdown
     attributes:
       value: "## Action Items"
@@ -41,7 +42,7 @@ body:
       label: "Resources-instructions"
       description: "https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions"
     validations:
-      required: false
+      required: true
   - type: checkboxes
     attributes:
       label: This is to create a new GHA
@@ -49,4 +50,4 @@ body:
         Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
       options:
         - label: I have searched the existing issues
-          required: false
+          required: true
