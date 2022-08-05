@@ -1,0 +1,53 @@
+name: "Sample name"
+description: Sample description
+title: "Sample form for GitHub actions "
+body:
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: dependency-explanation
+    attributes:
+      label: If Yes, please explain
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
+      placeholder: |
+    
+  - type: checkboxes
+    attributes:
+      label: Psudo-code
+      description: Checklist on how to use the GitHub actions
+      options:
+        - label:  I have read the [CONTRIBUTING.md]()
+        - label:  I have made corresponding changes to the documentation
+        - label:  My changes generate no lint errors
+        - label:  I have added tests that prove my fix is effective or that my feature works
+        - label:  New and existing unit tests pass locally with my changes
+          required: false
+  - type: markdown
+    attributes:
+      value: "## Action Items"
+  - type: textarea
+    id: Resources
+    attributes:
+      label: "Resources-instructions"
+      description: "https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions"
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: This is to create a new GHA
+      description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
+        Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
+      options:
+        - label: I have searched the existing issues
+          required: false
