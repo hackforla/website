@@ -20,7 +20,7 @@ body:
     attributes:
       label: "Overview"
       description: "Clearly state the purpose of this issue in 2 sentences or less"
-      placeholder: " "
+      placeholder: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
   - type: checkboxes
     attributes:
       label: Psudo-code
