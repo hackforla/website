@@ -20,8 +20,7 @@ body:
     attributes:
       label: "Overview"
       description: "Clearly state the purpose of this issue in 2 sentences or less"
-      placeholder: |
-    
+      placeholder: " "
   - type: checkboxes
     attributes:
       label: Psudo-code
