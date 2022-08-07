@@ -25,7 +25,6 @@ body:
   - type: checkboxes
     attributes:
       label: Pseudo-code
-      description: Checklist on how to use the GitHub actions
       options:
         - label:  I have read the [CONTRIBUTING.md]()
         - label:  I have made corresponding changes to the documentation
