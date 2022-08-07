@@ -39,14 +39,14 @@ body:
     id: Resources
     attributes:
       label: "Resources-instructions"
-      description: "https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions"
+      description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
+        Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
+
     validations:
       required: true
   - type: checkboxes
     attributes:
       label: This is to create a new GHA
-      description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
-        Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
       options:
         - label: I have searched the existing issues
           required: true
