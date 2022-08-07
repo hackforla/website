@@ -23,19 +23,14 @@ body:
       placeholder: |
         Clearly state the purpose of this issue in 2 sentences or less!
   - type: textarea
-    id: pseudo-code
-    attributes:
-      label: Checklist on how to use the GitHub actions
-  - type: checkboxes
     attributes:
       label: "Action Items/Pseudo-code"
-      options:
-        - label:  I have read the [CONTRIBUTING.md]()
-        - label:  I have made corresponding changes to the documentation
-        - label:  My changes generate no lint errors
-        - label:  I have added tests that prove my fix is effective or that my feature works
-        - label:  New and existing unit tests pass locally with my changes
-          required: false
+      value:  |
+        - [] I have read the [CONTRIBUTING.md]()
+        - [] I have made corresponding changes to the documentation
+        - [] My changes generate no lint errors
+        - [] I have added tests that prove my fix is effective or that my feature works
+        - [] New and existing unit tests pass locally with my changes
   - type: textarea
     id: Resources
     attributes:
