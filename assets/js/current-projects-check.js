@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded",function(){
             if(filterName === "programs"){
                 filterTitle = "program areas"
             } else if(filterName === 'technologies') {
-                filterTitle = 'languages / technologies'
+                filterTitle = 'technologies'
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
                     b = b.toLowerCase()
@@ -161,9 +161,9 @@ function createFilter(sortedProjectData){
     return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
-            'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
+            
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
 
         }
 }
@@ -427,8 +427,8 @@ return `
         <li class="project-card" id="${ project.identification }"
             data-status="${project.status}"
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-            data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
-
+            data-technologies="${project.technologies  ? [... new Set(project.technologies.map(tech => tech))] : '' }"
+            data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
