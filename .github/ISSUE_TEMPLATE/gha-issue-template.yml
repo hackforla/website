@@ -22,9 +22,13 @@ body:
       description: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
       placeholder: |
         Clearly state the purpose of this issue in 2 sentences or less!
+  - type: textarea
+    id: pseudo-code
+    attributes:
+      label: Psuedo-code
   - type: checkboxes
     attributes:
-      label: Pseudo-code
+      label: "Action Items/Pseudo-code"
       options:
         - label:  I have read the [CONTRIBUTING.md]()
         - label:  I have made corresponding changes to the documentation
