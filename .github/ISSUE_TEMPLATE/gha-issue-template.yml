@@ -35,7 +35,7 @@ body:
         - label:  My changes generate no lint errors
         - label:  I have added tests that prove my fix is effective or that my feature works
         - label:  New and existing unit tests pass locally with my changes
-          required: true
+          required: false
   - type: markdown
     attributes:
       value: "## Action Items"
@@ -45,7 +45,6 @@ body:
       label: "Resources-instructions"
       description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
         Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
-
     validations:
       required: true
   - type: checkboxes
