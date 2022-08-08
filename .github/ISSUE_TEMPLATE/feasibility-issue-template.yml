@@ -25,8 +25,9 @@ body:
       options:
         - "Yes"
         - "No"
+    validations:
+      required: true
   - type: markdown
-    #id: dependencies
     attributes:
       value: "## Dependencies"
   - type: checkboxes
@@ -37,7 +38,6 @@ body:
         - label: "Dependency 1"
         - label: "Dependency 2"  
   - type: markdown
-    #id: action-items
     attributes:
       value: "## Action Items"
   - type: checkboxes
@@ -48,10 +48,7 @@ body:
         - label: "Instruction example 1"
         - label: "Instruction example 2"
         - label: "Instruction example 3"
-    # validations:
-    #   required: true
   - type: markdown
-    #id: feasibility-checklist
     attributes:
       value: "## Feasibility Checklist"
   - type: checkboxes
@@ -62,8 +59,6 @@ body:
         - label: "Check 1"
         - label: "Check 2"
         - label: "Check 3"
-    # validations:
-    #   required: true
   - type: textarea
     id: resources-instructions
     attributes:
