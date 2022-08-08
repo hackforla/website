@@ -5,12 +5,26 @@ title: 'Standard Feasibility Issue Template '
 
 body:
   - type: textarea
+    id: title
+    attributes:
+      label: "Title"
+      description: "Enter the title of this issue"
+    validations:
+      required: true
+  - type: textarea
     id: overview
     attributes:
       label: "Overview"
       description: "Clearly state the purpose of this issue in 2 sentences or less"
     validations:
       required: true
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
   - type: markdown
     id: dependencies
     attributes:
