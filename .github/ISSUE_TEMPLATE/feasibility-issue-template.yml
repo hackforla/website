@@ -4,18 +4,11 @@ title: 'Standard Feasibility Issue Template '
 
 
 body:
-  - type: textarea
+  - type: input
     id: title
     attributes:
       label: "Title"
       description: "Enter the title of this issue"
-    validations:
-      required: true
-  - type: textarea
-    id: overview
-    attributes:
-      label: "Overview"
-      description: "Clearly state the purpose of this issue in 2 sentences or less"
     validations:
       required: true
   - type: dropdown
@@ -27,16 +20,27 @@ body:
         - "No"
     validations:
       required: true
-  - type: markdown
+  - type: textarea
+    id: dependency-explanation
     attributes:
-      value: "## Dependencies"
-  - type: checkboxes
-    id: checkbox-items
+      label: "If yes, please explain"
+  # - type: markdown
+  #   attributes:
+  #     value: "## Dependencies"
+  # - type: checkboxes
+  #   id: checkbox-items
+  #   attributes:
+  #     label: "Indicate if there are dependencies associated with this issue"
+  #     options:
+  #       - label: "Dependency 1"
+  #       - label: "Dependency 2"  
+  - type: textarea
+    id: overview
     attributes:
-      label: "Indicate if there are dependencies associated with this issue"
-      options:
-        - label: "Dependency 1"
-        - label: "Dependency 2"  
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: "## Action Items"
