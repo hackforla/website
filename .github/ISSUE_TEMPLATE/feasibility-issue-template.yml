@@ -41,28 +41,44 @@ body:
       description: "Clearly state the purpose of this issue in 2 sentences or less"
     validations:
       required: true
-  - type: markdown
+  - type: textarea
+    id: action-items
     attributes:
-      value: "## Action Items"
-  - type: checkboxes
-    id: items
-    attributes:
-      label: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
-      options: 
-        - label: "Instruction example 1"
-        - label: "Instruction example 2"
-        - label: "Instruction example 3"
-  - type: markdown
-    attributes:
-      value: "## Feasibility Checklist"
-  - type: checkboxes
+      label: "Action Items"
+      description: >-
+        List the research to be done, or the steps to be completed. 
+        Note: If the steps can be divided into tasks for more than one person, 
+        we recommend dividing it up into separate issues, or assigning it as a pair programming task.
+    validations:
+      required: true
+  - type: textarea
     id: feasibility-items
     attributes:
-      label: "List feasibility related issues."
-      options: 
-        - label: "Check 1"
-        - label: "Check 2"
-        - label: "Check 3"
+      label: "Feasibility Items"
+    validations:
+      required: true
+  # - type: markdown
+  #   attributes:
+  #     value: "## Action Items"
+  # - type: checkboxes
+  #   id: items
+  #   attributes:
+  #     label: "List the research to be done, or the steps to be completed. Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task."
+  #     options: 
+  #       - label: "Instruction example 1"
+  #       - label: "Instruction example 2"
+  #       - label: "Instruction example 3"
+  # - type: markdown
+  #   attributes:
+  #     value: "## Feasibility Checklist"
+  # - type: checkboxes
+  #   id: feasibility-items
+  #   attributes:
+  #     label: "List feasibility related issues."
+  #     options: 
+  #       - label: "Check 1"
+  #       - label: "Check 2"
+  #       - label: "Check 3"
   - type: textarea
     id: resources-instructions
     attributes:
