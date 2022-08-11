@@ -55,18 +55,15 @@ body:
         - "label":  "Make sure the labels are placed in the code in such a way that we can easily add, edit, or delete labels"
         - "label":  "~~The columns id should ideally be a secret, so that they are not exposed. When the id is found, please consult an admin to add it to [our secrets](https://docs.github.com/en/actions/reference/encrypted-secrets).~~ Columns id can be retrieved as a link, from the columns settings menu, [for example ](https://github.com/hackforla/website/projects/7#column-7198257). Please retrieve the id from there."
         - "label":  "In the PR, request the reviewer to, after merging, test that the board automation does not intercept or supercede this GHA. If so, the team leads will need to remove the default automation to allow this one to work."
-  - type: textarea
-    id: Resources
+  - type: markdown
     attributes:
-      label: "Resources/Instructions"
-      description: "Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
-    validations:
-      required: true
+      value: Resources/Instructions
+  - type: markdown
+    attributes:
+      value: "#### Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
   - type: checkboxes
+    id: check
     attributes:
-      label: This is to create a new GHA
-      description: Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)
-                  Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!
+      label: Create a new GHA
       options:
-        - label: staple-text
-          required: false
+        - "label":  "Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
