@@ -24,23 +24,23 @@ body:
         Clearly state the purpose of this issue in 2 sentences or less!
     validations:
       required: true
-  - type: input
+  - type: textarea
     attributes:
       label: "Action Items/Pseudo-code"
       value: |
-          - [x] "When an issue/PR is closed:"
-            - [x] "If the issue/PR contains a label from the hard label list:"
-              - [x] "Place the issue/PR in the column marked 'Done'."
-          - [x] "Else if the issue/PR contains a label from the soft label list:"
-            - [x] "If the issue also contains a label from the soft label counter list:"
-              - [x] "Place the issue/PR in the column marked 'UAT'"
-          - [x] "Else:"
-            - [x] "Place the issue/PR in the column marked 'Done'."
-          - [x] "Else:"
-            - [x] "Place the issue/PR in the column marked 'UAT'."
-          - [x] "Hard label list: any labels involving refactoring"
-          - [x] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
-          - [x] "Soft label counter-list: 'role: front end'"
+          - [ ] "When an issue/PR is closed:"
+            - [ ] "If the issue/PR contains a label from the hard label list:"
+              - [ ] "Place the issue/PR in the column marked 'Done'."
+          - [ ] "Else if the issue/PR contains a label from the soft label list:"
+            - [ ] "If the issue also contains a label from the soft label counter list:"
+              - [ ] "Place the issue/PR in the column marked 'UAT'"
+          - [ ] "Else:"
+            - [ ] "Place the issue/PR in the column marked 'Done'."
+          - [ ] "Else:"
+            - [ ] "Place the issue/PR in the column marked 'UAT'."
+          - [ ] "Hard label list: any labels involving refactoring"
+          - [ ] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
+          - [ ] "Soft label counter-list: 'role: front end'"
     validations:
       required: true
   - type: textarea
