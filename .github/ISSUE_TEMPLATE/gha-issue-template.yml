@@ -27,12 +27,26 @@ body:
   - type: textarea
     attributes:
       label: "Action Items/Pseudo-code"
-      value:  |
-        - [ ] I have read the [CONTRIBUTING.md]()
-        - [ ] I have made corresponding changes to the documentation
-        - [ ] My changes generate no lint errors
-        - [ ] I have added tests that prove my fix is effective or that my feature works
-        - [ ] New and existing unit tests pass locally with my changes
+      value: |
+        - [ ] When an issue/PR is closed:
+          - [ ] If the issue/PR contains a label from the hard label list:
+            - [ ] Place the issue/PR in the column marked 'Done'.
+        - [ ] Else if the issue/PR contains a label from the soft label list:
+          - [ ] If the issue also contains a label from the soft label counter list:
+            - [ ] Place the issue/PR in the column marked 'UAT'
+        - [ ] Else:
+          - [ ] Place the issue/PR in the column marked 'Done'.
+        - [ ] Else:
+          - [ ] Place the issue/PR in the column marked 'UAT'.
+        - [ ] Hard label list: any labels involving refactoring
+        - [ ] Soft label list: 'role: back end' label, 'Feature: Analytics'
+        - [ ] Soft label counter-list: 'role: front end'
+      # value:  |
+      #   - [ ] I have read the [CONTRIBUTING.md]()
+      #   - [ ] I have made corresponding changes to the documentation
+      #   - [ ] My changes generate no lint errors
+      #   - [ ] I have added tests that prove my fix is effective or that my feature works
+      #   - [ ] New and existing unit tests pass locally with my changes
   - type: textarea
     id: Resources
     attributes:
