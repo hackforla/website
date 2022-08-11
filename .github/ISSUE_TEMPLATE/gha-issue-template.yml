@@ -24,23 +24,25 @@ body:
         Clearly state the purpose of this issue in 2 sentences or less!
     validations:
       required: true
-  - type: checkboxes
+  - type: input
     attributes:
       label: "Action Items/Pseudo-code"
-      options:
-          - label:  "When an issue/PR is closed:"
-          - label:  "If the issue/PR contains a label from the hard label list:"
-          - label:  "Place the issue/PR in the column marked 'Done'."
-          - label:  "Else if the issue/PR contains a label from the soft label list:"
-          - label:  "If the issue also contains a label from the soft label counter list:"
-          - label:  "Place the issue/PR in the column marked 'UAT'"
-          - label:  "Else:"
-          - label:  "Place the issue/PR in the column marked 'Done'."
-          - label:  "Else:"
-          - label:  "Place the issue/PR in the column marked 'UAT'."
-          - label:  "Hard label list: any labels involving refactoring"
-          - label:  "Soft label list: 'role: back end' label, 'Feature: Analytics'"
-          - label:  "Soft label counter-list: 'role: front end'"
+      value: |
+          - [x] "When an issue/PR is closed:"
+            - [x] "If the issue/PR contains a label from the hard label list:"
+              - [x] "Place the issue/PR in the column marked 'Done'."
+          - [x] "Else if the issue/PR contains a label from the soft label list:"
+            - [x] "If the issue also contains a label from the soft label counter list:"
+              - [x] "Place the issue/PR in the column marked 'UAT'"
+          - [x] "Else:"
+            - [x] "Place the issue/PR in the column marked 'Done'."
+          - [x] "Else:"
+            - [x] "Place the issue/PR in the column marked 'UAT'."
+          - [x] "Hard label list: any labels involving refactoring"
+          - [x] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
+          - [x] "Soft label counter-list: 'role: front end'"
+    validations:
+      required: true
   - type: textarea
     id: Resources
     attributes:
