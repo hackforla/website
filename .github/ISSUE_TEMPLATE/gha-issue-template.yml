@@ -46,20 +46,22 @@ body:
   - type: markdown
     attributes:
       # label: "Action Items/Pseudo-code"
+      value: "## Action Items/Pseudo-code"
+  - type: markdown
+    attributes:
       value: |
-          - [ ] "When an issue/PR is closed:"
-              - [ ] "If the issue/PR contains a label from the hard label list:"
-                  - [ ] "Place the issue/PR in the column marked 'Done'."
-              - [ ] "Else if the issue/PR contains a label from the soft label list:"
-                  - [ ] "If the issue also contains a label from the soft label counter list:"
-                      - [ ] "Place the issue/PR in the column marked 'UAT'"
-                  - [ ] "Else:"
-                      - [ ] "Place the issue/PR in the column marked 'Done'."
-              - [ ] "Else:"
-                    - [ ] "Place the issue/PR in the column marked 'UAT'."
-          - [ ] "Hard label list: any labels involving refactoring"
-          - [ ] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
-          - [ ] "Soft label counter-list: 'role: front end'"
+        - [ ] "When an issue/PR is closed:"
+            - [ ] "If the issue/PR contains a label from the hard label list:"
+                - [ ] "Place the issue/PR in the column marked 'Done'."
+            - [ ] "Else if the issue/PR contains a label from the soft label list:"
+                - [ ] "If the issue also contains a label from the soft label counter list:"                      - [ ] "Place the issue/PR in the column marked 'UAT'"
+            - [ ] "Else:"
+                - [ ] "Place the issue/PR in the column marked 'Done'."
+            - [ ] "Else:"
+                  - [ ] "Place the issue/PR in the column marked 'UAT'."
+        - [ ] "Hard label list: any labels involving refactoring"
+        - [ ] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
+        - [ ] "Soft label counter-list: 'role: front end'"
     # validations:
     #   required: false
   - type: checkboxes
