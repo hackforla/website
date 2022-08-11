@@ -15,15 +15,12 @@ body:
     id: dependency-explanation
     attributes:
       label: If Yes, please explain
-  - type: textarea
-    id: overview
+  - type: markdown
     attributes:
-      label: "Overview"
-      description: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
-      placeholder: |
-        Clearly state the purpose of this issue in 2 sentences or less!
-    validations:
-      required: true
+      value: "## Overview"
+  - type: markdown
+    attributes:
+      value: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
   - type: markdown
     attributes:
       value: "## Action Items/Pseudo-code"
@@ -57,13 +54,24 @@ body:
         - "label":  "In the PR, request the reviewer to, after merging, test that the board automation does not intercept or supercede this GHA. If so, the team leads will need to remove the default automation to allow this one to work."
   - type: markdown
     attributes:
-      value: Resources/Instructions
+      value: "## Resources/Instructions"
   - type: markdown
     attributes:
-      value: "#### Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+      value: "A link to Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+      # value: "#### Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+  # - type: checkboxes
+  #   id: check
+  #   attributes:
+  #     label: Create a new GHA
+  #     options:
+  #       - "label":  "Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
   - type: checkboxes
-    id: check
     attributes:
-      label: Create a new GHA
+      label: Create new GHA
+      description: "This is to create a new GHA"
       options:
-        - "label":  "Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
+        - label: "A link to Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+          required: true
+  - type: markdown
+    attributes:
+      value: "Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"
