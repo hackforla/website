@@ -42,7 +42,19 @@ body:
           - [ ] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
           - [ ] "Soft label counter-list: 'role: front end'"
     validations:
-      required: true
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - "label":  "An issue containing only 'role: back end' and 'role: front end' labels closes -> UAT."
+        - "label":  "An issue containing only 'role: front end' closes -> UAT."
+        - "label":  "An issue containing only 'Feature: Refactor CSS', 'Feature: Refactor JS / Liquid', and 'P-Feature: Home page' -> Done."
+        - "label":  "An issue containing no label -> UAT"
+        - "label":  "Make sure the labels are placed in the code in such a way that we can easily add, edit, or delete labels"
+        - "label":  "~~The columns id should ideally be a secret, so that they are not exposed. When the id is found, please consult an admin to add it to [our secrets](https://docs.github.com/en/actions/reference/encrypted-secrets).~~ Columns id can be retrieved as a link, from the columns settings menu, [for example ](https://github.com/hackforla/website/projects/7#column-7198257). Please retrieve the id from there."
+        - "label":  "In the PR, request the reviewer to, after merging, test that the board automation does not intercept or supercede this GHA. If so, the team leads will need to remove the default automation to allow this one to work."
   - type: textarea
     id: Resources
     attributes:
