@@ -24,29 +24,23 @@ body:
         Clearly state the purpose of this issue in 2 sentences or less!
     validations:
       required: true
-  - type: textarea
+  - type: checkboxes
     attributes:
       label: "Action Items/Pseudo-code"
-      value: |
-        - [ ] When an issue/PR is closed:
-          - [ ] If the issue/PR contains a label from the hard label list:
-            - [ ] Place the issue/PR in the column marked 'Done'.
-        - [ ] Else if the issue/PR contains a label from the soft label list:
-          - [ ] If the issue also contains a label from the soft label counter list:
-            - [ ] Place the issue/PR in the column marked 'UAT'
-        - [ ] Else:
-          - [ ] Place the issue/PR in the column marked 'Done'.
-        - [ ] Else:
-          - [ ] Place the issue/PR in the column marked 'UAT'.
-        - [ ] Hard label list: any labels involving refactoring
-        - [ ] Soft label list: 'role: back end' label, 'Feature: Analytics'
-        - [ ] Soft label counter-list: 'role: front end'
-      # value:  |
-      #   - [ ] I have read the [CONTRIBUTING.md]()
-      #   - [ ] I have made corresponding changes to the documentation
-      #   - [ ] My changes generate no lint errors
-      #   - [ ] I have added tests that prove my fix is effective or that my feature works
-      #   - [ ] New and existing unit tests pass locally with my changes
+      options:
+          - label:  "When an issue/PR is closed:"
+          - label:  "If the issue/PR contains a label from the hard label list:"
+          - label:  "Place the issue/PR in the column marked 'Done'."
+          - label:  "Else if the issue/PR contains a label from the soft label list:"
+          - label:  "If the issue also contains a label from the soft label counter list:"
+          - label:  "Place the issue/PR in the column marked 'UAT'"
+          - label:  "Else:"
+          - label:  "Place the issue/PR in the column marked 'Done'."
+          - label:  "Else:"
+          - label:  "Place the issue/PR in the column marked 'UAT'."
+          - label:  "Hard label list: any labels involving refactoring"
+          - label:  "Soft label list: 'role: back end' label, 'Feature: Analytics'"
+          - label:  "Soft label counter-list: 'role: front end'"
   - type: textarea
     id: Resources
     attributes:
