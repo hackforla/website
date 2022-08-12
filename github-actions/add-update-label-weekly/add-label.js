@@ -7,9 +7,9 @@ var context;
 const statusUpdatedLabel = 'Status: Updated';
 const toUpdateLabel = 'To Update !';
 const inactiveLabel = '2 weeks inactive';
-const updatedByDays = 3; // number of days ago to check for to update label
-const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
-const commentByDays = 7; // number of days ago to check for comment by assignee
+const updatedByDays = 1; // number of days ago to check for to update label
+const inactiveUpdatedByDays = 1; // number of days ago to check for inactive label
+const commentByDays = 1; // number of days ago to check for comment by assignee
 const threeDayCutoffTime = new Date()
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
