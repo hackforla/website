@@ -13,24 +13,24 @@ leadership:
       slack: https://hackforla.slack.com/team/U020Z27JB1S
       github: https://github.com/sdimran
     picture: https://avatars.githubusercontent.com/sdimran
-  - name: Sharad Gaurav
+  - name: Salima Yacoubi Soussane 
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U01RETBMLKS
-      github: https://github.com/SharadGaurav7
-    picture: https://avatars.githubusercontent.com/SharadGaurav7
+      slack: https://hackforla.slack.com/team/U03HUJM7YCX
+      github: https://github.com/Salimays
+    picture: https://avatars.githubusercontent.com/Salimays
   - name: Ava Li
     role: Full Stack Developer
     links:
       slack: https://hackforla.slack.com/team/U01B73XGCKV
       github: https://github.com/Aveline-art
     picture: https://avatars.githubusercontent.com/Aveline-art
-  - name: Sarah Williams
-    role: Software Developer
+  - name: Kevin Park
+    role: Backend Developer
     links:
-      slack: https://hackforla.slack.com/team/U01S1S75NLW
-      github: https://github.com/arghmatey
-    picture: https://avatars.githubusercontent.com/arghmatey
+      slack: https://hackforla.slack.com/team/U02B1MG90PK
+      github: https://github.com/Enzyme3
+    picture: https://avatars.githubusercontent.com/Enzyme3
   - name: Jen Chung
     role: UX/UI Designer
     links:
@@ -43,12 +43,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U02AE5H5BJ9
       github: https://github.com/graceerya
     picture: https://avatars.githubusercontent.com/graceerya
-  - name: Patty Costello
+  - name: Maria Elizabeth Rodriguez Beltran
     role: UX Researcher
     links:
-      slack: https://hackforla.slack.com/team/U01UTFC17L4
-      github: https://github.com/patula006
-    picture: https://avatars.githubusercontent.com/patula006
+      slack: https://hackforla.slack.com/team/U035B853S4W
+      github: https://github.com/mariaelizabeth04
+    picture: https://avatars.githubusercontent.com/mariaelizabeth04
   - name: Stephanie G. Stahlberg
     role: UX Researcher
     links:
@@ -61,6 +61,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U02C41H7919
       github: https://github.com/dendorable
     picture: https://avatars.githubusercontent.com/dendorable
+  - name: Summer Kim
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U0374ALAX2Q
+      github: https://github.com/hkimsummer
+    picture: https://avatars.githubusercontent.com/hkimsummer
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
