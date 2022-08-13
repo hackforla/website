@@ -145,7 +145,7 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 				return {result: false, labels: statusUpdatedLabel}
 			}
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
-				return {result: true, labels: inactiveLabel}
+				return {result: false}
 			}
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < threeDayCutoffTime.valueOf())) { // returns true if issue was created before 3 days
 				return {result: true, labels: toUpdateLabel}
