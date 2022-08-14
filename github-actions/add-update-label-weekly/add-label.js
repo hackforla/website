@@ -137,7 +137,11 @@ async function getTimeline(issueNum) {
 
 async function isTimelineOutdated(timeline, issueNum, assignees) {
 	for await (let [index, moment] of timeline.entries()) {
-		if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) { // checks if commented within last three days
+		if (isMomentRecent(moment.created_at, threeDayCutoffTime)) { // all the events of an issue within last three days will return true
+			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced within last three days
+				return {result: false, labels: statusUpdatedLabel}
+			}
+			else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) { // checks if commented within last three days
 				return {result: false, labels: statusUpdatedLabel}
 			}
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
@@ -145,9 +149,6 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 			}
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < threeDayCutoffTime.valueOf())) { // returns true if issue was created before 3 days
 				return {result: false, labels: toUpdateLabel}
-			}
-			else if (index === timeline.length-1) { // returns true if above two else ifs are false meaning issue was created within last 3 days
-				return {result: false, labels: statusUpdatedLabel}
 			}
 		}
 		else if (isMomentRecent(moment.created_at, sevenDayCutoffTime)) { // all the events of an issue between three and seven days will return true
