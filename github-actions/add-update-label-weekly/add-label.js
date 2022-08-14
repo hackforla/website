@@ -223,7 +223,7 @@ async function addLabels(issueNum, ...labels) {
     await github.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
-      issue_number: issueNum,
+      issue_number: issueNum, tomato tomato tomato
       labels: labels,
     });
     console.log(`Added these labels to issue #${issueNum}: ${labels}`);
