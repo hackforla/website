@@ -154,17 +154,17 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 		else if (isMomentRecent(moment.created_at, sevenDayCutoffTime)) { // all the events of an issue between three and seven days will return true
 			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced between 3 and 7 days
 				console.log('between 3 and 7 cross referenced');
-				return {result: false, labels: statusUpdatedLabel}
+				return {result: true, labels: statusUpdatedLabel}
 			}
 			else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) { // checks if commented between 3 and 7 days
 				console.log('between 3 and 7 commented');
-				return {result: false, labels: statusUpdatedLabel}
+				return {result: true, labels: statusUpdatedLabel}
 			}
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
-				return {result: true, labels: inactiveLabel}
+				return {result: false, labels: inactiveLabel}
 			}
 			else if (index === timeline.length-1) { // returns true if the latest event created is between 3 and 7 days  
-				return {result: true, labels: toUpdateLabel}
+				return {result: false, labels: toUpdateLabel}
 			}
 		}
 		else if (isMomentRecent(moment.created_at, fourteenDayCutoffTime)) { // all the events of an issue between seven and fourteen days will return true
