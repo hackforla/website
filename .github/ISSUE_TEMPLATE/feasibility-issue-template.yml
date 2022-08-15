@@ -54,7 +54,7 @@ body:
   - type: checkboxes
     id: feasibility-checklist
     attributes:
-      label: "List feasibility related issues."
+      label: "List feasibility related issues"
       options: 
         - label: "Check 1"
         - label: "Check 2"
