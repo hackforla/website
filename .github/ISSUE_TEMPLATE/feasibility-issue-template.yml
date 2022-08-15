@@ -51,6 +51,14 @@ body:
         we recommend dividing it up into separate issues, or assigning it as a pair programming task.
     validations:
       required: true
+  - type: checkboxes
+    id: feasibility-checklist
+    attributes:
+      label: "List feasibility related issues."
+      options: 
+        - label: "Check 1"
+        - label: "Check 2"
+        - label: "Check 3"
   - type: textarea
     id: feasibility-items
     attributes:
@@ -71,14 +79,6 @@ body:
   # - type: markdown
   #   attributes:
   #     value: "## Feasibility Checklist"
-  # - type: checkboxes
-  #   id: feasibility-items
-  #   attributes:
-  #     label: "List feasibility related issues."
-  #     options: 
-  #       - label: "Check 1"
-  #       - label: "Check 2"
-  #       - label: "Check 3"
   - type: textarea
     id: resources-instructions
     attributes:
