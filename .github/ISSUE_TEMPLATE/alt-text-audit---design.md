@@ -2,9 +2,10 @@
 name: Alt Text Audit - Design
 about: WCAG Audit
 title: Review alt text for WCAG compliance on [insert page name here] page
-labels: 'Feature: Accessibility, Feature: Onboarding/Contributing.md, prework, Ready
-  for Milestone, role: design, Size: Small, size: 1pt'
-assignees: ''
+labels: 'Feature: Accessibility, Feature: Onboarding/Contributing.md, Feature: Wiki,
+  prework, Ready for Milestone, role: design, role: user research, Size: Small, size:
+  0.5pt, size: 1pt'
+assignees: sacamp
 
 ---
 
