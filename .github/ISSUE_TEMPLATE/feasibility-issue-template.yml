@@ -41,16 +41,25 @@ body:
       description: "Clearly state the purpose of this issue in 2 sentences or less"
     validations:
       required: true
-  - type: textarea
-    id: action-items
+  - type: markdown
     attributes:
-      label: "Action Items"
-      description: >-
-        List the research to be done, or the steps to be completed. 
-        Note: If the steps can be divided into tasks for more than one person, 
-        we recommend dividing it up into separate issues, or assigning it as a pair programming task.
-    validations:
-      required: true
+      value: "## Action Items"
+  - type: markdown
+    attributes:
+      value: |
+        - [ ] "Action Item 1"
+        - [ ] "Action Item 2"
+        - [ ] "Action Item 3"
+  # - type: textarea
+  #   id: action-items
+  #   attributes:
+  #     label: "Action Items"
+  #     description: >-
+  #       List the research to be done, or the steps to be completed. 
+  #       Note: If the steps can be divided into tasks for more than one person, 
+  #       we recommend dividing it up into separate issues, or assigning it as a pair programming task.
+  #   validations:
+  #     required: true
   - type: checkboxes
     id: feasibility-checklist
     attributes:
