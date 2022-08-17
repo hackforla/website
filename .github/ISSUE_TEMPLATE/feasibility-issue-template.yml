@@ -47,9 +47,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        - [ ] "Action Item 1"
-        - [ ] "Action Item 2"
-        - [ ] "Action Item 3"
+        - [ ] Action Item 1
+        - [ ] Action Item 2
+        - [ ] Action Item 3
   # - type: textarea
   #   id: action-items
   #   attributes:
@@ -68,12 +68,12 @@ body:
         - label: "Check 1"
         - label: "Check 2"
         - label: "Check 3"
-  - type: textarea
-    id: feasibility-items
-    attributes:
-      label: "Feasibility Items"
-    validations:
-      required: true
+  # - type: textarea
+  #   id: feasibility-items
+  #   attributes:
+  #     label: "Feasibility Items"
+  #   validations:
+  #     required: true
   # - type: markdown
   #   attributes:
   #     value: "## Action Items"
