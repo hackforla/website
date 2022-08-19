@@ -43,7 +43,7 @@ body:
   - type: textarea
     id: action-items
     attributes:
-      label: " "
+      label: "Explain further..."
     validations:
       required: true
   - type: checkboxes
@@ -57,7 +57,7 @@ body:
   - type: textarea
     id: feasibility-items
     attributes:
-      label: " "
+      label: "Explain further..."
     validations:
       required: true
   - type: textarea
