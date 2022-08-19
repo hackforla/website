@@ -43,11 +43,7 @@ body:
   - type: textarea
     id: action-items
     attributes:
-      label: "Action Items"
-      description: >-
-        List the research to be done, or the steps to be completed. 
-        Note: If the steps can be divided into tasks for more than one person, 
-        we recommend dividing it up into separate issues, or assigning it as a pair programming task.
+      label: " "
     validations:
       required: true
   - type: checkboxes
@@ -61,7 +57,7 @@ body:
   - type: textarea
     id: feasibility-items
     attributes:
-      label: "Feasibility Items"
+      label: " "
     validations:
       required: true
   - type: textarea
