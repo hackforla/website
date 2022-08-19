@@ -1,0 +1,69 @@
+name: 'Feasibility Issue Template '
+description: 'Used to standardize issue forms '
+title: 'Standard Feasibility Issue Template '
+
+
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+      description: "Enter the title of this issue"
+    validations:
+      required: true
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: dependency-explanation
+    attributes:
+      label: "If yes, please explain" 
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "## Action Items"
+  - type: markdown
+    attributes:
+      value: |
+        - [ ] Action Item 1
+        - [ ] Action Item 2
+        - [ ] Action Item 3
+  - type: textarea
+    id: action-items
+    attributes:
+      label: "Explain further..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: feasibility-checklist
+    attributes:
+      label: "List feasibility related issues"
+      options: 
+        - label: "Check 1"
+        - label: "Check 2"
+        - label: "Check 3"
+  - type: textarea
+    id: feasibility-items
+    attributes:
+      label: "Explain further..."
+    validations:
+      required: true
+  - type: textarea
+    id: resources-instructions
+    attributes:
+      label: "Resources/Instructions"
+      description: "Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc."
+    validations:
+      required: true
