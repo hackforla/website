@@ -34,7 +34,7 @@ window.addEventListener("scroll", function() {
 
 
 /***************************************************/
-/**** Script 2: Highlight links when scrolling *****/
+/**** Script 3: Highlight links when scrolling *****/
 /***************************************************/
 
 // Initialize
@@ -71,7 +71,7 @@ function scrollHandler() {
 
 
 /***************************************************/
-/**** Script 3: Scroll to the Top (Mobile) *****/
+/**** Script 4: Scroll to the Top (Mobile) *****/
 /***************************************************/
 
 //Get the button:

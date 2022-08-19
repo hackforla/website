@@ -67,7 +67,6 @@
 
 .page-content-container-grid--guides {
 	display: grid;
-	/* grid-template-columns: auto 20vw; */
 	margin-left: 100px;
 
 }
@@ -168,12 +167,11 @@ img {
 	overflow: hidden;
 	border: 0 solid rgba(51, 51, 51, 0.06);
 	border-radius: 16px;
-	padding: 22px;
+	padding: 48px;
 	height: fit-content;
 	max-width: 896px;
 	box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
 	margin-bottom: 48px;
-	padding: 48px;
 }
 
 /* ==========================================================*/
