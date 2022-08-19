@@ -48,10 +48,10 @@ Slack is a communication and collaboration platform that organizes conversations
 
 # **When** to use Reminders ⏰
 
-Slack has a function that **allows you to set up an automatic reminder with a tailored message **sent out by the Bot at a specified time.  
+Slack has a function that **allows you to set up an automatic reminder with a tailored message** sent out by the Bot at a specified time.  
 
 
-## Who uses reminders
+## Who Uses Reminders
 
 * Yourself 
 * Someone else 
@@ -72,54 +72,42 @@ Reminders can be set up in two ways:
 
 ## Option 1: by Navigation
 
-1. Navigate to the channel you want to set up the reminder.
+1. Navigate to the channel you want to set up the reminder.<br>
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image1.png "image_tooltip")
 
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image1.png "image_tooltip")
+2. Click the lightning bolt at the bottom of the message window.<br>
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image13.png "image_tooltip")
 
+3. Then either:
 
-2. Click the lightning bolt at the bottom of the message window 
-
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image13.png "image_tooltip")
-
- 
-3. Then either 
-    1. Filter for and select the reminder option in the Suggested List. 
-
+   a. Filter for and select the reminder option in the Suggested list.
     ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image8.png "image_tooltip")
-
     ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image2.png "image_tooltip")
 
-    2. Type in “reminder”. Go ahead and set your reminder. Click on the “create” button 
-
+   b. Type in “reminder”. Go ahead and set your reminder. Click on the “create” button.
     ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image14.png "image_tooltip")
 
-
-
-
-4. And you should see this confirmation.
-
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image12.png "image_tooltip")
-
-
-    
-
-
-
-
+4. And you should see this confirmation. <br>
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image12.png "image_tooltip")  
 
 ## Option 2: by Direct Entry
 
+<style>
+  code {
+    color: #FA114F;
+  }
+</style>
 
+1. In the message box, type /remind. <br>
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image10.png "image_tooltip")
 
-1. In the message box, type /remind 
+2. To Whom? @ or # <br>
 
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image10.png "image_tooltip")
+   `If to a specific person: @someone` <br>
+   `If the entire channel: #channel`
 
-
-2. To Whom? @ or # 
-If to a specific person: @someone 
-If the entire channel: #channel
 3. In quotes write the reminder text you want the Bot to send out.
+
 4. Last, input day and time you want the Bot to send out the message. **NOTE: the time zone listed will be your time zone.**
 
 
