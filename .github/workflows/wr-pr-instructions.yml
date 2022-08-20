@@ -1,6 +1,6 @@
 name: WR Add Pull Request Instructions
 on:
-  workflow_run:
+  workflow_dispatch
     workflows: ["Add Pull Request Instructions"]
     types: [completed]
 

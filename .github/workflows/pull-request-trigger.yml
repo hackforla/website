@@ -1,6 +1,6 @@
 name: Pull Request Trigger
 on:
-  pull_request:
+  workflow_dispatch
     types: [closed]
     branches:
       - 'gh-pages'

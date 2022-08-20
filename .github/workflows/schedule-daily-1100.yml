@@ -2,8 +2,7 @@ name: Schedule Daily 1100
 
 # Run this action every day at 3am Pacific (11 am UTC)
 on:
-  schedule:
-    - cron:  '0 11 * * *'
+  workflow_dispatch
 
 jobs:
   github_data:

@@ -2,8 +2,7 @@ name: Update VRMS data
 
 # Run this action every day at 2am Pacific (10 am UTC)
 on:
-  schedule:
-    - cron: '0 10 * * *'
+  workflow_dispatch
 
 jobs:
   vrms_data:

@@ -1,6 +1,6 @@
 name: Move Closed Issues
 on:
-  issues:
+  workflow_dispatch
     types:
       - closed
 jobs:
