@@ -1,7 +1,7 @@
 name: Set PR Labels
 
 on:
-  workflow_dispatch
+  pull_request:
     types: [opened, edited]
     branches:
       - 'gh-pages'

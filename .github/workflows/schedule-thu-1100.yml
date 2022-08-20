@@ -3,7 +3,8 @@ name: Schedule Thursday 1100
 
 # Run this action at 11:00 (3 am Pacific) on the first Thursday of the month.
 on:
-  workflow_dispatch
+  schedule:
+    - cron:  0 11 * * 4 
 
 jobs:
   # This workflow contains a single job called "trim_contirbutors"

@@ -1,6 +1,6 @@
 name: WR Pull Request Trigger
 on:
-  workflow_dispatch
+  workflow_run:
     workflows: ["Pull Request Trigger"]
     types: [completed]
 

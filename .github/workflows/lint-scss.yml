@@ -1,7 +1,7 @@
 name: Lint SCSS
 
 on:
-  workflow_dispatch
+  pull_request:
     branches: [gh-pages]
   push:
     branches: [gh-pages]

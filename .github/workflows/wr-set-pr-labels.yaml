@@ -1,7 +1,7 @@
 name: WR Set PR Labels
 
 on:
-  workflow_dispatch
+  workflow_run:
     workflows: ['Set PR Labels']
     types: [completed]
 

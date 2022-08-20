@@ -1,6 +1,6 @@
 name: Add Pull Request Instructions
 on:
-  workflow_dispatch
+  pull_request:
     types: [opened]
     branches:
       - 'gh-pages'
