@@ -7,7 +7,7 @@ alt: '311 data logo.'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
   - name: Eric Cho
-    role: 
+    role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02E95SPK4N'
       github: 'https://github.com/echoproject'
