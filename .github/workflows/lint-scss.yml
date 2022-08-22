@@ -2,9 +2,9 @@ name: Lint SCSS
 
 on:
   pull_request:
-    branches: [gh-pages]
+    branches: [hackforla-dependabot/npm_and_yarn]
   push:
-    branches: [gh-pages]
+    branches: [hackforla-dependabot/npm_and_yarn]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
         uses: github/super-linter@v4.8.1
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: gh-pages
+          DEFAULT_BRANCH: hackforla-dependabot/npm_and_yarn
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 

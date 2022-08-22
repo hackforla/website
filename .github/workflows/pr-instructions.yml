@@ -6,6 +6,7 @@ on:
       - 'gh-pages'
       - 'feature-homepage-launch'
       - 'feature-tech-dropdown'
+      - 'hackforla-dependabot/npm_and_yarn'
 
 jobs:
   Add-Pull-Request-Instructions:
