@@ -79,8 +79,8 @@
 }
 
 .resource-svg-icons {
-    height: 17.5rem;
-    width: 17.5rem;
+    height: 17.5rem;    //or 14.5 rem
+    width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
 }
 
@@ -91,8 +91,11 @@
     h3 {
         font-weight: normal;
         text-align: left;
-        font-size: 1.125rem;
         height: fit-content;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5rem;
+        max-height: fit-content;
     }
 }
 
@@ -183,19 +186,7 @@
     margin-bottom: 1.5rem;
 }
 
-.resource-svg-icons {
-    height: 14.5rem;
-    width: 14.5rem;
-}
 
-.toolkit-info-container {
-    h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.5rem;
-        max-height: fit-content;
-    }
-}
 
 @media #{$bp-below-mobile} {
     .toolkit-svg {
