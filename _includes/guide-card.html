@@ -10,19 +10,27 @@
 
         <div class="toolkit-info-container">
             {%- if guide.status == 'completed' -%}
-                <h3><a href={{ item.resource-url }}>{{ guide.title }}</a></h3>
+                <h3><a href={{ item.resource-url-completed }}>{{ guide.title }}</a></h3>
                 
             {%- else -%}  
                 <h3>{{ guide.title }}</h3>
             {%- endif -%}
 
-            {%- if guide.description -%}
-            <p>{{ guide.description }}</p>
+            {%- if guide.description.size < 210 -%}
+                <p>{{ guide.description }}</p>
+            {%- else -%}
+                <p>{{ guide.short-description}}</p>
             {%- endif -%}
 
 
         </div>
         {%- if guide.status == 'work-in-progress' -%}
-            <span class="toolkit-flex-item-status">work in progress</span>
+            <span class="toolkit-flex-item-status"> 
+                {%- if guide.resource-url-wip -%}
+                    <a href={{ item.resource-url-wip }}>work in progress</a>
+                {%- else -%}
+                    work in progress
+                {%- endif -%}
+            </span>
         {%- endif -%}  
     </div>

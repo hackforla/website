@@ -48,8 +48,6 @@
     margin-bottom: 0;
 }
 
-
-
 .toolkit-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
@@ -157,7 +155,7 @@
     .toolkit-flex-container {
         display: grid;
         grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, max-content));
+        grid-template-columns: repeat(2, 1fr);
         padding: 0;
     }
 
