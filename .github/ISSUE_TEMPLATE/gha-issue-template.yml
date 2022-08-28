@@ -2,6 +2,13 @@ name: "Github Actions"
 description: This is to create a new GHA
 title: "Sample form for GitHub actions "
 body:
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+      description:  "Enter the title of this issue"
+    validations:
+      required: true
   - type: dropdown
     id: dependency
     attributes:
