@@ -15,31 +15,35 @@ body:
     id: dependency-explanation
     attributes:
       label: If Yes, please explain
-  - type: markdown
+  - type: textarea
+    id: overview
     attributes:
-      value: "## Overview"
-  - type: markdown
-    attributes:
-      value: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
+    validations:
+      required: true
+  # - type: markdown
+  #   attributes:
+  #     value: "As a developer, we have to ensure that our kanban board is organized for all teams so that productivity is high. For this issue, we are creating a sorter that will move closed issues and PRs to the correct column by their labels when they are closed."
   - type: markdown
     attributes:
       value: "## Action Items/Pseudo-code"
   - type: markdown
     attributes:
       value: |
-          - [ ] "When an issue/PR is closed:"
-            - [ ] "If the issue/PR contains a label from the hard label list:"
-              - [ ] "Place the issue/PR in the column marked 'Done'."
-            - [ ] "Else if the issue/PR contains a label from the soft label list:"
-              - [ ] "If the issue also contains a label from the soft label counter list:"
-                - [ ] "Place the issue/PR in the column marked 'UAT'"
-              - [ ] "Else:"
-                - [ ] "Place the issue/PR in the column marked 'Done'."
-            - [ ] "Else:"
-              - [ ] "Place the issue/PR in the column marked 'UAT'."
-          - [ ] "Hard label list: any labels involving refactoring"
-          - [ ] "Soft label list: 'role: back end' label, 'Feature: Analytics'"
-          - [ ] "Soft label counter-list: 'role: front end'"
+          - [ ] When an issue/PR is closed:
+            - [ ] If the issue/PR contains a label from the hard label list:
+              - [ ] Place the issue/PR in the column marked 'Done'.
+            - [ ] Else if the issue/PR contains a label from the soft label list:
+              - [ ] If the issue also contains a label from the soft label counter list:
+                - [ ] Place the issue/PR in the column marked 'UAT'
+              - [ ] Else:
+                - [ ] Place the issue/PR in the column marked 'Done'.
+            - [ ] Else:
+              - [ ] Place the issue/PR in the column marked 'UAT'.
+          - [ ] Hard label list: any labels involving refactoring
+          - [ ] Soft label list: 'role: back end' label, 'Feature: Analytics'
+          - [ ] Soft label counter-list: 'role: front end'
   - type: checkboxes
     id: checklist
     attributes:
@@ -57,7 +61,7 @@ body:
       value: "## Resources/Instructions"
   - type: markdown
     attributes:
-      value: "A link to Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+      value: "A link to [Github actions!](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions)"
       # value: "#### Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
   # - type: checkboxes
   #   id: check
@@ -68,9 +72,8 @@ body:
   - type: checkboxes
     attributes:
       label: Create new GHA
-      description: "This is to create a new GHA"
       options:
-        - label: "A link to Never done GitHub actions? [Start here!](https://docs.github.com/en/actions)"
+        - label: "This is to create a new GHA [Start here!](https://docs.github.com/en/actions)"
           required: true
   - type: markdown
     attributes:
