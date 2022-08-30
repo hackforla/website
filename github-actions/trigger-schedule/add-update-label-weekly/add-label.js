@@ -299,7 +299,7 @@ function createAssigneeString(assignees) {
   return assigneeString.join(', ')
 }
 function formatComment(assignees) {
-  const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
+  const path = './github-actions/trigger-schedule/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
   const options = {
     dateStyle: 'full',
