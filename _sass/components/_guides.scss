@@ -16,7 +16,6 @@
 	text-align: center;
 	color: #fff;
 	font-weight: bold;
-	// font-size: 100%;
 	left: 11%;
 	top: 35%;
 }
@@ -73,6 +72,14 @@
 
 img {
 	max-width: 100%;
+}
+
+img[src*='#content'] {
+    margin-top: 24px;
+}
+
+img[src*='#examples'] {
+    width: 588.2px;
 }
 
 /* Scroll to Top Button - Only Visible on Mobile*/

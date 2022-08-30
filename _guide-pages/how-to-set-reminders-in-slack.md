@@ -41,6 +41,26 @@ guide-author:
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty   
 ---
 
+<style>
+  
+  code {
+    color: #FA114F;
+  }
+
+  h1 {
+	font-size: 36px;
+  }
+  
+  h2 {
+	font-size: 24px
+  }
+  
+  h3 {
+	font-size: 20px;
+  }
+
+</style>
+
 # **What** is Slack? ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/slack-icon.png "image_tooltip")
 
 Slack is a communication and collaboration platform that organizes conversations into topics, groups or private messages.  Each topic or group is called a Channel.  Hack for LA uses slack to allow teams to connect, discuss and work on projects collectively.  There are channels set up for both specific projects, and specific functional roles. 
@@ -73,33 +93,27 @@ Reminders can be set up in two ways:
 ## Option 1: by Navigation
 
 1. Navigate to the channel you want to set up the reminder.<br>
-  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image1.png "image_tooltip")
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image1.png#content "image_tooltip")
 
 2. Click the lightning bolt at the bottom of the message window.<br>
-  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image13.png "image_tooltip")
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image13.png#content "image_tooltip")
 
 3. Then either:
 
    a. Filter for and select the reminder option in the Suggested list.
-    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image8.png "image_tooltip")
-    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image2.png "image_tooltip")
+    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image8.png#content "image_tooltip")
+    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image2.png#content "image_tooltip")
 
    b. Type in “reminder”. Go ahead and set your reminder. Click on the “create” button.
-    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image14.png "image_tooltip")
+    ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image14.png#content "image_tooltip")
 
 4. And you should see this confirmation. <br>
-  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image12.png "image_tooltip")  
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image12.png#content "image_tooltip")  
 
 ## Option 2: by Direct Entry
 
-<style>
-  code {
-    color: #FA114F;
-  }
-</style>
-
 1. In the message box, type /remind. <br>
-  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image10.png "image_tooltip")
+  ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image10.png#content "image_tooltip")
 
 2. To Whom? @ or # <br>
 
@@ -113,11 +127,11 @@ Reminders can be set up in two ways:
 
 # **Examples**
 
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image6.png "image_tooltip")
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image4.png "image_tooltip")
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image7.png "image_tooltip")
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image11.png "image_tooltip")
-![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image3.png "image_tooltip")
+![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image6.png#examples "image_tooltip")
+![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image4.png#examples "image_tooltip")
+![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image7.png#examples "image_tooltip")
+![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image11.png#examples "image_tooltip")
+![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image3.png#examples "image_tooltip")
 
 
 
