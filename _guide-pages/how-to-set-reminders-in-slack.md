@@ -61,12 +61,13 @@ guide-author:
 
 </style>
 
-# **What** is Slack? ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/slack-icon.png "image_tooltip")
+
+# **What is Slack?** ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/slack-icon.png "image_tooltip")
 
 Slack is a communication and collaboration platform that organizes conversations into topics, groups or private messages.  Each topic or group is called a Channel.  Hack for LA uses slack to allow teams to connect, discuss and work on projects collectively.  There are channels set up for both specific projects, and specific functional roles. 
 
 
-# **When** to use Reminders ⏰
+# **When to use Reminders** ⏰
 
 Slack has a function that **allows you to set up an automatic reminder with a tailored message** sent out by the Bot at a specified time.  
 
@@ -85,7 +86,7 @@ Slack has a function that **allows you to set up an automatic reminder with a ta
 * Remind yourself to check back in with someone at a certain time
 
 
-# **How** to Set Up Reminders ✅
+# **How to Set Up Reminders** ✅
 
 Reminders can be set up in two ways: 
 
