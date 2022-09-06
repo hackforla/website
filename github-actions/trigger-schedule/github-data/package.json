@@ -4,7 +4,7 @@
   "description": "> Hack for LA's website https://www.hackforla.org",
   "main": "./github-actions/get-project-data.js",
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^2.0.0",
     "@actions/http-client": ">=1.0.8",
     "@octokit/rest": "^18.0.6",

@@ -36,12 +36,30 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
       github: 'https://github.com/phuonguvan'
     picture: https://avatars.githubusercontent.com/phuonguvan
-  - name: Tamara Snyder
+  - name: Kathryn Silva Conway
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U02SQV06ARZ'
-      github: 'https://github.com/tamara-snyder'
-    picture: https://avatars.githubusercontent.com/tamara-snyder
+      slack: 'https://hackforla.slack.com/team/U037LRF8QC9'
+      github: 'https://github.com/kathrynsilvaconway'
+    picture: https://avatars.githubusercontent.com/kathrynsilvaconway
+  - name: Sakari Salminiitty
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U01UMFCKKT5'
+      github: 'https://github.com/Zak234'
+    picture: https://avatars.githubusercontent.com/Zak234
+  - name: Sarah Sanger
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
+  - name: Arpita Pandya
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
+      github: 'https://github.com/arpitapandya'
+    picture: https://avatars.githubusercontent.com/arpitapandya
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

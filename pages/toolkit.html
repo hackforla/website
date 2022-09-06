@@ -54,34 +54,6 @@ permalink: /toolkit/
     </div>
   </div>
 
-    <script>
-        //add listener for click in banner, and toggle classes for filters.
-        document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
-            filter.addEventListener('click', function (event) {
-                let thisCategory = event.currentTarget;
-                let otherCategories = event.currentTarget.parentElement.children;
-
-                if (thisCategory.classList.contains('selected-category')) {
-                    return;
-                } else {
-                    Array.from(otherCategories).forEach((category) => {
-                        if (category.classList.contains('selected-category')) {
-                            category.classList.remove('selected-category');
-                            return;
-                        }
-                    });
-
-                    thisCategory.classList.toggle('selected-category');  
-                }
-            });
-        });
-        //add handler for dropdown navigation selection
-        document.getElementById("dropdown-select").onchange = function() {
-            window.location.href = this.value;
-        }
-
-       
-    </script>
 
     <a class="anchor" id="external-resources"></a>
     <div class="toolkit__card-list">
@@ -114,31 +86,6 @@ permalink: /toolkit/
     </div>
 </div>
 
-<script>
 
-    //add listener for url change and toggle visible cards.
-    window.addEventListener("hashchange", hashFilter);
-        function hashFilter(e) {
-            let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
-
-            let cardContainers = document.querySelectorAll("[data-article-type]");
-            let guidesCategories = ["all", "development", "design", "projectmanagement", "professionaldevelopment"]
-            if(guidesCategories.includes(currentHash)){
-                cardContainers.forEach((card) => {
-                    if (currentHash == 'all') {
-                        card.style.display = 'block';
-                        return;
-                    }
-                    card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
-                });
-            }
-        } 
-
-    // Add margin to the bottom of cards with status text
-    let statusElements = document.getElementsByClassName("toolkit-flex-item-status");
-    for (let i = 0; i < statusElements.length; i++) {
-        let parent = statusElements[i].parentElement;
-        let infoContainer = parent.getElementsByClassName("toolkit-info-container");
-        infoContainer[0].style["margin-bottom"] = "3.5rem";
-    }
-</script>
+<!-- Include javaScript -->
+<script src="{{ '/assets/js/toolkit.js' | absolute_url }}"></script>
