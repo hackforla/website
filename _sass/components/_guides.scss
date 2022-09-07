@@ -124,6 +124,11 @@ img[src*='#examples'] {
 }
 
 /* Style the sticky nav links */
+
+.sticky-nav--guides > ul > li > a {
+	font-weight: bold;
+}
+
 .sticky-nav--guides li {
 	list-style-type: none;
 	position: relative;
