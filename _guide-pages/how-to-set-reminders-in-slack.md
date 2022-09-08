@@ -62,12 +62,12 @@ guide-author:
 </style>
 
 
-# **<span style="font-weight: bolder">What</span> is Slack?** ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/slack-icon.png "image_tooltip")
+# What <span style="font-weight: 400">is Slack?</span> ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/slack-icon.png "image_tooltip")
 
 Slack is a communication and collaboration platform that organizes conversations into topics, groups or private messages.  Each topic or group is called a Channel.  Hack for LA uses slack to allow teams to connect, discuss and work on projects collectively.  There are channels set up for both specific projects, and specific functional roles. 
 
 
-# **<span style="font-weight: bolder">When</span> to use Reminders** ⏰
+# When <span style="font-weight: 400">to use Reminders </span> ⏰
 
 Slack has a function that **allows you to set up an automatic reminder with a tailored message** sent out by the Bot at a specified time.  
 
@@ -86,7 +86,7 @@ Slack has a function that **allows you to set up an automatic reminder with a ta
 * Remind yourself to check back in with someone at a certain time
 
 
-# **<span style="font-weight: bolder">How</span> to Set Up Reminders** ✅
+# How <span style="font-weight: 400">to Set Up Reminders</span> ✅
 
 Reminders can be set up in two ways: 
 
@@ -126,7 +126,7 @@ Reminders can be set up in two ways:
 4. Last, input day and time you want the Bot to send out the message. **NOTE: the time zone listed will be your time zone.**
 
 
-# **<span style="font-weight: bolder">Examples</span>**
+# Examples
 
 ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image6.png#examples "image_tooltip")
 ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image4.png#examples "image_tooltip")
@@ -136,7 +136,7 @@ Reminders can be set up in two ways:
 
 
 
-<!-- # **<span style="font-weight: bolder">Guide Authors</span>Guide Authors**
+<!-- # Guide Authors
 
 Peer-created guides are an important part of Hack for LA’s Culture.  They are created by our Volunteer Members based on effective processes developed on our projects.
 
