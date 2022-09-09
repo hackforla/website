@@ -48,45 +48,6 @@
     margin-bottom: 0;
 }
 
-/*
-  Refer to issue #1999. This part, the accompanying divs in toolkit.html (lines 89 and 109),
-  and $screen-desktop-large under _layout.scss were added to take into account how the external
-  resources look at a certain breakpoint ($bp-desktop-large-up). As of 7/22/2021, there are only three resources in the list.
-  Since suggest-site-group div was added to the grid and takes up the entire first row, the rows that
-  follow does not go to the center and instead aligns to the left. The media queries here fixes that.
-  When there are four or more resources added in the future, this part (and the divs in toolkit.html)
-  can be removed.
-*/
-.external-resource-container {
-    @media #{$bp-desktop-large-up} {
-        display: flex;
-        grid-column: 1 / -1;
-        justify-content: center;
-    }
-
-    @media #{$bp-below-desktop-large} {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
-        grid-column: 1 / -1;
-        align-items: stretch;
-        justify-content: center;
-    }
-
-    @media #{$bp-below-desktop} {
-        //display: grid;
-        grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 0;
-    }
-
-    @media #{$bp-below-mobile} {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        flex-direction: column;
-    }
-}
-
 .toolkit-flex-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
@@ -118,8 +79,8 @@
 }
 
 .resource-svg-icons {
-    height: 17.5rem;
-    width: 17.5rem;
+    height: 17.5rem;    //or 14.5 rem
+    width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
 }
 
@@ -130,8 +91,11 @@
     h3 {
         font-weight: normal;
         text-align: left;
-        font-size: 1.125rem;
         height: fit-content;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5rem;
+        max-height: fit-content;
     }
 }
 
@@ -194,7 +158,7 @@
     .toolkit-flex-container {
         display: grid;
         grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, max-content));
+        grid-template-columns: repeat(2, 1fr);
         padding: 0;
     }
 
@@ -222,19 +186,7 @@
     margin-bottom: 1.5rem;
 }
 
-.resource-svg-icons {
-    height: 14.5rem;
-    width: 14.5rem;
-}
 
-.toolkit-info-container {
-    h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.5rem;
-        max-height: fit-content;
-    }
-}
 
 @media #{$bp-below-mobile} {
     .toolkit-svg {
