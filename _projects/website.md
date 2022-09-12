@@ -18,18 +18,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Simone Campbell
-    role: UX Research Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
-      github: 'https://github.com/sacamp'
-    picture: https://avatars.githubusercontent.com/sacamp
-  - name: Providence Onyenekwe
+  - name: Akram Nour
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
-      github: 'https://github.com/Providence-o'
-    picture: https://avatars.githubusercontent.com/Providence-o    
+      slack: 'https://hackforla.slack.com/team/U03UW53122J'
+      github: 'https://github.com/7kram'
+    picture: https://avatars.githubusercontent.com/7kram
+  - name: Bishr Aboobaker
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
+      github: 'https://github.com/bishrfaisal'
+    picture: https://avatars.githubusercontent.com/bishrfaisal
+  - name: Vaisali Krishna Kumar
+    role: Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U028RCG9Z44'
+      github: 'https://github.com/vaisali89'
+    picture: https://avatars.githubusercontent.com/vaisali89
   - name: Phuong Van
     role: Design Lead
     links:
@@ -87,7 +93,7 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics
+tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
 location:
   # - Santa Monica
   # - Downtown LA
