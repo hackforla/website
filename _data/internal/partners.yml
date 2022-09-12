@@ -1,4 +1,4 @@
-- name: Empower LA
+- name: Los Angeles Department of Neighborhood Empowerment
   image: /assets/images/partners/empower-la.png
   link: https://empowerla.org/
 - name: Code for America
@@ -7,7 +7,7 @@
 - name: Yale Open Lab
   image: /assets/images/partners/yale-open-labs.svg
   link: https://openlab.yale.edu/
-- name: Metro
+- name: Los Angeles Metro
   image: /assets/images/partners/m.svg
   link: https://www.metro.net/
 - name: City of Santa Monica
@@ -34,7 +34,7 @@
 - name: Los Angeles City Attorney
   image: /assets/images/partners/la-city-attorney.png
   link: https://www.lacityattorney.org/
-- name: LADOT
+- name: Los Angeles Department of Transportation
   image: /assets/images/partners/la-dot.png
   link: https://ladot.lacity.org/
 - name: Los Angeles City Planning

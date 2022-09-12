@@ -59,7 +59,7 @@
 // Make the active link different
 .is-active {
   font-weight: 700;
-  color:#333 !important;
+  color:$color-black !important;
   a {
     font-weight: 700;
     &:link,
@@ -95,7 +95,7 @@ a.anchor {
 .sticky-nav {
   grid-area: nav;
   display: none;
-  background: #fff;
+  background: $color-white;
   border: 0px solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
@@ -338,7 +338,7 @@ a.anchor {
 
 // SDG Colors
 .color-goldenrod-2 {
-  color: #d49f28;
+  color: $color-mustard;
   font-weight: 700;
 }
 
@@ -348,17 +348,17 @@ a.anchor {
 }
 
 .color-brown {
-  color: #8e1737;
+  color: $color-redpurple;
   font-weight: 700;
 }
 
 .color-goldenrod-11 {
-  color: #fa9c25; 
+  color: $color-lightorange; 
   font-weight: 700;
   }
 
 .color-darkolivegreen {
-  color: #48763e;
+  color: $color-darkolive;
   font-weight: 700;
 }
 
@@ -896,7 +896,7 @@ a.anchor {
   position: relative;
   bottom: 50px;
   left: 20px;
-  color: #767676;
+  color: $color-cement;
   font-style: normal;
 }
 .quote-text{
@@ -924,7 +924,7 @@ a.anchor {
     position: relative;
     left:125px;
     bottom: 90px;
-    color: #767676;
+    color: $color-cement;
     font-style: normal;
   }
   .garcetti-quote{
