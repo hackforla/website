@@ -91,12 +91,12 @@
 }
 
 .rsvp-button {
-  color: #fff;
+  color: $color-white;
   font-size: 15px;
   font-weight: bold;
   background-color: $color-red;
   border-radius: 20px;
-  box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px $color-mediumgrey;
   height: 2.6em;
   width: 13em;
   margin-left: 2em;
@@ -118,12 +118,12 @@
 
   @media #{$bp-below-tablet} {
     visibility: visible;
-    color: #fff !important;
+    color: $color-white !important;
     font-size: 15px;
     font-weight: bold;
     background-color: $color-red;
     border-radius: 20px;
-    box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px $color-mediumgrey;
     height: 2.6em;
     width: 13em;
     display: flex;
@@ -365,8 +365,6 @@
 }
 
 .getting-started-step-title-faq {
-  font-size: 1.5rem;
-  font-weight: 700;
   margin-left: 2px;
 
   @media #{$bp-below-tablet} {

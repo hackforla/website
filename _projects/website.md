@@ -18,30 +18,54 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Simone Campbell
-    role: UX Research Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
-      github: 'https://github.com/sacamp'
-    picture: https://avatars.githubusercontent.com/sacamp
-  - name: Providence Onyenekwe
+  - name: Akram Nour
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
-      github: 'https://github.com/Providence-o'
-    picture: https://avatars.githubusercontent.com/Providence-o    
+      slack: 'https://hackforla.slack.com/team/U03UW53122J'
+      github: 'https://github.com/7kram'
+    picture: https://avatars.githubusercontent.com/7kram
+  - name: Bishr Aboobaker
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
+      github: 'https://github.com/bishrfaisal'
+    picture: https://avatars.githubusercontent.com/bishrfaisal
+  - name: Vaisali Krishna Kumar
+    role: Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U028RCG9Z44'
+      github: 'https://github.com/vaisali89'
+    picture: https://avatars.githubusercontent.com/vaisali89
   - name: Phuong Van
     role: Design Lead
     links:
       slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
       github: 'https://github.com/phuonguvan'
     picture: https://avatars.githubusercontent.com/phuonguvan
-  - name: Tamara Snyder
+  - name: Kathryn Silva Conway
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U02SQV06ARZ'
-      github: 'https://github.com/tamara-snyder'
-    picture: https://avatars.githubusercontent.com/tamara-snyder
+      slack: 'https://hackforla.slack.com/team/U037LRF8QC9'
+      github: 'https://github.com/kathrynsilvaconway'
+    picture: https://avatars.githubusercontent.com/kathrynsilvaconway
+  - name: Sakari Salminiitty
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U01UMFCKKT5'
+      github: 'https://github.com/Zak234'
+    picture: https://avatars.githubusercontent.com/Zak234
+  - name: Sarah Sanger
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
+  - name: Arpita Pandya
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
+      github: 'https://github.com/arpitapandya'
+    picture: https://avatars.githubusercontent.com/arpitapandya
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -69,7 +93,7 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics
+tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
 location:
   # - Santa Monica
   # - Downtown LA
