@@ -1,0 +1,18 @@
+- name: Our Work
+  link: /#
+  bolded: true
+
+- name: About Us
+  link: /about
+
+- name: Program Areas
+  link: /program-areas
+  
+- name: Projects
+  link: /projects
+
+- name: Our Wins
+  link: /wins
+
+- name: Press
+  link: /about#news

@@ -1,0 +1,38 @@
+---
+name: Operations
+description: This group covers all areas of dev-ops and has been the spot for coordination on infrastructure improvements such as AWS hosting, password vaults, multi-tenant product architecture, etc.
+visible: true
+status: Active
+location:
+  - Remote
+
+image: /assets/images/communities-of-practice/ops.jpg
+alt: 'A dramatic closeup of a screen filled with code'
+
+icon: /assets/images/hero/communities-icons/operations.png
+
+meeting-times: Tuesdays 8:00-9:00 pm PT
+
+leadership-type: Community Led
+leadership:
+  - name: Jason Ebueng
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U02CA3CAK7Z
+      github: https://github.com/JasonEb
+    picture: https://avatars.githubusercontent.com/u/6300995
+  - name: Nicole Dubin
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U02LL2XK486
+      github: https://github.com/Neecolaa
+    picture: https://avatars.githubusercontent.com/u/7437035
+
+links:
+  - name: Slack
+    url: https://app.slack.com/client/T04502KQX/CV7QGL66B
+  - name: Github
+    url: https://github.com/hackforla/ops
+  
+recruiting-message:
+---
