@@ -63,6 +63,10 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
+    - [**2.8 Working off a feature branch**]()
+      - [**2.8.a Create your branch**](#28a-create-your-branch)
+      - [**2.8.b Update your branch with upstream changes**](#28b-update-your-branch-with-upstream-changes)
+      - [**2.8.c Create a pull request**](#28c-create-a-pull-request)
   - [**Part 3: Pull Requests**](#part-3-pull-requests)
     - [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request)
       - [**3.1.a Push all changes to your issue branch**](#31a-push-all-changes-to-your-issue-branch)
@@ -71,7 +75,7 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
-        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-How-to-add-a-pull-request-to-the-project-board)
+        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-how-to-add-a-pull-request-to-the-project-board)
         - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
@@ -689,6 +693,54 @@ If you receive warnings about conflicts, abort the rebase with `git rebase --abo
 git checkout update-give-link-2093
 git merge gh-pages
 ```
+***
+### **2.8 Working off a feature branch**
+For reference see [here](https://github.com/hackforla/website/wiki/How-to-work-off-of-a-feature-branch) or follow below.
+
+#### **2.8.a Create your branch**
+Fetch the most recent changes on the upstream remote.
+
+```
+git fetch upstream
+```
+Then create the local branch based off the upstream remote branch.
+
+```
+# feature-branch-name-here needs to be identical to the feature branch name on the upstream remote repo.
+git checkout -b feature-branch-name-here upstream/feature-branch-name-here
+```
+
+Create your new branch off of the new feature branch that you created.
+
+```
+git checkout -b your-branch-here
+```
+
+
+#### **2.8.b Update your branch with upstream changes**
+Update the branch with the following command.
+
+```
+# example: git pull upstream wins-feature-1
+git pull name-of-remote-here feature-branch-name-here
+```
+
+#### **2.8.c Create a pull request**
+Stage and commit changes.
+
+```
+git add files-changed-here
+git commit -m 'Commit message'
+```
+Create a pull request that is comparing across forks, from your branch to the feature branch with the following settings:
+  - **base repository:** hackforla/website
+  - **base:** feature-branch-name-here, where feature-branch-name-here is the name of the feature branch you want to update.
+  - **head repository:** your-github-handle/website, where your-github-handle is your GitHub handle
+  - **compare:** your-branch-here, where your-branch-here is the branch you created in [step 1](#28a-create-your-branch)
+  <details>
+    <summary>Screenshot of an example where the feature branch is feature-homepage-launch</summary>
+    <img alt="screenshot of feature branch example" src="https://user-images.githubusercontent.com/31293603/179375637-6ec839bc-b62e-4908-a370-d3e686a71724.png">
+  </details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -913,6 +965,7 @@ The best way to ask for help and provide as much information to the team is to d
 * [Wiki - How to Create Issues](https://github.com/hackforla/website/wiki/How-to-create-issues)
 * [Wiki - How to read and interpret issue labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
 * [Wiki - How to communicate with the HfLA Website Team](https://github.com/hackforla/website/wiki/How-to-communicate-with-the-team)
+* [Wiki - Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 
 #### **4.2.b Tools Documentation**
 * [GitHub Pages](https://pages.github.com/)
