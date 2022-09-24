@@ -1,0 +1,20 @@
+---
+# The title from the source provider
+title: Citizen Engagement
+# The url where you can get direct access to the image on the provider site
+title-link: https://pixabay.com/photos/los-angeles-la-city-hall-6041398/
+# The type of content - image, audio, or video 
+content-type: image
+# The page it's used on
+used-in: Homepage
+# Name of the artist
+artist: Cnugent69
+# Name of the image database you found it on
+provider: Pixabay
+# Please give the general site URL, not the link to the image
+provider-link: https://pixabay.com
+# Location in our GitHub repo
+image-url: /assets/images/program-areas/citizen-engagement.png
+# Alt text for the image on the Credits page
+alt: ''
+---
