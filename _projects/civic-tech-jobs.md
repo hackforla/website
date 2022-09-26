@@ -5,7 +5,6 @@ description: The CivicTechJobs.org MVP website will be a platform to help prospe
 image: /assets/images/projects/civic-tech-jobs.png
 alt: "Hack for LA logo and the title of the project, Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
-alt-hero: "Civic tech jobs hero image, for HfLA website projects page"
 leadership: 
   - name: Syed Danish Imran
     role: Product Manager
