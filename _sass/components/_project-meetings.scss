@@ -1,5 +1,5 @@
 .covid-notification-banner {
-    background-color: #f2c94d;
+    background-color: $color-gold;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@
 }
 
 .calendar-started-page {
-    background: #030d2d;
+    background: $color-darkblue;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
