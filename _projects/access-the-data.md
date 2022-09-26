@@ -82,7 +82,7 @@ technologies:
 location:
   #- Downtown LA
   #- Santa Monica
-  #- South LA
+  - South LA
   - Remote
   # must choose one of the above (closest)
 tools: figma, photoshop, google drive.
