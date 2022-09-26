@@ -11,7 +11,6 @@
   max-height: 74vh;
 
 
-
   &::after {
     position: absolute;
     top: 0;
@@ -382,4 +381,31 @@
 .userTimeZone--project-page {
   font-size: 15px;
   margin-bottom: 20px;
+}
+
+
+.hero-inner {
+  color: $color-white;
+  margin: 60px auto 0px;
+  max-width: $max-content-width;
+  position: relative;
+  z-index: 2;
+
+  @media #{$bp-tablet-up} {
+    margin-bottom: 0;
+    margin-top: 150px;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-bottom: .65rem;
+  }
+  
+  p {
+    margin-bottom: .65rem;
+  }
+  
+  span {
+    border-bottom: 3px solid $color-red;
+  }
 }
