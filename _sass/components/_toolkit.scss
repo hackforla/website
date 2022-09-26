@@ -143,12 +143,6 @@
     }
 }
 
-// .toolkit-info-container p {
-//     margin: 1rem auto auto 0rem;
-//     line-height: 1.1rem;
-//     width: 100%;
-// }
-
 .toolkit-flex-item-status {
     position: absolute;
     font-size: 1.125rem;
@@ -210,10 +204,6 @@
         margin: 0 auto;
     }
 
-    // .resource-svg-icons {
-    //     height: 15.5rem;
-    //     width: 15.5rem;
-    // }
 }
 
 @media #{$bp-below-tablet} {
@@ -229,20 +219,6 @@
 .toolkit-flex-item {
     margin-bottom: 1.5rem;
 }
-
-// .resource-svg-icons {
-//     height: 14.5rem;
-//     width: 14.5rem;
-// }
-
-// .toolkit-info-container {
-//     h3 {
-//         font-size: 1.4rem;
-//         margin-bottom: 1.5rem;
-//         line-height: 1.5rem;
-//         max-height: fit-content;
-//     }
-// }
 
 @media #{$bp-below-mobile} {
     .toolkit-svg {
