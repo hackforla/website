@@ -40,13 +40,14 @@ permalink: /program-areas
             </p>
             <ul class="project-card-mini-list-alignment">
                 {% for project in site.projects %}
-                {% if program_areas[1].program-area != project.program-area %}
+                {% for project_program in project.program-area %}
+                {% if program_areas[1].program-area == project_program %}
                 <li class="project-card-mini inline-list" id="{{project.identification}}">
-                  <h6>{{project.title}}</h6>
-                    <!-- <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
+                    <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
                     <a class="project-card-mini-title" href="{{project.links[0].url}}">{{project.title}}</a>
-                </li> -->
+                </li>
                 {% endif %}
+                {% endfor %}
                 {% endfor %}
                 <!--Spacer li are used to center the project card mini on mobile-->
                 <li class="project-card-mini-spacer"></li> 
