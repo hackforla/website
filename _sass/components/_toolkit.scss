@@ -97,12 +97,11 @@
         line-height: 1.5rem;
         max-height: fit-content;
     }
-}
-
-.toolkit-info-container p {
-    margin: 1rem auto auto 0rem;
-    line-height: 1.1rem;
-    width: 100%;
+    p {
+        margin: 1rem auto auto 0rem;
+        line-height: 1.1rem;
+        width: 100%;
+    }
 }
 
 .toolkit-flex-item-status {
@@ -185,8 +184,6 @@
 .toolkit-flex-item {
     margin-bottom: 1.5rem;
 }
-
-
 
 @media #{$bp-below-mobile} {
     .toolkit-svg {
