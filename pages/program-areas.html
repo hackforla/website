@@ -18,7 +18,7 @@ permalink: /program-areas
 <section class="content-section content--program-areas">
     {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_areas in sorted_program_areas %}
-    {% if program_areas[1].size > 0 %}
+    {% if program_areas[1].size > 0 %}  <!--program_areas[0] is a reference to yaml file name, program_areas[1] references contents of that yaml file-->
     <div class="page-card card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}" />
@@ -39,11 +39,14 @@ permalink: /program-areas
                 {% endif %}<br>
             </p>
             <ul class="project-card-mini-list-alignment">
-                {% for project in program_areas[1].projects%}
-                <li class="project-card-mini inline-list" id="{{project.id}}">
-                    <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
-                    <a class="project-card-mini-title" href="{{project.link}}">{{project.name}}</a>
-                </li>
+                {% for project in site.projects %}
+                {% if program_areas[1].program-area != project.program-area %}
+                <li class="project-card-mini inline-list" id="{{project.identification}}">
+                  <h6>{{project.title}}</h6>
+                    <!-- <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
+                    <a class="project-card-mini-title" href="{{project.links[0].url}}">{{project.title}}</a>
+                </li> -->
+                {% endif %}
                 {% endfor %}
                 <!--Spacer li are used to center the project card mini on mobile-->
                 <li class="project-card-mini-spacer"></li> 
