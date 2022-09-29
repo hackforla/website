@@ -3,10 +3,11 @@
 identification: '330800079'
 title: Access The Data
 description: "With government policies increasingly relying on data and data analysis, it becomes imperative to increase citizens'access and understanding of local government data in order to be effective advocates for their communities.
+
 We are currently working on an MVP, which is a website that will serve as a foundation for the continued Access the Data project. The MVP will consist of a website that hosts a catalog of sources of open government data. This project will focus on Los Angeles County as its backdrop to test the hypothesis
 that this is a tool the community of community activists and data experts needs and wants."
 # card image should be 600px wide x 400px high
-image: /assets/images/projects/horizontal-version.png
+image: /assets/images/projects/access-the-data-horizontal.png
 alt: 'description of the card image'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
@@ -82,10 +83,10 @@ technologies:
 location:
   #- Downtown LA
   #- Santa Monica
-  - South LA
+  # - South LA
   - Remote
   # must choose one of the above (closest)
-tools: figma, photoshop, google drive.
+tools: Figma, Photoshop, Google Drive.
 program-area:
   - Citizen Engagement
 status: Active
