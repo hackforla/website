@@ -18,7 +18,7 @@ permalink: /program-areas
 <section class="content-section content--program-areas">
     {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_areas in sorted_program_areas %}
-    {% if program_areas[1].size > 0 %}  <!--program_areas[0] is a reference to yaml file name, program_areas[1] references contents of that yaml file-->
+    {% if program_areas[1].size > 0 %} 
     <div class="page-card card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}" />
