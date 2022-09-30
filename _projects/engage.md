@@ -5,7 +5,6 @@ description: 'Engage is a civic participation platform that makes it easier for 
 image: /assets/images/projects/engage-logo.png
 alt: 'Engage logo'
 image-hero: /assets/images/projects/engage-hero.png
-alt-hero: 'People of different ages, gender and ethnicity coming together concept illustration'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
