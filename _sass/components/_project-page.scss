@@ -250,7 +250,8 @@
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   overflow: hidden;
   display: inline-block;
-  margin: 0px 42px 21px 0px;
+  inline-size: min-content;
+  margin: 0px 40px 21px 0px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -259,8 +260,8 @@
 }
 
 .resource-img {
-  width: 128px;
-  height: 128px;
+  width: 95px;
+  height: 95px;
   padding: 20px;
   margin: auto auto;
 
