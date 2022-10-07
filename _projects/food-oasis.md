@@ -77,7 +77,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools: figma, photoshop, sketch, pencil and paper, phone calls.
+tools: Figma, Photoshop, Sketch, pencil and paper, phone calls
 program-area:
   - Social Safety Net
 partner: seeking
