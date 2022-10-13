@@ -221,17 +221,22 @@
 .resource-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 21px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 0px;
+    margin-left: auto;
   }
 }
 
 .resource-link {
+  display: flex;
+  flex-basis: 16%;
+  justify-content: center;
   text-decoration: none;
   &:link{
     color: $color-black;
@@ -242,6 +247,7 @@
   &:hover{
     color: $color-red;
   }
+
 }
 
 .resource-card {
@@ -251,7 +257,7 @@
   overflow: hidden;
   display: inline-block;
   inline-size: min-content;
-  margin: 0px 40px 21px 0px;
+  margin-bottom: 21px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -260,8 +266,8 @@
 }
 
 .resource-img {
-  width: 95px;
-  height: 95px;
+  width: 97px;
+  height: 98px;
   padding: 20px;
   margin: auto auto;
 
@@ -282,6 +288,10 @@
 }
 
 .resource-body {
+  display: flex;
+  height: 71px;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1);
   border-top: 2px solid #ececec;
