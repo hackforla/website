@@ -5,7 +5,6 @@ description: The Home Unite Us project is developing a workflow management tool 
 image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.'
 image-hero: /assets/images/projects/home-unite-us-hero.png
-
 leadership:
   - name: Tyler Thome
     role: HUU Tech Lead
