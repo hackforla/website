@@ -521,7 +521,6 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how sync the fork on GitHub</summary>
-  <p><strong>Assign/Unassign demo</strong></p>
   <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
 </details>
 
@@ -624,7 +623,6 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how sync the fork on GitHub</summary>
-  <p><strong>Assign/Unassign demo</strong></p>
   <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
 </details>
 
