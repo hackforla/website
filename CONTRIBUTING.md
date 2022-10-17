@@ -520,7 +520,7 @@ git pull upstream
 You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
 
 <details>
-  <summary><strong>Click here</strong> to see how sync the fork on GitHub</summary>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
   <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
 </details>
 
@@ -622,7 +622,7 @@ git pull upstream
 You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
 
 <details>
-  <summary><strong>Click here</strong> to see how sync the fork on GitHub</summary>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
   <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
 </details>
 
