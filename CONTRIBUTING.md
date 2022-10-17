@@ -614,7 +614,7 @@ git commit -m “insert message here”
   
 #### **2.7.d Working on an issue (4): Check upstream before you push**
 
-IMPORTANT: Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
 ```bash
 git pull upstream
