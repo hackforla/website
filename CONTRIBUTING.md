@@ -58,7 +58,7 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
         - [**iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**](#iii-prepare-repos-changes-3-use-the-git-reset-head-command-to-remove-a-staged-file)
         - [**iv. Prepare repos changes (4): Use the `git commit` command**](#iv-prepare-repos-changes-4-use-the-git-commit-command)
-      - [**2.7.d Working on an issue (4): Check upstream before you push**](#27d-working-on-an-issue-4-check-upstream-before-you-push)
+      - [**2.7.d Working on an issue (4): Pulling from upstream before you push**](#27d-working-on-an-issue-4-pulling-from-upstream-before-you-push)
         - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
@@ -511,7 +511,7 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. git pull upstream will ensure that your local repository is up-to-date with the main site:
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
 ```bash
 git pull upstream
@@ -612,7 +612,7 @@ git commit -m “insert message here”
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
   
-#### **2.7.d Working on an issue (4): Check upstream before you push**
+#### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
 **IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
