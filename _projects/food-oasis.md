@@ -5,7 +5,6 @@ description: The website is focused on individuals seeking food in Los Angeles w
 image: /assets/images/projects/food-oasis.jpg
 alt: 'Stacks of freshly harvested beets'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
-alt-hero: 'Stacks of freshly harvested carrots, beets and vegetables'
 leadership:
   - name: John Darragh
     role: Architect & Technology Lead
@@ -77,7 +76,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools: figma, photoshop, sketch, pencil and paper, phone calls.
+tools: Figma, Photoshop, Sketch, pencil and paper, phone calls
 program-area:
   - Social Safety Net
 partner: seeking

@@ -40,12 +40,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U038BPUMFB7'
       github: 'https://github.com/mmelovega'
     picture: https://avatars.githubusercontent.com/mmelovega
-  - name: Kevin Chu
-    role: UX/UI Design Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U037TKS7U9G'
-      github: 'https://github.com/KC243'
-    picture: https://avatars.githubusercontent.com/KC243
   - name: Judson Lester
     role: Developer Lead
     links:
@@ -90,7 +84,7 @@ location:
   # - South LA
   - Remote
   # must choose one of the above (closest)
-tools: Figma, Photoshop, Google Drive.
+tools: Figma, Photoshop, Google Drive
 program-area:
   - Citizen Engagement
 status: Active
