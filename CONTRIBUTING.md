@@ -37,7 +37,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
       - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
       - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-       - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -58,7 +58,7 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
         - [**iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**](#iii-prepare-repos-changes-3-use-the-git-reset-head-command-to-remove-a-staged-file)
         - [**iv. Prepare repos changes (4): Use the `git commit` command**](#iv-prepare-repos-changes-4-use-the-git-commit-command)
-      - [**2.7.d Working on an issue (4): Check upstream before you push**](#27d-working-on-an-issue-4-check-upstream-before-you-push)
+      - [**2.7.d Working on an issue (4): Pulling from upstream before you push**](#27d-working-on-an-issue-4-pulling-from-upstream-before-you-push)
         - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
@@ -510,6 +510,20 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 ```bash
 git checkout gh-pages
 ```
+
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+
+```bash
+git pull upstream
+```
+
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+
+<details>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+</details>
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
@@ -598,13 +612,20 @@ git commit -m “insert message here”
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
   
-#### **2.7.d Working on an issue (4): Check upstream before you push**
+#### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
-Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
 ```bash
-git fetch upstream
+git pull upstream
 ```
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+
+<details>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+</details>
+
 
 ##### **i. If there are no changes in the upstream repository**
 
