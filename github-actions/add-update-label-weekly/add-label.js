@@ -211,7 +211,7 @@ async function removeLabels(issueNum, ...labels) {
       });
       console.log(`Removed "${label}" from issue #${issueNum}`);
     } catch (err) { 
-      console.error(`No "${label}" label to remove for issue #${issueNum}`);
+      console.error(`Function failed to remove labels.Please refer to the error below: \n ${err}`);
     }
   }
 }
@@ -232,7 +232,7 @@ async function addLabels(issueNum, ...labels) {
     console.log(`Added these labels to issue #${issueNum}: ${labels}`);
     // If an error is found, the rest of the script does not stop.
   } catch {
-    console.error(`Could not add these labels for issue #${issueNum}: ${labels}`);
+    console.error(`Function failed to add labels.Please refer to the error below:\n ${err}`);
   }
 }
 async function postComment(issueNum, assignees) {
@@ -246,7 +246,7 @@ async function postComment(issueNum, assignees) {
       body: instructions,
     });
   } catch (err) {
-    console.error(`Could not post a comment for issue #${issueNum}`);
+    console.error(`Function failed to post comments.Please refer to the error below: \n ${err}`);
   }
 }
 /***********************
@@ -280,7 +280,7 @@ async function getAssignees(issueNum) {
     assigneesLogins = filterForAssigneesLogins(assigneesData);
     return assigneesLogins
   } catch (err) {
-    console.error(`Failed request to get assignee from issue: #${issueNum}`)
+    console.error(`Function failed to get assignees.Please refer to the error below: \n ${err}`)
     return null
   }
 }
@@ -290,7 +290,7 @@ function filterForAssigneesLogins(data) {
     logins.push(item.login);
   }
   return logins
-}
+}  
 function createAssigneeString(assignees) {
   const assigneeString = [];
   for (let assignee of assignees) {
