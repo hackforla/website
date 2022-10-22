@@ -5,7 +5,6 @@ description: Heart is a project working directly with the LA City & County Attor
 image: /assets/images/projects/heart.png
 alt: 'Programming code icon that reads helping the homeless with code.'
 image-hero: /assets/images/projects/heart-hero.png
-alt-hero: 'A line of tents under a freeway overpass.'
 leadership:
   - name: Marie-Aimee Brajeux
     role: Product Manager
