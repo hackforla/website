@@ -30,6 +30,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
       github: 'https://github.com/bishrfaisal'
     picture: https://avatars.githubusercontent.com/bishrfaisal
+  - name: Stephanie Samuels
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03SJS7LYCC'
+      github: 'https://github.com/Steph112792'
+    picture: https://avatars.githubusercontent.com/Steph112792
   - name: Vaisali Krishna Kumar
     role: Researcher
     links:
