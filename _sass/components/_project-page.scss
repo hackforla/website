@@ -221,8 +221,8 @@
 .resource-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 18px;
+  margin-right: 18px;
   justify-content: space-between;
 
   // NEW MOBILE FRIENDLY RULES
@@ -235,7 +235,7 @@
 
 .resource-link {
   display: flex;
-  flex-basis: 16%;
+  flex-basis: 15%;
   justify-content: center;
   text-decoration: none;
   &:link{
@@ -266,8 +266,8 @@
 }
 
 .resource-img {
-  width: 97px;
-  height: 98px;
+  width: 111px;
+  height: 112px;
   padding: 5px;
   margin: auto auto;
 
