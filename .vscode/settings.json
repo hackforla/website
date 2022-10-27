@@ -8,24 +8,4 @@
     // Format a file on save. A formatter must be available, the file must not be saved after delay, and the 
     // editor must not be shutting down.
     "editor.formatOnSave": false,
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#e88f89",
-        "activityBar.background": "#e88f89",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#caf5cc",
-        "activityBarBadge.foreground": "#15202b",
-        "commandCenter.border": "#15202b99",
-        "sash.hoverBorder": "#e88f89",
-        "statusBar.background": "#e0675e",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#d83f33",
-        "statusBarItem.remoteBackground": "#e0675e",
-        "statusBarItem.remoteForeground": "#15202b",
-        "titleBar.activeBackground": "#e0675e",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#e0675e99",
-        "titleBar.inactiveForeground": "#15202b99"
-    },
-    "peacock.color": "#e0675e"
 }
