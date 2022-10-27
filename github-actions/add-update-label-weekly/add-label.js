@@ -211,7 +211,7 @@ async function removeLabels(issueNum, ...labels) {
       });
       console.log(`Removed "${label}" from issue #${issueNum}`);
     } catch (err) { 
-      console.error(`Function failed to remove labels.Please refer to the error below: \n`,err);
+      console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
     }
   }
 }
@@ -231,8 +231,8 @@ async function addLabels(issueNum, ...labels) {
     });
     console.log(`Added these labels to issue #${issueNum}: ${labels}`);
     // If an error is found, the rest of the script does not stop.
-  } catch {
-    console.error(`Function failed to add labels.Please refer to the error below:\n`,err);
+  } catch (err){
+    console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
   }
 }
 async function postComment(issueNum, assignees) {
@@ -246,7 +246,7 @@ async function postComment(issueNum, assignees) {
       body: instructions,
     });
   } catch (err) {
-    console.error(`Function failed to post comments.Please refer to the error below: \n `,err);
+    console.error(`Function failed to post comments. Please refer to the error below: \n `, err);
   }
 }
 /***********************
@@ -280,9 +280,9 @@ async function getAssignees(issueNum) {
     assigneesLogins = filterForAssigneesLogins(assigneesData);
     return assigneesLogins
   } catch (err) {
-    console.error(`Function failed to get assignees.Please refer to the error below: \n `,err);
+    console.error(`Function failed to get assignees. Please refer to the error below: \n `, err);
     return null
-  }
+  } 
 }
 function filterForAssigneesLogins(data) {
   logins = [];
