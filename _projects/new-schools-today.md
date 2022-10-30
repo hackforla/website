@@ -5,7 +5,6 @@ description: We’re building a platform for students across LA County to create
 image: /assets/images/projects/new-schools-today.jpg
 alt: 'Team of students each with a laptop sitting around the conference table, attentively engege in a video conference call meeting.'
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
-alt-hero: 'Team students and teachers working during a meeting.'
 leadership:
   - name: Ben Swerdlow
     role: Tech Team Lead
