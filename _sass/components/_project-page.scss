@@ -221,7 +221,7 @@
 .resource-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 30px;
+  margin-left: 20px;
   margin-right: auto;
   justify-content: flex-start;
 
@@ -236,6 +236,7 @@
 .resource-link {
   display: flex;
   flex-basis: 16%;
+  margin-right: 5px;
   justify-content: center;
   text-decoration: none;
   &:link{
@@ -257,7 +258,6 @@
   overflow: hidden;
   display: inline-block;
   inline-size: min-content;
-  margin-right: 20px;
   margin-bottom: 21px;
 
   // NEW MOBILE FRIENDLY RULES
