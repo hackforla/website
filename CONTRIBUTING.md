@@ -891,7 +891,7 @@ Now you are all set to work on a new PR. Start over at [**2.3 Where can I find G
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
-For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
+For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests), [visual demo on pull request reviews](https://github.com/hackforla/website/assets/How.to.Review.a.PR.2.pdf), and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
