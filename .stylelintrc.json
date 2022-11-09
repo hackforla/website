@@ -16,6 +16,7 @@
     "selector-type-no-unknown": true,
     "comment-no-empty": true,
     "no-duplicate-selectors": true,
-    "no-extra-semicolons": true
+    "no-extra-semicolons": true,
+    "extends": "stylelint-config-standard-scss"
   }
 }
