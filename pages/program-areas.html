@@ -18,7 +18,7 @@ permalink: /program-areas
 <section class="content-section content--program-areas">
     {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_areas in sorted_program_areas %}
-    {% if program_areas[1].size > 0 %} 
+    {% if program_areas[1].size > 0 %}
     <div class="page-card card-primary page-card-lg page-card-container">
         <div class="page-card-image-container">
             <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}" />
@@ -42,15 +42,16 @@ permalink: /program-areas
                 {% for project in site.projects %}
                 {% for project_program in project.program-area %}
                 {% if program_areas[1].program-area == project_program %}
+                {% assign project_relative_path = project.slug | prepend: "../projects/" %}
                 <li class="project-card-mini inline-list" id="{{project.identification}}">
                     <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
-                    <a class="project-card-mini-title" href="{{project.links[0].url}}">{{project.title}}</a>
+                    <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
                 </li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
                 <!--Spacer li are used to center the project card mini on mobile-->
-                <li class="project-card-mini-spacer"></li> 
+                <li class="project-card-mini-spacer"></li>
                 <li class="project-card-mini-spacer"></li>
                 <li class="project-card-mini-spacer"></li>
             </ul>
