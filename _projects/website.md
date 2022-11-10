@@ -30,30 +30,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
       github: 'https://github.com/bishrfaisal'
     picture: https://avatars.githubusercontent.com/bishrfaisal
+  - name: Stephanie Samuels
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03SJS7LYCC'
+      github: 'https://github.com/Steph112792'
+    picture: https://avatars.githubusercontent.com/Steph112792
   - name: Vaisali Krishna Kumar
     role: Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U028RCG9Z44'
       github: 'https://github.com/vaisali89'
     picture: https://avatars.githubusercontent.com/vaisali89
-  - name: Phuong Van
-    role: Design Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
-      github: 'https://github.com/phuonguvan'
-    picture: https://avatars.githubusercontent.com/phuonguvan
   - name: Kathryn Silva Conway
     role: Technical Lead
     links:
       slack: 'https://hackforla.slack.com/team/U037LRF8QC9'
       github: 'https://github.com/kathrynsilvaconway'
     picture: https://avatars.githubusercontent.com/kathrynsilvaconway
-  - name: Sakari Salminiitty
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U01UMFCKKT5'
-      github: 'https://github.com/Zak234'
-    picture: https://avatars.githubusercontent.com/Zak234
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -66,6 +60,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
       github: 'https://github.com/arpitapandya'
     picture: https://avatars.githubusercontent.com/arpitapandya
+  - name: Justin Dingeman
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
+      github: 'https://github.com/jdingeman'
+    picture: https://avatars.githubusercontent.com/jdingeman
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
