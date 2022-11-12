@@ -1,0 +1,330 @@
+name: "Project Profile Card review and update"
+description: "To track project profile card updates"
+title: "Update Project Profile: [Project Name]"
+labels: ["P-Feature: Project Info and Page", "role: back end/devOps, role: front end, Size: Small, size: 0.5pt, time sensative"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "# Overview"
+  - type: markdown
+    attributes:
+      value: "As a product manager, I want my project's details to be up to date on the HackforLA website."
+  - type: dropdown
+    id: project-name
+    attributes:
+      label: Project Name
+      options:
+        - "100 Automations"
+        - "311 Data"
+        - "Access The Data"
+        - "BallotNav"
+        - "Brigade Organizers Playbook"
+        - "Civic Opportunity Project"
+        - "Civic Tech Index"
+        - "Civic Tech Jobs"
+        - "Civic Tech Structure"
+        - "Design Systems"
+        - "Engage"
+        - "Expunge Assist"
+        - "Food Oasis"
+        - "GreenEarthOS"
+        - "Guides Team"
+        - "Hackforla.org Website"
+        - "Home Unite Us"
+        - "LA TDM Calculator"
+        - "Lucky Parking"
+        - "Open Community Survey"
+        - "VRMS"
+        - "Write for All"
+        - "Youth Justice Nav"
+        - "EMS Triage Tracker"
+        - "Heart"
+        - "HelloGov"
+        - "Public Tree Map"
+        - "Railstats LA"
+        - "Undebate"
+        - "Work for LA"
+        - "Jobs for Hope"
+        - "New Schools Today"
+        - "Not Today - Self-Defense Against Suicidal Thoughts"
+        - "Spare"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: project-card-url
+    attributes:
+      label: Project Card URL
+      description: "https://github.com/hackforla/website/tree/gh-pages/_projects"
+      options: 
+        - "100-automations.md"
+        - "311-data.md"
+        - "access-the-data.md"
+        - "adopt-civic-art.md"
+        - "brigade-organizers-playbook.md"
+        - "ballot-nav.md"
+        - "civic-opportunity-project.md"
+        - "civic-tech-index.md"
+        - "civic-tech-jobs.md"
+        - "civic-tech-structure.md"
+        - "criminal-sentencing.md"
+        - "curbmap.md"
+        - "design-systems.md"
+        - "ems-triage-tracker.md"
+        - "engage.md"
+        - "expunge-assist.md"
+        - "food-oasis.md"
+        - "green-earth-os.md"
+        - "guides-team.md"
+        - "heart.md"
+        - "hellogov.md"
+        - "home-unite-us.md"
+        - "jobs-for-hope.md"
+        - "light-the-way.md"
+        - "lucky-parking.md"
+        - "metro-ontime.md"
+        - "new-schools-today.md"
+        - "not-today.md"
+        - "open-community-survey.md"
+        - "public-tree-map.md"
+        - "shared-housing-project.md"
+        - "spare.md"
+        - "tdm-calculator.md"
+        - "undebate.md"
+        - "vrms.md"
+        - "website.md"
+        - "work-for-la.md"
+        - "writeforall.md"
+        - "youthjusticenav.md"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "# Action Items"
+
+  - type: dropdown
+    id: update-title-yes-no
+    attributes:
+      label: Update the Title?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+  
+  - type: dropdown
+    id: update-description-yes-no
+    attributes:
+      label: Update the Description?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripton
+
+
+  - type: dropdown
+    id: update-image-yes-no
+    attributes:
+      label: Update the Image?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: image
+    attributes:
+      label: Image
+
+  
+
+  - type: dropdown
+    id: update-technologies-yes-no
+    attributes:
+      label: Update the Technologies?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: technologies
+    attributes:
+      label: Techonologies
+
+
+  - type: dropdown
+    id: update-partners-yes-no
+    attributes:
+      label: Update the Partner(s)?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: partners
+    attributes:
+      label: Partners
+
+
+  - type: dropdown
+    id: update-tools-yes-no
+    attributes:
+      label: Update the Tools?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Tools
+
+  - type: dropdown
+    id: update-github-link-yes-no
+    attributes:
+      label: "Update GitHub Link?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: github-link
+    attributes:
+      label: GitHub Link
+
+  - type: dropdown
+    id: update-slack-link-yes-no
+    attributes:
+      label: "Update Slack Link?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: slack-link
+    attributes:
+      label: Slack Link
+
+  - type: dropdown
+    id: update-test-site-link-yes-no
+    attributes:
+      label: "Update Test Site Link?"
+      options:
+        - "YES"
+        - "NO"
+  - type: input
+    id: test-site-link
+    attributes:
+      label: Test Site Link
+
+  - type: dropdown
+    id: update-demo-site-link-yes-no
+    attributes:
+      label: "Update Demo Site Link?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: demo-site-link
+    attributes:
+      label: Demo Site Link
+
+  - type: dropdown
+    id: update-site-link-yes-no
+    attributes:
+      label: "Update Site Link?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: site-link
+    attributes:
+      label: Site link
+
+  - type: dropdown
+    id: remove-leadership-yes-no
+    attributes:
+      label: "Remove person(s) and info from Leadership?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: remove-leadership
+    attributes:
+      label: "If YES on remove person(s) edit the below to provide the information required. If NO, delete the template in the field below:"
+      value: "Name:"
+
+  - type: dropdown
+    id: add-leadership-yes-no
+    attributes:
+      label: "Add person(s) and info to Leadership?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: add-leadership
+    attributes:
+      label: "If YES on add person(s), edit the below to provide the information required. If NO, delete the template in the field below:"
+      value: |
+        Name:
+        GitHub Handle:
+        Role:
+        Slack Member ID:
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Project Status
+      options:
+        - "Active"
+        - "Completed"
+        - "On Hold"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: update-meeting-times-yes-no
+    attributes: 
+      label: Update your meeting times?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: input
+    id: update-meeting-times-vrms-issue-link
+    attributes:
+      label: "If YES on update meeting times, open an issue on VRMS to update the meeting times and provide the link to the new issue"
+      placeholder: "VRMS issue link"
+
+  - type: markdown
+    attributes:
+      value: "### Resources"
+  - type: markdown
+    attributes:
+      value: |
+        [VRMS Add/edit team meeting time template issue](https://github.com/hackforla/VRMS/issues/new?assignees=&labels=1+week+change+request&template=add-edit-team-meeting-time.md&title=Meeting+time+change+request+for+%5BProject+Name%5D)
