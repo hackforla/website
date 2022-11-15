@@ -1,72 +1,121 @@
 - name: Los Angeles Department of Neighborhood Empowerment
   image: /assets/images/partners/empower-la.png
   link: https://empowerla.org/
+  program-areas:
+    - Citizen Engagement
 - name: Code for America
   image: /assets/images/sponsors/code-for-america.svg
   link: https://www.codeforamerica.org/
+  program-areas:
+    - Vote / Representation
 - name: Yale Open Lab
   image: /assets/images/partners/yale-open-labs.svg
   link: https://openlab.yale.edu/
+  program-areas:
+    - Civic Tech Infrastructure
+    - Environment
 - name: Los Angeles Metro
   image: /assets/images/partners/m.svg
   link: https://www.metro.net/
+  program-areas:
+    - Environment
 - name: City of Santa Monica
   image: /assets/images/partners/city-of-santa-monica.png
   link: https://www.santamonica.gov/
+  program-areas:
+    - Environment
 - name: FoodCycle LA
   image: /assets/images/partners/food-cycle-la.png
   link: https://www.foodcyclela.org/
+  program-areas:
+    - Social Safety Net
 - name: Food Forward
   image: /assets/images/partners/food-forward.png
   link: https://www.goodfoodla.org/food-waste
+  program-areas:
+    - Social Safety Net
 - name: Good Food LA
   image: /assets/images/partners/good-food-la.png
   link: https://www.goodfoodla.org/food-waste
+  program-areas:
+    - Social Safety Net
 - name: Los Angeles Regional Food Bank
   image: /assets/images/partners/la-food-bank.png
   link: https://www.lafoodbank.org/
+  program-areas:
+    - Social Safety Net
 - name: Safe Place for Youth
   image: /assets/images/partners/safe-place-for-youth.png
   link: https://www.safeplaceforyouth.org/
+  program-areas:
+    - Social Safety Net
 - name: Point Source Youth
   image: /assets/images/partners/point-source-youth.svg
   link: https://www.pointsourceyouth.org/
+  program-areas:
+    - Social Safety Net
 - name: Los Angeles City Attorney
   image: /assets/images/partners/la-city-attorney.png
   link: https://www.lacityattorney.org/
+  program-areas:
+    - Justice
 - name: Los Angeles Department of Transportation
   image: /assets/images/partners/la-dot.png
   link: https://ladot.lacity.org/
+  program-areas:
+    - Environment
 - name: Los Angeles City Planning
   image: /assets/images/partners/la-city-planning.png
   link: https://planning.lacity.org/
+  program-areas:
+    - Environment
 - name: The National Diversity & Inclusion Cannabis Alliance
   image: /assets/images/partners/ndica.png
   link: https://www.thendica.org/
+  program-areas:
+    - Justice
 - name: Ballotpedia
   image: /assets/images/partners/bp.png
   link: https://ballotpedia.org/Main_Page
+  program-areas:
+    - Vote / Representation
 - name: EnCiv
   image: /assets/images/partners/enciv.svg
   link: https://enciv.org/
+  program-areas:
+    - Vote / Representation
 - name: UCLA Law
   image: /assets/images/partners/ucla-law.png
   link: https://law.ucla.edu/
+  program-areas:
+    - Justice
 - name: Golden Gate University School of Law
   image: /assets/images/partners/ggu-school-of-law.png
   link: https://law.ggu.edu/
+  program-areas:
+    - Justice
 - name: Los Angeles County District Attorney
   image: /assets/images/partners/da-county-of-la.png
   link: https://da.lacounty.gov/
+  program-areas:
+    - Justice
 - name: Digital Defense Fund
   image: /assets/images/partners/digital-defense-fund.png
   link: https://digitaldefensefund.org/
+  program-areas:
+    - Vote / Representation
 - name: City of Los Angeles Personnel Department
   image: /assets/images/partners/la-department-of-personnel.png
   link: https://personnel.lacity.org/
+  program-areas:
+    - Workforce Development
 - name: The Los Angeles County Homeless Initiative
   image: /assets/images/partners/la-county-homeless-initiative.png
   link: https://homeless.lacounty.gov/
+  program-areas:
+    - Social Safety Net
 - name: Hope of the Valley
   image: /assets/images/partners/hope-of-the-valley.png
   link: https://www.hopeofthevalley.org/
+  program-areas:
+    - Social Safety Net
