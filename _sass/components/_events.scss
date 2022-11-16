@@ -238,62 +238,57 @@
   text-align: center;
 }
 
-.location-img-pos {
-  flex: 0 0 auto;
-  width: 372px;
-  overflow: hidden;
-  margin: -5px;
+.event-card {
+  width: 414px;
+  height: 414px;
+  margin-right:16px; 
+  margin-left:16px; 
+  margin-bottom:32px;
+  text-align: center;
 
   @media #{$bp-below-tablet} {
-    margin: 0;
+    margin: 0 auto 4px auto;         
     width: 100%;
-    height: 40vh;
+	height: 100%;
   }
-  @media #{$bp-below-mobile} {
-    height: 231px;
-  }
+
 }
 
 .location-image {
   width: 100%;
-  height: 100%;
+  height: 100%; 
   object-fit: cover;
-
+  max-width: 414px;
   @media #{$bp-below-tablet} {
     /* Positions image so location text is visible */
     object-position: center 80%;
+    border-radius: 5.8%;
   }
 }
 
-.getting-started-page-card-locations {
-  background: $color-white;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  overflow: hidden;
-  max-width: 996px;
-  margin: 45px;
-  padding: 20px;
-  font-family: "Roboto" sans-serif;
+
+
+.getting-started-locations-only {
+  max-width: 1338px;
+  width: 100%;
   height: fit-content;
-
-  @media #{$bp-below-tablet} {
-    padding: 16px 16px;
-  }
-  @media #{$bp-below-mobile} {
-    margin: 45px 16px;
-  }
 }
 
-.locations-1 {
+.events-card-container {
   display: flex;
-  height: 388px;
-  margin: -17px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 45px;
+  align-content: center;
 
   @media #{$bp-below-tablet} {
     flex-direction: column;
-    text-align: center;
     height: fit-content;
+	text-align: center;
+	margin-right: 16px; 
+	margin-left: 16px; 
+	margin-bottom: 16px;
+	margin-top: 4px;
   }
 }
 .location-content {
