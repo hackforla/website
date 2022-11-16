@@ -34,10 +34,9 @@ permalink: /toolkit/
     <div class="toolkit-flex-container">
       <div class="suggest-guide-group">
         <h2 class="title3">Guides</h2>
-        <!-- The Suggest a guide button has been temporarily hidden until we figure out how this button will function after it's clicked. See issue #3678 for more details. -->
-        <button hidden class="btn btn-primary btn-md-narrow">Suggest a guide</button>
+        <button class="btn btn-primary btn-md-narrow">Suggest a guide</button>
       </div>
-    <div class="dropdown">
+    <div class="dropdown"> 
         {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
         <select id ="dropdown-select">
         {% for category in category_list %}
@@ -61,8 +60,7 @@ permalink: /toolkit/
         <div class="toolkit-flex-container">
             <div class="suggest-guide-group">
                 <h2 class="external-resources-text title3">External Resources</h2>
-                <!-- The Suggest a resource button has been temporarily hidden until we figure out how this button will function after it's clicked. See issue #3678 for more details. -->
-                <button hidden class="btn btn-primary btn-md-narrow">Suggest a resource</button>
+                <button class="btn btn-primary btn-md-narrow">Suggest a resource</button>
             </div>
             <!-- Searching through toolkitResources collection -->
                 {%- for item in site.data.internal.toolkitresources -%}
