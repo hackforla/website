@@ -44,7 +44,7 @@ guide-author:
 <style>
   
   code {
-    color: #FA114F;
+    color: $color-red;
   }
 
   h1 {
