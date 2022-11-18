@@ -43,6 +43,10 @@ guide-author:
 
 <style>
 
+  code {
+    color: $color-red;
+  }
+
   h1 {
 	font-size: 36px;
   }
