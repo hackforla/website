@@ -181,6 +181,14 @@
     .external-resources-text {
     text-align: left;
     }
+
+    .toolkit-flex-item-img-container {
+        height: auto;
+        
+        &.resource-svg-icons {
+            height: 15.5rem;
+        }
+    }
 }
 
 .toolkit-flex-item {
