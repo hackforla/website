@@ -4,7 +4,7 @@
 
         {%- if guide.svg -%}
         <div class="toolkit-flex-item-img-container">
-            {% include {{ guide.svg }} %}
+            <img src={{ guide.svg | absolute_url }} alt="">
         </div>
         {%- endif -%}
 
