@@ -87,6 +87,27 @@ layout: default
         </div>
     </div>
 
+    <!--Project Value Card-->
+    <div class='project-value-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
+        <h2 class='project-page-card-title title6'>Value</h2>
+        <div class='project-page-description'>
+            <div class='value-description-grid-item'>
+                {% if project.problem %}
+                    <p><strong>Problem</strong></p>
+                    <p>{{ project.problem }}</p>
+                {% endif %}
+                {% if project.solution %}
+                    <p><strong>Solution</strong></p>
+                    <p>{{ project.solution }}</p>
+                {% endif %}
+                {% if project.Impact %}
+                    <p><strong>Impact</strong></p>
+                    <p>{{ project.impact }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
     <!--Project Resources Card-->
     <div class='page-card card-primary page-card-lg page-card--project-description-page'>
         <h2 class='project-page-card-title title6'>Resources</h2>
