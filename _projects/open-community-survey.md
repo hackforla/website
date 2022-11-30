@@ -5,7 +5,6 @@ description: The Open Community Survey project creates transparent reports suppo
 image: /assets/images/projects/open-community-survey.jpg
 alt: 'Open Community Survey accessible to three participants with different background and perspectives.'
 image-hero: /assets/images/projects/open-community-survey-hero.jpg
-alt-hero: 'Silhouette of buildings and houses with different colors, shapes and styles.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -74,7 +73,7 @@ solution: The Open Community Survey project creates transparent reports supporte
 impact: Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 card-image-src: /assets/images/projects/open-community-survey.jpg
-card-image-alt: open community project card
+card-image-alt:
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: peace justice bottom sustainable dev goal
+sdg-image-alt: '16: peace, justice and strong institutions'
 ---

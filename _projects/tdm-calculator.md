@@ -5,7 +5,6 @@ description: The LA TDM Calculator is a web app, created in conjunction with the
 image: /assets/images/projects/tdm-calculator.jpg
 alt: 'LA TDM Calculator Landing Page (Mock Up)'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
-alt-hero: 'Los Angeles skyline at dusk, complete with cranes on top of buildings and golden smog.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach / Primary Stakeholder Relationship Manager

@@ -10,8 +10,6 @@
   height: 46vw;
   max-height: 74vh;
 
-
-
   &::after {
     position: absolute;
     top: 0;
@@ -20,8 +18,8 @@
     right: 0;
     background: linear-gradient(
       to bottom,
-      rgba($color-darkblue, 0.3) 0%,
-      rgba($color-darkblue, 1) 100%
+      rgba($color-darkblue, 0) 0%,
+      rgba($color-darkblue, 1) 90%
     );
     content: "";
     display: block;
@@ -30,16 +28,24 @@
     @media #{$bp-tablet-up} {
       background: linear-gradient(
         to bottom,
-        rgba($color-darkblue, 0) 30%,
-        rgba($color-darkblue, 1) 100%
+        rgba($color-darkblue, 0) 0%,
+        rgba($color-darkblue, 1) 93%
       );
       opacity: 1;
     }
 
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-mobile} {
-      background: linear-gradient(to bottom, rgba(3,13,45,0.3) 30%, $color-darkblue 100%);
+      background: linear-gradient(
+        to bottom, 
+        rgba($color-darkblue, 0) 0%, 
+        rgba($color-darkblue, 1) 85%
+      );
     }
+  }
+
+  .hero-inner {
+    top: 30px;
   }
 }
 
@@ -221,17 +227,23 @@
 .resource-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 21px;
+  margin-left: 20px;	
+  margin-right: auto;	
+  justify-content: flex-start;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 0px;
+    margin-left: auto;
   }
 }
 
 .resource-link {
+  display: flex;	
+  flex-basis: 16%;	
+  margin-right: 5px;	
+  justify-content: center;
   text-decoration: none;
   &:link{
     color: $color-black;
@@ -250,7 +262,8 @@
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   overflow: hidden;
   display: inline-block;
-  margin: 0px 42px 21px 0px;
+  inline-size: min-content;	
+  margin-bottom: 21px;
 
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
@@ -259,9 +272,9 @@
 }
 
 .resource-img {
-  width: 128px;
-  height: 128px;
-  padding: 20px;
+  width: 111px;	
+  height: 112px;	
+  padding: 5px;
   margin: auto auto;
 
   // NEW MOBILE FRIENDLY RULES
@@ -272,7 +285,7 @@
 }
 
 .resource-img-provided {
-  padding:12px;
+  padding: 5px;
 }
 
 .resource-title {
@@ -281,6 +294,10 @@
 }
 
 .resource-body {
+  display: flex;	
+  height: 71px;	
+  justify-content: center;	
+  align-items: center;
   padding: 10px;
   box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1);
   border-top: 2px solid #ececec;

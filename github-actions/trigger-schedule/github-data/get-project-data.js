@@ -116,7 +116,7 @@ async function getAllRepos() {
 /**
  * Fetches commit contributors for a given repo
  * @param {Object} repo     [Repository object from GitHub]
- * @return {Array}     [An array of contributors based on how many commits they have made]
+ * @return {Array}     [An array of contributors, sorted by the number of issue commits per contributor, in descending order]
  */
 async function getCommitContributors(repo) {
   // Construct parameters for request
@@ -140,13 +140,14 @@ async function getCommitContributors(repo) {
  * Fetches comment contributors for a given repo
  * @param {Object} repo     [Repository object from GitHub]
  * @param {String} dateLastRan      [ISO 8601 Date to fetch contributors from]
- * @return {Array}     [An array of contributors based on how many commits they have made]
+ * @return {Array}     [An array of contributors, sorted by the number of issue comments per contributor, in descending order]
  */
 async function getCommentContributors(repo, dateLastRan) {
   // Construct parameters for request
   let requestParams = constructContributorParams(repo);
   if(dateLastRan) requestParams.since = dateLastRan;
 
+  // Get comment contributors. listCommentContributors and listCommentContributorsForOrg are methods from trueContributorsMixin
   let issueCommentContributors = (requestParams.hasOwnProperty("org")) ?
     await octokit.listCommentContributorsForOrg(requestParams) :
     await octokit.listCommentContributors(requestParams);

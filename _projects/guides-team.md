@@ -7,7 +7,6 @@ image: /assets/images/projects/guides-team.jpg
 alt: 'Globe Map made of dots and hackforla logo and text reading Guides Team'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/guides-team-hero.jpg
-alt-hero: 'Globe Map made of dots'
 leadership:
   - name: Bonnie Wolfe
     role: Product Manager
@@ -36,7 +35,7 @@ location:
   - Remote
 partner:
 tools: 
-program area:
+program-area:
   - Civic Tech Infrastructure
 status: Active
 # If the card should not be included on the site, change visible to "false"

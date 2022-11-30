@@ -69,13 +69,15 @@
 }
 
 .toolkit-flex-item-img-container {
-    max-height: 16.95rem;
+    height: 16em;
     overflow: hidden;
 }
 
-.toolkit-flex-item-img-container svg {
+.toolkit-flex-item-img-container svg, 
+.toolkit-flex-item-img-container img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .resource-svg-icons {
@@ -97,12 +99,11 @@
         line-height: 1.5rem;
         max-height: fit-content;
     }
-}
-
-.toolkit-info-container p {
-    margin: 1rem auto auto 0rem;
-    line-height: 1.1rem;
-    width: 100%;
+    p {
+        margin: 1rem auto auto 0rem;
+        line-height: 1.1rem;
+        width: 100%;
+    }
 }
 
 .toolkit-flex-item-status {
@@ -180,13 +181,19 @@
     .external-resources-text {
     text-align: left;
     }
+
+    .toolkit-flex-item-img-container {
+        height: auto;
+        
+        &.resource-svg-icons {
+            height: 15.5rem;
+        }
+    }
 }
 
 .toolkit-flex-item {
     margin-bottom: 1.5rem;
 }
-
-
 
 @media #{$bp-below-mobile} {
     .toolkit-svg {

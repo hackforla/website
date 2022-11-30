@@ -1,13 +1,13 @@
 name: Issue Trigger
 on:
   issues:
-    types: [opened, assigned]
+    types: [opened, transferred, assigned]
 
 jobs:
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
     # Only trigger this action when an issue is newly created
-    if: ${{ github.event_name == 'issues' && github.event.action == 'opened'}}
+    if: ${{ github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'transferred')}}
     steps:
       - uses: actions/checkout@v2      
       # Check if the issue has required labels

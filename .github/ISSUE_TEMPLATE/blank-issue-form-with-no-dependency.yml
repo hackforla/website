@@ -1,20 +1,7 @@
-name: 'Blank Issue Form with Dependency'
-description: 'Standard HackforLA issue form with dependency'
+name: 'Blank Issue Form with No Dependency'
+description: 'Standard HackforLA issue form with no dependency'
 
 body:
-  - type: dropdown
-    id: dependency
-    attributes:
-      label: Is there a dependency?
-      options:
-        - "Yes"
-        - "No"
-    validations:
-      required: true
-  - type: textarea
-    id: dependency-explanation
-    attributes:
-      label: If Yes, please explain
   - type: input
     id: overview
     attributes:
@@ -36,4 +23,3 @@ body:
       description: "Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc."
     validations:
       required: true
-  
