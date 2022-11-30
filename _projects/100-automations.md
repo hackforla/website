@@ -21,7 +21,7 @@ leadership:
   - name: Olivia Chiong
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L' 
+      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
       github: 'https://github.com/Olivia-Chiong'
     picture: 'https://avatars.githubusercontent.com/Olivia-Chiong'
   - name: Muhi-Dean Othman
