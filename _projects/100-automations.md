@@ -3,7 +3,7 @@ identification: '276448423'
 title: 100 Automations
 description: Hack for LA seeks to reduce repetitive work in our open source projects and for the open source community.  This project will be both a showcase for the automations and/or microservices that we develop, but also a convenient home for those automations, so that they can be found, forked, and contributed to easily. We will be using JAMstack and a static site generator for building this website.
 image: /assets/images/projects/100automations.png
-alt: 'Logo shown as a 1 and two gears between open and closing brackets followed by the word Automations'
+alt: '100 Automations logo depicted as a 1 and two intermeshed gears surrounded by a open left bracket, forward slash and closing right bracket to indicate the 100 automations are in code, followed by the word Automations.'
 image-hero: /assets/images/projects/100automations-hero.png
 leadership:
   - name: Niven Prasad
@@ -21,7 +21,7 @@ leadership:
   - name: Olivia Chiong
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
+      slack: 'https://hackforla.slack.com/team/U01GJC7VC6L' 
       github: 'https://github.com/Olivia-Chiong'
     picture: 'https://avatars.githubusercontent.com/Olivia-Chiong'
   - name: Muhi-Dean Othman
