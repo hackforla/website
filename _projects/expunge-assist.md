@@ -6,7 +6,6 @@ description: 'Expunge Assist aims to help people in California with criminal rec
 image: /assets/images/projects/expunge-assist.png
 alt: 'Image of a criminal record'
 image-hero: /assets/images/projects/expunge-assist-hero.png
-alt-hero: 'Expunge Assist project logo'
 leadership:
   - name: Thomas Demoner
     role: Product Manager, Development
