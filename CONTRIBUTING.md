@@ -567,7 +567,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
-**Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+**Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/How-to-Use-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
    
 ##### **i. Prepare repo changes (1): Use the `git add` command to stage your changes.** 
 
@@ -891,7 +891,7 @@ Now you are all set to work on a new PR. Start over at [**2.3 Where can I find G
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
-For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
+For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests), [visual demo on pull request reviews](https://drive.google.com/file/d/1b6uW_Od8ftACsEr5u-nxe8qNb8UjkISN), and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***

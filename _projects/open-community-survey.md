@@ -5,7 +5,6 @@ description: The Open Community Survey project creates transparent reports suppo
 image: /assets/images/projects/open-community-survey.jpg
 alt: 'Open Community Survey accessible to three participants with different background and perspectives.'
 image-hero: /assets/images/projects/open-community-survey-hero.jpg
-alt-hero: 'Silhouette of buildings and houses with different colors, shapes and styles.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
