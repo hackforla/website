@@ -42,9 +42,9 @@ guide-author:
 ---
 
 <style>
-  
+
   code {
-    color: #FA114F;
+    color: $color-red;
   }
 
   h1 {
@@ -117,10 +117,10 @@ Reminders can be set up in two ways:
   ![alt_text](../assets/images/guides/how-to-set-reminders-in-slack/image10.png#content "image_tooltip")
 
 2. To Whom? @ or # <br>
-
+<span class="color-red">
    `If to a specific person: @someone` <br>
    `If the entire channel: #channel`
-
+<span>
 3. In quotes write the reminder text you want the Bot to send out.
 
 4. Last, input day and time you want the Bot to send out the message. **NOTE: the time zone listed will be your time zone.**

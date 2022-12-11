@@ -152,7 +152,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -173,7 +173,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -207,7 +207,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(-45deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }
@@ -224,7 +224,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(135deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }

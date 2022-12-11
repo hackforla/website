@@ -35,7 +35,7 @@
 
 .hero-heading--guides {
 	text-decoration: underline;
-	text-decoration-color: #fa114f;
+	text-decoration-color: $color-red;
 }
 
 /* ==========================================================*/
@@ -45,7 +45,7 @@
 /* ==========================================================*/
 
 .guide-links a {
-	color: #fa114f;
+	color: $color-red;
 }
 
 .guide-links ul {
@@ -91,7 +91,7 @@ img[src*='#examples'] {
 	z-index: 99;
 	border: none;
 	outline: none;
-	background-color: #fa114f;
+	background-color: $color-red;
 	color: white;
 	cursor: pointer;
 	padding: 15px;
@@ -137,7 +137,7 @@ img[src*='#examples'] {
 }
 
 .sticky-nav--guides a {
-	color: #fa114f;
+	color: $color-red;
 	text-decoration: none;
 }
 

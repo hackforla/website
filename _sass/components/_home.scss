@@ -309,7 +309,7 @@ button {
   float: right;
   text-align: center;
   margin-left: 10px;
-  background-color: rgb(255, 255, 151);
+  background-color: $color-lightyellow;
   width: 92px;
   padding: 2px 7px;
   border-radius: 6px;
@@ -329,7 +329,7 @@ button {
 }
 
 .status-Completed {
-  background-color: rgb(255, 173, 173);
+  background-color: $color-salmon;
 }
 
 .project-card-field-inline {
