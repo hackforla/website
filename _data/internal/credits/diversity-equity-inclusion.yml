@@ -1,0 +1,22 @@
+---
+# The title from the source provider
+title: Diversity, Equity, Inclusion
+# The url where you can get direct access to the image on the provider site
+title-link: https://burst.shopify.com/photos/team-hands-middle?q=matthew+henry+diversity
+# The type of content - image, audio, or video 
+content-type: image
+# The page it's used on
+used-in: Homepage
+# Name of the artist
+artist: Matthew Henry
+# Name of the image database you found it on
+provider: Burst
+# Please give the general site URL, not the link to the image
+provider-link: https://burst.shopify.com/
+# Location in our GitHub repo
+image-url: /assets/images/program-areas/diversity-equity-inclusion.png
+# Alt text for the image on the Credits page
+alt: ''
+# If an image was altered, please give the name of the HfLA designer that altered the image
+altered-by: Kristine Eudey
+---
