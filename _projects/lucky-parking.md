@@ -9,8 +9,8 @@ leadership:
   - name: Yuting Chu
     role: Product Manager Lead
     links:
-      slack: ‘https://hackforla.slack.com/team/U03J4E55KCH’
-      github: ‘https://github.com/ychu196’
+      slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
+      github: 'https://github.com/ychu196'
     picture: https://avatars.githubusercontent.com/ychu196
   - name: Greg Pawin
     role: Data Scientist Lead
@@ -30,54 +30,42 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
       github: 'https://github.com/mklmrgn'
     picture: https://avatars.githubusercontent.com/mklmrgn
-  - name: Yen Phan
-    role: User Research
+  - name: Arpita Pandya
+    role: Full-Stack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
-  - name: Yujin Chang
-    role: UI Designer
+      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
+      github: 'https://github.com/arpitapandya'
+    picture: https://avatars.githubusercontent.com/arpitapandya
+  - name: Diedrich Chavarria
+    role: Full-Stack Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
-      github: 'https://github.com/eugenecha'
-    picture: https://avatars.githubusercontent.com/eugenecha
+      slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
+      github: 'https://github.com/DCH-CH'
+    picture: https://avatars.githubusercontent.com/DCH-CH
   - name: Jodie Chen
-    role: UI/UX Designer
+    role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03RFGLLAQG'
       github: 'https://github.com/jojochen25’'
     picture: https://avatars.githubusercontent.com/u/103106753
   - name: Sijia Pitts
-    role: UI/UX Designer
+    role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
       github: 'https://github.com/sijiapitts'
     picture: https://avatars.githubusercontent.com/u/103976231
-  - name: Pratibha Shivanand
-    role: Data Scientist
+  - name: Yujin Chang
+    role: UX/UI Designer
     links:
-      slack: 'https://hackforla.slack.com/team/U03SM1LF9HD'
-      github: 'https://github.com/pratibhanagesh'
-    picture: https://avatars.githubusercontent.com/u/8139348
-  - name: Aletia Trepte
-    role: Data Scientist/Engineer
+      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
+      github: 'https://github.com/eugenecha'
+    picture: https://avatars.githubusercontent.com/eugenecha
+  - name: Sam Sengupta
+    role: UX/UI Designer
     links:
-      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
-      github: 'https://github.com/parcheesime'
-    picture: https://avatars.githubusercontent.com/u/38143160
-  - name: Yao Guan
-    role: Quant UXR
-    links:
-      slack: 'https://hackforla.slack.com/team/U03F35T4PND'
-      github: 'https://github.com/yaoguan'
-    picture: https://avatars.githubusercontent.com/u/41702875
-  - name: Diedrich Chavarria
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
-      github: 'https://github.com/DCH-CH'
-    picture: https://avatars.githubusercontent.com/DCH-CH
+      slack: 
+      github: 
+    picture: 
   - name: Seymour Liao
     role: Data Scientist
     links:
@@ -96,12 +84,30 @@ leadership:
       slack: 
       github: 
     picture: 
-  - name: Sam Sengupta
-    role: UX/UI
+  - name: Pratibha Shivanand
+    role: Data Scientist
     links:
-      slack: 
-      github: 
-    picture: 
+      slack: 'https://hackforla.slack.com/team/U03SM1LF9HD'
+      github: 'https://github.com/pratibhanagesh'
+    picture: https://avatars.githubusercontent.com/u/8139348
+  - name: Aletia Trepte
+    role: Data Scientist/Engineer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
+      github: 'https://github.com/parcheesime'
+    picture: https://avatars.githubusercontent.com/u/38143160
+  - name: Yen Phan
+    role: User Research
+    links:
+      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
+      github: 'https://github.com/ymphan'
+    picture: https://avatars.githubusercontent.com/ymphan
+  - name: Yao Guan
+    role: Quant UXR
+    links:
+      slack: 'https://hackforla.slack.com/team/U03F35T4PND'
+      github: 'https://github.com/yaoguan'
+    picture: https://avatars.githubusercontent.com/u/41702875
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
