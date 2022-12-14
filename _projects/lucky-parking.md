@@ -65,7 +65,7 @@ leadership:
     links:
       slack: 
       github: 
-    picture: 
+    picture: https://avatars.githubusercontent.com/u/41702879
   - name: Seymour Liao
     role: Data Scientist
     links:
@@ -83,7 +83,7 @@ leadership:
     links:
       slack: 
       github: 
-    picture: 
+    picture: https://avatars.githubusercontent.com/u/41702877
   - name: Pratibha Shivanand
     role: Data Scientist
     links:
