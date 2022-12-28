@@ -217,7 +217,7 @@
     .program-area {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap:2em;
+        grid-gap: 2em;
         padding: 44px;
 
         img {
@@ -258,6 +258,7 @@
             display: block !important;
             background: $color-pink;
             border-radius: 10px;
+            padding: 20px;
             grid-row: 2/3;
 
             h4 {
@@ -274,7 +275,7 @@
             }
 
             .sdg-image {
-                height: 100%;
+                height: 145px;
                 margin-right: 20px;
                 border-radius: 10px;
             }
