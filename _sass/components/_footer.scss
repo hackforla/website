@@ -34,7 +34,7 @@
       margin-bottom: 10px;
       flex: 0 0 50%;
       padding: 10px;
-      @media #{$bp-mobile-up} {
+      @media #{$bp-desktop-up} {
         flex: none;
         padding-right: 150px;
       }
