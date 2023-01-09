@@ -1,99 +1,99 @@
 <footer class="main-footer">
-	<div class="footer-contain">
-		<nav class="footer-nav">
-			<div class="header-links">
-				<div class="footer-columns">
-					<div class="column">
-						{% for item in site.data.navigation.ourwork %}
-						<li>
-							{% if item.bolded == true %}
-							<a style="font-weight: bold" href="{{ item.link }}">
-								{{item.name}}
-							</a>
-							{% else %}
-							<a href="{{ item.link }}"> {{item.name}} </a>
-							{% endif %}
-						</li>
-						{% endfor %}
-					</div>
+  <div class="footer-contain">
+    <nav class="footer-nav">
+      <div class="header-links">
+        <div class="footer-columns">
+         <div class="column">
+          {% for item in site.data.navigation.ourwork %}
+            <li>
+              {% if item.bolded == true %}
+              <a style="font-weight:bold" href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% else %}
+              <a href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% endif %}
+            </li>
+           {% endfor %}
+          </div>
 
-					<div class="column">
-						{% for item in site.data.navigation.joinus %}
-						<li>
-							{% if item.bolded == true %}
-							<a style="font-weight: bold" href="{{ item.link }}">
-								{{item.name}}
-							</a>
-							{% else %}
-							<a href="{{ item.link }}"> {{item.name}} </a>
-							{% endif %}
-						</li>
-						{% endfor %}
-					</div>
+          <div class="column">
+            {% for item in site.data.navigation.joinus %}
+            <li>
+              {% if item.bolded == true %}
+              <a style="font-weight:bold" href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% else %}
+              <a href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% endif %}
+            </li>
+           {% endfor %}
+          </div>
 
-					<div class="column">
-						{% for item in site.data.navigation.getintouch %}
-						<li>
-							{% if item.bolded == true %}
-							<a style="font-weight: bold" href="{{ item.link }}">
-								{{item.name}}
-							</a>
-							{% else %}
-							<a href="{{ item.link }}"> {{item.name}} </a>
-							{% endif %}
-						</li>
-						{% endfor %}
-					</div>
+          <div class="column">
+            {% for item in site.data.navigation.getintouch %}
+            <li>
+              {% if item.bolded == true %}
+              <a style="font-weight:bold" href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% else %}
+              <a href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% endif %}
+            </li>
+           {% endfor %}
+          </div>
 
-					<div class="column">
-						{% for item in site.data.navigation.toolkit %}
-						<li>
-							{% if item.bolded == true %}
-							<a style="font-weight: bold" href="{{ item.link }}">
-								{{item.name}}
-							</a>
-							{% else %}
-							<a href="{{ item.link }}"> {{item.name}} </a>
-							{% endif %}
-						</li>
-						{% endfor %}
-					</div>
-				</div>
+          <div class="column">
+            {% for item in site.data.navigation.toolkit %}
+            <li>
+              {% if item.bolded == true %}
+              <a style="font-weight:bold" href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% else %}
+              <a href="{{ item.link }}">
+                {{item.name}}
+              </a>
+              {% endif %}
+            </li>
+           {% endfor %}
+        	</div>
+        </div> 
 
-				<a
-					href="/donate/"
-					class="btn btn-primary-on-dark btn-md-narrow btn--donate-footer btn--default"
-					title="Go to Donate Page">
-          Donate
-				</a>
+				<a href="/donate/" class="btn btn-primary-on-dark btn-md-narrow btn--donate-footer btn--default" title="Go to Donate Page">Donate</a>
 
-				<div class="footer-links">
-					<div class="credits-page">
+        <div class="footer-links">
+          <div class="credits-page">
 						<a href="/credits">Credits</a>
-            &nbsp;|&nbsp;
-            <a href="/privacy-policy">Privacy Policy</a>
-            &nbsp;|&nbsp;
-            <a href="/sitemap">Site Map</a>
+						&nbsp;|&nbsp;
+						<a href="/sitemap">Site Map</a>
+						&nbsp;|&nbsp;
+						<a href="/privacy-policy">Privacy Policy</a>
+						&nbsp;|&nbsp;
+						<a href="/join">Join Us</a>
 					</div>
 
-					<ul class="inline-list header-list">
-						{% for item in site.data.navigation.social %} {% if item.footer %}
-						<li>
-							<a
-								href="{{ item.link }}"
-								rel="noopener"
-								target="_blank"
-								class="js-inline-link js-inline-link-{{ item.name | downcase }}"
-							>
-								{% if item.icon %} {%- include {{ site.baseurl }}{{ item.icon }}
-								-%} {% endif %}
-								<span class="sr-only">{{ item.name }}</span>
-							</a>
-						</li>
-						{% endif %} {% endfor %}
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
-</footer>
+          <ul class="inline-list header-list">
+            {% for item in site.data.navigation.social %} {% if item.footer %}
+            <li>
+              <a href="{{ item.link }}" rel="noopener" target="_blank" class="js-inline-link js-inline-link-{{ item.name | downcase }}">
+                {% if item.icon %}
+                {%- include {{ site.baseurl }}{{ item.icon }} -%}
+                {% endif %}
+                <span class="sr-only">{{ item.name }}</span>
+              </a>
+            </li>
+            {% endif %} {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
