@@ -231,6 +231,11 @@
   column-gap: 6%;
   padding: 0px 2%;
 
+  @media screen and (max-width:600px){
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
   // NEW MOBILE FRIENDLY RULES
   @media #{$bp-below-mobile} {
     display: grid;
@@ -241,10 +246,29 @@
 
 .sdg-card-title {
   color: $color-white;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    color: #333333;
+    font-size: 16px;
+  }
 }
 
 .sdg-grid-item {
-  padding: 0px;
+  padding: 0px 10px;
+}
+
+.sdg-description-card {
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: auto;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    width: 100%;
+  }
 }
 
 .sdg-img-item {
@@ -252,12 +276,25 @@
   padding: 30px 60px 10px;
   border-radius: 10px 10px 0px 0px;
   background: #02548B;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    background: #F7F5F5;
+    width: 100%;
+  }
+
 }
 
 .sdg-description-grid-item {
   padding: 25px 19px;
   background: #F6F6F6;
   border-radius: 0px 0px 20px 20px;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    background: #F7F5F5;
+    width: 100%;
+  }
 }
 
 .sdg-img {
@@ -265,6 +302,15 @@
   height: 145px;
   left: 72px;
   top: 98px;
+
+  // NEW MOBILE FRIENDLY RULES
+  @media #{$bp-below-mobile} {
+    width: 90px;
+    height: 90px;
+    left: 32px;
+    top: 2138px;
+    border-radius: 10px;
+  }
 }
 
 .resource-list {
