@@ -12,7 +12,6 @@
   }
 
   @media #{$bp-desktop-up} {
-    margin-top: -165px;
     padding: 48px 69px;
   }
   
@@ -78,6 +77,7 @@
 
     @media #{$bp-mobile-up} {
       justify-content: space-between;
+      align-items: center;
       margin: 0;
     }
   }
