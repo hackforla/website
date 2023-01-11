@@ -3,7 +3,7 @@ description: 'Standard HackforLA issue form with dependency'
 
 body:
   - type: textarea
-    id: dependency-explanation
+    id: dependency
     attributes:
       label: Dependency
       description: 'Add dependencies (ideally by issue #)'
