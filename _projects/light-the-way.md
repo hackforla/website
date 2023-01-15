@@ -15,5 +15,7 @@ location:
   # - Downtown LA
   - Remote
 visible: false
+program-area:  
+  - Social Safety Net
 status: On Hold
 ---
