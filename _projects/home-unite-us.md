@@ -94,7 +94,7 @@ links:
   - name: Overview
     url: '../assets/pdfs/Home-Unite-Us-One-Sheet.pdf'
   - name: Site
-    url: "https://homeunite.us/"
+    url: "https://homeunite.us"
 looking:
   - category: UI/UX
     skill: UI (including wireframes, familiar with Figma)
