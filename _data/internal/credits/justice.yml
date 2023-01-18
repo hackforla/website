@@ -1,0 +1,20 @@
+---
+# The title from the source provider
+title: Justice
+# The url where you can get direct access to the image on the provider site
+title-link: https://unsplash.com/photos/bvHcG6334dE
+# The type of content - image, audio, or video 
+content-type: image
+# The page it's used on
+used-in: Homepage
+# Name of the artist
+artist: Sean Lee
+# Name of the image database you found it on
+provider: Unsplash
+# Please give the general site URL, not the link to the image
+provider-link: https://unsplash.com/
+# Location in our GitHub repo
+image-url: /assets/images/program-areas/justice.png
+# Alt text for the image on the Credits page
+alt: ''
+---
