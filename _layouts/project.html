@@ -101,20 +101,11 @@ layout: default
                     <p>{{ page.impact }}</p>
                 </div>
                 <div class='sdg-description-card'>
-                    <div class='sdg-img-item'>
-                        <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
+                    <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
+                    <div class='sdg-description-wrapper'>
                         <img class='sdg-img' src='{{ page.sdg-image-src }}'/>
+                        <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
                     </div>
-                    <div class='sdg-description-grid-item'>
-                        {{ page.sdg }}
-                    </div>
-                </div>
-            </div>
-            <div class="sdg-description-card-mobile">
-                <h2 class='sdg-card-title-mobile title7'>Sustainable Development Goal</h2>
-                <div class="sdg-description-item-mobile">
-                    <img class='sdg-img' src='{{ page.sdg-image-src }}'/>
-                    <p>{{ page.sdg }}</p>
                 </div>
             </div>
         </div>
