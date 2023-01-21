@@ -7,7 +7,35 @@ on:
       - 'feature-homepage-launch'
 
 jobs:
+# The purpose of the echo is to show that this workflow was triggered. Once everything is working, this may be deleted.
   Hello-World:
     runs-on: ubuntu-latest
     steps:
-     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+     - run: echo "🍺 The job was automatically triggered by a ${{ github.event_name }} event."
+
+# The purpose of Move-PR is to gather merged PRs from every location 
+# into a single column so that in the next step they may be deleted.
+  Move-PR:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }} 
+    steps:
+      - name: Move PR
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+
+# The purpose of Delete-Merged-PRs is to delete 
+  Delete-Merged-PRs:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }} 
+    steps: 
+      - name: Delete Merged PRs
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          action: delete
+
