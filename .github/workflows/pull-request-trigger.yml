@@ -26,9 +26,9 @@ jobs:
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
-  # Deletes merged PRs from column 'test-approved-by-reviewer' w/ inclusion of 'needs: Move PR'
+  # Deletes merged PRs from column 'test-approved-by-reviewer' w/ inclusion of 'needs: Move-PR'
   Delete-Merged-PRs:
-    needs: Move PR
+    needs: Move-PR
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true }} 
     steps: 
