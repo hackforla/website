@@ -23,7 +23,7 @@ jobs:
       - name: Move PR
         uses: alex-page/github-project-automation-plus@v0.8.1
         with:
-          project: Project Board
+          project: 'Project Board 77'
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
