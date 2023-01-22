@@ -5,6 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'remove-merged-prs-project-board-2592'
 
 jobs:
 # The purpose of the echo is to show that this workflow was triggered. Once everything is working, this may be deleted.
@@ -24,7 +25,7 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
 # The purpose of Delete-Merged-PRs is to delete 
   Delete-Merged-PRs:
@@ -36,6 +37,6 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          repo-token: ${{ secrets.GHPROJECT_TOKEN }}
           action: delete
 
