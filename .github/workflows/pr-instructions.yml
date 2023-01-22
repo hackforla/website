@@ -5,6 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'remove-merged-prs-project-board-2592'
 
 jobs:
   Add-Pull-Request-Instructions:
