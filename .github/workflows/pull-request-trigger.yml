@@ -8,14 +8,13 @@ on:
       - 'remove-merged-prs-project-board-2592'
 
 jobs:
-# The purpose of the echo is to show that this workflow was triggered. Once everything is working, this may be deleted.
+  # Run an echo to demonstrate action was triggered
   Hello-World:
     runs-on: ubuntu-latest
     steps:
      - run: echo "🍺 The job was automatically triggered by a ${{ github.event_name }} event."
 
-# The purpose of Move-PR is to gather merged PRs from every location 
-# into a single column so that in the next step they may be deleted.
+  # Gathers merged PRs from every location and moves to column 'test-approved-by-reviewer'
   Move-PR:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true }} 
@@ -27,8 +26,9 @@ jobs:
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.GHPROJECT_TOKEN }}
 
-# The purpose of Delete-Merged-PRs is to delete 
+  # Deletes merged PRs from column 'test-approved-by-reviewer' w/ inclusion of 'needs: Move PR'
   Delete-Merged-PRs:
+    needs: Move PR
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true }} 
     steps: 
