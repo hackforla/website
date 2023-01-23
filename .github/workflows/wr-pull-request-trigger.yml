@@ -25,6 +25,7 @@ jobs:
 
 # The purpose of Delete-Merged-PRs is to delete 
   Delete-Merged-PRs:
+    needs: Move-PR
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.merged == true }} 
     steps: 
