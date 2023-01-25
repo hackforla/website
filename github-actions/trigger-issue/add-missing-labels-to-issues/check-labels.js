@@ -1,7 +1,7 @@
 // Constant variables
-const REQUIRED_LABELS = ['level', 'role', 'Feature']
-const LABEL_MISSING = ['level: missing', 'role missing', 'Feature Missing']
-const LEVEL_EXCEPTIONS = ['good first issue']
+const REQUIRED_LABELS = ['Complexity', 'role', 'Feature']
+const LABEL_MISSING = ['Complexity: missing', 'role missing', 'Feature Missing']
+const COMPLEXITY_EXCEPTIONS = ['good first issue']
 
 // Global variables
 var github
@@ -62,8 +62,8 @@ function checkLabels(labels) {
   REQUIRED_LABELS.forEach((requiredLabel, i) => {
     const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'gi')
     const isLabelPresent = labels.some(label => {
-      // If the label is in the level exceptions array, it also fulfills the level requirements
-      if (LEVEL_EXCEPTIONS.includes(label) && requiredLabel === 'level') {
+      // If the label is in the complexity exceptions array, it also fulfills the complexity requirements
+      if (COMPLEXITY_EXCEPTIONS.includes(label) && requiredLabel === 'Complexity') {
         return true
       }
 
