@@ -4,10 +4,36 @@ on:
     types: [closed]
     branches:
       - 'gh-pages'
-      - 'feature-homepage-launch'
 
 jobs:
+  # Run an echo to confirm that the is taction was triggered
   Hello-World:
     runs-on: ubuntu-latest
     steps:
-     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+     - run: echo "🍺 This job was automatically triggered by a ${{ github.event_name }} event."
+
+  # Gathers merged PRs from every location and moves to column 'test-approved-by-reviewer...'
+  Gather-Merged-PRs:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }} 
+    steps:
+      - name: Gather Merged PRs
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+
+  # Deletes merged PRs from column 'test-approved-by-reviewer...' after 'needs: Gather-Merged-PRs'
+  Delete-Merged-PRs:
+    needs: Gather-Merged-PRs
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }} 
+    steps: 
+      - name: Delete Merged PRs
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          action: delete
