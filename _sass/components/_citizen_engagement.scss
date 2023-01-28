@@ -212,13 +212,15 @@
 
 @media #{$bp-tablet-up} {
     .program-area-container {
-        max-width: 1080px !important;
+        max-width: 1080px !important; 
     }
+
     .program-area {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2em;
         padding: 44px;
+        margin: 30px 0;
 
         img {
             border-radius: 10px;
