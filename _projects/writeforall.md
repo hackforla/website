@@ -22,7 +22,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/gender-equity/blob/master/README.md'
   - name: Demo link
-    url: 'http://writeforall.org/'
+    url: 'https://hackforla.github.io/writeforall/'
 looking:
   - category: Content
     skill: Gender researcher
