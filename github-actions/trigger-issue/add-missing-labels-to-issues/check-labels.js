@@ -1,6 +1,6 @@
 // Constant variables
 const REQUIRED_LABELS = ['Complexity', 'role', 'Feature']
-const LABEL_MISSING = ['Complexity: missing', 'role missing', 'Feature Missing']
+const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing']
 const COMPLEXITY_EXCEPTIONS = ['good first issue']
 
 // Global variables
