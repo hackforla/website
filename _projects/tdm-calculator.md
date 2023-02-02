@@ -24,7 +24,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
       github: 'https://github.com/Biuwa'
     picture: https://avatars.githubusercontent.com/Biuwa
-   - name: Anousha Shadrach
+  - name: Anousha Shadrach
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
