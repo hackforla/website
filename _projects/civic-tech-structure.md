@@ -55,7 +55,7 @@ location:
   - Remote
 partner:
 tools: Google Docs, HackforLA.org guides
-visible: false
+visible: true
 program-area:
   - Civic Tech Infrastructure
 status: Complete
