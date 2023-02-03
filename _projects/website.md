@@ -30,18 +30,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
       github: 'https://github.com/bishrfaisal'
     picture: https://avatars.githubusercontent.com/bishrfaisal
-  - name: Stephanie Samuels
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03SJS7LYCC'
-      github: 'https://github.com/Steph112792'
-    picture: https://avatars.githubusercontent.com/Steph112792
-  - name: Vaisali Krishna Kumar
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U028RCG9Z44'
-      github: 'https://github.com/vaisali89'
-    picture: https://avatars.githubusercontent.com/vaisali89
   - name: Kathryn Silva Conway
     role: Technical Lead
     links:
@@ -66,6 +54,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
       github: 'https://github.com/jdingeman'
     picture: https://avatars.githubusercontent.com/jdingeman
+  - name: Matt Pereira
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
+      github: 'https://github.com/MattPereira'
+    picture: https://avatars.githubusercontent.com/MattPereira
+  - name: Phillip Sanchez
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
+      github: 'https://github.com/plang-psm'
+    picture: https://avatars.githubusercontent.com/plang-psm
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
