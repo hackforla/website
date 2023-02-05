@@ -137,7 +137,7 @@ function appendMeetingTimes(scheduleData) {
             const day = new Date(event.date).toString().substring(0,3);
     
             // only append the meeting times to the correct project page
-            if (projectTitle === projectName) {
+            if (projectTitle.toLowerCase() === projectName.toLowerCase()) {
                 meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
                 meetingsFound.push(day);
             }
