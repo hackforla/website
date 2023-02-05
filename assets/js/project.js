@@ -128,81 +128,39 @@ const API_URL = 'https://www.vrms.io/api/recurringevents';
 function schedule(scheduleData) {
 
     // Loops through data and assigns information to variables in a readable format
-    for (let i = 0; i <= scheduleData.length - 1; i++) {
-        let startTime = timeFormat(new Date(scheduleData[i].startTime));
-        let endTime = timeFormat(new Date(scheduleData[i].endTime));
-        let webURL = scheduleData[i].project.hflaWebsiteUrl;
-        let projectName = scheduleData[i].project.name;
-        let description = scheduleData[i].description;
-        let day = new Date(scheduleData[i].date).toString().substring(0,3);
-        let scheduleClass;
-
-        // Function that adds data to proper header
-        function scheduleDay() {
-            // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-            if (scheduleData == localData) {
-                scheduleClass = "localData";
-            } else {
-                scheduleClass = "updated";
+    for (let event of scheduleData) {
+        try {
+            const startTime = timeFormat(new Date(event.startTime));
+            const endTime = timeFormat(new Date(event.endTime));
+            const webURL = event.project.hflaWebsiteUrl;
+            const projectName = event.project.name;
+            const description = event.description;
+            const day = new Date(event.date).toString().substring(0,3);
+            let scheduleClass;
+    
+            // Function that adds data to proper header
+            function scheduleDay() {
+                // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
+                if (scheduleData == localData) {
+                    scheduleClass = "localData";
+                } else {
+                    scheduleClass = "updated";
+                }
+                if (projectTitle === projectName) {
+                    meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
+                    meetingsFound.push(day);
+                }
             }
-            if (projectTitle === projectName) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
-                meetingsFound.push(day);
-            }
+            scheduleDay(day);
+        } catch (e) {
+            console.error(e);
         }
-        scheduleDay(day);
-    }
+    } 
 }
 
-// Function checks for differences between two arrays
-function arr_diff (a1, a2) {
-
-    let a = [], diff = [];
-
-    for (let i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (let i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (let k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-}
-
-// Function clears the schedule
-function clearSchedule() {
-    let prevDayList = meetingsList.getElementsByClassName("localData");
-
-    while (prevDayList[0]) {
-        prevDayList[0].parentNode.removeChild(prevDayList[0]);
-    }
-}
 
 // Executes schedule with localData
 schedule(localData);
-
-// Fetchs JSON file from VRMS_API
-fetch(API_URL, {method: 'GET'})
-    .then(response => response.json())
-    .then((data) => {
-    // Checks for differences between localData and VRMS data
-    if (arr_diff(data, localData)) {
-        clearSchedule();
-        schedule(data);
-    }
-})
-.catch(err => {
-    console.log(err);
-})
 
 
 if (meetingsFound.length >= 1) {
