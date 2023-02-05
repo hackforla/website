@@ -118,48 +118,37 @@ let meetingsHeader = document.querySelector('.meetingsHeader');
 let projectTitle = scriptTag.getAttribute("projectTitle");
 let meetingsFound = [];
 
-// Assigns local JSON Data to localData variable
-{% assign localData = site.data.external.vrms_data %}
+// Grab the meeting time data from the vrms_data.json file
+{% assign vrmsData = site.data.external.vrms_data %}
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
+const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
-// Function schedules data that is passed in
-function schedule(scheduleData) {
+// Loops through the VRMS data and inserts each meeting time into the HTML of the correct project page
+function appendMeetingTimes(scheduleData) {
 
-    // Loops through data and assigns information to variables in a readable format
     for (const event of scheduleData) {
         try {
+            // Assigning information to variables in a readable format
             const startTime = timeFormat(new Date(event.startTime));
             const endTime = timeFormat(new Date(event.endTime));
             const webURL = event.project.hflaWebsiteUrl;
             const projectName = event.project.name;
             const description = event.description;
             const day = new Date(event.date).toString().substring(0,3);
-            let scheduleClass;
     
-            // Function that adds data to proper header
-            function scheduleDay() {
-                // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-                if (scheduleData == localData) {
-                    scheduleClass = "localData";
-                } else {
-                    scheduleClass = "updated";
-                }
-                if (projectTitle === projectName) {
-                    meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
-                    meetingsFound.push(day);
-                }
+            // only append the meeting times to the correct project page
+            if (projectTitle === projectName) {
+                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
+                meetingsFound.push(day);
             }
-            scheduleDay(day);
+
         } catch (e) {
             console.error(e);
         }
     } 
 }
 
-
-// Executes schedule with localData
-schedule(localData);
+appendMeetingTimes(vrmsData);
 
 
 if (meetingsFound.length >= 1) {
