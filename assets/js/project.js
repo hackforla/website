@@ -122,13 +122,12 @@ let meetingsFound = [];
 {% assign localData = site.data.external.vrms_data %}
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
 let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
-const API_URL = 'https://www.vrms.io/api/recurringevents';
 
 // Function schedules data that is passed in
 function schedule(scheduleData) {
 
     // Loops through data and assigns information to variables in a readable format
-    for (let event of scheduleData) {
+    for (const event of scheduleData) {
         try {
             const startTime = timeFormat(new Date(event.startTime));
             const endTime = timeFormat(new Date(event.endTime));
