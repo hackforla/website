@@ -57,6 +57,8 @@ partner:
 tools: Google Docs, HackforLA.org guides
 visible: false
 program-area:
+visible: false
+program-area:
   - Civic Tech Infrastructure
 status: Complete
 ---
