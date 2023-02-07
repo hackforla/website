@@ -70,7 +70,7 @@ status: Active
 # citizen engagement card data
 problem: Most Neighborhood Councils do not have access or resources to hire technical experts necessary to create a citywide survey so that they can use the data to create inclusive websites targeted towards the needs of their specific communities.
 solution: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils to understand how constituents are interacting with, and what they need from, their websites.
-impact: Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+impact: 
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 card-image-src: /assets/images/projects/open-community-survey.jpg
 card-image-alt:
