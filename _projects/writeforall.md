@@ -43,7 +43,7 @@ location:
   - Remote
 partner: Seeking
 visible: true
-status: Active
+status: On Hold
 program-area: 
   - Diversity / Equity and Inclusion
 ---
