@@ -5,7 +5,6 @@ description: The website is focused on individuals seeking food in Los Angeles w
 image: /assets/images/projects/food-oasis.jpg
 alt: 'Stacks of freshly harvested beets'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
-alt-hero: 'Stacks of freshly harvested carrots, beets and vegetables'
 leadership:
   - name: John Darragh
     role: Architect & Technology Lead
@@ -13,36 +12,43 @@ leadership:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
-  - name: Erika Gill
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U01NB9SEKUJ"
-      github: "https://github.com/erigilg"
-    picture: https://avatars.githubusercontent.com/erigilg
-  - name: Katie Jensen
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U01JKTLQGBF"
-      github: "https://github.com/ktjnyc"
-    picture: https://avatars.githubusercontent.com/ktjnyc
-  - name: Andrew Strauss
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U018LSRS37Y"
-      github: "https://github.com/pageignited"
-    picture: https://avatars.githubusercontent.com/pageignited
-  - name: Thy Tran
-    role: Subject Matter Expert & User Researcher
-    links:
-      slack: "https://hackforla.slack.com/team/U01R74KS81Y"
-      github: "https://github.com/wanderingspoon"
-    picture: https://avatars.githubusercontent.com/wanderingspoon
   - name: Bryan Wu
-    role: UX Designer
+    role: Design Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
       github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
+  - name: Jieun Ryu
+    role: UX Researcher
+    links:
+      slack: "https://hackforla.slack.com/team/U02LL2DF4HL"
+      github: "https://github.com/ryu-jieun"
+    picture: https://avatars.githubusercontent.com/ryu-jieun
+  - name: Gigi Patel
+    role: UX Researcher
+    links:
+      slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
+      github: "https://github.com/GigiUxR"
+    picture: https://avatars.githubusercontent.com/GigiUxR
+  - name: Virginia Wu
+    role: Full Stack Engineer
+    links:
+      slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
+      github: "https://github.com/VirginiaWu11"
+    picture: https://avatars.githubusercontent.com/VirginiaWu11
+  - name: Seiko Igi
+    role: Product Designer
+    links:
+      slack: "https://hackforla.slack.com/team/U02U55MQEQ7"
+      github: "https://github.com/sei1122"
+    picture: https://avatars.githubusercontent.com/sei1122
+  - name: Hannah Zulueta
+    role: Full Stack Engineer
+    links:
+      slack: "https://hackforla.slack.com/team/U01G7AH18J3"
+      github: "https://github.com/hanapotski"
+    picture: https://avatars.githubusercontent.com/hanapotski 
+
 links:
   - name: GitHub
     url: "https://github.com/hackforla/food-oasis"
@@ -54,6 +60,8 @@ links:
     url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
     url: "https://devla.foodoasis.net/"
+  - name: Overview
+    url: '../assets/pdfs/Food-Oasis-One-Sheet.pdf'
 looking:
 technologies:
   - React
@@ -68,7 +76,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools: figma, photoshop, sketch, pencil and paper, phone calls.
+tools: Figma, Photoshop, Sketch, pencil and paper, phone calls
 program-area:
   - Social Safety Net
 partner: seeking

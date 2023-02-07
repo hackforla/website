@@ -5,7 +5,6 @@ description: We compiled job listings from 60+ different non-profit organization
 image: /assets/images/projects/jobs-for-hope.png
 alt: 'LA county homelessness initiative logo.'
 image-hero: /assets/images/projects/jobs-for-hope-hero.png
-alt-hero: ''
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/jobs-for-hope'
@@ -14,6 +13,8 @@ links:
 location: 
   # - Downtown LA
   - Remote
+program-area:
+  - Social Safety Net
 partner: LA County Homeless Initiative; 
 visible: true
 status: On Hold

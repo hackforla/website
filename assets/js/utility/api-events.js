@@ -32,16 +32,15 @@ function insertEventSchedule(eventData, page) {
       );
     } else {
       value.forEach((event) => {
-        let eventHtml;
-        // insert the correct html for the current page
-        if ( page === "events" ) {
-          eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
-        } else {
-          eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
-        }
-        placeToInsert.insertAdjacentHTML(
-          "beforeend", eventHtml
-        );
+        if (event) {
+          let eventHtml;
+				  // insert the correct html for the current page
+				  if (page === "events") {
+					  eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+				  } else {
+					  eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+				  }
+				  placeToInsert.insertAdjacentHTML("beforeend", eventHtml);}
       });
     }
   }
@@ -84,7 +83,7 @@ function filterDataFromApi(responseData) {
 function sortData(filteredData) {
   for (const [key, value] of Object.entries(filteredData)) {
     value.sort(function (a, b) {
-      return convertTime12to24(a.start) - convertTime12to24(b.start);
+      return convertTime12to24(a.start) - convertTime12to24(b.start) || a.name.localeCompare(b.name);
     });
   }
   return filteredData;
@@ -143,14 +142,16 @@ function convertTime12to24(time12h) {
  * Function that represent the individual object extracted from the api
  */
 function display_object(item) {
-  const rv_object = {
-    name: item.project.name,
-    dsc: item.description,
-    start: localeTimeIn12Format(item.startTime),
-    end: localeTimeIn12Format(item.endTime),
-    hflaWebsiteUrl: item.project.hflaWebsiteUrl,
-  };
-  return rv_object;
+  if (item && item.project) { 
+    const rv_object = {
+      name: item.project.name,
+      dsc: item.description,
+      start: localeTimeIn12Format(item.startTime),
+      end: localeTimeIn12Format(item.endTime),
+      hflaWebsiteUrl: item.project.hflaWebsiteUrl,
+	  };
+	  return rv_object;
+  }
 }
 
 export { getEventData, insertEventSchedule };

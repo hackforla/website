@@ -1,8 +1,9 @@
 ---
 name: Pre-work Template - UX
-about: All new Research team members should start by making this issue
+about: New Research team members should start by making this issue
 title: 'Pre-work Checklist: Researcher: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, good first issue, role: user research'
+labels: 'Feature: Onboarding/Contributing.md, prework, role: user research, size:
+  1pt'
 assignees: ''
 
 ---
@@ -18,6 +19,8 @@ As a new researcher on the HfLA website UX team, fill in the following fields as
 - [ ] Share your Gmail address with the research team lead
 - [ ]  (once added to the drive) Add yourself to the team roster.
 - [ ]  Confirm with the research team lead that they have added you to the meeting invites and Github repo
+- [ ] Self Assign this issue (gear in right side panel)
+- [ ] Add this issue to Projects: Project Board (gear in right side panel)
 - [ ]  Confirm that the research team lead has given you login credentials for the team Miro and Figma accounts
 - [ ] Attend weekly team meetings:
    - UX weekly team meeting, Thursdays 5 pm PST
@@ -47,3 +50,4 @@ provide update
 - [Googledrive-HackforLA website](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT)
 - [UX Research Presentations](https://drive.google.com/drive/folders/1yV9YRrjVKmVLU_xSM_BjtdIaNITRhP5j)
 - [Weekly Meeting Agendas](https://github.com/hackforla/website/issues/2106)
+- [Example of an issue with really good updates](https://github.com/hackforla/website/issues/2537), this issue also is a good example of when you have finished an issue, but there is still more work to be done, so it leads to a new issue being made instead of changing the scope of the original issue.

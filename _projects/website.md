@@ -5,7 +5,6 @@ description: The hackforla.org website is our organization's way of communicatin
 image: /assets/images/projects/website.png
 alt: 'Wireframe sample from new website.'
 image-hero: /assets/images/projects/website-hero.jpg
-alt-hero: 'Five women in tech collaborating, engaging in a joyful conversation.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
@@ -19,30 +18,54 @@ leadership:
       slack: 'https://hackforla.slack.com/team/USBB18YDR'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Tomas Gonzalez
+  - name: Akram Nour
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03UW53122J'
+      github: 'https://github.com/7kram'
+    picture: https://avatars.githubusercontent.com/7kram
+  - name: Bishr Aboobaker
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
+      github: 'https://github.com/bishrfaisal'
+    picture: https://avatars.githubusercontent.com/bishrfaisal
+  - name: Kathryn Silva Conway
     role: Technical Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U02DF1PPQUA'
-      github: 'https://github.com/R-Tomas-Gonzalez'
-    picture: https://avatars.githubusercontent.com/R-Tomas-Gonzalez
-  - name: Saumil Dhankar
-    role: Technical Lead
+      slack: 'https://hackforla.slack.com/team/U037LRF8QC9'
+      github: 'https://github.com/kathrynsilvaconway'
+    picture: https://avatars.githubusercontent.com/kathrynsilvaconway
+  - name: Sarah Sanger
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U02AG2K2BB3'
-      github: 'https://github.com/SAUMILDHANKAR'
-    picture: https://avatars.githubusercontent.com/SAUMILDHANKAR
-  - name: Isaac Cruz
-    role: UX Design Lead
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
+  - name: Arpita Pandya
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U0255408P8Q'
-      github: 'https://github.com/IsaacDesigns'
-    picture: https://avatars.githubusercontent.com/IsaacDesigns
-  - name: Simone Campbell
-    role: UX Research Lead
+      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
+      github: 'https://github.com/arpitapandya'
+    picture: https://avatars.githubusercontent.com/arpitapandya
+  - name: Justin Dingeman
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
-      github: 'https://github.com/sacamp'
-    picture: https://avatars.githubusercontent.com/sacamp
+      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
+      github: 'https://github.com/jdingeman'
+    picture: https://avatars.githubusercontent.com/jdingeman
+  - name: Matt Pereira
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
+      github: 'https://github.com/MattPereira'
+    picture: https://avatars.githubusercontent.com/MattPereira
+  - name: Phillip Sanchez
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
+      github: 'https://github.com/plang-psm'
+    picture: https://avatars.githubusercontent.com/plang-psm
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -67,7 +90,10 @@ technologies:
   - GitHub Pages
   - Jekyll
   - Docker
-tools: Figma, Google Drive, Zoom, Google Analytics
+  - Google Apps Script
+  - GitHub Actions
+  - VRMS API
+tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
 location:
   # - Santa Monica
   # - Downtown LA

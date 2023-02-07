@@ -23,11 +23,11 @@
 }
 
 .used {
-    background-color: #89cff0;
+    background-color: $color-skyblue;
 }
 
 .never-used {
-    background-color: #0000ff;
+    background-color: $color-brightblue;
 }
 
 .indent {
@@ -35,7 +35,7 @@
 }
 
 .highlight {
-    background-color: #EDEDED;
+    background-color: $color-lightgrey;
     word-wrap: break-word;
 }
 

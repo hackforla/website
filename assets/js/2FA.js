@@ -71,7 +71,7 @@ let Piechart = function(options){
                 this.options.doughnutHoleSize * Math.min(this.canvas.width/2,this.canvas.height/2),
                 0,
                 2 * Math.PI,
-                "#FFFFFF"
+                "$color-white"
             );
         }
 
@@ -102,7 +102,7 @@ let myPiechart = new Piechart(
     {
         canvas:myCanvas,
         data:userData,
-        colors:["#89cff0", "#0000ff"],
+        colors:["$color-skyblue", "$color-brightblue"],
         doughnutHoleSize:0.4
     }
 );

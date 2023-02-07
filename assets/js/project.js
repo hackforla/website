@@ -68,27 +68,35 @@ if(project != null){
         }
     }
 
-    // Creates DOM elements for contributors
-    for(let contributor of contributorsArray){
-        if (contributorsArray.length >= 1) {
-            let contributorDiv = document.createElement('div');
-            contributorDiv.classList.add('contributor-div');
+    let projectTeam = document.querySelectorAll('.leader-card')
 
-            let contributorProfile = document.createElement('a');
-            contributorProfile.classList.add('contributor-link');
-            contributorProfile.setAttribute('href', contributor.github_url);
-            contributorProfile.setAttribute('target', '_blank');
-            let contributorUrl = contributor.github_url.split('/');
-            let contributorName = contributorUrl.pop();
-            contributorProfile.setAttribute('title', contributorName);
+    if (contributorsArray.length < projectTeam.length) {
+        // Hides all-time contributors if number of contributors is less than size of current project team
+        let contributorSection = document.getElementById('contributor-header');
+        contributorSection.style.display = 'none';
+    } else {
+        // Creates DOM elements for contributors
+        for(let contributor of contributorsArray){
+            if (contributorsArray.length >= 1) {
+                let contributorDiv = document.createElement('div');
+                contributorDiv.classList.add('contributor-div');
 
-            let contributorImg = document.createElement('img');
-            contributorImg.style['border-radius'] = '12px';
-            contributorImg.setAttribute('src', contributor.avatar_url);
+                let contributorProfile = document.createElement('a');
+                contributorProfile.classList.add('contributor-link');
+                contributorProfile.setAttribute('href', contributor.github_url);
+                contributorProfile.setAttribute('target', '_blank');
+                let contributorUrl = contributor.github_url.split('/');
+                let contributorName = contributorUrl.pop();
+                contributorProfile.setAttribute('title', contributorName);
 
-            contributorProfile.appendChild(contributorImg);
-            contributorDiv.appendChild(contributorProfile);
-            contributors.appendChild(contributorDiv);
+                let contributorImg = document.createElement('img');
+                contributorImg.style['border-radius'] = '12px';
+                contributorImg.setAttribute('src', contributor.avatar_url);
+
+                contributorProfile.appendChild(contributorImg);
+                contributorDiv.appendChild(contributorProfile);
+                contributors.appendChild(contributorDiv);
+            }
         }
     }
 } else {
@@ -110,91 +118,37 @@ let meetingsHeader = document.querySelector('.meetingsHeader');
 let projectTitle = scriptTag.getAttribute("projectTitle");
 let meetingsFound = [];
 
-// Assigns local JSON Data to localData variable
-{% assign localData = site.data.external.vrms_data %}
+// Grab the meeting time data from the vrms_data.json file
+{% assign vrmsData = site.data.external.vrms_data %}
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-let localData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
-const API_URL = 'https://www.vrms.io/api/recurringevents';
+const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
-// Function schedules data that is passed in
-function schedule(scheduleData) {
+// Loops through the VRMS data and inserts each meeting time into the HTML of the correct project page
+function appendMeetingTimes(scheduleData) {
 
-    // Loops through data and assigns information to variables in a readable format
-    for (let i = 0; i <= scheduleData.length - 1; i++) {
-        let startTime = timeFormat(new Date(scheduleData[i].startTime));
-        let endTime = timeFormat(new Date(scheduleData[i].endTime));
-        let webURL = scheduleData[i].project.hflaWebsiteUrl;
-        let projectName = scheduleData[i].project.name;
-        let description = scheduleData[i].description;
-        let day = new Date(scheduleData[i].date).toString().substring(0,3);
-        let scheduleClass;
-
-        // Function that adds data to proper header
-        function scheduleDay() {
-            // Assigns different class to data depending if it utilized local JSON file or the VRMS fetch data
-            if (scheduleData == localData) {
-                scheduleClass = "localData";
-            } else {
-                scheduleClass = "updated";
-            }
-            if (projectTitle === projectName) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="${scheduleClass} meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
+    for (const event of scheduleData) {
+        try {
+            // Assigning information to variables in a readable format
+            const startTime = timeFormat(new Date(event.startTime));
+            const endTime = timeFormat(new Date(event.endTime));
+            const webURL = event.project.hflaWebsiteUrl;
+            const projectName = event.project.name;
+            const description = event.description;
+            const day = new Date(event.date).toString().substring(0,3);
+    
+            // only append the meeting times to the correct project page
+            if (projectTitle.toLowerCase() === projectName.toLowerCase()) {
+                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
                 meetingsFound.push(day);
             }
+
+        } catch (e) {
+            console.error(e);
         }
-        scheduleDay(day);
-    }
+    } 
 }
 
-// Function checks for differences between two arrays
-function arr_diff (a1, a2) {
-
-    let a = [], diff = [];
-
-    for (let i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (let i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (let k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-}
-
-// Function clears the schedule
-function clearSchedule() {
-    let prevDayList = meetingsList.getElementsByClassName("localData");
-
-    while (prevDayList[0]) {
-        prevDayList[0].parentNode.removeChild(prevDayList[0]);
-    }
-}
-
-// Executes schedule with localData
-schedule(localData);
-
-// Fetchs JSON file from VRMS_API
-fetch(API_URL, {method: 'GET'})
-    .then(response => response.json())
-    .then((data) => {
-    // Checks for differences between localData and VRMS data
-    if (arr_diff(data, localData)) {
-        clearSchedule();
-        schedule(data);
-    }
-})
-.catch(err => {
-    console.log(err);
-})
+appendMeetingTimes(vrmsData);
 
 
 if (meetingsFound.length >= 1) {

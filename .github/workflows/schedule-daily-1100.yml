@@ -1,0 +1,39 @@
+name: Schedule Daily 1100
+
+# Run this action every day at 3am Pacific (11 am UTC)
+on:
+  schedule:
+    - cron:  '0 11 * * *'
+
+jobs:
+  github_data:
+    runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+    
+    - name: GitHub Action for install npm dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        working-directory: ./github-actions/trigger-schedule/github-data
+    
+    - name: Generate github-data.json
+      env:
+        token: ${{ secrets.GITHUB_TOKEN }}
+      run: node github-actions/trigger-schedule/github-data/get-project-data.js
+
+
+    - name: Auto Commit
+      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      with:
+        # Optional glob pattern of files which should be added to the commit
+        file_pattern: _data/external/github-data.json
+
+        commit_message: Update contributor and language data
+
+        # Commit author settings
+        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>

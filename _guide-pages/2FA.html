@@ -1,19 +1,26 @@
 ---
 title: 2FA Guide
 description: Hack for LA requires two-factor authentication (2FA) in GitHub for all project contributors.
-short-description: Hack for LA requires two-factor authentication (2FA) in GitHub for all project contributors.
-in-this-guide: 
+short-description: 
+in-this-guide:
   - name: To Enable 2FA
     link: '#To-Enable-2FA'
   - name: FAQ
     link: '#FAQ'
 card-type: guide-page
-status: active
+status: completed
 display: true
-category: Development
-svg: svg/2FA.svg
-alt-text: 2fa-image
-provider-link: '/guide-pages/2FA'
+practice-area: Development
+tools: 
+  - GitHub
+contributors: 
+  - Danielle Nedivi
+source: Hack for LA
+recommended-by: 
+svg: /assets/images/guides/2FA/2FA.svg
+resource-url-completed: '/guide-pages/2FA'
+resource-url-wip:
+resource-url-depreciated:
 ---
 
 <div class='content-section'>
@@ -21,8 +28,8 @@ provider-link: '/guide-pages/2FA'
     <a class='anchor' id='To-Enable-2FA'></a>
     <div class='section-container'>
         <div>
-            <h3 class="title-left"><b>To Enable 2FA:</b></h3>
-            <h5 class="title-left"><b>Visit and follow </b><b><a href="https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication" target="blank">Github's Guide to Setting Up 2FA</a></b></h5>
+            <h3 class="title-left"><strong>To Enable 2FA:</strong></h3>
+            <h5 class="title-left"><strong>Visit and follow <a href="https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication" target="blank">Github's Guide to Setting Up 2FA</a></strong></h5>
         </div>
 
         <div>
@@ -44,7 +51,7 @@ provider-link: '/guide-pages/2FA'
 
 
             <p class="accordion">What is 2FA? </p>
-            
+
             <div class="panel">
                 <p>Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. With 2FA, you have to log in with your username and password, and then provide another form of authentication that only you know or have access to.</p>
                 <a href="">Read more information about 2FA at GitHub</a>
@@ -61,9 +68,9 @@ provider-link: '/guide-pages/2FA'
             </div>
             <p class="accordion">Encountering challenges using Git CLI after setting up 2FA? (Developers) </p>
             <div class="panel">
-                
+
                 <p>You might encounter a challenge using the Git CLI after enabling 2-Factor Authentication if you have not used the ssh link for the repo URL.</p><br>
-                
+
                 <p class="indent">If you clone via the ssh URL for a repo, e.g.</p>
                 <p class="indent"><mark class="highlight"><code>git@github.com:hackforla/governance.git</code></mark></p>
                 <p class="indent">instead of the <mark class="highlight">https</mark> URL, e.g.</p>
@@ -82,7 +89,7 @@ provider-link: '/guide-pages/2FA'
         </div>
     </div>
 
-<!-- Refactor Javascript, moved script to 2FA.js, issue #2068   
+    <!-- Refactor Javascript, moved script to 2FA.js, issue #2068
     <div class='section-container' style="display: none;">
         <a class='anchor' id='Member-Analytics'></a>
         <div class="step-header">
@@ -101,5 +108,6 @@ provider-link: '/guide-pages/2FA'
             </div>
         </div>
     </div>
+    -->
 </div>
 <script src ="/assets/js/elements/accordion.js"></script>

@@ -5,7 +5,6 @@ description: Each of the 80+ Code for America Brigades is an experiment which ge
 image: /assets/images/projects/brigade-organizers-playbook.png
 alt: "Brigade Organizer's Playbook Extension Project"
 image-hero: /assets/images/projects/brigade-organizers-playbook-hero.png
-alt-hero: ''
 program-area: 
   - Civic Tech Infrastructure
 leadership:

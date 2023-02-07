@@ -5,7 +5,6 @@ description: The GreenEarthOS project seeks to create and publish a map of the c
 image: /assets/images/projects/green-earth-os.png
 alt: 'GreenEarthOS logo with text in green and a globe as a "O"'
 image-hero: /assets/images/projects/green-earth-os-hero.png
-alt-hero: 'Green Background'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -54,6 +53,8 @@ links:
     url: '../assets/pdfs/GreenEarthOS-One-Sheet.pdf'
 location: 
   - Remote
+program-area:  
+  - Environment
 visible: true
-status: Active
+status: On Hold
 ---

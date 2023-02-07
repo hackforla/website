@@ -50,7 +50,7 @@
       margin: 10px 80px;
 
       @media #{$bp-mobile-up} {
-        height: 70px;
+        height: 110px; //70px original
         margin: 10px;
       }
     }
@@ -309,7 +309,7 @@ button {
   float: right;
   text-align: center;
   margin-left: 10px;
-  background-color: rgb(255, 255, 151);
+  background-color: $color-lightyellow;
   width: 92px;
   padding: 2px 7px;
   border-radius: 6px;
@@ -329,7 +329,7 @@ button {
 }
 
 .status-Completed {
-  background-color: rgb(255, 173, 173);
+  background-color: $color-salmon;
 }
 
 .project-card-field-inline {
@@ -418,13 +418,18 @@ button {
 }
 
 .column {
-  display: flex;
+  display: block;
   flex-direction: column;
   flex: 1;
 }
 
 .volunteerWithUs {
   margin: 0 5%;
+  padding-bottom: 40px;
+
+  @media #{$bp-below-tablet} {
+    padding-bottom: 20px;
+  }
 }
 
 .row-1 {

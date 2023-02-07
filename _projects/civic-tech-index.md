@@ -6,7 +6,6 @@ description: Our goal of the project is to create a comprehensive, searchable in
 image: /assets/images/projects/civic-tech-index.png
 alt: 'Civic Tech Index logo. A magnifying glass over the outline of the world map on the left "Civic Tech Index" on the right.'
 image-hero: /assets/images/projects/civic-tech-index-hero.png
-alt-hero: 'Outline of the world map with connectivity dots linking major cities on each continent.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach and Stakeholder Rep
@@ -20,42 +19,30 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MFPQDN'
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
-  - name: Levi Adissi 
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/UD9MQDARJ'
-      github: 'https://github.com/ladissi'
-    picture: https://avatars.githubusercontent.com/ladissi
   - name: Kevin Phan
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02B90U9FPS'
       github: 'https://github.com/kevindphan'
     picture: https://avatars.githubusercontent.com/kevindphan
-  - name: Iffath Sultana
+  - name: Sean Sada
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01JQ2V3NRZ'
-      github: 'https://github.com/DrIffathsultana'
-    picture: https://avatars.githubusercontent.com/DrIffathsultana
-  - name: Maria Studnicka
+      slack: https://hackforla.slack.com/team/U016XE06ZS5
+      github: https://github.com/smsada
+    picture: https://avatars.githubusercontent.com/smsada
+  - name: Briana Bennett
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01FREFQ99B'
-      github: 'https://github.com/mariastudnicka'
-    picture: https://avatars.githubusercontent.com/mariastudnicka
+      slack: 'https://hackforla.slack.com/team/U031BRKV59C'
+      github: 'https://github.com/bribenn'
+    picture: https://avatars.githubusercontent.com/bribenn
   - name: Chali Prasertsri
     role: UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
-  - name: Shipra Prakash
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01TUA963NZ'
-      github: 'https://github.com/shipranj'
-    picture: https://avatars.githubusercontent.com/shipranj
   - name: Farzana Prianka
     role: UX/UI Designer
     links:
@@ -74,12 +61,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01CSPAFEBV'
       github: 'https://github.com/emecas'
     picture: https://avatars.githubusercontent.com/emecas
-  - name: Emily Marinaro
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U01JS81CCFL'
-      github: 'https://github.com/e0marina'
-    picture: https://avatars.githubusercontent.com/e0marina
   - name: Bruce Lai
     role: Full Stack Developer
     links:
@@ -87,24 +68,48 @@ leadership:
       github: 'https://github.com/bruceplai'
     picture: https://avatars.githubusercontent.com/bruceplai
   - name: Bhaggyalakshmi Balasubramaniyan
-    role: Full Stack Developer 
+    role: Full Stack Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
+  - name: Ron Fu
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/UGWDHDF46'
+      github: 'https://github.com/rfvisuals'
+    picture: https://avatars.githubusercontent.com/rfvisuals
+  - name: Isaiah Ozadhe
+    role: Full Stack Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U034X04V2H5'
+      github: 'https://github.com/Tekkieware'
+    picture: https://avatars.githubusercontent.com/Tekkieware
   - name: Maxwell Countryman Skewes
-    role: Front End Developer
+    role: Front End Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R6RWQR3L'
       github: 'https://github.com/maxskewes'
     picture: https://avatars.githubusercontent.com/maxskewes
+  - name: Dennis Chatkhan
+    role: Frontend Developer
+    links:
+      slack: https://hackforla.slack.com/team/U01B4S459CZ
+      github: https://github.com/mealthebear
+    picture: https://avatars.githubusercontent.com/mealthebear
+  - name: Iffath Sultana
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U01JQ2V3NRZ
+      github: https://github.com/DrIffathsultana
+    picture: https://avatars.githubusercontent.com/driffathsultana
 links:
   - name: GitHub
-    url: 'https://github.com/civictechindex/website'
+    url: 'https://github.com/civictechindex/CTI-website-frontend'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CTYAKM0CW'
   - name: Wiki
-    url: 'https://github.com/civictechindex/website/wiki'
+    url: 'https://github.com/civictechindex/CTI-website-frontend/wiki'
   - name: Site
     url: 'http://civictechindex.org/'
   - name: Overview
@@ -117,12 +122,14 @@ technologies:
   - ESLint
   - Code Climate
   - Cypress
+  - AWS
 location:
   # - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
+tools: Google docs, Figma, Usability Hub
 visible: true
 program-area: 
   - Civic Tech Infrastructure
-status: Active
+status: On Hold
 ---

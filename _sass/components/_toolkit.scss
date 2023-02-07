@@ -25,7 +25,7 @@
 }
 
 .toolkit-background {
-    background-color: #030D2D;
+    background-color: $color-darkblue;
     padding: 2rem;
 }
 
@@ -44,47 +44,8 @@
     font-style: normal;
     font-weight: normal;
     font-size: 1.75rem;
-    color: #FFFFFF;
+    color: $color-white;
     margin-bottom: 0;
-}
-
-/*
-  Refer to issue #1999. This part, the accompanying divs in toolkit.html (lines 89 and 109),
-  and $screen-desktop-large under _layout.scss were added to take into account how the external
-  resources look at a certain breakpoint ($bp-desktop-large-up). As of 7/22/2021, there are only three resources in the list.
-  Since suggest-site-group div was added to the grid and takes up the entire first row, the rows that
-  follow does not go to the center and instead aligns to the left. The media queries here fixes that.
-  When there are four or more resources added in the future, this part (and the divs in toolkit.html)
-  can be removed.
-*/
-.external-resource-container {
-    @media #{$bp-desktop-large-up} {
-        display: flex;
-        grid-column: 1 / -1;
-        justify-content: center;
-    }
-
-    @media #{$bp-below-desktop-large} {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
-        grid-column: 1 / -1;
-        align-items: stretch;
-        justify-content: center;
-    }
-
-    @media #{$bp-below-desktop} {
-        //display: grid;
-        grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 0;
-    }
-
-    @media #{$bp-below-mobile} {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        flex-direction: column;
-    }
 }
 
 .toolkit-flex-container {
@@ -108,37 +69,41 @@
 }
 
 .toolkit-flex-item-img-container {
-    max-height: 16.95rem;
+    height: 16em;
     overflow: hidden;
 }
 
-.toolkit-flex-item-img-container svg {
+.toolkit-flex-item-img-container svg, 
+.toolkit-flex-item-img-container img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .resource-svg-icons {
-    height: 17.5rem;
-    width: 17.5rem;
+    height: 17.5rem;    //or 14.5 rem
+    width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
 }
 
 .toolkit-info-container {
-    margin: 1rem 0rem 2rem;
+    margin: 1rem 0rem 3.5rem;
     padding: 0rem 2rem;
 
     h3 {
         font-weight: normal;
         text-align: left;
-        font-size: 1.125rem;
         height: fit-content;
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5rem;
+        max-height: fit-content;
     }
-}
-
-.toolkit-info-container p {
-    margin: 1rem auto auto 0rem;
-    line-height: 1.1rem;
-    width: 100%;
+    p {
+        margin: 1rem auto auto 0rem;
+        line-height: 1.1rem;
+        width: 100%;
+    }
 }
 
 .toolkit-flex-item-status {
@@ -151,6 +116,12 @@
 
 .toolkit__card-list {
     margin-bottom: 10rem;
+    @media (min-width: 1232px) and (max-width: 1400px) {
+        padding-top: 1.7rem;
+    }
+    @media #{$bp-desktop-large-up} {
+        padding-top: 1.7rem;
+    }
 }
 
 @media only screen and (max-width: 1430px) {
@@ -188,7 +159,7 @@
     .toolkit-flex-container {
         display: grid;
         grid-gap: 24px;
-        grid-template-columns: repeat(2, minmax(0, max-content));
+        grid-template-columns: repeat(2, 1fr);
         padding: 0;
     }
 
@@ -208,16 +179,14 @@
     }
 
     .external-resources-text {
-      text-align: left;
+    text-align: left;
     }
-}
 
-@media #{$bp-below-mobile} {
-    .toolkit-header {
-
-        &__banner-item {
-            font-size: .5rem;
-            max-width: 3.6rem;
+    .toolkit-flex-item-img-container {
+        height: auto;
+        
+        &.resource-svg-icons {
+            height: 15.5rem;
         }
     }
 }
@@ -226,28 +195,12 @@
     margin-bottom: 1.5rem;
 }
 
-.resource-svg-icons {
-    height: 14.5rem;
-    width: 14.5rem;
-}
-
-.toolkit-info-container {
-    h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.5rem;
-        max-height: fit-content;
-    }
-}
-
 @media #{$bp-below-mobile} {
     .toolkit-svg {
         max-width: 250px;
     }
     .suggest-guide-group {
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
+        margin: 1.2rem 1rem;
 
         h2 {
             margin-bottom: 1rem;
@@ -260,6 +213,52 @@
         flex-direction: column;
     }
     .external-resources-text {
-      text-align: center;
+    text-align: center;
+    }   
+}
+
+@media #{$bp-below-mobile} {
+
+    .toolkit-header {
+
+        &__text-group {
+            display: none;
+        }
+
+        &__banner-item {
+            display: none;
+        }
+    }
+}
+
+.dropdown {
+    margin: 0 auto;
+}
+#dropdown-select {
+    width: 310px;
+    height: 44px;
+    background: $color-white;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+@media #{$bp-mobile-up} {
+    .dropdown {
+        display: none;
+    }
+    #dropdown-select {
+        display: none;
+        }
+    }
+
+// For display on very narrow screens such as Galaxy Fold. There are currently
+// no sitewide settings for this size screen:
+@media (max-width: 281px) {
+    .suggest-guide-group {
+        display: block;    
+    }
+    #dropdown-select {
+        width: 216px;
     }
 }

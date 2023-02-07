@@ -6,35 +6,36 @@ description: 'Expunge Assist aims to help people in California with criminal rec
 image: /assets/images/projects/expunge-assist.png
 alt: 'Image of a criminal record'
 image-hero: /assets/images/projects/expunge-assist-hero.png
-alt-hero: 'Expunge Assist project logo'
 leadership:
-  - name: Gretchen Howard
-    role: Product Manager
+  - name: Thomas Demoner
+    role: Product Manager, Development
     links:
-      slack: 'https://hackforla.slack.com/team/U01GC5HU9AB'
-      github: 'https://github.com/ggrrettcchhenn'
-    picture: 'https://avatars.githubusercontent.com/ggrrettcchhenn'
-  - name: Apurva Barve
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
+      github: 'https://github.com/thomasdemoner'
+    picture: 'https://avatars.githubusercontent.com/thomasdemoner'
+  - name: Valeriya Metla
+    role: Product Manager, Research
     links:
-      slack: 'https://hackforla.slack.com/team/U01Q1P81HGB'
-      github: 'https://github.com/apurvabarve'
-    picture: 'https://avatars.githubusercontent.com/apurvabarve'
-  - name: Andan Eddy
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U02NWJ2H8M6'
+      github: 'https://github.com/ValeriyaMetla'
+    picture: 'https://avatars.githubusercontent.com/ValeriyaMetla'
+  - name: Jamie Siu
+    role: Product Manager, Design
     links:
-      slack: 'https://hackforla.slack.com/team/U01LE6TAXQR'
-      github: 'https://github.com/Andan-Eddy'
-    picture: 'https://avatars.githubusercontent.com/Andan-Eddy'
+      slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
+      github: 'https://github.com/jamiesiu'
+    picture: 'https://avatars.githubusercontent.com/jamiesiu'
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
+    - name: Site
+      url: https://expungeassist.org/
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
       url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
     - name: Overview
-      url: 'https://docs.google.com/document/d/1JFZGKxeEBWVak_GATgIt0Knyr9_gJ15CBirynebb4tg/preview'
+      url: '../assets/pdfs/Expunge-Assist-Project-One-Sheet.pdf'
 partner: NDICA
 looking:
   - category: Marketing

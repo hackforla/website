@@ -70,7 +70,7 @@
         text-align: center;
 
         h3 {
-            color: $color-darkgrey;
+            color: $color-black;
         }
 
     }
@@ -84,6 +84,13 @@
             justify-self: center;
             align-self: center;
             border-radius: 0px;
+        }
+        //This class is targeting the Code for LA logo image to mirror the appearance of the live page.
+        .org-img-large{
+            object-fit:cover;
+            height: 65px;
+            width: 185px;
+            max-width: 100%;
         }
     }
 }
@@ -103,7 +110,7 @@
             margin-bottom: 10px;
             font-style: bold;
             font-size: 20px;
-            color: $color-darkgrey;
+            color: $color-black;
         }
     }
 
@@ -116,7 +123,7 @@
             margin-bottom: 10px;
             font-style: bold;
             font-size: 20px;
-            color: $color-darkgrey;
+            color: $color-black;
         }
 
         .card-bottom-info {
@@ -170,7 +177,7 @@
                 margin-bottom: 10px;
                 font-style: bold;
                 font-size: 20px;
-                color: $color-darkgrey;
+                color: $color-black;
             }
         }
     }
@@ -185,7 +192,7 @@
             margin-bottom: 10px;
             font-style: bold;
             font-size: 20px;
-            color: $color-darkgrey;
+            color: $color-black;
         }
 
         .card-bottom-info {
@@ -200,6 +207,7 @@
             border-radius: 10px;
         }
     }
+  
 }
 
 @media #{$bp-tablet-up} {
@@ -241,7 +249,7 @@
                     margin-bottom: 10px;
                     font-style: bold;
                     font-size: 20px;
-                    color: $color-darkgrey;
+                    color: $color-black;
                 }
             }
         }
@@ -256,7 +264,7 @@
                 margin-bottom: 10px;
                 font-style: bold;
                 font-size: 20px;
-                color: $color-darkgrey;
+                color: $color-black;
             }
 
             .card-bottom-info {
@@ -284,7 +292,7 @@
                 text-align: center;
 
                 h3 {
-                    color: $color-darkgrey;
+                    color: $color-black;
                 }
 
                 p {
@@ -304,6 +312,13 @@
                     border-radius: 0px;
                     min-height: 70px;
                 }
+                //This class is targeting the Code for LA logo image to mirror the appearance of the live page.    
+                .org-img-large{
+                    object-fit:cover;
+                    height: 75px;
+                    max-width: 100%;
+                }
+                    
             }
     }
 

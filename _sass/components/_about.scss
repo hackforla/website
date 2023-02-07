@@ -59,7 +59,7 @@
 // Make the active link different
 .is-active {
   font-weight: 700;
-  color:#333 !important;
+  color:$color-black !important;
   a {
     font-weight: 700;
     &:link,
@@ -95,7 +95,7 @@ a.anchor {
 .sticky-nav {
   grid-area: nav;
   display: none;
-  background: #fff;
+  background: $color-white;
   border: 0px solid rgba(51, 51, 51, 0.06);
   border-radius: 16px;
   box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
@@ -152,7 +152,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -173,7 +173,7 @@ a.anchor {
   float: right;
   transform: rotate(-45deg);
   transition: transform 0.25s ease-in;
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 24px;
 }
@@ -207,7 +207,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(-45deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }
@@ -224,7 +224,7 @@ a.anchor {
   position: absolute;
   margin-left: 10px;
   transform: rotate(135deg);
-  color: rgb(250, 17, 79);
+  color: $color-red;
   font-weight: bolder;
   font-size: 16px;
 }
@@ -338,37 +338,37 @@ a.anchor {
 
 // SDG Colors
 .color-goldenrod-2 {
-  color: #d49f28;
+  color: $color-mustard;
   font-weight: 700;
 }
 
 .color-orangered {
-  color: #ee412a;
+  color: $color-orangered;
   font-weight: 700;
 }
 
 .color-brown {
-  color: #8e1737;
+  color: $color-redpurple;
   font-weight: 700;
 }
 
 .color-goldenrod-11 {
-  color: #fa9c25; 
+  color: $color-lightorange; 
   font-weight: 700;
   }
 
 .color-darkolivegreen {
-  color: #48763e;
+  color: $color-darkolive;
   font-weight: 700;
 }
 
 .color-teal {
-  color: #01548a;
+  color: $color-darkroyalblue;
   font-weight: 700;
 }
 
 .color-midnightblue {
-  color: #173567;
+  color: $color-midnightblue;
   font-weight: 700;
 }
 
@@ -563,18 +563,20 @@ a.anchor {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  padding: 25px 0 15px 0;
+  align-items: center;
+  width: 55.733vw;
+  padding-bottom: 45px; 
+}
+.image-news-container{
+  height: 100px;
+  display: flex;
+  align-content: center;
+  margin-bottom: 30px;
+}
+.flex-container.news-container{
   align-items: center;
 }
 
-.news-cells p {
-  padding-top: 40px;
-  margin: 0 20px 0 20px;
-}
-
-.more-padding {
-  padding-top: 10px;
-}
 
 /* Below are the breakpoints and adjustments for different size monitors */
 
@@ -811,9 +813,21 @@ a.anchor {
     padding-left: 25px;
   }
 
-  .news-cells p {
-    padding-top: 48.33px;
-    margin: 0 20px 0 20px;
+  .flex-container.news-container{
+    flex-basis: auto;
+    column-gap: 2.863vw;
+    align-items: baseline;
+    margin-bottom: 67px;
+  }
+  .image-news-container{
+      margin-bottom: 48px;
+      height: 100px;
+  }
+
+  .news-cells {
+    justify-content: unset;
+    padding-bottom: unset;
+    width: 33.3%;
   }
 
   .news-cells--govtech {
@@ -882,7 +896,7 @@ a.anchor {
   position: relative;
   bottom: 50px;
   left: 20px;
-  color: #767676;
+  color: $color-cement;
   font-style: normal;
 }
 .quote-text{
@@ -910,7 +924,7 @@ a.anchor {
     position: relative;
     left:125px;
     bottom: 90px;
-    color: #767676;
+    color: $color-cement;
     font-style: normal;
   }
   .garcetti-quote{

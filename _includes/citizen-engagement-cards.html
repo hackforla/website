@@ -1,6 +1,6 @@
 {% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
              {% for item in visible_projects %}
-                   <div class="page-card card-primary page-card-lg card-body card-width program-area" data-dropdown>
+                   <div class="page-card card-primary page-card-lg program-area" data-dropdown>
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
