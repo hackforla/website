@@ -58,5 +58,5 @@ tools: Google Docs, HackforLA.org guides
 visible: false
 program-area:
   - Civic Tech Infrastructure
-status: Completed
+status: Complete
 ---
