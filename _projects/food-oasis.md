@@ -1,7 +1,7 @@
 ---
 identification: "215666884"
 title: Food Oasis
-description: Food Oasis is focused on supporting individuals seeking food in Los Angeles. We aim to provide an up-to date resource on food pantries and meal services. The team is currently working on updating listings on our website [foodoasis.net](http://foodoasis.net/), improving UI, and establishing new partnerships.
+description: Food Oasis is focused on supporting individuals seeking food in Los Angeles. We aim to provide an up-to date resource on food pantries and meal services. The team is currently working on updating listings on our website foodoasis.net, improving UI, and establishing new partnerships.
 image: /assets/images/projects/food-oasis.jpg
 alt: 'Stacks of freshly harvested beets'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
