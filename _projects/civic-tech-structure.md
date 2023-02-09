@@ -60,5 +60,5 @@ program-area:
 visible: false
 program-area:
   - Civic Tech Infrastructure
-status: Complete
+status: Completed
 ---
