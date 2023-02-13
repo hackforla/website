@@ -1,15 +1,13 @@
 {% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
              {% for item in visible_projects %}
-                {%- if 
-                    item.problem.size > 0 and
-                    item.solution.size > 0 and
-                    item.impact.size > 0 and
-                    item.sdg.size > 0 and
-                    item.card-image-src.size > 0 and
-                    item.sdg-image-src.size > 0 and 
-                    item.card-image-alt != false and
-                    item.sdg-image-alt != false
-                    -%}
+             {%- if 
+                item.problem.size > 0 and
+                item.solution.size > 0 and
+                item.impact.size > 0 and
+                item.sdg.size > 0 and
+                item.card-image-src.size > 0 and
+                item.sdg-image-src.size > 0
+                -%}
                   <div class="page-card card-primary page-card-lg program-area" data-dropdown>
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                         <div class="mobile-card-info-container">
@@ -41,17 +39,10 @@
                     </div>
                 </div>
                 {%- else -%}  
-                     <div class="page-card card-primary page-card-lg program-area" data-dropdown>
+                     <div class="page-card card-primary page-card-lg missing-area" data-dropdown>
                         <div class="mobile-card-info-container">
-                            <div class="mobile-card-nav">
-                                <h3>{{ item.title }}</h3>
-                                <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
-                            </div>
-                            <div class="project-dropdown">
-                                <div class="missing-info">
-                                    <p>We are currently drafting the Problem, Solution and Impact statements for this project.</p>
-                                </div>
-                            </div>
+                            <h3>{{ item.title }}</h3>
+                            <p>We are currently drafting the Problem, Solution and Impact statements for this project.</p>
                         </div>
                    </div>
                 {%- endif -%}   
