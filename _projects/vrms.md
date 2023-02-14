@@ -30,7 +30,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03PC4KKGAG'
       github: 'https://github.com/heyitsalexander'
     picture: 'https://avatars.githubusercontent.com/heyitsalexander'
-  - name: Amanda GLover
+  - name: Amanda Glover
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
