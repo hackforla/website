@@ -12,12 +12,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Josh Bubar
-    role: Shows up to meetings
-    links:
-      slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
-      github: 'https://github.com/jbubar'
-    picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Julia Gab
     role: Lead UX Designer
     links:
@@ -42,6 +36,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
       github: 'https://github.com/AmandaGlover-PM'
     picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
+  - name: Josh Bubar
+    role: Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
+      github: 'https://github.com/jbubar'
+    picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Trillium Smith
     role: Developer
     links:
