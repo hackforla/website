@@ -6,54 +6,18 @@ image: /assets/images/projects/vrms.png
 alt: 'VRMS logo. VRMS homepage.'
 image-hero: /assets/images/projects/vrms-hero.png
 leadership:
-  - name: Alex Anakin
-    role: Software Architect / Tech Lead
-    links:
-      slack: ' https://hackforla.slack.com/team/U017H3Y7QDS'
-      github: 'https://github.com/alex-anakin'
-    picture: https://avatars.githubusercontent.com/alex-anakin
-  - name: Adam Spar
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/UKYHJ16CW'
-      github: 'https://github.com/switchzer0'
-    picture: https://avatars.githubusercontent.com/switchzer0
   - name: Bonnie Wolfe
     role: Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Katiuska Alicea de Leon
-    role: Full Stack Web Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0100R46ESC'
-      github: 'https://github.com/chukalicious'
-    picture: 'https://avatars.githubusercontent.com/chukalicious'
-  - name: Glen Paul Florendo
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/UFQGH8JH0'
-      github: 'https://github.com/glenflorendo'
-    picture: 'https://avatars.githubusercontent.com/glenflorendo'
-  - name: Walter (JunJie) Tang
-    role: Full Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U02KAPGUZ0T'
-      github: 'https://github.com/WalterT-MK'
-    picture: 'https://avatars.githubusercontent.com/WalterT-MK'
   - name: Josh Bubar
     role: Shows up to meetings
     links:
       slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
-  - name: David Rubinstein
-    role: Engineer for the People
-    links:
-      slack: 'https://hackforla.slack.com/team/U015FP47R5G'
-      github: 'https://github.com/drubgrubby'
-    picture: 'https://avatars.githubusercontent.com/drubgrubby'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
