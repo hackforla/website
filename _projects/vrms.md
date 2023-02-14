@@ -18,6 +18,36 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
+  - name: Julia Gab
+    role: Lead UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03AS9FBAAU'
+      github: 'https://github.com/juliagab56'
+    picture: 'https://avatars.githubusercontent.com/juliagab56'
+  - name: Judy Lee
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03K7Q1FV3P'
+      github: 'https://github.com/JudyLee533'
+    picture: 'https://avatars.githubusercontent.com/JudyLee533'
+  - name: Alex Lee
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03PC4KKGAG'
+      github: 'https://github.com/heyitsalexander'
+    picture: 'https://avatars.githubusercontent.com/heyitsalexander'
+  - name: Amanda GLover
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
+      github: 'https://github.com/AmandaGlover-PM'
+    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
+  - name: Trillium Smith
+    role: Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U010G9864Q1'
+      github: 'https://github.com/Spiteless'
+    picture: 'https://avatars.githubusercontent.com/Spiteless'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
