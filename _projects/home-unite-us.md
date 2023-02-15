@@ -38,6 +38,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/erikguntner
   - name: Kristelle Gumaru
     role: Product Manager
+
     links:
       slack: "https://hackforla.slack.com/team/U031VJ99ATU"
       github: "https://github.com/K-Gumarama"

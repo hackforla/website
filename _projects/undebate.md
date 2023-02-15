@@ -5,7 +5,6 @@ description: For down ballot offices like school-board, voters often don’t kno
 image: /assets/images/projects/undebate.jpg
 alt: 'Undebate with moderator and 4 participants, displayed question as "Why are you running for office?".'
 image-hero: /assets/images/projects/undebate-hero.jpg
-alt-hero: "Silhouette of three people sitting in chairs. Two of them have empty speach bubbles over their heads."
 leadership:
   - name: David Fridley
     role: Stake Holder/Technical Lead

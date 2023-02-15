@@ -5,7 +5,6 @@ description: The LA TDM Calculator is a web app, created in conjunction with the
 image: /assets/images/projects/tdm-calculator.jpg
 alt: 'LA TDM Calculator Landing Page (Mock Up)'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
-alt-hero: 'Los Angeles skyline at dusk, complete with cranes on top of buildings and golden smog.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach / Primary Stakeholder Relationship Manager
@@ -13,36 +12,42 @@ leadership:
       slack: 'https://hackforla.slack.com/team/DE1HK083W'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Kevin Howley
-    role: Product Manager / Stakeholder Project Rep
-    links:
-      slack: 'https://hackforla.slack.com/team/UL53VUVPZ'
-      github: 'https://github.com/kphowley'
-    picture: https://avatars.githubusercontent.com/kphowley
   - name: John Darragh
     role: Architect
     links:
       slack: 'https://hackforla.slack.com/team/UFLDX9V19'
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
-  - name: Claire Nguyen
-    role: Sr. Fullstack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/UHJKN8UJD'
-      github: 'https://github.com/nclairesays'
-    picture: https://avatars.githubusercontent.com/nclairesays
-  - name: Kevin Shih
-    role: UX Research Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U01K4Q3EU6R'
-      github: 'https://github.com/kevinshih613'
-    picture: https://avatars.githubusercontent.com/kevinshih613
-  - name: Vivek Jha
+  - name: Ebi Imafidon
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U019HFZ9WM6'
-      github: 'https://github.com/VJ1285'
-    picture: https://avatars.githubusercontent.com/VJ1285
+      slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
+      github: 'https://github.com/Biuwa'
+    picture: https://avatars.githubusercontent.com/Biuwa
+  - name: Anousha Shadrach
+    role: UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
+      github: 'https://github.com/Noushie'
+    picture: https://avatars.githubusercontent.com/Noushie
+  - name: Moji Momoh
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
+      github: 'https://github.com/mojimoh'
+    picture: https://avatars.githubusercontent.com/mojimoh
+  - name: Jane He
+    role: Lead, UX Research
+    links:
+      slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
+      github: 'https://github.com/Jane4925'
+    picture: https://avatars.githubusercontent.com/Jane4925
+  - name: James Higgs
+    role: Frontend Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U015ZGMK171'
+      github: 'https://github.com/jahpe777'
+    picture: https://avatars.githubusercontent.com/jahpe777
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
@@ -52,6 +57,10 @@ links:
     url: 'https://hackforla.slack.com/archives/CKY65G266'
   - name: Overview
     url: ../assets/pdfs/TDM-Calculator-Product-One-Sheet.pdf
+  - name: Test Site
+    url: https://tdmdev.azurewebsites.net/calculation/4
+  - name: Site
+    url: https://tdm.ladot.lacity.org/
 looking:
   - category: UI/UX
     skill:  UI/UX Designers and Researchers

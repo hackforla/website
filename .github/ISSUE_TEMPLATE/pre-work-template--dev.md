@@ -21,7 +21,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
 ### Action Items
 
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
-- [ ] Share your GitHub handle and Gmail address with a merge team member or technical lead so you can be added to the Google Drive
+- [ ] Share your GitHub handle and Gmail address in the hfla-site-onboarding slack channel so you can be added to the Google Drive (alternative to go to meeting and direct message a merge team member at the [meeting](https://github.com/hackforla/website/wiki/Meetings-and-Agendas
+))
   - [ ] To find contact information for the merge team members and technical leads, please take a look at our [Meet the Team wiki page](https://github.com/hackforla/website/wiki/Meet-the-Team)
 - [ ] Also, confirm with a merge team member or a technical lead that they have added you to the Google Calendar invites for our Zoom meetings
 - [ ] (Once added to the Drive) Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)

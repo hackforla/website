@@ -10,6 +10,8 @@ links:
 location: 
   # - Downtown LA
   - Remote
+program-area:
+  - Justice
 visible: false
 status: On Hold
 ---
