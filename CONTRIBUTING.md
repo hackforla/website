@@ -304,15 +304,15 @@ docker-compose up
 
 ### **2.1 Hack for LA Contributor expectations**
 
-In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Size: Small`/`Size: Medium`/`Size: Large` label issue within this repo, you need to complete the following:
+In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
 
 1. `good first issue`
    * Self-assign an issue with the `good first issue` label. 
    * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
    * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
    * Once your pull request is merged, you can work on your next issue.
-2. `size: Good second issue`
-  *  Self-assign an issue with the `Size: Good second issue` label. 
+2. `Complexity: Good second issue`
+  *  Self-assign an issue with the `Complexity: Good second issue` label. 
   * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
@@ -345,13 +345,13 @@ We currently have issues with the following **role** labels:
 * `role: front end` 
 * `role: backend/devOps`
 
-And the following **size** labels:
+And the following **complexity** labels:
 
 * `good first issue` 
-* `size: good second issue`
-* `size: Small`
-* `size: Medium`
-* `size: Large`
+* `complexity: good second issue`
+* `complexity: Small`
+* `complexity: Medium`
+* `complexity: Large`
 
 **Note:** The Prioritized Backlog column is filtered so the first (top) issue has the highest priority and should be worked on next. <br />
 
@@ -375,9 +375,9 @@ There are only 2 columns that you will be consistently referencing:
 1. `Onboarding infos/links` - Some helpful card information examples:
   * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
   * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
-  * Filters to show the project issues by a specific size:
-    * [`role: front end` size filters card](https://github.com/hackforla/website/projects/7#card-63001626)
-    * [`role: back end` size filters card](https://github.com/hackforla/website/projects/7#card-65620159)
+  * Filters to show the project issues by a specific complexity:
+    * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
+    * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
@@ -391,17 +391,17 @@ We recommend you visit the `Prioritized Backlog` column in the filtered Project 
 
 #### **2.3.b Available issues for returning members (front end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+good+second+issue%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
 
 #### **2.3.c Available issues for returning members (back end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
 
 #### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
 
