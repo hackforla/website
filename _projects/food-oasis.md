@@ -65,7 +65,7 @@ links:
   - name: GitHub
     url: "https://github.com/hackforla/food-oasis"
   - name: Site
-    url: "https://foodoasis.la/"
+    url: "https://foodoasis.net"
   - name: Readme
     url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
