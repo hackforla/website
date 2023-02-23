@@ -4,7 +4,7 @@ title: Expunge Assist
 description: 'Expunge Assist aims to help people in California with criminal records accomplish record clearance, expungement or reduction and subsequently a second chance as a part of society.
 <br /><br />We work with verifiable non-profits, the government and partners to build digital tools that can affect changes in the lives of these justice impacted individuals.'
 image: /assets/images/projects/expunge-assist.png
-alt: 'Image of a criminal record'
+alt: 'Expunge Assist'
 image-hero: /assets/images/projects/expunge-assist-hero.png
 leadership:
   - name: Thomas Demoner

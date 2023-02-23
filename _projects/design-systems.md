@@ -6,7 +6,7 @@ description: 'The Design System initiative seeks  to empower volunteers with the
 A Design System is a single source of truth for a website’s designers and developers– a collection of reusable components, styles, and code guided by clear standards and documentation. Design systems are now an industry standard used by the website teams of most major companies.'
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/design-systems.jpg
-alt: 'Hack for LA logo and the title of the project, Design Systems'
+alt: 'Design Systems'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/design-systems-hero.jpg
 leadership:

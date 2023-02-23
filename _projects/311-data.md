@@ -3,7 +3,7 @@ identification: '190321758'
 title: 311 Data
 description: The 311 Data project seeks to empower local Neighborhood Councils to improve the ideation and analysis of their initiatives using the wealth of publicly available 311 data.
 image: /assets/images/projects/311_data.png
-alt: '311 data logo.'
+alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
   - name: Eric Cho

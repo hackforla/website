@@ -12,7 +12,7 @@ activists and data experts needs and wants."
 
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/access-the-data.png
-alt: 'description of the card image'
+alt: 'Access The Data'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
 leadership:
