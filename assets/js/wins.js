@@ -263,14 +263,14 @@
 			if (badgeIcons.hasOwnProperty(item)) {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-						<img class="${view}-badge-icon" alt="${item}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+						<img class="${view}-badge-icon" alt="${view === 'wins' ? item: ''}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
 						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 					</div>`
 				)
 			} else if (item !== '') {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-						<img class="${view}-badge-icon" alt="" src="${SVG_FILE_PATH}${otherIcon}">
+						<img class="${view}-badge-icon" alt="${view === 'wins' ? item: ''}" src="${SVG_FILE_PATH}${otherIcon}">
 						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 					</div>`
 				)
