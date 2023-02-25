@@ -1,19 +1,19 @@
 ---
 identification: "215666884"
 title: Food Oasis
-description: The website is focused on individuals seeking food in Los Angeles who need an up-to-date resource about food pantries and meals. Our mission is to update the existing website, foodoasis.la with a simplified UI and verified data.  Future development goals include creating functionality for referral services that will allow the end user to annotate and update listings through a peer verification system.
+description: Food Oasis is focused on supporting individuals seeking food in Los Angeles. We aim to provide an up-to date resource on food pantries and meal services. The team is currently working on updating listings on our website foodoasis.net, improving UI, and establishing new partnerships.
 image: /assets/images/projects/food-oasis.jpg
 alt: 'Stacks of freshly harvested beets'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
 leadership:
   - name: John Darragh
-    role: Architect & Technology Lead
+    role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Bryan Wu
-    role: Design Lead
+    role: UX/UR Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
       github: "https://github.com/fancyham"
@@ -25,7 +25,7 @@ leadership:
       github: "https://github.com/ryu-jieun"
     picture: https://avatars.githubusercontent.com/ryu-jieun
   - name: Gigi Patel
-    role: UX Researcher
+    role: Lead UX Researcher
     links:
       slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
       github: "https://github.com/GigiUxR"
@@ -37,23 +37,35 @@ leadership:
       github: "https://github.com/VirginiaWu11"
     picture: https://avatars.githubusercontent.com/VirginiaWu11
   - name: Seiko Igi
-    role: Product Designer
+    role: Senior Product Designer
     links:
       slack: "https://hackforla.slack.com/team/U02U55MQEQ7"
       github: "https://github.com/sei1122"
     picture: https://avatars.githubusercontent.com/sei1122
   - name: Hannah Zulueta
-    role: Full Stack Engineer
+    role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/U01G7AH18J3"
       github: "https://github.com/hanapotski"
-    picture: https://avatars.githubusercontent.com/hanapotski 
+    picture: https://avatars.githubusercontent.com/hanapotski
+  - name: Stacey Rebekah Scott
+    role: Senior Project Manager
+    links:
+      slack: "https://hackforla.slack.com/team/U02U9Q5DUF6"
+      github: "https://github.com/staceyrebekahscott"
+    picture: https://avatars.githubusercontent.com/staceyrebekahscott
+  - name: Erin Dean
+    role: Senior Product Manager
+    links:
+      slack: "https://hackforla.slack.com/team/U03JSNJ3UKE"
+      github: "https://github.com/itserindean"
+    picture: https://avatars.githubusercontent.com/itserindean
 
 links:
   - name: GitHub
     url: "https://github.com/hackforla/food-oasis"
   - name: Site
-    url: "https://foodoasis.la/"
+    url: "https://foodoasis.net"
   - name: Readme
     url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
@@ -76,10 +88,10 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools: Figma, Photoshop, Sketch, pencil and paper, phone calls
+tools: Figma, Photoshop, Sketch, whiteboard / paper & pencil, phone calls, paper prototyping, Google forms, Google Sheets, Google Analytics, FigJam, SPSS, Mplus, AtlasTI, Usabilityhub.com surveys
 program-area:
   - Social Safety Net
-partner: seeking
+partner:
 visible: true
 status: Active
 iframe:

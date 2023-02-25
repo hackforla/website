@@ -12,42 +12,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Cynthia Kiser
-    role: Technical Advisor
-    links:
-      slack: 'https://hackforla.slack.com/team/USBB18YDR'
-      github: 'https://github.com/cnk'
-    picture: https://avatars.githubusercontent.com/cnk
-  - name: Akram Nour
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03UW53122J'
-      github: 'https://github.com/7kram'
-    picture: https://avatars.githubusercontent.com/7kram
-  - name: Bishr Aboobaker
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03VDRGD34P'
-      github: 'https://github.com/bishrfaisal'
-    picture: https://avatars.githubusercontent.com/bishrfaisal
-  - name: Stephanie Samuels
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03SJS7LYCC'
-      github: 'https://github.com/Steph112792'
-    picture: https://avatars.githubusercontent.com/Steph112792
-  - name: Vaisali Krishna Kumar
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U028RCG9Z44'
-      github: 'https://github.com/vaisali89'
-    picture: https://avatars.githubusercontent.com/vaisali89
-  - name: Kathryn Silva Conway
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U037LRF8QC9'
-      github: 'https://github.com/kathrynsilvaconway'
-    picture: https://avatars.githubusercontent.com/kathrynsilvaconway
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -61,11 +25,42 @@ leadership:
       github: 'https://github.com/arpitapandya'
     picture: https://avatars.githubusercontent.com/arpitapandya
   - name: Justin Dingeman
-    role: Merge Team
+    role: Technical Lead
     links:
       slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
       github: 'https://github.com/jdingeman'
     picture: https://avatars.githubusercontent.com/jdingeman
+  - name: Matt Pereira
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
+      github: 'https://github.com/MattPereira'
+    picture: https://avatars.githubusercontent.com/MattPereira
+  - name: Phillip Sanchez
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
+      github: 'https://github.com/plang-psm'
+    picture: https://avatars.githubusercontent.com/plang-psm
+  - name: Roslyn Wythe
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
+  - name: Will Gillis
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
+      github: 'https://github.com/t-will-gillis'
+    picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danny Do
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
+      github: 'https://github.com/Adastros'
+    picture: https://avatars.githubusercontent.com/Adastros
+    
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
