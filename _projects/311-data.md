@@ -18,6 +18,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0143158U80'
       github: 'https://github.com/pras4u'
     picture: https://avatars.githubusercontent.com/pras4u
+  - name: Michael Criste
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U048U430FQV'
+      github: 'https://github.com/mc759'
+    picture: https://avatars.githubusercontent.com/mc759
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'

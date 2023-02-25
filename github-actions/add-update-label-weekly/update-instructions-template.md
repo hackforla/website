@@ -1,6 +1,6 @@
 ${assignees}
 
-Please add update using the below template (even if you have a pull request). Afterwards, remove the 'To Update !' label and add the 'Status: Updated' label.
+Please add update using the below template (even if you have a pull request). Afterwards, remove the '${label}' label and add the 'Status: Updated' label.
 1. Progress: "What is the current status of your project? What have you completed and what is left to do?"
 2. Blockers: "Difficulties or errors encountered."
 3. Availability: "How much time will you have this week to work on this issue?"

@@ -44,7 +44,7 @@ async function main({ g, c }, columnId) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
 			await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);  
 			await addLabels(issueNum, responseObject.labels); 
-			await postComment(issueNum, assignees);
+			await postComment(issueNum, assignees, toUpdateLabel);
 		} else if (responseObject.result === true && responseObject.labels === statusUpdatedLabel) {
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
 			await addLabels(issueNum, responseObject.labels);
@@ -52,7 +52,7 @@ async function main({ g, c }, columnId) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
 			await removeLabels(issueNum, toUpdateLabel, statusUpdatedLabel);
 			await addLabels(issueNum, responseObject.labels);
-			await postComment(issueNum, assignees);
+			await postComment(issueNum, assignees, inactiveLabel);
 		} else {
 			console.log(`No updates needed for issue #${issueNum}`);
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
@@ -235,10 +235,10 @@ async function addLabels(issueNum, ...labels) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
   }
 }
-async function postComment(issueNum, assignees) {
+async function postComment(issueNum, assignees, labelString) {
   try {
     const assigneeString = createAssigneeString(assignees);
-    const instructions = formatComment(assigneeString);
+    const instructions = formatComment(assigneeString, labelString);
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -298,7 +298,7 @@ function createAssigneeString(assignees) {
   }
   return assigneeString.join(', ')
 }
-function formatComment(assignees) {
+function formatComment(assignees, labelString) {
   const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
   const options = {
@@ -308,7 +308,7 @@ function formatComment(assignees) {
     timeZoneName: 'short',
   }
   const cutoffTimeString = threeDayCutoffTime.toLocaleString('en-US', options);
-  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
+  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString).replace('${label}', labelString);
   return completedInstuctions
 }
 		
