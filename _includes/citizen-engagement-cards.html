@@ -4,7 +4,8 @@
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
-                                   <h3>{{ item.title }}</h3>
+                                {% assign project_relative_path = item.slug | prepend: "../projects/" %}
+                                <h3><a class="project-card-mini-title" href="{{ project_relative_path }}">{{ item.title }}</a></h3>
                                    <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
                                </div>
                                <div class="project-dropdown">

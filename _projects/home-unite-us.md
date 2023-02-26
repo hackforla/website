@@ -36,20 +36,26 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
+  - name: Kristelle Gumaru
+    role: Product Manager
+    links:
+      slack: "https://hackforla.slack.com/team/U031VJ99ATU"
+      github: "https://github.com/K-Gumarama"
+    picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031FLYS561"
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
   - name: Bryce Lednar
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
       github: "https://github.com/brycelednar"

@@ -54,6 +54,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danny Do
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
+      github: 'https://github.com/Adastros'
+    picture: https://avatars.githubusercontent.com/Adastros
     
 links:
   - name: Wiki
