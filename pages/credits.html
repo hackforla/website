@@ -61,6 +61,18 @@ permalink: /credits/
                           {%- endif -%}
                         </p>
                       {%- endif -%}
+
+                      {%- if item[1].altered-by -%}
+                        <p>
+                          <strong>Altered by: </strong>
+                          {%- if item[1].altered-by-link -%}
+                            <a href="{{item[1].altered-by-link}}">{{ item[1].altered-by }}</a>
+                          {%- else -%}
+                            {{ item[1].altered-by }}
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+
                     </div>
                   </div>
                 </li>
