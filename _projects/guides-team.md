@@ -4,7 +4,7 @@ title: Guides Team
 description: The Hack for LA Guides Team project is creating guides and templates from the effective practices that HfLA has developed and iterated from our projects. HfLA Guides aim to share replicable processes and practices from Engineering, UI/UX, Product Management, Data Science, Marketing Fundraising, DevOps, Admin, and Professional Development. The project seeks to further grow HfLA’s peer learning and iterative culture, and ultimately improve outcomes for the entire civic tech ecosystem.
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/guides-team.jpg
-alt: 'Globe Map made of dots and hackforla logo and text reading Guides Team'
+alt: 'Guides Team'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
