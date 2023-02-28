@@ -36,6 +36,7 @@ function insertEventSchedule(eventData, page) {
           let eventHtml;
 				  // insert the correct html for the current page
 				  if (page === "events") {
+            console.log('EVENT', event)
 					  eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
 				  } else {
 					  eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
