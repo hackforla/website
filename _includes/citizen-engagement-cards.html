@@ -10,12 +10,13 @@
                 -%}
                   <div class="page-card card-primary page-card-lg program-area" data-dropdown>
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
-                        <div class="mobile-card-info-container">
-                            <div class="mobile-card-nav">
-                                <h3>{{ item.title }}</h3>
-                                <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
-                            </div>
-                            <div class="project-dropdown">
+                           <div class="mobile-card-info-container">
+                               <div class="mobile-card-nav">
+                                {% assign project_relative_path = item.slug | prepend: "../projects/" %}
+                                <h3><a class="project-card-mini-title" href="{{ project_relative_path }}">{{ item.title }}</a></h3>
+                                   <input class="dropdown-arrow" data-dropdown-arrow type="image" src="/assets/images/citizen-engagement/arrow-button-icon.svg" alt="dropdown-arrow">
+                               </div>
+                               <div class="project-dropdown">
                                     <div class="problem-info">
                                         <h4>Problem</h4>
                                         <p>{{ item.problem }}</p>
@@ -41,7 +42,8 @@
                 {%- else -%}  
                      <div class="page-card card-primary page-card-lg missing-area" data-dropdown>
                         <div class="mobile-card-info-container">
-                            <h3>{{ item.title }}</h3>
+                            {% assign project_relative_path = item.slug | prepend: "../projects/" %}
+                            <h3><a class="project-card-mini-title" href="{{ project_relative_path }}">{{ item.title }}</a></h3>
                             <p>We are currently drafting the Problem, Solution and Impact statements for this project.</p>
                         </div>
                    </div>
