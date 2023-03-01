@@ -388,6 +388,7 @@ function seeMore(id){
 	let screenWidth = window.innerWidth;
 	let parent = span.parentElement.parentElement;
 	let winsIconContainer = document.getElementById(`icons-${id}`)
+	console.log(winsIconContainer)
 	if (parent.classList.contains('expanded') && screenWidth > 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
@@ -395,11 +396,17 @@ function seeMore(id){
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		span.setAttribute('class', 'see-more-div');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
+		for (const child of winsIconContainer.children) {
+			child.firstElementChild.alt = child.lastElementChild.textContent
+		};
 	} else {
 		parent.setAttribute('class','project-inner wins-card-text expanded');
 		span.setAttribute('class', 'see-more-div show-less-btn');
 		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-  		span.parentElement.removeAttribute('hidden');
+  	span.parentElement.removeAttribute('hidden');
+		for (const child of winsIconContainer.children) {
+			child.firstElementChild.setAttribute('alt', '')
+		};
 	}
 }
 
