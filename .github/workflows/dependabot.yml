@@ -3,7 +3,7 @@
 
 name: Dependabot pull requests
 
-version: 1
+version: 2
 updates:
   - package-ecosystem: "npm"
     # Files stored in `app` directory
@@ -23,6 +23,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
-
-# double check if there are packages or dependencies that swhouldn't be scanned/updated
