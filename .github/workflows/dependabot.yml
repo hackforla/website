@@ -1,18 +1,17 @@
-#  Create dependabot.yml file for dependabot to create pull requests #3843
-# Goal: Have dependabot make pull requests for vulnerabilities it finds
+# Create dependabot.yml file for dependabot to create pull requests #3843
 
 name: Dependabot pull requests
 
 version: 2
 updates:
   - package-ecosystem: "npm"
-    # Files stored in `app` directory
+    # Files stored in root directory
     directory: "/"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "docker"
-    # Files stored in `app` directory
+    # Files stored in root directory
     directory: "/"
     schedule:
       interval: "weekly"
