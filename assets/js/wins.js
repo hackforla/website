@@ -388,7 +388,6 @@ function seeMore(id){
 	let screenWidth = window.innerWidth;
 	let parent = span.parentElement.parentElement;
 	let winsIconContainer = document.getElementById(`icons-${id}`)
-	console.log(winsIconContainer)
 	if (parent.classList.contains('expanded') && screenWidth > 960) {
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
