@@ -4,14 +4,19 @@ var fs = require("fs");
 // Global variables
 var github;
 var context;
-const statusUpdatedLabel = 'Status: Updated';
-const toUpdateLabel = 'To Update !';
-const inactiveLabel = '2 weeks inactive';
-const updatedByDays = 3; // number of days ago to check for to update label
+const statusUpdatedLabel = 'Status: Updated'; // If an issue has been cross-referenced or commented on by the assignee within the past 7 days, it's considered updated and should have the 'Status: Updated' label
+const toUpdateLabel = 'To Update !'; // If the last time an issue was cross-referenced or commented on by the assignee was 7 days ago, but within the past 14 days, add the 'To Update !' label; if the issue has never been commented on by the assignee, check the date when the contributor was (self-)assigned, and add this label if they were assigned 7 days ago
+const inactiveLabel = '2 weeks inactive'; // If the last time an issue was cross-referenced or commented on by the assignee was 14 days ago, add the '2 weeks inactive' label; if the issue has never been commented on by the assignee, check the date when the contributor was (self-)assigned, and add this label if they were assigned 14 days ago
+
+
+/* 
+Note: The team discussed and decided to use only the sevenDayCutoffTime to check for updated/outdated, so I'm commenting out the 3-day variables  
+*/
+// const updatedByDays = 3; // number of days ago to check for to update label
 const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
 const commentByDays = 7; // number of days ago to check for comment by assignee
-const threeDayCutoffTime = new Date()
-threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
+// const threeDayCutoffTime = new Date()
+// threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
 const fourteenDayCutoffTime = new Date()
@@ -31,7 +36,7 @@ async function main({ g, c }, columnId) {
 	for await (let issueNum of issueNums) {
 		const timeline = await getTimeline(issueNum);
 		const timelineArray = Array.from(timeline);
-		const assignees = await getAssignees(issueNum);
+		const assignees = await getAssignees(issueNum); // assignees is an array of login's
 		// Error catching.
 		if (assignees.length === 0) {
 		  console.log(`Assignee not found, skipping issue #${issueNum}`)
@@ -132,7 +137,7 @@ async function getTimeline(issueNum) {
  * @param {Number} issueNum the issue's number
  * @param {String} assignees a list of the issue's assignee's username
  * @returns true if timeline indicates the issue is outdated and inactive, false if not; also returns appropriate labels
- * Note: Outdated means that the assignee did not make a linked PR or comment within the threedaycutoffTime (see global variables), while inactive is for 14 days
+ * Note: Outdated means that the assignee did not make a linked PR or comment within the sevendaycutoffTime (see global variables), while inactive is for 14 days
  */
 
 async function isTimelineOutdated(timeline, issueNum, assignees) {
