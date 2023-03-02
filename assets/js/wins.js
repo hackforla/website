@@ -402,7 +402,7 @@ function seeMore(id){
 		parent.setAttribute('class','project-inner wins-card-text expanded');
 		span.setAttribute('class', 'see-more-div show-less-btn');
 		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-  	span.parentElement.removeAttribute('hidden');
+		span.parentElement.removeAttribute('hidden');
 		for (const child of winsIconContainer.children) {
 			child.firstElementChild.setAttribute('alt', '')
 		};
