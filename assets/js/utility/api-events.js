@@ -36,8 +36,7 @@ function insertEventSchedule(eventData, page) {
           let eventHtml;
 				  // insert the correct html for the current page
 				  if (page === "events") {
-            console.log('EVENT', event)
-					  eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+					  eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}</li>`;
 				  } else {
 					  eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
 				  }
@@ -144,7 +143,10 @@ function convertTime12to24(time12h) {
  */
 function display_object(item) {
   if (item && item.project) { 
+
+    console.log('EVENT DATA: ', item)
     const rv_object = {
+      meetingName: item.name,
       name: item.project.name,
       dsc: item.description,
       start: localeTimeIn12Format(item.startTime),
