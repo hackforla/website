@@ -143,8 +143,6 @@ function convertTime12to24(time12h) {
  */
 function display_object(item) {
   if (item && item.project) { 
-
-    console.log('EVENT DATA: ', item)
     const rv_object = {
       meetingName: item.name,
       name: item.project.name,
