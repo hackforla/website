@@ -167,7 +167,6 @@ function appendMeetingTimes(scheduleData) {
 
     for (const event of scheduleData) {
         try {
-            console.log('EVENTS', event.name)
             const startTime = timeFormat(new Date(event.startTime));
             const endTime = timeFormat(new Date(event.endTime));
             const projectName = event.project.name;
@@ -180,7 +179,6 @@ function appendMeetingTimes(scheduleData) {
             }
 
         } catch (e) {
-            console.log(event)
             console.error(e);
         }
     } 
