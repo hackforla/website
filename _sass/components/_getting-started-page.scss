@@ -7,6 +7,8 @@
   font-weight: 700;
   padding-top: 20px;
   font-family: "Roboto"sans-serif;
+  max-width: 580px;
+  margin: 0 auto;
 
   @media #{$bp-below-tablet} {
     font-size: 18px;
