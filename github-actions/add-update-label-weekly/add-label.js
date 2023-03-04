@@ -155,7 +155,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) {
     // each event object has a property of 'event' that has the value of the event type
     const issueEventType = issueEvent.event;
 
-    if (issueEventType === 'cross-referenced' || (issueEventType === 'commented' && isCommentByAssignees(issueEvent, assignees))) {
+    if ((issueEventType === 'cross-referenced' && isLinkedIssue(issueEvent, issueNum) && assignees.includes(issueEvent.assignee.login)) || (issueEventType === 'commented' && isCommentByAssignees(issueEvent, assignees))) {
       // if such event is found, check how recent it is
       // each event object has a 'created_at' property and an 'updated_at' property, set the timestamp to the most recent one
       const eventTimestamp = issueEvent.updated_at ? issueEvent.updated_at : issueEvent.created_at;
@@ -264,12 +264,10 @@ function isMomentRecent(dateString, cutoffTime) {
   }
 }
 
-/*
-I can't reason the function below, and couldn't find documentation on the event.source.issue.body property being an issue number. (Bitian Zhang 3/3/23)
-*/
-// function isLinkedIssue(data, issueNum) {
-//   return findLinkedIssue(data.source.issue.body) == issueNum
-// }
+
+function isLinkedIssue(data, issueNum) {
+  return findLinkedIssue(data.source.issue.body) == issueNum
+}
 function isCommentByAssignees(data, assignees) {
   return assignees.includes(data.actor.login)
 }
