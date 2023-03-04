@@ -144,14 +144,14 @@ async function getTimeline(issueNum) {
  */
 
 // assignees is an arrays of `login`'s
-async function isTimelineOutdated(timeline, issueNum, assignees) {
+function isTimelineOutdated(timeline, issueNum, assignees) {
   // Setting initial responseObj and properties to update/refer to these values in the for...loop 
   let responseObj = {
       result: true,
       labels: inactiveLabel,
       }
   /* I don't understand why this needs to be an await for...loop (I can't reason why isTimelineOutdated should be an async function either) - Bitian Zhang 3/3/23 */
-	for (let [index, moment] of timeline.entries()) {
+	for (let moment of timeline) {
     let eventTimestamp = moment.updated_at ? moment.updated_at : moment.created_at;
 		if (isMomentRecent(eventTimestamp, sevenDayCutoffTime)) { // if event occurred within 7 days
 			if (moment.event === 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees.includes(moment.actor.login)) { // if cross-referenced in a PR by assignee within 7 days, update the responseObj and break the loop
