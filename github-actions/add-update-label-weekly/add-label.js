@@ -167,7 +167,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) {
         responseObj.labels = statusUpdatedLabel;
         break
 			} 
-      else if (moment.event = 'assigned' && assignees.includes(moment.assignee.login)) { // if not the two former cases, check if this event is assigning an assignee to this issue, if so, set responseObj.labels to '', and make sure responseObj.result is false--no need for an 'To Update !' label or an '2 weeks inactive' label
+      else if (moment.event === 'assigned' && assignees.includes(moment.assignee.login)) { // if not the two former cases, check if this event is assigning an assignee to this issue, if so, set responseObj.labels to '', and make sure responseObj.result is false--no need for an 'To Update !' label or an '2 weeks inactive' label
         responseObj.result = false;
         responseObj.labels = ''
       }
