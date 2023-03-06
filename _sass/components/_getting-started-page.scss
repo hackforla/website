@@ -8,13 +8,14 @@
   padding-top: 20px;
   font-family: "Roboto"sans-serif;
   max-width: 580px;
-  margin: 0 auto;
+  margin: 0 auto 23px;
 
   @media #{$bp-below-tablet} {
     font-size: 18px;
     text-align: left;
   }
 }
+
 .header-p {
   display: flex;
   max-width: 580px;
