@@ -44,7 +44,7 @@ async function main({ g, c }, columnId) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
 			await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);  
 			await addLabels(issueNum, responseObject.labels); 
-			await postComment(issueNum, assignees);
+			await postComment(issueNum, assignees, toUpdateLabel);
 		} else if (responseObject.result === true && responseObject.labels === statusUpdatedLabel) {
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
 			await addLabels(issueNum, responseObject.labels);
@@ -52,7 +52,7 @@ async function main({ g, c }, columnId) {
 			console.log(`Going to ask for an update now for issue #${issueNum}`);
 			await removeLabels(issueNum, toUpdateLabel, statusUpdatedLabel);
 			await addLabels(issueNum, responseObject.labels);
-			await postComment(issueNum, assignees);
+			await postComment(issueNum, assignees, inactiveLabel);
 		} else {
 			console.log(`No updates needed for issue #${issueNum}`);
 			await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
@@ -136,14 +136,19 @@ async function getTimeline(issueNum) {
  */
 
 async function isTimelineOutdated(timeline, issueNum, assignees) {
+  assignedWithinFourteenDays = false;
 	for await (let [index, moment] of timeline.entries()) {
 		if (isMomentRecent(moment.created_at, threeDayCutoffTime)) { // all the events of an issue within last three days will return true
-			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced within last three days 
+			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees == moment.actor.login) { // checks if cross referenced within last three days 
 				return {result: false, labels: statusUpdatedLabel}
 			}
 			else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) { // checks if commented within last three days 
 				return {result: false, labels: statusUpdatedLabel}
 			}
+      else if (moment.event == 'assigned' && assignees == moment.assignee)
+      {
+        assignedWithinFourteenDays = true;
+      }
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
 				return {result: true, labels: inactiveLabel}
 			}
@@ -155,7 +160,7 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 			}
 		}
 		else if (isMomentRecent(moment.created_at, sevenDayCutoffTime)) { // all the events of an issue between three and seven days will return true
-			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced between 3 and 7 days
+			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees == moment.actor.login) { // checks if cross referenced between 3 and 7 days
 				console.log('between 3 and 7 cross referenced');
 				return {result: false, labels: statusUpdatedLabel}
 			}
@@ -163,6 +168,10 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 				console.log('between 3 and 7 commented');
 				return {result: false, labels: statusUpdatedLabel}
 			}
+      else if (moment.event == 'assigned' && assignees == moment.assignee)
+      {
+        assignedWithinFourteenDays = true;
+      }
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
 				return {result: true, labels: inactiveLabel}
 			}
@@ -171,19 +180,27 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 			}
 		}
 		else if (isMomentRecent(moment.created_at, fourteenDayCutoffTime)) { // all the events of an issue between seven and fourteen days will return true
-			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced between 7 and 14 days
+			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees == moment.actor.login) { // checks if cross referenced between 7 and 14 days
 				console.log('between 7 and 14 cross referenced');
 				return {result: false, labels: statusUpdatedLabel}
 			}
+      else if (moment.event == 'commented' && isCommentByAssignees(moment, assignees)) { // checks if commented between 3 and 7 days
+				console.log('between 7 and 14 commented');
+				return {result: false, labels: statusUpdatedLabel}
+			}
+      else if (moment.event == 'assigned' && assignees == moment.assignee)
+      {
+        assignedWithinFourteenDays = true;
+      }
 			else if (index === timeline.length-1 && (Date.parse(timeline[0].created_at) < fourteenDayCutoffTime.valueOf())) { // returns true if issue was created before 14 days after comparing the two dates in millisecond format  
-				return {result: true, labels: inactiveLabel}
+				return {result: true, labels: inactiveLabel}  
 			}
 			else if (index === timeline.length-1) { // returns true if the latest event created is between 7 and 14 days  
 				return {result: true, labels: toUpdateLabel}
 			}
 		}
 		else    { // all the events of an issue older than fourteen days will be processed here
-			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum)) { // checks if cross referenced older than fourteen days
+			if (moment.event == 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees == moment.actor.login) { // checks if cross referenced older than fourteen days
 				console.log('14 day event cross referenced');
 				return {result: false, labels: statusUpdatedLabel}
 			}
@@ -192,6 +209,8 @@ async function isTimelineOutdated(timeline, issueNum, assignees) {
 			}
 		}
 	}
+  if (assignedWithinFourteenDays)
+    return {result: true, labels: toUpdateLabel}
 }	
 
 /**
@@ -235,10 +254,10 @@ async function addLabels(issueNum, ...labels) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
   }
 }
-async function postComment(issueNum, assignees) {
+async function postComment(issueNum, assignees, labelString) {
   try {
     const assigneeString = createAssigneeString(assignees);
-    const instructions = formatComment(assigneeString);
+    const instructions = formatComment(assigneeString, labelString);
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -298,7 +317,7 @@ function createAssigneeString(assignees) {
   }
   return assigneeString.join(', ')
 }
-function formatComment(assignees) {
+function formatComment(assignees, labelString) {
   const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
   const options = {
@@ -308,7 +327,7 @@ function formatComment(assignees) {
     timeZoneName: 'short',
   }
   const cutoffTimeString = threeDayCutoffTime.toLocaleString('en-US', options);
-  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
+  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString).replace('${label}', labelString);
   return completedInstuctions
 }
 		

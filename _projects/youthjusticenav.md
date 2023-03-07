@@ -19,18 +19,30 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01G75XUYHX'
       github: 'https://github.com/ltung05'
     picture: 'https://avatars.githubusercontent.com/ltung05'
-  - name: Nielsen
+  - name: Rabia Shaikh
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U01QSJ10XRA'
+      github: 'https://github.com/Rabia2219'
+    picture: 'https://avatars.githubusercontent.com/Rabia2219'
+  - name: Hyun Joo Sandy Oh
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U03RZE7TTKP'
+      github: 'https://github.com/doctorsandy'
+    picture: 'https://avatars.githubusercontent.com/doctorsandy'
+  - name: Moji Jimoh
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U01G0PX0NJY'
-      github: 'https://github.com/nielseny'
-    picture: 'https://avatars.githubusercontent.com/nielseny'
-  - name: Daniel Lee
-    role: Product Designer
+      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
+      github: 'https://github.com/mojimoh'
+    picture: 'https://avatars.githubusercontent.com/mojimoh'
+  - name: Anousha Shadrach
+    role: Lead, UX Design
     links:
-      slack: 'https://hackforla.slack.com/team/U01G0PX0NJY'
-      github: 'https://github.com/j100892'
-    picture: 'https://avatars.githubusercontent.com/j100892'
+      slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
+      github: 'https://github.com/Noushie'
+    picture: 'https://avatars.githubusercontent.com/Noushie'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/YouthJusticeNav/'
