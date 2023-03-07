@@ -153,6 +153,8 @@ function isTimelineOutdated(timeline, issueNum, assignees) {
   };
  
   /* I don't think this needs to be an await for...loop because there is no async function calls within the loop - Bitian Zhang 3/4/23 */
+
+  // timeline lists events from oldest to newest
   for (let moment of timeline) {
     // if issue was crossed-referenced in a PR by an assignee ANYTIME in the events timeline, the issue is considered updated, immediately return {result: false, labels: statusUpdatedLabel}
     if (moment.event === 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees.includes(moment.actor.login)) {
@@ -171,7 +173,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) {
         responseObj.labels = statusUpdatedLabel;
         return responseObj
       }
-      else if (moment.event === 'assigned' && assignees.includes(moment.assignee.login)) { // if this event is assigning an assignee to this issue, set responseObj.labels to ''--issue is not outdated, and does not need an label for this case
+      else if (moment.event === 'assigned' && assignees.includes(moment.assignee.login)) { // if this event is assigning an assignee to this issue, set responseObj.labels to ''--issue is not outdated, and does not need a label for this case
         responseObj.result = false;
         responseObj.labels = '';
       }
