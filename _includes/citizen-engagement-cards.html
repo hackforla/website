@@ -1,6 +1,14 @@
 {% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
              {% for item in visible_projects %}
-                   <div class="page-card card-primary page-card-lg program-area" data-dropdown>
+             {%- if 
+                item.problem.size > 0 and
+                item.solution.size > 0 and
+                item.impact.size > 0 and
+                item.sdg.size > 0 and
+                item.card-image-src.size > 0 and
+                item.sdg-image-src.size > 0
+                -%}
+                  <div class="page-card card-primary page-card-lg program-area" data-dropdown>
                         <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
@@ -21,14 +29,23 @@
                                         <h4>Impact</h4>
                                         <p>{{ item.impact }}</p>
                                     </div>
-                               </div>
-                           </div>
-                       <div class="sustainable-dev-goal">
-                           <h4>Sustainable Development Goal</h4>
-                           <div class="card-bottom-info">
-                               <img class="sdg-image" src="{{ item.sdg-image-src }}" alt="{{ item.sdg-image-alt }}" />
-                                       <p>{{ item.sdg }}</p>
-                           </div>
-                       </div>
+                            </div>
+                        </div>
+                    <div class="sustainable-dev-goal">
+                        <h4>Sustainable Development Goal</h4>
+                        <div class="card-bottom-info">
+                            <img class="sdg-image" src="{{ item.sdg-image-src }}" alt="{{ item.sdg-image-alt }}" />
+                                    <p>{{ item.sdg }}</p>
+                        </div>
+                    </div>
+                </div>
+                {%- else -%}  
+                     <div class="page-card card-primary page-card-lg missing-area" data-dropdown>
+                        <div class="mobile-card-info-container">
+                            {% assign project_relative_path = item.slug | prepend: "../projects/" %}
+                            <h3><a class="project-card-mini-title" href="{{ project_relative_path }}">{{ item.title }}</a></h3>
+                            <p>We are currently drafting the Problem, Solution and Impact statements for this project.</p>
+                        </div>
                    </div>
+                {%- endif -%}   
             {% endfor %}
