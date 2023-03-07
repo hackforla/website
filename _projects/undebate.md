@@ -3,7 +3,7 @@ identification: "221070186"
 title: Undebate
 description: For down ballot offices like school-board, voters often don’t know the candidates, so they skip it. With declining media attention, candidates for these offices have a hard time being heard by voters. But electing good people is important!<br /><br /> Undebates are automated online video Q&A so candidates can be heard, and voters can quickly decide - for every candidate, for every election, across the US.
 image: /assets/images/projects/undebate.jpg
-alt: 'Undebate with moderator and 4 participants, displayed question as "Why are you running for office?".'
+alt: 'Undebate'
 image-hero: /assets/images/projects/undebate-hero.jpg
 leadership:
   - name: David Fridley
@@ -37,6 +37,6 @@ location:
 partner: EnCiv.org, Ballotpedia.org
 visible: true
 status: Completed
-program-area: 
+program-area:
   - Vote / Representation
 ---
