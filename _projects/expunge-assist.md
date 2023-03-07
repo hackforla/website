@@ -13,18 +13,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: Valeriya Metla
-    role: Product Manager, Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U02NWJ2H8M6'
-      github: 'https://github.com/ValeriyaMetla'
-    picture: 'https://avatars.githubusercontent.com/ValeriyaMetla'
   - name: Jamie Siu
     role: Product Manager, Design
     links:
       slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
       github: 'https://github.com/jamiesiu'
     picture: 'https://avatars.githubusercontent.com/jamiesiu'
+  - name: Sheron Virani
+    role: Product Manager, Research
+    links:
+      slack: 'https://hackforla.slack.com/team/U041X0628B0'
+      github: 'https://github.com/sheronvirani21'
+    picture: 'https://avatars.githubusercontent.com/sheronvirani21'
+  - name: James Shin
+    role: Product Manager, Design
+    links:
+      slack: 'https://hackforla.slack.com/team/U04BS46F67L'
+      github: 'https://github.com/jamesshin27'
+    picture: 'https://avatars.githubusercontent.com/jamesshin27'
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
@@ -34,9 +40,6 @@ links:
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
       url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
-    - name: Overview
-      url: '../assets/pdfs/Expunge-Assist-Project-One-Sheet.pdf'
-partner: NDICA
 looking:
   - category: Marketing
     skill: Marketing & Communications
