@@ -3,7 +3,7 @@ identification: '216854923'
 title: Lucky Parking
 description: Visualization of parking data to assist in understanding of the effects of parking policies on a neighborhood by neighborhood basis in the City of Los Angeles.
 image: /assets/images/projects/lucky-parking.png
-alt: 'Lucky Parking Logo'
+alt: 'Lucky Parking'
 image-hero: /assets/images/projects/lucky-parking-hero.png
 leadership:
   - name: Yuting Chu
