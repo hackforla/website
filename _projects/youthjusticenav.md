@@ -5,7 +5,7 @@ description: We are creating a know your rights tool for youth and their familie
 image: /assets/images/projects/youthjusticenav.png
 alt: "All capital letters spelling out title of project - YOUTH JUSTICE NAV"
 image-hero: /assets/images/projects/youthjusticenav-hero.png
-alt: ''
+alt: 'Youth Justice Nav'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -31,6 +31,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03RZE7TTKP'
       github: 'https://github.com/doctorsandy'
     picture: 'https://avatars.githubusercontent.com/doctorsandy'
+  - name: Moji Jimoh
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
+      github: 'https://github.com/mojimoh'
+    picture: 'https://avatars.githubusercontent.com/mojimoh'
+  - name: Anousha Shadrach
+    role: Lead, UX Design
+    links:
+      slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
+      github: 'https://github.com/Noushie'
+    picture: 'https://avatars.githubusercontent.com/Noushie'
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/YouthJusticeNav/'
