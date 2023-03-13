@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded",function(){
                 filterTitle = filterName
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
+            if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
+                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all">View all</li>` );
+            }
         }
 
         document.querySelectorAll("input[type='checkbox']").forEach(item =>{

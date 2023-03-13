@@ -67,6 +67,16 @@ ul.filter-list li ul li {
   cursor: pointer;
   vertical-align: middle;
 }
+.dropdown li:nth-child(n+9) {
+  display: none;
+}
+.dropdown li.view-all:last-child {
+  display: block;
+  color: $color-red;
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
 
 .filter-checkbox {
   border: 1px solid #000000;
