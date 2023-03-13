@@ -1,3 +1,6 @@
+.filters-title {
+  margin: 0 0 10px 0;
+}
 section.filter-content-container {
   display: grid;
   grid-template-columns: 275px 1fr;
@@ -95,7 +98,7 @@ ul.filter-list li ul li {
   height: var(--filter-tag-height);
   box-sizing: border-box;
   max-width: fit-content;
-  margin: 0em 0.5em 1em;
+  margin: 0em 0.5em .5em;
   padding: 0.15em 1em;
   background: $color-red;
   border: none;
