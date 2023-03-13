@@ -8,11 +8,12 @@
   padding-top: 20px;
   font-family: "Roboto"sans-serif;
   max-width: 580px;
-  margin: 0 auto 23px;
+  margin: 0 auto 16px;
 
   @media #{$bp-below-tablet} {
     font-size: 18px;
     text-align: left;
+    margin-bottom: 23px;
   }
 }
 
