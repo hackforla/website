@@ -522,7 +522,6 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     <a class='category-title' style='text-transform: capitalize;'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
-        <span class='labelArrow'> ∟ </span>
     </a>
     <ul class='dropdown' id='${categoryName.toLowerCase()}'>
         ${filterArray.map(item =>
