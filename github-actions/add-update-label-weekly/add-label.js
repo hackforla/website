@@ -9,14 +9,11 @@ const toUpdateLabel = 'To Update !'; // If the last time an issue was cross-refe
 const inactiveLabel = '2 weeks inactive'; // If the last time an issue was cross-referenced or commented on by the assignee was 14 days ago, add the '2 weeks inactive' label; if the issue has never been commented on by the assignee, check the date when the contributor was (self-)assigned, and add this label if they were assigned 14 days ago
 
 
-/* 
-Note: The team discussed and decided to use only the sevenDayCutoffTime to check for updated/outdated, so I'm commenting out the 3-day variables  
-*/
-// const updatedByDays = 3; // number of days ago to check for to update label
+const updatedByDays = 3; // number of days ago to check for to update label
 const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
 const commentByDays = 7; // number of days ago to check for comment by assignee
-// const threeDayCutoffTime = new Date()
-// threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
+const threeDayCutoffTime = new Date()
+threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
 const fourteenDayCutoffTime = new Date()
@@ -49,20 +46,19 @@ async function main({ g, c }, columnId) {
     // responseObject has two properties: {result: true/false, labels: [string]}
     const responseObject = isTimelineOutdated(timeline, issueNum, assignees)
 
-    if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // Outdated, add toUpdateLabel
+    if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // 7-day outdated, add 'To Update !' label
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);
       await addLabels(issueNum, responseObject.labels);
       await postComment(issueNum, assignees, toUpdateLabel);
-    } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) { // Not outdated, add statusUpdatedLabel
-      await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
-      await addLabels(issueNum, responseObject.labels);
-    } else if (responseObject.result === true && responseObject.labels === inactiveLabel) { // Outdated, add inactiveLabel
+    } else if (responseObject.result === true && responseObject.labels === inactiveLabel) { // 14-day outdated, add '2 Weeks Inactive' label
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, statusUpdatedLabel);
       await addLabels(issueNum, responseObject.labels);
       await postComment(issueNum, assignees, inactiveLabel);
-    } else if (responseObject.result === false && responseObject.labels === '') { // Not outdated because recently assigned, but not updated either, remove all update-related labels
+    } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) { // Updated within 3 days, retain 'Status: Updated' label if there is one
+      await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
+    } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, remove all three update-related labels
       console.log(`No updates needed for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel, statusUpdatedLabel);
     }
@@ -144,48 +140,57 @@ async function getTimeline(issueNum) {
  */
 
 // assignees is an arrays of `login`'s
-/* I removed the async keyword for this function because there is no async function calls in this function - Bitian Zhang 3/4/23 */
 function isTimelineOutdated(timeline, issueNum, assignees) {
-  // Setting initial responseObj and properties to update/refer to these values in the for...loop 
-  let responseObj = {
-    result: true,
-    labels: inactiveLabel,
-  };
- 
-  /* I don't think this needs to be an await for...loop because there is no async function calls within the loop - Bitian Zhang 3/4/23 */
+  let lastAssignedTimestamp = null;
+  let lastCommentTimestamp = null;
 
-  // timeline lists events from oldest to newest
-  for (let moment of timeline) {
-    // if issue was crossed-referenced in a PR by an assignee ANYTIME in the events timeline, the issue is considered updated, immediately return {result: false, labels: statusUpdatedLabel}
-    if (moment.event === 'cross-referenced' && isLinkedIssue(moment, issueNum) && assignees.includes(moment.actor.login)) {
-      console.log('Cross-referenced by assignee in a PR');
-      responseObj.result = false;
-      responseObj.labels = statusUpdatedLabel;
-      return responseObj
+  for (let i = timeline.length - 1; i >= 0; i--) {
+    let eventObj = timeline[i];
+    let eventType = eventObj.event;
+
+    // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels
+    if (eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && assignees.includes(eventObj.actor.login)) { // isLinkedIssue checks if the 'body'(comment) of the event mentioned closing/fixing/resolving this current issue
+      console.log(`Issue fixed/resolved/closed by assignee, remove all update-related labels`);
+      return { result: true, labels: '' }
     }
 
-    let eventTimestamp = moment.updated_at ? moment.updated_at : moment.created_at;
+    let eventTimestamp = eventObj.updated_at || eventObj.created_at;
 
-    if (isMomentRecent(eventTimestamp, sevenDayCutoffTime)) { // if event occurred within 7 days
-      if (moment.event === 'commented' && isCommentByAssignees(moment, assignees)) { // if commented by assignee within 7 days, update the responseObj and return
-        console.log('Commented by assignee within 7 days');
-        responseObj.result = false;
-        responseObj.labels = statusUpdatedLabel;
-        return responseObj
-      }
-      else if (moment.event === 'assigned' && assignees.includes(moment.assignee.login)) { // if this event is assigning an assignee to this issue, set responseObj.labels to ''--issue is not outdated, and does not need a label for this case
-        responseObj.result = false;
-        responseObj.labels = '';
-      }
+    // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
+    if (!lastCommentTimestamp && eventType === 'commented' && isCommentByAssignees(eventObj, assignees)) {
+      lastCommentTimestamp = eventTimestamp;
     }
-    else if (isMomentRecent(eventTimestamp, fourteenDayCutoffTime) && moment.event === 'commented' && isCommentByAssignees(moment, assignees)) { // if event occurred between 7 and 14 days and is a comment by an assignee,  update responseObj
-      console.log('Commented by assignee between 7 and 14 days');
-      responseObj.result = true;
-      responseObj.labels = toUpdateLabel;
+
+    // update the lastAssignedTimestamp if this is the last (most recent) time an assignee was assigned to the issue
+    else if (!lastAssignedTimestamp && eventType === 'assigned' && assignees.includes(eventObj.assignee.login)) {
+      lastAssignedTimestamp = eventTimestamp;
     }
   }
-  return responseObj
+
+  if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented within 3 days
+    console.log(`Commented by assignee within 3 days, retain 'Status: Updated' label`);
+    return { result: false, labels: statusUpdatedLabel } // retain updated label, remove the other two
+  }
+
+  if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, threeDayCutoffTime)) { // if an assignee was assigned within 7 days
+    console.log(`Assigned by assignee within 7 days, no update-related labels should be used`);
+    return { result: false, labels: '' } // remove all three labels
+  }
+
+  if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, sevenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, sevenDayCutoffTime))) { // if updated within 7 days
+    console.log(`Commented by assignee or assigned between 3 and 7 days, no update-related labels should be used`);
+    return { result: false, labels: '' } // remove all three labels
+  }
+
+  if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, fourteenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, fourteenDayCutoffTime))) { // if last comment was between 7-14 days, or no comment but an assginee was assigned during this period, issue is outdated and add 'To Update !' label
+    console.log(`Commented by assignee or assigned between 7 and 14 days, use 'To Update !' label`);
+    return { result: true, labels: toUpdateLabel }
+  }
+
+  // if no comment or assigning found within 14 days, issue is outdated and add '2 weeks inactive' label
+  return { result: true, labels: inactiveLabel }
 }
+
 
 /**
  * Removes labels from a specified issue
