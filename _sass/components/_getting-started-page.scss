@@ -89,6 +89,7 @@
 .step-img-intro {
   max-height: 100px;
   text-align: center;
+  margin-top: auto;
 }
 
 .rsvp-button {
@@ -305,6 +306,8 @@
 .step-links {
   padding: 33px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .step-link-img {

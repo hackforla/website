@@ -4,11 +4,9 @@ var fs = require("fs");
 // Global variables
 var github;
 var context;
-const statusUpdatedLabel = 'Status: Updated'; // If an issue has been cross-referenced or commented on by the assignee within the past 7 days, it's considered updated and should have the 'Status: Updated' label
-const toUpdateLabel = 'To Update !'; // If the last time an issue was cross-referenced or commented on by the assignee was 7 days ago, but within the past 14 days, add the 'To Update !' label; if the issue has never been commented on by the assignee, check the date when the contributor was (self-)assigned, and add this label if they were assigned 7 days ago
-const inactiveLabel = '2 weeks inactive'; // If the last time an issue was cross-referenced or commented on by the assignee was 14 days ago, add the '2 weeks inactive' label; if the issue has never been commented on by the assignee, check the date when the contributor was (self-)assigned, and add this label if they were assigned 14 days ago
-
-
+const statusUpdatedLabel = 'Status: Updated';
+const toUpdateLabel = 'To Update !';
+const inactiveLabel = '2 weeks inactive';
 const updatedByDays = 3; // number of days ago to check for to update label
 const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
 const commentByDays = 7; // number of days ago to check for comment by assignee
@@ -25,46 +23,44 @@ fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedB
  * @param {Object} c context object from actions/github-script 
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
-
-// when called, this function loops through all issues in the `In Progress` column of the Project Board
 async function main({ g, c }, columnId) {
-  github = g;
-  context = c;
-  // Retrieve all issue numbers from a column
-  const issueNums = getIssueNumsFromColumn(columnId);
-  for await (let issueNum of issueNums) {
-    const assignees = await getAssignees(issueNum);
-    // Error catching.
-    if (assignees.length === 0) {
-      console.log(`Assignee not found, skipping issue #${issueNum}`)
-      continue
-    }
-    // get events timeline of the issue
-    const timeline = await getTimeline(issueNum);
+	github = g;
+	context = c;
+	// Retrieve all issue numbers from a column
+	const issueNums = getIssueNumsFromColumn(columnId);
+	for await (let issueNum of issueNums) {
+		const timeline = await getTimeline(issueNum);
+		const timelineArray = Array.from(timeline);
+		const assignees = await getAssignees(issueNum);
+		// Error catching.
+		if (assignees.length === 0) {
+		  console.log(`Assignee not found, skipping issue #${issueNum}`)
+		  continue
+		}
+		
+		// Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
+		const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
 
-    // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
-    // responseObject has two properties: {result: true/false, labels: [string]}
-    const responseObject = isTimelineOutdated(timeline, issueNum, assignees)
 
-    if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // 7-day outdated, add 'To Update !' label
+		if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // 7-day outdated, add 'To Update !' label
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);
       await addLabels(issueNum, responseObject.labels);
-      await postComment(issueNum, assignees, toUpdateLabel);
+      await postComment(issueNum, assignees);
     } else if (responseObject.result === true && responseObject.labels === inactiveLabel) { // 14-day outdated, add '2 Weeks Inactive' label
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, statusUpdatedLabel);
       await addLabels(issueNum, responseObject.labels);
-      await postComment(issueNum, assignees, inactiveLabel);
+      await postComment(issueNum, assignees);
     } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) { // Updated within 3 days, retain 'Status: Updated' label if there is one
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
     } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, remove all three update-related labels
       console.log(`No updates needed for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel, statusUpdatedLabel);
     }
-  }
-}
-
+	}
+}	
+		
 /**
  * Generator that returns issue numbers from cards in a column.
  * @param {Number} columnId the id of the column in GitHub's database
@@ -136,11 +132,10 @@ async function getTimeline(issueNum) {
  * @param {Number} issueNum the issue's number
  * @param {String} assignees a list of the issue's assignee's username
  * @returns true if timeline indicates the issue is outdated and inactive, false if not; also returns appropriate labels
- * Note: Outdated means that the assignee did not make a linked PR or comment within the sevendaycutoffTime (see global variables), while inactive is for 14 days
+ * Note: Outdated means that the assignee did not make a linked PR or comment within the sevenDayCutoffTime (see global variables), while inactive is for 14 days
  */
 
-// assignees is an arrays of `login`'s
-function isTimelineOutdated(timeline, issueNum, assignees) {
+function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
 
@@ -191,7 +186,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) {
   return { result: true, labels: inactiveLabel }
 }
 
-
 /**
  * Removes labels from a specified issue
  * @param {Number} issueNum an issue's number
@@ -233,10 +227,10 @@ async function addLabels(issueNum, ...labels) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
   }
 }
-async function postComment(issueNum, assignees, labelString) {
+async function postComment(issueNum, assignees) {
   try {
     const assigneeString = createAssigneeString(assignees);
-    const instructions = formatComment(assigneeString, labelString);
+    const instructions = formatComment(assigneeString);
     await github.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -296,7 +290,7 @@ function createAssigneeString(assignees) {
   }
   return assigneeString.join(', ')
 }
-function formatComment(assignees, labelString) {
+function formatComment(assignees) {
   const path = './github-actions/add-update-label-weekly/update-instructions-template.md'
   const text = fs.readFileSync(path).toString('utf-8');
   const options = {
@@ -305,8 +299,8 @@ function formatComment(assignees, labelString) {
     timeZone: 'America/Los_Angeles',
     timeZoneName: 'short',
   }
-  const cutoffTimeString = sevenDayCutoffTime.toLocaleString('en-US', options);
-  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString).replace('${label}', labelString);
+  const cutoffTimeString = threeDayCutoffTime.toLocaleString('en-US', options);
+  let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString);
   return completedInstuctions
 }
 
