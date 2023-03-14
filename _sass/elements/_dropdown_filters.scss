@@ -78,6 +78,17 @@ ul.filter-list li ul li {
   cursor: pointer;
 }
 
+.dropdown.show-all li.view-all:last-child {
+  display: none;
+}
+.dropdown.show-all {
+  height: 280px;
+  overflow-y: scroll;
+}
+.dropdown.show-all li:nth-child(n+9) {
+  display: block;
+}
+
 .filter-checkbox {
   border: 1px solid #000000;
   border-radius: 4px;

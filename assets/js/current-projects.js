@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded",function(){
             item.addEventListener('change', checkBoxEventHandler)
         });
 
+        document.querySelectorAll("li.view-all").forEach(viewAll => {
+            viewAll.addEventListener("click", viewAllEventHandler)
+        })
+
         // Update UI on page load based on url parameters
         updateUI()
 
@@ -193,6 +197,15 @@ function checkBoxEventHandler(){
 
     //Update URL parameters
     window.history.replaceState(null, '', `?${queryString}`);
+}
+
+/*
+    show more filter checkboxes
+*/
+function viewAllEventHandler(e) {
+    console.log("yeehaw")
+    console.log(e.target.parentNode)
+    e.target.parentNode.classList.add("show-all")
 }
 
 /**
