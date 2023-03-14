@@ -5,7 +5,7 @@ description: We want to improve the language used in websites to be
   more inclusive (of all communities) while also educating the public
   about exclusionary language. @writeforallorg&#8482;
 image: /assets/images/projects/writeforall.png
-alt: 'A rainbow document searcher icon, the words &quot;Write for All TM&quot;, and a rainbow-like border.'
+alt: 'Write for All'
 image-hero: /assets/images/projects/writeforall-hero.png
 leadership:
   - name: Joel Parker Henderson
@@ -45,5 +45,5 @@ partner: Seeking
 visible: true
 status: On Hold
 program-area: 
-  - Diversity / Equity and Inclusion
+  - Diversity, Equity & Inclusion
 ---

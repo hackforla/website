@@ -46,14 +46,12 @@ permalink: /citizen-engagement
                         A big thank you to:</p>
                 </div>
                 <div class="organizations-images">
-                    <img class="org-img org-img-large" src="/assets/images/sponsors/code-for-america.svg" alt="Code for America"/>
-                    <img class="org-img" src="/assets/images/citizen-engagement/la_neighborhood_councils.svg" alt="Los Angeles Department of Neighborhood Empowerment">
-                    <img class="org-img" src="/assets/images/citizen-engagement/palms_neighborhood_council.svg" alt="Palms Neighborhood Council">
-                    <img class="org-img" src="/assets/images/citizen-engagement/echo_park_neighborhood_council.svg" alt="Echo Park Neighborhood Council">
-                    <img class="org-img" src="/assets/images/citizen-engagement/la_county_open_data.svg" alt="County of Los Angeles Open Data">
-                    <img class="org-img" src="/assets/images/citizen-engagement/voices_neighborhood_council.svg" alt="Voices Neighborhood Council">
-                    <img class="org-img" src="/assets/images/citizen-engagement/mid_city_neighborhood_council.svg" alt="Mid-City Neighborhood Council">
-                    <img class="org-img" src="/assets/images/citizen-engagement/mar_vista_community_council.svg" alt="Marvista Community Council">
+                    {% assign partners = site.data.internal.partners %}
+                    {% for partner in partners %}
+                      {% if partner.program-area contains "Citizen Engagement" %}
+                        <img class="org-img org-img-large" src="{{ partner.image }}" alt="{{ partner.name }}"/>
+                      {% endif %}
+                    {% endfor %}
                 </div>
         </div>
     </div>
