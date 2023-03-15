@@ -53,9 +53,10 @@ async function main({ g, c }, columnId) {
       await addLabels(issueNum, responseObject.labels);
       await postComment(issueNum, assignees, inactiveLabel);
     } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) { // Updated within 3 days, retain 'Status: Updated' label if there is one
+      console.log(`Updated within 3 days, retain updated label for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
-    } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, remove all three update-related labels
-      console.log(`No updates needed for issue #${issueNum}`);
+    } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, or fixed by a PR, remove all three update-related labels
+      console.log(`No updates needed for issue #${issueNum}, will remove all labels`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel, statusUpdatedLabel);
     }
 	}
@@ -145,7 +146,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
 
     // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels
     if (eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && assignees.includes(eventObj.actor.login)) { // isLinkedIssue checks if the 'body'(comment) of the event mentioned closing/fixing/resolving this current issue
-      console.log(`Issue fixed/resolved/closed by assignee, remove all update-related labels`);
+      console.log(`Issue #${issueNum} fixed/resolved/closed by assignee, remove all update-related labels`);
       return { result: false, labels: '' } // remove all three labels
     }
 
@@ -163,26 +164,27 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
   }
 
   if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented within 3 days
-    console.log(`Commented by assignee within 3 days, retain 'Status: Updated' label`);
+    console.log(`Issue #${issueNum} commented by assignee within 3 days, retain 'Status: Updated' label`);
     return { result: false, labels: statusUpdatedLabel } // retain updated label, remove the other two
   }
 
   if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, threeDayCutoffTime)) { // if an assignee was assigned within 7 days
-    console.log(`Assigned by assignee within 7 days, no update-related labels should be used`);
+    console.log(`Issue #${issueNum} assigned to assignee within 3 days, no update-related labels should be used`);
     return { result: false, labels: '' } // remove all three labels
   }
 
   if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, sevenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, sevenDayCutoffTime))) { // if updated within 7 days
-    console.log(`Commented by assignee or assigned between 3 and 7 days, no update-related labels should be used`);
+    console.log(`Issue #${issueNum} commented by assignee or assigned between 3 and 7 days, no update-related labels should be used`);
     return { result: false, labels: '' } // remove all three labels
   }
 
   if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, fourteenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, fourteenDayCutoffTime))) { // if last comment was between 7-14 days, or no comment but an assginee was assigned during this period, issue is outdated and add 'To Update !' label
-    console.log(`Commented by assignee or assigned between 7 and 14 days, use 'To Update !' label`);
+    console.log(`Issue #${issueNum} commented by assignee or assigned between 7 and 14 days, use 'To Update !' label`);
     return { result: true, labels: toUpdateLabel }
   }
 
   // if no comment or assigning found within 14 days, issue is outdated and add '2 weeks inactive' label
+  console.log(`Issue #${issueNum} has no update within 14 days, use '2 weeks inactive' label`)
   return { result: true, labels: inactiveLabel }
 }
 
