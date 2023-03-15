@@ -146,7 +146,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels
     if (eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && assignees.includes(eventObj.actor.login)) { // isLinkedIssue checks if the 'body'(comment) of the event mentioned closing/fixing/resolving this current issue
       console.log(`Issue fixed/resolved/closed by assignee, remove all update-related labels`);
-      return { result: true, labels: '' }
+      return { result: false, labels: '' } // remove all three labels
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
