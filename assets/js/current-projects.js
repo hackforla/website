@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded",function(){
             viewAll.addEventListener("click", viewAllEventHandler)
         })
 
+        document.querySelectorAll(".labelArrow").forEach(arrow => {
+            arrow.addEventListener("click", showNoneEventHandler)
+        })
+
         // Update UI on page load based on url parameters
         updateUI()
 
@@ -203,9 +207,11 @@ function checkBoxEventHandler(){
     show more filter checkboxes
 */
 function viewAllEventHandler(e) {
-    console.log("yeehaw")
-    console.log(e.target.parentNode)
     e.target.parentNode.classList.add("show-all")
+}
+
+function showNoneEventHandler(e) {
+    e.target.parentNode.classList.toggle("show-none")
 }
 
 /**
@@ -538,6 +544,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     <a class='category-title' style='text-transform: capitalize;'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
+        <span class='labelArrow'> ∟ </span>
     </a>
     <ul class='dropdown' id='${categoryName.toLowerCase()}'>
         ${filterArray.map(item =>

@@ -3,13 +3,19 @@
 }
 section.filter-content-container {
   display: grid;
-  grid-template-columns: 275px 1fr;
+  grid-template-columns: 377px 1fr;
 }
 a.filter-item {
   text-decoration: none;
 }
 .project-list {
   margin-top: 0.5rem;
+}
+
+.filter-toolbar {
+  width: 100%;
+  padding: 80px 32px;
+  margin: 0 auto;
 }
 //filter container
 ul.filter-list {
@@ -18,6 +24,7 @@ ul.filter-list {
   align-items: flex-start;
   list-style: none;
   padding-left: 0;
+  width: 100%;
 }
 
 //category boxes
@@ -29,6 +36,7 @@ li.filter-item {
   margin: 0 10px;
   transition-duration: 0.5s;
   border-top: solid 1px $color-mediumgrey;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -47,7 +55,7 @@ ul.filter-list li ul {
   opacity: 1;
   display: block;
   list-style: none;
-  width: 115%;
+  width: 100%;
   padding: 5px;
   line-height: 2em;
   font-size: 0.9em;
@@ -82,11 +90,24 @@ ul.filter-list li ul li {
   display: none;
 }
 .dropdown.show-all {
-  height: 280px;
+  max-height: 270px;
   overflow-y: scroll;
 }
 .dropdown.show-all li:nth-child(n+9) {
   display: block;
+}
+.dropdown.show-all::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 2.5px;
+}
+
+.dropdown.show-all::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px $color-mediumgrey
+}
+
+.dropdown.show-all::-webkit-scrollbar-thumb {
+background-color: $color-cement;
+border-radius: 2.5px;
 }
 
 .filter-checkbox {
@@ -96,15 +117,29 @@ ul.filter-list li ul li {
   cursor: pointer;
   vertical-align: middle;
 }
+.category-title {
+  position: relative;
+  width: 100%
+}
 
-// might need this later, keep until PR for projects page filter
-// .labelArrow {
-//   transform: rotate(-45deg);
-//   font-size: 24px;
-//   position: absolute;
-//   top: 2%;
-//   right: 10%;
-// }
+.labelArrow {
+  transform: rotate(-45deg);
+  transform-origin: 36% 50%;
+  font-size: 24px;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+.show-none .labelArrow {
+  transform: rotate(135deg);
+  transform-origin: 64% 50%;
+  bottom: auto;
+  top: 0; 
+}
+
+.show-none + .dropdown {
+  display: none;
+}
 
 .filter-tag-container {
   display: flex;
