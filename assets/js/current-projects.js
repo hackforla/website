@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded",function(){
             arrow.addEventListener("click", showNoneEventHandler)
         })
 
+        document.querySelectorAll(".show-filters-button").forEach(button => {
+            button.addEventListener("click", showFiltersEventHandler)
+        })
+
         // Update UI on page load based on url parameters
         updateUI()
 
@@ -212,6 +216,12 @@ function viewAllEventHandler(e) {
 
 function showNoneEventHandler(e) {
     e.target.parentNode.classList.toggle("show-none")
+}
+
+function showFiltersEventHandler(e) {
+    console.log("yee")
+    console.log(e.target.parentNode.parentNode)
+    e.target.parentNode.parentNode.classList.toggle("show-filters")
 }
 
 /**
