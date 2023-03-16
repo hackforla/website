@@ -3,7 +3,7 @@ identification: '138791772'
 title: Engage
 description: 'Engage is a civic participation platform that makes it easier for constituents to offer their feedback on policy issues that local Councils are considering. Engage aims to increase access for community stakeholders who are unable to attend public meetings or may otherwise feel unheard by their local government.'
 image: /assets/images/projects/engage-logo.png
-alt: 'Engage logo'
+alt: 'Engage'
 image-hero: /assets/images/projects/engage-hero.png
 leadership:
   - name: Bonnie Wolfe
