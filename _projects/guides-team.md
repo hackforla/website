@@ -20,6 +20,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02617GM7QX'
       github: 'https://github.com/SheIsBukki'
     picture: https://avatars.githubusercontent.com/SheIsBukki
+  - name: Sarah Edwards
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03KBU16APN'
+      github: 'https://github.com/edwardsarah'
+    picture: https://avatars.githubusercontent.com/edwardsarah
+  - name: Shawn Wong
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
+      github: 'https://github.com/seannwvong'
+    picture: https://avatars.githubusercontent.com/seannwvong
+  - name: Prakhar Singh
+    role: UI/UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U038R24FU3S'
+      github: 'https://github.com/designer2209'
+    picture: https://avatars.githubusercontent.com/designer2209
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
