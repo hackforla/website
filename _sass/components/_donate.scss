@@ -25,20 +25,65 @@
         p {
             font-size: 18px;
             max-width: 300px;
+            text-align: left;
             @media #{$bp-tablet-up} {
                 max-width: 500px;
             }
             @media #{$bp-mobile-up} {
                 font-size: 16px;
-                text-align: left;
+                text-align: left;                
             }
         }
-    }
+    }   
+}
 
-    img {
-        width: 80%;
-        max-width: 500px;
-        margin: auto;
-        padding-top: 20px;
+@media #{$bp-mobile-up} {
+    .donation-grid{
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: auto;
+        padding: 3rem;
+        text-align: left;
+        
+        h3 {
+            padding-left: 30px;
+        }
+
+        img {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 2;
+            margin: auto;
+            width: 150px;
+            padding: 40px 20px;
+        }
+    
+        ol {
+            padding-left: 30px;
+            max-width: 480px;
+        }
+    
+        ul {
+            padding-left: 30px;
+        }
+
+        p {
+            padding-left: 30px;
+            font-size: 15px;
+        }
+        .donation-body {
+            margin: 50px auto;  
+              
+            ol {
+              line-height: 24px;
+            }
+  
+            li {
+              padding: 5px 0;
+            }
+          }
     }
+}
+
+.donation-gif {
+    box-shadow: 0px 2px 4px 0px #00000040;
 }
