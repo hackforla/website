@@ -7,9 +7,9 @@ var context;
 const statusUpdatedLabel = 'Status: Updated';
 const toUpdateLabel = 'To Update !';
 const inactiveLabel = '2 weeks inactive';
-const updatedByDays = 3; // number of days ago to check for to update label
-const inactiveUpdatedByDays = 14; // number of days ago to check for inactive label
-const commentByDays = 7; // number of days ago to check for comment by assignee
+const updatedByDays = 3; // If there is an update within 3 days, the issue is considered updated
+const inactiveUpdatedByDays = 14; // If no update within 14 days, the issue is considered '2 weeks inactive'
+const commentByDays = 7; // If there is an update within 14 days but no update within 7 days, the issue is considered outdated and the assignee needs 'To Update !' it
 const threeDayCutoffTime = new Date()
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
@@ -18,31 +18,34 @@ const fourteenDayCutoffTime = new Date()
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
 
 /**
- * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. If outdated, the old status label is removed, and an updated is requested. Otherwise, the issue is labeled as updated.
+ * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. 
+ * An update to an issue is either 1. a comment by the assignee, or 2. assigning an assignee to the issue. If the last update is not within 7 days or 14 days, apply the according outdate label, and request an update. 
+ * However, if the assignee has submitted a PR that fixed the issue regardless of when, all update-related labels should be removed.
+ 
  * @param {Object} g github object from actions/github-script 
  * @param {Object} c context object from actions/github-script 
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
 async function main({ g, c }, columnId) {
-	github = g;
-	context = c;
-	// Retrieve all issue numbers from a column
-	const issueNums = getIssueNumsFromColumn(columnId);
-	for await (let issueNum of issueNums) {
-		const timeline = await getTimeline(issueNum);
-		const timelineArray = Array.from(timeline);
-		const assignees = await getAssignees(issueNum);
-		// Error catching.
-		if (assignees.length === 0) {
-		  console.log(`Assignee not found, skipping issue #${issueNum}`)
-		  continue
-		}
-		
-		// Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
-		const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
+  github = g;
+  context = c;
+  // Retrieve all issue numbers from a column
+  const issueNums = getIssueNumsFromColumn(columnId);
+  for await (let issueNum of issueNums) {
+    const timeline = await getTimeline(issueNum);
+    const timelineArray = Array.from(timeline);
+    const assignees = await getAssignees(issueNum);
+    // Error catching.
+    if (assignees.length === 0) {
+      console.log(`Assignee not found, skipping issue #${issueNum}`)
+      continue
+    }
+
+    // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
+    const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
 
 
-		if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // 7-day outdated, add 'To Update !' label
+    if (responseObject.result === true && responseObject.labels === toUpdateLabel) { // 7-day outdated, add 'To Update !' label
       console.log(`Going to ask for an update now for issue #${issueNum}`);
       await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);
       await addLabels(issueNum, responseObject.labels);
@@ -55,13 +58,13 @@ async function main({ g, c }, columnId) {
     } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) { // Updated within 3 days, retain 'Status: Updated' label if there is one
       console.log(`Updated within 3 days, retain updated label for issue #${issueNum}`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
-    } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, or fixed by a PR, remove all three update-related labels
+    } else if (responseObject.result === false && responseObject.labels === '') { // Updated between 3 and 7 days, or recently assigned, or fixed by a PR by assignee, remove all three update-related labels
       console.log(`No updates needed for issue #${issueNum}, will remove all labels`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel, statusUpdatedLabel);
     }
-	}
-}	
-		
+  }
+}
+
 /**
  * Generator that returns issue numbers from cards in a column.
  * @param {Number} columnId the id of the column in GitHub's database
@@ -132,8 +135,7 @@ async function getTimeline(issueNum) {
  * @param {Array} timeline a list of events in the timeline of an issue, retrieved from the issues API
  * @param {Number} issueNum the issue's number
  * @param {String} assignees a list of the issue's assignee's username
- * @returns true if timeline indicates the issue is outdated and inactive, false if not; also returns appropriate labels
- * Note: Outdated means that the assignee did not make a linked PR or comment within the sevenDayCutoffTime (see global variables), while inactive is for 14 days
+ * @returns true if timeline indicates the issue is outdated/inactive, false if not; also returns appropriate labels that should be retained or added to the issue
  */
 
 function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
@@ -144,7 +146,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     let eventObj = timeline[i];
     let eventType = eventObj.event;
 
-    // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels
+    // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels, remove all three labels
     if (eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && assignees.includes(eventObj.actor.login)) { // isLinkedIssue checks if the 'body'(comment) of the event mentioned closing/fixing/resolving this current issue
       console.log(`Issue #${issueNum} fixed/resolved/closed by assignee, remove all update-related labels`);
       return { result: false, labels: '' } // remove all three labels
@@ -163,24 +165,32 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
   }
 
-  if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented within 3 days
+  if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented by assignee within 3 days
     console.log(`Issue #${issueNum} commented by assignee within 3 days, retain 'Status: Updated' label`);
-    return { result: false, labels: statusUpdatedLabel } // retain updated label, remove the other two
+    return { result: false, labels: statusUpdatedLabel } // retain (don't add) updated label, remove the other two
   }
 
-  if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, threeDayCutoffTime)) { // if an assignee was assigned within 7 days
+  if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, threeDayCutoffTime)) { // if an assignee was assigned within 3 days
     console.log(`Issue #${issueNum} assigned to assignee within 3 days, no update-related labels should be used`);
     return { result: false, labels: '' } // remove all three labels
   }
 
   if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, sevenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, sevenDayCutoffTime))) { // if updated within 7 days
-    console.log(`Issue #${issueNum} commented by assignee or assigned between 3 and 7 days, no update-related labels should be used`);
+    if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, sevenDayCutoffTime))) {
+      console.log(`Issue #${issueNum} commented by assignee between 3 and 7 days, no update-related labels should be used; timestamp: ${lastCommentTimestamp}`)
+    } else if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, sevenDayCutoffTime)) {
+      console.log(`Issue #${issueNum} assigned between 3 and 7 days, no update-related labels should be used; timestamp: ${lastAssignedTimestamp}`)
+    }
     return { result: false, labels: '' } // remove all three labels
   }
 
   if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, fourteenDayCutoffTime)) || (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, fourteenDayCutoffTime))) { // if last comment was between 7-14 days, or no comment but an assginee was assigned during this period, issue is outdated and add 'To Update !' label
-    console.log(`Issue #${issueNum} commented by assignee or assigned between 7 and 14 days, use 'To Update !' label`);
-    return { result: true, labels: toUpdateLabel }
+    if ((lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, fourteenDayCutoffTime))) {
+      console.log(`Issue #${issueNum} commented by assignee between 7 and 14 days, use 'To Update !' label; timestamp: ${lastCommentTimestamp}`)
+    } else if (lastAssignedTimestamp && isMomentRecent(lastAssignedTimestamp, fourteenDayCutoffTime)) {
+      console.log(`Issue #${issueNum} assigned between 7 and 14 days, use 'To Update !' label; timestamp: ${lastAssignedTimestamp}`)
+    }
+    return { result: true, labels: toUpdateLabel } // outdated, add 'To Update!' label
   }
 
   // if no comment or assigning found within 14 days, issue is outdated and add '2 weeks inactive' label
