@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll(".show-filters-button").forEach(button => {
             button.addEventListener("click", showFiltersEventHandler)
         })
+        document.querySelectorAll(".hide-filters-button").forEach(button => {
+            button.addEventListener("click", hideFiltersEventHandler)
+        })
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -219,9 +222,11 @@ function showNoneEventHandler(e) {
 }
 
 function showFiltersEventHandler(e) {
-    console.log("yee")
-    console.log(e.target.parentNode.parentNode)
-    e.target.parentNode.parentNode.classList.toggle("show-filters")
+    document.querySelector(".filter-toolbar").classList.add("show-filters")
+    //document.querySelector(".main-header").classLi
+}
+function hideFiltersEventHandler(e) {
+    document.querySelector(".filter-toolbar").classList.remove("show-filters")
 }
 
 /**

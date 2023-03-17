@@ -4,7 +4,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.filters-title .show-filters-button {
+.filters-title .show-filters-button,
+.filters-title .hide-filters-button {
   display: none;
 }
 section.filter-content-container {
@@ -206,11 +207,25 @@ a.clear-filter-tags {
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   section.filter-content-container {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    padding: 0;
+    // flex-direction: column;
+  }
+  .filter-toolbar.show-filters {
+    height: 99vh;
+    width: 100vw;
+    box-sizing: border-box;
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    background: $color-white;
   }
   .filter-toolbar {
-    padding: 5px;
+    padding: 0 5px;
   }
   .filters-title {
     background: $color-white;
@@ -230,44 +245,46 @@ a.clear-filter-tags {
   ul.filter-list {
     display: none;
   }
+  .filter-toolbar.show-filters .show-filters-button {
+    display: none;
+  }
+  .filter-toolbar.show-filters .hide-filters-button {
+    display: inline-block;
+    border: none;
+  }
   .filter-toolbar.show-filters .filter-tag-container, 
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
   }
-}
-/*
-@media #{$bp-below-tablet} {
-  //resize dropdown on tablet and mobile view
-  ul.filter-list li ul {
-    width: 105%;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 659px) {
-  //creating 2 rows and 2 columns to display categories on mobile
-  ul.filter-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: row;
-    grid-gap: 10px;
-  }
-
-  //resize category labels
-  li.filter-item {
-    padding: 5px 10px;
-  }
-
-  //resize and reposition label arrow GET RID OF THIS IF NOT USED BY PROJECT PAGE FILTER PR
-  // .labelArrow {
-  //   top: -8%;
-  //   right: 5%;
-  //   font-size: 20px;
-  // }
-
-  .clear-filter-tags {
+  .dropdown li {
     display: none;
   }
+  .dropdown li.view-all:last-child {
+    display: none;
+  }
+  li.filter-item {
+    box-sizing: border-box;
+  }
+  .labelArrow {
+  transform: rotate(135deg);
+  transform-origin: 64% 50%;
+  font-size: 24px;
+  position: absolute;
+  bottom: auto;
+  top: 0;
+  right: 10%;
 }
-*/
+.show-none .labelArrow {
+  transform: rotate(-45deg);
+  transform-origin: 36% 50%;
+  bottom: 0;
+  top: auto; 
+}
+.show-none + .dropdown {
+  display: block;
+}
+.show-none + .dropdown li {
+  display: block;
+}
+
+}
