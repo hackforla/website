@@ -3,7 +3,7 @@ identification: '302142959'
 title: GreenEarthOS
 description: The GreenEarthOS project seeks to create and publish a map of the current climate project support landscape including gaps. Once the landscape has been created the project will work to create visible guidance for open source projects and project ideators on how to navigate the landscape and connect with players at every appropriate stage (recruiting, mentoring, partnerships, packaging and funding) ; thereby reducing barriers to currently under represented communities.
 image: /assets/images/projects/green-earth-os.png
-alt: 'GreenEarthOS logo with text in green and a globe as a "O"'
+alt: 'GreenEarthOS'
 image-hero: /assets/images/projects/green-earth-os-hero.png                  
 links:
   - name: GitHub

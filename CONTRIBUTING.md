@@ -219,7 +219,7 @@ More on using Docker and the concepts of containerization:
 
 #### **1.5.a Docker installation troubleshooting**
 
-If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
+If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving the issue:
 - [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Add-local-user-accounts-to-the-docker-users-group-on-Windows-10)
 
 Installing WSL2 on windows
