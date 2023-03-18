@@ -61,7 +61,7 @@ program-area:
 partner: Various Los Angeles Neighborhood Councils
 visible: true
 status: On Hold
-# citizen engagement card data
+# program area card data
 problem: Everyone should be able to have a voice in their community’s issues, but not everyone has access or is easily able to follow an issue’s details. For example, not everyone has time to attend a city council meeting!
 solution: On Engage, all users can view, read, and comment on agenda items their city council is currently debating. This makes it much easier to participate in discussions on government policies.
 impact: Our platform will make important local conversations much more representative of the actual community, boosting the representation of the most marginalized and underserved members. Being able to hear their perspective will lead to more inclusive, considerate decision-making that will truly benefit all of us rather than just some.
