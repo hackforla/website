@@ -311,7 +311,8 @@
 			AVATAR_DEFAULT_PATH;
 
 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
-		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
+		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;		
+		cloneCardTemplate.querySelector('.wins-card-profile-img').alt = `photograph of ${card[name]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
@@ -468,6 +469,7 @@ function changeSeeMoreBtn(x) {
 
 		const overlayProfileImg = document.querySelector('#overlay-profile-img');
 		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
+		overlayProfileImg.alt = document.querySelector(`#ghImg-${i}`).alt;
 
   		const overlayIcons = document.querySelector('#overlay-icons');
   		overlayIcons.innerHTML = "";
