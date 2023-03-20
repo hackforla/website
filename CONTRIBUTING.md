@@ -850,7 +850,7 @@ Moving files to another directory. No visual changes to the website.
 ```
 ##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+**NOTE**: We are automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
 
 After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
 
