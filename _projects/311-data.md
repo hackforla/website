@@ -68,7 +68,7 @@ program-area:
   - Citizen Engagement
 visible: true
 status: Active
-# citizen engagement card data
+# program area card data
 problem: The city produces a data set from all the 311 tickets placed. This data is useful if you are a data scientist, but for citizens without this training it has little value.
 solution: We partnered with the Los Angeles Department of Neighborhood Empowerment and LA Neighborhood Councils to co-create and iterate analysis and tools (see 311-Data.org) to provide neighborhoods with actionable information at the local level through real time visualizations and comparison tools.
 impact: Neighborhood Councils are able to use visualizations to demonstrate and discuss the city service levels with constituents and determine where to send mailings to target information to those parts of their community not availing themselves of specific city services.
