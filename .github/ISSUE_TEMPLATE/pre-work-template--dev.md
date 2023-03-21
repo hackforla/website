@@ -67,7 +67,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
    - [ ] Please don't forget to review pull requests whenever you are able to.  The [How to review Pull Requests](https://github.com/hackforla/website/wiki/How-to-review-pull-requests) guide will teach you how to review pull requests.
    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Read and understand how we progress through issues. Then, you can check this off.
-Progress through issues with increasing complexity in the following order:
+Progress through issues in the [prioritized backlog](https://github.com/hackforla/website/projects/7#column-7198257) only with increasing complexity in the following order:
   - Good first issue (one per person)
   - Good second issue (one per person)
   - Small (one per person, with some exceptions, see below)

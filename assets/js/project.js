@@ -123,22 +123,58 @@ let meetingsFound = [];
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
 const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
+// Helper function to sort VRMS data by day of the week from "date" key and meeting time from "startTime" key
+function sortByDate(scheduleData) {
+    const map = {
+        'Mon': 1,
+        'Tue': 2,
+        'Wed': 3,
+        'Thu': 4,
+        'Fri': 5,
+        'Sat': 6,
+        'Sun': 7
+     };
+
+     scheduleData.sort(function(a, b) {
+        const day1 = new Date(a.date).toString().substring(0, 3);
+        const day2 = new Date(b.date).toString().substring(0, 3);
+
+        return map[day1] - map[day2];
+     });
+
+     scheduleData.sort(function(a, b) {
+        const day1 = new Date(a.date).toString().substring(0, 3);
+        const day2 = new Date(b.date).toString().substring(0, 3);
+        const time1 = new Date(a.startTime).toString().substring(16, 21);
+        const time2 = new Date(b.startTime).toString().substring(16, 21);
+
+        if (day1 === day2) {
+            if (time1 > time2) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else {
+            return 1;
+        }
+     });
+}
+
 // Loops through the VRMS data and inserts each meeting time into the HTML of the correct project page
 function appendMeetingTimes(scheduleData) {
+    
+    sortByDate(scheduleData);
 
     for (const event of scheduleData) {
         try {
-            // Assigning information to variables in a readable format
             const startTime = timeFormat(new Date(event.startTime));
             const endTime = timeFormat(new Date(event.endTime));
-            const webURL = event.project.hflaWebsiteUrl;
             const projectName = event.project.name;
-            const description = event.description;
+            const name = event.name;
             const day = new Date(event.date).toString().substring(0,3);
-    
             // only append the meeting times to the correct project page
             if (projectTitle.toLowerCase() === projectName.toLowerCase()) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
+                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${name}</li>`);
                 meetingsFound.push(day);
             }
 

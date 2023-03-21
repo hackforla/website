@@ -3,7 +3,7 @@ identification: 297491982
 title: Civic Tech Jobs
 description: The CivicTechJobs.org MVP website will be a platform to help prospective volunteers find inter disciplinary projects that will be useful for their career development while contributing to positive civic impact and a CMS for Hack for LA projects to be able to list their open roles.<br><br>The tool will match volunteers by availability, role, and program area. Future iterations of the platform will focus helping volunteers find volunteer opportunities that match paid job postings, so that a volunteer can better prepare themselves for the marketplace.
 image: /assets/images/projects/civic-tech-jobs.png
-alt: "Hack for LA logo and the title of the project, Civic Tech Jobs"
+alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
 leadership: 
   - name: Syed Danish Imran

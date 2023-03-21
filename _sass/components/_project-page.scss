@@ -333,7 +333,7 @@
   @media #{$bp-below-mobile} {
     display: flex;
     flex-wrap: wrap;
-    margin-left: auto;
+    justify-content: space-evenly;
   }
 }
 
