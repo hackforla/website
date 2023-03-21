@@ -5,91 +5,91 @@ permalink: /program-areas
 ---
 <!-- Header banner -->
 <div class="header-container flex-container">
-    <div class="header-text">
-        <h1 class="title1">Program Areas</h1>
-        <p>
-            Hack for LA’s nonprofit civic tech projects support a wide variety of important social causes,
-            from environmental justice to voter representation, in Los Angeles and far beyond.
-        </p>
-    </div>
-    <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="" />
+  <div class="header-text">
+      <h1 class="title1">Program Areas</h1>
+      <p>
+          Hack for LA’s nonprofit civic tech projects support a wide variety of important social causes,
+          from environmental justice to voter representation, in Los Angeles and far beyond.
+      </p>
+  </div>
+  <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="" />
 </div>
 
 <section class="content-section content--program-areas">
-    {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
-    {% for program_areas in sorted_program_areas %}
-    {% if program_areas[1].size > 0 %}
-    <div class="page-card card-primary page-card-lg page-card-container">
-        <div class="page-card-image-container">
-            <img class="page-card-image" src="{{ program_areas[1].image }}" alt="{{ program_areas[1].image_alt }}" />
-        </div>
-        <div class="page-card-content">
-            <h2 class="title4">{{program_areas[1].name}}</h2>
-            <p>{{program_areas[1].description}}</p>
-            <p>
-                <strong>SDGs: </strong>
-                {% if program_areas[1].SDG %}
-                {% for sdg in program_areas[1].SDG %}
-                {% if forloop.last == true %}
-                and {{sdg}}
-                {% else %}
-                {{sdg}},
-                {% endif %}
-                {% endfor %}
-                {% endif %}<br>
-            </p>
-            <ul class="project-card-mini-list-alignment">
-                {% for project in site.projects %}
-                {% for project_program in project.program-area %}
-                {% if program_areas[1].program-area == project_program %}
-                {% assign project_relative_path = project.slug | prepend: "../projects/" %}
-                <li class="project-card-mini inline-list" id="{{project.identification}}">
-                    <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
-                    <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
-                </li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %}
-                <!--Spacer li are used to center the project card mini on mobile-->
-                <li class="project-card-mini-spacer"></li>
-                <li class="project-card-mini-spacer"></li>
-                <li class="project-card-mini-spacer"></li>
-            </ul>
+  {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
+  {% for program_areas in sorted_program_areas %}
+  {% if program_areas[1].size > 0 %}
+  <div class="page-card card-primary page-card-lg page-card-container">
+      <div class="page-card-image-container">
+        <img class="page-card-image" src="{{ program_areas[1].image }}" alt="" />
+      </div>
+      <div class="page-card-content">
+          <h2 class="title4">{{program_areas[1].name}}</h2>
+          <p>{{program_areas[1].description}}</p>
+          <p>
+              <strong>SDGs: </strong>
+              {% if program_areas[1].SDG %}
+              {% for sdg in program_areas[1].SDG %}
+              {% if forloop.last == true %}
+              and {{sdg}}
+              {% else %}
+              {{sdg}},
+              {% endif %}
+              {% endfor %}
+              {% endif %}<br>
+          </p>
+          <ul class="project-card-mini-list-alignment">
+              {% for project in site.projects %}
+              {% for project_program in project.program-area %}
+              {% if program_areas[1].program-area == project_program %}
+              {% assign project_relative_path = project.slug | prepend: "../projects/" %}
+              <li class="project-card-mini inline-list" id="{{project.identification}}">
+                  <img class="project-card-mini-image" src="{{project.image}}" alt="" />
+                  <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
+              <!--Spacer li are used to center the project card mini on mobile-->
+              <li class="project-card-mini-spacer"></li>
+              <li class="project-card-mini-spacer"></li>
+              <li class="project-card-mini-spacer"></li>
+          </ul>
 
 
-        </div>
-    </div>
+      </div>
+  </div>
 
-    {% endif %}
-    {% endfor %}
+  {% endif %}
+  {% endfor %}
 
 </section>
 <section class="join-us-footer">
-    <div class="join-us-footer-body">
+  <div class="join-us-footer-body">
+      <img
+        class="join-us-footer-img desktop-img"
+        src="/assets/images/join-us/volunteer-with-us-icon.svg"
+        alt=""
+      />
+      <div class="join-us-footer-description">
+        <h3>Join a Project</h3>
         <img
-          class="join-us-footer-img desktop-img"
-          src="/assets/images/join-us/volunteer-with-us-icon.svg"
-          alt=""
-        />
-        <div class="join-us-footer-description">
-          <h3>Join a Project</h3>
-          <img
-          class="join-us-footer-img mobile-img"
-          src="/assets/images/join-us/volunteer-with-us-icon.svg"
-          alt="join us card image"
-        />
-        <div class="join-us-footer-paragraphs">
-          <p class="first-paragraph">
-            To join any of the projects click through their project pages for
-            details on getting started.
-          </p>
-          <p class="second-paragraph">
-            The projects that are in formation are not yet on our website. To
-            connect with the current project team <a href="https://hackforla-slack.herokuapp.com/"> join our slack</a> and browse for their
-            channel name.
-          </p>
-        </div>
-          <a href="/join" class="btn btn-primary btn-md btn--default">Join Us</a>
-        </div>
-    </div>
-  </section>
+        class="join-us-footer-img mobile-img"
+        src="/assets/images/join-us/volunteer-with-us-icon.svg"
+        alt="join us card image"
+      />
+      <div class="join-us-footer-paragraphs">
+        <p class="first-paragraph">
+          To join any of the projects click through their project pages for
+          details on getting started.
+        </p>
+        <p class="second-paragraph">
+          The projects that are in formation are not yet on our website. To
+          connect with the current project team <a href="https://hackforla-slack.herokuapp.com/"> join our slack</a> and browse for their
+          channel name.
+        </p>
+      </div>
+        <a href="/join" class="btn btn-primary btn-md btn--default">Join Us</a>
+      </div>
+  </div>
+</section>
