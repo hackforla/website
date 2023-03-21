@@ -44,7 +44,7 @@ permalink: /program-areas
               {% if program_areas[1].program-area == project_program %}
               {% assign project_relative_path = project.slug | prepend: "../projects/" %}
               <li class="project-card-mini inline-list" id="{{project.identification}}">
-                  <img class="project-card-mini-image" src="{{project.image}}" alt="{{project.image_alt}}" />
+                  <img class="project-card-mini-image" src="{{project.image}}" alt="" />
                   <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
               </li>
               {% endif %}
