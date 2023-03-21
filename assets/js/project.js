@@ -167,16 +167,14 @@ function appendMeetingTimes(scheduleData) {
 
     for (const event of scheduleData) {
         try {
-            // Assigning information to variables in a readable format
             const startTime = timeFormat(new Date(event.startTime));
             const endTime = timeFormat(new Date(event.endTime));
-            const webURL = event.project.hflaWebsiteUrl;
             const projectName = event.project.name;
-            const description = event.description;
+            const name = event.name;
             const day = new Date(event.date).toString().substring(0,3);
             // only append the meeting times to the correct project page
             if (projectTitle.toLowerCase() === projectName.toLowerCase()) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${description}</li>`);
+                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${name}</li>`);
                 meetingsFound.push(day);
             }
 
