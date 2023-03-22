@@ -31,7 +31,7 @@ leadership:
       github: 'https://github.com/jdingeman'
     picture: https://avatars.githubusercontent.com/jdingeman
   - name: Matt Pereira
-    role: Technical Lead
+    role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
       github: 'https://github.com/MattPereira'
