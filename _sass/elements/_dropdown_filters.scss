@@ -22,6 +22,7 @@ a.filter-item {
 .filter-toolbar {
   width: 100%;
   padding: 80px 32px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 //filter container
@@ -32,6 +33,7 @@ ul.filter-list {
   list-style: none;
   padding-left: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 //category boxes
@@ -44,6 +46,7 @@ li.filter-item {
   transition-duration: 0.5s;
   border-top: solid 1px $color-mediumgrey;
   width: 100%;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -63,6 +66,7 @@ ul.filter-list li ul {
   display: block;
   list-style: none;
   width: 100%;
+  box-sizing: border-box;
   padding: 5px;
   line-height: 2em;
   font-size: 0.9em;
@@ -135,7 +139,7 @@ border-radius: 2.5px;
   font-size: 24px;
   position: absolute;
   bottom: 0;
-  right: 10%;
+  right: 5%;
 }
 .show-none .labelArrow {
   transform: rotate(135deg);
@@ -204,6 +208,9 @@ a.clear-filter-tags {
 .number-of-checked-boxes {
   color: $color-red;
 }
+.mobile-filter-buttons {
+  display: none;
+}
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   section.filter-content-container {
@@ -214,7 +221,6 @@ a.clear-filter-tags {
   .filter-toolbar.show-filters {
     height: 99vh;
     width: 100vw;
-    box-sizing: border-box;
     z-index: 101;
     position: fixed;
     top: 0;
@@ -229,11 +235,11 @@ a.clear-filter-tags {
   }
   .filters-title {
     background: $color-white;
-    border: 1px solid $color-darkgrey;
+    border: none;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 5px 8px;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 44px 12px 5px 12px;
   }
   .filters-title .show-filters-button {
     display: inline-block;
@@ -252,9 +258,13 @@ a.clear-filter-tags {
     display: inline-block;
     border: none;
   }
-  .filter-toolbar.show-filters .filter-tag-container, 
+  
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
+  }
+  .filter-toolbar.show-filters .mobile-filter-buttons {
+    display: flex;
+    justify-content: space-between;
   }
   .dropdown li {
     display: none;
@@ -263,7 +273,7 @@ a.clear-filter-tags {
     display: none;
   }
   li.filter-item {
-    box-sizing: border-box;
+    margin: 0;
   }
   .labelArrow {
   transform: rotate(135deg);
@@ -272,7 +282,7 @@ a.clear-filter-tags {
   position: absolute;
   bottom: auto;
   top: 0;
-  right: 10%;
+  right: 21px;
 }
 .show-none .labelArrow {
   transform: rotate(-45deg);
