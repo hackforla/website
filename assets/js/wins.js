@@ -327,6 +327,7 @@
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+			cloneCardTemplate.querySelector('.github-icon').alt = `github of ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
@@ -435,12 +436,13 @@ function changeSeeMoreBtn(x) {
 		parent.appendChild(child);
 		return child;
 	}
-  function makeIcon(href, parent, className, src) {
+  function makeIcon(href, parent, className, src, alt) {
 		let icon = makeElement('a', parent, 'wins-card-icon');
 		icon.setAttribute("href", href);
 		icon.setAttribute("target", "_blank");
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
+		iconImg.setAttribute("alt", alt);
 	}
 
   function updateOverlay(i) {
@@ -478,6 +480,7 @@ function changeSeeMoreBtn(x) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
   		} if (data[i][github_url].length > 0) {
   			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
