@@ -60,6 +60,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
       github: 'https://github.com/Adastros'
     picture: https://avatars.githubusercontent.com/Adastros
+  - name: Bitian Zhang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04H6PYK14N'
+      github: 'https://github.com/bzzz-coding'
+    picture: https://avatars.githubusercontent.com/bzzz-coding
     
 links:
   - name: Wiki
