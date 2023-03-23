@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
-                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all">View all</li>` );
+                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" aria-label="View All ${filterTitle} Filters">View all</li>` );
             }
         }
 
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll(".hide-filters-button").forEach(button => {
             button.addEventListener("click", hideFiltersEventHandler)
         })
+        document.addEventListener('keydown', tabFocusedKeyDownHandler);
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -215,6 +216,13 @@ function checkBoxEventHandler(){
 */
 function viewAllEventHandler(e) {
     e.target.parentNode.classList.add("show-all")
+}
+
+function tabFocusedKeyDownHandler(e) {
+    // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
+	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
+        document.activeElement.click()
+    }
 }
 
 function showNoneEventHandler(e) {
@@ -559,7 +567,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     <a class='category-title' style='text-transform: capitalize;'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
-        <span class='labelArrow'> ∟ </span>
+        <span class='labelArrow' tabindex="0" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
     </a>
     <ul class='dropdown' id='${categoryName.toLowerCase()}'>
         ${filterArray.map(item =>

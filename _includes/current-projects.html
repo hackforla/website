@@ -3,11 +3,11 @@
   <div class="filter-toolbar">
     <h3 class="filters-title">
       Filters 
-      <button class="hide-filters-button">
-        {% include svg/icon-hamburger-nav-x.svg %}
-      </button>
-      <button class="show-filters-button">
+      <button class="show-filters-button" aria-label="Show All Filters">
         {% include svg/icon-hamburger-nav.svg %}
+      </button>
+      <button class="hide-filters-button" aria-label="Hide All Filters">
+        {% include svg/icon-hamburger-nav-x.svg %}
       </button>
     </h3>
     <div class="filter-tag-container"></div>
