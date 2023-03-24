@@ -392,7 +392,7 @@ function attachEventListenerToFilterTags(){
 
         // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
         if(!document.querySelector('.clear-filter-tags')){
-            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
+            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" tabindex="0" aria-label="Clear All Filters" style="white-space: nowrap;">Clear All</a>`);
 
             //Attach an event handler to the clear all button
             document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
@@ -593,7 +593,7 @@ function filterTagComponent(filterName,filterValue){
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
-                <span>
+                <span tabindex="0" aria-label="Remove ${filterValue} Filter">
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
