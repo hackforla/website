@@ -18,6 +18,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0143158U80'
       github: 'https://github.com/pras4u'
     picture: https://avatars.githubusercontent.com/pras4u
+  - name: Michael Criste
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U048U430FQV'
+      github: 'https://github.com/mc759'
+    picture: https://avatars.githubusercontent.com/mc759
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -62,7 +68,7 @@ program-area:
   - Citizen Engagement
 visible: true
 status: Active
-# citizen engagement card data
+# program area card data
 problem: The city produces a data set from all the 311 tickets placed. This data is useful if you are a data scientist, but for citizens without this training it has little value.
 solution: We partnered with the Los Angeles Department of Neighborhood Empowerment and LA Neighborhood Councils to co-create and iterate analysis and tools (see 311-Data.org) to provide neighborhoods with actionable information at the local level through real time visualizations and comparison tools.
 impact: Neighborhood Councils are able to use visualizations to demonstrate and discuss the city service levels with constituents and determine where to send mailings to target information to those parts of their community not availing themselves of specific city services.

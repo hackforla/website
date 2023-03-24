@@ -37,25 +37,25 @@ leadership:
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
   - name: Kristelle Gumaru
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031VJ99ATU"
       github: "https://github.com/K-Gumarama"
     picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031FLYS561"
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
   - name: Bryce Lednar
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
       github: "https://github.com/brycelednar"
@@ -84,6 +84,24 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
+  - name: Samuel Kowitch
+    role: UX/UI Designer
+    links:
+      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
+      github: "https://github.com/KowDesign"
+    picture: https://avatars.githubusercontent.com/KowDesign
+  - name: Muyin Zheng
+    role: UX/UI Designer
+    links:
+      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
+      github: "https://github.com/IndigoYinZ"
+    picture: https://avatars.githubusercontent.com/IndigoYinZ
+  - name: Emily Eldar
+    role: Developer
+    links:
+      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
+      github: "https://github.com/emeldar"
+    picture: https://avatars.githubusercontent.com/emeldar
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
@@ -106,7 +124,7 @@ technologies:
   - React
   - NoSQL
   - Flask
-  - Auth0 / OIDC / OAuth2
+  - Amazon Cognito / OIDC / OAuth2
   - MongoDB
 location:
   - Remote

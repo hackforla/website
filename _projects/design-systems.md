@@ -6,7 +6,7 @@ description: 'The Design System initiative seeks  to empower volunteers with the
 A Design System is a single source of truth for a website’s designers and developers– a collection of reusable components, styles, and code guided by clear standards and documentation. Design systems are now an industry standard used by the website teams of most major companies.'
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/design-systems.jpg
-alt: 'Hack for LA logo and the title of the project, Design Systems'
+alt: 'Design Systems'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/design-systems-hero.jpg
 leadership:
@@ -16,54 +16,92 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U033GFQ1UQM'
       github: 'https://github.com/allthatyazz'
     picture: 'https://avatars.githubusercontent.com/allthatyazz'
-  - name: Wataru Inoue
-    role: Lead UX/UI Designer
+  - name: Rachel Newcomb
+    role: Lead UX Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'
-      github: 'https://github.com/winoue90'
-    picture: 'https://avatars.githubusercontent.com/winoue90'
-  - name: Tammy Trinh
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U02RZRF34DA'
-      github: 'https://github.com/tamalatrinh'
-    picture: 'https://avatars.githubusercontent.com/tamalatrinh'
-  - name: Anthony Navarro-Liu
-    role: UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02H764K6D8'
-      github: 'https://github.com/navarroliuanthony'
-    picture: 'https://avatars.githubusercontent.com/navarroliuanthony'
-  - name: Kelene Lee
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02U49VDV2L'
-      github: 'https://github.com/kelenelee'
-    picture: 'https://avatars.githubusercontent.com/kelenelee'
-  - name: Dongchen Hou
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02QPKCB7UN'
-      github: 'https://github.com/hdchangie'
-    picture: 'https://avatars.githubusercontent.com/hdchangie'
-  - name: Eric J Cunningham
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02V6PA5NJY'
-      github: 'https://github.com/cunninghamej'
-    picture: 'https://avatars.githubusercontent.com/cunninghamej'
-  - name: Joyce Chang
-    role: Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U02U727NYM9'
-      github: 'https://github.com/tfeng95725'
-    picture: 'https://avatars.githubusercontent.com/tfeng95725'
+      slack: 'https://hackforla.slack.com/team/U03Q5J8SVM3'
+      github: 'https://github.com/rachelita2'
+    picture: 'https://avatars.githubusercontent.com/rachelita2'
   - name: Sandra Berjan
-    role: UX Writer
+    role: Lead Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03753VQBSR'
       github: 'https://github.com/sandraberjan'
     picture: 'https://avatars.githubusercontent.com/sandraberjan'
+  - name:  Khanh Cao
+    role: Co-Lead UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U04A19TDBED'
+      github: 'https://github.com/khanhcao17'
+    picture: 'https://avatars.githubusercontent.com/khanhcao17'
+  - name:  Debbie Nyasetia
+    role: Co-Lead UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03FJ3V58FN'
+      github: 'https://github.com/kangina-tech'
+    picture: 'https://avatars.githubusercontent.com/kangina-tech'
+  - name: Wataru Inoue
+    role: UX Consultant
+    links:
+      slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'
+      github: 'https://github.com/winoue90'
+    picture: 'https://avatars.githubusercontent.com/winoue90'
+  - name: Faezeh Faezipour
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U04AT8KU5CY'
+      github: 'https://github.com/fuzjan81'
+    picture: 'https://avatars.githubusercontent.com/fuzjan81'
+  - name: Eva Kwock
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U049PSE3ZMZ'
+      github: 'https://github.com/EvaKw'
+    picture: 'https://avatars.githubusercontent.com/EvaKw'
+  - name: Zeynep Aslan
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U04HDCMD90A'
+      github: 'https://github.com/zeaslan'
+    picture: 'https://avatars.githubusercontent.com/zeaslan'
+  - name: Gala Stojnic
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U03307LRD2A'
+      github: 'https://github.com/GalaStojnic'
+    picture: 'https://avatars.githubusercontent.com/GalaStojnic'
+  - name: Eli Marietta
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U03P6Q87BEZ'
+      github: 'https://github.com/elimarietta'
+    picture: 'https://avatars.githubusercontent.com/elimarietta'
+  - name: Asad Haider
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U04H6Q4K5AS'
+      github: 'https://github.com/TobyShanti'
+    picture: 'https://avatars.githubusercontent.com/TobyShanti'
+  - name: Liz Zheng
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U04GYRW4DAT'
+      github: 'https://github.com/liz-zheng'
+    picture: 'https://avatars.githubusercontent.com/liz-zheng'
+  - name: Michael Morgan
+    role: UX/UI Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
+      github: 'https://github.com/mklmrgn'
+    picture: 'https://avatars.githubusercontent.com/mklmrgn'
+  - name: Robert Schacht
+    role: Content Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U02R5GG3T09'
+      github: 'https://github.com/rsschacht'
+    picture: 'https://avatars.githubusercontent.com/rsschacht'
+
+    
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/design-systems'
@@ -73,6 +111,8 @@ links:
     url: 'https://github.com/hackforla/design-systems/wiki'
   - name: Overview
     url: '../assets/pdfs/Design-Systems-One-Sheet.pdf'
+  - name: Releases
+    url: 'https://github.com/hackforla/design-systems/releases'
 looking:
 technologies: 
 location: 

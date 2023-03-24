@@ -3,7 +3,7 @@ identification: '197452459'
 title: LA TDM Calculator
 description: The LA TDM Calculator is a web app, created in conjunction with the L.A. Department of Transportation (LADOT) and Los Angeles City Planning, to help real estate developers design better projects for Los Angeles. The Calculator is being implemented alongside a new ordinance reducing over-parking and improving the infrastructure to incentivize public transportation and discourage single occupancy vehicle trips.
 image: /assets/images/projects/tdm-calculator.jpg
-alt: 'LA TDM Calculator Landing Page (Mock Up)'
+alt: 'LA TDM Calculator'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
 leadership:
   - name: Bonnie Wolfe
@@ -24,12 +24,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
       github: 'https://github.com/Biuwa'
     picture: https://avatars.githubusercontent.com/Biuwa
-  - name: Renee Moore-Adams
-    role: Lead, UX Design
+  - name: Anousha Shadrach
+    role: UX Designer
     links:
-      slack: 'https://hackforla.slack.com/team/U032LNZNRJ5'
-      github: 'https://github.com/Reneedesigns'
-    picture: https://avatars.githubusercontent.com/Reneedesigns
+      slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
+      github: 'https://github.com/Noushie'
+    picture: https://avatars.githubusercontent.com/Noushie
+  - name: Moji Momoh
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
+      github: 'https://github.com/mojimoh'
+    picture: https://avatars.githubusercontent.com/mojimoh
   - name: Jane He
     role: Lead, UX Research
     links:
