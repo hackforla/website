@@ -75,6 +75,6 @@ impact: Neighborhood Councils are able to use visualizations to demonstrate and 
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 card-image-src: /assets/images/projects/311.jpg
 card-image-alt:
-sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-src: /assets/images/sdg/peace-justice.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---
