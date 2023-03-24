@@ -45,5 +45,5 @@ partner: Seeking
 visible: true
 status: On Hold
 program-area: 
-  - Diversity / Equity and Inclusion
+  - Diversity, Equity & Inclusion
 ---

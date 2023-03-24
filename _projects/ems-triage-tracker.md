@@ -3,7 +3,7 @@ identification: '221542759'
 title: EMS Triage Tracker
 description: 'The EMS Triage Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
 image: /assets/images/projects/ems-triage-tracker.png
-alt: 'EMS Triage Tracker Logo'
+alt: 'EMS Triage Tracker'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 leadership:
   - name: Bonnie Wolfe
