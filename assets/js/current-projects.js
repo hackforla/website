@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll(".hide-filters-button").forEach(button => {
             button.addEventListener("click", hideFiltersEventHandler)
         })
+        document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
 
         // Update UI on page load based on url parameters
@@ -231,10 +232,15 @@ function showNoneEventHandler(e) {
 
 function showFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.add("show-filters")
-    //document.querySelector(".main-header").classLi
 }
 function hideFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.remove("show-filters")
+}
+
+function cancelMobileFiltersEventHandler(e) {
+    console.log("yye")
+    hideFiltersEventHandler(e)
+    clearAllEventHandler()
 }
 
 /**
