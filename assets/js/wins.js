@@ -442,7 +442,9 @@ function changeSeeMoreBtn(x) {
 		icon.setAttribute("target", "_blank");
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
-		iconImg.setAttribute("alt", alt);
+		if (alt !== undefined) {
+			iconImg.setAttribute("alt", alt);
+		}
 	}
 
   function updateOverlay(i) {
