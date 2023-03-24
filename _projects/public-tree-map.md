@@ -5,6 +5,7 @@ description: Public Tree Map helps connect people to Santa Monica's urban forest
 image: /assets/images/projects/public-tree-map.png
 alt: 'Zoomed-in map showing ten streets of the neighborhood. Each dot on the map displaying a tree from the urban forest'
 image-hero: /assets/images/projects/public-tree-map-hero.jpeg
+image-hero-credit: 'Coral tree from City of Santa Monica. Photo by Dave Baiocchi www.studiobaiocchi.net'
 leadership: 
   - name: Emily F.
     role: Product Owner
