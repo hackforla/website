@@ -269,6 +269,9 @@ a.clear-filter-tags {
     border: none;
   }
   .filter-tag-container {
+    flex-direction: column;
+  }
+  .filter-toolbar.show-filters .filter-tag-container {
     display: none;
   }
   ul.filter-list {
