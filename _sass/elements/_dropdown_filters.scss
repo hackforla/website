@@ -230,6 +230,10 @@ a.clear-filter-tags {
     padding: 0;
     // flex-direction: column;
   }
+  .filter-toolbar {
+    background-color: $color-pink;
+    padding: 5px;
+  }
   .filter-toolbar.show-filters {
     height: 100vh;
     width: 100vw;
@@ -241,8 +245,6 @@ a.clear-filter-tags {
     right: 0;
     overflow-y: scroll;
     background: $color-white;
-  }
-  .filter-toolbar {
     padding: 0 5px;
   }
   .filter-toolbar > .stickyDiv {
@@ -250,8 +252,16 @@ a.clear-filter-tags {
   }
   .filters-title {
     background: $color-white;
-    border: none;
+    border: 1px solid $color-mediumgrey;
     border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 16px;
+    margin: 10px auto;   
+    font-weight: 400; 
+  }
+  .filter-toolbar.show-filters .filters-title {
+    width: 100%;
+    border: none;
     font-size: 24px;
     font-weight: 700;
     padding: 44px 12px 5px 12px;
