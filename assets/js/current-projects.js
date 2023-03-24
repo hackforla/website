@@ -371,6 +371,7 @@ function updateProjectCardDisplayState(filterParams){
 function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
     document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
+    document.querySelectorAll('.applied-filters').forEach(appliedFilters => appliedFilters.parentNode.removeChild(appliedFilters) );
 
     //Filter tags display hide logic
     for(const [key,value] of Object.entries(filterParams)){
@@ -379,6 +380,10 @@ function updateFilterTagDisplayState(filterParams){
 
         })
 
+    }
+
+    if (Object.entries(filterParams). length > 0) {
+        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
     }
 }
 

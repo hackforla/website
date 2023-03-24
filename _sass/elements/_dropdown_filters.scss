@@ -65,6 +65,8 @@ li.filter-item {
 li.filter-item a {
   color: black;
   text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 li.filter-item:focus-within a {
@@ -163,10 +165,15 @@ border-radius: 2.5px;
 .show-none + .dropdown {
   display: none;
 }
-
+.applied-filters{
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-black;
+  margin: 10px 0;
+}
 .filter-tag-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   list-style: none;
   padding: 0 0 10px 0;
 }
@@ -267,9 +274,6 @@ a.clear-filter-tags {
   .filters-title .show-filters-button {
     display: inline-block;
     border: none;
-  }
-  .filter-tag-container {
-    flex-direction: column;
   }
   .filter-toolbar.show-filters .filter-tag-container {
     display: none;
