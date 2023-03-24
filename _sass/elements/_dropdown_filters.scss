@@ -145,18 +145,19 @@ border-radius: 2.5px;
 }
 
 .labelArrow {
-  transform: rotate(-45deg);
-  transform-origin: 36% 50%;
-  font-size: 24px;
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-}
-.show-none .labelArrow {
   transform: rotate(135deg);
   transform-origin: 64% 50%;
   bottom: auto;
   top: 0; 
+  right: 5%;
+  font-size: 24px;
+  position: absolute;
+}
+.show-none .labelArrow {
+  transform: rotate(-45deg);
+  transform-origin: 36% 50%;
+  bottom: 0;
+  top: auto;
 }
 
 .show-none + .dropdown {
@@ -302,19 +303,19 @@ a.clear-filter-tags {
     margin: 0;
   }
   .labelArrow {
-  transform: rotate(135deg);
-  transform-origin: 64% 50%;
-  font-size: 24px;
-  position: absolute;
-  bottom: auto;
-  top: 0;
-  right: 21px;
-}
-.show-none .labelArrow {
   transform: rotate(-45deg);
   transform-origin: 36% 50%;
   bottom: 0;
   top: auto; 
+  font-size: 24px;
+  position: absolute;
+  right: 21px;
+}
+.show-none .labelArrow {
+  transform: rotate(135deg);
+  transform-origin: 64% 50%;
+  bottom: auto;
+  top: 0;
 }
 .show-none + .dropdown {
   display: block;
