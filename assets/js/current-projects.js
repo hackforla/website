@@ -211,34 +211,31 @@ function checkBoxEventHandler(){
     //Update URL parameters
     window.history.replaceState(null, '', `?${queryString}`);
 }
-
-/*
-    show more filter checkboxes
-*/
+//shows all filters for a category
 function viewAllEventHandler(e) {
     e.target.parentNode.classList.add("show-all")
 }
-
+//event handler for keyboard users to click spans when focused
 function tabFocusedKeyDownHandler(e) {
     // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
 	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
         document.activeElement.click()
     }
 }
-
+//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
 function showNoneEventHandler(e) {
     e.target.parentNode.classList.toggle("show-none")
 }
-
+// shows filters popup on moble
 function showFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.add("show-filters")
 }
+// hides filters popup on moble
 function hideFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.remove("show-filters")
 }
-
+// cancel button on mobile filters
 function cancelMobileFiltersEventHandler(e) {
-    console.log("yye")
     hideFiltersEventHandler(e)
     clearAllEventHandler()
 }
