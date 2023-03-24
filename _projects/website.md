@@ -60,6 +60,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
       github: 'https://github.com/Adastros'
     picture: https://avatars.githubusercontent.com/Adastros
+  - name: Christina Or
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
+      github: 'https://github.com/christinaor'
+    picture: https://avatars.githubusercontent.com/christinaor
     
 links:
   - name: Wiki
