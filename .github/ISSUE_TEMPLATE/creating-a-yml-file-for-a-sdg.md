@@ -29,6 +29,8 @@ targets:
     statement: [INSERT SDG TARGET STATEMENT HERE]
   - target:
     statement:
+  - target:
+    statement:
 ```
 
 ### Resources/Instructions
