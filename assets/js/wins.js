@@ -328,6 +328,7 @@
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+			cloneCardTemplate.querySelector('.github-icon').alt = `Github profile for ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
@@ -481,7 +482,7 @@ function changeSeeMoreBtn(x) {
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
