@@ -11,7 +11,7 @@ assignees: ''
 We want to create a yml file for a Sustainable Development Goal (SDG) so that information is not repeated in multiple files.
 
 ### Action Items
-- [ ] In `_data/internal/sdgs`, add a file called `sdg[INSERT SDG NUMBER HERE].yml`
+- [ ] In `_data/internal/sdg`, add a file called `sdg[INSERT SDG NUMBER HERE].yml`
 - [ ] In the file you just created, add the following:
 ```
 # The Sustainable Development Goal (SDG) number (e.g. 16)
