@@ -5,7 +5,7 @@ description: We are creating a know your rights tool for youth and their familie
 image: /assets/images/projects/youthjusticenav.png
 alt: "All capital letters spelling out title of project - YOUTH JUSTICE NAV"
 image-hero: /assets/images/projects/youthjusticenav-hero.png
-alt: ''
+alt: 'Youth Justice Nav'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach

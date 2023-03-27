@@ -3,7 +3,7 @@ identification: "215666884"
 title: Food Oasis
 description: Food Oasis is focused on supporting individuals seeking food in Los Angeles. We aim to provide an up-to date resource on food pantries and meal services. The team is currently working on updating listings on our website foodoasis.net, improving UI, and establishing new partnerships.
 image: /assets/images/projects/food-oasis.jpg
-alt: 'Stacks of freshly harvested beets'
+alt: 'Food Oasis'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
 leadership:
   - name: John Darragh
@@ -18,12 +18,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
       github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
-  - name: Jieun Ryu
-    role: UX Researcher
-    links:
-      slack: "https://hackforla.slack.com/team/U02LL2DF4HL"
-      github: "https://github.com/ryu-jieun"
-    picture: https://avatars.githubusercontent.com/ryu-jieun
   - name: Gigi Patel
     role: Lead UX Researcher
     links:
