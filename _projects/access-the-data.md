@@ -94,7 +94,7 @@ visible: true
 # project-homepage: false
 # For completed projects. Uncomment and add contact info if provided
 # completed-contact:
-# citizen engagement card data
+# program area card data
 problem: Policies that impact the public are increasingly advised by surveys and other means of data collection. To ensure that citizens are empowered advocates of their community, we are looking to identify the areas where data literacy education within our communities is needed most.
 solution: Hack for LA’s Access the Data team, in partnership with the Los Angeles Department of Neighborhood Empowerment, Neighborhood Councils, and the Los Angeles Mayor’s office, will be developing modules to address those areas.
 impact: Citizens will be empowered to advocate for change in their communities by using publicly available data and asking for data to be made available when it is required for advocacy.

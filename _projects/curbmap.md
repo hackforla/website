@@ -2,7 +2,7 @@
 title: curbmap
 description: We are building a platform to engage the community to map and update the city's parking restrictions. Simultaneously we want to create an app that is easy for all people (community members, visitors, etc.) to use to see the landscape of parking around themselves. We want to help you avoid endlessly searching for parking in all the wrong places and reduce your risk of getting tickets.
 image: /assets/images/projects/curbmap.jpg
-alt: 'Parking sign'
+alt: 'Curbmap'
 links:
   - name: GitHub
     url: 'https://github.com/curbmap'
@@ -10,15 +10,15 @@ links:
     url: 'https://curbmap.com/'
 looking:
   - category: UI/UX
-    skill: UX designers 
+    skill: UX designers
   - category: UI/UX
-    skill: UX researchers 
+    skill: UX researchers
   - category: UI/UX
     skill: UI designers
-location: 
+location:
   # - Downtown LA
   - Remote
-program-area:  
+program-area:
   - Citizen Engagement
 visible: false
 status: On Hold
