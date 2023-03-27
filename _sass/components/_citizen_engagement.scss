@@ -93,7 +93,7 @@
 
     .organizations-images {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1em;
 
         .org-img {
@@ -104,8 +104,8 @@
         //This class is targeting the Code for LA logo image to mirror the appearance of the live page.
         .org-img-large{
             object-fit:cover;
-            height: 65px;
-            width: 185px;
+            height: auto;
+            width: auto;
             max-width: 100%;
         }
     }
@@ -339,16 +339,17 @@
                 gap: 1em;
 
                 .org-img {
-                    justify-self: center;
-                    align-self: center;
-                    border-radius: 0px;
-                    min-height: 70px;
+                    display: grid;
+                    place-items: center;
+                    width: 100%;
+                
+
                 }
                 //This class is targeting the Code for LA logo image to mirror the appearance of the live page.    
                 .org-img-large{
                     object-fit:cover;
-                    height: 75px;
-                    max-width: 100%;
+                    height: auto;
+                    width: max-content;
                 }
                     
             }
