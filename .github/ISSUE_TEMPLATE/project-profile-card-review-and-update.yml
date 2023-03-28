@@ -314,7 +314,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        If you need to update your meeting times, names, dates, or frequency, please see the [VRMS User Guide](https://github.com/hackforla/VRMS/wiki/User-Guide).  The HackforLA.org website gets the meeting times from the updates the Project PM makes to the projet's meeting data in vrms.io
+        If you need to update your meeting times, names, dates, or frequency, please see the [VRMS User Guide](https://github.com/hackforla/VRMS/wiki/User-Guide).  The HackforLA.org website gets the meeting times from the updates the Project PM makes to the project's meeting data in vrms.io
 
   - type: markdown
     attributes:
