@@ -14,7 +14,7 @@ jobs:
      - run: echo "🍺 This job was automatically triggered by a ${{ github.event_name }} event."
 
 
-  # Move opened PRs onto Project Board
+  # Moves newly opened PRs onto Project Board in column 'PR Needs review...'
   PRs-To-Project-Board:
     runs-on: ubuntu-latest
     if: ${{ github.event.action == 'opened' }}
