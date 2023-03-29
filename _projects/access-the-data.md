@@ -34,12 +34,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/D02USE0EPSS'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
-  - name: Mariana Melo-Vega
-    role: UX/UI Research Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U038BPUMFB7'
-      github: 'https://github.com/mmelovega'
-    picture: https://avatars.githubusercontent.com/mmelovega
   - name: Judson Lester
     role: Developer Lead
     links:
