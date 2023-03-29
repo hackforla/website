@@ -1,9 +1,10 @@
 name: Pull Request Trigger
 on:
   pull_request_target:
-    types: [closed]
+    types: [opened, closed]
     branches:
       - 'gh-pages'
+      - 'move-new-prs-2395'
 
 jobs:
   # Run an echo to confirm that the action was triggered
@@ -12,6 +13,20 @@ jobs:
     steps:
      - run: echo "🍺 This job was automatically triggered by a ${{ github.event_name }} event."
 
+
+  # Move opened PRs onto Project Board
+  PRs-To-Project-Board:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' }}
+    steps:
+      - name: Move Opened PR to Project Board
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'PR Needs review (Automated Column, do not place items here manually)'
+          repo-token: ${{ secrets.TEST_GHA_TOKEN }}      
+    
+    
   # Gathers merged PRs from every location and moves to column 'test-approved-by-reviewer...'
   Gather-Merged-PRs:
     runs-on: ubuntu-latest
@@ -22,7 +37,7 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          repo-token: ${{ secrets.TEST_GHA_TOKEN }}
 
   # Deletes merged PRs from column 'test-approved-by-reviewer...' after 'needs: Gather-Merged-PRs'
   Delete-Merged-PRs:
@@ -35,5 +50,5 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          repo-token: ${{ secrets.TEST_GHA_TOKEN }}
           action: delete
