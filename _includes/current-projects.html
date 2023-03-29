@@ -5,10 +5,17 @@
       <h3 class="filters-title">
         Filters
         <button class="show-filters-button" aria-label="Show All Filters">
-          {% include svg/icon-hamburger-nav.svg %}
+          <svg id='hamburger-filter-nav' width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6297 12.2046H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.6297 6.20459H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.6297 18.2046H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
         <button class="hide-filters-button" aria-label="Hide All Filters">
-          {% include svg/icon-hamburger-nav-x.svg %}
+          <svg id='hamburger-filter-nav-x' width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.6292 6.99756L6.62915 18.9976" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.62915 6.99756L18.6292 18.9976" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
       </h3>
       <div class="filter-tag-container"></div>
