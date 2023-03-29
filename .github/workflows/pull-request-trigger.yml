@@ -4,7 +4,6 @@ on:
     types: [opened, closed]
     branches:
       - 'gh-pages'
-      - 'move-new-prs-2395'
 
 jobs:
   # Run an echo to confirm that the action was triggered
@@ -24,7 +23,7 @@ jobs:
         with:
           project: Project Board
           column: 'PR Needs review (Automated Column, do not place items here manually)'
-          repo-token: ${{ secrets.TEST_GHA_TOKEN }}      
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}      
     
     
   # Gathers merged PRs from every location and moves to column 'test-approved-by-reviewer...'
@@ -37,7 +36,7 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
-          repo-token: ${{ secrets.TEST_GHA_TOKEN }}
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
 
   # Deletes merged PRs from column 'test-approved-by-reviewer...' after 'needs: Gather-Merged-PRs'
@@ -51,5 +50,5 @@ jobs:
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
-          repo-token: ${{ secrets.TEST_GHA_TOKEN }}
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           action: delete
