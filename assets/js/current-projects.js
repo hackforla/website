@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
-                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" aria-label="View All ${filterTitle} Filters">View all</li>` );
+                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" role="button" aria-label="View All ${filterTitle} Filters">View all</li>` );
             }
         }
 
@@ -575,7 +575,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     <a class='category-title' style='text-transform: capitalize;'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
-        <span class='labelArrow' tabindex="0" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
+        <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
     </a>
     <ul class='dropdown' id='${categoryName.toLowerCase()}'>
         ${filterArray.map(item =>
@@ -601,7 +601,7 @@ function filterTagComponent(filterName,filterValue){
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
-                <span tabindex="0" aria-label="Remove ${filterValue} Filter">
+                <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
