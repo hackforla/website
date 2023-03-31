@@ -99,8 +99,6 @@ problem: Policies that impact the public are increasingly advised by surveys and
 solution: Hack for LA’s Access the Data team, in partnership with the Los Angeles Department of Neighborhood Empowerment, Neighborhood Councils, and the Los Angeles Mayor’s office, will be developing modules to address those areas.
 impact: Citizens will be empowered to advocate for change in their communities by using publicly available data and asking for data to be made available when it is required for advocacy.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-card-image-src: /assets/images/projects/access-the-data.png
-card-image-alt:
 sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---
