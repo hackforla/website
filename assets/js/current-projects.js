@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 
 /**
- * Retieves project data from jekyll _projects collection using liquid and transforms it into a javascript object
+ * Retrieves project data from jekyll _projects collection using liquid and transforms it into a javascript object
  * The function returns a javascript array of objects representing all the projects under the _projects directory
 */
 function retrieveProjectDataFromCollection(){
@@ -129,7 +129,7 @@ function retrieveProjectDataFromCollection(){
 }
 
 /**
- * Given an input hehe of a project data array object as returned by the function `retrieveProjectDataFromCollection()`, this
+ * Given an input of a project data array object as returned by the function `retrieveProjectDataFromCollection()`, this
  * function sorts the project twice.
  *  1. It sort all projects in the array alphabetically on their `status` value
  *  2. It sort all project by title for each status type
@@ -220,7 +220,7 @@ function updateUI(){
     // The function updates the frequency of each filter based on the cards that are displayed on the page.
     updateFilterFrequency(filterParams);
 
-    // Updates the filter tags show on the page based on the url paramenter
+    // Updates the filter tags show on the page based on the url parameter
     updateFilterTagDisplayState(filterParams);
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
@@ -253,7 +253,7 @@ function updateFilterFrequency(){
     let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
 
 
-    // Update values on the filterFrquencyObject if item in onPageFilter array exist as a key in this object.
+    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
     for(const item of onPageFilters){
         if(item in filterFrequencyObject){
             filterFrequencyObject[item] += 1;
@@ -318,7 +318,7 @@ function updateProjectCardDisplayState(filterParams){
 }
 
     /**
-     * Updates the filter tags show on the page based on the url paramenter
+     * Updates the filter tags show on the page based on the url parameter
  */
 function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
@@ -412,7 +412,7 @@ function filterTagOnClickEventHandler(){
 
 /**
  * Clear All Button Event Handler
- *  The function clears all URL parmeter by setting the history to '/'
+ *  The function clears all URL parameter by setting the history to '/'
 */
 function clearAllEventHandler(){
     //Update URL parameters
@@ -514,7 +514,7 @@ return `
 }
 
 /**
- * Takes a filter category name and array of filter stirings and returns the html string representing a single filter component
+ * Takes a filter category name and array of filter strings and returns the html string representing a single filter component
 */
 function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     return `

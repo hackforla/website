@@ -167,19 +167,13 @@ layout: default
     <!-- Show iFrame Card for project, if available -->
     {% if page.iframe.available == true %}
     <div class='page-card card-primary page-card-lg page-card--iframe'>
-        <<<<<<< apply-gradient-image-2600
-        <iframe src='{{ page.iframe.src }}'
-                width="100%"
-                height="100%"
-                style="margin: 0; border: 2px solid #336699; box-sizing: border-box">
-        </iframe>
-    </div>
-    <iframe src='{{ page.iframe.src }}'
-            width="100%"
-            height="100%"
-            style="margin: 0; border: 2px solid color-mediumdarkcyanblue; box-sizing: border-box">
-    </iframe>
-</div>
+      <iframe
+      src='{{ page.iframe.src }}'
+      width="100%"
+      height="100%"
+      style="margin: 0; border: 2px solid color-mediumdarkcyanblue; box-sizing: border-box">
+      </iframe>
+    </div>    
     {% endif %}
 </div>
 
