@@ -315,6 +315,7 @@
 		cloneCardTemplate.querySelector('.wins-card-profile-img').alt = `photograph of ${card[name]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
+		cloneCardTemplate.querySelector('.wins-card-big-quote').alt = `Quote from ${card[name]}`
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
 
 		if (card[linkedin_url].length > 0) {
