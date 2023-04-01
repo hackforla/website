@@ -477,6 +477,9 @@ function changeSeeMoreBtn(x) {
 		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
 		overlayProfileImg.alt = document.querySelector(`#ghImg-${i}`).alt;
 
+	  	const bigQuoteImg = document.querySelector('.wins-card-big-quote');
+	  	bigQuoteImg.alt = "Quote from " + data[i][name];
+
   		const overlayIcons = document.querySelector('#overlay-icons');
   		overlayIcons.innerHTML = "";
 
