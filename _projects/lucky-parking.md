@@ -145,8 +145,6 @@ problem: Parking citations are distributed unevenly across different socio-econo
 solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a web app that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
 impact: Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.
 sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
-card-image-src: /assets/images/projects/lucky-parking.png
-card-image-alt:
 sdg-image-src: /assets/images/sdg/sustainable-cities.svg
 sdg-image-alt: '11: sustainable cities and communities'
 ---
