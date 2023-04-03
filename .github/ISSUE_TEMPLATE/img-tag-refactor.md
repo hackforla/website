@@ -1,8 +1,8 @@
 ---
 name: img Tag Refactor
 about: 'For removing the ending slash in img tags, so that `<img.../>` becomes `<img..>` '
-title: 'img Tag Refactor: Getting Started page - [INSERT SHORT DESCRIPTION OF IMG
-  TAG HERE]'
+title: 'img Tag Refactor: Getting Started page - `[INSERT SHORT DESCRIPTION OF IMG
+  TAG HERE]`'
 labels: 'Feature: Refactor HTML, good first issue, P-Feature: Getting Started, role:
   back end/devOps, role: front end, size: 0.25pt'
 assignees: ''
