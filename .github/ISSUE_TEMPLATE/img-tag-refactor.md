@@ -9,6 +9,10 @@ assignees: ''
 
 ---
 
+### Prerequisite
+1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started page](https://www.hackforla.org/getting-started).
+2. Before you claim or start working on an issue, please make sure you have read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/7f0c132c96f71230b8935759e1f8711ccb340c0f/CONTRIBUTING.md).
+
 ### Overview
 We want to change an img HTML tag ending with a slash (<img.../>) to an img tag without an ending slash (<img...>) so that the codebase is consistent with how we use img HTML tags.
 
