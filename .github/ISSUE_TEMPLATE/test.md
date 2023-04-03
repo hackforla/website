@@ -2,8 +2,9 @@
 name: Test
 about: test about
 title: ''
-labels: []
+labels: ''
 assignees: ''
+
 ---
 
 Test content
