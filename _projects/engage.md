@@ -66,7 +66,6 @@ problem: Everyone should be able to have a voice in their community’s issues, 
 solution: On Engage, all users can view, read, and comment on agenda items their city council is currently debating. This makes it much easier to participate in discussions on government policies.
 impact: Our platform will make important local conversations much more representative of the actual community, boosting the representation of the most marginalized and underserved members. Being able to hear their perspective will lead to more inclusive, considerate decision-making that will truly benefit all of us rather than just some.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-src: /assets/images/sdg/peace-justice.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
-
 ---

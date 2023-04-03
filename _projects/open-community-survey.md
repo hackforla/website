@@ -72,6 +72,6 @@ problem: Most Neighborhood Councils do not have access or resources to hire tech
 solution: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils to understand how constituents are interacting with, and what they need from, their websites.
 impact: <i>We are currently drafting the Impact statement for this project.</i>
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-src: /assets/images/sdg/peace-justice.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---

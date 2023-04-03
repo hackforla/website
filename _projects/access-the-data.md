@@ -90,6 +90,6 @@ visible: true
 # completed-contact:
 # program area card data
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
+sdg-image-src: /assets/images/sdg/peace-justice.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---
