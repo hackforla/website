@@ -7,11 +7,10 @@
                 item.solution.size > 0 and
                 item.impact.size > 0 and
                 item.sdg.size > 0 and
-                item.card-image-src.size > 0 and
                 item.sdg-image-src.size > 0
                 -%}
                   <div class="page-card card-primary page-card-lg program-area" data-dropdown>
-                        <img class="card-image" src="{{ item.card-image-src }}" alt="{{ item.card-image-alt }}"/>
+                        <img class="card-image" src="{{ item.image }}" alt=""/>
                            <div class="mobile-card-info-container">
                                <div class="mobile-card-nav">
                                 {% assign project_relative_path = item.slug | prepend: "../projects/" %}
