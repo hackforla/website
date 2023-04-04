@@ -57,7 +57,7 @@ leadership:
   - name: Beth Williford
     role: UX Researcher
     links:
-      slack: https://hackforla.slack.com/team/U03T1G9F46P
+      slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
   - name: Genggeng Zhang
