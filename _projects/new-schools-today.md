@@ -50,5 +50,5 @@ location:
 visible: true
 status: On Hold
 program-area: 
-  - Diversity, Equity & Inclusion
+  - Diversity / Equity / Inclusion
 ---
