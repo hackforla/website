@@ -39,10 +39,10 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
       - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
-      - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
+      - [**2.4.a Assign \& Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
         - [**ii. If you want to to remove yourself an issue:**](#ii-if-you-want-to-to-remove-yourself-an-issue)
-      - [**2.4.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ & back**](#24b-move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
+      - [**2.4.b Move this issue from the ‘Prioritized Backlog’ to the ‘In progress’ \& back**](#24b-move-this-issue-from-the-prioritized-backlog-to-the-in-progress--back)
         - [**i. After you claim an issue:**](#i-after-you-claim-an-issue)
         - [**ii. After you unassign yourself from an issue:**](#ii-after-you-unassign-yourself-from-an-issue)
     - [**2.5 Reporting progress on your issue**](#25-reporting-progress-on-your-issue)
@@ -850,7 +850,7 @@ Moving files to another directory. No visual changes to the website.
 ```
 ##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+**NOTE**: There is an automation for adding newly created pull requests to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
 
 After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
 
