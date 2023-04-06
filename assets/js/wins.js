@@ -315,6 +315,7 @@
 		cloneCardTemplate.querySelector('.wins-card-profile-img').alt = `photograph of ${card[name]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
+		cloneCardTemplate.querySelector('.wins-card-big-quote').alt = `Quote from ${card[name]}`
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
 
 		if (card[linkedin_url].length > 0) {
@@ -475,6 +476,9 @@ function changeSeeMoreBtn(x) {
 		const overlayProfileImg = document.querySelector('#overlay-profile-img');
 		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
 		overlayProfileImg.alt = document.querySelector(`#ghImg-${i}`).alt;
+
+	  	const bigQuoteImg = document.querySelector('.wins-card-big-quote');
+	  	bigQuoteImg.alt = "Quote from " + data[i][name];
 
   		const overlayIcons = document.querySelector('#overlay-icons');
   		overlayIcons.innerHTML = "";
