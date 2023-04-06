@@ -714,7 +714,7 @@ git checkout update-give-link-2093
 git merge gh-pages
 ```
 
-#### **2.7.f Working on an issue (6): Setting up SSH keys**
+#### **2.7.f Working on an issue (6): Handling SSH authorization errors**
 
 **IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
 [Git Bash](https://git-scm.com/downloads)
