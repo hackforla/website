@@ -63,7 +63,7 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
-      - [**2.7.f Working on an issue (6): Setting up SSH keys**](#27f-working-on-an-issue-6-setting-up-ssh-keys)
+      - [**2.7.f Working on an issue (6): Handling SSH authorization errors**](#27f-working-on-an-issue-6-handling-ssh-authorization-errors)
         - [**i. Setting up SSH Keys for Mac**](#i-setting-up-ssh-keys-for-mac)
         - [**ii. Setting up SSH Keys for Windows**](#ii-setting-up-ssh-keys-for-windows)
   - [**Part 3: Pull Requests**](#part-3-pull-requests)
