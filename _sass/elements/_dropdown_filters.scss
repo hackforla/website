@@ -230,7 +230,7 @@ a.clear-filter-tags {
 .mobile-filter-buttons {
   display: none;
 }
-@media #{$bp-below-desktop} {
+@media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   section.filter-content-container {
     display: block;
