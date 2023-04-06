@@ -3,50 +3,23 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 0;
+  margin:0;
   position: relative;
   margin-top: 61px;
   width: 100vw;
   height: 46vw;
   max-height: 74vh;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba($color-darkblue, 0) 0%,
-      rgba($color-darkblue, 1) 90%
-    );
-    content: "";
-    display: block;
-    z-index: 1;
-
-    @media #{$bp-tablet-up} {
-      background: linear-gradient(
-        to bottom,
-        rgba($color-darkblue, 0) 0%,
-        rgba($color-darkblue, 1) 93%
-      );
-      opacity: 1;
-    }
-
-    // NEW MOBILE FRIENDLY RULES
-    @media #{$bp-below-mobile} {
-      background: linear-gradient(
-        to bottom, 
-        rgba($color-darkblue, 0) 0%, 
-        rgba($color-darkblue, 1) 85%
-      );
-    }
-  }
-
   .hero-inner {
     top: 30px;
   }
+}
+
+.gradient-background {
+    position: absolute;
+    width:100vw;
+    height:46vw;
 }
 
 .meetingTime {
