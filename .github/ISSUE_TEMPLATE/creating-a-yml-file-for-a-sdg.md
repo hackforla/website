@@ -16,14 +16,14 @@ We want to create a yml file for a Sustainable Development Goal (SDG) so that in
 ```
 # The Sustainable Development Goal (SDG) number (e.g. 16)
 sdg: [INSERT SDG NUMBER HERE]
-# The SCSS background color class that matches the color of the SDG image 
-background-color: [INSERT BACKGROUND COLOR SCSS CLASS HERE]
+# The SCSS color variable that matches the color of the SDG image 
+color-variable: [INSERT COLOR VARIABLE HERE]
 # The path to the SDG image
 image: [INSERT IMAGE PATH HERE]
 # The alt text for the SDG image
 image-alt: [INSERT ALT TEXT HERE]
 targets:
-    # The SDG target (e.g. b)
+    # The SDG target (e.g. 1, 2, or a, b, ...)
   - target: [INSERT SDG TARGET HERE]
     # The SDG target statement 
     statement: [INSERT SDG TARGET STATEMENT HERE]
