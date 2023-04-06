@@ -63,6 +63,9 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
+      - [**2.7.f Working on an issue (6): Setting up SSH keys**](#27f-working-on-an-issue-6-setting-up-ssh-keys)
+        - [**i. Setting up SSH Keys for Mac**](#i-setting-up-ssh-keys-for-mac)
+        - [**ii. Setting up SSH Keys for Windows**](#ii-setting-up-ssh-keys-for-windows)
   - [**Part 3: Pull Requests**](#part-3-pull-requests)
     - [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request)
       - [**3.1.a Push all changes to your issue branch**](#31a-push-all-changes-to-your-issue-branch)
@@ -736,13 +739,13 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent
+4. Next you need to add your ssh key to your ssh agent.
 
 ```bash
 ssh-add -K ~/.ssh/id_ed25519
 ```
 
-5. Finally copy the ssh key and add it to your github account by entering the following command. __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
 
 ```bash
 pbcopy < ~/.ssh/id_ed25519.pub
@@ -776,7 +779,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
 
-5. Finally copy the ssh key and add it to your github account by entering the following command. __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
 
 ```bash
 clip < ~/.ssh/id_ed25519.pub
