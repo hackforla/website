@@ -71,7 +71,19 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
-    picture: https://avatars.githubusercontent.com/kcoronel  
+    picture: https://avatars.githubusercontent.com/kcoronel
+  - name: Matt Pereira
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U045XKKB5DH
+      github: https://github.com/MattPereira
+    picture: https://avatars.githubusercontent.com/MattPereira 
+  - name: Bitian Zhang
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U04H6PYK14N
+      github: https://github.com/bzzz-coding
+    picture: https://avatars.githubusercontent.com/bzzz-coding
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
