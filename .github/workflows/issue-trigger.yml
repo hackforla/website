@@ -69,4 +69,17 @@ jobs:
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results)
+  
+  # Automatically add response containing instructions on working off of a feature branch
+  Automatic-Response-To-Feature-Branch-Issues:
+    runs-on: ubuntu-latest
+    # Runs only when an issue has the 'Feature Branch' label
+    if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') }}
+    steps:
+      - uses: actions/github-script@v4
+      - name: Add feature branch instructions to issue
+        with:
+          script: |
+            const script = require('')
+
 
