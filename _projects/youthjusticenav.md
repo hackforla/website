@@ -3,7 +3,6 @@ identification: '324048462'
 title: Youth Justice Nav
 description: We are creating a know your rights tool for youth and their families when interacting with the Juvenile Justice System.  This interactive tool creates a resource for youth and their families to access information that is relevant to several different parts of the process from knowing your rights when you come into contact with law enforcement, to an explanation of the different types of hearings that take place, to knowing who various people in the courtroom are.
 image: /assets/images/projects/youthjusticenav.png
-alt: "All capital letters spelling out title of project - YOUTH JUSTICE NAV"
 image-hero: /assets/images/projects/youthjusticenav-hero.png
 alt: 'Youth Justice Nav'
 leadership:
