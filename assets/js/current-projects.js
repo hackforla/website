@@ -37,11 +37,31 @@ document.addEventListener("DOMContentLoaded",function(){
                 filterTitle = filterName
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
+            if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
+                document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" role="button" aria-label="View All ${filterTitle} Filters">View all</li>` );
+            }
         }
 
         document.querySelectorAll("input[type='checkbox']").forEach(item =>{
             item.addEventListener('change', checkBoxEventHandler)
         });
+
+        document.querySelectorAll("li.view-all").forEach(viewAll => {
+            viewAll.addEventListener("click", viewAllEventHandler)
+        })
+
+        document.querySelectorAll(".labelArrow").forEach(arrow => {
+            arrow.addEventListener("click", showNoneEventHandler)
+        })
+
+        document.querySelectorAll(".show-filters-button").forEach(button => {
+            button.addEventListener("click", showFiltersEventHandler)
+        })
+        document.querySelectorAll(".hide-filters-button").forEach(button => {
+            button.addEventListener("click", hideFiltersEventHandler)
+        })
+        document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
+        document.addEventListener('keydown', tabFocusedKeyDownHandler);
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -191,6 +211,34 @@ function checkBoxEventHandler(){
     //Update URL parameters
     window.history.replaceState(null, '', `?${queryString}`);
 }
+//shows all filters for a category
+function viewAllEventHandler(e) {
+    e.target.parentNode.classList.add("show-all")
+}
+//event handler for keyboard users to click spans when focused
+function tabFocusedKeyDownHandler(e) {
+    // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
+	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
+        document.activeElement.click()
+    }
+}
+//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
+function showNoneEventHandler(e) {
+    e.target.parentNode.classList.toggle("show-none")
+}
+// shows filters popup on moble
+function showFiltersEventHandler(e) {
+    document.querySelector(".filter-toolbar").classList.add("show-filters")
+}
+// hides filters popup on moble
+function hideFiltersEventHandler(e) {
+    document.querySelector(".filter-toolbar").classList.remove("show-filters")
+}
+// cancel button on mobile filters
+function cancelMobileFiltersEventHandler(e) {
+    hideFiltersEventHandler(e)
+    clearAllEventHandler()
+}
 
 /**
  * The updateUI function updates the ui based on the url parameters during the following events
@@ -323,6 +371,7 @@ function updateProjectCardDisplayState(filterParams){
 function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
     document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag) );
+    document.querySelectorAll('.applied-filters').forEach(appliedFilters => appliedFilters.parentNode.removeChild(appliedFilters) );
 
     //Filter tags display hide logic
     for(const [key,value] of Object.entries(filterParams)){
@@ -331,6 +380,10 @@ function updateFilterTagDisplayState(filterParams){
 
         })
 
+    }
+
+    if (Object.entries(filterParams). length > 0) {
+        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
     }
 }
 
@@ -347,7 +400,7 @@ function attachEventListenerToFilterTags(){
 
         // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
         if(!document.querySelector('.clear-filter-tags')){
-            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" style="white-space: nowrap;">Clear All</a>`);
+            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" tabindex="0" aria-label="Clear All Filters" style="white-space: nowrap;">Clear All</a>`);
 
             //Attach an event handler to the clear all button
             document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
@@ -522,7 +575,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     <a class='category-title' style='text-transform: capitalize;'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
-        <span class='labelArrow'> ∟ </span>
+        <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
     </a>
     <ul class='dropdown' id='${categoryName.toLowerCase()}'>
         ${filterArray.map(item =>
@@ -548,7 +601,7 @@ function filterTagComponent(filterName,filterValue){
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
-                <span>
+                <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
