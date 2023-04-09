@@ -29,4 +29,4 @@ to
 
 ### Resources/Instructions
 1. For QA to validate change: [INSERT LINK TO FILE]
-2. [INSERT LINK TO PAGE ON WEBSITE HERE]
+2. Webpage: [INSERT LINK TO PAGE ON WEBSITE HERE]
