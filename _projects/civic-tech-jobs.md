@@ -27,7 +27,7 @@ leadership:
   - name: Jen Chung
     role: UX/UI Design Lead
     links:
-      slack: https://hackforla.slack.com/team/U045Q8PD1B5
+      slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Tin Wei Chung
