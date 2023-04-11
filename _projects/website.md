@@ -12,6 +12,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Justin Dingeman
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
+      github: 'https://github.com/jdingeman'
+    picture: https://avatars.githubusercontent.com/jdingeman
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -24,12 +30,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
       github: 'https://github.com/arpitapandya'
     picture: https://avatars.githubusercontent.com/arpitapandya
-  - name: Justin Dingeman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
-      github: 'https://github.com/jdingeman'
-    picture: https://avatars.githubusercontent.com/jdingeman
   - name: Matt Pereira
     role: Merge Team
     links:

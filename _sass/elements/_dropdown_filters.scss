@@ -1,32 +1,63 @@
+.filters-title {
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters-title .show-filters-button,
+.filters-title .hide-filters-button {
+  display: none;
+}
+section.filter-content-container {
+  display: grid;
+  grid-template-columns: 377px 1fr;
+}
 a.filter-item {
   text-decoration: none;
 }
 .project-list {
   margin-top: 0.5rem;
 }
+
+.filter-toolbar {
+  width: 100%;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 100%;
+}
+.filter-toolbar > .stickyDiv {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 120px;
+}
+@media only screen and (max-width: 1028px) {
+  .filter-toolbar > .stickyDiv {
+    top: 75px;
+  }
+}
 //filter container
 ul.filter-list {
-  background: $color-pink;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   list-style: none;
   padding-left: 0;
-  grid-auto-flow: column;
-  grid-column-gap: 20px;
-  // grid-template-columns: repeat(4, 1fr);
-  // ^ See issue #1997 for more info on why this is commented out and changed to 3
-  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 //category boxes
 li.filter-item {
-  border: 1px solid rgba(0, 0, 0, 0.24);
-  border-radius: 5px;
   color: black;
-  background: white;
   display: flex;
-  padding: 10px 15px;
-  position: relative;
+  flex-direction: column;
+  padding: 10px 5px;
+  margin: 0;
   transition-duration: 0.5s;
+  border-top: solid 1px $color-mediumgrey;
+  width: 100%;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -34,11 +65,8 @@ li.filter-item {
 li.filter-item a {
   color: black;
   text-transform: capitalize;
-}
-
-li.filter-item:hover,
-li.filter-item:focus-within {
-  background: white;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 li.filter-item:focus-within a {
@@ -47,34 +75,18 @@ li.filter-item:focus-within a {
 
 //dropdown
 ul.filter-list li ul {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.24);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease;
-  z-index: 99;
+  opacity: 1;
+  display: block;
   list-style: none;
-  width: 115%;
-  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
   line-height: 2em;
   font-size: 0.9em;
-  position: absolute;
-  left: 0;
-  top: 100%;
   cursor: default;
 }
 
-ul.filter-list li:hover > ul,
-ul.filter-list li:focus-within > ul,
-ul.filter-list li ul:hover,
-ul.filter-list li ul:focus {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
 ul.filter-list li ul li {
-  clear: both;
   width: 100%;
   text-align: left;
 }
@@ -87,6 +99,40 @@ ul.filter-list li ul li {
   cursor: pointer;
   vertical-align: middle;
 }
+.dropdown li:nth-child(n+9) {
+  display: none;
+}
+.dropdown li.view-all:last-child {
+  display: block;
+  color: $color-red;
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dropdown.show-all li.view-all:last-child {
+  display: none;
+}
+.dropdown.show-all {
+  max-height: 360px;
+  overflow-y: scroll;
+}
+.dropdown.show-all li:nth-child(n+9) {
+  display: block;
+}
+.dropdown.show-all::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 2.5px;
+}
+
+.dropdown.show-all::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px $color-mediumgrey
+}
+
+.dropdown.show-all::-webkit-scrollbar-thumb {
+background-color: $color-cement;
+border-radius: 2.5px;
+}
 
 .filter-checkbox {
   border: 1px solid #000000;
@@ -95,32 +141,54 @@ ul.filter-list li ul li {
   cursor: pointer;
   vertical-align: middle;
 }
-
-.labelArrow {
-  transform: rotate(-45deg);
-  font-size: 24px;
-  position: absolute;
-  top: 2%;
-  right: 10%;
+.category-title {
+  position: relative;
+  width: 100%
 }
 
+.labelArrow {
+  transform: rotate(135deg);
+  transform-origin: 64% 50%;
+  bottom: auto;
+  top: 0; 
+  right: 5%;
+  font-size: 24px;
+  position: absolute;
+}
+.show-none .labelArrow {
+  transform: rotate(-45deg);
+  transform-origin: 36% 50%;
+  bottom: 0;
+  top: auto;
+}
+
+.show-none + .dropdown {
+  display: none;
+}
+.applied-filters{
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-black;
+  margin: 10px 0;
+}
 .filter-tag-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   list-style: none;
+  padding: 0 0 10px 0;
 }
 
 .filter-tag {
+  --filter-tag-height: 24px;
   align-self: flex-start;
-  height: 24px;
+  height: var(--filter-tag-height);
   box-sizing: border-box;
   max-width: fit-content;
-
-  margin: 0em 0.5em 1em;
+  margin: 0em 0.5em .5em;
   padding: 0.15em 1em;
   background: $color-red;
   border: none;
-  border-radius: 5px;
+  border-radius: calc(var(--filter-tag-height) / 2);
   color: $color-white;
   font-weight: 500;
   font-size: 15px;
@@ -159,38 +227,117 @@ a.clear-filter-tags {
 .number-of-checked-boxes {
   color: $color-red;
 }
-
+.mobile-filter-buttons {
+  display: none;
+}
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
-  ul.filter-list li ul {
-    width: 105%;
-    padding: 15px;
+  section.filter-content-container {
+    display: block;
+    padding: 32px 16px;
+    // flex-direction: column;
   }
-}
-
-@media (max-width: 659px) {
-  //creating 2 rows and 2 columns to display categories on mobile
-  ul.filter-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: row;
-    grid-gap: 10px;
+  .filter-toolbar {
+    background-color: $color-pink;
+    padding: 0;
   }
-
-  //resize category labels
-  li.filter-item {
-    padding: 5px 10px;
+  .filter-toolbar.show-filters {
+    height: 100vh;
+    width: 100vw;
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    background: $color-white;
   }
-
-  //resize and reposition label arrow
-  .labelArrow {
-    top: -8%;
-    right: 5%;
-    font-size: 20px;
+  .filter-toolbar > .stickyDiv {
+    position: static;
   }
-
-  .clear-filter-tags {
+  .filters-title {
+    background: $color-white;
+    border: 1px solid $color-mediumgrey;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 16px;  
+    font-weight: 400; 
+  }
+  .filter-toolbar.show-filters .filters-title {
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 44px 12px 5px 12px;
+  }
+  .filters-title .show-filters-button {
+    display: inline-block;
+    border: none;
+  }
+  .filter-toolbar.show-filters .filter-tag-container {
     display: none;
   }
+  ul.filter-list {
+    display: none;
+  }
+  .filter-toolbar.show-filters .show-filters-button {
+    display: none;
+  }
+  .filter-toolbar.show-filters .hide-filters-button {
+    display: inline-block;
+    border: none;
+  }
+  
+  .filter-toolbar.show-filters ul.filter-list {
+    display: flex;
+    padding: 0 12px;
+  }
+  .filter-toolbar.show-filters .mobile-filter-buttons {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: $color-white;
+    padding: 8px;
+    box-shadow: 0px -1px 4px 0px $color-mediumgrey;
+  }
+  .filter-toolbar.show-filters .mobile-filter-buttons button {
+    border: none;
+  }
+  .dropdown li {
+    display: none;
+  }
+  .dropdown li.view-all:last-child {
+    display: none;
+  }
+  li.filter-item {
+    margin: 0;
+  }
+  .labelArrow {
+  transform: rotate(-45deg);
+  transform-origin: 36% 50%;
+  bottom: 0;
+  top: auto; 
+  font-size: 24px;
+  position: absolute;
+  right: 21px;
+}
+.show-none .labelArrow {
+  transform: rotate(135deg);
+  transform-origin: 64% 50%;
+  bottom: auto;
+  top: 0;
+}
+.show-none + .dropdown {
+  display: block;
+}
+.show-none + .dropdown li {
+  display: block;
+}
+
 }
