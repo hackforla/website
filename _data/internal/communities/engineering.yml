@@ -13,14 +13,39 @@ icon: /assets/images/hero/communities-icons/engineering.png
 
 meeting-times: Wednesdays 6:00-7:00 pm PT
 
-leadership-type: Mentor Led
+leadership-type: Peer Led
 leadership:
-  - name: Ava Li
-    role: Lead
+  - name: Micah Elm
+    role: Co-Lead
     links:
-      slack: https://hackforla.slack.com/team/U01B73XGCKV
-      github: https://github.com/Aveline-art
-    picture: https://avatars.githubusercontent.com/u/62368440?v=4
+      slack: https://hackforla.slack.com/team/U04N8H0V72R
+      github: https://github.com/MicahBear
+    picture: https://avatars.githubusercontent.com/MicahBear
+  - name: AJ Price
+    role: Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U02UZ5BK8UB
+      github: https://github.com/mxajprice
+    picture: https://avatars.githubusercontent.com/mxajprice
+  - name: Fang Yi Liu
+    role: Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/UCE01B4AX
+      github: https://github.com/fyliu
+    picture: https://avatars.githubusercontent.com/fyliu
+  - name: Alejandro Gomez
+    role: Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U04HFRQ5Y12
+      github: https://github.com/agosmou
+    picture: https://avatars.githubusercontent.com/agosmou
+  - name: Harrison Katz
+    role: Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U04PFCPK6EP
+      github: https://github.com/hkatzdev
+    picture: https://avatars.githubusercontent.com/hkatzdev
+  
 
 links:
   - name: Slack

@@ -2,7 +2,7 @@
 name: Suggest an external resource
 about: For resources that could be listed on the toolkit page.
 title: Add this resource to the ToolKit External Resources section
-labels: 'P-Feature: Toolkit, role: front end, Size: Small, size: 0.5pt'
+labels: 'P-Feature: Toolkit, role: front end, size: 0.5pt'
 assignees: ''
 
 ---

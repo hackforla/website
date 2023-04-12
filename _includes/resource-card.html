@@ -5,13 +5,13 @@
 <a href='{{ url }}' target="_blank" class='resource-link'>
     <li class='resource-card'>
         <!--Where the images will be-->
-        <div {% if image %} class='resource-img resource-img-provided' {% else %} class='resource-img' {% endif %}>
+        <div {% if image %} class='resource-img resource-img-provided' {% else %} role="img" aria-label="{{name}}" class='resource-img' {% endif %}>
             {% if name == 'GitHub' or name == 'Slack' %}
                 {% include {{ name | prepend: 'svg/icon-' | append: '-color.svg' | downcase }} %}
             {% elsif name == 'Getting Started' %}
                 {% include svg/logo-hfla-small.svg %}
             {% elsif image %}
-                <img src={{ page.image | absolute_url }} class='project-tmb-img project-start-guide-img' alt={{item.alt}}/>
+                <img src={{ page.image | absolute_url }} class='project-tmb-img project-start-guide-img' alt='project'/>
             {% else %}
                 {% include svg/_ionicons_svg_ios-link.svg %}
             {% endif %}

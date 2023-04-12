@@ -4,7 +4,7 @@ title: Guides Team
 description: The Hack for LA Guides Team project is creating guides and templates from the effective practices that HfLA has developed and iterated from our projects. HfLA Guides aim to share replicable processes and practices from Engineering, UI/UX, Product Management, Data Science, Marketing Fundraising, DevOps, Admin, and Professional Development. The project seeks to further grow HfLA’s peer learning and iterative culture, and ultimately improve outcomes for the entire civic tech ecosystem.
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/guides-team.jpg
-alt: 'Globe Map made of dots and hackforla logo and text reading Guides Team'
+alt: 'Guides Team'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
@@ -20,6 +20,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02617GM7QX'
       github: 'https://github.com/SheIsBukki'
     picture: https://avatars.githubusercontent.com/SheIsBukki
+  - name: Sarah Edwards
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U03KBU16APN'
+      github: 'https://github.com/edwardsarah'
+    picture: https://avatars.githubusercontent.com/edwardsarah
+  - name: Shawn Wong
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
+      github: 'https://github.com/seannwvong'
+    picture: https://avatars.githubusercontent.com/seannwvong
+  - name: Prakhar Singh
+    role: UI/UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U038R24FU3S'
+      github: 'https://github.com/designer2209'
+    picture: https://avatars.githubusercontent.com/designer2209
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
