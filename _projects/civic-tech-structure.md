@@ -7,7 +7,7 @@ description: "The Civic Tech Structure project seeks to improve existing structu
 Our Civic Tech Structure project is responsible for publishing all of our guides and other reference materials that we hope will help other people and organizations to stand on the shoulders of those who contributed before them."
 
 image: /assets/images/projects/civic-tech-structure.png
-alt: "A network of lines and nodes, and the lines converge to a large dot in the center."
+alt: "Civic Tech Structure"
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
 leadership:
   - name: Bonnie Wolfe
@@ -55,8 +55,8 @@ location:
   - Remote
 partner:
 tools: Google Docs, HackforLA.org guides
-visible: true
-program-area: 
+visible: false
+program-area:
   - Civic Tech Infrastructure
-status: Active
+status: Completed
 ---

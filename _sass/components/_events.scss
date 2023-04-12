@@ -65,7 +65,7 @@
     flex-direction: column;
     width: 90%;
   }
-  
+
   @media #{$bp-below-mobile}{
     width: 95%;
   }
@@ -76,21 +76,21 @@
     border-radius: 20px;
     box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
     overflow: hidden;
-    max-width: 489px;
+    max-width: 637px;
     width: 100%;
     padding: 32px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-family: "Roboto" sans-serif;
-    
+
     &:first-child{
-      margin-right: 8px;
+      margin-right: 16px;
     }
-  
+
     &:last-child{
-      margin-left: 8px;
+      margin-left: 16px;
     }
-  
+
     // NEW MOBILE FRIENDLY RULES
     @media #{$bp-below-tablet} {
       padding: 5px 15px;
@@ -228,7 +228,7 @@
 
   @media #{$bp-below-mobile} {
     margin: 0;
-    padding: 1em 2em; 
+    padding: 1em 2em;
     font-size: 16px;
     line-height: 19px;
   }
@@ -238,62 +238,59 @@
   text-align: center;
 }
 
-.location-img-pos {
-  flex: 0 0 auto;
-  width: 372px;
-  overflow: hidden;
-  margin: -5px;
+.event-card {
+  width: 414px;
+  height: 414px;
+  margin-right:16px;
+  margin-left:16px;
+  margin-bottom:32px;
+  text-align: center;
 
   @media #{$bp-below-tablet} {
-    margin: 0;
+    margin: 0 auto 24px auto;
     width: 100%;
-    height: 40vh;
+	height: min-content;
+	display: flex;
+	justify-content: center;
   }
-  @media #{$bp-below-mobile} {
-    height: 231px;
-  }
+
 }
 
 .location-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
+  max-width: 414px;
   @media #{$bp-below-tablet} {
     /* Positions image so location text is visible */
     object-position: center 80%;
+    border-radius: 5.8%;
   }
 }
 
-.getting-started-page-card-locations {
-  background: $color-white;
-  border: 0 solid rgba(51, 51, 51, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 0 8px 0 rgba(51, 51, 51, 0.2);
-  overflow: hidden;
-  max-width: 996px;
-  margin: 45px;
-  padding: 20px;
-  font-family: "Roboto" sans-serif;
+
+
+.getting-started-locations-only {
+  max-width: 1338px;
+  width: 100%;
   height: fit-content;
-
-  @media #{$bp-below-tablet} {
-    padding: 16px 16px;
-  }
-  @media #{$bp-below-mobile} {
-    margin: 45px 16px;
-  }
 }
 
-.locations-1 {
+.events-card-container {
   display: flex;
-  height: 388px;
-  margin: -17px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 48px;
+  align-content: center;
 
   @media #{$bp-below-tablet} {
     flex-direction: column;
-    text-align: center;
-    height: fit-content;
+    height: min-content;
+	text-align: center;
+	margin-right: 16px;
+	margin-left: 16px;
+	margin-bottom: 16px;
+	margin-top: 4px;
   }
 }
 .location-content {
@@ -488,7 +485,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin: 30px 0 10px 0;
-  color: $color-black; 
+  color: $color-black;
   padding:0;
   @media #{$bp-below-tablet} {
     font-size: 15px;
@@ -535,12 +532,12 @@
 }
 
 .events-video-fullscreen-container {
-  position: relative; 
-  height: 0; 
+  position: relative;
+  height: 0;
   padding-bottom: 56.25%;
 }
 
-/* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake. 
+/* The below styles were moved from _hack-nights.scss, which has been deleted along with it's page namesake.
     They have been saved because they are still being used in other places on the site. */
     .section-hack-nights {
       background: $color-darkblue;
@@ -548,7 +545,7 @@
     }
 
 
-/* This specific selector is created to maintain a total top-margin + top-padding of 44px for .events-page-header (below) without altering 
+/* This specific selector is created to maintain a total top-margin + top-padding of 44px for .events-page-header (below) without altering
 or overriding .content-section. See Issue #1609. If this comment is no longer relevant, please remove. */
 .content-section--events + .events-page-header {
   @media #{$bp-below-tablet} {
@@ -568,12 +565,13 @@ or overriding .content-section. See Issue #1609. If this comment is no longer re
 }
 
 .userTimeZone {
+  text-align: center;
   font-weight: 700;
 }
 
 .events-page-header {
-  color: $color-white; 
-  margin-top: 48px; 
+  color: $color-white;
+  margin-top: 48px;
   font-size: 36px;
   @media #{$bp-below-desktop} {
     font-size: 2rem;

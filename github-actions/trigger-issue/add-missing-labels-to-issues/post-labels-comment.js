@@ -2,7 +2,7 @@ var fs = require("fs")
 
 // Constant variables
 const LABELS_OBJ = {
-  'size: missing': 'Size',
+  'Complexity: Missing': 'Complexity',
   'role missing': 'Role',
   'Feature Missing': 'Feature'
 }

@@ -54,7 +54,7 @@
   document.addEventListener('click', event => {
 	// if the .see-more-div element is clicked
 	if (event.target.closest('.see-more-div')) {
-	  // open the seeMore with the id of the selected target 
+	  // open the seeMore with the id of the selected target
 	  seeMore(event.target.id)
 	}
 	if (event.target.matches('.overlay') || event.target.closest('.overlay-close-icon') || event.target.closest('.top-buffer') || event.target.closest('.bottom-buffer')) {
@@ -63,7 +63,7 @@
 	// else, do nothing
 	return false;
   }, false);
-  
+
   document.addEventListener('keydown', function(event) {
 	// if its the enter key and the .see-more-div element is currently tabbed on
 	if (event.key === "Enter" && document.activeElement.classList.contains('see-more-div')) {
@@ -73,7 +73,7 @@
 	// else, do nothing
 	return false;
   }, false);
-  
+
   function createFilter(){
 
   	const roleArr = [];
@@ -86,7 +86,7 @@
   		Array.isArray(team) ? teamArr.push(...team)  :  teamArr.push(team);
 
   	})
-	//Assign Role for each Wins-Card  
+	//Assign Role for each Wins-Card
   	responses.querySelectorAll('.wins-card-role:not([style*="display:none"]):not([style*="display: none"]').forEach(item =>{
   		let value = item.textContent.replace("Role(s):","").trim();
   		let role = value.split(",").map(x=>x.trim());
@@ -239,7 +239,7 @@
   	}
   }
 
- 
+
 	function insertIcons(cardSelector, cardString, viewType, cloneCardTemplate = document) {
 		let initialCardList = cardString.split(',').map(item => item.trim())
 		let otherWinsText = [];
@@ -263,14 +263,14 @@
 			if (badgeIcons.hasOwnProperty(item)) {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-						<img class="${view}-badge-icon" alt="${badgeIcons[item]}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
+						<img class="${view}-badge-icon" alt="${view === 'wins' ? item: ''}" src="${SVG_FILE_PATH}${badgeIcons[item]}">
 						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 					</div>`
 				)
 			} else if (item !== '') {
 				iconContainer.insertAdjacentHTML('beforeend',
 					`<div class='${view}-item-container'>
-						<img class="${view}-badge-icon" alt="${badgeIcons[otherIcon]}" src="${SVG_FILE_PATH}${otherIcon}">
+						<img class="${view}-badge-icon" alt="${view === 'wins' ? item: ''}" src="${SVG_FILE_PATH}${otherIcon}">
 						<div class="${view}-text-bubble" data-wins="font-styling">${item}</div>
 					</div>`
 				)
@@ -305,20 +305,23 @@
 				})
 
 			})
-		} 
+		}
 		let profileImgSrc = ghId ?
 			`https://avatars1.githubusercontent.com/u/${ghId}?v=4` :
 			AVATAR_DEFAULT_PATH;
-		
+
 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
-		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
+		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;		
+		cloneCardTemplate.querySelector('.wins-card-profile-img').alt = `photograph of ${card[name]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
+		cloneCardTemplate.querySelector('.wins-card-big-quote').alt = `Quote from ${card[name]}`
 		cloneCardTemplate.querySelector('.wins-card-name').textContent = card[name];
-	
+
 		if (card[linkedin_url].length > 0) {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
 			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
+			cloneCardTemplate.querySelector('.linkedin-icon').alt = `LinkedIn profile for ${card[name]}`; 
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
 		};
@@ -326,6 +329,7 @@
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
+			cloneCardTemplate.querySelector('.github-icon').alt = `Github profile for ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
@@ -395,29 +399,35 @@ function seeMore(id){
 		parent.setAttribute('class', 'project-inner wins-card-text');
 		span.setAttribute('class', 'see-more-div');
 		winsIconContainer.setAttribute('class', 'wins-icon-container');
+		for (const child of winsIconContainer.children) {
+			child.firstElementChild.alt = child.lastElementChild.textContent
+		};
 	} else {
 		parent.setAttribute('class','project-inner wins-card-text expanded');
 		span.setAttribute('class', 'see-more-div show-less-btn');
 		winsIconContainer.setAttribute('class', 'wins-tablet wins-icon-container');
-  		span.parentElement.removeAttribute('hidden');
+		span.parentElement.removeAttribute('hidden');
+		for (const child of winsIconContainer.children) {
+			child.firstElementChild.setAttribute('alt', '')
+		};
 	}
 }
 
 function changeSeeMoreBtn(x) {
 	const span = document.querySelectorAll(".see-more-div");
-	if (x.matches) { 
+	if (x.matches) {
 		for(let i = 0; i < span.length; i++) {
 			span[i].innerHTML = ''
 		}
 	} else {
 		for(let i = 0; i < span.length; i++) {
 			// removes show-less-btn class
-			span[i].setAttribute('class', 'see-more-div');	
+			span[i].setAttribute('class', 'see-more-div');
 			span[i].innerHTML = "See More";
 		}
 	}
   }
-  
+
   const x = window.matchMedia("(max-width: 960px)");
   x.addListener(changeSeeMoreBtn);
 
@@ -428,12 +438,15 @@ function changeSeeMoreBtn(x) {
 		parent.appendChild(child);
 		return child;
 	}
-  function makeIcon(href, parent, className, src) {
+  function makeIcon(href, parent, className, src, alt) {
 		let icon = makeElement('a', parent, 'wins-card-icon');
 		icon.setAttribute("href", href);
 		icon.setAttribute("target", "_blank");
 		let iconImg = makeElement('img', icon, className);
 		iconImg.setAttribute("src", src);
+		if (alt !== undefined) {
+			iconImg.setAttribute("alt", alt);
+		}
 	}
 
   function updateOverlay(i) {
@@ -462,14 +475,18 @@ function changeSeeMoreBtn(x) {
 
 		const overlayProfileImg = document.querySelector('#overlay-profile-img');
 		overlayProfileImg.src = document.querySelector(`#ghImg-${i}`).src;
+		overlayProfileImg.alt = document.querySelector(`#ghImg-${i}`).alt;
+
+	  	const bigQuoteImg = document.querySelector('.wins-card-big-quote');
+	  	bigQuoteImg.alt = "Quote from " + data[i][name];
 
   		const overlayIcons = document.querySelector('#overlay-icons');
   		overlayIcons.innerHTML = "";
 
   		if (data[i][linkedin_url].length > 0) {
-  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg');
+  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg');
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
