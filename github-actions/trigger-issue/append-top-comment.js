@@ -8,7 +8,7 @@ var context
  * @param {Object} g
  * @param {Object} c
  */
-async function appendTopComment({g, c}) {
+async function main({g, c}) {
 	github = g
 	context = c
 
@@ -34,4 +34,4 @@ async function appendTopComment({g, c}) {
 	});
 }
 
-module.exports = appendTopComment;
+module.exports =  main;
