@@ -63,6 +63,9 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
+      - [**2.7.f Working on an issue (6): Handling SSH authorization errors**](#27f-working-on-an-issue-6-handling-ssh-authorization-errors)
+        - [**i. Setting up SSH Keys for Mac**](#i-setting-up-ssh-keys-for-mac)
+        - [**ii. Setting up SSH Keys for Windows**](#ii-setting-up-ssh-keys-for-windows)
   - [**Part 3: Pull Requests**](#part-3-pull-requests)
     - [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request)
       - [**3.1.a Push all changes to your issue branch**](#31a-push-all-changes-to-your-issue-branch)
@@ -710,6 +713,79 @@ If you receive warnings about conflicts, abort the rebase with `git rebase --abo
 git checkout update-give-link-2093
 git merge gh-pages
 ```
+
+#### **2.7.f Working on an issue (6): Handling SSH authorization errors**
+
+**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
+[Git Bash](https://git-scm.com/downloads)
+
+##### **i. Setting up SSH Keys for Mac**
+
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+
+```bash
+ls -al ~/.ssh
+```
+
+2. Then enter the text below into your terminal using your github account email address.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+3. You will be asked to enter a file to save the key, press enter, and then enter a passphrase. Then you will need to ensure that your machine and your repository are connected by running the ssh agent.
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+4. Next you need to add your ssh key to your ssh agent.
+
+```bash
+ssh-add -K ~/.ssh/id_ed25519
+```
+
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+
+##### **ii. Setting up SSH Keys for Windows**
+
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+
+```bash
+ls -al ~/.ssh
+```
+
+2. Then enter the text below into your terminal using your github account email address.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+3. You will be asked to enter a file to save the key, press enter, and then enter a passphrase. Then you will need to ensure that your machine and your repository are connected by running the ssh agent.
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+4. Next you need to add your ssh key to your ssh agent
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+
+```bash
+clip < ~/.ssh/id_ed25519.pub
+```
+
+6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
