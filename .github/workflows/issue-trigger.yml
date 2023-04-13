@@ -78,10 +78,10 @@ jobs:
     steps:
       - uses: actions/github-script@v4
       - name: Add feature branch instructions to top comment
-      - id: instructions-comment
+      - id: top-comment-instructions
         with:
           script: |
-            const script = require('')
+            const script = require('./github-actions/trigger-issue/add-preliminary-comment/append-top-comment.js')
             script({g: github, c:context})
  
 
