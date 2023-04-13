@@ -5,8 +5,8 @@ var context
 
 /**
  * @description
- * @param {Object} g
- * @param {Object} c
+ * @param {Object} g github object
+ * @param {Object} c context object
  */
 async function main({g, c}) {
 	github = g
