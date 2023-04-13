@@ -81,7 +81,7 @@ jobs:
       - id: top-comment-instructions
         with:
           script: |
-            const script = require('./github-actions/trigger-issue/add-preliminary-comment/append-top-comment.js')
+            const script = require('./github-actions/trigger-issue/append-top-comment.js')
             script({g: github, c:context})
  
 
