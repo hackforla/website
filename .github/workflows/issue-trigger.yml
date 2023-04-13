@@ -73,7 +73,7 @@ jobs:
   # Automatically append top comment with text containing feature branch instructions
   Automatic-Response-To-Feature-Branch-Issues:
     runs-on: ubuntu-latest
-    # Runs only when an issue has the 'Feature Branch' label
+    # Runs only when an issue has the label with the words 'Feature Branch'
     if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') }}
     steps:
       - uses: actions/github-script@v4
@@ -81,7 +81,7 @@ jobs:
       - id: instructions-comment
         with:
           script: |
-            const result = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('')
+            script({g: github, c:context})
  
 
