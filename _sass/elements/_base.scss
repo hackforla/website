@@ -21,7 +21,7 @@ body {
   height: auto;
   margin: 0;
   min-height: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding: 0;
   text-shadow: $color-text-shadow 0 0 1px; // Text anti-aliasing.
 }

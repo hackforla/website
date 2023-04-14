@@ -22,7 +22,7 @@ permalink: /citizen-engagement
         </p>
     </div>
     <img class="header-hero-image" src="/assets/images/citizen-engagement/citizen-engagement-header.svg"
-        alt="" />
+        alt="">
 </div>
 <!-- Header banner -->
 
@@ -36,7 +36,7 @@ permalink: /citizen-engagement
         <!-- Specifically I have added data attributes to the page-card container, and the dropdown arrow.
              We use the data attributes in JS to expand and close the cards. -->
 
-            {% include citizen-engagement-cards.html %}
+            {% include program-area-pages-cards.html %}
 
             <div class="page-card card-primary page-card-lg organizations">
                 <div class="organizations-info">
@@ -49,7 +49,7 @@ permalink: /citizen-engagement
                     {% assign partners = site.data.internal.partners %}
                     {% for partner in partners %}
                       {% if partner.program-area contains "Citizen Engagement" %}
-                        <img class="org-img org-img-large" src="{{ partner.image }}" alt="{{ partner.name }}"/>
+                        <img class="org-img org-img-large" src="{{ partner.image }}" alt="{{ partner.name }}">
                       {% endif %}
                     {% endfor %}
                 </div>

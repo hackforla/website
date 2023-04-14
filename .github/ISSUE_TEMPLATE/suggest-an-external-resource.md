@@ -2,7 +2,7 @@
 name: Suggest an external resource
 about: For resources that could be listed on the toolkit page.
 title: Add this resource to the ToolKit External Resources section
-labels: 'P-Feature: Toolkit, role: front end, Size: Small, size: 0.5pt'
+labels: 'P-Feature: Toolkit, role: front end, size: 0.5pt'
 assignees: ''
 
 ---
@@ -13,9 +13,9 @@ We want to add a new external resource to the website toolkit
 ### Details
 (Include a sentence that describes how Hack for LA teams are using this resource. For example: 
 
-Figma:  Our design team uses Figma to create wireframes and mockups.  
-  Github : We use github for our project management and to streamline development.
-  Zoom:  HackforLA uses zoom for onboarding and weekly meetings)
+Figma: Our design team uses Figma to create wireframes and mockups.
+Github: We use github for our project management and to streamline development.
+Zoom: HackforLA uses zoom for onboarding and weekly meetings)
 
 ### Link
 (Place link to resource here)

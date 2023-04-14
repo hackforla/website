@@ -3,6 +3,7 @@ layout: default
 ---
 
 <header class='project-hero'>
+    <img src="/assets/images/projects/gradient-background.png" class="gradient-background">
     <h1 class='hero-inner title1'>{{ page.title }}</h1>
 </header>
 
@@ -15,48 +16,50 @@ layout: default
             <!--Project Properties-->
             <div class='description-grid-item'>
                 {% if page.status %}
-                    <div>
-                        <p class='project-page-description-field'><strong>Status: </strong></p>
-                        <div class='status-indicator {{ "status-" | append: page.status }} project-page-status-indicator'>
-                            <h5 class='status-text'>{{ page.status }}</h5>
-                        </div>
+                <div>
+                    <p class='project-page-description-field'><strong>Status: </strong></p>
+                    <div class='status-indicator {{ "status-" | append: page.status }} project-page-status-indicator'>
+                        <h5 class='status-text'>{{ page.status }}</h5>
                     </div>
+                </div>
                 {% endif %}
                 {% if page.partner %}<p><strong>Partner: </strong>{{ page.partner }}</p>{% endif %}
-                {% if page.location %}<p><strong>Location: </strong>
+                {% if page.location %}<p>
+                    <strong>Location: </strong>
                     {% for city in page.location %}
                     {{ city }}{% if forloop.last == false %},{% endif %}
                     {% endfor %}
                 </p>{% endif %}
 
-                <!-- Links Logic to filter prioritized links and to correct comma placement -->        
+                <!-- Links Logic to filter prioritized links and to correct comma placement -->
                 {% if page.links %}
-                    {% assign counter = 0 %}
+                {% assign counter = 0 %}
+                {% for item in page.links %}
+                {% assign counter = counter | plus:1 %}
+                {% endfor %}
+                {% if counter > 0 %}
+                <p>
+                    <strong>Links: </strong>
                     {% for item in page.links %}
-                        {% assign counter = counter | plus:1 %}  
-                    {% endfor %}
-                    {% if counter > 0 %}
-                        <p>
-                            <strong>Links: </strong>
-                            {% for item in page.links %}
-                                    {% if counter == 1 %}
-                                        <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
-                                        {% assign counter = counter | minus:1 %}
-                                    {% elsif counter > 1 %}
-                                        <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
-                                    {% endif %}
-                            {% endfor %}
-                        </p>
+                    {% if counter == 1 %}
+                    <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                    {% assign counter = counter | minus:1 %}
+                    {% elsif counter > 1 %}
+                    <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
                     {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
                 {% endif %}
 
                 {% if page.tools %}<p><strong>Tools: </strong>{{ page.tools }}</p>{% endif %}
                 <p id='languages'><strong>Languages: </strong></p>
                 {% if page.technologies %}
-                <p id='technologies'><strong>Technologies: </strong>
-                  {% for tech in page.technologies %}
+                <p id='technologies'>
+                    <strong>Technologies: </strong>
+                    {% for tech in page.technologies %}
                     {{ tech }}{% if forloop.last == false %},{% endif %}
-                  {% endfor %}
+                    {% endfor %}
                 </p>
                 {% endif %}
                 <p class="meetingsHeader"></p>
@@ -65,16 +68,16 @@ layout: default
                     <ul class="meeting-times-list">
                     </ul>
                 </div>
-             </div>
+            </div>
 
             <!--Project Summary-->
             <!-- See issue #1997 for more info on why open-roles is commented out -->
             <div class='description-grid-item'>
                 <p>{{page.description}}</p>
                 {% if page.status == "Completed" and page.completed-contact %}
-                    <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:{{ page.completed-contact }}?subject=Question%20about%20{{ page.title }}">{{ page.completed-contact }}</a></p>
+                <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:{{ page.completed-contact }}?subject=Question%20about%20{{ page.title }}">{{ page.completed-contact }}</a></p>
                 {% elsif page.status == "Completed" %}
-                    <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:team@hackforla.org?subject=Question%20about%20{{ page.title }}">team@hackforla.org</a></p>
+                <p>If you would like to talk to us about this completed project, please reach out to <a href="mailto:team@hackforla.org?subject=Question%20about%20{{ page.title }}">team@hackforla.org</a></p>
                 {% elsif page.looking %}
                 <!-- <p class='open-roles'><strong>Open roles:</strong></p>
                 <ul id='open-roles-list'>
@@ -89,26 +92,26 @@ layout: default
 
     <!--Project Value Card-->
     {% if page.problem %}
-        <div id='project-value-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
-            <h2 class='project-page-card-title title6'>Value</h2>
-            <div class='project-page-value-description'>
-                <div class='sdg-grid-item'>
-                    <p><strong>Problem</strong></p>
-                    <p>{{ page.problem }}</p>
-                    <p><strong>Solution</strong></p>
-                    <p>{{ page.solution }}</p>
-                    <p><strong>Impact</strong></p>
-                    <p>{{ page.impact }}</p>
-                </div>
-                <div class='sdg-description-card'>
-                    <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
-                    <div class='sdg-description-wrapper'>
-                        <img class='sdg-img' src='{{ page.sdg-image-src }}'/>
-                        <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
-                    </div>
+    <div id='project-value-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
+        <h2 class='project-page-card-title title6'>Value</h2>
+        <div class='project-page-value-description'>
+            <div class='sdg-grid-item'>
+                <p><strong>Problem</strong></p>
+                <p>{{ page.problem }}</p>
+                <p><strong>Solution</strong></p>
+                <p>{{ page.solution }}</p>
+                <p><strong>Impact</strong></p>
+                <p>{{ page.impact }}</p>
+            </div>
+            <div class='sdg-description-card'>
+                <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
+                <div class='sdg-description-wrapper'>
+                    <img class='sdg-img' src='{{ page.sdg-image-src }}' />
+                    <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
                 </div>
             </div>
         </div>
+    </div>
     {% endif %}
 
     <!--Project Resources Card-->
@@ -116,11 +119,11 @@ layout: default
         <h2 class='project-page-card-title title6'>Resources</h2>
         <ul class="resource-list unstyled-list">
             {%- for item in page.links -%}
-                {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
-                    {%- include resource-card.html name=item.name url=item.url image=page.image -%}
-                {% else %}
-                    {%- include resource-card.html name=item.name url=item.url -%}
-                {% endif %}
+            {% if item.name == 'Readme' or item.name == 'Wiki' or item.name == 'Overview' %}
+            {%- include resource-card.html name=item.name url=item.url image=page.image -%}
+            {% else %}
+            {%- include resource-card.html name=item.name url=item.url -%}
+            {% endif %}
             {%- endfor -%}
             <!-- Hfla Start Guide -->
             {%- include resource-card.html name='Getting Started' url='/getting-started' -%}
@@ -130,32 +133,32 @@ layout: default
     <!-- Project Team Card -->
     <div id='project-team-card' class='page-card card-primary page-card-lg page-card--project-description-page'>
         {% if page.status == "Completed" %}
-            <h2 class='project-page-card-title title6'>Project Team</h2>
+        <h2 class='project-page-card-title title6'>Project Team</h2>
         {% else %}
-            <h2 class='project-page-card-title title6'>Current Project Team</h2>
+        <h2 class='project-page-card-title title6'>Current Project Team</h2>
         {% endif %}
         {% if page.leadership %}
-            <div class='resource-list'>
-                {% for item in page.leadership %}
-                    <div class='leader-card'>
-                        <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'/></a>
-                        <div class='leader-description'>
-                            {% if page.status == "Completed" and item.links.linkedin %}
-                                <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
-                            {% elsif page.status == "Completed" %}
-                               <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
-                            {% else %}
-                                <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
-                            {%  endif %}
-                            <p class='leader-description-field'><strong>Role: </strong>{{ item.role }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+        <div class='resource-list'>
+            {% for item in page.leadership %}
+            <div class='leader-card'>
+                <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}' /></a>
+                <div class='leader-description'>
+                    {% if page.status == "Completed" and item.links.linkedin %}
+                    <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
+                    {% elsif page.status == "Completed" %}
+                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
+                    {% else %}
+                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
+                    {%  endif %}
+                    <p class='leader-description-field'><strong>Role: </strong>{{ item.role }}</p>
+                </div>
             </div>
+            {% endfor %}
+        </div>
         {% else %}
-            <div class='empty-content-message'>
-                <p>Looks like this project has not revealed specific leadership roles yet!</p>
-            </div>
+        <div class='empty-content-message'>
+            <p>Looks like this project has not revealed specific leadership roles yet!</p>
+        </div>
         {% endif %}
         <h2 id='contributor-header' class='project-page-card-title title6'>All-Time Contributors</h2>
         <div id='contributors-list' class='resource-list'></div>
@@ -168,7 +171,7 @@ layout: default
       src='{{ page.iframe.src }}'
       width="100%"
       height="100%"
-      style="margin: 0; border: 2px solid #336699; box-sizing: border-box">
+      style="margin: 0; border: 2px solid color-mediumdarkcyanblue; box-sizing: border-box">
       </iframe>
     </div>    
     {% endif %}
@@ -176,16 +179,16 @@ layout: default
 
 {{ content | markdownify }}
 
-<!-- 
+{{ content | markdownify }}
+
+<!--
   Passing script attributes from html script tag to JS file
   https://www.gun.io/blog/pass-arguments-to-embedded-javascript-tutorial-example
 -->
-<script 
-  id="projectScript"
-  src="/assets/js/project.js"
-  type="module"
-  projectId="{{ page.identification }}"
-  imageHero="{{ page.image-hero }}"
-  projectTitle="{{ page.title }}"
->
+<script id="projectScript"
+        src="/assets/js/project.js"
+        type="module"
+        projectId="{{ page.identification }}"
+        imageHero="{{ page.image-hero }}"
+        projectTitle="{{ page.title }}">
 </script>

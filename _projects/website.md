@@ -12,6 +12,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Justin Dingeman
+    role: Technical Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
+      github: 'https://github.com/jdingeman'
+    picture: https://avatars.githubusercontent.com/jdingeman
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -24,14 +30,8 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
       github: 'https://github.com/arpitapandya'
     picture: https://avatars.githubusercontent.com/arpitapandya
-  - name: Justin Dingeman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
-      github: 'https://github.com/jdingeman'
-    picture: https://avatars.githubusercontent.com/jdingeman
   - name: Matt Pereira
-    role: Technical Lead
+    role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
       github: 'https://github.com/MattPereira'
@@ -60,6 +60,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
       github: 'https://github.com/Adastros'
     picture: https://avatars.githubusercontent.com/Adastros
+  - name: Christina Or
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
+      github: 'https://github.com/christinaor'
+    picture: https://avatars.githubusercontent.com/christinaor
+  - name: Bitian Zhang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04H6PYK14N'
+      github: 'https://github.com/bzzz-coding'
+    picture: https://avatars.githubusercontent.com/bzzz-coding
     
 links:
   - name: Wiki
