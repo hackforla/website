@@ -6,7 +6,8 @@ on:
     branches:
     - gh-pages
   pull_request:
-    branches: [gh-pages]
+    branches: 
+    - gh-pages
 
 jobs:
   Add-Missing-Labels-To-Issues:
