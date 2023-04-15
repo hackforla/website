@@ -4,9 +4,9 @@ on:
   #   types: [opened, transferred, assigned, labeled]
   push:
     branches:
-    - main
+    - gh-pages
   pull_request:
-    branches: [main]
+    branches: [gh-pages]
 
 jobs:
   Add-Missing-Labels-To-Issues:
