@@ -1,7 +1,12 @@
 name: Issue Trigger
 on:
-  issues:
-    types: [opened, transferred, assigned]
+  # issues:
+  #   types: [opened, transferred, assigned, labeled]
+  push:
+    branches:
+    - main
+  pull_request:
+    branches: [main]
 
 jobs:
   Add-Missing-Labels-To-Issues:
@@ -74,7 +79,7 @@ jobs:
   Automatic-Response-To-Feature-Branch-Issues:
     runs-on: ubuntu-latest
     # Runs only when an issue has the label with the words 'Feature Branch'
-    if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') }}
+    if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') && github.event.action == 'labeled')}}
     steps:
       - uses: actions/github-script@v4
       - name: Add feature branch instructions to top comment
