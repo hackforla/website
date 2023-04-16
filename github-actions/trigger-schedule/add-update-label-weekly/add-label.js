@@ -1,5 +1,5 @@
 // Import modules
-const findLinkedIssue = require('../utils/find-linked-issue');
+const findLinkedIssue = require('../../utils/find-linked-issue');
 var fs = require("fs");
 // Global variables
 var github;
@@ -18,12 +18,12 @@ const fourteenDayCutoffTime = new Date()
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
 
 /**
- * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness. 
- * An update to an issue is either 1. a comment by the assignee, or 2. assigning an assignee to the issue. If the last update is not within 7 days or 14 days, apply the according outdate label, and request an update. 
+ * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness.
+ * An update to an issue is either 1. a comment by the assignee, or 2. assigning an assignee to the issue. If the last update is not within 7 days or 14 days, apply the according outdate label, and request an update.
  * However, if the assignee has submitted a PR that fixed the issue regardless of when, all update-related labels should be removed.
- 
- * @param {Object} g github object from actions/github-script 
- * @param {Object} c context object from actions/github-script 
+
+ * @param {Object} g github object from actions/github-script
+ * @param {Object} c context object from actions/github-script
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
 async function main({ g, c }, columnId) {
@@ -41,7 +41,7 @@ async function main({ g, c }, columnId) {
       continue
     }
 
-    // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly 
+    // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly
     const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
 
 
@@ -98,7 +98,7 @@ async function* getIssueNumsFromColumn(columnId) {
 }
 /**
  * Function that returns the timeline of an issue.
- * @param {Number} issueNum the issue's number 
+ * @param {Number} issueNum the issue's number
  * @returns an Array of Objects containing the issue's timeline of events
  */
 

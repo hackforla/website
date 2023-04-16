@@ -36,7 +36,11 @@ permalink: /credits/
                         <p>
                         <strong>Name: </strong>
                         <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'-->
-                          <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
+                          {%- if item[1].title-link -%}
+                            <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
+                          {%- else -%}
+                            {{ item[1].title }}
+                          {% endif -%}
                         </p>
                       {%- endif -%}
                       {%- if item[1].used-in -%}
