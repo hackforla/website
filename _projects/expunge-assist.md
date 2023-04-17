@@ -39,7 +39,7 @@ links:
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
-      url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
+      url: 'https://hackforla.slack.com/archives/CN8NXTPK5'
 looking:
   - category: Marketing
     skill: Marketing & Communications

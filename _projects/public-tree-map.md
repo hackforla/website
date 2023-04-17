@@ -31,7 +31,7 @@ links:
   - name: Test Site
     url: 'http://public-tree-map.surge.sh/'
   - name: Slack
-    url: 'https://hackforla.slack.com/messages/C9UU5KKAA/'
+    url: 'https://hackforla.slack.com/archives/C9UU5KKAA/'
   - name: Readme
     url: 'https://github.com/Public-Tree-Map/public-tree-map/blob/master/README.md'
 technologies:
