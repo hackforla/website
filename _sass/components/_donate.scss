@@ -37,53 +37,58 @@
     }   
 }
 
-@media #{$bp-mobile-up} {
-    .donation-grid{
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        grid-template-rows: auto;
-        padding: 3rem;
-        text-align: left;
-        
-        h3 {
-            padding-left: 30px;
-        }
+.page-card--donate{
+    padding: 20px;
 
-        img {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 2;
-            margin: auto;
-            width: 150px;
-            padding: 40px 20px;
-        }
-    
-        ol {
-            padding-left: 30px;
-            max-width: 480px;
-        }
-    
-        ul {
-            padding-left: 30px;
-        }
+    .donate-title {
+        text-align: center;
+    }
 
-        p {
-            padding-left: 30px;
-            font-size: 15px;
-        }
-        .donation-body {
-            margin: 50px auto;  
-              
-            ol {
-              line-height: 24px;
-            }
-  
-            li {
-              padding: 5px 0;
-            }
-          }
+    .donation-gif {
+        box-shadow: 0px 2px 4px 0px #00000040;       
     }
 }
 
-.donation-gif {
-    box-shadow: 0px 2px 4px 0px #00000040;
+@media #{$bp-mobile-up} {
+    .donation-grid{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 50% 50%;
+        padding: 20px;
+        text-align: left;              
+        
+        .donation-body {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+            margin-top: 15%;
+            padding: 0 32px 0 16px;
+        
+            ol {
+                padding-left: 30px;
+                max-width: 480px;
+                line-height: 24px;
+            }
+
+            li {
+            padding: 5px 0;
+            font-size: 1.125rem;
+            }
+        }
+
+        .donation-gif {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 2;
+            margin: auto;
+            width: 318px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            margin-top: 10px;
+            padding: 0 32px 0 36px;
+            font-size: 15px;
+            grid-row: 2 / span 3;
+            grid-column: 1 / span 1;
+        }       
+    } 
 }
