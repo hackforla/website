@@ -38,24 +38,35 @@
 }
 
 .page-card--donate{
-    padding: 20px;
+    padding: 32px;
 
     .donate-title {
         text-align: center;
     }
-
     .donation-gif {
         box-shadow: 0px 2px 4px 0px #00000040;       
+    }   
+}
+
+.donation-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    p {
+        margin-top: 20px;
     }
 }
 
-@media #{$bp-mobile-up} {
+
+@media #{$bp-tablet-up} {
     .donation-grid{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
         padding: 20px;
-        text-align: left;              
+        text-align: left;  
+        align-items: flex-start;            
         
         .donation-body {
             grid-column: 1 / span 1;
@@ -63,6 +74,10 @@
             margin-top: 15%;
             padding: 0 32px 0 16px;
         
+            h3 {
+                text-align: left;
+            }
+            
             ol {
                 padding-left: 30px;
                 max-width: 480px;
