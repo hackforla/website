@@ -2,12 +2,7 @@ name: Issue Trigger
 on:
   issues:
     types: [opened, transferred, assigned, labeled]
-  push:
-    branches:
-    - gh-pages
-  pull_request:
-    branches: 
-    - gh-pages
+
 
 jobs:
   Add-Missing-Labels-To-Issues:
@@ -80,7 +75,7 @@ jobs:
   Automatic-Response-To-Feature-Branch-Issues:
     runs-on: ubuntu-latest
     # Runs only when an issue has the label with the words 'Feature Branch'
-    if: ${{ contains(github.event.issue.labels.*.name, 'Feature Branch') && github.event.action == 'labeled')}}
+    if: ${{ github.event_name == 'issues' && (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'Feature Branch'))}}
     steps:
       - uses: actions/github-script@v4
       - name: Add feature branch instructions to top comment
@@ -88,8 +83,7 @@ jobs:
         with:
           script: |
             const script = require('./github-actions/trigger-issue/append-top-comment.js')
-            script({g: github, c:context})
-            console.log("Script was executed");
+            script({c:context})
           env:
             REPO_TOKEN: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
  

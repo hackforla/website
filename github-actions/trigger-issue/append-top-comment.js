@@ -4,11 +4,9 @@ var context;
 
 /**
  * @description This function is the entry point into the javascript file, it appends text to an issue
- * @param {Object} g github object
  * @param {Object} c context object
  */
-async function main({ g, c }) {
-  github = g;
+async function main({ c }) {
   context = c;
 
   const octokit = new Octokit({ auth: process.env.REPO_TOKEN });
