@@ -1,18 +1,35 @@
 <a class="anchor" id="projects"></a>
-<section class="content-section projects">
-  <div class="page-contain projects-inner">
-    <h2 class="project-header title2">Current Projects</h2>
-    <p class="project-pitch">
-      Have an idea?
-      <a href="mailto:team@hackforla.org?subject=Submitting my pitch to Hack for LA" class="btn btn-primary btn-md-narrow"
-        >Submit your pitch</a
-      >
-    </p>
-  </div>
-  <div class="page-contain filter-toolbar">
-    <ul class="filter-list" id="filter-list"></ul>
-    <div class="filter-tag-container"></div>
-  </div>
+<section class="content-section projects filter-content-container">
+  <nav class="filter-toolbar" aria-label="Filter Navbar">
+    <div class="stickyDiv">
+      <h3 class="filters-title">
+        Filters
+        <button class="show-filters-button" aria-label="Show All Filters">
+          <svg id='hamburger-filter-nav' width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6297 12.2046H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.6297 6.20459H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.6297 18.2046H3.6297" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="hide-filters-button" aria-label="Hide All Filters">
+          <svg id='hamburger-filter-nav-x' width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.6292 6.99756L6.62915 18.9976" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.62915 6.99756L18.6292 18.9976" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </h3>
+      <div class="filter-tag-container"></div>
+      <ul class="filter-list" id="filter-list"></ul>
+      <div class="mobile-filter-buttons">
+        <button class="cancel-mobile-filters btn-md btn-dark">
+          Cancel
+        </button>
+        <button class="hide-filters-button btn-md btn-primary">
+          Apply
+        </button>
+      </div>
+    </div>
+  </nav>
   <div class="page-contain projects-inner" style="clear: left">
     <ul class="project-list unstyled-list"></ul>
   </div>

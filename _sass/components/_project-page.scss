@@ -31,7 +31,7 @@
 
   // NEW MOBILE FRIENDLY RULES
   // @media #{$bp-below-mobile} {
-    
+
   // }
 }
 
@@ -63,7 +63,7 @@
 }
 
 .project-page-status-indicator {
-  display:inline-block; 
+  display:inline-block;
   float:none;
 }
 
@@ -131,7 +131,7 @@
 }
 
 .getting-started-button-text {
-  margin-bottom:0px; 
+  margin-bottom:0px;
   white-space: nowrap;
 }
 
@@ -260,13 +260,6 @@
   }
 }
 
-.sdg-img-item {
-  text-align: center;
-  padding: 30px 60px 10px;
-  border-radius: 10px 10px 0px 0px;
-  background: #02548B;
-}
-
 .sdg-description-grid-item {
   padding: 25px 19px;
   background: #F6F6F6;
@@ -298,8 +291,8 @@
 .resource-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 20px;	
-  margin-right: auto;	
+  margin-left: 20px;
+  margin-right: auto;
   justify-content: flex-start;
 
   // NEW MOBILE FRIENDLY RULES
@@ -311,9 +304,9 @@
 }
 
 .resource-link {
-  display: flex;	
-  flex-basis: 16%;	
-  margin-right: 5px;	
+  display: flex;
+  flex-basis: 16%;
+  margin-right: 5px;
   justify-content: center;
   text-decoration: none;
   &:link{
@@ -333,7 +326,7 @@
   box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
   overflow: hidden;
   display: inline-block;
-  inline-size: min-content;	
+  inline-size: min-content;
   margin-bottom: 21px;
 
   // NEW MOBILE FRIENDLY RULES
@@ -343,8 +336,8 @@
 }
 
 .resource-img {
-  width: 111px;	
-  height: 112px;	
+  width: 111px;
+  height: 112px;
   padding: 5px;
   margin: auto auto;
 
@@ -365,9 +358,9 @@
 }
 
 .resource-body {
-  display: flex;	
-  height: 71px;	
-  justify-content: center;	
+  display: flex;
+  height: 71px;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1);

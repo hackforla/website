@@ -1,0 +1,13 @@
+# The Sustainable Development Goal (SDG) number (e.g. 16)
+sdg: 2
+# The SCSS color variable that matches the color of the SDG image 
+color-variable: $color-sdg2
+# The path to the SDG image
+image: /assets/images/sdg/sdg2.svg
+# The alt text for the SDG image
+image-alt: 2 Zero Hunger
+targets:
+    # The SDG target (e.g. 1, 2, or a, b, ...)
+  - target: 1
+    # The SDG target statement 
+    statement: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round

@@ -1,16 +1,15 @@
 ---
 name: img Tag Refactor
 about: 'For removing the ending slash in img tags, so that `<img.../>` becomes `<img..>` '
-title: 'img Tag Refactor: [INSERT PAGE HERE] page - `[INSERT SHORT DESCRIPTION OF
-  IMG TAG HERE]`'
-labels: 'Feature: Refactor HTML, good first issue, P-Feature: Getting Started, role:
-  back end/devOps, role: front end, size: 0.25pt'
+title: 'img Tag Refactor: [INSERT PAGE HERE] page(s)'
+labels: 'Feature: Refactor HTML, good first issue, ready for dev lead, role: back
+  end/devOps, role: front end, size: 0.25pt'
 assignees: ''
 
 ---
 
 ### Prerequisite
-1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started page](https://www.hackforla.org/getting-started).
+1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started page](https://www.hackforla.org/getting-started) and attend an onboarding session.
 2. Before you claim or start working on an issue, please make sure you have read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/7f0c132c96f71230b8935759e1f8711ccb340c0f/CONTRIBUTING.md).
 
 ### Overview
@@ -30,4 +29,4 @@ to
 
 ### Resources/Instructions
 1. For QA to validate change: [INSERT LINK TO FILE]
-2. [INSERT PAGE NAME HERE] page: [INSERT LINK TO PAGE HERE]
+2. Webpage(s): [INSERT LINK TO PAGE ON WEBSITE HERE]
