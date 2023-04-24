@@ -33,7 +33,6 @@ const createIssue = async (owner, repo, list) => {
     "Ready for product",
     "Complexity: Small",
     "Size: 0.5pt",
-    "bug",
   ];
   const title = "Review Inactive Members";
   const issue = await github.rest.issues.create({

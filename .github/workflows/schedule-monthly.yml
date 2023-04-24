@@ -36,7 +36,7 @@ jobs:
       # comments on issue #2607, notifying leads that the above issue has been created
       - name: Comment Issue
         uses: actions/github-script@v6
-        id:
+        id: comment-issue
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
