@@ -104,15 +104,15 @@ leadership:
     picture: 'https://avatars.githubusercontent.com/TobyShanti'
 links:
   - name: GitHub
-    url: 'https://github.com/100Automations/website'
+    url: 'https://github.com/hackforla/intership'
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/C018S5TCQE7'
+    url: 'https://hackforla.slack.com/messages/C01VAUPU788'
   - name: Readme
-    url: 'https://github.com/100Automations/Website/blob/gh-pages/README.md'
+    url: 'https://github.com/hackforla/internship/wiki'
   - name: Overview
-    url: '../assets/pdfs/100-Automations-Project-One-Sheet.pdf'
+    url: '../assets/pdfs/Tech-Work-Experience-One-Sheet.pdf'
   - name: Site
-    url: 'https://100automations.org/'
+    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Tech-Work-Experience-One-Sheet.pdf'
 looking:
   - category: Development
     skill: Anyone who wants to write open source automations
