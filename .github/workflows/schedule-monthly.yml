@@ -2,7 +2,7 @@ name: Schedule Monthly
 
 on:
   schedule:
-    - cron: '0 8 1 * *'
+    - cron: "0 8 1 * *"
 
 jobs:
   list-inactive-members:
@@ -17,9 +17,9 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
-            const script = require('./github-actions/trigger-schedule/list-inactive-members/get-list.js')
-            const getList = script({g: github, c: context})
-            return getList
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/get-list.js');
+            const getList = script({g: github, c: context});
+            return getList;
 
       # creates a new issue in hackforla/website repo with the list populated above. creates a project card linking to this issue
       - name: Create New Issue
@@ -28,10 +28,10 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
-            const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
-            const list = ${{ steps.get-list.outputs.result }}
-            const createNewIssue = script({g: github, c: context}, list)
-            return createNewIssue
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js');
+            const list = ${{ steps.get-list.outputs.result }};
+            const createNewIssue = script({g: github, c: context}, list);
+            return createNewIssue;
 
       # comments on issue #2607, notifying leads that the above issue has been created
       - name: Comment Issue
@@ -40,6 +40,6 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
-            const script = require('./github-actions/trigger-schedule/list-inactive-members/comment-issue.js')
-            const newIssueNumber = ${{ steps.create-new-issue.outputs.result }}
-            script({g: github, c: context}, newIssueNumber)
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/comment-issue.js');
+            const newIssueNumber = ${{ steps.create-new-issue.outputs.result }};
+            script({g: github, c: context}, newIssueNumber);

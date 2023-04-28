@@ -18,10 +18,10 @@ async function main({ g, c }) {
   let pageNumbers = await getNumberOfPages(org, teamSlug, github);
   let allTeamMembers = await getAllMembers(org, teamSlug, pageNumbers);
 
-  return await selectMembersWithNoIssues(allTeamMembers, owner, repo)
+  return await selectMembersWithNoIssues(allTeamMembers, owner, repo);
 }
 
-const getNumberOfPages= async (org, teamSlug) => {
+const getNumberOfPages = async (org, teamSlug) => {
   // get number of pages, needed for `getMembersWithoutIssues` function. GithubAPI has a return limit of 100 results => over 300 team members in website-write
   let websiteWriteTeam = await github.rest.teams.getByName({
     org,
@@ -45,25 +45,25 @@ const getAllMembers = async (org, teamSlug, pageNumbers) => {
     });
     allTeamMembers = allTeamMembers.concat(teamMembers.data);
   }
-  return allTeamMembers
+  return allTeamMembers;
 };
 
 const selectMembersWithNoIssues = async (allTeamMembers, owner, repo) => {
-    // select team members without open issues
-    let inactiveMembers = [];
-    for (let member of allTeamMembers) {
-        let assignee = member.login;
-        let memberIssues = await github.rest.issues.listForRepo({
-            owner,
-            repo,
-            state: "open",
-            assignee,
-        });
-        if (memberIssues.data.length === 0) {
-            inactiveMembers.push(assignee);
-        }
+  // select team members without open issues
+  let inactiveMembers = [];
+  for (let member of allTeamMembers) {
+    let assignee = member.login;
+    let memberIssues = await github.rest.issues.listForRepo({
+      owner,
+      repo,
+      state: "open",
+      assignee,
+    });
+    if (memberIssues.data.length === 0) {
+      inactiveMembers.push(assignee);
     }
-    return inactiveMembers
-}
+  }
+  return inactiveMembers;
+};
 
 module.exports = main;

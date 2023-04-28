@@ -8,7 +8,7 @@ async function main({ g, c }, newIssueNumber) {
   github = g;
   context = c;
 
-  let agendaAndNotesIssueNumber = 2607
+  let agendaAndNotesIssueNumber = 2607;
   await commentOnIssue(agendaAndNotesIssueNumber, newIssueNumber);
 }
 
