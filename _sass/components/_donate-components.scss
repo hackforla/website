@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1em;
     @media #{$bp-mobile-up} {
         gap: 4em;               
     }
