@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1.8em;
     @media #{$bp-mobile-up} {
         gap: 4em;               
     }
@@ -17,7 +16,6 @@
     align-items: center;
     padding: 0;
     margin: 0;
-
 }
 
 .circle-with-text {
@@ -29,18 +27,30 @@
 }
 
 .crc-lg {
-    height: 13em;
-    width: 13em;
+    height: 12em;
+    width: 12em;
+    @media #{$bp-mobile-up} {
+        height: 13em;
+        width: 13em;               
+    }
 }
 
 .crc-md {
-    height: 9em;
-    width: 9em;
+    height: 8em;
+    width: 8em;
+    @media #{$bp-mobile-up} {
+        height: 9em;
+        width: 9em;               
+    }
 }
 
 .crc-sm {
-    height: 6em;
-    width: 6em;
+    height: 5.5em;
+    width: 5.5em;
+    @media #{$bp-mobile-up} {
+        height: 6em;
+        width: 6em;               
+    }
 }
 
 .inside-circle-text {
