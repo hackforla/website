@@ -1,5 +1,5 @@
 ---
-name: img Tag Refactor
+name: img Tag Refactor on Website
 about: 'For removing the ending slash in img tags on the website, so that `<img.../>`
   becomes `<img..>` '
 title: 'img Tag Refactor: [INSERT PAGE HERE] page(s)'
