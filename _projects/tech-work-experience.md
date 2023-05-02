@@ -104,7 +104,7 @@ leadership:
     picture: 'https://avatars.githubusercontent.com/TobyShanti'
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/intership'
+    url: 'https://github.com/hackforla/internship'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/C01VAUPU788'
   - name: Readme
