@@ -77,6 +77,7 @@ The following is a set of guidelines for contributing to the website repository,
         - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-how-to-add-a-pull-request-to-the-project-board)
         - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
+      - [**3.1.d Dealing with merge conflicts**](#31d-dealing-with-merge-conflicts)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
     - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
     - [**4.2 Resources and Documentation**](#42-resources-and-documentation)
@@ -968,6 +969,14 @@ If you find an error in your code or your reviewer asks you to make a change, pl
 
 
 For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests), [visual demo on pull request reviews](https://drive.google.com/file/d/1b6uW_Od8ftACsEr5u-nxe8qNb8UjkISN), and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
+
+#### **3.1.d Dealing with merge conflicts**
+
+Merge conflicts occur when two or more branches of code have been modified in conflicting ways, making it difficult for the version control system to automatically merge the changes together. This often happens when two developers modify the same line of code, when one developer deletes a file that another has modified, or when one developer renames a file while another is still working on it.
+
+Resolving merge conflicts typically involves reviewing the changes made in each branch, deciding which changes to keep, and manually editing the code to resolve the conflict.
+
+Please check out this [documentation from VSCode](https://code.visualstudio.com/docs/sourcecontrol/overview#_merge-conflicts) for more information on handling merge conflicts.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
