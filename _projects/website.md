@@ -72,7 +72,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04H6PYK14N'
       github: 'https://github.com/bzzz-coding'
     picture: https://avatars.githubusercontent.com/bzzz-coding
-    
+  - name: Brian Mui
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04MFMMNJRH
+      github: https://github.com/bootcamp-brian
+    picture: https://avatars.githubusercontent.com/bootcamp-brian
+
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
