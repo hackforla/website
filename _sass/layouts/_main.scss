@@ -35,3 +35,12 @@
 .content-section {
   padding: 32px 16px;
 }
+
+// This is to provide padding for readability to the content in the default-markdown.html layout
+#content-markdown {
+  padding: 160px 60px;
+
+  @media #{$bp-below-mobile} {
+    padding-bottom: 200px;
+  }
+}
