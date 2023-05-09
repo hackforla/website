@@ -78,6 +78,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04MFMMNJRH
       github: https://github.com/bootcamp-brian
     picture: https://avatars.githubusercontent.com/bootcamp-brian
+  - name: Chris Menke
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04KVG05H3J
+      github: https://github.com/chrismenke45
+    picture: https://avatars.githubusercontent.com/chrismenke45
 
 links:
   - name: Wiki
