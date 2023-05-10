@@ -38,15 +38,13 @@
   grid-template-rows: repeat(4, 1fr);
   column-gap: 10px;
   row-gap: 26px;
-  justify-items: stretch;
-  align-content: space-between; 
 }
 
 // Grid displayed differently in Chrome and Firefox
 // Defining image height fixes the issue in Firefox
 .grid-2-column > img {
-  height: 140px;
-  width: auto
+  height: 100%;
+  max-width: 100%;
 }
 
 // Makes the sticky navigation stick
