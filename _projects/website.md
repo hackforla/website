@@ -84,7 +84,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04KVG05H3J
       github: https://github.com/chrismenke45
     picture: https://avatars.githubusercontent.com/chrismenke45
-
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
