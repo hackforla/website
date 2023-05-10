@@ -84,7 +84,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04UG4UQE8G
       github: https://github.com/mjshelton12
     picture: https://avatars.githubusercontent.com/mjshelton12
-
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
