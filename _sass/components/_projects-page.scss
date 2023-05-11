@@ -6,6 +6,11 @@
   .projects-inner {
     display: flex;
     flex-direction: column;
+
+    @media #{$bp-mobile-up} {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
   
   .project-list {
