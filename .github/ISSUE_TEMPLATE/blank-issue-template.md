@@ -2,7 +2,7 @@
 name: Blank Issue Template
 about: 'Standard HackforLA issue template '
 title: ''
-labels: ''
+labels: ['role missing','Feature Missing','Complexity: Missing','size: missing']
 assignees: ''
 
 ---
