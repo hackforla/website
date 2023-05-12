@@ -95,7 +95,7 @@ function retrieveFilterCategories(){
 function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     return `
     <li class='filter-item'>
-    <a class='category-title' style='text-transform: capitalize;'>
+    <a class='category-title filter-categories' style='text-transform: capitalize; color: white'>
         ${filterTitle}
         <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
         <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
