@@ -78,6 +78,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04MFMMNJRH
       github: https://github.com/bootcamp-brian
     picture: https://avatars.githubusercontent.com/bootcamp-brian
+  - name: MJ Shelton
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04UG4UQE8G
+      github: https://github.com/mjshelton12
+    picture: https://avatars.githubusercontent.com/mjshelton12
   - name: Chris Menke
     role: Merge Team
     links:
