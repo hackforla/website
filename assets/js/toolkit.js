@@ -89,5 +89,53 @@ function retrieveFilterCategories(){
             }
         }
     }
-    return {practiceAreas, projectStatus, projectTools, projectSource, projectContributors}
+    return {projectStatus, practiceAreas, projectTools, projectSource, projectContributors}
+}
+
+function dropDownFilterComponent(categoryName,filterArray,filterTitle){
+    return `
+    <li class='filter-item'>
+    <a class='category-title' style='text-transform: capitalize;'>
+        ${filterTitle}
+        <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
+        <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
+    </a>
+    <ul class='dropdown' id='${categoryName.toLowerCase()}'>
+        ${filterArray.map(item =>
+            `
+            <li>
+                <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
+                <label for='${item}'>${item} <span></span></label>
+            </li>
+            `
+        ).join("")}
+    </ul>
+    </li>
+    `
+}
+
+let filterCategories = retrieveFilterCategories()
+
+for (let key in filterCategories) {
+    let categoryName = key
+    let filterArray = filterCategories[key]
+    let filterTitle
+    switch(key) {
+        case 'projectStatus':
+            filterTitle = 'Status'
+            break
+        case 'practiceAreas':
+            filterTitle = 'Practice Area'
+            break
+        case 'projectTools':
+            filterTitle = 'Tools'
+            break
+        case 'projectSource':
+            filterTitle = 'Source'
+            break
+        case 'projectContributors':
+            filterTitle = 'Contributors'
+            break
+    }
+    document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) );
 }
