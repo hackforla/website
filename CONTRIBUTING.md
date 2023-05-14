@@ -29,6 +29,8 @@ The following is a set of guidelines for contributing to the website repository,
     - [**1.6 Dev setup (6): Build and serve the website locally**](#16-dev-setup-6-build-and-serve-the-website-locally)
       - [**1.6.a Starting Docker**](#16a-starting-docker)
       - [**1.6.b Stopping Docker**](#16b-stopping-docker)
+    - [**1.7 Dev setup (7): Linkage to the ESLint**](#17-dev-setup-7-linkage-to-the-ESLint)
+      -  [**1.7.a Setup ESLint**](#17a-setup-eslint)
   - [**Part 2: How the Website team works with GitHub issues**](#part-2-how-the-website-team-works-with-github-issues)
     - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
     - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
@@ -301,6 +303,16 @@ docker-compose up
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
+
+***
+
+### **1.7 Dev setup (7): Linkage to the ESLint**
+
+#### **1.7.a Setup ESLint**
+
+You must use VS Code as your local text editor to install the VS Code extension for linting your codebase, ESLint.
+
+The recommended installation method is to install ESLint directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
 
 ***
 
