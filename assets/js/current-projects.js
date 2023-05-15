@@ -480,8 +480,9 @@ function projectCardComponent(project){
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang)}"
-                data-location="${project.location? project.location.map(city => city) : '' }"
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
+                
+		data-location="${project.location? project.location.map(city => city) : '' }"
                 data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
             >
             <div class="project-card-inner">
