@@ -66,8 +66,13 @@ function retrieveFilterCategories(){
         if (project["practice-area"] && !practiceAreas.includes(project["practice-area"])) {
             practiceAreas.push(project["practice-area"])
         }
-        if (project["status"] && !projectStatus.includes(project["status"])) {
-            projectStatus.push(project["status"])
+        if (project["status"]) {
+            if (project["status"] === "completed" && !projectStatus.includes("Active")) {
+                projectStatus.push("Active")
+            }
+            if (project["status"] === "work-in-progress" && !projectStatus.includes("Draft")) {
+                projectStatus.push("Draft")
+            }
         }
         if (project["tools"]) {
             const tools = project["tools"]
@@ -139,3 +144,37 @@ for (let key in filterCategories) {
     }
     document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) );
 }
+
+const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectSource: [], projectContributors: []}
+
+document.querySelectorAll(".filter-checkbox").forEach(filter => {
+    filter.addEventListener('click', function (event) {
+        let name
+        if (event.target.id.split(' ').length > 0) {
+            name = event.target.id.split(' ').join('+')
+        } else {
+            name = event.target.id
+        }
+        let category = event.target.name
+        if (event.target.checked) {
+            currentFilters[category].push(name)
+        }
+        if (!event.target.checked) {
+            let index = currentFilters[category].indexOf(name)
+            currentFilters[category].splice(index, 1)
+        }
+        let filters = ''
+        for (let key in currentFilters) {
+            if (currentFilters[key].length) {
+                filters = filters + `${key}=${currentFilters[key].join(',')}&`
+            }
+        }
+        // Remove extra &
+        if (filters) {
+            filters = filters.slice(0, filters.length - 1)
+        }
+
+        window.history.replaceState(null, '', `?${filters}`);
+
+    });
+});
