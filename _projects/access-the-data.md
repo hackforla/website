@@ -25,7 +25,7 @@ leadership:
   - name: AJ Price
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/D02USE0EPSS'
+      slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
   - name: Judson Lester
