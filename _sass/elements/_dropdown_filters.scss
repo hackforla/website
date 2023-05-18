@@ -22,6 +22,16 @@ section.filter-content-container {
 .page-contain.projects-inner {
   margin: 0px 0px;
 }
+
+// I need to find this in the codebase
+.filter-tag-container.top-filter {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  max-width: 800px;
+  flex-direction: row;
+}
 // =================TEST==========================
 
 a.filter-item {
