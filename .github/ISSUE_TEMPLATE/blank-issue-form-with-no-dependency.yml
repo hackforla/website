@@ -1,6 +1,5 @@
 name: 'Blank Issue Form with No Dependency'
 description: 'Standard HackforLA issue form with no dependency'
-labels: ['role missing', 'Complexity: Missing', 'Feature Missing', 'size: missing','Draft']
 
 body:
   - type: input
