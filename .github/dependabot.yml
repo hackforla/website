@@ -2,7 +2,7 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     # NPM package directory
-    directory: "/github-actions/trigger-schedule/github-data/package.json"
+    directory: "/github-actions/trigger-schedule/github-data"
     schedule:
       interval: "daily"
 
