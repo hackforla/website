@@ -75,9 +75,7 @@
     align-items: center;
 }
 
-.donate-title {
-    text-align: center;
-}
+
 .donation-gif {
     box-shadow: 0px 2px 4px 0px #00000040;       
 }
@@ -99,28 +97,28 @@
         grid-template-rows: 50% 50%;
         padding: 20px;
         text-align: left;  
-        align-items: flex-start;            
+        align-items: flex-start;
+        font-size:18px;         
         
         .donation-body {
             grid-column: 1 / span 1;
             grid-row: 1 / span 1;
             margin-top: 15%;
-            padding: 0 32px 0 16px;
-        
-            h3 {
-                text-align: left;
-            }
-            
+ 
             ol {
-                padding-left: 30px;
+                padding-left: 55px;
                 max-width: 480px;
                 line-height: 24px;
             }
 
             li {
-            padding: 5px 0;
-            font-size: 1.125rem;
+                padding: 5px 0;
+                font-size: 1.125rem;
             }
+        }
+
+        .donation-footer {
+            font-size:15px;
         }
 
         .donation-gif {
@@ -134,7 +132,6 @@
         p {
             margin-top: 10px;
             padding: 0 32px 0 36px;
-            font-size: 15px;
             grid-row: 2 / span 3;
             grid-column: 1 / span 1;
         }       
