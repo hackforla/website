@@ -5,25 +5,33 @@
     width: 236.41px;
   }
 }
-
 .content-section--privacy-policy {
-  .subsection-spacing--privacy-policy {
-    margin-bottom: 24px;
+  #visiting-hackforlaorg,
+  #email-addresses,
+  #third-party-service-providers,
+  #google-analytics,
+  #how-to-opt-out-of-the-use-of-cookies {
+    margin-top: 24px;
   }
-    
-  .title-spacing {
+  ul,
+  p {
+    font-size: $font-size-paragraph2;
+  }
+
+  h2 {
     margin-bottom: 24px;
   }
 
-  .title-spacing.first-title-spacing {
+  #overview {
     margin-top: 0px;
   }
 
-  .subtitle-spacing {
+  h3 {
+    font-size: #{map-get($font-size-title4, desktop)};
     margin-bottom: 18px;
   }
-
-  .no-bottom-margin-spacing {
+  #visiting-hackforlaorg + p,
+  #as-required-by-law-and-similar-disclosures + p {
     margin-bottom: 0px;
   }
 }
@@ -34,39 +42,42 @@
       align-self: start;
     }
   }
-
   .content-section.content-section--privacy-policy {
     padding-top: 34px;
     padding-bottom: 34px;
   }
-
   .page-card--privacy-policy {
     padding: 36px 57px;
   }
-
-  .section-spacing--privacy-policy {
-    margin-bottom: 48px;
+  h2 {
+    margin-top: 48px;
   }
 }
 
 @media #{$bp-below-desktop} {
-
   /* 
   This has the same font-size as paragraph3 so it can be used for the Privacy Policy page in mobile screen sizes,
   which is a different font-size than the paragraph2 classes used for desktop size screens.
   */
-  section {
-    .paragraph2.paragraph--privacy-policy {
+  .content-section--privacy-policy {
+    ul,
+    p {
       font-size: $font-size-paragraph3;
+      line-height: 1.375;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: #333;
+    }
+    h2 {
+      margin-top: 32px;
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.25rem;
     }
   }
-
   .header-container--privacy-policy {
     padding: 32px 37.5px;
-  }
-
-  .section-spacing--privacy-policy {
-    margin-bottom: 32px;
   }
 
   .page-card--privacy-policy {

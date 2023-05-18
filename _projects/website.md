@@ -24,12 +24,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02M686LYET'
       github: 'https://github.com/blulady'
     picture: https://avatars.githubusercontent.com/blulady
-  - name: Arpita Pandya
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
-      github: 'https://github.com/arpitapandya'
-    picture: https://avatars.githubusercontent.com/arpitapandya
   - name: Matt Pereira
     role: Merge Team
     links:
@@ -66,12 +60,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Bitian Zhang
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U04H6PYK14N'
-      github: 'https://github.com/bzzz-coding'
-    picture: https://avatars.githubusercontent.com/bzzz-coding
   - name: Brian Mui
     role: Merge Team
     links:
@@ -84,6 +72,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04UG4UQE8G
       github: https://github.com/mjshelton12
     picture: https://avatars.githubusercontent.com/mjshelton12
+  - name: Chris Menke
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04KVG05H3J
+      github: https://github.com/chrismenke45
+    picture: https://avatars.githubusercontent.com/chrismenke45
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
