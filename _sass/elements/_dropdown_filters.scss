@@ -8,10 +8,22 @@
 .filters-title .hide-filters-button {
   display: none;
 }
+// section.filter-content-container {
+//   display: grid;
+//   grid-template-columns: 377px 1fr;
+// }
+
+// =================TEST==========================
 section.filter-content-container {
-  display: grid;
-  grid-template-columns: 377px 1fr;
+  display: flex;
+  justify-content: center;
 }
+
+.page-contain.projects-inner {
+  margin: 0px 0px;
+}
+// =================TEST==========================
+
 a.filter-item {
   text-decoration: none;
 }
@@ -20,17 +32,17 @@ a.filter-item {
 }
 
 .filter-toolbar {
-  width: 100%;
+  // width: 100%;
   padding: 8px 32px;
   box-sizing: border-box;
-  margin: 0 auto;
+  // margin: 0 auto;
   height: 100%;
 }
-.filter-toolbar > .stickyDiv {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 120px;
-}
+// .filter-toolbar > .stickyDiv {
+//   position: sticky;
+//   position: -webkit-sticky;
+//   top: 120px;
+// }
 @media only screen and (max-width: 1028px) {
   .filter-toolbar > .stickyDiv {
     top: 75px;
