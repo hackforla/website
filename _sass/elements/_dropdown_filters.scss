@@ -39,11 +39,6 @@ a.filter-item {
   height: 100%;
 }
 
-// @media only screen and (max-width: 1028px) {
-//   .filter-toolbar > .stickyDiv {
-//     top: 75px;
-//   }
-// }
 //filter container
 ul.filter-list {
   display: flex;
@@ -261,9 +256,6 @@ a.clear-filter-tags {
     overflow-y: scroll;
     background: $color-white;
   }
-  // .filter-toolbar > .stickyDiv {
-  //   position: static;
-  // }
   .filters-title {
     background: $color-white;
     border: 1px solid $color-mediumgrey;
