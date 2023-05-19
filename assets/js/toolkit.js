@@ -176,5 +176,48 @@ document.querySelectorAll(".filter-checkbox").forEach(filter => {
 
         window.history.replaceState(null, '', `?${filters}`);
 
+        cardContainers.forEach(card => {
+            card.style.display = 'block'
+            for (let key in currentFilters) {
+                if (key === 'projectStatus') {
+                    if (currentFilters.projectStatus.includes('Active') && currentFilters.projectStatus.length === 1) {
+                        if (card.dataset.projectStatus !== 'completed') {
+                            card.style.display = 'none'
+                        }
+                    }
+                    if (currentFilters.projectStatus.includes('Draft') && currentFilters.projectStatus.length === 1) {
+                        if (card.dataset.projectStatus !== 'work-in-progress') {
+                            card.style.display = 'none'
+                        }
+                    }
+                } else {
+                    if (currentFilters[key].length > 0) {
+                        currentFilters[key].map(data => {
+                            let param = data
+                            if (data.includes('+')) {
+                                param = data.split('+').join(' ')
+                            }
+                            if (card.dataset[key]) {
+                                if (!(card.dataset[key].includes(param))) {
+                                    card.style.display = 'none'
+                                }
+                            } else {
+                                card.style.display = 'none'
+                            }
+                        })
+                    }
+                }
+            }
+
+            // Check if no checkbox are checked
+            if ([...document.querySelectorAll(".filter-checkbox")].every(x => !(x.checked))) {
+                card.style.display = 'block'
+        }
+        });
+
     });
 });
+
+let cardContainers = document.querySelectorAll(".section-container");
+
+
