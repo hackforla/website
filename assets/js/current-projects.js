@@ -476,94 +476,94 @@ function clearAllEventHandler(){
  * Takes a single project object and returns the html string representing the project card
 */
 function projectCardComponent(project){
-return `
-        <li class="project-card" id="${ project.identification }"
-            data-status="${project.status}"
-            data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-            data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
+    return `
+            <li class="project-card" id="${ project.identification }"
+                data-status="${project.status}"
+                data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
+                
+		data-location="${project.location? project.location.map(city => city) : '' }"
+                data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
+            >
+            <div class="project-card-inner">
 
-            data-location="${project.location? project.location.map(city => city) : '' }"
-            data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
-        >
-        <div class="project-card-inner">
+            <a href='${project.id}'>
+                <div class="project-tmb">
+                <img src='${window.location.origin}${project.image}' class="project-tmb-img" alt='${project.alt}'/>
+                </div>
+            </a>
 
-        <a href='${project.id}'>
-            <div class="project-tmb">
-            <img src='${window.location.origin}${project.image}' class="project-tmb-img" alt='${project.alt}'/>
-            </div>
-        </a>
+            <div class="project-body">
+                <div class='status-indicator status-${project.status}'>
+                <h5 class='status-text'>${ project.status }</h5>
+                </div>
 
-        <div class="project-body">
-            <div class='status-indicator status-${project.status}'>
-            <h5 class='status-text'>${ project.status }</h5>
-            </div>
+                <a href='${ project.id }'><h4 class="project-title">${ project.title }</h4></a>
 
-            <a href='${ project.id }'><h4 class="project-title">${ project.title }</h4></a>
+                <p class="project-description">${ project.description }</p>
 
-            <p class="project-description">${ project.description }</p>
+                <div class="project-links">
+                <strong>Links: </strong>
+                ${project.links.map(item => `<a href="${ item.url }" rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
+                </div>
 
-            <div class="project-links">
-            <strong>Links: </strong>
-            ${project.links.map(item => `<a href="${ item.url }" rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
-            </div>
+                ${project.partner ?
+                `
+                <div class="project-partner">
+                <strong>Partner: </strong>
+                ${ project.partner }
+                </div>
+                `:""
+                }
 
-            ${project.partner ?
-            `
-            <div class="project-partner">
-            <strong>Partner: </strong>
-            ${ project.partner }
-            </div>
-            `:""
-            }
+                ${project.tools ?
+                `
+                <div class="project-tools">
+                <strong>Tools: </strong>
+                ${ project.tools }
+                </div>
+                `:""
+                }
 
-            ${project.tools ?
-            `
-            <div class="project-tools">
-            <strong>Tools: </strong>
-            ${ project.tools }
-            </div>
-            `:""
-            }
+                ${project.looking ? "" : ""
+                // `
+                // <div class="project-needs">
+                //     <strong>Looking for: </strong>
+                //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
+                // </div>
+                // `:""
+                // ^ See issue #1997 for more info on why this is commented out
+                }
 
-            ${project.looking ? "" : ""
-            // `
-            // <div class="project-needs">
-            //     <strong>Looking for: </strong>
-            //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
-            // </div>
-            // `:""
-            // ^ See issue #1997 for more info on why this is commented out
-            }
+                ${project.languages?.length > 0 ? 
+                `
+                <div class="project-languages">
+                <strong>Languages: </strong>
+                ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
+                </div>
+                `: ""
+                }
 
-            ${project.languages?.length > 0 ? 
-            `
-            <div class="project-languages">
-            <strong>Languages: </strong>
-            ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
-            </div>
-            `: ""
-            }
+                ${project.technologies ?
+                `
+                <div class="project-technologies">
+                <strong>Technologies: </strong>
+                ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
+                </div>
+                `:""
+                }
 
-            ${project.technologies ?
-            `
-            <div class="project-technologies">
-            <strong>Technologies: </strong>
-            ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
-            </div>
-            `:""
-            }
-
-            ${project.programAreas ?
-            `
-            <div class="project-programs">
-            <strong>Program Areas: </strong>
-            ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
-            </div>
-            `:""
-            }
-</div>
-</div>
-</li>`
+                ${project.programAreas ?
+                `
+                <div class="project-programs">
+                <strong>Program Areas: </strong>
+                ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
+                </div>
+                `:""
+                }
+    </div>
+    </div>
+    </li>`
 }
 
 /**

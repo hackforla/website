@@ -25,7 +25,7 @@ leadership:
   - name: AJ Price
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/D02USE0EPSS'
+      slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
   - name: Judson Lester
@@ -34,12 +34,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U9NFW84QK'
       github: 'https://github.com/nyarly'
     picture: https://avatars.githubusercontent.com/nyarly
-  - name: Cathy Cai
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U04TUV2FQCU'
-      github: 'https://github.com/Cathyyyyyyyy'
-    picture: https://avatars.githubusercontent.com/Cathyyyyyyyy
   - name: Aparna Gopal
     role: UX Researcher
     links:
