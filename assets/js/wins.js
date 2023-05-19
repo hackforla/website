@@ -100,7 +100,7 @@
 
 
 	const filterTemplate = document.getElementById("wins-filter-template-repeat");
-  	const roleDropwDown =  document.getElementById("role-dropdown");
+  	const roleDropDown =  document.getElementById("role-dropdown");
   	const teamDropDown = document.getElementById("team-dropdown");
 
 
@@ -110,9 +110,13 @@
 			cloneFilterTemplate.querySelector("input").id = `role_${key.replace(/\s+/g, '')}`;
 			cloneFilterTemplate.querySelector("input").name = `role_${key.replace(/\s+/g, '')}`;
   		cloneFilterTemplate.querySelector("input").addEventListener("click",checkboxClickHandler);
-			cloneFilterTemplate.querySelector("label").textContent = `${key}`;
-  		cloneFilterTemplate.querySelector("label").htmlFor =`role_${key.replace(/\s+/g, '')}`;
-  		roleDropwDown.append(cloneFilterTemplate);
+			if (key !== '') {
+				cloneFilterTemplate.querySelector("label").textContent = `${key}`;
+				cloneFilterTemplate.querySelector("label").htmlFor =`role_${key.replace(/\s+/g, '')}`;
+			} else {
+				continue
+			}
+			roleDropDown.append(cloneFilterTemplate);
 
   	}
   	for(const [key,value] of Object.entries(teamHash) ){
@@ -311,7 +315,7 @@
 			AVATAR_DEFAULT_PATH;
 
 		cloneCardTemplate.querySelector('.wins-card-profile-img').src = profileImgSrc;
-		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;		
+		cloneCardTemplate.querySelector('.wins-card-profile-img').id = `ghImg-${index}`;
 		cloneCardTemplate.querySelector('.wins-card-profile-img').alt = `photograph of ${card[name]}`;
 
 		cloneCardTemplate.querySelector('.wins-card-big-quote').src = QUOTE_ICON_PATH;
@@ -321,7 +325,7 @@
 		if (card[linkedin_url].length > 0) {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').href = card[linkedin_url];
 			cloneCardTemplate.querySelector('.linkedin-icon').src = LINKEDIN_ICON ;
-			cloneCardTemplate.querySelector('.linkedin-icon').alt = `LinkedIn profile for ${card[name]}`; 
+			cloneCardTemplate.querySelector('.linkedin-icon').alt = `LinkedIn profile for ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
 		};
