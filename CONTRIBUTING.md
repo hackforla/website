@@ -1,4 +1,5 @@
 # **How to Contribute to Hack for LA**
+reid was here 
 
 👍🥳 First off, thanks for taking the time to contribute! 🥳👍
 
