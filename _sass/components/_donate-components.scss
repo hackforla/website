@@ -12,7 +12,6 @@
 .circle-full-container {
     display: flex;
     flex-direction: column;
-    padding: 1em 2em;
     justify-content: center;
     align-items: center;
     padding: 0;
@@ -108,7 +107,7 @@
             grid-column: 1 / span 1;
             grid-row: 1 / span 1;
             margin-top: 15%;
-            
+
             ol {
                 padding-left: 55px;
                 max-width: 480px;
