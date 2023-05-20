@@ -9,22 +9,25 @@
     min-height: 100vh;
 }
 
+.donation-body  {
+    p{
+        padding-left: 23px;
+    }
+}
+
 .header-container--donate {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4rem 1rem;
     height: fit-content;
-
     .donate-banner-text {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         .title1 {
             padding-bottom: 28px;
         }
-
         p {
             font-size: 18px;
             max-width: 300px;
@@ -34,7 +37,8 @@
             }
             @media #{$bp-mobile-up} {
                 font-size: 16px;
-                text-align: left;                
+                text-align: left;
+                padding-left:0px;                
             }
         }
     }   

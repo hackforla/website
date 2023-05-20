@@ -8,7 +8,6 @@
         gap: 4em;               
     }
 }
-
 .circle-full-container {
     display: flex;
     flex-direction: column;
@@ -18,7 +17,6 @@
     padding: 0;
     margin: 0;
 }
-
 .circle-with-text {
     display: flex;
     justify-content: center;
@@ -26,7 +24,6 @@
     background-color: #cde4c5;
     border-radius: 50%;
 }
-
 .crc-lg {
     height: 12em;
     width: 12em;
@@ -35,7 +32,6 @@
         width: 13em;               
     }
 }
-
 .crc-md {
     height: 8em;
     width: 8em;
@@ -44,7 +40,6 @@
         width: 9em;               
     }
 }
-
 .crc-sm {
     height: 5.5em;
     width: 5.5em;
@@ -53,27 +48,25 @@
         width: 6em;               
     }
 }
-
 .inside-circle-text {
     text-align: center;
     color: #030D2D;
     margin: 0;
     padding: 0.4em 0em;
 }
-
 .circle-title{
     padding: 0.5em;
     font-size: 1.5em;
     color: #030D2D;
     margin: 0;
 }
-
 .circle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 
 .donation-gif {
     box-shadow: 0px 2px 4px 0px #00000040;       
@@ -83,7 +76,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     p {
         margin-top: 20px;
     }
@@ -98,12 +91,12 @@
         text-align: left;  
         align-items: flex-start;
         font-size:18px;         
-        
+
         .donation-body {
             grid-column: 1 / span 1;
             grid-row: 1 / span 1;
             margin-top: 15%;
- 
+
             ol {
                 padding-left: 55px;
                 max-width: 480px;
