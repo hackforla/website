@@ -105,18 +105,18 @@
 
 
   	for(const [key,value] of Object.entries(roleHash) ){
-  		let cloneFilterTemplate = filterTemplate.content.firstElementChild.cloneNode(true);
-  		cloneFilterTemplate.querySelector("input").value = `role_${key}`;
-			cloneFilterTemplate.querySelector("input").id = `role_${key.replace(/\s+/g, '')}`;
-			cloneFilterTemplate.querySelector("input").name = `role_${key.replace(/\s+/g, '')}`;
-  		cloneFilterTemplate.querySelector("input").addEventListener("click",checkboxClickHandler);
-			if (key !== '') {
+			if (key === '') {
+				continue
+			} else {
+				let cloneFilterTemplate = filterTemplate.content.firstElementChild.cloneNode(true);
+				cloneFilterTemplate.querySelector("input").value = `role_${key}`;
+				cloneFilterTemplate.querySelector("input").id = `role_${key.replace(/\s+/g, '')}`;
+				cloneFilterTemplate.querySelector("input").name = `role_${key.replace(/\s+/g, '')}`;
+				cloneFilterTemplate.querySelector("input").addEventListener("click",checkboxClickHandler);
 				cloneFilterTemplate.querySelector("label").textContent = `${key}`;
 				cloneFilterTemplate.querySelector("label").htmlFor =`role_${key.replace(/\s+/g, '')}`;
-			} else {
-				continue
+				roleDropDown.append(cloneFilterTemplate);
 			}
-			roleDropDown.append(cloneFilterTemplate);
 
   	}
   	for(const [key,value] of Object.entries(teamHash) ){
