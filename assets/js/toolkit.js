@@ -50,6 +50,19 @@
 //     }
 // }
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Apply current URL to filters
+    let currentHash = window.location.href.split('?')
+    if (currentHash.length > 1) {
+        currentHash = currentHash[1].split('&')
+        for (let i = 0; i < currentHash.length; i++) {
+            let category = currentHash[i].split('=')[0]
+            let filters = currentHash[i].split('=')[1].split('+').join(' ').split(',')
+            currentFilters[category] = filters
+        }
+    }
+})
+
 function retrieveFilterCategories(){
     {% assign projects = site.guide-pages | where: "display", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
@@ -176,6 +189,8 @@ document.querySelectorAll(".filter-checkbox").forEach(filter => {
 
         window.history.replaceState(null, '', `?${filters}`);
 
+        console.log(currentFilters)
+
         cardContainers.forEach(card => {
             card.style.display = 'block'
             for (let key in currentFilters) {
@@ -214,7 +229,6 @@ document.querySelectorAll(".filter-checkbox").forEach(filter => {
                 card.style.display = 'block'
         }
         });
-
     });
 });
 
