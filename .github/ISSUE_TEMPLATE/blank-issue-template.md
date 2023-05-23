@@ -15,6 +15,4 @@ REPLACE THIS TEXT - List the research to be done, or the steps to be completed.
 Note: If the steps can be divided into tasks for more than one person, we recommend dividing it up into separate issues, or assigning it as a pair programming task.
 
 ### Resources/Instructions
-<!-- REPLACE THIS TEXT - Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc. -->
-HLFA site new issue template labels
-https://docs.google.com/spreadsheets/d/1Gq6obyqDy9wgoymnlP-smQUXEvGfhgjGSCyMvgS4rRA/edit#gid=0
+REPLACE THIS TEXT - Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc.
