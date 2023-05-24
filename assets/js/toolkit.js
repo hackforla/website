@@ -51,19 +51,74 @@
 // }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectSource: [], projectContributors: []}
+
+    // Generate dropdown menu
+    initializeFilters()
+
     // Apply current URL to filters
     let currentHash = window.location.href.split('?')
-    if (currentHash.length > 1) {
+    if (currentHash.length > 1 && currentHash[1].length > 0) {
         currentHash = currentHash[1].split('&')
         for (let i = 0; i < currentHash.length; i++) {
             let category = currentHash[i].split('=')[0]
-            let filters = currentHash[i].split('=')[1].split('+').join(' ').split(',')
+            let filters = currentHash[i].split('=')[1].split(',')
             currentFilters[category] = filters
         }
+        for (key in currentFilters) {
+            const activeFilters = currentFilters[key]
+            document.querySelectorAll(".filter-checkbox").forEach(filter => {
+                if (filter.name === key) {
+                    let filterCheck = filter.id
+                    if (filter.id.split(' ').length > 0) {
+                        filterCheck = filter.id.split(' ').join('+')
+                    }
+                    if (activeFilters.includes(filterCheck)) {
+                        filter.checked = !filter.checked
+                    }
+                }
+            })
+        }
+        applyFilters(currentFilters)
     }
+
+    // Event listener for filter checkboxes
+    document.querySelectorAll(".filter-checkbox").forEach(filter => {
+        filter.addEventListener('click', function (event) {
+            let name
+            if (event.target.id.split(' ').length > 0) {
+                name = event.target.id.split(' ').join('+')
+            } else {
+                name = event.target.id
+            }
+            let category = event.target.name
+            if (event.target.checked) {
+                currentFilters[category].push(name)
+            }
+            if (!event.target.checked) {
+                let index = currentFilters[category].indexOf(name)
+                currentFilters[category].splice(index, 1)
+            }
+            let filters = ''
+            for (let key in currentFilters) {
+                if (currentFilters[key].length) {
+                    filters = filters + `${key}=${currentFilters[key].join(',')}&`
+                }
+            }
+            // Remove extra &
+            if (filters) {
+                filters = filters.slice(0, filters.length - 1)
+            }
+
+            window.history.replaceState(null, '', `?${filters}`);
+
+            applyFilters(currentFilters)
+        });
+    });
 })
 
-function retrieveFilterCategories(){
+// Retrieve filter categories from guide pages
+function retrieveFilterCategories() {
     {% assign projects = site.guide-pages | where: "display", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
 
@@ -73,7 +128,6 @@ function retrieveFilterCategories(){
     const projectSource = []
     const projectContributors = []
 
-    // Extract categories from guides
     for (let i = 0; i < projects.length; i++) {
         const project = projects[i]
         if (project["practice-area"] && !practiceAreas.includes(project["practice-area"])) {
@@ -110,7 +164,8 @@ function retrieveFilterCategories(){
     return {projectStatus, practiceAreas, projectTools, projectSource, projectContributors}
 }
 
-function dropDownFilterComponent(categoryName,filterArray,filterTitle){
+// Generate HTML for dropdown
+function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
     return `
     <li class='filter-item'>
     <a class='category-title filter-categories' style='text-transform: capitalize; color: white'>
@@ -132,106 +187,69 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     `
 }
 
-let filterCategories = retrieveFilterCategories()
+// Insert dropdown menu into the DOM
+function initializeFilters() {
+    let filterCategories = retrieveFilterCategories()
 
-for (let key in filterCategories) {
-    let categoryName = key
-    let filterArray = filterCategories[key]
-    let filterTitle
-    switch(key) {
-        case 'projectStatus':
-            filterTitle = 'Status'
-            break
-        case 'practiceAreas':
-            filterTitle = 'Practice Area'
-            break
-        case 'projectTools':
-            filterTitle = 'Tools'
-            break
-        case 'projectSource':
-            filterTitle = 'Source'
-            break
-        case 'projectContributors':
-            filterTitle = 'Contributors'
-            break
+    for (let key in filterCategories) {
+        let categoryName = key
+        let filterArray = filterCategories[key]
+        let filterTitle
+        switch(key) {
+            case 'projectStatus':
+                filterTitle = 'Status'
+                break
+            case 'practiceAreas':
+                filterTitle = 'Practice Area'
+                break
+            case 'projectTools':
+                filterTitle = 'Tools'
+                break
+            case 'projectSource':
+                filterTitle = 'Source'
+                break
+            case 'projectContributors':
+                filterTitle = 'Contributors'
+                break
+        }
+
+        document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) );
     }
-    document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) );
 }
 
-const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectSource: [], projectContributors: []}
-
-document.querySelectorAll(".filter-checkbox").forEach(filter => {
-    filter.addEventListener('click', function (event) {
-        let name
-        if (event.target.id.split(' ').length > 0) {
-            name = event.target.id.split(' ').join('+')
-        } else {
-            name = event.target.id
-        }
-        let category = event.target.name
-        if (event.target.checked) {
-            currentFilters[category].push(name)
-        }
-        if (!event.target.checked) {
-            let index = currentFilters[category].indexOf(name)
-            currentFilters[category].splice(index, 1)
-        }
-        let filters = ''
-        for (let key in currentFilters) {
-            if (currentFilters[key].length) {
-                filters = filters + `${key}=${currentFilters[key].join(',')}&`
-            }
-        }
-        // Remove extra &
-        if (filters) {
-            filters = filters.slice(0, filters.length - 1)
-        }
-
-        window.history.replaceState(null, '', `?${filters}`);
-
-        console.log(currentFilters)
-
-        cardContainers.forEach(card => {
-            card.style.display = 'block'
-            for (let key in currentFilters) {
-                if (key === 'projectStatus') {
-                    if (currentFilters.projectStatus.includes('Active') && currentFilters.projectStatus.length === 1) {
-                        if (card.dataset.projectStatus !== 'completed') {
-                            card.style.display = 'none'
-                        }
-                    }
-                    if (currentFilters.projectStatus.includes('Draft') && currentFilters.projectStatus.length === 1) {
-                        if (card.dataset.projectStatus !== 'work-in-progress') {
-                            card.style.display = 'none'
-                        }
-                    }
-                } else {
-                    if (currentFilters[key].length > 0) {
-                        currentFilters[key].map(data => {
-                            let param = data
-                            if (data.includes('+')) {
-                                param = data.split('+').join(' ')
-                            }
-                            if (card.dataset[key]) {
-                                if (!(card.dataset[key].includes(param))) {
-                                    card.style.display = 'none'
-                                }
-                            } else {
-                                card.style.display = 'none'
-                            }
-                        })
+// Update guide cards based on current filters
+function applyFilters(filters) {
+    document.querySelectorAll(".section-container").forEach(card => {
+        card.style.display = 'block'
+        for (let key in filters) {
+            if (key === 'projectStatus') {
+                if (filters.projectStatus.includes('Active') && filters.projectStatus.length === 1) {
+                    if (card.dataset.projectStatus !== 'completed') {
+                        card.style.display = 'none'
                     }
                 }
+                if (filters.projectStatus.includes('Draft') && filters.projectStatus.length === 1) {
+                    if (card.dataset.projectStatus !== 'work-in-progress') {
+                        card.style.display = 'none'
+                    }
+                }
+            } else {
+                if (filters[key].length > 0) {
+                    filters[key].map(data => {
+                        let param = data
+                        if (data.includes('+')) {
+                            param = data.split('+').join(' ')
+                        }
+                        if (card.dataset[key]) {
+                            if (!(card.dataset[key].includes(param))) {
+                                card.style.display = 'none'
+                            }
+                        } else {
+                            card.style.display = 'none'
+                        }
+                    })
+                }
             }
-
-            // Check if no checkbox are checked
-            if ([...document.querySelectorAll(".filter-checkbox")].every(x => !(x.checked))) {
-                card.style.display = 'block'
         }
-        });
     });
-});
-
-let cardContainers = document.querySelectorAll(".section-container");
-
-
+}
