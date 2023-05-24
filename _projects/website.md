@@ -1,7 +1,7 @@
 ---
 identification: '130000551'
 title: Hackforla.org Website
-description: The hackforla.org website is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
+description: The Hack for LA Site (hackforla.org) is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
 image: /assets/images/projects/website.png
 alt: 'Hackforla.org Website'
 image-hero: /assets/images/projects/website-hero.jpg
