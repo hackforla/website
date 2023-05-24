@@ -1,7 +1,7 @@
 name: 'Responsiveness on mobile '
 description: 'Standard HackforLA issue template '
 title: 'Mobile Responsiveness on [name of the page] : [quick recap of the bug here]'
-labels: ['role: design', 'Feature Missing', 'Complexity: Missing', 'size: missing']
+labels: ['role: design']
 # assignees:
 
 body:
