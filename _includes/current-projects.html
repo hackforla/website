@@ -1,7 +1,7 @@
 <a class="anchor" id="projects"></a>
 <section class="content-section projects filter-content-container">
   <nav class="filter-toolbar" aria-label="Filter Navbar">
-    <div class="stickyDiv">
+    <div class="filtersDiv">
       <h3 class="filters-title">
         Filters
         <button class="show-filters-button" aria-label="Show All Filters">
@@ -18,7 +18,6 @@
           </svg>
         </button>
       </h3>
-      <div class="filter-tag-container"></div>
       <ul class="filter-list" id="filter-list"></ul>
       <div class="mobile-filter-buttons">
         <button class="cancel-mobile-filters btn-md btn-dark">
@@ -30,8 +29,11 @@
       </div>
     </div>
   </nav>
-  <div class="page-contain projects-inner" style="clear: left">
-    <ul class="project-list unstyled-list"></ul>
+  <div class="projects-and-filters">
+    <div class="filter-tag-container top-filter"></div>
+    <div class="page-contain projects-inner" >
+      <ul class="project-list unstyled-list"></ul>
+    </div>
   </div>
 </section>
 
