@@ -9,17 +9,6 @@ We are currently working on an MVP, which is a website that will serve as a foun
 project. The MVP will consist of a website that hosts a catalog of sources of open government data. This project will 
 focus on Los Angeles County as its backdrop to test the hypothesis that this is a tool the community of community 
 activists and data experts needs and wants."
----
-# 'identification' is the 9 digit ID for your repo in the GitHub API.
-identification: '330800079'
-title: Access The Data
-description: "With government policies increasingly relying on data and data analysis, it becomes imperative to increase citizens' 
-access and understanding of local government data in order to be effective advocates for their communities.
-<br><br>
-We are currently working on an MVP, which is a website that will serve as a foundation for the continued Access the Data 
-project. The MVP will consist of a website that hosts a catalog of sources of open government data. This project will 
-focus on Los Angeles County as its backdrop to test the hypothesis that this is a tool the community of community 
-activists and data experts needs and wants."
 
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/access-the-data.png
