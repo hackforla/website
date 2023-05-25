@@ -110,20 +110,20 @@
 			}
 				let cloneFilterTemplate = filterTemplate.content.firstElementChild.cloneNode(true);
 				cloneFilterTemplate.querySelector("input").value = `role_${key}`;
-				cloneFilterTemplate.querySelector("input").id = `role_${key.replace(/\s+/g, '')}`;
-				cloneFilterTemplate.querySelector("input").name = `role_${key.replace(/\s+/g, '')}`;
+					cloneFilterTemplate.querySelector("input").id = `role_${key.replace(/\s+/g, '')}`;
+					cloneFilterTemplate.querySelector("input").name = `role_${key.replace(/\s+/g, '')}`;
 				cloneFilterTemplate.querySelector("input").addEventListener("click",checkboxClickHandler);
-				cloneFilterTemplate.querySelector("label").textContent = `${key}`;
+					cloneFilterTemplate.querySelector("label").textContent = `${key}`;
 				cloneFilterTemplate.querySelector("label").htmlFor =`role_${key.replace(/\s+/g, '')}`;
 				roleDropDown.append(cloneFilterTemplate);
   	}
   	for(const [key,value] of Object.entries(teamHash) ){
   		let cloneFilterTemplate = filterTemplate.content.firstElementChild.cloneNode(true);
   		cloneFilterTemplate.querySelector("input").value = `team_${key}`;
-			cloneFilterTemplate.querySelector("input").id = `team_${key.replace(/\s+/g, '')}`;
-			cloneFilterTemplate.querySelector("input").name = `team_${key.replace(/\s+/g, '')}`;
+				cloneFilterTemplate.querySelector("input").id = `team_${key.replace(/\s+/g, '')}`;
+				cloneFilterTemplate.querySelector("input").name = `team_${key.replace(/\s+/g, '')}`;
   		cloneFilterTemplate.querySelector("input").addEventListener("click",checkboxClickHandler);
-			cloneFilterTemplate.querySelector("label").textContent = `${key}`;
+				cloneFilterTemplate.querySelector("label").textContent = `${key}`;
   		cloneFilterTemplate.querySelector("label").htmlFor =`team_${key.replace(/\s+/g, '')}`;
   		teamDropDown.append(cloneFilterTemplate);
 
