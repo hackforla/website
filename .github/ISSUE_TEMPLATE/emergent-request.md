@@ -3,7 +3,7 @@ name: Emergent Request
 about: When you discover something in your issue that is out of scope and it needs
   a new issue or discussion
 title: 'ER: [replace with info ] '
-labels: 'size: 0.25pt'
+labels: 'size: 0.25pt', 'role missing', 'Feature Missing', 'Complexity: Missing'
 assignees: ''
 
 ---
