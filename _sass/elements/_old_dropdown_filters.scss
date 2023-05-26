@@ -54,7 +54,7 @@ ul.old-filter-list li ul {
   transition: all 0.5s ease;
   z-index: 99;
   list-style: none;
-  width: 115%;
+  width: 100%;
   padding: 15px 20px;
   line-height: 2em;
   font-size: 0.9em;
@@ -163,7 +163,7 @@ a.old-clear-filter-tags {
 @media #{$bp-below-tablet} {
   //resize dropdown on tablet and mobile view
   ul.old-filter-list li ul {
-    width: 105%;
+    width: 100%;
     padding: 15px;
   }
 }
