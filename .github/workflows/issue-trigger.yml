@@ -21,7 +21,7 @@ jobs:
             return checkLabels
             
       #Checks which teams the user is on 
-      - uses: tspascoal/get-user-teams-membership@v1
+      - uses: tspascoal/get-user-teams-membership@v2
         id: checkUserMember
         with:
           username: ${{ github.actor }}
