@@ -19,7 +19,7 @@ jobs:
     if: ${{ github.event.action == 'opened' }}
     steps:
       - name: Move Opened PR to Project Board
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: 'PR Needs review (Automated Column, do not place items here manually)'
@@ -32,7 +32,7 @@ jobs:
     if: ${{ github.event.pull_request.merged == true }} 
     steps:
       - name: Gather Merged PRs
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'
@@ -46,7 +46,7 @@ jobs:
     if: ${{ github.event.pull_request.merged == true }} 
     steps: 
       - name: Delete Merged PRs
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
@@ -59,7 +59,7 @@ jobs:
     if: ${{ github.event.pull_request.merged == false && github.event.action == 'closed' }}
     steps:
       - name: Delete Closed and Unmerged PRs
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: 'PR Needs review (Automated Column, do not place items here manually)'
