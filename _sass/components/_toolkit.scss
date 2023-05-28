@@ -1,7 +1,7 @@
 .toolkit-header {
     &__text-group {
-        display: flex; 
-        flex-wrap: wrap; 
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         text-align: center;
         padding: 1.4rem 0;
@@ -62,7 +62,7 @@
     height: auto;
     margin: 1.2rem 1rem;
     overflow: hidden;
-    
+
     a {
         width: 1.5rem;
     }
@@ -73,7 +73,7 @@
     overflow: hidden;
 }
 
-.toolkit-flex-item-img-container svg, 
+.toolkit-flex-item-img-container svg,
 .toolkit-flex-item-img-container img {
     width: 100%;
     height: 100%;
@@ -84,6 +84,11 @@
     height: 17.5rem;    //or 14.5 rem
     width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
+}
+
+.toolkit-content-container {
+    display: grid;
+    grid-template-columns: 377px 1fr;
 }
 
 .toolkit-info-container {
@@ -184,7 +189,7 @@
 
     .toolkit-flex-item-img-container {
         height: auto;
-        
+
         &.resource-svg-icons {
             height: 15.5rem;
         }
@@ -214,7 +219,7 @@
     }
     .external-resources-text {
     text-align: center;
-    }   
+    }
 }
 
 @media #{$bp-below-mobile} {
@@ -256,7 +261,7 @@
 // no sitewide settings for this size screen:
 @media (max-width: 281px) {
     .suggest-guide-group {
-        display: block;    
+        display: block;
     }
     #dropdown-select {
         width: 216px;
