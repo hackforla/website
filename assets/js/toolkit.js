@@ -213,7 +213,7 @@ function initializeFilters() {
 
 // Update page based on current filters
 function applyFilters(filters) {
-    document.querySelectorAll(".section-container").forEach(card => {
+    document.querySelectorAll(".guide-card").forEach(card => {
         card.style.display = 'block'
         for (let key in filters) {
             if (key === 'projectStatus') {
