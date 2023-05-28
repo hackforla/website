@@ -51,7 +51,7 @@
 // }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectSource: [], projectContributors: []}
+    const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectResourceType: [], projectTechnologies: [], projectSource: [], projectContributors: []}
 
     // Generate dropdown menu
     initializeFilters()
@@ -109,6 +109,8 @@ function retrieveFilterCategories() {
     const practiceAreas = []
     const projectStatus = []
     const projectTools = []
+    const projectResourceType = []
+    const projectTechnologies = []
     const projectSource = []
     const projectContributors = []
 
@@ -133,6 +135,17 @@ function retrieveFilterCategories() {
                 }
             }
         }
+        if (project["resource-type"] && !projectSource.includes(project["resource-type"])) {
+            projectResourceType.push(project["resource-type"])
+        }
+        if (project["technologies"]) {
+            const technologies = project["technologies"]
+            for (let j = 0; j < technologies.length; j++) {
+                if (!projectTechnologies.includes(technologies[j]) && technologies[j]) {
+                    projectTechnologies.push(technologies[j])
+                }
+            }
+        }
         if (project["source"] && !projectSource.includes(project["source"])) {
             projectSource.push(project["source"])
         }
@@ -145,7 +158,7 @@ function retrieveFilterCategories() {
             }
         }
     }
-    return {projectStatus, practiceAreas, projectTools, projectSource, projectContributors}
+    return {projectStatus, practiceAreas, projectTools, projectResourceType, projectTechnologies, projectSource, projectContributors}
 }
 
 // Generate HTML for dropdown
@@ -176,6 +189,7 @@ function initializeFilters() {
     let filterCategories = retrieveFilterCategories()
 
     for (let key in filterCategories) {
+        if (filterCategories[key].length === 0) continue
         let categoryName = key
         let filterArray = filterCategories[key]
         let filterTitle
@@ -188,6 +202,12 @@ function initializeFilters() {
                 break
             case 'projectTools':
                 filterTitle = 'Tools'
+                break
+            case 'projectResourceType':
+                filterTitle = 'Resource Type'
+                break
+            case 'projectTechnologies':
+                filterTitle = 'Technologies'
                 break
             case 'projectSource':
                 filterTitle = 'Source'
@@ -210,10 +230,10 @@ function initializeFilters() {
                 event.target.parentNode.classList.add("show-all")
             })
         })
-
-        // Show frequency of each filter
-        updateFilterFrequency()
     }
+
+    // Show frequency of each filter
+    updateFilterFrequency()
 }
 
 // Update page based on current filters
@@ -294,6 +314,12 @@ function updateFilterTag(filterParams) {
             case 'projectTools':
                 category = 'Tools'
                 break
+            case 'projectResourceType':
+                category = 'Type'
+                break
+            case 'projectTechnologies':
+                category = 'Technologies'
+                break
             case 'projectSource':
                 category = 'Source'
                 break
@@ -327,6 +353,12 @@ function attachEventListenerToFilterTags(filterParams) {
                         break
                     case 'Tools':
                         category = 'projectTools'
+                        break
+                    case 'Type':
+                        category = 'projectResourceType'
+                        break
+                    case 'Technologies':
+                        category = 'projectTechnologies'
                         break
                     case 'Source':
                         category = 'projectSource'
