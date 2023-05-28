@@ -299,9 +299,7 @@ function updateFilterTag(filterParams) {
         })
     }
 
-    if (document.querySelectorAll('.filter-tag').length > 0) {
-        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
-    } else {
+    if (document.querySelectorAll('.filter-tag').length === 0) {
         document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
     }
 }
