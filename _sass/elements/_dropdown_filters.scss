@@ -8,10 +8,27 @@
 .filters-title .hide-filters-button {
   display: none;
 }
+
+// Centered Components and filters up top
 section.filter-content-container {
-  display: grid;
-  grid-template-columns: 377px 1fr;
+  display: flex;
+  justify-content: center;
 }
+.page-contain.projects-inner {
+  margin: 0px 0px;
+}
+.page-contain.projects-inner.curr-projects {
+  margin: 0px auto;
+}
+.filter-tag-container.top-filter {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  max-width: 800px;
+  flex-direction: row;
+}
+
 a.filter-item {
   text-decoration: none;
 }
@@ -20,22 +37,15 @@ a.filter-item {
 }
 
 .filter-toolbar {
-  width: 100%;
   padding: 8px 32px;
   box-sizing: border-box;
-  margin: 0 auto;
   height: 100%;
 }
-.filter-toolbar > .stickyDiv {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 120px;
+
+.filtersDiv {
+  min-width: 282px;
 }
-@media only screen and (max-width: 1028px) {
-  .filter-toolbar > .stickyDiv {
-    top: 75px;
-  }
-}
+
 //filter container
 ul.filter-list {
   display: flex;
@@ -252,9 +262,6 @@ a.clear-filter-tags {
     right: 0;
     overflow-y: scroll;
     background: $color-white;
-  }
-  .filter-toolbar > .stickyDiv {
-    position: static;
   }
   .filters-title {
     background: $color-white;

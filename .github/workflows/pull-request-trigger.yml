@@ -52,3 +52,16 @@ jobs:
           column: 'test-approved-by-reviewer (Automated Column, do not place items here manually)'            
           repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           action: delete
+
+  # Removes PRs that are closed and not merged
+  Delete-Closed-And-Unmerged-PRs:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == false && github.event.action == 'closed' }}
+    steps:
+      - name: Delete Closed and Unmerged PRs
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Project Board
+          column: 'PR Needs review (Automated Column, do not place items here manually)'
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          action: delete

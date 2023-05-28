@@ -73,6 +73,6 @@ problem: The city produces a data set from all the 311 tickets placed. This data
 solution: We partnered with the Los Angeles Department of Neighborhood Empowerment and LA Neighborhood Councils to co-create and iterate analysis and tools (see 311-Data.org) to provide neighborhoods with actionable information at the local level through real time visualizations and comparison tools.
 impact: Neighborhood Councils are able to use visualizations to demonstrate and discuss the city service levels with constituents and determine where to send mailings to target information to those parts of their community not availing themselves of specific city services.
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/sdg/peace-justice.svg
+sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---

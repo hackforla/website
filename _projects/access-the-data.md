@@ -22,24 +22,42 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
-  - name: Lucy Chang
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U025WJ8CHFC'
-      github: 'https://github.com/lrchang2'
-    picture: https://avatars.githubusercontent.com/lrchang2
   - name: AJ Price
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/D02USE0EPSS'
+      slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
   - name: Judson Lester
-    role: Developer Lead
+    role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U9NFW84QK'
       github: 'https://github.com/nyarly'
     picture: https://avatars.githubusercontent.com/nyarly
+  - name: Aparna Gopal
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U0245UJP868'
+      github: 'https://github.com/Aparna1Gopal'
+    picture: https://avatars.githubusercontent.com/Aparna1Gopal
+  - name: Deepa Mohan
+    role: UX Designer 
+    links:
+      slack: 'https://hackforla.slack.com/team/U033H9HT0P2'
+      github: 'https://github.com/deepamohan22'
+    picture: https://avatars.githubusercontent.com/deepamohan22
+  - name: Leslie Luk
+    role: UX Writer
+    links:
+      slack: 'https://hackforla.slack.com/team/U04960088CV'
+      github: 'https://github.com/lesUXW'
+    picture: https://avatars.githubusercontent.com/lesUXW
+  - name: Tony Delgado
+    role: Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
+      github: 'https://github.com/TonyDelgadoWillis'
+    picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
 links:
   - name: Github
     url: 'https://github.com/hackforla/access-the-data/'
@@ -90,6 +108,6 @@ visible: true
 # completed-contact:
 # program area card data
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/sdg/peace-justice.svg
+sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 ---

@@ -1,0 +1,45 @@
+name: Schedule Monthly
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"
+
+jobs:
+  list-inactive-members:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # gets a list of website-write team members with no open issues, returns a list of member's github handles
+      - name: Get List
+        uses: actions/github-script@v6
+        id: get-list
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/get-list.js');
+            const getList = script({g: github, c: context});
+            return getList;
+
+      # creates a new issue in hackforla/website repo with the list populated above. creates a project card linking to this issue
+      - name: Create New Issue
+        uses: actions/github-script@v6
+        id: create-new-issue
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js');
+            const list = ${{ steps.get-list.outputs.result }};
+            const createNewIssue = script({g: github, c: context}, list);
+            return createNewIssue;
+
+      # comments on issue #2607, notifying leads that the above issue has been created
+      - name: Comment Issue
+        uses: actions/github-script@v6
+        id: comment-issue
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/comment-issue.js');
+            const newIssueNumber = ${{ steps.create-new-issue.outputs.result }};
+            script({g: github, c: context}, newIssueNumber);

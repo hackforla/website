@@ -23,6 +23,7 @@
 // /**
 //  * Elements
 //  */
+@import 'elements/background-sdg-colors';
 @import 'elements/accordion';
 @import 'elements/buttons';
 @import 'elements/forms';
@@ -34,6 +35,7 @@
 @import 'elements/cards';
 @import 'elements/color-styles';
 @import 'elements/dropdown_filters';
+@import 'elements/old_dropdown_filters';
 
 // /**
 //  * Components
@@ -62,6 +64,7 @@
 @import 'components/program-areas.scss';
 @import 'components/projects-page.scss';
 @import 'components/donate.scss';
+@import 'components/donate-components.scss';
 @import 'components/design-system.scss';
 @import 'components/citizen_engagement.scss';
 @import 'components/privacy-policy.scss';
