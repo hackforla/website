@@ -150,21 +150,21 @@ function retrieveFilterCategories() {
 function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
     return `
     <li class='filter-item'>
-    <a class='category-title filter-categories' name='${categoryName}' style='text-transform: capitalize; color: white'>
-        ${filterTitle}
-        <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
-        <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
-    </a>
-    <ul class='dropdown' id='${categoryName.toLowerCase()}'>
-        ${filterArray.map(item =>
-            `
-            <li>
-                <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
-                <label for='${item}'>${item} <span></span></label>
-            </li>
-            `
-        ).join("")}
-    </ul>
+        <a class='category-title filter-categories' name='${categoryName}' style='text-transform: capitalize; color: white'>
+            ${filterTitle}
+            <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
+            <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
+        </a>
+        <ul class='dropdown' id='${categoryName.toLowerCase()}'>
+            ${filterArray.map(item =>
+                `
+                <li>
+                    <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
+                    <label for='${item}'>${item} <span></span></label>
+                </li>
+                `
+            ).join("")}
+        </ul>
     </li>
     `
 }
@@ -195,7 +195,19 @@ function initializeFilters() {
                 break
         }
 
-        document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) );
+        document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent(categoryName, filterArray, filterTitle) )
+
+        // Add View All button if category has more than 8 filters
+        if (document.getElementById(categoryName.toLowerCase()).getElementsByTagName("li").length > 8) {
+            document.getElementById(categoryName.toLowerCase()).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" role="button" aria-label="View All ${filterTitle} Filters">View all</li>` );
+        }
+
+        // Add event listener on View All button
+        document.querySelectorAll("li.view-all").forEach(viewAll => {
+            viewAll.addEventListener("click", function(event) {
+                event.target.parentNode.classList.add("show-all")
+            })
+        })
     }
 }
 
