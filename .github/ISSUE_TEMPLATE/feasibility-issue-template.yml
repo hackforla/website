@@ -1,5 +1,6 @@
 name: 'Feasibility Issue Template '
 description: 'Used to standardize issue forms '
+labels: ['role missing', 'Complexity: Missing', 'Feature Missing', 'size: missing','Draft']
 title: 'Standard Feasibility Issue Template '
 
 
