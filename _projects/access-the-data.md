@@ -59,7 +59,7 @@ leadership:
       github: 'https://github.com/TonyDelgadoWillis'
     picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/access-the-data/'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01L2ANCG6M'
