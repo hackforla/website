@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Retrieve filter categories from guide pages
 function retrieveFilterCategories() {
     {% assign projects = site.guide-pages | where: "display", "true" %}
-    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
+    let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"))
 
     const practiceAreas = []
     const projectStatus = []
@@ -208,6 +208,9 @@ function initializeFilters() {
                 event.target.parentNode.classList.add("show-all")
             })
         })
+
+        // Show frequency of each filter
+        updateFilterFrequency()
     }
 }
 
@@ -248,6 +251,8 @@ function applyFilters(filters) {
     })
 
     applyFiltersToURL(filters)
+
+    updateFilterFrequency()
 
     updateFilterTag(filters)
 
@@ -386,5 +391,48 @@ function updateCheckBoxState(filterParams) {
                 }
             }
         })
+    }
+}
+
+// Computes and returns the frequency of each checkbox filter that are currently present on the displayed cards on the page
+function updateFilterFrequency() {
+    const onPageFilters = []
+    const guideCards = document.querySelectorAll('.guide-card')
+    const guideCardsArray = Array.from(guideCards)
+    const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
+    visibleGuideCards.forEach(card => {
+        for(const [key, value] of Object.entries(card.dataset)) {
+            value.split(",").map(item => {
+                if (item.toLowerCase() === 'completed') {
+                    item = 'Active'
+                }
+                if (item.toLowerCase() === 'work-in-progress') {
+                    item = 'Draft'
+                }
+                onPageFilters.push(`${item}`)
+            })
+        }
+    })
+
+    const allFilters = []
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+        allFilters.push(`${checkbox.name}_${checkbox.id}`)
+    })
+
+    // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
+    let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{})
+
+
+    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
+    for(const item of onPageFilters){
+        for (let key in filterFrequencyObject) {
+            if (item.includes(key.split('_')[1])) {
+                filterFrequencyObject[key] += 1
+            }
+        }
+    }
+
+    for(const [key,value] of Object.entries(filterFrequencyObject)){
+        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
     }
 }
