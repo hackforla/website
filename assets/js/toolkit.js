@@ -65,20 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let filters = currentHash[i].split('=')[1].split(',')
             currentFilters[category] = filters
         }
-        for (key in currentFilters) {
-            const activeFilters = currentFilters[key]
-            document.querySelectorAll(".filter-checkbox").forEach(filter => {
-                if (filter.name === key) {
-                    let filterCheck = filter.id
-                    if (filter.id.split(' ').length > 0) {
-                        filterCheck = filter.id.split(' ').join('+')
-                    }
-                    if (activeFilters.includes(filterCheck)) {
-                        filter.checked = !filter.checked
-                    }
-                }
-            })
-        }
+        updateCheckBoxState(currentFilters)
         applyFilters(currentFilters)
     }
 
@@ -99,24 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 let index = currentFilters[category].indexOf(name)
                 currentFilters[category].splice(index, 1)
             }
-            let filters = ''
-            for (let key in currentFilters) {
-                if (currentFilters[key].length) {
-                    filters = filters + `${key}=${currentFilters[key].join(',')}&`
-                }
-            }
-            // Remove extra &
-            if (filters) {
-                filters = filters.slice(0, filters.length - 1)
-            }
-
-            window.history.replaceState(null, '', `?${filters}`);
-
             applyFilters(currentFilters)
         });
     });
 
-    // Event listener on arrows to collapse categories
+    // Event listener for arrows to collapse categories
     const labelArrows = document.querySelectorAll(".labelArrow")
     labelArrows.forEach(label => {
         label.addEventListener('click', function() {
@@ -225,7 +199,7 @@ function initializeFilters() {
     }
 }
 
-// Update guide cards based on current filters
+// Update page based on current filters
 function applyFilters(filters) {
     document.querySelectorAll(".section-container").forEach(card => {
         card.style.display = 'block'
@@ -259,5 +233,148 @@ function applyFilters(filters) {
                 }
             }
         }
-    });
+    })
+
+    applyFiltersToURL(filters)
+
+    updateFilterTag(filters)
+
+    attachEventListenerToFilterTags(filters)
+}
+
+/**
+ * Takes a name of a checkbox filter and the value of the check boxed filter
+ * and creates a html string representing a button
+*/
+
+function filterTagComponent(filterName,filterValue){
+    return `<div
+                data-filter='${filterName},${filterValue}'
+                class='filter-tag'
+            >
+                <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
+                ${filterName}: ${filterValue}
+                </span>
+            </div>`
+}
+
+function updateFilterTag(filterParams) {
+    // Clear all filter tags
+    document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag))
+    document.querySelectorAll('.applied-filters').forEach(appliedFilters => appliedFilters.parentNode.removeChild(appliedFilters) )
+
+    for (const [key, value] of Object.entries(filterParams)) {
+        let category
+        switch(key) {
+            case 'projectStatus':
+                category = 'Status'
+                break
+            case 'practiceAreas':
+                category = 'Practice'
+                break
+            case 'projectTools':
+                category = 'Tools'
+                break
+            case 'projectSource':
+                category = 'Source'
+                break
+            case 'projectContributors':
+                category = 'Contributor'
+                break
+        }
+        value.forEach(item => {
+            document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', filterTagComponent(category, item.split('+').join(' ')))
+        })
+    }
+
+    if (document.querySelectorAll('.filter-tag').length > 0) {
+        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
+    } else {
+        document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
+    }
+}
+
+// Apply event listener to applied filters buttons
+function attachEventListenerToFilterTags(filterParams) {
+    if(document.querySelectorAll('.filter-tag').length > 0){
+        document.querySelectorAll('.filter-tag').forEach(button => {
+            button.addEventListener('click', function(event) {
+                let category = event.target.innerText.split(':')[0]
+                let filter = event.target.innerText.split(':')[1].trim().split(' ').join('+')
+                switch(category) {
+                    case 'Status':
+                        category = 'projectStatus'
+                        break
+                    case 'Practice':
+                        category = 'practiceAreas'
+                        break
+                    case 'Tools':
+                        category = 'projectTools'
+                        break
+                    case 'Source':
+                        category = 'projectSource'
+                        break
+                    case 'Contributor':
+                        category = 'projectContributors'
+                        break
+                }
+                filterParams[category] = [...filterParams[category].filter(item => item.toLowerCase() !== filter.toLowerCase())]
+                applyFilters(filterParams)
+
+                // Update checkboxes
+                updateCheckBoxState(filterParams)
+            })
+        })
+
+        // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
+        if(!document.querySelector('.clear-filter-tags')){
+            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" tabindex="0" aria-label="Clear All Filters" style="white-space: nowrap;">Clear All</a>`);
+
+            //Attach an event handler to the clear all button
+            document.querySelector('.clear-filter-tags').addEventListener('click',function () {
+                window.history.replaceState(null, '', '/toolkit')
+                for (let key in filterParams) {
+                    filterParams[key] = []
+                }
+                applyFilters(filterParams)
+                updateCheckBoxState(filterParams)
+                document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
+            });
+        }
+    }
+}
+
+// Converts current filters to URL string
+function applyFiltersToURL(filterParams) {
+    let filters = ''
+    for (let key in filterParams) {
+        if (filterParams[key].length) {
+            filters = filters + `${key}=${filterParams[key].join(',')}&`
+        }
+    }
+    // Remove extra &
+    if (filters) {
+        filters = filters.slice(0, filters.length - 1)
+    }
+    window.history.replaceState(null, '', `?${filters}`)
+}
+
+// Update checkboxes based on current filters
+function updateCheckBoxState(filterParams) {
+    for (key in filterParams) {
+        const activeFilters = filterParams[key]
+        document.querySelectorAll(".filter-checkbox").forEach(filter => {
+            if (filter.name === key) {
+                let filterCheck = filter.id
+                if (filter.id.split(' ').length > 0) {
+                    filterCheck = filter.id.split(' ').join('+')
+                }
+                if (activeFilters.includes(filterCheck)) {
+                    filter.checked = !filter.checked
+                } else {
+                    filter.checked = false
+                }
+            }
+        })
+    }
 }
