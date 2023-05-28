@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         updateCheckBoxState(currentFilters)
         applyFilters(currentFilters)
+    } else {
+        applyFilters(currentFilters)
     }
 
     // Event listener for filter checkboxes
@@ -400,7 +402,7 @@ function updateFilterFrequency() {
     const guideCards = document.querySelectorAll('.guide-card')
     const guideCardsArray = Array.from(guideCards)
     const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
-    visibleGuideCards.forEach(card => {
+    document.querySelectorAll('.guide-card[style*="display: block"]').forEach(card => {
         for(const [key, value] of Object.entries(card.dataset)) {
             value.split(",").map(item => {
                 if (item.toLowerCase() === 'completed') {
