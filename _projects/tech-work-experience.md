@@ -110,7 +110,7 @@ links:
   - name: Readme
     url: 'https://github.com/hackforla/internship/wiki'
   - name: Overview
-    url: '../assets/pdfs/Tech-Work-Experience-One-Sheet.pdf'
+    url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Tech-Work-Experience-One-Sheet.pdf'
   - name: Site
     url: 'https://github.com/hackforla/product-management/blob/master/project-one-sheets/Tech-Work-Experience-One-Sheet.pdf'
 looking:
