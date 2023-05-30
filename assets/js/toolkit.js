@@ -2,54 +2,6 @@
 
 ---
 
-// run hashFilter() as soon as page loads to show filtered results based on URL alone, without clicking on navbar
-// document.addEventListener("DOMContentLoaded", hashFilter)
-
-// //add listener for click in banner, and toggle classes for filters.
-// document.querySelectorAll(".toolkit-header__banner-item").forEach(filter => {
-//     filter.addEventListener('click', function (event) {
-//         let thisCategory = event.currentTarget;
-//         let otherCategories = event.currentTarget.parentElement.children;
-
-//         if (thisCategory.classList.contains('selected-category')) {
-//             return;
-//         } else {
-//             Array.from(otherCategories).forEach((category) => {
-//                 if (category.classList.contains('selected-category')) {
-//                     category.classList.remove('selected-category');
-//                     return;
-//                 }
-//             });
-
-//             thisCategory.classList.toggle('selected-category');
-//         }
-//     });
-// });
-
-// //add handler for dropdown navigation selection
-// document.getElementById("dropdown-select").onchange = function() {
-//     window.location.href = this.value;
-// }
-
-// //add listener for url change and toggle visible cards.
-// window.addEventListener("hashchange", hashFilter);
-
-// function hashFilter(e) {
-//     let currentHash = location.hash.split('#')[1].replace("+", "").toLowerCase();
-
-//     let cardContainers = document.querySelectorAll("[data-article-type]");
-//     let guidesCategories = ["all", "development", "design", "projectmanagement", "professionaldevelopment"]
-//     if(guidesCategories.includes(currentHash)){
-//         cardContainers.forEach((card) => {
-//             if (currentHash == 'all') {
-//                 card.style.display = 'block';
-//                 return;
-//             }
-//             card.dataset.articleType == currentHash ? card.style.display = "block" : card.style.display = "none";
-//         });
-//     }
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
     const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectResourceType: [], projectTechnologies: [], projectSource: [], projectContributors: []}
 
@@ -57,21 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeFilters()
 
     // Apply current URL to filters
-    let currentHash = window.location.href.split('?')
-    if (currentHash.length > 1 && currentHash[1].length > 0) {
-        currentHash = currentHash[1].split('&')
-        for (let i = 0; i < currentHash.length; i++) {
-            let category = currentHash[i].split('=')[0]
-            let filters = currentHash[i].split('=')[1].split(',')
-            currentFilters[category] = filters
-        }
-        updateCheckBoxState(currentFilters)
-        applyFilters(currentFilters)
-    } else {
-        applyFilters(currentFilters)
-    }
+    applyURLtoFilters(currentFilters)
 
-    // Event listener for filter checkboxes
+    // Add event listener to all filter checkboxes
     document.querySelectorAll(".filter-checkbox").forEach(filter => {
         filter.addEventListener('click', function (event) {
             let name
@@ -89,14 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentFilters[category].splice(index, 1)
             }
             applyFilters(currentFilters)
-        });
-    });
-
-    // Event listener for arrows to collapse categories
-    const labelArrows = document.querySelectorAll(".labelArrow")
-    labelArrows.forEach(label => {
-        label.addEventListener('click', function() {
-            label.parentElement.classList.toggle("show-none")
         })
     })
 })
@@ -231,26 +163,30 @@ function initializeFilters() {
             })
         })
     }
-
-    // Show frequency of each filter
-    updateFilterFrequency()
+    // Event listener for arrows to collapse categories
+    const labelArrows = document.querySelectorAll(".labelArrow")
+    labelArrows.forEach(label => {
+        label.addEventListener('click', function() {
+            label.parentElement.classList.toggle("show-none")
+        })
+    })
 }
 
 // Update page based on current filters
-function applyFilters(filters) {
+function applyFilters(filtersParams) {
     // Show all cards if there are no active filters
-    if (Object.values(filters).every(x => x.length === 0)) {
+    if (Object.values(filtersParams).every(x => x.length === 0)) {
         document.querySelectorAll(".guide-card").forEach(card => {
             card.style.display = 'block'
         })
     } else {
         document.querySelectorAll(".guide-card").forEach(card => {
             card.style.display = 'block'
-            for (let key in filters) {
+            for (let key in filtersParams) {
                 let filterList
-                if (filters[key].length > 0) {
+                if (filtersParams[key].length > 0) {
                     if (key === 'projectStatus') {
-                        filterList = filters[key].map(data => {
+                        filterList = filtersParams[key].map(data => {
                             if (data == 'Active') {
                                 return 'completed'
                             }
@@ -259,7 +195,7 @@ function applyFilters(filters) {
                             }
                         })
                     } else {
-                        filterList = filters[key].map(data => {
+                        filterList = filtersParams[key].map(data => {
                             if (data.includes('+')) {
                                 return data.split('+').join(' ')
                             } else {
@@ -276,19 +212,112 @@ function applyFilters(filters) {
     }
 
     // Change URL to include current filters
-    applyFiltersToURL(filters)
+    applyFiltersToURL(filtersParams)
 
     // Update card counter for each filter
     updateFilterFrequency()
 
     // Update filter counter for each category
-    updateCategoryCounter(filters)
+    updateCategoryCounter(filtersParams)
 
     // Update filter tags
-    updateFilterTag(filters)
+    updateFilterTag(filtersParams)
 
     // Attach event listener to filter tags
-    attachEventListenerToFilterTags(filters)
+    attachEventListenerToFilterTags(filtersParams)
+}
+
+// Apply current filters to URL
+function applyFiltersToURL(filterParams) {
+    let filters = ''
+    for (let key in filterParams) {
+        if (filterParams[key].length) {
+            filters = filters + `${key}=${filterParams[key].join(',')}&`
+        }
+    }
+    // Remove extra &
+    if (filters) {
+        filters = filters.slice(0, filters.length - 1)
+    }
+    window.history.replaceState(null, '', `?${filters}`)
+}
+
+// Apply URL to filters
+function applyURLtoFilters(filterParams) {
+    let currentHash = window.location.href.split('?')
+    if (currentHash.length > 1 && currentHash[1].length > 0) {
+        currentHash = currentHash[1].split('&')
+        for (let i = 0; i < currentHash.length; i++) {
+            let category = currentHash[i].split('=')[0]
+            let filters = currentHash[i].split('=')[1].split(',')
+            filterParams[category] = filters
+        }
+        updateCheckBoxState(filterParams)
+        applyFilters(filterParams)
+    } else {
+        applyFilters(filterParams)
+    }
+}
+
+// Computes and returns the frequency of each checkbox filter that are currently present on the displayed cards on the page
+function updateFilterFrequency() {
+    const onPageFilters = []
+    const guideCards = document.querySelectorAll('.guide-card')
+    const guideCardsArray = Array.from(guideCards)
+    const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
+    document.querySelectorAll('.guide-card[style*="display: block"]').forEach(card => {
+        for(const [key, value] of Object.entries(card.dataset)) {
+            value.split(",").map(item => {
+                if (item.toLowerCase() === 'completed') {
+                    item = 'Active'
+                }
+                if (item.toLowerCase() === 'work-in-progress') {
+                    item = 'Draft'
+                }
+                onPageFilters.push(`${item}`)
+            })
+        }
+    })
+
+    const allFilters = []
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+        allFilters.push(`${checkbox.name}_${checkbox.id}`)
+    })
+
+    // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
+    let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{})
+
+
+    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
+    for(const item of onPageFilters){
+        for (let key in filterFrequencyObject) {
+            if (item.includes(key.split('_')[1])) {
+                filterFrequencyObject[key] += 1
+            }
+        }
+    }
+
+    for(const [key,value] of Object.entries(filterFrequencyObject)){
+        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
+    }
+}
+
+// Update category counter based on filter params
+function updateCategoryCounter(filterParams) {
+    let container = []
+    for(const [key,value] of Object.entries(filterParams)){
+        container.push([`counter_${key}`,value.length])
+    }
+    let categories = [...document.querySelectorAll('.category-title')].map(category => category.name)
+    for(const [key,value] of container){
+        if (categories.includes(key.split('_')[1])) {
+            if (value > 0) {
+                document.querySelector(`#${key}`).innerHTML = ` (${value})`
+            } else {
+                document.querySelector(`#${key}`).innerHTML = ''
+            }
+        }
+    }
 }
 
 // Create filter tag based on filter category and parameter
@@ -344,7 +373,7 @@ function updateFilterTag(filterParams) {
     }
 }
 
-// Apply event listener to applied filters buttons
+// Apply event listener to applied filters buttons to remove filter when clicked
 function attachEventListenerToFilterTags(filterParams) {
     if(document.querySelectorAll('.filter-tag').length > 0){
         document.querySelectorAll('.filter-tag').forEach(button => {
@@ -376,8 +405,6 @@ function attachEventListenerToFilterTags(filterParams) {
                 }
                 filterParams[category] = [...filterParams[category].filter(item => item.toLowerCase() !== filter.toLowerCase())]
                 applyFilters(filterParams)
-
-                // Update checkboxes
                 updateCheckBoxState(filterParams)
             })
         })
@@ -400,21 +427,6 @@ function attachEventListenerToFilterTags(filterParams) {
     }
 }
 
-// Converts current filters to URL string
-function applyFiltersToURL(filterParams) {
-    let filters = ''
-    for (let key in filterParams) {
-        if (filterParams[key].length) {
-            filters = filters + `${key}=${filterParams[key].join(',')}&`
-        }
-    }
-    // Remove extra &
-    if (filters) {
-        filters = filters.slice(0, filters.length - 1)
-    }
-    window.history.replaceState(null, '', `?${filters}`)
-}
-
 // Update checkboxes based on current filters
 function updateCheckBoxState(filterParams) {
     for (key in filterParams) {
@@ -432,66 +444,5 @@ function updateCheckBoxState(filterParams) {
                 }
             }
         })
-    }
-}
-
-// Update category counter based on filter params
-function updateCategoryCounter(filterParams) {
-    let container = []
-    for(const [key,value] of Object.entries(filterParams)){
-        container.push([`counter_${key}`,value.length])
-    }
-    let categories = [...document.querySelectorAll('.category-title')].map(category => category.name)
-    for(const [key,value] of container){
-        if (categories.includes(key.split('_')[1])) {
-            if (value > 0) {
-                document.querySelector(`#${key}`).innerHTML = ` (${value})`
-            } else {
-                document.querySelector(`#${key}`).innerHTML = ''
-            }
-        }
-    }
-}
-
-// Computes and returns the frequency of each checkbox filter that are currently present on the displayed cards on the page
-function updateFilterFrequency() {
-    const onPageFilters = []
-    const guideCards = document.querySelectorAll('.guide-card')
-    const guideCardsArray = Array.from(guideCards)
-    const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
-    document.querySelectorAll('.guide-card[style*="display: block"]').forEach(card => {
-        for(const [key, value] of Object.entries(card.dataset)) {
-            value.split(",").map(item => {
-                if (item.toLowerCase() === 'completed') {
-                    item = 'Active'
-                }
-                if (item.toLowerCase() === 'work-in-progress') {
-                    item = 'Draft'
-                }
-                onPageFilters.push(`${item}`)
-            })
-        }
-    })
-
-    const allFilters = []
-    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
-        allFilters.push(`${checkbox.name}_${checkbox.id}`)
-    })
-
-    // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
-    let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{})
-
-
-    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
-    for(const item of onPageFilters){
-        for (let key in filterFrequencyObject) {
-            if (item.includes(key.split('_')[1])) {
-                filterFrequencyObject[key] += 1
-            }
-        }
-    }
-
-    for(const [key,value] of Object.entries(filterFrequencyObject)){
-        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
     }
 }
