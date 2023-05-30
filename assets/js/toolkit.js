@@ -238,39 +238,43 @@ function initializeFilters() {
 
 // Update page based on current filters
 function applyFilters(filters) {
-    document.querySelectorAll(".guide-card").forEach(card => {
-        card.style.display = 'block'
-        for (let key in filters) {
-            if (key === 'projectStatus') {
-                if (filters.projectStatus.includes('Active') && filters.projectStatus.length === 1) {
-                    if (card.dataset.projectStatus !== 'completed') {
-                        card.style.display = 'none'
-                    }
-                }
-                if (filters.projectStatus.includes('Draft') && filters.projectStatus.length === 1) {
-                    if (card.dataset.projectStatus !== 'work-in-progress') {
-                        card.style.display = 'none'
-                    }
-                }
-            } else {
-                if (filters[key].length > 0) {
-                    filters[key].map(data => {
-                        let param = data
-                        if (data.includes('+')) {
-                            param = data.split('+').join(' ')
-                        }
-                        if (card.dataset[key]) {
-                            if (!(card.dataset[key].includes(param))) {
-                                card.style.display = 'none'
-                            }
-                        } else {
+    // Show all cards if there are no active filters
+    if (Object.values(filters).every(x => x.length === 0)) {
+        document.querySelectorAll(".guide-card").forEach(card => {
+            card.style.display = 'block'
+        })
+    } else {
+        document.querySelectorAll(".guide-card").forEach(card => {
+            card.style.display = 'block'
+            for (let key in filters) {
+                if (key === 'projectStatus') {
+                    if (filters.projectStatus.includes('Active')) {
+                        if (card.dataset.projectStatus !== 'completed') {
                             card.style.display = 'none'
                         }
-                    })
+                    }
+                    if (filters.projectStatus.includes('Draft')) {
+                        if (card.dataset.projectStatus !== 'work-in-progress') {
+                            card.style.display = 'none'
+                        }
+                    }
+                } else {
+                    if (filters[key].length > 0) {
+                        let filterList = filters[key].map(data => {
+                            if (data.includes('+')) {
+                                return data.split('+').join(' ')
+                            } else {
+                                return data
+                            }
+                        })
+                        if (!(filterList.some(data => card.dataset[key].includes(data)))) {
+                            card.style.display = 'none'
+                        }
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 
     applyFiltersToURL(filters)
 
