@@ -49,10 +49,9 @@
 }
 
 .toolkit-flex-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
-    align-items: stretch;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
 .toolkit-flex-item.section-container {
@@ -121,12 +120,10 @@
 
 .toolkit__card-list {
     margin-bottom: 10rem;
-    // @media (min-width: 1232px) and (max-width: 1400px) {
-    //     padding-top: 1.7rem;
-    // }
-    // @media #{$bp-desktop-large-up} {
-    //     padding-top: 1.7rem;
-    // }
+}
+
+.toolkit__card-list.page-contain {
+    margin: 0px 0px;
 }
 
 @media only screen and (max-width: 1430px) {
