@@ -247,51 +247,51 @@ function applyFilters(filters) {
         document.querySelectorAll(".guide-card").forEach(card => {
             card.style.display = 'block'
             for (let key in filters) {
-                if (key === 'projectStatus') {
-                    if (filters.projectStatus.includes('Active')) {
-                        if (card.dataset.projectStatus !== 'completed') {
-                            card.style.display = 'none'
-                        }
-                    }
-                    if (filters.projectStatus.includes('Draft')) {
-                        if (card.dataset.projectStatus !== 'work-in-progress') {
-                            card.style.display = 'none'
-                        }
-                    }
-                } else {
-                    if (filters[key].length > 0) {
-                        let filterList = filters[key].map(data => {
+                let filterList
+                if (filters[key].length > 0) {
+                    if (key === 'projectStatus') {
+                        filterList = filters[key].map(data => {
+                            if (data == 'Active') {
+                                return 'completed'
+                            }
+                            if (data == 'Draft') {
+                                return 'work-in-progress'
+                            }
+                        })
+                    } else {
+                        filterList = filters[key].map(data => {
                             if (data.includes('+')) {
                                 return data.split('+').join(' ')
                             } else {
                                 return data
                             }
                         })
-                        if (!(filterList.some(data => card.dataset[key].includes(data)))) {
-                            card.style.display = 'none'
-                        }
+                    }
+                    if (!(filterList.some(data => card.dataset[key].includes(data)))) {
+                        card.style.display = 'none'
                     }
                 }
             }
         })
     }
 
+    // Change URL to include current filters
     applyFiltersToURL(filters)
 
+    // Update card counter for each filter
     updateFilterFrequency()
 
+    // Update filter counter for each category
     updateCategoryCounter(filters)
 
+    // Update filter tags
     updateFilterTag(filters)
 
+    // Attach event listener to filter tags
     attachEventListenerToFilterTags(filters)
 }
 
-/**
- * Takes a name of a checkbox filter and the value of the check boxed filter
- * and creates a html string representing a button
-*/
-
+// Create filter tag based on filter category and parameter
 function filterTagComponent(filterName,filterValue){
     return `<div
                 data-filter='${filterName},${filterValue}'
@@ -303,6 +303,7 @@ function filterTagComponent(filterName,filterValue){
             </div>`
 }
 
+// Update filter tags based on current filters
 function updateFilterTag(filterParams) {
     // Clear all filter tags
     document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.parentNode.removeChild(filterTag))
