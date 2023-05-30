@@ -167,7 +167,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
     <li class='filter-item'>
         <a class='category-title filter-categories' name='${categoryName}' style='text-transform: capitalize; color: white'>
             ${filterTitle}
-            <span id='counter_${categoryName}' class='number-of-checked-boxes'></span>
+            <span id='counter_${categoryName}' class='number-of-checked-boxes' style='color: red'></span>
             <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
         </a>
         <ul class='dropdown' id='${categoryName.toLowerCase()}'>
@@ -275,6 +275,8 @@ function applyFilters(filters) {
     applyFiltersToURL(filters)
 
     updateFilterFrequency()
+
+    updateCategoryCounter(filters)
 
     updateFilterTag(filters)
 
@@ -425,6 +427,24 @@ function updateCheckBoxState(filterParams) {
                 }
             }
         })
+    }
+}
+
+// Update category counter based on filter params
+function updateCategoryCounter(filterParams) {
+    let container = []
+    for(const [key,value] of Object.entries(filterParams)){
+        container.push([`counter_${key}`,value.length])
+    }
+    let categories = [...document.querySelectorAll('.category-title')].map(category => category.name)
+    for(const [key,value] of container){
+        if (categories.includes(key.split('_')[1])) {
+            if (value > 0) {
+                document.querySelector(`#${key}`).innerHTML = ` (${value})`
+            } else {
+                document.querySelector(`#${key}`).innerHTML = ''
+            }
+        }
     }
 }
 
