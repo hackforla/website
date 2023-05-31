@@ -54,8 +54,10 @@
 }
 
 .toolkit-filters * {
-    color: white
+    color: $color-white
 }
+
+
 
 .toolkit-flex-item.section-container {
     position: relative;
@@ -114,6 +116,15 @@
     line-height: 1.2rem;
     right: 1rem;
     bottom: 1rem;
+}
+
+.no-results-message {
+    color: $color-white;
+    margin: 1rem;
+}
+
+.toolkit-red {
+    color: $color-red
 }
 
 @media only screen and (max-width: 1430px) {
@@ -272,5 +283,9 @@
 
     .toolkit-flex-item.section-container {
         max-width: none;
+    }
+
+    .toolkit__card-list .filter-tag-container {
+        margin-top: 10px;
     }
 }
