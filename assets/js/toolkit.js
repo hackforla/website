@@ -38,7 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".hide-filters-button").forEach(button => {
         button.addEventListener("click", hideFiltersEventHandler)
     })
-    document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
+    document.querySelector(".cancel-mobile-filters").addEventListener("click", function(e) {
+        hideFiltersEventHandler(e)
+        window.history.replaceState(null, '', '/toolkit')
+        for (let key in currentFilters) {
+            currentFilters[key] = []
+        }
+        applyFilters(currentFilters)
+        updateCheckBoxState(currentFilters)
+        document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
+    })
     document.addEventListener('keydown', tabFocusedKeyDownHandler)
 })
 
@@ -479,11 +488,7 @@ function hideFiltersEventHandler(e) {
     filterToolbar.classList.remove("show-filters")
     filterToolbar.childNodes[1].classList.add("filtersDiv-background")
 }
-// cancel button on mobile filters
-function cancelMobileFiltersEventHandler(e) {
-    hideFiltersEventHandler(e)
-    clearAllEventHandler()
-}
+
 //event handler for keyboard users to click spans when focused
 function tabFocusedKeyDownHandler(e) {
     // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
