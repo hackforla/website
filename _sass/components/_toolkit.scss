@@ -26,7 +26,6 @@
 
 .toolkit-background {
     background-color: $color-darkblue;
-    padding: 2rem;
 }
 
 .suggest-guide-group {
@@ -37,7 +36,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .suggest-guide-group h2 {
@@ -88,11 +87,6 @@
     width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
 }
-
-// .toolkit-content-container {
-//     display: grid;
-//     grid-template-columns: 377px 1fr;
-// }
 
 .toolkit-info-container {
     margin: 1rem 0rem 3.5rem;
@@ -152,6 +146,10 @@
             max-width: 6rem;
             text-align: center;
         }
+    }
+
+    .toolkit-flex-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .toolkit-flex-item {
@@ -257,6 +255,10 @@
 @media #{$bp-below-tablet} {
     .toolkit-filters *:not(button) {
         color: unset;
+    }
+
+    .toolkit-filters .filters-title {
+        margin: 0 0.5rem;
     }
 
     .filtersDiv-background {
