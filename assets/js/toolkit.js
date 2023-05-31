@@ -31,6 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
             applyFilters(currentFilters)
         })
     })
+
+    document.querySelectorAll(".show-filters-button").forEach(button => {
+        button.addEventListener("click", showFiltersEventHandler)
+    })
+    document.querySelectorAll(".hide-filters-button").forEach(button => {
+        button.addEventListener("click", hideFiltersEventHandler)
+    })
+    document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
+    document.addEventListener('keydown', tabFocusedKeyDownHandler)
 })
 
 // Retrieve filter categories from guide pages
@@ -97,8 +106,8 @@ function retrieveFilterCategories() {
 function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
     return `
     <li class='filter-item'>
-        <a class='category-title filter-categories' name='${categoryName}' style='text-transform: capitalize; color: white'>
-            ${filterTitle}
+        <a class='category-title filter-categories' name='${categoryName}' style='text-transform: capitalize'>
+            <span>${filterTitle}</span>
             <span id='counter_${categoryName}' class='number-of-checked-boxes' style='color: red'></span>
             <span class='labelArrow' tabindex="0" role="button" aria-label="Toggle Show ${filterTitle} Filters"> ∟ </span>
         </a>
@@ -444,5 +453,35 @@ function updateCheckBoxState(filterParams) {
                 }
             }
         })
+    }
+}
+
+//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
+function showNoneEventHandler(e) {
+    e.target.parentNode.classList.toggle("show-none")
+}
+// shows filters popup on mobile
+function showFiltersEventHandler(e) {
+    let filterToolbar = document.querySelector(".filter-toolbar")
+    filterToolbar.classList.add("show-filters")
+    // Prevents corners of mobile filter toggle from having white corners
+    filterToolbar.childNodes[1].classList.remove("filtersDiv-background")
+}
+// hides filters popup on mobile
+function hideFiltersEventHandler(e) {
+    let filterToolbar = document.querySelector(".filter-toolbar")
+    filterToolbar.classList.remove("show-filters")
+    filterToolbar.childNodes[1].classList.add("filtersDiv-background")
+}
+// cancel button on mobile filters
+function cancelMobileFiltersEventHandler(e) {
+    hideFiltersEventHandler(e)
+    clearAllEventHandler()
+}
+//event handler for keyboard users to click spans when focused
+function tabFocusedKeyDownHandler(e) {
+    // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
+	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
+        document.activeElement.click()
     }
 }
