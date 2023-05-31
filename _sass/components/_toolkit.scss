@@ -49,8 +49,8 @@
 }
 
 .toolkit-flex-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: left;
 }
 
@@ -85,10 +85,10 @@
     margin: 0 auto;
 }
 
-.toolkit-content-container {
-    display: grid;
-    grid-template-columns: 377px 1fr;
-}
+// .toolkit-content-container {
+//     display: grid;
+//     grid-template-columns: 377px 1fr;
+// }
 
 .toolkit-info-container {
     margin: 1rem 0rem 3.5rem;
