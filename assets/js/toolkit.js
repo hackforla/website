@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     document.querySelector(".cancel-mobile-filters").addEventListener("click", function(e) {
         hideFiltersEventHandler(e)
-        window.history.replaceState(null, '', '/toolkit')
+        window.history.replaceState(null, '', '/toolkit/')
         for (let key in currentFilters) {
             currentFilters[key] = []
         }
@@ -439,7 +439,7 @@ function attachEventListenerToFilterTags(filterParams) {
 
             //Attach an event handler to the clear all button
             document.querySelector('.clear-filter-tags').addEventListener('click',function () {
-                window.history.replaceState(null, '', '/toolkit')
+                window.history.replaceState(null, '', '/toolkit/')
                 for (let key in filterParams) {
                     filterParams[key] = []
                 }
