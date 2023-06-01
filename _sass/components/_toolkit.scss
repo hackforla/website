@@ -57,7 +57,13 @@
     color: $color-white
 }
 
-
+.toolkit-filters .filter-tag-container {
+    flex-direction: column;
+    
+    a {
+        color: $color-white;
+    }
+}
 
 .toolkit-flex-item.section-container {
     position: relative;
@@ -285,7 +291,8 @@
         max-width: none;
     }
 
-    .toolkit__card-list .filter-tag-container {
-        margin-top: 10px;
+    .toolkit-filters .filter-tag-container {
+        margin: 10px 10px 0 10px;
+        color: $color-white;
     }
 }

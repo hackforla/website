@@ -391,9 +391,14 @@ function updateFilterTag(filterParams) {
             document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', filterTagComponent(category, item.split('+').join(' ')))
         })
     }
+    
+    if (Object.entries(filterParams).length > 0) {
+        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
+    }
 
     if (document.querySelectorAll('.filter-tag').length === 0) {
         document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove()
+        document.querySelector('.applied-filters').remove()
     }
 }
 
