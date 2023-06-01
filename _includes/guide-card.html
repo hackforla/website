@@ -19,8 +19,8 @@
         <div class="toolkit-info-container">
             {%- if guide.status == 'completed' -%}
                 <h3><a href={{ item.resource-url-completed }}>{{ guide.title }}</a></h3>
-
-            {%- else -%}
+                
+            {%- else -%}  
                 <h3>{{ guide.title }}</h3>
             {%- endif -%}
 
@@ -33,12 +33,12 @@
 
         </div>
         {%- if guide.status == 'work-in-progress' -%}
-            <span class="toolkit-flex-item-status">
+            <span class="toolkit-flex-item-status"> 
                 {%- if guide.resource-url-wip -%}
                     <a href={{ item.resource-url-wip }}>work in progress</a>
                 {%- else -%}
                     work in progress
                 {%- endif -%}
             </span>
-        {%- endif -%}
+        {%- endif -%}  
     </div>
