@@ -20,14 +20,6 @@ section.filter-content-container {
 .page-contain.projects-inner.curr-projects {
   margin: 0px auto;
 }
-.filter-tag-container.top-filter {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  max-width: 800px;
-  flex-direction: row;
-}
 
 a.filter-item {
   text-decoration: none;
@@ -43,7 +35,7 @@ a.filter-item {
 }
 
 .filtersDiv {
-  min-width: 282px;
+  min-width:282px;
 }
 
 //filter container
