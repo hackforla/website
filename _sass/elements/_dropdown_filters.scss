@@ -35,7 +35,7 @@ a.filter-item {
 }
 
 .filtersDiv {
-  width: 390px;
+  min-width:282px;
 }
 
 //filter container
@@ -175,8 +175,7 @@ border-radius: 2.5px;
 }
 .filter-tag-container {
   display: flex;
-  // flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: column;
   list-style: none;
   padding: 0 0 10px 0;
 }
