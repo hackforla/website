@@ -2,7 +2,7 @@
 name: Suggest a feature or new content for HackforLA.org
 about: Describe this issue template's purpose here.
 title: ''
-labels: enhancement
+labels: ['enhancement', 'role missing', 'Feature Missing', 'Complexity: Missing', 'size: missing']
 assignees: ''
 
 ---
