@@ -1,12 +1,13 @@
 {% assign url = include.url %}
 {% assign image = include.image %}
-{% assign name = include.name | downcase %}
+{% assign name = include.name %}
+{% assign lowercaseName = include.name | downcase %}
 
 <a href='{{ url }}' target="_blank" class='resource-link'>
     <li class='resource-card'>
         <!--Where the images will be-->
         <div {% if image %} class='resource-img resource-img-provided' {% else %} role="img" aria-label="{{name}}" class='resource-img' {% endif %}>
-            {% if name == 'github' or name == 'slack' %}
+            {% if lowercaseName == 'github' or lowercaseName == 'slack' %}
                 {% include {{ name | prepend: 'svg/icon-' | append: '-color.svg' | downcase }} %}
             {% elsif name == 'Getting Started' %}
                 {% include svg/logo-hfla-small.svg %}
@@ -18,7 +19,7 @@
         </div>
         <div class='resource-body'>
             <h4 class='resource-title'>
-                {{ name }}
+                {{ include.name }}
             </h4>
         </div>
     </li>
