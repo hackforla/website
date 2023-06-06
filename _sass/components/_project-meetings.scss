@@ -1,18 +1,3 @@
-.covid-notification-banner {
-    background-color: $color-gold;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
-    p {
-        text-align: center;
-        font-weight: bold;
-        margin: 0;
-        padding: 15px 0;
-    }
-}
-
 .calendar-started-page {
     background: $color-darkblue;
     min-height: 100vh;
@@ -20,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} 
 
 .page-card--project-meetings {
     padding: 30px;
