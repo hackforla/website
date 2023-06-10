@@ -60,6 +60,11 @@
 .toolkit-filters .filter-tag-container {
     flex-direction: column;
     
+    .filter-tag {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
     a {
         color: $color-white;
     }
