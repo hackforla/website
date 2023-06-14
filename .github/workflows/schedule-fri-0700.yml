@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v5
         env:
           IN_PROGRESS_COLUMN_ID: ${{ 19304957 }}
         with:
