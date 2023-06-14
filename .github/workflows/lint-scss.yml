@@ -2,9 +2,9 @@ name: Lint SCSS
 
 on:
   pull_request:
-    branches: [gh-pages]
+    branches: [gh-pages, check-version-updates-4823]
   push:
-    branches: [gh-pages]
+    branches: [gh-pages, check-version-updates-4823]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
@@ -22,8 +22,8 @@ jobs:
         uses: github/super-linter@v4.8.1
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: check-version-updates-4823
+          GITHUB_TOKEN: ${{ secrets.TEST_GHAS }}
 
 
           LINTER_RULES_PATH: /
