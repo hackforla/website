@@ -4,17 +4,18 @@ name: Schedule Daily 1100
 on:
   schedule:
     - cron:  '0 11 * * *'
+  workflow_dispatch:
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 't-will-gillis/website'
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
-        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+        token: ${{ secrets.TEST_GHAS }}
     
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
@@ -23,7 +24,7 @@ jobs:
     
     - name: Generate github-data.json
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TEST_GHAS }}
       run: node github-actions/trigger-schedule/github-data/get-project-data.js
 
 
