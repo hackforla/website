@@ -78,6 +78,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04KVG05H3J
       github: https://github.com/chrismenke45
     picture: https://avatars.githubusercontent.com/chrismenke45
+  - name: Drake Nguyen
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04TSESVB4J
+      github: https://github.com/drakenguyen4000
+    picture: https://avatars.githubusercontent.com/drakenguyen4000
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
