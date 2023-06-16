@@ -124,7 +124,9 @@ technologies:
   - React
   - NoSQL
   - Flask
-  - Amazon Cognito / OIDC / OAuth2
+  - Amazon Cognito
+  - OIDC
+  - OAuth2
   - MongoDB
 location:
   - Remote
