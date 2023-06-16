@@ -6,6 +6,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'check-version-updates-4831'
 
 jobs:
   generate-labels-artifact:
@@ -16,17 +17,17 @@ jobs:
       PR_NUMBER: ${{ github.event.number }}
       SCRIPT_PATH: './github-actions/trigger-pr/set-pr-labels.js'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: parse-pr-body
         name: 'Parse the pull request body for all linked issues'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const { listIssuesFromPRBody } = require('${{ env.SCRIPT_PATH }}');
             return listIssuesFromPRBody({ context, core });
       - id: compile-labels
         name: 'Compile labels from linked issues'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const { listLabelsFromIssues } = require('${{ env.SCRIPT_PATH }}');
