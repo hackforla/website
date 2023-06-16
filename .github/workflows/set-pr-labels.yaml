@@ -6,7 +6,6 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
-      - 'check-version-updates-4828'
 
 jobs:
   generate-labels-artifact:
