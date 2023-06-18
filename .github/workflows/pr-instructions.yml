@@ -10,11 +10,11 @@ jobs:
   Add-Pull-Request-Instructions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # Create the message to post
       - name: Create Instruction
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: instruction
         with:
           script: |
