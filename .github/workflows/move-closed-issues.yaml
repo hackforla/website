@@ -21,4 +21,4 @@ jobs:
         with:
           project: Project Board
           column: ${{ steps.sort-closed-issues.outputs.result }}
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          repo-token: ${{ secrets.TEST_GHAS }}
