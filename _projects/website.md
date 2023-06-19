@@ -1,9 +1,9 @@
 ---
 identification: '130000551'
-title: Hackforla.org Website
+title: Hack for LA Site
 description: The Hack for LA Site (hackforla.org) is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
 image: /assets/images/projects/website.png
-alt: 'Hackforla.org Website'
+alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
@@ -78,6 +78,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04KVG05H3J
       github: https://github.com/chrismenke45
     picture: https://avatars.githubusercontent.com/chrismenke45
+  - name: Drake Nguyen
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04TSESVB4J
+      github: https://github.com/drakenguyen4000
+    picture: https://avatars.githubusercontent.com/drakenguyen4000
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

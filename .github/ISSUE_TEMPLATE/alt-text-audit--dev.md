@@ -3,8 +3,7 @@ name: Alt Text Audit - Dev
 about: Developer template to update an alt text
 title: "[INSERT PAGE HERE]: Update alt text for [INSERT IMAGE NAME HERE] image to
   adhere to WCAG"
-labels: 'Feature: Accessibility, good first issue, ready for dev lead, role: back
-  end/devOps, role: front end, size: 1pt'
+labels: ['Feature: Accessibility', 'good first issue', 'ready for dev lead', 'role: back end/devOps', 'role: front end', 'size: 1pt', 'Complexity: Missing']
 assignees: ''
 
 ---
