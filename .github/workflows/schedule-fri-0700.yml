@@ -3,6 +3,7 @@ name: Schedule Friday 0700
 on:
   schedule:
     - cron:  '0 7 * * 5'
+  workflow_dispatch:
 
 jobs:
   Add-Update-Label-to-Issues-Weekly:
@@ -11,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/github-script@v4
         env:
-          IN_PROGRESS_COLUMN_ID: ${{ secrets.IN_PROGRESS_COLUMN_ID }}
+          IN_PROGRESS_COLUMN_ID: ${{ 19304957 }}
         with:
           script: |
             const { IN_PROGRESS_COLUMN_ID } = process.env;
