@@ -381,6 +381,10 @@ function updateFilterTagDisplayState(filterParams){
         })
 
     }
+
+    if (Object.entries(filterParams). length > 0) {
+        document.querySelector('.filter-tag-container').insertAdjacentHTML('afterbegin', `<h4 class="applied-filters">Applied Filters</h4>`)
+    }
 }
 
     /**

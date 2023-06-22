@@ -17,7 +17,7 @@ jobs:
             const sortIssues = script({context})
             return sortIssues
           result-encoding: string
-      - uses: alex-page/github-project-automation-plus@v0.8.1
+      - uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: ${{ steps.sort-closed-issues.outputs.result }}
