@@ -1,20 +1,20 @@
 name: Schedule Daily 1100
 
 # Run this action every day at 3am Pacific (11 am UTC)
-on:
-  schedule:
-    - cron:  '0 11 * * *'
+on: workflows_dispatch
+  # schedule:
+  #   - cron:  '0 11 * * *'
 
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'LOSjr4/website'
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
-        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN_LOS }}
     
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1
