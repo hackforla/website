@@ -9,17 +9,11 @@ alt: 'Guides Team'
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
   - name: Bonnie Wolfe
-    role: Product Manager
+    role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Bukola Ogunleye
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02617GM7QX'
-      github: 'https://github.com/SheIsBukki'
-    picture: https://avatars.githubusercontent.com/SheIsBukki
   - name: Sarah Edwards
     role: Product Manager
     links:
@@ -32,12 +26,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
       github: 'https://github.com/seannwvong'
     picture: https://avatars.githubusercontent.com/seannwvong
-  - name: Prakhar Singh
-    role: UI/UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U038R24FU3S'
-      github: 'https://github.com/designer2209'
-    picture: https://avatars.githubusercontent.com/designer2209
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
