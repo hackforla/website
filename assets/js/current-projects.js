@@ -317,14 +317,16 @@ function updateFilterFrequency(){
     /**
      * Filters listed in the url parameter are checked or unchecked based on filter params
  */
-function updateCheckBoxState(filterParams){
-    document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
-        if(checkBox.name in filterParams){
-            let args = filterParams[checkBox.name]
-            args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
-        }
-    })
-}
+    function updateCheckBoxState(filterParams){
+        document.querySelectorAll("input[type='checkbox']").forEach((checkBox) => {
+          if (checkBox.name in filterParams){ 
+            let args = filterParams[checkBox.name];
+            checkBox.checked = args.includes(checkBox.id);
+          } else {
+            checkBox.checked = false;
+          }
+        });
+      }
 
     /**
      * Update category counter based on filter params
