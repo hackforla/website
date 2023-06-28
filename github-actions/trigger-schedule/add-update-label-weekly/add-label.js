@@ -309,7 +309,7 @@ function formatComment(assignees, labelString) {
     dateStyle: 'full',
     timeStyle: 'short',
     timeZone: 'America/Los_Angeles',
-    timeZoneName: 'short',
+    // timeZoneName: 'short',
   }
   const cutoffTimeString = threeDayCutoffTime.toLocaleString('en-US', options);
   let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString).replace('${label}', labelString);
