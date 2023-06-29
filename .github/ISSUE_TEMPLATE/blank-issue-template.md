@@ -8,7 +8,8 @@ assignees: ''
 ---
 
 ### Overview
-REPLACE THIS TEXT - Clearly state the purpose of this issue in 2 sentences or less
+REPLACE THIS TEXT - Clearly state the purpose of this issue in 2 sentences or less.  Written as 
+_We need to do X for Y reason_
 
 ### Action Items
 REPLACE THIS TEXT - List the research to be done, or the steps to be completed.
