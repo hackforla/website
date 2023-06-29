@@ -106,7 +106,7 @@
 
   	for(const [key,value] of Object.entries(roleHash) ){
 			if (key === '') {
-				continue
+				continue 
 			}
 			let cloneFilterTemplate = filterTemplate.content.firstElementChild.cloneNode(true);
 			cloneFilterTemplate.querySelector("input").value = `role_${key}`;
