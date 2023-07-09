@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3    
       # Check if the issue has required labels
       - name: Check Labels
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: check-labels
         with:
           script: |
@@ -33,7 +33,7 @@ jobs:
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's results
         name: Post Comment
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: post-comment
         with:
           script: |
@@ -51,7 +51,7 @@ jobs:
 
       # Check if the issue has the required roles
       - name: Check Labels Prelim
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: check-labels-prelim
         with:
           script: |
@@ -63,7 +63,7 @@ jobs:
       # Post the comment based on the result of the previous step
       - name: Post assigning issue comment
         id: assigned-comment
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
