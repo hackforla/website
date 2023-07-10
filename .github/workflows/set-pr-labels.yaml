@@ -39,7 +39,7 @@ jobs:
           echo ${{ steps.compile-labels.outputs.result }} > '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
       - id: upload-labels-artifact
         name: 'Upload labels artifact'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pr-labels
           path: '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
