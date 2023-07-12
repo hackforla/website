@@ -145,11 +145,21 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
   for (let i = timeline.length - 1; i >= 0; i--) {
     let eventObj = timeline[i];
     let eventType = eventObj.event;
+    // isLinkedIssue checks if the 'body'(comment) of the event mentions fixes/resolves/closes this current issue
+    let isOpenLinkedPullRequest = eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && eventObj.source.issue.state === 'open';
 
-    // if cross-referenced and fixed/resolved/closed by assignee, remove all update-related labels, remove all three labels
-    if (eventType === 'cross-referenced' && isLinkedIssue(eventObj, issueNum) && assignees.includes(eventObj.actor.login)) { // isLinkedIssue checks if the 'body'(comment) of the event mentioned closing/fixing/resolving this current issue
-      console.log(`Issue #${issueNum} fixed/resolved/closed by assignee, remove all update-related labels`);
+    // if cross-referenced and fixed/resolved/closed by assignee and the pull
+    // request is open, remove all update-related labels
+    // Once a PR is opened, we remove labels because we focus on the PR not the issue.
+    if (isOpenLinkedPullRequest && assignees.includes(eventObj.actor.login)) {
+      console.log(`Assignee fixes/resolves/closes Issue #${issueNum} in with an open pull request, remove all update-related labels`);
       return { result: false, labels: '' } // remove all three labels
+    }
+
+    // If the event is a linked PR and the PR is closed, it will continue through the
+    // rest of the conditions to receive the appropriate label.
+    else if(eventType === 'cross-referenced' && eventObj.source.issue.state === 'closed') {
+      console.log(`Pull request linked to Issue #${issueNum} is closed.`);
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
