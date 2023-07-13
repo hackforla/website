@@ -5,6 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'updates-wr-pr-instructions-4934'
 
 jobs:
   Add-Pull-Request-Instructions:
