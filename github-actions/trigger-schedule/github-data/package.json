@@ -7,7 +7,7 @@
     "@actions/core": "^1.10.0",
     "@actions/github": "^2.0.0",
     "@actions/http-client": ">=2.1.0",
-    "@octokit/rest": "^18.0.6",
+    "@octokit/rest": "^20.0.1",
     "lodash": "^4.17.21",
     "true-github-contributors": "^1.0.5"
   },
