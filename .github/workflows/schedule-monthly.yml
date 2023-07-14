@@ -8,7 +8,7 @@ jobs:
   list-inactive-members:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # gets a list of website-write team members with no open issues, returns a list of member's github handles
       - name: Get List
