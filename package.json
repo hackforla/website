@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "pre-commit": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -18,9 +18,9 @@
     "lint-staged": "^13.2.3",
     "stylelint": "^15.10.1"
   },
-  "lint-staged": {
-    "*.css": "stylelint",
-    "*.scss": "stylelint --syntax=scss",
-    "*.js": "eslint --fix"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
   }
 }
