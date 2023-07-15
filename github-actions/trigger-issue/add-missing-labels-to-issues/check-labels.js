@@ -112,8 +112,3 @@ async function addLabels(labelsToAdd, currentLabels) {
 }
 
 module.exports = main
-
-var testObj = { hello: 'world', };
-var testObj1 = { 'hello': "world" }
-const testFunc = () => { }
-const testFunc1 = function (el) { return 1 + 1 }
