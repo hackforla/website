@@ -21,7 +21,7 @@ jobs:
     - name: Save vrms_data.json
       run: curl -o _data/external/vrms_data.json https://www.vrms.io/api/recurringevents
 
-    - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+    - uses: stefanzweifel/git-auto-commit-action@v4.16.0
       with:
         # Optional glob pattern of files which should be added to the commit
         file_pattern: _data/external/vrms_data.json

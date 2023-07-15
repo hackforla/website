@@ -28,7 +28,7 @@ jobs:
 
 
     - name: Auto Commit
-      uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      uses: stefanzweifel/git-auto-commit-action@v4.16.0
       with:
         # Optional glob pattern of files which should be added to the commit
         file_pattern: _data/external/github-data.json
