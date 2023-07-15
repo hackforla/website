@@ -1,12 +1,11 @@
 name: Lint JS
 
-on: [push, pull_request]
 
-# on:
-#   pull_request:
-#     branches: [gh-pages]
-#   push:
-#     branches: [gh-pages]
+on:
+  pull_request:
+    branches: [github-actions-implement-eslint-1442]
+  push:
+    branches: [github-actions-implement-eslint-1442]
 
 jobs:
   build:
