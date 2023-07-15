@@ -1,0 +1,32 @@
+name: Lint JS
+
+on:
+  pull_request:
+    branches: [gh-pages]
+  push:
+    branches: [gh-pages]
+
+jobs:
+  build:
+    name: Lint JS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
+
+      # Run Linter against code base #
+      - name: Lint JS
+        uses: super-linter/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+          LINTER_RULES_PATH: /
+          CSS_FILE_NAME: .eslint.json
+          VALIDATE_JAVASCRIPT_ES: true
