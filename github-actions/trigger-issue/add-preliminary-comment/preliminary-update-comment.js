@@ -6,10 +6,10 @@ var context
 
 /**
  * @description - This function is the entry point into the javascript file, it formats the md file based on the result of the previous step and then posts it to the issue
- * @param {Object} g - github object  
- * @param {Object} c - context object 
+ * @param {Object} g - github object
+ * @param {Object} c - context object
  * @param {Boolean} actionResult - the previous gh-action's result
- * @param {Number} issueNum - the number of the issue where the post will be made 
+ * @param {Number} issueNum - the number of the issue where the post will be made
  */
 
 async function main({ g, c }, { shouldPost, issueNum }){
@@ -32,13 +32,14 @@ async function main({ g, c }, { shouldPost, issueNum }){
 
 /**
  * Function that returns the timeline of an issue.
- * @param {Number} issueNum the issue's number 
+ * @param {Number} issueNum the issue's number
  * @returns an Array of Objects containing the issue's timeline of events
  */
 
  async function getTimeline(issueNum){
 	let history = []
-	let page = 1
+   let page = 1
+   // eslint-disable-next-line no-constant-condition
   while (true) {
     try {
       const results = await github.issues.listEventsForTimeline({
@@ -48,18 +49,19 @@ async function main({ g, c }, { shouldPost, issueNum }){
         per_page: 100,
         page: page,
       });
-      if (results.data.length){
-	      history = history.concat(results.data);
+      if (results.data.length) {
+        history = history.concat(results.data);
       } else {
         break
       }
     } catch (err){
-      console.log(error);
+      console.log(err);
 			continue
     }
     finally{
       page++
     }
+    // eslint-disable-next-line no-constant-condition
   }
 	return history
 }
@@ -126,10 +128,10 @@ async function postComment(issueNum, comment){
       issue_number: issueNum,
       body: comment,
     })
-  } 
+  }
   catch(err){
     throw new Error(err);
   }
 }
-  
+
 module.exports = main

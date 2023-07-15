@@ -33,7 +33,6 @@ async function main({ g, c }, columnId) {
   const issueNums = getIssueNumsFromColumn(columnId);
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum);
-    const timelineArray = Array.from(timeline);
     const assignees = await getAssignees(issueNum);
     // Error catching.
     if (assignees.length === 0) {
@@ -81,7 +80,7 @@ async function* getIssueNumsFromColumn(columnId) {
       });
       if (results.data.length) {
         for (let card of results.data) {
-          if (card.hasOwnProperty('content_url')) {
+          if ('content_url' in card) {
             const arr = card.content_url.split('/');
             yield arr.pop()
           }
@@ -105,6 +104,7 @@ async function* getIssueNumsFromColumn(columnId) {
 async function getTimeline(issueNum) {
   let arra = []
   let page = 1
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     try {
       const results = await github.issues.listEventsForTimeline({
@@ -114,19 +114,23 @@ async function getTimeline(issueNum) {
         per_page: 100,
         page: page,
       });
+      console.log(results, 'results')
+      console.log(arra, 'arra')
       if (results.data.length) {
         arra = arra.concat(results.data);
       } else {
         break
       }
     } catch (err) {
-      console.log(error);
+      console.log(err);
       continue
     }
     finally {
       page++
+      console.log(page, 'page')
     }
   }
+  // eslint-enable-next-line no-undef
   return arra
 }
 
@@ -291,7 +295,7 @@ async function getAssignees(issueNum) {
       issue_number: issueNum,
     });
     const assigneesData = results.data.assignees;
-    assigneesLogins = filterForAssigneesLogins(assigneesData);
+    const assigneesLogins = filterForAssigneesLogins(assigneesData);
     return assigneesLogins
   } catch (err) {
     console.error(`Function failed to get assignees. Please refer to the error below: \n `, err);
@@ -299,7 +303,7 @@ async function getAssignees(issueNum) {
   }
 }
 function filterForAssigneesLogins(data) {
-  logins = [];
+  const logins = [];
   for (let item of data) {
     logins.push(item.login);
   }
