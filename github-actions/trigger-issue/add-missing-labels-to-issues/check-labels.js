@@ -9,8 +9,8 @@ var context
 
 /**
  * Check the labels of an issue, and add/remove labels as necessary
- * @param {Object} g - github object  
- * @param {Object} c - context object 
+ * @param {Object} g - github object
+ * @param {Object} c - context object
  * @returns - returns an object with the action's result, which is passed on to the next action
  */
 async function main({ g, c }) {
@@ -74,7 +74,7 @@ function checkLabels(labels) {
       labelsToAdd.push(LABEL_MISSING[i])
     }
   })
-  
+
   return labelsToAdd
 }
 
@@ -112,3 +112,9 @@ async function addLabels(labelsToAdd, currentLabels) {
 }
 
 module.exports = main
+
+const testObj = { hello: 'world', };
+const testObj1 = { 'hello': "world" }
+const testFunc = () => { }
+const testFunc1 = function (el) { return 1 + 1 }
+
