@@ -8,19 +8,19 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:js": "eslint '**/*.js'",
-    "lint:css": "stylelint '**/*.css'"
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.45.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "stylelint": "^15.10.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:js && npm run lint:css"
-    }
+  "lint-staged": {
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss",
+    "*.js": "eslint --fix"
   }
 }
