@@ -1,0 +1,109 @@
+name: New Issue Approval From Ice Box
+
+on:
+  issues:
+    types: [edited]
+    filters:
+      project_column:
+        project: "Project Board"
+        column: "Ice Box"
+
+jobs:
+  Log-Trigger:
+    runs-on: ubuntu-latest
+    steps:
+     - run: echo "🎉 The job was triggered"
+
+
+  Check_Dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check dependencies
+        id: check
+        uses: actions/github-script@v3
+        with:
+          # Script finds the "Dependency" section and extracts the task list. 
+          # If there is no list then the job stops and nothing happens
+          # If everything on the list is linked to an issue and checked off then the job procceeds 
+          script: |
+            const issueText = context.payload.issue.body;
+            console.log("The issue body is:", issueText);
+            
+            function extractDependencySection(markdownText) {
+              const lines = markdownText.split('\n');
+              let isDependencySection = false;
+              const dependencies = [];
+
+              for (const line of lines) {
+                if (line.startsWith('### Dependency')) {
+                  isDependencySection = true;
+                } else if (line.startsWith('###')) {
+                  break;
+                } else if (isDependencySection && line.trim().startsWith('- [')) {
+                  dependencies.push(line.trim());
+                }
+              }
+
+              return dependencies;
+            }
+            
+            function checkTasksCompletion(dependencies) {
+              if (dependencies.length === 0) {
+                return false
+              }
+            
+              for (const dependency of dependencies) {
+                const isComplete = /- \[x\]/.test(dependency);
+                const hasIssueLinked = /#(\d+)/.test(dependency);
+
+                if (!isComplete || !hasIssueLinked) {
+                    console.log("Dependency:", dependency)
+                    console.log("iscomplete:", isComplete)
+                    console.log("LinkedIssue:", hasIssueLinked)
+                  return false;
+                }
+              }
+              return true;
+            } 
+            
+            const dependencies = extractDependencySection(issueText);
+            console.log("dependencies:", dependencies);
+            
+            const areTasksComplete = checkTasksCompletion(dependencies);
+            console.log("completion:", areTasksComplete)
+            
+            if( areTasksComplete == true) {
+                core.setOutput('run_next_job', 'yes');
+            }
+    outputs:
+      run_next_job: ${{steps.check.outputs.run_next_job}}
+      
+  Add_Ready_For_Dev_Lead_Label:
+    needs: Check_Dependencies
+    if: needs.Check_Dependencies.outputs.run_next_job == 'yes'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add Ready For Dev Lead Label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["ready for dev lead"]
+            })
+            
+  Move_To_New_Issue_Approval_Column:
+    needs: Check_Dependencies
+    if: needs.Check_Dependencies.outputs.run_next_job == 'yes'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Move To New Issue Approval Column
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: Project Board
+          column: New Issue Approval
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
