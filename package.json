@@ -1,0 +1,26 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Hack for LA's website: https://www.hackforla.org",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:js": "eslint '**/*.js'",
+    "lint:css": "stylelint '**/*.css'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "husky": "^8.0.3",
+    "stylelint": "^15.10.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:js && npm run lint:css"
+    }
+  }
+}
