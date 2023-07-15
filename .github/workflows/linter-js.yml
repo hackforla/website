@@ -29,7 +29,7 @@ jobs:
 
 
           LINTER_RULES_PATH: /
-          JAVASCRIPT_ES_CONFIG_FILE: .eslint.json
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           JAVASCRIPT_DEFAULT_STYLE: standard
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_JAVASCRIPT_STANDARD: true
