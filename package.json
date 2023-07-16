@@ -14,8 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "prettier": "3.0.0",
     "stylelint": "^15.10.1"
   },
   "husky": {
