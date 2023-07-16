@@ -7,5 +7,9 @@
 
   // Format a file on save. A formatter must be available, the file must not be saved after delay, and the
   // editor must not be shutting down.
-  "editor.formatOnSave": false
+  // "editor.formatOnSave": false
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false
 }
