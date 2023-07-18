@@ -96,7 +96,7 @@ async function addLabels(labelsToAdd, currentLabels) {
   ])]
 
   try {
-    const results = await github.issues.setLabels({
+    const results = await github.rest.issues.setLabels({
       owner: owner,
       repo: repo,
       issue_number: issueNum,

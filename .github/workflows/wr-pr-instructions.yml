@@ -10,12 +10,12 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download artifact
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             // Retrieve metadata about the artifacts of the last workflow
             // https://octokit.github.io/rest.js/v18#actions-list-workflow-run-artifacts
-            const artifacts = await github.actions.listWorkflowRunArtifacts({
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
                run_id: context.payload.workflow_run.id,
@@ -24,7 +24,7 @@ jobs:
 
             // Download artifact with GET API
             // https://octokit.github.io/rest.js/v18#actions-download-artifact
-            var download = await github.actions.downloadArtifact({
+            var download = await github.rest.actions.downloadArtifact({
                owner: context.repo.owner,
                repo: context.repo.repo,
                artifact_id: artifactData.id,
@@ -34,7 +34,7 @@ jobs:
             fs.writeFileSync('${{github.workspace}}/artifact.zip', Buffer.from(download.data));
       - run: unzip artifact.zip
 
-      - uses: actions/github-script@v4
+      - uses: actions/github-script@v6
         id: artifact
         with:
           script: |
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v3
       # Create the message to post
       - name: Post Comment
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const artifact = ${{ steps.artifact.outputs.result }};

@@ -818,11 +818,15 @@ git push --set-upstream origin update-give-link-2093
   ```
   Fixes #replace_this_text_with_the_issue_number
 
-  ### What changes did you make and why did you make them ?
+  ### What changes did you make?
+    -
+    -
+    -
 
-  -
-  -
-  -
+  ### Why did you make the changes (we will use this info to test)?
+    -
+    -
+    -
 
   ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
   <!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->

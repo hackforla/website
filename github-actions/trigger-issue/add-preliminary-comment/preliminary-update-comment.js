@@ -41,7 +41,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 	let page = 1
   while (true) {
     try {
-      const results = await github.issues.listEventsForTimeline({
+      const results = await github.rest.issues.listEventsForTimeline({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: issueNum,
@@ -120,7 +120,7 @@ function formatComment({ replacementString, placeholderString, filePathToFormat,
 
 async function postComment(issueNum, comment){
   try{
-    await github.issues.createComment({
+    await github.rest.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issueNum,
