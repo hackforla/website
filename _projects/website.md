@@ -48,12 +48,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Brian Mui
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04MFMMNJRH
-      github: https://github.com/bootcamp-brian
-    picture: https://avatars.githubusercontent.com/bootcamp-brian
   - name: MJ Shelton
     role: Merge Team
     links:
