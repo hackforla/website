@@ -3,9 +3,9 @@ name: Lint JS
 
 on:
   pull_request:
-    branches: [github-actions-implement-eslint-1442]
+    branches: [gh-pages]
   push:
-    branches: [github-actions-implement-eslint-1442]
+    branches: [gh-pages]
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
 
       # Run Linter against code base #
       - name: Lint JS
-        uses: super-linter/super-linter@v5
+        uses: github/super-linter@v5.0.0
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: gh-pages
@@ -29,5 +29,5 @@ jobs:
 
 
           LINTER_RULES_PATH: /
-          CSS_FILE_NAME: .eslint.json
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           VALIDATE_JAVASCRIPT_ES: true
