@@ -3,7 +3,7 @@
   //  - \n: LF
   //  - \r\n: CRLF
   //  - auto: Uses operating system specific end of line character.
-  "files.eol": "\n",
+  // "files.eol": "\n",
 
   // Format a file on save. A formatter must be available, the file must not be saved after delay, and the
   // editor must not be shutting down.
