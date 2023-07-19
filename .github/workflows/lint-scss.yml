@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Lint SCSS
-        uses: super-linter/super-linter/slim@v5.0.0
+        uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: gh-pages
