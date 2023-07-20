@@ -13,17 +13,21 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
   https://www.gun.io/blog/pass-arguments-to-embedded-javascript-tutorial-example
 */
 const scriptTag = document.getElementById("projectScript");
-const projectId = scriptTag.getAttribute("projectId");
+const projectId = scriptTag.getAttribute("projectId").split(", ");
 // Search for correct project
-let project = null;
-// Starts at 1 now since the first element is a time stamp
-for (let i = 1; i < projects.length; i++){
-    let itemId = projects[i].id.toString();
-    if(itemId == projectId){
-        project = projects[i];
-        break;
+let project = [];
+
+for (let i = 0; i < projectId.length; i++){
+    // Starts at 1 now since the first element is a time stamp
+    for (let k = 1; k < projects.length; k++){
+        let itemId = projects[k].id.toString();
+        if(itemId == projectId[i]){
+            project.push(projects[k])
+        }
     }
 }
+
+console.log(project);
 
 /*
   Assign hero background image
