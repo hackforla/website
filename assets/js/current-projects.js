@@ -118,7 +118,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
+                            "tools": {{ project.tools | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
@@ -522,9 +522,12 @@ function projectCardComponent(project){
                 `
                 <div class="project-tools">
                 <strong>Tools: </strong>
-                ${ project.tools }
+                ${(Array.isArray(project.tools) ? project.tools : project.tools.split(','))
+                    .map(tool => `<p class='project-card-field-inline'> ${tool}</p>`)
+                    .join(", ")
+                }
                 </div>
-                `:""
+                `: ""
                 }
 
                 ${project.looking ? "" : ""
