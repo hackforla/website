@@ -15,20 +15,29 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
 const scriptTag = document.getElementById("projectScript");
 const projectId = scriptTag.getAttribute("projectId").split(", ");
 // Search for correct project
-let project = [];
-
+let projectArr = [];
+// Checks if more than one repo id
 for (let i = 0; i < projectId.length; i++){
     // Starts at 1 now since the first element is a time stamp
     for (let k = 1; k < projects.length; k++){
         let itemId = projects[k].id.toString();
         if(itemId == projectId[i]){
-            project.push(projects[k])
+            projectArr.push(projects[k])
         }
     }
 }
 
-console.log(project);
+let project = projectArr[0];
 
+// Merge the language sections
+if (projectArr.length > 1){
+    let languagesArr = [];
+    for (let i = 0; i < projectArr.length; i++) {
+        languagesArr = languagesArr.concat(projectArr[i].languages) 
+    }
+    let set = new Set(languagesArr);
+    project.languages = Array.from(set);
+}
 /*
   Assign hero background image
 */
