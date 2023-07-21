@@ -1,52 +1,52 @@
 ---
-identification: '130000551'
+identification: "130000551"
 title: Hack for LA Site
 description: The Hack for LA Site (hackforla.org) is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
 image: /assets/images/projects/website.png
-alt: 'Hack for LA Site'
+alt: "Hack for LA Site"
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
     links:
-      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
-      github: 'https://github.com/ExperimentsInHonesty'
+      slack: "https://hackforla.slack.com/team/UE1UG1YFP"
+      github: "https://github.com/ExperimentsInHonesty"
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Sarah Sanger
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U02M686LYET'
-      github: 'https://github.com/blulady'
+      slack: "https://hackforla.slack.com/team/U02M686LYET"
+      github: "https://github.com/blulady"
     picture: https://avatars.githubusercontent.com/blulady
   - name: Phillip Sanchez
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
-      github: 'https://github.com/plang-psm'
+      slack: "https://hackforla.slack.com/team/U03UG3VCRK6"
+      github: "https://github.com/plang-psm"
     picture: https://avatars.githubusercontent.com/plang-psm
   - name: Roslyn Wythe
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
+      slack: "https://hackforla.slack.com/team/U046PD8UT55"
+      github: "https://github.com/roslynwythe"
     picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Will Gillis
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
-      github: 'https://github.com/t-will-gillis'
+      slack: "https://hackforla.slack.com/team/U043LGHSZFT"
+      github: "https://github.com/t-will-gillis"
     picture: https://avatars.githubusercontent.com/t-will-gillis
   - name: Danny Do
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
-      github: 'https://github.com/Adastros'
+      slack: "https://hackforla.slack.com/team/U048G8S2YAK"
+      github: "https://github.com/Adastros"
     picture: https://avatars.githubusercontent.com/Adastros
   - name: Christina Or
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
-      github: 'https://github.com/christinaor'
+      slack: "https://hackforla.slack.com/team/U04J1GBA6QP"
+      github: "https://github.com/christinaor"
     picture: https://avatars.githubusercontent.com/christinaor
   - name: Brian Mui
     role: Merge Team
@@ -72,15 +72,21 @@ leadership:
       slack: https://hackforla.slack.com/team/U04TSESVB4J
       github: https://github.com/drakenguyen4000
     picture: https://avatars.githubusercontent.com/drakenguyen4000
+  - name: Ronald Paek
+    role: Merge Team
+    links:
+      slack: "https://hackforla.slack.com/team/U04RS2BCESX"
+      github: "https://github.com/ronaldpaek"
+    picture: https://avatars.githubusercontent.com/ronaldpaek
 links:
   - name: Wiki
-    url: 'https://github.com/hackforla/website/wiki'
+    url: "https://github.com/hackforla/website/wiki"
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/C4UM52W93'
+    url: "https://hackforla.slack.com/archives/C4UM52W93"
   - name: GitHub
-    url: 'https://github.com/hackforla/website'
+    url: "https://github.com/hackforla/website"
   - name: Site
-    url: 'https://www.hackforla.org'
+    url: "https://www.hackforla.org"
 looking:
   - category: UI/UX
     skill: UI (wireframes)
