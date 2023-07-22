@@ -72,7 +72,7 @@ leadership:
       slack: https://hackforla.slack.com/team/U04TSESVB4J
       github: https://github.com/drakenguyen4000
     picture: https://avatars.githubusercontent.com/drakenguyen4000
-   - name: Ronald Paek
+  - name: Ronald Paek
     role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
