@@ -10,6 +10,9 @@
       "sourceType": "module"
     },
     "rules": {
-
+      "no-mixed-spaces-and-tabs": "off",
+      "no-unused-vars": "off",
+      "no-extra-semi": "off",
+      "no-prototype-builtins": "off"
     }
 }
