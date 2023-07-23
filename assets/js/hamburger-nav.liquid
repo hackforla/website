@@ -1,0 +1,14 @@
+---
+title: hamburger nav file
+---
+
+{% assign burgerImage = include svg/icon-hamburger-nav.svg %}
+{% assign burgerImageX = include svg/icon-hamburger-nav-x.svg %}
+
+<script>
+    // This is a global variable that your JavaScript file can access
+    window.burgerImage = "{{ burgerImage }}";
+    window.burgerImageX = "{{ burgerImageX }}";
+</script>
+
+<script src="hamburger-nav.js"></script>
