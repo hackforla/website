@@ -118,7 +118,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
+                            "tools": {{ project.tools | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
@@ -317,14 +317,16 @@ function updateFilterFrequency(){
     /**
      * Filters listed in the url parameter are checked or unchecked based on filter params
  */
-function updateCheckBoxState(filterParams){
-    document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
-        if(checkBox.name in filterParams){
-            let args = filterParams[checkBox.name]
-            args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
-        }
-    })
-}
+    function updateCheckBoxState(filterParams){
+        document.querySelectorAll("input[type='checkbox']").forEach((checkBox) => {
+          if (checkBox.name in filterParams){ 
+            let args = filterParams[checkBox.name];
+            checkBox.checked = args.includes(checkBox.id);
+          } else {
+            checkBox.checked = false;
+          }
+        });
+      }
 
     /**
      * Update category counter based on filter params
@@ -520,9 +522,12 @@ function projectCardComponent(project){
                 `
                 <div class="project-tools">
                 <strong>Tools: </strong>
-                ${ project.tools }
+                ${(Array.isArray(project.tools) ? project.tools : project.tools.split(','))
+                    .map(tool => `<p class='project-card-field-inline'> ${tool}</p>`)
+                    .join(", ")
+                }
                 </div>
-                `:""
+                `: ""
                 }
 
                 ${project.looking ? "" : ""

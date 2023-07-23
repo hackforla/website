@@ -78,27 +78,18 @@
 }
 
 .donation-gif {
-    box-shadow: 0px 2px 4px 0px #00000040;       
+    box-shadow: 0px 2px 4px 0px #00000040;
 }
 
 .donation-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    p {
-        margin-top: 20px;
-        margin-left: 20px;
-    }
 }
 
 .donation-body  {
     p {
-        margin-left: -10px;
         font-size: 18px;
-    }
-
-    ol {
-        padding-left: 5px;
     }
     
     li {
@@ -107,19 +98,19 @@
 }
 
 .donation-footer {
-    margin-left: -10px;
+    margin-top: 20px;
     font-style: italic;
 }
 
 @media #{$bp-tablet-up} {
-    .donation-grid{
+    .donation-grid {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
         padding: 20px;
         text-align: left;  
         align-items: flex-start;
-        font-size:18px;         
+        font-size: 18px;         
 
         .donation-body {
             grid-column: 1 / span 1;
@@ -144,7 +135,7 @@
 
         .donation-footer {
             max-width: 3340px;
-            margin: 20px 0px 0px -10px;
+            margin: 48px 0px 0px -10px;
             padding: 0px 48px 0px 60px;
             font-size: 15px;
         }

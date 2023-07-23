@@ -1,5 +1,6 @@
 name: "Github Actions"
 description: This is to create a new GHA
+labels: ['role missing', 'Complexity: Missing', 'Feature: Board/GitHub Maintenance', 'size: missing', 'Draft']
 title: "Sample form for GitHub actions "
 body:
   - type: input
