@@ -3,9 +3,9 @@ name: Lint JS
 
 on:
   pull_request:
-    branches: [gh-pages]
+    # branches: [gh-pages]
   push:
-    branches: [gh-pages]
+    # branches: [gh-pages]
 
 jobs:
   build:
