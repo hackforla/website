@@ -101,6 +101,7 @@ function retrieveProjectDataFromCollection(){
                 "project": {
                             'id': "{{project.id | default: 0}}",
                             'identification': {{project.identification | default: 0}},
+                            'additional-repo-ids': {{project.additional-repo-ids | default: 0}},
                             "status": "{{ project.status }}"
                             {%- if project.image -%},
                             "image": '{{ project.image }}'
@@ -141,8 +142,15 @@ function retrieveProjectDataFromCollection(){
     projectData.forEach((data,i) => {
         const { project } = data;
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
+        const secMatchingProject = projectLanguagesArr.find(x=> x.id === project['additional-repo-ids']);
         if(matchingProject) {
-            project.languages = matchingProject.languages
+            project.languages = matchingProject.languages;
+            
+            if(project['additional-repo-ids'] !== 0){
+                const langArr = [...matchingProject.languages, ...secMatchingProject.languages];
+                let set = new Set(langArr);
+                project.languages = Array.from(set);
+            }
         }
     })
     return projectData;
