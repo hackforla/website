@@ -30,7 +30,8 @@ for (let i = 0; i < projectIdArr.length; i++){
         }
     }
 }
-
+/* data other than languages is taken from the project whose 
+ repo id is paired with key "identification" on the md file */
 const project = projectObjArr[0];
 
 // Merge the language sections
