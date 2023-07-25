@@ -15,26 +15,29 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
 const scriptTag = document.getElementById("projectScript");
 const projectId = scriptTag.getAttribute("projectId");
 const moreProjectIds = scriptTag.getAttribute("moreProjectIds").split(", ");
+const projectIdArr = [projectId, ...moreProjectIds];
+
 // Search for correct project
-let projectArr = [];
-// Checks if more than one repo id
-for (let i = 0; i < projectId.length; i++){
+const projectObjArr = [];
+
+// loops through projectIdArr and pushes project obj to projectObjArr 
+for (let i = 0; i < projectIdArr.length; i++){
     // Starts at 1 now since the first element is a time stamp
     for (let k = 1; k < projects.length; k++){
         let itemId = projects[k].id.toString();
-        if(itemId == projectId[i]){
-            projectArr.push(projects[k])
+        if(itemId == projectIdArr[i]){
+            projectObjArr.push(projects[k])
         }
     }
 }
 
-let project = projectArr[0];
+const project = projectObjArr[0];
 
 // Merge the language sections
-if (projectArr.length > 1){
+if (projectObjArr.length > 1){
     let languagesArr = [];
-    for (let i = 0; i < projectArr.length; i++) {
-        languagesArr = languagesArr.concat(projectArr[i].languages) 
+    for (let i = 0; i < projectObjArr.length; i++) {
+        languagesArr = languagesArr.concat(projectObjArr[i].languages) 
     }
     let set = new Set(languagesArr);
     project.languages = Array.from(set);
