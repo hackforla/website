@@ -13,7 +13,8 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
   https://www.gun.io/blog/pass-arguments-to-embedded-javascript-tutorial-example
 */
 const scriptTag = document.getElementById("projectScript");
-const projectId = scriptTag.getAttribute("projectId").split(", ");
+const projectId = scriptTag.getAttribute("projectId");
+const moreProjectIds = scriptTag.getAttribute("moreProjectIds").split(", ");
 // Search for correct project
 let projectArr = [];
 // Checks if more than one repo id
