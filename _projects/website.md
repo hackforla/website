@@ -99,7 +99,6 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools:
   - Figma
   - Google Drive
   - Zoom
