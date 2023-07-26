@@ -142,10 +142,8 @@ function retrieveProjectDataFromCollection(){
     projectData.forEach((data,i) => {
         const { project } = data;
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
-        console.log(project)
         if(matchingProject) {
             project.languages = matchingProject.languages;
-            console.log(project.secondRepoId)
             if(project.secondRepoId != 0){
                 const secMatchingProject = projectLanguagesArr.find(x=> x.id === project.secondRepoId);
                 const langArr = [...matchingProject.languages, ...secMatchingProject.languages];

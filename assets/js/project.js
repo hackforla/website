@@ -35,7 +35,6 @@ if (scriptTag.getAttribute("secRepoId")){
     let languagesArr = [...firstLangs, ...secLangs];
     let set = new Set(languagesArr);
     project.languages = Array.from(set);
-    console.log(typeof scriptTag.getAttribute("secRepoId"));
 }
 /*
   Assign hero background image
