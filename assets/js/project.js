@@ -14,34 +14,28 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
 */
 const scriptTag = document.getElementById("projectScript");
 const projectId = scriptTag.getAttribute("projectId");
-const moreProjectIds = scriptTag.getAttribute("moreProjectIds").split(", ");
-const projectIdArr = [projectId, ...moreProjectIds];
+const project = findProjectById(projectId);
 
-// Search for correct project
-const projectObjArr = [];
-
-// loops through projectIdArr and pushes project obj to projectObjArr 
-for (let i = 0; i < projectIdArr.length; i++){
+function findProjectById(identification){
     // Starts at 1 now since the first element is a time stamp
-    for (let k = 1; k < projects.length; k++){
-        let itemId = projects[k].id.toString();
-        if(itemId == projectIdArr[i]){
-            projectObjArr.push(projects[k])
+    for (let i = 1; i < projects.length; i++){
+        let itemId = projects[i].id.toString();
+        if(itemId == identification){
+            return projects[i]
         }
     }
-}
-/* data other than languages is taken from the project whose 
- repo id is paired with key "identification" on the md file */
-const project = projectObjArr[0];
+} 
 
-// Merge the language sections
-if (projectObjArr.length > 1){
-    let languagesArr = [];
-    for (let i = 0; i < projectObjArr.length; i++) {
-        languagesArr = languagesArr.concat(projectObjArr[i].languages) 
-    }
+// Merge the language sections if there's a second repo
+if (scriptTag.getAttribute("secRepoId")){
+    const secRepoId = scriptTag.getAttribute("secRepoId");    
+    const firstLangs = project.languages;
+    const secLangs = findProjectById(secRepoId).languages;
+
+    let languagesArr = [...firstLangs, ...secLangs];
     let set = new Set(languagesArr);
     project.languages = Array.from(set);
+    console.log(typeof scriptTag.getAttribute("secRepoId"));
 }
 /*
   Assign hero background image
