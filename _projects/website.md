@@ -78,6 +78,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
       github: 'https://github.com/ronaldpaek'
     picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Johnny Wu
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
+      github: 'https://github.com/Skydodle'
+    picture: https://avatars.githubusercontent.com/Skydodle
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
