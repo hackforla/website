@@ -118,11 +118,7 @@ technologies:
 location: 
   - Remote
 partner:
-tools:
-  - Figma
-  - Google Docs
-  - Zoom
-  - Otter.ai
+tools: Figma, Google Docs, Zoom, Otter.ai
 program-area:
   - Civic Tech Infrastructure
 status: On Hold

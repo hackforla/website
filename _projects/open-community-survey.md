@@ -62,7 +62,7 @@ location:
   # - Los Angeles
   - Remote
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
-tools:
+tools: 
   - ArcGIS surveys
   - Figma
   - Google Docs
