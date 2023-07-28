@@ -7,5 +7,13 @@
 
   // Format a file on save. A formatter must be available, the file must not be saved after delay, and the
   // editor must not be shutting down.
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "workbench.colorCustomizations": {
+    "terminal.foreground": "#a2f8e8",
+    "terminal.background": "#12163c",
+    "terminalCursor.foreground": "#f84141",
+    "activityBar.background": "#392C06",
+    "titleBar.activeBackground": "#503E09",
+    "titleBar.activeForeground": "#FDFAF1"
+  }
 }
