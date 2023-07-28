@@ -83,19 +83,19 @@ location:
   # - Downtown LA
   - Remote
 tools: 
-  - Figma
-  - Photoshop
-  - Sketch
-  - whiteboard / paper & pencil
+  - Figma 
+  - Photoshop 
+  - Sketch 
+  - whiteboard / paper & pencil 
   - phone calls
-  - paper prototyping
+  - paper prototyping 
   - Google forms
-  - Google Sheets
-  - Google Analytics
-  - FigJam
+  - Google Sheets 
+  - Google Analytics 
+  - FigJam 
   - SPSS
-  - Mplus
-  - AtlasTI
+  - Mplus 
+  - AtlasTI 
   - Usabilityhub.com surveys
 program-area:
   - Social Safety Net

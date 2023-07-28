@@ -128,7 +128,10 @@ location:
   # - Downtown LA
   - Remote
 partner: Code for America, Yale OpenLab and many more.
-tools: Google docs, Figma, Usability Hub
+tools: 
+  - Google docs,
+  - Figma
+  - Usability Hub
 visible: true
 program-area: 
   - Civic Tech Infrastructure
