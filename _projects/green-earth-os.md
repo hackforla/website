@@ -22,5 +22,9 @@ visible: true
 status: On Hold
 technologies: 
   - mkdocs
-tools: Google sheets, Google forms, Figma, FigJam
+tools: 
+  - Google sheets
+  - Google forms
+  - Figma
+  - FigJam
 ---

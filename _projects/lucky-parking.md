@@ -135,7 +135,10 @@ location:
   # - Santa Monica
   - Remote
 partner: Department of Neighborhood Empowerment
-tools: Jupyter Notebooks, Google Colab, AWS
+tools: 
+  - Jupyter Notebooks
+  - Google Colab
+  - AWS
 program-area:
   - Citizen Engagement
 visible: true

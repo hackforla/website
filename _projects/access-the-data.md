@@ -96,7 +96,10 @@ location:
   # - South LA
   - Remote
   # must choose one of the above (closest)
-tools: Figma, Photoshop, Google Drive
+tools: 
+  - Figma 
+  - Photoshop
+  - Google Drive
 program-area:
   - Citizen Engagement
 status: Active
