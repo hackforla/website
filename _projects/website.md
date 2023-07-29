@@ -48,12 +48,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Brian Mui
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04MFMMNJRH
-      github: https://github.com/bootcamp-brian
-    picture: https://avatars.githubusercontent.com/bootcamp-brian
   - name: MJ Shelton
     role: Merge Team
     links:
@@ -72,6 +66,18 @@ leadership:
       slack: https://hackforla.slack.com/team/U04TSESVB4J
       github: https://github.com/drakenguyen4000
     picture: https://avatars.githubusercontent.com/drakenguyen4000
+  - name: Ren Demeis-Ortiz
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U059K7A1VFB
+      github: https://github.com/LRenDO
+    picture: https://avatars.githubusercontent.com/LRenDO
+  - name: Ronald Paek
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
+      github: 'https://github.com/ronaldpaek'
+    picture: https://avatars.githubusercontent.com/ronaldpaek
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
