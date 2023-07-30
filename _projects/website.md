@@ -78,6 +78,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
       github: 'https://github.com/ronaldpaek'
     picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
