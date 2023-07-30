@@ -62,8 +62,10 @@ document.addEventListener("DOMContentLoaded",function(){
         })
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
+        
         //events related to search bar
         document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
+        document.querySelector("#search").addEventListener("keydown", searchEnterKeyHandler);
         document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
         document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
 
@@ -213,8 +215,23 @@ function checkBoxEventHandler(){
 
     let queryString = Object.keys(queryObj).map(key => key + '=' + queryObj[key]).join('&').replaceAll(" ","+");
 
-    //Update URL parameters
-    window.history.replaceState(null, '', `?${queryString}`);
+    let currentHash=window.location.href.split('?');
+    if (currentHash.length>1 && currentHash[1].length>0 && currentHash[1].includes('Search')){
+        let searchQuery = currentHash[1].split('Search')[1];
+        if(queryString){ 
+            let newQuery =queryString+'&Search'+ searchQuery;
+            window.history.replaceState(null,'',`?${newQuery}`)
+        } 
+        else{
+            let newQuery= 'Search'+ searchQuery;
+            window.history.replaceState(null,'',`?${newQuery}`)
+        }
+    }
+    else{
+        window.history.replaceState(null,'',`?${queryString}`)
+    }
+
+    
 }
 //shows all filters for a category
 function viewAllEventHandler(e) {
@@ -246,34 +263,28 @@ function cancelMobileFiltersEventHandler(e) {
 }
 //search bar event handler
 function searchEventHandler(){
+    event.preventDefault();
     let searchTerm=document.querySelector("#search").value;
-    let tokens = searchTerm.toLowerCase().split(' ').filter(function(token){return token.trim() !== '';});
     let tokenObj={};
-    tokenObj['Search']=tokens;
+    tokenObj['Search']=searchTerm.toLowerCase();
      
-/*let existingParams = new URLSearchParams(window.location.search);  
-existingParams.append('Search', tokenObj['Search']);  
-let baseURL = window.location.href.split('?')[0];
-let updatedURL = baseURL + '?' + existingParams.toString();
-window.location.href = updatedURL;
-     /*let queryString = Object.keys(tokenObj).map(key => key + '=' + tokenObj[key]).join('&').replaceAll(" ","+");
-
-    let currentUrl=new URL(window.location.href);
-    currentUrl.searchParams.append("search", "value");
-    //let updatedUrl = currentUrl+ (currentUrl.includes("?") ? "&" : "?") + queryString;
-
    const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-    if (Object.keys(filterParams).length>0) {
-       
-       Object.entries(filterParams).forEach( ([key,value]) => tokenObj[key]=value.split(',') );
- 
- 
-    }*/
+    if (Object.keys(filterParams).length>0) {    
+        for(const [key,value] of Object.entries(filterParams)){
+            if (key !== 'Search'){
+                tokenObj[key]=value.split(',');
+            }
+        }  
+    }
     let queryString = Object.keys(tokenObj).map(key => key + '=' + tokenObj[key]).join('&').replaceAll(" ","+");
 
-    //Update URL parameters
-    window.history.replaceState(null, '', `?${queryString}`);
-    
+    window.history.replaceState(null,'',`?${queryString}`)
+}
+
+function searchEnterKeyHandler(e){
+    if (event.key === "Enter") {
+        document.querySelector(".search-glass").click();
+    }
 }
 
 function searchOnFocusEventHandler(){
@@ -281,6 +292,7 @@ function searchOnFocusEventHandler(){
 }
 
 function searchCloseEventHandler(){
+    event.preventDefault();
     document.querySelector("#search").value="";
 }
 
@@ -317,10 +329,7 @@ function updateUI(){
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
     attachEventListenerToFilterTags()
-
-    noResultMessage(filterParams);
     
-
 }
 
     /**
@@ -377,7 +386,6 @@ function updateCheckBoxState(filterParams){
      * Update category counter based on filter params
     */
 function updateCategoryCounter(filterParams){
-    
         let container = []
         for(const [key,value] of Object.entries(filterParams)){
             if (key !== 'Search') {
@@ -394,21 +402,25 @@ function updateCategoryCounter(filterParams){
      * Card is shown/hidden based on filters listed in the url parameter
  */
 function updateProjectCardDisplayState(filterParams){
-    //let projectsDisplayed=0;
+    
     document.querySelectorAll('.project-card').forEach(projectCard => {
         const projectCardObj = {};
-        
-       
+               
         for(const key in filterParams){
             if(key !=='Search'){            
                 projectCardObj[key] = projectCard.dataset[key].split(",");
             }
             else{
-                projectCardObj['technologies']=projectCard.dataset['technologies'].split(",");
+                const searchAreas=['technologies','description','partner','programs','title'];
+                for(const area of searchAreas){
+                    projectCardObj[area]=projectCard.dataset[area].split(",");
+                }
+                /*projectCardObj['technologies']=projectCard.dataset['technologies'].split(",");
                 projectCardObj['description']=projectCard.dataset['description'].split(",");
                 projectCardObj['partner']=projectCard.dataset['partner'].split(",");
                 projectCardObj['programs']=projectCard.dataset['programs'].split(",");
                 projectCardObj['title']=projectCard.dataset['title'].split(",");
+                */
             }
         }
         
@@ -423,38 +435,70 @@ function updateProjectCardDisplayState(filterParams){
                 else{
                     projectCard.style.display = 'list-item' ;
                 }
-
-           }
-          else{
-            let operators=["AND","OR","NOT"]    
-            let tokens = value;
-            for (let i = 0; i < tokens.length; i++) {
-                let token = tokens[i]
-                if (operators.includes(token)) {
-
-                    
-                  } else {
-                    let searchRegex= new RegExp(token,'gi');
-                    let noMatchDataset=0;
-                    for(const [key,value] of Object.entries(projectCardObj)){
-                        if(  value.filter(x => searchRegex.test(x) ).length == 0){
-                            noMatchDataset++;
-                            if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+            }
+            else if(key==="Search"){
+                let searchTerm=value[0];
+                let operators=["and","or","not"];
+                let tokens=[];
+                if(searchTerm.includes(" ")){tokens=searchTerm.split(" ");}
+                else{tokens[0]=searchTerm}
+                for (let i = 0; i < tokens.length; i++) {
+                    let token = tokens[i];
+                    if (operators.includes(token)) {
+                        let nextToken=tokens[i+1];
+                        if (token === "and"){
+                            let searchRegex= new RegExp(nextToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length == 0){
+                                    noMatchDataset++;
+                                    if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+                                }                                
+                            }
                         }
-                        else{
-                            projectCard.style.display = 'list-item' ;
-                            break;
+                        else if(token === "or"){
+                            let searchRegex= new RegExp(nextToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                    cardsToHideContainer.pop();
+                                    projectCard.style.display = 'list-item' ;
+                                    break;
+                                }
+                            }
                         }
-                    }
-                  }
-                    
-                }
+                        else if(token === "not"){
+                            let searchRegex= new RegExp(nextToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                    
+                                    cardsToHideContainer.push([key,projectCard.id]);
+                                
+                                }
+                            }
+                        }
+                        i++;                        
+                    } 
+                    else {
+                        let searchRegex= new RegExp(token,'gi');
+                        let noMatchDataset=0;
+                        for(const [key,value] of Object.entries(projectCardObj)){
+                            if(  value.filter(x => searchRegex.test(x) ).length == 0){
+                                noMatchDataset++;
+                                if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+                            }
+                            else{
+                                projectCard.style.display = 'list-item' ;                                    
+                                break;
+                            }
+                        }
+                    }                        
+                }       
             }
             cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
-        
         }
-    });
-    
+    });    
 }
 
     /**
@@ -560,6 +604,7 @@ function filterTagOnClickEventHandler(){
  *  The function clears all URL parameter by setting the history to '/'
 */
 function clearAllEventHandler(){
+    event.preventDefault();
     //Update URL parameters
     window.history.replaceState(null, '', '/');
 }
@@ -572,8 +617,7 @@ function projectCardComponent(project){
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
-                
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"                
 		        data-location="${project.location? project.location.map(city => city) : '' }"
                 data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
                 data-description="${project.description}"
@@ -700,39 +744,4 @@ function filterTagComponent(filterName,filterValue){
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
-}
-
-function noResultMessage(filterParams){
-    let displayedProject=0;
-    document.querySelectorAll('.project-card').forEach(projectCard => {
-        if (projectCard.style.display === 'list-item'){
-            displayedProject++
-        }
-    });
-    if(displayedProject===0){
-        document.querySelector('.projects-inner').innerHTML=`<div id="noResult">
-            <p> We couldn't find results for :</p>
-            <ul class="filters-applied unstyled-list"></ul>
-            <h3>Search Tips</h3>
-            <ul>
-            <li>Check the spelling of your keyword</li>
-            <li>Broaden your search by removing some filters</li>
-            </ul>"
-        </div>`
-        for(const [key,value] of Object.entries(filterParams)){
-            value.forEach(item =>{
-                document.querySelector('.filters-applied').insertAdjacentHTML('afterbegin', filtersApplied(key,item ) );
-    
-            })
-    
-        }
-    } 
-        
-}
-
-function filtersApplied(filterName,filterValue){
-    return `<li>
-                "<span style='text-transform: capitalize;color:red;'>${filterName === "looking" ? "Role" : filterName}: ${filterValue}</span>"
-                
-            </li>`
 }

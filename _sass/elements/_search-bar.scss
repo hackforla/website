@@ -42,19 +42,3 @@
     margin: 0;
     border: none;
 }
-
-#noResult {
-    display: flex;
-    flex-direction: column;
-    
-    li {
-        top: 51px;
-        left: 16px;
-        gap: 8px;
-    }
-
-    h3 {
-        margin-top: 30px;
-    }
-}
-
