@@ -78,6 +78,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
       github: 'https://github.com/ronaldpaek'
     picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
   - name: Johnny Wu
     role: Merge Team
     links:
@@ -111,7 +117,12 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
+tools:
+  - Figma
+  - Google Drive
+  - Zoom
+  - Google Analytics
+  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA
