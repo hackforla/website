@@ -33,6 +33,10 @@ function insertEventSchedule(eventData, page) {
     } else {
       value.forEach((event) => {
         if (event) {
+		  // If a project doesn't have an hflaWebsiteUrl, redirect to the project's Github page
+		  if (event.hflaWebsiteUrl == "") {
+			  event.hflaWebsiteUrl = event.githubUrl
+		  }
           let eventHtml;
 				  // insert the correct html for the current page
 				  if (page === "events") {
@@ -150,6 +154,7 @@ function display_object(item) {
       start: localeTimeIn12Format(item.startTime),
       end: localeTimeIn12Format(item.endTime),
       hflaWebsiteUrl: item.project.hflaWebsiteUrl,
+	  githubUrl: item.project.githubUrl,
 	  };
 	  return rv_object;
   }
