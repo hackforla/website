@@ -29,10 +29,7 @@ location:
   # - Downtown LA
   - Remote
 partner: LA Metro
-tools: 
-  - Docker
-  - AWS
-  - Observable
+tools: Docker, AWS, Observable
 visible: true
 program-area: 
   - Environment
