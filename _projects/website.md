@@ -90,7 +90,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/U043KH4FQ1M"
       github: "https://github.com/Skydodle"
     picture: https://avatars.githubusercontent.com/Skydodle
-
+  - name: Adrian Ang
+    role: Merge Team
+    links:
+      slack: "https://hackforla.slack.com/team/U0596J2AZEE"
+      github: "https://github.com/adrianang"
+    picture: https://avatars.githubusercontent.com/adrianang
 links:
   - name: Wiki
     url: "https://github.com/hackforla/website/wiki"
