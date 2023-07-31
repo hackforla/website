@@ -54,9 +54,7 @@ technologies:
 location:
   - Remote
 partner:
-tools: 
-  - Google Docs,
-  - HackforLA.org guides
+tools: Google Docs, HackforLA.org guides
 visible: false
 program-area:
   - Civic Tech Infrastructure
