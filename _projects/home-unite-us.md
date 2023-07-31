@@ -130,18 +130,7 @@ technologies:
   - MongoDB
 location:
   - Remote
-tools: 
-  - Figma
-  - AWS
-  - Nginx
-  - Docker
-  - Style Components
-  - Zoom
-  - GitHub
-  - Google Drive
-  - Docs
-  - Sheets
-  - Slides
+tools: Figma, AWS, Nginx, Docker, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
 program-area:

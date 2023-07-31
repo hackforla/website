@@ -70,9 +70,7 @@ links:
 location: 
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
-tools: 
-  - Figma
-  - video production
+tools: Figma, video production
 program-area: 
   - Civic Tech Infrastructure
 status: Completed
