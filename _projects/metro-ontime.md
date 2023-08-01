@@ -33,7 +33,7 @@ tools:
   - AWS 
   - Observable
 visible: true
-program-area: 
+program-area:
   - Environment
 status: Completed
 ---
