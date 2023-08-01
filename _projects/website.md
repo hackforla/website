@@ -12,24 +12,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Justin Dingeman
-    role: Technical Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U03P33YE2PQ'
-      github: 'https://github.com/jdingeman'
-    picture: https://avatars.githubusercontent.com/jdingeman
   - name: Sarah Sanger
     role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U02M686LYET'
       github: 'https://github.com/blulady'
     picture: https://avatars.githubusercontent.com/blulady
-  - name: Matt Pereira
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U045XKKB5DH'
-      github: 'https://github.com/MattPereira'
-    picture: https://avatars.githubusercontent.com/MattPereira
   - name: Phillip Sanchez
     role: Merge Team
     links:
@@ -60,12 +48,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Brian Mui
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04MFMMNJRH
-      github: https://github.com/bootcamp-brian
-    picture: https://avatars.githubusercontent.com/bootcamp-brian
   - name: MJ Shelton
     role: Merge Team
     links:
@@ -84,6 +66,30 @@ leadership:
       slack: https://hackforla.slack.com/team/U04TSESVB4J
       github: https://github.com/drakenguyen4000
     picture: https://avatars.githubusercontent.com/drakenguyen4000
+  - name: Ren Demeis-Ortiz
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U059K7A1VFB
+      github: https://github.com/LRenDO
+    picture: https://avatars.githubusercontent.com/LRenDO
+  - name: Ronald Paek
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
+      github: 'https://github.com/ronaldpaek'
+    picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
+  - name: Johnny Wu
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
+      github: 'https://github.com/Skydodle'
+    picture: https://avatars.githubusercontent.com/Skydodle
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -111,7 +117,12 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
+tools:
+  - Figma
+  - Google Drive
+  - Zoom
+  - Google Analytics
+  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA

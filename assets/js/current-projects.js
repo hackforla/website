@@ -108,6 +108,7 @@ function retrieveProjectDataFromCollection(){
                 "project": {
                             'id': "{{project.id | default: 0}}",
                             'identification': {{project.identification | default: 0}},
+                            'secondRepoId': {{project.secondRepoId | default: 0}},
                             "status": "{{ project.status }}"
                             {%- if project.image -%},
                             "image": '{{ project.image }}'
@@ -125,7 +126,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
+                            "tools": {{ project.tools | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
@@ -149,7 +150,13 @@ function retrieveProjectDataFromCollection(){
         const { project } = data;
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
         if(matchingProject) {
-            project.languages = matchingProject.languages
+            project.languages = matchingProject.languages;
+            if(project.secondRepoId != 0){
+                const secMatchingProject = projectLanguagesArr.find(x=> x.id === project.secondRepoId);
+                const langArr = [...matchingProject.languages, ...secMatchingProject.languages];
+                let set = new Set(langArr);
+                project.languages = Array.from(set);
+            }
         }
     })
     return projectData;
@@ -373,14 +380,16 @@ function updateFilterFrequency(){
     /**
      * Filters listed in the url parameter are checked or unchecked based on filter params
  */
-function updateCheckBoxState(filterParams){
-    document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
-        if(checkBox.name in filterParams){
-            let args = filterParams[checkBox.name]
-            args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
-        }
-    })
-}
+    function updateCheckBoxState(filterParams){
+        document.querySelectorAll("input[type='checkbox']").forEach((checkBox) => {
+          if (checkBox.name in filterParams){ 
+            let args = filterParams[checkBox.name];
+            checkBox.checked = args.includes(checkBox.id);
+          } else {
+            checkBox.checked = false;
+          }
+        });
+      }
 
     /**
      * Update category counter based on filter params
@@ -415,12 +424,7 @@ function updateProjectCardDisplayState(filterParams){
                 for(const area of searchAreas){
                     projectCardObj[area]=projectCard.dataset[area].split(",");
                 }
-                /*projectCardObj['technologies']=projectCard.dataset['technologies'].split(",");
-                projectCardObj['description']=projectCard.dataset['description'].split(",");
-                projectCardObj['partner']=projectCard.dataset['partner'].split(",");
-                projectCardObj['programs']=projectCard.dataset['programs'].split(",");
-                projectCardObj['title']=projectCard.dataset['title'].split(",");
-                */
+                
             }
         }
         
@@ -655,14 +659,14 @@ function projectCardComponent(project){
                         `:""
                         }
 
-                        ${project.tools ?
-                        `
-                        <div class="project-tools">
-                        <strong>Tools: </strong>
-                        ${ project.tools }
-                        </div>
-                        `:""
-                        }
+                ${project.tools ?
+                `
+                <div class="project-tools">
+                <strong>Tools: </strong>
+                ${ project.tools }
+                </div>
+                `:""
+                }
 
                         ${project.looking ? "" : ""
                         // `

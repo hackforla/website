@@ -64,7 +64,9 @@ technologies:
 location:
   - Remote
 partner: UCLA School of Law, Golden Gate University School of Law
-tools: Google Docs, Google Sheets
+tools:
+  - Google Docs
+  - Google Sheets
 program-area: 
   - Justice
 visible: true
