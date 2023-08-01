@@ -93,9 +93,9 @@ looking:
 tools: 
   - Zoom
   - Calendly
-  -  Otter.ai
-  -  Google Docs
-  -  HackforLA.org guides
+  - Otter.ai
+  - Google Docs
+  - HackforLA.org guides
 technologies:
   - Markdown
 location:
