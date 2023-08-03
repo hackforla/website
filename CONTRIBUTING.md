@@ -84,7 +84,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**4.2.a Hack For LA resources**](#42a-hack-for-la-resources)
       - [**4.2.b Tools Documentation**](#42b-tools-documentation)
 
-## Part 1: Setting up the development environment
+## **Part 1: Setting up the development environment**
 ### **1.1 Dev setup (1): Join the repository team**
 
 In the `hfla-site` Slack channel, send an introductory message with your GitHub handle/username asking to be added to the Hack for LA website GitHub repository (this repository).
