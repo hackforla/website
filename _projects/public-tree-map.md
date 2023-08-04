@@ -43,7 +43,8 @@ location:
   # - Santa Monica
   - Remote
 partner: City of Santa Monica
-tools: Zeplin
+tools:
+  - Zeplin
 visible: true
 status: Completed
 program-area: 
