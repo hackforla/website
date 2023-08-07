@@ -27,7 +27,7 @@ jobs:
     # Install dependencies to run js file
     - name: Install npm dependencies
       run: npm install
-      working-directory: ./github-actions/trigger-schedule/github-data/trim-contributors
+      working-directory: ./github-actions/trigger-schedule/github-data
 
     # Run js file- check action logs for inactive members and removes from 'website-write' 
     - name: Trim Members
