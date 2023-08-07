@@ -24,12 +24,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
       github: 'https://github.com/plang-psm'
     picture: https://avatars.githubusercontent.com/plang-psm
-  - name: Roslyn Wythe
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Will Gillis
     role: Merge Team
     links:
@@ -96,6 +90,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
       github: 'https://github.com/adrianang'
     picture: https://avatars.githubusercontent.com/adrianang
+  - name: Roslyn Wythe
+    role: Dev Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
+
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
