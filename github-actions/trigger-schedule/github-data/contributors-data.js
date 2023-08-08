@@ -25,27 +25,27 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
  */
 (async function main(){
   const [contributorsOneMonthAgo, contributorsTwoMonthsAgo] = await fetchContributors();
-  console.log('-------------------------------------------------------')
+  console.log('-------------------------------------------------------');
   console.log('List of active contributors since' + ' ⏰ ' + oneMonthAgo.slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
 
   const currentTeamMembers = await fetchTeamMembers();
-  console.log('-------------------------------------------------------')
+  console.log('-------------------------------------------------------');
   console.log('Current members of ' + team + ':')
   console.log(currentTeamMembers)
   
   const removedContributors = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo);
-  console.log('-------------------------------------------------------')
+  console.log('-------------------------------------------------------');
   console.log('Removed members from ' + team + ' inactive since ' + twoMonthsAgo.slice(0, 10) + ':');
   console.log(removedContributors);
 
   const updatedTeamMembers = await fetchTeamMembers();
   const notifiedContributors = await notifyInactiveMembers(updatedTeamMembers, contributorsOneMonthAgo);
-  console.log('-------------------------------------------------------')
+  console.log('-------------------------------------------------------');
   console.log('Notified members from ' + team + ' inactive since ' + oneMonthAgo.slice(0, 10) + ':');
   console.log(notifiedContributors);
 
-})()
+})();
 
 
 
@@ -232,7 +232,7 @@ async function toRemove(member){
  * @return {Array}     [removed members]
  */
 async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
-  const notifiedMembers = []
+  const notifiedMembers = [];
   
   // Loop over team members and add to "notify" list if they are not in recentContributors
   for(const username in updatedTeamMembers){
