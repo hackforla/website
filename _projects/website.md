@@ -78,6 +78,24 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
       github: 'https://github.com/ronaldpaek'
     picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
+  - name: Johnny Wu
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
+      github: 'https://github.com/Skydodle'
+    picture: https://avatars.githubusercontent.com/Skydodle
+  - name: Adrian Ang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
+      github: 'https://github.com/adrianang'
+    picture: https://avatars.githubusercontent.com/adrianang
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
