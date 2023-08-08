@@ -273,7 +273,7 @@ function searchEventHandler(){
     event.preventDefault();
     let searchTerm=document.querySelector("#search").value;
     let tokenObj={};
-    tokenObj['Search']=searchTerm.toLowerCase();
+    tokenObj['Search']=searchTerm;
      
    const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
     if (Object.keys(filterParams).length>0) {    
@@ -442,7 +442,7 @@ function updateProjectCardDisplayState(filterParams){
             }
             else if(key==="Search"){
                 let searchTerm=value[0];
-                let operators=["and","or","not"];
+                let operators=["AND","OR","-"];
                 let tokens=[];
                 if(searchTerm.includes(" ")){tokens=searchTerm.split(" ");}
                 else{tokens[0]=searchTerm}
@@ -450,7 +450,7 @@ function updateProjectCardDisplayState(filterParams){
                     let token = tokens[i];
                     if (operators.includes(token)) {
                         let nextToken=tokens[i+1];
-                        if (token === "and"){
+                        if (token === "AND"){
                             let searchRegex= new RegExp(nextToken,'gi');
                             let noMatchDataset=0;
                             for(const [key,value] of Object.entries(projectCardObj)){
@@ -460,7 +460,7 @@ function updateProjectCardDisplayState(filterParams){
                                 }                                
                             }
                         }
-                        else if(token === "or"){
+                        else if(token === "OR"){
                             let searchRegex= new RegExp(nextToken,'gi');
                             let noMatchDataset=0;
                             for(const [key,value] of Object.entries(projectCardObj)){
@@ -471,7 +471,7 @@ function updateProjectCardDisplayState(filterParams){
                                 }
                             }
                         }
-                        else if(token === "not"){
+                        else if(token === "-"){
                             let searchRegex= new RegExp(nextToken,'gi');
                             let noMatchDataset=0;
                             for(const [key,value] of Object.entries(projectCardObj)){
