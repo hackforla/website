@@ -106,7 +106,17 @@ technologies:
 location: 
   - Remote
 partner:
-tools: Figma, Miro, Otter.ai, Zoom, Calendly, LinkedIn, 1password, GitHub Wiki, Google Workspace (Sheets, Docs, Forms, Mail Merge, Calendar), Google Data Studio
+tools: 
+  - Figma
+  - Miro
+  - Otter.ai
+  - Zoom
+  - Calendly
+  - LinkedIn
+  - 1Password
+  - GitHub Wiki
+  - Google Workspace (Sheets, Docs, Forms, Mail Merge, Calendar)
+  - Google Data Studio
 program-area:
   - Workforce Development
 status: Active

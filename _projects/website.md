@@ -24,12 +24,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
       github: 'https://github.com/plang-psm'
     picture: https://avatars.githubusercontent.com/plang-psm
-  - name: Roslyn Wythe
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Will Gillis
     role: Merge Team
     links:
@@ -78,6 +72,31 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
       github: 'https://github.com/ronaldpaek'
     picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
+  - name: Johnny Wu
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
+      github: 'https://github.com/Skydodle'
+    picture: https://avatars.githubusercontent.com/Skydodle
+  - name: Adrian Ang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
+      github: 'https://github.com/adrianang'
+    picture: https://avatars.githubusercontent.com/adrianang
+  - name: Roslyn Wythe
+    role: Dev Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
+
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -105,7 +124,12 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics, 1Password
+tools:
+  - Figma
+  - Google Drive
+  - Zoom
+  - Google Analytics
+  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA

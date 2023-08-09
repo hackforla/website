@@ -16,12 +16,6 @@ alt: 'Access The Data'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
 leadership:
-  - name: Bonnie Wolfe
-    role: Agile Coach
-    links:
-      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
-      github: 'https://github.com/experimentsinhonesty'
-    picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: AJ Price
     role: Product Manager
     links:
@@ -46,18 +40,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U033H9HT0P2'
       github: 'https://github.com/deepamohan22'
     picture: https://avatars.githubusercontent.com/deepamohan22
-  - name: Leslie Luk
-    role: UX Writer
-    links:
-      slack: 'https://hackforla.slack.com/team/U04960088CV'
-      github: 'https://github.com/lesUXW'
-    picture: https://avatars.githubusercontent.com/lesUXW
   - name: Tony Delgado
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
       github: 'https://github.com/TonyDelgadoWillis'
     picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
+  - name: Jason Yung
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
+      github: 'https://github.com/merlinsmagic'
+    picture: https://avatars.githubusercontent.com/merlinsmagic
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/access-the-data/'
@@ -90,13 +84,20 @@ technologies:
   #- Ruby on Rails
   #- other etc.
   - CKAN
+  - Docker
+  - Amazon Web Services (AWS)
+  - PostgreSQL
 location:
   #- Downtown LA
   #- Santa Monica
   # - South LA
   - Remote
   # must choose one of the above (closest)
-tools: Figma, Photoshop, Google Drive
+tools: 
+  - Figma
+  - GitHub
+  - Zoom
+  - Google Suite
 program-area:
   - Citizen Engagement
 status: Active
