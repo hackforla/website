@@ -84,6 +84,9 @@ technologies:
   #- Ruby on Rails
   #- other etc.
   - CKAN
+  - Docker
+  - Amazon Web Services (AWS)
+  - PostgreSQL
 location:
   #- Downtown LA
   #- Santa Monica
@@ -92,8 +95,9 @@ location:
   # must choose one of the above (closest)
 tools: 
   - Figma
-  - Photoshop
-  - Google Drive
+  - GitHub
+  - Zoom
+  - Google Suite
 program-area:
   - Citizen Engagement
 status: Active
