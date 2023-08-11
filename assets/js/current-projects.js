@@ -471,19 +471,21 @@ function updateProjectCardDisplayState(filterParams){
                                 }
                             }
                         }
-                        else if(token === "-"){
-                            let searchRegex= new RegExp(nextToken,'gi');
-                            let noMatchDataset=0;
-                            for(const [key,value] of Object.entries(projectCardObj)){
-                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
-                                    
-                                    cardsToHideContainer.push([key,projectCard.id]);
-                                
-                                }
-                            }
-                        }
+                        
                         i++;                        
                     } 
+                    else if(token.includes("-")){
+                        let searchToken=token.substr(1);
+                        let searchRegex= new RegExp(searchToken,'gi');
+                        let noMatchDataset=0;
+                        for(const [key,value] of Object.entries(projectCardObj)){
+                            if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                
+                                cardsToHideContainer.push([key,projectCard.id]);
+                            
+                            }
+                        }
+                    }
                     else {
                         let searchRegex= new RegExp(token,'gi');
                         let noMatchDataset=0;
