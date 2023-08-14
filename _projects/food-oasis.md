@@ -99,7 +99,7 @@ tools:
   - Usabilityhub.com surveys
 program-area:
   - Social Safety Net
-partner:
+partner: UCLA (CESC 50XP)
 visible: true
 status: Active
 iframe:
