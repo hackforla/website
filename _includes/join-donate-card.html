@@ -1,28 +1,26 @@
 <div class="page-card card-primary page-card-lg page-card--join page-card--large-icon-container">
-    <h2 class="title4 page-card--large-icon-header">Help Us Keep The Lights On</h2>
-    <img id="join-us-donation-icon" class='join-us-card-img' src="/assets/images/join-us/help-us-icon.svg"
-        alt="" />
-    <div class="join-us-card-body page-card--large-icon-body">
-      <h3 class="title6 page-card--large-icon-header-secondary">Running Hack for LA costs money</h3>
-      <p>
-        In support of the development and launch of enterprise software
-        products with Government and nonprofit partners, we are standardizing
-        our infrastructure and procedures. This enables Hack for LA to provide
-        world-class training to our members and valuable, scalable, impactful
-        products to the community.
-      </p>            
-      {%  include /donation/donation-circles.html %}      
-      <h3 class="title6 page-card--large-icon-header-secondary">How to help us continue to do impactful work</h3>
-      <ul>
-        <li>
-          Provide
-          <a href="mailto: donations@hackforla.org" target="_blank">In-Kind services</a>
-        </li>
-        <li>Make a donation through Code for America (see below)</li>
-      </ul>
-      </div>
-      <div class="join-us-donation">
-        <h3 class="title6 page-card--large-icon-header-secondary">Make a donation to Hack for LA</h3>
-        {% include /donation/donate-gif-text.html %}
-      </div>
-    </div>
+  <h2 class="title4 page-card--large-icon-header">Help Us Keep The Lights On</h2>
+  <img id="join-us-donation-icon" class='join-us-card-img' src="/assets/images/join-us/help-us-icon.svg"
+      alt="" />
+  <div class="join-us-card-body page-card--large-icon-body">
+    <h3 class="title6 page-card--large-icon-header-secondary">Running Hack for LA costs money</h3>
+    <p>
+      In support of the development and launch of enterprise software
+      products with Government and nonprofit partners, we are standardizing
+      our infrastructure and procedures. This enables Hack for LA to provide
+      world-class training to our members and valuable, scalable, impactful
+      products to the community.
+    </p>            
+  </div>
+  <div class="join-us-donation-circles">
+    {%  include /donation/donation-circles.html %}      
+  </div>
+  <div class="join-us-in-kind">
+    <h3 class="title6 page-card--large-icon-header-secondary join-us-in-kind-title">Provide In-Kind Software & Services</h3>
+    {% include /donation/in-kind.html %}
+  </div>
+  <div class="join-us-donation">
+    <h3 class="title6 page-card--large-icon-header-secondary">Make a donation to Hack for LA</h3>
+    {% include /donation/donate-gif-text.html %}
+  </div>
+</div>

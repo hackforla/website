@@ -98,7 +98,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools | jsonify }}`
+                            "tools": {{ project.tools  | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
