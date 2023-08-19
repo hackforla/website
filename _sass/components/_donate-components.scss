@@ -106,7 +106,7 @@
     .donation-grid {
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: auto auto;
         padding: 20px;
         text-align: left;  
         align-items: flex-start;
@@ -122,21 +122,21 @@
 
             ol {
                 margin-bottom: 0px;
-                padding-left: 50px;
+                padding-left: 30px;
                 max-width: 360px;
                 line-height: 24px;
             }
 
             li {
-                padding: 10px 10px 25px 0px;
+                padding: 10px 15px 25px 0px;
                 font-size: 1.125rem;
             }
         }
 
         .donation-footer {
             max-width: 3340px;
-            margin: 48px 0px 0px -10px;
-            padding: 0px 48px 0px 60px;
+            margin: 0px 0px 0px -10px;
+            padding: 0px 48px 0px 40px;
             font-size: 15px;
         }
 
@@ -150,7 +150,7 @@
 
         p {
             margin-top: 0px;
-            padding: 0 10px 0 30px;
+            padding: 0 10px 0 15px;
             grid-row: 2 / span 3;
             grid-column: 1 / span 1;
         }       

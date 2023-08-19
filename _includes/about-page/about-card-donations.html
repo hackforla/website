@@ -1,20 +1,6 @@
 <div class='card-primary page-card-lg page-card--about'>
     <div class="about-us-section-header" data-hash="donations"><span class="sec-head-img"><img src="/assets/images/about/section-header-elements/donations.svg" alt="" /></span>Make a Donation</div>
-    <div class="about-us-section-content">
-        <div class="flex-container">
-            <div class="top-left-column top-paragraph">
-                <p class="donation-spacing">Hack for LA takes donations through Code for America.</p>
-                <div class="list-container-no-indent">
-                    <ol>
-                        <li class="donation-spacing">Please follow this link to the Code for America <a href="https://www.codeforamerica.org/donate" target="_blank" rel="noopener noreferrer">donation form.</a></li>
-                        <li class="donation-spacing"><p>To make a donation please select <strong>Hack for LA</strong> under the brigades listed.</p>
-                            <p class="text-small-italic">*100% of donated proceeds go directly to Hack for LA when option is selected.</p></li> 
-                    </ol>
-                </div>
-            </div>
-            <div class="bottom-right-column top-paragraph">
-                <img class="donation-gif-box-shadow" src="/assets/images/about/hfla-donate.gif" alt="Video guide on how to donate for Hack for LA" />
-            </div>
-        </div>
-    </div>
+    <div class="about-us-section-content">  
+        {% include donation/donate-gif-text.html %}
+    </div>  
 </div>
