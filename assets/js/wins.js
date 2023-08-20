@@ -37,7 +37,8 @@ const badgeIcons = {
 function main() {
   const winsDataContainer = document.querySelector("#winsDataContainer");
   const data = winsDataContainer.getAttribute("data-wins-data");
-  const cardData = JSON.parse(decodeURIComponent(data));
+	const cardData = JSON.parse(decodeURIComponent(data));
+	winsDataContainer.remove();
   window.localStorage.setItem('data', JSON.stringify(cardData));
   makeCards(cardData);
   ifPageEmpty();
@@ -259,7 +260,8 @@ function insertIcons(cardSelector, cardString, viewType, cloneCardTemplate = doc
 function makeCards(data) {
   const githubDataContainer = document.querySelector('#githubDataContainer')
   const rawGithubData = githubDataContainer.getAttribute("data-github-data");
-  const githubData = JSON.parse(decodeURIComponent(rawGithubData));
+	const githubData = JSON.parse(decodeURIComponent(rawGithubData));
+	githubDataContainer.remove();
   const cards = data.reverse();
   const cardTemplate = document.getElementById("wins-card-template");
   const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
