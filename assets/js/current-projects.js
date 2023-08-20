@@ -269,8 +269,8 @@ function cancelMobileFiltersEventHandler(e) {
     clearAllEventHandler()
 }
 //search bar event handler
-function searchEventHandler(){
-    event.preventDefault();
+function searchEventHandler(e){
+    e.preventDefault();
     let searchTerm=document.querySelector("#search").value;
     let tokenObj={};
     tokenObj['Search']=searchTerm;
@@ -289,17 +289,16 @@ function searchEventHandler(){
 }
 
 function searchEnterKeyHandler(e){
-    if (event.key === "Enter") {
-        document.querySelector(".search-glass").click();
-    }
+    if (e.key === "Enter") {
+        document.querySelector(".search-glass").click();    }
 }
 
 function searchOnFocusEventHandler(){
     document.querySelector(".search-x").style.display='block';
 }
 
-function searchCloseEventHandler(){
-    event.preventDefault();
+function searchCloseEventHandler(e){
+    e.preventDefault();
     document.querySelector("#search").value="";
 }
 
