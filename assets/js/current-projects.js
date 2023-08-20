@@ -290,7 +290,8 @@ function searchEventHandler(e){
 
 function searchEnterKeyHandler(e){
     if (e.key === "Enter") {
-        document.querySelector(".search-glass").click();    }
+        searchEventHandler(e); 
+    }
 }
 
 function searchOnFocusEventHandler(){
