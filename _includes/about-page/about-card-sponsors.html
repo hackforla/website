@@ -12,6 +12,13 @@
             </a>
             {% endfor %}
             {% endcomment %}
+            {% comment %}
+            {%for sponsor in site.data.internal.sponsors%}
+            <a href="{{sponsor.link}}" target="_blank" alt="testing">
+                <img width="150px" height="150px" src="{{sponsor.img_url}}" title="{{sponsor.name}}">
+            </a>
+            {% endfor %}
+            {% endcomment %}
             <a href="https://www.codeforamerica.org" target="_blank" alt="Code for America">
                 <img src="/assets/images/sponsors/code-for-america.svg" title="Code for America">
             </a>
