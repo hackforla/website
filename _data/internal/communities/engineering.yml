@@ -9,7 +9,7 @@ location:
 image: /assets/images/communities-of-practice/engineering.jpg
 alt: 'A computer screen shows a diagram used to manage code development'
 
-meeting-times: Wednesdays 6:00-7:00 pm PT
+meeting-times: Thursdays 6:00-7:00 pm PT
 
 leadership-type: Peer Led
 leadership:
@@ -25,12 +25,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U02UZ5BK8UB
       github: https://github.com/mxajprice
     picture: https://avatars.githubusercontent.com/mxajprice
-  - name: Fang Yi Liu
-    role: Co-Lead
-    links:
-      slack: https://hackforla.slack.com/team/UCE01B4AX
-      github: https://github.com/fyliu
-    picture: https://avatars.githubusercontent.com/fyliu
   - name: Alejandro Gomez
     role: Co-Lead
     links:

@@ -31,13 +31,16 @@ links:
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDA23KHKP'
 looking:
-location: 
+location:
   # - Santa Monica
   - Remote
 partner: Digital Defense Fund
-tools: Mongo, Angular, Node, JS
+tools:
+  - Mongo
+  - Angular
+  - Node
 visible: true
 status: Completed
-program-area: 
+program-area:
   - Vote / Representation
 ---

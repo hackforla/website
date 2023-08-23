@@ -14,17 +14,28 @@ let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape
 */
 const scriptTag = document.getElementById("projectScript");
 const projectId = scriptTag.getAttribute("projectId");
-// Search for correct project
-let project = null;
-// Starts at 1 now since the first element is a time stamp
-for (let i = 1; i < projects.length; i++){
-    let itemId = projects[i].id.toString();
-    if(itemId == projectId){
-        project = projects[i];
-        break;
-    }
-}
+const project = findProjectById(projectId);
 
+function findProjectById(identification){
+    // Starts at 1 now since the first element is a time stamp
+    for (let i = 1; i < projects.length; i++){
+        let itemId = projects[i].id.toString();
+        if(itemId == identification){
+            return projects[i]
+        }
+    }
+} 
+
+// Merge the language sections if there's a second repo
+if (scriptTag.getAttribute("secRepoId")){
+    const secRepoId = scriptTag.getAttribute("secRepoId");    
+    const firstLangs = project.languages;
+    const secLangs = findProjectById(secRepoId).languages;
+
+    let languagesArr = [...firstLangs, ...secLangs];
+    let set = new Set(languagesArr);
+    project.languages = Array.from(set);
+}
 /*
   Assign hero background image
 */

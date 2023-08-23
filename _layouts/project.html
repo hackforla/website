@@ -113,7 +113,7 @@ layout: default
             <div class='sdg-description-card'>
                 <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
                 <div class='sdg-description-wrapper'>
-                    <img class='sdg-img' src='{{ page.sdg-image-src }}' />
+                    <img class='sdg-img' src='{{ page.sdg-image-src }}'>
                     <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
                 </div>
             </div>
@@ -196,6 +196,7 @@ layout: default
         src="/assets/js/project.js"
         type="module"
         projectId="{{ page.identification }}"
+        secRepoId="{{ page.secondRepoId }}"
         imageHero="{{ page.image-hero }}"
         projectTitle="{{ page.title }}">
 </script>
