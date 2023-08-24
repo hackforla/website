@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
         // create filter dictionary from sorted project data
         let filters = createFilter(sortedProjectData);
-        console.log('filters,', filters)
         // Insert Checkbox Filter Into The Dom
         for(let [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
@@ -254,7 +253,7 @@ function updateUI(){
 
     //Get filter parameters from the url
     const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
-    console.log('what is filterparams in updateui', filterParams)
+    
     //Transform filterparam object values to arrays
     Object.entries(filterParams).forEach( ([key,value]) => filterParams[key] = value.split(',') )
 
@@ -288,7 +287,6 @@ function updateUI(){
      * Computes and return the frequency of each checkbox filter that are currently present in on the displayed cards on the page
  */
 function updateFilterFrequency(){
-
     const onPageFilters = []
     // Push the filters present on the displayed cards on the page into an array.
     document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
@@ -620,7 +618,7 @@ function filterTagComponent(filterName,filterValue){
             </div>`
 }
 
-function  toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
+function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
         noResultsMessageComponent(filtersParams,'black')
     } else {
