@@ -3,6 +3,7 @@
 ---
 
 document.addEventListener("DOMContentLoaded", () => {
+ 
     const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectResourceType: [], projectTechnologies: [], projectSource: [], projectContributors: []}
 
     // Generate dropdown menu
@@ -137,7 +138,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
 // Insert dropdown menu into the DOM
 function initializeFilters() {
     let filterCategories = retrieveFilterCategories()
-
+    console.log('filteredCategories', filterCategories)
     for (let key in filterCategories) {
         if (filterCategories[key].length === 0) continue
         let categoryName = key
@@ -192,6 +193,7 @@ function initializeFilters() {
 
 // Update page based on current filters
 function applyFilters(filtersParams) {
+    console.log("applyFilters function")
     // Show all cards if there are no active filters
     if (Object.values(filtersParams).every(x => x.length === 0)) {
         document.querySelectorAll(".guide-card").forEach(card => {
@@ -244,11 +246,8 @@ function applyFilters(filtersParams) {
     // Attach event listener to filter tags
     attachEventListenerToFilterTags(filtersParams)
 
-    if ([...document.querySelectorAll(".guide-card")].every(card => card.style.display === 'none')) {
-        displayNoResultsMessage(filtersParams)
-    } else {
-        document.querySelector(".no-results-message").innerHTML = ""
-    }
+   
+    toggleNoResultMsgIfNoMatch(filtersParams, 'guide-card')
 }
 
 // Apply current filters to URL
@@ -502,53 +501,10 @@ function tabFocusedKeyDownHandler(e) {
     }
 }
 
-function displayNoResultsMessage(filterParams) {
-    document.querySelector(".no-results-message").innerHTML = `
-    <div>
-        <p>We couldn't find results for:</p>
-            ${noResultsMessageComponent(filterParams)}
-    </div>
-    <div>
-        <h3>Search Tips</h3>
-        <ul>
-            <li><p>Broaden your search by removing some of the filters</p></li>
-        </ul>
-    </div>
-    `
-}
-
-function noResultsMessageComponent(filterParams) {
-    let filterList = ``
-    for (let key in filterParams) {
-        let category
-        switch(key) {
-            case 'projectStatus':
-                category = 'Status'
-                break
-            case 'practiceAreas':
-                category = 'Practice'
-                break
-            case 'projectTools':
-                category = 'Tools'
-                break
-            case 'projectResourceType':
-                category = 'Type'
-                break
-            case 'projectTechnologies':
-                category = 'Technologies'
-                break
-            case 'projectSource':
-                category = 'Source'
-                break
-            case 'projectContributors':
-                category = 'Contributor'
-                break
-        }
-        if (filterParams[key].length) {
-            for (let i = 0; i < filterParams[key].length; i++) {
-                filterList += `<p>"<span class='toolkit-red'>${category}: ${filterParams[key][i].split('+').join(' ')}</span>"</p>`
-            }
-        }
+function  toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
+    if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
+        noResultsMessageComponent(filtersParams,'white')
+    } else {
+        document.querySelector(".no-results-message").innerHTML = ""
     }
-    return filterList
 }
