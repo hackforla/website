@@ -3,7 +3,6 @@
 ---
 
 document.addEventListener("DOMContentLoaded", () => {
- 
     const currentFilters = {projectStatus: [], practiceAreas: [], projectTools: [], projectResourceType: [], projectTechnologies: [], projectSource: [], projectContributors: []}
 
     // Generate dropdown menu
@@ -138,7 +137,6 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle) {
 // Insert dropdown menu into the DOM
 function initializeFilters() {
     let filterCategories = retrieveFilterCategories()
-    console.log('filteredCategories', filterCategories)
     for (let key in filterCategories) {
         if (filterCategories[key].length === 0) continue
         let categoryName = key
@@ -193,7 +191,6 @@ function initializeFilters() {
 
 // Update page based on current filters
 function applyFilters(filtersParams) {
-    console.log("applyFilters function")
     // Show all cards if there are no active filters
     if (Object.values(filtersParams).every(x => x.length === 0)) {
         document.querySelectorAll(".guide-card").forEach(card => {
@@ -246,7 +243,7 @@ function applyFilters(filtersParams) {
     // Attach event listener to filter tags
     attachEventListenerToFilterTags(filtersParams)
 
-   
+    // Displays no results message if no matches and 2nd parameter is querySelector name
     toggleNoResultMsgIfNoMatch(filtersParams, 'guide-card')
 }
 
@@ -501,7 +498,8 @@ function tabFocusedKeyDownHandler(e) {
     }
 }
 
-function  toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
+//controls if no results message should display if no results match from filter selection
+function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
         noResultsMessageComponent(filtersParams,'white')
     } else {
