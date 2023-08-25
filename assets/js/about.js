@@ -96,20 +96,20 @@ function setupAccordionEventLitseners() {
 
 /* New code */
 
-function accordionclicked(event) {
-    console.log(event.target.dataset.hash);
+function accordionclicked(e) {
+    console.log(e.target.dataset.hash);
   if (
     window.getComputedStyle(this.parentElement.lastElementChild, null)
       .display == "block"
     
   ) {
-    event.target.classList.toggle("au_active");
+    e.target.classList.toggle("au_active");
     this.parentElement.lastElementChild.style.display = "none";
-    window.location.hash = event.target.dataset.hash;
+    window.location.hash = e.target.dataset.hash;
   } else {
-        event.target.classList.toggle("au_active");
+        e.target.classList.toggle("au_active");
     this.parentElement.lastElementChild.style.display = "block";
-    window.location.hash = event.target.dataset.hash;
+    window.location.hash = e.target.dataset.hash;
 
   }
 }
