@@ -12,12 +12,12 @@ const team = 'website-write';
 
 // Set date limits: at one month, warn contributor that they are 
 // inactive, and at two months remove contributor from team(s)
-const today = new Date();
-let oneMonthAgo = new Date(today.setMonth(today.getMonth() - 1)); // 1 month from today
-let twoMonthsAgo = new Date(today.setMonth(today.getMonth() - 1)); // 1 month behind oneMonthAgo
+let oneMonthAgo = new Date();                        // oneMonthAgo instantiated with date of "today"
+oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);   // then set oneMonthAgo from "today"
 oneMonthAgo = oneMonthAgo.toISOString();
+let twoMonthsAgo = new Date();                        // twoMonthsAgo instantiated with date of "today"
+twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 2);  // then set twoMonthsAgo from "today"
 twoMonthsAgo = twoMonthsAgo.toISOString();
-
 
 
 /**
@@ -226,7 +226,7 @@ async function toRemove(member){
 
 
 /**
- * Function to return list of contributors that have been inactive since twoMonthsAgo
+ * Function to return list of contributors that have been inactive since oneMonthAgo
  * @param {Object} teamMembers   [List of team members]
  * @param {Object} recentContributors     [List of active contributors]
  * @return {Array}     [removed members]
