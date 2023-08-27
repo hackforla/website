@@ -132,16 +132,16 @@
   }
 
   //Update History State / URL on checkbox click
-  function checkboxClickHandler(event){
+  function checkboxClickHandler(e){
 
   	let incomingFilterData = document.querySelectorAll("input");
   	let queryObj = { };
 
   	//Calculate and Create Updated Query String
-  	incomingFilterData.forEach(e => {
+  	incomingFilterData.forEach(d => {
   		//Find boxes that are checked
-  		if(e.checked){
-  			let data = e.value.split("_");
+  		if(d.checked){
+  			let data = d.value.split("_");
 
   			if(data[0] == 'role'){
 
