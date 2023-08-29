@@ -18,12 +18,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02M686LYET'
       github: 'https://github.com/blulady'
     picture: https://avatars.githubusercontent.com/blulady
-  - name: Phillip Sanchez
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U03UG3VCRK6'
-      github: 'https://github.com/plang-psm'
-    picture: https://avatars.githubusercontent.com/plang-psm
   - name: Will Gillis
     role: Merge Team
     links:
