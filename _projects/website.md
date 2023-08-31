@@ -12,6 +12,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Josiah Odosu
+    role: Product Team
+    links:
+      slack: https://hackforla.slack.com/team/U052L9U44LB
+      github: https://github.com/Josiah-O
+    picture: https://avatars.githubusercontent.com/Josiah-O
   - name: Sarah Sanger
     role: Merge Team
     links:
