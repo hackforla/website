@@ -48,8 +48,10 @@ function createContribInstruction(){
 }
 
 function compositeInstruction() {
-	const completedPullInstruction = formatPullComment(createPullInstruction());
-	const completedContribInstruction = formatContribComment(createContribInstruction());
+//	const completedPullInstruction = formatPullComment(createPullInstruction());
+//	const completedContribInstruction = formatContribComment(createContribInstruction());
+	const completedPullInstruction = formatPullComment('test pull instruction');
+	const completedContribInstruction = formatContribComment('test contrib instruction');
 	return completedPullInstruction + completedContribInstruction;
 }
 
