@@ -11,20 +11,48 @@ var context;
 function main({ g, c }) {
     github = g;
     context = c;
-    return createInstruction();
+    return compositeInstructions();
 }
 
-function createInstruction() {
+function formatPullComment(instruction) {
+    const path = './github-actions/pr-instructions/pr-instructions-pull-template.md'
+    const text = fs.readFileSync(path).toString('utf-8');
+    const completedInstuctions = text.replace('${commandlineInstructions}', instruction)
+    return completedInstuctions
+}
+
+function formatContribComment(instruction){
+	const path = './github-actions/pr-instructions/pr-instructions-contrib-template.md'
+    const text = fs.readFileSync(path).toString('utf-8');
+    const completedInstuctions = text.replace('${previewContribInstructions}', instruction)
+    return completedInstuctions
+}
+
+function createPullInstruction() {
     const nameOfCollaborator = context.payload.pull_request.head.repo.owner.login;
     const nameOfFromBranch = context.payload.pull_request.head.ref;
     const nameOfIntoBranch = context.payload.pull_request.base.ref;
     const cloneURL = context.payload.pull_request.head.repo.clone_url;
 
-    const instructionString =
+    const pullInstructionString =
 `git checkout -b ${nameOfCollaborator}-${nameOfFromBranch} ${nameOfIntoBranch}
 git pull ${cloneURL} ${nameOfFromBranch}`
 
-    return instructionString
+
+    return pullInstructionString
+}
+
+function createContribInstruction(){
+	const nameOfCollaborator = context.payload.pull_request.head.repo.owner.login;
+    const nameOfFromBranch = context.payload.pull_request.head.ref;
+	const previewContribURL = `https://github.com/${nameOfCollaborator}/website/blob/${nameOfFromBranch}/CONTRIBUTING.md`
+	return previewContribURL;
+}
+
+function compositeComment() {
+	const completedPullInstruction = formatComment(createPullInstruction());
+	const completedContribInstruction = formatComment(createContribInstruction());
+	return completedPullInstruction + completedContribInstruction;
 }
 
 module.exports = main
