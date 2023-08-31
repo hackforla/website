@@ -27,7 +27,7 @@ function formatContribComment(instruction){
 	const path = './github-actions/pr-instructions/pr-instructions-contrib-template.md'
     const text = fs.readFileSync(path).toString('utf-8');
 //    const completedInstructions = text.replace('${previewContribInstructions}', instruction);
-	const completedInstructions = text.replace('${previewContribInstructions}', 'test contrib instruction');
+	const completedInstructions = text.replace('[previewContribInstructions]', 'test contrib instruction');
     return completedInstructions;
 }
 
