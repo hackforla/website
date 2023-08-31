@@ -4,6 +4,6 @@
 
 Note that CONTRIBUTING.md cannot previewed locally; rather it should be previewed at this URL:
 
-```
+
 ${previewContribInstructions}
-```
+
