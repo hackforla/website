@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         // create filter dictionary from sorted project data
         let filters = createFilter(sortedProjectData);
-        
+
         // Insert Checkbox Filter Into The Dom
         for(let [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
@@ -161,9 +161,10 @@ function createFilter(sortedProjectData){
     return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
-            
+
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
 
         }
 }
@@ -485,7 +486,7 @@ return `
             // ^ See issue #1997 for more info on why this is commented out
             }
 
-            ${project.languages?.length > 0 ? 
+            ${project.languages?.length > 0 ?
             `
             <div class="project-languages">
             <strong>Languages: </strong>
