@@ -11,7 +11,7 @@ var context;
 function main({ g, c }) {
     github = g;
     context = c;
-    return compositeInstructions();
+    return compositeInstruction();
 }
 
 function formatPullComment(instruction) {
@@ -49,7 +49,7 @@ function createContribInstruction(){
 	return previewContribURL;
 }
 
-function compositeComment() {
+function compositeInstruction() {
 	const completedPullInstruction = formatPullComment(createPullInstruction());
 	const completedContribInstruction = formatContribComment(createContribInstruction());
 	return completedPullInstruction + completedContribInstruction;
