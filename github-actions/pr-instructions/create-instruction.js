@@ -18,15 +18,15 @@ function main({ g, c }) {
 function formatPullComment(instruction) {
     const path = './github-actions/pr-instructions/pr-instructions-pull-template.md'
     const text = fs.readFileSync(path).toString('utf-8');
-    const completedInstuctions = text.replace('${commandlineInstructions}', instruction);
-    return completedInstuctions;
+    const completedInstructions = text.replace('${commandlineInstructions}', instruction);
+    return completedInstructions;
 }
 
 function formatContribComment(instruction){
 	const path = './github-actions/pr-instructions/pr-instructions-contrib-template.md'
     const text = fs.readFileSync(path).toString('utf-8');
-    const completedInstuctions = text.replace('${previewContribInstructions}', instruction);
-    return completedInstuctions;
+    const completedInstructions = text.replace('${previewContribInstructions}', instruction);
+    return completedInstructions;
 }
 
 function createPullInstruction(){
