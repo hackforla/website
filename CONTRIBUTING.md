@@ -4,6 +4,8 @@
 
 The following is a set of guidelines for contributing to the website repository, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in the form of a pull request.
 
+test#3
+
 **The guide below assumes that you have completed the onboarding process which includes joining the Hack for LA Slack, GitHub, and Google Drive. If you have not been onboarded, please refer to the [Getting Started Page](https://www.hackforla.org/getting-started).**
 
 **If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.**
