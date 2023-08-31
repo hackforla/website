@@ -661,14 +661,14 @@ function projectCardComponent(project){
                         `:""
                         }
 
-                ${project.tools ?
-                `
-                <div class="project-tools">
-                <strong>Tools: </strong>
-                ${ project.tools }
-                </div>
-                `:""
-                }
+                        ${project.tools ?
+                        `
+                        <div class="project-tools">
+                        <strong>Tools: </strong>
+                        ${project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ")}
+                        </div>
+                        `: ""
+                        }
 
                         ${project.looking ? "" : ""
                         // `
