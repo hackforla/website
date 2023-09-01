@@ -30,19 +30,19 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0611PL2D'
       github: 'https://github.com/eselkin'
     picture: https://avatars.githubusercontent.com/eselkin
-# links:
-#   - name: GitHub
-#     url: 'https://github.com/hackla-engage'
-#   - name: Slack
-#     url: 'https://hackforla.slack.com/archives/C6JBH478W'
+links:
+  - name: GitHub
+    url: 'https://github.com/hackla-engage'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/C6JBH478W'
 #   - name: Test Site
 #     url: 'https://smstaging.engage.town'
 #   - name: Site
 #     url: 'https://sm.engage.town'
-#   # - name: Wiki
-#   #   url: 'https://github.com/hackla-engage/start-here/wiki'
-#   - name: Overview
-#     url: '../assets/pdfs/Engage-Product-One-Sheet.pdf'
+  # - name: Wiki
+  #   url: 'https://github.com/hackla-engage/start-here/wiki'
+  - name: Overview
+    url: '../assets/pdfs/Engage-Product-One-Sheet.pdf'
 looking:
   - category: UI/UX
     skill: UX Program Designer
