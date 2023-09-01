@@ -85,7 +85,7 @@ technologies:
   #- other etc.
   - CKAN
   - Docker
-  - Amazon Web Services (AWS)
+  - AWS
   - PostgreSQL
 location:
   #- Downtown LA
