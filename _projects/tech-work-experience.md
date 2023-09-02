@@ -113,7 +113,6 @@ tools:
   - Zoom
   - Calendly
   - LinkedIn
-  - 1Password
   - GitHub Wiki
   - Google Workspace (Sheets, Docs, Forms, Mail Merge, Calendar)
   - Google Data Studio

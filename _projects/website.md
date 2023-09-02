@@ -117,7 +117,6 @@ tools:
   - Google Drive
   - Zoom
   - Google Analytics
-  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA
