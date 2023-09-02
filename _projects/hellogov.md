@@ -24,8 +24,8 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
-  - name: Site
-    url: 'https://hellogov.squarespace.com'
+  # - name: Site
+    # url: 'https://hellogov.squarespace.com'
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
