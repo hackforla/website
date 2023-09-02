@@ -78,6 +78,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
+  - name: Benny Van
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05JP90EHMK
+      github: https://github.com/bennyv8
+    picture: https://avatars.githubusercontent.com/bennyv8
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
