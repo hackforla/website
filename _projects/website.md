@@ -36,12 +36,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Chris Menke
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04KVG05H3J
-      github: https://github.com/chrismenke45
-    picture: https://avatars.githubusercontent.com/chrismenke45
   - name: Drake Nguyen
     role: Merge Team
     links:

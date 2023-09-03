@@ -12,12 +12,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
       github: https://github.com/Salimays
     picture: https://avatars.githubusercontent.com/Salimays
-  - name: Ava Li
-    role: Development Lead
-    links:
-      slack: https://hackforla.slack.com/team/U01B73XGCKV
-      github: https://github.com/Aveline-art
-    picture: https://avatars.githubusercontent.com/Aveline-art
   - name: Noor Grewal
     role: Full Stack Developer
     links:
