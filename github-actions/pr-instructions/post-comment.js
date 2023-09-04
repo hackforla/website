@@ -15,8 +15,7 @@ var context;
 async function main({ g, c }, { issueNum, instruction }) {
     github = g;
     context = c;
-	const decodedInstruction = decodeURI(instruction);
-    postComment(issueNum, decodedInstruction);
+    postComment(issueNum, instruction);
 }
 
 
