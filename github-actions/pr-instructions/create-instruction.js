@@ -7,7 +7,7 @@ const fs = require('fs');
  * Uses information from the pull request to create commandline instructions.
  * @param {Object} g - github object
  * @param {Object} c - context object
- * @returns {string} string containing commandline instructions, URI encoded since the backtick character is not allowed in *  artifact
+ * @returns {string} string containing commandline instructions, URI encoded since the backtick character causes a problem in *  the artifact
  */
 function main({ g, c }) {
     github = g;
