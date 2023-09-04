@@ -37,8 +37,8 @@ links:
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
   # - name: Test Site
   #   url: 'https://smstaging.engage.town'
-  - name: Site
-    url: 'https://sm.engage.town'
+  # - name: Site
+  #   url: 'https://sm.engage.town'
   # - name: Wiki
   #   url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
