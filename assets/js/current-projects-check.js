@@ -254,7 +254,7 @@ function updateFilterFrequency(){
     let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
 
 
-    // Update values on the filterFrquencyObject if item in onPageFilter array exist as a key in this object.
+    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
     for(const item of onPageFilters){
         if(item in filterFrequencyObject){
             filterFrequencyObject[item] += 1;
@@ -319,7 +319,7 @@ function updateProjectCardDisplayState(filterParams){
 }
 
     /**
-     * Updates the filter tags show on the page based on the url paramenter
+     * Updates the filter tags show on the page based on the url parameter
  */
 function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
@@ -430,6 +430,7 @@ return `
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
             data-technologies="${project.technologies  ? [... new Set(project.technologies.map(tech => tech))] : '' }"
             data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
+            data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
@@ -518,7 +519,7 @@ return `
 }
 
 /**
- * Takes a filter category name and array of filter stirings and returns the html string representing a single filter component
+ * Takes a filter category name and array of filter strings and returns the html string representing a single filter component
 */
 function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     return `
