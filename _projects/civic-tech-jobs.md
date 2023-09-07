@@ -84,6 +84,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
+  - name: Jenn Wu
+    role: UX Researcher Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05JS3V38TV
+      github: https://github.com/jayywu
+    picture: https://avatars.githubusercontent.com/jayywu   
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
