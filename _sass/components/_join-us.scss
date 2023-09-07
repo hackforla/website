@@ -20,6 +20,10 @@
     width: 175px;
   }
 
+  .join-us-donation-circles {
+    margin-bottom: 26px;
+  }
+
   .join-us-donation {
     margin: 20px auto;
     background: $color-whitesmoke;
@@ -56,11 +60,31 @@
         flex-direction: column;
         align-items: center;
         grid-column: 1 / span 2;
-        grid-row: 3 / span 1;
+        grid-row: 5 / span 1;
 
         img {
           width: 318px;
         }
+      }
+
+      .join-us-donation-circles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+        margin-bottom: 26px;
+      }
+
+      .join-us-in-kind {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / span 2;
+        grid-row: 4 / span 1;
+      }
+
+      .join-us-in-kind-title{
+        text-align: center;
       }
     }
   }

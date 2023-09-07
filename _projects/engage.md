@@ -35,10 +35,10 @@ links:
     url: 'https://github.com/hackla-engage'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C6JBH478W'
-  - name: Test Site
-    url: 'https://smstaging.engage.town'
-  - name: Site
-    url: 'https://sm.engage.town'
+  # - name: Test Site
+  #   url: 'https://smstaging.engage.town'
+  # - name: Site
+  #   url: 'https://sm.engage.town'
   # - name: Wiki
   #   url: 'https://github.com/hackla-engage/start-here/wiki'
   - name: Overview
@@ -55,7 +55,9 @@ technologies:
   - MongoDB
 location:
   - Remote
-tools: Hotjar, Google Analytics
+tools:
+  - Hotjar
+  - Google Analytics
 program-area:
   - Citizen Engagement
 partner: Various Los Angeles Neighborhood Councils

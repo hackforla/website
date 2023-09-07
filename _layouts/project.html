@@ -113,7 +113,7 @@ layout: default
             <div class='sdg-description-card'>
                 <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
                 <div class='sdg-description-wrapper'>
-                    <img class='sdg-img' src='{{ page.sdg-image-src }}' />
+                    <img class='sdg-img' src='{{ page.sdg-image-src }}'>
                     <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
                 </div>
             </div>
@@ -148,7 +148,7 @@ layout: default
         <div class='resource-list'>
             {% for item in page.leadership %}
             <div class='leader-card'>
-                <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}' /></a>
+                <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'></a>
                 <div class='leader-description'>
                     {% if page.status == "Completed" and item.links.linkedin %}
                     <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
@@ -196,6 +196,7 @@ layout: default
         src="/assets/js/project.js"
         type="module"
         projectId="{{ page.identification }}"
+        additionalRepoIdNums="{{ page.additional-repo-ids }}"
         imageHero="{{ page.image-hero }}"
         projectTitle="{{ page.title }}">
 </script>

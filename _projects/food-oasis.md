@@ -82,10 +82,24 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools: Figma, Photoshop, Sketch, whiteboard / paper & pencil, phone calls, paper prototyping, Google forms, Google Sheets, Google Analytics, FigJam, SPSS, Mplus, AtlasTI, Usabilityhub.com surveys
+tools: 
+  - Figma
+  - Photoshop
+  - Sketch
+  - whiteboard / paper & pencil
+  - phone calls
+  - paper prototyping
+  - Google forms
+  - Google Sheets
+  - Google Analytics
+  - FigJam
+  - SPSS
+  - Mplus
+  - AtlasTI
+  - Usabilityhub.com surveys
 program-area:
   - Social Safety Net
-partner:
+partner: UCLA (CESC 50XP)
 visible: true
 status: Active
 iframe:
