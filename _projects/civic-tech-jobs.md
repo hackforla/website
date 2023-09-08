@@ -59,7 +59,13 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U03UYEVMV37
       github: https://github.com/gzhang5240
-    picture: https://avatars.githubusercontent.com/gzhang5240   
+    picture: https://avatars.githubusercontent.com/gzhang5240
+  - name: Leah Ellis
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U04GYTXSP9D
+      github: https://github.com/Leah0996
+    picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Karen Coronel
     role: Product Manager
     links:
