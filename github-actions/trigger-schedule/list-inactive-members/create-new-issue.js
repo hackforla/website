@@ -1,5 +1,4 @@
 // Import modules
-const fs = require("fs");
 
 // Global variables
 var github;
