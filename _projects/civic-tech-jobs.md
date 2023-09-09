@@ -60,12 +60,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
-  - name: Genggeng Zhang
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U03UYEVMV37
-      github: https://github.com/gzhang5240
-    picture: https://avatars.githubusercontent.com/gzhang5240   
   - name: Matt Pereira
     role: Developer
     links:
@@ -78,6 +72,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
+  - name: Benny Van
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05JP90EHMK
+      github: https://github.com/bennyv8
+    picture: https://avatars.githubusercontent.com/bennyv8
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
