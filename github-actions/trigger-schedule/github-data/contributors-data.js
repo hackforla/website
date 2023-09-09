@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { Octokit } = require("@octokit/rest");
 const trueContributorsMixin = require("true-github-contributors");
 
@@ -45,13 +46,15 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log('Notified members from ' + team + ' inactive since ' + oneMonthAgo.slice(0, 10) + ':');
   console.log(notifiedContributors);
 
+  writeData(removedContributors, notifiedContributors);
 })();
 
 
 
 /**
  * Function to fetch list of contributors with comments/commits/issues since date
- * @return {Object}     [List of active contributors]
+ * @returns {Object} allContributorsSinceOneMonthAgo - List of active contributors since one month ago 
+ * @returns {Object} allContributorsSinceTwoMonthsAgo - List of active contributors since two months ago 
  */
 async function fetchContributors(){
   let allContributorsSinceOneMonthAgo = {};
@@ -79,7 +82,7 @@ async function fetchContributors(){
           page: pageNum
         })
   
-        // If the API call returns an empty array, break out of loop- there is no additional data on that page.
+        // If the API call returns an empty array, break out of loop- there is no additional data.
         // Else if data is returned, push it to `result` and increase the page number (`pageNum`)
         if(!contributors.data.length){
           break;      
@@ -89,8 +92,8 @@ async function fetchContributors(){
         }
       }
   
-      // Once we have looked at all pages and collected all the data, we create key-value pairs 
-      // of recent contributors and store them in `allContributorsSince` object
+      // Once we have looked at all pages and collected all the data, we create key-value  
+      // pairs of recent contributors and store them in `allContributorsSince` object
   
       // The data that comes back from APIs is stored differently, i.e. `author.login` 
       // vs `user.login`, all we want is to extract the username of a contributor
@@ -101,9 +104,9 @@ async function fetchContributors(){
         } else if(contributorInfo.user){
           allContributorsSince[contributorInfo.user.login] = true;
   
-          // This check is done for "issues" API (3rd element in the APIs array). Sometimes a user who created
-          // an issue is not the same as the user assigned to that issue- we want to make sure that we count 
-          // all assignees as active contributors as well.
+          // This check is done for "issues" API (3rd element in the APIs array). Sometimes a 
+          // user who created an issue is not the same as the user assigned to that issue- we  
+          // want to make sure that we count all assignees as active contributors as well.
           if(contributorInfo.assignees && contributorInfo.assignees.length){
             contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
           } 
@@ -125,7 +128,7 @@ async function fetchContributors(){
 
 /**
  * Function to return list of current team members
- * @return {Array}     [Current team members]
+ * @returns {Array} allMembers - Current team members 
  */
 async function fetchTeamMembers(){
     
@@ -141,7 +144,7 @@ async function fetchTeamMembers(){
       page: pageNum
     })
     
-    // If the API call returns an empty array, break out of loop- there is no additional data on that page.
+    // If the API call returns an empty array, break out of loop- there is no additional data.
     // Else if data is returned, push it to `result` and increase the page number (`pageNum`)
     if(!teamMembers.data.length){
       break;      
@@ -161,9 +164,9 @@ async function fetchTeamMembers(){
 
 /**
  * Function to return list of contributors that have been inactive since twoMonthsAgo
- * @param {Object} allMembers   [List of active team]
- * @param {Object} recentContributors     [List of active contributors]
- * @return {Array}     [removed members]
+ * @param {Object} currentTeamMembers - List of active team members
+ * @param {Object} recentContributors - List of active contributors 
+ * @returns {Array} removed members - List of members that were removed 
  */
 async function removeInactiveMembers(currentTeamMembers, recentContributors){
   const removedMembers = [];
@@ -189,37 +192,39 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors){
 
 /**
  * Function to check if a member is set for removal
- * @param {String} member     [member's username]
- * @return {Boolean}     [true/false]
+ * @param {String} member - Member's username 
+ * @returns {Boolean} - true/false 
  */
 async function toRemove(member){
-  // collect user's repos and see if they recently joined hackforla/website;
+  // Collect user's repos and see if they recently joined hackforla/website;
   // Note: user might have > 100 repos, the code below will need adjustment (see 'flip' pages);
   const repos = await octokit.request('GET /users/{username}/repos', {
     username: member,
     per_page: 100
   })
 
-  // if a user recently cloned 'website' repo (within the last 30 days), they are 
-  // not consider for removal as they are new;
+  // If a user recently* cloned the 'website' repo (*within the last 30 days), then 
+  // they are new members and are not considered for notification or removal.
   for(const repository of repos.data){
-    // if repo is recently cloned, return 'false' or member is not be removed;
+    // If repo is recently cloned, return 'false' so that member is not removed 
     if(repository.name === repo && repository.created_at > oneMonthAgo){
       return false;
     }
   }
 
-  // get user's membership status 
+  // Get user's membership status 
   const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
     org: org,
     team_slug: team,
     username: member,
   })
 
-  // if a user is the team's maintainer, return 'false'. We do not remove maintainers;
-  if(userMembership.data.role === 'maintainer') return false;
-
-  // else this user is an inactive member of the team thus remove;
+  // If a user is a team 'maintainer', log their name and return 'false'. We do not remove maintainers 
+  if(userMembership.data.role === 'maintainer'){
+    console.log("This inactive member is a 'Maintainer': " + member);
+    return false;
+  }
+  // Else this user is an inactive member of the team and should be notified or removed
   return true;
 }
 
@@ -227,9 +232,9 @@ async function toRemove(member){
 
 /**
  * Function to return list of contributors that have been inactive since oneMonthAgo
- * @param {Object} teamMembers   [List of team members]
- * @param {Object} recentContributors     [List of active contributors]
- * @return {Array}     [removed members]
+ * @param {Array} updatedTeamMembers - List of updated team members
+ * @param {Array} recentContributors - List of recent contributors
+ * @returns {Array} - List of members to be notified (that they are on the list to be removed)
  */
 async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
   const notifiedMembers = [];
@@ -245,3 +250,33 @@ async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
   }
   return notifiedMembers;
 }
+
+
+
+
+/**
+ * Function to save inactive members list to local for use in next job  
+ * @param {Array} removedContributors - List of removed contributors 
+ * @param {Array} notifiedContributors - List of contributors to be notified 
+ * @returns {void}
+ */
+function writeData(removedContributors, notifiedContributors){
+  
+  // Combine removed and notified contributor lists into one dict
+  let inactiveMemberLists = {};
+  inactiveMemberLists["removedContributors"] = removedContributors;
+  inactiveMemberLists["notifiedContributors"] = notifiedContributors;
+  
+
+  fs.writeFile('inactive-Members.json', JSON.stringify(inactiveMemberLists, null, 2), (err) => {
+    if (err) throw err;
+    console.log('-------------------------------------------------------');
+    console.log("File 'inactive-Members.json' saved successfully!");
+   });
+  
+  fs.readFile('inactive-Members.json', (err, data) => {
+    if (err) throw err;
+    console.log("File 'inactive-Members.json' read successfully!");
+  });
+  
+ }
