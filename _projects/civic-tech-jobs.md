@@ -54,12 +54,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
-  - name: Genggeng Zhang
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U03UYEVMV37
-      github: https://github.com/gzhang5240
-    picture: https://avatars.githubusercontent.com/gzhang5240   
   - name: Karen Coronel
     role: Product Manager
     links:
