@@ -6,6 +6,12 @@ image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
 leadership: 
+  - name: Karen Coronel
+    role: Senior Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U010KUGJATC
+      github: https://github.com/kcoronel
+    picture: https://avatars.githubusercontent.com/kcoronel
   - name: Salima Yacoubi Soussane 
     role: Product Manager
     links:
@@ -54,12 +60,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
-  - name: Karen Coronel
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U010KUGJATC
-      github: https://github.com/kcoronel
-    picture: https://avatars.githubusercontent.com/kcoronel
   - name: Matt Pereira
     role: Developer
     links:
