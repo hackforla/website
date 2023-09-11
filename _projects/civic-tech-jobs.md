@@ -101,7 +101,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U02M686LYET
       github: https://github.com/Blulady
-    picture: https://avatars.githubusercontent.com/Blulady  
+    picture: https://avatars.githubusercontent.com/Blulady
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
