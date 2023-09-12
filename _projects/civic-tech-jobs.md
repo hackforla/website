@@ -60,7 +60,7 @@ leadership:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
       github: https://github.com/melkosm
     picture: https://avatars.githubusercontent.com/melkosm
-  - 
+   
   - name: Matt Pereira
     role: Developer
     links:
