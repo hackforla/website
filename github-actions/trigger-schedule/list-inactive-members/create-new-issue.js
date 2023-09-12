@@ -44,7 +44,7 @@ const createIssue = async (owner, repo, inactiveLists) => {
   + "## Removed Members\n"
   + "Our team bot has determined that the following member(s) have not been active with the Website team for over 60 days, and therefore the member(s) have been removed from the 'website-write' team.\n\n"
   + removedList + "\n\n\n\n"
-  + "### If this is a mistake or if you would like to return to the Hack for LA Website team, please respond in a comment with one of the two following messages:\n"
+  + "### If this is a mistake or if you would like to return to the Hack for LA 'website-write' team, please respond in a comment with one of the two following messages:\n"
   + "#### Our bot made a mistake, let us know!\n"
   + "```\n"
   + "I have been active!  See Issue # or PR # \n"
