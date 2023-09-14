@@ -63,8 +63,8 @@ leadership:
   - name: Sam Sengupta
     role: UX/UI Designer
     links:
-      slack: 
-      github: 
+      slack:
+      github:
     picture: https://avatars.githubusercontent.com/u/41702879
   - name: Seymour Liao
     role: Data Scientist
@@ -81,8 +81,8 @@ leadership:
   - name: Carlos Olivas
     role: Data Scientist
     links:
-      slack: 
-      github: 
+      slack:
+      github:
     picture: https://avatars.githubusercontent.com/u/41702877
   - name: Pratibha Shivanand
     role: Data Scientist
@@ -128,6 +128,7 @@ looking:
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
   - React
+  - AWS
   - PostgreSQL
   - Node.js
   - Mapbox
@@ -135,10 +136,9 @@ location:
   # - Santa Monica
   - Remote
 partner: Department of Neighborhood Empowerment
-tools: 
+tools:
   - Jupyter Notebooks
   - Google Colab
-  - AWS
 program-area:
   - Citizen Engagement
 visible: true
