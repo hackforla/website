@@ -129,9 +129,10 @@ location:
   - Remote
 partner: Code for America, Yale OpenLab and many more.
 tools:
-  - Google docs
+  - Google Docs
   - Figma
-  - Usability Hub
+  - UsabilityHub
+  
 visible: true
 program-area: 
   - Civic Tech Infrastructure
