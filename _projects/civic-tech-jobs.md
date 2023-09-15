@@ -18,6 +18,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
       github: https://github.com/Salimays
     picture: https://avatars.githubusercontent.com/Salimays
+  - name: Sabrina Heasley
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05GDBDPEDR
+      github: https://github.com/sabheasley
+    picture: https://avatars.githubusercontent.com/sabheasley
   - name: Noor Grewal
     role: Full Stack Developer
     links:
