@@ -12,6 +12,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Josiah Odosu
+    role: Product Team
+    links:
+      slack: https://hackforla.slack.com/team/U052L9U44LB
+      github: https://github.com/Josiah-O
+    picture: https://avatars.githubusercontent.com/Josiah-O    
+  - name: Roslyn Wythe
+    role: Dev Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -72,12 +84,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
       github: 'https://github.com/adrianang'
     picture: https://avatars.githubusercontent.com/adrianang
-  - name: Roslyn Wythe
-    role: Dev Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
 
 links:
   - name: Wiki
