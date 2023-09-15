@@ -24,12 +24,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05GDBDPEDR
       github: https://github.com/sabheasley
     picture: https://avatars.githubusercontent.com/sabheasley
-  - name: Noor Grewal
-    role: Full Stack Developer
-    links:
-      slack: https://hackforla.slack.com/team/U045Q8PD1B5
-      github: https://github.com/gjagnoor
-    picture: https://avatars.githubusercontent.com/gjagnoor 
   - name: Jen Chung
     role: UX/UI Design Lead
     links:
