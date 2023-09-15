@@ -66,6 +66,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
+  - name: Leah Ellis
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U04GYTXSP9D
+      github: https://github.com/Leah0996
+    picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Matt Pereira
     role: Developer
     links:
