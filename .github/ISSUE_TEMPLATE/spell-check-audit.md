@@ -1,7 +1,7 @@
 ---
 name: Spell check audit web page
 about: 'For checking spelling on a code file that contains text displayed on the website'
-title: 'Run VSCode Spell Checker on [INSERT FILE HERE]'
+title: 'Run VS Code Spell Checker on [INSERT FILE HERE]'
 labels: 'Feature: Administrative, Complexity: Small, ready for dev lead, role: back
   end/devOps, role: front end, size: 0.5pt'
 assignees: ''
@@ -9,7 +9,7 @@ assignees: ''
 ---
 
 ### Overview
-We need to audit HfLA codebase files for spelling errors using the VSCode Code Spell Checker extension in order to ensure site quality. Results will be categorized as misspellings, false positives in the HfLA spelling audit spreadsheet[^1] and will be resolved in later issues.  
+We need to audit HfLA codebase files for spelling errors using the Code Spell Checker extension in VS Code in order to ensure site quality. Results will be categorized as misspellings or false positives in the HfLA spelling audit spreadsheet[^1] and will be resolved in later issues.  
 
 ### Action Items
 - [ ] You must use VS Code as your local text editor and install the `Code Spell Checker` VS Code extension[^2]  
@@ -17,7 +17,7 @@ We need to audit HfLA codebase files for spelling errors using the VSCode Code S
 - [ ] Open the file '[INSERT FILE PATH]' and note any Code Spell Checker errors
 - [ ] Locate the file in column A ("File") of the "Page Audit" sheet. In the column labeled "Result Summary", select the appropriate option: `No errors` or `At least one error`.
 - [ ] If at least one error was reported, copy/paste each cSpell message into a separate row in the `Results` sheet
-- [ ] In each new row, select the appropriate value: `misspelling` or `false positive` from the "Result type" column. A false positive is a term that is not a misspelling, but it is not recognized by the spell checker because it is a technical term, abbreviation, acronym, URL or proper noun (name of a person, place or organization).
+- [ ] In each new row, select the appropriate value: `misspelling` or `false positive` from the "Result type" column. A false positive is a term that is not a misspelling but is not recognized by the spell checker because it is a technical term, abbreviation, acronym, URL or proper noun (name of a person, place or organization).
 - [ ] Move this issue to the Questions/In Review column and apply the label `ready for dev lead`
 
 ### Merge Team
