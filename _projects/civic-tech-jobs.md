@@ -6,30 +6,36 @@ image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
 leadership: 
+  - name: Karen Coronel
+    role: Senior Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U010KUGJATC
+      github: https://github.com/kcoronel
+    picture: https://avatars.githubusercontent.com/kcoronel
   - name: Salima Yacoubi Soussane 
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
       github: https://github.com/Salimays
     picture: https://avatars.githubusercontent.com/Salimays
-  - name: Ava Li
-    role: Development Lead
+  - name: Sabrina Heasley
+    role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U01B73XGCKV
-      github: https://github.com/Aveline-art
-    picture: https://avatars.githubusercontent.com/Aveline-art
-  - name: Noor Grewal
-    role: Full Stack Developer
-    links:
-      slack: https://hackforla.slack.com/team/U045Q8PD1B5
-      github: https://github.com/gjagnoor
-    picture: https://avatars.githubusercontent.com/gjagnoor 
+      slack: https://hackforla.slack.com/team/U05GDBDPEDR
+      github: https://github.com/sabheasley
+    picture: https://avatars.githubusercontent.com/sabheasley
   - name: Jen Chung
     role: UX/UI Design Lead
     links:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
+  - name: Jenn Wu
+    role: UX Researcher Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05JS3V38TV
+      github: https://github.com/jayywu
+    picture: https://avatars.githubusercontent.com/jayywu 
   - name: Tin Wei Chung
     role: UX/UI Designer
     links:
@@ -60,18 +66,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U0312CTAZS4
       github: https://github.com/BethBethBeth
     picture: https://avatars.githubusercontent.com/BethBethBeth
-  - name: Genggeng Zhang
+  - name: Leah Ellis
     role: UX Researcher
     links:
-      slack: https://hackforla.slack.com/team/U03UYEVMV37
-      github: https://github.com/gzhang5240
-    picture: https://avatars.githubusercontent.com/gzhang5240   
-  - name: Karen Coronel
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U010KUGJATC
-      github: https://github.com/kcoronel
-    picture: https://avatars.githubusercontent.com/kcoronel
+      slack: https://hackforla.slack.com/team/U04GYTXSP9D
+      github: https://github.com/Leah0996
+    picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Matt Pereira
     role: Developer
     links:
@@ -84,6 +84,18 @@ leadership:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
+  - name: Benny Van
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05JP90EHMK
+      github: https://github.com/bennyv8
+    picture: https://avatars.githubusercontent.com/bennyv8
+  - name: Sarah Sanger
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U02M686LYET
+      github: https://github.com/Blulady
+    picture: https://avatars.githubusercontent.com/Blulady
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs

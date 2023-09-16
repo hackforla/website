@@ -98,7 +98,7 @@ function retrieveProjectDataFromCollection(){
                 "project": {
                             'id': "{{project.id | default: 0}}",
                             'identification': {{project.identification | default: 0}},
-                            'secondRepoId': {{project.secondRepoId | default: 0}},
+                            'additionalRepoIds': {{project.additional-repo-ids | default: 0}},
                             "status": "{{ project.status }}"
                             {%- if project.image -%},
                             "image": '{{ project.image }}'
@@ -141,9 +141,9 @@ function retrieveProjectDataFromCollection(){
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
         if(matchingProject) {
             project.languages = matchingProject.languages;
-            if(project.secondRepoId != 0){
-                const secMatchingProject = projectLanguagesArr.find(x=> x.id === project.secondRepoId);
-                const langArr = [...matchingProject.languages, ...secMatchingProject.languages];
+            if(project.additionalRepoIds != 0){
+                const additionalMatchingProject = projectLanguagesArr.find(x=> x.id === project.additionalRepoIds);
+                const langArr = [...matchingProject.languages, ...additionalMatchingProject.languages];
                 let set = new Set(langArr);
                 project.languages = Array.from(set);
             }
@@ -524,17 +524,14 @@ function projectCardComponent(project){
                 `:""
                 }
 
-                ${project.tools ?
-                `
-                <div class="project-tools">
-                <strong>Tools: </strong>
-                ${(Array.isArray(project.tools) ? project.tools : project.tools.split(','))
-                    .map(tool => `<p class='project-card-field-inline'> ${tool}</p>`)
-                    .join(", ")
-                }
-                </div>
-                `: ""
-                }
+                        ${project.tools ?
+                        `
+                        <div class="project-tools">
+                        <strong>Tools: </strong>
+                        ${project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ")}
+                        </div>
+                        `: ""
+                        }
 
                 ${project.looking ? "" : ""
                 // `

@@ -42,12 +42,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
       github: 'https://github.com/Jane4925'
     picture: https://avatars.githubusercontent.com/Jane4925
-  - name: James Higgs
-    role: Frontend Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U015ZGMK171'
-      github: 'https://github.com/jahpe777'
-    picture: https://avatars.githubusercontent.com/jahpe777
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
