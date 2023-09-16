@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
         document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
 
-
         // Update UI on page load based on url parameters
         updateUI()
 
@@ -328,7 +327,7 @@ function updateUI(){
     // Card is shown/hidden based on filters listed in the url parameter
     updateProjectCardDisplayState(filterParams);
 
-    //update this later!!!
+    //Displays no results message if filter returns no results
     toggleNoResultMsgIfNoMatch(filterParams, 'project-card')
 
     // The function updates the frequency of each filter based on the cards that are displayed on the page.
