@@ -12,6 +12,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Josiah Odosu
+    role: Product Team
+    links:
+      slack: https://hackforla.slack.com/team/U052L9U44LB
+      github: https://github.com/Josiah-O
+    picture: https://avatars.githubusercontent.com/Josiah-O    
   - name: Roslyn Wythe
     role: Dev Lead
     links:
@@ -66,12 +72,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04U531MS5P
       github: https://github.com/kwangric
     picture: https://avatars.githubusercontent.com/kwangric
-  - name: Johnny Wu
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
-      github: 'https://github.com/Skydodle'
-    picture: https://avatars.githubusercontent.com/Skydodle
   - name: Adrian Ang
     role: Merge Team
     links:
