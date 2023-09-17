@@ -9,7 +9,7 @@ jobs:
     # Only trigger this action when an issue is newly created
     if: ${{ github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'transferred')}}
     steps:
-      - uses: actions/checkout@v3    
+      - uses: actions/checkout@v4    
       # Check if the issue has required labels
       - name: Check Labels
         uses: actions/github-script@v6
@@ -47,7 +47,7 @@ jobs:
     #Triggers when the issue is newly assigned
     if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
     steps:
-      - uses: actions/checkout@v3  
+      - uses: actions/checkout@v4  
 
       # Check if the issue has the required roles
       - name: Check Labels Prelim
