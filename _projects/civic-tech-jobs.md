@@ -60,12 +60,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
       github: https://github.com/melkosm
     picture: https://avatars.githubusercontent.com/melkosm
-  - name: Beth Williford
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U0312CTAZS4
-      github: https://github.com/BethBethBeth
-    picture: https://avatars.githubusercontent.com/BethBethBeth
   - name: Leah Ellis
     role: UX Researcher
     links:
