@@ -72,12 +72,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04U531MS5P
       github: https://github.com/kwangric
     picture: https://avatars.githubusercontent.com/kwangric
-  - name: Johnny Wu
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
-      github: 'https://github.com/Skydodle'
-    picture: https://avatars.githubusercontent.com/Skydodle
   - name: Adrian Ang
     role: Merge Team
     links:
