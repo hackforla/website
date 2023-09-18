@@ -18,12 +18,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
       github: https://github.com/Salimays
     picture: https://avatars.githubusercontent.com/Salimays
-  - name: Noor Grewal
-    role: Full Stack Developer
+  - name: Sabrina Heasley
+    role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U045Q8PD1B5
-      github: https://github.com/gjagnoor
-    picture: https://avatars.githubusercontent.com/gjagnoor 
+      slack: https://hackforla.slack.com/team/U05GDBDPEDR
+      github: https://github.com/sabheasley
+    picture: https://avatars.githubusercontent.com/sabheasley
   - name: Jen Chung
     role: UX/UI Design Lead
     links:
@@ -60,12 +60,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
       github: https://github.com/melkosm
     picture: https://avatars.githubusercontent.com/melkosm
-  - name: Beth Williford
+  - name: Leah Ellis
     role: UX Researcher
     links:
-      slack: https://hackforla.slack.com/team/U0312CTAZS4
-      github: https://github.com/BethBethBeth
-    picture: https://avatars.githubusercontent.com/BethBethBeth
+      slack: https://hackforla.slack.com/team/U04GYTXSP9D
+      github: https://github.com/Leah0996
+    picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Matt Pereira
     role: Developer
     links:
