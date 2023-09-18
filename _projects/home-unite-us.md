@@ -123,6 +123,7 @@ looking:
 technologies:
   - React
   - NoSQL
+  - AWS
   - Flask
   - Amazon Cognito
   - OIDC
@@ -130,9 +131,8 @@ technologies:
   - MongoDB
 location:
   - Remote
-tools: 
+tools:
   - Figma
-  - AWS
   - Nginx
   - Style Components
   - Zoom
