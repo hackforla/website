@@ -132,7 +132,6 @@ tools:
   - Google Docs
   - Figma
   - UsabilityHub
-  
 visible: true
 program-area: 
   - Civic Tech Infrastructure
