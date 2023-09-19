@@ -127,7 +127,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-partner: Code for America, Yale OpenLab and many more.
+
 tools:
   - Google docs
   - Figma
