@@ -129,9 +129,9 @@ location:
   - Remote
 
 tools:
-  - Google docs
+  - Google Docs
   - Figma
-  - Usability Hub
+  - UsabilityHub
 visible: true
 program-area: 
   - Civic Tech Infrastructure
