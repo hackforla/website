@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
   - name: Camila Arias
+  - github-handle:
     role: UI/UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U018S4VQK3M'
