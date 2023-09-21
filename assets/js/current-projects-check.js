@@ -469,7 +469,7 @@ return `
 			`
 			<div class="project-tools">
 			<strong>Tools: </strong>
-            ${project.tools.map(tool => `<p class='project-card-field-inline'>${ tool }</p>`).join(", ")}
+            ${project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ")}
 			</div>
 			`: ""
 			}
