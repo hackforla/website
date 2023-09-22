@@ -1,5 +1,5 @@
 ---
-name: update CONTRIBUTING.md
+name: Update CONTRIBUTING.md
 about: 'For making updates to CONTRIBUTING.md'
 title: 'Update [DESCRIBE CHANGE] in CONTRIBUTING.md'
 labels: 'Feature: Wiki, Complexity: Small, ready for dev lead, role: back end/devOps, role: front end, size: 0.5pt'
