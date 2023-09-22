@@ -63,7 +63,6 @@ const createIssue = async (owner, repo, inactiveLists) => {
     "Feature: Administrative",
     "role: dev leads",
     "Ready for dev lead",
-    "Ready for product",
     "Complexity: Small",
     "Size: 0.5pt",
   ];
