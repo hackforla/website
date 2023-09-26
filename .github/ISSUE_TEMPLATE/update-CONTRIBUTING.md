@@ -2,7 +2,7 @@
 name: Update CONTRIBUTING.md
 about: 'For making updates to CONTRIBUTING.md'
 title: 'Update [DESCRIBE CHANGE] in CONTRIBUTING.md'
-labels: 'Feature: Wiki, Complexity: Small, ready for dev lead, role: back end/devOps, role: front end, size: 0.5pt'
+labels: 'Feature: Wiki, Complexity: Small, role: back end/devOps, role: front end, size: 0.5pt'
 assignees: ''
 
 ---
@@ -10,6 +10,8 @@ assignees: ''
 ### Prerequisite
 1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started page](https://www.hackforla.org/getting-started) and attend an onboarding session.
 2. Before you claim or start working on an issue, please make sure you have read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/7f0c132c96f71230b8935759e1f8711ccb340c0f/CONTRIBUTING.md).
+
+### Overview
 
 ### Action Items
 - [ ] In your local IDE, navigate to `CONTRIBUTING.md`
@@ -29,7 +31,7 @@ https://github.com/[REPLACE WITH GITHUB HANDLE]/website/blob/[REPLACE WITH NAME 
    (for example: https://github.com/bonniewolfe/website/blob/issue-branch-1234/CONTRIBUTING.md)
 - [ ] Create a pull request with your changes.  In the Pull Request, after the "Why did you make the changes" section, add this line to help reviewers, replacing the text in brackets (and the brackets) with the test URL from the previous Action Item.
 ```
-For Reviewers: Do not test changes locally, rather test changes at [REPLACE WITH TEST URL]
+For Reviewers: Do not review changes locally, rather, review changes at [REPLACE WITH TEST URL]
 ```
 
 ### Resources/Instructions
