@@ -135,7 +135,8 @@
 }
 
 .toolkit-red {
-    color: $color-red
+    color: $color-red;
+    text-transform: capitalize
 }
 
 @media only screen and (max-width: 1430px) {
