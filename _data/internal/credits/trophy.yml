@@ -1,8 +1,7 @@
 ---
 title: Trophy
 title-link: https://thenounproject.com/term/trophy/3115497/
-# the type of image - icon, photo, etc.
-content: Image
+content-type: image
 # the page it's used on
 used-in: About
 artist: iconpixel, ID
@@ -13,6 +12,4 @@ provider-link: https://thenounproject.com/
 # Location in our GitHub repo
 image-url: /assets/images/about/wins-cup.svg
 alt: 'Image of Trophy'
-# apparently the same as content
-type: icon
 ---

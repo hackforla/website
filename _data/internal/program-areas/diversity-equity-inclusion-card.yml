@@ -1,6 +1,6 @@
 ---
-name: Diversity, Equity, and Inclusion
-program-area: Diversity / Equity and Inclusion
+name: Diversity, Equity & Inclusion
+program-area: Diversity / Equity / Inclusion
 description: >
   Hack for LA believes in radical inclusivity, and this extends to the causes of 
   our projects, from promoting inclusive language online to improving student 
@@ -25,6 +25,6 @@ projects:
   - id: 222602391
     name: New Schools Today
     image: /assets/images/projects/new-schools-today.jpg
-    image_alt: Team of students each with a laptop sitting around the conference table, attentively engege in a video conference call meeting.
+    image_alt: Team of students each with a laptop sitting around the conference table, attentively engage in a video conference call meeting.
     link: https://www.hackforla.org/projects/new-schools-today
 ---

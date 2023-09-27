@@ -24,10 +24,10 @@ jobs:
       ARTIFACT_NAME: 'pr-labels'
       SCRIPT_PATH: './github-actions/trigger-pr/set-pr-labels.js'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: download-artifact
         name: 'Download artifact'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const { downloadLabelsArtifact } = require('${{ env.SCRIPT_PATH }}');
@@ -37,7 +37,7 @@ jobs:
         run: unzip '${{ env.ARTIFACT_NAME }}.zip'
       - id: set-pr-labels
         name: 'Set labels on the pull request'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const { setLabelsOnPR } = require('${{ env.SCRIPT_PATH }}');

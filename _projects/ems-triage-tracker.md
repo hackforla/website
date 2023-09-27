@@ -3,9 +3,8 @@ identification: '221542759'
 title: EMS Triage Tracker
 description: 'The EMS Triage Tracker app provides the ability to track both primary and secondary triage during Mass Casualty Incidents, as well as provide incident command with tools to view and direct the operation of all personnel involved.'
 image: /assets/images/projects/ems-triage-tracker.png
-alt: 'EMS Triage Tracker Logo'
+alt: 'EMS Triage Tracker'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
-alt-hero: 'EMS Triage Tracker dashboard with breakdown of casualty numbers and a satellite view of the street grid with blue casualty location markers.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -71,7 +70,9 @@ links:
 location: 
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
-tools: Figma, video production
+tools: 
+  - Figma
+  - video production
 program-area: 
   - Civic Tech Infrastructure
 status: Completed

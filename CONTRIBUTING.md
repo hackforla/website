@@ -37,7 +37,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
       - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
       - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-       - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -58,11 +58,14 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
         - [**iii. Prepare repos changes (3): Use the `git reset HEAD` command to remove a staged file.**](#iii-prepare-repos-changes-3-use-the-git-reset-head-command-to-remove-a-staged-file)
         - [**iv. Prepare repos changes (4): Use the `git commit` command**](#iv-prepare-repos-changes-4-use-the-git-commit-command)
-      - [**2.7.d Working on an issue (4): Check upstream before you push**](#27d-working-on-an-issue-4-check-upstream-before-you-push)
+      - [**2.7.d Working on an issue (4): Pulling from upstream before you push**](#27d-working-on-an-issue-4-pulling-from-upstream-before-you-push)
         - [**i. If there are no changes in the upstream repository**](#i-if-there-are-no-changes-in-the-upstream-repository)
         - [**ii. If there are conflicting changes in the upstream repository**](#ii-if-there-are-conflicting-changes-in-the-upstream-repository)
       - [**2.7.e Working on an issue (5): Incorporating changes from upstream**](#27e-working-on-an-issue-5-incorporating-changes-from-upstream)
         - [**i. Incorporating changes into your topic branch**](#i-incorporating-changes-into-your-topic-branch)
+      - [**2.7.f Working on an issue (6): Handling SSH authorization errors**](#27f-working-on-an-issue-6-handling-ssh-authorization-errors)
+        - [**i. Setting up SSH Keys for Mac**](#i-setting-up-ssh-keys-for-mac)
+        - [**ii. Setting up SSH Keys for Windows**](#ii-setting-up-ssh-keys-for-windows)
   - [**Part 3: Pull Requests**](#part-3-pull-requests)
     - [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request)
       - [**3.1.a Push all changes to your issue branch**](#31a-push-all-changes-to-your-issue-branch)
@@ -71,9 +74,10 @@ The following is a set of guidelines for contributing to the website repository,
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
         - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
-        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-How-to-add-a-pull-request-to-the-project-board)
+        - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-how-to-add-a-pull-request-to-the-project-board)
         - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
       - [**3.1.c Editing a submitted pull request**](#31c-editing-a-submitted-pull-request)
+      - [**3.1.d Dealing with merge conflicts**](#31d-dealing-with-merge-conflicts)
   - [**Part 4: Resources and Documentation**](#part-4-resources-and-documentation)
     - [**4.1 What do I do if I need help?**](#41-what-do-i-do-if-i-need-help)
     - [**4.2 Resources and Documentation**](#42-resources-and-documentation)
@@ -219,8 +223,8 @@ More on using Docker and the concepts of containerization:
 
 #### **1.5.a Docker installation troubleshooting**
 
-If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving te issue:
-- [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Adding-local-user-accounts-to-the-docker-users-group-on-Windows-10)
+If you are on Windows and get 'You are not allowed to use Docker, you must be in the "docker-users" group' as an error message, the following wiki page is a guide for solving the issue:
+- [Windows docker-users group error guide](https://github.com/hackforla/website/wiki/Add-local-user-accounts-to-the-docker-users-group-on-Windows-10)
 
 Installing WSL2 on windows
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10
@@ -304,15 +308,15 @@ docker-compose up
 
 ### **2.1 Hack for LA Contributor expectations**
 
-In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Size: Small`/`Size: Medium`/`Size: Large` label issue within this repo, you need to complete the following:
+In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
 
 1. `good first issue`
    * Self-assign an issue with the `good first issue` label. 
    * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
    * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
    * Once your pull request is merged, you can work on your next issue.
-2. `size: Good second issue`
-  *  Self-assign an issue with the `Size: Good second issue` label. 
+2. `Complexity: Good second issue`
+  *  Self-assign an issue with the `Complexity: Good second issue` label. 
   * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
   * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
   * Once your pull request is merged, you can work on your next issue.
@@ -345,13 +349,13 @@ We currently have issues with the following **role** labels:
 * `role: front end` 
 * `role: backend/devOps`
 
-And the following **size** labels:
+And the following **complexity** labels:
 
 * `good first issue` 
-* `size: good second issue`
-* `size: Small`
-* `size: Medium`
-* `size: Large`
+* `complexity: good second issue`
+* `complexity: Small`
+* `complexity: Medium`
+* `complexity: Large`
 
 **Note:** The Prioritized Backlog column is filtered so the first (top) issue has the highest priority and should be worked on next. <br />
 
@@ -375,9 +379,9 @@ There are only 2 columns that you will be consistently referencing:
 1. `Onboarding infos/links` - Some helpful card information examples:
   * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
   * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
-  * Filters to show the project issues by a specific size:
-    * [`role: front end` size filters card](https://github.com/hackforla/website/projects/7#card-63001626)
-    * [`role: back end` size filters card](https://github.com/hackforla/website/projects/7#card-65620159)
+  * Filters to show the project issues by a specific complexity:
+    * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
+    * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
   
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
@@ -391,17 +395,17 @@ We recommend you visit the `Prioritized Backlog` column in the filtered Project 
 
 #### **2.3.b Available issues for returning members (front end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+good+second+issue%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+small%22+label%3A%22role%3A+front+end%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+good+second+issue%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
 
 #### **2.3.c Available issues for returning members (back end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22size%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+small%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22size%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **size: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22size%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
 
 #### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
 
@@ -510,6 +514,20 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 ```bash
 git checkout gh-pages
 ```
+
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+
+```bash
+git pull upstream
+```
+
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+
+<details>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+</details>
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
@@ -553,7 +571,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 
 Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
 
-**Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/Using-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
+**Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/How-to-Use-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
    
 ##### **i. Prepare repo changes (1): Use the `git add` command to stage your changes.** 
 
@@ -598,13 +616,20 @@ git commit -m “insert message here”
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
   
-#### **2.7.d Working on an issue (4): Check upstream before you push**
+#### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
-Before you push your local commits to your repository, check to see if there have been updates made in the main Hack For LA website repository. `git fetch` will check remote repositories for changes without altering your local repository.
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
 ```bash
-git fetch upstream
+git pull upstream
 ```
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+
+<details>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+</details>
+
 
 ##### **i. If there are no changes in the upstream repository**
 
@@ -690,6 +715,79 @@ git checkout update-give-link-2093
 git merge gh-pages
 ```
 
+#### **2.7.f Working on an issue (6): Handling SSH authorization errors**
+
+**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
+[Git Bash](https://git-scm.com/downloads)
+
+##### **i. Setting up SSH Keys for Mac**
+
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+
+```bash
+ls -al ~/.ssh
+```
+
+2. Then enter the text below into your terminal using your github account email address.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+3. You will be asked to enter a file to save the key, press enter, and then enter a passphrase. Then you will need to ensure that your machine and your repository are connected by running the ssh agent.
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+4. Next you need to add your ssh key to your ssh agent.
+
+```bash
+ssh-add -K ~/.ssh/id_ed25519
+```
+
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+
+##### **ii. Setting up SSH Keys for Windows**
+
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+
+```bash
+ls -al ~/.ssh
+```
+
+2. Then enter the text below into your terminal using your github account email address.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+3. You will be asked to enter a file to save the key, press enter, and then enter a passphrase. Then you will need to ensure that your machine and your repository are connected by running the ssh agent.
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+4. Next you need to add your ssh key to your ssh agent
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+
+```bash
+clip < ~/.ssh/id_ed25519.pub
+```
+
+6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
@@ -720,11 +818,15 @@ git push --set-upstream origin update-give-link-2093
   ```
   Fixes #replace_this_text_with_the_issue_number
 
-  ### What changes did you make and why did you make them ?
+  ### What changes did you make?
+    -
+    -
+    -
 
-  -
-  -
-  -
+  ### Why did you make the changes (we will use this info to test)?
+    -
+    -
+    -
 
   ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
   <!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
@@ -829,7 +931,7 @@ Moving files to another directory. No visual changes to the website.
 ```
 ##### **v. Complete pull request (5): How to add a pull request to the project board**
 
-**NOTE**: We are in the process of automating newly created pull requests being added to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
+**NOTE**: There is an automation for adding newly created pull requests to the Project Board. However, it still should be manually checked to make sure the pull request has been placed on the Project Board in case automation breaks.
 
 After you have submitted your pull request, add it to the project board by clicking the gear icon on the right under Projects and selecting 'Project Board.'
 
@@ -870,7 +972,15 @@ Now you are all set to work on a new PR. Start over at [**2.3 Where can I find G
 If you find an error in your code or your reviewer asks you to make a change, please avoid editing your code directly from the pull request. Instead update it in your local branch first and then push it to your origin remote. This will update the original pull request.
 
 
-For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests) and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
+For new volunteers, check this [wiki on completing pull request reviews](https://github.com/hackforla/website/wiki/How-to-Review-Pull-Requests), [visual demo on pull request reviews](https://drive.google.com/file/d/1b6uW_Od8ftACsEr5u-nxe8qNb8UjkISN), and our [wiki on creating issues](https://github.com/hackforla/website/wiki/How-to-create-issues) for more ways to contribute to the project.
+
+#### **3.1.d Dealing with merge conflicts**
+
+Merge conflicts occur when two or more branches of code have been modified in conflicting ways, making it difficult for the version control system to automatically merge the changes together. This often happens when two developers modify the same line of code, when one developer deletes a file that another has modified, or when one developer renames a file while another is still working on it.
+
+Resolving merge conflicts typically involves reviewing the changes made in each branch, deciding which changes to keep, and manually editing the code to resolve the conflict.
+
+Please check out this [documentation from VSCode](https://code.visualstudio.com/docs/sourcecontrol/overview#_merge-conflicts) for more information on handling merge conflicts.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -913,6 +1023,8 @@ The best way to ask for help and provide as much information to the team is to d
 * [Wiki - How to Create Issues](https://github.com/hackforla/website/wiki/How-to-create-issues)
 * [Wiki - How to read and interpret issue labels](https://github.com/hackforla/website/wiki/How-to-read-and-interpret-labels)
 * [Wiki - How to communicate with the HfLA Website Team](https://github.com/hackforla/website/wiki/How-to-communicate-with-the-team)
+* [Wiki - How to work off a feature branch](https://github.com/hackforla/website/wiki/How-to-work-off-of-a-feature-branch)
+* [Wiki - Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 
 #### **4.2.b Tools Documentation**
 * [GitHub Pages](https://pages.github.com/)

@@ -3,9 +3,8 @@ identification: '354140311'
 title: Open Community Survey
 description: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils (NCs) to understand how constituents are interacting with, and what they need from, their websites.<br /><br /> Current project&#58 NC website survey; Most NCs do not have access or resources to hire technical experts necessary to create a citywide survey so that they can use the data to create inclusive websites targeted towards the needs of their specific communities. Working with EmpowerLA and NCs, Hack for LA is providing the workforce and expertise to design and implement this survey that will give NCs a tool to understand the overall needs of their community -- beyond the people already involved in NCs.
 image: /assets/images/projects/open-community-survey.jpg
-alt: 'Open Community Survey accessible to three participants with different background and perspectives.'
+alt: 'Open Community Survey'
 image-hero: /assets/images/projects/open-community-survey-hero.jpg
-alt-hero: 'Silhouette of buildings and houses with different colors, shapes and styles.'
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
@@ -63,18 +62,20 @@ location:
   # - Los Angeles
   - Remote
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
-tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
+tools:
+  - ArcGIS surveys
+  - Figma
+  - Google Docs
+  - Zoom
 visible: true
 program-area:
   - Citizen Engagement
 status: Active
-# citizen engagement card data
+# program area card data
 problem: Most Neighborhood Councils do not have access or resources to hire technical experts necessary to create a citywide survey so that they can use the data to create inclusive websites targeted towards the needs of their specific communities.
 solution: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils to understand how constituents are interacting with, and what they need from, their websites.
-impact: Dolorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+impact: <i>We are currently drafting the Impact statement for this project.</i>
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-card-image-src: /assets/images/projects/open-community-survey.jpg
-card-image-alt: open community project card
-sdg-image-src: /assets/images/about/sdg-elements/peace-justice.svg
-sdg-image-alt: peace justice bottom sustainable dev goal
+sdg-image-src: /assets/images/sdg/sdg16.svg
+sdg-image-alt: '16: peace, justice and strong institutions'
 ---

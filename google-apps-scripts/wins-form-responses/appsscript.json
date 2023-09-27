@@ -1,0 +1,15 @@
+{
+  "timeZone": "America/Los_Angeles",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "ghrequests",
+        "version": "0",
+        "libraryId": "1GSXdiZq386Q2D-6bQ5MKR7p82dX1Q58ibeVC20EFFkKZdj_Cfr-WqaDG",
+        "developmentMode": true
+      }
+    ]
+  }
+}

@@ -6,7 +6,7 @@
     width: 100vw;
     margin-top: 61px;
     padding-bottom: 160px;
-    background-color: #f7f5f5;
+    background-color: $color-pink;
 
     @media #{$bp-below-mobile} {
         margin-top: 54px;
@@ -91,7 +91,7 @@
 
     &--header {
         color: $color-white;
-        background-color: #030d2d;
+        background-color: $color-darkblue;
         width: 100%;
         margin: 0;
         padding-top: 13px;
@@ -138,7 +138,7 @@
 
 // must set background color of parent div for primary on dark buttons
 .primary-on-dark-example {
-    background-color: #030d2d;
+    background-color: $color-darkblue;
     width: fit-content;
     padding: 20px 23px;
 }

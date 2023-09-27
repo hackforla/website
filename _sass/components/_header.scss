@@ -25,19 +25,18 @@
     flex-grow: 1;
     text-align: right;
 
-    li {
-      margin-right: 20px;
+    /*li {
+       margin-right: 20px;
 
       &:last-child {
-        margin-right: 0;
+       margin-right: 0;
       }
     }
 
     a {
       &:link,
       &:visited {
-        color: $color-black;
-        margin: -4px;
+       margin: -4px;
       }
 
       &:hover,
@@ -45,7 +44,7 @@
       &:focus {
         color: $color-red;
       }
-    }
+    }*/
   }
 
   .branding {
@@ -70,7 +69,7 @@
 }
 
 .btn--donate-header { 
-  margin: -10px 20px 0 0;
+  margin: -10px 16.25px 0 0;
 }
 
 @media only screen and (max-width: 1028px) {
@@ -102,6 +101,7 @@
     font-weight: 500;
     height: 30px;
     margin-top: 6px;
+    padding-top: 15px;
     line-height: 0;
   }
 }

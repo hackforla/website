@@ -1,0 +1,78 @@
+name: "Github Actions"
+description: This is to create a new GHA
+labels: ['role missing', 'Complexity: Missing', 'Feature: Board/GitHub Maintenance', 'size: missing', 'Draft']
+title: "Sample form for GitHub actions "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+      description:  "Enter the title of this issue"
+    validations:
+      required: true
+  - type: dropdown
+    id: dependency
+    attributes:
+      label: Is there a dependency?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: dependency-explanation
+    attributes:
+      label: If Yes, please explain
+  - type: textarea
+    id: overview
+    attributes:
+      label: "Overview"
+      description: "Clearly state the purpose of this issue in 2 sentences or less"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "## Action Items/Pseudo-code"
+  - type: markdown
+    attributes:
+      value: |
+          - [ ] When an issue/PR is closed:
+            - [ ] If the issue/PR contains a label from the hard label list:
+              - [ ] Place the issue/PR in the column marked 'Done'.
+            - [ ] Else if the issue/PR contains a label from the soft label list:
+              - [ ] If the issue also contains a label from the soft label counter list:
+                - [ ] Place the issue/PR in the column marked 'UAT'
+              - [ ] Else:
+                - [ ] Place the issue/PR in the column marked 'Done'.
+            - [ ] Else:
+              - [ ] Place the issue/PR in the column marked 'UAT'.
+          - [ ] Hard label list: any labels involving refactoring
+          - [ ] Soft label list: 'role: back end' label, 'Feature: Analytics'
+          - [ ] Soft label counter-list: 'role: front end'
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checks
+      options:
+        - "label":  "An issue containing only 'role: back end' and 'role: front end' labels closes -> UAT."
+        - "label":  "An issue containing only 'role: front end' closes -> UAT."
+        - "label":  "An issue containing only 'Feature: Refactor CSS', 'Feature: Refactor JS / Liquid', and 'P-Feature: Home page' -> Done."
+        - "label":  "An issue containing no label -> UAT"
+        - "label":  "Make sure the labels are placed in the code in such a way that we can easily add, edit, or delete labels"
+        - "label":  "~~The columns id should ideally be a secret, so that they are not exposed. When the id is found, please consult an admin to add it to [our secrets](https://docs.github.com/en/actions/reference/encrypted-secrets).~~ Columns id can be retrieved as a link, from the columns settings menu, [for example ](https://github.com/hackforla/website/projects/7#column-7198257). Please retrieve the id from there."
+        - "label":  "In the PR, request the reviewer to, after merging, test that the board automation does not intercept or supercede this GHA. If so, the team leads will need to remove the default automation to allow this one to work."
+  - type: markdown
+    attributes:
+      value: "## Resources/Instructions"
+  - type: markdown
+    attributes:
+      value: "A link to [Github actions!](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions)"
+  - type: checkboxes
+    attributes:
+      label: Create new GHA
+      options:
+        - label: "This is to create a new GHA [Start here!](https://docs.github.com/en/actions)"
+          required: true
+  - type: markdown
+    attributes:
+      value: "Note that you might want to do something outside the scope of the above psudo-code. If so, be sure to leave comments in your PR or this issue that justifies your reasoning. If you feel you need guidance, be sure to reach out! We cannot foresee whether this issue is solvable, or what hard decisions have to be made, but we would love to hear and help you!"

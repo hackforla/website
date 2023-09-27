@@ -1,7 +1,7 @@
 // Constant variables
-const REQUIRED_LABELS = ['Size', 'role', 'Feature']
-const LABEL_MISSING = ['size: missing', 'role missing', 'Feature Missing']
-const SIZE_EXCEPTIONS = ['good first issue']
+const REQUIRED_LABELS = ['Complexity', 'role', 'Feature']
+const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing']
+const COMPLEXITY_EXCEPTIONS = ['good first issue']
 
 // Global variables
 var github
@@ -62,8 +62,8 @@ function checkLabels(labels) {
   REQUIRED_LABELS.forEach((requiredLabel, i) => {
     const regExp = new RegExp(`\\b${requiredLabel}\\b`, 'gi')
     const isLabelPresent = labels.some(label => {
-      // If the label is in the size exceptions array, it also fulfills the size requirements
-      if (SIZE_EXCEPTIONS.includes(label) && requiredLabel === 'Size') {
+      // If the label is in the complexity exceptions array, it also fulfills the complexity requirements
+      if (COMPLEXITY_EXCEPTIONS.includes(label) && requiredLabel === 'Complexity') {
         return true
       }
 
@@ -96,7 +96,7 @@ async function addLabels(labelsToAdd, currentLabels) {
   ])]
 
   try {
-    const results = await github.issues.setLabels({
+    const results = await github.rest.issues.setLabels({
       owner: owner,
       repo: repo,
       issue_number: issueNum,

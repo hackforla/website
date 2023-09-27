@@ -29,7 +29,7 @@ function formatComment(instruction) {
 
 async function postComment(issueNum, instructions) {
     try {
-        await github.issues.createComment({
+        await github.rest.issues.createComment({
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: issueNum,

@@ -7,9 +7,9 @@ jobs:
   move-closed-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Sort Closed Issues by Label
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: sort-closed-issues
         with:
           script: |
@@ -17,7 +17,7 @@ jobs:
             const sortIssues = script({context})
             return sortIssues
           result-encoding: string
-      - uses: alex-page/github-project-automation-plus@v0.8.1
+      - uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: Project Board
           column: ${{ steps.sort-closed-issues.outputs.result }}

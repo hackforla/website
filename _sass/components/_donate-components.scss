@@ -1,0 +1,158 @@
+.circle-lower-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    @media #{$bp-mobile-up} {
+        gap: 4em;               
+    }
+}
+
+.circle-full-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    margin: 0;
+}
+
+.circle-with-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cde4c5;
+    border-radius: 50%;
+}
+
+.crc-lg {
+    height: 12em;
+    width: 12em;
+    @media #{$bp-mobile-up} {
+        height: 13em;
+        width: 13em;               
+    }
+}
+
+.crc-md {
+    height: 8em;
+    width: 8em;
+    @media #{$bp-mobile-up} {
+        height: 9em;
+        width: 9em;               
+    }
+}
+
+.crc-sm {
+    height: 5.5em;
+    width: 5.5em;
+    @media #{$bp-mobile-up} {
+        height: 6em;
+        width: 6em;               
+    }
+}
+
+.inside-circle-text {
+    text-align: center;
+    color: $color-darkblue;
+    margin: 0;    
+}
+
+// Override p padding from page-card--large-icon-body in _card.scss
+#circle-override-p-padding {
+    padding: 0.2em 0em;
+}
+
+.circle-title{
+    padding: 0.5em;
+    font-size: 1.5em;
+    color: $color-darkblue;
+    margin: 0;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.donation-gif {
+    box-shadow: 0px 2px 4px 0px #00000040;
+}
+
+.donation-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donation-body  {
+    p {
+        font-size: 18px;
+    }
+    
+    li {
+        padding-bottom: 15px;
+    }
+}
+
+.donation-footer {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media #{$bp-tablet-up} {
+    .donation-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        padding: 20px;
+        text-align: left;  
+        align-items: flex-start;
+        font-size: 18px;         
+
+        .donation-body {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+            
+            p {
+                margin-left: 0px;
+            }
+
+            ol {
+                margin-bottom: 0px;
+                padding-left: 30px;
+                max-width: 360px;
+                line-height: 24px;
+            }
+
+            li {
+                padding: 10px 15px 25px 0px;
+                font-size: 1.125rem;
+            }
+        }
+
+        .donation-footer {
+            max-width: 3340px;
+            margin: 0px 0px 0px -10px;
+            padding: 0px 48px 0px 40px;
+            font-size: 15px;
+        }
+
+        .donation-gif {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 2;
+            margin: auto;
+            width: 318px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            margin-top: 0px;
+            padding: 0 10px 0 15px;
+            grid-row: 2 / span 3;
+            grid-column: 1 / span 1;
+        }       
+    } 
+}

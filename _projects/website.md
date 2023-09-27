@@ -1,9 +1,9 @@
 ---
 identification: '130000551'
-title: Hackforla.org Website
-description: The hackforla.org website is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
+title: Hack for LA Site
+description: The Hack for LA Site (hackforla.org) is our organization's way of communicating with volunteers, stakeholders, and donors. This project is a good place to start for new volunteers looking to polish their git protocol skills (branches, separation of concerns, etc.). We currently have two development paths&#58; growth (building out new pages and guides) and optimization (taking inventory of our code and design systems) to ensure we are consistently delivering value to our users while being scalable in our approach to building the site.
 image: /assets/images/projects/website.png
-alt: 'Wireframe sample from new website.'
+alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
@@ -12,36 +12,73 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Cynthia Kiser
-    role: Technical Advisor
+  - name: Josiah Odosu
+    role: Product Team
     links:
-      slack: 'https://hackforla.slack.com/team/USBB18YDR'
-      github: 'https://github.com/cnk'
-    picture: https://avatars.githubusercontent.com/cnk
-  - name: Simone Campbell
-    role: UX Research Lead
+      slack: https://hackforla.slack.com/team/U052L9U44LB
+      github: https://github.com/Josiah-O
+    picture: https://avatars.githubusercontent.com/Josiah-O    
+  - name: Roslyn Wythe
+    role: Dev Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U0260MKR5EJ'
-      github: 'https://github.com/sacamp'
-    picture: https://avatars.githubusercontent.com/sacamp
-  - name: Providence Onyenekwe
-    role: Product Manager
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
+  - name: Sarah Sanger
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U02TECJJ3R7'
-      github: 'https://github.com/Providence-o'
-    picture: https://avatars.githubusercontent.com/Providence-o    
-  - name: Phuong Van
-    role: Design Lead
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
+  - name: Will Gillis
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U031MRNSLNS'
-      github: 'https://github.com/phuonguvan'
-    picture: https://avatars.githubusercontent.com/phuonguvan
-  - name: Tamara Snyder
-    role: Technical Lead
+      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
+      github: 'https://github.com/t-will-gillis'
+    picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danny Do
+    role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U02SQV06ARZ'
-      github: 'https://github.com/tamara-snyder'
-    picture: https://avatars.githubusercontent.com/tamara-snyder
+      slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
+      github: 'https://github.com/Adastros'
+    picture: https://avatars.githubusercontent.com/Adastros
+  - name: Christina Or
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
+      github: 'https://github.com/christinaor'
+    picture: https://avatars.githubusercontent.com/christinaor
+  - name: Drake Nguyen
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04TSESVB4J
+      github: https://github.com/drakenguyen4000
+    picture: https://avatars.githubusercontent.com/drakenguyen4000
+  - name: Ren Demeis-Ortiz
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U059K7A1VFB
+      github: https://github.com/LRenDO
+    picture: https://avatars.githubusercontent.com/LRenDO
+  - name: Ronald Paek
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
+      github: 'https://github.com/ronaldpaek'
+    picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
+  - name: Adrian Ang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
+      github: 'https://github.com/adrianang'
+    picture: https://avatars.githubusercontent.com/adrianang
+
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
@@ -69,7 +106,12 @@ technologies:
   - Google Apps Script
   - GitHub Actions
   - VRMS API
-tools: Figma, Google Drive, Zoom, Google Analytics
+tools:
+  - Figma
+  - Google Drive
+  - Zoom
+  - Google Analytics
+  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA
