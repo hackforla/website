@@ -1,7 +1,7 @@
 ---
 name: Update CONTRIBUTING.md
 about: 'For making updates to CONTRIBUTING.md'
-title: 'Update [DESCRIBE CHANGE] in CONTRIBUTING.md'
+title: 'Update CONTRIBUTING.md Section [INSERT SECTION #]'
 labels: 'Feature: Wiki, Complexity: Small, role: back end/devOps, role: front end, size: 0.5pt'
 assignees: ''
 
@@ -12,6 +12,7 @@ assignees: ''
 2. Before you claim or start working on an issue, please make sure you have read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/7f0c132c96f71230b8935759e1f8711ccb340c0f/CONTRIBUTING.md).
 
 ### Overview
+[INSERT BRIEF DESCRIPTION OF THE UPDATE]
 
 ### Action Items
 - [ ] In your local IDE, navigate to `CONTRIBUTING.md`
