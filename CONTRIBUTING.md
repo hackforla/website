@@ -72,7 +72,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**3.1.b Complete pull request on Hack for LA `website` repo**](#31b-complete-pull-request-on-hack-for-la-website-repo)
         - [**i. Complete pull request (1): Update pull request title**](#i-complete-pull-request-1-update-pull-request-title)
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
-        - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
+        - [**iii. Complete pull request (3): Explain the changes you made, then explain why these changes were needed**](#iii-complete-pull-request-3-explain-the-changes-you-made-then-explain-why-these-changes-were-needed)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
         - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-how-to-add-a-pull-request-to-the-project-board)
         - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
@@ -882,16 +882,17 @@ Fixes #2093
 
 **Note:** This will now connect the issue and pull request both close when the pull request is successfully merged.
 
-##### **iii. Complete pull request (3): What changes did you make**
+##### **iii. Complete pull request (3): Explain the changes you made, then explain why these changes were needed**
 
-In bullet point form, notate the changes you made to be in order to complete the action items within your issue. [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following summary in PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131):
+In bullet point form, explain the changes you made in order to complete the action items within your issue and why. [@adrianang](https://github.com/adrianang) provided the following summary in PR [Add Project to Website: Tech Work Experience #4911](https://github.com/hackforla/website/pull/4911):
 
 ```
-### What changes did you make and why did you make them ?
+### What changes did you make?
+  - Created new markdown file for the Tech Work Experience Project (tech-work-experience.md)
+  - Added assets (project card image, project hero image, PDF overview) to their appropriate folders
 
-- Updated title and alt to Care.
-- Updated artist to Bharat
-- Updated filename to care.yml
+### Why did you make the changes (we will use this info to test)?
+  - To keep list of active HfLA projects on the website up-to-date
 
 ```
 
