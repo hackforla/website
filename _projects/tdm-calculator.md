@@ -30,12 +30,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
       github: 'https://github.com/Noushie'
     picture: https://avatars.githubusercontent.com/Noushie
-  - name: Moji Momoh
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
-      github: 'https://github.com/mojimoh'
-    picture: https://avatars.githubusercontent.com/mojimoh
   - name: Jane He
     role: Lead, UX Research
     links:

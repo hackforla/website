@@ -89,14 +89,14 @@ tools:
   - whiteboard / paper & pencil
   - phone calls
   - paper prototyping
-  - Google forms
+  - Google Forms
   - Google Sheets
   - Google Analytics
   - FigJam
   - SPSS
   - Mplus
   - AtlasTI
-  - Usabilityhub.com surveys
+  - UsabilityHub
 program-area:
   - Social Safety Net
 partner: UCLA (CESC 50XP)
