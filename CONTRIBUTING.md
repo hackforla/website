@@ -395,7 +395,7 @@ We recommend you visit the `Prioritized Backlog` column in the filtered Project 
 
 #### **2.3.b Available issues for returning members (front end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+good+second+issue%22)
+
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
