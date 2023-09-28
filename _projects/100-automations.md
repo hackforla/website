@@ -37,6 +37,7 @@ leadership:
       github: 'https://github.com/nahyungkim1220'
     picture: 'https://avatars.githubusercontent.com/nahyungkim1220'
   - name: Jason Brown
+    github-handle:
     role: UX/Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01G7G1HMU1'
