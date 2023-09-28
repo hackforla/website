@@ -90,6 +90,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U02M686LYET
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
+  - name: Nga Do
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U05JS3BS9FD
+      github: https://github.com/ngadoq
+    picture: https://avatars.githubusercontent.com/ngadoq 
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs

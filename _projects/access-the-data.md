@@ -22,6 +22,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
+  - name: Jason Yung
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
+      github: 'https://github.com/merlinsmagic'
+    picture: https://avatars.githubusercontent.com/merlinsmagic
   - name: Judson Lester
     role: Developer
     links:
