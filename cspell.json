@@ -3,7 +3,8 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
-      "collabathon"
+      "collabathon",
+      "Westside"
   ],
   "ignorePaths": [
       "node_modules",
