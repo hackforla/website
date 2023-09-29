@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/mdothman'
     picture: 'https://avatars.githubusercontent.com/mdothman'
   - name: Audrey Kim
+    github-handle: 
     role: UX Writer
     links:
       slack: 'https://hackforla.slack.com/team/U01H0CXBTUM'
