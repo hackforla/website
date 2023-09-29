@@ -129,11 +129,11 @@ technologies:
   - OIDC
   - OAuth2
   - MongoDB
+  - Nginx
 location:
   - Remote
 tools:
   - Figma
-  - Nginx
   - Style Components
   - Zoom
   - GitHub
