@@ -22,6 +22,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
+  - name: Jason Yung
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
+      github: 'https://github.com/merlinsmagic'
+    picture: https://avatars.githubusercontent.com/merlinsmagic
   - name: Judson Lester
     role: Developer
     links:
@@ -34,24 +40,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0245UJP868'
       github: 'https://github.com/Aparna1Gopal'
     picture: https://avatars.githubusercontent.com/Aparna1Gopal
-  - name: Deepa Mohan
-    role: UX Designer 
-    links:
-      slack: 'https://hackforla.slack.com/team/U033H9HT0P2'
-      github: 'https://github.com/deepamohan22'
-    picture: https://avatars.githubusercontent.com/deepamohan22
   - name: Tony Delgado
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
       github: 'https://github.com/TonyDelgadoWillis'
     picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
-  - name: Jason Yung
-    role: Project Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
-      github: 'https://github.com/merlinsmagic'
-    picture: https://avatars.githubusercontent.com/merlinsmagic
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/access-the-data/'

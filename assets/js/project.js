@@ -27,12 +27,12 @@ function findProjectById(identification){
 } 
 
 // Merge the language sections if there's a second repo
-if (scriptTag.getAttribute("secRepoId")){
-    const secRepoId = scriptTag.getAttribute("secRepoId");    
+if (scriptTag.getAttribute("additionalRepoIdNums")){
+    const additionalRepoIdNums = scriptTag.getAttribute("additionalRepoIdNums");    
     const firstLangs = project.languages;
-    const secLangs = findProjectById(secRepoId).languages;
+    const additionalLangs = findProjectById(additionalRepoIdNums).languages;
 
-    let languagesArr = [...firstLangs, ...secLangs];
+    let languagesArr = [...firstLangs, ...additionalLangs];
     let set = new Set(languagesArr);
     project.languages = Array.from(set);
 }

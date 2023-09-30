@@ -68,8 +68,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
    - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Read and understand how we progress through issues. Then, you can check this off.
 Progress through issues in the [prioritized backlog](https://github.com/hackforla/website/projects/7#column-7198257) only with increasing complexity in the following order:
-  - Good first issue (one per person)
-  - Good second issue (one per person)
+  - Good first issue (two per person)
   - Small (one per person, with some exceptions, see below)
   - Medium (you can work on more than one medium issue, but only one at a time)
   - Large (you can work on more than one large issue, but only one at a time)

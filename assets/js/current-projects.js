@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
         document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
 
-
         // Update UI on page load based on url parameters
         updateUI()
 
@@ -108,7 +107,7 @@ function retrieveProjectDataFromCollection(){
                 "project": {
                             'id': "{{project.id | default: 0}}",
                             'identification': {{project.identification | default: 0}},
-                            'secondRepoId': {{project.secondRepoId | default: 0}},
+                            'additionalRepoIds': {{project.additional-repo-ids | default: 0}},
                             "status": "{{ project.status }}"
                             {%- if project.image -%},
                             "image": '{{ project.image }}'
@@ -151,9 +150,9 @@ function retrieveProjectDataFromCollection(){
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
         if(matchingProject) {
             project.languages = matchingProject.languages;
-            if(project.secondRepoId != 0){
-                const secMatchingProject = projectLanguagesArr.find(x=> x.id === project.secondRepoId);
-                const langArr = [...matchingProject.languages, ...secMatchingProject.languages];
+            if(project.additionalRepoIds != 0){
+                const additionalMatchingProject = projectLanguagesArr.find(x=> x.id === project.additionalRepoIds);
+                const langArr = [...matchingProject.languages, ...additionalMatchingProject.languages];
                 let set = new Set(langArr);
                 project.languages = Array.from(set);
             }
@@ -327,6 +326,9 @@ function updateUI(){
 
     // Card is shown/hidden based on filters listed in the url parameter
     updateProjectCardDisplayState(filterParams);
+
+    //Displays no results message if filter returns no results
+    toggleNoResultMsgIfNoMatch(filterParams, 'project-card')
 
     // The function updates the frequency of each filter based on the cards that are displayed on the page.
     updateFilterFrequency(filterParams);
@@ -750,4 +752,12 @@ function filterTagComponent(filterName,filterValue){
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
+}
+
+function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
+    if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
+        noResultsMessageComponent(filtersParams,'black')
+    } else {
+        document.querySelector(".no-results-message").innerHTML = ""
+    }
 }

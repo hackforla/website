@@ -12,6 +12,18 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Josiah Odosu
+    role: Product Team
+    links:
+      slack: https://hackforla.slack.com/team/U052L9U44LB
+      github: https://github.com/Josiah-O
+    picture: https://avatars.githubusercontent.com/Josiah-O    
+  - name: Roslyn Wythe
+    role: Dev Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
+      github: 'https://github.com/roslynwythe'
+    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Sarah Sanger
     role: Merge Team
     links:
@@ -36,12 +48,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
       github: 'https://github.com/christinaor'
     picture: https://avatars.githubusercontent.com/christinaor
-  - name: Chris Menke
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04KVG05H3J
-      github: https://github.com/chrismenke45
-    picture: https://avatars.githubusercontent.com/chrismenke45
   - name: Drake Nguyen
     role: Merge Team
     links:
@@ -66,24 +72,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U04U531MS5P
       github: https://github.com/kwangric
     picture: https://avatars.githubusercontent.com/kwangric
-  - name: Johnny Wu
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U043KH4FQ1M'
-      github: 'https://github.com/Skydodle'
-    picture: https://avatars.githubusercontent.com/Skydodle
   - name: Adrian Ang
     role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
       github: 'https://github.com/adrianang'
     picture: https://avatars.githubusercontent.com/adrianang
-  - name: Roslyn Wythe
-    role: Dev Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
 
 links:
   - name: Wiki
