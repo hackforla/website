@@ -16,7 +16,7 @@ jobs:
       PR_NUMBER: ${{ github.event.number }}
       SCRIPT_PATH: './github-actions/trigger-pr/set-pr-labels.js'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: parse-pr-body
         name: 'Parse the pull request body for all linked issues'
         uses: actions/github-script@v6
