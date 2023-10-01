@@ -1,6 +1,6 @@
 ---
 identification: '277577906'
-title: Brigade Organizers Playbook
+title: BOP
 description: Civic tech volunteer organizations often start building from scratch, which uses up valuable resources (time, labor and momentum).  This project aims to improve existing structures and create new ones that make it easier to share replicable processes and practices so that organizers and members can iterate on each other's work, improving outcomes for the civic tech ecosystem.
 image: /assets/images/projects/brigade-organizers-playbook.png
 alt: 'Brigade Organizers Playbook'
