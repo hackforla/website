@@ -20,12 +20,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
-  - name: Shawn Wong
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
-      github: 'https://github.com/seannwvong'
-    picture: https://avatars.githubusercontent.com/seannwvong
+
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
