@@ -19,7 +19,7 @@ leadership:
       github: 'https://github.com/CamilaArias'
     picture: 'https://avatars.githubusercontent.com/CamilaArias'
   - name: Olivia Chiong
-  - github-handle: 
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
