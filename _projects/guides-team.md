@@ -20,7 +20,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
-
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
