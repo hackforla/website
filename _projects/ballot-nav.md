@@ -62,7 +62,7 @@ looking:
     skill: Translators (Spanish especially)
 location:
   - Remote
-partner: Code for America, Other Brigades
+partner: Code for San Jose, Code for Atlanta, Open Oakland
 visible: true
 status: Active
 program-area:
