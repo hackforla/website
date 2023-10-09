@@ -1002,7 +1002,7 @@ The best way to ask for help and provide as much information to the team is to d
 
 <details>
   <summary><strong>Click here</strong> to see how to copy a link that goes to an issue comment</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link" />
+  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link">
 </details>
 
 1. Click on the ellipsis (...) at the top right of the comment box
