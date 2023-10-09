@@ -352,7 +352,6 @@ We currently have issues with the following **role** labels:
 And the following **complexity** labels:
 
 * `good first issue` 
-* `complexity: good second issue`
 * `complexity: Small`
 * `complexity: Medium`
 * `complexity: Large`
