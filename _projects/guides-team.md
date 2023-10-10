@@ -26,6 +26,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
       github: 'https://github.com/seannwvong'
     picture: https://avatars.githubusercontent.com/seannwvong
+  - name: Rhoda Michael
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
+      github: 'https://github.com/the-techgurl'
+    picture: https://avatars.githubusercontent.com/the-techgurl
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
