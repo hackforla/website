@@ -938,7 +938,7 @@ After you have submitted your pull request, add it to the project board by click
 <details>
   <summary><strong>Click here</strong> to see how to add a pull request to the project board</summary>
   <h4>Our GitHub project board</h4>
-  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png"/>
+  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png">
 </details>
 
 ##### **vi. After pull request is submitted/merged**
