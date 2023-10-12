@@ -1,0 +1,31 @@
+# Add new variable github-handle to member [INSERT MEMBER NAME] in [INSERT PROJECT FILE]
+
+### Overview
+We need to create a single variable github-handle to hold the github handle for each member of the leadership team. Eventually github-handle will replace the github and picture variables, reducing redundancy in the project file.
+
+### Action Items
+- [ ] Open the file [INSERT PATH TO PROJECT FILE] in the IDE
+- [ ] Replace
+```
+- name: [INSERT MEMBER NAME]
+```
+with
+```
+- name: [INSERT MEMBER NAME]
+  github-handle: 
+```
+- [ ] Do not use a tab to indent github-handle. YAML doesn't allow tabs; it requires spaces.
+- [ ] Using docker, confirm that the appearance of the project webpage is unchanged at all screen sizes. The project webpage URL can be found below under Resources.
+```
+```
+### For Merge Team
+- [ ] Release the dependency for this issue in [Epic: Create issues to add github-handle to leadership teams #5441](https://github.com/hackforla/website/issues/5441). If all the dependencies have been completed, close that issue.
+```
+```
+### Resources/Instructions
+https://github.com/hackforla/website/wiki/project.md-file-template  
+https://jekyllrb.com/  
+For QA to validate change: https://github.com/hackforla/website/blob/gh-pages/[INSERT-PATH-TO-PROJECT-FILE]  
+Project Webpage: https://www.hackforla.org/projects/[INSERT-PROJECT-FILENAME-WITHOUT-.MD-EXTENSION]
+
+- This issue is part of Epic: [Create issues to add github-handle to leadership teams #5441](https://github.com/hackforla/website/issues/5441)
