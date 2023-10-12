@@ -315,19 +315,15 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
    * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
    * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
    * Once your pull request is merged, you can work on your next issue.
-2. `Complexity: Good second issue`
-  *  Self-assign an issue with the `Complexity: Good second issue` label. 
-  * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
-  * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
-  * Once your pull request is merged, you can work on your next issue.
+2.  Repeat #1 with a new `good first issue`
 
 Progress through issues with increasing complexity in the following order:
-  1. Good first issue
-  2. Good second issue
-  3. Small 
-  4. Medium 
-  5. Large
-
+  1. Good first issue (x2)
+  2. Small 
+  3. Medium 
+  4. Large
+  5. Extra Large
+  
 The reasons for this progression are:
   * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
   * We are trying to teach you the team methodology through the issues themselves.
@@ -352,7 +348,6 @@ We currently have issues with the following **role** labels:
 And the following **complexity** labels:
 
 * `good first issue` 
-* `complexity: good second issue`
 * `complexity: Small`
 * `complexity: Medium`
 * `complexity: Large`
@@ -1003,7 +998,7 @@ The best way to ask for help and provide as much information to the team is to d
 
 <details>
   <summary><strong>Click here</strong> to see how to copy a link that goes to an issue comment</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link" />
+  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link">
 </details>
 
 1. Click on the ellipsis (...) at the top right of the comment box
