@@ -20,6 +20,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
+  - name: Sarah Levine
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U05RWQJ8YKU'
+      github: 'https://github.com/levines2017'
+    picture: https://avatars.githubusercontent.com/levines2017
   - name: Shawn Wong
     role: Product Manager
     links:
