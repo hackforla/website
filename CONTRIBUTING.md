@@ -102,7 +102,7 @@ In the `hfla-site` Slack channel, send an introductory message with your GitHub 
 Before cloning your forked repository to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Please note that if you have a Mac the page offers several options (see other option, if you need to conserve hard drive space) including:
 
 - an “easiest” option (this version is fine for use at hackforla): This option would take just over 4GB.
-- a “more up to date” option (not required but optional if you want it): This option prompts you to go to install an 8GB package manager called Homebrew. 
+- a “more up to date” option (not required but optional if you want it): This option prompts you to go to install an 8GB package manager called Homebrew.
 - Other option: If your computer is low on space, you can use this [tutorial](https://www.datacamp.com/community/tutorials/homebrew-install-use) to install XCode Command Tools and a lighter version of Homebrew and then install Git using this command: ```$ brew install git```  which in total only uses 300MB.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
@@ -132,7 +132,7 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
 
 ### **1.4 Dev setup (4): Clone (Create) a copy on your computer**
 
-Before creating a copy to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+Before creating a copy to your local machine, you must have Git installed. You can find instructions for installing Git for your operating system [**here**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 The following steps will clone (create) a local copy of the forked repository on your computer.
 
@@ -141,19 +141,19 @@ The following steps will clone (create) a local copy of the forked repository on
 Create a new folder in your computer that will contain `hackforla` projects.
 
 In your command line interface (Terminal, Git Bash, Powershell), move to where you want your new folder to be placed and create a new folder in your computer that will contain `hackforla` projects. After that, navigate into the folder(directory) you just created.
-      
-For example: 
+
+For example:
 ```bash
 mkdir hackforla
 cd hackforla
 ```
-      
+
 and run the following commands:
-      
+
 ```bash
 git clone https://github.com/<your_GitHub_user_name>/website.git
 ```
-      
+
 For example if your GitHub username was `octocat`:
 ```bash
 git clone https://github.com/octocat/website.git
@@ -256,7 +256,7 @@ Running the above command will result in the following output in your terminal
   Starting hfla_site ... done
   Attaching to hfla_site
   hfla_site    | ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux-musl]
-  hfla_site    | Configuration file: _config.yml       
+  hfla_site    | Configuration file: _config.yml
   hfla_site    | Configuration file: _config.docker.yml
   hfla_site    |             Source: .
   hfla_site    |        Destination: /srv/jekyll/_site
@@ -311,28 +311,24 @@ docker-compose up
 In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
 
 1. `good first issue`
-   * Self-assign an issue with the `good first issue` label. 
+   * Self-assign an issue with the `good first issue` label.
    * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
    * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
    * Once your pull request is merged, you can work on your next issue.
-2. `Complexity: Good second issue`
-  *  Self-assign an issue with the `Complexity: Good second issue` label. 
-  * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
-  * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
-  * Once your pull request is merged, you can work on your next issue.
+2.  Repeat #1 with a new `good first issue`
 
 Progress through issues with increasing complexity in the following order:
-  1. Good first issue
-  2. Good second issue
-  3. Small 
-  4. Medium 
-  5. Large
-
+  1. Good first issue (x2)
+  2. Small 
+  3. Medium 
+  4. Large
+  5. Extra Large
+  
 The reasons for this progression are:
   * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
   * We are trying to teach you the team methodology through the issues themselves.
   * It ensures you understand what we expect and the quality of contributions.
-  
+
 All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis.
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
@@ -346,13 +342,12 @@ Also, please let the tech leadership team know (through a slack message in the h
 
 We currently have issues with the following **role** labels:
 
-* `role: front end` 
+* `role: front end`
 * `role: backend/devOps`
 
 And the following **complexity** labels:
 
 * `good first issue` 
-* `complexity: good second issue`
 * `complexity: Small`
 * `complexity: Medium`
 * `complexity: Large`
@@ -383,7 +378,7 @@ There are only 2 columns that you will be consistently referencing:
     * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
     * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
   * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
-  
+
 2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
@@ -395,14 +390,12 @@ We recommend you visit the `Prioritized Backlog` column in the filtered Project 
 
 #### **2.3.b Available issues for returning members (front end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+good+second+issue%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
 
 #### **2.3.c Available issues for returning members (back end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
@@ -483,8 +476,8 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 #### **2.6.b What to do if you have to stop working mid issue:**
 - For your issue, uncheck the checkboxes for any action items that have to be redone by the next developer picking up the issue.
 - Add a note in the comments with details and progress for the next developer
-- Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue)) 
-- Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue)) 
+- Move this issue from the ‘In progress’ to the ‘Prioritized Backlog’(see - [project board column example above](#ii-after-you-unassign-yourself-from-an-issue))
+- Unassign yourself from this issue (see the [unassign example above](#24a-assign--unassign-yourself-to-this-issue))
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -532,7 +525,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
-The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it. 
+The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it.
 
 For example,if we creating a new issue branch off [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
 
@@ -540,17 +533,17 @@ For example,if we creating a new issue branch off [Update ‘Give’ image credi
 git checkout -b update-give-link-2093
 ```
 
- The text after the `-b`, in the example `update-give-link-2093`, will be the name of your new branch. 
- 
+ The text after the `-b`, in the example `update-give-link-2093`, will be the name of your new branch.
+
  **Note:** Choose a branch name that:
  * relates to the issue (No spaces!)
  * includes the issue number
 
-**Note:** The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue. 
+**Note:** The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue.
 
 **Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
 
-When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository. 
+When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
 ##### **i. What if you cannot see your changes locally within Docker?**
 
@@ -569,20 +562,20 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 
 #### **2.7.c Working on an issue(3): Prepare your changes to push to your repository**
 
-Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs. 
+Once you are done with the work on your issue you will push it to your repository.  Before you can push your work to your repository, you will stage and commit your changes.  These two commands are similar to the save command that you have used to in other programs.
 
 **Note:** If you are using Visual studios code you can use the Git graphical user interface to stage your changes. For instructions check out the [Git Gui Wiki](https://github.com/hackforla/website/wiki/How-to-Use-Git-GUI-(Graphical-user-Interface)-in-Visual-Studios-Code)
-   
-##### **i. Prepare repo changes (1): Use the `git add` command to stage your changes.** 
 
-This command prepares your changes before you commit them. You can stage files one at a time using the filename. 
+##### **i. Prepare repo changes (1): Use the `git add` command to stage your changes.**
 
-Run this command if you want to **add changes from a specific file(s) to your commit record**: 
+This command prepares your changes before you commit them. You can stage files one at a time using the filename.
+
+Run this command if you want to **add changes from a specific file(s) to your commit record**:
 ```bash
 git add “filename.ext”
 ```
 
-Run this command if you want to **add all changes to all file(s) to your commit record**: 
+Run this command if you want to **add all changes to all file(s) to your commit record**:
 ```bash
 git add .
 ```
@@ -590,7 +583,7 @@ git add .
 ##### **ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**
 
 This command will list the files that have been staged.  These are the files that will be committed (saved) when you run the next command, `git commit`. Please be sure all your staged changes are relevant to the issue you are working on. If you accidentally included unrelated changes, please unstage them before making this commit, and then make a new commit for the unrelated changes. (The commands for unstaging commits are provided in the output of your `git status` command.)
-      
+
 ```bash
 git status
 ```
@@ -599,7 +592,7 @@ git status
 This command will remove a file that has been staged.  This file will not be committed (saved) when you run the next command, `git commit`. This only works if the wrong files were added, but they were not yet committed. The file will be removed from the staging area, but not actually deleted:
 
 ```bash
-git reset HEAD “filename.ext” 
+git reset HEAD “filename.ext”
 ```
 
 ##### **iv. Prepare repos changes (4): Use the `git commit` command**
@@ -612,10 +605,10 @@ To commit your changes with a message, run:
 git commit -m “insert message here”
 ```
 
-* If you do not see the changes you applied when you run `docker-compose up`, delete `_site` directory and `.jekyll-metadata` file and restart docker. This will force docker to rebuild the whole site. 
+* If you do not see the changes you applied when you run `docker-compose up`, delete `_site` directory and `.jekyll-metadata` file and restart docker. This will force docker to rebuild the whole site.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
-  
+
 #### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
 **IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
@@ -636,7 +629,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 If you do not see any output, there have not been any changes in the main Hack for LA website repository since the last time you
 checked. So it is safe to push your local commits to your fork.
 
-If you just type `git push` you will be prompted to create a new branch in your GitHub repository. The more complete command below will create a new branch on your copy of the website repository, and then push your local branch there. The name at the end of this command should be the same as the name of the local branch that you created back in step 3, as in the example below: 
+If you just type `git push` you will be prompted to create a new branch in your GitHub repository. The more complete command below will create a new branch on your copy of the website repository, and then push your local branch there. The name at the end of this command should be the same as the name of the local branch that you created back in step 3, as in the example below:
 
 ```bash
 git push --set-upstream origin update-give-link-2093
@@ -672,26 +665,26 @@ One way to keep your fork up to date with this repository is to follow these ins
 
 You can also update your fork via the local clone of your fork, using these instructions. Assuming you have a local clone with remotes `upstream` (this repo) and `origin` (your GitHub fork of this repo):
 
-* First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes. 
+* First, you will need to create a local branch which tracks upstream/gh-pages.  You will only need to do this once; you do not need to do this every time you want to incorporate upstream changes.
 
-Run the following two commands: 
+Run the following two commands:
 
 ```bash
 git fetch upstream
 git checkout -b upstream-gh-pages --track upstream/gh-pages
 ```
 
-If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes: 
+If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes:
 
 ```bash
-git checkout upstream-gh-pages # Move to the branch you want to merge with. 
+git checkout upstream-gh-pages # Move to the branch you want to merge with.
 git pull  # This updates your tracking branch to match the gh-pages branch in this repository
 git checkout gh-pages  # Move back to your gh-pages branch
-git merge upstream-gh-pages  # Merge to bring your gh-pages current. 
+git merge upstream-gh-pages  # Merge to bring your gh-pages current.
 ```
 If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
 
-Then push the merge changes to your GitHub fork:  
+Then push the merge changes to your GitHub fork:
 
 ```bash
 git push
@@ -797,7 +790,7 @@ clip < ~/.ssh/id_ed25519.pub
 
 #### **3.1.a Push all changes to your issue branch**
 
-Once you are satisfied with your changes, push them to the feature branch you made within your remote repository. 
+Once you are satisfied with your changes, push them to the feature branch you made within your remote repository.
 
 ```bash
 git push --set-upstream origin update-give-link-2093
@@ -809,12 +802,12 @@ git push --set-upstream origin update-give-link-2093
 
 <details>
   <summary><strong>Click here</strong> to see a notification for a pull request</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg" />
+  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg">
 </details>
 <br>
 <details>
   <summary><strong>Click here</strong> to see pull request markdown template</summary>
-  
+
   ```
   Fixes #replace_this_text_with_the_issue_number
 
@@ -841,7 +834,7 @@ git push --set-upstream origin update-give-link-2093
 
   <details>
     <summary>Visuals after changes are applied</summary>
-  
+
     ![image](Paste_Your_Image_Link_Here_After_Attaching_Files)
 
   </details>
@@ -857,13 +850,13 @@ git push --set-upstream origin update-give-link-2093
 ##### **i. Complete pull request (1): Update pull request title**
 
 * When the pull request is opened, the title input box will be the where the cursor defaults to.
-* The default title will be your last commit message from your branch. 
+* The default title will be your last commit message from your branch.
   * Please change it to provide a summary of what you did.
   * For our example (PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131)), [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following title:
 
   ```
   Update Care Link in Credits Page
-  ``` 
+  ```
 
 **Advice:** Provide a 4-12 word summary of your resolution to the issue you are handling.
 
@@ -917,7 +910,7 @@ in the gif example [near the top  of this part within the gif of completing pull
 
 <details>
 <summary>Visuals after changes are applied</summary>
-  
+
 ![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
 
 </details>
@@ -939,12 +932,12 @@ After you have submitted your pull request, add it to the project board by click
 <details>
   <summary><strong>Click here</strong> to see how to add a pull request to the project board</summary>
   <h4>Our GitHub project board</h4>
-  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png"/>
+  <img src="https://user-images.githubusercontent.com/81049661/161181526-23ae511c-e991-4cc6-a0a4-d8db19dd69ca.png">
 </details>
 
 ##### **vi. After pull request is submitted/merged**
 
-**NOTE**: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch. 
+**NOTE**: After completing your assignment and committing all of the changes, you must leave your current branch and return to the `gh-pages` branch.
 
 Run the following command to return to the `gh-pages` branch:
 
@@ -952,7 +945,7 @@ Run the following command to return to the `gh-pages` branch:
 git checkout `gh-pages`
 ```
 Once your pull request is merged you can delete your branch with the following command:
-   
+
 ```bash
 git branch -d update-give-link-2093
 ```
@@ -998,12 +991,12 @@ The best way to ask for help and provide as much information to the team is to d
 </details>
 
 1. Write down your blocker as a comment within your issue
-    * Describe the blocker and your approach to resolve the action items within the issue. 
+    * Describe the blocker and your approach to resolve the action items within the issue.
 2. Note which branch you are working on and make sure it has the changes you are referring to.
 
 <details>
   <summary><strong>Click here</strong> to see how to copy a link that goes to an issue comment</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link" />
+  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link">
 </details>
 
 1. Click on the ellipsis (...) at the top right of the comment box
@@ -1031,7 +1024,7 @@ The best way to ask for help and provide as much information to the team is to d
 * [GitHub Pages](https://pages.github.com/)
 * [Jekyll Docs](https://jekyllrb.com/docs/)
 * [Liquid Documentation](https://shopify.github.io/liquid/)
-* [Github Guides](https://guides.github.com/) 
+* [Github Guides](https://guides.github.com/)
 * [Docker](https://docs.docker.com/get-started/)
   - [Docker Compose](https://docs.docker.com/compose/gettingstarted/)
   - [Docker Desktop](https://docs.docker.com/install/)
