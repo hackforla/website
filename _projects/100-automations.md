@@ -13,12 +13,14 @@ leadership:
       github: 'https://github.com/nivenprasad'
     picture: 'https://avatars.githubusercontent.com/nivenprasad'
   - name: Camila Arias
+    github-handle:
     role: UI/UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U018S4VQK3M'
       github: 'https://github.com/CamilaArias'
     picture: 'https://avatars.githubusercontent.com/CamilaArias'
   - name: Olivia Chiong
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01GJC7VC6L'
@@ -31,12 +33,14 @@ leadership:
       github: 'https://github.com/mdothman'
     picture: 'https://avatars.githubusercontent.com/mdothman'
   - name: Audrey Kim
+    github-handle: 
     role: UX Writer
     links:
       slack: 'https://hackforla.slack.com/team/U01H0CXBTUM'
       github: 'https://github.com/nahyungkim1220'
     picture: 'https://avatars.githubusercontent.com/nahyungkim1220'
   - name: Jason Brown
+    github-handle:
     role: UX/Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01G7G1HMU1'

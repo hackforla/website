@@ -2,8 +2,7 @@
 name: Pre-work Template - UX
 about: New Research team members should start by making this issue
 title: 'Pre-work Checklist: Researcher: [replace brackets with your name]'
-labels: 'Complexity: Missing, Feature: Onboarding/Contributing.md, prework, role:
-  user research, size: 1pt'
+labels: ['Complexity: Prework, Feature: Onboarding/Contributing.md, prework, role: user research, size: 1pt']
 assignees: ''
 
 ---

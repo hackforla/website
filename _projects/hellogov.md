@@ -35,10 +35,10 @@ location:
   # - Santa Monica
   - Remote
 partner: Digital Defense Fund
-tools:
-  - Mongo
+technologies:
+  - MongoDB
   - Angular
-  - Node
+  - Node.js
 visible: true
 status: Completed
 program-area:

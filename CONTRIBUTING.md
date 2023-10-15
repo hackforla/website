@@ -72,7 +72,7 @@ The following is a set of guidelines for contributing to the website repository,
       - [**3.1.b Complete pull request on Hack for LA `website` repo**](#31b-complete-pull-request-on-hack-for-la-website-repo)
         - [**i. Complete pull request (1): Update pull request title**](#i-complete-pull-request-1-update-pull-request-title)
         - [**ii. Complete pull request (2): Add issue number to the pull request**](#ii-complete-pull-request-2-add-issue-number-to-the-pull-request)
-        - [**iii. Complete pull request (3): What changes did you make**](#iii-complete-pull-request-3-what-changes-did-you-make)
+        - [**iii. Complete pull request (3): Explain the changes you made, then explain why these changes were needed**](#iii-complete-pull-request-3-explain-the-changes-you-made-then-explain-why-these-changes-were-needed)
         - [**iv. Complete pull request (4): Include images (if available)**](#iv-complete-pull-request-4-include-images-if-available)
         - [**v. Complete pull request (5): How to add a pull request to the project board**](#v-complete-pull-request-5-how-to-add-a-pull-request-to-the-project-board)
         - [**vi. After pull request is submitted/merged**](#vi-after-pull-request-is-submittedmerged)
@@ -315,19 +315,15 @@ In order to join [another project within Hack for LA](https://www.hackforla.org/
    * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
    * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team.
    * Once your pull request is merged, you can work on your next issue.
-2. `Complexity: Good second issue`
-  *  Self-assign an issue with the `Complexity: Good second issue` label.
-  * Complete steps in [**2.7 Working on an issue**](#27-working-on-an-issue) to create a solution for the issue
-  * Complete steps in [**3.1 How to make a pull request**](#31-how-to-make-a-pull-request) to get your solution reviewed by the `website-merge` team
-  * Once your pull request is merged, you can work on your next issue.
+2.  Repeat #1 with a new `good first issue`
 
 Progress through issues with increasing complexity in the following order:
-  1. Good first issue
-  2. Good second issue
-  3. Small
-  4. Medium
-  5. Large
-
+  1. Good first issue (x2)
+  2. Small 
+  3. Medium 
+  4. Large
+  5. Extra Large
+  
 The reasons for this progression are:
   * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
   * We are trying to teach you the team methodology through the issues themselves.
@@ -351,8 +347,7 @@ We currently have issues with the following **role** labels:
 
 And the following **complexity** labels:
 
-* `good first issue`
-* `complexity: good second issue`
+* `good first issue` 
 * `complexity: Small`
 * `complexity: Medium`
 * `complexity: Large`
@@ -401,7 +396,6 @@ We recommend you visit the `Prioritized Backlog` column in the filtered Project 
 
 #### **2.3.c Available issues for returning members (back end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Good second issues** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+good+second+issue%22+label%3A%22role%3A+back+end%2Fdevops%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
 * `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
@@ -808,7 +802,7 @@ git push --set-upstream origin update-give-link-2093
 
 <details>
   <summary><strong>Click here</strong> to see a notification for a pull request</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg" />
+  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg">
 </details>
 <br>
 <details>
@@ -881,16 +875,17 @@ Fixes #2093
 
 **Note:** This will now connect the issue and pull request both close when the pull request is successfully merged.
 
-##### **iii. Complete pull request (3): What changes did you make**
+##### **iii. Complete pull request (3): Explain the changes you made, then explain why these changes were needed**
 
-In bullet point form, notate the changes you made to be in order to complete the action items within your issue. [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following summary in PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131):
+In bullet point form, explain the changes you made in order to complete the action items within your issue and why. [@adrianang](https://github.com/adrianang) provided the following summary in PR [Add Project to Website: Tech Work Experience #4911](https://github.com/hackforla/website/pull/4911):
 
 ```
-### What changes did you make and why did you make them ?
+### What changes did you make?
+  - Created new markdown file for the Tech Work Experience Project (tech-work-experience.md)
+  - Added assets (project card image, project hero image, PDF overview) to their appropriate folders
 
-- Updated title and alt to Care.
-- Updated artist to Bharat
-- Updated filename to care.yml
+### Why did you make the changes (we will use this info to test)?
+  - To keep list of active HfLA projects on the website up-to-date
 
 ```
 
@@ -1001,7 +996,7 @@ The best way to ask for help and provide as much information to the team is to d
 
 <details>
   <summary><strong>Click here</strong> to see how to copy a link that goes to an issue comment</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link" />
+  <img src="https://user-images.githubusercontent.com/21162229/137784791-30871703-48de-4836-91ef-1268d86662a4.jpg" alt="Visual example of how to copy the comment link">
 </details>
 
 1. Click on the ellipsis (...) at the top right of the comment box

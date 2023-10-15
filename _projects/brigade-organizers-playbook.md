@@ -1,6 +1,6 @@
 ---
 identification: '277577906'
-title: Brigade Organizers Playbook
+title: BOP
 description: Civic tech volunteer organizations often start building from scratch, which uses up valuable resources (time, labor and momentum).  This project aims to improve existing structures and create new ones that make it easier to share replicable processes and practices so that organizers and members can iterate on each other's work, improving outcomes for the civic tech ecosystem.
 image: /assets/images/projects/brigade-organizers-playbook.png
 alt: 'Brigade Organizers Playbook'
@@ -9,82 +9,40 @@ program-area:
   - Civic Tech Infrastructure
 leadership:
   - name: Bonnie Wolfe
-    role: Agile Mentor & CfA National Advisory Council BOP project Co-Lead
+    role: BOP Project Lead
     links:
-      slack: 'https://codeforamerica.slack.com/team/UGREE50MT'
+      slack: 'https://hackforla.slack.com/archives/C01Q24YF56J'
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
-  - name: Thad K.
-    role: CfA National Advisory Council BOP project Co-Lead
-    links:
-      slack: 'https://codeforamerica.slack.com/team/UAU40G31A'
-      github: 'https://github.com/thadk'
-    picture: https://avatars.githubusercontent.com/thadk
-  - name: Will Pfeffer
-    role: CfA Brigade Network team representative
-    links:
-      slack: 'https://codeforamerica.slack.com/team/U014MEJV6KT'
-      github: 'https://github.com/willpfeffer'
-    picture: https://avatars.githubusercontent.com/willpfeffer
-  - name: Sam H.
+  - name: Aleiya Gafar
     role: Product Manager
     links:
-      slack: 'https://codeforamerica.slack.com/team/U019C4LERSM'
-      github: 'https://github.com/thesamwong'
-    picture: https://avatars.githubusercontent.com/thesamwong
-  - name: Serena Baleja
-    role: Product Owner
+      slack: 'https://hackforla.slack.com/team/U01K7QMQ4TC'
+      github: 'https://github.com/ag2463'
+    picture: https://avatars.githubusercontent.com/ag2463
+  - name: Evan Stalker
+    role: Lead Designer
     links:
-      slack: 'https://codeforamerica.slack.com/team/U01FUJ7124S'
-      github: 'https://github.com/Baleja'
-    picture: https://avatars.githubusercontent.com/Baleja
-  - name: Marianne Miranda
-    role: UX Research Team Lead
+      slack: 'https://hackforla.slack.com/team/U04M979AY3G'
+      github: 'https://github.com/ejstalker'
+    picture: https://avatars.githubusercontent.com/ejstalker
+  - name: Liz Brown
+    role: UX Designer
     links:
-      slack: 'https://codeforamerica.slack.com/team/U01ASEG8HK5'
-      github: 'https://github.com/MarianneAnthonette'
-    picture: https://avatars.githubusercontent.com/MarianneAnthonette
-  - name: Raquel Nishijima
-    role: Communication Designer & UX Researcher
+      slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
+      github: 'https://github.com/ermbrown'
+    picture: https://avatars.githubusercontent.com/ermbrown
+  - name: Katrina Bonoan 
+    role: UX Designer
     links:
-      slack: 'https://codeforamerica.slack.com/team/U01EJ7KMLCV'
-      github: 'https://github.com/raquelnish'
-    picture: https://avatars.githubusercontent.com/raquelnish
-  - name: Jon Kropko
-    role: Data Scientist
-    links:
-      slack: 'https://codeforamerica.slack.com/team/UL9U380TH'
-      github: 'https://github.com/jkropko'
-    picture: https://avatars.githubusercontent.com/jkropko
-  - name: Tan Zhou
-    role: Research Analysis Contributors
-    links:
-      slack: 'https://codeforamerica.slack.com/team/UPMSC27G8'
-      github: 'https://github.com/tan-zhou'
-    picture: https://avatars.githubusercontent.com/tan-zhou
-  - name: Helen Lin
-    role: Research Analysis Contributors
-    links:
-      slack: 'https://codeforamerica.slack.com/team/U01B79J9V9B'
-      github: 'https://github.com/osnickersnee'
-    picture: https://avatars.githubusercontent.com/osnickersnee
-  - name: Myranda Pierce
-    role: Research Analysis Contributors
-    links:
-      slack: 'https://codeforamerica.slack.com/team/U01E521NT2L'
-      github: 'https://github.com/myrandi'
-    picture: https://avatars.githubusercontent.com/myrandi
-  - name: Reem Mehdoui
-    role: Research Analysis Contributors
-    links:
-      slack: 'https://codeforamerica.slack.com/team/U01DF6AE5TL'
-      github: 'https://github.com/reemux'
-    picture: https://avatars.githubusercontent.com/reemux
+      slack: 'https://hackforla.slack.com/team/U052LER0010'
+      github: 'https://github.com/kit-katrina20'
+    picture: https://avatars.githubusercontent.com/kit-katrina20
 links:
   - name: GitHub
-    url: 'https://github.com/codeforamerica/brigade-playbook'
+    url: 'https://github.com/hackforla/BOP'
   - name: Slack
-    url: 'https://cfa.slack.com/archives/G0196272BBN'
+    url: 'https://hackforla.slack.com/archives/C051M4JU562'
   - name: Wiki
     url: 'https://github.com/codeforamerica/brigade-playbook/wiki'
   - name: Effective Practices

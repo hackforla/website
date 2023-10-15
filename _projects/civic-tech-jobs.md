@@ -30,6 +30,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
+  - name: Melinda Sukosd
+    role: UX Research Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03T1G9F46P
+      github: https://github.com/melkosm
+    picture: https://avatars.githubusercontent.com/melkosm
   - name: Jenn Wu
     role: UX Researcher Lead
     links:
@@ -54,18 +60,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03P33ZNPGW
       github: https://github.com/geibu
     picture: https://avatars.githubusercontent.com/geibu
-  - name: Melinda Sukosd
-    role: UX Research Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03T1G9F46P
-      github: https://github.com/melkosm
-    picture: https://avatars.githubusercontent.com/melkosm
-  - name: Beth Williford
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U0312CTAZS4
-      github: https://github.com/BethBethBeth
-    picture: https://avatars.githubusercontent.com/BethBethBeth
   - name: Leah Ellis
     role: UX Researcher
     links:
@@ -96,6 +90,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U02M686LYET
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
+  - name: Nga Do
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U05JS3BS9FD
+      github: https://github.com/ngadoq
+    picture: https://avatars.githubusercontent.com/ngadoq 
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
