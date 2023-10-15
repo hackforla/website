@@ -803,7 +803,7 @@ git push --set-upstream origin update-give-link-2093
 
 <details>
   <summary><strong>Click here</strong> to see a notification for a pull request</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg" />
+  <img src="https://user-images.githubusercontent.com/21162229/137709888-77ccfd63-3921-4978-9fc0-6fbd703683b8.jpg">
 </details>
 <br>
 <details>
