@@ -161,7 +161,7 @@ body:
   - type: textarea
     id: technologies
     attributes:
-      label: Technologies
+      label: Technologies (maximum 26 characters)
 
 
   - type: dropdown
