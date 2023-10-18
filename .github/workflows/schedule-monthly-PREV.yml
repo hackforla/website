@@ -1,8 +1,7 @@
 name: Schedule Monthly PREVIOUS
 
 on:
-  schedule:
-    - cron: "0 8 1 * *"
+  workflow_dispatch:
 
 jobs:
   list-inactive-members:
