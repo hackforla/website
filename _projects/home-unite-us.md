@@ -3,7 +3,7 @@ identification: "228981080"
 title: Home Unite Us
 description: The Home Unite Us project is developing a workflow management tool for community nonprofits to automate and scale their existing Host Home initiatives, prioritizing streamlining of caseworkers' repetitive workloads, reducing institutional bias, and effectively capturing crucial data. <br /><br />Host Home programs are centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
 image: /assets/images/projects/home-heart.png
-alt: 'Home Unite Us logo, blue circle with white heart in the center, two hands hugging the logo with "Home Unite Us" above the heart.'
+alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
   - name: Tyler Thome
@@ -37,25 +37,25 @@ leadership:
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
   - name: Kristelle Gumaru
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031VJ99ATU"
       github: "https://github.com/K-Gumarama"
     picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031FLYS561"
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
   - name: Bryce Lednar
-    role: Project Manager
+    role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
       github: "https://github.com/brycelednar"
@@ -84,6 +84,24 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
+  - name: Samuel Kowitch
+    role: UX/UI Designer
+    links:
+      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
+      github: "https://github.com/KowDesign"
+    picture: https://avatars.githubusercontent.com/KowDesign
+  - name: Muyin Zheng
+    role: UX/UI Designer
+    links:
+      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
+      github: "https://github.com/IndigoYinZ"
+    picture: https://avatars.githubusercontent.com/IndigoYinZ
+  - name: Emily Eldar
+    role: Developer
+    links:
+      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
+      github: "https://github.com/emeldar"
+    picture: https://avatars.githubusercontent.com/emeldar
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
@@ -105,12 +123,24 @@ looking:
 technologies:
   - React
   - NoSQL
+  - AWS
   - Flask
-  - Auth0 / OIDC / OAuth2
+  - Amazon Cognito
+  - OIDC
+  - OAuth2
   - MongoDB
+  - Nginx
 location:
   - Remote
-tools: Figma, AWS, Nginx, Docker, Style Components, Zoom, GitHub, Google Drive, Docs, Sheets, Slides
+tools:
+  - Figma
+  - Style Components
+  - Zoom
+  - GitHub
+  - Google Drive
+  - Docs
+  - Sheets
+  - Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
 program-area:

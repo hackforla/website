@@ -2,7 +2,7 @@
 name: Pre-work Template - Design
 about: New Design team members should start with by making this issue for themselves.
 title: 'Pre-work Checklist: Designer: [replace brackets with your name]'
-labels: 'Feature: Onboarding/Contributing.md, prework, role: design, size: 1pt'
+labels: ['Complexity: Prework, Feature: Onboarding/Contributing.md, prework, role: design, size: 1pt']
 assignees: ''
 
 ---
@@ -52,8 +52,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.
 - [ ] Read and understand how we progress through issues. Then, you can check this off.
 Progress through issues with increasing complexity in the following order:
-  - Good first issue (one per person)
-  - Good second issue (one per person)
+  - Good first issue (two per person)
   - Small (one per person, with some exceptions, see below)
   - Medium (you can work on more than one medium issue, but only one at a time)
   - Large (you can work on more than one large issue, but only one at a time)

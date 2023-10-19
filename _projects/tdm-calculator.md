@@ -3,7 +3,7 @@ identification: '197452459'
 title: LA TDM Calculator
 description: The LA TDM Calculator is a web app, created in conjunction with the L.A. Department of Transportation (LADOT) and Los Angeles City Planning, to help real estate developers design better projects for Los Angeles. The Calculator is being implemented alongside a new ordinance reducing over-parking and improving the infrastructure to incentivize public transportation and discourage single occupancy vehicle trips.
 image: /assets/images/projects/tdm-calculator.jpg
-alt: 'LA TDM Calculator Landing Page (Mock Up)'
+alt: 'LA TDM Calculator'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
 leadership:
   - name: Bonnie Wolfe
@@ -30,24 +30,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
       github: 'https://github.com/Noushie'
     picture: https://avatars.githubusercontent.com/Noushie
-  - name: Moji Momoh
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
-      github: 'https://github.com/mojimoh'
-    picture: https://avatars.githubusercontent.com/mojimoh
   - name: Jane He
     role: Lead, UX Research
     links:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
       github: 'https://github.com/Jane4925'
     picture: https://avatars.githubusercontent.com/Jane4925
-  - name: James Higgs
-    role: Frontend Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U015ZGMK171'
-      github: 'https://github.com/jahpe777'
-    picture: https://avatars.githubusercontent.com/jahpe777
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'

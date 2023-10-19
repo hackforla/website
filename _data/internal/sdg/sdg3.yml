@@ -1,0 +1,13 @@
+# The Sustainable Development Goal (SDG) number (e.g. 16)
+sdg: 3
+# The SCSS color variable that matches the color of the SDG image 
+color-variable: $color-sdg3
+# The path to the SDG image
+image: /assets/images/sdg/sdg3.svg
+# The alt text for the SDG image
+image-alt: 3 Good Health And Well-being
+targets:
+    # The SDG target (e.g. 1, 2, or a, b, ...)
+  - target: 4
+    # The SDG target statement 
+    statement: By 2030, reduce premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being

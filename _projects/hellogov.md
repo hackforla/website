@@ -3,7 +3,7 @@ identification: '76137532'
 title: HelloGOV
 description: HelloGOV is helping grassroots organizations connect supporters to their state assembly and state senate representatives for call campaigns to advocate on the legislation that matters most to their work. The HelloGOV webapp generates a campaign shortlink that can be used in texts, social posts, and more.
 image: /assets/images/projects/hellogov.jpg
-alt: 'helloGOV log on top, three mobile devices displaying different areas of the helloGOV application'
+alt: 'HelloGOV'
 image-hero: /assets/images/projects/hellogov-hero.jpg
 leadership:
   - name: Kate Rose
@@ -24,20 +24,23 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
-  - name: Site
-    url: 'https://hellogov.squarespace.com'
+  # - name: Site
+  #   url: 'https://hellogov.squarespace.com'
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDA23KHKP'
 looking:
-location: 
+location:
   # - Santa Monica
   - Remote
 partner: Digital Defense Fund
-tools: Mongo, Angular, Node, JS
+technologies:
+  - MongoDB
+  - Angular
+  - Node.js
 visible: true
 status: Completed
-program-area: 
+program-area:
   - Vote / Representation
 ---

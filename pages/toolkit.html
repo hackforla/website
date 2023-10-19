@@ -14,80 +14,8 @@ permalink: /toolkit/
             community.
         </p>
     </div>
-    <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="" />
+    <img class="header-hero-image" src="/assets/images/toolkit/toolkit-hero.svg" alt="">
 </div>
 
-<div class="toolkit-header__text-group">
-    {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
-    {% for category in category_list %}
-        {% if category == "All" %}
-            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item selected-category">{{category}}</a>
-        {% else %}
-            <a href="#{{category | replace: ' ', '+'}}" class="toolkit-header__banner-item">{{ category }}</a>
-        {% endif %}
-    {% endfor %}
-</div>
+{%- include current-guides.html -%}
 
-<div class="toolkit-background content-section">
-  <a class="anchor" id="guides"></a>
-  <div class="toolkit__card-list">
-    <div class="toolkit-flex-container">
-      <div class="suggest-guide-group">
-        <h2 class="title3">Guides</h2>
-        <!-- The Suggest a guide button has been temporarily hidden until we figure out how this button will function after it's clicked. See issue #3678 for more details. -->
-        <button hidden class="btn btn-primary btn-md-narrow">Suggest a guide</button>
-      </div>
-    <div class="dropdown">
-        {% assign category_list = "All, Development, Design, Project Management, Professional Development" | split: ", " %}
-        <select id ="dropdown-select">
-        {% for category in category_list %}
-        <option value="#{{category | replace: ' ', '+'}}">{{category}}</option>
-        {% endfor %}
-        </select>
-    </div>
-        <!-- Iterating through toolkitPages collection -->
-            {%- assign guides = site.guide-pages | sort: "title" -%}
-            {%- for item in guides -%}
-                {%- if item.display == true -%}
-                    {%- include guide-card.html guide=item -%}
-                {%- endif -%}
-            {%- endfor -%}
-    </div>
-  </div>
-
-
-    <a class="anchor" id="external-resources"></a>
-    <div class="toolkit__card-list">
-        <div class="toolkit-flex-container">
-            <div class="suggest-guide-group">
-                <h2 class="external-resources-text title3">External Resources</h2>
-                <!-- The Suggest a resource button has been temporarily hidden until we figure out how this button will function after it's clicked. See issue #3678 for more details. -->
-                <button hidden class="btn btn-primary btn-md-narrow">Suggest a resource</button>
-            </div>
-            <!-- Searching through toolkitResources collection -->
-                {%- for item in site.data.internal.toolkitresources -%}
-                {%- if item.display == true -%}
-                <div data-article-type={{ item.practice-area | downcase | remove: ' ' }} class="toolkit-flex-item section-container">
-                    {%- if item.svg -%}
-                    <div class="toolkit-flex-item-img-container resource-svg-icons">
-                        {% include {{ item.svg }} %}
-                    </div>
-                    {%- endif -%}
-
-                    <div class="toolkit-info-container">
-                        <h3><a href="{{item.resource-url}}" target="_blank">{{ item.title }}</a></h3>
-                        <p>{{ item.description }}</p>
-                    </div>
-                    <a href="{{item.resource-url}}" class="toolkit-flex-item-status" target="_blank">
-                        {% include svg/outer-link.svg %}
-                    </a>
-                </div>
-                {%- endif -%}
-                {%- endfor -%}
-            </div>
-    </div>
-</div>
-
-
-<!-- Include javaScript -->
-<script src="{{ '/assets/js/toolkit.js' | absolute_url }}"></script>

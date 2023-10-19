@@ -9,10 +9,10 @@ jobs:
     # Only trigger this action when an issue is newly created
     if: ${{ github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'transferred')}}
     steps:
-      - uses: actions/checkout@v2      
+      - uses: actions/checkout@v4    
       # Check if the issue has required labels
       - name: Check Labels
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: check-labels
         with:
           script: |
@@ -21,7 +21,7 @@ jobs:
             return checkLabels
             
       #Checks which teams the user is on 
-      - uses: tspascoal/get-user-teams-membership@v1
+      - uses: tspascoal/get-user-teams-membership@v3
         id: checkUserMember
         with:
           username: ${{ github.actor }}
@@ -33,7 +33,7 @@ jobs:
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
       # Post comment based on the previous action's results
         name: Post Comment
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: post-comment
         with:
           script: |
@@ -47,11 +47,11 @@ jobs:
     #Triggers when the issue is newly assigned
     if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
     steps:
-      - uses: actions/checkout@v2  
+      - uses: actions/checkout@v4  
 
       # Check if the issue has the required roles
       - name: Check Labels Prelim
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         id: check-labels-prelim
         with:
           script: |
@@ -63,7 +63,7 @@ jobs:
       # Post the comment based on the result of the previous step
       - name: Post assigning issue comment
         id: assigned-comment
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}

@@ -1,0 +1,36 @@
+name: Schedule Monthly
+
+# This action runs at 11:00 UTC/ 3:00 PDT on the first day of the month.
+on:
+  schedule:
+    - cron:  0 11 1 * * 
+
+jobs:
+  trim_contributors:
+    runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'      
+
+    steps:
+    # Checkout repo
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    # Setup node 
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+
+    # Install dependencies to run js file
+    - name: Install npm dependencies
+      run: npm install
+      working-directory: ./github-actions/trigger-schedule/github-data
+
+    # Run js file- check action logs for inactive members and removes from 'website-write' 
+    - name: Trim Members
+      env:
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+      run: node github-actions/trigger-schedule/github-data/contributors-data.js

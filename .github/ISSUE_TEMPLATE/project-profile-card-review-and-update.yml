@@ -1,7 +1,7 @@
 name: "Project Profile Card review and update"
 description: "To track project profile card updates"
 title: "Update Project Profile: [Project Name]"
-labels: ["P-Feature: Project Info and Page, role: back end/devOps, role: front end, Size: Small, size: 0.5pt, time sensitive"]
+labels: ['P-Feature: Project Info and Page', 'role: back end/devOps', 'role: front end', 'Complexity: Small', 'size: 0.5pt', 'time sensitive']
 
 body:
   - type: markdown
@@ -161,7 +161,7 @@ body:
   - type: textarea
     id: technologies
     attributes:
-      label: Technologies
+      label: Technologies (maximum 26 characters)
 
 
   - type: dropdown
@@ -307,21 +307,6 @@ body:
         - "On Hold"
     validations:
       required: true
-      
-  - type: dropdown
-    id: update-meeting-times-yes-no
-    attributes: 
-      label: Update your meeting times?
-      options:
-        - "YES"
-        - "NO"
-    validations:
-      required: true
-  - type: input
-    id: update-meeting-times-vrms-issue-link
-    attributes:
-      label: "If YES on update meeting times, open an issue on VRMS to update the meeting times and provide the link to the new issue"
-      placeholder: "VRMS issue link"
 
   - type: markdown
     attributes:
@@ -329,7 +314,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        [VRMS Add/edit team meeting time template issue](https://github.com/hackforla/VRMS/issues/new?assignees=&labels=1+week+change+request&template=add-edit-team-meeting-time.md&title=Meeting+time+change+request+for+%5BProject+Name%5D)
+        If you need to update your meeting times, names, dates, or frequency, please see the [VRMS User Guide](https://github.com/hackforla/VRMS/wiki/User-Guide).  The HackforLA.org website gets the meeting times from the updates the Project PM makes to the project's meeting data in vrms.io
 
   - type: markdown
     attributes:

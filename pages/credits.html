@@ -29,14 +29,18 @@ permalink: /credits/
                     <!-- originally class="project-card-inner" -->
                   <div class="credits-item">
                     <div class="icon-left">
-                      <img class="icon-left-image" src={{ item[1].image-url | absolute_url }} alt="{{ item[1].alt }}"/>
+                      <img class="icon-left-image" src={{ item[1].image-url | absolute_url }} alt=""/>
                     </div>
                     <div class="icon-info">
                       {%- if item[1].title -%}
                         <p>
                         <strong>Name: </strong>
                         <!-- original-url: 'https://thenounproject.com/kmgdesignid/collection/calendar-time-line/?i=3256421'-->
-                          <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
+                          {%- if item[1].title-link -%}
+                            <a href="{{item[1].title-link}}">{{ item[1].title }}</a>
+                          {%- else -%}
+                            {{ item[1].title }}
+                          {% endif -%}
                         </p>
                       {%- endif -%}
                       {%- if item[1].used-in -%}

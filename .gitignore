@@ -22,3 +22,7 @@ Gemfile.lock
 
 #ignore models.json file added by IDE intellesense
 models.json
+
+
+# Ignore clasp config file
+.clasp.json

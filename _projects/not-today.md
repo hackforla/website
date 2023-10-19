@@ -1,9 +1,9 @@
 ---
 identification: '202051333'
-title: Not Today - Self-Defense Against Suicidal Thoughts
-description:  Not Today is an app intended to help people wait out periods of suicidal thinking without acting on their thoughts.
+title: Not Today
+description: Not Today - the self-defense against suicidal thoughts app is intended to help people wait out periods of suicidal thinking without acting on their thoughts.
 image: /assets/images/projects/not-today.png
-alt: 'Not Today logo. A person embrace another person with full support. Art by C.W. Moss'
+alt: 'Not Today - Self-Defense Against Suicidal Thoughts'
 image-hero: /assets/images/projects/not-today-hero.png
 leadership:
   - name: Mya Stark
@@ -29,7 +29,7 @@ location:
   - Remote
 partner: Seeking
 visible: true
-program-area: 
+program-area:
   - Social Safety Net
 status: On Hold
 ---
