@@ -61,8 +61,8 @@ const createIssue = async (owner, repo, inactiveLists) => {
   + "- Please send us a Slack message with a link to your comment\n\n"
   let labels = [
     "Feature: Administrative",
+    "Feature: Onboarding/Contributing.md",
     "role: dev leads",
-    "Ready for dev lead",
     "Complexity: Small",
     "Size: 0.5pt",
   ];
