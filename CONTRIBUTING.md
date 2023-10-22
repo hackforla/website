@@ -987,7 +987,7 @@ The best way to ask for help and provide as much information to the team is to d
 
 <details>
   <summary><strong>Click here</strong> for visual comment example</summary>
-  <img src="https://user-images.githubusercontent.com/21162229/137784250-96281332-9231-4c5d-aba2-0d4c36521b82.jpg" alt="Making a comment visual example" />
+<img src="https://user-images.githubusercontent.com/21162229/137784250-96281332-9231-4c5d-aba2-0d4c36521b82.jpg" alt="Making a comment visual example" />
 </details>
 
 1. Write down your blocker as a comment within your issue
