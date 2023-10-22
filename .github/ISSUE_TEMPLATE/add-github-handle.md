@@ -1,5 +1,8 @@
 # Add new variable github-handle to member [INSERT MEMBER NAME] in [INSERT PROJECT FILE]
-
+### Prerequisite
+1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started Page](https://www.hackforla.org/getting-started).
+2. Before you claim or start working on an issue, please make sure you have read our [How to Contribute to Hack for LA Guide.](https://github.com/hackforla/website/blob/7f0c132c96f71230b8935759e1f8711ccb340c0f/CONTRIBUTING.md).
+   
 ### Overview
 We need to create a single variable github-handle to hold the github handle for each member of the leadership team. Eventually github-handle will replace the github and picture variables, reducing redundancy in the project file.
 
