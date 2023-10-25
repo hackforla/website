@@ -7,6 +7,13 @@ image: /assets/images/projects/expunge-assist.png
 alt: 'Expunge Assist'
 image-hero: /assets/images/projects/expunge-assist-hero.png
 leadership:
+  - name: Analicia Mejia Mesinas
+    github-handle: amejiamesinas
+    role: Product Manager, UX Research
+    links:
+      slack: https://hackforla.slack.com/team/U04J34E73CG
+      github: https://github.com/amejiamesinas
+    picture: https://avatars.githubusercontent.com/amejiamesinas
   - name: Thomas Demoner
     role: Product Manager, Development
     links:
