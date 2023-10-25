@@ -7,6 +7,7 @@ alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
   - name: Eric Cho
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02E95SPK4N'
