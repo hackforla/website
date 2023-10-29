@@ -7,6 +7,7 @@ alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
   - name: Eric Cho
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02E95SPK4N'
@@ -75,4 +76,5 @@ impact: Neighborhood Councils are able to use visualizations to demonstrate and 
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
+sdg-color-variable: $color-sdg16
 ---

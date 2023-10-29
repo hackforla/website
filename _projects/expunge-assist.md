@@ -31,6 +31,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04BS46F67L'
       github: 'https://github.com/jamesshin27'
     picture: 'https://avatars.githubusercontent.com/jamesshin27'
+  - name: Samantha Hyler
+    github-handle: SamHyler
+    role:  UX Content, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U025XR6MY6S
+      github: https://github.com/SamHyler
+    picture: https://avatars.githubusercontent.com/SamHyler
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
