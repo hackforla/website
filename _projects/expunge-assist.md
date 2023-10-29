@@ -19,12 +19,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
       github: 'https://github.com/jamiesiu'
     picture: 'https://avatars.githubusercontent.com/jamiesiu'
-  - name: Sheron Virani
-    role: Product Manager, Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U041X0628B0'
-      github: 'https://github.com/sheronvirani21'
-    picture: 'https://avatars.githubusercontent.com/sheronvirani21'
   - name: James Shin
     role: Product Manager, Design
     links:
