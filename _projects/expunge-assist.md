@@ -38,6 +38,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Curtis Barber
+    github-handle: CBx3000
+    role: Product Manager, Content
+    links:
+      slack: https://hackforla.slack.com/team/U05RZAETCQ4
+      github: https://github.com/CBx3000
+    picture: https://avatars.githubusercontent.com/CBx3000
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
