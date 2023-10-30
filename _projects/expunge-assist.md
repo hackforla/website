@@ -31,6 +31,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04BS46F67L'
       github: 'https://github.com/jamesshin27'
     picture: 'https://avatars.githubusercontent.com/jamesshin27'
+  - name: Sydney Walcoff
+    github-handle: sydneywalcoff
+    role: Development, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U02P0A49XL4
+      github: https://github.com/sydneywalcoff
+    picture: https://avatars.githubusercontent.com/sydneywalcoff
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
