@@ -35,30 +35,50 @@ const createIssue = async (owner, repo, inactiveLists) => {
 
   let removedList = removeList.map(x => "@" + x).join("\n");  
   let notifiedList = notifyList.map(x => "@" + x).join("\n"); 
+
+  // This finds all issues in the repo and returns the number for only the last issue created. 
+  // Add 1 to this issue number to get the number for the next issue- i.e. the one being created.
+  let thisIssuePredict = await github.rest.issues.listForRepo({
+    owner,
+    repo,
+    state:"all",
+    per_page: 1,
+    page: 1,
+  });
+  let thisIssueNumber = thisIssuePredict['data'][0]['number'] + 1
   
   let title = "Review Inactive Team Members";
   let body = "# Review of Inactive Website Team Members\n" 
   + "## Inactive Members\n"
   + "Developers: If your name is on the following list, our team bot has determined that you have not been active with the Website team in the last 30 days. If we don't hear back from you in the upcoming weeks, we will unassign you from any issues you may be working on and remove you from the 'website-write' team.\n\n"
   + notifiedList + "\n\n"
+  + "### Did we make a mistake?\n"
+  + "The bot is checking for the following activity:\n"
+  + "- If you are assigned to an issue, that you have provided an update on the issue in the past 30 days. The updates are due weekly.\n"
+  + "- If your issue is a \`Draft\` in the \"New Issue Approval\" column, that you have added to it within the last 30 days.\n"
+  + "- If you are reviewing PRs, that you have done some kind of activity in the past 30 days.\n"
+  + "If you have been inactive in the last 30 days (using the above measurements), you can become active again by doing at least one of the above actions.\n\n"
+  + "If you were active during the last 30 days (using the above measurements) and the bot made a mistake, let us know by responding in a comment (reopening this issue) with this message:\n"
+  + "```\n"
+  + "I am responding to Issue #" + thisIssueNumber + ".\n"
+  + "The Hack for LA website bot made a mistake, I have been active!\n" 
+  + "See my Issue # or my review in PR #  \n"
+  + "```\n"
+  + "After you leave the comment, please send us a Slack message on the \"hfla-site\" channel with a link to your comment.\n\n"
+  + "### Temporary leave\n"
+  + "If you have taken a temporary leave, and you have been authorized to keep your assignment to an issue: \n"
+  + "- Your issue should be in the \"Questions/ In Review\" column, with the \`Ready for dev lead\` label and a note letting us know when you will be back.\n"
+  + "- We generally try to encourage you to unassign yourself from the issue and allow us to return it to the prioritized backlog. However, exceptions are sometimes made.\n"
   + "## Removed Members\n"
   + "Our team bot has determined that the following member(s) have not been active with the Website team for over 60 days, and therefore the member(s) have been removed from the 'website-write' team.\n\n"
-  + removedList + "\n\n\n\n"
-  + "### If this is a mistake or if you would like to return to the Hack for LA 'website-write' team, please respond in a comment with one of the two following messages:\n"
-  + "#### Our bot made a mistake, let us know!\n"
+  + removedList + "\n\n"
+  + "If this is a mistake or if you would like to return to the Hack for LA Website team, please respond in a comment with this message:\n"
   + "```\n"
-  + "I have been active!  See Issue # or PR # \n"
+  + "I am responding to Issue #" + thisIssueNumber + ".\n"
+  + "I want to come back to the team!\n"
+  + "Please add me back to the 'website-write' team, I am ready to work on an issue now.\n"
   + "```\n"
-  + "#### I want to come back to the team!\n"
-  + "```\n"
-  + "Please add me back to the write team, I am ready to work on an issue now.\n"
-  + "```\n"
-  + "### If it has been less than 20 days:\n"
-  + "- Make sure that you are assigned to an issue, and\n"
-  + "- That issue is in the column \"In progress (actively working)\", and\n"
-  + "- You are providing weekly progress updates.\n"
-  + "### If it has been more than 20 days:\n"
-  + "- Please send us a Slack message with a link to your comment\n\n"
+  + "After you leave the comment, please send us a Slack message on the \"hfla-site\" channel with a link to your comment.\n\n"
   let labels = [
     "Feature: Administrative",
     "Feature: Onboarding/Contributing.md",
@@ -66,12 +86,15 @@ const createIssue = async (owner, repo, inactiveLists) => {
     "Complexity: Small",
     "Size: 0.5pt",
   ];
+  // Note that 8 represents ".08 Team workflow" i.e. the 8th workflow on HfLAs Project Board 
+  let milestone = 1;
   const issue = await github.rest.issues.create({
     owner,
     repo,
     title,
     body,
     labels,
+    milestone,
   });
   return issue.data;
 };
