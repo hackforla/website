@@ -38,6 +38,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Anita Morales
+    github-handle: anitadesigns
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03F43PFR3K
+      github: https://github.com/anitadesigns
+    picture: https://avatars.githubusercontent.com/anitadesigns
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
