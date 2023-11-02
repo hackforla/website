@@ -7,18 +7,25 @@ image: /assets/images/projects/expunge-assist.png
 alt: 'Expunge Assist'
 image-hero: /assets/images/projects/expunge-assist-hero.png
 leadership:
+  - name: Analicia Mejia Mesinas
+    github-handle: amejiamesinas
+    role: Product Manager, UX Research
+    links:
+      slack: https://hackforla.slack.com/team/U04J34E73CG
+      github: https://github.com/amejiamesinas
+    picture: https://avatars.githubusercontent.com/amejiamesinas
   - name: Thomas Demoner
     role: Product Manager, Development
     links:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: Sheron Virani
-    role: Product Manager, Research
+  - name: Jamie Siu
+    role: Product Manager, Design
     links:
-      slack: 'https://hackforla.slack.com/team/U041X0628B0'
-      github: 'https://github.com/sheronvirani21'
-    picture: 'https://avatars.githubusercontent.com/sheronvirani21'
+      slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
+      github: 'https://github.com/jamiesiu'
+    picture: 'https://avatars.githubusercontent.com/jamiesiu'
   - name: James Shin
     role: Product Manager, Design
     links:
