@@ -20,12 +20,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: Jamie Siu
-    role: Product Manager, Design
-    links:
-      slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
-      github: 'https://github.com/jamiesiu'
-    picture: 'https://avatars.githubusercontent.com/jamiesiu'
   - name: James Shin
     role: Product Manager, Design
     links:
