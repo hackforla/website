@@ -42,4 +42,12 @@
       margin: 0;
     }
   }
+
+  .svg-sprites,
+  .icon {
+    path {
+      fill: currentColor;
+    }
+  }
+
 }

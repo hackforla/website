@@ -3,8 +3,9 @@
 }
 
 .svg-sprites,
-.icon {
+.icon:not(div.resource-img *) {
   path {
     fill: currentColor;
   }
 }
+
