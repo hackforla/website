@@ -40,6 +40,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05RZAETCQ4
       github: https://github.com/CBx3000
     picture: https://avatars.githubusercontent.com/CBx3000
+  - name: Sydney Walcoff
+    github-handle: sydneywalcoff
+    role: Development, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U02P0A49XL4
+      github: https://github.com/sydneywalcoff
+    picture: https://avatars.githubusercontent.com/sydneywalcoff
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
