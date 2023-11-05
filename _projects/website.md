@@ -23,7 +23,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U052HJ1NMEZ
       github: https://github.com/anjolaaoluwa
-      picture: https://avatars.githubusercontent.com/u/122532788?v=4
+    picture: https://avatars.githubusercontent.com/u/122532788?v=4
   - name: Roslyn Wythe
     role: Dev Lead
     links:
