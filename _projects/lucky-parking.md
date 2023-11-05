@@ -84,12 +84,6 @@ leadership:
       slack:
       github:
     picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Pratibha Shivanand
-    role: Data Scientist
-    links:
-      slack: 'https://hackforla.slack.com/team/U03SM1LF9HD'
-      github: 'https://github.com/pratibhanagesh'
-    picture: https://avatars.githubusercontent.com/u/8139348
   - name: Aletia Trepte
     role: Data Scientist/Engineer
     links:
