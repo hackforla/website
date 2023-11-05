@@ -12,6 +12,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
       github: 'https://github.com/ychu196'
     picture: https://avatars.githubusercontent.com/ychu196
+  - name: Danny Pham
+    github-handle: dannycpham
+    role: Product Manager Lead
+    links:
+      slack: https://hackforla.slack.com/team/U041DP398GH
+      github: https://github.com/dannycpham
+    picture: https://avatars.githubusercontent.com/dannycpham
   - name: Greg Pawin
     role: Data Scientist Lead
     links:
