@@ -40,6 +40,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03PNBDLXL1
       github: https://github.com/jyehllow
     picture: https://avatars.githubusercontent.com/jyehllow
+  - name: Anita Morales
+    github-handle: anitadesigns
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03F43PFR3K
+      github: https://github.com/anitadesigns
+    picture: https://avatars.githubusercontent.com/anitadesigns
   - name: Curtis Barber
     github-handle: CBx3000
     role: Product Manager, Content
