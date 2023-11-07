@@ -33,6 +33,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Justin Yeh
+    github-handle: jyehllow
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03PNBDLXL1
+      github: https://github.com/jyehllow
+    picture: https://avatars.githubusercontent.com/jyehllow
   - name: Anita Morales
     github-handle: anitadesigns
     role: UX Design, Team Co-lead
