@@ -1,4 +1,12 @@
+---
+name: github-handle in project file
+about: 'For adding github-handle to member data in a project file'
+title: 'Add github-handle for [INSERT NAME] in [INSERT PROJECT FILE]'
+labels: 'P-Feature: Project Info and Page, good first issue, ready for dev lead, role: back
+  end/devOps, role: front end, size: 0.25pt'
+assignees: ''
 
+---
 # Add new variable github-handle to member [INSERT MEMBER NAME] in [INSERT PROJECT FILE]
 ### Prerequisite
 1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started Page](https://www.hackforla.org/getting-started).
