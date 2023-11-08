@@ -4,6 +4,19 @@ on:
     types: [opened, transferred, assigned]
 
 jobs:
+  # Adds newly created issues onto project board in column 'New Issue Approval'
+  Add-Issue-To-Project-Board:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
+    steps:
+      - name: Add issue to project board
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        id: add-issue-project-board
+        with:
+          project: Project Board
+          column: New Issue Approval
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
     # Only trigger this action when an issue is newly created
@@ -69,4 +82,3 @@ jobs:
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results)
-
