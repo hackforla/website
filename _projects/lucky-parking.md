@@ -129,10 +129,13 @@ looking:
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
   - React
-  - AWS
-  - PostgreSQL
-  - Node.js
+  - TailwindCSS
   - Mapbox
+  - Node.js
+  - Express
+  - MongoDB
+  - AWS
+  - Markdown
 location:
   # - Santa Monica
   - Remote
