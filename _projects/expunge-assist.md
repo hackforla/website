@@ -7,30 +7,53 @@ image: /assets/images/projects/expunge-assist.png
 alt: 'Expunge Assist'
 image-hero: /assets/images/projects/expunge-assist-hero.png
 leadership:
+  - name: Analicia Mejia Mesinas
+    github-handle: amejiamesinas
+    role: Product Manager, UX Research
+    links:
+      slack: https://hackforla.slack.com/team/U04J34E73CG
+      github: https://github.com/amejiamesinas
+    picture: https://avatars.githubusercontent.com/amejiamesinas
   - name: Thomas Demoner
     role: Product Manager, Development
     links:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: Jamie Siu
-    role: Product Manager, Design
-    links:
-      slack: 'https://hackforla.slack.com/team/U036RQHGRRR'
-      github: 'https://github.com/jamiesiu'
-    picture: 'https://avatars.githubusercontent.com/jamiesiu'
-  - name: Sheron Virani
-    role: Product Manager, Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U041X0628B0'
-      github: 'https://github.com/sheronvirani21'
-    picture: 'https://avatars.githubusercontent.com/sheronvirani21'
   - name: James Shin
     role: Product Manager, Design
     links:
       slack: 'https://hackforla.slack.com/team/U04BS46F67L'
       github: 'https://github.com/jamesshin27'
     picture: 'https://avatars.githubusercontent.com/jamesshin27'
+  - name: Samantha Hyler
+    github-handle: SamHyler
+    role:  UX Content, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U025XR6MY6S
+      github: https://github.com/SamHyler
+    picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Justin Yeh
+    github-handle: jyehllow
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03PNBDLXL1
+      github: https://github.com/jyehllow
+    picture: https://avatars.githubusercontent.com/jyehllow
+  - name: Anita Morales
+    github-handle: anitadesigns
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03F43PFR3K
+      github: https://github.com/anitadesigns
+    picture: https://avatars.githubusercontent.com/anitadesigns
+  - name: Curtis Barber
+    github-handle: CBx3000
+    role: Product Manager, Content
+    links:
+      slack: https://hackforla.slack.com/team/U05RZAETCQ4
+      github: https://github.com/CBx3000
+    picture: https://avatars.githubusercontent.com/CBx3000
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'

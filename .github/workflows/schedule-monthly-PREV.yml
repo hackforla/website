@@ -1,14 +1,14 @@
 name: Schedule Monthly PREVIOUS
 
 on:
-  schedule:
-    - cron: "0 8 1 * *"
+  workflow_dispatch:
 
 jobs:
   list-inactive-members:
     runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # gets a list of website-write team members with no open issues, returns a list of member's github handles
       - name: Get List

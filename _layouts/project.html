@@ -110,7 +110,8 @@ layout: default
                 <p><strong>Impact</strong></p>
                 <p>{{ page.impact }}</p>
             </div>
-            <div class='sdg-description-card'>
+            {%- assign background_color = page.sdg-color-variable |  replace_first: "$", "background-" -%}
+            <div class='sdg-description-card {{ background_color }}'>
                 <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
                 <div class='sdg-description-wrapper'>
                     <img class='sdg-img' src='{{ page.sdg-image-src }}'>

@@ -24,7 +24,7 @@ jobs:
       ARTIFACT_NAME: 'pr-labels'
       SCRIPT_PATH: './github-actions/trigger-pr/set-pr-labels.js'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: download-artifact
         name: 'Download artifact'
         uses: actions/github-script@v6

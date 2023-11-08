@@ -12,6 +12,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
       github: 'https://github.com/ychu196'
     picture: https://avatars.githubusercontent.com/ychu196
+  - name: Danny Pham
+    github-handle: dannycpham
+    role: Product Manager Lead
+    links:
+      slack: https://hackforla.slack.com/team/U041DP398GH
+      github: https://github.com/dannycpham
+    picture: https://avatars.githubusercontent.com/dannycpham
   - name: Greg Pawin
     role: Data Scientist Lead
     links:
@@ -84,12 +91,6 @@ leadership:
       slack:
       github:
     picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Pratibha Shivanand
-    role: Data Scientist
-    links:
-      slack: 'https://hackforla.slack.com/team/U03SM1LF9HD'
-      github: 'https://github.com/pratibhanagesh'
-    picture: https://avatars.githubusercontent.com/u/8139348
   - name: Aletia Trepte
     role: Data Scientist/Engineer
     links:
@@ -128,10 +129,13 @@ looking:
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
   - React
-  - AWS
-  - PostgreSQL
-  - Node.js
+  - TailwindCSS
   - Mapbox
+  - Node.js
+  - Express
+  - MongoDB
+  - AWS
+  - Markdown
 location:
   # - Santa Monica
   - Remote
@@ -150,4 +154,5 @@ impact: Our project seeks to educate and inform city leaders and the community a
 sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
 sdg-image-src: /assets/images/sdg/sdg11.svg
 sdg-image-alt: '11: sustainable cities and communities'
+sdg-color-variable: $color-sdg11
 ---
