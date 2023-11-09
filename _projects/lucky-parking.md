@@ -103,12 +103,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
       github: 'https://github.com/ymphan'
     picture: https://avatars.githubusercontent.com/ymphan
-  - name: Yao Guan
-    role: Quant UXR
-    links:
-      slack: 'https://hackforla.slack.com/team/U03F35T4PND'
-      github: 'https://github.com/yaoguan'
-    picture: https://avatars.githubusercontent.com/u/41702875
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
