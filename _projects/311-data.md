@@ -26,6 +26,22 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
+  - name: Ahmed Awadalla
+    github-handle: ahmedsalah0130
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05Q80JEGG4
+      github: https://github.com/ahmedsalah0130
+    picture: https://avatars.githubusercontent.com/ahmedsalah0130
+  - name: Edwin Jue
+    github-handle: edwinjue
+    role: Engineering Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03SUUZMFEV
+      github: https://github.com/edwinjue
+    picture: https://avatars.githubusercontent.com/edwinjue
+    
+    
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -52,16 +68,10 @@ technologies:
   - React
   - Redux
   - Material-UI
+  - DuckDb
+  - HuggingFace
+  - GitHub Pages
   - Mapbox
-  - AWS
-  - FastAPI
-  - Redis
-  - PostgreSQL
-  - Prefect
-  - Docker
-  - Figma
-  - Adobe CC
-  - Miro
 location:
   # - Downtown LA
   - Remote
