@@ -97,12 +97,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
       github: 'https://github.com/parcheesime'
     picture: https://avatars.githubusercontent.com/u/38143160
-  - name: Yen Phan
-    role: User Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
   - name: Yao Guan
     role: Quant UXR
     links:
