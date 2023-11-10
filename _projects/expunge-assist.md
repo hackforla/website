@@ -20,12 +20,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: James Shin
-    role: Product Manager, Design
-    links:
-      slack: 'https://hackforla.slack.com/team/U04BS46F67L'
-      github: 'https://github.com/jamesshin27'
-    picture: 'https://avatars.githubusercontent.com/jamesshin27'
   - name: Samantha Hyler
     github-handle: SamHyler
     role:  UX Content, Team Lead
