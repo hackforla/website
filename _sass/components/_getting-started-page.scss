@@ -248,11 +248,14 @@
 }
 
 .step-img-icon-cop {
-  margin-left: -2.1em;
-  margin-right: 1em;
-  width: 2.3em;
-  float: left;
   align-self: flex-start;
+  max-width: 1.9em;
+  margin-left: -1.8em;
+  margin-right: 1.1em;
+
+  @media #{$bp-below-tablet} {
+    min-width: 31px;
+  }
 }
 
 .step-img-icon-cop-small {
