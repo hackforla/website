@@ -85,12 +85,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
       github: 'https://github.com/davidlamcanada'
     picture: https://avatars.githubusercontent.com/davidlamcanada
-  - name: Carlos Olivas
-    role: Data Scientist
-    links:
-      slack:
-      github:
-    picture: https://avatars.githubusercontent.com/u/41702877
   - name: Aletia Trepte
     role: Data Scientist/Engineer
     links:
