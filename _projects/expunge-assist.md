@@ -20,12 +20,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
       github: 'https://github.com/thomasdemoner'
     picture: 'https://avatars.githubusercontent.com/thomasdemoner'
-  - name: James Shin
-    role: Product Manager, Design
-    links:
-      slack: 'https://hackforla.slack.com/team/U04BS46F67L'
-      github: 'https://github.com/jamesshin27'
-    picture: 'https://avatars.githubusercontent.com/jamesshin27'
   - name: Samantha Hyler
     github-handle: SamHyler
     role:  UX Content, Team Lead
@@ -33,6 +27,20 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Justin Yeh
+    github-handle: jyehllow
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03PNBDLXL1
+      github: https://github.com/jyehllow
+    picture: https://avatars.githubusercontent.com/jyehllow
+  - name: Anita Morales
+    github-handle: anitadesigns
+    role: UX Design, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U03F43PFR3K
+      github: https://github.com/anitadesigns
+    picture: https://avatars.githubusercontent.com/anitadesigns
   - name: Curtis Barber
     github-handle: CBx3000
     role: Product Manager, Content
@@ -40,6 +48,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05RZAETCQ4
       github: https://github.com/CBx3000
     picture: https://avatars.githubusercontent.com/CBx3000
+  - name: Sydney Walcoff
+    github-handle: sydneywalcoff
+    role: Development, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U02P0A49XL4
+      github: https://github.com/sydneywalcoff
+    picture: https://avatars.githubusercontent.com/sydneywalcoff
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
