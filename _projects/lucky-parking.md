@@ -61,12 +61,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
       github: 'https://github.com/sijiapitts'
     picture: https://avatars.githubusercontent.com/u/103976231
-  - name: Yujin Chang
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
-      github: 'https://github.com/eugenecha'
-    picture: https://avatars.githubusercontent.com/eugenecha
   - name: Sam Sengupta
     role: UX/UI Designer
     links:
