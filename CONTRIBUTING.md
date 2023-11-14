@@ -29,6 +29,7 @@ The following is a set of guidelines for contributing to the website repository,
     - [**1.6 Dev setup (6): Build and serve the website locally**](#16-dev-setup-6-build-and-serve-the-website-locally)
       - [**1.6.a Starting Docker**](#16a-starting-docker)
       - [**1.6.b Stopping Docker**](#16b-stopping-docker)
+    - [**1.7 Dev setup (7): Install local codebase spell checker**](#17-Install-local-codebase-spell-checker)
   - [**Part 2: How the Website team works with GitHub issues**](#part-2-how-the-website-team-works-with-github-issues)
     - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
     - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
