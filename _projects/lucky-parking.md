@@ -67,12 +67,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0270QURQCD'
       github: 'https://github.com/eugenecha'
     picture: https://avatars.githubusercontent.com/eugenecha
-  - name: Sam Sengupta
-    role: UX/UI Designer
-    links:
-      slack:
-      github:
-    picture: https://avatars.githubusercontent.com/u/41702879
   - name: Seymour Liao
     role: Data Scientist
     links:
