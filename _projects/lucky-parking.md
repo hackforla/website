@@ -85,12 +85,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
       github: 'https://github.com/davidlamcanada'
     picture: https://avatars.githubusercontent.com/davidlamcanada
-  - name: Aletia Trepte
-    role: Data Scientist/Engineer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
-      github: 'https://github.com/parcheesime'
-    picture: https://avatars.githubusercontent.com/u/38143160
   - name: Yen Phan
     role: User Research
     links:
