@@ -40,8 +40,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03SUUZMFEV
       github: https://github.com/edwinjue
     picture: https://avatars.githubusercontent.com/edwinjue
-    
-    
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
