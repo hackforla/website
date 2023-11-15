@@ -91,12 +91,6 @@ leadership:
       slack:
       github:
     picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Aletia Trepte
-    role: Data Scientist/Engineer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
-      github: 'https://github.com/parcheesime'
-    picture: https://avatars.githubusercontent.com/u/38143160
   - name: Yen Phan
     role: User Research
     links:
