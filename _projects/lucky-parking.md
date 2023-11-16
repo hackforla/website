@@ -85,12 +85,6 @@ leadership:
       slack:
       github:
     picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Yen Phan
-    role: User Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
   - name: Yao Guan
     role: Quant UXR
     links:
