@@ -14,12 +14,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04J34E73CG
       github: https://github.com/amejiamesinas
     picture: https://avatars.githubusercontent.com/amejiamesinas
-  - name: Thomas Demoner
-    role: Product Manager, Development
-    links:
-      slack: 'https://hackforla.slack.com/team/U02DFJ72V8Q'
-      github: 'https://github.com/thomasdemoner'
-    picture: 'https://avatars.githubusercontent.com/thomasdemoner'
   - name: Samantha Hyler
     github-handle: SamHyler
     role:  UX Content, Team Lead
