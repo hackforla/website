@@ -129,7 +129,9 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools:
-  - Jupyter Notebooks
+  - pnpm
+  - GitHub
+  - Storybook
   - Google Colab
 program-area:
   - Citizen Engagement
