@@ -4,12 +4,14 @@
   max-width: 508px;
   margin-top: 31px;
 
-  .self-invite-img {
-    /*Note "margin-top: 15px" is needed to keep this img aligned with neighboring text*/
-    margin-top: 15px;
+  svg.icon {
+    path {
+      fill: #fa114f;
+    }
+    margin-top: -10px;
     margin-right: 27px;
-    width: 24px;
-    height: 24px;
+    width: 80px;
+    height: 80px;
   }
 
   .alert--communities {
