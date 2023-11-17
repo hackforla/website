@@ -79,6 +79,21 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
       github: 'https://github.com/davidlamcanada'
     picture: https://avatars.githubusercontent.com/davidlamcanada
+<<<<<<< HEAD
+=======
+  - name: Carlos Olivas
+    role: Data Scientist
+    links:
+      slack:
+      github:
+    picture: https://avatars.githubusercontent.com/u/41702877
+  - name: Aletia Trepte
+    role: Data Scientist/Engineer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
+      github: 'https://github.com/parcheesime'
+    picture: https://avatars.githubusercontent.com/u/38143160
+>>>>>>> e74fb0d4 (removed Carlos Olivas from Lucky Parking)
   - name: Yen Phan
     role: User Research
     links:
