@@ -181,9 +181,9 @@ function initializeFilters() {
         })
     }
     // Event listener for arrows to collapse categories
-    document.querySelectorAll(".filter-item").forEach(filterItem => {
-        filterItem.addEventListener("click", () => {
-            filterItem.querySelector('a').classList.toggle("show-none")
+    document.querySelectorAll("li.filter-item a.category-title").forEach(categoryHeading => {
+        categoryHeading.addEventListener("click", () => {
+            categoryHeading.classList.toggle("show-none")
         })
     })
 }
