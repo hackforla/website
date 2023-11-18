@@ -26,6 +26,7 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
+
   - name: Ahmed Awadalla
     github-handle: ahmedsalah0130
     role: Product Manager
@@ -40,6 +41,22 @@ leadership:
       slack: https://hackforla.slack.com/team/U03SUUZMFEV
       github: https://github.com/edwinjue
     picture: https://avatars.githubusercontent.com/edwinjue
+
+  - name: Bethlehem Berhane
+    github-handle: bberhane
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05QV9AKPNU
+      github: https://github.com/bberhane
+    picture: https://avatars.githubusercontent.com/bberhane
+  - name: Holly Worthen
+    github-handle: hworthen
+    role: UX Research Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03RPBE9DL6
+      github: https://github.com/hworthen
+    picture: https://avatars.githubusercontent.com/hworthen
+
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -74,6 +91,12 @@ location:
   # - Downtown LA
   - Remote
 partner: Los Angeles Department of Neighborhood Empowerment
+tools:
+  - Google Suite
+  - Figma
+  - GitHub
+  - Zoom
+  - Observable
 program-area:
   - Citizen Engagement
 visible: true
