@@ -33,13 +33,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05Q80JEGG4
       github: https://github.com/ahmedsalah0130
     picture: https://avatars.githubusercontent.com/ahmedsalah0130
-  - name: Edwin Jue
-    github-handle: edwinjue
-    role: Engineering Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03SUUZMFEV
-      github: https://github.com/edwinjue
-    picture: https://avatars.githubusercontent.com/edwinjue
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
@@ -54,6 +47,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
+  - name: Edwin Jue
+    github-handle: edwinjue
+    role: Engineering Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03SUUZMFEV
+      github: https://github.com/edwinjue
+    picture: https://avatars.githubusercontent.com/edwinjue
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
