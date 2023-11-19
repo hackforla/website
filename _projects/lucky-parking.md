@@ -55,12 +55,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03RFGLLAQG'
       github: 'https://github.com/jojochen25’'
     picture: https://avatars.githubusercontent.com/u/103106753
-  - name: Sijia Pitts
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
-      github: 'https://github.com/sijiapitts'
-    picture: https://avatars.githubusercontent.com/u/103976231
   - name: Yujin Chang
     role: UX/UI Designer
     links:
