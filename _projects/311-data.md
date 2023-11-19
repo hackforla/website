@@ -26,7 +26,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
-
   - name: Ahmed Awadalla
     github-handle: ahmedsalah0130
     role: Product Manager
@@ -41,7 +40,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03SUUZMFEV
       github: https://github.com/edwinjue
     picture: https://avatars.githubusercontent.com/edwinjue
-
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
@@ -56,7 +54,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
-
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
