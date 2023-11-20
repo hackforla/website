@@ -20,12 +20,19 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
-  - name: Shawn Wong
+  - name: Sarah Levine
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
-      github: 'https://github.com/seannwvong'
-    picture: https://avatars.githubusercontent.com/seannwvong
+      slack: 'https://hackforla.slack.com/team/U05RWQJ8YKU'
+      github: 'https://github.com/levines2017'
+    picture: https://avatars.githubusercontent.com/levines2017
+  - name: Rhoda Michael
+    github-handle: the-techgurl
+    role: UX Research Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
+      github: 'https://github.com/the-techgurl'
+    picture: https://avatars.githubusercontent.com/the-techgurl
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'

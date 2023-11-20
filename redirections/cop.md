@@ -4,5 +4,5 @@
 layout: redirect
 title: cop
 permalink: /cop/
-redirect_to: /communities-of-practice/
+redirect_to: /communities-of-practice
 ---
