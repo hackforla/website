@@ -12,7 +12,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U048U430FQV'
       github: 'https://github.com/mc759'
     picture: https://avatars.githubusercontent.com/mc759
-  - name: Saju Venugopal
+  - name: Sanju Venugopal
     github-handle: sanjumv
     role: Product Manager
     links:
