@@ -49,9 +49,12 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll("li.view-all").forEach(viewAll => {
             viewAll.addEventListener("click", viewAllEventHandler)
         })
-
-        document.querySelectorAll(".labelArrow").forEach(arrow => {
-            arrow.addEventListener("click", showNoneEventHandler)
+        
+        // Event listener for arrows to collapse categories
+        document.querySelectorAll("li.filter-item a.category-title").forEach(categoryHeading => {
+            categoryHeading.addEventListener("click", () => {
+                categoryHeading.classList.toggle("show-none")
+            })
         })
 
         document.querySelectorAll(".show-filters-button").forEach(button => {
@@ -249,10 +252,6 @@ function tabFocusedKeyDownHandler(e) {
 	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
         document.activeElement.click()
     }
-}
-//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
-function showNoneEventHandler(e) {
-    e.target.parentNode.classList.toggle("show-none")
 }
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
