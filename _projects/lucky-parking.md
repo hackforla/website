@@ -73,12 +73,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
-  - name: David Lam
-    role: Data Scientist
-    links:
-      slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
-      github: 'https://github.com/davidlamcanada'
-    picture: https://avatars.githubusercontent.com/davidlamcanada
   - name: Carlos Olivas
     role: Data Scientist
     links:
@@ -91,12 +85,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
       github: 'https://github.com/ymphan'
     picture: https://avatars.githubusercontent.com/ymphan
-  - name: Yao Guan
-    role: Quant UXR
-    links:
-      slack: 'https://hackforla.slack.com/team/U03F35T4PND'
-      github: 'https://github.com/yaoguan'
-    picture: https://avatars.githubusercontent.com/u/41702875
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -129,7 +117,9 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools:
-  - Jupyter Notebooks
+  - pnpm
+  - GitHub
+  - Storybook
   - Google Colab
 program-area:
   - Citizen Engagement
