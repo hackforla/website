@@ -42,7 +42,8 @@ function insertEventSchedule(eventData, page) {
 				  if (page === "events") {
 					  eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}</li>`;
 				  } else {
-					  eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.dsc}</li>`;
+            if(event.dsc != "") event.meetingName += ", ";
+					  eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName} ${event.dsc}</li>`;
 				  }
 				  placeToInsert.insertAdjacentHTML("beforeend", eventHtml);}
       });
