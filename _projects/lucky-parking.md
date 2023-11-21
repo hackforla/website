@@ -61,12 +61,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
       github: 'https://github.com/sijiapitts'
     picture: https://avatars.githubusercontent.com/u/103976231
-  - name: Sam Sengupta
-    role: UX/UI Designer
-    links:
-      slack:
-      github:
-    picture: https://avatars.githubusercontent.com/u/41702879
   - name: Seymour Liao
     role: Data Scientist
     links:
