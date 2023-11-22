@@ -143,11 +143,11 @@ function stickItHere() {
 function loadAccomplishmentYears() {
   let d = new Date();
   let year = d.getFullYear();
-  for (i=year; i>=2020; i--){
+  for (let i=year; i>=2020; i--){
     let optionsHtml='<option value="' + i + '">' + i + '</option>';
     document.querySelector("#accomplishments-year-dropdown").insertAdjacentHTML ('beforeend',optionsHtml);
   }
-  for (i=year; i>=2020; i--){
+  for (let i=year; i>=2020; i--){
     let listItemHtml='<li id="' + i + '">' + i + '</li>';
     document.querySelector("#accomplishments-year-list").insertAdjacentHTML ('beforeend',listItemHtml);
   }
@@ -215,7 +215,7 @@ window.addEventListener(
 );
 
 function retrieveAccomplishmentsData() {
-  const scriptTag = document.getElementById("accScript");
+  const scriptTag = document.getElementById("aboutScript");
   let receivedData = scriptTag.getAttribute("accomplishments");
   let accData=receivedData.replaceAll("}{", "},{").replaceAll("=>",":");
   let jsonFormat="[" + accData + "]";
@@ -307,5 +307,4 @@ function displayAccomplishments(accToDisplay) {
       }
     }) 
   }
-  console.log ("accomplishments displayed")
 }
