@@ -181,10 +181,9 @@ function initializeFilters() {
         })
     }
     // Event listener for arrows to collapse categories
-    const labelArrows = document.querySelectorAll(".labelArrow")
-    labelArrows.forEach(label => {
-        label.addEventListener('click', function() {
-            label.parentElement.classList.toggle("show-none")
+    document.querySelectorAll("li.filter-item a.category-title").forEach(categoryHeading => {
+        categoryHeading.addEventListener("click", () => {
+            categoryHeading.classList.toggle("show-none")
         })
     })
 }
