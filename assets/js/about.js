@@ -143,11 +143,11 @@ function stickItHere() {
 function loadAccomplishmentYears() {
   let d = new Date();
   let year = d.getFullYear();
-  for (i=year; i>=2020; i--){
+  for (let i=year; i>=2020; i--){
     let optionsHtml='<option value="' + i + '">' + i + '</option>';
     document.querySelector("#accomplishments-year-dropdown").insertAdjacentHTML ('beforeend',optionsHtml);
   }
-  for (i=year; i>=2020; i--){
+  for (let i=year; i>=2020; i--){
     let listItemHtml='<li id="' + i + '">' + i + '</li>';
     document.querySelector("#accomplishments-year-list").insertAdjacentHTML ('beforeend',listItemHtml);
   }
