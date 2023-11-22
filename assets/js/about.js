@@ -215,7 +215,7 @@ window.addEventListener(
 );
 
 function retrieveAccomplishmentsData() {
-  const scriptTag = document.getElementById("accScript");
+  const scriptTag = document.getElementById("aboutScript");
   let receivedData = scriptTag.getAttribute("accomplishments");
   let accData=receivedData.replaceAll("}{", "},{").replaceAll("=>",":");
   let jsonFormat="[" + accData + "]";
@@ -307,5 +307,4 @@ function displayAccomplishments(accToDisplay) {
       }
     }) 
   }
-  console.log ("accomplishments displayed")
 }
