@@ -6,7 +6,7 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
-  - name: Saju Venugopal
+  - name: Sanju Venugopal
     github-handle: sanjumv
     role: Product Manager
     links:
