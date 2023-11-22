@@ -446,14 +446,10 @@ a.anchor {
   border: 1px solid rgba(0, 0, 0, 0.24);  
 }
 
-.accomplishment-nav ul {
-  
- display: none;
-  
+.accomplishment-nav ul {  
+ display: none;  
 }
 
-
-/**
 @media #{$bp-mobile-up} {
   .accomplishment-nav select {
    display: none;
@@ -484,8 +480,7 @@ a.anchor {
   .accomplishment-nav ul li:hover {
     color: rgb(250, 17, 79);
   }
-}**/
-
+}
 
 .accomplishment-program-area {
   padding: 10px 0 0 0;
