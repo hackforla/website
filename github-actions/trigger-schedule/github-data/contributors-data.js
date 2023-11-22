@@ -20,6 +20,7 @@ twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 2);  // then set twoMonthsAgo fr
 twoMonthsAgo = twoMonthsAgo.toISOString();
 
 
+
 /**
  * Main function, immediately invoked
  */
@@ -33,7 +34,7 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log('-------------------------------------------------------');
   console.log('Current members of ' + team + ':')
   console.log(currentTeamMembers)
-  
+
   const removedContributors = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo);
   console.log('-------------------------------------------------------');
   console.log('Removed members from ' + team + ' inactive since ' + twoMonthsAgo.slice(0, 10) + ':');
@@ -58,10 +59,10 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
 async function fetchContributors(){
   let allContributorsSinceOneMonthAgo = {};
   let allContributorsSinceTwoMonthsAgo = {};
-  
-  // Fetch all contributors with commit, comment, and issue contributions
+
+  // Fetch all contributors with commit, comment, and issue (assignee) contributions
   const APIs = ['GET /repos/{owner}/{repo}/commits', 'GET /repos/{owner}/{repo}/issues/comments', 'GET /repos/{owner}/{repo}/issues'];
-  const dates = [oneMonthAgo, twoMonthsAgo]
+  const dates = [oneMonthAgo, twoMonthsAgo];
 
   for (const date of dates){
     const allContributorsSince = {};
@@ -69,10 +70,9 @@ async function fetchContributors(){
       let pageNum = 1;
       let result = [];
   
-      // Since Github only allows to fetch 100 items per request, we need to 'flip' pages
+      // Since Github only allows to fetch max 100 items per request, we need to 'flip' pages
       while(true){
-        // Fetch 100 items from page number (`pageNum`)
-        // `oneMonthAgo` is a variable defined on top of the file
+        // Fetch 100 items per each page (`pageNum`)
         const contributors = await octokit.request(api, {
           owner: org,
           repo: repo,
@@ -91,35 +91,31 @@ async function fetchContributors(){
         }
       }
   
-      // Once we have looked at all pages and collected all the data, we create key-value  
-      // pairs of recent contributors and store them in `allContributorsSince` object
-  
-      // The data that comes back from APIs is stored differently, i.e. `author.login` 
-      // vs `user.login`, all we want is to extract the username of a contributor
+      // Once we have looked at all pages and collected all the data, we create key-value pairs of recent contributors and store 
+      // them in the `allContributorsSince` object. The contributor data that comes back from each API are stored differently,  
+      // i.e. `author.login` vs `user.login` vs `assignee.login`. We want to extract the contributors' usernames for each situation.
       for(const contributorInfo of result){
-        // check if username is stored in author.login
+        // Check if username is stored in `author.login`
         if(contributorInfo.author){
           allContributorsSince[contributorInfo.author.login] = true;
-        } else if(contributorInfo.user){
+        } 
+        // Check for username in `user.login`, but skip `user.login` for 3rd API 
+        else if(contributorInfo.user){
           allContributorsSince[contributorInfo.user.login] = true;
-  
-          // This check is done for "issues" API (3rd element in the APIs array). Sometimes a 
-          // user who created an issue is not the same as the user assigned to that issue- we  
-          // want to make sure that we count all assignees as active contributors as well.
-          if(contributorInfo.assignees && contributorInfo.assignees.length){
-            contributorInfo.assignees.forEach(user => allContributorsSince[user.login] = true);
-          } 
-        } else {
-          console.log('You should not be seeing this message...');
-        }    // END if...else
-      }    // END for(const contributorInfo of result)
-    }    // END for(const api of APIs) 
+        }
+        // This check is done for `/issues` (3rd) API. Sometimes a user who created an issue is not the same as the 
+        // assignee on that issue- we want to make sure that we count all assignees as active contributors as well.
+        else if(contributorInfo.assignee){
+          allContributorsSince[contributorInfo.assignee.login] = true;
+        } 
+      }     
+    } 
     if(date == oneMonthAgo){
       allContributorsSinceOneMonthAgo = allContributorsSince;
     } else {
       allContributorsSinceTwoMonthsAgo = allContributorsSince;
     }
-  }    // END for(date of dates)
+  }   
   return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo]; 
 }
 
@@ -133,18 +129,15 @@ async function fetchTeamMembers(){
     
   let pageNum = 1;
   let teamResults = [];
-  
+
+  // Fetch all members of team. Note: if total members exceed 100, we need to 'flip' pages 
   while(true){
-    // Fetch all members of team. Note: if total members exceed 100, we need to 'flip' pages 
     const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
       org: org,
       team_slug: team, 
       per_page: 100,
       page: pageNum
     })
-    
-    // If the API call returns an empty array, break out of loop- there is no additional data.
-    // Else if data is returned, push it to `result` and increase the page number (`pageNum`)
     if(!teamMembers.data.length){
       break;      
     } else {
@@ -249,7 +242,6 @@ async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
   }
   return notifiedMembers;
 }
-
 
 
 
