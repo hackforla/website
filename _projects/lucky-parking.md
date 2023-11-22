@@ -67,12 +67,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
-  - name: Carlos Olivas
-    role: Data Scientist
-    links:
-      slack:
-      github:
-    picture: https://avatars.githubusercontent.com/u/41702877
   - name: Yen Phan
     role: User Research
     links:
