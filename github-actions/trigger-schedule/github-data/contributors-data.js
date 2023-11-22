@@ -98,9 +98,9 @@ async function fetchContributors(){
         // Check if username is stored in `author.login`
         if(contributorInfo.author){
           allContributorsSince[contributorInfo.author.login] = true;
-        } 
+        }
         // Check for username in `user.login`, but skip `user.login` for 3rd API 
-        else if(contributorInfo.user){
+        else if(contributorInfo.user  && api != 'GET /repos/{owner}/{repo}/issues'){
           allContributorsSince[contributorInfo.user.login] = true;
         }
         // This check is done for `/issues` (3rd) API. Sometimes a user who created an issue is not the same as the 
@@ -258,7 +258,6 @@ function writeData(removedContributors, notifiedContributors){
   inactiveMemberLists["removedContributors"] = removedContributors;
   inactiveMemberLists["notifiedContributors"] = notifiedContributors;
   
-
   fs.writeFile('inactive-Members.json', JSON.stringify(inactiveMemberLists, null, 2), (err) => {
     if (err) throw err;
     console.log('-------------------------------------------------------');
@@ -269,5 +268,4 @@ function writeData(removedContributors, notifiedContributors){
     if (err) throw err;
     console.log("File 'inactive-Members.json' read successfully!");
   });
-  
  }
