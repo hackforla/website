@@ -36,7 +36,7 @@ const createIssue = async (owner, repo, inactiveLists) => {
   let removedList = removeList.map(x => "@" + x).join("\n");  
   let notifiedList = notifyList.map(x => "@" + x).join("\n"); 
 
-  // This finds all issues in the repo and returns the number for only the last issue created. 
+  // This finds all issues in the repo and returns the only the number for the last issue created. 
   // Add 1 to this issue number to get the number for the next issue- i.e. the one being created.
   let thisIssuePredict = await github.rest.issues.listForRepo({
     owner,
@@ -67,8 +67,8 @@ const createIssue = async (owner, repo, inactiveLists) => {
   + "After you leave the comment, please send us a Slack message on the \"hfla-site\" channel with a link to your comment.\n\n"
   + "### Temporary leave\n"
   + "If you have taken a temporary leave, and you have been authorized to keep your assignment to an issue: \n"
-  + "- Your issue should be in the \"Questions/ In Review\" column, with the \`Ready for dev lead\` label and a note letting us know when you will be back.\n"
-  + "- We generally try to encourage you to unassign yourself from the issue and allow us to return it to the \"Prioritized backlog\". However, exceptions are sometimes made.\n"
+  + "- Your issue should be in the \"Questions/ In Review\" column, with the \`ready for dev lead\` label and a note letting us know when you will be back.\n"
+  + "- We generally try to encourage you to unassign yourself from the issue and allow us to return it to the \"Prioritized backlog\" column. However, exceptions are sometimes made.\n"
   + "## Removed Members\n"
   + "Our team bot has determined that the following member(s) have not been active with the Website team for over 60 days, and therefore the member(s) have been removed from the 'website-write' team.\n\n"
   + removedList + "\n\n"
@@ -79,6 +79,10 @@ const createIssue = async (owner, repo, inactiveLists) => {
   + "Please add me back to the 'website-write' team, I am ready to work on an issue now.\n"
   + "```\n"
   + "After you leave the comment, please send us a Slack message on the \"hfla-site\" channel with a link to your comment.\n\n"
+  + "## Dev Leads\n"
+  + "This issue is closed automatically after creation. If the issue is open, check whether: \n"
+  + "- A \"Removed Member\" is requesting reactivation to the 'website-write' team. If so, reactivate the member and inform them via a comment on this issue as well as via Slack. After informing the member, close this issue.\n"
+  + "- An \"Inactive Member\" believes that the bot has made a mistake. If so, determine whether the member has or has not been active based on the issue or PR number provided in the member's comment. If multiple members are being inappropriately flagged as \"inactive\" by the bot, then submit an ER/Issue in order to deactivate the `schedule-monthly.yml` workflow so that the cause of the bug can be investigated and resolved.\n\n" 
   let labels = [
     "Feature: Administrative",
     "Feature: Onboarding/Contributing.md",
