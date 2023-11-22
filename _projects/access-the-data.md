@@ -41,6 +41,7 @@ leadership:
       github: 'https://github.com/Aparna1Gopal'
     picture: https://avatars.githubusercontent.com/Aparna1Gopal
   - name: Tony Delgado
+    github-handle: 
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U05422GPUQ2'

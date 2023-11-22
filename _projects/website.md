@@ -18,6 +18,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U052L9U44LB
       github: https://github.com/Josiah-O
     picture: https://avatars.githubusercontent.com/Josiah-O    
+  - name: Anjola Jaiyeola
+    role: Product Team
+    links:
+      slack: https://hackforla.slack.com/team/U052HJ1NMEZ
+      github: https://github.com/anjolaaoluwa
+    picture: https://avatars.githubusercontent.com/u/122532788?v=4
   - name: Roslyn Wythe
     role: Dev Lead
     links:
