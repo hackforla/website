@@ -61,12 +61,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
       github: 'https://github.com/sijiapitts'
     picture: https://avatars.githubusercontent.com/u/103976231
-  - name: Yujin Chang
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
-      github: 'https://github.com/eugenecha'
-    picture: https://avatars.githubusercontent.com/eugenecha
   - name: Seymour Liao
     role: Data Scientist
     links:
@@ -105,7 +99,9 @@ location:
   - Remote
 partner: Department of Neighborhood Empowerment
 tools:
-  - Jupyter Notebooks
+  - pnpm
+  - GitHub
+  - Storybook
   - Google Colab
 program-area:
   - Citizen Engagement

@@ -1,5 +1,5 @@
 name: "Project Profile Card review and update"
-description: "To track project profile card updates"
+description: "To track project profile card updates or add a new project profile card"
 title: "Update Project Profile: [Project Name]"
 labels: ['P-Feature: Project Info and Page', 'role: back end/devOps', 'role: front end', 'Complexity: Small', 'size: 0.5pt', 'time sensitive']
 
@@ -15,6 +15,7 @@ body:
     attributes:
       label: Project Name
       options:
+        - "---New Project---"
         - "100 Automations"
         - "311 Data"
         - "Access The Data"
@@ -58,6 +59,7 @@ body:
       label: Project Card URL
       description: "https://github.com/hackforla/website/tree/gh-pages/_projects"
       options: 
+        - "---New Project---"
         - "100-automations.md"
         - "311-data.md"
         - "access-the-data.md"
@@ -132,6 +134,19 @@ body:
     attributes:
       label: Description
 
+  - type: dropdown
+    id: update-hero-image-yes-no
+    attributes:
+      label: Update the Hero Image?
+      options: 
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: hero-image
+    attributes:
+      label: Hero Image
 
   - type: dropdown
     id: update-image-yes-no
@@ -142,12 +157,10 @@ body:
         - "NO"
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: image
     attributes:
       label: Image
-
-  
 
   - type: dropdown
     id: update-technologies-yes-no
@@ -161,8 +174,7 @@ body:
   - type: textarea
     id: technologies
     attributes:
-      label: Technologies (maximum 26 characters)
-
+      label: Technologies (maximum 26 characters per technology name)
 
   - type: dropdown
     id: update-partners-yes-no
@@ -177,7 +189,6 @@ body:
     id: partners
     attributes:
       label: Partners
-
 
   - type: dropdown
     id: update-tools-yes-no
