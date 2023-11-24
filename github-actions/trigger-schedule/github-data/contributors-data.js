@@ -10,13 +10,17 @@ const org = 'hackforla';
 const repo = 'website';
 const team = 'website-write';
 
-// Set date limits: at one month, warn contributor that they are 
-// inactive, and at two months remove contributor from team(s)
-let oneMonthAgo = new Date();                        // oneMonthAgo instantiated with date of "today"
-oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);   // then set oneMonthAgo from "today"
+// Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
+// Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
+// The February 1st run keeps the 1 month inactive warning, but changes removal to 3 months inactive (skipping December).
+let today = new Date();
+let twoMonths = (today.getMonth() == 1) ? 3 : 2;           // If month is "February" == 1, then twoMonths = 3 months ago
+
+let oneMonthAgo = new Date();                              // oneMonthAgo instantiated with date of "today"
+oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);          // then set oneMonthAgo from "today"
 oneMonthAgo = oneMonthAgo.toISOString();
-let twoMonthsAgo = new Date();                        // twoMonthsAgo instantiated with date of "today"
-twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 2);  // then set twoMonthsAgo from "today"
+let twoMonthsAgo = new Date();                               // twoMonthsAgo instantiated with date of "today"
+twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - twoMonths);  // then set twoMonthsAgo from "today"
 twoMonthsAgo = twoMonthsAgo.toISOString();
 
 
