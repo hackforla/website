@@ -49,12 +49,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
       github: 'https://github.com/DCH-CH'
     picture: https://avatars.githubusercontent.com/DCH-CH
-  - name: Jodie Chen
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03RFGLLAQG'
-      github: 'https://github.com/jojochen25’'
-    picture: https://avatars.githubusercontent.com/u/103106753
   - name: Sijia Pitts
     role: UX/UI Designer
     links:
