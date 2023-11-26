@@ -6,12 +6,6 @@ image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking'
 image-hero: /assets/images/projects/lucky-parking-hero.png
 leadership:
-  - name: Yuting Chu
-    role: Product Manager Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
-      github: 'https://github.com/ychu196'
-    picture: https://avatars.githubusercontent.com/ychu196
   - name: Danny Pham
     github-handle: dannycpham
     role: Product Manager Lead
