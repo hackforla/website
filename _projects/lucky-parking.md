@@ -55,12 +55,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
-  - name: Yen Phan
-    role: User Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
