@@ -7,7 +7,14 @@
         <div class="flex-container-row flex-container-row--partners">
             {% comment %}
             {%for sponsor in site.data.internal.sponsors%}
-            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}">
+            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}" >
+                <img width="150px" height="150px" src="{{sponsor.img_url}}" title="{{sponsor.name}}">
+            </a>
+            {% endfor %}
+            {% endcomment %}
+            {% comment %}
+            {%for sponsor in site.data.internal.sponsors%}
+            <a href="{{sponsor.link}}" target="_blank" alt="test" >
                 <img width="150px" height="150px" src="{{sponsor.img_url}}" title="{{sponsor.name}}">
             </a>
             {% endfor %}
@@ -22,6 +29,9 @@
                 <img src="/assets/images/sponsors/carbon-five.svg" title="Carbon Five">
             </a>
             <a href="https://www.sipandsonder.com" target="_blank" alt="Sip and Sonder">
+                <img src="/assets/images/sponsors/sip-sonder.svg" title="Sip and Sonder">
+            </a>
+            <a href="https://www.rand.org" target="_blank" alt="Rand Corp">
                 <img src="/assets/images/sponsors/sip-sonder.svg" title="Sip and Sonder">
             </a>
         </div>
