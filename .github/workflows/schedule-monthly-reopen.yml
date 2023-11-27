@@ -43,4 +43,4 @@ jobs:
         with:
           project: Project Board
           column: 'Questions / In Review'
-          repo-token: ${{ secrets.TEST_GHAS }}
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
