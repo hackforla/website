@@ -43,4 +43,4 @@ jobs:
       - name: Auto close issue
         run: gh issue close "${{ steps.get-owner-url.outputs.result }}/issues/${{ steps.get-issue-number.outputs.result }}"
         env:
-          GH_TOKEN: ${{ secrets.TEST_GHAS }}
+          GH_TOKEN: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
