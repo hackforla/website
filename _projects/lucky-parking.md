@@ -37,12 +37,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
       github: 'https://github.com/arpitapandya'
     picture: https://avatars.githubusercontent.com/arpitapandya
-  - name: Diedrich Chavarria
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
-      github: 'https://github.com/DCH-CH'
-    picture: https://avatars.githubusercontent.com/DCH-CH
   - name: Sijia Pitts
     role: UX/UI Designer
     links:
