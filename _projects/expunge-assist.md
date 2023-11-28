@@ -21,7 +21,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
-
   - name: Lane Mitchell
     github-handle: lmitch10
     role: Product Manager, Development
@@ -29,7 +28,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U052LEP0BSN
       github: https://github.com/lmitch10
     picture: https://avatars.githubusercontent.com/lmitch10
-
   - name: Justin Yeh
     github-handle: jyehllow
     role: UX Design, Team Co-lead
@@ -58,7 +56,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U02P0A49XL4
       github: https://github.com/sydneywalcoff
     picture: https://avatars.githubusercontent.com/sydneywalcoff
-
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
