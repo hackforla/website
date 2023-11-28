@@ -49,6 +49,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U02P0A49XL4
       github: https://github.com/sydneywalcoff
     picture: https://avatars.githubusercontent.com/sydneywalcoff
+  - name: Mireya V. Aviles
+    github-handle: vanessaavviles
+    role: Product Manager, Design
+    links:
+      slack: https://hackforla.slack.com/team/U0429M52LTY
+      github: https://github.com/vanessaavviles
+    picture: https://avatars.githubusercontent.com/vanessaavviles
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'

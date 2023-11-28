@@ -6,12 +6,6 @@ image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking'
 image-hero: /assets/images/projects/lucky-parking-hero.png
 leadership:
-  - name: Yuting Chu
-    role: Product Manager Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
-      github: 'https://github.com/ychu196'
-    picture: https://avatars.githubusercontent.com/ychu196
   - name: Danny Pham
     github-handle: dannycpham
     role: Product Manager Lead
@@ -49,36 +43,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
       github: 'https://github.com/DCH-CH'
     picture: https://avatars.githubusercontent.com/DCH-CH
-  - name: Jodie Chen
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03RFGLLAQG'
-      github: 'https://github.com/jojochen25’'
-    picture: https://avatars.githubusercontent.com/u/103106753
-  - name: Yujin Chang
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
-      github: 'https://github.com/eugenecha'
-    picture: https://avatars.githubusercontent.com/eugenecha
   - name: Seymour Liao
     role: Data Scientist
     links:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
-  - name: Carlos Olivas
-    role: Data Scientist
-    links:
-      slack:
-      github:
-    picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Yen Phan
-    role: User Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'

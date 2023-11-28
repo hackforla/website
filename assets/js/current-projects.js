@@ -49,9 +49,12 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll("li.view-all").forEach(viewAll => {
             viewAll.addEventListener("click", viewAllEventHandler)
         })
-
-        document.querySelectorAll(".labelArrow").forEach(arrow => {
-            arrow.addEventListener("click", showNoneEventHandler)
+        
+        // Event listener for arrows to collapse categories
+        document.querySelectorAll("li.filter-item a.category-title").forEach(categoryHeading => {
+            categoryHeading.addEventListener("click", () => {
+                categoryHeading.classList.toggle("show-none")
+            })
         })
 
         document.querySelectorAll(".show-filters-button").forEach(button => {
@@ -250,17 +253,16 @@ function tabFocusedKeyDownHandler(e) {
         document.activeElement.click()
     }
 }
-//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
-function showNoneEventHandler(e) {
-    e.target.parentNode.classList.toggle("show-none")
-}
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.add("show-filters")
+    // prevent page scrolling behind filter overlay
+    document.getElementsByTagName("html")[0].classList.add("scroll-lock")
 }
 // hides filters popup on moble
 function hideFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.remove("show-filters")
+    document.getElementsByTagName("html")[0].classList.remove("scroll-lock")
 }
 // cancel button on mobile filters
 function cancelMobileFiltersEventHandler(e) {

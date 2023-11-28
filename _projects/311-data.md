@@ -6,13 +6,7 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
-  - name: Michael Criste
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U048U430FQV'
-      github: 'https://github.com/mc759'
-    picture: https://avatars.githubusercontent.com/mc759
-  - name: Saju Venugopal
+  - name: Sanju Venugopal
     github-handle: sanjumv
     role: Product Manager
     links:
@@ -26,6 +20,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
+  - name: Ryan Chase
+    github-handle: ryanfchase
+    role: Project Manager, Developer
+    links:
+      slack: https://hackforla.slack.com/team/U052L9R6ETD
+      github: https://github.com/ryanfchase
+    picture: https://avatars.githubusercontent.com/ryanfchase
+  - name: Anna Kim
+    github-handle: annaseulgi
+    role: UX Design Lead, Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05JKGV3F4N
+      github: https://github.com/annaseulgi
+    picture: https://avatars.githubusercontent.com/annaseulgi
+  - name: Ahmed Awadalla
+    github-handle: ahmedsalah0130
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05Q80JEGG4
+      github: https://github.com/ahmedsalah0130
+    picture: https://avatars.githubusercontent.com/ahmedsalah0130
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
@@ -40,6 +55,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
+  - name: Edwin Jue
+    github-handle: edwinjue
+    role: Engineering Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03SUUZMFEV
+      github: https://github.com/edwinjue
+    picture: https://avatars.githubusercontent.com/edwinjue
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
@@ -66,16 +88,10 @@ technologies:
   - React
   - Redux
   - Material-UI
+  - DuckDb
+  - HuggingFace
+  - GitHub Pages
   - Mapbox
-  - AWS
-  - FastAPI
-  - Redis
-  - PostgreSQL
-  - Prefect
-  - Docker
-  - Figma
-  - Adobe CC
-  - Miro
 location:
   # - Downtown LA
   - Remote
