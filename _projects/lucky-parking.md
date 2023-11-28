@@ -43,12 +43,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
       github: 'https://github.com/DCH-CH'
     picture: https://avatars.githubusercontent.com/DCH-CH
-  - name: Sijia Pitts
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
-      github: 'https://github.com/sijiapitts'
-    picture: https://avatars.githubusercontent.com/u/103976231
   - name: Seymour Liao
     role: Data Scientist
     links:
