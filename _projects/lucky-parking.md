@@ -31,12 +31,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
       github: 'https://github.com/mklmrgn'
     picture: https://avatars.githubusercontent.com/mklmrgn
-  - name: Arpita Pandya
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
-      github: 'https://github.com/arpitapandya'
-    picture: https://avatars.githubusercontent.com/arpitapandya
   - name: Diedrich Chavarria
     role: Full-Stack Developer
     links:
