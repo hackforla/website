@@ -123,17 +123,17 @@ looking:
 technologies:
   - React
   - NoSQL
+  - AWS
   - Flask
   - Amazon Cognito
   - OIDC
   - OAuth2
   - MongoDB
+  - Nginx
 location:
   - Remote
-tools: 
+tools:
   - Figma
-  - AWS
-  - Nginx
   - Style Components
   - Zoom
   - GitHub

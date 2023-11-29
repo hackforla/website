@@ -19,25 +19,24 @@ leadership:
       slack: https://hackforla.slack.com/team/U04N8H0V72R
       github: https://github.com/MicahBear
     picture: https://avatars.githubusercontent.com/MicahBear
-  - name: AJ Price
-    role: Co-Lead
-    links:
-      slack: https://hackforla.slack.com/team/U02UZ5BK8UB
-      github: https://github.com/mxajprice
-    picture: https://avatars.githubusercontent.com/mxajprice
   - name: Alejandro Gomez
     role: Co-Lead
     links:
       slack: https://hackforla.slack.com/team/U04HFRQ5Y12
       github: https://github.com/agosmou
     picture: https://avatars.githubusercontent.com/agosmou
-  - name: Harrison Katz
+  - name: Zeke Arany-Lucas
     role: Co-Lead
     links:
-      slack: https://hackforla.slack.com/team/U04PFCPK6EP
-      github: https://github.com/hkatzdev
-    picture: https://avatars.githubusercontent.com/hkatzdev
-  
+      slack: https://hackforla.slack.com/team/U062KFUJFU5
+      github: https://github.com/ZekeAranyLucas
+    picture: https://avatars.githubusercontent.com/ZekeAranyLucas
+  - name: Chelsey Beck
+    role: Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U01J93AQKSS
+      github: https://github.com/chelseybeck
+    picture: https://avatars.githubusercontent.com/chelseybeck
 
 links:
   - name: Slack

@@ -22,6 +22,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
+  - name: Jason Yung
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
+      github: 'https://github.com/merlinsmagic'
+    picture: https://avatars.githubusercontent.com/merlinsmagic
   - name: Judson Lester
     role: Developer
     links:
@@ -35,6 +41,7 @@ leadership:
       github: 'https://github.com/Aparna1Gopal'
     picture: https://avatars.githubusercontent.com/Aparna1Gopal
   - name: Tony Delgado
+    github-handle: 
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
@@ -99,4 +106,5 @@ visible: true
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
 sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
+sdg-color-variable: $color-sdg16
 ---

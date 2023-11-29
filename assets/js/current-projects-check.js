@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         // create filter dictionary from sorted project data
         let filters = createFilter(sortedProjectData);
-        
+
         // Insert Checkbox Filter Into The Dom
         for(let [filterName,filterValue] of Object.entries(filters)){
             // Add displayed filter title, resolves issue of "program areas" not being valid html attribute name due to spacing
@@ -161,9 +161,10 @@ function createFilter(sortedProjectData){
     return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
-            
+
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
 
         }
 }
@@ -253,7 +254,7 @@ function updateFilterFrequency(){
     let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
 
 
-    // Update values on the filterFrquencyObject if item in onPageFilter array exist as a key in this object.
+    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
     for(const item of onPageFilters){
         if(item in filterFrequencyObject){
             filterFrequencyObject[item] += 1;
@@ -318,7 +319,7 @@ function updateProjectCardDisplayState(filterParams){
 }
 
     /**
-     * Updates the filter tags show on the page based on the url paramenter
+     * Updates the filter tags show on the page based on the url parameter
  */
 function updateFilterTagDisplayState(filterParams){
     // Clear all filter tags
@@ -429,6 +430,7 @@ return `
             data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
             data-technologies="${project.technologies  ? [... new Set(project.technologies.map(tech => tech))] : '' }"
             data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
+            data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"
             data-location="${project.location? project.location.map(city => city) : '' }"
             data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
         >
@@ -467,10 +469,7 @@ return `
 			`
 			<div class="project-tools">
 			<strong>Tools: </strong>
-			${(Array.isArray(project.tools) ? project.tools : project.tools.split(','))
-				.map(tool => `<p class='project-card-field-inline'> ${tool}</p>`)
-				.join(", ")
-			}
+            ${project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ")}
 			</div>
 			`: ""
 			}
@@ -485,7 +484,7 @@ return `
             // ^ See issue #1997 for more info on why this is commented out
             }
 
-            ${project.languages?.length > 0 ? 
+            ${project.languages?.length > 0 ?
             `
             <div class="project-languages">
             <strong>Languages: </strong>
@@ -517,7 +516,7 @@ return `
 }
 
 /**
- * Takes a filter category name and array of filter stirings and returns the html string representing a single filter component
+ * Takes a filter category name and array of filter strings and returns the html string representing a single filter component
 */
 function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     return `
