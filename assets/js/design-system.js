@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 function primaryOnDarkHandler() {
-    for (i = 0; i < CODE_EXAMPLES.length; i++) {
+    for (let i = 0; i < CODE_EXAMPLES.length; i++) {
         if (CODE_EXAMPLES[i].firstChild.classList.contains("btn-primary-on-dark")) {
             CODE_EXAMPLES[i].classList.add("primary-on-dark-example")
         }

@@ -113,7 +113,6 @@ tools:
   - Zoom
   - Calendly
   - LinkedIn
-  - 1Password
   - GitHub Wiki
   - Google Sheets
   - Google Docs

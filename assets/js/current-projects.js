@@ -256,10 +256,13 @@ function tabFocusedKeyDownHandler(e) {
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.add("show-filters")
+    // prevent page scrolling behind filter overlay
+    document.getElementsByTagName("html")[0].classList.add("scroll-lock")
 }
 // hides filters popup on moble
 function hideFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.remove("show-filters")
+    document.getElementsByTagName("html")[0].classList.remove("scroll-lock")
 }
 // cancel button on mobile filters
 function cancelMobileFiltersEventHandler(e) {
