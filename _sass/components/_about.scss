@@ -450,6 +450,10 @@ a.anchor {
  display: none;  
 }
 
+.wip-msg {
+ padding-top: 10px;
+}
+
 @media #{$bp-mobile-up} {
   .accomplishment-nav select {
    display: none;
@@ -477,8 +481,13 @@ a.anchor {
       padding: 5px;
   }
 
+  #All {
+    color:rgb(250, 17, 79);
+  }
+
   .accomplishment-nav ul li:hover {
     color: rgb(250, 17, 79);
+    cursor: pointer;
   }
 }
 

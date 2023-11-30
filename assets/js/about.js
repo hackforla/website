@@ -150,8 +150,7 @@ function loadAccomplishmentYears() {
   for (let i=year; i>=2020; i--){
     let listItemHtml='<li id="' + i + '">' + i + '</li>';
     document.querySelector("#accomplishments-year-list").insertAdjacentHTML ('beforeend',listItemHtml);
-  }
-  console.log ("Accomplishment years have loaded");
+  }  
 }
 
 
@@ -250,12 +249,16 @@ function yearEventHandler(accByProgramArea,e){
   let accYear="";
   let accToDisplay=[];
   if(element=="LI"){ 
-    e.target.style.color = "rgb(250,17,80,255)";
+    e.target.style.color = "rgb(250, 17, 79)";
     accYear=e.target.id;
+    document.querySelector("#accomplishments-year-dropdown").value=accYear;
   }
   else {
     accYear=e.target.value;
+    let element=document.getElementById(accYear);
+    element.style.color="rgb(250,17,80,255)";
   }
+  
   if (accYear == "All"){
     accToDisplay=accByProgramArea;
   }
@@ -274,7 +277,7 @@ function displayAccomplishments(accToDisplay) {
   document.querySelector(".top-left-column--acc").innerHTML="";
   document.querySelector(".bottom-right-column--acc").innerHTML="";
   if(accToDisplay.length ==0){
-    document.querySelector(".top-left-column--acc").innerHTML="<p>Work In Progress...</p>";
+    document.querySelector(".top-left-column--acc").innerHTML="<p class='wip-msg'>Work In Progress...</p>";
   }
   let progAreaList=[];
   let accCount = accToDisplay.length;
