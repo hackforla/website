@@ -30,7 +30,7 @@ with
 - [ ] Using docker, confirm that the appearance of the project webpage is unchanged at all screen sizes. The project webpage URL can be found below under Resources.
 
 ### For Merge Team
-- [ ] Release the dependency for this issue in [Epic: Create issues to add github-handle to leadership teams](https://github.com/hackforla/website/issues/5441)#5441. If all the dependencies have been completed, close that issue.
+- [ ] Release the dependency for this issue in #5441. If all the dependencies have been completed, close that issue.
 
 ### Resources/Instructions
 https://github.com/hackforla/website/wiki/project.md-file-template  
@@ -38,4 +38,4 @@ https://jekyllrb.com/
 For QA to validate change: https://github.com/hackforla/website/blob/gh-pages/[INSERT-PATH-TO-PROJECT-FILE]  
 Project Webpage: https://www.hackforla.org/projects/[INSERT-PROJECT-FILENAME-WITHOUT-.MD-EXTENSION]
 
-- This issue is part of [Epic: Create issues to add github-handle to leadership teams #5441](https://github.com/hackforla/website/issues/5441)
+- This issue is part of #5441.
