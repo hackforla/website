@@ -9,6 +9,7 @@ const octokit = new Octokit({ auth: process.env.token });
 const org = 'hackforla';
 const repo = 'website';
 const team = 'website-write';
+const baseTeam = 'website';
 
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
@@ -170,6 +171,21 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors){
   // Loop over team members and remove them from the team if they are not in recentContributors
   for(const username in currentTeamMembers){
     if (!recentContributors[username]){
+      // Prior to deletion, confirm that member is on the 'base', i.e. 'website', team
+      const baseMember = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+        org: org,
+        team_slug: baseTeam,
+        username: username,
+      })
+      // If response status is not 200, need to add member to 'base' team before deleting
+      if(baseMember.status != 200){
+        await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+          org: org,
+          team_slug: baseTeam,
+          username: userName,
+          role: 'member',
+        })
+      } 
       // Remove contributor from a team if they don't pass additional checks in `toRemove` function
       if(await toRemove(username)){   
         await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
