@@ -7,6 +7,9 @@
       "Cleantech",
       "collabathon"
   ],
+  "ignoreWords": [
+    "Harish"
+ ],
   "ignorePaths": [
       "node_modules",
       ".github"
