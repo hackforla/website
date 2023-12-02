@@ -277,8 +277,6 @@ Running the above command will result in the following output in your terminal
 
 When you see the above output, it means the site is now running and now you can browse to http://localhost:4000
 
-**NOTE:** If it takes longer than 2 minutes to build your website using `docker-compose up`, please let the [technical leads](https://github.com/hackforla/website/wiki/Meet-the-Team) know about this and add your website build time in a comment to [issue #1443](https://github.com/hackforla/website/issues/1443). Also, once you are part of the merge team, you can work on [issue #1443](https://github.com/hackforla/website/issues/1443) and fix it (if you want).
-
 #### **1.6.b Stopping Docker**
 
  - To stop and completely remove the jekyll server (i.e. the running Docker container):
@@ -549,9 +547,11 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
-The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it.
+If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
-For example,if we creating a new issue branch off [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
+Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.  
+
+For example, if you create a new issue branch for [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
 
 ```bash
 git checkout -b update-give-link-2093
@@ -566,6 +566,8 @@ git checkout -b update-give-link-2093
 **Note:** The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue.
 
 **Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
+
+We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit.  
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
@@ -757,7 +759,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent.
+4. Next you need to add your ssh key to your ssh agent.  In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
 
 ```bash
 ssh-add -K ~/.ssh/id_ed25519

@@ -481,12 +481,15 @@ function showFiltersEventHandler(e) {
     filterToolbar.classList.add("show-filters")
     // Prevents corners of mobile filter toggle from having white corners
     filterToolbar.childNodes[1].classList.remove("filtersDiv-background")
+    // prevent page scrolling behind filter overlay
+    document.getElementsByTagName("html")[0].classList.add("scroll-lock")
 }
 // hides filters popup on mobile
 function hideFiltersEventHandler(e) {
     let filterToolbar = document.querySelector(".filter-toolbar")
     filterToolbar.classList.remove("show-filters")
     filterToolbar.childNodes[1].classList.add("filtersDiv-background")
+    document.getElementsByTagName("html")[0].classList.remove("scroll-lock")
 }
 
 //event handler for keyboard users to click spans when focused
