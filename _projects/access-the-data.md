@@ -17,31 +17,35 @@ alt: 'Access The Data'
 image-hero: /assets/images/projects/access-the-data-hero.png
 leadership:
   - name: AJ Price
+    github-handle: mxajPrice
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
   - name: Jason Yung
+    github-handle: merlinsmagic
     role: Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/U059W9P96C8'
       github: 'https://github.com/merlinsmagic'
     picture: https://avatars.githubusercontent.com/merlinsmagic
   - name: Judson Lester
+    github-handle: nyarly
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U9NFW84QK'
       github: 'https://github.com/nyarly'
     picture: https://avatars.githubusercontent.com/nyarly
   - name: Aparna Gopal
+    github-handle: Aparna1Gopal
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U0245UJP868'
       github: 'https://github.com/Aparna1Gopal'
     picture: https://avatars.githubusercontent.com/Aparna1Gopal
   - name: Tony Delgado
-    github-handle: 
+    github-handle: TonyDelgadoWillis
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
