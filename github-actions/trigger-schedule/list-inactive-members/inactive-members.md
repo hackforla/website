@@ -62,5 +62,5 @@ After you leave the comment, please send us a Slack message on the "hfla-site" c
 
 ## Dev Leads
 This issue is closed automatically after creation. If a link referred you to this issue, check whether: 
-- A "Removed Member" is requesting reactivation to the 'website-write' team. If so, reactivate the member and inform them via a comment on the referring issue as well as via Slack.
+- A "Removed Member" is requesting reactivation to the 'website-write' team. If so, confirm that the member is/was a part of HfLA, then reactivate and inform them via a comment on the referring issue as well as via Slack.
 - An "Inactive Member" believes that the bot has made a mistake. If so, determine whether the member has or has not been active based on the issue or PR number provided in the member's comment. If multiple members are being inappropriately flagged as "inactive" by the bot, then submit an ER / Issue in order to deactivate the `schedule-monthly.yml` workflow so that the cause of the bug can be investigated and resolved. 
