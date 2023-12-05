@@ -58,13 +58,9 @@ const createIssue = async (owner, repo, inactiveLists) => {
   let body = issueObject['body'];
   
   // Replace variables in issue template body
-  const replacementVariables = ['notifiedList', 'removedList', 'thisIssueNumber'];
-  for (var repVar in replacementVariables) {
-    body = body.replaceAll('${repVar}', repVar);
-  }
-  // body = body.replace('${notifiedList}', notifiedList);
-  // body = body.replace('${removedList}', removedList);
-  // body = body.replace('${thisIssueNumber}', thisIssueNumber);
+  body = body.replace('${notifiedList}', notifiedList);
+  body = body.replace('${removedList}', removedList);
+  body = body.replace('${thisIssueNumber}', thisIssueNumber);
 
 
   const issue = await github.rest.issues.create({
