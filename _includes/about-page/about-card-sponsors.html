@@ -5,9 +5,9 @@
     </div>
     <div class="about-us-section-content">
         <div class="flex-container-row flex-container-row--partners">
-            {% comment %}
+            {% comment %} 
             {%for sponsor in site.data.internal.sponsors%}
-            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}">
+            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}" rel="noopener noreferrer">
                 <img width="150px" height="150px" src="{{sponsor.img_url}}" title="{{sponsor.name}}">
             </a>
             {% endfor %}
