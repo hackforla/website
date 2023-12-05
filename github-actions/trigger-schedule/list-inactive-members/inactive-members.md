@@ -2,7 +2,7 @@
 name: Review Inactive Team Members
 about: Issue template used only by `schedule-monthly.yml`
 title: "Review Inactive Team Members"
-labels: [Feature: Administrative, Feature: Onboarding/Contributing.md, role: dev leads, Complexity: Small, Size: 0.5pt]
+labels: ['Feature: Administrative', 'Feature: Onboarding/Contributing.md', 'role: dev leads', 'Complexity: Small', 'Size: 0.5pt']
 milestone: 8
 assignees: ''
 ---
