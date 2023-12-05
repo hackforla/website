@@ -21,9 +21,9 @@ function issueTemplateParser(filepath) {
     const key = item.slice(0, colonIndex).trim();
     const value = item.slice(colonIndex + 1).trim();
     if (value.startsWith('[') && value.endsWith(']')) {
-      acc[key] = value.slice(1, -1).split(',').map(str => str.trim());
+      acc[key] = value.slice(1, -1).replaceAll(/["']/g,'').split(',').map(str => str.trim());
     } else {
-      acc[key] = value;
+      acc[key] = value.replaceAll(/["']/g,'');
     }
     return acc;
   }, {});
