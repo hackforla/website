@@ -6,7 +6,7 @@
  * @param {String} textToFormat - the text to be formatted. If null, use the md file provided in the path. If provided, format that text
  * @returns {String} - returns a formatted comment to be posted on github
  */
-function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }) {
+function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat, fs}) {
     const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat
     const commentToPost = text.replace(placeholderString, replacementString)
     return commentToPost

@@ -1,6 +1,6 @@
 // Import modules
 var fs = require("fs");
-const postComment = require('../utils/post-comment')
+const postComment = require('../utils/post-issue-comment')
 
 // Global variables
 var github;
@@ -17,7 +17,7 @@ var context;
 async function main({ g, c }, { issueNum, instruction }) {
     github = g;
     context = c;
-    postComment(issueNum, decodeURI(instruction));
+    postComment(issueNum, decodeURI(instruction), github, context);
 }
 
 module.exports = main

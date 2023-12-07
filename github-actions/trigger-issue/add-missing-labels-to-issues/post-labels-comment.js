@@ -1,5 +1,5 @@
 var fs = require("fs")
-const postComment = require('../../utils/post-comment')
+const postComment = require('../../utils/post-issue-comment')
 const formatComment = require('../../utils/format-comment')
 
 // Constant variables
@@ -35,7 +35,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   if (instructions === null) {
     return
   }
-  await postComment(issueNum, instructions)
+  await postComment(issueNum, instructions, github, context)
 }
 
 /**
@@ -57,7 +57,7 @@ function makeComment(labels) {
     filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/add-labels-template.md',
     textToFormat: null
   }
-  const commentWithIssueCreator = formatComment(commentObject)
+  const commentWithIssueCreator = formatComment(commentObject, fs)
 
   // Replace the labels placeholder
   const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
@@ -67,7 +67,7 @@ function makeComment(labels) {
     filePathToFormat: null,
     textToFormat: commentWithIssueCreator
   }
-  return formatComment(labelsCommentObject)
+  return formatComment(labelsCommentObject, fs)
 }
 
 module.exports = main

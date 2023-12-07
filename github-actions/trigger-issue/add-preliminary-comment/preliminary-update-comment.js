@@ -1,5 +1,5 @@
 var fs = require("fs")
-const postComment = require('../../utils/post-comment')
+const postComment = require('../../utils/post-issue-comment')
 const formatComment = require('../../utils/format-comment')
 const getTimeline = require('../../utils/get-timeline');
 
@@ -28,7 +28,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
     const instructions = await makeComment()
     if(instructions !== null){
       // the actual creation of the comment in github
-      await postComment(issueNum, instructions)
+      await postComment(issueNum, instructions, github, context)
     }
   }
 }
@@ -41,7 +41,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   var issueAssignee = context.payload.issue.assignee.login
-  const eventdescriptions = await getTimeline(context.payload.issue.number)
+  const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
   console.log(eventdescriptions.length)
   //adding the code to find out the latest person assigned the issue
   for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
@@ -60,7 +60,7 @@ async function makeComment(){
   }
 
   // creating the comment with issue assignee's name and returning it!
-  const commentWithIssueAssignee = formatComment(commentObject)
+  const commentWithIssueAssignee = formatComment(commentObject, fs)
   return commentWithIssueAssignee
 }
   

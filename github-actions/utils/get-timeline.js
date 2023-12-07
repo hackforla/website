@@ -3,7 +3,7 @@
  * @param {Number} issueNum the issue's number
  * @returns an Array of Objects containing the issue's timeline of events
  */
-async function getTimeline(issueNum) {
+async function getTimeline(issueNum, github, context) {
     let arra = []
     let page = 1
     while (true) {
