@@ -31,6 +31,7 @@ permalink: /about/
             {% include about-page/about-card-sustainability.html %}
 
             <a class="anchor" id='accomplishments' data-name="Accomplishments"></a>
+            {% assign accomplishments= site.data.internal.accomplishments %}
             {% include about-page/about-card-accomplishments.html %}
 
             <a class="anchor" id='metrics' data-name="Metrics"></a>
@@ -73,4 +74,7 @@ permalink: /about/
 
 
 <!-- Include javaScript -->
-<script src="{{ '/assets/js/about.js' | absolute_url }}"></script>
+<script id="aboutScript"
+    src="{{ '/assets/js/about.js' | absolute_url }}"
+    type="module"
+    accomplishments='{{ accomplishments }}'></script>
