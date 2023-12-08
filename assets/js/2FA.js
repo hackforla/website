@@ -76,9 +76,9 @@ let Piechart = function(options){
         }
 
         start_angle = 0;
-        for (categ in this.options.data){
-            val = this.options.data[categ];
-            slice_angle = 2 * Math.PI * val / total_value;
+        for (const categ in this.options.data){
+            const val = this.options.data[categ];
+            const slice_angle = 2 * Math.PI * val / total_value;
             let pieRadius = Math.min(this.canvas.width/2,this.canvas.height/2);
             let labelX = this.canvas.width/2 + (pieRadius / 2) * Math.cos(start_angle + slice_angle/2);
             let labelY = this.canvas.height/2 + (pieRadius / 2) * Math.sin(start_angle + slice_angle/2);
