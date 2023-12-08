@@ -10,12 +10,12 @@ jobs:
   vrms_data:
     runs-on: ubuntu-latest
 
-    # if: github.repository == 'hackforla/website'
+    if: github.repository == 'hackforla/website'
 
     steps:
     - uses: actions/checkout@v4
       with:
-        token: ${{ secrets.token }}
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
     # Use an action (`my-action`) in your repository
     - name: Save vrms_data.json
