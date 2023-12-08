@@ -19,7 +19,7 @@ jobs:
 
     # Use an action (`my-action`) in your repository
     - name: Save vrms_data.json
-      run: curl --retry 7 --fail -o _data/external/vrms_data.json https://httpstat.us/503
+      run: curl --retry 7 --fail -o _data/external/vrms_data.json https://www.vrms.io/api/recurringevents
 
     - uses: stefanzweifel/git-auto-commit-action@v5.0.0
       with:
