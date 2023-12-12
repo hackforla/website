@@ -742,12 +742,9 @@ git merge gh-pages
 ##### **i. Setting up SSH Keys for Mac**
 
 1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+
 ```bash
 ls -al ~/.ssh
-```
-If the folder ~/.ssh does not exist, create it using
-```bash
-mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.
@@ -782,6 +779,12 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ```bash
 ls -al ~/.ssh
+```
+
+If the folder ~/.ssh does not exist, create it using
+
+```bash
+mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.
