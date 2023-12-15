@@ -794,7 +794,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent.  In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
+4. Next you need to add your ssh key to your ssh agent. In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
 
 ```bash
 ssh-add ~/.ssh/id_ed25519

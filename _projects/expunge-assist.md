@@ -70,7 +70,7 @@ links:
       url: https://expungeassist.org/
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
-    - name: Slack``
+    - name: Slack
       url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
 looking:
   - category: Marketing
