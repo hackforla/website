@@ -40,11 +40,15 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log('Current members of ' + team + ':')
   console.log(currentTeamMembers)
 
-  const removedContributors = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo, inactiveWithOpenIssue);
+  const [removedContributors, cannotRemoveYet] = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo, inactiveWithOpenIssue);
   console.log('-------------------------------------------------------');
   console.log('Removed members from ' + team + ' inactive since ' + twoMonthsAgo.slice(0, 10) + ':');
   console.log(removedContributors);
 
+  console.log('-------------------------------------------------------');
+  console.log('BLOCKED FROM REMOVAL: Inactive members from ' + team + ' with open issues preventing removal:');
+  console.log(cannotRemoveYet);
+  
   const updatedTeamMembers = await fetchTeamMembers();
   const notifiedContributors = await notifyInactiveMembers(updatedTeamMembers, contributorsOneMonthAgo);
   console.log('-------------------------------------------------------');
@@ -242,13 +246,14 @@ async function fetchTeamMembers(){
  * @param {Object} recentContributors - List of active contributors 
  * @returns {Array} removed members - List of members that were removed 
  */
-async function removeInactiveMembers(currentTeamMembers, recentContributors){
+async function removeInactiveMembers(currentTeamMembers, recentContributors, inactiveWithOpenIssue){
   const removedMembers = [];
+  const cannotRemoveYet = {};
   
   // Loop over team members and remove them from the team if they are not in recentContributors
   for(const username in currentTeamMembers){
     if (!recentContributors[username]){
-      // Prior to deletion, confirm that member is on the 'base', i.e. 'website', team
+      // Prior to deletion, confirm that member is on the 'base' === 'website' team
       const baseMember = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
         org: org,
         team_slug: baseTeam,
@@ -263,18 +268,22 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors){
           role: 'member',
         })
       } 
-      // Remove contributor from a team if they don't pass additional checks in `toRemove` function
-      if(await toRemove(username)){   
-        await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-          org: org,
-          team_slug: team,
-          username: username,
-        })
+      if(username in inactiveWithOpenIssue){
+        cannotRemoveYet.push([username, inactiveWithOpenIssue[username]]);
+      } else {
+        // Remove contributor from a team if they don't pass additional checks in `toRemove` function
+        if(await toRemove(username)){   
+          await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+            org: org,
+            team_slug: team,
+            username: username,
+          })
+        }
         removedMembers.push(username);
       }
     }
   }
-  return removedMembers;
+  return [removedMembers, cannotRemoveYet];
 }
 
 
@@ -313,6 +322,7 @@ async function toRemove(member){
     console.log("This inactive member is a 'Maintainer': " + member);
     return false;
   }
+  
   // Else this user is an inactive member of the team and should be notified or removed
   return true;
 }
