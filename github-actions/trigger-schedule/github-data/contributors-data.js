@@ -269,7 +269,7 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
         })
       } 
       if(username in inactiveWithOpenIssue){
-        cannotRemoveYet.push([username, inactiveWithOpenIssue[username]]);
+        cannotRemoveYet[username] = inactiveWithOpenIssue[username];
       } else {
         // Remove contributor from a team if they don't pass additional checks in `toRemove` function
         if(await toRemove(username)){   
