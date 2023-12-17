@@ -28,7 +28,7 @@ function issueTemplateParser(filepath) {
     return acc;
   }, {});
 
-  // Add body to object
+  // Add body entry to issueObject
   issueObject['body'] = data[2].trim();
 
   return issueObject
