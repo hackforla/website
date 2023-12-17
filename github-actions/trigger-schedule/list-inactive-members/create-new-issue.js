@@ -60,9 +60,9 @@ const createIssue = async (owner, repo, inactiveLists) => {
   // Replace variables in issue template body
   body = body.replace('${notifiedList}', notifiedList);
   body = body.replace('${removedList}', removedList);
-  body = body.replace('${thisIssueNumber}', thisIssueNumber);
+  body = body.replaceAll('${thisIssueNumber}', thisIssueNumber);
 
-
+  // Create issue
   const issue = await github.rest.issues.create({
     owner,
     repo,
