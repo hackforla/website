@@ -30,9 +30,9 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
  * Main function, immediately invoked
  */
 (async function main(){
-  const [contributorsOneMonthAgo, contributorsTwoMonthsAgo] = await fetchContributors();
+  const [contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue] = await fetchContributors();
   console.log('-------------------------------------------------------');
-  console.log('List of active contributors since' + ' ⏰ ' + oneMonthAgo.slice(0, 10) + ':');
+  console.log('List of active contributors since ' + oneMonthAgo.slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
 
   const currentTeamMembers = await fetchTeamMembers();
@@ -40,7 +40,7 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log('Current members of ' + team + ':')
   console.log(currentTeamMembers)
 
-  const removedContributors = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo);
+  const removedContributors = await removeInactiveMembers(currentTeamMembers, contributorsTwoMonthsAgo, inactiveWithOpenIssue);
   console.log('-------------------------------------------------------');
   console.log('Removed members from ' + team + ' inactive since ' + twoMonthsAgo.slice(0, 10) + ':');
   console.log(removedContributors);
@@ -64,6 +64,7 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
 async function fetchContributors(){
   let allContributorsSinceOneMonthAgo = {};
   let allContributorsSinceTwoMonthsAgo = {};
+  let inactiveWithOpenIssue = {};
 
   // Fetch all contributors with commit, comment, and issue (assignee) contributions
   const APIs = ['GET /repos/{owner}/{repo}/commits', 'GET /repos/{owner}/{repo}/issues/comments', 'GET /repos/{owner}/{repo}/issues'];
@@ -104,24 +105,38 @@ async function fetchContributors(){
         if(contributorInfo.author){
           allContributorsSince[contributorInfo.author.login] = true;
         }
-        // Check for username in `user.login`, but skip `user.login` for 3rd API 
+        // Check for username in `user.login`, but skip `user.login` covered by 3rd API 
         else if(contributorInfo.user  && api != 'GET /repos/{owner}/{repo}/issues'){
           allContributorsSince[contributorInfo.user.login] = true;
         }
         // This check is done for `/issues` (3rd) API. Sometimes a user who created an issue is not the same as the 
         // assignee on that issue- we want to make sure that we count all assignees as active contributors as well.
-        else if(contributorInfo.assignee){
-          allContributorsSince[contributorInfo.assignee.login] = true;
-        } 
-      }     
-    } 
+        // We only want to run this check if the assignee is not counted as an active contributor yet.
+        else if((contributorInfo.assignee) && (contributorInfo.assignee.login in allContributorsSince === false)){
+          const issueNum = contributorInfo.number;
+          const timeline = await getTimeline(issueNum);
+          const assignee = contributorInfo.assignee.login;
+          const responseObject = await isTimelineOutdated(date, timeline, issueNum, assignee);
+          // If timeline is not outdated, add member to `allContributorsSince`
+          if(responseObject.result === false){
+            allContributorsSince[assignee] = true;
+          } 
+          // If timeline is more than two months ago, add to open issues with inactive comments
+          else {
+            if(date == twoMonthsAgo){
+              inactiveWithOpenIssue[assignee] = issueNum;
+            }
+          }
+        }
+      }
+    }
     if(date == oneMonthAgo){
       allContributorsSinceOneMonthAgo = allContributorsSince;
     } else {
       allContributorsSinceTwoMonthsAgo = allContributorsSince;
     }
   }   
-  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo]; 
+  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo, inactiveWithOpenIssue]; 
 }
 
 
