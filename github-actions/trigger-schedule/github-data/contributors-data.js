@@ -140,6 +140,68 @@ async function fetchContributors(){
 }
 
 
+// Note that functionality differs from `add-label.js`
+async function getTimeline(issueNum) {
+  let arra = []
+  let page = 1
+  while (true) {
+    try {
+      const results = await octokit.rest.issues.listEventsForTimeline({
+        owner: org,
+        repo: repo,
+        issue_number: issueNum,
+        per_page: 100,
+        page: page,
+      });
+      if (results.data.length) {
+        arra = arra.concat(results.data);
+      } else {
+        break
+      }
+    } catch (err) {
+      console.log(err);
+      continue
+    }
+    finally {
+      page++
+    }
+  }
+  return arra
+}
+
+
+
+/* 
+ * Helper function for getTimeline()
+ *
+ *
+ */
+function isTimelineOutdated(date, timeline, issueNum, assignee) { // assignees is an arrays of `login`'s
+  let lastAssignedTimestamp = null;
+  let lastCommentTimestamp = null;
+  for (let i = timeline.length - 1; i >= 0; i--) {
+    let eventObj = timeline[i];
+    let eventType = eventObj.event;
+    let eventTimestamp = eventObj.updated_at || eventObj.created_at;
+
+    // Note that this should be redundant/ unneeded: The 2nd API should catch this
+    // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
+    if (!lastCommentTimestamp && eventType === 'commented' && assignee === (eventObj.actor.login)) {
+      lastCommentTimestamp = eventTimestamp;
+    }
+    // update the lastAssignedTimestamp if this is the last (most recent) time an assignee was assigned to the issue
+    else if (!lastAssignedTimestamp && eventType === 'assigned' && assignee === (eventObj.assignee.login)) {
+      lastAssignedTimestamp = eventTimestamp;
+    }
+  }
+  // If either the assignee commented or the assignee was assigned later than the 'date', the issue is not outdated so return false
+  if ((lastCommentTimestamp && (lastCommentTimestamp >= date)) || (lastAssignedTimestamp && (lastAssignedTimestamp >= date))) { 
+    return { result: false };
+  } 
+  return { result: true };
+}
+
+
 
 /**
  * Function to return list of current team members
