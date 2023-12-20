@@ -7,9 +7,12 @@
       "Cleantech",
       "collabathon",
       "Inclusivity",
+      "Collabathon",
+      "Undebate"
   ],
   "ignorePaths": [
       "node_modules",
-      ".github"
+      ".github",
+      "test/"
   ]
 }
