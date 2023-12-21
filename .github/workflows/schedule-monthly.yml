@@ -54,7 +54,7 @@ jobs:
     # Download artifact file from "Trim_Contributors"
     - name: Download artifact
       id: download-artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: trim_job_artifact
 
