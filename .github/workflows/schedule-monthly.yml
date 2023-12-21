@@ -39,7 +39,7 @@ jobs:
 
     # Upload artifact file to allow list sharing with next job "Create_New_Issue"
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: trim_job_artifact
         path: inactive-Members.json 
