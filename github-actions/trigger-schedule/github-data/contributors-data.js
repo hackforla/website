@@ -89,7 +89,7 @@ async function fetchContributors(){
           since: date,
           per_page: 100,
           page: pageNum
-        })
+        });
   
         // If the API call returns an empty array, break out of loop- there is no additional data.
         // Else if data is returned, push it to `result` and increase the page number (`pageNum`)
