@@ -12,6 +12,7 @@
   "ignorePaths": [
       "node_modules",
       ".github",
-      "test/"
+      "test/",
+      "docker-compose.yml"
   ]
 }
