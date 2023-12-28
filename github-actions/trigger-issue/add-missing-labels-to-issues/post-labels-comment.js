@@ -31,7 +31,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
 
   // If addedLabels === [], no new labels are needed
   if (addedLabels.length === 0) {
-    console.log('All required labels are included, no additional labels are needed.');
+    console.log('All required labels are included; no labels to add.');
     return
   }
   
