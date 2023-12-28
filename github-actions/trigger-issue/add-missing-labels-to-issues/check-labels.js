@@ -30,8 +30,13 @@ async function main({ g, c }) {
   if (issueTitle.includes('Hack for LA website bot')) {
     labelsToAdd = SPECIAL_CASE;
   }
-  console.log('Labels to add: ', labelsToAdd)
-
+  
+  if (labelsToAdd.length === 0) {
+    console.log('All required labels are included; no labels to add.');
+  } else {
+    console.log('Labels to add: ', labelsToAdd);
+  }
+  
   const result = await addLabels(labelsToAdd, filteredLabels)
   return {
     actionResult: result,
@@ -111,7 +116,7 @@ async function addLabels(labelsToAdd, currentLabels) {
       issue_number: issueNum,
       labels: labels
     })
-    console.log('Succesfully added labels. Results:\n', results)
+    console.log('Succesfully added labels: ', labelsToAdd)
     return true
   }
   catch(err) {
