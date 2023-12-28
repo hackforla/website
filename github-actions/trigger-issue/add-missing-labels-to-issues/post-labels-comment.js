@@ -29,10 +29,13 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
     return
   }
 
-  const instructions = makeComment(addedLabels)
-  if (instructions === null) {
+  // If addedLabels === [], no new labels are needed
+  if (addedLabels.length === 0) {
+    console.log('All required labels are included, no additional labels are needed.');
     return
   }
+  
+  const instructions = makeComment(addedLabels)
   await postComment(issueNum, instructions)
 }
 
