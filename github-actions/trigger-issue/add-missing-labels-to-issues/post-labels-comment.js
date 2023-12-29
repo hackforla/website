@@ -25,16 +25,17 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
 
   // If the previous action failed, stop here
   if (actionResult === false){
-    console.log('Previous gh-action failed. The current gh-action will end.')
+    console.log('Previous gh-action failed. The current gh-action will end.');
     return
   }
 
   // If addedLabels === [], no new labels are needed
   if (addedLabels.length === 0) {
-    console.log('All required labels are included; no labels to add.');
+    console.log('All required labels are included; the labels comment will not be posted.');
     return
   }
-  
+
+  console.log('Comment will be posted to issue regarding missing labels.');
   const instructions = makeComment(addedLabels)
   await postComment(issueNum, instructions)
 }
@@ -60,10 +61,14 @@ function makeComment(labels) {
   }
   const commentWithIssueCreator = formatComment(commentObject)
 
-  // Replace the labels placeholder
-  const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
+  // Replace the labels placeholder with formatted list
+  const formatter = new Intl.ListFormat('en', {
+    style: 'long',
+    type: 'conjunction',
+  });
+  const labelsToAdd = labels.map(label => LABELS_OBJ[label])
   const labelsCommentObject = {
-    replacementString: labelsToAdd,
+    replacementString: formatter.format(labelsToAdd),
     placeholderString: '${labels}',
     filePathToFormat: null,
     textToFormat: commentWithIssueCreator
