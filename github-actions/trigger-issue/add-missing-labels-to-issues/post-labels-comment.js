@@ -61,14 +61,10 @@ function makeComment(labels) {
   }
   const commentWithIssueCreator = formatComment(commentObject)
 
-  // Replace the labels placeholder with formatted list
-  const formatter = new Intl.ListFormat('en', {
-    style: 'long',
-    type: 'conjunction',
-  });
-  const labelsToAdd = labels.map(label => LABELS_OBJ[label])
+  // Replace the labels placeholder
+  const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
   const labelsCommentObject = {
-    replacementString: formatter.format(labelsToAdd),
+    replacementString: labelsToAdd,
     placeholderString: '${labels}',
     filePathToFormat: null,
     textToFormat: commentWithIssueCreator
