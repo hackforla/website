@@ -25,7 +25,11 @@ document.addEventListener("DOMContentLoaded",function(){
             if(filterName === "programs"){
                 filterTitle = "program areas"
             } else if(filterName === 'technologies') {
-                filterTitle = 'languages / technologies'
+                if (window.location.pathname === '/projects-check/') {
+                    filterTitle = filterName;                 
+                } else {
+                    filterTitle = 'languages / technologies'  
+                }
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
                     b = b.toLowerCase()
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     return 0;
                 })
             } else {
-                filterTitle = filterName
+                filterTitle = filterName;
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
@@ -194,14 +198,21 @@ function projectDataSorter(projectdata){
  * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
 */
 function createFilter(sortedProjectData){
-    return {
+    if (window.location.pathname === '/projects-check/') {
+        return {
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            }        
+    } else {
+        return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
-
-        }
+            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
+        }        
+    }
 }
 
 /**
@@ -627,7 +638,9 @@ function projectCardComponent(project){
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"                
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
+                data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
+                data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"             
 		        data-location="${project.location? project.location.map(city => city) : '' }"
                 data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
                 data-description="${project.description}"
