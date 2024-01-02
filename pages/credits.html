@@ -45,8 +45,8 @@ permalink: /credits/
                       {%- endif -%}
                       {%- if item[1].used-in -%}
                         <p>
-                        <strong>Used in: </strong>
-                          {{ item[1].used-in }}
+                          <strong>Used in: </strong>
+                            {{ item[1].used-in }}
                         </p>
                       {%- endif -%}
                       {%- if item[1].artist -%}
@@ -77,25 +77,14 @@ permalink: /credits/
                       {%- endif -%}
                       {%- if item[1].compiled-by -%}
                         <p>
-                          <strong>Altered by: </strong>
-                          {%- if item[1].altered-by-link -%}
-                            <a href="{{item[1].altered-by-link}}">{{ item[1].altered-by }}</a>
+                          <strong>Compiled by: </strong>
+                          {%- if item[1].compiled-by-link -%}
+                            <a href="{{item[1].compiled-by-link}}">{{ item[1].compiled-by }}</a>
                           {%- else -%}
-                            {{ item[1].altered-by }}
+                            {{ item[1].compiled-by }}
                           {%- endif -%}
                         </p>
                       {%- endif -%}
-                      {%- if item[1].compiled-by-link -%}
-                        <p>
-                          <strong>Altered by: </strong>
-                          {%- if item[1].altered-by-link -%}
-                            <a href="{{item[1].altered-by-link}}">{{ item[1].altered-by }}</a>
-                          {%- else -%}
-                            {{ item[1].altered-by }}
-                          {%- endif -%}
-                        </p>
-                      {%- endif -%}
-
                     </div>
                   </div>
                 </li>
