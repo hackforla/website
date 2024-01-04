@@ -1,5 +1,5 @@
 /**
- * @description - This function is called by makeComment() and it formats the comment to be posted based on an object input.
+ * @description - This function formats the comment to be posted based on an object input.
  * @param {String} replacementString - the string to replace the placeholder in the md file
  * @param {String} placeholderString - the placeholder to be replaced in the md file
  * @param {String} filePathToFormat - the path of the md file to be formatted
