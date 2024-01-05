@@ -138,9 +138,9 @@ tools:
   - Zoom
   - GitHub
   - Google Drive
-  - Docs
-  - Sheets
-  - Slides
+  - Google Docs
+  - Google Sheets
+  - Google Slides
 partner: Safe Place for Youth (SPY), Point Source Youth (PSY)
 visible: true
 program-area:
