@@ -1,5 +1,6 @@
 // Import modules
 var fs = require("fs");
+const postComment = require('../utils/post-issue-comment')
 
 // Global variables
 var github;
@@ -16,21 +17,7 @@ var context;
 async function main({ g, c }, { issueNum, instruction }) {
     github = g;
     context = c;
-    postComment(issueNum, decodeURI(instruction));
-}
-
-
-async function postComment(issueNum, instructions) {
-    try {
-        await github.rest.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: issueNum,
-            body: instructions,
-        });
-    } catch (err) {
-        throw new Error(err);
-    }
+    postComment(issueNum, decodeURI(instruction), github, context);
 }
 
 module.exports = main
