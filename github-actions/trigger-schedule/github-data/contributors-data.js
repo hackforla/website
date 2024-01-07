@@ -118,9 +118,9 @@ async function fetchContributors(){
         // We only want to run this check if the assignee is not counted as an active contributor yet.
         else if((contributorInfo.assignee) && (contributorInfo.assignee.login in allContributorsSince === false)){
           const issueNum = contributorInfo.number;
-          const timeline = await getTimeline(issueNum);
+          const timeline = await getEventTimeline(issueNum);
           const assignee = contributorInfo.assignee.login;
-          const responseObject = await isTimelineOutdated(date, timeline, issueNum, assignee);
+          const responseObject = await isEventOutdated(date, timeline, issueNum, assignee);
           // If timeline is not outdated, add member to `allContributorsSince`
           if(responseObject.result === false){
             allContributorsSince[assignee] = true;
@@ -144,8 +144,12 @@ async function fetchContributors(){
 }
 
 
-// Note that functionality differs from `add-label.js`
-async function getTimeline(issueNum) {
+/* 
+ * Helper functions for fetchContributors()
+ *
+ *
+ */
+async function getEventTimeline(issueNum) {
   let arra = []
   let page = 1
   while (true) {
@@ -174,13 +178,7 @@ async function getTimeline(issueNum) {
 }
 
 
-
-/* 
- * Helper function for getTimeline()
- *
- *
- */
-function isTimelineOutdated(date, timeline, issueNum, assignee) { // assignees is an arrays of `login`'s
+function isEventOutdated(date, timeline, issueNum, assignee) { // assignees is an arrays of `login`'s
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
   for (let i = timeline.length - 1; i >= 0; i--) {
