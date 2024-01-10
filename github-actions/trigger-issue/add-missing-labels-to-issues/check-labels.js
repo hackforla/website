@@ -116,7 +116,9 @@ async function addLabels(labelsToAdd, currentLabels) {
       issue_number: issueNum,
       labels: labels
     })
-    console.log('Succesfully added labels: ', labelsToAdd)
+    if (labelsToAdd.length > 0) {
+      console.log('Succesfully added labels: ', labelsToAdd);
+    }
     return true
   }
   catch(err) {
