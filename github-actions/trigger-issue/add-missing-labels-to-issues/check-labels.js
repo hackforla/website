@@ -30,13 +30,13 @@ async function main({ g, c }) {
   if (issueTitle.includes('Hack for LA website bot')) {
     labelsToAdd = SPECIAL_CASE;
   }
-  
+
   if (labelsToAdd.length === 0) {
     console.log('All required labels are included; no labels to add.');
   } else {
     console.log('Labels to add: ', labelsToAdd);
   }
-  
+
   const result = await addLabels(labelsToAdd, filteredLabels)
   return {
     actionResult: result,

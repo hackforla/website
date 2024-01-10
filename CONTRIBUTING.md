@@ -781,6 +781,12 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ls -al ~/.ssh
 ```
 
+If the folder ~/.ssh does not exist, create it using
+
+```bash
+mkdir ~/.ssh
+```
+
 2. Then enter the text below into your terminal using your github account email address.
 
 ```bash
@@ -793,7 +799,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent
+4. Next you need to add your ssh key to your ssh agent. In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
 
 ```bash
 ssh-add ~/.ssh/id_ed25519
@@ -975,16 +981,6 @@ Once your pull request is merged you can delete your branch with the following c
 ```bash
 git branch -d update-give-link-2093
 ```
-Now you can move on to your next issue and create a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch)
-
-From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
-
-```bash
-git pull upstream gh-pages
-git branch -d update-give-link-2093
-```
-
-Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
 Now you are all set to work on a new PR. Start over at [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on) and repeat completing parts 2 and 3.
 

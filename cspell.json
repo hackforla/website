@@ -3,12 +3,17 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
+      "VRMS",
       "Westside",
       "Cleantech",
-      "collabathon"
+      "Inclusivity",
+      "Collabathon",
+      "Undebate"
   ],
   "ignorePaths": [
       "node_modules",
-      ".github"
+      ".github",
+      "test/",
+      "docker-compose.yml"
   ]
 }

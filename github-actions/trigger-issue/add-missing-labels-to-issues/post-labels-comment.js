@@ -1,4 +1,6 @@
 var fs = require("fs")
+const postComment = require('../../utils/post-issue-comment')
+const formatComment = require('../../utils/format-comment')
 
 // Constant variables
 const LABELS_OBJ = {
@@ -25,15 +27,19 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
 
   // If the previous action failed, stop here
   if (actionResult === false){
-    console.log('Previous gh-action failed. The current gh-action will end.')
+    console.log('Previous gh-action failed. The current gh-action will end.');
     return
   }
 
-  const instructions = makeComment(addedLabels)
-  if (instructions === null) {
+  // If addedLabels === [], no new labels are needed
+  if (addedLabels.length === 0) {
+    console.log('All required labels have been included; the labels comment will not be posted.');
     return
   }
-  await postComment(issueNum, instructions)
+
+  console.log('Comment will be posted to issue regarding missing labels.');
+  const instructions = makeComment(addedLabels)
+  await postComment(issueNum, instructions, github, context)
 }
 
 /**
@@ -55,7 +61,7 @@ function makeComment(labels) {
     filePathToFormat: './github-actions/trigger-issue/add-missing-labels-to-issues/add-labels-template.md',
     textToFormat: null
   }
-  const commentWithIssueCreator = formatComment(commentObject)
+  const commentWithIssueCreator = formatComment(commentObject, fs)
 
   // Replace the labels placeholder
   const labelsToAdd = labels.map(label => LABELS_OBJ[label]).join(', ')
@@ -65,39 +71,7 @@ function makeComment(labels) {
     filePathToFormat: null,
     textToFormat: commentWithIssueCreator
   }
-  return formatComment(labelsCommentObject)
-}
-
-/**
- * Formats the comment to be posted based on an object input
- * @param {String} replacementString - the string to replace the placeholder in the md file
- * @param {String} placeholderString - the placeholder to be replaced in the md file
- * @param {String} filePathToFormat - the path of the md file to be formatted
- * @param {String} textToFormat - the text to be formatted. If null, use the md file provided in the path. If provided, format that text
- * @returns {String} - returns a formatted comment to be posted on github
- */
- function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }) {
-  const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat
-  const commentToPost = text.replace(placeholderString, replacementString)
-  return commentToPost
-}
-
-/**
- * Posts a comment on github
- * @param {Number} issueNum - the issue number where the comment should be posted
- * @param {String} comment - the comment to be posted
- */
- async function postComment(issueNum, comment) {
-  try {
-    await github.rest.issues.createComment({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      issue_number: issueNum,
-      body: comment,
-    })
-  } catch (err) {
-    throw new Error(err);
-  }
+  return formatComment(labelsCommentObject, fs)
 }
 
 module.exports = main

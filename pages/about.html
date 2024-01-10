@@ -11,7 +11,7 @@ permalink: /about/
             programs and services with community partners and local government to address issues in our LA region.
         </p>
         <p class="sub-p">
-            Hack for LA is a project of <a class="header-link--about" href="https://www.codeforamerica.org/" target="_blank">Code for America</a> and its official Los Angeles chapter.
+            Hack for LA is a project of <a class="header-link--about" href="https://www.civictechstructure.org/" target="_blank">Civic Tech Structure</a>.
         </p>
     </div>
     <img class="header-hero-image"src="/assets/images/about/about-us-header.svg" alt="" />
@@ -31,6 +31,7 @@ permalink: /about/
             {% include about-page/about-card-sustainability.html %}
 
             <a class="anchor" id='accomplishments' data-name="Accomplishments"></a>
+            {% assign accomplishments= site.data.internal.accomplishments %}
             {% include about-page/about-card-accomplishments.html %}
 
             <a class="anchor" id='metrics' data-name="Metrics"></a>
@@ -73,4 +74,7 @@ permalink: /about/
 
 
 <!-- Include javaScript -->
-<script src="{{ '/assets/js/about.js' | absolute_url }}"></script>
+<script id="aboutScript"
+    src="{{ '/assets/js/about.js' | absolute_url }}"
+    type="module"
+    accomplishments='{{ accomplishments }}'></script>
