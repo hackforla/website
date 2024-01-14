@@ -1,6 +1,6 @@
 name: 'Blank Issue Form with Dependency'
 description: 'Standard HackforLA issue form with dependency'
-
+labels: ['role missing', 'Complexity: Missing', 'Feature Missing', 'size: missing','Draft']
 body:
   - type: textarea
     id: dependency
@@ -31,4 +31,3 @@ body:
       description: "Provide links to resources or instructions that may help with this issue. This can include files to be worked on, external sites with solutions, documentation, etc."
     validations:
       required: true
-  

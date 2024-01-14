@@ -101,13 +101,6 @@
             align-self: center;
             border-radius: 0px;
         }
-        //This class is targeting the Code for LA logo image to mirror the appearance of the live page.
-        .org-img-large{
-            object-fit:cover;
-            height: 65px;
-            width: 185px;
-            max-width: 100%;
-        }
     }
 }
 
@@ -342,13 +335,6 @@
                     justify-self: center;
                     align-self: center;
                     border-radius: 0px;
-                    min-height: 70px;
-                }
-                //This class is targeting the Code for LA logo image to mirror the appearance of the live page.    
-                .org-img-large{
-                    object-fit:cover;
-                    height: 75px;
-                    max-width: 100%;
                 }
                     
             }

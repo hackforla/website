@@ -8,8 +8,8 @@ image-hero: /assets/images/projects/jobs-for-hope-hero.png
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/jobs-for-hope'
-  - name: Site
-    url: 'https://jobs-for-hope.herokuapp.com/'
+  # - name: Site
+  #   url: 'https://jobs-for-hope.herokuapp.com/'
 location: 
   # - Downtown LA
   - Remote

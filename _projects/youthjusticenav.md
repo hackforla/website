@@ -58,13 +58,14 @@ looking:
     skill: UI Designer
   - category: UI/UX
     skill: UX Researcher
-technologies:
-  - Figma
-  - Miro
 location:
   - Remote
 partner: UCLA School of Law, Golden Gate University School of Law
-tools: Google Docs, Google Sheets
+tools:
+  - Figma
+  - Google Docs
+  - Google Sheets
+  - Miro
 program-area: 
   - Justice
 visible: true

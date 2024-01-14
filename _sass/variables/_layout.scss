@@ -17,13 +17,13 @@ $screen-mobile: 480px;
  * anything below a tablet, use $bp-below-tablet.
  */
 $bp-desktop-large-up: '(min-width: #{$screen-desktop-large})';
-$bp-below-desktop-large: '(max-width: #{$screen-desktop-large - 1})';
+$bp-below-desktop-large: '(max-width: #{$screen-desktop-large - .02})';
 $bp-desktop-up: '(min-width: #{$screen-desktop})';
-$bp-below-desktop: '(max-width: #{$screen-desktop - 1})';
+$bp-below-desktop: '(max-width: #{$screen-desktop - .02})';
 $bp-tablet-up: '(min-width: #{$screen-tablet})';
-$bp-below-tablet: '(max-width: #{$screen-tablet - 1})';
+$bp-below-tablet: '(max-width: #{$screen-tablet - .02})';
 $bp-mobile-up: '(min-width: #{$screen-mobile})';
-$bp-below-mobile: '(max-width: #{$screen-mobile - 1})';
+$bp-below-mobile: '(max-width: #{$screen-mobile - .02})';
 
 /**
  * Magic Numbers

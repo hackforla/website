@@ -26,7 +26,6 @@
 
 .toolkit-background {
     background-color: $color-darkblue;
-    padding: 2rem;
 }
 
 .suggest-guide-group {
@@ -37,7 +36,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .suggest-guide-group h2 {
@@ -50,9 +49,25 @@
 
 .toolkit-flex-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, max-content));
-    align-items: stretch;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: left;
+}
+
+.toolkit-filters * {
+    color: $color-white
+}
+
+.toolkit-filters .filter-tag-container {
+    flex-direction: column;
+    
+    .filter-tag {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    a {
+        color: $color-white;
+    }
 }
 
 .toolkit-flex-item.section-container {
@@ -60,7 +75,7 @@
     max-width: 23rem;
     padding: 0rem;
     height: auto;
-    margin: 1.2rem 1rem;
+    margin: 0.5rem;
     overflow: hidden;
     
     a {
@@ -114,14 +129,14 @@
     bottom: 1rem;
 }
 
-.toolkit__card-list {
-    margin-bottom: 10rem;
-    @media (min-width: 1232px) and (max-width: 1400px) {
-        padding-top: 1.7rem;
-    }
-    @media #{$bp-desktop-large-up} {
-        padding-top: 1.7rem;
-    }
+.no-results-message {
+    color: $color-white;
+    margin: 1rem;
+}
+
+.toolkit-red {
+    color: $color-red;
+    text-transform: capitalize
 }
 
 @media only screen and (max-width: 1430px) {
@@ -157,10 +172,7 @@
     }
 
     .toolkit-flex-container {
-        display: grid;
-        grid-gap: 24px;
         grid-template-columns: repeat(2, 1fr);
-        padding: 0;
     }
 
     .toolkit-flex-item {
@@ -260,5 +272,33 @@
     }
     #dropdown-select {
         width: 216px;
+    }
+}
+
+@media #{$bp-below-tablet} {
+    .toolkit-filters *:not(button) {
+        color: unset;
+    }
+
+    .toolkit-filters .filters-title {
+        margin: 0 0.5rem;
+    }
+
+    .filtersDiv-background {
+        background-color: $color-darkblue;
+    }
+
+    .toolkit-flex-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .toolkit-flex-item.section-container {
+        max-width: none;
+    }
+
+    .toolkit-filters .filter-tag-container {
+        margin: 10px 10px 0 10px;
+        color: $color-white;
     }
 }

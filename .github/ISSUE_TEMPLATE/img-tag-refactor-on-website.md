@@ -1,6 +1,7 @@
 ---
-name: img Tag Refactor
-about: 'For removing the ending slash in img tags, so that `<img.../>` becomes `<img..>` '
+name: img Tag Refactor on Website
+about: 'For removing the ending slash in img tags on the website, so that `<img.../>`
+  becomes `<img..>` '
 title: 'img Tag Refactor: [INSERT PAGE HERE] page(s)'
 labels: 'Feature: Refactor HTML, good first issue, ready for dev lead, role: back
   end/devOps, role: front end, size: 0.25pt'
@@ -30,3 +31,4 @@ to
 ### Resources/Instructions
 1. For QA to validate change: [INSERT LINK TO FILE]
 2. Webpage(s): [INSERT LINK TO PAGE ON WEBSITE HERE]
+3. This issue is tracked in [HfLA-Website: img Tag Audit spreadsheet's img with Ending Slash tab](https://docs.google.com/spreadsheets/d/1cq8iLOYQkAbho2GsRAxVJYgjxDeJ9KLdx2NuL4G6vu4/edit#gid=0), which is part of #4362
