@@ -2,10 +2,10 @@
 
 Hi @${issueCreator}.
 
-Please don't forget to add the proper labels to this issue. Currently, the labels for the following are missing:
-${labels}
+Please don't forget to add the proper labels to this issue. Currently, the labels for the following are missing:  
+- ${labels}
 
-**NOTE: Please ignore the adding proper labels comment if you do not have 'write' access to this directory.**
+**NOTE: Please ignore this comment if you do not have 'write' access to this directory.**
 
 To add a label, take a look at Github's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
 

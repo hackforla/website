@@ -9,35 +9,30 @@ alt: 'Guides Team'
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
   - name: Bonnie Wolfe
-    role: Product Manager
+    role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Bukola Ogunleye
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02617GM7QX'
-      github: 'https://github.com/SheIsBukki'
-    picture: https://avatars.githubusercontent.com/SheIsBukki
   - name: Sarah Edwards
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
-  - name: Shawn Wong
+  - name: Sarah Levine
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/U04MXRWPQ64'
-      github: 'https://github.com/seannwvong'
-    picture: https://avatars.githubusercontent.com/seannwvong
-  - name: Prakhar Singh
-    role: UI/UX Designer
+      slack: 'https://hackforla.slack.com/team/U05RWQJ8YKU'
+      github: 'https://github.com/levines2017'
+    picture: https://avatars.githubusercontent.com/levines2017
+  - name: Rhoda Michael
+    github-handle: the-techgurl
+    role: UX Research Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U038R24FU3S'
-      github: 'https://github.com/designer2209'
-    picture: https://avatars.githubusercontent.com/designer2209
+      slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
+      github: 'https://github.com/the-techgurl'
+    picture: https://avatars.githubusercontent.com/the-techgurl
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'

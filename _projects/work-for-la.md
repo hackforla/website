@@ -13,8 +13,8 @@ leadership:
 links: 
   - name: GitHub
     url: 'https://github.com/hunterowens/workfor.la'
-  - name: Site
-    url: 'http://www.workfor.la/'
+  # - name: Site
+  #   url: 'http://www.workfor.la/'
 location: 
   # - Downtown LA
   - Remote

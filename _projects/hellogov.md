@@ -24,20 +24,23 @@ leadership:
 links:
   - name: GitHub
     url: 'https://github.com/helloGov/'
-  - name: Site
-    url: 'https://hellogov.squarespace.com'
+  # - name: Site
+  #   url: 'https://hellogov.squarespace.com'
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/CDA23KHKP'
 looking:
-location: 
+location:
   # - Santa Monica
   - Remote
 partner: Digital Defense Fund
-tools: Mongo, Angular, Node, JS
+technologies:
+  - MongoDB
+  - Angular
+  - Node.js
 visible: true
 status: Completed
-program-area: 
+program-area:
   - Vote / Representation
 ---

@@ -118,10 +118,14 @@ technologies:
 location: 
   - Remote
 partner:
-tools: Figma, Google Docs, Zoom, Otter.ai
+tools:
+  - Figma
+  - Google Docs
+  - Zoom
+  - Otter.ai
 program-area:
   - Civic Tech Infrastructure
-status: Active 
+status: On Hold
 visible: true
 # If the project should not have a project homepage for any given reason, add the following line (uncommented):
 # project-homepage: false

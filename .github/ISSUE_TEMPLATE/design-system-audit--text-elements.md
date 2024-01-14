@@ -3,7 +3,7 @@ name: 'Design System Audit: Text Elements'
 about: 'setups up and instructs how to do an audit of the text elements of a page
   in Figma '
 title: 'Design System Audit: Text Elements: [replace with page name] page'
-labels: 'Feature Missing, good first issue, role: design, size: 0.25pt'
+labels: ['Feature Missing', 'good first issue', 'role: design', 'size: 0.25pt', 'Complexity: Missing']
 assignees: ''
 
 ---

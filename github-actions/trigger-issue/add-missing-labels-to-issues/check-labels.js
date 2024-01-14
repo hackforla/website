@@ -3,6 +3,9 @@ const REQUIRED_LABELS = ['Complexity', 'role', 'Feature']
 const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing']
 const COMPLEXITY_EXCEPTIONS = ['good first issue']
 
+// SPECIAL_CASE is for issue created by reference with issue title "Hack for LA website bot" (from "Review Inactive Team Members")
+const SPECIAL_CASE = ['ready for dev lead','Feature: Administrative','size: 0.25pt','Complexity: Small','role: dev leads']
+
 // Global variables
 var github
 var context
@@ -17,11 +20,22 @@ async function main({ g, c }) {
   github = g
   context = c
   const issueNum = context.payload.issue.number
+  const issueTitle = context.payload.issue.title
 
   const labels = obtainLabels()
   const filteredLabels = filterLabels(labels)
-  const labelsToAdd = checkLabels(filteredLabels)
-  console.log('Labels to add: ', labelsToAdd)
+  let labelsToAdd = checkLabels(filteredLabels)
+
+  // for SPECIAL_CASE noted above
+  if (issueTitle.includes('Hack for LA website bot')) {
+    labelsToAdd = SPECIAL_CASE;
+  }
+
+  if (labelsToAdd.length === 0) {
+    console.log('All required labels are included; no labels to add.');
+  } else {
+    console.log('Labels to add: ', labelsToAdd);
+  }
 
   const result = await addLabels(labelsToAdd, filteredLabels)
   return {
@@ -96,13 +110,15 @@ async function addLabels(labelsToAdd, currentLabels) {
   ])]
 
   try {
-    const results = await github.issues.setLabels({
+    const results = await github.rest.issues.setLabels({
       owner: owner,
       repo: repo,
       issue_number: issueNum,
       labels: labels
     })
-    console.log('Succesfully added labels. Results:\n', results)
+    if (labelsToAdd.length > 0) {
+      console.log('Succesfully added labels: ', labelsToAdd);
+    }
     return true
   }
   catch(err) {

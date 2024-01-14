@@ -2,13 +2,13 @@
 name: Blank Issue Template
 about: 'Standard HackforLA issue template '
 title: ''
-labels: ''
+labels: 'Complexity: Missing, Feature Missing, role missing, size: missing'
 assignees: ''
 
 ---
 
 ### Overview
-REPLACE THIS TEXT - Clearly state the purpose of this issue in 2 sentences or less
+REPLACE THIS TEXT - Clearly state the purpose of this issue in 2 sentences or less.  We write ours a modified user story in this format: _We need to do X for Y reason._
 
 ### Action Items
 REPLACE THIS TEXT - List the research to be done, or the steps to be completed.

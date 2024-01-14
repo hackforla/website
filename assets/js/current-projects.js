@@ -25,7 +25,11 @@ document.addEventListener("DOMContentLoaded",function(){
             if(filterName === "programs"){
                 filterTitle = "program areas"
             } else if(filterName === 'technologies') {
-                filterTitle = 'languages / technologies'
+                if (window.location.pathname === '/projects-check/') {
+                    filterTitle = filterName;                 
+                } else {
+                    filterTitle = 'languages / technologies'  
+                }
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
                     b = b.toLowerCase()
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     return 0;
                 })
             } else {
-                filterTitle = filterName
+                filterTitle = filterName;
             }
             document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
@@ -49,9 +53,12 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelectorAll("li.view-all").forEach(viewAll => {
             viewAll.addEventListener("click", viewAllEventHandler)
         })
-
-        document.querySelectorAll(".labelArrow").forEach(arrow => {
-            arrow.addEventListener("click", showNoneEventHandler)
+        
+        // Event listener for arrows to collapse categories
+        document.querySelectorAll("li.filter-item a.category-title").forEach(categoryHeading => {
+            categoryHeading.addEventListener("click", () => {
+                categoryHeading.classList.toggle("show-none")
+            })
         })
 
         document.querySelectorAll(".show-filters-button").forEach(button => {
@@ -62,6 +69,12 @@ document.addEventListener("DOMContentLoaded",function(){
         })
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
+        
+        //events related to search bar
+        document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
+        document.querySelector("#search").addEventListener("keydown", searchEnterKeyHandler);
+        document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
+        document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -69,7 +82,7 @@ document.addEventListener("DOMContentLoaded",function(){
         // Event listener to Update UI on url parameter change
         window.addEventListener('locationchange',updateUI)
 
-})()
+    })()
 
 })
 
@@ -101,6 +114,7 @@ function retrieveProjectDataFromCollection(){
                 "project": {
                             'id': "{{project.id | default: 0}}",
                             'identification': {{project.identification | default: 0}},
+                            'additionalRepoIds': {{project.additional-repo-ids | default: 0}},
                             "status": "{{ project.status }}"
                             {%- if project.image -%},
                             "image": '{{ project.image }}'
@@ -118,7 +132,7 @@ function retrieveProjectDataFromCollection(){
                             "partner": `{{ project.partner }}`
                             {%- endif -%}
                             {%- if project.tools -%},
-                            "tools": `{{ project.tools }}`
+                            "tools": {{ project.tools | jsonify }}
                             {%- endif -%}
                             {%- if project.looking -%},
                             "looking": {{ project.looking | jsonify }}
@@ -142,7 +156,13 @@ function retrieveProjectDataFromCollection(){
         const { project } = data;
         const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
         if(matchingProject) {
-            project.languages = matchingProject.languages
+            project.languages = matchingProject.languages;
+            if(project.additionalRepoIds != 0){
+                const additionalMatchingProject = projectLanguagesArr.find(x=> x.id === project.additionalRepoIds);
+                const langArr = [...matchingProject.languages, ...additionalMatchingProject.languages];
+                let set = new Set(langArr);
+                project.languages = Array.from(set);
+            }
         }
     })
     return projectData;
@@ -178,14 +198,21 @@ function projectDataSorter(projectdata){
  * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
 */
 function createFilter(sortedProjectData){
-    return {
+    if (window.location.pathname === '/projects-check/') {
+        return {
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            }        
+    } else {
+        return {
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
             'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort(),
-
-        }
+            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
+        }        
+    }
 }
 
 /**
@@ -204,12 +231,27 @@ function checkBoxEventHandler(){
                 queryObj[input.name].push(input.id)
             }
         }
-    })
+    })   
 
     let queryString = Object.keys(queryObj).map(key => key + '=' + queryObj[key]).join('&').replaceAll(" ","+");
 
-    //Update URL parameters
-    window.history.replaceState(null, '', `?${queryString}`);
+    let currentHash=window.location.href.split('?');
+    if (currentHash.length>1 && currentHash[1].length>0 && currentHash[1].includes('Search')){
+        let searchQuery = currentHash[1].split('Search')[1];
+        if(queryString){ 
+            let newQuery =queryString+'&Search'+ searchQuery;
+            window.history.replaceState(null,'',`?${newQuery}`)
+        } 
+        else{
+            let newQuery= 'Search'+ searchQuery;
+            window.history.replaceState(null,'',`?${newQuery}`)
+        }
+    }
+    else{
+        window.history.replaceState(null,'',`?${queryString}`)
+    }
+
+    
 }
 //shows all filters for a category
 function viewAllEventHandler(e) {
@@ -222,22 +264,55 @@ function tabFocusedKeyDownHandler(e) {
         document.activeElement.click()
     }
 }
-//hides all filters in a category (unless in mobile view, then this shows all, because mobile default is show none)
-function showNoneEventHandler(e) {
-    e.target.parentNode.classList.toggle("show-none")
-}
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.add("show-filters")
+    // prevent page scrolling behind filter overlay
+    document.getElementsByTagName("html")[0].classList.add("scroll-lock")
 }
 // hides filters popup on moble
 function hideFiltersEventHandler(e) {
     document.querySelector(".filter-toolbar").classList.remove("show-filters")
+    document.getElementsByTagName("html")[0].classList.remove("scroll-lock")
 }
 // cancel button on mobile filters
 function cancelMobileFiltersEventHandler(e) {
     hideFiltersEventHandler(e)
     clearAllEventHandler()
+}
+//search bar event handler
+function searchEventHandler(e){
+    e.preventDefault();
+    let searchTerm=document.querySelector("#search").value;
+    let tokenObj={};
+    tokenObj['Search']=searchTerm;
+     
+   const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
+    if (Object.keys(filterParams).length>0) {    
+        for(const [key,value] of Object.entries(filterParams)){
+            if (key !== 'Search'){
+                tokenObj[key]=value.split(',');
+            }
+        }  
+    }
+    let queryString = Object.keys(tokenObj).map(key => key + '=' + tokenObj[key]).join('&').replaceAll(" ","+");
+
+    window.history.replaceState(null,'',`?${queryString}`)
+}
+
+function searchEnterKeyHandler(e){
+    if (e.key === "Enter") {
+        searchEventHandler(e); 
+    }
+}
+
+function searchOnFocusEventHandler(){
+    document.querySelector(".search-x").style.display='block';
+}
+
+function searchCloseEventHandler(e){
+    e.preventDefault();
+    document.querySelector("#search").value="";
 }
 
 /**
@@ -265,6 +340,9 @@ function updateUI(){
     // Card is shown/hidden based on filters listed in the url parameter
     updateProjectCardDisplayState(filterParams);
 
+    //Displays no results message if filter returns no results
+    toggleNoResultMsgIfNoMatch(filterParams, 'project-card')
+
     // The function updates the frequency of each filter based on the cards that are displayed on the page.
     updateFilterFrequency(filterParams);
 
@@ -273,96 +351,175 @@ function updateUI(){
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
     attachEventListenerToFilterTags()
-
+    
 }
 
     /**
      * Computes and return the frequency of each checkbox filter that are currently present in on the displayed cards on the page
  */
 function updateFilterFrequency(){
+    
+        const onPageFilters = []
+        // Push the filters present on the displayed cards on the page into an array.
+        document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
+            for(const [key,value] of Object.entries(card.dataset)){
+                value.split(",").map(item => {
+                    onPageFilters.push(`${key}_${item}`)
+                });
+            }
+        });
 
-    const onPageFilters = []
-    // Push the filters present on the displayed cards on the page into an array.
-    document.querySelectorAll('.project-card[style*="display: list-item;"]').forEach(card => {
-        for(const [key,value] of Object.entries(card.dataset)){
-            value.split(",").map(item => {
-                onPageFilters.push(`${key}_${item}`)
-            });
+        const allFilters = []
+
+        document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+            allFilters.push(`${checkbox.name}_${checkbox.id}`)
+        })
+
+        // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
+        let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
+
+
+        // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
+        for(const item of onPageFilters){
+            if(item in filterFrequencyObject){
+                filterFrequencyObject[item] += 1;
+            }
         }
-    });
 
-    const allFilters = []
-
-    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
-        allFilters.push(`${checkbox.name}_${checkbox.id}`)
-    })
-
-    // Convert a 1 dimensional array into a key,value object. Where the array item becomes the key and the value is defaulted to 0
-    let filterFrequencyObject = allFilters.reduce((acc,curr)=> (acc[curr]=0,acc),{});
-
-
-    // Update values on the filterFrequencyObject if item in onPageFilter array exist as a key in this object.
-    for(const item of onPageFilters){
-        if(item in filterFrequencyObject){
-            filterFrequencyObject[item] += 1;
+        for(const [key,value] of Object.entries(filterFrequencyObject)){
+            document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
         }
-    }
-
-    for(const [key,value] of Object.entries(filterFrequencyObject)){
-        document.querySelector(`label[for="${key.split("_")[1]}"]`).lastElementChild.innerHTML = ` (${value})`;
-    }
-
+    
 }
 
     /**
      * Filters listed in the url parameter are checked or unchecked based on filter params
  */
-function updateCheckBoxState(filterParams){
-    document.querySelectorAll("input[type='checkbox']").forEach(checkBox =>{
-        if(checkBox.name in filterParams){
-            let args = filterParams[checkBox.name]
-            args.includes(checkBox.id) ? checkBox.checked = true : checkBox.checked = false;
-        }
-    })
-}
+    function updateCheckBoxState(filterParams){
+        document.querySelectorAll("input[type='checkbox']").forEach((checkBox) => {
+          if (checkBox.name in filterParams){ 
+            let args = filterParams[checkBox.name];
+            checkBox.checked = args.includes(checkBox.id);
+          } else {
+            checkBox.checked = false;
+          }
+        });
+      }
 
     /**
      * Update category counter based on filter params
- */
+    */
 function updateCategoryCounter(filterParams){
-    let container = []
-    for(const [key,value] of Object.entries(filterParams)){
-        container.push([`counter_${key}`,value.length]);
-    }
+        let container = []
+        for(const [key,value] of Object.entries(filterParams)){
+            if (key !== 'Search') {
+                container.push([`counter_${key}`,value.length]);
+            }
+        }
 
-    for(const [key,value] of container){
-        document.querySelector(`#${key}`).innerHTML = ` (${value})`;
-    }
+        for(const [key,value] of container){
+            document.querySelector(`#${key}`).innerHTML = ` (${value})`;
+        }
+    
 }
     /**
      * Card is shown/hidden based on filters listed in the url parameter
  */
 function updateProjectCardDisplayState(filterParams){
+    
     document.querySelectorAll('.project-card').forEach(projectCard => {
         const projectCardObj = {};
+               
         for(const key in filterParams){
-            projectCardObj[key] = projectCard.dataset[key].split(",");
-        }
-        const cardsToHideContainer = [];
-        for(const [key,value] of Object.entries(filterParams)){
-            let inUrl = value;
-            let inCard = projectCardObj[key];
-            if( ( inCard.filter(x => inUrl.includes(x)) ).length == 0 ){
-                cardsToHideContainer.push([key,projectCard.id]);
+            if(key !=='Search'){            
+                projectCardObj[key] = projectCard.dataset[key].split(",");
             }
             else{
-                projectCard.style.display = 'list-item' ;
+                const searchAreas=['technologies','description','partner','programs','title'];
+                for(const area of searchAreas){
+                    projectCardObj[area]=projectCard.dataset[area].split(",");
+                }
+                
             }
-
         }
-        cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
-
-    });
+        
+        const cardsToHideContainer = [];
+        for(const [key,value] of Object.entries(filterParams)){
+            if(key !=='Search'){
+                let inUrl = value;
+                let inCard = projectCardObj[key];
+                if( ( inCard.filter(x => inUrl.includes(x)) ).length == 0 ){
+                    cardsToHideContainer.push([key,projectCard.id]);
+                }
+                else{
+                    projectCard.style.display = 'list-item' ;
+                }
+            }
+            else if(key==="Search"){
+                let searchTerm=value[0];
+                let operators=["AND","OR","-"];
+                let tokens=[];
+                if(searchTerm.includes(" ")){tokens=searchTerm.split(" ");}
+                else{tokens[0]=searchTerm}
+                for (let i = 0; i < tokens.length; i++) {
+                    let token = tokens[i];
+                    if (operators.includes(token)) {
+                        let nextToken=tokens[i+1];
+                        if (token === "AND"){
+                            let searchRegex= new RegExp(nextToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length == 0){
+                                    noMatchDataset++;
+                                    if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+                                }                                
+                            }
+                        }
+                        else if(token === "OR"){
+                            let searchRegex= new RegExp(nextToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                    cardsToHideContainer.pop();
+                                    projectCard.style.display = 'list-item' ;
+                                    break;
+                                }
+                            }
+                        }
+                        
+                        i++;                        
+                    } 
+                    else if(token.includes("-")){
+                        let searchToken=token.substr(1);
+                        let searchRegex= new RegExp(searchToken,'gi');
+                        let noMatchDataset=0;
+                        for(const [key,value] of Object.entries(projectCardObj)){
+                            if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                
+                                cardsToHideContainer.push([key,projectCard.id]);
+                            
+                            }
+                        }
+                    }
+                    else {
+                        let searchRegex= new RegExp(token,'gi');
+                        let noMatchDataset=0;
+                        for(const [key,value] of Object.entries(projectCardObj)){
+                            if(  value.filter(x => searchRegex.test(x) ).length == 0){
+                                noMatchDataset++;
+                                if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+                            }
+                            else{
+                                projectCard.style.display = 'list-item' ;                                    
+                                break;
+                            }
+                        }
+                    }                        
+                }       
+            }
+            cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
+        }
+    });    
 }
 
     /**
@@ -468,6 +625,7 @@ function filterTagOnClickEventHandler(){
  *  The function clears all URL parameter by setting the history to '/'
 */
 function clearAllEventHandler(){
+    event.preventDefault();
     //Update URL parameters
     window.history.replaceState(null, '', '/');
 }
@@ -476,94 +634,98 @@ function clearAllEventHandler(){
  * Takes a single project object and returns the html string representing the project card
 */
 function projectCardComponent(project){
-return `
-        <li class="project-card" id="${ project.identification }"
-            data-status="${project.status}"
-            data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-            data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : '' }"
+    return `
+            <li class="project-card" id="${ project.identification }"
+                data-status="${project.status}"
+                data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
+                data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
+                data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"             
+		        data-location="${project.location? project.location.map(city => city) : '' }"
+                data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
+                data-description="${project.description}"
+                data-partner="${project.partner}"
+                data-title="${project.title}"
+            >
+                <div class="project-card-inner">
 
-            data-location="${project.location? project.location.map(city => city) : '' }"
-            data-programs="${project.programAreas ? project.programAreas.map(programArea => programArea) : '' }"
-        >
-        <div class="project-card-inner">
+                    <a href='${project.id}'>
+                        <div class="project-tmb">
+                            <img src='${window.location.origin}${project.image}' class="project-tmb-img" alt='${project.alt}'/>
+                        </div>
+                    </a>
 
-        <a href='${project.id}'>
-            <div class="project-tmb">
-            <img src='${window.location.origin}${project.image}' class="project-tmb-img" alt='${project.alt}'/>
-            </div>
-        </a>
+                    <div class="project-body">
+                        <div class='status-indicator status-${project.status}'>
+                        <h5 class='status-text'>${ project.status }</h5>
+                        </div>
 
-        <div class="project-body">
-            <div class='status-indicator status-${project.status}'>
-            <h5 class='status-text'>${ project.status }</h5>
-            </div>
+                        <a href='${ project.id }'><h4 class="project-title">${ project.title }</h4></a>
 
-            <a href='${ project.id }'><h4 class="project-title">${ project.title }</h4></a>
+                        <p class="project-description">${ project.description }</p>
 
-            <p class="project-description">${ project.description }</p>
+                        <div class="project-links">
+                        <strong>Links: </strong>
+                        ${project.links.map(item => `<a href="${ item.url }" rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
+                        </div>
 
-            <div class="project-links">
-            <strong>Links: </strong>
-            ${project.links.map(item => `<a href="${ item.url }" rel="noopener" target='_blank'> ${ item.name }</a>`).join(", ")}
-            </div>
+                        ${project.partner ?
+                        `
+                        <div class="project-partner">
+                        <strong>Partner: </strong>
+                        ${ project.partner }
+                        </div>
+                        `:""
+                        }
 
-            ${project.partner ?
-            `
-            <div class="project-partner">
-            <strong>Partner: </strong>
-            ${ project.partner }
-            </div>
-            `:""
-            }
+                        ${project.tools ?
+                        `
+                        <div class="project-tools">
+                        <strong>Tools: </strong>
+                        ${project.tools.map(tool => `<p class='project-card-field-inline'> ${ tool }</p>`).join(", ")}
+                        </div>
+                        `: ""
+                        }
 
-            ${project.tools ?
-            `
-            <div class="project-tools">
-            <strong>Tools: </strong>
-            ${ project.tools }
-            </div>
-            `:""
-            }
+                        ${project.looking ? "" : ""
+                        // `
+                        // <div class="project-needs">
+                        //     <strong>Looking for: </strong>
+                        //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
+                        // </div>
+                        // `:""
+                        // ^ See issue #1997 for more info on why this is commented out
+                        }
 
-            ${project.looking ? "" : ""
-            // `
-            // <div class="project-needs">
-            //     <strong>Looking for: </strong>
-            //     ${project.looking.map( role => `<p class='project-card-field-inline'> ${ role.skill }</p>`).join(", ")}
-            // </div>
-            // `:""
-            // ^ See issue #1997 for more info on why this is commented out
-            }
+                        ${project.languages?.length > 0 ? 
+                        `
+                        <div class="project-languages">
+                        <strong>Languages: </strong>
+                        ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
+                        </div>
+                        `: ""
+                        }
 
-            ${project.languages?.length > 0 ? 
-            `
-            <div class="project-languages">
-            <strong>Languages: </strong>
-            ${project.languages.map(language => `<p class='project-card-field-inline'> ${ language }</p>`).join(", ")}
-            </div>
-            `: ""
-            }
+                        ${project.technologies ?
+                        `
+                        <div class="project-technologies">
+                        <strong>Technologies: </strong>
+                        ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
+                        </div>
+                        `:""
+                        }
 
-            ${project.technologies ?
-            `
-            <div class="project-technologies">
-            <strong>Technologies: </strong>
-            ${project.technologies.map(tech => `<p class='project-card-field-inline'> ${ tech }</p>`).join(", ")}
-            </div>
-            `:""
-            }
-
-            ${project.programAreas ?
-            `
-            <div class="project-programs">
-            <strong>Program Areas: </strong>
-            ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
-            </div>
-            `:""
-            }
-</div>
-</div>
-</li>`
+                        ${project.programAreas ?
+                        `
+                        <div class="project-programs">
+                        <strong>Program Areas: </strong>
+                        ${project.programAreas.map(programArea => `<p class='project-card-field-inline'> ${ programArea }</p>`).join(", ")}
+                        </div>
+                        `:""
+                        }
+                    </div>
+                </div>
+            </li>`
 }
 
 /**
@@ -605,4 +767,12 @@ function filterTagComponent(filterName,filterValue){
                 ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
                 </span>
             </div>`
+}
+
+function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
+    if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
+        noResultsMessageComponent(filtersParams,'black')
+    } else {
+        document.querySelector(".no-results-message").innerHTML = ""
+    }
 }
