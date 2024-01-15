@@ -1,6 +1,6 @@
----
+// ---
 
----
+// ---
   //assigning the google form questions to variables for readability
   //these variables correspond with a question on the google form
   //these variables can be used as a key to access the data
@@ -39,9 +39,10 @@
 	}
 
   function main() {
-    {% assign localData = site.data.external._wins-data %}
+    // {% assign localData = site.data.external._wins-data %}
     // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment
-    const cardData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
+    // const cardData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
+		const cardData = window.localData;
     window.localStorage.setItem('data', JSON.stringify(cardData));
     makeCards(cardData);
     ifPageEmpty();
@@ -282,10 +283,10 @@
 	}
 
   function makeCards(data) {
-	{% assign githubData = site.data.external.github-data %}
+	// {% assign githubData = site.data.external.github-data %}
 	// Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
-  	let githubData = JSON.parse(decodeURIComponent("{{ githubData | jsonify | uri_escape }}"));
-
+  // let githubData = JSON.parse(decodeURIComponent("{{ githubData | jsonify | uri_escape }}"));
+	const githubData = window.githubData;
 	const cards = data.reverse();
 	const cardTemplate = document.getElementById("wins-card-template");
 	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
@@ -326,7 +327,7 @@
 			cloneCardTemplate.querySelector('.linkedin-icon').alt = `LinkedIn profile for ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-linkedin-icon').setAttribute('hidden', 'true')
-		};
+		}
 
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
@@ -530,4 +531,3 @@ function changeSeeMoreBtn(x) {
 
   main();
   changeSeeMoreBtn(x);
-

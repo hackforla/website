@@ -1,0 +1,11 @@
+---
+---
+
+<script>
+    // This is a global variable that your separate JavaScript file can access
+    window.localData = {{ site.data.external._wins-data | jsonify }};
+    window.githubData = {{ site.data.external.github-data | jsonify }};
+</script>
+
+<!-- Here you would include your separate JavaScript file -->
+<script src="/path/to/your/javascript/file.js"></script>
