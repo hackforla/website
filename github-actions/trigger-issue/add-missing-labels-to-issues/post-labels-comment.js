@@ -27,14 +27,18 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
 
   // If the previous action failed, stop here
   if (actionResult === false){
-    console.log('Previous gh-action failed. The current gh-action will end.')
+    console.log('Previous gh-action failed. The current gh-action will end.');
     return
   }
 
-  const instructions = makeComment(addedLabels)
-  if (instructions === null) {
+  // If addedLabels === [], no new labels are needed
+  if (addedLabels.length === 0) {
+    console.log('All required labels have been included; the labels comment will not be posted.');
     return
   }
+
+  console.log('Comment will be posted to issue regarding missing labels.');
+  const instructions = makeComment(addedLabels)
   await postComment(issueNum, instructions, github, context)
 }
 
