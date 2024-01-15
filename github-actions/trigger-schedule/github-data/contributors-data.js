@@ -339,7 +339,7 @@ async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
   // Loop over team members and add to "notify" list if they are not in recentContributors
   for(const username in updatedTeamMembers){
     if (!recentContributors[username]){
-      // Remove contributor from a team if they don't pass additional checks in `shouldRemoveOrNotify` function
+      // Check whether member should be added to notifiedMembers list
       if(await shouldRemoveOrNotify(username)){   
         notifiedMembers.push(username)
       }
