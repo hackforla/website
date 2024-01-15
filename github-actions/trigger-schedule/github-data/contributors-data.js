@@ -269,8 +269,8 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
       if(username in inactiveWithOpenIssue){
         cannotRemoveYet[username] = inactiveWithOpenIssue[username];
       } else {
-        // Remove contributor from a team if they don't pass additional checks in `toRemove` function
-        if(await toRemove(username)){   
+        // Remove contributor from a team if they don't pass additional checks in `shouldRemoveOrNotify` function
+        if(await shouldRemoveOrNotify(username)){   
           await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
             org: org,
             team_slug: team,
@@ -291,7 +291,7 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
  * @param {String} member - Member's username 
  * @returns {Boolean} - true/false 
  */
-async function toRemove(member){
+async function shouldRemoveOrNotify(member){
   // Collect user's repos and see if they recently joined hackforla/website;
   // Note: user might have > 100 repos, the code below will need adjustment (see 'flip' pages);
   const repos = await octokit.request('GET /users/{username}/repos', {
@@ -303,7 +303,7 @@ async function toRemove(member){
   // they are new members and are not considered for notification or removal.
   for(const repository of repos.data){
     // If repo is recently cloned, return 'false' so that member is not removed 
-    if(repository.name === repo && repository.created_at > oneMonthAgo){
+    if(repository.name === repo && repository.created_at > twoMonthsAgo){
       return false;
     }
   }
@@ -339,8 +339,8 @@ async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
   // Loop over team members and add to "notify" list if they are not in recentContributors
   for(const username in updatedTeamMembers){
     if (!recentContributors[username]){
-      // Remove contributor from a team if they don't pass additional checks in `toRemove` function
-      if(await toRemove(username)){   
+      // Remove contributor from a team if they don't pass additional checks in `shouldRemoveOrNotify` function
+      if(await shouldRemoveOrNotify(username)){   
         notifiedMembers.push(username)
       }
     }
