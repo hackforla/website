@@ -10,6 +10,7 @@ const org = 'hackforla';
 const repo = 'website';
 const team = 'website-write';
 const baseTeam = 'website';
+const maintTeam = 'website-maintain';
 
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
@@ -35,7 +36,7 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log('List of active contributors since ' + oneMonthAgo.slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
 
-  const currentTeamMembers = await fetchTeamMembers();
+  const currentTeamMembers = await fetchTeamMembers(team);
   console.log('-------------------------------------------------------');
   console.log('Current members of ' + team + ':')
   console.log(currentTeamMembers)
@@ -46,10 +47,10 @@ twoMonthsAgo = twoMonthsAgo.toISOString();
   console.log(removedContributors);
 
   console.log('-------------------------------------------------------');
-  console.log('BLOCKED FROM REMOVAL: Inactive members from ' + team + ' with open issues preventing removal:');
+  console.log('Members inactive since ' + twoMonthsAgo.slice(0, 10) + ' with open issues preventing removal:');
   console.log(cannotRemoveYet);
   
-  const updatedTeamMembers = await fetchTeamMembers();
+  const updatedTeamMembers = await fetchTeamMembers(team);
   const notifiedContributors = await notifyInactiveMembers(updatedTeamMembers, contributorsOneMonthAgo);
   console.log('-------------------------------------------------------');
   console.log('Notified members from ' + team + ' inactive since ' + oneMonthAgo.slice(0, 10) + ':');
@@ -70,6 +71,9 @@ async function fetchContributors(){
   let allContributorsSinceTwoMonthsAgo = {};
   let inactiveWithOpenIssue = {};
 
+  // Members on 'website-maintain' team considered permanent members
+  const permanentMembers = await fetchTeamMembers(maintTeam);
+  
   // Fetch all contributors with commit, comment, and issue (assignee) contributions
   const APIs = ['GET /repos/{owner}/{repo}/commits', 'GET /repos/{owner}/{repo}/issues/comments', 'GET /repos/{owner}/{repo}/issues'];
   const dates = [oneMonthAgo, twoMonthsAgo];
@@ -125,14 +129,19 @@ async function fetchContributors(){
           if(responseObject.result === false){
             allContributorsSince[assignee] = true;
           } 
-          // If timeline is more than two months ago, add to open issues with inactive comments
+          // If the timeline of last activity is more than two months ago and the title of the member's 
+          // issue does not include the words "Pre-work Checklist", add member to inactiveWithOpenIssue
           else {
-            if(date == twoMonthsAgo){
+            if(date == twoMonthsAgo && !contributorInfo.title.includes("Pre-work Checklist")){
               inactiveWithOpenIssue[assignee] = issueNum;
             }
           }
         }
       }
+    }
+    // Add permanent members from 'website-maintain' to list of active contributors
+    for(const permanentMember in permanentMembers){
+      allContributorsSince[permanentMember] = true;
     }
     if(date == oneMonthAgo){
       allContributorsSinceOneMonthAgo = allContributorsSince;
@@ -207,9 +216,10 @@ function isEventOutdated(date, timeline, issueNum, assignee) { // assignees is a
 
 /**
  * Function to return list of current team members
+ * @param {String} team_slug - default to 'website-write' team
  * @returns {Array} allMembers - Current team members 
  */
-async function fetchTeamMembers(){
+async function fetchTeamMembers(fetchTeam){
     
   let pageNum = 1;
   let teamResults = [];
@@ -218,7 +228,7 @@ async function fetchTeamMembers(){
   while(true){
     const teamMembers = await octokit.request('GET /orgs/{org}/teams/{team_slug}/members', {
       org: org,
-      team_slug: team, 
+      team_slug: fetchTeam,
       per_page: 100,
       page: pageNum
     })
@@ -262,9 +272,10 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
         await octokit.request('PUT /orgs/{org}/teams/{team_slug}/memberships/{username}', {
           org: org,
           team_slug: baseTeam,
-          username: userName,
+          username: username,
           role: 'member',
         })
+        console.log('Member added to \'website\' team: ' + username);
       } 
       if(username in inactiveWithOpenIssue){
         cannotRemoveYet[username] = inactiveWithOpenIssue[username];
@@ -276,8 +287,8 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
             team_slug: team,
             username: username,
           })
+          removedMembers.push(username);
         }
-        removedMembers.push(username);
       }
     }
   }
@@ -292,36 +303,33 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
  * @returns {Boolean} - true/false 
  */
 async function shouldRemoveOrNotify(member){
-  // Collect user's repos and see if they recently joined hackforla/website;
-  // Note: user might have > 100 repos, the code below will need adjustment (see 'flip' pages);
+  // Collect member's repos and see if they recently joined hackforla/website;
+  // Note: member might have > 100 repos, the code below will need adjustment (see 'flip' pages);
   const repos = await octokit.request('GET /users/{username}/repos', {
     username: member,
     per_page: 100
   })
 
-  // If a user recently* cloned the 'website' repo (*within the last 30 days), then 
-  // they are new members and are not considered for notification or removal.
+  // If a member recently* cloned the 'website' repo (*within the last 30 days), then they
+  // are a new member. Return 'false' so that member is not notified or removed from team
   for(const repository of repos.data){
-    // If repo is recently cloned, return 'false' so that member is not removed 
     if(repository.name === repo && repository.created_at > twoMonthsAgo){
       return false;
     }
   }
 
-  // Get user's membership status 
+  // Get member's membership status: if member is a team 'Maintainer', return false. We do not remove maintainers 
   const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
     org: org,
     team_slug: team,
     username: member,
   })
-
-  // If a user is a team 'maintainer', log their name and return 'false'. We do not remove maintainers 
   if(userMembership.data.role === 'maintainer'){
     console.log("This inactive member is a 'Maintainer': " + member);
     return false;
   }
   
-  // Else this user is an inactive member of the team and should be notified or removed
+  // Else this is an inactive team member that should be notified or removed
   return true;
 }
 
@@ -369,8 +377,3 @@ function writeData(removedContributors, notifiedContributors){
     console.log("File 'inactive-Members.json' saved successfully!");
    });
   
-  fs.readFile('inactive-Members.json', (err, data) => {
-    if (err) throw err;
-    console.log("File 'inactive-Members.json' read successfully!");
-  });
- }
