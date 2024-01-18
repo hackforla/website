@@ -91,6 +91,7 @@ leadership:
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
   - name: Nga Do
+    github-handle: 
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U05JS3BS9FD
@@ -100,7 +101,7 @@ links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
-    url: https://hackforla.slack.com/archives/C02509WHFQQ
+    url: https://hackforla.slack.com/messages/C02509WHFQQ
   - name: Overview
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
 looking: 
