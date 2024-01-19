@@ -16,10 +16,11 @@ const maintTeam = 'website-maintain';
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
 // The February 1st run keeps the 1 month inactive warning, but changes removal to 3 months inactive (skipping December).
 let today = new Date();
+let oneMonth = (today.getMonth() == 1) ? 2 : 1;            // If month is "February" == 1, then oneMonth = 2 months ago
 let twoMonths = (today.getMonth() == 1) ? 3 : 2;           // If month is "February" == 1, then twoMonths = 3 months ago
 
 let oneMonthAgo = new Date();                              // oneMonthAgo instantiated with date of "today"
-oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);          // then set oneMonthAgo from "today"
+oneMonthAgo.setMonth(oneMonthAgo.getMonth() - oneMonth);   // then set oneMonthAgo from "today"
 oneMonthAgo = oneMonthAgo.toISOString();
 let twoMonthsAgo = new Date();                               // twoMonthsAgo instantiated with date of "today"
 twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - twoMonths);  // then set twoMonthsAgo from "today"
@@ -124,13 +125,13 @@ async function fetchContributors(){
           const issueNum = contributorInfo.number;
           const timeline = await getEventTimeline(issueNum);
           const assignee = contributorInfo.assignee.login;
-          const responseObject = await isEventOutdated(date, timeline, issueNum, assignee);
+          const responseObject = await isEventOutdated(date, timeline, assignee);
           // If timeline is not outdated, add member to `allContributorsSince`
           if(responseObject.result === false){
             allContributorsSince[assignee] = true;
           } 
-          // If the timeline of last activity is more than two months ago and the title of the member's 
-          // issue does not include the words "Pre-work Checklist", add member to inactiveWithOpenIssue
+          // If timeline is more than two months ago, and the issue title does not include 
+          // the words "Pre-work Checklist", add to open issues with inactive comments
           else {
             if(date == twoMonthsAgo && !contributorInfo.title.includes("Pre-work Checklist")){
               inactiveWithOpenIssue[assignee] = issueNum;
@@ -187,7 +188,7 @@ async function getEventTimeline(issueNum) {
 }
 
 
-function isEventOutdated(date, timeline, issueNum, assignee) { // assignees is an arrays of `login`'s
+function isEventOutdated(date, timeline, assignee) { 
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
   for (let i = timeline.length - 1; i >= 0; i--) {
@@ -277,11 +278,12 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
         })
         console.log('Member added to \'website\' team: ' + username);
       } 
-      if(username in inactiveWithOpenIssue){
-        cannotRemoveYet[username] = inactiveWithOpenIssue[username];
-      } else {
-        // Remove contributor from a team if they don't pass additional checks in `shouldRemoveOrNotify` function
-        if(await shouldRemoveOrNotify(username)){   
+      // Remove member from the team if they don't pass additional checks in `shouldRemoveOrNotify` function
+      if(await shouldRemoveOrNotify(username)){
+        // But if member has an open issue, don't remove
+        if(username in inactiveWithOpenIssue){
+          cannotRemoveYet[username] = inactiveWithOpenIssue[username];
+        } else {
           await octokit.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
             org: org,
             team_slug: team,
@@ -289,7 +291,7 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
           })
           removedMembers.push(username);
         }
-      }
+      } 
     }
   }
   return [removedMembers, cannotRemoveYet];
@@ -303,35 +305,35 @@ async function removeInactiveMembers(currentTeamMembers, recentContributors, ina
  * @returns {Boolean} - true/false 
  */
 async function shouldRemoveOrNotify(member){
-  // Collect member's repos and see if they recently joined hackforla/website;
-  // Note: member might have > 100 repos, the code below will need adjustment (see 'flip' pages);
-  const repos = await octokit.request('GET /users/{username}/repos', {
-    username: member,
-    per_page: 100
-  })
-
-  // If a member recently* cloned the 'website' repo (*within the last 30 days), then they
-  // are a new member. Return 'false' so that member is not notified or removed from team
-  for(const repository of repos.data){
-    if(repository.name === repo && repository.created_at > twoMonthsAgo){
-      return false;
-    }
-  }
-
-  // Get member's membership status: if member is a team 'Maintainer', return false. We do not remove maintainers 
-  const userMembership = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
+  
+  // Get member's membership status: if member is a team 'Maintainer', return false- we don't remove maintainers
+  const membershipStatus = await octokit.request('GET /orgs/{org}/teams/{team_slug}/memberships/{username}', {
     org: org,
     team_slug: team,
     username: member,
   })
-  if(userMembership.data.role === 'maintainer'){
+  if(membershipStatus.data.role === 'maintainer'){
     console.log("This inactive member is a 'Maintainer': " + member);
     return false;
   }
+
+  // Run check to see if member cloned the 'website' repo within the last 30 days. If so do not notify  
+  // because they are new members. (This will not catch new members who did not name their repos 'website'.)
+  try {
+    const repoData = await octokit.request('GET /repos/{username}/{repo}', {
+      username: member,
+      repo: repo,
+    });
+    if(repoData.created_at > oneMonthAgo){ 
+      return false;
+    }
+  } catch {}
+
   
-  // Else this is an inactive team member that should be notified or removed
+  // Else this member is inactive and should be notified or removed from team
   return true;
 }
+
 
 
 
@@ -377,3 +379,4 @@ function writeData(removedContributors, notifiedContributors){
     console.log("File 'inactive-Members.json' saved successfully!");
    });
   
+}
