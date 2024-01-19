@@ -43,6 +43,7 @@ leadership:
       github: https://github.com/jayywu
     picture: https://avatars.githubusercontent.com/jayywu 
   - name: Tin Wei Chung
+    github-handle:
     role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
