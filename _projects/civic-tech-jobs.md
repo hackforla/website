@@ -13,6 +13,7 @@ leadership:
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
   - name: Salima Yacoubi Soussane 
+    github-handle:
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
