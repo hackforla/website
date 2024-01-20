@@ -323,11 +323,9 @@ async function shouldRemoveOrNotify(member){
     }
   } catch {}
 
-  
   // Else this member is inactive and should be notified or removed from team
   return true;
 }
-
 
 
 
