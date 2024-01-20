@@ -28,7 +28,7 @@ async function main({ g, c }, artifactContent) {
   // Create the project card, which links to the issue created in createIssue() above
   await createProjectCard(issueId, columnId);
   // Add issue number used to reference the issue and comment on the `Dev/PM Agenda and Notes`
-  const commentBody = `**Review Inactive Team Members:** #` + issueNumber
+  const commentBody = `**Review Inactive Team Members:** #` + issueNumber;
   await postComment(agendaIssueNum, commentBody, github, context);
 }
 
