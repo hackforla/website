@@ -1,5 +1,6 @@
 // Import modules
 const issueTemplateParser = require('../../utils/issue-template-parser');
+const postComment = require('../../utils/post-issue-comment');
 
 // Global variables
 var github;
@@ -12,8 +13,9 @@ async function main({ g, c }, artifactContent) {
   // Retrieve lists data from json file written in previous step
   let inactiveLists = JSON.parse(artifactContent);
   
-  const owner = "hackforla";
-  const repo = "website";
+  const owner = context.repo.owner;
+  const repo = context.repo.repo;
+  const agendaIssueNum = 2607;            // Issue number of the Dev/PM meeting agenda on Mondays
 
   // Create a new issue in repo, return the issue id for later: creating the project card linked to this issue
   const issue = await createIssue(owner, repo, inactiveLists);
@@ -25,12 +27,13 @@ async function main({ g, c }, artifactContent) {
   const columnId = await getColumnId(projectId);
   // Create the project card, which links to the issue created in createIssue() above
   await createProjectCard(issueId, columnId);
-  // Return issue number used to reference the issue when commenting on the `Dev/PM Agenda and Notes`
-  return issueNumber;
+  // Add issue number used to reference the issue and comment on the `Dev/PM Agenda and Notes`
+  const commentBody = `**Review Inactive Team Members:** #` + issueNumber
+  await postComment(agendaIssueNum, commentBody, github, context);
 }
 
 const createIssue = async (owner, repo, inactiveLists) => {
-  // Splits inactivesList into lists of removed contributors and of those to be notified
+  // Splits inactiveLists into lists of removed contributors and of those to be notified
   let removeList = inactiveLists['removedContributors'];
   let notifyList = inactiveLists['notifiedContributors'];
 
