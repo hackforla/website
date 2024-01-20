@@ -188,26 +188,20 @@ async function getEventTimeline(issueNum) {
 }
 
 
-function isEventOutdated(date, timeline, assignee) { 
+function isEventOutdated(date, timeline, assignee) {
   let lastAssignedTimestamp = null;
-  let lastCommentTimestamp = null;
   for (let i = timeline.length - 1; i >= 0; i--) {
     let eventObj = timeline[i];
     let eventType = eventObj.event;
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
 
-    // Note that this should be redundant/ unneeded: The 2nd API should catch this
-    // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
-    if (!lastCommentTimestamp && eventType === 'commented' && assignee === (eventObj.actor.login)) {
-      lastCommentTimestamp = eventTimestamp;
-    }
     // update the lastAssignedTimestamp if this is the last (most recent) time an assignee was assigned to the issue
-    else if (!lastAssignedTimestamp && eventType === 'assigned' && assignee === (eventObj.assignee.login)) {
+    if (!lastAssignedTimestamp && eventType === 'assigned' && assignee === (eventObj.assignee.login)) {
       lastAssignedTimestamp = eventTimestamp;
     }
   }
-  // If either the assignee commented or the assignee was assigned later than the 'date', the issue is not outdated so return false
-  if ((lastCommentTimestamp && (lastCommentTimestamp >= date)) || (lastAssignedTimestamp && (lastAssignedTimestamp >= date))) { 
+  // If the assignee was assigned later than the 'date', the issue is not outdated so return false
+  if (lastAssignedTimestamp && (lastAssignedTimestamp >= date)) {
     return { result: false };
   } 
   return { result: true };
