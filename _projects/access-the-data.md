@@ -83,7 +83,7 @@ tools:
   - Google Suite
 program-area:
   - Citizen Engagement
-status: Active
+status: On Hold
 # If the card should not be included on the site, change visible to "false"
 visible: true
 # If the project should not have a project homepage for any given reason, add the following line (uncommented):
