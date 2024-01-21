@@ -30,24 +30,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
       github: 'https://github.com/Noushie'
     picture: https://avatars.githubusercontent.com/Noushie
-  - name: Moji Momoh
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
-      github: 'https://github.com/mojimoh'
-    picture: https://avatars.githubusercontent.com/mojimoh
   - name: Jane He
     role: Lead, UX Research
     links:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
       github: 'https://github.com/Jane4925'
     picture: https://avatars.githubusercontent.com/Jane4925
-  - name: James Higgs
-    role: Frontend Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U015ZGMK171'
-      github: 'https://github.com/jahpe777'
-    picture: https://avatars.githubusercontent.com/jahpe777
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
@@ -75,11 +63,12 @@ technologies:
   - Microsoft SQL Server
   - Docker
   - Azure App Service
-  - Figma
 location:
   # - Downtown LA
   - Remote
 partner: LA Department of Transportation and Los Angeles City Planning
+tools:
+  - Figma
 program-area:
   - Environment
 visible: true

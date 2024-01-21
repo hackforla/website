@@ -6,12 +6,13 @@ image: /assets/images/projects/lucky-parking.png
 alt: 'Lucky Parking'
 image-hero: /assets/images/projects/lucky-parking-hero.png
 leadership:
-  - name: Yuting Chu
+  - name: Danny Pham
+    github-handle: dannycpham
     role: Product Manager Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U03J4E55KCH'
-      github: 'https://github.com/ychu196'
-    picture: https://avatars.githubusercontent.com/ychu196
+      slack: https://hackforla.slack.com/team/U041DP398GH
+      github: https://github.com/dannycpham
+    picture: https://avatars.githubusercontent.com/dannycpham
   - name: Greg Pawin
     role: Data Scientist Lead
     links:
@@ -30,84 +31,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
       github: 'https://github.com/mklmrgn'
     picture: https://avatars.githubusercontent.com/mklmrgn
-  - name: Arpita Pandya
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U02LQ20MEDU'
-      github: 'https://github.com/arpitapandya'
-    picture: https://avatars.githubusercontent.com/arpitapandya
-  - name: Diedrich Chavarria
-    role: Full-Stack Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U031VEUS0CW'
-      github: 'https://github.com/DCH-CH'
-    picture: https://avatars.githubusercontent.com/DCH-CH
-  - name: Jodie Chen
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03RFGLLAQG'
-      github: 'https://github.com/jojochen25’'
-    picture: https://avatars.githubusercontent.com/u/103106753
-  - name: Sijia Pitts
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03CBK89KUY'
-      github: 'https://github.com/sijiapitts'
-    picture: https://avatars.githubusercontent.com/u/103976231
-  - name: Yujin Chang
-    role: UX/UI Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U0270QURQCD'
-      github: 'https://github.com/eugenecha'
-    picture: https://avatars.githubusercontent.com/eugenecha
-  - name: Sam Sengupta
-    role: UX/UI Designer
-    links:
-      slack: 
-      github: 
-    picture: https://avatars.githubusercontent.com/u/41702879
   - name: Seymour Liao
     role: Data Scientist
     links:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
       github: 'https://github.com/Seymour100'
     picture: https://avatars.githubusercontent.com/Seymour100
-  - name: David Lam
-    role: Data Scientist
-    links:
-      slack: 'https://hackforla.slack.com/team/U02D8CDURF0'
-      github: 'https://github.com/davidlamcanada'
-    picture: https://avatars.githubusercontent.com/davidlamcanada
-  - name: Carlos Olivas
-    role: Data Scientist
-    links:
-      slack: 
-      github: 
-    picture: https://avatars.githubusercontent.com/u/41702877
-  - name: Pratibha Shivanand
-    role: Data Scientist
-    links:
-      slack: 'https://hackforla.slack.com/team/U03SM1LF9HD'
-      github: 'https://github.com/pratibhanagesh'
-    picture: https://avatars.githubusercontent.com/u/8139348
-  - name: Aletia Trepte
-    role: Data Scientist/Engineer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03KAPRML9Y'
-      github: 'https://github.com/parcheesime'
-    picture: https://avatars.githubusercontent.com/u/38143160
-  - name: Yen Phan
-    role: User Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U025M9VRDJR'
-      github: 'https://github.com/ymphan'
-    picture: https://avatars.githubusercontent.com/ymphan
-  - name: Yao Guan
-    role: Quant UXR
-    links:
-      slack: 'https://hackforla.slack.com/team/U03F35T4PND'
-      github: 'https://github.com/yaoguan'
-    picture: https://avatars.githubusercontent.com/u/41702875
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/lucky-parking'
@@ -128,14 +57,22 @@ looking:
     skill: Data Analyst/Data Scientist (data cleaning)
 technologies:
   - React
-  - PostgreSQL
-  - Node.js
+  - TailwindCSS
   - Mapbox
+  - Node.js
+  - Express
+  - MongoDB
+  - AWS
+  - Markdown
 location:
   # - Santa Monica
   - Remote
 partner: Department of Neighborhood Empowerment
-tools: Jupyter Notebooks, Google Colab, AWS
+tools:
+  - pnpm
+  - GitHub
+  - Storybook
+  - Google Colab
 program-area:
   - Citizen Engagement
 visible: true
@@ -145,6 +82,7 @@ problem: Parking citations are distributed unevenly across different socio-econo
 solution: Hack for LA’s Lucky Parking project seeks to map the 12.5 million parking citations on a web app that is easy to use yet powerful enough to make meaningful insights about parking citations accessible to the public at large.
 impact: Our project seeks to educate and inform city leaders and the community about the effects of Los Angeles’ parking policies, hopefully serving as a tool in discussing more equitable solutions to our transportation problems.
 sdg: '<strong>11.2:</strong> By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.'
-sdg-image-src: /assets/images/sdg/sustainable-cities.svg
+sdg-image-src: /assets/images/sdg/sdg11.svg
 sdg-image-alt: '11: sustainable cities and communities'
+sdg-color-variable: $color-sdg11
 ---

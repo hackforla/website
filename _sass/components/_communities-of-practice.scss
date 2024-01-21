@@ -141,9 +141,10 @@
     margin-right: 5px;
   }
   
-  #slack-icon{
-    width: 22px;
-    height: 22px;
+  #Layer_1{ 
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
   }
 
   #github-icon{
@@ -159,6 +160,7 @@
   }
   .cop-btn{
     width: 232px;
+    padding: 0 30px;
   }
 }
 
@@ -169,6 +171,7 @@
 
   .cop-btn{
       width: 203px;
+      padding: 0 15px;
   }
 
   .link-buttons a:nth-child(2){

@@ -62,7 +62,11 @@ location:
   # - Los Angeles
   - Remote
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
-tools: 'ArcGIS surveys, Figma, Google Docs, Zoom'
+tools:
+  - ArcGIS surveys
+  - Figma
+  - Google Docs
+  - Zoom
 visible: true
 program-area:
   - Citizen Engagement
@@ -72,6 +76,7 @@ problem: Most Neighborhood Councils do not have access or resources to hire tech
 solution: The Open Community Survey project creates transparent reports supported by a direct collection of personal perspectives from LA residents to help The LA Department of Neighborhood Empowerment (empowerla.org) and the Los Angeles Neighborhood Councils to understand how constituents are interacting with, and what they need from, their websites.
 impact: <i>We are currently drafting the Impact statement for this project.</i>
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/sdg/peace-justice.svg
+sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
+sdg-color-variable: $color-sdg16
 ---

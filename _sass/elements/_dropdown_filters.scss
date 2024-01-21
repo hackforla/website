@@ -8,10 +8,19 @@
 .filters-title .hide-filters-button {
   display: none;
 }
+
+// Centered Components and filters up top
 section.filter-content-container {
-  display: grid;
-  grid-template-columns: 377px 1fr;
+  display: flex;
+  justify-content: center;
 }
+.page-contain.projects-inner {
+  margin: 0px 0px;
+}
+.page-contain.projects-inner.curr-projects {
+  margin: 0px auto;
+}
+
 a.filter-item {
   text-decoration: none;
 }
@@ -20,22 +29,15 @@ a.filter-item {
 }
 
 .filter-toolbar {
-  width: 100%;
   padding: 8px 32px;
   box-sizing: border-box;
-  margin: 0 auto;
   height: 100%;
 }
-.filter-toolbar > .stickyDiv {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 120px;
+
+.filtersDiv {
+  min-width:330px;
 }
-@media only screen and (max-width: 1028px) {
-  .filter-toolbar > .stickyDiv {
-    top: 75px;
-  }
-}
+
 //filter container
 ul.filter-list {
   display: flex;
@@ -150,10 +152,11 @@ border-radius: 2.5px;
   transform: rotate(135deg);
   transform-origin: 64% 50%;
   bottom: auto;
-  top: 0; 
+  top: 0;
   right: 5%;
   font-size: 24px;
   position: absolute;
+  user-select: none;
 }
 .show-none .labelArrow {
   transform: rotate(-45deg);
@@ -237,6 +240,9 @@ a.clear-filter-tags {
     padding: 32px 16px;
     // flex-direction: column;
   }
+  .scroll-lock {
+    overflow: hidden;
+  }
   .filter-toolbar {
     background-color: $color-pink;
     padding: 0;
@@ -253,16 +259,13 @@ a.clear-filter-tags {
     overflow-y: scroll;
     background: $color-white;
   }
-  .filter-toolbar > .stickyDiv {
-    position: static;
-  }
   .filters-title {
     background: $color-white;
     border: 1px solid $color-mediumgrey;
     border-radius: 5px;
     padding: 5px 8px;
-    font-size: 16px;  
-    font-weight: 400; 
+    font-size: 16px;
+    font-weight: 400;
   }
   .filter-toolbar.show-filters .filters-title {
     width: 100%;
@@ -288,10 +291,10 @@ a.clear-filter-tags {
     display: inline-block;
     border: none;
   }
-  
+
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
-    padding: 0 12px;
+    padding: 0 12px 65px 12px;
   }
   .filter-toolbar.show-filters .mobile-filter-buttons {
     display: flex;
@@ -322,7 +325,7 @@ a.clear-filter-tags {
   transform: rotate(-45deg);
   transform-origin: 36% 50%;
   bottom: 0;
-  top: auto; 
+  top: auto;
   font-size: 24px;
   position: absolute;
   right: 21px;

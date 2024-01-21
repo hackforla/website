@@ -473,12 +473,12 @@
 	width: 100%;
 }
 
-@media #{$bp-below-desktop}{
-	.wins-page-contain > ul.wins-filter{
-		width: 100%;
-		grid-template-rows: none;
-    }
+.wins-page-contain > ul.wins-filter{
+    width: 100%;
+    grid-template-rows: none;
+}
 
+@media #{$bp-below-desktop}{
     .wins-tablet{
         margin-left: 0em;
 

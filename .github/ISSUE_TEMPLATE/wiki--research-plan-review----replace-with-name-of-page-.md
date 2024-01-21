@@ -2,7 +2,7 @@
 name: 'Wiki: Research Plan Review:  [REPLACE WITH NAME OF PAGE]'
 about: Research Plan Review
 title: 'Wiki: Research Plan Review:  [REPLACE WITH NAME OF PAGE]'
-labels: 'Feature: Wiki, role: user research, size: 0.5pt'
+labels: ['Feature: Wiki', 'role: user research', 'size: 0.5pt', 'Complexity: Missing']
 assignees: sacamp
 
 ---
@@ -17,17 +17,17 @@ We need to make all the research pages in the wiki uniform so that we can determ
 - [ ] Order the items the same way that they exist in the format template below
 - [ ] Take Inventory of Assets
    - [ ] Name of Research
-   - [ ] Research Date: 
+   - [ ] Research Date:
    - [ ] Current Status
    - [ ] Outstanding task items
    - [ ] Research Plan (including Audience Identification documentation)
    - [ ] Scripts
    - [ ] Interview recordings & Transcripts
    - [ ] Synthesis (Miro or Figjam)
-   - [ ] Presentation of Findings	
+   - [ ] Presentation of Findings
    - [ ] Action Items Spreadsheet
 - [ ] Check to see if there are more assets or assets (in the folder) from related research that are needed on this page, and add them
-- [ ] Check all the issues labeled research that do not have an RP label already assigned, to see if they are connected to this issue.  
+- [ ] Check all the issues labeled research that do not have an RP label already assigned, to see if they are connected to this issue.
   - [ ] add RP[replace with number] to this issue and any issues that need it
 - [ ] Evaluate all the research assets and summarize the status of the research under  "Current Status"
 - [ ] List out next steps under "Outstanding Task Items"
@@ -44,7 +44,7 @@ We need to make all the research pages in the wiki uniform so that we can determ
 ```
 # [Name of Research]
 
-## Research Date: 
+## Research Date:
 
 ## Current Status
 
@@ -60,7 +60,7 @@ We need to make all the research pages in the wiki uniform so that we can determ
 
 ### Synthesis (Miro or Figjam)
 
-### Presentation of Findings	
+### Presentation of Findings
 
 ### Action Items Spreadsheet
 ```

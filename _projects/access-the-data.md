@@ -16,32 +16,39 @@ alt: 'Access The Data'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
 leadership:
-  - name: Bonnie Wolfe
-    role: Agile Coach
-    links:
-      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
-      github: 'https://github.com/experimentsinhonesty'
-    picture: https://avatars.githubusercontent.com/experimentsinhonesty
-  - name: Lucy Chang
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U025WJ8CHFC'
-      github: 'https://github.com/lrchang2'
-    picture: https://avatars.githubusercontent.com/lrchang2
   - name: AJ Price
     role: Product Manager
     links:
-      slack: 'https://hackforla.slack.com/team/D02USE0EPSS'
+      slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
       github: 'https://github.com/mxajPrice'
     picture: https://avatars.githubusercontent.com/mxajPrice
+  - name: Jason Yung
+    role: Project Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
+      github: 'https://github.com/merlinsmagic'
+    picture: https://avatars.githubusercontent.com/merlinsmagic
   - name: Judson Lester
-    role: Developer Lead
+    role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U9NFW84QK'
       github: 'https://github.com/nyarly'
     picture: https://avatars.githubusercontent.com/nyarly
+  - name: Aparna Gopal
+    role: UX Researcher
+    links:
+      slack: 'https://hackforla.slack.com/team/U0245UJP868'
+      github: 'https://github.com/Aparna1Gopal'
+    picture: https://avatars.githubusercontent.com/Aparna1Gopal
+  - name: Tony Delgado
+    github-handle: 
+    role: Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
+      github: 'https://github.com/TonyDelgadoWillis'
+    picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/access-the-data/'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01L2ANCG6M'
@@ -72,13 +79,20 @@ technologies:
   #- Ruby on Rails
   #- other etc.
   - CKAN
+  - Docker
+  - AWS
+  - PostgreSQL
 location:
   #- Downtown LA
   #- Santa Monica
   # - South LA
   - Remote
   # must choose one of the above (closest)
-tools: Figma, Photoshop, Google Drive
+tools: 
+  - Figma
+  - GitHub
+  - Zoom
+  - Google Suite
 program-area:
   - Citizen Engagement
 status: Active
@@ -90,6 +104,7 @@ visible: true
 # completed-contact:
 # program area card data
 sdg: '<strong>16.8:</strong> Broaden and strengthen the awareness and participation of City and local communities, especially those traditionally underserved and marginalized, in the institutions of local and global governance.'
-sdg-image-src: /assets/images/sdg/peace-justice.svg
+sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
+sdg-color-variable: $color-sdg16
 ---

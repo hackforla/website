@@ -3,7 +3,7 @@ layout: default
 ---
 
 <header class='project-hero'>
-    <img src="/assets/images/projects/gradient-background.png" class="gradient-background">
+    <img src="/assets/images/projects/gradient-background.png" class="gradient-background" alt="">
     <h1 class='hero-inner title1'>{{ page.title }}</h1>
 </header>
 
@@ -52,7 +52,14 @@ layout: default
                 {% endif %}
                 {% endif %}
 
-                {% if page.tools %}<p><strong>Tools: </strong>{{ page.tools }}</p>{% endif %}
+                {% if page.tools %}
+                <p id='tools'>
+                    <strong>Tools: </strong>
+                    {% for tool in page.tools %}
+                    {{ tool }}{% if forloop.last == false %},{% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
                 <p id='languages'><strong>Languages: </strong></p>
                 {% if page.technologies %}
                 <p id='technologies'>
@@ -103,10 +110,11 @@ layout: default
                 <p><strong>Impact</strong></p>
                 <p>{{ page.impact }}</p>
             </div>
-            <div class='sdg-description-card'>
+            {%- assign background_color = page.sdg-color-variable |  replace_first: "$", "background-" -%}
+            <div class='sdg-description-card {{ background_color }}'>
                 <h2 class='sdg-card-title title7'>Sustainable Development Goal</h2>
                 <div class='sdg-description-wrapper'>
-                    <img class='sdg-img' src='{{ page.sdg-image-src }}' />
+                    <img class='sdg-img' src='{{ page.sdg-image-src }}'>
                     <div class='sdg-description-grid-item'>{{ page.sdg }}</div>
                 </div>
             </div>
@@ -141,7 +149,7 @@ layout: default
         <div class='resource-list'>
             {% for item in page.leadership %}
             <div class='leader-card'>
-                <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}' /></a>
+                <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'></a>
                 <div class='leader-description'>
                     {% if page.status == "Completed" and item.links.linkedin %}
                     <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
@@ -173,7 +181,7 @@ layout: default
       height="100%"
       style="margin: 0; border: 2px solid color-mediumdarkcyanblue; box-sizing: border-box">
       </iframe>
-    </div>    
+    </div>
     {% endif %}
 </div>
 
@@ -189,6 +197,7 @@ layout: default
         src="/assets/js/project.js"
         type="module"
         projectId="{{ page.identification }}"
+        additionalRepoIdNums="{{ page.additional-repo-ids }}"
         imageHero="{{ page.image-hero }}"
         projectTitle="{{ page.title }}">
 </script>

@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+      "VRMS",
+      "Westside",
+      "Cleantech",
+      "Inclusivity",
+      "Collabathon",
+      "Undebate"
+  ],
+  "ignorePaths": [
+      "node_modules",
+      ".github",
+      "test/",
+      "docker-compose.yml"
+  ]
+}

@@ -1,6 +1,10 @@
 /*--------
 | Mobile 
 ----------*/
+.donate-title {
+    text-align: center;
+    font-size: 1.5rem;
+}
 
 .donate-wrapper {
     min-height: 100vh;
@@ -12,33 +16,29 @@
     align-items: center;
     padding: 4rem 1rem;
     height: fit-content;
-
     .donate-banner-text {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         .title1 {
             padding-bottom: 28px;
         }
-
         p {
             font-size: 18px;
             max-width: 300px;
+            text-align: left;
             @media #{$bp-tablet-up} {
                 max-width: 500px;
             }
             @media #{$bp-mobile-up} {
                 font-size: 16px;
                 text-align: left;
+                padding-left: 0px;                
             }
         }
-    }
+    }   
+}
 
-    img {
-        width: 80%;
-        max-width: 500px;
-        margin: auto;
-        padding-top: 20px;
-    }
+.page-card--donate{
+    padding: 32px;
 }
