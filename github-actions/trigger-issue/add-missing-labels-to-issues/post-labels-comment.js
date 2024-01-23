@@ -6,7 +6,8 @@ const formatComment = require('../../utils/format-comment')
 const LABELS_OBJ = {
   'Complexity: Missing': 'Complexity',
   'role missing': 'Role',
-  'Feature Missing': 'Feature'
+  'Feature Missing': 'Feature',
+  'size: missing': 'Size'
 }
 
 // Global variables

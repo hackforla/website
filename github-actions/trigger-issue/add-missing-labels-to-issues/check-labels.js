@@ -1,6 +1,6 @@
 // Constant variables
 const REQUIRED_LABELS = ['Complexity', 'role', 'Feature']
-const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing']
+const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing', 'size: missing']
 const COMPLEXITY_EXCEPTIONS = ['good first issue']
 
 // SPECIAL_CASE is for issue created by reference with issue title "Hack for LA website bot" (from "Review Inactive Team Members")
