@@ -160,7 +160,7 @@ async function fetchContributors(){
  *
  */
 async function getEventTimeline(issueNum) {
-  let arra = []
+  let timelineArray = []
   let page = 1
   while (true) {
     try {
@@ -172,7 +172,7 @@ async function getEventTimeline(issueNum) {
         page: page,
       });
       if (results.data.length) {
-        arra = arra.concat(results.data);
+        timelineArray = timelineArray.concat(results.data);
       } else {
         break
       }
@@ -184,7 +184,7 @@ async function getEventTimeline(issueNum) {
       page++
     }
   }
-  return arra
+  return timelineArray
 }
 
 
