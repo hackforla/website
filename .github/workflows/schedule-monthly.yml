@@ -72,7 +72,7 @@ jobs:
       with:
         github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         script: |
-          const artifactContent = process.env.TRIM_LISTS;
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js');
-          createNewIssue = script({g: github, c: context}, artifactContent);
+          const artifactContent = process.env.TRIM_LISTS
+          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
+          script({g: github, c: context}, artifactContent)
     
