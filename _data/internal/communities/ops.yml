@@ -13,12 +13,18 @@ meeting-times: Wednesdays 6:00-7:00 pm PT
 
 leadership-type: Community Led
 leadership:
-  - name: Jason Ebueng
+  - name: Chelsey Beck
     role: Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U02CA3CAK7Z
-      github: https://github.com/JasonEb
-    picture: https://avatars.githubusercontent.com/u/6300995
+      slack: https://hackforla.slack.com/team/U01J93AQKSS
+      github: https://github.com/chelseybeck
+    picture: https://avatars.githubusercontent.com/chelseybeck
+  - name: Ernie Pelayo
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U046MDSM3PA
+      github: https://github.com/erniep278
+    picture: https://avatars.githubusercontent.com/erniep278
   - name: Dean Church
     role: Co-lead
     links:
