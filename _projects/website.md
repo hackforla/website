@@ -84,6 +84,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
       github: 'https://github.com/adrianang'
     picture: https://avatars.githubusercontent.com/adrianang
+  - name: J Pham
+    github-handle: jphamtv
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U064FRUF893'
+      github: 'https://github.com/jphamtv'
+    picture: https://avatars.githubusercontent.com/jphamtv
 
 links:
   - name: Wiki
