@@ -156,7 +156,7 @@ layout: default
                     {% elsif page.status == "Completed" %}
                     <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
                     {% else %}
-                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
+                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}'target='_blank' title='Slack Direct Message' rel="noopener noreferrer">{{ item.name }}</a></p>
                     {%  endif %}
                     <p class='leader-description-field'><strong>Role: </strong>{{ item.role }}</p>
                 </div>
