@@ -147,7 +147,7 @@ function convertTime12to24(time12h) {
  * Function that represent the individual object extracted from the api
  */
 function display_object(item) {
-  if (item && item.project.name && (item.project.name !== "Hack4LA" && item.project.name !== "test")) { 
+  if (item?.project?.name !== "Hack4LA" && item?.project?.name !== "test") { 
     const rv_object = {
       meetingName: item.name,
       name: item.project.name,
