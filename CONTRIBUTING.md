@@ -775,7 +775,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ##### **ii. Setting up SSH Keys for Windows**
 
-1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already. Open Git Bash and run:
 
 ```bash
 ls -al ~/.ssh
