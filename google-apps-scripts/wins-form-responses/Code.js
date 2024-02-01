@@ -89,7 +89,7 @@ function main() {
   */
 
   // Create an array of data for wins-data.json
-  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows);
+  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows, null, 5);
   // const encodedArrayData = Utilities.base64Encode(`${cleanedAndFormattedArrayData}`);
   const encodedArrayData = Utilities.base64Encode(cleanedAndFormattedArrayData, Utilities.Charset.UTF_8); 
 
