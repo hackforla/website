@@ -530,18 +530,12 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+Update your gh-pages branch with upstream changes
 
-```bash
-git pull upstream
+```
+git pull upstream gh-pages
 ```
 
-You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
-
-<details>
-  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
-</details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
