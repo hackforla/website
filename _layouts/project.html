@@ -42,7 +42,7 @@ layout: default
                     <strong>Links: </strong>
                     {% for item in page.links %}
                     {% if counter == 1 %}
-                    <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
+                    <a target="_blank" href='{{ item.url }}' rel="noopener noreferrer"> {{ item.name }}</a>
                     {% assign counter = counter | minus:1 %}
                     {% elsif counter > 1 %}
                     <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
