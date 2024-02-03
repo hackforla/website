@@ -152,7 +152,7 @@ layout: default
                 <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'></a>
                 <div class='leader-description'>
                     {% if page.status == "Completed" and item.links.linkedin %}
-                    <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
+                    <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile' rel="noopener noreferrer">{{ item.name }}</a></p>
                     {% elsif page.status == "Completed" %}
                     <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer">{{ item.name }}</a></p>
                     {% else %}
