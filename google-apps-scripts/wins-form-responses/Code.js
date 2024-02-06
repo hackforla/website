@@ -65,7 +65,7 @@ function main() {
   */
 
   // Create an array of objects (key-value pair) for _wins-data.json
-  const cleanedAndFormattedKeyValueData = JSON.stringify(sortedKeyValueData);
+  const cleanedAndFormattedKeyValueData = JSON.stringify(sortedKeyValueData, null, 5);
   const encodedKeyValueData = Utilities.base64Encode(`${cleanedAndFormattedKeyValueData}`, Utilities.Charset.UTF_8);
 
     // Retrieves latest sha of the _wins data file, which is needed for edits later
@@ -89,7 +89,7 @@ function main() {
   */
 
   // Create an array of data for wins-data.json
-  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows, null, 5);
+  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows);
   // const encodedArrayData = Utilities.base64Encode(`${cleanedAndFormattedArrayData}`);
   const encodedArrayData = Utilities.base64Encode(cleanedAndFormattedArrayData, Utilities.Charset.UTF_8); 
 
