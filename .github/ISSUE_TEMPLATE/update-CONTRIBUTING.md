@@ -1,8 +1,9 @@
 ---
 name: Update CONTRIBUTING.md
-about: 'For making updates to CONTRIBUTING.md'
+about: For making updates to CONTRIBUTING.md
 title: 'Update CONTRIBUTING.md Section [INSERT SECTION #]'
-labels: 'Feature: Wiki, Complexity: Small, role: back end/devOps, role: front end, size: 0.5pt'
+labels: 'Complexity: Small, Feature: Wiki, role: back end/devOps, role: front end,
+  size: 0.5pt'
 assignees: ''
 
 ---

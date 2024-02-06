@@ -37,11 +37,17 @@ leadership:
       slack: https://hackforla.slack.com/team/U051F68PG2C
       github: https://github.com/pogwon
     picture: https://avatars.githubusercontent.com/pogwon
+  - name: Leo Peng
+    role: Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/UPDM52A94
+      github: https://github.com/leopeng101
+    picture: https://avatars.githubusercontent.com/leopeng101
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C017ESHSMNG/
   - name: Github
     url: https://github.com/hackforla/UI-UX
-  
+
 recruiting-message:
 ---

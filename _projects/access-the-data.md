@@ -16,37 +16,6 @@ alt: 'Access The Data'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/access-the-data-hero.png
 leadership:
-  - name: AJ Price
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U02UZ5BK8UB'
-      github: 'https://github.com/mxajPrice'
-    picture: https://avatars.githubusercontent.com/mxajPrice
-  - name: Jason Yung
-    role: Project Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U059W9P96C8'
-      github: 'https://github.com/merlinsmagic'
-    picture: https://avatars.githubusercontent.com/merlinsmagic
-  - name: Judson Lester
-    role: Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U9NFW84QK'
-      github: 'https://github.com/nyarly'
-    picture: https://avatars.githubusercontent.com/nyarly
-  - name: Aparna Gopal
-    role: UX Researcher
-    links:
-      slack: 'https://hackforla.slack.com/team/U0245UJP868'
-      github: 'https://github.com/Aparna1Gopal'
-    picture: https://avatars.githubusercontent.com/Aparna1Gopal
-  - name: Tony Delgado
-    github-handle: 
-    role: Developer
-    links:
-      slack: 'https://hackforla.slack.com/team/U05422GPUQ2'
-      github: 'https://github.com/TonyDelgadoWillis'
-    picture: https://avatars.githubusercontent.com/TonyDelgadoWillis
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/access-the-data/'
@@ -95,7 +64,7 @@ tools:
   - Google Suite
 program-area:
   - Citizen Engagement
-status: Active
+status: On Hold
 # If the card should not be included on the site, change visible to "false"
 visible: true
 # If the project should not have a project homepage for any given reason, add the following line (uncommented):

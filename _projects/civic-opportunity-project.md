@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/rfambro2'
     picture: https://avatars.githubusercontent.com/rfambro2
   - name: Tan Zhou
+    github-handle: 
     role: UX Research Lead
     links:
       slack: 'https://hackforla.slack.com/team/UPMSC27G8'
