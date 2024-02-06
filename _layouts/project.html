@@ -42,10 +42,10 @@ layout: default
                     <strong>Links: </strong>
                     {% for item in page.links %}
                     {% if counter == 1 %}
-                    <a target="_blank" href='{{ item.url }}' rel="noopener noreferrer"> {{ item.name }}</a>
+                    <a target="_blank" href='{{ item.url }}'> {{ item.name }}</a>
                     {% assign counter = counter | minus:1 %}
                     {% elsif counter > 1 %}
-                    <a target="_blank" href='{{ item.url }}' rel="noopener noreferrer">{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
+                    <a target="_blank" href='{{ item.url }}'>{{ item.name }}</a>{% if forloop.last == false %}, {% endif %}
                     {% endif %}
                     {% endfor %}
                 </p>
@@ -152,11 +152,11 @@ layout: default
                 <a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img' src='{{ item.picture }}'></a>
                 <div class='leader-description'>
                     {% if page.status == "Completed" and item.links.linkedin %}
-                    <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile' rel="noopener noreferrer">{{ item.name }}</a></p>
+                    <p class='leader-description-field'></p><strong>Name: </strong><a href='{{ item.links.linkedin }}' target='_blank' title='Linkedin Profile'>{{ item.name }}</a></p>
                     {% elsif page.status == "Completed" %}
-                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer">{{ item.name }}</a></p>
+                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.github }}' target='_blank' title='GitHub Profile'>{{ item.name }}</a></p>
                     {% else %}
-                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}'target='_blank' title='Slack Direct Message' rel="noopener noreferrer">{{ item.name }}</a></p>
+                    <p class='leader-description-field'><strong>Name: </strong><a href='{{ item.links.slack }}' target='_blank' title='Slack Direct Message'>{{ item.name }}</a></p>
                     {%  endif %}
                     <p class='leader-description-field'><strong>Role: </strong>{{ item.role }}</p>
                 </div>

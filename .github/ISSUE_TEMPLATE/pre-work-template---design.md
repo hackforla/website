@@ -2,8 +2,7 @@
 name: Pre-work Template - Design
 about: New Design team members should start with by making this issue for themselves.
 title: 'Pre-work Checklist: Designer: [replace brackets with your name]'
-labels: 'Complexity: Prework, Feature: Onboarding/Contributing.md, role: design, size:
-  1pt'
+labels: ['Complexity: Prework, Feature: Onboarding/Contributing.md, prework, role: design, size: 1pt']
 assignees: ''
 
 ---

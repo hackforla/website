@@ -2,7 +2,7 @@
 name: 'Wiki: Research Plan Review:  [REPLACE WITH NAME OF PAGE]'
 about: Research Plan Review
 title: 'Wiki: Research Plan Review:  [REPLACE WITH NAME OF PAGE]'
-labels: 'Complexity: Missing, Feature: Wiki, role: user research, size: 0.5pt'
+labels: ['Feature: Wiki', 'role: user research', 'size: 0.5pt', 'Complexity: Missing']
 assignees: sacamp
 
 ---

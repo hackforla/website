@@ -13,7 +13,6 @@ leadership:
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
   - name: Salima Yacoubi Soussane 
-    github-handle:
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
@@ -44,7 +43,6 @@ leadership:
       github: https://github.com/jayywu
     picture: https://avatars.githubusercontent.com/jayywu 
   - name: Tin Wei Chung
-    github-handle:
     role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
@@ -93,7 +91,6 @@ leadership:
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
   - name: Nga Do
-    github-handle:
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U05JS3BS9FD

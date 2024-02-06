@@ -530,12 +530,18 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
 
-```
-git pull upstream gh-pages
+```bash
+git pull upstream
 ```
 
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+
+<details>
+  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+</details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
@@ -793,7 +799,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent. In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
+4. Next you need to add your ssh key to your ssh agent
 
 ```bash
 ssh-add ~/.ssh/id_ed25519

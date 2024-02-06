@@ -2,8 +2,7 @@
 name: Suggest a guide
 about: 'For guides that could be helpful and listed on the toolkit page. '
 title: ''
-labels: 'Complexity: Missing, documentation, enhancement, Feature Missing, role missing,
-  size: missing'
+labels: ['documentation', 'enhancement', 'role missing', 'Feature Missing', 'Complexity: Missing', 'size: missing']
 assignees: ''
 
 ---

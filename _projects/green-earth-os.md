@@ -23,8 +23,8 @@ status: On Hold
 technologies:
   - mkdocs
 tools:
-  - Google Sheets
-  - Google Forms
+  - Google sheets
+  - Google forms
   - Figma
   - FigJam
 ---
