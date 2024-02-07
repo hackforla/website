@@ -1,20 +1,17 @@
 <div class="card-primary page-card-lg page-card--about">
     <div class="about-us-section-header" data-hash="sponsors"><span class="sec-head-img"><img
                 src="/assets/images/about/section-header-elements/sponsors.svg"
-                alt="Make your donation for Hack for LA Brigade on codeforamerica.org/donate. Choose the amount and select the payment frequency, then enter 'Hack for LA' under 'if your donation is for a Brigade, please select the Brigade Name(Optional)'."></span>Sponsors
+                alt=""></span>Sponsors
     </div>
     <div class="about-us-section-content">
         <div class="flex-container-row flex-container-row--partners">
-            {% comment %}
+            {% comment %} 
             {%for sponsor in site.data.internal.sponsors%}
-            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}">
+            <a href="{{sponsor.link}}" target="_blank" alt="{{sponsor.name}}" rel="noopener noreferrer">
                 <img width="150px" height="150px" src="{{sponsor.img_url}}" title="{{sponsor.name}}">
             </a>
             {% endfor %}
             {% endcomment %}
-            <a href="https://www.codeforamerica.org" target="_blank" alt="Code for America">
-                <img src="/assets/images/sponsors/code-for-america.svg" title="Code for America">
-            </a>
             <a href="https://laincubator.org" target="_blank" alt="LA Incubator">
                 <img src="/assets/images/sponsors/laci.svg" title="Los Angeles Cleantech Incubator">
             </a>

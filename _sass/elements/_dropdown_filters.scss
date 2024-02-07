@@ -240,6 +240,9 @@ a.clear-filter-tags {
     padding: 32px 16px;
     // flex-direction: column;
   }
+  .scroll-lock {
+    overflow: hidden;
+  }
   .filter-toolbar {
     background-color: $color-pink;
     padding: 0;
@@ -291,7 +294,7 @@ a.clear-filter-tags {
 
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
-    padding: 0 12px;
+    padding: 0 12px 65px 12px;
   }
   .filter-toolbar.show-filters .mobile-filter-buttons {
     display: flex;
