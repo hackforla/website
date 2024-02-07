@@ -16,7 +16,7 @@ permalink: /communities-of-practice
         </p>
             <div class="header-self-invite--communities">
                 <img class="self-invite-img" src="/assets/images/communities-of-practice/slack-self-invite.svg" alt="slack icon" />
-                <p class="alert--communities">To join the Slack channels below, you first need to be a member of our Hack for LA Slack Community. If you have not joined yet, please follow the steps in <a href="/getting-started" target="_blank" rel="noopener noreferrer">Getting Started</a>.
+                <p class="alert--communities">To join the Slack channels below, you first need to be a member of our Hack for LA Slack Community. If you have not joined yet, please follow the steps in <a href="/getting-started" target="_blank">Getting Started</a>.
             </p></div>
     </div>
     <img class="header-hero-image" src="/assets/images/communities-of-practice/comm-prac-header.svg" alt="commmunity of practice header" />
@@ -45,15 +45,15 @@ permalink: /communities-of-practice
                 <div class='leader-list--communities'>
                 {% for leader in community[1].leadership %}
                 <div class='leader-card--communities'>
-                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer"><img class='leader-img--communities' src='{{ leader.picture }}'/></a>
+                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img--communities' src='{{ leader.picture }}'/></a>
                     <div class='leader-description'>
                         <p class='leader-description-field'><strong>Name: </strong>
                         {% if page.status == "Completed" and item.links.linkedin %}
-                            <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile' rel="noopener noreferrer">
+                            <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile'>
                         {% elsif page.status == "Completed" %}
-                            <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer">
+                            <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'>
                         {% else %}
-                            <a href='{{ leader.links.slack }}' target='_blank' title='Slack Direct Message' rel="noopener noreferrer">
+                            <a href='{{ leader.links.slack }}' target='_blank' title='Slack Direct Message'>
                         {%  endif %}
                         {{ leader.name }}</a></p>
                         <p class='leader-description-field'><strong>Role: </strong>{{ leader.role }}</p>
@@ -79,7 +79,7 @@ permalink: /communities-of-practice
                 {% if community[1].links[1].url %}
                     {% assign url_links = true %}
                     <a href="{{ community[1].links[1].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank"
-                        title="{{community[1].name}} Github Repo" rel="noopener noreferrer">
+                        title="{{community[1].name}} Github Repo">
                         <img class="button-icon" id="github-icon" src="/assets/images/communities-of-practice/icon-github-small.svg" alt="github icon" />
                         View GitHub
                     </a>
