@@ -12,12 +12,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Josiah Odosu
-    role: Product Team
-    links:
-      slack: https://hackforla.slack.com/team/U052L9U44LB
-      github: https://github.com/Josiah-O
-    picture: https://avatars.githubusercontent.com/Josiah-O    
   - name: Anjola Jaiyeola
     role: Product Team
     links:
@@ -84,6 +78,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
       github: 'https://github.com/adrianang'
     picture: https://avatars.githubusercontent.com/adrianang
+  - name: J Pham
+    github-handle: jphamtv
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U064FRUF893'
+      github: 'https://github.com/jphamtv'
+    picture: https://avatars.githubusercontent.com/jphamtv
 
 links:
   - name: Wiki
@@ -117,7 +118,6 @@ tools:
   - Google Drive
   - Zoom
   - Google Analytics
-  - 1Password
 location:
   # - Santa Monica
   # - Downtown LA

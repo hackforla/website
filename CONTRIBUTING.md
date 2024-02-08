@@ -277,8 +277,6 @@ Running the above command will result in the following output in your terminal
 
 When you see the above output, it means the site is now running and now you can browse to http://localhost:4000
 
-**NOTE:** If it takes longer than 2 minutes to build your website using `docker-compose up`, please let the [technical leads](https://github.com/hackforla/website/wiki/Meet-the-Team) know about this and add your website build time in a comment to [issue #1443](https://github.com/hackforla/website/issues/1443). Also, once you are part of the merge team, you can work on [issue #1443](https://github.com/hackforla/website/issues/1443) and fix it (if you want).
-
 #### **1.6.b Stopping Docker**
 
  - To stop and completely remove the jekyll server (i.e. the running Docker container):
@@ -532,26 +530,22 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+Update your gh-pages branch with upstream changes
 
-```bash
-git pull upstream
+```
+git pull upstream gh-pages
 ```
 
-You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
-
-<details>
-  <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
-</details>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
-The `git checkout` command will create and change to a new branch where you will do the work on your issue.  In git, the checkout command lets you navigate between different branches.  Using the `-b` flag you can create a new branch and immediately switch into it.
+If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
-For example,if we creating a new issue branch off [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
+Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.  
+
+For example, if you create a new issue branch for [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
 
 ```bash
 git checkout -b update-give-link-2093
@@ -566,6 +560,8 @@ git checkout -b update-give-link-2093
 **Note:** The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue.
 
 **Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
+
+We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit.  
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
@@ -757,7 +753,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent.
+4. Next you need to add your ssh key to your ssh agent.  In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
 
 ```bash
 ssh-add -K ~/.ssh/id_ed25519
@@ -779,6 +775,12 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ls -al ~/.ssh
 ```
 
+If the folder ~/.ssh does not exist, create it using
+
+```bash
+mkdir ~/.ssh
+```
+
 2. Then enter the text below into your terminal using your github account email address.
 
 ```bash
@@ -791,7 +793,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 eval "$(ssh-agent -s)"
 ```
 
-4. Next you need to add your ssh key to your ssh agent
+4. Next you need to add your ssh key to your ssh agent. In the command below, replace `id_ed25519` with the filename (without file extension) you provided in the previous step.
 
 ```bash
 ssh-add ~/.ssh/id_ed25519
@@ -973,16 +975,6 @@ Once your pull request is merged you can delete your branch with the following c
 ```bash
 git branch -d update-give-link-2093
 ```
-Now you can move on to your next issue and create a new branch. (This ensures you don’t accidentally include the changes from your previous branch in your new branch)
-
-From here, once your pull request is approved and merged you can pull the recent merge from the Hack For LA repository and delete your local branch:
-
-```bash
-git pull upstream gh-pages
-git branch -d update-give-link-2093
-```
-
-Managing branches this way will keep the commit logs cleaner on the Hack For LA repository, versus merging your completed feature branches into your local repo.
 
 Now you are all set to work on a new PR. Start over at [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on) and repeat completing parts 2 and 3.
 

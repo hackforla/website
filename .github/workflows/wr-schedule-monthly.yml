@@ -1,0 +1,46 @@
+name: WR Schedule Monthly
+
+on:
+  workflow_run:
+    workflows: ['Schedule Monthly']
+    types: [completed]
+
+jobs:
+  On-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo "The 'Schedule Monthly' workflow succeeded. Continuing."
+
+      # If 'Schedule Monthly' was succcesful, retrieve the owner URL
+      - name: Get owner url
+        id: get-owner-url
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ownerURL = context.payload.repository.html_url;
+            console.log("Owner url: " + ownerURL);
+            return ownerURL;
+
+      # Then retrieve the latest issue created in the repo (i.e. by 'Schedule Monthly')
+      - name: Get issue number
+        id: get-issue-number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const newIssue = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state:"all",
+              per_page: 1,
+              page: 1,
+            });
+            const newIssueNumber = newIssue['data'][0]['number'];
+            console.log("Latest issue number: " + newIssueNumber);
+            return newIssueNumber;
+
+      # Automatically close this last issue- that is, the issue just created by 'Schedule Monthly' 
+      - name: Auto close issue
+        run: gh issue close "${{ steps.get-owner-url.outputs.result }}/issues/${{ steps.get-issue-number.outputs.result }}"
+        env:
+          GH_TOKEN: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}

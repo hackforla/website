@@ -5,11 +5,13 @@
   margin-top: 31px;
 
   .self-invite-img {
-    /*Note "margin-top: 15px" is needed to keep this img aligned with neighboring text*/
-    margin-top: 15px;
-    margin-right: 27px;
-    width: 24px;
-    height: 24px;
+    color: #fa114f;
+    margin-top: 14px;
+    margin-right: 26px;
+    margin-left: -1px;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
   }
 
   .alert--communities {
@@ -141,9 +143,10 @@
     margin-right: 5px;
   }
   
-  #slack-icon{
-    width: 22px;
-    height: 22px;
+  #Layer_1{ 
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
   }
 
   #github-icon{
@@ -159,6 +162,7 @@
   }
   .cop-btn{
     width: 232px;
+    padding: 0 30px;
   }
 }
 
@@ -169,6 +173,7 @@
 
   .cop-btn{
       width: 203px;
+      padding: 0 15px;
   }
 
   .link-buttons a:nth-child(2){
