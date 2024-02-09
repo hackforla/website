@@ -759,12 +759,15 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
 */
 
 function filterTagComponent(filterName,filterValue){
+    let copyOfFilterName = filterName
+    if (copyOfFilterName === "tools") copyOfFilterName = "tool"
+    else if (copyOfFilterName === "technologies") copyOfFilterName = "technology"
     return `<div
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
                 <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
-                ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
+                ${filterName === "looking" ? "Role" : copyOfFilterName.length > 0 ? copyOfFilterName : filterName}: ${filterValue}
                 </span>
             </div>`
 }
