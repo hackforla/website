@@ -47,7 +47,7 @@ permalink: /communities-of-practice
                 <div class='leader-list--communities'>
                 {% for leader in community[1].leadership %}
                 <div class='leader-card--communities'>
-                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img--communities' src='{{ leader.picture }}'/></a>
+                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img--communities' src='{{ leader.picture }}' rel="noopener noreferrer"/></a>
                     <div class='leader-description'>
                         <p class='leader-description-field'><strong>Name: </strong>
                         {% if page.status == "Completed" and item.links.linkedin %}
