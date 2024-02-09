@@ -121,7 +121,7 @@ resource-url-depreciated:
     <img class="title-new-columns" src="../assets/images/guides/survey-reporting/dashboard-6.png">
     <h4 class="title-section add-margin-top-to-header">TRANSPOSE ROW DATA</h4>
     <p class="after-paragraph-margin">
-      To create a chart, whether direclty in Google Sheets, or by using a data visualization tool like Google Data Studio, we must have a 1:1 relationship between the data in a particular cell and its dimension (column name). By default, survey questions of the “check all that apply” variety produce data arrays that violate this principle. 
+      To create a chart, whether directly in Google Sheets, or by using a data visualization tool like Google Data Studio, we must have a 1:1 relationship between the data in a particular cell and its dimension (column name). By default, survey questions of the “check all that apply” variety produce data arrays that violate this principle. 
       <br><br>
       We use the TRANSPOSE() function with the SPLIT() and JOIN() functions to achieve this outcome. In our example, we enter the formula =TRANSPOSE((SPLIT(JOIN(“,”, G2:G995), “,”))) in cell H2. 
       <br><br>
