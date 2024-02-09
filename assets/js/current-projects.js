@@ -759,15 +759,14 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
 */
 
 function filterTagComponent(filterName,filterValue){
-    let copyOfFilterName = filterName
-    if (copyOfFilterName === "tools") copyOfFilterName = "tool"
-    else if (copyOfFilterName === "technologies") copyOfFilterName = "technology"
+    // The filterName value of "languages" is still stored in its plural form within the singularFormOfFilterName variable. "Tools" and "technologies" were made singular.
+    const singularFormOfFilterName = filterName === "tools" ? "tool" : filterName === "technologies" ? "technology" : filterName
     return `<div
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
                 <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
-                ${filterName === "looking" ? "Role" : copyOfFilterName.length > 0 ? copyOfFilterName : filterName}: ${filterValue}
+                ${filterName === "looking" ? "Role" : singularFormOfFilterName}: ${filterValue}
                 </span>
             </div>`
 }
