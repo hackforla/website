@@ -209,7 +209,20 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [
+                ...new Set(
+                    sortedProjectData.map(item => {
+                        let combined = [];
+                        if (item.project.languages?.length > 0) {
+                            combined = combined.concat(item.project.languages);
+                        }
+                        if (item.project.technologies?.length > 0) {
+                            combined = combined.concat(item.project.technologies);
+                        }
+                        return combined;
+                    }).flat()
+                )
+            ].filter(v => v).sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
         }        
     }
