@@ -125,7 +125,7 @@ function retrieveProjectDataFromCollection() {
                     "image": `{{ project.image }}`,
                     {%- endif -%}
                     {%- if project.alt -%}
-                    "alt": `{{ project.alt }}`,
+                    "alt": "",
                     {%- endif -%}
                     {%- if project.title -%}
                     "title": `{{ project.title }}`,
