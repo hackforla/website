@@ -17,6 +17,7 @@
       "node_modules",
       ".github",
       "test/",
-      "docker-compose.yml"
+      "docker-compose.yml",
+      "_sass/"
   ]
 }
