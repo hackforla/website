@@ -7,6 +7,7 @@ alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
 leadership: 
   - name: Karen Coronel
+    github-handle: 
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
