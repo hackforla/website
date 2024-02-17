@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded",function(){
  * Retrieves project data from jekyll _projects collection using liquid and transforms it into a javascript object
  * The function returns a javascript array of objects representing all the projects under the _projects directory
 */
-function retrieveProjectDataFromCollection(){
+function retrieveProjectDataFromCollection() {
     // { "project": {"id":"/projects/311-data","relative_path":"_projects/311-data.md","excerpt"
     {% assign projects = site.data.external.github-data %}
     {% assign visible_projects = site.projects | where: "visible", "true" %}
@@ -98,73 +98,94 @@ function retrieveProjectDataFromCollection(){
     // const scriptTag = document.getElementById("projectScript");
     // const projectId = scriptTag.getAttribute("projectId");
     // Search for correct project
-    let projectLanguagesArr = [];
-    projects.forEach(project=> {
-        if(project.languages){
+    let projectLanguagesArray = [];
+    projects.forEach(project => {
+        if (project.languages) {
             const projectLanguages = {
                 id: project.id,
                 languages: project.languages
             };
-            projectLanguagesArr.push(projectLanguages);
+            projectLanguagesArray.push(projectLanguages);
         }
-    })
+    });
 
-    let projectData = [{%- for project in visible_projects -%}
+    // Construct project data objects for visible projects, 
+    // including dynamic properties like additional repositories.
+    let projectData = [
+        {%- for project in visible_projects -%}
             {
                 "project": {
-                            'id': "{{project.id | default: 0}}",
-                            'identification': {{project.identification | default: 0}},
-                            'additionalRepoIds': {{project.additional-repo-ids | default: 0}},
-                            "status": "{{ project.status }}"
-                            {%- if project.image -%},
-                            "image": '{{ project.image }}'
-                            {%- endif -%}
-                            {%- if project.alt -%},
-                            "alt": `{{ project.alt }}`
-                            {%- endif -%}
-                            {%- if project.title -%},
-                            "title": `{{ project.title }}`
-                            {%- endif -%}
-                            {%- if project.description -%},
-                            "description": `{{ project.description }}`
-                            {%- endif -%}
-                            {%- if project.partner -%},
-                            "partner": `{{ project.partner }}`
-                            {%- endif -%}
-                            {%- if project.tools -%},
-                            "tools": {{ project.tools | jsonify }}
-                            {%- endif -%}
-                            {%- if project.looking -%},
-                            "looking": {{ project.looking | jsonify }}
-                            {%- endif -%}
-                            {%- if project.links -%},
-                            "links": {{ project.links | jsonify }}
-                            {%- endif -%}
-                            {%- if project.technologies -%},
-                            "technologies": {{ project.technologies | jsonify }}
-                            {%- endif -%}
-                            {%- if project.program-area -%},
-                            "programAreas": {{ project.program-area | jsonify }}
-                            {%- endif -%}
-                            {%- if project.languages -%},
-                            "languages": {{ project.languages }}
-                            {%- endif -%}
-                            }
-            }{%- unless forloop.last -%}, {% endunless %}
-    {%- endfor -%}]
-    projectData.forEach((data,i) => {
+                    "id": `{{project.id | default: 0}}`,
+                    "identification": {{ project.identification | default: 0 }},
+                    {%- if project.additional-repo-ids -%}
+                    "additionalRepoIds": [{{ project.additional-repo-ids | join: ',' }}],
+                    {% endif %}
+                    "status": `{{ project.status }}`,
+                    {%- if project.image -%}
+                    "image": `{{ project.image }}`,
+                    {%- endif -%}
+                    {%- if project.alt -%}
+                    "alt": "",
+                    {%- endif -%}
+                    {%- if project.title -%}
+                    "title": `{{ project.title }}`,
+                    {%- endif -%}
+                    {%- if project.description -%}
+                    "description": `{{ project.description }}`,
+                    {%- endif -%}
+                    {%- if project.partner -%}
+                    "partner": `{{ project.partner }}`,
+                    {%- endif -%}
+                    {%- if project.tools -%}
+                    "tools": {{ project.tools | jsonify }},
+                    {%- endif -%}
+                    {%- if project.looking -%}
+                    "looking": {{ project.looking | jsonify }},
+                    {%- endif -%}
+                    {%- if project.links -%}
+                    "links": {{ project.links | jsonify }},
+                    {%- endif -%}
+                    {%- if project.technologies -%}
+                    "technologies": {{ project.technologies | jsonify }},
+                    {%- endif -%}
+                    {%- if project.program-area -%}
+                    "programAreas": {{ project.program-area | jsonify }},
+                    {%- endif -%}
+                    {%- if project.languages -%}
+                    "languages": {{ project.languages }}
+                    {%- endif -%}
+                }
+            }
+            {%- unless forloop.last -%},{% endunless %}
+        {%- endfor -%}
+    ];
+
+    projectData.forEach((data, i) => {
         const { project } = data;
-        const matchingProject = projectLanguagesArr.find(x=> x.id === project.identification);
-        if(matchingProject) {
+        const matchingProject = projectLanguagesArray.find(repo => repo.id === project.identification);
+
+        if (matchingProject) {
             project.languages = matchingProject.languages;
-            if(project.additionalRepoIds != 0){
-                const additionalMatchingProject = projectLanguagesArr.find(x=> x.id === project.additionalRepoIds);
-                const langArr = [...matchingProject.languages, ...additionalMatchingProject.languages];
-                let set = new Set(langArr);
-                project.languages = Array.from(set);
+            
+            // Merge languages from additional GitHub repositories to ensure  
+            // a comprehensive list of languages used on a single project.
+            if (project.additionalRepoIds) {
+                const additionalRepoIdNums = project.additionalRepoIds;
+                let languagesArray = [...project.languages];
+
+                additionalRepoIdNums.forEach(repoId => {
+                    const additionalRepo = projectLanguagesArray.find(repo => repo.id === repoId);
+                    if (additionalRepo && additionalRepo.languages) {
+                        languagesArray = [...languagesArray, ...additionalRepo.languages];                
+                    }
+                });
+
+                let uniqueLanguages = new Set(languagesArray);
+                project.languages = Array.from(uniqueLanguages);
             }
         }
-    })
+    });
+
     return projectData;
 }
 
@@ -759,12 +780,14 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
 */
 
 function filterTagComponent(filterName,filterValue){
+    // The filterName value of "languages" is still stored in its plural form within the singularFormOfFilterName variable. "Tools" and "technologies" were made singular.
+    const singularFormOfFilterName = filterName === "tools" ? "tool" : filterName === "technologies" ? "technology" : filterName
     return `<div
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
             >
                 <span tabindex="0" role="button" aria-label="Remove ${filterValue} Filter">
-                ${filterName === "looking" ? "Role" : filterName}: ${filterValue}
+                ${filterName === "looking" ? "Role" : singularFormOfFilterName}: ${filterValue}
                 </span>
             </div>`
 }
