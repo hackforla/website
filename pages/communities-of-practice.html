@@ -53,7 +53,7 @@ permalink: /communities-of-practice
                         {% if page.status == "Completed" and item.links.linkedin %}
                             <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile'>
                         {% elsif page.status == "Completed" %}
-                            <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'>
+                            <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer">
                         {% else %}
                             <a href='{{ leader.links.slack }}' target='_blank' title='Slack Direct Message' rel="noopener noreferrer">
                         {%  endif %}
