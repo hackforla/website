@@ -58,6 +58,7 @@ leadership:
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
   - name: Gabriel Vicencio
+    github-handle:
     role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03P33ZNPGW
