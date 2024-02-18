@@ -6,6 +6,12 @@ image: /assets/images/projects/website.png
 alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
+ - name: Aditya Raj
+    role: Agile Coach/Stakeholder Rep
+    links:
+      slack: 'https://midsane.slack.com/team/U06KS928GHX'
+      github: 'https://github.com/AdityaRaj150'
+    picture: https://butwhytho.net/wp-content/uploads/2023/09/Gojo-Jujutsu-Kaisen-But-Why-Tho-2.jpg
   - name: Bonnie Wolfe
     role: Agile Coach/Stakeholder Rep
     links:
