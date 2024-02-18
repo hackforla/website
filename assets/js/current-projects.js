@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 if (window.location.pathname === '/projects-check/') {
                     filterTitle = filterName;                 
                 } else {
-                    filterTitle = 'languages / technologies'  
+                    filterTitle = 'languages / technologies / tools'  
                 }
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
