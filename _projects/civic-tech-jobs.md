@@ -26,7 +26,8 @@ leadership:
       slack: https://hackforla.slack.com/team/U05GDBDPEDR
       github: https://github.com/sabheasley
     picture: https://avatars.githubusercontent.com/sabheasley
-  - name: Jen Chung
+  - name: Jen Chung 
+    github-handle: 
     role: UX/UI Design Lead
     links:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
