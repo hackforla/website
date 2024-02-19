@@ -92,7 +92,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MJA414LU'
       github: 'https://github.com/Thinking-Panda'
     picture: https://avatars.githubusercontent.com/Thinking-Panda
-
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
