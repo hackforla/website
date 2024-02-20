@@ -39,7 +39,7 @@ leadership:
   - name: Hannah Zulueta
     role: Lead Developer
     links:
-      slack: "https://hackforla.slack.com/team/U01G7AH18J3"
+      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
       github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
   - name: Stacey Rebekah Scott
