@@ -40,6 +40,7 @@ leadership:
       github: https://github.com/melkosm
     picture: https://avatars.githubusercontent.com/melkosm
   - name: Jenn Wu
+    github-handle:
     role: UX Researcher Lead
     links:
       slack: https://hackforla.slack.com/team/U05JS3V38TV
