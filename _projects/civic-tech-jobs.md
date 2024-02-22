@@ -53,6 +53,7 @@ leadership:
       github: https://github.com/TCUX
     picture: https://avatars.githubusercontent.com/TCUX
   - name: Lu Feng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
