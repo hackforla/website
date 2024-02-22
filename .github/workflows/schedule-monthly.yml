@@ -72,19 +72,7 @@ jobs:
       with:
         github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         script: |
-          const artifactContent = process.env.TRIM_LISTS;
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js');
-          const createNewIssue = script({g: github, c: context}, artifactContent);
-          return createNewIssue;
+          const artifactContent = process.env.TRIM_LISTS
+          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
+          script({g: github, c: context}, artifactContent)
     
-    # Comments on issue #2607, notifying leads that the above issue has been created
-    - name: Comment issue
-      uses: actions/github-script@v7
-      id: comment-issue
-      with:
-        github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
-        script: |
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/comment-issue.js');
-          const newIssueNumber = ${{ steps.create-new-issue.outputs.result }};
-          script({g: github, c: context}, newIssueNumber);
-

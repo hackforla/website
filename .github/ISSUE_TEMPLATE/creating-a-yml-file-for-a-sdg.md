@@ -2,7 +2,7 @@
 name: Creating a yml file for a SDG
 about: Creating a yml file for a SDG (Sustainable Development Goal)
 title: Creating a yml file for SDG [INSERT SDG NUMBER HERE]
-labels: ['Complexity: Small','p-feature: SDGs','role: front end','size: 0.25pt']
+labels: 'Complexity: Small, p-feature: SDGs, role: front end, size: 0.25pt'
 assignees: ''
 
 ---

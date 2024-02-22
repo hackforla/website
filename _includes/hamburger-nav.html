@@ -1,7 +1,15 @@
 <div id="swapButton">
-  <ul class="inline-list">
-    <li>
-      <button id="burgerImage" >{% include svg/icon-hamburger-nav.svg %}</button>
+  <ul class="inline-list" role="menu" aria-labelledby="burgerImage">
+    <li role="none">
+      <button
+        id="burgerImage"
+        type="button"
+        aria-haspopup="true"
+        aria-controls="headerNav"
+        aria-label="Toggle Navigation"
+      >
+        {% include svg/icon-hamburger-nav.svg %}
+      </button>
     </li>
   </ul>
 </div>

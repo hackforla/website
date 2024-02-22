@@ -7,12 +7,14 @@ alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
 leadership: 
   - name: Karen Coronel
+    github-handle: 
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
   - name: Salima Yacoubi Soussane 
+    github-handle:
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
@@ -24,7 +26,8 @@ leadership:
       slack: https://hackforla.slack.com/team/U05GDBDPEDR
       github: https://github.com/sabheasley
     picture: https://avatars.githubusercontent.com/sabheasley
-  - name: Jen Chung
+  - name: Jen Chung 
+    github-handle: 
     role: UX/UI Design Lead
     links:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
@@ -56,6 +59,7 @@ leadership:
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
   - name: Gabriel Vicencio
+    github-handle:
     role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03P33ZNPGW
@@ -92,6 +96,7 @@ leadership:
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
   - name: Nga Do
+    github-handle:
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U05JS3BS9FD
