@@ -20,7 +20,8 @@ leadership:
       slack: https://hackforla.slack.com/team/U03HUJM7YCX
       github: https://github.com/Salimays
     picture: https://avatars.githubusercontent.com/Salimays
-  - name: Sabrina Heasley
+  - name: Sabrina Heasley 
+    github-handle: 
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U05GDBDPEDR
