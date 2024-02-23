@@ -780,8 +780,7 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
 */
 
 function filterTagComponent(filterName,filterValue){
-    // The filterName value of "languages" is still stored in its plural form within the singularFormOfFilterName variable. "Tools" and "technologies" were made singular.
-    const singularFormOfFilterName = filterName === "tools" ? "tool" : filterName === "technologies" ? "technology" : filterName
+    const singularFormOfFilterName = filterName === "tools" ? "tool" : filterName === "technologies" ? "technology" : filterName === "languages" ? "language" : filterName === "programs" ? "program" : filterName
     return `<div
                 data-filter='${filterName},${filterValue}'
                 class='filter-tag'
