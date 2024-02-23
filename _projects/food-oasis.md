@@ -30,30 +30,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
       github: "https://github.com/VirginiaWu11"
     picture: https://avatars.githubusercontent.com/VirginiaWu11
-  - name: Seiko Igi
-    role: Senior Product Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U02U55MQEQ7"
-      github: "https://github.com/sei1122"
-    picture: https://avatars.githubusercontent.com/sei1122
   - name: Hannah Zulueta
     role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/U9SCMTNK0"
       github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
-  - name: Stacey Rebekah Scott
-    role: Senior Project Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U02U9Q5DUF6"
-      github: "https://github.com/staceyrebekahscott"
-    picture: https://avatars.githubusercontent.com/staceyrebekahscott
-  - name: Erin Dean
-    role: Senior Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U03JSNJ3UKE"
-      github: "https://github.com/itserindean"
-    picture: https://avatars.githubusercontent.com/itserindean
 
 links:
   - name: GitHub
