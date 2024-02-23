@@ -74,6 +74,7 @@ leadership:
       github: https://github.com/Leah0996
     picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Matt Pereira
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U045XKKB5DH
