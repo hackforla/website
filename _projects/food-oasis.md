@@ -30,6 +30,27 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
       github: "https://github.com/VirginiaWu11"
     picture: https://avatars.githubusercontent.com/VirginiaWu11
+  - name: Andy Arensman
+    github-handle: andyarensman
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U04PFGPR19Q
+      github: https://github.com/andyarensman
+    picture: https://avatars.githubusercontent.com/andyarensman
+  - name: Belen Garcia Martinez
+    github-handle: 93Belen
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U056TQ9UA3C
+      github: https://github.com/93Belen
+    picture: https://avatars.githubusercontent.com/93Belen
+  - name: June Zhao
+    github-handle: junjun107
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U03UWG0EP7V
+      github: https://github.com/junjun107
+    picture: https://avatars.githubusercontent.com/junjun107
   - name: Hannah Zulueta
     role: Lead Developer
     links:
