@@ -10,10 +10,15 @@
       "Collabathon",
       "Undebate"
   ],
+  "ignoreWords": [
+      "Harish"
+  ],
   "ignorePaths": [
       "node_modules",
       ".github",
       "test/",
-      "docker-compose.yml"
+      "docker-compose.yml",
+      "_sass/",
+      "_data/internal/credits/"
   ]
 }
