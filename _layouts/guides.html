@@ -77,12 +77,12 @@ layout: default
           <div class="authors-contact">
             {% if item.links.linked-in and item.links.github %}
             <a href="{{ item.links.linked-in }}" target="_blank" title="Linkedin Profile" class="fa fa-linkedin fa-xl" style="margin-right: 13px;
-            text-decoration: none;"></a>
+            text-decoration: none;" rel="noopener noreferrer"></a>
             <a href="{{ item.links.github }}" target="_blank" title="GitHub Profile" class="fa fa-github fa-xl" style="margin-right: 13px; 
             text-decoration: none;"></a>
             {% elsif item.links.linked-in %}
             <a href="{{ item.links.linked-in }}" target="_blank" title="Linkedin Profile" class="fa fa-linkedin fa-xl" style="margin-right: 13px;
-            text-decoration: none;"></a>
+            text-decoration: none;" rel="noopener noreferrer"></a>
             <div class="no-github"></div>
             <div></div>
             {% else %}

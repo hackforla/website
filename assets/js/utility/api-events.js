@@ -147,7 +147,7 @@ function convertTime12to24(time12h) {
  * Function that represent the individual object extracted from the api
  */
 function display_object(item) {
-  if (item && item.project) { 
+  if (item?.project?.name !== "Hack4LA" && !/^Test\b/i.test(item?.project?.name)) { 
     const rv_object = {
       meetingName: item.name,
       name: item.project.name,
@@ -155,7 +155,7 @@ function display_object(item) {
       start: localeTimeIn12Format(item.startTime),
       end: localeTimeIn12Format(item.endTime),
       hflaWebsiteUrl: item.project.hflaWebsiteUrl,
-	  githubUrl: item.project.githubUrl,
+	    githubUrl: item.project.githubUrl,
 	  };
 	  return rv_object;
   }

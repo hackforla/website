@@ -37,6 +37,7 @@ leadership:
       github: 'https://github.com/zuriisawesome'
     picture: 'https://avatars.githubusercontent.com/zuriisawesome'
   - name: Jon Lam
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U01N6C5GDA8'

@@ -67,7 +67,7 @@ technologies:
 location:
   # - Santa Monica
   - Remote
-partner: Department of Neighborhood Empowerment
+partner: Department of Neighborhood Empowerment, Atwater Village
 tools:
   - pnpm
   - GitHub
