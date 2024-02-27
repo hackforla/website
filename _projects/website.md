@@ -60,12 +60,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059K7A1VFB
       github: https://github.com/LRenDO
     picture: https://avatars.githubusercontent.com/LRenDO
-  - name: Ronald Paek
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
-      github: 'https://github.com/ronaldpaek'
-    picture: https://avatars.githubusercontent.com/ronaldpaek
   - name: Richard Kwang
     role: Merge Team
     links:
