@@ -12,6 +12,12 @@ leadership:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
+  - name: Hannah Zulueta
+    role: Lead Developer
+    links:
+      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
+      github: "https://github.com/hanapotski"
+    picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
     role: UX/UR Lead
     links:
@@ -51,12 +57,7 @@ leadership:
       slack: https://hackforla.slack.com/team/U03UWG0EP7V
       github: https://github.com/junjun107
     picture: https://avatars.githubusercontent.com/junjun107
-  - name: Hannah Zulueta
-    role: Lead Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
-      github: "https://github.com/hanapotski"
-    picture: https://avatars.githubusercontent.com/hanapotski
+
 
 links:
   - name: GitHub
