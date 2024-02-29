@@ -82,6 +82,7 @@ leadership:
       github: https://github.com/MattPereira
     picture: https://avatars.githubusercontent.com/MattPereira 
   - name: Bitian Zhang
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
