@@ -218,23 +218,30 @@ function projectDataSorter(projectdata){
  * Given an array of project object as returned by ``retrieveProjectDataFromCollection()``
  * Returns a filter object -> {filter_type1:[filter_value1,filter_value2], filter_type2:[filter_value1,filter_value2], ... }
 */
-function createFilter(sortedProjectData){
+function createFilter(sortedProjectData) {
     if (window.location.pathname === '/projects-check/') {
         return {
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            }        
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat())].filter(v => v != '').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat())].filter(v => v != '').sort(),
+            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat())].filter(v => v != '').sort(), 
+        }
     } else {
+        let combinedData = sortedProjectData.map(item => {
+            let combined = [];
+            if (item.project.languages?.length > 0) combined.push(...item.project.languages);
+            if (item.project.technologies?.length > 0) combined.push(...item.project.technologies);
+            if (item.project.tools?.length > 0) combined.push(...item.project.tools);
+            return combined;
+        }).flat();
+
         return {
-            // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
-            // ^ See issue #1997 for more info on why this is commented out
-            'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
-        }        
+            'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat())].filter(v => v != '').sort(),
+            'technologies': [...new Set(combinedData)].filter(v => v != '').sort(),
+            'status': [...new Set(sortedProjectData.map(item => item.project.status))].sort()
+        }
     }
 }
+
 
 /**
  * Update the history state and the url parameters on checkbox changes
