@@ -30,6 +30,27 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
       github: "https://github.com/VirginiaWu11"
     picture: https://avatars.githubusercontent.com/VirginiaWu11
+  - name: Krista Strucke
+    github-handle: kurikurichan
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U04PHV2HUF6
+      github: https://github.com/kurikurichan
+    picture: https://avatars.githubusercontent.com/kurikurichan
+  - name: Qiqi Zheng
+    github-handle: qiqicodes
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U01LM6SE70A
+      github: https://github.com/qiqicodes
+    picture: https://avatars.githubusercontent.com/qiqicodes
+  - name: Saumil Dhankar
+    github-handle: saumildhankar
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U02AG2K2BB3
+      github: https://github.com/saumildhankar
+    picture: https://avatars.githubusercontent.com/saumildhankar
   - name: Seiko Igi
     role: Senior Product Designer
     links:
