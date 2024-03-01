@@ -51,7 +51,7 @@ permalink: /communities-of-practice
                     <div class='leader-description'>
                         <p class='leader-description-field'><strong>Name: </strong>
                         {% if page.status == "Completed" and item.links.linkedin %}
-                            <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile'>
+                        <a href='{{ leader.links.linkedin }}' target='_blank' title='Linkedin Profile' rel="noopener noreferrer">
                         {% elsif page.status == "Completed" %}
                             <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile' rel="noopener noreferrer">
                         {% else %}
@@ -80,7 +80,7 @@ permalink: /communities-of-practice
                 
                 {% if community[1].links[1].url %}
                     {% assign url_links = true %}
-                    <a href="{{ community[1].links[1].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank"
+                    <a href="{{ community[1].links[1].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank" rel="noopener noreferrer"
                         title="{{community[1].name}} Github Repo">
                         <img class="button-icon" id="github-icon" src="/assets/images/communities-of-practice/icon-github-small.svg" alt="github icon" />
                         View GitHub
