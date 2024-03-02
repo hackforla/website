@@ -34,7 +34,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
       github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
-links:
+links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
   - name: Slack
@@ -42,13 +42,13 @@ links:
   - name: Overview
     url: '../assets/pdfs/Guides-Team-One-Sheet.pdf'
 looking:
-technologies:
+technologies: 
 location:
   # - Santa Monica
   # - Downtown LA
   - Remote
 partner:
-tools:
+tools: 
 program-area:
   - Civic Tech Infrastructure
 status: Active
