@@ -1,24 +1,24 @@
 ---
-identification: "386323061"
+identification: '386323061'
 title: Guides Team
 description: The Hack for LA Guides Team project is creating guides and templates from the effective practices that HfLA has developed and iterated from our projects. HfLA Guides aim to share replicable processes and practices from Engineering, UI/UX, Product Management, Data Science, Marketing Fundraising, DevOps, Admin, and Professional Development. The project seeks to further grow HfLA’s peer learning and iterative culture, and ultimately improve outcomes for the entire civic tech ecosystem.
 # card image should be 600px wide x 400px high
 image: /assets/images/projects/guides-team.jpg
-alt: "Guides Team"
+alt: 'Guides Team'
 # hero image should be 1500px wide x 700px high
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
   - name: Bonnie Wolfe
     role: Agile Coach
     links:
-      slack: "https://hackforla.slack.com/team/UE1UG1YFP"
-      github: "https://github.com/ExperimentsInHonesty"
+      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
+      github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Sarah Edwards
     role: Product Manager
     links:
-      slack: "https://hackforla.slack.com/team/U03KBU16APN"
-      github: "https://github.com/edwardsarah"
+      slack: 'https://hackforla.slack.com/team/U03KBU16APN'
+      github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
   - name: Ayma Rahman
     github-handle: aymarmsba
@@ -31,16 +31,16 @@ leadership:
     github-handle: the-techgurl
     role: UX Research Lead
     links:
-      slack: "https://hackforla.slack.com/team/U05JS9NLNQJ"
-      github: "https://github.com/the-techgurl"
+      slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
+      github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
 links:
   - name: GitHub
-    url: "https://github.com/hackforla/guides"
+    url: 'https://github.com/hackforla/guides'
   - name: Slack
-    url: "https://hackforla.slack.com/archives/C028T9XU9S5"
+    url: 'https://hackforla.slack.com/archives/C028T9XU9S5'
   - name: Overview
-    url: "../assets/pdfs/Guides-Team-One-Sheet.pdf"
+    url: '../assets/pdfs/Guides-Team-One-Sheet.pdf'
 looking:
 technologies:
 location:
