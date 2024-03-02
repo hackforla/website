@@ -235,6 +235,8 @@ function createFilter(sortedProjectData) {
         }).flat();
 
         return {
+            // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
+            // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat())].filter(v => v != '').sort(),
             'technologies': [...new Set(combinedData)].filter(v => v != '').sort(),
             'status': [...new Set(sortedProjectData.map(item => item.project.status))].sort()
