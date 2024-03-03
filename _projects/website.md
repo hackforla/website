@@ -36,12 +36,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
-  - name: Christina Or
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
-      github: 'https://github.com/christinaor'
-    picture: https://avatars.githubusercontent.com/christinaor
   - name: Drake Nguyen
     role: Merge Team
     links:
