@@ -294,7 +294,7 @@ function formatComment(assignees, labelString) {
 }
 
 function isCommentByBot(data, botLogin) {
-
+  return data.actor.login === botLogin;
 }
 
 module.exports = main
