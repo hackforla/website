@@ -54,12 +54,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059K7A1VFB
       github: https://github.com/LRenDO
     picture: https://avatars.githubusercontent.com/LRenDO
-  - name: Richard Kwang
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04U531MS5P
-      github: https://github.com/kwangric
-    picture: https://avatars.githubusercontent.com/kwangric
   - name: J Pham
     github-handle: jphamtv
     role: Merge Team
