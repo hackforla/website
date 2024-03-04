@@ -28,6 +28,7 @@ fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedB
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
 async function main({ g, c }, columnId) {
+  console.log("Hello GitHub Action World!");
   github = g;
   context = c;
   // Retrieve all issue numbers from a column
@@ -109,8 +110,6 @@ async function* getIssueNumsFromColumn(columnId) {
 function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
-
-  console.log("Hello GitHub Action World!");
 
   for (let i = timeline.length - 1; i >= 0; i--) {
     let eventObj = timeline[i];
