@@ -293,4 +293,8 @@ function formatComment(assignees, labelString) {
   return completedInstuctions
 }
 
+function isCommentByBot(data, botLogin) {
+
+}
+
 module.exports = main
