@@ -57,6 +57,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U03UWG0EP7V
       github: https://github.com/junjun107
     picture: https://avatars.githubusercontent.com/junjun107
+  - name: Krista Strucke
+    github-handle: kurikurichan
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U04PHV2HUF6
+      github: https://github.com/kurikurichan
+    picture: https://avatars.githubusercontent.com/kurikurichan
+  - name: Qiqi Zheng
+    github-handle: qiqicodes
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U01LM6SE70A
+      github: https://github.com/qiqicodes
+    picture: https://avatars.githubusercontent.com/qiqicodes
+  - name: Saumil Dhankar
+    github-handle: saumildhankar
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U02AG2K2BB3
+      github: https://github.com/saumildhankar
+    picture: https://avatars.githubusercontent.com/saumildhankar
 
 
 links:

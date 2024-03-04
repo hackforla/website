@@ -54,12 +54,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059K7A1VFB
       github: https://github.com/LRenDO
     picture: https://avatars.githubusercontent.com/LRenDO
-  - name: Adrian Ang
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
-      github: 'https://github.com/adrianang'
-    picture: https://avatars.githubusercontent.com/adrianang
   - name: J Pham
     github-handle: jphamtv
     role: Merge Team
