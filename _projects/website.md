@@ -24,6 +24,12 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U046PD8UT55'
       github: 'https://github.com/roslynwythe'
     picture: https://avatars.githubusercontent.com/roslynwythe
+  - name: Sarah Sanger
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
   - name: Will Gillis
     role: Merge Team
     links:
