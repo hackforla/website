@@ -28,7 +28,6 @@ fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedB
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
  */
 async function main({ g, c }, columnId) {
-  console.log("Hello GitHub Action World!");
   github = g;
   context = c;
   columnId = 6;
