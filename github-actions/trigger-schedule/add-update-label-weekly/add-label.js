@@ -14,7 +14,6 @@ const commentByDays = 7; // If there is an update within 14 days but no update w
 const threeDayCutoffTime = new Date()
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
-sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - 10); // for testing purposes, let's pretend it's 10 days before today.
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
 const fourteenDayCutoffTime = new Date()
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
