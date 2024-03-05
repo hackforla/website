@@ -31,6 +31,7 @@ async function main({ g, c }, columnId) {
   console.log("Hello GitHub Action World!");
   github = g;
   context = c;
+  columnId = 6;
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
   console.log(columnId);
