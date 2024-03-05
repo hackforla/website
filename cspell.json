@@ -20,7 +20,6 @@
       "docker-compose.yml",
       "_sass/",
       "_data/internal/credits/",
-      "_includes/design-system-page/examples/",
-      "_config.yml"
+      "_includes/design-system-page/examples/"
   ]
 }
