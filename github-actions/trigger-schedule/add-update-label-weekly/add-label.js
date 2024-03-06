@@ -134,9 +134,9 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
-    eventTimestamp = (new Date()).setDate((new Date(eventTimestamp)).getDate - 8);
+    eventTimestamp = (new Date()).setDate((new Date(eventTimestamp)).getDate() - 8);
     eventTimestamp = eventTimestamp.toString(); // pretend the eventTimestamp is 8 days ago for testing purposes
-    console.log(eventTimestamp);
+    console.log("eventTimestamp: " + eventTimestamp);
 
     // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
     if (!lastCommentTimestamp && eventType === 'commented' && isCommentByAssignees(eventObj, assignees)) {
