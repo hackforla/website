@@ -134,7 +134,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
-    let formattedEventTimestamp = new Date(eventTimestamp).toDateString();
+    let formattedEventTimestamp = new Date(eventTimestamp).toString();
     console.log("Formatted eventTimestamp: " + formattedEventTimestamp);
     
     // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
