@@ -134,8 +134,8 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
-    eventTimestamp = (new Date()).setDate((new Date(eventTimestamp)).getDate() - 6);
-    eventTimestamp = eventTimestamp.toString(); // pretend the eventTimestamp is 6 days before what it really is for testing purposes
+    eventTimestamp = (new Date()).setDate((new Date(eventTimestamp)).getDate() - 0);
+    eventTimestamp = eventTimestamp.toString(); // pretend the eventTimestamp is 0 days before what it really is for testing purposes
     let formattedTimeStamp = new Date();
     formattedTimeStamp.setTime(eventTimestamp);
     console.log("eventTimestamp: " + formattedTimeStamp);
