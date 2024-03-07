@@ -15,6 +15,7 @@ leadership:
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Aleiya Gafar
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01K7QMQ4TC'
