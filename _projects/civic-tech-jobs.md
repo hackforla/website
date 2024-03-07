@@ -95,6 +95,7 @@ leadership:
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
   - name: Sarah Sanger
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U02M686LYET
