@@ -134,6 +134,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
+    console.log(typeof(eventTimestamp));
     let formattedEventTimestamp = new Date(eventTimestamp).toString();
     console.log("Formatted eventTimestamp: " + formattedEventTimestamp);
     
