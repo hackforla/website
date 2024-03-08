@@ -89,7 +89,7 @@ leadership:
       github: 'https://github.com/Tekkieware'
     picture: https://avatars.githubusercontent.com/Tekkieware
   - name: Maxwell Countryman Skewes
-    githube-handle:
+    github-handle:
     role: Front End Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R6RWQR3L'
