@@ -158,6 +158,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         comment_id: eventObj.id
       })
       .then((comment) => {
+        console.log("The comment says this:");
         console.log(comment);
       });
     }
