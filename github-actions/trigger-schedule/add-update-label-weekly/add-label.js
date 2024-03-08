@@ -149,6 +149,18 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     else if (!lastAssignedTimestamp && eventType === 'assigned' && assignees.includes(eventObj.assignee.login)) {
       lastAssignedTimestamp = eventTimestamp;
     }
+
+    if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
+      console.log("Comment create more than 7 days ago. Hiding as outdated...");
+      github.rest.issues.getComment({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        comment_id: eventObj.id
+      })
+      .then((comment) => {
+        console.log(comment);
+      });
+    }
   }
 
   if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented by assignee within 3 days
@@ -179,19 +191,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     return { result: true, labels: toUpdateLabel } // outdated, add 'To Update!' label
   }
 
-  let momentIsRecent = isMomentRecent(eventTimestamp, sevenDayCutoffTime);
-  console.log(momentIsRecent);
-  if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
-    console.log("Comment create more than 7 days ago. Hiding as outdated...");
-    github.rest.issues.getComment({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      comment_id: eventObj.id
-    })
-    .then((comment) => {
-      console.log(comment);
-    });
-  }
 
   // if no comment or assigning found within 14 days, issue is outdated and add '2 weeks inactive' label
   console.log(`Issue #${issueNum} has no update within 14 days, use '2 weeks inactive' label`)
