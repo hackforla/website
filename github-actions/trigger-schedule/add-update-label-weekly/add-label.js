@@ -179,6 +179,8 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     return { result: true, labels: toUpdateLabel } // outdated, add 'To Update!' label
   }
 
+  let momentIsRecent = isMomentRecent(eventTimestamp, sevenDayCutoffTime);
+  console.log(momentIsRecent);
   if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
     console.log("Comment create more than 7 days ago. Hiding as outdated...");
     github.rest.issues.getComment({
