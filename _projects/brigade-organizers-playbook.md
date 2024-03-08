@@ -9,6 +9,7 @@ program-area:
   - Civic Tech Infrastructure
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: BOP Project Lead
     links:
       slack: 'https://hackforla.slack.com/archives/C01Q24YF56J'
