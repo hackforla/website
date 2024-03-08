@@ -16,6 +16,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Cynthia Kiser
+    github-handle:
     role: Architectural Advisor
     links: 
       slack: 'https://hackforla.slack.com/team/U04MFPQDN'
