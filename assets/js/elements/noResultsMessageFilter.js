@@ -1,6 +1,6 @@
 function noResultsMessageComponent(filterParams, textColor) {
     let filterList = ``
-    let filterNameSingular = {"technologies" : "Technology", "languages" : "Language", "tools": "Tool", "programs" : "Program"}
+    let filterNameSingular = {"technologies": "Technology", "languages": "Language", "tools": "Tool", "programs": "Program", "status": "Status"}
     for (let key in filterParams) {
         if (filterParams[key].length) {
             for (let i = 0; i < filterParams[key].length; i++) {
