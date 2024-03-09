@@ -1,6 +1,6 @@
 name: Update Label Directory
 
-# This action triggered by change to Labels, updates github-actions/utils/_data/label-directory.json
+# This action updates github-actions/utils/_data/label-directory.json
 on:
   label:
     types: [edited, created]
@@ -29,9 +29,7 @@ jobs:
      - name: Update label directory
        uses: stefanzweifel/git-auto-commit-action@v5.0.0
        with:
-         # Glob pattern of file which should be added to the commit
+         # Glob pattern of file to commit, and opt. commit message + author
          file_pattern: github-actions/utils/_data/label-directory.json
-         
-         # Optional commit message and author settings
          commit_message: Update label directory
          commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org> 
