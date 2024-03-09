@@ -4,6 +4,10 @@ const fs = require('fs');
 var github;
 var context;
 
+/*
+ * Function triggered by the `update-label-directory.yml`
+ *
+ */
 async function main({ g, c }) {
   
   github = g;
