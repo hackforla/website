@@ -6,7 +6,8 @@ var context;
 
 /*
  * Function triggered by the `update-label-directory.yml`
- *
+ * @param {Object} g     - github object from actions/github-script
+ * @param {Object} c     - context object from actions/github-script
  */
 async function main({ g, c }) {
   
