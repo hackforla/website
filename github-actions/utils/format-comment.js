@@ -4,7 +4,7 @@
  * @param {String} placeholderString - the placeholder to be replaced in the md file
  * @param {String} filePathToFormat - the path of the md file to be formatted
  * @param {String} textToFormat - the text to be formatted. If null, use the md file provided in the path. If provided, format that text
- * @returns {String} - returns a formatted comment to be posted on github
+ * @returns {String} - returns a formatted comment to be posted on GitHub
  */
 function formatComment({ replacementString, placeholderString, filePathToFormat, textToFormat }, fs) {
     const text = textToFormat === null ? fs.readFileSync(filePathToFormat).toString('utf-8') : textToFormat

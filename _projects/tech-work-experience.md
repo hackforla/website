@@ -92,7 +92,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/ericvennemeyer
   
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/internship'
   - name: Slack
     url: 'https://hackforla.slack.com/messages/C01VAUPU788'

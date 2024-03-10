@@ -85,7 +85,7 @@ async function fetchContributors(){
       let pageNum = 1;
       let result = [];
   
-      // Since Github only allows to fetch max 100 items per request, we need to 'flip' pages
+      // Since GitHub only allows to fetch max 100 items per request, we need to 'flip' pages
       while(true){
         // Fetch 100 items per each page (`pageNum`)
         const contributors = await octokit.request(api, {

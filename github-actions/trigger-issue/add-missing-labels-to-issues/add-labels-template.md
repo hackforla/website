@@ -7,7 +7,7 @@ Please don't forget to add the proper labels to this issue. Currently, the label
 
 **NOTE: Please ignore this comment if you do not have 'write' access to this directory.**
 
-To add a label, take a look at Github's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
+To add a label, take a look at GitHub's documentation [here](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
 
 Also, don't forget to remove the "missing labels" afterwards.
 To remove a label, the process is similar to adding a label, but you select a currently added label to remove it.
