@@ -14,12 +14,13 @@ async function main({ g, c }) {
   github = g;
   context = c;
 
-  // Proceed only if the label name changed or if the label is completely new
-  if((context.payload.action === 'edited' && context.payload.changes.name) || (context.payload.action === 'created')) {
+  // Proceed only if the label name changed, if the label is new, or if the label has been deleted
+  if((context.payload.action === 'edited' && context.payload.changes.name) || context.payload.action === 'created' || context.payload.action === 'deleted') {
 
     const labelId = context.payload.label.id + '';
     const labelName = context.payload.label.name;
 
+    
     // Retrieve label directory
     const filepath = 'github-actions/utils/_data/label-directory.json';
     const rawData = fs.readFileSync(filepath, 'utf8');
@@ -27,16 +28,17 @@ async function main({ g, c }) {
     let keyName = '';
 
         
-    // Check if labelId exists in label directory, if so, set keyName
-    if(context.payload.action === 'edited') {
+    // If label is to be edited or deleted, check for labelId in label directory and return keyName
+    if(context.payload.action === 'edited' || context.payload.action === 'deleted') {
       for(let [key, value] of Object.entries(data)) {
         if (value.includes(labelId)) {
           keyName = key;
           break;
         }
-      };
-    }
+      }
+    };
 
+    
     // If labelId does not exist, create new (camelCased) keyName so label entry can be added to directory
     if(context.payload.action === 'created') {
       const isAlphanumeric = str => /^[a-z0-9]+$/gi.test(str);
@@ -50,9 +52,10 @@ async function main({ g, c }) {
       }
     };
 
-    // Log the entry, then save to data file
+    
+    // Log the label information
     console.log('-------------------------------------------------------');
-    console.log('Current info for edited label:');
+    console.log('Label reference info:');
     console.log(context.payload.label);
     console.log('-------------------------------------------------------');
     if(context.payload.action === 'edited') {
@@ -60,10 +63,17 @@ async function main({ g, c }) {
       console.log(context.payload.changes);
       console.log('-------------------------------------------------------');
     }
-    console.log('Writing data:\n {"' + keyName + '": ["' + labelId + '", "' + labelName + '"]}\n');
+
     
-    // Save entry to data file
-    data[keyName] = [labelId, labelName];
+    // Update directory (delete, edit, or create) and log
+    if(context.payload.action === 'deleted') {
+      delete data[keyName];
+      console.log('\nDeleted label:\n {"' + keyName + '": ["' + labelId + '", "' + labelName + '"]}\n');
+    } else {
+      data[keyName] = [labelId, labelName];
+      console.log('\nWriting data:\n {"' + keyName + '": ["' + labelId + '", "' + labelName + '"]}\n');
+    }
+
     
     // Write data file in prep for committing changes to label directory
     fs.writeFile(filepath, JSON.stringify(data, null, 2), (err) => {
