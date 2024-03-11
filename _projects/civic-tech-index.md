@@ -10,6 +10,7 @@ alt: "Civic Tech Index"
 image-hero: /assets/images/projects/civic-tech-index-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: Agile Coach and Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
