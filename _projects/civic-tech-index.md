@@ -23,6 +23,7 @@ leadership:
       github: 'https://github.com/cnk'
     picture: https://avatars.githubusercontent.com/cnk
   - name: Kevin Phan
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02B90U9FPS'
