@@ -336,8 +336,21 @@
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
-		cloneCardTemplate.querySelector('.project-inner.wins-card-team').innerHTML = `<span class="wins-team-role-color">Team(s): </span> ${card[team]}`;
-		cloneCardTemplate.querySelector('.project-inner.wins-card-role').innerHTML = `<span class="wins-team-role-color">Role(s): </span> ${card[role]}`;
+		const teamSpanElement = document.createElement('span');
+		teamSpanElement.classList.add('wins-team-role-color');
+		teamSpanElement.textContent = `Team(s): ${cards[team]}`;
+
+		const roleSpanElement = document.createElement('span');
+		roleSpanElement.classList.add('wins-team-role-color');
+		roleSpanElement.textContent = `Role(s): ${cards[role]}`;
+		
+		cloneCardTemplate
+			.querySelector('.project-inner.wins-card-team')
+			.appendChild(teamSpanElement);
+		
+		cloneCardTemplate
+			.querySelector('.project-inner.wins-card-role')
+			.appendChild(roleSpanElement);
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
