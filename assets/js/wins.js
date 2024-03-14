@@ -336,21 +336,26 @@
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
+		// Avoiding using innerHTML due to security risks
+		// Creating the elements 
+		const teamContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-team');
+		const roleContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-role');
 		const teamSpanElement = document.createElement('span');
 		teamSpanElement.classList.add('wins-team-role-color');
-		teamSpanElement.textContent = `Team(s): ${card[team]}`;
-
 		const roleSpanElement = document.createElement('span');
 		roleSpanElement.classList.add('wins-team-role-color');
-		roleSpanElement.textContent = `Role(s): ${card[role]}`;
 		
-		cloneCardTemplate
-			.querySelector('.project-inner.wins-card-team')
-			.appendChild(teamSpanElement);
-		
-		cloneCardTemplate
-			.querySelector('.project-inner.wins-card-role')
-			.appendChild(roleSpanElement);
+		// Preparing the text of the elements 
+		teamSpanElement.textContent = "Team(s): ";
+		const teamTextNode = document.createTextNode(card[team]);
+		roleSpanElement.textContent = "Role(s): ";
+		const roleTextNode = document.createTextNode(card[role]);
+
+		// Inserting the elements into the DOM
+		teamContainer.appendChild(teamSpanElement);
+		teamContainer.appendChild(teamTextNode);
+		roleContainer.appendChild(roleSpanElement);
+		roleContainer.appendChild(roleTextNode);
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
