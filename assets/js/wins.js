@@ -496,7 +496,7 @@ function changeSeeMoreBtn(x) {
 	  	bigQuoteImg.alt = "Quote from " + data[i][name];
 
   		const overlayIcons = document.querySelector('#overlay-icons');
-  		overlayIcons.innerHTML = "";
+  		overlayIcons.textContent = "";
 
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
@@ -505,16 +505,16 @@ function changeSeeMoreBtn(x) {
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
-		overlayName.innerHTML = data[i][name];
+		overlayName.textContent = data[i][name];
 
   		const overlayTeams = document.querySelector('#overlay-teams');
-  		overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
+  		overlayTeams.textContent = `Team(s): ${data[i][team]}`;
 
   		const overlayRoles = document.querySelector('#overlay-roles');
-  		overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
+  		overlayRoles.textContent = `Role(s): ${data[i][role]}`;
 
   		const overlayOverview = document.querySelector('#overlay-overview');
-  		overlayOverview.innerHTML = data[i][overview];
+  		overlayOverview.textContent = data[i][overview];
 
 		insertIcons('#overlay-info', data[i][win], 'overlay')
 
@@ -537,7 +537,7 @@ function changeSeeMoreBtn(x) {
 
 	  const overlayInfo = document.querySelector('#overlay-info');
 
-	  overlayInfo.innerHTML = '';
+	  overlayInfo.textContent = '';
   }
 
 
