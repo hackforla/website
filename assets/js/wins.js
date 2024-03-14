@@ -338,11 +338,11 @@
 
 		const teamSpanElement = document.createElement('span');
 		teamSpanElement.classList.add('wins-team-role-color');
-		teamSpanElement.textContent = `Team(s): ${cards[team]}`;
+		teamSpanElement.textContent = `Team(s): ${card[team]}`;
 
 		const roleSpanElement = document.createElement('span');
 		roleSpanElement.classList.add('wins-team-role-color');
-		roleSpanElement.textContent = `Role(s): ${cards[role]}`;
+		roleSpanElement.textContent = `Role(s): ${card[role]}`;
 		
 		cloneCardTemplate
 			.querySelector('.project-inner.wins-card-team')
