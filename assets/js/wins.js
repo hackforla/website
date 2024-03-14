@@ -432,13 +432,13 @@ function changeSeeMoreBtn(x) {
 	const span = document.querySelectorAll(".see-more-div");
 	if (x.matches) {
 		for(let i = 0; i < span.length; i++) {
-			span[i].innerHTML = ''
+			span[i].textContent = ''
 		}
 	} else {
 		for(let i = 0; i < span.length; i++) {
 			// removes show-less-btn class
 			span[i].setAttribute('class', 'see-more-div');
-			span[i].innerHTML = "See More";
+			span[i].textContent = "See More";
 		}
 	}
   }
