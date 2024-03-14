@@ -236,8 +236,8 @@
   	if (document.querySelectorAll('.wins-card').length == 0) {
   		const page = document.querySelector('.wins-page-contain');
   		const p = document.createElement('p');
+  		p.textContent = "No one has shared a win yet...be the first!";
   		page.appendChild(p);
-  		p.innerHTML = "No one has shared a win yet...be the first!";
   	}
   }
 
