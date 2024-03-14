@@ -35,6 +35,7 @@ leadership:
       github: https://github.com/smsada
     picture: https://avatars.githubusercontent.com/smsada
   - name: Briana Bennett
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U031BRKV59C'
