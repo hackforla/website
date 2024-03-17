@@ -34,6 +34,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
       github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
+  - name: Mary Gabrielian
+    github-handle: marygabrielian
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U06KMNL8ETY'
+      github: 'https://github.com/marygabrielian'
+    picture:  https://avatars.githubusercontent.com/marygabrielian
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
