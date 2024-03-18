@@ -1,7 +1,7 @@
 /**
  * Function that returns the timeline of an issue
- * @param {Object} g                      - github object from actions/github-script
- * @param {Object} c                      - context object  from actions/github-script
+ * @param {Object} github                 - github object from actions/github-script
+ * @param {Object} context                - context object from actions/github-script
  * @param {Number} issueNum               - the issue number
  * @returns {Object} timelineArray        - an array containing the timeline of issue events
  */
