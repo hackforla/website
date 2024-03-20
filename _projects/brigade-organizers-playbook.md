@@ -34,7 +34,8 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
       github: 'https://github.com/ermbrown'
     picture: https://avatars.githubusercontent.com/ermbrown
-  - name: Katrina Bonoan 
+  - name: Katrina Bonoan
+    github-handle: 
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052LER0010'
