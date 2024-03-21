@@ -2,6 +2,7 @@
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
 var fs = require("fs");
+const https = require("https");
 // Global variables
 var github;
 var context;
@@ -34,6 +35,7 @@ async function main({ g, c }, columnId) {
   const issueNums = getIssueNumsFromColumn(columnId);
   console.log(columnId);
   console.log(issueNums);
+
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum, github, context);
     const timelineArray = Array.from(timeline);
