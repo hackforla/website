@@ -51,11 +51,36 @@ async function makeComment(){
     }
   }
 
+  const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
+
+  const query = `query($owner:String!, $name:String!, $number:Int!) {
+    repository(owner:$owner, name:$name) {
+      issue(number:$number) {
+        projectCards {
+          nodes {
+            column {
+              name
+            }
+          }
+        }
+      }
+    }
+  }`;
+  const variables = {
+    owner: context.repo.owner,
+    name: context.repo.repo,
+    number: context.payload.issue.number
+  }
+  const res = await github.graphql(query, variables);
+  const columnName = res.repository.issue.projectCards.nodes[0].column.name;
+
+  const filename = !isDraft && columnName == 'New Issue Approval' ? 'unassign-from-NIA.md' : 'preliminary-update.md';
+  const filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
 
   const commentObject = {
     replacementString: issueAssignee,
     placeholderString: '${issueAssignee}',
-    filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
+    filePathToFormat: filePathToFormat,
     textToFormat: null
   }
 
