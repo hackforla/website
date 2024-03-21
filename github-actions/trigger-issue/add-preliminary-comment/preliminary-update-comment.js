@@ -53,7 +53,7 @@ async function makeComment(){
 
   const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
 
-  const query = `query($owner:String!, $name:String!, $number:Int!) {
+  const queryColumn = `query($owner:String!, $name:String!, $number:Int!) {
     repository(owner:$owner, name:$name) {
       issue(number:$number) {
         projectCards {
@@ -70,11 +70,24 @@ async function makeComment(){
     owner: context.repo.owner,
     name: context.repo.repo,
     number: context.payload.issue.number
-  }
-  const res = await github.graphql(query, variables);
-  const columnName = res.repository.issue.projectCards.nodes[0].column.name;
+  };
+  const resColumn = await github.graphql(queryColumn, variables);
+  const columnName = resColumn.repository.issue.projectCards.nodes[0].column.name;
 
-  const filename = !isDraft && columnName == 'New Issue Approval' ? 'unassign-from-NIA.md' : 'preliminary-update.md';
+  let filename = 'preliminary-update.md';
+
+  // Unassign if issue is in New Issue Approval column of Project Board and is not labeled 'Draft'
+  if (!isDraft && columnName == 'New Issue Approval') {
+    filename = 'unassign-from-NIA.md';
+
+    await github.rest.issues.removeAssignees({
+      owner: variables.owner,
+      repo: variables.name,
+      issue_number: variables.number,
+      assignees: [issueAssignee],
+    });
+  }
+
   const filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
 
   const commentObject = {
