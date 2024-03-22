@@ -8,8 +8,8 @@ var github;
 var context;
 
 // Set variables to avoid hard-coding
-const org = context.repo.owner;
-const repo = context.repo.repo;
+const org = 'hackforla';
+const repo = 'website';
 const baseTeam = 'website';
 const writeTeam = 'website-write';
 const mergeTeam = 'website-merge';
