@@ -63,6 +63,7 @@ async function main({ g, c }, results) {
  * @param {Object} previousContributors   - List of contributors active since previous date
  * @param {Object} inactiveWithOpenIssue  - Inactive members with open issues
  * @returns {Array} removedMembers        - List of members that were removed 
+ * @returns {Object} cannotRemoveYet      - List of members that cannot be removed due to open issues
  */
 async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue){
   const removedMembers = [];
@@ -182,8 +183,8 @@ async function checkMemberIsNotNew(member){
 
 /**
  * Function to find the previous month's "Review Inactive Team Members" issue and extract the raw notified members list
- * @params {}              - none
- * @returns {Array}        - list of notified members from prev. month
+ * @params {}                             - none
+ * @returns {Array} notifiedMembers       - list of notified members from prev. month
  */
  async function readPreviousNotifyList(){
 
