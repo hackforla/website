@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "create-new-codeql-issues-5059" ]
+    branches: [ "gh-pages" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "create-new-codeql-issues-5059s" ]
+    branches: [ "gh-pages" ]
   schedule:
     - cron: '30 5 * * 5'
 
@@ -86,7 +86,7 @@ jobs:
           // Get a list of open CodeQL alerts
           const response = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/code-scanning/alerts?state=active`, {
             headers: {
-              Authorization: `token ${{secrets.H4LA_TOKEN}}`
+              Authorization: `token ${{secrets.GITHUB_TOKEN}}`
             }
           });
 
@@ -104,7 +104,7 @@ jobs:
               // Check if there is an existing tracking issue for the alert
               const searchResponse = await fetch(`https://api.github.com/search/issues?q=repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`, {
                 headers: {
-                  Authorization: `token ${{secrets.H4LA_TOKEN}}`
+                  Authorization: `token ${{secrets.GITHUB_TOKEN}}`
                 }
               });
 
@@ -131,7 +131,7 @@ jobs:
                 const createIssueResponse = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/issues`, {
                   method: 'POST',
                   headers: {
-                    Authorization: `token ${{secrets.H4LA_TOKEN}}`,
+                    Authorization: `token ${{secrets.GITHUB_TOKEN}}`,
                     'Content-Type': 'application/json'
                   },
                   body: JSON.stringify({
