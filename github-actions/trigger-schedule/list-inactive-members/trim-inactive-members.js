@@ -228,4 +228,4 @@ function writeData(removedContributors, notifiedContributors, cannotRemoveYet){
    });
 }
 
-module.exports = main
+module.exports = main;
