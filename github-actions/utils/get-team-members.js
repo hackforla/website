@@ -32,4 +32,4 @@ async function getTeamMembers(github, context, getTeam){
   return allMembers;
 }
 
-module.exports = getTeamMembers
+module.exports = getTeamMembers;
