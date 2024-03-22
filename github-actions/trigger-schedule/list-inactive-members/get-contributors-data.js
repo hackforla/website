@@ -7,8 +7,8 @@ var github;
 var context;
 
 // Set variables to avoid hard-coding
-const org = context.repo.owner;
-const repo = context.repo.repo;
+const org = 'hackforla';
+const repo = 'website';
 const baseTeam = 'website';
 const writeTeam = 'website-write';
 const mergeTeam = 'website-merge';
@@ -129,7 +129,7 @@ async function fetchContributors(dates){
           } 
           // If timeline is more than two months ago, add to open issues with inactive 
           // comments with flag = true if issue is "Pre-work Checklist", false otherwise
-          else if(date == twoMonthsAgo){
+          else if(date === dates[1]){
             if(contributorInfo.title.includes("Pre-work Checklist")){
               inactiveWithOpenIssue[assignee] = [issueNum, true];
             } else {
@@ -143,7 +143,7 @@ async function fetchContributors(dates){
     for(const permanentMember in permanentMembers){
       allContributorsSince[permanentMember] = true;
     }
-    if(date == oneMonthAgo){
+    if(date === dates[0]){
       allContributorsSinceOneMonthAgo = allContributorsSince;
     } else {
       allContributorsSinceTwoMonthsAgo = allContributorsSince;
