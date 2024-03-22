@@ -24,4 +24,4 @@ async function addTeamMember(github, context, team, username){
     } 
 }
 
-module.exports = addTeamMember
+module.exports = addTeamMember;
