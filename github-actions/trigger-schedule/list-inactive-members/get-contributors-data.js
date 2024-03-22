@@ -180,4 +180,4 @@ function isEventOutdated(date, timeline, assignee) {
   return { result: true };
 }
 
-module.exports = main
+module.exports = main;
