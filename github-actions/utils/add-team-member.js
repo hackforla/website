@@ -2,8 +2,8 @@
  * Function to return list of current team members
  * @param {Object} github      - github object from actions/github-script
  * @param {Object} context     - context object from actions/github-script
- * @param {String} getTeam     - team from which to get members
- * @returns {Array} allMembers - Current members of team
+ * @param {String} team        - team to check for member
+ * @param {String} username    - member to check for team membership
  */
 async function addTeamMember(github, context, team, username){
 
