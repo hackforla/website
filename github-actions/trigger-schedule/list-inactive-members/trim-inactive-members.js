@@ -84,7 +84,7 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
         const teams = [writeTeam, mergeTeam];
         for(const team of teams){
           await github.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
-            org: org,
+            org: context.repo.owner,
             team_slug: team,
             username: username,
           });
@@ -110,16 +110,16 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
 async function closePrework(member, issueNum){ 
   // Close the assignee's "Pre-work Checklist" and add comment
   await github.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
-    owner: org,
-    repo: repo,
+    owner: context.repo.owner,
+    repo: context.repo.repo,
     issue_number: issueNum,
     state: 'closed'
   });
   console.log('Closing "Pre-work Checklist" issue number ' + issueNum + ' for ' + member);
   // Add comment to issue
   await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
-    owner: org,
-    repo: repo,
+    owner: context.repo.owner,
+    repo: context.repo.repo,
     issue_number: issueNum,
     body: 'The Hack for LA Bot has closed this issue due to member inactivity.'
   });
