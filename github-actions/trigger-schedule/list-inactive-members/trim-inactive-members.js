@@ -7,13 +7,11 @@ const addTeamMember = require('../../utils/add-team-member');
 var github;
 var context;
 
-// Set variables to avoid hard-coding
 const org = 'hackforla';
 const repo = 'website';
 const baseTeam = 'website';
 const writeTeam = 'website-write';
 const mergeTeam = 'website-merge';
-// const adminTeam = 'website-admins';   <-- Not used currently
 
 
 
