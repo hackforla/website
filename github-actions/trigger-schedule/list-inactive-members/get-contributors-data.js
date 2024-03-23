@@ -6,14 +6,6 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
-// Set variables to avoid hard-coding
-const org = 'hackforla';
-const repo = 'website';
-const baseTeam = 'website';
-const writeTeam = 'website-write';
-const mergeTeam = 'website-merge';
-// const adminTeam = 'website-admins';   <-- Not used currently
-const maintTeam = 'website-maintain';
 
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
@@ -39,6 +31,10 @@ let dates = [oneMonthAgo, twoMonthsAgo];
 async function main({ g, c }) {
   github = g;
   context = c;
+
+  const org = context.repo.owner;
+  const repo = context.repo.repo;
+  const maintTeam = 'website-maintain';
 
   const [contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue] = await fetchContributors(dates);
   console.log('-------------------------------------------------------');
