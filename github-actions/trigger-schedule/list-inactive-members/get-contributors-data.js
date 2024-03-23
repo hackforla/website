@@ -6,7 +6,7 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
-const org = 'hackforla;
+const org = 'hackforla';
 const repo = 'website';
 const maintTeam = 'website-maintain';
 
