@@ -6,6 +6,9 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
+const org = context.repo.owner;
+const repo = context.repo.repo;
+const maintTeam = 'website-maintain';
 
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
@@ -22,6 +25,8 @@ twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - twoMonths);  // then set twoMont
 twoMonthsAgo = twoMonthsAgo.toISOString();
 let dates = [oneMonthAgo, twoMonthsAgo];
 
+
+
 /**
  * Main function
  * @param {Object} g         - github object from actions/github-script
@@ -31,10 +36,6 @@ let dates = [oneMonthAgo, twoMonthsAgo];
 async function main({ g, c }) {
   github = g;
   context = c;
-
-  const org = context.repo.owner;
-  const repo = context.repo.repo;
-  const maintTeam = 'website-maintain';
 
   const [contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue] = await fetchContributors(dates);
   console.log('-------------------------------------------------------');
