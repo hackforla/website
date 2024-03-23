@@ -6,8 +6,8 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
-const org = context.repo.owner;
-const repo = context.repo.repo;
+const org = 'hackforla;
+const repo = 'website';
 const maintTeam = 'website-maintain';
 
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
