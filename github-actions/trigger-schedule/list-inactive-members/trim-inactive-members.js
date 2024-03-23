@@ -197,10 +197,8 @@ async function checkMemberIsNotNew(member){
 
      return notifiedMembers;  
 
-     // If error, return empty array
    } catch (err) {
      throw new Error(err);
-     return [];
    }
 }
 
