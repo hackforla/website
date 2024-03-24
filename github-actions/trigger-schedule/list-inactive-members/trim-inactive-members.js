@@ -7,8 +7,6 @@ const addTeamMember = require('../../utils/add-team-member');
 var github;
 var context;
 
-const org = 'hackforla';
-const repo = 'website';
 const baseTeam = 'website';
 const writeTeam = 'website-write';
 const mergeTeam = 'website-merge';
@@ -16,19 +14,19 @@ const mergeTeam = 'website-merge';
 
 
 /**
- * Main function
- * @param {Object} g        - github object from actions/github-script
- * @param {Object} c        - context object from actions/github-script
- * @param {Object} results  - results from `get-contributors-data.js`
+ * Takes results of `get-contributors-data.js` for finding all contributors active in the periods since the dates
+ * of oneMonthAgo and twoMonthsAgo. Team members with no activity are removed as 'Inactive', with activity within 
+ * twoMonthsAgo but not oneMonthAgo are notified, and with activity within the last month are 'Active'
+ * @param {Object} g                     - github object from actions/github-script
+ * @param {Object} c                     - context object from actions/github-script
+ * @param {Object} recentContributors    - recentContributors since the dates[0] = recent cutoff
+ * @param {Object} previousContributors  - previousContributors since the dates[1] = previous cutoff
+ * @param {Object} inactiveWithOpenIssue - Inactive contributors that have open issues
+ * @param {Object} dates                 - [recent, previous] dates of oneMonthAgo, twoMonthsAgo
  */
-async function main({ g, c }, results) {
+async function main({ g, c }, { recentContributors, previousContributors, inactiveWithOpenIssue, dates }) {
   github = g;
   context = c;
-
-  const recentContributors = results["recentContributors"];                                 // recentContributors since the dates[0] = recent cutoff
-  const previousContributors = results["previousContributors"];                             // previousContributors since the dates[1] = previous cutoff
-  const inactiveWithOpenIssue = results["inactiveWithOpenIssue"];                           // Inactive contributors that have open issues
-  const dates = results["dates"];                                                           // [recent, previous] dates of oneMonthAgo, twoMonthsAgo
   
   const currentTeamMembers = await getTeamMembers(github, context, writeTeam);
   console.log('-------------------------------------------------------');
@@ -211,7 +209,6 @@ function writeData(removedContributors, notifiedContributors, cannotRemoveYet){
   const filepath = 'github-actions/utils/_data/inactive-members.json';
   const inactiveMemberLists = { removedContributors, notifiedContributors, cannotRemoveYet };
 
-  const filepath = 'github-actions/utils/_data/inactive-members.json';
   fs.writeFile(filepath, JSON.stringify(inactiveMemberLists, null, 2), (err) => {
     if (err) throw err;
     console.log('-------------------------------------------------------');
