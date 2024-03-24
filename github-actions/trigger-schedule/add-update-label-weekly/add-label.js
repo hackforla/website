@@ -2,7 +2,7 @@
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
 var fs = require("fs");
-const fetch = require("node-fetch");
+const https = require("https");
 // Global variables
 var github;
 var context;
