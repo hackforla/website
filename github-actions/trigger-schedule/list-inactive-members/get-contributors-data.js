@@ -6,10 +6,6 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
-const org = 'hackforla';
-const repo = 'website';
-const maintTeam = 'website-maintain';
-
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
 // The February 1st run keeps the 1 month inactive warning, but changes removal to 3 months inactive (skipping December).
@@ -57,7 +53,8 @@ async function fetchContributors(dates){
   let allContributorsSinceTwoMonthsAgo = {};
   let inactiveWithOpenIssue = {};
 
-  // Members on 'website-maintain' team considered permanent members
+  // Members of 'website-maintain' team are considered permanent members
+  const maintTeam = 'website-maintain';
   const permanentMembers = await getTeamMembers(github, context, maintTeam);
 
   // Fetch all contributors with commit, comment, and issue (assignee) contributions
@@ -130,7 +127,7 @@ async function fetchContributors(dates){
         }
       }
     }
-    // Add permanent members from 'website-maintain' to list of active contributors
+    // Add permanent members from 'website-maintain' team to list of active contributors
     for(const permanentMember in permanentMembers){
       allContributorsSince[permanentMember] = true;
     }
