@@ -42,21 +42,15 @@ async function main({ g, c }) {
   console.log('List of active contributors since ' + dates[0].slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
 
-  let results = {};
-  results["recentContributors"] = contributorsOneMonthAgo;
-  results["previousContributors"] = contributorsTwoMonthsAgo;
-  results["inactiveWithOpenIssue"] = inactiveWithOpenIssue;
-  results["dates"] = dates;
-
-  return results;
+  return ({contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue, dates});
 };
 
 
 
 /**
  * Function to fetch list of contributors with comments/commits/issues since date
- * @returns {Object} allContributorsSinceOneMonthAgo  - List of active contributors since one month ago 
- * @returns {Object} allContributorsSinceTwoMonthsAgo - List of active contributors since two months ago 
+ * @returns {Object} allContributorsSinceOneMonthAgo  - List of active contributors since oneMonthAgo 
+ * @returns {Object} allContributorsSinceTwoMonthsAgo - List of active contributors since twoMonthsAgo 
  */
 async function fetchContributors(dates){
   let allContributorsSinceOneMonthAgo = {};
