@@ -1,6 +1,6 @@
-var fs = require("fs")
-const postComment = require('../../utils/post-issue-comment')
-const formatComment = require('../../utils/format-comment')
+const fs = require("fs");
+const postComment = require('../../utils/post-issue-comment');
+const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
@@ -16,19 +16,19 @@ var context
  */
 
 async function main({ g, c }, { shouldPost, issueNum }){
-  github = g
-  context = c
+  github = g;
+  context = c;
   // If the previous action returns a false, stop here
   if(shouldPost === false){
-    console.log('No need to post comment.')
-    return
+    console.log('No need to post comment.');
+    return;
   }
   //Else we make the comment with the issuecreator's github handle instead of the placeholder.
   else{
     const instructions = await makeComment()
     if(instructions !== null){
       // the actual creation of the comment in github
-      await postComment(issueNum, instructions, github, context)
+      await postComment(issueNum, instructions, github, context);
     }
   }
 }
@@ -40,14 +40,13 @@ async function main({ g, c }, { shouldPost, issueNum }){
 
 async function makeComment(){
   // Setting all the variables which formatComment is to be called with
-  var issueAssignee = context.payload.issue.assignee.login
-  const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
-  console.log(eventdescriptions.length)
+  let issueAssignee = context.payload.issue.assignee.login;
+  const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
   //adding the code to find out the latest person assigned the issue
-  for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
+  for(let i = eventdescriptions.length - 1; i >= 0; i -= 1){
     if(eventdescriptions[i].event == 'assigned'){
-      issueAssignee = eventdescriptions[i].assignee.login
-      break
+      issueAssignee = eventdescriptions[i].assignee.login;
+      break;
     }
   }
 
@@ -98,8 +97,8 @@ async function makeComment(){
   }
 
   // creating the comment with issue assignee's name and returning it!
-  const commentWithIssueAssignee = formatComment(commentObject, fs)
-  return commentWithIssueAssignee
+  const commentWithIssueAssignee = formatComment(commentObject, fs);
+  return commentWithIssueAssignee;
 }
   
-module.exports = main
+module.exports = main;
