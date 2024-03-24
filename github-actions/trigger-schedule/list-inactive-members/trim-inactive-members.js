@@ -150,14 +150,13 @@ async function notifyInactiveMembers(updatedTeamMembers, recentContributors){
 
 
 /**
- * Function to confirm that the member did not recently clone HfLA repo and thus is not new: otherwise they are new
+ * Function to check if any of a member's 10 most recent repos match "description":"Hack for LA's Website" with "created_at" less
+ * than 30 days. If so, they are new members and should be excluded from removal or notification since they might be setting up still
  * @param {String} member       - Member's username 
  * @returns {Boolean}           - True if member is not new, False if member is new
  */
 async function checkMemberIsNotNew(member){
-  // Check if member cloned the HfLA repo within the last 30 days. If so, they are new members and they
-  // may not have had time yet to get set up. Check the user's 10 most recent repos and see if any match 
-  // "description":"Hack for LA's Website": if so then, check if "created_at" is less than 30 days.
+
   try {
     const memberRepoResults = await github.request('GET /users/{username}/repos', {
       username: member,
@@ -181,7 +180,6 @@ async function checkMemberIsNotNew(member){
 
 /**
  * Function to find the previous month's "Review Inactive Team Members" issue and extract the raw notified members list
- * @params {}                             - none
  * @returns {Array} notifiedMembers       - list of notified members from prev. month
  */
  async function readPreviousNotifyList(){
@@ -203,19 +201,15 @@ async function checkMemberIsNotNew(member){
 
 
 /**
- * Function to save inactive members list to local for use in next job  
+ * Function to save inactive members list to local repo for use in next job  
  * @param {Array} removedContributors  - List of contributors that were removed
  * @param {Array} notifiedContributors - List of contributors to be notified
  * @param {Array} cannotRemoveYet      - List of contributors that can't be removed yet
- * @returns {void}
  */
 function writeData(removedContributors, notifiedContributors, cannotRemoveYet){
   
-  // Combine removed, notified, and cannot remove contributor lists into one dict
-  let inactiveMemberLists = {};
-  inactiveMemberLists["removedContributors"] = removedContributors;
-  inactiveMemberLists["notifiedContributors"] = notifiedContributors;
-  inactiveMemberLists["cannotRemoveYet"] = cannotRemoveYet;
+  const filepath = 'github-actions/utils/_data/inactive-members.json';
+  const inactiveMemberLists = { removedContributors, notifiedContributors, cannotRemoveYet };
 
   const filepath = 'github-actions/utils/_data/inactive-members.json';
   fs.writeFile(filepath, JSON.stringify(inactiveMemberLists, null, 2), (err) => {
