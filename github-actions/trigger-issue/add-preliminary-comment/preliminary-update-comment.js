@@ -4,8 +4,8 @@ const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
-var github
-var context
+var github;
+var context;
 
 /**
  * @description - This function is the entry point into the javascript file, it formats the md file based on the result of the previous step and then posts it to the issue
@@ -25,7 +25,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
   }
   //Else we make the comment with the issuecreator's github handle instead of the placeholder.
   else{
-    const instructions = await makeComment()
+    const instructions = await makeComment();
     if(instructions !== null){
       // the actual creation of the comment in github
       await postComment(issueNum, instructions, github, context);
@@ -41,11 +41,11 @@ async function main({ g, c }, { shouldPost, issueNum }){
 async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   let issueAssignee = context.payload.issue.assignee.login;
-  const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
+  const eventDescriptions = await getTimeline(context.payload.issue.number, github, context);
   //adding the code to find out the latest person assigned the issue
-  for(let i = eventdescriptions.length - 1; i >= 0; i -= 1){
-    if(eventdescriptions[i].event == 'assigned'){
-      issueAssignee = eventdescriptions[i].assignee.login;
+  for(let i = eventDescriptions.length - 1; i >= 0; i -= 1){
+    if(eventDescriptions[i].event == 'assigned'){
+      issueAssignee = eventDescriptions[i].assignee.login;
       break;
     }
   }
@@ -94,7 +94,7 @@ async function makeComment(){
     placeholderString: '${issueAssignee}',
     filePathToFormat: filePathToFormat,
     textToFormat: null
-  }
+  };
 
   // creating the comment with issue assignee's name and returning it!
   const commentWithIssueAssignee = formatComment(commentObject, fs);
