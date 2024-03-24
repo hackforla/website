@@ -1,4 +1,3 @@
-
   const locationsDropDown = document.querySelector(".getting-started-mobile-page");
   const showingLocations = document.querySelector(".mobile-locations-dropdown");
   const showContent = document.querySelectorAll(".event-title");
