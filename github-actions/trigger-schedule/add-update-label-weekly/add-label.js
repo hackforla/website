@@ -267,7 +267,7 @@ async function getAssignees(issueNum) {
   }
 }
 function filterForAssigneesLogins(data) {
-  logins = [];
+  const logins = [];
   for (let item of data) {
     logins.push(item.login);
   }
