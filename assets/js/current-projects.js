@@ -491,7 +491,7 @@ function updateProjectCardDisplayState(filterParams){
                 projectCardObj[key] = projectCard.dataset[key].split(",");
             }
             else{
-                const searchAreas=['technologies','description','partner','programs','title','languages']; //might need to add languages here, for issue #4648
+                const searchAreas=['technologies','description','partner','programs','title','languages'];
                 for(const area of searchAreas){
                     projectCardObj[area]=projectCard.dataset[area].split(",");
                 }
