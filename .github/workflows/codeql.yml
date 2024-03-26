@@ -19,7 +19,7 @@ on:
     branches: [ "gh-pages" ]
   schedule:
     - cron: '30 5 * * 5'
-  workflow_dispatch:
+
 jobs:
   analyze:
     name: Analyze
