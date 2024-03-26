@@ -2,10 +2,10 @@
  * Function to return list of current team members
  * @param {Object} github      - github object from actions/github-script
  * @param {Object} context     - context object from actions/github-script
- * @param {String} getTeam     - team from which to get member list
- * @returns {Array} allMembers - Current members of 'getTeam'
+ * @param {String} team        - team from which to get member list
+ * @returns {Array} allMembers - Current team members 
  */
-async function getTeamMembers(github, context, getTeam){
+async function getTeamMembers(github, context, team){
 
   let pageNum = 1;
   let teamResults = [];
@@ -14,7 +14,7 @@ async function getTeamMembers(github, context, getTeam){
   while(true){
     const teamMembers = await github.request('GET /orgs/{org}/teams/{team_slug}/members', {
       org: context.repo.owner,
-      team_slug: getTeam,
+      team_slug: team,
       per_page: 100,
       page: pageNum
     })
