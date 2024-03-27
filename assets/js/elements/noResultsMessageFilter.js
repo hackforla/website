@@ -1,12 +1,13 @@
 function noResultsMessageComponent(filterParams, textColor) {
-	let filterList = ``
-	for (let key in filterParams) {
-		if (filterParams[key].length) {
-			for (let i = 0; i < filterParams[key].length; i++) {
-				filterList += `<p>"<span class='toolkit-red'>${key}: ${filterParams[key][i]}</span>"</p>`
-			}
-		}
-	}
+    let filterList = ``
+    let filterNameSingular = {"technologies": "Technology", "languages": "Language", "tools": "Tool", "programs": "Program", "status": "Status", "Search": "Search"}
+    for (let key in filterParams) {
+        if (filterParams[key].length) {
+            for (let i = 0; i < filterParams[key].length; i++) {
+                filterList += `<p>"<span class='toolkit-red'>${filterNameSingular[key]}: ${filterParams[key][i]}</span>"</p>`
+            }
+        }
+    }
 
 	const noResultsMsgEle = document.querySelector(".no-results-message")
 	noResultsMsgEle.style.color = textColor
