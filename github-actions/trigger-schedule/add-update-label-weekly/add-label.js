@@ -154,13 +154,37 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
 
     if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
       console.log("Comment create more than 7 days ago. Hiding as outdated...");
-      const data = JSON.stringify({
-        query: `{
-          
-        }`
-      })
+      const mutation = JSON.stringify({
+        mutation: `{
+          mutation HideOutdatedComment($node_id: node_id){
+            minimizeComment(input:{
+              classifier:OUTDATED
+              subjectId:"IC_kwDOLAkgZM514ksN"
+            }) {
+              clientMutationId
+              minimizedComment {
+                isMinimized
+                minimizedReason
+              }
+            }
+          }
+        }`,
+        variables: {
+          node_id: eventObj.node_id
+        }
+      });
 
-      console.log(eventObj.node_id);
+
+      const options = {
+        hostname: 'api.github.com',
+        path: '/graphql',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'bearer ' + context.secrets.GITHUB_TOKEN, // context.secrets.GITHUB_TOKEN?
+        }
+      }
+
 
       // github.rest.issues.getComment({
       //   owner: context.repo.owner,
