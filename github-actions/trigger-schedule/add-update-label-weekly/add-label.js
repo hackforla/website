@@ -185,7 +185,8 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'bearer ' + projectBoardToken, // context.secrets.GITHUB_TOKEN?
+          'Authorization': 'bearer ' + projectBoardToken,
+          'user-agent': 'Add-Update-Label-to-Issues-Weekly'
         }
       };
 
