@@ -163,7 +163,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         query: `mutation HideOutdatedComment($nodeid: String!){ 
             minimizeComment(input:{
               classifier:OUTDATED,
-              subjectId: $node_id
+              subjectId: $nodeid
             }) {
               clientMutationId
               minimizedComment {
