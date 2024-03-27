@@ -206,7 +206,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         console.error(error);
       });
       
-      req.write(data);
+      req.write(mutation);
       req.end();
 
 
