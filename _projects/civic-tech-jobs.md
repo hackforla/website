@@ -69,6 +69,7 @@ leadership:
       github: https://github.com/geibu
     picture: https://avatars.githubusercontent.com/geibu
   - name: Leah Ellis
+    github-handle:
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
