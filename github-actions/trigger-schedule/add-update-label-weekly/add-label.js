@@ -159,11 +159,11 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
       console.log("Comment create more than 7 days ago. Hiding as outdated...");
       const mutation = JSON.stringify({
-        mutation: `{
+        query: `{
           mutation HideOutdatedComment($node_id: node_id){
             minimizeComment(input:{
               classifier:OUTDATED
-              subjectId:"IC_kwDOLAkgZM514ksN"
+              subjectId: $node_id
             }) {
               clientMutationId
               minimizedComment {
