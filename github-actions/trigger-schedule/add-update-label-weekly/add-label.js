@@ -160,8 +160,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
       console.log("Comment create more than 7 days ago. Hiding as outdated...");
       //todo: play around with quotations. Stringifying is likely causing the issue
       const mutation = JSON.stringify({
-        query: `"{
-          mutation HideOutdatedComment($nodeid: STRING!){ 
+        query: `mutation HideOutdatedComment($nodeid: STRING!){ 
             minimizeComment(input:{
               classifier:OUTDATED,
               subjectId: $node_id
@@ -172,8 +171,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
                 minimizedReason
               }
             }
-          }
-        }"`,
+          }`,
         variables: {
           nodeid: eventObj.node_id
         }
