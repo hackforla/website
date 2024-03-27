@@ -183,7 +183,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
           'Content-Type': 'application/json',
           'Authorization': 'bearer ' + context.secrets.GITHUB_TOKEN, // context.secrets.GITHUB_TOKEN?
         }
-      }
+      };
 
 
       // github.rest.issues.getComment({
