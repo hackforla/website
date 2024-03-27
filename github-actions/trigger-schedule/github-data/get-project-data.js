@@ -181,7 +181,7 @@ function constructContributorParams(repo) {
  */
 function formatContributorsList(contributorsList){
   for(let i = 0; i < contributorsList.length; i++){
-    currentContributor = contributorsList[i];
+    const currentContributor = contributorsList[i];
     contributorsList[i] = {
       id: currentContributor.id,
       github_url: currentContributor.html_url,
