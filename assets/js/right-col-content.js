@@ -1,4 +1,4 @@
-import { getEventData, insertEventSchedule } from "./utility/api-events.js";
+import { getEventData, insertEventSchedule } from "./utility/vrms-events.js";
 
 /**
  * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
