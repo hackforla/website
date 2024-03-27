@@ -160,7 +160,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
       console.log("Comment create more than 7 days ago. Hiding as outdated...");
       const mutation = JSON.stringify({
         query: `{
-          mutation HideOutdatedComment($node_id: node_id){
+          mutation HideOutdatedComment($node_id: STRING!){
             minimizeComment(input:{
               classifier:OUTDATED
               subjectId: $node_id
