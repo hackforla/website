@@ -27,6 +27,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06C183Q2HL
       github: https://github.com/aymarmsba
     picture: https://avatars.githubusercontent.com/aymarmsba
+  - name: Mary Gabrielian
+    github-handle: marygabrielian
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U06KMNL8ETY
+      github: https://github.com/marygabrielian
+    picture: https://avatars.githubusercontent.com/marygabrielian
   - name: Rhoda Michael
     github-handle: the-techgurl
     role: UX Research Lead
