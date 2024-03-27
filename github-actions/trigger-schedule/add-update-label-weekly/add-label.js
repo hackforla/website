@@ -19,6 +19,8 @@ sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
 const fourteenDayCutoffTime = new Date()
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
 
+var projectBoardToken;
+
 /**
  * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness.
  * An update to an issue is either 1. a comment by the assignee, or 2. assigning an assignee to the issue. If the last update is not within 7 days or 14 days, apply the according outdate label, and request an update.
@@ -27,10 +29,12 @@ fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedB
  * @param {Object} g github object from actions/github-script
  * @param {Object} c context object from actions/github-script
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
+ * @param {String} projectBoardToken the Personal Access Token for the action
  */
-async function main({ g, c }, columnId) {
+async function main({ g, c }, columnId, pbt) {
   github = g;
   context = c;
+  projectBoardToken = pbt;
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
   console.log(columnId);
@@ -181,7 +185,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'bearer ' + context.secrets.HFLA_PROJECT_BOARD_TOKEN, // context.secrets.GITHUB_TOKEN?
+          'Authorization': 'bearer ' + projectBoardToken, // context.secrets.GITHUB_TOKEN?
         }
       };
 
