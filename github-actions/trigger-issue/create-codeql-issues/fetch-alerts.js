@@ -10,7 +10,6 @@ var context;
  * @returns {Promise<void>} A promise that resolves when the alerts are fetched.
  */
 const fetchAlerts = async ({ g, c, token }) => {
-  console.log("fetchAlerts starts")
   // Rename parameters
   github = g;
   context = c; 
@@ -21,7 +20,6 @@ const fetchAlerts = async ({ g, c, token }) => {
       Authorization: `token ${token}`
     },
   });
-  console.log('response: ', response);
 
   // Throw error if fetch fails
   if (!response.ok) {
@@ -30,8 +28,6 @@ const fetchAlerts = async ({ g, c, token }) => {
 
   // Convert response to JSON
   const alerts = await response.json();
-  console.log('alerts: ', alerts);
-  console.log("alerts worked")
 
   // Set output for future scripts in workflow
   core.setOutput("alerts", alerts);
