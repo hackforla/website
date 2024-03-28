@@ -16,7 +16,7 @@ const fetchAlerts = async ({ g, c }) => {
   // Get a list of open CodeQL alerts
   const response = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/code-scanning/alerts?state=active`, {
     headers: {
-      Authorization: `token ${{secrets.GITHUB_TOKEN}}`
+      Authorization: `token ${{secrets.H4LA_TOKEN}}`
     }
   });
 

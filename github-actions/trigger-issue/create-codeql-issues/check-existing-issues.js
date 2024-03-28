@@ -23,7 +23,7 @@ const checkExistingIssues = async ({ g, c }) => {
     // Search for existing issues related to the alert
     const searchResponse = await fetch(`https://api.github.com/search/issues?q=repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`, {
       headers: {
-        Authorization: `token ${{secrets.GITHUB_TOKEN}}`
+        Authorization: `token ${{secrets.H4LA_TOKEN}}`
       }
     });
 

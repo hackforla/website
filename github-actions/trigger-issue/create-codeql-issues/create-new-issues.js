@@ -33,7 +33,7 @@ const createNewIssues = async ({ g, c }) => {
   const createIssueResponse = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/issues`, {
     method: 'POST',
     headers: {
-      Authorization: `token ${{secrets.GITHUB_TOKEN}}`,
+      Authorization: `token ${{secrets.H4LA_TOKEN}}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
