@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "gh-pages" ]
+    branches: [ "create-new-codeql-issues-5059" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "gh-pages" ]
+    branches: [ "create-new-codeql-issues-5059" ]
   schedule:
     - cron: '30 5 * * 5'
 
@@ -76,3 +76,47 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    # Install @actions/core
+    - name: Install @actions/core
+      run: npm install @actions/core
+
+    # Fetch Alerts
+    - name: Fetch Alerts
+      id: fetch-alerts
+      uses: actions/github-script@v7
+      env:
+        H4LA_TOKEN: ${{ secrets.H4LA_TOKEN }}
+      with:
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+          const fetchAlerts = script({ g: github, c: context, token: process.env.H4LA_TOKEN });
+
+    # Check Existing Issues
+    - name: Check Existing Issues
+      uses: actions/github-script@v7
+      id: check-existing-issues
+      env:
+        H4LA_TOKEN: ${{ secrets.H4LA_TOKEN }}
+      with:
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
+          const alerts = ${{ steps.fetch-alerts.outputs.alerts }};
+          const checkIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN, alerts });
+
+    # Create New Issues
+    - name: Create New Issues
+      uses: actions/github-script@v7
+      env:
+        H4LA_TOKEN: ${{ secrets.H4LA_TOKEN }}
+      with:
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
+          const alertId = ${{ steps.check-existing-issues.outputs.alertId }};
+          const newIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN, alertId });
+
