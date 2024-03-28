@@ -1,4 +1,5 @@
 const fs = require('fs');
+const core = require('@actions/core');
 
 // Global variables
 var github;
@@ -8,7 +9,7 @@ var context;
  * Fetches existing issues for each alert and sets the output for alerts without existing issues.
  * @returns {Promise<void>}
  */
-const checkExistingIssues = async ({ g, c, setOutput, token }) => {
+const checkExistingIssues = async ({ g, c, token }) => {
   // Rename parameters
   github = g;
   context = c; 
@@ -37,7 +38,7 @@ const checkExistingIssues = async ({ g, c, setOutput, token }) => {
 
     // If no existing issues are found, set the alertId output and exit the loop
     if (searchResult.items.length === 0) {
-      setOutput("alertId", alertId);
+      core.setOutput("alertId", alertId);
       break; // Exit the loop after finding the first alert without an existing issue
     }
   }
