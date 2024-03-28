@@ -29,7 +29,7 @@ const fetchAlerts = async ({ g, c, setOutput, token }) => {
   const alerts = await response.json();
 
   // Set output for future scripts in workflow
-  core.setOutput("alerts", alerts);
+  setOutput("alerts", alerts);
 };
 
 module.exports = fetchAlerts

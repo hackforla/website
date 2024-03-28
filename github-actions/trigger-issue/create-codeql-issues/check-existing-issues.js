@@ -37,7 +37,7 @@ const checkExistingIssues = async ({ g, c, setOutput, token }) => {
 
     // If no existing issues are found, set the alertId output and exit the loop
     if (searchResult.items.length === 0) {
-      core.setOutput("alertId", alertId);
+      setOutput("alertId", alertId);
       break; // Exit the loop after finding the first alert without an existing issue
     }
   }
