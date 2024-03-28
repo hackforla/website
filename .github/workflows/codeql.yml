@@ -77,6 +77,11 @@ jobs:
       with:
         category: "/language:${{matrix.language}}"
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
     # Fetch Alerts
     - name: Fetch Alerts
       uses: actions/github-script@v7
