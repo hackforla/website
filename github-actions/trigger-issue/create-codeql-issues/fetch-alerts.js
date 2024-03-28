@@ -1,7 +1,6 @@
 const fs = require('fs');
 const core = require('@actions/core');
 
-
 // Global variables
 var github;
 var context;

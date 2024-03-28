@@ -88,6 +88,7 @@ jobs:
 
     # Fetch Alerts
     - name: Fetch Alerts
+      id: fetch-alerts
       uses: actions/github-script@v7
       env:
         H4LA_TOKEN: ${{ secrets.H4LA_TOKEN }}
@@ -99,12 +100,14 @@ jobs:
     # Check Existing Issues
     - name: Check Existing Issues
       uses: actions/github-script@v7
+      id: check-existing-issues
       env:
         H4LA_TOKEN: ${{ secrets.H4LA_TOKEN }}
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
-          const checkIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN });
+          const alerts = ${{ steps.fetch-alerts.outputs.alerts }};
+          const checkIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN, alerts });
 
     # Create New Issues
     - name: Create New Issues
@@ -114,5 +117,6 @@ jobs:
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
-          const newIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN });
+          const alertId = ${{ steps.check-existing-issues.outputs.alertId }};
+          const newIssues = script({ g: github, c: context, token: process.env.H4LA_TOKEN, alertId });
 

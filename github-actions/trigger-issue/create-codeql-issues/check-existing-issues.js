@@ -10,13 +10,10 @@ var context;
  * Fetches existing issues for each alert and sets the output for alerts without existing issues.
  * @returns {Promise<void>}
  */
-const checkExistingIssues = async ({ g, c, token }) => {
+const checkExistingIssues = async ({ g, c, token, alerts }) => {
   // Rename parameters
   github = g;
   context = c; 
-
-  // Get alerts from the fetch-alerts step output
-  const alerts = ${{ steps.fetch-alerts.outputs.alerts }};
   
   // Loop through each alert
   for (const alert of alerts) {
