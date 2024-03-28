@@ -1,5 +1,4 @@
 const fs = require('fs');
-const core = require('@actions/core');
 
 // Global variables
 var github;
@@ -9,7 +8,7 @@ var context;
  * Fetches a list of open CodeQL alerts from the GitHub API.
  * @returns {Promise<void>} A promise that resolves when the alerts are fetched.
  */
-const fetchAlerts = async ({ g, c, token }) => {
+const fetchAlerts = async ({ g, c, core, token }) => {
   // Rename parameters
   github = g;
   context = c; 

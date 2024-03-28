@@ -83,7 +83,7 @@ jobs:
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
-          const fetchAlerts = script({ g: github, c: context, token: ${{secrets.H4LA_TOKEN}} });
+          const fetchAlerts = script({ g: github, c: context, core, token: ${{secrets.H4LA_TOKEN}} });
           return fetchAlerts;
 
     # Check Existing Issues
@@ -92,7 +92,7 @@ jobs:
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
-          const checkIssues = script({ g: github, c: context, token: ${{secrets.H4LA_TOKEN}} });
+          const checkIssues = script({ g: github, c: context, core token: ${{secrets.H4LA_TOKEN}} });
           return checkIssues;
 
     # Create New Issues
@@ -101,5 +101,5 @@ jobs:
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
-          const newIssues = script({ g: github, c: context, token: ${{secrets.H4LA_TOKEN}} });
+          const newIssues = script({ g: github, c: context, core, token: ${{secrets.H4LA_TOKEN}} });
           return newIssues;
