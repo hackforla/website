@@ -92,7 +92,7 @@ jobs:
       with:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
-          const checkIssues = script({ g: github, c: context, setOutput: core.setOutput token: ${{secrets.H4LA_TOKEN}} });
+          const checkIssues = script({ g: github, c: context, setOutput: core.setOutput, token: ${{secrets.H4LA_TOKEN}} });
           return checkIssues;
 
     # Create New Issues
