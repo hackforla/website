@@ -10,7 +10,7 @@ import { getEventData, insertEventSchedule } from "./utility/api-events.js";
   //Displays/Inserts event schedule to DOM
   document.addEventListener(
     "DOMContentLoaded",
-    insertEventSchedule(eventData, "events")
+    () => { insertEventSchedule(eventData, "events"); }
   );
   //Displays/Inserts the user's time zone in the DOM
   document
