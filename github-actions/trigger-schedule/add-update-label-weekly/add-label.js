@@ -259,7 +259,7 @@ async function getAssignees(issueNum) {
       issue_number: issueNum,
     });
     const assigneesData = results.data.assignees;
-    assigneesLogins = filterForAssigneesLogins(assigneesData);
+    const assigneesLogins = filterForAssigneesLogins(assigneesData);
     return assigneesLogins
   } catch (err) {
     console.error(`Function failed to get assignees. Please refer to the error below: \n `, err);
