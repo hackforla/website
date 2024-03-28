@@ -8,7 +8,7 @@ var context;
  * Fetches existing issues for each alert and sets the output for alerts without existing issues.
  * @returns {Promise<void>}
  */
-const checkExistingIssues = async ({ g, c }) => {
+const checkExistingIssues = async ({ g, c, token }) => {
   // Rename parameters
   github = g;
   context = c; 
@@ -23,7 +23,7 @@ const checkExistingIssues = async ({ g, c }) => {
     // Search for existing issues related to the alert
     const searchResponse = await fetch(`https://api.github.com/search/issues?q=repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`, {
       headers: {
-        Authorization: `token ${{secrets.H4LA_TOKEN}}`
+        Authorization: `token ${token}`
       }
     });
 

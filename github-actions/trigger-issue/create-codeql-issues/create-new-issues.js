@@ -8,7 +8,7 @@ var context;
  * Creates new GitHub issues for each alert that doesn't have an existing issue.
  * @returns {Promise<void>}
  */
-const createNewIssues = async ({ g, c }) => {
+const createNewIssues = async ({ g, c, token }) => {
   // Rename parameters
   github = g;
   context = c; 
@@ -33,7 +33,7 @@ const createNewIssues = async ({ g, c }) => {
   const createIssueResponse = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/issues`, {
     method: 'POST',
     headers: {
-      Authorization: `token ${{secrets.H4LA_TOKEN}}`,
+      Authorization: `token ${token}`
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
