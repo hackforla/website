@@ -1,4 +1,5 @@
 const fs = require('fs');
+const core = require('@actions/core');
 
 // Global variables
 var github;
@@ -8,7 +9,7 @@ var context;
  * Fetches existing issues for each alert and sets the output for alerts without existing issues.
  * @returns {Promise<void>}
  */
-const checkExistingIssues = async ({ g, c, core, token }) => {
+const checkExistingIssues = async ({ g, c, setOutput, token }) => {
   // Rename parameters
   github = g;
   context = c; 
