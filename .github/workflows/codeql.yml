@@ -82,6 +82,10 @@ jobs:
       with:
         node-version: '14'
 
+    # Install @actions/core
+    - name: Install @actions/core
+      run: npm install @actions/core
+
     # Fetch Alerts
     - name: Fetch Alerts
       uses: actions/github-script@v7
