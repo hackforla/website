@@ -27,6 +27,7 @@ const fetchAlerts = async ({ g, c, token }) => {
 
   // Convert response to JSON
   const alerts = await response.json();
+  console.log("alerts worked")
 
   // Set output for future scripts in workflow
   core.setOutput("alerts", alerts);
