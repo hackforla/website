@@ -37,8 +37,6 @@ async function main({ g, c }, columnId, pbt) {
   projectBoardToken = pbt;
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
-  console.log(columnId);
-  console.log(issueNums);
 
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum, github, context);
@@ -49,7 +47,6 @@ async function main({ g, c }, columnId, pbt) {
       console.log(`Assignee not found, skipping issue #${issueNum}`)
       continue
     }
-    console.log("we getting here?");
 
     // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly
     const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
@@ -140,11 +137,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
-    let eventTimestampDate = new Date(eventTimestamp);
-    eventTimestampDate.setDate(eventTimestampDate.getDate() - 8); // pretend timestamps are 8 days before they really are for testing purposes
-    eventTimestamp = eventTimestampDate.toString();
-    let formattedEventTimestamp = new Date(eventTimestamp).toString();
-    console.log("Formatted eventTimestamp: " + formattedEventTimestamp);
     
     // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
     if (!lastCommentTimestamp && eventType === 'commented' && isCommentByAssignees(eventObj, assignees)) {
@@ -157,8 +149,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     if (!isMomentRecent(eventTimestamp, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
-      console.log("Comment create more than 7 days ago. Hiding as outdated...");
-      //todo: play around with quotations. Stringifying is likely causing the issue
+      console.log("Comment created more than 7 days ago. Hiding as outdated...");
       const mutation = JSON.stringify({
         query: `mutation HideOutdatedComment($nodeid: ID!){ 
             minimizeComment(input:{
@@ -176,7 +167,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
           nodeid: eventObj.node_id
         }
       });
-
 
       const options = {
         hostname: 'api.github.com',
@@ -208,17 +198,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
       
       req.write(mutation);
       req.end();
-
-
-      // github.rest.issues.getComment({
-      //   owner: context.repo.owner,
-      //   repo: context.repo.repo,
-      //   comment_id: eventObj.id
-      // })
-      // .then((comment) => {
-      //   console.log("The comment says this:");
-      //   console.log(comment);
-      // });
     }
   }
 
