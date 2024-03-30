@@ -6,6 +6,10 @@ var context;
 
 /**
  * Creates new GitHub issues for each alert that doesn't have an existing issue.
+ * @param {Object} options - The options object.
+ * @param {string} options.g - The GitHub access token.
+ * @param {Object} options.c - The context object.
+ * @param {Array<number>} options.alertIds - The array of alert IDs to create issues for.
  * @returns {Promise<void>}
  */
 const createNewIssues = async ({ g, c, alertIds }) => {
@@ -29,23 +33,21 @@ const createNewIssues = async ({ g, c, alertIds }) => {
     const issueBody = issueBodyTemplate;
 
     // Create a new GitHub issue
-    const createIssueResponse = await fetch(`https://api.github.com/repos/${context.repo.owner}/${context.repo.repo}/issues`, {
-      method: 'POST',
+    const createIssueResponse = await github.request('POST /repos/{owner}/{repo}/issues', {
+      owner: context.repo.owner,
+      repo: context.repo.repo,
       headers: {
-        Authorization: `token ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        title: issueTitle,
-        body: issueBody,
-        labels: ['ready for dev lead'],
-      }),
+      title: issueTitle,
+      body: issueBody,
+      labels: ['ready for dev lead'],
     });
 
     if (createIssueResponse.status !== 200) {
       throw new Error(`Failed to create issue for alert ${alertId}: ${createIssueResponse.status} - ${createIssueResponse.statusText}`);
     }
-    console.log("issue created");
+    console.log('issue created');
   }
 };
 
