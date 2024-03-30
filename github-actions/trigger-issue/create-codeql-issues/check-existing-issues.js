@@ -41,6 +41,8 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     // Creates one query for multiple alertIds
     const q = tenAlertIds.map(alertId => `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`).join('+OR+');
 
+    console.log("q: ", q)
+
     // Query GitHub API in batches
     const searchResponse = await github.request('GET /search/issues', { q });
     console.log('searchResponse: ', searchResponse);
@@ -56,9 +58,8 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
 
     // Push alertIds that do not have existing issues in searchResult to output array
     alertIdsWithoutIssues.push(...tenAlertIds.filter(alertId => !searchResult.items.some(item => item.title.includes(alertId))));
-
+  };
   console.log('alertIdsWithoutIssues: ', alertIdsWithoutIssues);
-
   // Return flat array of alertIds that do not have issues
   return alertIdsWithoutIssues;
 };
