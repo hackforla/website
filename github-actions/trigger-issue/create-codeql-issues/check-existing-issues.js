@@ -54,9 +54,8 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     const searchResult = searchResponse.data;
     console.log('searchResult: ', searchResult);
 
-    // Push alertIds that do not exist in searchResult to alertIdsWithoutIssues array
-    alertIdsWithoutIssues.push(...alertIds.filter(alertId => !searchResult.items.some(item => item.id === alertId)));
-  }
+    // Push alertIds that do not have existing issues in searchResult to output array
+    alertIdsWithoutIssues.push(...tenAlertIds.filter(alertId => !searchResult.items.some(item => item.title.includes(alertId))));
 
   console.log('alertIdsWithoutIssues: ', alertIdsWithoutIssues);
 
