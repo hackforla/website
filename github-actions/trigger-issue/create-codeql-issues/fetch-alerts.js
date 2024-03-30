@@ -6,7 +6,11 @@ var context;
 
 /**
  * Fetches a list of open CodeQL alerts from the GitHub API.
- * @returns {Promise<void>} A promise that resolves when the alerts are fetched.
+ * @param {Object} params - The parameters for the fetch operation.
+ * @param {Object} params.g - The GitHub object for making API requests.
+ * @param {Object} params.c - The context object containing repository information.
+ * @returns {Promise<Array>} A promise that resolves with an array of alerts when the fetch is successful.
+ * @throws {Error} If the fetch operation fails.
  */
 const fetchAlerts = async ({ g, c }) => {
   // Rename parameters
@@ -21,6 +25,8 @@ const fetchAlerts = async ({ g, c }) => {
     per_page: 100,
     page: 1
   });
+
+  console.log("fetchAlertsResponse: ", fetchAlertsResponse);
 
   // Throw error if fetch fails
   if (fetchAlertsResponse.status !== 200) {
