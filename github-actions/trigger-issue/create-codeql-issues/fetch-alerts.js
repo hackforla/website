@@ -25,11 +25,11 @@ const fetchAlerts = async ({ g, c }) => {
 
   // Throw error if fetch fails
   if (!fetchAlertsResponse.ok) {
-    throw new Error(`Failed to fetch alerts: ${response.status} - ${response.statusText}`);
+    throw new Error(`Failed to fetch alerts: ${fetchAlertsResponse.status} - ${fetchAlertsResponse.statusText}`);
   }
 
   // Convert response to JSON
-  const alerts = await response.json();
+  const alerts = await fetchAlertsResponse.json();
   console.log('alerts: ', alerts);
 
   return alerts;
