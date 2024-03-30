@@ -43,7 +43,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       labels: ['ready for dev lead'],
     });
 
-    console.log('Issue Created:', createIssueResponse.data.title);
+    console.log('Issue Created:', createIssueResponse.data.title, createIssueResponse.data.html_url);
 
     // Throw error if POST request fails (201 not created)
     if (createIssueResponse.status !== 201) {
