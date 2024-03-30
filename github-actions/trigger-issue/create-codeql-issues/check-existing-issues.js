@@ -6,7 +6,11 @@ var context;
 
 /**
  * Fetches existing issues for each alert and sets the output for alerts without existing issues.
- * @returns {Promise<void>}
+ * @param {Object} options - The options object.
+ * @param {string} options.g - The GitHub access token.
+ * @param {Object} options.c - The context object.
+ * @param {Array<Object>} options.alerts - The array of alerts to check.
+ * @returns {Promise<Array<number>>} An array of alert IDs without existing issues.
  */
 const checkExistingIssues = async ({ g, c, alerts }) => {
   // Rename parameters
@@ -21,10 +25,10 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     const alertId = alert.number;
 
     // Search for existing issues related to the alert
-    const searchResponse = await fetch(`https://api.github.com/search/issues?q=repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`, {
-      headers: {
-        Authorization: `token ${github}`,
-      },
+    const searchResponse = await github.request('POST /search/issues', {
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      q: `repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`,
     });
 
     // Check if the search request was successful
