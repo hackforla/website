@@ -34,7 +34,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
     const issueBody = issueBodyTemplate;
 
     // Create a new GitHub issue
-    const createIssueResponse = await github.request('POST /repos/{context.repo.owner}/{context.repo.repo}/issues', {
+    const createIssueResponse = await github.request(`POST /repos/${context.repo.owner}/${context.repo.repo}/issues`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -42,6 +42,8 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       body: issueBody,
       labels: ['ready for dev lead'],
     });
+
+    console.log('createIssueResponse:', createIssueResponse);
 
     // Throw error if POST request fails
     if (createIssueResponse.status !== 200) {
