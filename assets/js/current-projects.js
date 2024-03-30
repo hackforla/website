@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 if (window.location.pathname === '/projects-check/') {
                     filterTitle = filterName;                 
                 } else {
-                    filterTitle = 'languages / technologies'  
+                    filterTitle = 'languages / technologies / tools'  
                 }
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
@@ -230,7 +230,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0 && item.project.tools?.length > 0) ? [item.project.languages, item.project.technologies, item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
         }        
     }
@@ -654,12 +654,18 @@ function clearAllEventHandler(){
 /**
  * Takes a single project object and returns the html string representing the project card
 */
-function projectCardComponent(project){
+function projectCardComponent(project) {
+    const projectLanguages = project.languages ? [... new Set(project.languages.map(lang => lang))] : ""
+    const projectTechnologies = project.technologies ? [... new Set(project.technologies.map(t => t))] : ""
+    const projectTools = project.tools ? [... new Set(project.tools.map(t => t))] : ""
+    // the data-technologies attr will be used by UpdateFilterFrequency
+    // to generate Filter's Object
+    const dataTechnologiesArr = [...projectLanguages, ...projectTechnologies, ...projectTools]
     return `
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
+                data-technologies="${[...dataTechnologiesArr]}"
                 data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
                 data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"             
 		        data-location="${project.location? project.location.map(city => city) : '' }"
