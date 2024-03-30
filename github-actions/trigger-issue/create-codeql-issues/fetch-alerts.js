@@ -23,7 +23,7 @@ const fetchAlerts = async ({ g, c }) => {
   });
 
   // Throw error if fetch fails
-  if (!fetchAlertsResponse.ok) {
+  if (fetchAlertsResponse.status !== 200) {
     throw new Error(`Failed to fetch alerts: ${fetchAlertsResponse.status} - ${fetchAlertsResponse.statusText}`);
   }
 
