@@ -34,9 +34,8 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
       throw new Error(`Failed to search for issues: ${searchResponse.status} - ${searchResponse.statusText}`);
     }
 
-    // Convert response to JSON
-    const searchResult = await searchResponse.json();
-    console.log('searchResult: ', searchResult);
+    // Assign response data to variable for access
+    const searchResult = searchResponse.data
 
     // If no existing issues are found, add the alertId to the array
     if (searchResult.items.length === 0) {
