@@ -23,11 +23,11 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
 
   // Batch alerts into groups of 10 for each request to avoid rate limit
   const batchedAlertIds = alerts.reduce((acc, alert, index) => {
-    // For indexes 0 to 9, batchIndex == 0
-    // For indexes 10 to 19, batchIndex == 1
-    // For indexes 20 to 29, batchIndex == 2
+    // For indexes 0 to 4, batchIndex == 0
+    // For indexes 5 to 9, batchIndex == 1
+    // For indexes 10 to 14, batchIndex == 2
     // Etc.
-    const batchIndex = Math.floor(index / 10);
+    const batchIndex = Math.floor(index / 5);
     // if acc[batchIndex] == undefined, a new array is created before pushing the alert number
     acc[batchIndex] = acc[batchIndex] || [];
     // Push alert.number to inner array
@@ -37,9 +37,9 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
   }, []);
 
   // Loop through each batch of alerts
-  for (const tenAlertIds of batchedAlertIds) {
+  for (const fiveAlertIds of batchedAlertIds) {
     // Creates one query for multiple alertIds
-    const q = tenAlertIds.map(alertId => `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`).join('+OR+');
+    const q = fiveAlertIds.map(alertId => `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`).join('+OR+');
 
     console.log("q: ", q)
 
@@ -57,7 +57,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     console.log('searchResult: ', searchResult);
 
     // Push alertIds that do not have existing issues in searchResult to output array
-    alertIdsWithoutIssues.push(...tenAlertIds.filter(alertId => !searchResult.items.some(item => item.title.includes(alertId))));
+    alertIdsWithoutIssues.push(...fiveAlertIds.filter(alertId => !searchResult.items.some(item => item.title.includes(alertId))));
   };
   console.log('alertIdsWithoutIssues: ', alertIdsWithoutIssues);
   // Return flat array of alertIds that do not have issues
