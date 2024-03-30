@@ -22,6 +22,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
   let alertIdsWithoutIssues = [];
 
   // Batch alerts into groups of 10 for each request to avoid rate limit
+  // Limit for /search/issues endpoint is 30 requests
   const batchedAlertIds = alerts.reduce((acc, alert, index) => {
     // For indexes 0 to 4, batchIndex == 0
     // For indexes 5 to 9, batchIndex == 1
