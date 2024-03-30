@@ -26,7 +26,7 @@ const fetchAlerts = async ({ g, c }) => {
     page: 1
   });
 
-  // Throw error if fetch fails
+  // Throw error if GET request fails
   if (fetchAlertsResponse.status !== 200) {
     throw new Error(`Failed to fetch alerts: ${fetchAlertsResponse.status} - ${fetchAlertsResponse.statusText}`);
   }

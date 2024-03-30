@@ -45,6 +45,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       labels: ['ready for dev lead'],
     });
 
+    // Throw error if POST request fails
     if (createIssueResponse.status !== 200) {
       throw new Error(`Failed to create issue for alert ${alertId}: ${createIssueResponse.status} - ${createIssueResponse.statusText}`);
     }
