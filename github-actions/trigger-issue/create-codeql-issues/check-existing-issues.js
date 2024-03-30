@@ -28,7 +28,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     });
 
     // Check if the search request was successful
-    if (!searchResponse.ok) {
+    if (searchResponse.status !== 200) {
       throw new Error(`Failed to search for issues: ${searchResponse.status} - ${searchResponse.statusText}`);
     }
 
