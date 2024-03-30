@@ -18,33 +18,43 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
   github = g;
   context = c;
 
-  // Array to store alertIds without existing issues
+  // Initialize empty array to store alertIds
   let alertIdsWithoutIssues = [];
 
-  // Loop through each alert
-  for (const alert of alerts) {
-    const alertId = alert.number;
+  // Batch alerts into groups of 10 for each request to avoid rate limit
+  const batchedAlertIds = alerts.reduce((acc, alert, index) => {
+    const batchIndex = Math.floor(index / 10);
+    acc[batchIndex] = acc[batchIndex] || [];
+    acc[batchIndex].push(alert.number);
+    // Returns array of arrays
+    return acc;
+  }, []);
 
-    // Search for existing issues related to the alert
-    const searchResponse = await github.request('GET /search/issues', {
-      q: `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`,
-    });
+  // Loop through each batch of alerts
+  for (const tenAlertIds of batchedAlertIds) {
+    // Creates one query for multiple IDs
+    const q = tenAlertIds.map(alertId => `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`).join('+OR+');
 
-    // Check if the search request was successful
+    // Query GitHub API in batches
+    const searchResponse = await github.request('GET /search/issues', { q });
+    console.log('searchResponse: ', searchResponse);
+
+    // Throw error if GET request fails
     if (searchResponse.status !== 200) {
       throw new Error(`Failed to search for issues: ${searchResponse.status} - ${searchResponse.statusText}`);
     }
 
-    // Assign response data to variable for access
-    const searchResult = searchResponse.data
+    // Store the response data in a variable for easy access
+    const searchResult = searchResponse.data;
+    console.log('searchResult: ', searchResult);
 
-    // If no existing issues are found, add the alertId to the array
-    if (searchResult.items.length === 0) {
-      alertIdsWithoutIssues.push(alertId);
-    }
+    // Push alertIds that do not exist in searchResult to alertIdsWithoutIssues array
+    alertIdsWithoutIssues.push(...alertIds.filter(alertId => !searchResult.items.some(item => item.id === alertId)));
   }
 
-  // Return the array of alertIds without existing issues
+  console.log('alertIdsWithoutIssues: ', alertIdsWithoutIssues);
+
+  // Return flat array of alertIds that do not have issues
   return alertIdsWithoutIssues;
 };
 
