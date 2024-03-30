@@ -71,6 +71,7 @@ async function fetchContributors(){
   let allContributorsSinceOneMonthAgo = {};
   let allContributorsSinceTwoMonthsAgo = {};
   let inactiveWithOpenIssue = {};
+  console.log('inactiveWithOpenIssue: ', inactiveWithOpenIssue);
 
   // Members on 'website-maintain' team considered permanent members
   const permanentMembers = await fetchTeamMembers(maintTeam);
