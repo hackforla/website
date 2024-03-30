@@ -19,6 +19,7 @@ leadership:
       github: 'https://github.com/staceyrebekahscott'
     picture: 'https://avatars.githubusercontent.com/staceyrebekahscott'
   - name: Layne Mostyn
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U032H8FJX6U'
