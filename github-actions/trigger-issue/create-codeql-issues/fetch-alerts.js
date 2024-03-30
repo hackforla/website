@@ -33,11 +33,7 @@ const fetchAlerts = async ({ g, c }) => {
     throw new Error(`Failed to fetch alerts: ${fetchAlertsResponse.status} - ${fetchAlertsResponse.statusText}`);
   }
 
-  // Convert response to JSON
-  const alerts = await fetchAlertsResponse.json();
-  console.log('alerts: ', alerts);
-
-  return alerts;
+  return fetchAlertsResponse.data
 };
 
 module.exports = fetchAlerts
