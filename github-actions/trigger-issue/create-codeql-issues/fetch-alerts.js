@@ -10,7 +10,7 @@ var context;
  * @param {Object} params.g - The GitHub object for making API requests.
  * @param {Object} params.c - The context object containing repository information.
  * @returns {Promise<Array>} A promise that resolves with an array of alerts when the fetch is successful.
- * @throws {Error} If the fetch operation fails.
+ * @throws {Error} If the GET request fails.
  */
 const fetchAlerts = async ({ g, c }) => {
   // Rename parameters

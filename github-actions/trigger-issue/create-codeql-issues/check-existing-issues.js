@@ -11,6 +11,7 @@ var context;
  * @param {Object} options.c - The context object.
  * @param {Array<Object>} options.alerts - The array of alerts to check.
  * @returns {Promise<Array<number>>} An array of alert IDs without existing issues.
+ * @throws {Error} If the GET request fails.
  */
 const checkExistingIssues = async ({ g, c, alerts }) => {
   // Rename parameters

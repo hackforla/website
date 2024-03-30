@@ -11,6 +11,7 @@ var context;
  * @param {Object} options.c - The context object.
  * @param {Array<number>} options.alertIds - The array of alert IDs to create issues for.
  * @returns {Promise<void>}
+ * @throws {Error} If the POST request fails.
  */
 const createNewIssues = async ({ g, c, alertIds }) => {
   // Rename parameters
