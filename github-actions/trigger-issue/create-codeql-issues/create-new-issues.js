@@ -46,7 +46,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
     console.log('createIssueResponse:', createIssueResponse);
 
     // Throw error if POST request fails
-    if (createIssueResponse.status !== 200) {
+    if (createIssueResponse.status !== 201) {
       throw new Error(`Failed to create issue for alert ${alertId}: ${createIssueResponse.status} - ${createIssueResponse.statusText}`);
     }
     console.log('issue created');
