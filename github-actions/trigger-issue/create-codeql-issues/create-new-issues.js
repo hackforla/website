@@ -34,9 +34,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
     const issueBody = issueBodyTemplate;
 
     // Create a new GitHub issue
-    const createIssueResponse = await github.request('POST /repos/{owner}/{repo}/issues', {
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+    const createIssueResponse = await github.request('POST /repos/{context.repo.owner}/{context.repo.repo}/issues', {
       headers: {
         'Content-Type': 'application/json',
       },
