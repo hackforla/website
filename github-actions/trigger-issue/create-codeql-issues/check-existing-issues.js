@@ -23,8 +23,14 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
 
   // Batch alerts into groups of 10 for each request to avoid rate limit
   const batchedAlertIds = alerts.reduce((acc, alert, index) => {
+    // For indexes 0 to 9, batchIndex == 0
+    // For indexes 10 to 19, batchIndex == 1
+    // For indexes 20 to 29, batchIndex == 2
+    // Etc.
     const batchIndex = Math.floor(index / 10);
+    // if acc[batchIndex] == undefined, a new array is created before pushing the alert number
     acc[batchIndex] = acc[batchIndex] || [];
+    // Push alert.number to inner array
     acc[batchIndex].push(alert.number);
     // Returns array of arrays
     return acc;
@@ -32,7 +38,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
 
   // Loop through each batch of alerts
   for (const tenAlertIds of batchedAlertIds) {
-    // Creates one query for multiple IDs
+    // Creates one query for multiple alertIds
     const q = tenAlertIds.map(alertId => `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`).join('+OR+');
 
     // Query GitHub API in batches
