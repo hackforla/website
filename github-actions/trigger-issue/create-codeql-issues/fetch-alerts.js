@@ -14,14 +14,13 @@ const fetchAlerts = async ({ g, c }) => {
   context = c; 
 
   // Get a list of open CodeQL alerts
-  const fetchAlertsResponse = await github.rest.codeScanning.listAlertsForRepo({
+  const fetchAlertsResponse = await github.request('GET /repos/{owner}/{repo}/code-scanning/alerts', {
     owner: context.repo.owner,
     repo: context.repo.repo,
     state: 'open',
     per_page: 100,
-    page: 1,
+    page: 1
   });
-
 
   // Throw error if fetch fails
   if (!fetchAlertsResponse.ok) {
