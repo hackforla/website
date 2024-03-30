@@ -85,7 +85,7 @@ jobs:
         github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
-          const fetchAlerts = script({ g: github, c: context);
+          const fetchAlerts = script({ g: github, c: context });
           return fetchAlerts
 
     # Check Existing Issues
@@ -97,7 +97,7 @@ jobs:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
           const alerts = ${{ steps.fetch-alerts.outputs.result }};
-          const checkExistingIssues = script({ g: github, c: context, alerts);
+          const checkExistingIssues = script({ g: github, c: context, alerts});
           return checkExistingIssues
 
     # Create New Issues
@@ -108,5 +108,5 @@ jobs:
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
           const alertIds = ${{ steps.check-existing-issues.outputs.result }};
-          const newIssues = script({ g: github, c: context, alertIds);
+          const newIssues = script({ g: github, c: context, alertIds});
 
