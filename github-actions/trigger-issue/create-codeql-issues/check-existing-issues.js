@@ -25,10 +25,8 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     const alertId = alert.number;
 
     // Search for existing issues related to the alert
-    const searchResponse = await github.request('POST /search/issues', {
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      q: `repo:${context.repo.owner}/${context.repo.repo}+state:open+${encodeURIComponent(`"${alertId}"`)}+in:title`,
+    const searchResponse = await github.request('GET /search/issues', {
+      q: `repo:${context.repo.owner}/${context.repo.repo}+state:open+"${alertId}"+in:title`,
     });
 
     // Check if the search request was successful

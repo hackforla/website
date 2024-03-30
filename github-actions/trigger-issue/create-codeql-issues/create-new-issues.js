@@ -42,7 +42,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       }),
     });
 
-    if (!createIssueResponse.ok) {
+    if (createIssueResponse.status !== 200) {
       throw new Error(`Failed to create issue for alert ${alertId}: ${createIssueResponse.status} - ${createIssueResponse.statusText}`);
     }
     console.log("issue created");
