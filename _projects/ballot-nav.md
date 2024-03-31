@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/kcoronel'
     picture: 'https://avatars.githubusercontent.com/kcoronel'
   - name: Stacey Rebekah Scott
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U02U9Q5DUF6'
