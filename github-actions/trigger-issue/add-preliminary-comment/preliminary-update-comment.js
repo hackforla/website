@@ -2,6 +2,7 @@ var fs = require("fs")
 const postComment = require('../../utils/post-issue-comment')
 const formatComment = require('../../utils/format-comment')
 const getTimeline = require('../../utils/get-timeline');
+const checkComplexityEligibility = require('./check-complexity-eligibility');
 
 // Global variables
 var github
@@ -15,18 +16,21 @@ var context
  * @param {Number} issueNum - the number of the issue where the post will be made 
  */
 
-async function main({ g, c }, { shouldPost, issueNum }){
-  github = g
-  context = c
-  // If the previous action returns a false, stop here
-  if(shouldPost === false){
-    console.log('No need to post comment.')
-    return
+async function main({ g, c }, { shouldPost, issueNum }) {
+  github = g;
+  context = c;
+
+  const issueComplexityPermitted = await checkComplexityEligibility(github, context);
+
+  // If the previous actions returns a false, stop here
+  if (shouldPost === false || issueComplexityPermitted === false) {
+    console.log('No need to post Preliminary Update comment.');
+    return;
   }
-  //Else we make the comment with the issuecreator's github handle instead of the placeholder.
-  else{
-    const instructions = await makeComment()
-    if(instructions !== null){
+  // Else we make the comment with the issuecreator's github handle instead of the placeholder.
+  else {
+    const instructions = await makeComment();
+    if (instructions !== null) {
       // the actual creation of the comment in github
       await postComment(issueNum, instructions, github, context)
     }
@@ -38,17 +42,17 @@ async function main({ g, c }, { shouldPost, issueNum }){
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
-async function makeComment(){
+async function makeComment() {
   // Setting all the variables which formatComment is to be called with
   let issueAssignee = context.payload.issue.assignee.login
   let filename = 'preliminary-update.md';
   const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
 
   //adding the code to find out the latest person assigned the issue
-  for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
-    if(eventdescriptions[i].event == 'assigned'){
-      issueAssignee = eventdescriptions[i].assignee.login
-      break
+  for (let i = eventDescriptions.length - 1; i >= 0; i -= 1) {
+    if (eventDescriptions[i].event == 'assigned') {
+      issueAssignee = eventDescriptions[i].assignee.login;
+      break;
     }
   }
 
@@ -88,8 +92,12 @@ async function makeComment(){
 
   let filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
   const commentObject = {
-    replacementString: issueAssignee,
-    placeholderString: '${issueAssignee}',
+    replacements: [
+      {
+        replacementString: issueAssignee,
+        placeholderString: '${issueAssignee}',
+      },
+    ],
     filePathToFormat: filePathToFormat,
     textToFormat: null
   }
