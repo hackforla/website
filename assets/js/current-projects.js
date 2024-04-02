@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded",function(){
             } else {
                 filterTitle = filterName;
             }
-            // Partap
             // for issue #4648, needed to add languages inside the technologies filter-item group,  might be able to optimize for future iterations
+
+            // This ensures that the /projects-check page does not change
             if ((filterName === 'languages' || filterName === 'tools') && window.location.pathname === '/projects/') {
               // remove the view all button
               document.querySelector(`#technologies`).lastElementChild.remove()
@@ -493,7 +494,6 @@ function updateProjectCardDisplayState(filterParams){
                 projectCardObj[key] = projectCard.dataset[key].split(",");
             }
             else {
-                // partap
                 const searchAreas=['technologies','description','partner','programs','title','languages', 'tools'];
                 for(const area of searchAreas){
                     projectCardObj[area]=projectCard.dataset[area].split(",");
