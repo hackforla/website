@@ -78,7 +78,7 @@ async function makeComment(){
 
   let filename = 'preliminary-update.md';
 
-  // Unassign if issue is in New Issue Approval column of Project Board and is not labeled 'Draft'
+  // Unassign if issue is in New Issue Approval column of Project Board and is not labeled `Draft` or `Complexity: Prework`
   if (!excludeLabelPresent && columnName == 'New Issue Approval') {
     filename = 'unassign-from-NIA.md';
 
