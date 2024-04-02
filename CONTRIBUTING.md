@@ -305,17 +305,6 @@ docker-compose up
 
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
-The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-
-
-***
-
-### **1.7 Dev setup (7): Install local codebase spell checker**
-
-You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
-
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
 The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
