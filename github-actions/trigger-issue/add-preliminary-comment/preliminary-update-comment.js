@@ -42,17 +42,17 @@ async function main({ g, c }, { shouldPost, issueNum }) {
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
-async function makeComment() {
+async function makeComment(){
   // Setting all the variables which formatComment is to be called with
   let issueAssignee = context.payload.issue.assignee.login
   let filename = 'preliminary-update.md';
   const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
 
   //adding the code to find out the latest person assigned the issue
-  for (let i = eventDescriptions.length - 1; i >= 0; i -= 1) {
-    if (eventDescriptions[i].event == 'assigned') {
-      issueAssignee = eventDescriptions[i].assignee.login;
-      break;
+  for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
+    if(eventdescriptions[i].event == 'assigned'){
+      issueAssignee = eventdescriptions[i].assignee.login
+      break
     }
   }
 
@@ -92,13 +92,9 @@ async function makeComment() {
 
   let filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
   const commentObject = {
-    replacements: [
-      {
-        replacementString: issueAssignee,
-        placeholderString: '${issueAssignee}',
-      },
-    ],
-    filePathToFormat: filePathToFormat,
+    replacementString: issueAssignee,
+    placeholderString: '${issueAssignee}',
+    filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
     textToFormat: null
   }
 
