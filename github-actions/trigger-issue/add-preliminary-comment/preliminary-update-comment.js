@@ -50,7 +50,10 @@ async function makeComment(){
     }
   }
 
-  const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
+  // Exclude for case when issue includes one of the following labels
+  const excludeLabels = [ 'Draft', 'Complexity: Prework' ];
+  const issueLabels = context.payload.issue.labels.map(data => data.name);
+  const excludeLabelPresent = issueLabels.some(label => excludeLabels.includes(label));
 
   const queryColumn = `query($owner:String!, $name:String!, $number:Int!) {
     repository(owner:$owner, name:$name) {
@@ -76,7 +79,7 @@ async function makeComment(){
   let filename = 'preliminary-update.md';
 
   // Unassign if issue is in New Issue Approval column of Project Board and is not labeled 'Draft'
-  if (!isDraft && columnName == 'New Issue Approval') {
+  if (!excludeLabelPresent && columnName == 'New Issue Approval') {
     filename = 'unassign-from-NIA.md';
 
     await github.rest.issues.removeAssignees({
