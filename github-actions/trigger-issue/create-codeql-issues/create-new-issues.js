@@ -43,6 +43,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       labels: ['ready for dev lead'],
     });
 
+    // Log issue titles and links in GHA workflow
     console.log('Issue Created:', createIssueResponse.data.title, createIssueResponse.data.html_url);
 
     // Throw error if POST request fails (201 not created)
