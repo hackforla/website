@@ -29,6 +29,7 @@ const fetchAlerts = async ({ g, c }) => {
     throw new Error(`Failed to fetch alerts: ${fetchAlertsResponse.status} - ${fetchAlertsResponse.statusText}`);
   }
 
+  console.log('Test1')
   // Return alerts
   return fetchAlertsResponse.data
 };
