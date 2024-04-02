@@ -24,23 +24,33 @@ async function checkComplexityEligibility(github, context) {
     context
   );
 
-  // If issue not from Prioritized backlog, skip complexity checks
+  // If issue not from Prioritized backlog, skip complexity check
   if (columnName !== 'Prioritized backlog') {
     return true;
   }
-
-  // If issue created by assignee or not self-assigned, skip complexity checks
+   
+  // If issue created by assignee or not self-assigned, skip complexity check
   if (currentIssue.assigneeId === currentIssue.creatorId ||
       currentIssue.assigneeId !== currentIssue.assignerId) {
     return true;
   }
 
-  // If issue doesn't have required labels, skip complexity checks  
-  if (!(currentIssue.labels.includes('role: front end') ||
-        currentIssue.labels.includes('role: back end/devOps')) ||
-      !(currentIssue.labels.includes('good first issue') ||
-        currentIssue.labels.includes('Complexity: Small') ||
-        currentIssue.labels.includes('Complexity: Medium'))) {
+  const hasAnyLabel = (labels, requiredLabels) =>
+  labels.some(label => requiredLabels.includes(label));
+  
+  const requiredRoleLabels = [
+    'role: front end',
+    'role: back end/devOps'
+  ];
+  const requiredComplexityLabels = [
+    'good first issue',
+    'Complexity: Small',
+    'Complexity: Medium'
+  ];
+  
+  // If issue doesn't have required labels, skip complexity check
+  if (!hasAnyLabel(currentIssue.labels, requiredRoleLabels) ||
+      !hasAnyLabel(currentIssue.labels, requiredComplexityLabels)) {
     return true;
   }
 
@@ -49,7 +59,6 @@ async function checkComplexityEligibility(github, context) {
     github,
     context
   );
-
   const previousIssues = assignedIssues.filter(
     issue => issue.issueNum !== currentIssue.issueNum
   );
@@ -123,8 +132,9 @@ async function fetchProjectCardInfo(issueNum, github, context) {
     return { projectCardId, columnName };
 
   } catch (error) {
-    console.error(`Error fetching project card info for issue #${issueNum}`, error);
-    return { projectCardId: null, columnName: null }; 
+    throw new Error(
+      `Error fetching project card info for issue #${issueNum}: ${error.message}`
+    );
   }
 }
 
@@ -311,7 +321,9 @@ function extractPreWorkChecklistFromIssues(assignedIssues) {
   );
 
   if (!preWorkChecklist) {
-    console.error(`Assignee's Pre-Work Checklist not found in assigned issues.`);
+    throw new Error(
+      `Assignee's Pre-Work Checklist not found in assigned issues.`
+    );
   } 
 
   return preWorkChecklist;    
@@ -401,7 +413,9 @@ async function handleIssueComplexityNotPermitted(
     await postComment(preWorkCheckList.issueNum, commentBody, github, context);
 
   } catch (error) {
-    console.error('Error handling issue complexity not permitted.', error);
+    throw new Error(
+      `Failed to handle issue complexity not permitted for issue #${currentIssueNum}: ${error.message}`
+    );
   }
 }
 
