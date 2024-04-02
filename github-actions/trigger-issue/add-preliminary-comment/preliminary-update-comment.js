@@ -32,7 +32,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     const instructions = await makeComment();
     if (instructions !== null) {
       // the actual creation of the comment in github
-      await postComment(issueNum, instructions, github, context)
+      await postComment(issueNum, instructions, github, context);
     }
   }
 }
@@ -42,17 +42,17 @@ async function main({ g, c }, { shouldPost, issueNum }) {
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 
-async function makeComment(){
+async function makeComment() {
   // Setting all the variables which formatComment is to be called with
   let issueAssignee = context.payload.issue.assignee.login
   let filename = 'preliminary-update.md';
   const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
 
   //adding the code to find out the latest person assigned the issue
-  for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
-    if(eventdescriptions[i].event == 'assigned'){
-      issueAssignee = eventdescriptions[i].assignee.login
-      break
+  for (var i = eventdescriptions.length - 1; i >= 0; i -= 1) {
+    if (eventdescriptions[i].event == 'assigned') {
+      issueAssignee = eventdescriptions[i].assignee.login;
+      break;
     }
   }
 
@@ -92,15 +92,19 @@ async function makeComment(){
 
   let filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
   const commentObject = {
-    replacementString: issueAssignee,
-    placeholderString: '${issueAssignee}',
+    replacements: [
+      {
+        replacementString: issueAssignee,
+        placeholderString: '${issueAssignee}',
+      },
+    ],
     filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
     textToFormat: null
-  }
+  };
 
   // creating the comment with issue assignee's name and returning it!
-  const commentWithIssueAssignee = formatComment(commentObject, fs)
-  return commentWithIssueAssignee
+  const commentWithIssueAssignee = formatComment(commentObject, fs);
+  return commentWithIssueAssignee;
 }
   
-module.exports = main
+module.exports = main;
