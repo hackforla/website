@@ -25,6 +25,7 @@
       "_includes/design-system-page/examples/",
       "assets/",
       "_config.docker.yml",
-      "_site/"
+      "_site/",
+      "github-actions/"
   ]
 }
