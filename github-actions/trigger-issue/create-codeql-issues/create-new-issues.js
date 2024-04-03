@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 // Global variables
 var github;
 var context;
