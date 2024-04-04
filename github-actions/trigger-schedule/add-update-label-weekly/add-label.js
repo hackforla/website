@@ -259,7 +259,7 @@ async function getAssignees(issueNum) {
       issue_number: issueNum,
     });
     const assigneesData = results.data.assignees;
-    assigneesLogins = filterForAssigneesLogins(assigneesData);
+    const assigneesLogins = filterForAssigneesLogins(assigneesData);
     return assigneesLogins
   } catch (err) {
     console.error(`Function failed to get assignees. Please refer to the error below: \n `, err);
@@ -267,7 +267,7 @@ async function getAssignees(issueNum) {
   }
 }
 function filterForAssigneesLogins(data) {
-  logins = [];
+  const logins = [];
   for (let item of data) {
     logins.push(item.login);
   }

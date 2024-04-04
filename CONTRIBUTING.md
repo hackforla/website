@@ -305,17 +305,6 @@ docker-compose up
 
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
-The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-
-
-***
-
-### **1.7 Dev setup (7): Install local codebase spell checker**
-
-You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
-
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
 The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
@@ -330,7 +319,7 @@ For developers who do not use VS Code, use the corresponding npm package, cspell
 
 ### **2.1 Hack for LA Contributor expectations**
 
-In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
+In order to work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
 
 1. `good first issue`
    * Self-assign an issue with the `good first issue` label.
@@ -356,6 +345,20 @@ All website team members are required to attend at least 1 team meeting in a wee
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
 Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+
+Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
+* Setting up your local environment from a CONTRIBUTING file
+* Completing the above series of issues at least up to `Complexity: Large` 
+* Resolving Merge Conflicts
+* Reviewing other people's Pull Requests
+* Create or improve documentation for other developers
+* Mentor other developers
+* Create new issues
+
+In addition, backend engineers should complete issues that provide experience with the following:
+* API requests
+* Cron Job Scripting
+* CRUD operations
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -769,7 +772,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ##### **ii. Setting up SSH Keys for Windows**
 
-1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already. Open Git Bash and run:
 
 ```bash
 ls -al ~/.ssh

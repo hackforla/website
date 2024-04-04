@@ -8,7 +8,9 @@
       "Cleantech",
       "Inclusivity",
       "Collabathon",
-      "Undebate"
+      "Undebate",
+      "hackforla",
+      "redirections"
   ],
   "ignoreWords": [
       "Harish"
@@ -17,6 +19,12 @@
       "node_modules",
       ".github",
       "test/",
-      "docker-compose.yml"
+      "docker-compose.yml",
+      "_sass/",
+      "_data/internal/credits/",
+      "_includes/design-system-page/examples/",
+      "assets/",
+      "_config.docker.yml",
+      "_site/"
   ]
 }

@@ -197,7 +197,7 @@ layout: default
         src="/assets/js/project.js"
         type="module"
         projectId="{{ page.identification }}"
-        additionalRepoIdNums="{{ page.additional-repo-ids }}"
+        additionalRepoIdNums="{{ page.additional-repo-ids | join: ',' }}"
         imageHero="{{ page.image-hero }}"
         projectTitle="{{ page.title }}">
 </script>
