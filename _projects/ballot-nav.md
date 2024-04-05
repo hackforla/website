@@ -26,6 +26,7 @@ leadership:
       github: 'https://github.com/layneam'
     picture: 'https://avatars.githubusercontent.com/layneam'
   - name: Andrew Steman
+    github-handle:
     role: Lead Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01AP5R8U6P'
