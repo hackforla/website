@@ -92,7 +92,7 @@ function getLocalData(){
  */
 function projectListToMap(projectList) {
   let projectMap = {};
-  for(project of projectList){
+  for(let project of projectList){
     projectMap[project.id] = project;
   }
   return projectMap;
