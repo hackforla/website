@@ -21,5 +21,6 @@ We need to resolve the new alert [(${alertId})](https://github.com/hackforla/web
 - [HfLA website: CodeQL scan alert audits - issue 5005](https://docs.google.com/spreadsheets/d/1B3R-fI8OW0LcYuwZICQZ2fB8sjlE3VsfyGIXoReNBIs/edit#gid=193401043)
 - [Code scanning results page](https://github.com/hackforla/website/security/code-scanning)
 - [CodeQL query help for JavaScript](https://codeql.github.com/codeql-query-help/javascript/)
+- [How to manage CodeQL alerts](https://github.com/hackforla/website/issues/6463#issuecomment-2002573270 )
 
 This issue was automatically generated from the codeql.yml workflow
