@@ -40,7 +40,31 @@ document.addEventListener("DOMContentLoaded",function(){
             } else {
                 filterTitle = filterName;
             }
-            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
+            
+            // for issue #4648, needed to add languages inside the technologies filter-item group,  might be able to optimize for future iterations
+            if (filterName === 'languages') {
+              // remove the view all button
+              document.querySelector(`#technologies`).lastElementChild.remove()
+              // insert data inside at the end of the category
+              document.querySelector(`#technologies`).insertAdjacentHTML( 'beforeend', addToDropDownFilterComponents(filterName, filterValue));
+              // change filterName so that the view all button will be added back
+              filterName = 'technologies'
+              // get all li elements from #technologies
+              liValues = Array.from(document.querySelector('#technologies').querySelectorAll('li'))
+              // sort the array of li elements
+              liValues.sort((a,b) => {
+                const textA = a.querySelector('label').textContent.trim()
+                const textB = b.querySelector('label').textContent.trim()
+                return textA.localeCompare(textB)
+              })
+              // clear existing contents of #technologies
+              document.querySelector('#technologies').innerHTML = ''
+              // append sorted li
+              liValues.forEach(li => document.querySelector('#technologies').appendChild(li))
+            } else {
+              document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
+            }
+            
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
                 document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" role="button" aria-label="View All ${filterTitle} Filters">View all</li>` );
             }
@@ -230,7 +254,8 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
         }        
     }
@@ -433,13 +458,23 @@ function updateFilterFrequency(){
 function updateCategoryCounter(filterParams){
         let container = []
         for(const [key,value] of Object.entries(filterParams)){
-            if (key !== 'Search') {
-                container.push([`counter_${key}`,value.length]);
-            }
+          // for issue #4648, added this modifiedKey so that the counter for languages will be tied to technologies
+          let modifiedKey = key
+          if (key === 'languages') {
+            modifiedKey = 'technologies'
+          }
+          if (key !== 'Search') {
+            container.push([`counter_${modifiedKey}`,value.length]);
+          }
         }
 
         for(const [key,value] of container){
-            document.querySelector(`#${key}`).innerHTML = ` (${value})`;
+          // for issue #4648, added this to show the sum of selected filters for both technology and language filters
+          let totalValue = 0
+          for (const innerValue of container){
+            totalValue += innerValue[1]
+          }
+          document.querySelector(`#${key}`).innerHTML = ` (${totalValue})`;
         }
     
 }
@@ -456,7 +491,7 @@ function updateProjectCardDisplayState(filterParams){
                 projectCardObj[key] = projectCard.dataset[key].split(",");
             }
             else{
-                const searchAreas=['technologies','description','partner','programs','title'];
+                const searchAreas=['technologies','description','partner','programs','title','languages'];
                 for(const area of searchAreas){
                     projectCardObj[area]=projectCard.dataset[area].split(",");
                 }
@@ -772,6 +807,23 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     </ul>
     </li>
     `
+}
+
+/*
+ * Adds filter components to already existing filter category
+ * Helper function created for issue #4648
+*/
+function addToDropDownFilterComponents(categoryName, filterArray){
+  return `
+  ${filterArray.map(item =>
+      `
+      <li>
+          <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
+          <label for='${item}'>${item} <span></span></label>
+      </li>
+      `
+  ).join("")}
+  `
 }
 
 /**

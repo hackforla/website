@@ -8,10 +8,16 @@ import { getEventData, insertEventSchedule } from "./utility/api-events.js";
   const eventData = await getEventData();
 
   //Displays/Inserts event schedule to DOM
-  document.addEventListener(
-    "DOMContentLoaded",
-    insertEventSchedule(eventData, "events")
-  );
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => { insertEventSchedule(eventData, "events"); }
+    );
+  }
+  else {
+    insertEventSchedule(eventData, "events");
+  }
+
   //Displays/Inserts the user's time zone in the DOM
   document
     .querySelector("#userTimeZone")
