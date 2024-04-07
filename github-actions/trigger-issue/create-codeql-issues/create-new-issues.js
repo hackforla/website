@@ -28,10 +28,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
     let issueBodyTemplate = fs.readFileSync(issueBodyTemplatePath, 'utf8');
 
     // Replace placeholders with actual values in the issue body template
-    issueBodyTemplate = issueBodyTemplate.replace(/\${alertId}/g, alertId);
-
-    // Use the modified content as the issue body
-    const body = issueBodyTemplate;
+    const body = issueBodyTemplate.replace(/\${alertId}/g, alertId);
 
     // Create a new GitHub issue
     const createIssueResponse = await github.rest.issues.create({
