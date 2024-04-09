@@ -8,8 +8,10 @@
     <li class='resource-card'>
         <!--Where the images will be-->
         <div {% if image %} class='resource-img resource-img-provided' {% else %} role="img" aria-label="{{name}}" class='resource-img' {% endif %}>
-            {% if lowercaseName == 'github' or name == 'Slack' %}
-                {% include {{ name | prepend: 'svg/icon-' | append: '-color.svg' | downcase }} %}
+            {% if lowercaseName == 'github' %}
+                {% include svg/icon-github-color.svg %}
+            {% elsif lowercaseName == 'slack' %}
+                {% include svg/icon-slack.svg %}
             {% elsif name == 'Getting Started' %}
                 {% include svg/logo-hfla-small.svg %}
             {% elsif image %}

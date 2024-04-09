@@ -9,12 +9,14 @@ program-area:
   - Civic Tech Infrastructure
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: BOP Project Lead
     links:
       slack: 'https://hackforla.slack.com/archives/C01Q24YF56J'
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Aleiya Gafar
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01K7QMQ4TC'
@@ -32,7 +34,8 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
       github: 'https://github.com/ermbrown'
     picture: https://avatars.githubusercontent.com/ermbrown
-  - name: Katrina Bonoan 
+  - name: Katrina Bonoan
+    github-handle: 
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052LER0010'
