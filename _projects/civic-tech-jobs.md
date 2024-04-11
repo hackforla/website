@@ -90,6 +90,7 @@ leadership:
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
   - name: Benny Van
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
