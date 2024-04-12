@@ -38,7 +38,13 @@ async function main({ g, c }) {
   console.log('List of active contributors since ' + dates[0].slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
 
-  return ({contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue, dates});
+  let results = {};
+  results["recentContributors"] = contributorsOneMonthAgo;
+  results["previousContributors"] = contributorsTwoMonthsAgo;
+  results["inactiveWithOpenIssue"] = inactiveWithOpenIssue;
+  results["dates"] = dates;
+
+  return results;
 };
 
 
