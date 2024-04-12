@@ -58,6 +58,7 @@ leadership:
       github: 'https://github.com/FarzanaPrianka'
     picture: https://avatars.githubusercontent.com/FarzanaPrianka
   - name: Nandana Rao
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U013JA9H62E'
