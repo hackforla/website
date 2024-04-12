@@ -63,6 +63,7 @@ leadership:
       github: 'https://github.com/nrrao'
     picture: https://avatars.githubusercontent.com/nrrao
   - name: Emerson Castaneda
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01CSPAFEBV'
