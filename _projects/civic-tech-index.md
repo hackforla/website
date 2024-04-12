@@ -77,6 +77,7 @@ leadership:
       github: 'https://github.com/bruceplai'
     picture: https://avatars.githubusercontent.com/bruceplai
   - name: Bhaggyalakshmi Balasubramaniyan
+    github-handle:   
     role: Full Stack Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
