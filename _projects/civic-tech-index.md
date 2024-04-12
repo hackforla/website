@@ -44,6 +44,7 @@ leadership:
       github: 'https://github.com/bribenn'
     picture: https://avatars.githubusercontent.com/bribenn
   - name: Chali Prasertsri
+    github-handle: 
     role: UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
