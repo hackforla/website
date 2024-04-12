@@ -51,6 +51,7 @@ leadership:
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
   - name: Farzana Prianka
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01FUP87W3U'
