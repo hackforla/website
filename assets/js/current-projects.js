@@ -307,7 +307,7 @@ function viewAllEventHandler(e) {
 function tabFocusedKeyDownHandler(e) {
     // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
 	if ((e.key === "Enter" || e.key === "Spacebar" || e.key === " ") && document.activeElement.getAttribute("aria-label")) {
-        
+        document.activeElement.click()
     }
     
 }
