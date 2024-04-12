@@ -83,6 +83,7 @@ leadership:
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
   - name: Ron Fu
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/UGWDHDF46'
