@@ -58,6 +58,7 @@ leadership:
       github: 'https://github.com/FarzanaPrianka'
     picture: https://avatars.githubusercontent.com/FarzanaPrianka
   - name: Nandana Rao
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U013JA9H62E'
@@ -71,18 +72,21 @@ leadership:
       github: 'https://github.com/emecas'
     picture: https://avatars.githubusercontent.com/emecas
   - name: Bruce Lai
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01NT0K7XC6'
       github: 'https://github.com/bruceplai'
     picture: https://avatars.githubusercontent.com/bruceplai
   - name: Bhaggyalakshmi Balasubramaniyan
+    github-handle:   
     role: Full Stack Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
   - name: Ron Fu
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/UGWDHDF46'
