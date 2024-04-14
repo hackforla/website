@@ -44,42 +44,49 @@ leadership:
       github: 'https://github.com/bribenn'
     picture: https://avatars.githubusercontent.com/bribenn
   - name: Chali Prasertsri
+    github-handle: 
     role: UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USLBE6X4M'
       github: 'https://github.com/chalimar'
     picture: https://avatars.githubusercontent.com/chalimar
   - name: Farzana Prianka
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01FUP87W3U'
       github: 'https://github.com/FarzanaPrianka'
     picture: https://avatars.githubusercontent.com/FarzanaPrianka
   - name: Nandana Rao
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U013JA9H62E'
       github: 'https://github.com/nrrao'
     picture: https://avatars.githubusercontent.com/nrrao
   - name: Emerson Castaneda
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01CSPAFEBV'
       github: 'https://github.com/emecas'
     picture: https://avatars.githubusercontent.com/emecas
   - name: Bruce Lai
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01NT0K7XC6'
       github: 'https://github.com/bruceplai'
     picture: https://avatars.githubusercontent.com/bruceplai
   - name: Bhaggyalakshmi Balasubramaniyan
+    github-handle:   
     role: Full Stack Developer and Tech Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01R30YR26L'
       github: 'https://github.com/bhaggya'
     picture: https://avatars.githubusercontent.com/bhaggya
   - name: Ron Fu
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/UGWDHDF46'
