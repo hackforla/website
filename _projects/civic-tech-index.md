@@ -72,6 +72,7 @@ leadership:
       github: 'https://github.com/emecas'
     picture: https://avatars.githubusercontent.com/emecas
   - name: Bruce Lai
+    github-handle:
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01NT0K7XC6'
