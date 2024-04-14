@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ 'gh-pages' ]
+    branches: [ 'create-new-codeql-issues-5059' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ 'gh-pages' ]
+    branches: [ 'create-new-codeql-issues-5059' ]
   schedule:
     - cron: '30 5 * * 5'
   workflow_dispatch:
