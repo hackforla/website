@@ -81,6 +81,7 @@ jobs:
 
     # Fetch Alerts
     - name: Fetch Alerts
+      if: github.event_name != 'pull_request'
       id: fetch-alerts
       uses: actions/github-script@v7
       with:
@@ -92,6 +93,7 @@ jobs:
 
     # Check Existing Issues
     - name: Check Existing Issues
+      if: github.event_name != 'pull_request'
       uses: actions/github-script@v7
       id: check-existing-issues
       with:
@@ -104,6 +106,7 @@ jobs:
 
     # Create New Issues
     - name: Create New Issues
+      if: github.event_name != 'pull_request'
       uses: actions/github-script@v7
       with:
         github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
