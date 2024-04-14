@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ 'create-new-codeql-issues-50' ]
+    branches: [ 'create-new-codeql-issues-5059' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ 'create-new-codeql-issues-50' ]
+    branches: [ 'create-new-codeql-issues-5059' ]
   schedule:
     - cron: '30 5 * * 5'
   workflow_dispatch:
@@ -106,7 +106,7 @@ jobs:
     - name: Create New Issues
       uses: actions/github-script@v7
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
         script: |
           const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
           const alertIds = ${{ steps.check-existing-issues.outputs.result }};
