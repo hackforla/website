@@ -30,6 +30,7 @@ leadership:
       github: 'https://github.com/ejstalker'
     picture: https://avatars.githubusercontent.com/ejstalker
   - name: Liz Brown
+    github-handle:
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
