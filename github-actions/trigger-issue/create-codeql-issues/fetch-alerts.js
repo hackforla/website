@@ -1,7 +1,6 @@
 // Global variables
 var github;
 var context;
-const test = "test" // introducing unused variable to see if CodeQL picks it up
 
 /**
  * Fetches a list of open CodeQL alerts from the GitHub API.
