@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/kevindphan'
     picture: https://avatars.githubusercontent.com/kevindphan
   - name: Sean Sada
+    github-handle:
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U016XE06ZS5
