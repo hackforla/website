@@ -94,7 +94,6 @@ function sortData(filteredData) {
   return filteredData;
 }
 
-
 /**
  * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
  * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 pm"
