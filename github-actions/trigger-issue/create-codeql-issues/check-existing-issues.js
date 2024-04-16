@@ -56,6 +56,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
 
   // Return flat array of alertIds that do not have issues
   console.log('alertIds without issues: ', alertIdsWithoutIssues);
+  console.log('test 1')
   return alertIdsWithoutIssues;
 };
 
