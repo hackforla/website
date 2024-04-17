@@ -13,12 +13,13 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "gh-pages" ]
+    branches: [ 'gh-pages' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "gh-pages" ]
+    branches: [ 'gh-pages' ]
   schedule:
     - cron: '30 5 * * 5'
+  workflow_dispatch:
 
 jobs:
   analyze:
@@ -29,6 +30,7 @@ jobs:
       actions: read
       contents: read
       security-events: write
+      issues: write
 
     strategy:
       fail-fast: false
@@ -76,3 +78,41 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    # Fetch Alerts
+    - name: Fetch Alerts
+      id: fetch-alerts
+      if: github.event_name != 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+          const fetchAlerts = script({ g: github, c: context });
+          return fetchAlerts
+
+    # Check Existing Issues
+    - name: Check Existing Issues
+      id: check-existing-issues
+      if: github.event_name != 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
+          const alerts = ${{ steps.fetch-alerts.outputs.result }};
+          const checkExistingIssues = script({ g: github, c: context, alerts});
+          return checkExistingIssues
+
+    # Create New Issues
+    - name: Create New Issues
+      id: create-new-issues
+      if: github.event_name != 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+        script: |
+          const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
+          const alertIds = ${{ steps.check-existing-issues.outputs.result }};
+          const newIssues = script({ g: github, c: context, alertIds});
+
