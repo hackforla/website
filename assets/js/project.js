@@ -18,6 +18,7 @@ const project = findProjectById(projectId);
 
 function findProjectById(identification){
     // Starts at 1 now since the first element is a time stamp
+
     for (let i = 1; i < projects.length; i++){
         let itemId = projects[i].id.toString();
         if(itemId == identification){
@@ -140,8 +141,12 @@ let meetingsFound = [];
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
 const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
+// me 
+console.log("vrmsData", vrmsData)
+
 // Helper function to sort VRMS data by day of the week from "date" key and meeting time from "startTime" key
 function sortByDate(scheduleData) {
+    console.log("scheduleData", scheduleData)
     const map = {
         'Mon': 1,
         'Tue': 2,
@@ -181,6 +186,8 @@ function sortByDate(scheduleData) {
 function appendMeetingTimes(scheduleData) {
     
     sortByDate(scheduleData);
+    //me 
+    console.log("scheduleData ====>", scheduleData)
 
     for (const event of scheduleData) {
         try {
