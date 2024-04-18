@@ -35,6 +35,7 @@ leadership:
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Melinda Sukosd
+    github-handle: 
     role: UX Research Lead
     links:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
