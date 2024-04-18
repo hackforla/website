@@ -94,6 +94,7 @@ leadership:
       github: 'https://github.com/rfvisuals'
     picture: https://avatars.githubusercontent.com/rfvisuals
   - name: Isaiah Ozadhe
+    github-handle: 
     role: Full Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U034X04V2H5'
