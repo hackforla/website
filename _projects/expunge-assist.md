@@ -14,13 +14,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04J34E73CG
       github: https://github.com/amejiamesinas
     picture: https://avatars.githubusercontent.com/amejiamesinas
-  - name: Lane Mitchell
-    github-handle: lmitch10
-    role: Product Manager, Development
-    links:
-      slack: https://hackforla.slack.com/team/U052LEP0BSN
-      github: https://github.com/lmitch10
-    picture: https://avatars.githubusercontent.com/lmitch10
   - name: Curtis Barber
     github-handle: CBx3000
     role: Product Manager, Content
@@ -63,6 +56,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Sylvia Nam
+    github-handle: sylvia-nam
+    role: UX Research, Team Lead
+    links:
+      slack: https://hackforla.slack.com/team/U06E9RQ8DRA
+      github: https://github.com/sylvia-nam
+    picture: https://avatars.githubusercontent.com/sylvia-nam
 links:
     - name: GitHub
       url: 'https://github.com/hackforla/record-clearance/'
@@ -71,7 +71,7 @@ links:
     - name: Readme
       url: 'https://github.com/hackforla/record-clearance/blob/master/README.md'
     - name: Slack
-      url: 'https://hackforla.slack.com/messages/CN8NXTPK5'
+      url: 'https://hackforla.slack.com/archives/CN8NXTPK5'
 looking:
   - category: Marketing
     skill: Marketing & Communications

@@ -69,6 +69,7 @@ leadership:
       github: https://github.com/geibu
     picture: https://avatars.githubusercontent.com/geibu
   - name: Leah Ellis
+    github-handle:
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
@@ -95,6 +96,7 @@ leadership:
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
   - name: Sarah Sanger
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U02M686LYET

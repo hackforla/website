@@ -21,7 +21,7 @@ permalink: /communities-of-practice
                 <p class="alert--communities">To join the Slack channels below, you first need to be a member of our Hack for LA Slack Community. If you have not joined yet, please follow the steps in <a href="/getting-started" target="_blank">Getting Started</a>.
             </p></div>
     </div>
-    <img class="header-hero-image" src="/assets/images/communities-of-practice/comm-prac-header.svg" alt="commmunity of practice header" />
+    <img class="header-hero-image" src="/assets/images/communities-of-practice/comm-prac-header.svg" alt="community of practice header" />
 </div>
 
 <section class="content-section content--communities">
@@ -47,7 +47,7 @@ permalink: /communities-of-practice
                 <div class='leader-list--communities'>
                 {% for leader in community[1].leadership %}
                 <div class='leader-card--communities'>
-                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile'><img class='leader-img--communities' src='{{ leader.picture }}' rel='noopener noreferrer'/></a>
+                    <a href='{{ leader.links.github }}' target='_blank' title='GitHub Profile' rel='noopener noreferrer'><img class='leader-img--communities' src='{{ leader.picture }}' /></a>
                     <div class='leader-description'>
                         <p class='leader-description-field'><strong>Name: </strong>
                         {% if page.status == "Completed" and item.links.linkedin %}
