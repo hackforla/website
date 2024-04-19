@@ -53,7 +53,7 @@ async function getModifiedFiles() {
     const ownerName = context.payload.pull_request.head.repo.owner.login;
 
     // Gets the list of files modified in the pull request and destructures the data object into a files variable
-    const { data: files } = await github.pulls.listFiles({
+    const { data: files } = await github.rest.pulls.listFiles({
         owner: ownerName,
         repo: repoName,
         pull_number: prNumber
