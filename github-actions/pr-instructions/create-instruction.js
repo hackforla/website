@@ -47,10 +47,41 @@ function createContribInstruction(){
 	return previewContribURL;
 }
 
-function compositeInstruction() {
-	const completedPullInstruction = formatPullComment(createPullInstruction());
-	const completedContribInstruction = formatContribComment(createContribInstruction());
-	return completedPullInstruction + completedContribInstruction;
+async function getModifiedFiles() {
+    const prNumber = context.payload.pull_request.number;
+    const repoName = context.payload.pull_request.head.repo.name;
+    const ownerName = context.payload.pull_request.head.repo.owner.login;
+
+    // Gets the list of files modified in the pull request and destructures the data object into a files variable
+    const { data: files } = await github.pulls.listFiles({
+        owner: ownerName,
+        repo: repoName,
+        pull_number: prNumber
+    });
+    // Maps the files array to only include the filename of each file
+    const modifiedFiles = files.map(file => file.filename);
+
+    return modifiedFiles;
+}
+
+async function compositeInstruction() {
+    const modifiedFiles = await getModifiedFiles();
+    const isContributingModified = modifiedFiles.includes('CONTRIBUTING.md');
+    const isOnlyContributingModified = isContributingModified && modifiedFiles.length === 1;
+
+    let completedPullInstruction = '';
+    let completedContribInstruction = '';
+
+    // Only includes the pull request instructions if multiple files, including CONTRIBUTING.md, are modified
+    if (!isOnlyContributingModified) {
+        completedPullInstruction = formatPullComment(createPullInstruction());
+    }
+    // Only include the contributing instructions if the CONTRIBUTING.md file is modified
+    if (isContributingModified) {
+        completedContribInstruction = formatContribComment(createContribInstruction());
+    }
+
+    return completedPullInstruction + completedContribInstruction;
 }
 
 module.exports = main
