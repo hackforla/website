@@ -1,5 +1,6 @@
 
 # This workflow is shared between codeql.yml and new-codeql-issues.yml
+# It is a reusable workflow
 # For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
