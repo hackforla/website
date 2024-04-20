@@ -1,5 +1,16 @@
 
 # This workflow is shared between codeql.yml and new-codeql-issues.yml
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+#
 name: "CodeQL Scan Script"
 # workflow_call enables this workflow to be called from other workflows
 on:
@@ -7,7 +18,13 @@ on:
 
 jobs:
   analyze:
-    uses: ./.github/workflows/codeql-scripts/codeql-analyze-script.yml
+    name: Analyze
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     strategy:
       fail-fast: false
