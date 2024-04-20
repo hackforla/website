@@ -1,5 +1,5 @@
 # This workflow generates new issues
-name: "Create CodeQL Issues Workflow"
+name: "CodeQL Create Issues"
 
 on:
   #TODO: Remove push
