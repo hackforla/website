@@ -56,7 +56,7 @@ jobs:
         id: create-new-issues
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
             const alertIds = ${{ steps.check-existing-issues.outputs.result }};
