@@ -4,6 +4,7 @@ name: "CodeQL Scan Workflow"
 
 on:
   push:
+    # TODO: Replace with gh-page
     branches: [ 'refactor-codql-yml-6691' ]
   pull_request:
     # The branches below must be a subset of the branches above

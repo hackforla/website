@@ -13,4 +13,5 @@ jobs:
   codql-scan-job:
     uses: ./.github/workflows/codeql-scan-script.yml
   create-new-issues-job:
+    needs: codql-scan-job
     uses: ./.github/workflows/codeql-create-issues-script.yml
