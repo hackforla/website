@@ -1,0 +1,51 @@
+name: "New CodeQL Issues"
+
+on:
+  schedule:
+    - cron: '30 5 * * 5'
+  workflow_dispatch:
+
+jobs:
+  codql-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extend CodeQL Template
+        uses: ./.github/workflows/codeql-template.yml
+        with:
+          # Provide additional steps here
+          additional_steps: |
+            # Fetch Alerts
+            - name: Fetch Alerts
+              if: github.event_name != 'pull_request'
+              id: fetch-alerts
+              uses: actions/github-script@v7
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                  const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+                  const fetchAlerts = script({ g: github, c: context });
+                  return fetchAlerts
+
+            # Check Existing Issues
+            - name: Check Existing Issues
+              if: github.event_name != 'pull_request'
+              uses: actions/github-script@v7
+              id: check-existing-issues
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                  const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
+                  const alerts = ${{ steps.fetch-alerts.outputs.result }};
+                  const checkExistingIssues = script({ g: github, c: context, alerts});
+                  return checkExistingIssues
+
+            # Create New Issues
+            - name: Create New Issues
+              if: github.event_name != 'pull_request'
+              uses: actions/github-script@v7
+              with:
+                github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+                script: |
+                  const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
+                  const alertIds = ${{ steps.check-existing-issues.outputs.result }};
+                  const newIssues = script({ g: github, c: context, alertIds});
