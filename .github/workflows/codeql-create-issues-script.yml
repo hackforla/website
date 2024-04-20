@@ -1,13 +1,20 @@
 
 # This workflow is called in new-codeql-issues.yml
-name: "CodeQL Create Issues Script"
+name: "Create CodeQL Issues Script"
 # workflow_call enables this workflow to be called from other workflows
 on:
   workflow_call:
 
 jobs:
   analyze:
-    uses: ./.github/workflows/codeql-scripts/codeql-analyze-script.yml
+    name: Analyze
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+      issues: write
 
     strategy:
       fail-fast: false
