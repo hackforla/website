@@ -1,0 +1,54 @@
+
+# This workflow is called in new-codeql-issues.yml
+name: "CodeQL Create Issues Script"
+# workflow_call enables this workflow to be called from other workflows
+on:
+  workflow_call:
+
+jobs:
+  analyze:
+    uses: ./.github/workflows/codeql-scripts/codeql-analyze-script.yml
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby', 'swift' ]
+        # Use only 'java' to analyze code written in Java, Kotlin or both
+        # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both
+        # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
+
+    steps:
+      # Fetch Alerts
+      - name: Fetch Alerts
+        id: fetch-alerts
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+            const fetchAlerts = script({ g: github, c: context });
+            return fetchAlerts
+
+      # Check Existing Issues
+      - name: Check Existing Issues
+        id: check-existing-issues
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
+            const alerts = ${{ steps.fetch-alerts.outputs.result }};
+            const checkExistingIssues = script({ g: github, c: context, alerts});
+            return checkExistingIssues
+
+      # Create New Issues
+      - name: Create New Issues
+        id: create-new-issues
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
+            const alertIds = ${{ steps.check-existing-issues.outputs.result }};
+            const newIssues = script({ g: github, c: context, alertIds});
