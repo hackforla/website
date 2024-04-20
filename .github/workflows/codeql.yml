@@ -13,5 +13,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  codql-scan-job:
-    uses: ./.github/workflows/codeql-scan-script.yml
+  codeql-scan-job:
+    uses: ./.github/workflows/codeql-scan-job.yml
