@@ -1,5 +1,6 @@
 
 # This workflow is called in new-codeql-issues.yml
+# It is a reusable workflow
 name: "Create CodeQL Issues Script"
 # workflow_call enables this workflow to be called from other workflows
 on:
