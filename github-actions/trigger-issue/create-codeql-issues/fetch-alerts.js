@@ -2,6 +2,7 @@
 var github;
 var context;
 
+// TODO: Remove test
 const test = "test" // Testing if CodeQL picks up an error
 
 /**
