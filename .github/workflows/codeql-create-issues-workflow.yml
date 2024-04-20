@@ -1,5 +1,5 @@
 # This workflow generates new issues for CodeQL alerts if they do not exist 
-# Most of the code is in .github/workflows/codeql-scan-script.yml and .github/workflows/codeql-create-issues-job.yml
+# Most of the code is in .github/workflows/codeql-scan-job.yml and .github/workflows/codeql-create-issues-job.yml
 name: "CodeQL Create Issues"
 
 on:  
