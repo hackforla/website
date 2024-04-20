@@ -1,3 +1,5 @@
+
+# This workflow is shared between codeql.yml and new-codeql-issues.yml
 name: "CodeQL Template"
 # workflow_call enables this workflow to be called from other workflows
 on:
