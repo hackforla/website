@@ -2,9 +2,6 @@
 var github;
 var context;
 
-// TODO: Remove test
-const test = "test" // Testing if CodeQL picks up an error
-
 /**
  * Fetches a list of open CodeQL alerts from the GitHub API.
  * @param {Object} params - The parameters for the fetch operation.
