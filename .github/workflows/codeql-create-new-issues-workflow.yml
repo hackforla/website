@@ -1,5 +1,5 @@
 # This workflow generates new issues
-name: "New CodeQL Issues"
+name: "Create CodeQL Issues Workflow"
 
 on:
   #TODO: Remove push
@@ -11,6 +11,6 @@ on:
 
 jobs:
   codql-scan-job:
-    uses: ./.github/workflows/codeql-scripts/codeql-scan-script.yml
+    uses: ./.github/workflows/codeql-scan-script.yml
   create-new-issues-job:
-    uses: ./.github/workflows/codeql-scripts/codeql-create-issues-script.yml
+    uses: ./.github/workflows/codeql-create-issues-script.yml
