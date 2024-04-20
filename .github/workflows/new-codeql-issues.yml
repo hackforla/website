@@ -1,3 +1,4 @@
+# This workflow generates new issues
 name: "New CodeQL Issues"
 
 on:
@@ -11,15 +12,25 @@ jobs:
   codql-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Extend CodeQL
+      - name: Extend CodeQL Template
         uses: ./.github/workflows/codeql-template.yml
         with:
           # Provide additional steps here
           additional_steps: |
+            # Fetch Alerts
+            - name: Fetch Alerts
+              id: fetch-alerts
+              uses: actions/github-script@v7
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                  const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+                  const fetchAlerts = script({ g: github, c: context });
+                  return fetchAlerts
+
             # Check Existing Issues
             - name: Check Existing Issues
               id: check-existing-issues
-              if: github.event_name != 'pull_request'
               uses: actions/github-script@v7
               with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -32,7 +43,6 @@ jobs:
             # Create New Issues
             - name: Create New Issues
               id: create-new-issues
-              if: github.event_name != 'pull_request'
               uses: actions/github-script@v7
               with:
                 github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
@@ -40,4 +50,3 @@ jobs:
                   const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
                   const alertIds = ${{ steps.check-existing-issues.outputs.result }};
                   const newIssues = script({ g: github, c: context, alertIds});
-
