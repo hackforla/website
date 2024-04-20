@@ -4,7 +4,7 @@ name: "CodeQL Scan"
 
 on:
   push:
-    branches: [ 'refactor-codql-yml-6691' ]
+    branches: [ 'gh-pages' ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ 'gh-pages' ]
