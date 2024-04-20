@@ -33,7 +33,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const script = require('/github/workspace/github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/fetch-alerts.js');
             const fetchAlerts = script({ g: github, c: context });
             return fetchAlerts
 
@@ -44,7 +44,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const script = require('/github/workspace/github-actionstrigger-issue/create-codeql-issues/fetch-alerts.js');
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/check-existing-issues.js');
             const alerts = ${{ steps.fetch-alerts.outputs.result }};
             const checkExistingIssues = script({ g: github, c: context, alerts});
             return checkExistingIssues
@@ -56,6 +56,6 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
           script: |
-            const script = require('/github/workspace/github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
+            const script = require('./github-actions/trigger-issue/create-codeql-issues/create-new-issues.js');
             const alertIds = ${{ steps.check-existing-issues.outputs.result }};
             const newIssues = script({ g: github, c: context, alertIds});
