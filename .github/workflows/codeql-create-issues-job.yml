@@ -29,6 +29,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        
       # Fetch Alerts
       - name: Fetch Alerts
         id: fetch-alerts
