@@ -3,11 +3,9 @@
 name: "CodeQL Create Issues"
 
 on:  
-# TODO: Remove push
+# TODO: Remove push before deploy
   push:
       branches: [ 'refactor-codql-yml-6691' ] 
-  schedule:
-    - cron: '30 5 * * 5'
   workflow_dispatch:
 
 jobs:
