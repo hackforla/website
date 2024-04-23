@@ -11,6 +11,7 @@ alt: 'Design Systems'
 image-hero: /assets/images/projects/design-systems-hero.jpg
 leadership:
   - name: Yasaman Roostaeian
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U033GFQ1UQM'
