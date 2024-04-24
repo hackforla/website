@@ -9,10 +9,10 @@ const fs = require('fs');
  * @param {Object} c - context object
  * @returns {string} string containing commandline instructions, URI encoded since the backtick character causes a problem in *  the artifact
  */
-function main({ g, c }) {
+async function main({ g, c }) {
     github = g;
     context = c;
-    return encodeURI(compositeInstruction());   
+    return encodeURI(await compositeInstruction());   
 }
 
 function formatPullComment(instruction) {
