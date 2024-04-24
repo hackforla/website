@@ -6,7 +6,6 @@
 
   var contactForm = document.querySelector(".contact-form");
   var contactFormEmail = document.getElementById("contact-email");
-  var contactMessage = document.querySelector(".contact-form textarea");
   var contactFormBtn = document.getElementById("contact-form-btn");
 
   var heroFormConfirm = document.querySelector(".form-confirmation strong");
