@@ -12,8 +12,9 @@
 // Centered Components and filters up top
 section.filter-content-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
 }
+
 .page-contain.projects-inner {
   margin: 0px 0px;
 }
@@ -32,10 +33,20 @@ a.filter-item {
   padding: 8px 32px;
   box-sizing: border-box;
   height: 100%;
+  max-height: 750px;
+  overflow-y: scroll;
+}
+
+.projects-and-filters {
+  overflow-y: auto;
+  max-height: 750px;
+  padding-left: 10px;
 }
 
 .filtersDiv {
-  min-width:330px;
+  min-width: 330px;
+  position: sticky;
+  top: 0px;
 }
 
 //filter container

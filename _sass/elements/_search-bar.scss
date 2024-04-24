@@ -10,6 +10,12 @@
     margin-bottom: 10px;
 }
 
+form#search-bar {
+    position: sticky;
+    top: 0px; 
+    z-index: 1;
+}
+
 //Styles to override the styles from _forms.scss
 #search{
     padding-right: 0px;
