@@ -533,9 +533,9 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes
+Update your gh-pages branch with upstream changes:
 
-```
+```bash
 git pull upstream gh-pages
 ```
 
