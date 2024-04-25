@@ -643,7 +643,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
 
 
