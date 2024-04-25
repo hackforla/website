@@ -12,12 +12,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Anjola Jaiyeola
-    role: Product Team
+  - name: Kelly Chuang
+    github-handle: kellyc9
+    role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U052HJ1NMEZ
-      github: https://github.com/anjolaaoluwa
-    picture: https://avatars.githubusercontent.com/u/122532788?v=4
+      slack: https://hackforla.slack.com/team/U06REBB5K4M
+      github: https://github.com/kellyc9
+    picture: https://avatars.githubusercontent.com/kellyc9
   - name: Roslyn Wythe
     role: Dev Lead
     links:
