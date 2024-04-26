@@ -53,6 +53,7 @@ leadership:
       github: 'https://github.com/fuzjan81'
     picture: 'https://avatars.githubusercontent.com/fuzjan81'
   - name: Eva Kwock
+    github-handle: 
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U049PSE3ZMZ'
