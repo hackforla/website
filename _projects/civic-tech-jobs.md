@@ -20,27 +20,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U02E7ATACAV
       github: https://github.com/kchotani
     picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jen Chung 
-    github-handle: 
-    role: UX/UI Design Lead
+  - name: Lu Feng
+    github-handle: fenglugithub
+    role: UI/UX Lead
     links:
-      slack: https://hackforla.slack.com/team/U02A6H5PVAA
-      github: https://github.com/jenchuu
-    picture: https://avatars.githubusercontent.com/jenchuu
-  - name: Melinda Sukosd
-    github-handle: 
-    role: UX Research Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03T1G9F46P
-      github: https://github.com/melkosm
-    picture: https://avatars.githubusercontent.com/melkosm
-  - name: Jenn Wu
-    github-handle:
-    role: UX Researcher Lead
-    links:
-      slack: https://hackforla.slack.com/team/U05JS3V38TV
-      github: https://github.com/jayywu
-    picture: https://avatars.githubusercontent.com/jayywu 
+      slack: https://hackforla.slack.com/team/U03NV47TG4X
+      github: https://github.com/fenglugithub
+    picture: https://avatars.githubusercontent.com/fenglugithub    
   - name: Tin Wei Chung
     github-handle:
     role: UX/UI Designer
@@ -48,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
       github: https://github.com/TCUX
     picture: https://avatars.githubusercontent.com/TCUX
-  - name: Lu Feng
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U03NV47TG4X
-      github: https://github.com/fenglugithub
-    picture: https://avatars.githubusercontent.com/fenglugithub
   - name: Gabriel Vicencio
     github-handle:
     role: UX/UI Designer
