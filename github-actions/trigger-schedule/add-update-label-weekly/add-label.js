@@ -34,7 +34,6 @@ async function main({ g, c }, columnId) {
   const issueNums = getIssueNumsFromColumn(columnId);
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum, github, context);
-    const timelineArray = Array.from(timeline);
     const assignees = await getAssignees(issueNum);
     // Error catching.
     if (assignees.length === 0) {

@@ -13,20 +13,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
-  - name: Salima Yacoubi Soussane 
-    github-handle:
+  - name: Kanika Chotani
+    github-handle: kchotani
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U03HUJM7YCX
-      github: https://github.com/Salimays
-    picture: https://avatars.githubusercontent.com/Salimays
-  - name: Sabrina Heasley 
-    github-handle: 
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U05GDBDPEDR
-      github: https://github.com/sabheasley
-    picture: https://avatars.githubusercontent.com/sabheasley
+      slack: https://hackforla.slack.com/team/U02E7ATACAV
+      github: https://github.com/kchotani
+    picture: https://avatars.githubusercontent.com/kchotani
   - name: Jen Chung 
     github-handle: 
     role: UX/UI Design Lead
@@ -35,6 +28,7 @@ leadership:
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Melinda Sukosd
+    github-handle: 
     role: UX Research Lead
     links:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
@@ -90,6 +84,7 @@ leadership:
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
   - name: Benny Van
+    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U05JP90EHMK

@@ -86,11 +86,11 @@ function filterDataFromApi(responseData) {
  * Sorts Filtered Date from the api end point by their start time
  */
 function sortData(filteredData) {
-  for (const [key, value] of Object.entries(filteredData)) {
-    value.sort(function (a, b) {
+  Object.values(filteredData).forEach(value => {
+    value.sort((a, b) => {
       return convertTime12to24(a.start) - convertTime12to24(b.start) || a.name.localeCompare(b.name);
     });
-  }
+  });
   return filteredData;
 }
 
