@@ -15,6 +15,12 @@ async function main({ g, c }) {
     return encodeURI(await compositeInstruction());   
 }
 
+function formatHeaderInstruction() {
+    const path = './github-actions/pr-instructions/pr-instructions-header.md'
+    const headerInstruction = fs.readFileSync(path).toString('utf-8')
+    return headerInstruction
+}
+
 function formatPullComment(instruction) {
     const path = './github-actions/pr-instructions/pr-instructions-template.md'
     const text = fs.readFileSync(path).toString('utf-8');
@@ -69,6 +75,7 @@ async function compositeInstruction() {
     const isContributingModified = modifiedFiles.includes('CONTRIBUTING.md');
     const isOnlyContributingModified = isContributingModified && modifiedFiles.length === 1;
 
+    const pullRequestHeader = formatHeaderInstruction();
     let completedPullInstruction = '';
     let completedContribInstruction = '';
 
@@ -81,7 +88,7 @@ async function compositeInstruction() {
         completedContribInstruction = formatContribComment(createContribInstruction());
     }
 
-    return completedPullInstruction + completedContribInstruction;
+    return pullRequestHeader + completedPullInstruction + completedContribInstruction;
 }
 
 module.exports = main
