@@ -15,11 +15,11 @@ async function main({ g, c }) {
   const filepath = 'github-actions/utils/_data/inactive-members.json';
   const rawData = fs.readFileSync(filepath, 'utf8');
   let inactiveLists = JSON.parse(rawData);
+  const inactiveWithOpen = parseInactiveOpen(inactiveLists['cannotRemoveYet']);
   
   const owner = context.repo.owner;
   const repo = context.repo.repo;
   const agendaIssueNum = 2607;            // Issue number of the Dev/PM meeting agenda on Mondays
-  const inactiveWithOpen = parseInactiveOpen(inactiveLists['cannotRemoveYet']);
 
   // Create a new issue in repo, return the issue id for later: creating the project card linked to this issue
   const issue = await createIssue(owner, repo, inactiveLists);
@@ -48,7 +48,7 @@ const createIssue = async (owner, repo, inactiveLists) => {
     page: 1,
   });
   let thisIssueNumber = thisIssuePredict['data'][0]['number'] + 1;
-  
+
   // Uses issueTemplateParser to pull the relevant data from the issue template
   const pathway = 'github-actions/trigger-schedule/list-inactive-members/inactive-members.md';
   const issueObject = issueTemplateParser(pathway);
@@ -57,7 +57,7 @@ const createIssue = async (owner, repo, inactiveLists) => {
   let labels = issueObject['labels'];
   let milestone = parseInt(issueObject['milestone']);
   let body = issueObject['body'];
-  
+
   // Replace variables in issue template body
   body = body.replace('${notifiedList}', notifiedList);
   body = body.replace('${removedList}', removedList);
