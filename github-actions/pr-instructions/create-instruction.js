@@ -29,7 +29,7 @@ function formatPullComment(instruction) {
 }
 
 function formatContribComment(instruction){
-	const path = './github-actions/pr-instructions/pr-instructions-contrib-template.md'
+    const path = './github-actions/pr-instructions/pr-instructions-contrib-template.md'
     const text = fs.readFileSync(path).toString('utf-8');
     const completedInstructions = text.replace('${previewContribInstructions}', instruction);
     return completedInstructions;
@@ -47,10 +47,10 @@ git pull ${cloneURL} ${nameOfFromBranch}`
 }
 
 function createContribInstruction(){
-	const nameOfCollaborator = context.payload.pull_request.head.repo.owner.login;
+    const nameOfCollaborator = context.payload.pull_request.head.repo.owner.login;
     const nameOfFromBranch = context.payload.pull_request.head.ref;
-	const previewContribURL = `https://github.com/${nameOfCollaborator}/website/blob/${nameOfFromBranch}/CONTRIBUTING.md`
-	return previewContribURL;
+    const previewContribURL = `https://github.com/${nameOfCollaborator}/website/blob/${nameOfFromBranch}/CONTRIBUTING.md`
+    return previewContribURL;
 }
 
 async function getModifiedFiles() {
