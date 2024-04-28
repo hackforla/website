@@ -27,7 +27,7 @@
       }
     }
   }
-  document.querySelector('.flex-page-card').addEventListener('resize',handleScreenResize)
+  window.addEventListener('resize',handleScreenResize) 
   function handleScreenResize(){
     if(document.body.clientWidth>767){
       const columns = document.querySelectorAll('.mobile-dropdown');
