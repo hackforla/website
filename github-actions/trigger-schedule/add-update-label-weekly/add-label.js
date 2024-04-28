@@ -203,7 +203,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
         req.write(mutation);
         req.end();
 
-      }, 1000 * outdatedCommentCount++); // set a different timeout length for each outdated comment, each 1000ms (1s) apart.
+      }, 1500 * outdatedCommentCount++); // set a different timeout length for each outdated comment, each 1000ms (1s) apart.
     }
   }
 
