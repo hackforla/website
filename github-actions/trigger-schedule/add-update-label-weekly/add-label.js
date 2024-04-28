@@ -183,6 +183,19 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
           }
         };
 
+        // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
+        const req = https.request(options, (res) => {
+          let data = '';
+          console.log(`statusCode: ${res}`);
+        
+          res.on('data', (d) => {
+            data += d;
+          });
+          res.on('end', () => {
+            console.log(data);
+          });
+        });
+
         req.on('error', (error) => {
           console.error(error);
         });
