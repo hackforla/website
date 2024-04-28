@@ -38,7 +38,6 @@ async function makeComment() {
 
   // creating the comment with label event actor's name and returning it!
   const commentWithEventActor = formatComment(commentObject, fs)
-  console.log(commentWithEventActor)
   return commentWithEventActor
 }
 
