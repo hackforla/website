@@ -21,6 +21,8 @@ async function getEventData() {
  * @param {String} page - page that is using eventData ("events" or "project-meetings")
  */
 function insertEventSchedule(eventData, page) {
+  // me
+  console.log("eventData", eventData)
   for (const [key, value] of Object.entries(eventData)) {
     let placeToInsert = document.querySelector(`#${key}-List`);
     placeToInsert.innerHTML = "";
