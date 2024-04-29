@@ -24,6 +24,7 @@ leadership:
       github: 'https://github.com/rachelita2'
     picture: 'https://avatars.githubusercontent.com/rachelita2'
   - name: Sandra Berjan
+    github-handle: 
     role: Lead Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03753VQBSR'
