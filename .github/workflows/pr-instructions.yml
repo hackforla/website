@@ -19,9 +19,8 @@ jobs:
         with:
           script: |
             const script = require('./github-actions/pr-instructions/create-instruction.js')
-            return script({g: github, c: context}).then((instruction) => {
-              return JSON.stringify({ instruction: instruction, issueNum: context.payload.number })
-            })
+            const instruction = script({g: github, c: context})
+            return JSON.stringify({ instruction: instruction, issueNum: context.payload.number })
       
       # Create an artifact with the message
       - name: Create Artifacts
