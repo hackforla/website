@@ -8,7 +8,7 @@ export const vrmsDataFetch = (currentPage, appendMeetingTimes) => {
     return sortByDate(vrmsData, currentPage, appendMeetingTimes)
 }
 
- // Helper function to sort VRMS data by day of the week from "date" key and meeting time from "startTime" key
+ // Helper function used for project.html and right-col-content.html to sort VRMS data by day of the week from "date" key and meeting time from "startTime" key
  function sortByDate(scheduleData, currentPage, appendMeetingTimes) {
     const map = {
         'Mon': 1,
@@ -43,12 +43,13 @@ export const vrmsDataFetch = (currentPage, appendMeetingTimes) => {
             return 1;
         }
      });
-    
-    currentPage === "events" ? scheduleData : appendMeetingTimes(scheduleData)
+
+    if (currentPage === "events") return scheduleData
+    else if (currentPage === "project") appendMeetingTimes(scheduleData)
 }
 
 
-// Formats time to be readable
+// Formats time to be readable for projects.html page
 export function timeFormat(time) {
     let hours = time.getHours();
     let minutes = time.getMinutes();
@@ -71,3 +72,4 @@ export function timeFormat(time) {
     }
 
 }
+
