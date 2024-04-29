@@ -39,6 +39,10 @@
     else{
       const columns = document.querySelectorAll('.mobile-dropdown');
       for(let column of columns){
+        if (column.previousElementSibling.classList.contains('active')){
+          // when collapsing cards, skip the ones unfolded manually
+          continue;
+        }
         column.style.display='none';
     }
   }
