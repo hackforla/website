@@ -108,6 +108,7 @@ leadership:
       github: 'https://github.com/maxskewes'
     picture: https://avatars.githubusercontent.com/maxskewes
   - name: Dennis Chatkhan
+    github-handle:
     role: Frontend Developer
     links:
       slack: https://hackforla.slack.com/team/U01B4S459CZ
