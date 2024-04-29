@@ -35,6 +35,7 @@ leadership:
       github: "https://github.com/thadk"
     picture: https://avatars2.githubusercontent.com/u/283343?v=4
   - name: Naomi Chao
+    github-handle:
     role: Special Projects Coordinator
     links:
       slack: "https://hackforla.slack.com/team/U018TQWQB0T"
