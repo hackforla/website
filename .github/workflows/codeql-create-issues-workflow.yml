@@ -7,10 +7,19 @@ on:
   push:
       branches: [ 'refactor-codql-yml-6691' ] 
   workflow_dispatch:
+    inputs:
+      hackforla_admin_token:
+        description: 'HACKFORLA_ADMIN_TOKEN secret'
+        required: true
 
 jobs:
   codql-scan-job:
     uses: ./.github/workflows/codeql-scan-job.yml
   codeql-create-issues-job:
     needs: codql-scan-job
-    uses: ./.github/workflows/codeql-create-issues-job.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Create Issues Job
+        uses: ./.github/workflows/codeql-create-issues-job.yml
+        with:
+          HACKFORLA_ADMIN_TOKEN: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
