@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ 'gh-pages' ]
+    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ 'gh-pages' ]
+    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
   schedule:
     - cron: '30 5 * * 5'
   workflow_dispatch:
@@ -50,7 +50,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        queries: security-and-quality
+        queries: security-and-quality, ../exclude-patterns.ql
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
