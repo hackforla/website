@@ -13,4 +13,5 @@ jobs:
     uses: ./.github/workflows/codeql-scan-job.yml
   codeql-create-issues-job:
     needs: codql-scan-job
+    if: ${{ needs.codql-scan-job.result == 'success' }}
     uses: ./.github/workflows/codeql-create-issues-job.yml
