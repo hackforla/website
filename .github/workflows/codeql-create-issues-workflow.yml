@@ -1,0 +1,16 @@
+# This workflow generates new issues for CodeQL alerts if they do not exist 
+# Most of the code is in .github/workflows/codeql-scan-job.yml and .github/workflows/codeql-create-issues-job.yml
+name: "CodeQL Create Issues"
+
+on:  
+# TODO: Remove push before deploy
+  push:
+      branches: [ 'refactor-codql-yml-6691' ] 
+  workflow_dispatch:
+
+jobs:
+  codql-scan-job:
+    uses: ./.github/workflows/codeql-scan-job.yml
+  codeql-create-issues-job:
+    needs: codql-scan-job
+    uses: ./.github/workflows/codeql-create-issues-job.yml
