@@ -5,6 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      - 'anthonypz-custom-pr-instructions-5182'
 
 jobs:
   Add-Pull-Request-Instructions:
