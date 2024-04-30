@@ -4,6 +4,9 @@
 name: "CodeQL Create Issues Job"
 # workflow_call enables this workflow to be called from other workflows
 on:
+  # TODO: Remove push before deploy
+  push:
+        branches: [ 'refactor-codql-yml-6691' ] 
   workflow_call:
 
 jobs:
