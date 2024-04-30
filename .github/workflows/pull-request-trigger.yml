@@ -4,6 +4,7 @@ on:
     types: [opened, closed]
     branches:
       - 'gh-pages'
+      - 'anthonypz-custom-pr-instructions-5182'
 
 jobs:
   # Run an echo to confirm that the action was triggered
