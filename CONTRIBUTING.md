@@ -1,5 +1,5 @@
 # **How to Contribute to Hack for LA**
-
+UNNEEDED CHANGE!
 👍🥳 First off, thanks for taking the time to contribute! 🥳👍
 
 The following is a set of guidelines for contributing to the website repository, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in the form of a pull request.
