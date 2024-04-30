@@ -28,6 +28,7 @@
       "_config.docker.yml",
       "_site/",
       "github-actions/",
+      "redirections/",
       "surveys/"
   ]
 }
