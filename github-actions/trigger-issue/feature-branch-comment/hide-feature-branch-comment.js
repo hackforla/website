@@ -44,7 +44,7 @@ async function fetchComments(github, context) {
  */
 function findMatchingComment(comments) {
   const matchingComments = comments.filter((comment) =>
-    comment.body.includes("`feature: feature branch`")
+    comment.body.includes("Feature: Feature Branch")
   )
   const comment = matchingComments[matchingComments.length - 1]
   if (comment) {
