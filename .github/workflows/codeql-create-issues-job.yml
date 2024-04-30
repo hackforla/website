@@ -32,6 +32,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - name: Run CodeQL scan
+        uses: ./.github/workflows/codeql-scan-job.yml
         
       # Fetch Alerts
       - name: Fetch Alerts
