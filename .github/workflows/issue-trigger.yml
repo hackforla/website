@@ -85,32 +85,46 @@ jobs:
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results)
-  #   trigger for issues that are labeled and should trigger a comment
-  Add-New-Comment-For-Feature-Issue:
-    if: "${{github.event.label.name == 'feature: feature branch' && github.event.action == 'labeled'}}"
+
+  Add-Feature-Branch-Comment:
     runs-on: ubuntu-latest
+    if: "${{ github.event_name == 'issues' && (github.event.action == 'labeled' && github.event.label.name == 'Feature: Feature Branch')}}"
     permissions:
       issues: write
     steps:
       - uses: actions/checkout@v4
-      # add comment
-      - name: Add new comment for feature branch issue
+
+      - name: Add feature branch comment
         uses: actions/github-script@v7
         with:
           script: |
-            const script = require('./github-actions/trigger-issue/feature-branch-comment/add-comments.js')
-            script({g: github, c: context})
-  # trigger to Hide a comment once label is removed
-  Hide-Comment-For-Feature-Issue:
-    if: "${{github.event.action == 'unlabeled' && github.event.label.name == 'feature: feature branch'}}"
+            const script = require('./github-actions/trigger-issue/feature-branch-comment/add-feature-branch-comment.js')
+            const addComment = script({g: github, c: context})
+            return addComment
+
+  Hide-Feature-Branch-Comment:
     runs-on: ubuntu-latest
+    if: "${{ github.event_name == 'issues' && (github.event.action == 'unlabeled' && github.event.label.name == 'Feature: Feature Branch')}}"
     permissions:
       issues: write
     steps:
       - uses: actions/checkout@v4
-      - name: outdate the comment for feature branch issue
+
+      - name: hide feature branch comment
         uses: actions/github-script@v7
         with:
           script: |
-            const script = require('./github-actions/trigger-issue/feature-branch-comment/outdate-comments.js')
-            script({g: github, c: context})
+            const script = require('./github-actions/trigger-issue/feature-branch-comment/hide-feature-branch-comment.js')
+            const hideComment = script({g: github, c: context})
+            return hideComment
+
+
+
+
+            # TODO
+# If you specify multiple activity types, only one of those event activity types needs to occur to trigger your workflow. If multiple triggering event activity types for your workflow occur at the same time, multiple workflow runs will be triggered. For example, the following workflow triggers when an issue is opened or labeled. If an issue with two labels is opened, three workflow runs will start: one for the issue opened event and two for the two issue labeled events.
+##7
+# For example, if you want the workflow to run when a specific label is added to an issue, you can trigger on the issues labeled event activity type and use a conditional to check what label triggered the workflow. The following workflow will run when any label is added to an issue in the workflow's repository, but the run_if_label_matches job will only execute if the label is named bug.
+
+#
+# If you specify multiple events, only one of those events needs to occur to trigger your workflow. If multiple triggering events for your workflow occur at the same time, multiple workflow runs will be triggered.
