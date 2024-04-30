@@ -49,6 +49,7 @@ leadership:
       github: 'https://github.com/winoue90'
     picture: 'https://avatars.githubusercontent.com/winoue90'
   - name: Faezeh Faezipour
+    github-handle: 
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04AT8KU5CY'
