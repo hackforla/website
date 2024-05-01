@@ -5,9 +5,9 @@ description: The CivicTechJobs.org MVP website will be a platform to help prospe
 image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
-leadership: 
+leadership:
   - name: Karen Coronel
-    github-handle: 
+    github-handle:
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
@@ -20,15 +20,15 @@ leadership:
       slack: https://hackforla.slack.com/team/U02E7ATACAV
       github: https://github.com/kchotani
     picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jen Chung 
-    github-handle: 
+  - name: Jen Chung
+    github-handle:
     role: UX/UI Design Lead
     links:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Melinda Sukosd
-    github-handle: 
+    github-handle:
     role: UX Research Lead
     links:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
@@ -40,7 +40,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U05JS3V38TV
       github: https://github.com/jayywu
-    picture: https://avatars.githubusercontent.com/jayywu 
+    picture: https://avatars.githubusercontent.com/jayywu
   - name: Jimmy Juarez
     github-handle: JimmyJuarez10
     role: Developer Lead
@@ -75,9 +75,6 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
       github: https://github.com/Leah0996
-<<<<<<< HEAD
-    picture: https://avatars.githubusercontent.com/Leah0996   
-=======
     picture: https://avatars.githubusercontent.com/Leah0996
   - name: Manju Chawla
     github-handle: itsmanjuchawla
@@ -86,14 +83,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U06E9T37H9A
       github: https://github.com/itsmanjuchawla
     picture: https://avatars.githubusercontent.com/itsmanjuchawla
-  - name: Matt Pereira
-    github-handle:
-    role: Developer
-    links:
-      slack: https://hackforla.slack.com/team/U045XKKB5DH
-      github: https://github.com/MattPereira
-    picture: https://avatars.githubusercontent.com/MattPereira 
->>>>>>> 3cb10103d82bc242cd936bca0b2fd1a65c7791aa
   - name: Bitian Zhang
     github-handle:
     role: Developer
@@ -108,32 +97,15 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
-<<<<<<< HEAD
-  - name: Nga Do
-    github-handle:
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U05JS3BS9FD
-      github: https://github.com/ngadoq
-    picture: https://avatars.githubusercontent.com/ngadoq 
-=======
-  - name: Sarah Sanger
-    github-handle:
-    role: Developer
-    links:
-      slack: https://hackforla.slack.com/team/U02M686LYET
-      github: https://github.com/Blulady
-    picture: https://avatars.githubusercontent.com/Blulady
->>>>>>> 3cb10103d82bc242cd936bca0b2fd1a65c7791aa
-links: 
+links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
     url: https://hackforla.slack.com/archives/C02509WHFQQ
   - name: Overview
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
-looking: 
-technologies: 
+looking:
+technologies:
   - Django
   - Django REST Framework
   - React
@@ -142,11 +114,11 @@ technologies:
   - PostgreSQL
   - Docker
   - GitHub Actions
-tools: 
-location: 
+tools:
+location:
   - Remote
 visible: true
 status: Active
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 ---
