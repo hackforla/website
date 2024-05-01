@@ -361,7 +361,7 @@ async function minimizeComment(node_id) {
       data += d;
     });
     res.on('end', () => {
-      console.log(f`GraphQL output: ${data}`);
+      console.log(`GraphQL output: ${data}`);
     });
   });
 
