@@ -40,7 +40,14 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U05JS3V38TV
       github: https://github.com/jayywu
-    picture: https://avatars.githubusercontent.com/jayywu 
+    picture: https://avatars.githubusercontent.com/jayywu
+  - name: Jimmy Juarez
+    github-handle: JimmyJuarez10
+    role: Developer Lead
+    links:
+      slack: https://hackforla.slack.com/team/U062FQ7UXQE
+      github: https://github.com/JimmyJuarez10
+    picture: https://avatars.githubusercontent.com/JimmyJuarez10
   - name: Tin Wei Chung
     github-handle:
     role: UX/UI Designer
