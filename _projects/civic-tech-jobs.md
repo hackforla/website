@@ -74,7 +74,6 @@ leadership:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U045XKKB5DH
-      github: https://github.com/MattPereira
   - name: Bitian Zhang
     github-handle:
     role: Developer
