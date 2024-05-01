@@ -64,20 +64,16 @@ const createIssue = async (owner, repo, inactiveLists) => {
   body = body.replaceAll('${thisIssueNumber}', thisIssueNumber);
 
   // Create issue
-  try {
-    const issue = await github.rest.issues.create({
-      owner,
-      repo,
-      title,
-      body,
-      labels,
-      milestone,
-    });
-    console.log('Created issue ' + thisIssueNumber);
-    return issue.data;
-  } catch (err) {
-      throw new Error(err);
-  }
+  const issue = await github.rest.issues.create({
+    owner,
+    repo,
+    title,
+    body,
+    labels,
+    milestone,
+  });
+  console.log('Created issue ' + thisIssueNumber);
+  return issue.data;
 };
 
 const parseInactiveOpen = (inactiveOpens) => {
