@@ -140,7 +140,7 @@ async function fetchContributors(dates){
     }
     // Add members of botMembers team to list of active contributors
     for(let i; i < botMembers.length; i++){
-      allContributorsSince[botMember[i]] = true;
+      allContributorsSince[botMembers[i]] = true;
     }
     
     if(date === dates[0]){
