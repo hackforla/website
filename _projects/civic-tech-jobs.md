@@ -72,7 +72,6 @@ leadership:
   - name: Matt Pereira
     github-handle:
     role: Developer
-    links:
   - name: Bitian Zhang
     github-handle:
     role: Developer
