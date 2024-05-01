@@ -317,7 +317,6 @@ function isCommentByBot(data) {
 // asynchronously minimize all the comments that are outdated (> 1 week old)
 async function minimizeComments(comment_node_ids) {
   for (const node_id of comment_node_ids) {
-    console.log(node_id); // log node id for debugging purposes
     await new Promise((resolve) => { setTimeout(resolve, 1000); }); // wait for 1000ms before doing the GraphQL mutation
     await minimizeComment(node_id);
   }
@@ -362,7 +361,7 @@ async function minimizeComment(node_id) {
       data += d;
     });
     res.on('end', () => {
-      console.log(`Comment ${node_id} ${data.minimizeComment.minimizedComment.isMinimized ? "is minimized." : "is not minimized."} `);
+      console.log(`Comment ${node_id} ${data.data.minimizeComment.minimizedComment.isMinimized ? "is minimized." : "is not minimized."} `);
     });
   });
 
