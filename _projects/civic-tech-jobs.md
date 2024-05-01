@@ -71,7 +71,6 @@ leadership:
     picture: https://avatars.githubusercontent.com/Leah0996   
   - name: Matt Pereira
     github-handle:
-    role: Developer
   - name: Bitian Zhang
     github-handle:
     role: Developer
