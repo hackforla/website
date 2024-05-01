@@ -151,6 +151,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     if (!isMomentRecent(eventObj.created_at, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
+      console.log(`Comment ${eventObj.node_id} is outdated (i.e. > 7 days old) and will be minimized.`)
       commentsToBeMinimized.push(eventObj.node_id); // retain node id so its associated comment can be minimized later
     }
   }
@@ -355,13 +356,13 @@ async function minimizeComment(node_id) {
   // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
   const req = https.request(options, (res) => {
     let data = '';
-    console.log(`statusCode: ${res}`);
+    // console.log(`statusCode: ${res}`);
   
     res.on('data', (d) => {
       data += d;
     });
     res.on('end', () => {
-      console.log(data);
+      console.log(`Comment ${node_id} ${data.minimizeComment.minimizedComment.isMinimized ? "is minimized." : "is not minimized."} `);
     });
   });
 
