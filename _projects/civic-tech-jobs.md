@@ -40,7 +40,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U05JS3V38TV
       github: https://github.com/jayywu
-    picture: https://avatars.githubusercontent.com/jayywu
+    picture: https://avatars.githubusercontent.com/jayywu 
   - name: Jimmy Juarez
     github-handle: JimmyJuarez10
     role: Developer Lead
