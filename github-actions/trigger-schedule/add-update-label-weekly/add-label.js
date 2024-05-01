@@ -150,60 +150,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     if (!isMomentRecent(eventObj.created_at, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
-      
-      // set a timeout to avoid rate limit issues
-      setTimeout(() => {
-        console.log(`Comment ${eventObj.node_id} created more than 7 days ago. Hiding as outdated...`);
-        const mutation = JSON.stringify({
-          query: `mutation HideOutdatedComment($nodeid: ID!){ 
-              minimizeComment(input:{
-                classifier:OUTDATED,
-                subjectId: $nodeid
-              }) {
-                clientMutationId
-                minimizedComment {
-                  isMinimized
-                  minimizedReason
-                }
-              }
-            }`,
-          variables: {
-            nodeid: eventObj.node_id
-          }
-        });
-
-        const options = {
-          hostname: 'api.github.com',
-          path: '/graphql',
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'bearer ' + projectBoardToken,
-            'user-agent': 'Add-Update-Label-to-Issues-Weekly'
-          }
-        };
-
-        // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
-        const req = https.request(options, (res) => {
-          let data = '';
-          console.log(`statusCode: ${res}`);
-        
-          res.on('data', (d) => {
-            data += d;
-          });
-          res.on('end', () => {
-            console.log(data);
-          });
-        });
-
-        req.on('error', (error) => {
-          console.error(error);
-        });
-
-        req.write(mutation);
-        req.end();
-
-      }, 1500 * outdatedCommentCount++); // set a different timeout length for each outdated comment, each 1000ms (1s) apart.
+      minimizeComment(eventObj.node_id);
     }
   }
 
@@ -361,6 +308,57 @@ function formatComment(assignees, labelString) {
 function isCommentByBot(data) {
   let botLogin = "github-actions[bot]";
   return data.actor.login === botLogin;
+}
+
+function minimizeComment(node_id) {
+  const mutation = JSON.stringify({
+    query: `mutation HideOutdatedComment($nodeid: ID!){ 
+        minimizeComment(input:{
+          classifier:OUTDATED,
+          subjectId: $nodeid
+        }) {
+          clientMutationId
+          minimizedComment {
+            isMinimized
+            minimizedReason
+          }
+        }
+      }`,
+    variables: {
+      nodeid: node_id
+    }
+  });
+
+  const options = {
+    hostname: 'api.github.com',
+    path: '/graphql',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + projectBoardToken,
+      'user-agent': 'Add-Update-Label-to-Issues-Weekly'
+    }
+  };
+
+  // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
+  const req = https.request(options, (res) => {
+    let data = '';
+    console.log(`statusCode: ${res}`);
+  
+    res.on('data', (d) => {
+      data += d;
+    });
+    res.on('end', () => {
+      console.log(data);
+    });
+  });
+
+  req.on('error', (error) => {
+    console.error(error);
+  });
+
+  req.write(mutation);
+  req.end();
 }
 
 module.exports = main
