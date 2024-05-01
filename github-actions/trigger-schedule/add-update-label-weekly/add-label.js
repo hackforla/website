@@ -152,7 +152,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
 
     if (!isMomentRecent(eventObj.created_at, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
       commentsToBeMinimized.push(eventObj.node_id); // retain node id so its associated comment can be minimized later
-      console.log(eventObj.node_id) // logging node id for debugging purposes
     }
   }
 
@@ -317,6 +316,7 @@ function isCommentByBot(data) {
 // asynchronously minimize all the comments that are outdated (> 1 week old)
 async function minimizeComments(comment_node_ids) {
   for (node_id in comment_node_ids) {
+    console.log(node_id); // log node id for debugging purposes
     await new Promise((resolve) => { setTimeout(resolve, 1000); }); // wait for 1000ms before doing the GraphQL mutation
     await minimizeComment(node_id);
   }
