@@ -83,13 +83,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
-  - name: Sarah Sanger
-    github-handle:
-    role: Developer
-    links:
-      slack: https://hackforla.slack.com/team/U02M686LYET
-      github: https://github.com/Blulady
-    picture: https://avatars.githubusercontent.com/Blulady
   - name: Nga Do
     github-handle:
     role: UX Researcher
