@@ -139,7 +139,7 @@ async function fetchContributors(dates){
       allContributorsSince[permanentMember] = true;
     }
     // Add members of botMembers team to list of active contributors
-    for(let i; i < botMembers.length; i++){
+    for(let i = 0; i < botMembers.length; i++){
       allContributorsSince[botMembers[i]] = true;
     }
     
