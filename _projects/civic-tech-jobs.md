@@ -5,9 +5,9 @@ description: The CivicTechJobs.org MVP website will be a platform to help prospe
 image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
-leadership: 
+leadership:
   - name: Karen Coronel
-    github-handle: 
+    github-handle:
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
@@ -20,15 +20,15 @@ leadership:
       slack: https://hackforla.slack.com/team/U02E7ATACAV
       github: https://github.com/kchotani
     picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jen Chung 
-    github-handle: 
+  - name: Jen Chung
+    github-handle:
     role: UX/UI Design Lead
     links:
       slack: https://hackforla.slack.com/team/U02A6H5PVAA
       github: https://github.com/jenchuu
     picture: https://avatars.githubusercontent.com/jenchuu
   - name: Melinda Sukosd
-    github-handle: 
+    github-handle:
     role: UX Research Lead
     links:
       slack: https://hackforla.slack.com/team/U03T1G9F46P
@@ -40,7 +40,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U05JS3V38TV
       github: https://github.com/jayywu
-    picture: https://avatars.githubusercontent.com/jayywu 
+    picture: https://avatars.githubusercontent.com/jayywu
   - name: Jimmy Juarez
     github-handle: JimmyJuarez10
     role: Developer Lead
@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U062FQ7UXQE
       github: https://github.com/JimmyJuarez10
     picture: https://avatars.githubusercontent.com/JimmyJuarez10
-  - name: Tin Wei Chung
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
-      github: https://github.com/TCUX
-    picture: https://avatars.githubusercontent.com/TCUX
   - name: Lu Feng
     github-handle:
     role: UX/UI Designer
@@ -69,6 +62,20 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MWMRSCJW
       github: https://github.com/brendasdesign
     picture: https://avatars.githubusercontent.com/brendasdesign
+  - name: Armon Brown
+    github-handle: stanarmon
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U06J0UCAWHE
+      github: https://github.com/stanarmon
+    picture: https://avatars.githubusercontent.com/stanarmon
+  - name: Carmen Mak
+    github-handle: CarmenMM1
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U06313EMD41
+      github: https://github.com/CarmenMM1
+    picture: https://avatars.githubusercontent.com/CarmenMM1
   - name: Leah Ellis
     github-handle:
     role: UX Researcher
@@ -97,15 +104,15 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
-links: 
+links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
     url: https://hackforla.slack.com/archives/C02509WHFQQ
   - name: Overview
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
-looking: 
-technologies: 
+looking:
+technologies:
   - Django
   - Django REST Framework
   - React
@@ -114,11 +121,11 @@ technologies:
   - PostgreSQL
   - Docker
   - GitHub Actions
-tools: 
-location: 
+tools:
+location:
   - Remote
 visible: true
 status: Active
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 ---
