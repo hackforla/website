@@ -315,7 +315,7 @@ function isCommentByBot(data) {
 
 // asynchronously minimize all the comments that are outdated (> 1 week old)
 async function minimizeComments(comment_node_ids) {
-  for (node_id in comment_node_ids) {
+  for (const node_id of comment_node_ids) {
     console.log(node_id); // log node id for debugging purposes
     await new Promise((resolve) => { setTimeout(resolve, 1000); }); // wait for 1000ms before doing the GraphQL mutation
     await minimizeComment(node_id);
