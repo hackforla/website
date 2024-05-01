@@ -55,20 +55,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Gabriel Vicencio
-    github-handle:
+  - name: Brenda Njemanze
+    github-handle: brendasdesign
     role: UX/UI Designer
     links:
-      slack: https://hackforla.slack.com/team/U03P33ZNPGW
-      github: https://github.com/geibu
-    picture: https://avatars.githubusercontent.com/geibu
+      slack: https://hackforla.slack.com/team/U06MWMRSCJW
+      github: https://github.com/brendasdesign
+    picture: https://avatars.githubusercontent.com/brendasdesign
   - name: Leah Ellis
     github-handle:
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
       github: https://github.com/Leah0996
-    picture: https://avatars.githubusercontent.com/Leah0996   
+    picture: https://avatars.githubusercontent.com/Leah0996
+  - name: Manju Chawla
+    github-handle: itsmanjuchawla
+    role: UX Researcher
+    links:
+      slack: https://hackforla.slack.com/team/U06E9T37H9A
+      github: https://github.com/itsmanjuchawla
+    picture: https://avatars.githubusercontent.com/itsmanjuchawla
   - name: Matt Pereira
     github-handle:
     role: Developer
@@ -97,13 +104,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U02M686LYET
       github: https://github.com/Blulady
     picture: https://avatars.githubusercontent.com/Blulady
-  - name: Nga Do
-    github-handle:
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U05JS3BS9FD
-      github: https://github.com/ngadoq
-    picture: https://avatars.githubusercontent.com/ngadoq 
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
