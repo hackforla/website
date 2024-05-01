@@ -73,7 +73,6 @@ leadership:
     github-handle:
     role: Developer
     links:
-      slack: https://hackforla.slack.com/team/U045XKKB5DH
   - name: Bitian Zhang
     github-handle:
     role: Developer
