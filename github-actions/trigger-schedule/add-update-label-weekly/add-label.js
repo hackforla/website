@@ -361,7 +361,7 @@ async function minimizeComment(node_id) {
       data += d;
     });
     res.on('end', () => {
-      console.log(`Comment ${node_id} ${data.data.minimizeComment.minimizedComment.isMinimized ? "is minimized." : "is not minimized."} `);
+      console.log(f`GraphQL output: ${data}`);
     });
   });
 
