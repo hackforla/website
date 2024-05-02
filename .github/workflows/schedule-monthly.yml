@@ -41,7 +41,7 @@ jobs:
     # Commits list of inactive members to repo for using in next step, and in one month
     - name: Update Inactive Members JSON
       id: update-inactive-members-json
-      uses: stefanzweifel/git-auto-commit-action@v5.0.0
+      uses: stefanzweifel/git-auto-commit-action@v5.0.1
       with:
        # Glob pattern of file which should be added to the commit
         file_pattern: github-actions/utils/_data/inactive-members.json
