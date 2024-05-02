@@ -3,18 +3,11 @@
  * when the content is short.
  */
 
- #app {
-   position: relative;
-   min-height: 100vh;
- }
-
- #content {
-  padding-bottom: 160px;
-
-  @media #{$bp-below-mobile} {
-    padding-bottom: 200px;
-  }
- }
+#app {
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column;
+}
 
 .page-wrapper {
   display: flex;
