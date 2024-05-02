@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/sandraberjan'
     picture: 'https://avatars.githubusercontent.com/sandraberjan'
   - name:  Khanh Cao
+    github-handle:
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04A19TDBED'
