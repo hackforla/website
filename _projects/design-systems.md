@@ -18,6 +18,7 @@ leadership:
       github: 'https://github.com/allthatyazz'
     picture: 'https://avatars.githubusercontent.com/allthatyazz'
   - name: Rachel Newcomb
+    github-handle: 
     role: Lead UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03Q5J8SVM3'
