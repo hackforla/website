@@ -38,6 +38,7 @@ leadership:
       github: 'https://github.com/khanhcao17'
     picture: 'https://avatars.githubusercontent.com/khanhcao17'
   - name:  Debbie Nyasetia
+    github-handle: 
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03FJ3V58FN'
