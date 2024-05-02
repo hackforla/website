@@ -27,19 +27,24 @@
       }
     }
   }
-  window.addEventListener('resize',handleScreenResize) 
-  function handleScreenResize(){
-    if(document.body.clientWidth>767){
-      const columns = document.querySelectorAll('.mobile-dropdown');
-      for(let column of columns){
+  window.addEventListener('resize', handleScreenResize); 
+
+  /**
+   * Handles the screen resize event for event cards
+   * When the screen width is greater than 767 pixels (tablet/desktop), disables mobile dropdown, removes the arrow and display card content
+   * When the screen width is less than or equal to 767 pixels (mobile), enables cards mobile dropdown and fold the cards, unless already unfolded ('active').
+   */
+  function handleScreenResize() {
+    const columns = document.querySelectorAll('.mobile-dropdown');
+
+    if (document.body.clientWidth > 767) {
+      for(let column of columns) {
         column.style.display='block';
         column.previousElementSibling.classList.remove('active');
       }
-    }
-    else{
-      const columns = document.querySelectorAll('.mobile-dropdown');
-      for(let column of columns){
-        if (column.previousElementSibling.classList.contains('active')){
+    } else {
+      for (let column of columns) {
+        if (column.previousElementSibling.classList.contains('active')) {
           // when collapsing cards, skip the ones unfolded manually
           continue;
         }
