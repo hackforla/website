@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U062FQ7UXQE
       github: https://github.com/JimmyJuarez10
     picture: https://avatars.githubusercontent.com/JimmyJuarez10
-  - name: Tin Wei Chung
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
-      github: https://github.com/TCUX
-    picture: https://avatars.githubusercontent.com/TCUX
   - name: Lu Feng
     github-handle:
     role: UX/UI Designer
@@ -69,6 +62,20 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MWMRSCJW
       github: https://github.com/brendasdesign
     picture: https://avatars.githubusercontent.com/brendasdesign
+  - name: Armon Brown
+    github-handle: stanarmon
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U06J0UCAWHE
+      github: https://github.com/stanarmon
+    picture: https://avatars.githubusercontent.com/stanarmon
+  - name: Carmen Mak
+    github-handle: CarmenMM1
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U06313EMD41
+      github: https://github.com/CarmenMM1
+    picture: https://avatars.githubusercontent.com/CarmenMM1
   - name: Leah Ellis
     github-handle:
     role: UX Researcher
