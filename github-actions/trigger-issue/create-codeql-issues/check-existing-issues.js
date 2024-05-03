@@ -46,7 +46,7 @@ const checkExistingIssues = async ({ g, c, alerts }) => {
     if (searchResponse.status !== 200) {
       throw new Error(`Failed to search for issues: ${searchResponse.status} - ${searchResponse.statusText}`);
     }
-
+    console.log('testing code scanning')
     // Store the response data in a variable for easy access
     const searchResult = searchResponse.data;
 
