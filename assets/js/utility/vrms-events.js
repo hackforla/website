@@ -4,6 +4,10 @@
 {% assign vrmsData = site.data.external.vrms_data %}
 const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
+/* vrmsDataFetch calls sortByDate function and passes vrmsData variable, current page which can either be "events" for the right-col-content.html page or 
+"project" from the project.html page, and passes the appendMeetingTimes function from projects.js that appends the sorted vrmsData 
+returned by sortByDate to project.html. AppendMeetingTimes is only called if vrmsDataFetch is being called from project.js for the project.html page 
+*/
 export const vrmsDataFetch = (currentPage, appendMeetingTimes) => {
     return sortByDate(vrmsData, currentPage, appendMeetingTimes)
 }
