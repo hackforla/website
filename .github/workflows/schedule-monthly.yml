@@ -40,6 +40,7 @@ jobs:
     
     # Commits list of inactive members to repo for using in next step, and in one month
     - name: Update Inactive Members JSON
+      id: update-inactive-members-json
       uses: stefanzweifel/git-auto-commit-action@v5.0.1
       with:
        # Glob pattern of file which should be added to the commit
@@ -48,20 +49,3 @@ jobs:
         # Optional commit message and author settings
         commit_message: Update Inactive Members JSON
         commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org> 
-
-
-  Create_New_Issue:
-    needs: Trim_Contributors
-    runs-on: ubuntu-latest     
-    steps:
-    - uses: actions/checkout@v4
-
-    # Creates a new issue in 'hackforla/website' repo with the saved lists
-    - name: Create new issue
-      id: create-new-issue
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
-        script: |
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
-          script({g: github, c: context})
