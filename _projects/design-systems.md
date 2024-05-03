@@ -46,6 +46,7 @@ leadership:
       github: 'https://github.com/kangina-tech'
     picture: 'https://avatars.githubusercontent.com/kangina-tech'
   - name: Wataru Inoue
+    github-handle:
     role: UX Consultant
     links:
       slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'
