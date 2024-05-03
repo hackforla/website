@@ -52,28 +52,22 @@ export const vrmsDataFetch = (currentPage, appendMeetingTimes) => {
     else if (currentPage === "project") appendMeetingTimes(scheduleData)
 }
 
-
-// Formats time to be readable for projects.html page
-export function timeFormat(time) {
-    let hours = time.getHours();
-    let minutes = time.getMinutes();
-
-    if (minutes == 0) {
-        minutes = minutes + "0";
-    }
-
-    if (hours < 12) {
-        return `${hours}:${minutes} am`;
-    }
-    else if (hours > 12){
-        hours = hours - 12;
-        return `${hours}:${minutes} pm`;
-    }
-    else if (hours = 12){
-        return `${hours}:${minutes} pm`;
-    } else {
-        return `${hours}:${minutes} am`;
-    }
-
-}
+/**
+  * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
+  * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 pm"
+*/
+// Formats time to be readable for projects.html and right-col-content.html page
+export function localeTimeIn12Format(time) {
+    return new Date(time)
+      .toLocaleTimeString(
+        {},
+        {
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          hour12: true,
+          hour: "numeric",
+          minute: "numeric",
+        }
+      )
+      .toLowerCase();
+  }
 

@@ -7,7 +7,7 @@ Fetch the correct project
 // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment.
 let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"));
 
-import { vrmsDataFetch, timeFormat } from './utility/vrms-events.js';
+import { vrmsDataFetch, localeTimeIn12Format } from './utility/vrms-events.js';
 
 /*
   Passing script attributes from html script tag to JS file
@@ -139,11 +139,10 @@ let meetingsFound = [];
 
 // Loops through the VRMS data and inserts each meeting time into the HTML of the correct project page
 function appendMeetingTimes(scheduleData) {
-
     for (const event of scheduleData) {
         try {
-            const startTime = timeFormat(new Date(event.startTime));
-            const endTime = timeFormat(new Date(event.endTime));
+            const startTime = localeTimeIn12Format(event.startTime);
+            const endTime = localeTimeIn12Format(event.endTime);
             const projectName = event.project.name;
             const name = event.name;
             const day = new Date(event.date).toString().substring(0,3);
@@ -153,7 +152,6 @@ function appendMeetingTimes(scheduleData) {
                 meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${name}</li>`);
                 meetingsFound.push(day);
             }
-
         } catch (e) {
             console.error(e);
         }

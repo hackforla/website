@@ -1,4 +1,4 @@
-import { vrmsDataFetch } from "./utility/vrms-events.js"
+import { vrmsDataFetch, localeTimeIn12Format } from "./utility/vrms-events.js"
 /**
  * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
  * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
@@ -69,15 +69,15 @@ function insertEventSchedule(eventData, page) {
    * @return {Object} filtered and sorted data
    */
   function formatEventData(data) {
-    const filteredData = filterDataFromApi(data);
+    const filteredData = filterVrmsData(data);
     return filteredData
   
   }
   
   /**
-   * Filters out the needed data from the vrmsData return from vrmsDataFetch
+   * Filters out the needed data from the vrmsData returned from vrmsDataFetch
    */
-  function filterDataFromApi(responseData) {
+  function filterVrmsData(responseData) {
     const return_obj = {
       Monday: [],
       Tuesday: [],
@@ -92,24 +92,6 @@ function insertEventSchedule(eventData, page) {
       return_obj[day_of_week].push(display_object(item));
     });
     return return_obj;
-  }
-
-  /**
-   * @param {Date} time - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
-   * @return {String} - A time string formatted in the 12 hour format and converted to your timezone. Example: "10:00 pm"
-   */
-  function localeTimeIn12Format(time) {
-    return new Date(time)
-      .toLocaleTimeString(
-        {},
-        {
-          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          hour12: true,
-          hour: "numeric",
-          minute: "numeric",
-        }
-      )
-      .toLowerCase();
   }
   
   /**
