@@ -7,6 +7,7 @@ alt: "Ballot Nav"
 image-hero: /assets/images/projects/ballot-nav-hero.png
 leadership:
   - name: Karen Coronel
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U010KUGJATC'
@@ -34,6 +35,7 @@ leadership:
       github: 'https://github.com/aNullValue'
     picture: 'https://avatars.githubusercontent.com/aNullValue'
   - name: Zuri Smith
+    github-handle: 
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U035UP9N5PG'

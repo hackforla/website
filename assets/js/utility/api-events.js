@@ -55,6 +55,17 @@ async function getEventData() {
 //     }
 //   }
 // }
+/**
+ * Sorts Filtered Date from the api end point by their start time
+ */
+function sortData(filteredData) {
+  Object.values(filteredData).forEach(value => {
+    value.sort((a, b) => {
+      return convertTime12to24(a.start) - convertTime12to24(b.start) || a.name.localeCompare(b.name);
+    });
+  });
+  return filteredData;
+}
 
 // /**
 //  * Formats event data
@@ -86,6 +97,15 @@ async function getEventData() {
 //   });
 //   return return_obj;
 // }
+/**
+ * @param {Date} date - A valid javscript time string. Example:  "2020-05-13T02:00:00.000Z"
+ * @return {String} - The name of the day represented by the time string. Example 2020-05-13 was a wednesday. I.e rv = 'Wednesday'
+ */
+function getDayString(date) {
+  let new_date = new Date(date);
+  let options = { weekday: "long" };
+  return new Intl.DateTimeFormat("en-US", options).format(new_date);
+}
 
 // /**
 //  * Sorts Filtered Date from the api end point by their start time

@@ -308,9 +308,10 @@ function viewAllEventHandler(e) {
 //event handler for keyboard users to click spans when focused
 function tabFocusedKeyDownHandler(e) {
     // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
-	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
+	if ((e.key === "Enter" || e.key === "Spacebar" || e.key === " ") && document.activeElement.getAttribute("aria-label")) {
         document.activeElement.click()
     }
+    
 }
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
