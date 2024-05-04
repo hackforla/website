@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
+    branches: [ 'gh-pages' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
+    branches: [ 'gh-pages' ]
   schedule:
     - cron: '30 5 * * 5'
   workflow_dispatch:
