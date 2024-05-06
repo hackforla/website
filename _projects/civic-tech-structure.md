@@ -11,6 +11,7 @@ alt: "Civic Tech Structure"
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle: 
     role: Executive Director
     links:
       slack: "https://hackforla.slack.com/team/UE1UG1YFP"
