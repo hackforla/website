@@ -28,6 +28,8 @@
       "_config.docker.yml",
       "_site/",
       "github-actions/",
-      "surveys/"
+      "redirections/",
+      "surveys/",
+      "google-apps-scripts/"
   ]
 }
