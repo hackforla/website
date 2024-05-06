@@ -4,10 +4,10 @@ name: "CodeQL Scan"
 
 on:
   push:
-    branches: [ 'gh-pages' ]
+    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ 'gh-pages' ]
+    branches: [ 'update-codeql.yml-exclude-liquid-code-6548' ]
   schedule:
     - cron: '30 5 * * 5'
   workflow_dispatch:
