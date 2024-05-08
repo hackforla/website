@@ -27,11 +27,12 @@ $nav-width: 240px;
       color: $color-black;
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: $color-red;
-    }
+    // &:hover,
+    // &:active,
+    // &:focus {
+    //   padding-bottom: 19px;
+    //   border-bottom: $color-red 2px solid;
+    // }
   }
 
   @media #{$bp-below-tablet} {
@@ -54,6 +55,15 @@ $nav-width: 240px;
     li {
       margin-left: 2em;
       width: auto;
+    }
+    
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        padding-bottom: 19px;
+        border-bottom: $color-red 2px solid;
+      }
     }
   }
 }
