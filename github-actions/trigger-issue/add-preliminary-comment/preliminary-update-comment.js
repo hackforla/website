@@ -40,9 +40,10 @@ async function main({ g, c }, { shouldPost, issueNum }){
 
 async function makeComment(){
   // Setting all the variables which formatComment is to be called with
-  var issueAssignee = context.payload.issue.assignee.login
+  let issueAssignee = context.payload.issue.assignee.login
+  let filename = 'preliminary-update.md';
   const eventdescriptions = await getTimeline(context.payload.issue.number, github, context)
-  console.log(eventdescriptions.length)
+
   //adding the code to find out the latest person assigned the issue
   for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
     if(eventdescriptions[i].event == 'assigned'){
@@ -51,11 +52,45 @@ async function makeComment(){
     }
   }
 
+  // Getting the issue's Project Board column name
+  const queryColumn = `query($owner:String!, $name:String!, $number:Int!) {
+    repository(owner:$owner, name:$name) {
+      issue(number:$number) {
+        projectCards { nodes { column { name } } }
+      }
+    }
+  }`;
+  const variables = {
+    owner: context.repo.owner,
+    name: context.repo.repo,
+    number: context.payload.issue.number
+  };
+  const resColumn = await github.graphql(queryColumn, variables);
+  const columnName = resColumn.repository.issue.projectCards.nodes[0].column.name;
+  const isPrework = context.payload.issue.labels.find((label) => label.name == 'Complexity: Prework') ? true : false;
+  const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
 
+  if (columnName == 'New Issue Approval' && !isDraft && !isPrework) {
+    // If author = assignee, remind them to add draft label, otherwise unnasign and comment
+    if (context.payload.issue.user.login == issueAssignee) {
+      filename = 'draft-label-reminder.md';
+    } else {
+      filename = 'unassign-from-NIA.md';
+
+      await github.rest.issues.removeAssignees({
+        owner: variables.owner,
+        repo: variables.name,
+        issue_number: variables.number,
+        assignees: [issueAssignee],
+      });
+    }
+  }
+
+  let filePathToFormat = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
   const commentObject = {
     replacementString: issueAssignee,
     placeholderString: '${issueAssignee}',
-    filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
+    filePathToFormat: filePathToFormat,
     textToFormat: null
   }
 

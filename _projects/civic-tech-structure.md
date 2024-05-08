@@ -29,6 +29,7 @@ leadership:
       github: "https://github.com/MasSamH"
     picture: https://avatars.githubusercontent.com/MasSamH
   - name: Thad Kerosky
+    github-handle:
     role: Co-Product Manager
     links:
       slack: "https://cfa.slack.com/archives/C019RCM15FE"
