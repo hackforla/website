@@ -7,6 +7,7 @@ alt: 'EMS Triage Tracker'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle: 
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
