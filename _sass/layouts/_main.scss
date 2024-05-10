@@ -4,6 +4,10 @@
  */
 
 #app {
+  /**
+   * Modifying #app to be flex will establish a stack (vertical layout) 
+   * for its child elements so the footer will always be pushed to the bottom.
+   */
   min-height: 100vh;
   display: flex; 
   flex-direction: column;

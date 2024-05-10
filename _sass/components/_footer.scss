@@ -1,4 +1,9 @@
 .main-footer {
+  /**
+   * Removing position, top and margin-top attributes 
+   * because the footer is now a child of a flex element
+   * and no need to modify the positioning attributes 
+   */
   width: 100%;
   background: $color-darkblue;
   color: $color-white;
