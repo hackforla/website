@@ -24,6 +24,7 @@ leadership:
       github: "https://github.com/olivia-chiong"
     picture: https://avatars.githubusercontent.com/olivia-chiong
   - name: Sam H.
+    github-handle:
     role: Co-Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U01A2FPLBC3"
