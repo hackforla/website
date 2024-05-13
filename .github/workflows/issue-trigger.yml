@@ -18,7 +18,7 @@ jobs:
         with:
           project: Project Board
           column: ${{ env.COLUMN_NAME }}
-          repo-token: ${{ secrets.NOTIFY_SAME_COMPLEXITY_ISSUES_4442 }} # TODO: CHANGE BACK TO secrets.HACKFORLA_BOT_PA_TOKEN 
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }} 
  
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
           username: ${{ github.actor }}
           organization: 'hackforla'
           team: 'website-write'
-          GITHUB_TOKEN: ${{ secrets.NOTIFY_SAME_COMPLEXITY_ISSUES_4442 }} # TODO: CHANGE BACK TO secrets.TEAMS 
+          GITHUB_TOKEN: ${{ secrets.TEAMS }}
           
       # Checks if user is on the website-write-team
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
@@ -81,7 +81,6 @@ jobs:
         id: assigned-comment
         uses: actions/github-script@v7
         with:
-          debug: true # TODO: REMOVE 
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')

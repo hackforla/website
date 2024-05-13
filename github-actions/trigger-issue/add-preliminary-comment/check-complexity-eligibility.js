@@ -370,8 +370,8 @@ async function handleIssueComplexityNotPermitted(
   context
 ) {
   try {
-    const NEW_ISSUE_APPROVAL_COLUMN_ID = 19784554; // TODO: REPLACE WITH 15235217
-    const IN_PROGRESS_COLUMN_ID = 19784557; // TODO: REPLACE WITH 7198228
+    const NEW_ISSUE_APPROVAL_COLUMN_ID = 15235217;
+    const IN_PROGRESS_COLUMN_ID = 7198228;
     const { owner, repo } = context.repo;
 
     // Unassign assignee from the issue
