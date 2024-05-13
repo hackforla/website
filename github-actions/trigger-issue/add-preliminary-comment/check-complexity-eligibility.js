@@ -24,20 +24,24 @@ async function checkComplexityEligibility(github, context) {
     context
   );
 
-  // If issue not from Prioritized backlog, skip complexity check
-  if (columnName !== 'Prioritized backlog') {
+  // If issue is from the New Issue Approval column, skip complexity check
+  if (columnName === 'New Issue Approval') {
     return true;
   }
-   
+
   // If issue created by assignee or not self-assigned, skip complexity check
   if (currentIssue.assigneeId === currentIssue.creatorId ||
       currentIssue.assigneeId !== currentIssue.assignerId) {
     return true;
   }
-
-  const hasAnyLabel = (labels, requiredLabels) =>
-  labels.some(label => requiredLabels.includes(label));
   
+  const hasAnyLabel = (labels, requiredLabels) =>
+    labels.some(label => requiredLabels.includes(label));
+  
+  const exceptionLabels = [
+    'ER',
+    'epic'
+  ];
   const requiredRoleLabels = [
     'role: front end',
     'role: back end/devOps'
@@ -47,6 +51,11 @@ async function checkComplexityEligibility(github, context) {
     'Complexity: Small',
     'Complexity: Medium'
   ];
+
+  // If issue has any exception labels, skip complexity check
+  if (hasAnyLabel(currentIssue.labels, exceptionLabels)) {
+    return true;
+  }
   
   // If issue doesn't have required labels, skip complexity check
   if (!hasAnyLabel(currentIssue.labels, requiredRoleLabels) ||
