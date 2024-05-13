@@ -25,9 +25,7 @@ async function checkComplexityEligibility(github, context) {
   );
 
   // If issue not from Prioritized backlog, skip complexity check
-  // TODO: Need to figure out which columns should trigger check or skip
-  // SEE ISSUE 6556
-  if (columnName === 'New Issue Approval') {
+  if (columnName !== 'Prioritized backlog') {
     return true;
   }
    
