@@ -98,7 +98,7 @@ async function makeComment() {
         placeholderString: '${issueAssignee}',
       },
     ],
-    filePathToFormat: './github-actions/trigger-issue/add-preliminary-comment/preliminary-update.md',
+    filePathToFormat: filePathToFormat,
     textToFormat: null
   };
 
