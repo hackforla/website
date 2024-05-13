@@ -35,8 +35,8 @@ async function checkComplexityEligibility(github, context) {
     return true;
   }
   
-  const hasAnyLabel = (labels, requiredLabels) =>
-    labels.some(label => requiredLabels.includes(label));
+  const hasAnyLabel = (labels, referenceLabels) =>
+    labels.some(label => referenceLabels.includes(label));
   
   const exceptionLabels = [
     'ER',
