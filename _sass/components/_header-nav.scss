@@ -3,7 +3,7 @@ $nav-width: 240px;
 .header-nav {
   position: fixed;
   left: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   background: $color-white;
   box-shadow: 0 -1px 0 0 rgba($color-black, 0.12);
@@ -27,12 +27,6 @@ $nav-width: 240px;
       color: $color-black;
     }
 
-    // &:hover,
-    // &:active,
-    // &:focus {
-    //   padding-bottom: 19px;
-    //   border-bottom: $color-red 2px solid;
-    // }
   }
 
   @media #{$bp-below-tablet} {
@@ -53,11 +47,11 @@ $nav-width: 240px;
     }
 
     li {
-      margin-left: 2em;
+      margin-left: 3em;
       width: auto;
     }
-    
-    a {
+
+    #menuitem {
       &:hover,
       &:active,
       &:focus {
@@ -65,6 +59,52 @@ $nav-width: 240px;
         border-bottom: $color-red 2px solid;
       }
     }
+
+    #dropdown {
+      // display: inline-block; 
+      position: relative;
+      margin: 0 60px;
+      width: auto;
+    }
+
+    #dropdown-content {
+      display: none;
+      position: absolute;
+      top: 41px;
+      left: -20px;
+      background-color: rgba(255, 255, 255, 0.93);
+      box-shadow: 0px 8px 16px 0px rgba($color-black, .2);
+      z-index: 1000;
+      min-width: 150px;
+      padding: 15px 20px;
+      font-weight: 400;
+    }
+
+    #dropdown-content ul,
+    #dropdown-content li {
+      display: auto;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    #dropdown-content li {
+      margin: 10px auto;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+    }
+
+    #dropdown-content a:hover {
+      color: $color-red;
+      text-decoration: underline;
+    }
+
+    #dropdown:hover #dropdown-content {
+      display: block;
+    }
+
   }
 }
 
@@ -97,11 +137,11 @@ body {
   #swapButton {
     display: none;
   }
-}  
+}
 
 // This styles the hamburger nav and menus on mobile
 @media #{$bp-below-tablet} {
-  #burgerImage { 
+  #burgerImage {
     background-color: $color-white;
     display: block;
     height: 25px;
@@ -110,10 +150,10 @@ body {
     padding-right: 41px;
     padding-top: 5px;
     margin: 5px 0;
-  } 
+  }
 
-  #burgerImageX { 
-    display: none; 
+  #burgerImageX {
+    display: none;
     height: 25px;
     width: 25px;
     border: none;
@@ -129,7 +169,7 @@ body {
   // Hide the nav icons
   .nav-icon {
     display: none;
-  }  
+  }
 
   // This is the position of the white box of the menu
   .header-nav {

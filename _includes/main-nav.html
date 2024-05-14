@@ -1,12 +1,32 @@
 <nav class="header-nav" id="headerNav" aria-label="Primary">
   <ul class="inline-list" id="mobileNavLink">
     {% for item in site.data.navigation.main %}
-    <li class="{{ item.list_class_name }}">
-      <a href="{{ item.link }}" role="menuitem">
+    <li class="{{ item.list_class_name }}" id="dropdown">
+      <a href="{{ item.link }}" role="menuitem" id="menuitem">
         {% if item.icon %} {%- include {{ site.baseurl
         }}{{ item.icon }} -%} {% endif %}
         {{- item.name -}}
       </a>
+
+      <div>
+        <ul id="dropdown-content">
+          <li class="">
+            <a href="#" role="dropdown-item">
+              Link 1
+            </a>
+          </li>
+          <li class="">
+            <a href="#" role="dropdown-item">
+              Link 2
+            </a>
+          </li>
+          <li class="">
+            <a href="#" role="dropdown-item">
+              Link 3
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
 
     {% endfor %}
