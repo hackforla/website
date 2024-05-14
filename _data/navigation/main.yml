@@ -1,8 +1,10 @@
 - name: Our Work
   link: /#our-work
+  link-name: ourwork
 
 - name: Join Us
-  link: /#join-us
+  link: /join
+  link-name: joinus
 
 # Link below to remain inactive until About page is completed and live
 # - name: About Us
@@ -10,6 +12,8 @@
 
 - name: Get in Touch
   link: /#get-in-touch
+  link-name: getintouch
 
 - name: Toolkit
-  link: /#toolkit
+  link: /toolkit
+  link-name: toolkit

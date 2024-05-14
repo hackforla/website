@@ -10,21 +10,16 @@
 
       <div>
         <ul id="dropdown-content">
-          <li class="">
-            <a href="#" role="dropdown-item">
-              Link 1
+          {% assign list_link_name = site.data.navigation[item.link-name] %}
+          {% for link in list_link_name %}
+          {% unless link.bolded %}
+          <li class="{{ link.name }}">
+            <a href="{{ link.link }}" role="dropdown-item">
+              {{ link.name }}
             </a>
           </li>
-          <li class="">
-            <a href="#" role="dropdown-item">
-              Link 2
-            </a>
-          </li>
-          <li class="">
-            <a href="#" role="dropdown-item">
-              Link 3
-            </a>
-          </li>
+          {% endunless %}
+          {% endfor %}
         </ul>
       </div>
     </li>
