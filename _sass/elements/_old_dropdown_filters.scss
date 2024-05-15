@@ -168,8 +168,7 @@ a.old-clear-filter-tags {
   }
 }
 
-//media query is up to the browser defined laptop size to eliminate wrapping
-@media (max-width: 1024px) {
+@media #{$bp-below-desktop-medium} {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.old-filter-list {
     display: grid;
