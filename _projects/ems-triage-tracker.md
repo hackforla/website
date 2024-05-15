@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Dr. Stephen M. Hubbard
+    github-handle: 
     role: System Design Project Advisor
     links:
       slack: 'https://hackforla.slack.com/team/UPXH1Q3RP'
