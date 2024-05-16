@@ -3,18 +3,15 @@
  * when the content is short.
  */
 
- #app {
-   position: relative;
-   min-height: 100vh;
- }
-
- #content {
-  padding-bottom: 160px;
-
-  @media #{$bp-below-mobile} {
-    padding-bottom: 200px;
-  }
- }
+#app {
+  /**
+   * Modifying #app to be flex will establish a stack (vertical layout) 
+   * for its child elements so the footer will always be pushed to the bottom.
+   */
+  min-height: 100vh;
+  display: flex; 
+  flex-direction: column;
+}
 
 .page-wrapper {
   display: flex;
