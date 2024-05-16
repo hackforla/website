@@ -50,6 +50,7 @@ leadership:
       github: 'https://github.com/ysjiang18'
     picture: https://avatars.githubusercontent.com/ysjiang18
   - name: Richa Srivastava
+    github-handle: 
     role: UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UJ8M64E5V'
