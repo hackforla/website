@@ -139,7 +139,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     }
 
     let eventTimestamp = eventObj.updated_at || eventObj.created_at;
-    
+
     // update the lastCommentTimestamp if this is the last (most recent) comment by an assignee
     if (!lastCommentTimestamp && eventType === 'commented' && isCommentByAssignees(eventObj, assignees)) {
       lastCommentTimestamp = eventTimestamp;
