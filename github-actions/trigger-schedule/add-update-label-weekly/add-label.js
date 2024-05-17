@@ -186,7 +186,6 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     return { result: true, labels: toUpdateLabel } // outdated, add 'To Update!' label
   }
 
-
   // if no comment or assigning found within 14 days, issue is outdated and add '2 weeks inactive' label
   console.log(`Issue #${issueNum} has no update within 14 days, use '2 weeks inactive' label`)
   return { result: true, labels: inactiveLabel }
