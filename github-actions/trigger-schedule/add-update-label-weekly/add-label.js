@@ -115,7 +115,6 @@ async function* getIssueNumsFromColumn(columnId) {
 function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
-  let outdatedCommentCount = 0;
   let commentsToBeMinimized = [];
 
   for (let i = timeline.length - 1; i >= 0; i--) {
