@@ -32,6 +32,7 @@ leadership:
       github: 'https://github.com/designsimone'
     picture: https://avatars.githubusercontent.com/designsimone
   - name: Nicole Doan
+    github-handle:
     role: Lead UX/UI Design and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
