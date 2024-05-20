@@ -11,7 +11,7 @@ targets:
   - target: 1
     # The SDG target statement 
     statement: By 2030, ensure access for all to adequate, safe and affordable housing and basic services
-  - target: 2
+  - target: 2 
     statement: By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons
   - target: 3
     statement: By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries
