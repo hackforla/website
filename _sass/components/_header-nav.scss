@@ -52,7 +52,7 @@ $nav-width: 240px;
       width: auto;
     }
 
-    #menuitem {
+    .menu-item {
       &:hover,
       &:active,
       &:focus {
@@ -61,14 +61,16 @@ $nav-width: 240px;
       }
     }
 
-    #dropdown {
+    // The following styles apply to the dropdowns in the header nav
+
+    .dropdown {
       display: inline-block;
       position: relative;
       margin: 0 30px;
       width: auto;
     }
 
-    #dropdown-content {
+    .dropdown-content {
       display: none;
       position: absolute;
       top: 41px;
@@ -81,8 +83,8 @@ $nav-width: 240px;
       font-weight: 400;
     }
 
-    #dropdown-content ul,
-    #dropdown-content li {
+    .dropdown-content ul,
+    .dropdown-content li {
       display: auto;
       margin-left: 0;
       margin-right: 0;
@@ -90,19 +92,19 @@ $nav-width: 240px;
       text-align: left;
     }
 
-    #dropdown-content li {
+    .dropdown-content li {
       margin: 10px auto;
       text-decoration: none;
       display: block;
       width: 100%;
     }
 
-    #dropdown-content a:hover {
+    .dropdown-content a:hover {
       color: $color-red;
       text-decoration: underline;
     }
 
-    #dropdown:hover #dropdown-content {
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
