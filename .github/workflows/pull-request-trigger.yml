@@ -65,3 +65,10 @@ jobs:
           column: 'PR Needs review (Automated Column, do not place items here manually)'
           repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           action: delete
+
+  Add-Comment-To-Prework-Issue:
+    if: ${{ github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'closed')}}
+    permissions:
+      issues: write
+    uses: ./.github/workflows/prework-issue-comment-reusable-workflow.yaml@gh-pages
+    secrets: inherit
