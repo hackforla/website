@@ -12,8 +12,9 @@
 
 form#search-bar {
     position: sticky;
-    top: 0px; 
-    z-index: 1;
+    padding: 10px;
+    top: 60px; 
+    z-index: 10;
 }
 
 //Styles to override the styles from _forms.scss
