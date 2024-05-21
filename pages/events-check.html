@@ -1,0 +1,54 @@
+---
+layout: default
+title: Events - Hack for LA
+permalink: /events-check
+---
+<!--refactored javascript link-->
+<script src="/assets/js/events-check.js" defer></script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMQK7VL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="header-container header-container--events">
+  {% include events-page/header-container-content.html %}
+</div>
+
+<section class="events-page content-section content-section--events">
+
+    <h2 class="events-page-header title2">Our Events</h2>
+    <div class="flex-page-card">
+      <div class="column-card-lg--events">
+        {% include events-page/left-col-content.html %}
+      </div>
+
+      <div class="column-card-lg--events">
+        {% include events-page/right-col-content-check.html%}
+      </div>
+    </div>
+  
+    <h2 class="events-page-header title2">
+      Our Locations
+    </h2>
+    
+    <div class="fullwidth-background-container">
+      <div class="notification-banner">
+        <p class="meetings-message">
+          In light of the COVID-19 pandemic, Hack for LA has suspended its in-person
+          events below. The organization remains fully active, and all events are
+          now being conducted remotely using Zoom at the days/times listed above.
+        </p>
+    </div>
+  
+      <div class="getting-started-mobile-page">
+        <h2 class="event-title-1">
+          <img class="vector-img" src="../assets/images/hack-nights/locations.svg" alt="">
+          See our Locations
+        </h2>
+      </div>
+    </div>
+  
+    <div class="mobile-locations-dropdown">
+      {% include events-page/our-locations-content.html %}
+    </div>
+
+</section>
