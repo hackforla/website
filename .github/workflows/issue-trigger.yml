@@ -1,7 +1,7 @@
 name: Issue Trigger
 on:
   issues:
-    types: [opened, transferred, assigned, labeled, unlabeled]
+    types: [opened, closed, transferred, assigned, unassigned, labeled, unlabeled]
 
 jobs:
   # Adds newly created issues onto project board in the default column 'New Issue Approval' 
@@ -111,3 +111,11 @@ jobs:
           script: |
             const script = require('./github-actions/trigger-issue/feature-branch-comment/hide-feature-branch-comment.js')
             script({g: github, c: context})
+
+# Adds a comment to actor's prework issue              
+  Add-Comment-To-Prework-Issue:
+    if: "${{ github.event.action == 'opened' || github.event.action == 'closed' || github.event.action == 'assigned' || github.event.action == 'unassigned'}}"
+    permissions:
+      issues: write
+    uses: partapparam/website/.github/workflows/prework-issue-comment-reusable-workflow.yaml@gh-pages
+    secrets: inherit

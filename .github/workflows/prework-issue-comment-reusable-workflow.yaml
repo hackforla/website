@@ -1,0 +1,76 @@
+name: Find Prework Issue and Comment User Activity
+
+on:
+  workflow_call:
+
+jobs:
+  Add-Comment-To-Prework-Issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get activity detail
+        id: get-activity-detail
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/prework-issue-reusable-workflow/get-activity-detail.js')
+            const contributor = script({g: github, c: context})
+            return contributor
+
+      - name: Get prework issue
+        id: get-prework-issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/prework-issue-reusable-workflow/get-prework-issue.js')
+            const activityDetail = ${{steps.get-activity-detail.outputs.result}}
+            return script({g: github, c: context}, activityDetail)
+
+      - name: Update prework issue status
+        id: update-prework-issue-status
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
+          script: |
+            const script = require('./github-actions/prework-issue-reusable-workflow/update-prework-issue-status.js')
+            const issue = ${{steps.get-prework-issue.outputs.result}}
+            return script({g: github, c: context}, issue)
+
+      # Only move issue if issue was closed and is reopened
+      - name: Move issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.HFLA_PROJECT_BOARD_TOKEN }}
+          script: |
+            const projectColumnId = "PC_lATOJyGIJc4A4juVzgEvcLk"
+            let mutation = `
+              mutation ($cardId: ID! $columnId: ID!) {
+                moveProjectCard (input: {cardId: $cardId columnId: $columnId}) {
+                  cardEdge {
+                    node {
+                      resourcePath
+                    }
+                  }
+                }
+              }
+              `
+            let issue = ${{steps.update-prework-issue-status.outputs.result}}
+            if (issue != false) {
+              let cardId = issue.projectCards.nodes[0].id
+              return await github.graphql(mutation, {
+                cardId: cardId,
+                columnId: projectColumnId,
+              })
+            }
+
+      - name: Leave comment on issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/prework_issue_comment/add-prework-comment.js')
+            const issue = ${{steps.get-prework-issue.outputs.result}}
+            const activityDetail = ${{steps.get-activity-detail.outputs.result}}
+            return script({ g: github, c: context}, issue.number, activityDetail)
