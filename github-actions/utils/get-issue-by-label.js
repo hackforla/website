@@ -12,6 +12,7 @@ async function getIssueByLabel(actor, labels, github, context) {
       owner: "partapparam",
       repository: "website",
     })
+    console.log(context)
 
     let issue = results.repository.issues.nodes[0]
     return issue
