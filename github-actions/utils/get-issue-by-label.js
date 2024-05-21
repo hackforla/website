@@ -5,15 +5,13 @@
  */
 async function getIssueByLabel(actor, labels, github, context) {
   try {
-    //   TODO - How to get owner and repo dynamically
+    const [owner, name] = context.payload.repository.full_name.split("/")
     let results = await github.graphql(query, {
       actor: actor,
       labels: labels,
-      owner: "partapparam",
-      repository: "website",
+      owner: owner,
+      repository: name,
     })
-    console.log(context)
-
     let issue = results.repository.issues.nodes[0]
     return issue
   } catch (err) {

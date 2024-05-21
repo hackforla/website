@@ -17,7 +17,6 @@ async function main({ g, c }, issue) {
 
   // TODO value is hardcoded
   // Project Number =1 , for HFLA project number = 7
-  const projectColumnId = "PC_lATOLVwEr84A4jIbzgEvVeo"
   console.log(issue)
   if (issue.closed == true) {
     const result = await reopenIssue(issue.id, github)
