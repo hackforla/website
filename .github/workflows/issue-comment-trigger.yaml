@@ -9,5 +9,4 @@ jobs:
     if: ${{ github.event_name == 'issue_comment' && github.event.action == 'created'}}
     permissions:
       issues: write
-    uses: partapparam/website/.github/workflows/prework-issue-comment-reusable-workflow.yaml@gh-pages
-    secrets: inherit
+    uses: ./.github/workflows/prework-issue-comment-reusable-workflow.yaml    secrets: inherit

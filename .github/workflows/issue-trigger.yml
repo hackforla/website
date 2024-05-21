@@ -117,5 +117,5 @@ jobs:
     if: "${{ github.event.action == 'opened' || github.event.action == 'closed' || github.event.action == 'assigned' || github.event.action == 'unassigned'}}"
     permissions:
       issues: write
-    uses: partapparam/website/.github/workflows/prework-issue-comment-reusable-workflow.yaml@gh-pages
+    uses: ./.github/workflows/prework-issue-comment-reusable-workflow.yaml
     secrets: inherit

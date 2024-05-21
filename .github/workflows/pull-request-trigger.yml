@@ -70,5 +70,5 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'closed')}}
     permissions:
       issues: write
-    uses: ./.github/workflows/prework-issue-comment-reusable-workflow.yaml@gh-pages
+    uses: ./.github/workflows/prework-issue-comment-reusable-workflow.yaml
     secrets: inherit
