@@ -25,6 +25,7 @@ leadership:
       github: 'https://github.com/McRawly'
     picture: https://avatars.githubusercontent.com/McRawly
   - name: Simone Wojtaszek
+  github-handle: 
     role: Lead UX/UI Design and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UNY9Q55B7'
@@ -58,7 +59,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/UPNR0KG00'
     picture: /assets/images/misc/no-photo.png
-links: 
+links:
   - name: Github
     url: 'https://github.com/hackforla/ems-triage-tracker'
   - name: Slack
@@ -67,13 +68,13 @@ links:
     url: 'https://drive.google.com/file/d/1WWxADa3aBKtTk47Fx1vzoMSn0-yWKp3X/view?usp=sharing'
   - name: Overview
     url: '../assets/pdfs/EMS-Triage-Tracker-One-Sheet.pdf'
-location: 
+location:
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
-tools: 
+tools:
   - Figma
   - video production
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 status: Completed
 visible: true
