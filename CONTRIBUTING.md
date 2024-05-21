@@ -305,17 +305,6 @@ docker-compose up
 
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
-The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-
-
-***
-
-### **1.7 Dev setup (7): Install local codebase spell checker**
-
-You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
-
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
 The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
@@ -544,9 +533,9 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes
+Update your gh-pages branch with upstream changes:
 
-```
+```bash
 git pull upstream gh-pages
 ```
 
@@ -654,7 +643,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
 
 
@@ -753,6 +742,10 @@ git merge gh-pages
 
 ```bash
 ls -al ~/.ssh
+```
+If the folder ~/.ssh does not exist, create it using
+```bash
+mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.

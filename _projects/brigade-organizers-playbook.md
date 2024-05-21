@@ -23,12 +23,14 @@ leadership:
       github: 'https://github.com/ag2463'
     picture: https://avatars.githubusercontent.com/ag2463
   - name: Evan Stalker
+    github-handle:
     role: Lead Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04M979AY3G'
       github: 'https://github.com/ejstalker'
     picture: https://avatars.githubusercontent.com/ejstalker
   - name: Liz Brown
+    github-handle:
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
