@@ -7,7 +7,7 @@ alt: 'EMS Triage Tracker'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 leadership:
   - name: Bonnie Wolfe
-    github-handle: 
+    github-handle:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
@@ -26,7 +26,7 @@ leadership:
       github: 'https://github.com/McRawly'
     picture: https://avatars.githubusercontent.com/McRawly
   - name: Simone Wojtaszek
-  github-handle: 
+    github-handle:
     role: Lead UX/UI Design and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UNY9Q55B7'
@@ -51,7 +51,7 @@ leadership:
       github: 'https://github.com/ysjiang18'
     picture: https://avatars.githubusercontent.com/ysjiang18
   - name: Richa Srivastava
-    github-handle: 
+    github-handle:
     role: UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UJ8M64E5V'
