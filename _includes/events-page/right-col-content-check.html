@@ -1,0 +1,32 @@
+<h3 class="event-title title4">
+    <img class="vector-img" src="../assets/images/hack-nights/meetings.svg" alt="">
+    <span><span>Online Project</span> <span>Team Meetings</span></span>
+</h3>
+<div class="mobile-dropdown">
+    <div class="meetup-steps-2">
+        <div id="img-content">
+            <img class="step-img-2" src="../assets/images/hack-nights/org-projects.png" alt="">
+        </div>
+        <div id="text-content-1">
+            <p>
+                Please review the listing of project team meeting times to find a
+                project that fits your schedule. You are welcome to attend a project
+                team meeting after you have completed
+                <a href="https://www.hackforla.org/getting-started" target="_blank">Onboarding</a>.
+            </p>
+        </div>
+    </div>
+    <div class="days-display-1">
+        <div id="userTimeZone" class="userTimeZone"></div>
+        {% assign days-of-week =
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," %}
+        {% for day in days-of-week %}
+        <div id="{{day}}">
+            <h4 class="day-header-1 title7">{{day}}</h4>
+            <ul id="{{day}}-List" class="schedule-list-1"></ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="../../assets/js/right-col-content-check.js" type="module"></script>
