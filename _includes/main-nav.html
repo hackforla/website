@@ -1,7 +1,7 @@
 <nav class="header-nav" id="headerNav" aria-label="Primary">
   <ul class="inline-list" id="mobileNavLink">
     {% for item in site.data.navigation.main %}
-    <li id="{{ item.name }}" class="dropdown">
+    <li id="{{ item.link-name }}" class="dropdown">
       <a href="{{ item.link }}" role="menu-item" class="menu-item">
         {% if item.icon %} {%- include {{ site.baseurl
         }}{{ item.icon }} -%} {% endif %}
