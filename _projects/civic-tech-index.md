@@ -108,12 +108,14 @@ leadership:
       github: 'https://github.com/maxskewes'
     picture: https://avatars.githubusercontent.com/maxskewes
   - name: Dennis Chatkhan
+    github-handle:
     role: Frontend Developer
     links:
       slack: https://hackforla.slack.com/team/U01B4S459CZ
       github: https://github.com/mealthebear
     picture: https://avatars.githubusercontent.com/mealthebear
   - name: Iffath Sultana
+    github-handle:
     role: Product Manager
     links:
       slack: https://hackforla.slack.com/team/U01JQ2V3NRZ

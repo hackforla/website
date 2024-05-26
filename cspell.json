@@ -27,6 +27,9 @@
       "assets/",
       "_config.docker.yml",
       "_site/",
-      "github-actions/"
+      "github-actions/",
+      "redirections/",
+      "surveys/",
+      "google-apps-scripts/"
   ]
 }

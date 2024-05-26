@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: 'https://avatars.githubusercontent.com/ExperimentsInHonesty'
   - name: Ryan Mayott
+    github-handle:
     role: UI/UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01L3BJ3QSW'
