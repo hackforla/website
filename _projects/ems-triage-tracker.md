@@ -39,6 +39,7 @@ leadership:
       github: 'https://github.com/nekobox'
     picture: https://avatars.githubusercontent.com/nekobox
   - name: Conor McKiernan
+    github-handle:
     role: Logo Design and UX Strategy/Research
     links:
       slack: 'https://hackforla.slack.com/team/UNHNCALSE'
