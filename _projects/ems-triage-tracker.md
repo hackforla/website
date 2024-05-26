@@ -45,6 +45,7 @@ leadership:
       github: 'https://github.com/redmckiernan'
     picture: https://avatars.githubusercontent.com/redmckiernan
   - name: Selena Jiang
+    github-handle: 
     role: UI Design, Life Saving Measures screen
     links:
       slack: 'https://hackforla.slack.com/team/UMYN9DVSB'
