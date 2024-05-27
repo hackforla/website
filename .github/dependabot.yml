@@ -6,6 +6,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
+      - dependency-name: "*"
       - update-types: ["version-update:semver-patch"]
 
   - package-ecosystem: "github-actions"
@@ -15,6 +16,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
+      - dependency-name: "*"
       - update-types: ["version-update:semver-patch"]
 
 
