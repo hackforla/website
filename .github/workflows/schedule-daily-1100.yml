@@ -4,7 +4,7 @@ name: Schedule Daily 1100
 on:
   schedule:
     - cron:  '0 11 * * *'
-
+  workflow_dispatch:
 jobs:
   github_data:
     runs-on: ubuntu-latest

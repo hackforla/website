@@ -18,42 +18,49 @@ leadership:
       github: 'https://github.com/allthatyazz'
     picture: 'https://avatars.githubusercontent.com/allthatyazz'
   - name: Rachel Newcomb
+    github-handle: 
     role: Lead UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03Q5J8SVM3'
       github: 'https://github.com/rachelita2'
     picture: 'https://avatars.githubusercontent.com/rachelita2'
   - name: Sandra Berjan
+    github-handle: 
     role: Lead Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03753VQBSR'
       github: 'https://github.com/sandraberjan'
     picture: 'https://avatars.githubusercontent.com/sandraberjan'
   - name:  Khanh Cao
+    github-handle:
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04A19TDBED'
       github: 'https://github.com/khanhcao17'
     picture: 'https://avatars.githubusercontent.com/khanhcao17'
   - name:  Debbie Nyasetia
+    github-handle: 
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03FJ3V58FN'
       github: 'https://github.com/kangina-tech'
     picture: 'https://avatars.githubusercontent.com/kangina-tech'
   - name: Wataru Inoue
+    github-handle:
     role: UX Consultant
     links:
       slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'
       github: 'https://github.com/winoue90'
     picture: 'https://avatars.githubusercontent.com/winoue90'
   - name: Faezeh Faezipour
+    github-handle: 
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04AT8KU5CY'
       github: 'https://github.com/fuzjan81'
     picture: 'https://avatars.githubusercontent.com/fuzjan81'
   - name: Eva Kwock
+    github-handle: 
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U049PSE3ZMZ'

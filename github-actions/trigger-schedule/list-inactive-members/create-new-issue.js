@@ -72,6 +72,7 @@ const createIssue = async (owner, repo, inactiveLists) => {
     labels,
     milestone,
   });
+  console.log('Created issue ' + thisIssueNumber);
   return issue.data;
 };
 

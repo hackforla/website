@@ -7,12 +7,14 @@ alt: 'EMS Triage Tracker'
 image-hero: /assets/images/projects/ems-triage-tracker-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Dr. Stephen M. Hubbard
+    github-handle: 
     role: System Design Project Advisor
     links:
       slack: 'https://hackforla.slack.com/team/UPXH1Q3RP'
@@ -25,12 +27,14 @@ leadership:
       github: 'https://github.com/McRawly'
     picture: https://avatars.githubusercontent.com/McRawly
   - name: Simone Wojtaszek
+    github-handle:
     role: Lead UX/UI Design and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UNY9Q55B7'
       github: 'https://github.com/designsimone'
     picture: https://avatars.githubusercontent.com/designsimone
   - name: Nicole Doan
+    github-handle:
     role: Lead UX/UI Design and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UBPKHJJVC'
@@ -49,6 +53,7 @@ leadership:
       github: 'https://github.com/ysjiang18'
     picture: https://avatars.githubusercontent.com/ysjiang18
   - name: Richa Srivastava
+    github-handle:
     role: UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UJ8M64E5V'
@@ -58,7 +63,7 @@ leadership:
     links:
       slack: 'https://hackforla.slack.com/team/UPNR0KG00'
     picture: /assets/images/misc/no-photo.png
-links: 
+links:
   - name: Github
     url: 'https://github.com/hackforla/ems-triage-tracker'
   - name: Slack
@@ -67,13 +72,13 @@ links:
     url: 'https://drive.google.com/file/d/1WWxADa3aBKtTk47Fx1vzoMSn0-yWKp3X/view?usp=sharing'
   - name: Overview
     url: '../assets/pdfs/EMS-Triage-Tracker-One-Sheet.pdf'
-location: 
+location:
   - Downtown LA
 partner: General Assembly (Downtown Campus), Lisa W. Anderson
-tools: 
+tools:
   - Figma
   - video production
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 status: Completed
 visible: true

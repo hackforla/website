@@ -6,13 +6,29 @@ on:
     types: [completed]
 
 jobs:
-  On-success:
+  Create-New-Issue:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - run: echo "The 'Schedule Monthly' workflow succeeded. Continuing."
+      - uses: actions/checkout@v4
 
-      # If 'Schedule Monthly' was succcesful, retrieve the owner URL
+      # Creates a new issue in 'hackforla/website' repo with the saved lists
+      - name: Create new issue
+        id: create-new-issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
+            script({g: github, c: context})
+
+  Close-New-Issue:
+    needs: Create-New-Issue
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
       - name: Get owner url
         id: get-owner-url
         uses: actions/github-script@v7
