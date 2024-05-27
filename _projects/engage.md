@@ -25,6 +25,7 @@ leadership:
       github: 'https://github.com/BryonPm'
     picture: 'https://avatars.githubusercontent.com/BryonPm'
   - name: Eli Selkin
+    github-handle:
     role: Backend Architect and Technology Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0611PL2D'
