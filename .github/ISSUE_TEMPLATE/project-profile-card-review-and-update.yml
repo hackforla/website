@@ -219,6 +219,20 @@ body:
       label: GitHub Link
 
   - type: dropdown
+    id: additional-github-repos-yes-no
+    attributes:
+      label: "Do you have any additional (other than your primary) GitHub repositories that your volunteers make issues or PRs against?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: input
+    id: additional-github-repos
+    attributes:
+      label: "If yes, list the repo URLs here"
+
+  - type: dropdown
     id: update-slack-link-yes-no
     attributes:
       label: "Update Slack Link?"
