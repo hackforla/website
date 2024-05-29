@@ -25,6 +25,7 @@ leadership:
       github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
   - name: Gigi Patel
+    github-handle: 
     role: Lead UX Researcher
     links:
       slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
