@@ -19,6 +19,7 @@ leadership:
       github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
+    github-handle: 
     role: UX/UR Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
