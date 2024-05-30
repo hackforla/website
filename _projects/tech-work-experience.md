@@ -95,7 +95,7 @@ links:
   - name: Github
     url: 'https://github.com/hackforla/internship'
   - name: Slack
-    url: 'https://hackforla.slack.com/messages/C01VAUPU788'
+    url: 'https://hackforla.slack.com/archives/C01VAUPU788'
   - name: Wiki
     url: 'https://github.com/hackforla/internship/wiki'
   - name: Overview

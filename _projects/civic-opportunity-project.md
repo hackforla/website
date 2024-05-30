@@ -7,6 +7,7 @@ alt: 'Civic Opportunity Project'
 image-hero: /assets/images/projects/civic-opportunity-project-hero.png
 leadership:
   - name: Ray Fambro
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U015QPJS34M'

@@ -61,7 +61,7 @@ links:
   - name: GitHub
     url: 'https://github.com/hackforla/heart'
   - name: Slack
-    url: 'https://hackforla.slack.com/messages/CDWKEBYBB'
+    url: 'https://hackforla.slack.com/archives/CDWKEBYBB'
   - name: Wiki
     url: 'https://github.com/hackforla/heart/wiki'
 partner: LA City & County Attorney’s Homeless Engagement and Response Team
