@@ -20,7 +20,7 @@ leadership:
       github: 'https://github.com/rmayott'
     picture: 'https://avatars.githubusercontent.com/rmayott'
   - name: Bryon Heart
-    role: Product Manager
+    github-handle: 
     links:
       slack: 'https://hackforla.slack.com/team/U01GHT3EMNZ'
       github: 'https://github.com/BryonPm'
