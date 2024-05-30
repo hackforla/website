@@ -13,6 +13,7 @@ leadership:
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Hannah Zulueta
+    github-handle:
     role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/U9SCMTNK0"
