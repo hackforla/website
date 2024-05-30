@@ -5,6 +5,8 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
+      #Uncomment the next line for testing:
+      #- 'verify-pr-author-3906'
 
 jobs:
   Add-Pull-Request-Instructions:
@@ -34,3 +36,42 @@ jobs:
         with:
           name: adding-pr-instructions-artifact
           path: addingPrInstructions/artifact/
+  
+  #Instructions for testing the Check-Team-Membership action:
+  #1) Delete the '#' on line 9 to uncomment the testing branch
+  #2) Replace the token on line 51 with a user-generated token (Instructions will be linked in PR)
+  #3) Change the owner assignment on lines 65 and 71 from 'hackforla' to your own github handle. 
+  #4) For testing the success condition: Test the action excluding step #5
+  #5) For testing the fail condition: Change the username assignment from 'prAuthor' in line 56 to a random string that doesn't accidentally spell out the handle of someone on the website-write team
+  Check-Team-Membership:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const prAuthor = context.payload.sender.login;
+            const prNumber = context.payload.number;
+            try {
+              const getMembershipStatus = await github.rest.teams.getMembershipForUserInOrg({
+              org: 'hackforla',
+              team_slug: 'website-write',
+              username: prAuthor
+              });
+              console.log('Successfully verified!')
+            } catch (verificationError) {
+              if (verificationError.status==404) {
+                await github.request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
+                  owner : 'hackforla',
+                  repo : 'website',
+                  pull_number : prNumber,
+                  state : 'closed'
+                });
+                await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
+                  owner : 'hackforla',
+                  repo : 'website',
+                  issue_number : prNumber,
+                  body : 'You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started.  If you have been though onboarding, and feel this message in error, please message us in the #hfla-site team slack channel with the link to this PR.'
+                });
+              }
+              }
