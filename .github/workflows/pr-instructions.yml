@@ -5,9 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
-      #Uncomment the next line for testing:
-      #- 'verify-pr-author-3906'
-
+      
 jobs:
   Add-Pull-Request-Instructions:
     runs-on: ubuntu-latest
@@ -37,12 +35,6 @@ jobs:
           name: adding-pr-instructions-artifact
           path: addingPrInstructions/artifact/
   
-  #Instructions for testing the Check-Team-Membership action:
-  #1) Delete the '#' on line 9 to uncomment the testing branch
-  #2) Replace the token on line 51 with a user-generated token (Instructions will be linked in PR)
-  #3) Change the owner assignment on lines 65 and 71 from 'hackforla' to your own github handle. 
-  #4) For testing the success condition: Test the action excluding step #5
-  #5) For testing the fail condition: Change the username assignment from 'prAuthor' in line 56 to a random string that doesn't accidentally spell out the handle of someone on the website-write team
   Check-Team-Membership:
     runs-on: ubuntu-latest
     steps:
