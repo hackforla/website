@@ -5,7 +5,7 @@ on:
     branches:
       - 'gh-pages'
       - 'feature-homepage-launch'
-      
+
 jobs:
   Add-Pull-Request-Instructions:
     runs-on: ubuntu-latest
