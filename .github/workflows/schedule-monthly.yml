@@ -27,7 +27,7 @@ jobs:
           const script = require('./github-actions/trigger-schedule/list-inactive-members/get-contributors-data.js')
           const results = script({ g: github, c: context })
           return results
-    
+
     # Trims inactive members from team and notifies idle members
     - name: Trim and Notify Members
       id: trim-and-notify-members
@@ -42,7 +42,7 @@ jobs:
     # Run `git pull` so that branch is current prior to next step
     - name: Pull latest changes from gh-pages
       run: git pull
-      
+
     # Commits list of inactive members to repo for using in next step, and in one month
     - name: Update Inactive Members JSON
       id: update-inactive-members-json
