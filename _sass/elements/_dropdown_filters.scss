@@ -32,13 +32,16 @@ a.filter-item {
 .filter-toolbar {
   padding: 8px 32px;
   box-sizing: border-box;
-  height: 100%;
-  max-height: 750px;
-  width: 27%;
+  height: 95vh;
+  flex-shrink: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   position: sticky;
   top: 64px;
+}
+
+.filtersDiv {
+  min-width:330px;
 }
 
 .projects-and-filters {
@@ -253,6 +256,14 @@ a.clear-filter-tags {
   .filter-toolbar {
     background-color: $color-pink;
     padding: 0;
+    height: auto;
+    overflow-y: hidden;
+    position: relative; 
+    top: 0px;
+    bottom: 0px;
+    left: 10px;
+    right: 10px;
+    width: 98%;
   }
 
   .filter-toolbar.show-filters {
@@ -264,7 +275,6 @@ a.clear-filter-tags {
     left: 0;
     bottom: 0;
     right: 0;
-    max-height: 850px;
     overflow-y: scroll;
     background: $color-white;
   }

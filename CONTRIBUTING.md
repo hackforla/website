@@ -533,9 +533,9 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes
+Update your gh-pages branch with upstream changes:
 
-```
+```bash
 git pull upstream gh-pages
 ```
 
@@ -643,7 +643,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
 
 
@@ -742,6 +742,10 @@ git merge gh-pages
 
 ```bash
 ls -al ~/.ssh
+```
+If the folder ~/.ssh does not exist, create it using
+```bash
+mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.
