@@ -3,6 +3,7 @@ name: Schedule Friday 0700
 on:
   schedule:
     - cron:  '0 7 * * 5'
+  workflow_dispatch:
 
 jobs:
   Add-Update-Label-to-Issues-Weekly:
@@ -12,8 +13,10 @@ jobs:
       - uses: actions/github-script@v7
         env:
           IN_PROGRESS_COLUMN_ID: ${{ secrets.IN_PROGRESS_COLUMN_ID }}
+          HACKFORLA_ADMIN_TOKEN: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
         with:
           script: |
-            const { IN_PROGRESS_COLUMN_ID } = process.env;
+            const IN_PROGRESS_COLUMN_ID = process.env.IN_PROGRESS_COLUMN_ID;
+            const HACKFORLA_ADMIN_TOKEN = process.env.HACKFORLA_ADMIN_TOKEN;
             const script = require('./github-actions/trigger-schedule/add-update-label-weekly/add-label.js');
-            script({ g: github, c: context }, IN_PROGRESS_COLUMN_ID);
+            script({ g: github, c: context }, IN_PROGRESS_COLUMN_ID, HACKFORLA_ADMIN_TOKEN);
