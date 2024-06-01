@@ -72,11 +72,11 @@ leadership:
       github: 'https://github.com/gaylem'
     picture: https://avatars.githubusercontent.com/gaylem
   - name: Mario Antonini
-    github-handle:
+    github-handle: 
     role: Merge Team
     links:
-      slack: "https://hackforla.slack.com/team/U06MTPZ67V3"
-      github: "https://github.com/marioantonini"
+      slack: 'https://hackforla.slack.com/team/U06MTPZ67V3'
+      github: 'https://github.com/marioantonini'
     picture: https://avatars.githubusercontent.com/marioantonini
 links:
   - name: Wiki
