@@ -41,12 +41,14 @@ leadership:
       github: 'https://github.com/nekobox'
     picture: https://avatars.githubusercontent.com/nekobox
   - name: Conor McKiernan
+    github-handle:
     role: Logo Design and UX Strategy/Research
     links:
       slack: 'https://hackforla.slack.com/team/UNHNCALSE'
       github: 'https://github.com/redmckiernan'
     picture: https://avatars.githubusercontent.com/redmckiernan
   - name: Selena Jiang
+    github-handle: 
     role: UI Design, Life Saving Measures screen
     links:
       slack: 'https://hackforla.slack.com/team/UMYN9DVSB'
