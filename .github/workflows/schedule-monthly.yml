@@ -3,12 +3,12 @@ name: Schedule Monthly
 # This action runs at 11:00 UTC/ 4:00 PDT on the first day of every month except January.
 on:
   schedule:
-    - cron:  0 11 1 2-12 * 
-  workflow_dispatch:
+    - cron:  0 11 1 2-12 *
+
 jobs:
   Trim_Contributors:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'      
+    if: github.repository == 'hackforla/website'
 
     steps:
     # Checkout repo, and provide authorization token for `stefanzweifel/git-auto-commit-action` below
@@ -17,7 +17,7 @@ jobs:
       with: 
         token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
 
-    # Checks member activity logs for recent and previous contributors 
+    # Checks member activity logs for recent and previous contributors
     - name: Get Contributors
       id: get-contributors
       uses: actions/github-script@v7
