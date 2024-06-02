@@ -4,7 +4,7 @@ name: Schedule Monthly
 on:
   schedule:
     - cron:  0 11 1 2-12 * 
-
+  workflow_dispatch:
 jobs:
   Trim_Contributors:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v4
       with: 
         token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
- 
+
     # Checks member activity logs for recent and previous contributors 
     - name: Get Contributors
       id: get-contributors
@@ -27,7 +27,7 @@ jobs:
           const script = require('./github-actions/trigger-schedule/list-inactive-members/get-contributors-data.js')
           const results = script({ g: github, c: context })
           return results
-    
+
     # Trims inactive members from team and notifies idle members
     - name: Trim and Notify Members
       id: trim-and-notify-members
@@ -38,7 +38,11 @@ jobs:
           const results = ${{ steps.get-contributors.outputs.result }}
           const script = require('./github-actions/trigger-schedule/list-inactive-members/trim-inactive-members.js')
           script({ g: github, c: context }, results)
-    
+
+    # Run `git pull` so that branch is current prior to next step
+    - name: Pull latest changes from gh-pages
+      run: git pull
+
     # Commits list of inactive members to repo for using in next step, and in one month
     - name: Update Inactive Members JSON
       id: update-inactive-members-json
