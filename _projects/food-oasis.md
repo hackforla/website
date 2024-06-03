@@ -7,18 +7,21 @@ alt: 'Food Oasis'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
 leadership:
   - name: John Darragh
+    github-handle:
     role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Hannah Zulueta
+    github-handle:
     role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/U9SCMTNK0"
       github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
+    github-handle: 
     role: UX/UR Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
