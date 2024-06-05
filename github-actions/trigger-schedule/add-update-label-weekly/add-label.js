@@ -2,6 +2,7 @@
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
 var fs = require("fs");
+const https = require("https");
 // Global variables
 var github;
 var context;
@@ -10,13 +11,15 @@ const toUpdateLabel = 'To Update !';
 const inactiveLabel = '2 weeks inactive';
 const updatedByDays = 3; // If there is an update within 3 days, the issue is considered updated
 const inactiveUpdatedByDays = 14; // If no update within 14 days, the issue is considered '2 weeks inactive'
-const commentByDays = 7; // If there is an update within 14 days but no update within 7 days, the issue is considered outdated and the assignee needs 'To Update !' it
+const commentByDays = 7; // If there is an update within 14 days but no update within 7 days, the issue is considered outdated and the assignee needs 'To Update !' it.
 const threeDayCutoffTime = new Date()
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays)
 const sevenDayCutoffTime = new Date()
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays)
 const fourteenDayCutoffTime = new Date()
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays)
+
+var projectBoardToken;
 
 /**
  * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue for outdatedness.
@@ -26,12 +29,15 @@ fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedB
  * @param {Object} g github object from actions/github-script
  * @param {Object} c context object from actions/github-script
  * @param {Number} columnId a number presenting a specific column to examine, supplied by GitHub secrets
+ * @param {String} projectBoardToken the Personal Access Token for the action
  */
-async function main({ g, c }, columnId) {
+async function main({ g, c }, columnId, pbt) {
   github = g;
   context = c;
+  projectBoardToken = pbt;
   // Retrieve all issue numbers from a column
   const issueNums = getIssueNumsFromColumn(columnId);
+
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum, github, context);
     const assignees = await getAssignees(issueNum);
@@ -108,6 +114,7 @@ async function* getIssueNumsFromColumn(columnId) {
 function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
   let lastAssignedTimestamp = null;
   let lastCommentTimestamp = null;
+  let commentsToBeMinimized = [];
 
   for (let i = timeline.length - 1; i >= 0; i--) {
     let eventObj = timeline[i];
@@ -140,7 +147,14 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     else if (!lastAssignedTimestamp && eventType === 'assigned' && assignees.includes(eventObj.assignee.login)) {
       lastAssignedTimestamp = eventTimestamp;
     }
+
+    if (!isMomentRecent(eventObj.created_at, sevenDayCutoffTime) && eventType === 'commented' && isCommentByBot(eventObj)) { // If this event did not happen more recently than 7 days ago AND this event is a comment AND the comment is by GitHub Actions Bot, then hide the comment as outdated.
+      console.log(`Comment ${eventObj.node_id} is outdated (i.e. > 7 days old) and will be minimized.`);
+      commentsToBeMinimized.push(eventObj.node_id); // retain node id so its associated comment can be minimized later
+    }
   }
+
+  minimizeComments(commentsToBeMinimized);
 
   if (lastCommentTimestamp && isMomentRecent(lastCommentTimestamp, threeDayCutoffTime)) { // if commented by assignee within 3 days
     console.log(`Issue #${issueNum} commented by assignee within 3 days, retain 'Status: Updated' label`);
@@ -290,6 +304,70 @@ function formatComment(assignees, labelString) {
   const cutoffTimeString = threeDayCutoffTime.toLocaleString('en-US', options);
   let completedInstuctions = text.replace('${assignees}', assignees).replace('${cutoffTime}', cutoffTimeString).replace('${label}', labelString);
   return completedInstuctions
+}
+
+function isCommentByBot(data) {
+  let botLogin = "github-actions[bot]";
+  return data.actor.login === botLogin;
+}
+
+// asynchronously minimize all the comments that are outdated (> 1 week old)
+async function minimizeComments(comment_node_ids) {
+  for (const node_id of comment_node_ids) {
+    await new Promise((resolve) => { setTimeout(resolve, 1000); }); // wait for 1000ms before doing the GraphQL mutation
+    await minimizeComment(node_id);
+  }
+}
+
+async function minimizeComment(node_id) {
+  const mutation = JSON.stringify({
+    query: `mutation HideOutdatedComment($nodeid: ID!){ 
+        minimizeComment(input:{
+          classifier:OUTDATED,
+          subjectId: $nodeid
+        }) {
+          clientMutationId
+          minimizedComment {
+            isMinimized
+            minimizedReason
+          }
+        }
+      }`,
+    variables: {
+      nodeid: node_id
+    }
+  });
+
+  const options = {
+    hostname: 'api.github.com',
+    path: '/graphql',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + projectBoardToken,
+      'user-agent': 'Add-Update-Label-to-Issues-Weekly'
+    }
+  };
+
+  // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
+  const req = https.request(options, (res) => {
+    let data = '';
+    // console.log(`statusCode: ${res}`);
+  
+    res.on('data', (d) => {
+      data += d;
+    });
+    res.on('end', () => {
+      console.log(`GraphQL output: ${data}`);
+    });
+  });
+
+  req.on('error', (error) => {
+    console.error(error);
+  });
+
+  req.write(mutation);
+  req.end();
 }
 
 module.exports = main

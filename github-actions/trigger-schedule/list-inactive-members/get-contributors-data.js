@@ -6,6 +6,9 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
+const maintTeam = 'website-maintain';
+const botMembers = ['elizabethhonest', 'hfla-website-checklist', 'HackforLABot'];
+
 // Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
 // Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
 // The February 1st run keeps the 1 month inactive warning, but changes removal to 3 months inactive (skipping December).
@@ -59,7 +62,6 @@ async function fetchContributors(dates){
   let inactiveWithOpenIssue = {};
 
   // Members of 'website-maintain' team are considered permanent members
-  const maintTeam = 'website-maintain';
   const permanentMembers = await getTeamMembers(github, context, maintTeam);
 
   // Fetch all contributors with commit, comment, and issue (assignee) contributions
@@ -79,8 +81,8 @@ async function fetchContributors(dates){
       while(true){
         // Fetch 100 items per each page (`pageNum`)
         const contributors = await github.request(api, {
-          owner: github.context.owner,
-          repo: github.context.repo,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
           since: date,
           per_page: 100,
           page: pageNum
@@ -133,9 +135,14 @@ async function fetchContributors(dates){
       }
     }
     // Add permanent members from 'website-maintain' team to list of active contributors
-    for(const permanentMember in permanentMembers){
+    for(let permanentMember in permanentMembers){
       allContributorsSince[permanentMember] = true;
     }
+    // Add members of botMembers team to list of active contributors
+    for(let i = 0; i < botMembers.length; i++){
+      allContributorsSince[botMembers[i]] = true;
+    }
+    
     if(date === dates[0]){
       allContributorsSinceOneMonthAgo = allContributorsSince;
     } else {

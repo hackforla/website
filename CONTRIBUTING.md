@@ -743,6 +743,10 @@ git merge gh-pages
 ```bash
 ls -al ~/.ssh
 ```
+If the folder ~/.ssh does not exist, create it using
+```bash
+mkdir ~/.ssh
+```
 
 2. Then enter the text below into your terminal using your github account email address.
 

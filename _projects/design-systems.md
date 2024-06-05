@@ -18,6 +18,7 @@ leadership:
       github: 'https://github.com/allthatyazz'
     picture: 'https://avatars.githubusercontent.com/allthatyazz'
   - name: Rachel Newcomb
+    github-handle: 
     role: Lead UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03Q5J8SVM3'
@@ -31,18 +32,21 @@ leadership:
       github: 'https://github.com/sandraberjan'
     picture: 'https://avatars.githubusercontent.com/sandraberjan'
   - name:  Khanh Cao
+    github-handle:
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04A19TDBED'
       github: 'https://github.com/khanhcao17'
     picture: 'https://avatars.githubusercontent.com/khanhcao17'
   - name:  Debbie Nyasetia
+    github-handle: 
     role: Co-Lead UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U03FJ3V58FN'
       github: 'https://github.com/kangina-tech'
     picture: 'https://avatars.githubusercontent.com/kangina-tech'
   - name: Wataru Inoue
+    github-handle:
     role: UX Consultant
     links:
       slack: 'https://hackforla.slack.com/team/U02SMT4H4LR'

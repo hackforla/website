@@ -1,22 +1,23 @@
 name: Schedule Monthly
 
-# This action runs at 11:00 UTC/ 3:00 PDT on the first day of every month except January.
+# This action runs at 11:00 UTC/ 4:00 PDT on the first day of every month except January.
 on:
   schedule:
-    - cron:  0 11 1 2-12 * 
-  workflow_dispatch:
+    - cron:  0 11 1 2-12 *
 
 jobs:
   Trim_Contributors:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'      
+    if: github.repository == 'hackforla/website'
 
     steps:
-    # Checkout repo
+    # Checkout repo, and provide authorization token for `stefanzweifel/git-auto-commit-action` below
     - name: Checkout repository
       uses: actions/checkout@v4
- 
-    # Checks member activity logs for recent and previous contributors 
+      with: 
+        token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+
+    # Checks member activity logs for recent and previous contributors
     - name: Get Contributors
       id: get-contributors
       uses: actions/github-script@v7
@@ -26,7 +27,7 @@ jobs:
           const script = require('./github-actions/trigger-schedule/list-inactive-members/get-contributors-data.js')
           const results = script({ g: github, c: context })
           return results
-    
+
     # Trims inactive members from team and notifies idle members
     - name: Trim and Notify Members
       id: trim-and-notify-members
@@ -37,10 +38,15 @@ jobs:
           const results = ${{ steps.get-contributors.outputs.result }}
           const script = require('./github-actions/trigger-schedule/list-inactive-members/trim-inactive-members.js')
           script({ g: github, c: context }, results)
-    
+
+    # Run `git pull` so that branch is current prior to next step
+    - name: Pull latest changes from gh-pages
+      run: git pull
+
     # Commits list of inactive members to repo for using in next step, and in one month
     - name: Update Inactive Members JSON
-      uses: stefanzweifel/git-auto-commit-action@v5.0.0
+      id: update-inactive-members-json
+      uses: stefanzweifel/git-auto-commit-action@v5.0.1
       with:
        # Glob pattern of file which should be added to the commit
         file_pattern: github-actions/utils/_data/inactive-members.json
@@ -48,20 +54,3 @@ jobs:
         # Optional commit message and author settings
         commit_message: Update Inactive Members JSON
         commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org> 
-
-
-  Create_New_Issue:
-    needs: Trim_Contributors
-    runs-on: ubuntu-latest     
-    steps:
-    - uses: actions/checkout@v4
-
-    # Creates a new issue in 'hackforla/website' repo with the saved lists
-    - name: Create new issue
-      id: create-new-issue
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
-        script: |
-          const script = require('./github-actions/trigger-schedule/list-inactive-members/create-new-issue.js')
-          script({g: github, c: context})
