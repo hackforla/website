@@ -21,12 +21,14 @@ leadership:
       github: 'https://github.com/rmayott'
     picture: 'https://avatars.githubusercontent.com/rmayott'
   - name: Bryon Heart
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01GHT3EMNZ'
       github: 'https://github.com/BryonPm'
     picture: 'https://avatars.githubusercontent.com/BryonPm'
   - name: Eli Selkin
+    github-handle:
     role: Backend Architect and Technology Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0611PL2D'
