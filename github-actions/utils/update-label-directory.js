@@ -126,7 +126,7 @@ function cycleThroughDirectory(data, searchValue) {
 
 // If the label has not been created, prepend 'NEW-' to labelKey to flag it
 function createInitiallabelKey(data, labelName) {
-  let labelKey = '';
+  let labelKey = 'NEW-';
   const isAlphanumeric = str => /^[a-z0-9]+$/gi.test(str);
   let labelInterim = labelName.split(/[^a-zA-Z0-9]+/);
   for (let i = 0; i < labelInterim.length ; i++) {
@@ -135,10 +135,6 @@ function createInitiallabelKey(data, labelName) {
       } else if (isAlphanumeric(labelInterim[i])) {
           labelKey += labelInterim[i].split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(' ');
       }
-  }
-  // If the 'labelKey' already exists for some reason, add the word 'COPY' so it is flagged and does not overwrite existing
-  if (data[labelKey]) {
-    labelKey += 'COPY';
   }
   return labelKey;
 }
