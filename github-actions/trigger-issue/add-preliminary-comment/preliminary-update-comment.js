@@ -20,7 +20,7 @@ var columnsId = new Map([
   [In_Progress, 7198228],
 ]);
 
-const READY_FOR_DEV_LABEL = "ready for dev lead"
+const READY_FOR_DEV_LABEL = "ready for dev lead";
 
 
 /**
