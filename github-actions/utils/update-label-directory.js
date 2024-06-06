@@ -38,7 +38,7 @@ async function main({ g, c }) {
   // Otherwise, retrieve label directory 
   var rawData = fs.readFileSync(filepath, 'utf8');
   var data = JSON.parse(rawData);
-  let keyName = '';
+  let labelKey = '';
   let actionAddOn = '';
 
   // Initial information to log
@@ -47,22 +47,22 @@ async function main({ g, c }) {
   console.log(context.payload.label);
   console.log(`\n${breakLine}\n`);
   
-  // If label 'deleted', check for 'labelId' in label directory and if found return 'keyName' 
+  // If label 'deleted', check for 'labelId' in label directory and if found return 'labelKey' 
   if (labelAction === 'deleted') {
-    keyName = cycleThroughDirectory(data, Number(labelId));
-    if (keyName) {
-      // If the 'keyName' is found with 'labelId', replace 'labelId' with '9999999999' in JSON and flag for review
+    labelKey = cycleThroughDirectory(data, Number(labelId));
+    if (labelKey) {
+      // If the 'labelKey' is found with 'labelId', replace 'labelId' with '9999999999' in JSON and flag for review
       let prevId = labelId;
       labelId = 9999999999;
-      message = `Found keyName:  ${keyName}  for labelName:  ${labelName}  using labelId:  ${prevId}  --->  ${labelId}.  Id no longer valid. This needs review!`;
+      message = `Found labelKey:  ${labelKey}  for labelName:  ${labelName}  using labelId:  ${prevId}  --->  ${labelId}.  Id no longer valid. This needs review!`;
       actionAddOn = ' / id found';
       console.log(message);
-      writeToJsonFile(data, keyName, labelId, labelName);
+      writeToJsonFile(data, labelKey, labelId, labelName);
     } else {
-      // If the 'keyName' not found with 'labelId', rerun with 'labelName'
-      keyName = cycleThroughDirectory(data, labelName);
-      if (keyName) {
-        message = `Found a keyName:  ${keyName}  for labelName:  ${labelName}.  However, this DOES NOT MATCH labelId:  ${labelId}.  No updates to JSON. This needs review!`;
+      // If the 'labelKey' not found with 'labelId', rerun with 'labelName'
+      labelKey = cycleThroughDirectory(data, labelName);
+      if (labelKey) {
+        message = `Found a labelKey:  ${labelKey}  for labelName:  ${labelName}.  However, this DOES NOT MATCH labelId:  ${labelId}.  No updates to JSON. This needs review!`;
         console.log(message);
         actionAddOn = ' / check name';
       } else {
@@ -73,36 +73,36 @@ async function main({ g, c }) {
     }
   }
  
-  // If 'edited' check for 'labelId' in label directory and if found return 'keyName' 
+  // If 'edited' check for 'labelId' in label directory and if found return 'labelKey' 
   if (labelAction === 'edited' ) {
     let prevName = context.payload.changes.name.from;
-    keyName = cycleThroughDirectory(data, Number(labelId));
-    // If the 'keyName' is returned, it is assumed that the change is known. Label directory will be updated w/ new 'name'
-    if (keyName) {
-      message = `Found keyName:  ${keyName}  for labelName:   ${prevName} ---> ${labelName}   and labelId:  ${labelId}.`;
+    labelKey = cycleThroughDirectory(data, Number(labelId));
+    // If the 'labelKey' is returned, it is assumed that the change is known. Label directory will be updated w/ new 'name'
+    if (labelKey) {
+      message = `Found labelKey:  ${labelKey}  for labelName:   ${prevName} ---> ${labelName}   and labelId:  ${labelId}.`;
       actionAddOn = ' / found';
     } else {
-      // If the 'labelId' is not found, create a new 'keyName' and flag this label edit for review
-      keyName = createInitialKeyName(data, labelName);
-      message = `Did not find keyName:   for labelName:  ${labelName}  using labelId:  ${labelId}.  Adding Label Object with new keyName:  ${keyName}.`;
+      // If the 'labelId' is not found, create a new 'labelKey' and flag this label edit for review
+      labelKey = createInitiallabelKey(data, labelName);
+      message = `Did not find labelKey:   for labelName:  ${labelName}  using labelId:  ${labelId}.  Adding Label Object with new labelKey:  ${labelKey}.`;
       actionAddOn = ' / added';
     }
     console.log(message);
-    writeToJsonFile(data, keyName, labelId, labelName);
+    writeToJsonFile(data, labelKey, labelId, labelName);
   }
 
-  // If 'created' then 'keyName' won't exist, create new camelCased 'keyName' so label entry can be added to directory
+  // If 'created' then 'labelKey' won't exist, create new camelCased 'labelKey' so label entry can be added to directory
   if (labelAction === 'created') {
-    keyName = createInitialKeyName(data, labelName);
-    message = `Created initial keyName:  ${keyName}  for new labelName:  ${labelName}  and new labelId:  ${labelId}.  Adding Label Object to JSON.`;
+    labelKey = createInitiallabelKey(data, labelName);
+    message = `Created initial labelKey:  ${labelKey}  for new labelName:  ${labelName}  and new labelId:  ${labelId}.  Adding Label Object to JSON.`;
     console.log(message);
-    writeToJsonFile(data, keyName, labelId, labelName);
+    writeToJsonFile(data, labelKey, labelId, labelName);
   }
 
   // Final step is to return label data packet to workflow
   console.log(`\nSending  Label Object  Google Apps Script / Sheets file`);
   labelAction += actionAddOn;
-  return { labelAction, keyName, labelName, labelId, message };
+  return { labelAction, labelKey, labelName, labelId, message };
 }
 
 
@@ -112,11 +112,11 @@ async function main({ g, c }) {
  *
  */
 function cycleThroughDirectory(data, searchValue) {
-  let keyName = '';
+  let labelKey = '';
   for (let [key, value] of Object.entries(data)) {
     if (value.includes(searchValue)) {
-      keyName = key;
-      return keyName;
+      labelKey = key;
+      return labelKey;
     } 
   }
   return undefined;
@@ -124,30 +124,31 @@ function cycleThroughDirectory(data, searchValue) {
 
 
 
-function createInitialKeyName(data, labelName) {
-  let keyName = '';
+// If the label has not been created, prepend 'NEW-' to labelKey to flag it
+function createInitiallabelKey(data, labelName) {
+  let labelKey = '';
   const isAlphanumeric = str => /^[a-z0-9]+$/gi.test(str);
   let labelInterim = labelName.split(/[^a-zA-Z0-9]+/);
   for (let i = 0; i < labelInterim.length ; i++) {
       if (i === 0) {
-          keyName += labelInterim[0].toLowerCase();
+          labelKey += labelInterim[0].toLowerCase();
       } else if (isAlphanumeric(labelInterim[i])) {
-          keyName += labelInterim[i].split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+          labelKey += labelInterim[i].split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(' ');
       }
   }
-  // If the 'keyName' already exists for some reason, add the word 'COPY' so it is flagged and does not overwrite existing
-  if (data[keyName]) {
-    keyName += 'COPY';
+  // If the 'labelKey' already exists for some reason, add the word 'COPY' so it is flagged and does not overwrite existing
+  if (data[labelKey]) {
+    labelKey += 'COPY';
   }
-  return keyName;
+  return labelKey;
 }
 
 
 
-function writeToJsonFile(data, keyName, labelId, labelName) {
+function writeToJsonFile(data, labelKey, labelId, labelName) {
   try {
-    data[keyName] = [labelName, Number(labelId)];
-    console.log(`\nSuccess writing  Label Object  to JSON:\n   { "${keyName}": [ "${labelName}", "${labelId}" ] }`);
+    data[labelKey] = [labelName, Number(labelId)];
+    console.log(`\nSuccess writing  Label Object  to JSON:\n   { "${labelKey}": [ "${labelName}", "${labelId}" ] }`);
   } catch (error) {
     console.log(error);
   }
