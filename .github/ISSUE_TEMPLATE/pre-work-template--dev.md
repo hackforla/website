@@ -24,7 +24,6 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
   - [ ] To find contact information for the merge team members and technical leads, please take a look at our [Meet the Team wiki page](https://github.com/hackforla/website/wiki/Meet-the-Team)
 - [ ] Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
-- [ ] After you have finished adding yourself to the roster, let a merge team member or a technical lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Self Assign this issue (gear in right side panel)
 - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
 - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
