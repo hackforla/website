@@ -80,7 +80,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 async function makeComment(){
   try {
     // Get column name
-    const columnName = await getColumnName(context.payload.issue.number);
+    const columnName = await getColumnName();
 
     const isPrework = context.payload.issue.labels.find((label) => label.name == 'Complexity: Prework') ? true : false;
     const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
