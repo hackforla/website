@@ -82,7 +82,7 @@ const parseInactiveOpen = (inactiveOpens) => {
   } else {
     let inactiveOpen = '\r\n\nInactive members with open issues:\r\n';
     for(const [key, value] of Object.entries(inactiveOpens)){
-      inactiveOpen += ' - ' + key + ': # ' + value + '\r\n';
+      inactiveOpen += ' - ' + key + ': #' + value + '\r\n';
     }
     return inactiveOpen;
   }
