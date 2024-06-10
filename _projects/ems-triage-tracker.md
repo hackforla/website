@@ -21,10 +21,11 @@ leadership:
       github: 'https://github.com/lwanderson-triage'
     picture: https://avatars.githubusercontent.com/lwanderson-triage
   - name: Shawn Duenas
+    github-handle:
     role: Project Manager, Presentation Build and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UN4EV6CG3'
-      github-handle: 'https://github.com/McRawly'
+      github: 'https://github.com/McRawly'
     picture: https://avatars.githubusercontent.com/McRawly
   - name: Simone Wojtaszek
     github-handle:
