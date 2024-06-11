@@ -12,7 +12,7 @@ leadership:
       linkedin: https://linkedin.com/in/marie-aim%C3%A9e-brajeux-88b40978/
     picture: https://user-images.githubusercontent.com/37763229/79702509-34a33480-825a-11ea-94e8-ff952f42863d.jpg
   - name: Adrian Inchauste
-    github-handle: adrianinchauste
+    github-handle:
     role: Design Sprint Facilitator
     links: 
       linkedin: https://linkedin.com/in/adrianinchauste
