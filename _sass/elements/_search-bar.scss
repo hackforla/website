@@ -16,10 +16,10 @@ form#search-bar {
     top: 60px; 
     z-index: 10;
 }
-// Avoid pinning of search-bar on mobile
+// Pin search-bar on mobile
 @media #{$bp-below-tablet} {
     form#search-bar {
-        position: static;
+        position: sticky;
     }
 }
 //Styles to override the styles from _forms.scss

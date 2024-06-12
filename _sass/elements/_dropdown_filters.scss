@@ -42,6 +42,7 @@ a.filter-item {
 
 .filtersDiv {
   min-width:330px;
+  padding-bottom: 15px;
 }
 
 .projects-and-filters {
@@ -266,6 +267,10 @@ a.clear-filter-tags {
     width: 98%;
   }
 
+  .filtersDiv {
+    padding-bottom: 0px;
+  }
+
   .filter-toolbar.show-filters {
     height: 100vh;
     width: 100vw;
@@ -361,5 +366,4 @@ a.clear-filter-tags {
 .show-none + .dropdown li {
   display: block;
 }
-
 }
