@@ -735,7 +735,7 @@ git merge gh-pages
 
 If you already have an SSH key that connects your computer with your GitHub account, you can skip this section (2.7.f).
 
-**IMPORTANT:** If you are a Windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
+**IMPORTANT:** If you are a Windows user then you have to install Git Bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
 [Git Bash](https://git-scm.com/downloads)
 
 ##### **i. Setting up SSH Keys for Mac**
