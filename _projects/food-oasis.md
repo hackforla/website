@@ -1,5 +1,5 @@
 ---
-identification: '215666884'
+identification: "215666884"
 title: Food Oasis
 description: Food Oasis is focused on supporting individuals seeking food in Los Angeles. We aim to provide an up-to date resource on food pantries and meal services. The team is currently working on updating listings on our website foodoasis.net, improving UI, and establishing new partnerships.
 image: /assets/images/projects/food-oasis.jpg
@@ -10,36 +10,36 @@ leadership:
     github-handle:
     role: Lead Developer
     links:
-      slack: 'https://hackforla.slack.com/team/UFLDX9V19'
-      github: 'https://github.com/entrotech'
+      slack: "https://hackforla.slack.com/team/UFLDX9V19"
+      github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Hannah Zulueta
     github-handle:
     role: Lead Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U9SCMTNK0'
-      github: 'https://github.com/hanapotski'
+      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
+      github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
-    github-handle:
+    github-handle: 
     role: UX/UR Lead
     links:
-      slack: 'https://hackforla.slack.com/team/U01PG6RD0T1'
-      github: 'https://github.com/fancyham'
+      slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
+      github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
   - name: Gigi Patel
-    github-handle:
+    github-handle: 
     role: Lead UX Researcher
     links:
-      slack: 'https://hackforla.slack.com/team/U02KZ8WSHHV'
-      github: 'https://github.com/GigiUxR'
+      slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
+      github: "https://github.com/GigiUxR"
     picture: https://avatars.githubusercontent.com/GigiUxR
   - name: Virginia Wu
     github-handle:
     role: Full Stack Engineer
     links:
-      slack: 'https://hackforla.slack.com/team/U02G7SBKSV7'
-      github: 'https://github.com/VirginiaWu11'
+      slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
+      github: "https://github.com/VirginiaWu11"
     picture: https://avatars.githubusercontent.com/VirginiaWu11
   - name: Andy Arensman
     github-handle: andyarensman
@@ -84,17 +84,18 @@ leadership:
       github: https://github.com/saumildhankar
     picture: https://avatars.githubusercontent.com/saumildhankar
 
+
 links:
   - name: GitHub
-    url: 'https://github.com/hackforla/food-oasis'
+    url: "https://github.com/hackforla/food-oasis"
   - name: Site
-    url: 'https://foodoasis.net'
+    url: "https://foodoasis.net"
   - name: Readme
-    url: 'https://github.com/hackforla/food-oasis/blob/master/README.md'
+    url: "https://github.com/hackforla/food-oasis/blob/master/README.md"
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/CMER3R1RD'
+    url: "https://hackforla.slack.com/archives/CMER3R1RD"
   - name: Test Site
-    url: 'https://devla.foodoasis.net/'
+    url: "https://devla.foodoasis.net/"
   - name: Overview
     url: '../assets/pdfs/Food-Oasis-One-Sheet.pdf'
 looking:
@@ -111,7 +112,7 @@ technologies:
 location:
   # - Downtown LA
   - Remote
-tools:
+tools: 
   - Figma
   - Photoshop
   - Sketch
@@ -133,5 +134,5 @@ visible: true
 status: Active
 iframe:
   available: true
-  src: 'https://la.foodoasis.net/widget'
+  src: "https://la.foodoasis.net/widget"
 ---
