@@ -310,7 +310,7 @@ The extension can also be installed via the VS Code Marketplace website [here](h
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
-<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
+<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -733,7 +733,9 @@ git merge gh-pages
 
 #### **2.7.f Working on an issue (6): Handling SSH authorization errors**
 
-**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
+If you already have an SSH key that connects your computer with your GitHub account, you can skip this section (2.7.f).
+
+**IMPORTANT:** If you are a Windows user then you have to install Git Bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
 [Git Bash](https://git-scm.com/downloads)
 
 ##### **i. Setting up SSH Keys for Mac**
