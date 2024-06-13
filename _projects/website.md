@@ -64,13 +64,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05TZLLJAUV'
       github: 'https://github.com/freaky4wrld'
     picture: https://avatars.githubusercontent.com/freaky4wrld
-  - name: Gayle Martin
-    github-handle: gaylem
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U06HC3A0DM0'
-      github: 'https://github.com/gaylem'
-    picture: https://avatars.githubusercontent.com/gaylem
   - name: Mario Antonini
     github-handle: 
     role: Merge Team
