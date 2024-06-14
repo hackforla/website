@@ -216,7 +216,7 @@ git remote add upstream https://github.com/hackforla/website.git
 
 Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
-The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing docker on your system</em></strong>
+The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing docker on your system</em></strong>
 
 More on using Docker and the concepts of containerization:
 
@@ -305,23 +305,12 @@ docker-compose up
 
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
-The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-
-
-***
-
-### **1.7 Dev setup (7): Install local codebase spell checker**
-
-You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
-
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
 The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
-<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
+<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -544,9 +533,9 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes
+Update your gh-pages branch with upstream changes:
 
-```
+```bash
 git pull upstream gh-pages
 ```
 
@@ -654,7 +643,7 @@ You can also sync your fork directly on GitHub by clicking "Sync Fork" at the ri
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
 
 
@@ -744,7 +733,9 @@ git merge gh-pages
 
 #### **2.7.f Working on an issue (6): Handling SSH authorization errors**
 
-**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
+If you already have an SSH key that connects your computer with your GitHub account, you can skip this section (2.7.f).
+
+**IMPORTANT:** If you are a Windows user then you have to install Git Bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
 [Git Bash](https://git-scm.com/downloads)
 
 ##### **i. Setting up SSH Keys for Mac**
@@ -753,6 +744,10 @@ git merge gh-pages
 
 ```bash
 ls -al ~/.ssh
+```
+If the folder ~/.ssh does not exist, create it using
+```bash
+mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.

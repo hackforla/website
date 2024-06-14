@@ -236,8 +236,8 @@
   	if (document.querySelectorAll('.wins-card').length == 0) {
   		const page = document.querySelector('.wins-page-contain');
   		const p = document.createElement('p');
+  		p.textContent = "No one has shared a win yet...be the first!";
   		page.appendChild(p);
-  		p.innerHTML = "No one has shared a win yet...be the first!";
   	}
   }
 
@@ -336,8 +336,26 @@
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
-		cloneCardTemplate.querySelector('.project-inner.wins-card-team').innerHTML = `<span class="wins-team-role-color">Team(s): </span> ${card[team]}`;
-		cloneCardTemplate.querySelector('.project-inner.wins-card-role').innerHTML = `<span class="wins-team-role-color">Role(s): </span> ${card[role]}`;
+		// Avoiding using innerHTML due to security risks
+		// Creating the elements 
+		const teamContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-team');
+		const roleContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-role');
+		const teamSpanElement = document.createElement('span');
+		teamSpanElement.classList.add('wins-team-role-color');
+		const roleSpanElement = document.createElement('span');
+		roleSpanElement.classList.add('wins-team-role-color');
+		
+		// Preparing the text of the elements 
+		teamSpanElement.textContent = "Team(s): ";
+		const teamTextNode = document.createTextNode(card[team]);
+		roleSpanElement.textContent = "Role(s): ";
+		const roleTextNode = document.createTextNode(card[role]);
+
+		// Inserting the elements into the DOM
+		teamContainer.appendChild(teamSpanElement);
+		teamContainer.appendChild(teamTextNode);
+		roleContainer.appendChild(roleSpanElement);
+		roleContainer.appendChild(roleTextNode);
 
 		cloneCardTemplate.querySelector('.wins-card-overview').textContent = card[overview];
 		cloneCardTemplate.querySelector('.wins-icon-container').setAttribute('data-index', index)
@@ -419,13 +437,13 @@ function changeSeeMoreBtn(x) {
 	const span = document.querySelectorAll(".see-more-div");
 	if (x.matches) {
 		for(let i = 0; i < span.length; i++) {
-			span[i].innerHTML = ''
+			span[i].textContent = ''
 		}
 	} else {
 		for(let i = 0; i < span.length; i++) {
 			// removes show-less-btn class
 			span[i].setAttribute('class', 'see-more-div');
-			span[i].innerHTML = "See More";
+			span[i].textContent = "See More";
 		}
 	}
   }
@@ -483,7 +501,7 @@ function changeSeeMoreBtn(x) {
 	  	bigQuoteImg.alt = "Quote from " + data[i][name];
 
   		const overlayIcons = document.querySelector('#overlay-icons');
-  		overlayIcons.innerHTML = "";
+  		overlayIcons.textContent = "";
 
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
@@ -492,16 +510,16 @@ function changeSeeMoreBtn(x) {
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
-		overlayName.innerHTML = data[i][name];
+		overlayName.textContent = data[i][name];
 
   		const overlayTeams = document.querySelector('#overlay-teams');
-  		overlayTeams.innerHTML = `Team(s): ${data[i][team]}`;
+  		overlayTeams.textContent = `Team(s): ${data[i][team]}`;
 
   		const overlayRoles = document.querySelector('#overlay-roles');
-  		overlayRoles.innerHTML = `Role(s): ${data[i][role]}`;
+  		overlayRoles.textContent = `Role(s): ${data[i][role]}`;
 
   		const overlayOverview = document.querySelector('#overlay-overview');
-  		overlayOverview.innerHTML = data[i][overview];
+  		overlayOverview.textContent = data[i][overview];
 
 		insertIcons('#overlay-info', data[i][win], 'overlay')
 
@@ -524,7 +542,7 @@ function changeSeeMoreBtn(x) {
 
 	  const overlayInfo = document.querySelector('#overlay-info');
 
-	  overlayInfo.innerHTML = '';
+	  overlayInfo.textContent = '';
   }
 
 

@@ -264,6 +264,7 @@
   background: $color-whitesmoke;
   border-radius: 0px 0px 10px 10px;
   height: 80%;
+  text-align: left;
 
   @media #{$bp-below-tablet} {
     padding-top: 0px;
@@ -345,6 +346,11 @@
     width: 116px;
     height: 116px;
   }
+}
+
+.resource-img svg {
+  width: 101px;
+  height: 101px;
 }
 
 .resource-img-provided {

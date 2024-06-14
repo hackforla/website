@@ -28,6 +28,7 @@ leadership:
       github: 'https://github.com/Olivia-Chiong'
     picture: 'https://avatars.githubusercontent.com/Olivia-Chiong'
   - name: Muhi-Dean Othman
+    github-handle: 
     role: Full-Stack Developer
     links:
       slack: 'https://hackforla.slack.com/team/U01F5K8DDPW'

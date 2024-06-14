@@ -1,7 +1,7 @@
 name: Issue Trigger
 on:
   issues:
-    types: [opened, transferred, assigned]
+    types: [opened, transferred, assigned, labeled, unlabeled]
 
 jobs:
   # Adds newly created issues onto project board in the default column 'New Issue Approval' 
@@ -85,3 +85,29 @@ jobs:
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
             script({g: github, c:context},results)
+
+  Add-Feature-Branch-Comment:
+    runs-on: ubuntu-latest
+    if: "${{ github.event.action == 'labeled' && github.event.label.name == 'Feature: Feature Branch' }}"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add feature branch comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/trigger-issue/feature-branch-comment/add-feature-branch-comment.js')
+            script({g: github, c: context})
+
+  Hide-Feature-Branch-Comment:
+    runs-on: ubuntu-latest
+    if: "${{ github.event.action == 'unlabeled' && github.event.label.name == 'Feature: Feature Branch' }}"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Hide feature branch comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/trigger-issue/feature-branch-comment/hide-feature-branch-comment.js')
+            script({g: github, c: context})
