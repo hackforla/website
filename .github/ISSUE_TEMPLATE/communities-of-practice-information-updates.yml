@@ -20,9 +20,22 @@ body:
   - type: markdown
     attributes:
       value: "Change Description: NO"
-  - type: markdown
+  - type: dropdown
     attributes:
-      value: "Change Leadership Type: NO"
+      label: "Change Leadership Type"
+      options:
+          - "YES"
+          - "NO"
+      description: "If YES on Change Leadership Type, choose the Leadership Type; if NO, leave the field with the NA value:"
+  - type: dropdown
+    attributes:
+      label: "Leadership Type"
+      options:
+        - "N/A"
+        - "Mentor Led"
+        - "Community Led"
+      default: "N/A"
+      description: "Select the type of leadership if applicable."
   - type: markdown
     attributes:
       value: "Change Slack Link: NO"
