@@ -18,6 +18,7 @@ leadership:
       github: "https://github.com/ExperimentsInHonesty"
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Olivia Chiong
+    github-handle:
     role: Director of Operations
     links:
       slack: "https://hackforla.slack.com/team/U01GJC7VC6"
