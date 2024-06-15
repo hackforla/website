@@ -22,6 +22,7 @@ leadership:
       linkedin: https://www.linkedin.com/in/jasonlamanque/
     picture: https://user-images.githubusercontent.com/37763229/79702551-9a8fbc00-825a-11ea-819f-dde8cad5d058.jpg       
   - name: Lex Roman
+    github-handle:
     role: UX Advisor (1st stage)
     links: 
       linkedin: https://linkedin.com/in/lexroman/
@@ -34,6 +35,7 @@ leadership:
       github: https://github.com/gianbun
     picture: https://avatars3.githubusercontent.com/u/45775543?s=400&v=4
   - name: Charlotte Soestini
+    github-handle: 
     role: UX Design and Documentarian (post project)
     links: 
       linkedin: https://linkedin.com/in/charlotte-soestini
