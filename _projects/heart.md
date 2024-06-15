@@ -46,6 +46,7 @@ leadership:
       github: https://github.com/experimentsinhonesty
     picture: https://avatars2.githubusercontent.com/u/37763229?s=400&u=e7cb79276f78b9fb641dac9c3540fd4301a16958&v=4
   - name: Roland Abregorivas
+    github-handle:
     role: Tech Lead
     links: 
       linkedin: https://linkedin.com/in/rolandabregorivas
