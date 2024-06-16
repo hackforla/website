@@ -35,6 +35,7 @@ leadership:
       github: "https://github.com/GigiUxR"
     picture: https://avatars.githubusercontent.com/GigiUxR
   - name: Virginia Wu
+    github-handle:
     role: Full Stack Engineer
     links:
       slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
