@@ -42,6 +42,7 @@ leadership:
       github: https://github.com/charlottesauce
     picture: https://avatars2.githubusercontent.com/u/45779646?s=400&v=4
   - name: Bonnie Wolfe
+    github-handle:
     role: Documentarian (post project)
     links: 
       linkedin: https://linkedin.com/in/bonnieawolfe
