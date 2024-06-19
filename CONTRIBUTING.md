@@ -579,7 +579,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 <br><br>
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
