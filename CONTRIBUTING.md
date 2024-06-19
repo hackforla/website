@@ -216,7 +216,7 @@ git remote add upstream https://github.com/hackforla/website.git
 
 Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
-The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing docker on your system</em></strong>
+The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing docker on your system</em></strong>
 
 More on using Docker and the concepts of containerization:
 
@@ -310,7 +310,7 @@ The extension can also be installed via the VS Code Marketplace website [here](h
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
-<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
+<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
