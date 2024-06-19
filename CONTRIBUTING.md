@@ -344,7 +344,7 @@ All website team members are required to attend at least 1 team meeting in a wee
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
-Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
 * Setting up your local environment from a CONTRIBUTING file
