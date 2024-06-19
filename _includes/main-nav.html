@@ -1,14 +1,31 @@
 <nav class="header-nav" id="headerNav" aria-label="Primary">
   <ul class="inline-list" id="mobileNavLink">
     {% for item in site.data.navigation.main %}
-    <li class="{{ item.list_class_name }}">
-      <a href="{{ item.link }}" role="menuitem">
+    <li id="{{ item.link-name }}" class="dropdown">
+      <a href="{{ item.link }}" role="menu-item" class="menu-item">
         {% if item.icon %} {%- include {{ site.baseurl
         }}{{ item.icon }} -%} {% endif %}
         {{- item.name -}}
       </a>
+
+      <div>
+        <ul class="dropdown-content">
+          {% assign list_link_name = site.data.navigation[item.link-name] %}
+          {% for link in list_link_name %}
+          {% unless link.bolded %}
+          <li id="{{ link.name }}">
+            <a href="{{ link.link }}" role="dropdown-item">
+              {{ link.name }}
+            </a>
+          </li>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
     </li>
 
     {% endfor %}
   </ul>
 </nav>
+
+<script src="{{ '/assets/js/nav-accessibility.js' | absolute_url }}"></script>
