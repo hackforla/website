@@ -65,7 +65,7 @@ jobs:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
-            script({g: github, c:context},results)
+            script({g: github, c:context}, results)
 
 
   # The following steps only apply to issues with `Feature: Feature Branch` label
