@@ -16,5 +16,5 @@ jobs:
           script: |
             const prAuthor = context.payload.sender.login;
             const prNumber = context.payload.number;
-            const verifyPR = require('./github-actions/trigger-pr-target/verify-pr');
+            const verifyPR = require('./github-actions/trigger-pr-target/verify-pr.js');
             verifyPR(prAuthor,prNumber);
