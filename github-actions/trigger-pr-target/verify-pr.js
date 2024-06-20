@@ -25,3 +25,5 @@ async function main(prAuthor,prNumber) {
         } 
     }    
 }
+
+module.exports = main;
