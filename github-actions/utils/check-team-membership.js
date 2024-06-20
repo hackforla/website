@@ -1,4 +1,5 @@
 /** 
+* @param {octokit} github - Octokit object used to access GitHub API 
 * @param {String} githubUsername - The github username of the user whose membership is to be checked.
 * @param {String} team - The HFLA team the username's membership is checked against. Example: 'website-write'
 
@@ -10,7 +11,7 @@ Lack of permission will result in a 403 error.
 docs on printing context information into the log.
 */
 
-async function isMemberOfTeam(githubUsername, team)
+async function isMemberOfTeam(github, githubUsername, team)
 {
     try {
         await github.rest.issues.getMembershipForUserInOrg({

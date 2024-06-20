@@ -15,7 +15,5 @@ jobs:
         with:
           github-token: ${{ secrets.HFLA_PB_TOKEN}}
           script: |
-            const prAuthor = context.payload.sender.login;
-            const prNumber = context.payload.number;
             const verifyPR = require('./github-actions/trigger-pr-target/verify-pr.js');
-            verifyPR(prAuthor,prNumber);
+            verifyPR({github, context});
