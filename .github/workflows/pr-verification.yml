@@ -10,11 +10,15 @@ jobs:
   Check-Team-Membership:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/checkout@v4
+
+      - name: Verify Membership
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.HFLA_PB_TOKEN}}
           script: |
             const prAuthor = context.payload.sender.login;
             const prNumber = context.payload.number;
             const verifyPR = require('./github-actions/trigger-pr-target/verify-pr.js');
+            github-actions/trigger-pr-target/verify-pr.js
             verifyPR(prAuthor,prNumber);
