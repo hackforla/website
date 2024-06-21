@@ -5,7 +5,9 @@ const commentContent = 'You must be a member of the HFLA website team in order t
 async function main({github,context}) {
     const prAuthor = context.payload.sender.login;
     const prNumber = context.payload.number;
-    if (isMemberOfTeam(github, prAuthor, 'website-write')==true) {    
+    membershipStatus = await isMemberOfTeam(github, prAuthor, 'website-write');
+    console.log(membershipStatus);
+    if (membershipStatus) {    
         console.log('Successfully verified!');
     }
     else {
@@ -23,7 +25,7 @@ async function main({github,context}) {
                 body : commentContent
             }); 
         } catch (closeCommentError) {
-            throw new Error (closeCommentError);
+            throw closeCommentError;
         } 
     }    
 }
