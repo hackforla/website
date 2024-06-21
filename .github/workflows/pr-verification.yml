@@ -16,21 +16,21 @@ jobs:
             const prAuthor = context.payload.sender.login;
             const prNumber = context.payload.number;
             try {
-              const getMembershipStatus = await github.rest.teams.getMembershipForUserInOrg({
-              org: 'hackforla',
-              team_slug: 'website-write',
-              username: prAuthor
+              await github.rest.teams.getMembershipForUserInOrg({
+                org: 'hackforla',
+                team_slug: 'website-write',
+                username: prAuthor
               });
               console.log('Successfully verified!')
             } catch (verificationError) {
               if (verificationError.status==404) {
-                await github.request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
+                await github.rest.issues.update({
                   owner : 'hackforla',
                   repo : 'website',
-                  pull_number : prNumber,
+                  issue_number : prNumber,
                   state : 'closed'
                 });
-                await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
+                await github.rest.issues.createComment({
                   owner : 'hackforla',
                   repo : 'website',
                   issue_number : prNumber,
@@ -38,4 +38,3 @@ jobs:
                 });
               }
               }
-  
