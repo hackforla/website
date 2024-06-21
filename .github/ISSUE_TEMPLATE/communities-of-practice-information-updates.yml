@@ -3,7 +3,6 @@ description: CoP leads use this issue to make changes to Leadership members and 
 title: 'Communities of Practice information updates: [INSERT NAME OF Community of
   Practice]'
 labels: ['role: product', 'P-Feature: Communities of Practice', 'time sensitive', 'Complexity: Missing', 'size: missing']
-
 body:
   - type: markdown
     attributes:
@@ -27,6 +26,8 @@ body:
           - "YES"
           - "NO"
       description: "If YES on Change Leadership Type, choose the Leadership Type; if NO, leave the field with the NA value:"
+    validations:
+      required: true
   - type: dropdown
     attributes:
       label: "Leadership Type"
