@@ -22,8 +22,8 @@ body:
     attributes:
       label: "Change Leadership Type"
       options:
-          - "YES"
-          - "NO"
+        - "YES"
+        - "NO"
       description: "If YES on Change Leadership Type, choose the Leadership Type; if NO, leave the field with the NA value:"
     validations:
       required: true
