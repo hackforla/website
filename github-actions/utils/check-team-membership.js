@@ -14,7 +14,7 @@ docs on printing context information into the log.
 async function isMemberOfTeam(github, githubUsername, team)
 {
     try {
-        const result = await github.rest.teams.getMembershipForUserInOrg({
+        await github.rest.teams.getMembershipForUserInOrg({
             org : 'hackforla',
             team_slug : team,
             username : githubUsername
