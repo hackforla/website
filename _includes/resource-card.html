@@ -2,14 +2,14 @@
 {% assign image = include.image %}
 {% assign name = include.name %}
 {% assign lowercaseName = include.name | downcase %}
+{% assign hyphenatedName = lowercaseName | replace: ' ', '-' %}
 
-
-<a href="{{ url }}" class='resource-link' target="_blank" rel="noopener noreferrer">
+<a href="{{ url }}" class='resource-link' target="_blank" rel="noopener noreferrer" aria-labelledby="resource-title-{{hyphenatedName}}">
     <li class='resource-card'>
         <!--Where the images will be-->
         <div {% if image %} class='resource-img resource-img-provided' {% else %} role="img" aria-label="{{name}}" class='resource-img' {% endif %}>
             {% if lowercaseName == 'github' %}
-                {% include svg/icon-github-color.svg %}
+                {% include svg/icon-github.svg %}
             {% elsif lowercaseName == 'slack' %}
                 {% include svg/icon-slack.svg %}
             {% elsif name == 'Getting Started' %}
@@ -22,11 +22,11 @@
         </div>
         <div class='resource-body'>
             {% if lowercaseName == 'github' %}
-                <h4 class='resource-title'>
+                <h4 id="resource-title-{{hyphenatedName}}" class='resource-title'>
                     GitHub
                 </h4>
             {% else %}
-                <h4 class='resource-title'>
+                <h4 id="resource-title-{{hyphenatedName}}" class='resource-title'>
                     {{ name }}
                 </h4>
             {% endif %}
