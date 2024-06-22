@@ -13,26 +13,27 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
           script: |
-            const prAuthor = context.payload.sender.login;
-            const prNumber = context.payload.number;
+            const prAuthor = "test";
+            const prNumber = 100;
             try {
               const getMembershipStatus = await github.rest.teams.getMembershipForUserInOrg({
               org: 'hackforla',
               team_slug: 'website-write',
               username: prAuthor
               });
-              console.log('Successfully verified!')
+              if(getMembershipStatus.data) console.log(getMembershipStatus.data);
+              //console.log('Successfully verified!')
             } catch (verificationError) {
               if (verificationError.status==404) {
                 await github.request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
-                  owner : 'hackforla',
-                  repo : 'website',
+                  owner : 'moazDev1',
+                  repo : 'test',
                   pull_number : prNumber,
                   state : 'closed'
                 });
                 await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
-                  owner : 'hackforla',
-                  repo : 'website',
+                  owner : 'moazDev1',
+                  repo : 'test',
                   issue_number : prNumber,
                   body : 'You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started.  If you have been though onboarding, and feel this message in error, please message us in the #hfla-site team slack channel with the link to this PR.'
                 });
