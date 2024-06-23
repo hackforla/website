@@ -29,6 +29,7 @@ leadership:
       github: https://github.com/calexity
     picture: https://avatars0.githubusercontent.com/u/1103366?s=400&u=3b85c9e08f73d0980caf99bf0e6ee005f8da925a&v=4
   - name: Gian Reyes Dionisio
+    github-handle:
     role: UX Design Lead
     links: 
       linkedin: https://linkedin.com/in/gianreyesdionisio/
