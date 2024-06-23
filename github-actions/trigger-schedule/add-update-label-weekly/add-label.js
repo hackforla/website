@@ -55,7 +55,7 @@ async function main({ g, c }, pbt) {
     }
 
     // Add and remove labels as well as post comment if the issue's timeline indicates the issue is inactive, to be updated or up to date accordingly
-    const responseObject = await isTimelineOutdated(timeline, issueNum, assignees)
+    const responseObject = await isTimelineOutdated(timeline, issueNum, assignees);
 
     if (responseObject.result === true && responseObject.labels === toUpdateLabel) {   // 7-day outdated, add 'To Update !' label
       console.log(` Issue #${issueNum}: Going to ask for an update now`);
