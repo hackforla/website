@@ -225,7 +225,7 @@ async function removeLabels(issueNum, ...labels) {
     repo: context.repo.repo,
     issue_number: issueNum,
   });
-  for (currLabel in labelData.data) {
+  for (let currLabel in labelData.data) {
     currLabels.push(currLabel.name);
   }
 
