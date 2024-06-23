@@ -168,7 +168,7 @@ a.old-clear-filter-tags {
   }
 }
 
-@media (max-width: 659px) {
+@media #{$bp-below-desktop-medium} {
   //creating 2 rows and 2 columns to display categories on mobile
   ul.old-filter-list {
     display: grid;
