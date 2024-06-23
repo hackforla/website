@@ -32,7 +32,7 @@ a.filter-item {
 .filter-toolbar {
   padding: 8px 32px;
   box-sizing: border-box;
-  height: 95vh;
+  height: calc(100vh - 64px);
   flex-shrink: 0;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -42,11 +42,7 @@ a.filter-item {
 
 .filtersDiv {
   min-width:330px;
-  padding-bottom: 15px;
-}
-
-.projects-and-filters {
-  margin-left: 10px;
+  padding-bottom: 300px;
 }
 
 //filter container
@@ -130,6 +126,7 @@ ul.filter-list li ul li {
   max-height: 360px;
   overflow-y: scroll;
 }
+
 .dropdown.show-all li:nth-child(n+9) {
   display: block;
 }
@@ -256,19 +253,21 @@ a.clear-filter-tags {
   }
   .filter-toolbar {
     background-color: $color-pink;
-    padding: 0;
     height: auto;
     overflow-y: hidden;
-    position: relative; 
-    top: 0px;
-    bottom: 0px;
-    left: 10px;
-    right: 10px;
-    width: 98%;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 
   .filtersDiv {
     padding-bottom: 0px;
+    padding-top: 0px;
   }
 
   .filter-toolbar.show-filters {
