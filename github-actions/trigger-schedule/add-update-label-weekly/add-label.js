@@ -92,10 +92,8 @@ async function getIssueNumsFromRepo() {
   
   while (true) {
     const issueData = await github.request('GET /repos/{owner}/{repo}/issues', {
-      // owner: context.repo.owner,
-      // repo: context.repo.repo,
-      owner: 't-will-gillis',
-      repo: 'website',
+      owner: context.repo.owner,
+      repo: context.repo.repo,
       per_page: 100,
       page: pageNum,
     });
@@ -121,16 +119,16 @@ async function getIssueNumsFromRepo() {
       }
     }
   }
-  return issueNums  
+  return issueNums;
 }
 
 
 
 /**
  * Assesses whether the timeline is outdated.
- * @param {Array} timeline a list of events in the timeline of an issue, retrieved from the issues API
- * @param {Number} issueNum the issue's number
- * @param {String} assignees a list of the issue's assignee's username
+ * @param {Array} timeline      - a list of events in the timeline of an issue, retrieved from the issues API
+ * @param {Number} issueNum     - the issue's number
+ * @param {String} assignees    - a list of the issue's assignee's username
  * @returns true if timeline indicates the issue is outdated/inactive, false if not; also returns appropriate labels that should be retained or added to the issue
  */
 function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an arrays of `login`'s
@@ -149,7 +147,7 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
     // Once a PR is opened, we remove labels because we focus on the PR not the issue.
     if (isOpenLinkedPullRequest && assignees.includes(eventObj.actor.login)) {
       console.log(`Issue #${issueNum}: Assignee fixes/resolves/closes issue with an open pull request, remove all update-related labels`);
-      return { result: false, labels: '' } // remove all three labels
+      return { result: false, labels: '' };  // remove all three labels
     }
 
     // If the event is a linked PR and the PR is closed, it will continue through the
