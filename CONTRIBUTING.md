@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to the website repository,
 
 **If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.**
 
-**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel.**
+**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel.**
 <br><br>
 
 ## **Table of Contents**
@@ -344,7 +344,7 @@ All website team members are required to attend at least 1 team meeting in a wee
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
-Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
 * Setting up your local environment from a CONTRIBUTING file
@@ -579,7 +579,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 <br><br>
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
