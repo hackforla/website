@@ -4,6 +4,7 @@ on:
     types: [opened]
     branches:
       - 'gh-pages'
+      - 'verify-pr-creator-3906'
 
 jobs:
   Check-Team-Membership:
@@ -11,32 +12,31 @@ jobs:
     steps:
       - uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
             const prAuthor = "test";
             const prNumber = 100;
             try {
-              const getMembershipStatus = await github.rest.teams.getMembershipForUserInOrg({
-              org: 'hackforla',
-              team_slug: 'website-write',
-              username: prAuthor
+              const response = await github.rest.teams.getMembershipForUserInOrg({
+                org: 'hackforla',
+                team_slug: 'website-write',
+                username: prAuthor
               });
-              if(getMembershipStatus.data) console.log(getMembershipStatus.data);
-              //console.log('Successfully verified!')
+              if(response) console.log(response.data);
+              else console.log("Not successful!");
             } catch (verificationError) {
               if (verificationError.status==404) {
-                await github.request('PATCH /repos/{owner}/{repo}/pulls/{pull_number}', {
+                await github.rest.issues.update({
                   owner : 'moazDev1',
-                  repo : 'test',
-                  pull_number : prNumber,
+                  repo : 'website',
+                  issue_number : prNumber,
                   state : 'closed'
                 });
-                await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
+                await github.rest.issues.createComment({
                   owner : 'moazDev1',
-                  repo : 'test',
+                  repo : 'website',
                   issue_number : prNumber,
-                  body : 'You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started.  If you have been though onboarding, and feel this message in error, please message us in the #hfla-site team slack channel with the link to this PR.'
+                  body : 'You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started. If you have been though onboarding, and feel you have received this message in error, please message us in the #hfla-site team slack channel with the link to this PR.'
                 });
               }
               }
-  
