@@ -101,6 +101,17 @@
     margin: 0 auto;
 }
 
+[data-article-type="development"] .resource-svg-icons svg{
+    width: 50%;
+    height: 50%;
+}
+
+[data-article-type="development"] .toolkit-flex-item-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .toolkit-info-container {
     margin: 1rem 0rem 3.5rem;
     padding: 0rem 2rem;

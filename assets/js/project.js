@@ -147,9 +147,13 @@ function appendMeetingTimes(scheduleData) {
             const name = event.name;
             const day = new Date(event.date).toString().substring(0,3);
 
+            // for adding a meeting description if it exists
+            const meetingDescription = event.description;
+
             // only append the meeting times to the correct project page
             if (projectTitle.toLowerCase() === projectName.toLowerCase()) {
-                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${name}</li>`);
+                // added description with <br>${meetingDescription}
+                meetingsList.insertAdjacentHTML("beforeend", `<li class="meetingTime">${day} ${startTime} - ${endTime} <br>${name} <br>${meetingDescription}</li>`);
                 meetingsFound.push(day);
             }
         } catch (e) {

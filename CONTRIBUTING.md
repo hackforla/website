@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to the website repository,
 
 **If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.**
 
-**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel.**
+**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel.**
 <br><br>
 
 ## **Table of Contents**
@@ -216,7 +216,7 @@ git remote add upstream https://github.com/hackforla/website.git
 
 Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
-The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing docker on your system</em></strong>
+The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing docker on your system</em></strong>
 
 More on using Docker and the concepts of containerization:
 
@@ -310,7 +310,7 @@ The extension can also be installed via the VS Code Marketplace website [here](h
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
-<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
+<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -344,7 +344,7 @@ All website team members are required to attend at least 1 team meeting in a wee
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
-Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
 * Setting up your local environment from a CONTRIBUTING file
@@ -579,7 +579,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 <br><br>
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
@@ -733,7 +733,9 @@ git merge gh-pages
 
 #### **2.7.f Working on an issue (6): Handling SSH authorization errors**
 
-**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
+If you already have an SSH key that connects your computer with your GitHub account, you can skip this section (2.7.f).
+
+**IMPORTANT:** If you are a Windows user then you have to install Git Bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
 [Git Bash](https://git-scm.com/downloads)
 
 ##### **i. Setting up SSH Keys for Mac**

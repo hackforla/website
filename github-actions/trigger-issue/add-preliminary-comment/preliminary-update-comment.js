@@ -1,6 +1,7 @@
-var fs = require("fs")
-const postComment = require('../../utils/post-issue-comment')
-const formatComment = require('../../utils/format-comment')
+// Import modules
+const fs = require("fs");
+const postComment = require('../../utils/post-issue-comment');
+const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
@@ -25,10 +26,10 @@ const READY_FOR_DEV_LABEL = "ready for dev lead";
 
 /**
  * @description - This function is the entry point into the javascript file, it formats the md file based on the result of the previous step and then posts it to the issue
- * @param {Object} g - github object  
- * @param {Object} c - context object 
+ * @param {Object} g - GitHub object
+ * @param {Object} c - context object
  * @param {Boolean} actionResult - the previous gh-action's result
- * @param {Number} issueNum - the number of the issue where the post will be made 
+ * @param {Number} issueNum - the number of the issue where the post will be made
  */
 async function main({ g, c }, { shouldPost, issueNum }){
   try {
@@ -74,7 +75,7 @@ async function main({ g, c }, { shouldPost, issueNum }){
 }
 
 /**
- * @description - This function makes the comment with the issue assignee's github handle using the raw preliminary.md file
+ * @description - This function makes the comment with the issue assignee's GitHub handle using the raw preliminary.md file
  * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
  */
 async function makeComment(){

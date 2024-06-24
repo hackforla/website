@@ -3,8 +3,9 @@ on:
   issues:
     types:
       - closed
+      
 jobs:
-  move-closed-issue:
+  Move-Closed-Issues:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,8 +18,9 @@ jobs:
             const sortIssues = script({context})
             return sortIssues
           result-encoding: string
-      - uses: alex-page/github-project-automation-plus@v0.9.0
-        with:
-          project: Project Board
-          column: ${{ steps.sort-closed-issues.outputs.result }}
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          
+      # Post-migration to Projects Beta:
+      # Move-Closed-Issues to "QA" column by default; OR move to "Done" based on `sort-closed-issues.js`
+      - name: Move Closed Issues
+        run: echo "Based on its labels, issue should be sorted to 'status' of '${{ steps.sort-closed-issues.outputs.result }}'" 
+        
