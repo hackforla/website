@@ -17,6 +17,7 @@ jobs:
             const prAuthor = "test";
             const prNumber = 100;
             try {
+            
               const response = await github.rest.teams.getMembershipForUserInOrg({
                 org: 'hackforla',
                 team_slug: 'website-write',
