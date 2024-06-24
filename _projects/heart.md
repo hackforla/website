@@ -7,6 +7,7 @@ alt: 'Heart'
 image-hero: /assets/images/projects/heart-hero.png
 leadership:
   - name: Marie-Aimee Brajeux
+    github-handle:
     role: Product Manager
     links: 
       linkedin: https://linkedin.com/in/marie-aim%C3%A9e-brajeux-88b40978/
