@@ -4,7 +4,7 @@ on:
     types: [opened]
     branches:
       - 'gh-pages'
-      - 'verify-pr-creator-3906'
+      - 'verify-pr-creator-3906-test'
 
 jobs:
   Check-Team-Membership:
@@ -17,7 +17,7 @@ jobs:
             const prAuthor = "test";
             const prNumber = 100;
             try {
-            
+
               const response = await github.rest.teams.getMembershipForUserInOrg({
                 org: 'hackforla',
                 team_slug: 'website-write',
