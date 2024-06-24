@@ -14,9 +14,10 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
-            const prAuthor = context.payload.number;
-            const prNumber = context.payload.number;
+            const prAuthor = "test";
+            const prNumber = 100;
             try {
+
               const response = await github.rest.teams.getMembershipForUserInOrg({
                 org: 'hackforla',
                 team_slug: 'website-write',
