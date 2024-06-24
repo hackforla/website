@@ -5,10 +5,11 @@ on:
   schedule:
     - cron:  '0 11 * * *'
   workflow_dispatch:
+
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'mrodz/hfla-website'
     
     steps:
     - name: Checkout repository
