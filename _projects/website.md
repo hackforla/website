@@ -26,7 +26,7 @@ leadership:
       github: 'https://github.com/roslynwythe'
     picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Will Gillis
-    role: Merge Team
+    role: Developer Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
