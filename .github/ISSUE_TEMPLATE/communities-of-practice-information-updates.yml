@@ -34,7 +34,7 @@ body:
         - "N/A"
         - "Mentor Led"
         - "Community Led"
-      default: "N/A"
+      default: 0
       description: "Select the type of leadership if applicable."
   - type: markdown
     attributes:
