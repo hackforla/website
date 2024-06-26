@@ -643,9 +643,9 @@ git commit -m “insert message here”
 
 Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
 
-    ```bash
-    git pull upstream gh-pages
-    ```
+```bash
+git pull upstream gh-pages
+```
 
 
 ##### **i. If there are no changes in the upstream repository**
