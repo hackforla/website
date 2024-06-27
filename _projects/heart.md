@@ -18,6 +18,7 @@ leadership:
       linkedin: https://linkedin.com/in/adrianinchauste
     picture: https://user-images.githubusercontent.com/37763229/79702530-63210f80-825a-11ea-8314-93950014939d.jpg    
   - name: Jason LaManque
+    github-handle:
     role: Design Sprint Facilitator
     links: 
       linkedin: https://www.linkedin.com/in/jasonlamanque/
