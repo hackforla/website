@@ -4,26 +4,10 @@ on:
     types: [opened, transferred, assigned, labeled, unlabeled]
 
 jobs:
-  # Adds newly created issues onto project board in the default column 'New Issue Approval' 
-  # unless overridden when issue has "LA website bot" in title, then 'Questions / In Review'
-  Add-Issue-To-Project-Board:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
-    env:
-      COLUMN_NAME: ${{ contains(github.event.issue.title, 'Hack for LA website bot') && 'Questions / In Review' || 'New Issue Approval' }}
-    steps:
-      - name: Add issue to project board
-        id: add-issue-project-board
-        uses: alex-page/github-project-automation-plus@v0.9.0
-        with:
-          project: Project Board
-          column: ${{ env.COLUMN_NAME }}
-          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
- 
+  # Adds missing labels to newly-created or transferred issues
   Add-Missing-Labels-To-Issues:
     runs-on: ubuntu-latest
-    # Only trigger this action when an issue is newly created
-    if: ${{ github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'transferred')}}
+    if: ${{ github.event.action == 'opened' || github.event.action == 'transferred' }}
     steps:
       - uses: actions/checkout@v4    
       # Check if the issue has required labels
@@ -36,7 +20,7 @@ jobs:
             const checkLabels = script({g: github, c: context})
             return checkLabels
             
-      #Checks which teams the user is on 
+      # Checks if user is on the 'website-write' team
       - uses: tspascoal/get-user-teams-membership@v3
         id: checkUserMember
         with:
@@ -45,9 +29,8 @@ jobs:
           team: 'website-write'
           GITHUB_TOKEN: ${{ secrets.TEAMS }}
           
-      # Checks if user is on the website-write-team
+      # Posts comment only if user is team member (based on the previous action's result)
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
-      # Post comment based on the previous action's results
         name: Post Comment
         uses: actions/github-script@v7
         id: post-comment
@@ -58,15 +41,13 @@ jobs:
             script({g: github, c:context}, results)
 
 
-  #Asking for preliminary update when issue is assigned
+  # Asks for preliminary update when issue is assigned
   Ask-For-Preliminary-update:
     runs-on: ubuntu-latest
-    #Triggers when the issue is newly assigned
-    if: ${{ github.event_name == 'issues' && github.event.action == 'assigned'}}
+    if: ${{ github.event.action == 'assigned' }}
     steps:
       - uses: actions/checkout@v4  
-
-      # Check if the issue has the required roles
+      # Checks if the issue has the required roles (front end, back end/devOps, design, or user research)
       - name: Check Labels Prelim
         uses: actions/github-script@v7
         id: check-labels-prelim
@@ -76,7 +57,7 @@ jobs:
             const checklabels = script({g: github, c: context})
             return checklabels
 
-      # Post the comment based on the result of the previous step
+      # Posts the comment based on the result of the previous step
       - name: Post assigning issue comment
         id: assigned-comment
         uses: actions/github-script@v7
@@ -84,14 +65,16 @@ jobs:
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
-            script({g: github, c:context},results)
+            script({g: github, c:context}, results)
 
+
+  # The following steps only apply to issues with `Feature: Feature Branch` label
+  # Note: These steps will be unnecessary and should be removed once Feature Branch goes live
   Add-Feature-Branch-Comment:
     runs-on: ubuntu-latest
     if: "${{ github.event.action == 'labeled' && github.event.label.name == 'Feature: Feature Branch' }}"
     steps:
       - uses: actions/checkout@v4
-
       - name: Add feature branch comment
         uses: actions/github-script@v7
         with:
@@ -104,7 +87,6 @@ jobs:
     if: "${{ github.event.action == 'unlabeled' && github.event.label.name == 'Feature: Feature Branch' }}"
     steps:
       - uses: actions/checkout@v4
-
       - name: Hide feature branch comment
         uses: actions/github-script@v7
         with:
