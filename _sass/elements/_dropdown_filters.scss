@@ -122,8 +122,9 @@ ul.filter-list li ul li {
 .dropdown.show-all li.view-all:last-child {
   display: none;
 }
+
 .dropdown.show-all {
-  max-height: 360px;
+  max-height: 500px;
   overflow-y: scroll;
 }
 
