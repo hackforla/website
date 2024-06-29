@@ -878,7 +878,7 @@ git push --set-upstream origin update-give-link-2093
 <br>
 <details>
   <summary><strong>Click here</strong> to see pull request #2131 example (gif)</summary>
-  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif" />
+  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif">
 </details>
 <br>
 
