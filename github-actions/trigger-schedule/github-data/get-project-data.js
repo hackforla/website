@@ -8,8 +8,7 @@ const _ = require('lodash');
 const dateRan = new Date();
 // Hard coded list of untagged repos we would like to fetch data on
 // 79977929 -> https://github.com/hunterowens/workfor.la
-// 277577906 -> https://github.com/codeforamerica/brigade-playbook
-const untaggedRepoIds = [79977929, 277577906];
+const untaggedRepoIds = [79977929];
 
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 
