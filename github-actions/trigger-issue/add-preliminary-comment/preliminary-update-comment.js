@@ -49,8 +49,8 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     assignee = await getLatestAssignee();
     
     // If the previous action returns false, stop here
-    if(shouldPost === false)
-      return;
+    // if(shouldPost === false)
+    //   return;
 
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
