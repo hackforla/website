@@ -44,6 +44,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
   try {
     github = g;
     context = c;
+    
     // Get the lates developer in case there are multiple assignees
     assignee = await getLatestAssignee();
     
