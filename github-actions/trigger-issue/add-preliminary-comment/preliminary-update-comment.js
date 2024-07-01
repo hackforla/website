@@ -106,7 +106,7 @@ async function makeComment(){
 
     if (statusName == New_Issue_Approval && !isDraft && !isPrework) {
       // If author = developer, remind them to add draft label, otherwise unnasign and comment
-      if (context.payload.issue.user.login == assignee) {
+      if (context.payload.issue.user.login == issueAsasignee) {
         filename = 'draft-label-reminder.md';
       } else {
         filename = 'unassign-from-NIA.md';
@@ -184,7 +184,7 @@ async function assignedToAnotherIssue() {
     }
     
     // If developer is assigned to another issue/s, return true 
-    return otherIssues.length > 0;
+    return otherIssues.length > 1;
   } catch (error) {
     console.log("Error getting other issues: ", error);
   }
