@@ -7,16 +7,19 @@ alt: 'Heart'
 image-hero: /assets/images/projects/heart-hero.png
 leadership:
   - name: Marie-Aimee Brajeux
+    github-handle:
     role: Product Manager
     links: 
       linkedin: https://linkedin.com/in/marie-aim%C3%A9e-brajeux-88b40978/
     picture: https://user-images.githubusercontent.com/37763229/79702509-34a33480-825a-11ea-94e8-ff952f42863d.jpg
   - name: Adrian Inchauste
+    github-handle:
     role: Design Sprint Facilitator
     links: 
       linkedin: https://linkedin.com/in/adrianinchauste
     picture: https://user-images.githubusercontent.com/37763229/79702530-63210f80-825a-11ea-8314-93950014939d.jpg    
   - name: Jason LaManque
+    github-handle:
     role: Design Sprint Facilitator
     links: 
       linkedin: https://www.linkedin.com/in/jasonlamanque/
@@ -57,6 +60,7 @@ leadership:
       github: https://github.com/abregorivas
     picture: https://avatars2.githubusercontent.com/u/7821047?s=400&u=9128a4d0a4d1ff33bdebae02bcdaac7ff7e7432f&v=4
   - name: Tien Yuan
+    github-handle:
     role: Tech Lead
     links: 
       linkedin: https://linkedin.com/in/tienyuan/
