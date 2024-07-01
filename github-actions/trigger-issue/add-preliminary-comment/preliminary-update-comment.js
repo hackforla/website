@@ -5,60 +5,72 @@ const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
-var github
-var context
-var assignee
+let github;
+let context;
+let assignee;
 
-var Emergent_Requests = "Emergent Requests";
-var New_Issue_Approval = "New Issue Approval";
-var Prioritized_Backlog = "Prioritized backlog";
-var In_Progress = "In progress (actively working)";
+const PROJECT_ID = "PVT_kwHOAfZet84AkAVr";
 
-var columnsId = new Map([
-  [Emergent_Requests, 19403960],
-  [New_Issue_Approval, 15235217],
-  [Prioritized_Backlog, 7198257],
-  [In_Progress, 7198228],
+// The field containing all statuses
+const STATUS_FIELD_ID = "PVTSSF_lAHOAfZet84AkAVrzgcR5Tc";
+
+const Emergent_Requests = "Emergent Requests";
+const New_Issue_Approval = "New Issue Approval";
+const Prioritized_Backlog = "Prioritized backlog";
+const In_Progress = "In progress (actively working)";
+
+const statusesValues = new Map([
+  [Emergent_Requests, "d468e876"],
+  [New_Issue_Approval, "83187325"],
+  [Prioritized_Backlog, "434304a8"],
+  [In_Progress, "9a878e9c"],
 ]);
 
 const READY_FOR_DEV_LABEL = "ready for dev lead";
 
-
 /**
- * @description - This function is the entry point into the javascript file, it formats the md file based on the result of the previous step and then posts it to the issue
+ * @description This function is the entry point into the JavaScript file. It formats the
+ * markdown file based on the result of the previous step, checks if the developer is allowed
+ * to be assigned to this issue, and performs the following actions:
+ * - If the developer is not allowed, posts an "unassigned" comment, unassigns the developer,
+ *   and updates the item status.
+ * - Posts the formatted markdown to the issue.
  * @param {Object} g - GitHub object
- * @param {Object} c - context object
- * @param {Boolean} actionResult - the previous gh-action's result
- * @param {Number} issueNum - the number of the issue where the post will be made
+ * @param {Object} c - Context object
+ * @param {Boolean} shouldPost - The previous GitHub action's result
+ * @param {Number} issueNum - The number of the issue where the post will be made
  */
-async function main({ g, c }, { shouldPost, issueNum }){
+async function main({ g, c }, { shouldPost, issueNum }) {
   try {
-    github = g
-    context = c
-    // Get the lates assignee in case there are multiple assignees
+    github = g;
+    context = c;
+    // Get the lates developer in case there are multiple assignees
     assignee = await getLatestAssignee();
-
-    // If the previous action returns a false, stop here
-    if(shouldPost === false){
-      console.log('No need to post comment.');
+    
+    // If the previous action returns false, stop here
+    if(shouldPost === false)
       return;
-    }
 
+    // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
     const isAssignedToAnotherIssues = await assignedToAnotherIssue();
 
-    // If assignee is not in Admin or Merge Teams
-    // and assigned to other issues, do the following:
+    // If developer is not in Admin or Merge Teams
+    // and assigned to another issue/s, do the following:
     if(!isAdminOrMerge && isAssignedToAnotherIssues) {
+
       // Create and post a comment using the template in this file
       const fileName = "multiple-issue-reminder.md";
       const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
       const unAssigningComment = createComment(filePath);
       await postComment(issueNum, unAssigningComment, github, context);
       
-      await unassignIssue(); // Unassign the issue
+      await unAssignDev(); // Unassign the developer
       await addLabel(READY_FOR_DEV_LABEL); // Add 'ready for dev lead' label
-      await moveToNewIssueApproval(); // Move the card to 'New Issue Approval' Column
+      
+      // Update item status to "New Issue Approval"
+      const item = await getItemInfo();
+      await updateItemStatus(item.id, statusesValues.get(New_Issue_Approval));
     }
     // Otherwise, post the normal comment
     else {
@@ -66,7 +78,10 @@ async function main({ g, c }, { shouldPost, issueNum }){
       if(instructions !== null){
         // the actual creation of the comment in github
         await postComment(issueNum, instructions, github, context);
-        console.log(instructions);
+
+        // Update item status to "In progress (actively working)"
+        const item = await getItemInfo();
+        await updateItemStatus(item.id, statusesValues.get(In_Progress));
       }
     }
   } catch (error) {
@@ -75,28 +90,28 @@ async function main({ g, c }, { shouldPost, issueNum }){
 }
 
 /**
- * @description - This function makes the comment with the issue assignee's GitHub handle using the raw preliminary.md file
- * @returns {string} - Comment to be posted with the issue assignee's name in it!!!
+ * @description - This function makes the comment with the issue developer's GitHub handle using the raw preliminary.md file
+ * @returns {string} - Comment to be posted with the issue developer's name in it!!!
  */
 async function makeComment(){
   try {
-    // Get column name
-    const columnName = await getColumnName();
+    // Get status name
+    const statusName = (await getItemInfo()).statusName;
 
     const isPrework = context.payload.issue.labels.find((label) => label.name == 'Complexity: Prework') ? true : false;
     const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
 
     let filename = 'preliminary-update.md';
 
-    if (columnName == 'New Issue Approval' && !isDraft && !isPrework) {
-      // If author = assignee, remind them to add draft label, otherwise unnasign and comment
+    if (statusName == New_Issue_Approval && !isDraft && !isPrework) {
+      // If author = developer, remind them to add draft label, otherwise unnasign and comment
       if (context.payload.issue.user.login == issueAsasignee) {
         filename = 'draft-label-reminder.md';
       } else {
         filename = 'unassign-from-NIA.md';
 
-        // Unassign the issue
-        await unassignIssue();
+        // Unassign the developer
+        await unAssignDev();
       }
     }
 
@@ -110,8 +125,8 @@ async function makeComment(){
 }
 
 /**
- * @description - This function Check if assignee is in the Admin or Merge Team
- * @returns {Boolean} - return true if assignee is member of Admin/Merge team, false otherwise
+ * @description - This function Check if developer is in the Admin or Merge Team
+ * @returns {Boolean} - return true if developer is member of Admin/Merge team, false otherwise
  */
 async function memberOfAdminOrMergeTeam() {
   try {
@@ -127,61 +142,57 @@ async function memberOfAdminOrMergeTeam() {
       org: context.repo.owner
     })).data.map(member => member.login);
   
-    // Return true if assignee is a member of the Admin or Merge Teams
+    // Return true if developer is a member of the Admin or Merge Teams
     return (websiteAdminsMembers.includes(assignee) || websiteMergeMembers.includes(assignee));
   } catch (error) {
-    console.log(error);
+    console.log("Error getting membership status: ", error);
   }
 }
 
 /**
  * @description - Check whether developer is assigned to another issue
- * @returns {Boolean} - return true if assignee is assinged to another issue/s
+ * @returns {Boolean} - return true if developer is assinged to another issue/s
  */
 async function assignedToAnotherIssue() {
   try {
-    let issues = (await github.rest.issues.listForRepo({
+    const issues = (await github.rest.issues.listForRepo({
       owner: context.repo.owner,
       repo: context.repo.repo,
       assignee: assignee,
       state: "open", // Only fetch opened issues
     })).data;
-  
-    // Get all cards in 'Emergent Request' Column
-    const emergentRequestCards = await getAllCardsInColumn(columnsId.get(Emergent_Requests));
-  
-    // Get all cards in 'New Issue Approval' Column
-    const newIssueApprovalCards = await getAllCardsInColumn(columnsId.get(New_Issue_Approval));
-  
-    // Exclude any issue that apply the conditions below
-    issues = issues.filter(issue => {
-      // Check is it's an agendas issue
+
+    const otherIssues = [];
+
+    for(const issue of issues) {
+      // Check is it's an "Agenda" issue
       const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
-      
-      // Check if it's a prework issue
+
+      // Check if it's a "Prework" issue
       const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
-      
-      // Check if it's exists in Emergent Request Column
-      const inEmergentRequestColumn = emergentRequestCards.some(card => card.content_url === issue.url);
-  
-      // Check if it's exists in New Issue Approval Column
-      const inNewIssueApprovalColumn = newIssueApprovalCards.some(card => card.content_url === issue.url);
-  
-      // If any of these conditions applied, exclude the issue
-      return !(isAgendaIssue || isPreWork || inEmergentRequestColumn || inNewIssueApprovalColumn);
-    });
-  
-    // After excluding above issues and assignee still assigned to another issue/s, return true 
-    return issues.length > 1;
+
+      // Check if it exists in "Emergent Request" Status
+      const inEmergentRequestStatus = (await getItemInfo()).statusName === Emergent_Requests;
+    
+      // Check if it exists in "New Issue Approval" Status
+      const inNewIssueApprovalStatus = (await getItemInfo()).statusName === New_Issue_Approval;
+    
+      // Include the issue only if none of the conditions are met
+      if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
+        otherIssues.push(issue);
+    }
+    
+    // If developer is assigned to another issue/s, return true 
+    return otherIssues.length > 1;
   } catch (error) {
-    console.log(error);
+    console.log("Error getting other issues: ", error);
   }
 }
 
 /**
- * @description - Unassign assignee from the issue
+ * @description - Unassign developer from the issue
  */
-async function unassignIssue() {
+async function unAssignDev() {
   try {
     await github.rest.issues.removeAssignees({
       owner: context.repo.owner,
@@ -190,7 +201,7 @@ async function unassignIssue() {
       assignees: [assignee],
     });
   } catch (error) {
-    console.log(error);
+    console.log("Error unassigning developer: ", error);
   }
 }
 
@@ -208,11 +219,11 @@ function createComment(filePath) {
       textToFormat: null
     }
 
-    // Fromat the comment and return it back
+    // Return teh formatted comment
     const fromattedComment = formatComment(commentObject, fs);
     return fromattedComment;
   } catch (error) {
-    
+    console.log("Error creating comment: ", error);
   }
 }
 
@@ -221,7 +232,7 @@ function createComment(filePath) {
  * @param {String} labelName - Name of the label to add
  */
 async function addLabel(labelName) {
-  try {  
+  try {
     await github.rest.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -229,12 +240,12 @@ async function addLabel(labelName) {
       labels: [labelName],
     });
   } catch (error) {
-    console.log(error);
+    console.log("Error Adding label: ", error);
   }
 }
 
 /**
- * @description - Get latest assignee, in case there were multimple assignee to the issue
+ * @description - Get latest assignee, in case there are multimple assignees to the issue
  * @returns {String} - return the username of the latest assignee
  */
 async function getLatestAssignee() {
@@ -243,8 +254,8 @@ async function getLatestAssignee() {
 
     const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
     
-    // Adding the code to find out the latest person assigned the issue
-    for(var i = eventdescriptions.length - 1 ; i>=0; i-=1){
+    // Find out the latest developer assigned to the issue
+    for(let i = eventdescriptions.length - 1 ; i>=0; i-=1){
       if(eventdescriptions[i].event == 'assigned'){
         issueAssignee = eventdescriptions[i].assignee.login
         break
@@ -253,104 +264,97 @@ async function getLatestAssignee() {
 
     return issueAssignee;
   } catch (error) {
-    console.log(error);
+    console.log("Error getting last assignee: ", error);
   }
 }
 
 /**
- * @description - Move the card to 'New Approval Issues' Column
+ * @description - Get item info using its issue number
+ * @param {Number} issueNum - Issue number linked to the item
+ * @returns {Object} - An object containing the item ID and its status name
  */
-async function moveToNewIssueApproval() {
+async function getItemInfo() {
   try {
-    const issueNum = context.payload.issue.number;
-
-    // Get column name assiged with the issue
-    const columnName = await getColumnName();
-
-    // Get all cards in this column using column id
-    const cards = await getAllCardsInColumn(columnsId.get(columnName));
-
-    // Get the issue's card
-    const card = cards.find(card => card.content_url && card.content_url.includes(`/issues/${issueNum}`));
-
-    // Move the card to 'New Issue Approval' Column
-    await github.rest.projects.moveCard({
-      card_id: card.id,
-      position: "top",
-      column_id: columnsId.get(New_Issue_Approval),
-    });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-/**
- * @description - Getting the issue's Project Board column name using graphql
- * @returns {String} - Column Name
- */
-async function getColumnName() {
-  try {
-    // GraphQL query to fetch issue's column name
-    const queryColumn = `query($owner:String!, $name:String!, $number:Int!) {
-      repository(owner:$owner, name:$name) {
-        issue(number:$number) {
-          projectCards { nodes { column { name } } }
+    const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
+      repository(owner: $owner, name: $repo) {
+        issue(number: $issueNum) {
+          id
+          projectItems(first: 100) {
+            nodes {
+              id
+              fieldValues(first: 100) {
+                nodes {
+                  ... on ProjectV2ItemFieldSingleSelectValue {
+                    name
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }`;
-    
-    // Variables to be passed to the GraphQL query
-    const variables = {
-      owner: context.repo.owner,
-      name: context.repo.repo,
-      number: context.payload.issue.number
-    };
-    
-    // Making the GraphQL request to get column name
-    const response = await github.graphql(queryColumn, variables);
-    const columnName = response.repository.issue.projectCards.nodes[0].column.name;
-    
-    // Return column name
-    return columnName;
+  
+  const variables = {
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    issueNum: context.payload.issue.number
+  };
+
+  const response = await github.graphql(query, variables);
+
+  // Extract the list of project items associated with the issue
+  const projectItems = response.repository.issue.projectItems.nodes;
+  
+  // Since there is always one item associated with the issue,
+  // directly get the item's ID from the first index
+  const id = projectItems[0].id;
+
+  // Iterate through the field values of the first project item
+  // and find the node that contains the 'name' property, then get its 'name' value
+  const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
+
+  return {id, statusName};
+
   } catch (error) {
-    console.log(error);
+    console.log("Error getting item info: ", error);
   }
 }
 
 /**
- * @description - Fetch all cards inside issue's column
- * @param {Number} columnId - The id for the issue's column
- * @returns {Object[]} - Array of card objects
+ * @description - Update item to a new status
+ * @param {String} itemId - The ID of the item to be updated
+ * @param {String} newStatusValue - The new status value to be assigned to the item
  */
-async function getAllCardsInColumn(columnId) {
-  let allCards = [];
-  let page = 1;
-  const perPage = 100; // Maximum number of cards per page
-
+async function updateItemStatus(itemId, newStatusValue) {
   try {
-    // Using pagination since max number of cards to fetch per request is only 100
-    while (true) {
-      const cards = (await github.rest.projects.listCards({
-        column_id: columnId,
-        page: page,
-        per_page: perPage,
-      })).data;
-
-      allCards = allCards.concat(cards);
-
-      // Berak if there are no more cards
-      if (cards.length < perPage) {
-        break;
+    const mutation = `mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
+      updateProjectV2ItemFieldValue(input: {
+        projectId: $projectId,
+        itemId: $itemId,
+        fieldId: $fieldId,
+        value: {
+          singleSelectOptionId: $value
+        }
+      }) {
+        projectV2Item {
+          id
+        }
       }
+    }`
 
-      // Go to next page
-      page++;
-    }
+    const variables = {
+      projectId: PROJECT_ID,
+      itemId: itemId,
+      fieldId: STATUS_FIELD_ID,
+      value: newStatusValue
+    };
 
-    return allCards;
+    await github.graphql(mutation, variables);
+
   } catch (error) {
-    console.log(error);
+    console.log("Error moving item: ", error);
   }
 }
- 
-module.exports = main
+
+module.exports = main;
