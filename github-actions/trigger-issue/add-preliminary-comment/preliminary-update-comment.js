@@ -105,7 +105,7 @@ async function makeComment(){
 
     if (statusName == New_Issue_Approval && !isDraft && !isPrework) {
       // If author = developer, remind them to add draft label, otherwise unnasign and comment
-      if (context.payload.issue.user.login == issueAsasignee) {
+      if (context.payload.issue.user.login == assignee) {
         filename = 'draft-label-reminder.md';
       } else {
         filename = 'unassign-from-NIA.md';
@@ -133,13 +133,13 @@ async function memberOfAdminOrMergeTeam() {
     // Get all members in Admin Team
     const websiteAdminsMembers = (await github.rest.teams.listMembersInOrg({
       team_slug: "website-admins",
-      org: context.repo.owner
+      org: "hackforla"
     })).data.map(member => member.login);
   
     // Get all members in Merge Team
     const websiteMergeMembers = (await github.rest.teams.listMembersInOrg({
       team_slug: "website-merge",
-      org: context.repo.owner
+      org: "hackforla"
     })).data.map(member => member.login);
   
     // Return true if developer is a member of the Admin or Merge Teams
@@ -156,8 +156,8 @@ async function memberOfAdminOrMergeTeam() {
 async function assignedToAnotherIssue() {
   try {
     const issues = (await github.rest.issues.listForRepo({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+      owner: "moazDev1",
+      repo: "website",
       assignee: assignee,
       state: "open", // Only fetch opened issues
     })).data;
@@ -183,7 +183,7 @@ async function assignedToAnotherIssue() {
     }
     
     // If developer is assigned to another issue/s, return true 
-    return otherIssues.length > 1;
+    return otherIssues.length > 0;
   } catch (error) {
     console.log("Error getting other issues: ", error);
   }
@@ -195,8 +195,8 @@ async function assignedToAnotherIssue() {
 async function unAssignDev() {
   try {
     await github.rest.issues.removeAssignees({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+      owner: "moazDev1",
+      repo: "website",
       issue_number: context.payload.issue.number,
       assignees: [assignee],
     });
@@ -234,8 +234,8 @@ function createComment(filePath) {
 async function addLabel(labelName) {
   try {
     await github.rest.issues.addLabels({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+      owner: "moazDev1",
+      repo: "website",
       issue_number: context.payload.issue.number,
       labels: [labelName],
     });
@@ -296,8 +296,8 @@ async function getItemInfo() {
     }`;
   
   const variables = {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
+    owner: "moazDev1",
+    repo: "website",
     issueNum: context.payload.issue.number
   };
 
