@@ -634,10 +634,10 @@ git commit -m “insert message here”
 
 #### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream gh-pages` will ensure that your local repository is up-to-date with the main site:
 
 ```bash
-git pull upstream
+git pull upstream gh-pages
 ```
 You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
 
