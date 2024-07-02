@@ -9,10 +9,10 @@ let github;
 let context;
 let assignee;
 
-const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
+const PROJECT_ID = "PVT_kwHOAfZet84AkAVr";
 
 // The field containing all statuses
-const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
+const STATUS_FIELD_ID = "PVTSSF_lAHOAfZet84AkAVrzgcR5Tc";
 
 const Emergent_Requests = "Emergent Requests";
 const New_Issue_Approval = "New Issue Approval";
@@ -49,8 +49,8 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     assignee = await getLatestAssignee();
     
     // If the previous action returns false, stop here
-    if(shouldPost === false)
-      return;
+    // if(shouldPost === false)
+    //   return;
 
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
