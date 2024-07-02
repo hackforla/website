@@ -50,9 +50,8 @@ function insertEventSchedule(eventData, page) {
             }
             let eventHtml;
             // insert the correct html for the current page
-            // &#42; is "*", which indicates a meeting that is not weekly
             if (page === "events") {
-                eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}${event.isWeekly === false ? '&#42;' : ''}</li>`;
+                eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}</li>`;
             } else {
               if(event.dsc != "") event.meetingName += ", ";
                 eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName} ${event.dsc}</li>`;
@@ -118,10 +117,9 @@ function insertEventSchedule(eventData, page) {
         start: localeTimeIn12Format(item.startTime),
         end: localeTimeIn12Format(item.endTime),
         hflaWebsiteUrl: item.project.hflaWebsiteUrl,
-        githubUrl: item.project.githubUrl,
-        isWeekly: item.isWeekly,
-      };
-      return rv_object;
+          githubUrl: item.project.githubUrl,
+        };
+        return rv_object;
     }
   }
   
