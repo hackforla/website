@@ -15,7 +15,7 @@ jobs:
         id: check-labels
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
             const checkLabels = script({g: github, c: context})
@@ -53,7 +53,7 @@ jobs:
         uses: actions/github-script@v7
         id: check-labels-prelim
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/check-label-preliminary-update.js')
             const checklabels = script({g: github, c: context})
