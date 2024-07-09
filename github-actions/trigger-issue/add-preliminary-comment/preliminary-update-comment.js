@@ -48,8 +48,8 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     assignee = await getLatestAssignee();
     
     // If the previous action returns false, stop here
-    if(shouldPost === false)
-      return;
+    // if(shouldPost === false)
+    //   return;
 
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
@@ -211,10 +211,11 @@ async function unAssignDev() {
  * @returns {String} - return fromatted comment
  */
 function createComment(filePath) {
+  issueAssignee = assignee;
   try {
     const commentObject = {
-      replacementString: assignee,
-      placeholderString: '${assignee}',
+      replacementString: issueAssignee,
+      placeholderString: '${issueAssignee}',
       filePathToFormat: filePath,
       textToFormat: null
     }
