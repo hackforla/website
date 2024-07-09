@@ -211,10 +211,9 @@ async function unAssignDev() {
  * @returns {String} - return fromatted comment
  */
 function createComment(filePath) {
-  issueAssignee = assignee;
   try {
     const commentObject = {
-      replacementString: issueAssignee,
+      replacementString: assignee,
       placeholderString: '${issueAssignee}',
       filePathToFormat: filePath,
       textToFormat: null
