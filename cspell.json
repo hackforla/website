@@ -31,5 +31,8 @@
       "redirections/",
       "surveys/",
       "google-apps-scripts/"
+  ],
+  "ignoreRegExpList": [
+      "\\- name:.*$"
   ]
 }
