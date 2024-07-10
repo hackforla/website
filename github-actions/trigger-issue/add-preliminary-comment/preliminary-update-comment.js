@@ -186,7 +186,7 @@ async function assignedToAnotherIssue() {
     }
     
     // If developer is assigned to another issue/s, return true 
-    return otherIssues.length > 0;
+    return otherIssues.length > 1;
   } catch (error) {
     console.log("Error getting other issues: ", error);
   }
