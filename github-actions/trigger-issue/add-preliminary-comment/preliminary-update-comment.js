@@ -134,19 +134,13 @@ async function makeComment(){
 async function memberOfAdminOrMergeTeam() {
   try {
     // Get all members in Admin Team
-    const websiteAdminsMembers = (await github.rest.teams.listMembersInOrg({
-      team_slug: "website-admins",
-      org: context.repo.owner
-    })).data.map(member => member.login);
+    const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
   
     // Get all members in Merge Team
-    const websiteMergeMembers = (await github.rest.teams.listMembersInOrg({
-      team_slug: "website-merge",
-      org: context.repo.owner
-    })).data.map(member => member.login);
+    const websiteMergeMembers = await getTeamMembers(github, context, "website-merge");
   
     // Return true if developer is a member of the Admin or Merge Teams
-    return (websiteAdminsMembers.includes(assignee) || websiteMergeMembers.includes(assignee));
+    return (assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
   } catch (error) {
     console.log("Error getting membership status: ", error);
   }
