@@ -61,8 +61,11 @@
     flex-direction: column;
     
     .filter-tag {
-        overflow-x: auto;
+        overflow-x: hidden;
         overflow-y: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 300px;
     }
     
     a {
