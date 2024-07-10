@@ -9,12 +9,10 @@ let github;
 let context;
 let assignee;
 
-// const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
-const PROJECT_ID = "PVT_kwHOAfZet84AkAVr";
+const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
 
 // The field containing all statuses
-// const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
-const STATUS_FIELD_ID = "PVTSSF_lAHOAfZet84AkAVrzgcR5Tc";
+const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
 
 const Emergent_Requests = "Emergent Requests";
 const New_Issue_Approval = "New Issue Approval";
@@ -51,8 +49,8 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     assignee = await getLatestAssignee();
     
     // If the previous action returns false, stop here
-    // if(shouldPost === false)
-    //   return;
+    if(shouldPost === false)
+      return;
 
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
@@ -267,7 +265,6 @@ async function getLatestAssignee() {
 
 /**
  * @description - Get item info using its issue number
- * @param {Number} issueNum - Issue number linked to the item
  * @returns {Object} - An object containing the item ID and its status name
  */
 async function getItemInfo() {
