@@ -3,6 +3,7 @@ const fs = require("fs");
 const postComment = require('../../utils/post-issue-comment');
 const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
+const getTeamMembers = require('../../utils/get-team-members');
 
 // Global variables
 let github;
@@ -131,19 +132,13 @@ async function makeComment(){
 async function memberOfAdminOrMergeTeam() {
   try {
     // Get all members in Admin Team
-    const websiteAdminsMembers = (await github.rest.teams.listMembersInOrg({
-      team_slug: "website-admins",
-      org: "hackforla"
-    })).data.map(member => member.login);
+    const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
   
     // Get all members in Merge Team
-    const websiteMergeMembers = (await github.rest.teams.listMembersInOrg({
-      team_slug: "website-merge",
-      org: "hackforla"
-    })).data.map(member => member.login);
+    const websiteMergeMembers = await getTeamMembers(github, context, "website-merge");
   
     // Return true if developer is a member of the Admin or Merge Teams
-    return (websiteAdminsMembers.includes(assignee) || websiteMergeMembers.includes(assignee));
+    return (assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
   } catch (error) {
     console.log("Error getting membership status: ", error);
   }
@@ -183,7 +178,7 @@ async function assignedToAnotherIssue() {
     }
     
     // If developer is assigned to another issue/s, return true 
-    return otherIssues.length > 0;
+    return otherIssues.length > 1;
   } catch (error) {
     console.log("Error getting other issues: ", error);
   }
