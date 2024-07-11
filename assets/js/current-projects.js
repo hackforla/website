@@ -2,38 +2,6 @@
 
 ---
 
-// Prevent scrolling through projects list when we reach the end of the filters toolbar scroll section on desktop
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollableComponent = document.querySelector('.filter-toolbar');
-
-    scrollableComponent.addEventListener('wheel', function(event) {
-      const { scrollTop, scrollHeight, clientHeight } = scrollableComponent;
-      const deltaY = event.deltaY;
-
-      if (
-        (deltaY > 0 && scrollTop + clientHeight >= scrollHeight) || // Scrolling down at the bottom
-        (deltaY < 0 && scrollTop <= 0) // Scrolling up at the top
-      ) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    }, { passive: false });
-
-    // For better compatibility with older browsers
-    scrollableComponent.addEventListener('mousewheel', function(event) {
-      const { scrollTop, scrollHeight, clientHeight } = scrollableComponent;
-      const deltaY = event.deltaY;
-
-      if (
-        (deltaY > 0 && scrollTop + clientHeight >= scrollHeight) || // Scrolling down at the bottom
-        (deltaY < 0 && scrollTop <= 0) // Scrolling up at the top
-      ) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    }, { passive: false });
-  });
-
 // Do All Dom Manipulation After The DOM content is full loaded
 document.addEventListener("DOMContentLoaded",function(){
     (function main(){
