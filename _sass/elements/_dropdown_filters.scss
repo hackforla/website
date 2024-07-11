@@ -207,9 +207,10 @@ border-radius: 2.5px;
   font-size: 15px;
   text-transform: capitalize;
 
-  &::after {
+  &::before {
     content: "\00d7";
-    padding-left: 0.5em;
+    padding-left: 0.75em;
+    float: right;
   }
 
   &:hover,
