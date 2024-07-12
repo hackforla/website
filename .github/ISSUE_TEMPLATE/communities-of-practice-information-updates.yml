@@ -1,9 +1,8 @@
+
 name: Communities of Practice information updates
 description: CoP leads use this issue to make changes to Leadership members and contact info
-title: 'Communities of Practice information updates: [INSERT NAME OF Community of
-  Practice]'
+title: 'Communities of Practice information updates: [INSERT NAME OF Community of Practice]'
 labels: ['role: product', 'P-Feature: Communities of Practice', 'time sensitive', 'Complexity: Missing', 'size: missing']
-
 body:
   - type: markdown
     attributes:
@@ -20,9 +19,24 @@ body:
   - type: markdown
     attributes:
       value: "Change Description: NO"
-  - type: markdown
+  - type: dropdown
     attributes:
-      value: "Change Leadership Type: NO"
+      label: "Change Leadership Type"
+      options:
+        - "YES"
+        - "NO"
+      description: "If YES on Change Leadership Type, choose the Leadership Type; if NO, leave the field with the NA value:"
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Leadership Type"
+      options:
+        - "N/A"
+        - "Mentor Led"
+        - "Community Led"
+      default: 0
+      description: "Select the type of leadership if applicable."
   - type: markdown
     attributes:
       value: "Change Slack Link: NO"
