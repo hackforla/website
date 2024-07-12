@@ -58,7 +58,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
 
   try {
     // Check if developer is allowed to work on this issue
-    const isAdminOrMerge = await memberOfAdminOrMergeTeams();
+    const isAdminOrMerge = await memberOfAdminOrMergeTeam();
     const isAssignedToAnotherIssues = await assignedToAnotherIssue();
 
     // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
