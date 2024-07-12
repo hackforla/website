@@ -20,7 +20,7 @@ const New_Issue_Approval = "New Issue Approval";
 const Prioritized_Backlog = "Prioritized backlog";
 const In_Progress = "In progress (actively working)";
 
-const statusesValues = new Map([
+const statusValues = new Map([
   [Emergent_Requests, "d468e876"],
   [New_Issue_Approval, "83187325"],
   [Prioritized_Backlog, "434304a8"],
@@ -42,86 +42,45 @@ const READY_FOR_DEV_LABEL = "ready for dev lead";
  * @param {Number} issueNum - The number of the issue where the post will be made
  */
 async function main({ g, c }, { shouldPost, issueNum }) {
-  try {
-    github = g;
-    context = c;
-    // Get the lates developer in case there are multiple assignees
-    assignee = await getLatestAssignee();
-    
-    // If the previous action returns false, stop here
-    // if(shouldPost === false)
-    //   return;
+  shouldPost = true;
 
+  github = g;
+  context = c;
+  
+  // If the previous action returns false, stop here
+  if (shouldPost === false) {
+    console.log('Issue creator not a team member, no need to post comment.');
+    return;
+  }
+
+  // Get the latest developer in case there are multiple assignees
+  assignee = await getLatestAssignee();
+
+  try {
     // Check if developer is allowed to work on this issue
-    const isAdminOrMerge = await memberOfAdminOrMergeTeam();
+    const isAdminOrMerge = await memberOfAdminOrMergeTeams();
     const isAssignedToAnotherIssues = await assignedToAnotherIssue();
 
-    // If developer is not in Admin or Merge Teams
-    // and assigned to another issue/s, do the following:
-    if(!isAdminOrMerge && isAssignedToAnotherIssues) {
+    // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
+    if (!isAdminOrMerge && isAssignedToAnotherIssues) {
+      const comment = await createComment("multiple-issue-reminder.md");
+      await postComment(issueNum, comment, github, context);
 
-      // Create and post a comment using the template in this file
-      const fileName = "multiple-issue-reminder.md";
-      const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
-      const unAssigningComment = createComment(filePath);
-      await postComment(issueNum, unAssigningComment, github, context);
-      
       await unAssignDev(); // Unassign the developer
       await addLabel(READY_FOR_DEV_LABEL); // Add 'ready for dev lead' label
-      
-      // Update item status to "New Issue Approval"
-      const item = await getItemInfo();
-      await updateItemStatus(item.id, statusesValues.get(New_Issue_Approval));
-    }
+
+      // Update item's status to "New Issue Approval"
+      const itemInfo = await getItemInfo();
+      await updateItemStatus(itemInfo.id, statusValues.get(New_Issue_Approval));
+    } 
+
     // Otherwise, post the normal comment
     else {
-      const instructions = await makeComment();
-      if(instructions !== null){
-        // the actual creation of the comment in github
-        await postComment(issueNum, instructions, github, context);
-
-        // Update item status to "In progress (actively working)"
-        const item = await getItemInfo();
-        await updateItemStatus(item.id, statusesValues.get(In_Progress));
-      }
+      const comment = await createComment("preliminary-update.md");
+      await postComment(issueNum, comment, github, context);
     }
   } catch (error) {
-    console.log(error);
-  }
-}
-
-/**
- * @description - This function makes the comment with the issue developer's GitHub handle using the raw preliminary.md file
- * @returns {string} - Comment to be posted with the issue developer's name in it!!!
- */
-async function makeComment(){
-  try {
-    // Get status name
-    const statusName = (await getItemInfo()).statusName;
-
-    const isPrework = context.payload.issue.labels.find((label) => label.name == 'Complexity: Prework') ? true : false;
-    const isDraft = context.payload.issue.labels.find((label) => label.name == 'Draft') ? true : false;
-
-    let filename = 'preliminary-update.md';
-
-    if (statusName == New_Issue_Approval && !isDraft && !isPrework) {
-      // If author = developer, remind them to add draft label, otherwise unnasign and comment
-      if (context.payload.issue.user.login == assignee) {
-        filename = 'draft-label-reminder.md';
-      } else {
-        filename = 'unassign-from-NIA.md';
-
-        // Unassign the developer
-        await unAssignDev();
-      }
-    }
-
-    const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + filename;
-
-    const comment = createComment(filePath);  
-    return comment;
-  } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 }
 
@@ -140,7 +99,7 @@ async function memberOfAdminOrMergeTeam() {
     // Return true if developer is a member of the Admin or Merge Teams
     return (assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
   } catch (error) {
-    console.log("Error getting membership status: ", error);
+    throw new Error("Error getting membership status: " + error);
   }
 }
 
@@ -151,8 +110,8 @@ async function memberOfAdminOrMergeTeam() {
 async function assignedToAnotherIssue() {
   try {
     const issues = (await github.rest.issues.listForRepo({
-      owner: "moazDev1",
-      repo: "website",
+      owner: context.repo.owner,
+      repo: context.repo.repo,
       assignee: assignee,
       state: "open", // Only fetch opened issues
     })).data;
@@ -180,7 +139,7 @@ async function assignedToAnotherIssue() {
     // If developer is assigned to another issue/s, return true 
     return otherIssues.length > 1;
   } catch (error) {
-    console.log("Error getting other issues: ", error);
+    throw new Error("Error getting other issues: " + error);
   }
 }
 
@@ -190,35 +149,51 @@ async function assignedToAnotherIssue() {
 async function unAssignDev() {
   try {
     await github.rest.issues.removeAssignees({
-      owner: "moazDev1",
-      repo: "website",
+      owner: context.repo.owner,
+      repo: context.repo.repo,
       issue_number: context.payload.issue.number,
       assignees: [assignee],
     });
   } catch (error) {
-    console.log("Error unassigning developer: ", error);
+    throw new Error("Error unassigning developer: " + error);
   }
 }
 
 /**
- * @description - Create a comment using the template of the file in 'filePath'
- * @param {String} filePath - file path for the used template
+ * @description - Create a comment using the template 
+ * of the filenName in "add-preliminary-comment" directory
+ * @param {String} fileName - the file name of the used template
  * @returns {String} - return fromatted comment
  */
-function createComment(filePath) {
+async function createComment(fileName) {
   try {
+    const { statusName } = await getItemInfo();
+
+    const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
+    const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
+
+    if (statusName === New_Issue_Approval && !isDraft && !isPrework) {
+      if (context.payload.issue.user.login === assignee) {
+        fileName = 'draft-label-reminder.md';
+      } else {
+        fileName = 'unassign-from-NIA.md';
+        await unAssignDev();
+      }
+    }
+
+    const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
     const commentObject = {
       replacementString: assignee,
       placeholderString: '${issueAssignee}',
       filePathToFormat: filePath,
       textToFormat: null
-    }
+    };
 
-    // Return teh formatted comment
-    const fromattedComment = formatComment(commentObject, fs);
-    return fromattedComment;
+    // Return the formatted comment
+    const formattedComment = formatComment(commentObject, fs);
+    return formattedComment;
   } catch (error) {
-    console.log("Error creating comment: ", error);
+    throw new Error("Error creating comment: " + error);
   }
 }
 
@@ -229,13 +204,13 @@ function createComment(filePath) {
 async function addLabel(labelName) {
   try {
     await github.rest.issues.addLabels({
-      owner: "moazDev1",
-      repo: "website",
+      owner: context.repo.owner,
+      repo: context.repo.repo,
       issue_number: context.payload.issue.number,
       labels: [labelName],
     });
   } catch (error) {
-    console.log("Error Adding label: ", error);
+    throw new Error("Error Adding label: " + error);
   }
 }
 
@@ -259,7 +234,7 @@ async function getLatestAssignee() {
 
     return issueAssignee;
   } catch (error) {
-    console.log("Error getting last assignee: ", error);
+    throw new Error("Error getting last assignee: " + error);
   }
 }
 
@@ -291,8 +266,8 @@ async function getItemInfo() {
     }`;
   
   const variables = {
-    owner: "moazDev1",
-    repo: "website",
+    owner: context.repo.owner,
+    repo: context.repo.repo,
     issueNum: context.payload.issue.number
   };
 
@@ -312,7 +287,7 @@ async function getItemInfo() {
   return {id, statusName};
 
   } catch (error) {
-    console.log("Error getting item info: ", error);
+    throw new Error("Error getting item info: " + error);
   }
 }
 
@@ -348,7 +323,7 @@ async function updateItemStatus(itemId, newStatusValue) {
     await github.graphql(mutation, variables);
 
   } catch (error) {
-    console.log("Error moving item: ", error);
+    throw new Error("Error updating item's status: " + error);
   }
 }
 
