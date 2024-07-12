@@ -42,6 +42,7 @@ const READY_FOR_DEV_LABEL = "ready for dev lead";
  * @param {Number} issueNum - The number of the issue where the post will be made
  */
 async function main({ g, c }, { shouldPost, issueNum }) {
+
   // If the previous action returns false, stop here
   if (shouldPost === false) {
     console.log('Issue creator not a team member, no need to post comment.');
