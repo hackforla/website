@@ -1,8 +1,9 @@
 name: Schedule Friday 0700
 
+# This action runs at 7:00 UTC/ 0:00 PDT (midnight) every Friday, except during July and December.
 on:
   schedule:
-    - cron:  '0 7 * * 5'
+    - cron:  '0 7 * 1-6,8-11 5'
   workflow_dispatch:
 
 jobs:
