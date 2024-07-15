@@ -1,7 +1,12 @@
 {
     "version": "0.2",
     "language": "en",
-    // words - list of words to be always considered correct
+    ⚠
+Error: Parse error on line 3:
+...anguage": "en",    // words - list of w
+----------------------^
+Expecting 'STRING', got 'undefined'
+// words - list of words to be always considered correct
     "words": [
         "VRMS",
         "Westside",
