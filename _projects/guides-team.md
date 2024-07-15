@@ -9,6 +9,7 @@ alt: 'Guides Team'
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
