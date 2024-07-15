@@ -3,7 +3,7 @@ name: Schedule Monthly
 # This action runs at 11:00 UTC/ 4:00 PDT on the first day of every month except January.
 on:
   schedule:
-    - cron:  0 11 1 2-12 *
+    - cron:  0 11 1 2-7, 9-12 *
 
 jobs:
   Trim_Contributors:
@@ -14,7 +14,7 @@ jobs:
     # Checkout repo, and provide authorization token for `stefanzweifel/git-auto-commit-action` below
     - name: Checkout repository
       uses: actions/checkout@v4
-      with: 
+      with:
         token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
 
     # Checks member activity logs for recent and previous contributors
@@ -53,4 +53,4 @@ jobs:
 
         # Optional commit message and author settings
         commit_message: Update Inactive Members JSON
-        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org> 
+        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org>
