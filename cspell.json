@@ -33,6 +33,7 @@
       "google-apps-scripts/"
   ],
   "ignoreRegExpList": [
-      "\\- name:.*$"
+      "\\- name:.*$",
+      "github-handle:.*$"
   ]
 }
