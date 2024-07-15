@@ -42,39 +42,40 @@ const READY_FOR_DEV_LABEL = "ready for dev lead";
  * @param {Number} issueNum - The number of the issue where the post will be made
  */
 async function main({ g, c }, { shouldPost, issueNum }) {
+  try {
+    // If the previous action returns false, stop here
+    if(shouldPost === false) {
+      console.log("Issue creator not a team member, no need to post comment.");
+      return;
+    }
 
-  // If the previous action returns false, stop here
-  if (shouldPost === false) {
-    console.log('Issue creator not a team member, no need to post comment.');
-    return;
-  }
+    github = g;
+    context = c;
+    // Get the latest developer in case there are multiple assignees
+    assignee = await getLatestAssignee();
 
-  github = g;
-  context = c;
-  // Get the latest developer in case there are multiple assignees
-  assignee = await getLatestAssignee();
+    // Check if developer is allowed to work on this issue
+    const isAdminOrMerge = await memberOfAdminOrMergeTeam();
+    const isAssignedToAnotherIssues = await assignedToAnotherIssue();
 
-  // Check if developer is allowed to work on this issue
-  const isAdminOrMerge = await memberOfAdminOrMergeTeam();
-  const isAssignedToAnotherIssues = await assignedToAnotherIssue();
+    // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
+    if(!isAdminOrMerge && isAssignedToAnotherIssues) {
+      const comment = await createComment("multiple-issue-reminder.md");
+      await postComment(issueNum, comment, github, context);
 
-  // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
-  if (!isAdminOrMerge && isAssignedToAnotherIssues) {
-    const comment = await createComment("multiple-issue-reminder.md");
-    await postComment(issueNum, comment, github, context);
+      await unAssignDev(); // Unassign the developer
+      await addLabel(READY_FOR_DEV_LABEL); // Add 'ready for dev lead' label
 
-    await unAssignDev(); // Unassign the developer
-    await addLabel(READY_FOR_DEV_LABEL); // Add 'ready for dev lead' label
-
-    // Update item's status to "New Issue Approval"
-    const itemInfo = await getItemInfo();
-    await updateItemStatus(itemInfo.id, statusValues.get(New_Issue_Approval));
-  } 
-
-  // Otherwise, post the normal comment
-  else {
-    const comment = await createComment("preliminary-update.md");
-    await postComment(issueNum, comment, github, context);
+      // Update item's status to "New Issue Approval"
+      const itemInfo = await getItemInfo();
+      await updateItemStatus(itemInfo.id, statusValues.get(New_Issue_Approval));
+    } else {
+      // Otherwise, post the normal comment
+      const comment = await createComment("preliminary-update.md");
+      await postComment(issueNum, comment, github, context);
+    }
+  } catch(error) {
+    throw new Error(error);
   }
 }
 
@@ -83,14 +84,18 @@ async function main({ g, c }, { shouldPost, issueNum }) {
  * @returns {Boolean} - return true if developer is member of Admin/Merge team, false otherwise
  */
 async function memberOfAdminOrMergeTeam() {
-  // Get all members in Admin Team
-  const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
+  try {
+    // Get all members in Admin Team
+    const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
   
-  // Get all members in Merge Team
-  const websiteMergeMembers = await getTeamMembers(github, context, "website-merge");
+    // Get all members in Merge Team
+    const websiteMergeMembers = await getTeamMembers(github, context, "website-merge");
   
-  // Return true if developer is a member of the Admin or Merge Teams
-  return (assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
+    // Return true if developer is a member of the Admin or Merge Teams
+    return(assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
+  } catch(error) {
+    throw new Error("Error getting membership status: " + error);
+  }
 }
 
 /**
@@ -98,47 +103,55 @@ async function memberOfAdminOrMergeTeam() {
  * @returns {Boolean} - return true if developer is assigned to another issue/s
  */
 async function assignedToAnotherIssue() {
-  const issues = (await github.rest.issues.listForRepo({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    assignee: assignee,
-    state: "open", // Only fetch opened issues
-  })).data;
+  try {
+    const issues = (await github.rest.issues.listForRepo({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      assignee: assignee,
+      state: "open", // Only fetch opened issues
+    })).data;
 
-  const otherIssues = [];
+    const otherIssues = [];
 
-  for(const issue of issues) {
-    // Check is it's an "Agenda" issue
-    const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
+    for(const issue of issues) {
+      // Check is it's an "Agenda" issue
+      const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
 
-    // Check if it's a "Prework" issue
-    const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
+      // Check if it's a "Prework" issue
+      const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
 
-    // Check if it exists in "Emergent Request" Status
-    const inEmergentRequestStatus = (await getItemInfo()).statusName === Emergent_Requests;
+      // Check if it exists in "Emergent Request" Status
+      const inEmergentRequestStatus = (await getItemInfo()).statusName === Emergent_Requests;
     
-    // Check if it exists in "New Issue Approval" Status
-    const inNewIssueApprovalStatus = (await getItemInfo()).statusName === New_Issue_Approval;
+      // Check if it exists in "New Issue Approval" Status
+      const inNewIssueApprovalStatus = (await getItemInfo()).statusName === New_Issue_Approval;
     
-    // Include the issue only if none of the conditions are met
-    if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
-      otherIssues.push(issue);
-  }
+      // Include the issue only if none of the conditions are met
+      if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
+        otherIssues.push(issue);
+    }
   
-  // If developer is assigned to another issue/s, return true 
-  return otherIssues.length > 1;
+    // If developer is assigned to another issue/s, return true 
+    return otherIssues.length > 1;
+  } catch(error) {
+    throw new Error("Error getting other issues: " + error);
+  }
 }
 
 /**
  * @description - Unassign developer from the issue
  */
 async function unAssignDev() {
-  await github.rest.issues.removeAssignees({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: context.payload.issue.number,
-    assignees: [assignee],
-  });
+  try {
+    await github.rest.issues.removeAssignees({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: context.payload.issue.number,
+      assignees: [assignee],
+    });
+  } catch(error) {
+    throw new Error("Error unassigning developer: " + error);
+  }
 }
 
 /**
@@ -148,31 +161,35 @@ async function unAssignDev() {
  * @returns {String} - return formatted comment
  */
 async function createComment(fileName) {
-  const { statusName } = await getItemInfo();
+  try {
+    const { statusName } = await getItemInfo();
 
-  const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
-  const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
+    const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
+    const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
 
-  if (statusName === New_Issue_Approval && !isDraft && !isPrework) {
-    if (context.payload.issue.user.login === assignee) {
-      fileName = 'draft-label-reminder.md';
-    } else {
-      fileName = 'unassign-from-NIA.md';
-      await unAssignDev();
+    if(statusName === New_Issue_Approval && !isDraft && !isPrework) {
+      if(context.payload.issue.user.login === assignee) {
+        fileName = 'draft-label-reminder.md';
+      } else {
+        fileName = 'unassign-from-NIA.md';
+        await unAssignDev();
+      }
     }
+
+    const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
+    const commentObject = {
+      replacementString: assignee,
+      placeholderString: '${issueAssignee}',
+      filePathToFormat: filePath,
+      textToFormat: null
+    };
+
+    // Return the formatted comment
+    const formattedComment = formatComment(commentObject, fs);
+    return formattedComment;
+  } catch(error) {
+    throw new Error("Error creating comment: " + error);
   }
-
-  const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
-  const commentObject = {
-    replacementString: assignee,
-    placeholderString: '${issueAssignee}',
-    filePathToFormat: filePath,
-    textToFormat: null
-  };
-
-  // Return the formatted comment
-  const formattedComment = formatComment(commentObject, fs);
-  return formattedComment;
 }
 
 /**
@@ -180,12 +197,16 @@ async function createComment(fileName) {
  * @param {String} labelName - Name of the label to add
  */
 async function addLabel(labelName) {
-  await github.rest.issues.addLabels({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: context.payload.issue.number,
-    labels: [labelName],
-  });
+  try {
+    await github.rest.issues.addLabels({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: context.payload.issue.number,
+      labels: [labelName],
+    });
+  } catch(error) {
+    throw new Error("Error Adding label: " + error);
+  }
 }
 
 /**
@@ -193,19 +214,23 @@ async function addLabel(labelName) {
  * @returns {String} - return the username of the latest assignee
  */
 async function getLatestAssignee() {
-  let issueAssignee = context.payload.issue.assignee.login;
+  try {
+    let issueAssignee = context.payload.issue.assignee.login;
 
-  const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
+    const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
     
-  // Find out the latest developer assigned to the issue
-  for(let i = eventdescriptions.length - 1 ; i>=0; i-=1){
-    if(eventdescriptions[i].event == 'assigned'){
-      issueAssignee = eventdescriptions[i].assignee.login;
-      break;
+    // Find out the latest developer assigned to the issue
+    for(let i = eventdescriptions.length - 1; i >= 0; i -= 1) {
+      if(eventdescriptions[i].event == 'assigned') {
+        issueAssignee = eventdescriptions[i].assignee.login;
+        break;
+      }
     }
-  }
 
-  return issueAssignee;
+    return issueAssignee;
+  } catch(error) {
+    throw new Error("Error getting last assignee: " + error);
+  }
 }
 
 /**
@@ -213,46 +238,50 @@ async function getLatestAssignee() {
  * @returns {Object} - An object containing the item ID and its status name
  */
 async function getItemInfo() {
-  const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
-    repository(owner: $owner, name: $repo) {
-      issue(number: $issueNum) {
-        id
-        projectItems(first: 100) {
-          nodes {
-            id
-            fieldValues(first: 100) {
-              nodes {
-                ... on ProjectV2ItemFieldSingleSelectValue {
-                  name
+  try {
+    const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
+      repository(owner: $owner, name: $repo) {
+        issue(number: $issueNum) {
+          id
+          projectItems(first: 100) {
+            nodes {
+              id
+              fieldValues(first: 100) {
+                nodes {
+                  ... on ProjectV2ItemFieldSingleSelectValue {
+                    name
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-  }`;
+    }`;
 
-  const variables = {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issueNum: context.payload.issue.number
-  };
+    const variables = {
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issueNum: context.payload.issue.number
+    };
 
-  const response = await github.graphql(query, variables);
+    const response = await github.graphql(query, variables);
 
-  // Extract the list of project items associated with the issue
-  const projectItems = response.repository.issue.projectItems.nodes;
-  
-  // Since there is always one item associated with the issue,
-  // directly get the item's ID from the first index
-  const id = projectItems[0].id;
+    // Extract the list of project items associated with the issue
+    const projectItems = response.repository.issue.projectItems.nodes;
+    
+    // Since there is always one item associated with the issue,
+    // directly get the item's ID from the first index
+    const id = projectItems[0].id;
 
-  // Iterate through the field values of the first project item
-  // and find the node that contains the 'name' property, then get its 'name' value
-  const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
+    // Iterate through the field values of the first project item
+    // and find the node that contains the 'name' property, then get its 'name' value
+    const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
 
-  return { id, statusName };
+    return { id, statusName };
+  } catch(error) {
+    throw new Error("Error updating item's status: " + error);
+  }
 }
 
 /**
@@ -261,29 +290,33 @@ async function getItemInfo() {
  * @param {String} newStatusValue - The new status value to be assigned to the item
  */
 async function updateItemStatus(itemId, newStatusValue) {
-  const mutation = `mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
-    updateProjectV2ItemFieldValue(input: {
-      projectId: $projectId,
-      itemId: $itemId,
-      fieldId: $fieldId,
-      value: {
-        singleSelectOptionId: $value
+  try {
+    const mutation = `mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
+      updateProjectV2ItemFieldValue(input: {
+        projectId: $projectId,
+        itemId: $itemId,
+        fieldId: $fieldId,
+        value: {
+          singleSelectOptionId: $value
+        }
+      }) {
+        projectV2Item {
+          id
+        }
       }
-    }) {
-      projectV2Item {
-        id
-      }
-    }
-  }`;
+    }`;
 
-  const variables = {
-    projectId: PROJECT_ID,
-    itemId: itemId,
-    fieldId: STATUS_FIELD_ID,
-    value: newStatusValue
-  };
+    const variables = {
+      projectId: PROJECT_ID,
+      itemId: itemId,
+      fieldId: STATUS_FIELD_ID,
+      value: newStatusValue
+    };
 
-  await github.graphql(mutation, variables);
+    await github.graphql(mutation, variables);
+  } catch(error) {
+    throw new Error("Error in updateItemStatus function: " + error);
+  }
 }
 
 module.exports = main;
