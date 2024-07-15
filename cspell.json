@@ -1,43 +1,38 @@
 {
-    "version": "0.2",
-    "language": "en",
-    ⚠
-Error: Parse error on line 3:
-...anguage": "en",    // words - list of w
-----------------------^
-Expecting 'STRING', got 'undefined'
-// words - list of words to be always considered correct
-    "words": [
-        "VRMS",
-        "Westside",
-        "Cleantech",
-        "Inclusivity",
-        "Collabathon",
-        "Undebate",
-        "hackforla",
-        "redirections"
-    ],
-    "ignoreWords": [
-        "Harish"
-    ],
-    "ignorePaths": [
-        "node_modules",
-        ".github",
-        "test/",
-        "docker-compose.yml",
-        "_sass/",
-        "_data/internal/credits/",
-        "_includes/design-system-page/examples/",
-        "_includes/svg/",
-        "assets/",
-        "_config.docker.yml",
-        "_site/",
-        "github-actions/",
-        "redirections/",
-        "surveys/",
-        "google-apps-scripts/"
-    ],
-    "ignoreRegExpList": [
-        "\\- name:.*$"
-    ]
-  }  
+  "version": "0.2",
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+      "VRMS",
+      "Westside",
+      "Cleantech",
+      "Inclusivity",
+      "Collabathon",
+      "Undebate",
+      "hackforla",
+      "redirections"
+  ],
+  "ignoreWords": [
+      "Harish"
+  ],
+  "ignorePaths": [
+      "node_modules",
+      ".github",
+      "test/",
+      "docker-compose.yml",
+      "_sass/",
+      "_data/internal/credits/",
+      "_includes/design-system-page/examples/",
+      "_includes/svg/",
+      "assets/",
+      "_config.docker.yml",
+      "_site/",
+      "github-actions/",
+      "redirections/",
+      "surveys/",
+      "google-apps-scripts/"
+  ],
+  "ignoreRegExpList": [
+      "\\- name:.*$"
+  ]
+}
