@@ -1,8 +1,9 @@
-const core = require("@actions/core");
-const fs = require("fs");
-const { Octokit } = require("@octokit/rest");
-const trueContributorsMixin = require("true-github-contributors");
-const _ = require('lodash');
+// @octokit/rest revised from v20.0.1 to v21.0.0 suggested
+// by dependabot. *** Package v21.0.0 is now ESM ***
+import fs from "fs";
+import { Octokit } from "@octokit/rest";
+import trueContributorsMixin from "true-github-contributors";
+import _ from "lodash";
 
 // Record the time this script started running so it can be stored later
 const dateRan = new Date();
