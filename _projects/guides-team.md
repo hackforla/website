@@ -9,13 +9,13 @@ alt: 'Guides Team'
 image-hero: /assets/images/projects/guides-team-hero.jpg
 leadership:
   - name: Bonnie Wolfe
-    github-handle:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Sarah Edwards
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
