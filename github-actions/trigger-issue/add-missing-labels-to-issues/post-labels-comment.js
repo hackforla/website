@@ -26,7 +26,7 @@ async function main({ g, c }, { actionResult, addedLabels, issueNum }) {
   github = g;
   context = c;
 
-  const issueTitle = context.payload.issue.title
+  const issueTitle = context.payload.issue.title;
 
   // If the previous action failed, stop here
   if (actionResult === false) {
