@@ -17,7 +17,7 @@ var context;
 
 /**
  * Check the labels of an issue, and add/remove labels as necessary
- * @param {Object} g - github object  
+ * @param {Object} g - GitHub object  
  * @param {Object} c - context object 
  * @returns - returns an object with the action's result, which is passed on to the next action
  */
