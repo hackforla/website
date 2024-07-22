@@ -1,7 +1,7 @@
 /**
- * Changes the "Status" of an issue (with the corresponding itemId) to a newStatusValue
+ * Changes the 'Status' of an issue (with the corresponding itemId) to a newStatusValue
  * @param {String} itemId          -  GraphQL item Id for the issue 
- * @param {String} newStatusValue  -  GraphQL Id value for the Status' field that the issue is moving to
+ * @param {String} newStatusValue  -  GraphQL Id value of the 'Status' field that the issue is moving to
  * 
  */
 async function mutateIssueStatus(github, context, itemId, newStatusValue) {
