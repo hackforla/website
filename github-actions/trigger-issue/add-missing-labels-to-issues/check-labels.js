@@ -35,8 +35,7 @@ async function main({ g, c }) {
   if (issueTitle.includes('Hack for LA website bot')) {
     labelsToAdd = SPECIAL_CASE;
     // Find GraphQL issue id and change status id, then change status
-    // const itemId = (await queryIssueInfo(github, context, issueNum)).id;
-    const itemId = (await queryIssueInfo(github, context, 824)).id;
+    const itemId = (await queryIssueInfo(github, context, issueNum)).id;
     const newStatusValue = statusFieldIds("Questions_In_Review");
     mutateIssueStatus(github, context, itemId, newStatusValue);
   }
