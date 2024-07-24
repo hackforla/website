@@ -119,6 +119,7 @@ async function addLabels(labelsToAdd, currentLabels) {
   ])];
 
   try {
+    // https://octokit.github.io/rest.js/v20#issues-set-labels
     await github.rest.issues.setLabels({
       owner: owner,
       repo: repo,
