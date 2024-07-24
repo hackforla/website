@@ -21,6 +21,7 @@ leadership:
       github: 'https://github.com/lwanderson-triage'
     picture: https://avatars.githubusercontent.com/lwanderson-triage
   - name: Shawn Duenas
+    github-handle:
     role: Project Manager, Presentation Build and UX Research
     links:
       slack: 'https://hackforla.slack.com/team/UN4EV6CG3'
@@ -41,12 +42,14 @@ leadership:
       github: 'https://github.com/nekobox'
     picture: https://avatars.githubusercontent.com/nekobox
   - name: Conor McKiernan
+    github-handle:
     role: Logo Design and UX Strategy/Research
     links:
       slack: 'https://hackforla.slack.com/team/UNHNCALSE'
       github: 'https://github.com/redmckiernan'
     picture: https://avatars.githubusercontent.com/redmckiernan
   - name: Selena Jiang
+    github-handle: 
     role: UI Design, Life Saving Measures screen
     links:
       slack: 'https://hackforla.slack.com/team/UMYN9DVSB'
@@ -59,6 +62,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UJ8M64E5V'
     picture: /assets/images/misc/no-photo.png
   - name: Kelvin Nguyen
+    github-handle: 
     role: UI Design, Individual Assessment screen
     links:
       slack: 'https://hackforla.slack.com/team/UPNR0KG00'
