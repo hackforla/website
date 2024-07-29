@@ -31,12 +31,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
-  - name: Drake Nguyen
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U04TSESVB4J
-      github: https://github.com/drakenguyen4000
-    picture: https://avatars.githubusercontent.com/drakenguyen4000
   - name: Ren Demeis-Ortiz
     role: Merge Team
     links:
