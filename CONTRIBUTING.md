@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to the website repository,
 
 **If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.**
 
-**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel.**
+**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel.**
 <br><br>
 
 ## **Table of Contents**
@@ -344,7 +344,7 @@ All website team members are required to attend at least 1 team meeting in a wee
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
-Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
 * Setting up your local environment from a CONTRIBUTING file
@@ -447,7 +447,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 <details>
   <summary><strong>Click here</strong> to see how you assign & unassign yourself to an issue</summary>
   <p><strong>Assign/Unassign demo</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137636320-e96ef70d-3c85-405e-90d2-ee7b3bba071f.gif" />
+  <img src="https://user-images.githubusercontent.com/21162229/137636320-e96ef70d-3c85-405e-90d2-ee7b3bba071f.gif">
 </details>
 
 ##### **i. If you want to to self assign an issue:**
@@ -579,7 +579,7 @@ If you do not see the changes you applied when you run `docker-compose up`, **do
 <br><br>
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
@@ -634,17 +634,18 @@ git commit -m “insert message here”
 
 #### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
-
-```bash
-git pull upstream
-```
-You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. You can sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch":
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
   <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
+
+Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
+
+```bash
+git pull upstream gh-pages
+```
 
 
 ##### **i. If there are no changes in the upstream repository**
@@ -878,7 +879,7 @@ git push --set-upstream origin update-give-link-2093
 <br>
 <details>
   <summary><strong>Click here</strong> to see pull request #2131 example (gif)</summary>
-  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif" />
+  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif">
 </details>
 <br>
 

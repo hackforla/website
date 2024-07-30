@@ -31,5 +31,9 @@
       "redirections/",
       "surveys/",
       "google-apps-scripts/"
+  ],
+  "ignoreRegExpList": [
+      "\\- name:.*$",
+      "github-handle:.*$"
   ]
 }
