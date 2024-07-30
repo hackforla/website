@@ -15,6 +15,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Sarah Edwards
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
