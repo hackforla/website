@@ -43,7 +43,7 @@ async function main({ g, c }) {
   if (labelsToAdd.length === 0) {
     console.log('All required labels are included; no labels to add.');
   } else {
-    console.log(`Labels to add: ${labelsToAdd}`);
+    console.log('Labels to add: ', labelsToAdd);
   }
 
   const result = await addLabels(labelsToAdd, filteredLabels);
@@ -132,7 +132,7 @@ async function addLabels(labelsToAdd, currentLabels) {
     return true;
   }
   catch(err) {
-    console.log(`Error editing labels: ${err}`);
+    console.log('Error editing labels: ', err)
     return false;
   }
 }
