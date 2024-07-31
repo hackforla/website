@@ -1,6 +1,6 @@
 /** 
 * @param {octokit} github - Octokit object used to access GitHub API 
-* @param {String} githubUsername - The github username of the user whose membership is to be checked.
+* @param {String} githubUsername - The Github username of the user whose membership is to be checked.
 * @param {String} team - The HFLA team the username's membership is checked against. Example: 'website-write'
 
 - Returns true or false depending on whether the username is found on the passed team, 404 means the user passed wasn't 
