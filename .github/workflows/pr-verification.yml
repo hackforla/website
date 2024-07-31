@@ -2,9 +2,6 @@ name: Pull Request Verification
 on:
   pull_request_target:
     types: [opened]
-    branches:
-      - 'gh-pages'
-      - 'verify-pr-creator-util-3906'
 
 jobs:
   Check-Team-Membership:
