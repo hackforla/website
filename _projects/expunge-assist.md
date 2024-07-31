@@ -7,6 +7,13 @@ image: /assets/images/projects/expunge-assist.png
 alt: 'Expunge Assist'
 image-hero: /assets/images/projects/expunge-assist-hero.png
 leadership:
+  - name: Maria Weissman
+    github-handle: mariaweissman
+    role: Product Manager, Project Manager
+    links:
+      slack: https://hackforla.slack.com/team/U06REA9H3FF
+      github: https://github.com/mariaweissman
+    picture: https://avatars.githubusercontent.com/mariaweissman
   - name: Analicia Mejia Mesinas
     github-handle: amejiamesinas
     role: Product Manager, UX Research
@@ -14,13 +21,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04J34E73CG
       github: https://github.com/amejiamesinas
     picture: https://avatars.githubusercontent.com/amejiamesinas
-  - name: Curtis Barber
-    github-handle: CBx3000
-    role: Product Manager, Content
-    links:
-      slack: https://hackforla.slack.com/team/U05RZAETCQ4
-      github: https://github.com/CBx3000
-    picture: https://avatars.githubusercontent.com/CBx3000
   - name: Mireya V. Aviles
     github-handle: vanessaavviles
     role: Product Manager, Design
@@ -51,11 +51,18 @@ leadership:
     picture: https://avatars.githubusercontent.com/jyehllow
   - name: Samantha Hyler
     github-handle: SamHyler
-    role:  UX Content, Team Lead
+    role:  UX Content, Team Co-lead
     links:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
+  - name: Emma Thrash
+    github-handle: emmathrash
+    role:  UX Content, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U05JUM3881J
+      github: https://github.com/emmathrash
+    picture: https://avatars.githubusercontent.com/emmathrash
   - name: Sylvia Nam
     github-handle: sylvia-nam
     role: UX Research, Team Lead

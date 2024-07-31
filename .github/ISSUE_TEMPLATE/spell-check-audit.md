@@ -2,7 +2,7 @@
 name: Spell check audit web page
 about: For checking spelling on a code file that contains text displayed on the website
 title: Run VS Code Spell Checker on [INSERT FILE HERE]
-labels: 'Complexity: Small, Feature: Administrative, ready for dev lead, role: back
+labels: 'Complexity: Small, feature: spelling, ready for dev lead, role: back
   end/devOps, role: front end, size: 0.5pt'
 assignees: ''
 

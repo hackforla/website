@@ -7,24 +7,28 @@ alt: 'Engage'
 image-hero: /assets/images/projects/engage-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: 'https://avatars.githubusercontent.com/ExperimentsInHonesty'
   - name: Ryan Mayott
+    github-handle:
     role: UI/UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01L3BJ3QSW'
       github: 'https://github.com/rmayott'
     picture: 'https://avatars.githubusercontent.com/rmayott'
   - name: Bryon Heart
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01GHT3EMNZ'
       github: 'https://github.com/BryonPm'
     picture: 'https://avatars.githubusercontent.com/BryonPm'
   - name: Eli Selkin
+    github-handle:
     role: Backend Architect and Technology Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0611PL2D'

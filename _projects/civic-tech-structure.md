@@ -11,30 +11,35 @@ alt: "Civic Tech Structure"
 image-hero: /assets/images/projects/civic-tech-structure-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle: 
     role: Executive Director
     links:
       slack: "https://hackforla.slack.com/team/UE1UG1YFP"
       github: "https://github.com/ExperimentsInHonesty"
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Olivia Chiong
+    github-handle:
     role: Director of Operations
     links:
       slack: "https://hackforla.slack.com/team/U01GJC7VC6"
       github: "https://github.com/olivia-chiong"
     picture: https://avatars.githubusercontent.com/olivia-chiong
   - name: Sam H.
+    github-handle:
     role: Co-Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U01A2FPLBC3"
       github: "https://github.com/MasSamH"
     picture: https://avatars.githubusercontent.com/MasSamH
   - name: Thad Kerosky
+    github-handle:
     role: Co-Product Manager
     links:
       slack: "https://cfa.slack.com/archives/C019RCM15FE"
       github: "https://github.com/thadk"
     picture: https://avatars2.githubusercontent.com/u/283343?v=4
   - name: Naomi Chao
+    github-handle:
     role: Special Projects Coordinator
     links:
       slack: "https://hackforla.slack.com/team/U018TQWQB0T"

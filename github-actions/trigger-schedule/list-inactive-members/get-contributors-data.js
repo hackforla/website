@@ -6,12 +6,15 @@ const getTeamMembers = require('../../utils/get-team-members');
 var github;
 var context;
 
-// Set date limits: we are sorting inactive members into groups to warn after 1 month and remove after 2 months.
-// Since the website team takes off the month of December, the January 1st run is skipped (via `schedule-monthly.yml`). 
-// The February 1st run keeps the 1 month inactive warning, but changes removal to 3 months inactive (skipping December).
+const maintTeam = 'website-maintain';
+const botMembers = ['elizabethhonest', 'hfla-website-checklist', 'HackforLABot'];
+
+// Set date limits: we are sorting inactive members into groups to notify after 1 month and remove after 2 months.  
+// Since the teams take off December and July, the Jan. 1st and Aug. 1st runs are skipped (via `schedule-monthly.yml`). 
+// The Feb. 1st and Sept. 1st runs account for skipped months: 'oneMonth' & 'twoMonths' = 2 & 3 months respectively
 let today = new Date();
-let oneMonth = (today.getMonth() == 1) ? 2 : 1;            // If month is "February" == 1, then oneMonth = 2 months ago
-let twoMonths = (today.getMonth() == 1) ? 3 : 2;           // If month is "February" == 1, then twoMonths = 3 months ago
+let oneMonth = (today.getMonth() === 1 || today.getMonth() === 8) ? 2 : 1;
+let twoMonths = (today.getMonth() === 1 || today.getMonth() === 8) ? 3 : 2;
 
 let oneMonthAgo = new Date();                              // oneMonthAgo instantiated with date of "today"
 oneMonthAgo.setMonth(oneMonthAgo.getMonth() - oneMonth);   // then set oneMonthAgo from "today"
@@ -59,7 +62,6 @@ async function fetchContributors(dates){
   let inactiveWithOpenIssue = {};
 
   // Members of 'website-maintain' team are considered permanent members
-  const maintTeam = 'website-maintain';
   const permanentMembers = await getTeamMembers(github, context, maintTeam);
 
   // Fetch all contributors with commit, comment, and issue (assignee) contributions
@@ -79,8 +81,8 @@ async function fetchContributors(dates){
       while(true){
         // Fetch 100 items per each page (`pageNum`)
         const contributors = await github.request(api, {
-          owner: github.context.owner,
-          repo: github.context.repo,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
           since: date,
           per_page: 100,
           page: pageNum
@@ -133,9 +135,14 @@ async function fetchContributors(dates){
       }
     }
     // Add permanent members from 'website-maintain' team to list of active contributors
-    for(const permanentMember in permanentMembers){
+    for(let permanentMember in permanentMembers){
       allContributorsSince[permanentMember] = true;
     }
+    // Add members of botMembers team to list of active contributors
+    for(let i = 0; i < botMembers.length; i++){
+      allContributorsSince[botMembers[i]] = true;
+    }
+    
     if(date === dates[0]){
       allContributorsSinceOneMonthAgo = allContributorsSince;
     } else {
