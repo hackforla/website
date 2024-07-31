@@ -4,20 +4,20 @@ const commentContent = 'You must be a member of the HFLA website team in order t
 async function main({github,context}) {
     const prAuthor = context.payload.sender.login;
     const prNumber = context.payload.number;
-    isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
+    const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
     if (isMember) {    
         console.log('Successfully verified!');
     }
     else {
         try {
             await github.rest.issues.update({
-                owner : 'hackforla',
+                owner : 'ajb176',
                 repo : 'website',
                 issue_number : prNumber,
                 state : 'closed'
             });
             await github.rest.issues.createComment({
-                owner : 'hackforla',
+                owner : 'ajb176',
                 repo : 'website',
                 issue_number : prNumber,
                 body : commentContent
