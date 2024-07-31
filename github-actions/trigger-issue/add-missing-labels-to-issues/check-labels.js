@@ -35,15 +35,15 @@ async function main({ g, c }) {
   if (issueTitle.includes('Hack for LA website bot')) {
     labelsToAdd = SPECIAL_CASE;
     // Find GraphQL issue id and change status id, then change status
-    const itemId = (await queryIssueInfo(github, context, issueNum)).id;
+    const { id: itemId } = await queryIssueInfo(github, context, issueNum);
     const newStatusValue = statusFieldIds("Questions_In_Review");
-    mutateIssueStatus(github, context, itemId, newStatusValue);
+    await mutateIssueStatus(github, context, itemId, newStatusValue);
   }
 
   if (labelsToAdd.length === 0) {
     console.log('All required labels are included; no labels to add.');
   } else {
-    console.log('Labels to add: ', labelsToAdd);
+    console.log(`Labels to add: ${labelsToAdd}`);
   }
 
   const result = await addLabels(labelsToAdd, filteredLabels);
@@ -76,8 +76,8 @@ function filterLabels(labels) {
 
 /**
  * Check for missing labels
- * @param {Array} labels - array of labels to check
- * @return {Array} - returns an array of the labels to add
+ * @param {Array} labels        - array of the labels to check
+ * @return {Array} labelsToAdd  - array of the labels to add
  */
 function checkLabels(labels) {
   let labelsToAdd = [];
@@ -127,12 +127,12 @@ async function addLabels(labelsToAdd, currentLabels) {
       labels: labels
     });
     if (labelsToAdd.length > 0) {
-      console.log('Succesfully added labels: ', labelsToAdd);
+      console.log(`Labels added successfully`);
     }
     return true;
   }
   catch(err) {
-    console.log('Error editing labels: ', err);
+    console.log(`Error editing labels: ${err}`);
     return false;
   }
 }
