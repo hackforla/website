@@ -1,4 +1,3 @@
-// 
 const isMemberOfTeam = require('../utils/check-team-membership');
 const commentContent = 'You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started.  If you have been though onboarding, and feel this message was sent in error, please message us in the #hfla-site team Slack channel with the link to this PR.';
 
