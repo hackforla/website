@@ -3,7 +3,7 @@ identification: "228981080"
 title: Home Unite Us
 description: The Home Unite Us project is developing a workflow management tool for community nonprofits to automate and scale their existing Host Home initiatives, prioritizing streamlining of caseworkers' repetitive workloads, reducing institutional bias, and effectively capturing crucial data. <br /><br />Host Home programs are centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
 image: /assets/images/projects/home-heart.png
-alt: 'Home Unite Us'
+alt: "Home Unite Us"
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
   - name: Tyler Thome
@@ -97,6 +97,7 @@ leadership:
       github: "https://github.com/IndigoYinZ"
     picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Emily Eldar
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
@@ -110,7 +111,7 @@ links:
   - name: Slack
     url: "https://hackforla.slack.com/archives/CRWUG7X0C"
   - name: Overview
-    url: '../assets/pdfs/Home-Unite-Us-One-Sheet.pdf'
+    url: "../assets/pdfs/Home-Unite-Us-One-Sheet.pdf"
   - name: Site
     url: "https://homeunite.us/"
 looking:
