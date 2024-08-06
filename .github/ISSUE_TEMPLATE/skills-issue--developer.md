@@ -48,9 +48,10 @@ Sections
 
 <a name="section-1"></a>
 #### 1 - JOINING THE WEBSITE TEAM.
+- [ ] Add yourself to the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) and [#hfla-site-pr](https://hackforla.slack.com/archives/C025ERFDM4Y) Slack channels
 - [ ] Self Assign this issue (gear in right side panel).  
-  - [ ] If there are no gears in the right side panel of this issue (next to Assignees, Labels, Projects, Milestone,Development): 
-     - [ ] check to see if you are logged in to GitHub (if you are not logged in your will see a sign in button on the top right of this browser tab).  
+  - [ ] If there are no gears in the right side panel of this issue (next to Assignees, Labels, Projects, Milestone, Development): 
+     - [ ] check to see if you are logged in to GitHub (if you are not logged in you will see a sign in button on the top right of this browser tab).  
          - if you are not logged in
             - [ ] log in and try to self assign again.  If that does not work, continue with the instructions below.
          - if you are logged in
@@ -58,19 +59,16 @@ Sections
                ```
                Hi.  I don't see the gear on my issue, here are my details:
                - issue: #
-               - github handle:
+               - GitHub handle:
                - date onboarded:
-               - row on roster:
-               
-               [return to section 1](#section-1)
+               - row on roster:               
                ```
             - [ ] add the following text to a comment on this issue
                ```
-               I don't have access, I have messaged the merge team / technical lead in the hfla-site slack channel.
+               I don't have access, I have messaged the merge team / technical lead in the hfla-site Slack channel.
 
                [return to section 1](#section-1)
                ```
-- [ ] Add yourself to the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) and [#hfla-site-pr](https://hackforla.slack.com/archives/C025ERFDM4Y) Slack channels
 - [ ] Register for Zoom meetings using the form at [Replace  with URL TO SLIDE WITH ZOOM REGISTRATION LINKS - this will get replaced by an automation that happens during onboarding, but in the meantime we will link to the slide]
 - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
 - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
@@ -93,11 +91,11 @@ Sections
 <a name="section-2"></a>
 #### 2 - TEAM MEETINGS (OPTIONS AND REQUIREMENTS)
 - [ ] Attend weekly team meetings:
-  - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm PST
-  - [ ] (Optional) Office Hours, Thursdays 7-8pm PST
-  - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm PST
+  - [ ] Developer (front-end/back-end) weekly team meeting, Tuesdays 7-8pm Pacific
+  - [ ] (Optional) Office Hours, Thursdays 7-8pm Pacific
+  - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm Pacific
 - [ ] Note: The meetings on the 1st-7th of every month are planning meetings for leads and merge team. You are welcome to observe but we don't provide team member support.
-- [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know through a slack message in the #hfla-site Slack channel as well as an @ mention in a comment of the issue that you would be working on, if you are planning to take a week off or a longer vacation.
+- [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know through a Slack message in the #hfla-site Slack channel as well as an @ mention in a comment of the issue that you would be working on, if you are planning to take a week off or a longer vacation.
 - [ ] Post the following message in a comment below on this issue and then answer it.
     ```
     ### 2 - TEAM MEETINGS update
@@ -117,7 +115,7 @@ Sections
 <a name="section-3"></a>
 #### 3 - DEVELOPMENT ENVIRONMENT SETUP
 - [ ] Complete steps 1.1 - 1.7 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
-  - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
+  - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) 
 <a name="section-3-ongoing-self-test"></a>
   - [ ] If you have never setup your development environment before, please update your [Ongoing Skills List](#Ongoing_Skills_List) to check off "Setting up your local environment from a contributing file"
 - [ ] Post the following message in a comment below on this issue and then answer it.  While keeping in mind that this is just to get feedback on how long it took you to get to this point. There is no right or wrong answers. There is no judgement. It is ok if you take a long time or if you do it really fast or at any pace.  Getting your dev environment setup will be easier for some people because they might already have some experience or items installed on their computer and you may not. This is an important step, be patient with yourself and your computer but keep on it till you get it done.
@@ -183,7 +181,7 @@ Sections
 
 <a name="section-6"></a>
 #### 6 - SUBMITTING YOUR FIRST PULL REQUEST
-- [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/2e3c45fede99e61f479548ccca3f0dda83e351db/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a pull request (PR) for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
+- [ ] Read sections 3.1.a - 3.1.c in [3.1 How to make a pull request](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#31-how-to-make-a-pull-request) to learn more about how to make a pull request (PR) for the issue that you are working on and how to make changes to your PR if changes are requested by the reviewer
  - Confirm you understand the following:
     - [ ] Please work on only one issue at a time and wait until your pull request is merged before picking up another issue.  
     - [ ] Please keep an eye on your PR, if someone leaves you a comment asking for a change, please respond in a timely way.
@@ -565,7 +563,7 @@ I  have finished sections 1-16 and am ready to have my activity reviewed by the 
 
 - First, you should post the question or blocker as a comment on your assigned issue, so it can be easily referred to in the next bullet points.
 - Then, add the label "Status: Help Wanted" so other developers can see it and potentially help answer your question. In addition, you will still need to post a Slack message or bring it up in meeting so we know you need help; see below for how to do that.
-- Also, you can post your question on the hfla-site slack channel and link the issue you're working on, so other developers can see and respond.
+- Also, you can post your question on the hfla-site Slack channel and link the issue you're working on, so other developers can see and respond.
 - Lastly, you can add the issue to the <s>"Development team meeting discussion items"</s> "Questions/In Review" column of the Project Board so that it can be addressed in the next development meeting. Please bring it during the meeting that you need help.
 </details> 
 
@@ -585,9 +583,7 @@ Copy and customize this response, and leave it in a comment on this issue
 
 ### Resources/Instructions
 - [Contributing.md - Hack for LA](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md)
-- [GitHub Project Board - Hack for LA](https://github.com/hackforla/website/projects/7)
-- [GitHub Project Board Prioritized Backlog highlighted and sorted by Front End](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22)
-- [GitHub Project Board Prioritized Backlog highlighted and sorted by Back End/DevOps](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22)
+- [GitHub Project Board - Hack for LA](https://github.com/orgs/hackforla/projects/86)
 - [Figma - Hack for LA](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website)
 - [Google Drive - Hack for LA website team](https://drive.google.com/drive/folders/1p76K0FgfiAWeIIEyoyJ_Iik8FVj8cBjT?usp=sharing)
 - [Agenda / Notes - Dev Team Tuesday meeting](https://github.com/hackforla/website/issues/2010)
