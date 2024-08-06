@@ -346,7 +346,7 @@ Also, we want you on the Merge team.  This will ensure you are a competent devel
 #### 12 - PULL REQUEST REVIEWS - SMALL
 Now that you have your small PR merged, you are eligible to review [small PRs, Review Required](https://github.com/hackforla/website/pulls?q=is%3Aopen+is%3Apr+label%3A%22Complexity%3A+Small%22+review%3Arequired) from other people who are following in the same journey path as you.
 
-Please review 3 `small` PRs.  Each PR requires at least two reviews, so by reviewing 3 good first issue PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 small issue PR) plus 1 extra review to help us all make up the deficit for people who submit small PRs and then drop off the team.
+Please review 3 `small` PRs.  Each PR requires at least two reviews, so by reviewing 3 small PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 small issue PR) plus 1 extra review to help us all make up the deficit for people who submit small PRs and then drop off the team.
 - [ ] reviewed 1st `small` pr
 - [ ] reviewed 2nd `small` pr
 - [ ] reviewed 3rd `small` pr
