@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, edited]
     branches:
-      - 'gh-pages'
+      - '*'
 
 jobs:
   Check-For-Linked-Issue:
