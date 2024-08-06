@@ -30,8 +30,9 @@ async function main({ g, c }) {
     console.log(`Found a keyword: \'${keyword}\'. Checking for legitimate linked issue...`);
 
     // Check if the linked issue exists in repo
+    // https://octokit.github.io/rest.js/v20#issues-get
     try {
-      const response = await github.rest.issues.get({
+      await github.rest.issues.get({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: linkNumber,
