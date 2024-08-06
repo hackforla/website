@@ -16,10 +16,10 @@ As a developer on the website team this issue will be your companion and a place
 
 ### Special Notes
 1. This issue will stay open for as long as you are on the Website team.  Use it as a place to indicate that you have completed a level as well as get instructions on how to progress. 
-2. Usually we don't want to you have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally)
+2. Usually we don't want to you have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally).
 3. The action items listed below should mostly be worked on in a sequential order. However, you don't have to wait on one if you can proceed with the others, For instance, you don't have to wait for attending a weekly meeting before setting up your dev environment.  
-4. During the General Hack for LA onboarding, you will be directed to fill out a form that will add you to the website team Google drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1
-5. The template that this issue is made from is a work in progress.  We will be updating it, and possibly updating your issue.  It works through section 17.  But after that its still a work in progress.  If any of the links don't work, please leave a note in the comments on this issue https://github.com/hackforla/website/issues/4944, and we will get you an update.
+4. During the General Hack for LA onboarding, you will be directed to fill out a form that will add you to the website team Google drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1.
+5. The template that this issue is made from is a work in progress.  We will be updating it, and possibly updating your issue.  It works through section 17.  But after that it's still a work in progress.  If any of the links don't work, please leave a note in the comments on this issue https://github.com/hackforla/website/issues/4944, and we will get you an update.
 
 <a name="table-of=contents"></a>
 ### Action Items
@@ -70,7 +70,7 @@ Sections
                [return to section 1](#section-1)
                ```
 - [ ] Register for Zoom meetings using the form at [Replace  with URL TO SLIDE WITH ZOOM REGISTRATION LINKS - this will get replaced by an automation that happens during onboarding, but in the meantime we will link to the slide]
-- [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
+- [ ] Add the `role: front end` or `role: back end/devOps` or both label(s) to this issue and remove the `role missing` label (gear in right side panel)
 - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
 - [ ] Sign up for a [Figma](https://Figma.com) account
 <a name="section-1-intake-self-test"></a>
@@ -135,7 +135,7 @@ Sections
 - [ ] Read section 2.1 - 2.2 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
 - [ ] Take the first issue from this prefiltered view of the project board (status: prioritized backlog, good first issues = [dev: GFI](https://github.com/orgs/hackforla/projects/86/views/2))
   - [ ] Follow the steps in section [2.4 Claiming an Issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#24-claiming-an-issue) to assign yourself your first issue.
-  - [ ] under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
+  - [ ] Move your issue from the Project Board's "Prioritized Backlog" column to the "In progress (actively working)" column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
   - [ ] Read [2.6 What to do when you need to stop mid issue](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#26-what-to-do-when-you-need-to-stop-mid-issue)
 - Once you self assign an issue, an automation will post a welcome message in a comment giving you additional guidance to manage your issue (includes how to provide estimates and progress reports there).  
    - [ ] On assignment, you will be prompted to estimate Availability and ETA.  
@@ -144,7 +144,7 @@ Sections
       >My estimated ETA for completing this issue: 
 
       Once you have done that on your good first issue, check this box, above, on this issue to let us know you have completed that task and understand how to do it in future.  
-          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the questions/review column, and add the label `ready for dev lead` and `help wanted`
+          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the "Questions/ In Review" column, and add the labels `ready for dev lead` and `Status: Help Wanted`
 - [ ] Post the following message in a comment below on this issue and then answer it.
     ```
     ### 4 - FINDING AND ASSIGNING YOUR FIRST GITHUB ISSUE update
@@ -346,7 +346,7 @@ Also, we want you on the Merge team.  This will ensure you are a competent devel
 #### 12 - PULL REQUEST REVIEWS - SMALL
 Now that you have your small PR merged, you are eligible to review [small PRs, Review Required](https://github.com/hackforla/website/pulls?q=is%3Aopen+is%3Apr+label%3A%22Complexity%3A+Small%22+review%3Arequired) from other people who are following in the same journey path as you.
 
-Please review 3 `small PRs.  Each PR requires at least two reviews, so by reviewing 3 good first issue PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 small issue PR) plus 1 extra review to help us all make up the deficit for people who submit small PRs and then drop off the team.
+Please review 3 `small` PRs.  Each PR requires at least two reviews, so by reviewing 3 good first issue PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 small issue PR) plus 1 extra review to help us all make up the deficit for people who submit small PRs and then drop off the team.
 - [ ] reviewed 1st `small` pr
 - [ ] reviewed 2nd `small` pr
 - [ ] reviewed 3rd `small` pr
@@ -478,7 +478,7 @@ Only work on this section if you needed a medium issue and one is not available 
 #### 15 - PULL REQUEST REVIEWS - Medium
 Now that you have your medium PR merged, you are eligible to review [medium PRs, Review Required](https://github.com/hackforla/website/pulls?q=is%3Aopen+is%3Apr+label%3A%22Complexity%3A+Medium%22+review%3Arequired) from other people who are following in the same journey path as you.
 
-Please review 3 `medium PRs.  Each PR requires at least two reviews, so by reviewing 3 medium PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 medium issue PR) plus 1 extra review to help us all make up the deficit for people who submit medium PRs and then drop off the team.
+Please review 3 `medium` PRs.  Each PR requires at least two reviews, so by reviewing 3 medium PRs you are repaying the effort that others did for you (provided 2 reviews for your 1 medium issue PR) plus 1 extra review to help us all make up the deficit for people who submit medium PRs and then drop off the team.
 - [ ] reviewed 1st `medium` pr
 - [ ] reviewed 2nd `medium` pr
 - [ ] reviewed 3rd `medium` pr
@@ -562,7 +562,7 @@ I  have finished sections 1-16 and am ready to have my activity reviewed by the 
 <details><summary>What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?</summary>
 
 - First, you should post the question or blocker as a comment on your assigned issue, so it can be easily referred to in the next bullet points.
-- Then, add the label "Status: Help Wanted" so other developers can see it and potentially help answer your question. In addition, you will still need to post a Slack message or bring it up in meeting so we know you need help; see below for how to do that.
+- Then, add the label `Status: Help Wanted` so other developers can see it and potentially help answer your question. In addition, you will still need to post a Slack message or bring it up in meeting so we know you need help; see below for how to do that.
 - Also, you can post your question on the hfla-site Slack channel and link the issue you're working on, so other developers can see and respond.
 - Lastly, you can add the issue to the <s>"Development team meeting discussion items"</s> "Questions/In Review" column of the Project Board so that it can be addressed in the next development meeting. Please bring it during the meeting that you need help.
 </details> 
