@@ -22,7 +22,7 @@ async function main({ g, c }) {
 
   if (!match) {
     console.log('PR does not have a properly linked issue. Posting comment...');
-    prComment = `@${prOwner}, this Pull Request is not linked to a valid issue. Above, on the first line of your PR, please link the number of the issue that you worked on using the format of 'Fixes #' + issue number, for example **_Fixes #9876_**.\n\nNote: Do **_not_** use the number of this PR.`;
+    prComment = `@${prOwner}, this Pull Request is not linked to a valid issue. Above, on the first line of your PR, please link the number of the issue that you worked on using the format of 'Fixes #' + issue number, for example:   **_Fixes #9876_**\n\nNote: Do **_not_** use the number of this PR.`;
   }
   
   else {
