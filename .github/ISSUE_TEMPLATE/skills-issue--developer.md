@@ -12,13 +12,13 @@ assignees: ''
 We are looking forward to having you on our team. Please make sure to attend the general Hack for LA onboarding to get the process started https://meetup.com/hackforla/events.
 
 ### Overview
-As a developer on the website team this issue will be your companion and a place to track your progress with the path we have set out for you.
+As a developer on the Website team this issue will be your companion and a place to track your progress with the path we have set out for you.
 
 ### Special Notes
 1. This issue will stay open for as long as you are on the Website team.  Use it as a place to indicate that you have completed a level as well as get instructions on how to progress. 
-2. Usually we don't want to you have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally).
-3. The action items listed below should mostly be worked on in a sequential order. However, you don't have to wait on one if you can proceed with the others, For instance, you don't have to wait for attending a weekly meeting before setting up your dev environment.  
-4. During the General Hack for LA onboarding, you will be directed to fill out a form that will add you to the website team Google drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1.
+2. Usually we don't want you to have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally).
+3. The action items listed below should mostly be worked on in a sequential order. However, you don't have to wait on one if you can proceed with the others. For instance, you don't have to wait for attending a weekly meeting before setting up your dev environment.  
+4. During the general Hack for LA onboarding, you will be directed to fill out a form that will add you to the Website team Google Drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1.
 5. The template that this issue is made from is a work in progress.  We will be updating it, and possibly updating your issue.  It works through section 17.  But after that it's still a work in progress.  If any of the links don't work, please leave a note in the comments on this issue https://github.com/hackforla/website/issues/4944, and we will get you an update.
 
 <a name="table-of=contents"></a>
@@ -49,7 +49,7 @@ Sections
 <a name="section-1"></a>
 #### 1 - JOINING THE WEBSITE TEAM.
 - [ ] Add yourself to the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) and [#hfla-site-pr](https://hackforla.slack.com/archives/C025ERFDM4Y) Slack channels
-- [ ] Self Assign this issue (gear in right side panel).  
+- [ ] Self assign this issue (gear in right side panel).  
   - [ ] If there are no gears in the right side panel of this issue (next to Assignees, Labels, Projects, Milestone, Development): 
      - [ ] check to see if you are logged in to GitHub (if you are not logged in you will see a sign in button on the top right of this browser tab).  
          - if you are not logged in
@@ -69,7 +69,7 @@ Sections
 
                [return to section 1](#section-1)
                ```
-- [ ] Register for Zoom meetings using the form at [Replace  with URL TO SLIDE WITH ZOOM REGISTRATION LINKS - this will get replaced by an automation that happens during onboarding, but in the meantime we will link to the slide]
+- [ ] Register for Zoom meetings using the forms in the [Register for Meetings slide](https://docs.google.com/presentation/d/1jg2UusQkY4APKf6Jn-q-pRDYZrae1DzI5cH76GXsMKQ/edit?pli=1#slide=id.g26ea7b29f52_0_14)
 - [ ] Add the `role: front end` or `role: back end/devOps` or both label(s) to this issue and remove the `role missing` label (gear in right side panel)
 - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
 - [ ] Sign up for a [Figma](https://Figma.com) account
