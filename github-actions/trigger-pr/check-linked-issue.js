@@ -1,5 +1,4 @@
 // Import modules
-const fs = require('fs');
 const postIssueComment = require('../utils/post-issue-comment');
 
 // Global variables
