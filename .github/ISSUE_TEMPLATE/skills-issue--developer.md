@@ -16,10 +16,10 @@ As a developer on the Website team this issue will be your companion and a place
 
 ### Special Notes
 1. This issue will stay open for as long as you are on the Website team.  Use it as a place to indicate that you have completed a level as well as get instructions on how to progress. 
-2. Usually we don't want you to have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally)
+2. Usually we don't want you to have more than one issue assigned to you at a time, this issue is the exception, because it is instructions on how to work on other issues.  Do not close this issue until you leave the team (please see to do items associated with leaving professionally).
 3. The action items listed below should mostly be worked on in a sequential order. However, you don't have to wait on one if you can proceed with the others. For instance, you don't have to wait for attending a weekly meeting before setting up your dev environment.  
-4. During the general Hack for LA onboarding, you will be directed to fill out a form that will add you to the Website team Google Drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1
-5. The template that this issue is made from is a work in progress.  We will be updating it, and possibly updating your issue.  It works through section 17.  But after that its still a work in progress.  If any of the links don't work, please leave a note in the comments on this issue https://github.com/hackforla/website/issues/4944, and we will get you an update.
+4. During the general Hack for LA onboarding, you will be directed to fill out a form that will add you to the Website team Google Drive and GitHub teams, and then you will add yourself to the roster.  If you have not done that yet, you will not be able to do the action items in section 1.
+5. The template that this issue is made from is a work in progress.  We will be updating it, and possibly updating your issue.  It works through section 17.  But after that it's still a work in progress.  If any of the links don't work, please leave a note in the comments on this issue https://github.com/hackforla/website/issues/4944, and we will get you an update.
 
 <a name="table-of=contents"></a>
 ### Action Items
