@@ -1,5 +1,5 @@
 ---
-name: Skills Issue
+name: 'Skills Issue: Developer'
 about: Guides all developers through their time on the website team
 title: 'Skills Issue: Developer: [replace brackets with your name]'
 labels: 'Complexity: Prework, Feature: Board/GitHub Maintenance, role missing, size:
