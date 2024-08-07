@@ -391,7 +391,7 @@ The best way to view the issues available is our [GitHub Project Board](https://
 <details>
   <summary><strong>Click here</strong> to see a Project Board visual</summary>
   <h4>Our GitHub project board</h4>
-  <img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg"/>
+  <img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg">
 </details>
 
 There are only 2 columns that you will be consistently referencing:
