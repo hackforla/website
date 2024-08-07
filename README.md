@@ -25,3 +25,5 @@ We require all Code Contributors to
 
 Thanks to the following people who have given us a star on our repo:
 [![Stargazers repo roster for @hackforla/website](https://reporoster.com/stars/hackforla/website)](https://github.com/hackforla/website/stargazers)
+John 
+V.
