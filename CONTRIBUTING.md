@@ -388,12 +388,12 @@ And the following **complexity** labels:
 The best way to view the issues available is our [GitHub Project Board](https://github.com/orgs/hackforla/projects/86)
 
 
-For the purpose of finding issues to work on, developers should focus on the `Prioritized Backlog` column, which contains all the available issues that are ready to be worked on. 
+For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that are ready to be worked on. 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.a Available issues for new members**
 
-We recommend you visit the `Prioritized Backlog` column in the filtered Project Board using the following links: [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2). These links will take you to a filtered Project Board and will only show issues with the `good first issue` label, including issues for both the front end and back end roles.
+To view "good first issues" in the Prioritized Backlog column of the Project Board, use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2).  Issues for both the front end and back end roles will be displayed. 
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
