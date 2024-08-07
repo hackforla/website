@@ -36,8 +36,8 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on)
       - [**2.3.a Available issues for new members**](#23a-available-issues-for-new-members)
       - [**2.3.b Available issues for returning members**](#23b-available-issues-for-returning-members)
-      - [**2.3.d Issues for Hacktoberfest contributors**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.c Issues for Hacktoberfest contributors**](#23d-issues-for-hacktoberfest-contributors)
+      - [**2.3.d What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -388,12 +388,12 @@ And the following **complexity** labels:
 The best way to view the issues available is our [GitHub Project Board](https://github.com/orgs/hackforla/projects/86)
 
 
-For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that are ready to be worked on. 
+For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that have been approved and prioritized. 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
 #### **2.3.a Available issues for new members**
 
-To view "good first issues" in the Prioritized Backlog column of the Project Board, use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2).  Issues for both the front end and back end roles will be displayed. 
+Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2).  to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
@@ -410,7 +410,7 @@ Please use the `Prioritized Backlog` column in the [filtered Project Board - **H
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
+#### **2.3.d What if you see bugs/errors that are not connected to an issue?**
 
 If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://www.hackforla.org/projects/website) and they will help you create an issue you can resolve.
 
