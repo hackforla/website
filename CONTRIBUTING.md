@@ -393,7 +393,7 @@ For the purpose of finding issues to work on, developers should focus exclusivel
 
 #### **2.3.a Available issues for new members**
 
-Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2).  to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
+Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2) to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
