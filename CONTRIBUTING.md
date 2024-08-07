@@ -929,7 +929,7 @@ In bullet point form, explain the changes you made in order to complete the acti
 
 ##### **iv. Complete pull request (4): Include images (if available)**
 
-in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
+In the dropdown example above [**Click here** to see pull request #2131 example (gif)](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so: 
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
