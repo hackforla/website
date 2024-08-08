@@ -305,7 +305,7 @@ docker-compose up
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
-The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
+The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
@@ -329,11 +329,11 @@ In order to work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Larg
 
 Progress through issues with increasing complexity in the following order:
   1. Good first issue (x2)
-  2. Small
-  3. Medium
+  2. Small 
+  3. Medium 
   4. Large
   5. Extra Large
-
+  
 The reasons for this progression are:
   * The issues start out as being prescriptive and become less so as you gain more experience by working through increasingly complex issues.
   * We are trying to teach you the team methodology through the issues themselves.
@@ -347,7 +347,7 @@ Also, please let the tech leadership team know (through a Slack message in the h
 
 Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
 * Setting up your local environment from a CONTRIBUTING file
-* Completing the above series of issues at least up to `Complexity: Large`
+* Completing the above series of issues at least up to `Complexity: Large` 
 * Resolving Merge Conflicts
 * Reviewing other people's Pull Requests
 * Create or improve documentation for other developers
@@ -371,7 +371,7 @@ We currently have issues with the following **role** labels:
 
 And the following **complexity** labels:
 
-* `good first issue`
+* `good first issue` 
 * `complexity: Small`
 * `complexity: Medium`
 * `complexity: Large`
@@ -522,9 +522,9 @@ git pull upstream gh-pages
 
 #### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
-If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a.
+If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
-Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.
+Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.  
 
 For example, if you create a new issue branch for [Update ‘Give’ image credit link and information - #2093](https://github.com/hackforla/website/issues/2093):
 
@@ -542,7 +542,7 @@ git checkout -b update-give-link-2093
 
 **Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
 
-We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit.
+We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit.  
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
@@ -619,7 +619,7 @@ git commit -m “insert message here”
   <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
 </details>
 
-Next, bring upstream changes into your topic branch. With your topic branch checked out, run:
+Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
 
 ```bash
 git pull upstream gh-pages
