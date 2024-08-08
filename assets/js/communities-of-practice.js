@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Make it plural form for the day
             const dayOfWeekPlural = dayOfWeek + 's';
 
-            return `${dayOfWeekPlural} ${formattedStartTime}-${formattedEndTime} PT`;
+            return `${dayOfWeekPlural} ${formattedStartTime} - ${formattedEndTime} PT`;
         } else {
             return "TBD";
         }
