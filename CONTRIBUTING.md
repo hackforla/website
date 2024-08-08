@@ -34,11 +34,10 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
     - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
     - [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on)
-      - [**2.3.a Available issues for new members (front end/back end)**](#23a-available-issues-for-new-members-front-endback-end)
-      - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
-      - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
-      - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.a Available issues for new members**](#23a-available-issues-for-new-members)
+      - [**2.3.b Available issues for returning members**](#23b-available-issues-for-returning-members)
+      - [**2.3.c Issues for Hacktoberfest contributors**](#23c-issues-for-hacktoberfest-contributors)
+      - [**2.3.d What if you see bugs/errors that are not connected to an issue?**](#23d-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -386,55 +385,35 @@ And the following **complexity** labels:
 
 ### **2.3 Where can I find GitHub issues to work on?**
 
-The best way to view the issues available is our [GitHub Project Board](https://github.com/hackforla/website/projects/7)
+The best way to view the issues available is our [GitHub Project Board](https://github.com/orgs/hackforla/projects/86)
 
-<details>
-  <summary><strong>Click here</strong> to see a Project Board visual</summary>
-  <h4>Our GitHub project board</h4>
-  <img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg">
-</details>
+<img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg">
 
-There are only 2 columns that you will be consistently referencing:
-
-1. `Onboarding infos/links` - Some helpful card information examples:
-  * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
-  * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
-  * Filters to show the project issues by a specific complexity:
-    * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
-    * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
-  * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
-
-2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
+For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that have been approved and prioritized. 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.a Available issues for new members (front end/back end)**
+#### **2.3.a Available issues for new members**
 
-We recommend you visit the `Prioritized Backlog` column in the filtered Project Board using the following links: [`good first issues` (front end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) and [`good first issues` (back end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22good+first+issue%22+label%3A%22role%3A+back+end%2Fdevops%22#column-7198257). These links will take you to a filtered Project Board and will only show issues with the `good first issue` label for both front end and back end respectively.
+Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2) to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.b Available issues for returning members (front end)**
+#### **2.3.b Available issues for returning members**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/orgs/hackforla/projects/86/views/3)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/orgs/hackforla/projects/86/views/4)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large and XLarge** label](https://github.com/orgs/hackforla/projects/86/views/5)
 
-#### **2.3.c Available issues for returning members (back end)**
+#### **2.3.c Issues for Hacktoberfest contributors**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
-
-#### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
-
-Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
+Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/orgs/hackforla/projects/86/views/4?filterQuery=status%3A%22Prioritized+backlog%22+label%3A%22hacktoberfest%22+label%3A%22role%3A+front+end%22+)
 
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
+#### **2.3.d What if you see bugs/errors that are not connected to an issue?**
 
-If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
+If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://www.hackforla.org/projects/website) and they will help you create an issue you can resolve.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
