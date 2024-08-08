@@ -933,7 +933,7 @@ in the gif example [near the top  of this part within the gif of completing pull
 </details>
 ```
 
-**Note:** Not all pull requests will have significant changes to our website. **Please do not any screenshots of VSCode** If you do not have the ability to notate changes, please remove the `<details>/<summary` and replace it with an explanation for no images like:
+**Note:** Not all pull requests will make visual changes to our website. **Please do not include screenshots from VSCode / other IDE**.  If your pull request does not make visual changes to our website, please remove the entire`<details>/<summary` section and replace it with a brief summary stating that there are no visual changes, for example:
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
