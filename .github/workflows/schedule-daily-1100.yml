@@ -8,7 +8,7 @@ on:
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'daras-cu/website' # change back to hackforla
     
     steps:
     - name: Checkout repository
