@@ -19,7 +19,7 @@ leadership:
       github: "https://github.com/jed-stewart"
     picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
-    github-handle:
+    github-handler:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U0411CAL13N"
