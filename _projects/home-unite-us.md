@@ -25,6 +25,7 @@ leadership:
       github: "https://github.com/mira-kine"
     picture: https://avatars.githubusercontent.com/mira-kine
   - name: Stephen Barkley-Yeung
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U041403GHEC"
