@@ -84,7 +84,7 @@ async function main({ g, c }, pbt) {
  * Finds issue numbers for all open & assigned issues, excluding issues labeled `Draft`, `ER`, `Epic`,
  * or `Dependency`, and returning issue numbers only if their status === "In progess (actively working"
  *
- * @Returns{Array} issueNums   - an array of open, assigned, and statused issue numbers
+ * @returns {Promise<Array>} issueNums     - an array of open, assigned, and statused issue numbers
  */
 async function getIssueNumsFromRepo() {
   const labelsToExclude = ['Draft', 'ER', 'Epic', 'Dependency'];
