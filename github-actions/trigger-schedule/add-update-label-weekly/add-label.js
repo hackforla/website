@@ -1,7 +1,6 @@
 /// Import modules
 const fs = require("fs");
 const https = require("https");
-const statusFieldIds = require("../../utils/_data/status-field-ids");
 const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
