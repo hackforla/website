@@ -35,7 +35,7 @@ function updateWinsFile(fileName, content, sha) {
     "sha": sha,
     "branch": "update-wins-data"
   }
-  const url = `https://api.github.com/repos/iancoopeprman/hackforla-website/contents/_data/external/${fileName}`;
+  const url = `https://api.github.com/repos/iancooperman/hackforla-website/contents/_data/external/${fileName}`;
   const response = putRequest_(url, ACCEPT_HEADER.Repository, payload);
 
   if (response === false ) {
