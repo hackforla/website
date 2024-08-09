@@ -55,6 +55,7 @@ leadership:
       github: 'https://github.com/bryannalim'
     picture: https://avatars.githubusercontent.com/bryannalim
   - name: Brian Dick
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U046AAZD309'
