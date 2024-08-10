@@ -123,7 +123,7 @@ async function getAllRepos() {
       }
       else{
         console.log("Error: retrying in " + 2**tries*2 + " minutes");
-        await delay(2**tries*12000);
+        await delay(2**tries*120000);
         tries++;
       }
     }
