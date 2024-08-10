@@ -103,23 +103,29 @@ function projectListToMap(projectList) {
  * @return {Array}     [Array of GitHub repository objects]
  */
 async function getAllRepos() {
-  let tries = 3;
+  let tries = 0;
   const delay = (length) => new Promise((resolve) => setTimeout(resolve, length));
 
-  for(let i = 0; i < tries; i++) {
+  while(tries < 4) {
     try {
       let allRepos = [];
-      let taggedRepos = await octokit.paginate(octokit.search.repos, {q: "topc:hack-for-la"});
+      let taggedRepos = await octokit.paginate(octokit.search.repos, {q: "topic:hack-for-la"});
       allRepos = taggedRepos;
-      for(let j = 0; j < untaggedRepoIds.length; j++){
+      for(let i = 0; i < untaggedRepoIds.length; i++){
         let untaggedRepo = await octokit.request("GET /repositories/:id", { id: untaggedRepoIds[j] });
         allRepos.push(untaggedRepo.data);
       }
       return allRepos;
     }
     catch (error){
-      console.log("Error: retrying in " + 2**i*2 + " minutes");
-      await delay(2**i*12000);
+      if(i === 3){
+        throw error;
+      }
+      else{
+        console.log("Error: retrying in " + 2**tries*2 + " minutes");
+        await delay(2**tries*12000);
+        tries++;
+      }
     }
   }
 }
