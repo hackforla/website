@@ -8,13 +8,13 @@ on:
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'daras-cu/website' # change back to hackforla
+    if: github.repository == 'hackforla/website'
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.HACKFORLA_PA_BOT_TOKEN }} # change back to HACKFORLA_BOT_PA_TOKEN
+        token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
     
     - name: GitHub Action for install npm dependencies
       uses: bahmutov/npm-install@v1

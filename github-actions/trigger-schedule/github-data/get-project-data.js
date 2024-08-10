@@ -107,7 +107,7 @@ async function getAllRepos() {
   const delay = (length) => new Promise((resolve) => setTimeout(resolve, length));
 
   while(tries < 4) {
-    try {
+    try{
       let allRepos = [];
       let taggedRepos = await octokit.paginate(octokit.search.repos, {q: "topic:hack-for-la"});
       allRepos = taggedRepos;
@@ -117,12 +117,11 @@ async function getAllRepos() {
       }
       return allRepos;
     }
-    catch (error){
+    catch(error){
       if(tries === 3){
         throw error;
       }
       else{
-        console.log("Error: retrying in " + 2**tries*2 + " minutes");
         await delay(2**tries*120000);
         tries++;
       }
