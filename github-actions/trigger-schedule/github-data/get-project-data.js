@@ -118,7 +118,7 @@ async function getAllRepos() {
       return allRepos;
     }
     catch (error){
-      if(i === 3){
+      if(tries === 3){
         throw error;
       }
       else{
