@@ -112,7 +112,7 @@ async function getAllRepos() {
       let taggedRepos = await octokit.paginate(octokit.search.repos, {q: "topic:hack-for-la"});
       allRepos = taggedRepos;
       for(let i = 0; i < untaggedRepoIds.length; i++){
-        let untaggedRepo = await octokit.request("GET /repositories/:id", { id: untaggedRepoIds[j] });
+        let untaggedRepo = await octokit.request("GET /repositories/:id", { id: untaggedRepoIds[i] });
         allRepos.push(untaggedRepo.data);
       }
       return allRepos;
