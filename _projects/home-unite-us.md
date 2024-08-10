@@ -55,6 +55,7 @@ leadership:
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
   - name: Bryce Lednar
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
