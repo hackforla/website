@@ -79,6 +79,7 @@ leadership:
       github: "https://github.com/itzflowa"
     picture: https://avatars.githubusercontent.com/itzflowa
   - name: Rachel Bracker
+    github-handle: 
     role: Design Lead
     links:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
