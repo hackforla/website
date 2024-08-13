@@ -894,23 +894,22 @@ Fixes #2093
 In bullet point form, explain the changes you made in order to complete the action items within your issue and why. [@adrianang](https://github.com/adrianang) provided the following summary in PR [Add Project to Website: Tech Work Experience #4911](https://github.com/hackforla/website/pull/4911):
 
 ```
+<!--  Important! Add the number of the issue you worked on, for example: 'Fixes #9876'   --> 
+Fixes #replace_this_text_with_the_issue_number
+
 ### What changes did you make?
-  - Created new markdown file for the Tech Work Experience Project (tech-work-experience.md)
-  - Added assets (project card image, project hero image, PDF overview) to their appropriate folders
+<!--  Note: add lines if needed, and remove any unused lines  -->  
+  - 
+  - 
+  - 
 
 ### Why did you make the changes (we will use this info to test)?
-  - To keep list of active HfLA projects on the website up-to-date
+<!--  Note: add lines if needed, and remove any unused lines  -->  
+  - 
+  - 
+  - 
 
-```
-
-**Note:** All the bullet points addressed the action items within that issue.
-
-##### **iv. Complete pull request (4): Include images (if available)**
-
-in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
-
-```
-### Screenshots of Proposed Changes Of The Website (if any, please do not include screenshots of code changes)
+### Screenshots of Proposed Changes To The Website (if any, please do not include screenshots of code changes)
 <!--  Notes: 
   - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
   - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
@@ -921,14 +920,14 @@ in the gif example [near the top  of this part within the gif of completing pull
 <details>
   <summary>Visuals before changes are applied</summary>
 
-  ![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
+  ![image](Paste_Your_Image_Link_Here_After_Attaching_Files)
 
 </details>
 
 <details>
   <summary>Visuals after changes are applied</summary>
 
-  ![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
+  ![image](Paste_Your_Image_Link_Here_After_Attaching_Files)
 
 </details>
 ```
