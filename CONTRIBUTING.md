@@ -616,7 +616,7 @@ git commit -m “insert message here”
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif">
 </details>
 
 Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
