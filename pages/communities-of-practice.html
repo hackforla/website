@@ -37,8 +37,7 @@ permalink: /communities-of-practice
             <p>{{ community[1].description}}</p>
             <p>
                 <strong>Meeting Times:</strong> 
-                {% if community[1].meeting-times %}{{ community[1].meeting-times }}{% else %}TBD{% endif %}<br> 
-            </p>
+                <span id="meeting-times-{{ community[1].name | replace: ' ', '-' | downcase }}"></span><br>            </p>
             <p>
                 <strong>Leadership Type:</strong> 
                 {% if community[1].leadership-type %}{{ community[1].leadership-type }}{% else %}TBD{% endif %}
@@ -96,3 +95,4 @@ permalink: /communities-of-practice
     {% endif %}
     {% endfor %}
 </section>
+<script type="module" src="assets/js/communities-of-practice.js"></script>
