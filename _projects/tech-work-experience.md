@@ -67,6 +67,7 @@ leadership:
       github: 'https://github.com/jessieliu1219'
     picture: https://avatars.githubusercontent.com/jessieliu1219
   - name: Minji Kim
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U02ST1L9WAH'
