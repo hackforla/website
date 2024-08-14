@@ -43,6 +43,7 @@ leadership:
       github: "https://github.com/K-Gumarama"
     picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031FLYS561"
