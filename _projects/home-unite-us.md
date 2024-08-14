@@ -97,6 +97,7 @@ leadership:
       github: "https://github.com/IndigoYinZ"
     picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Emily Eldar
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
