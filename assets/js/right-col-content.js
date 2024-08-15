@@ -100,7 +100,6 @@ function insertEventSchedule(eventData, page) {
    */
   function getDayString(date) {
     let new_date = new Date(date); 
-    let weekday = new_date.getDay();
     let options = { weekday: "long" };
     return new Intl.DateTimeFormat("en-US", options).format(new_date);
   }
