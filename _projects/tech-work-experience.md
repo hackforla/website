@@ -62,6 +62,7 @@ leadership:
       github: 'https://github.com/dialectic51'
     picture: https://avatars.githubusercontent.com/dialectic51
   - name: Jessie Liu
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U045YQFSGMB'
