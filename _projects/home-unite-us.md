@@ -70,6 +70,7 @@ leadership:
       github: "https://github.com/fourmatte"
     picture: https://avatars.githubusercontent.com/fourmatte
   - name: Eduardo De La Rosa
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U0430G2T4AC"
