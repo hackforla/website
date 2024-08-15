@@ -75,6 +75,7 @@ leadership:
       github: 'https://github.com/meetminji'
     picture: https://avatars.githubusercontent.com/meetminji
   - name: Natalie Aguilar
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04P6N186P9'
@@ -93,8 +94,8 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03AUUZT3E3'
       github: 'https://github.com/ericvennemeyer'
     picture: https://avatars.githubusercontent.com/ericvennemeyer
-  
-links: 
+
+links:
   - name: Github
     url: 'https://github.com/hackforla/internship'
   - name: Slack
@@ -104,12 +105,12 @@ links:
   - name: Overview
     url: '../assets/pdfs/Tech-Work-Experience-One-Sheet.pdf'
 looking:
-technologies: 
+technologies:
   - GitHub Pages
-location: 
+location:
   - Remote
 partner:
-tools: 
+tools:
   - Figma
   - Miro
   - Otter.ai
