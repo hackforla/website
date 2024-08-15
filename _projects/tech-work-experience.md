@@ -87,6 +87,7 @@ leadership:
       github: 'https://github.com/Dzotsen'
     picture: https://avatars.githubusercontent.com/Dzotsen
   - name: Eric Vennemeyer
+    github-handle:
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U03AUUZT3E3'
