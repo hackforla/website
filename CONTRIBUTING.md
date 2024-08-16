@@ -907,30 +907,33 @@ In bullet point form, explain the changes you made in order to complete the acti
 
 ##### **iv. Complete pull request (4): Include images (if available)**
 
-in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
+In the dropdown example above [**Click here** to see pull request #2131 example (gif)](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so: 
 
 ```
-### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
-<!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
-<!-- If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag -->
+### Screenshots of Proposed Changes Of The Website (if any, please do not include screenshots of code changes)
+<!--  Notes: 
+  - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
+  - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
+  - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
+  - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
+ --> 
 
 <details>
-<summary>Visuals before changes are applied</summary>
+  <summary>Visuals before changes are applied</summary>
 
-![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
-
+  ![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
 
 </details>
 
 <details>
-<summary>Visuals after changes are applied</summary>
+  <summary>Visuals after changes are applied</summary>
 
-![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
+  ![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
 
 </details>
 ```
 
-**Note:** Not all pull requests will have significant changes to our website. **Please do not any screenshots of VSCode** If you do not have the ability to notate changes, please remove the `<details>/<summary` and replace it with an explanation for no images like:
+**Note:** Not all pull requests will make visual changes to our website. **Please do not include screenshots from VSCode / other IDE**.  If your pull request does not make visual changes to our website, please remove the entire`<details>/<summary` section and replace it with a brief summary stating that there are no visual changes, for example:
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)

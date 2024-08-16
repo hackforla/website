@@ -25,6 +25,7 @@ leadership:
       github: "https://github.com/mira-kine"
     picture: https://avatars.githubusercontent.com/mira-kine
   - name: Stephen Barkley-Yeung
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U041403GHEC"
@@ -43,6 +44,7 @@ leadership:
       github: "https://github.com/K-Gumarama"
     picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031FLYS561"
@@ -55,6 +57,7 @@ leadership:
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
   - name: Bryce Lednar
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
@@ -67,6 +70,7 @@ leadership:
       github: "https://github.com/fourmatte"
     picture: https://avatars.githubusercontent.com/fourmatte
   - name: Eduardo De La Rosa
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U0430G2T4AC"
@@ -79,6 +83,7 @@ leadership:
       github: "https://github.com/itzflowa"
     picture: https://avatars.githubusercontent.com/itzflowa
   - name: Rachel Bracker
+    github-handle: 
     role: Design Lead
     links:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
@@ -97,6 +102,7 @@ leadership:
       github: "https://github.com/IndigoYinZ"
     picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Emily Eldar
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
