@@ -81,6 +81,7 @@ leadership:
       github: 'https://github.com/Natalie-Aguilar'
     picture: https://avatars.githubusercontent.com/Natalie-Aguilar
   - name: Nino Dzotsenidze
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04MUEYTECR'
