@@ -1,13 +1,22 @@
 name: Pull Request Trigger
 on:
-  pull_request_target:
-    types: [opened, closed]
+  pull_request:
+    types: [opened, edited]
     branches:
       - 'gh-pages'
 
 jobs:
-  # Placeholder action: Delete when new jobs added 
-  Hello-World:
+  Check-For-Linked-Issue:
     runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' || github.event.action == 'edited' }}
     steps:
-     - run: echo "🍺 This job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for keyword and issue number
+        id: check-for-keyword
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const script = require('./github-actions/trigger-pr/check-linked-issue.js')
+            script({g: github, c: context})
