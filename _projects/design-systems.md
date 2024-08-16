@@ -67,12 +67,14 @@ leadership:
       github: 'https://github.com/EvaKw'
     picture: 'https://avatars.githubusercontent.com/EvaKw'
   - name: Zeynep Aslan
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04HDCMD90A'
       github: 'https://github.com/zeaslan'
     picture: 'https://avatars.githubusercontent.com/zeaslan'
   - name: Gala Stojnic
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03307LRD2A'
@@ -86,24 +88,28 @@ leadership:
       github: 'https://github.com/elimarietta'
     picture: 'https://avatars.githubusercontent.com/elimarietta'
   - name: Asad Haider
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04H6Q4K5AS'
       github: 'https://github.com/TobyShanti'
     picture: 'https://avatars.githubusercontent.com/TobyShanti'
   - name: Liz Zheng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04GYRW4DAT'
       github: 'https://github.com/liz-zheng'
     picture: 'https://avatars.githubusercontent.com/liz-zheng'
   - name: Michael Morgan
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
       github: 'https://github.com/mklmrgn'
     picture: 'https://avatars.githubusercontent.com/mklmrgn'
   - name: Robert Schacht
+    github-handle:
     role: Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U02R5GG3T09'
