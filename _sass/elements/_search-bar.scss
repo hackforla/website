@@ -10,6 +10,18 @@
     margin-bottom: 10px;
 }
 
+form#search-bar {
+    position: sticky;
+    padding: 10px;
+    top: 60px; 
+    z-index: 10;
+}
+// // Ensure search-bar does not pin on mobile
+@media #{$bp-below-tablet} {
+    form#search-bar {
+        position: static;
+    }
+}
 //Styles to override the styles from _forms.scss
 #search{
     padding-right: 0px;

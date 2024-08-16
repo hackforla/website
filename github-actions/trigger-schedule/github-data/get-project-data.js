@@ -1,15 +1,15 @@
-const core = require("@actions/core");
-const fs = require("fs");
-const { Octokit } = require("@octokit/rest");
-const trueContributorsMixin = require("true-github-contributors");
-const _ = require('lodash');
+// @octokit/rest revised from v20.0.1 to v21.0.0 suggested
+// by dependabot. *** Package v21.0.0 is now ESM ***
+import fs from "fs";
+import { Octokit } from "@octokit/rest";
+import trueContributorsMixin from "true-github-contributors";
+import _ from "lodash";
 
 // Record the time this script started running so it can be stored later
 const dateRan = new Date();
 // Hard coded list of untagged repos we would like to fetch data on
 // 79977929 -> https://github.com/hunterowens/workfor.la
-// 277577906 -> https://github.com/codeforamerica/brigade-playbook
-const untaggedRepoIds = [79977929, 277577906];
+const untaggedRepoIds = [79977929];
 
 
 // Extend Octokit with new contributor endpoints and construct instance of class with API token 

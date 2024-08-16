@@ -7,6 +7,7 @@ alt: 'LA TDM Calculator'
 image-hero: /assets/images/projects/TDM-calculator-hero.png
 leadership:
   - name: Bonnie Wolfe
+    github-handle:
     role: Agile Coach / Primary Stakeholder Relationship Manager
     links:
       slack: 'https://hackforla.slack.com/team/DE1HK083W'
@@ -25,6 +26,7 @@ leadership:
       github: 'https://github.com/Biuwa'
     picture: https://avatars.githubusercontent.com/Biuwa
   - name: Anousha Shadrach
+    github-handle:
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'

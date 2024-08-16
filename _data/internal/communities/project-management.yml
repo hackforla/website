@@ -9,8 +9,6 @@ location:
 image: /assets/images/communities-of-practice/product.jpg
 alt: 'Several people around a small table listen intently as one person speaks.'
 
-meeting-times: Fridays 12:00-1:00 pm PT
-
 leadership-type: Mentor Led
 leadership:
   - name: Bonnie Wolfe
@@ -23,7 +21,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C010LNXH2JY/details/
-  - name: Github
+  - name: GitHub
     url: https://github.com/hackforla/product-management
 
 recruiting-message:
