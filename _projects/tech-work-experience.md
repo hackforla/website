@@ -43,6 +43,7 @@ leadership:
       github: 'https://github.com/AndrewSalvatore'
     picture: https://avatars.githubusercontent.com/AndrewSalvatore
   - name: Angela Darosh
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03J4ENS09F'
