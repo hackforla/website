@@ -77,6 +77,7 @@ leadership:
       github: "https://github.com/edela0015"
     picture: https://avatars.githubusercontent.com/edela0015
   - name: Flora Osmond
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U047ZT4GP5E"
