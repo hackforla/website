@@ -60,8 +60,16 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     const isAssignedToAnotherIssues = await assignedToAnotherIssue();
 
     // Check if developer is allowed to work on complexity level of the issue
-    // If false, stop here. checkComplexityEligibility script will perform remainder tasks and post comment
-    const issueComplexityPermitted = await checkComplexityEligibility(github, context);
+    const issueComplexityPermitted = await checkComplexityEligibility(
+      github,
+      context,
+      isAdminOrMerge,
+      PROJECT_ID,
+      STATUS_FIELD_ID,
+      statusValues
+    );
+    // If complexity not permitted, stop here, check-complexity-eligibility.js 
+    // script will perform remaining tasks and post comment
     if (issueComplexityPermitted === false) {
       console.log("Issue of this complexity is not permitted.");
       return;
