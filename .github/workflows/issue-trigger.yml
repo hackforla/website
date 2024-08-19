@@ -15,7 +15,7 @@ jobs:
         id: check-labels
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+          github-token: ${{ secrets.NOTIFY_SAME_COMPLEXITY_ISSUES_4442 }} # TODO: Change back to secrets.HACKFORLA_GRAPHQL_TOKEN
           script: |
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
             const checkLabels = script({g: github, c: context})
@@ -28,7 +28,7 @@ jobs:
           username: ${{ github.actor }}
           organization: 'hackforla'
           team: 'website-write'
-          GITHUB_TOKEN: ${{ secrets.TEAMS }}
+          GITHUB_TOKEN: ${{ secrets.NOTIFY_SAME_COMPLEXITY_ISSUES_4442 }} # TODO: Change back to secrets.TEAMS
           
       # Posts comment only if user is team member (based on the previous action's result)
       - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
@@ -63,7 +63,7 @@ jobs:
         id: assigned-comment
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+          github-token: ${{ secrets.NOTIFY_SAME_COMPLEXITY_ISSUES_4442 }} # TODO: Change back to secrets.HACKFORLA_GRAPHQL_TOKEN
           script: |
             const results = ${{ steps.check-labels-prelim.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-preliminary-comment/preliminary-update-comment.js')
