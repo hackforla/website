@@ -221,32 +221,22 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
  * @param {Array} labels       - an array containing the labels to remove (captures the rest of the parameters)
  */
 async function removeLabels(issueNum, ...labels) {
-  // Check if label exists on issue before attempting to remove it
-  let currLabels = [];
-  let labelData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/labels', {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNum,
-  });
-  for (let currLabel in labelData.data) {
-    currLabels.push(currLabel.name);
-  }
-
   for (let label of labels) {
-    if (label in currLabels) {
-       try {
-        await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          issue_number: issueNum,
-          name: label,
-        });
-        console.log(`Issue #${issueNum}: removed "${label}" label`);
-      } catch (err) {
-        console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
+    try {
+      // https://docs.github.com/en/rest/issues/labels?apiVersion=2022-11-28#remove-a-label-from-an-issue
+      await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: issueNum,
+        name: label,
+      });
+      console.log(`  '${label}' label has been removed`);
+    } catch (err) {
+      if (err.status === 404) {
+        console.log(`  '${label}' label not found, no need to remove`);
+      } else {
+        console.error(`Function failed to remove labels. Please refer to the error below: \n `);
       }
-    } else {
-      console.log(`  '${label}' label not found, no need to remove`);
     }
   }
 }
