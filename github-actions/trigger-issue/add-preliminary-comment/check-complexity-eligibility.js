@@ -1,6 +1,7 @@
 const fs = require('fs');
 const formatComment = require('../../utils/format-comment');
 const postComment = require('../../utils/post-issue-comment');
+const { setTimeout } = require('timers/promises');
 
 /**
 * Checks if an assignee is eligible to be assigned an issue based on their
@@ -23,15 +24,15 @@ async function checkComplexityEligibility(
   STATUS_FIELD_ID,
   statusValues
 ) {
-  const currentIssue = formatCurrentIssue(
-    context.payload.issue,
-    context.payload.sender
-  );
-
   // If assignee is an admin or merge team member, skip complexity check
   if (isAdminOrMerge) {
     return true;
   }
+
+  const currentIssue = formatCurrentIssue(
+    context.payload.issue,
+    context.payload.sender
+  );
 
   // Fetch the current issue's project item ID and status name
   const { projectItemId, statusName } = await fetchProjectItemInfo(
@@ -445,16 +446,20 @@ async function handleIssueComplexityNotPermitted(
         issue_number: preWorkIssue.issueNum,
         state: 'open',
       });
-    }
 
-    // Change Pre-work status to In Progress
-    await updateItemStatus(
-      github,
-      preWorkIssueProjectItemId,
-      statusValues.get('In progress (actively working)'),
-      PROJECT_ID,
-      STATUS_FIELD_ID
-    );
+      // Brief delay allows Project automation to move Prework to New Issue Approval
+      // before script moves it to In Progress, ensuring correct final status 
+      await setTimeout(5000);
+
+      // Change Pre-work status to In Progress
+      await updateItemStatus(
+        github,
+        preWorkIssueProjectItemId,
+        statusValues.get('In progress (actively working)'),
+        PROJECT_ID,
+        STATUS_FIELD_ID
+      );
+    }
 
     const commentBody = formatComplexityReminderComment(
       currentIssueNum,
