@@ -136,13 +136,13 @@ async function fetchProjectItemInfo(issueNum, github, context) {
       query ($owner: String!, $repo:String!, $issueNum: Int!) {
         repository(owner: $owner, name: $repo) {
           issue(number: $issueNum) {
-            projectItems(first: 1) {
+            id
+            projectItems(first: 100) {
               nodes {
                 id
-                fieldValues(first: 10) {
+                fieldValues(first: 100) {
                   nodes {
                     ... on ProjectV2ItemFieldSingleSelectValue {
-                      field { name }
                       name
                     }
                   }
@@ -154,23 +154,26 @@ async function fetchProjectItemInfo(issueNum, github, context) {
       }
     `;
 
-    const { owner, repo } = context.repo;
-    const variables = { owner, repo, issueNum };
+    const variables = {
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issueNum: issueNum
+    };
 
-    const { repository } = await github.graphql(query, variables);
-    const projectItem = repository.issue.projectItems.nodes[0];
+    const response = await github.graphql(query, variables);
 
-    if (!projectItem) {
-      throw new Error(`No project item found for issue #${issueNum}`);
-    }
+    // Extract the list of project items associated with the issue
+    const projectItems = response.repository.issue.projectItems.nodes;
+    
+    // Since there is always one item associated with the issue,
+    // directly get the item's ID from the first index
+    const projectItemId = projectItems[0].id;
 
-    const projectItemId = projectItem.id;
-    const statusField = projectItems.fieldValues.nodes
-      .find(item => item.field && item.field.name === 'Status');
-    const statusName = statusField ? statusField.name : null;
+    // Iterate through the field values of the first project item
+    // and find the node that contains the 'name' property, then get its 'name' value
+    const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
 
     return { projectItemId, statusName };
-
   } catch (error) {
     throw new Error(
       `Error fetching project item info for issue #${issueNum}: ${error.message}`
