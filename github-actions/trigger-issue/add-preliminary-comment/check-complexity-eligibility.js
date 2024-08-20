@@ -432,7 +432,7 @@ async function handleIssueComplexityNotPermitted(
     await updateItemStatus(
       github,
       projectItemId,
-      statusValues.get(New_Issue_Approval),
+      statusValues.get('New Issue Approval'),
       PROJECT_ID,
       STATUS_FIELD_ID
     );
@@ -451,7 +451,7 @@ async function handleIssueComplexityNotPermitted(
     await updateItemStatus(
       github,
       preWorkIssueProjectItemId,
-      statusValues.get(In_Progress),
+      statusValues.get('In progress (actively working)'),
       PROJECT_ID,
       STATUS_FIELD_ID
     );
