@@ -139,10 +139,10 @@ async function fetchProjectItemInfo(issueNum, github, context) {
             projectItems(first: 1) {
               nodes {
                 id
-                fieldValues(first: 1) {
+                fieldValues(first: 10) {
                   nodes {
-                    field { name }
                     ... on ProjectV2ItemFieldSingleSelectValue {
+                      field { name }
                       name
                     }
                   }
@@ -160,10 +160,14 @@ async function fetchProjectItemInfo(issueNum, github, context) {
     const { repository } = await github.graphql(query, variables);
     const projectItem = repository.issue.projectItems.nodes[0];
 
+    if (!projectItem) {
+      throw new Error(`No project item found for issue #${issueNum}`);
+    }
+
     const projectItemId = projectItem.id;
     const statusField = projectItems.fieldValues.nodes
-      .find(item => item.field.name === 'Status');
-    const statusName = statusField?.name;
+      .find(item => item.field && item.field.name === 'Status');
+    const statusName = statusField ? statusField.name : null;
 
     return { projectItemId, statusName };
 
