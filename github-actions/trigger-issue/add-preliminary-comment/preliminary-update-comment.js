@@ -105,6 +105,13 @@ async function main({ g, c }, { shouldPost, issueNum }) {
  * @returns {Boolean} - return true if developer is member of Admin/Merge team, false otherwise
  */
 async function memberOfAdminOrMergeTeam() {
+  // Check if this is your personal testing repository 
+  // TODO: Remove this condition before merging to main repo
+  if (context.repo.owner === 'jphamtv' && context.repo.repo === 'hackforla-website') {
+    console.log('Testing environment detected. Mocking team membership.');
+    return false; // Assume the user is always a member for testing
+  }
+
   try {
     // Get all members in Admin Team
     const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
