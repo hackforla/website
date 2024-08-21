@@ -1,6 +1,7 @@
 /// Import modules
 const fs = require("fs");
 const https = require("https");
+const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
 
@@ -33,7 +34,7 @@ var projectBoardToken;
  * last update was not between 7 to 14 days ago, apply the appropriate label and request an update. However, if the assignee has submitted 
  * a PR that will fix the issue regardless of when, all update-related labels should be removed.
 
- * @param {Object} g                   - github object from actions/github-script
+ * @param {Object} g                   - GitHub object from actions/github-script
  * @param {Object} c                   - context object from actions/github-script
  * @param {String} projectBoardToken   - the Personal Access Token for the action
  */
@@ -80,12 +81,13 @@ async function main({ g, c }, pbt) {
 
 
 /**
- * Function that returns issue numbers of all issues in a repo
+ * Finds issue numbers for all open & assigned issues, excluding issues labeled `Draft`, `ER`, `Epic`,
+ * or `Dependency`, and returning issue numbers only if their status === "In progess (actively working"
  *
- * @returns an Array of issue numbers
+ * @returns {Promise<Array>} issueNums     - an array of open, assigned, and statused issue numbers
  */
 async function getIssueNumsFromRepo() {
-  const labelsToExclude = ['Draft', 'ER', 'Epic'];
+  const labelsToExclude = ['Draft', 'ER', 'Epic', 'Dependency'];
   let issueNums = [];
   let pageNum = 1;
   let result = [];
@@ -94,6 +96,7 @@ async function getIssueNumsFromRepo() {
     const issueData = await github.request('GET /repos/{owner}/{repo}/issues', {
       owner: context.repo.owner,
       repo: context.repo.repo,
+      assignee: '*',
       per_page: 100,
       page: pageNum,
     });
@@ -106,17 +109,17 @@ async function getIssueNumsFromRepo() {
     }
   }
   
-  for (let issueNum of result) {
-    if (issueNum.number) {
-      let issueLabels = [];
-      for (let label of issueNum.labels) {
-        issueLabels.push(label.name);
-      }
-      if (!issueLabels.some(item => labelsToExclude.includes(item))) {
-        issueNums.push(issueNum.number);
-      } else {
-        console.log(`Excluding Issue #${issueNum.number} because of label`);
-      }
+  for (let { number, labels } of result) {
+    if (!number) continue;
+
+    // Exclude any issues that have excluded labels
+    const issueLabels = labels.map((label) => label.name);
+    if (issueLabels.some((item) => labelsToExclude.includes(item))) continue;
+
+    // For remaining issues, check if status === "In progress (actively working)"
+    const { statusName } = await queryIssueInfo(github, context, number);
+    if (statusName === "In progress (actively working)") {
+      issueNums.push(number);
     }
   }
   return issueNums;

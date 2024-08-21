@@ -55,12 +55,14 @@ leadership:
       github: 'https://github.com/bryannalim'
     picture: https://avatars.githubusercontent.com/bryannalim
   - name: Brian Dick
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U046AAZD309'
       github: 'https://github.com/dialectic51'
     picture: https://avatars.githubusercontent.com/dialectic51
   - name: Jessie Liu
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U045YQFSGMB'
@@ -86,6 +88,7 @@ leadership:
       github: 'https://github.com/Dzotsen'
     picture: https://avatars.githubusercontent.com/Dzotsen
   - name: Eric Vennemeyer
+    github-handle:
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U03AUUZT3E3'

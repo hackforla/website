@@ -51,7 +51,7 @@ function insertEventSchedule(eventData, page) {
             let eventHtml;
             // insert the correct html for the current page
             if (page === "events") {
-                eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}</li>`;
+                eventHtml = `<li>${event.start} - ${event.end} </li><li><a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName}${event.dsc.length > 0 ? "*" : ""}</li>`;
             } else {
               if(event.dsc != "") event.meetingName += ", ";
                 eventHtml = `<li>${event.start} - ${event.end} <a href="${event.hflaWebsiteUrl}">${event.name}</a> ${event.meetingName} ${event.dsc}</li>`;
