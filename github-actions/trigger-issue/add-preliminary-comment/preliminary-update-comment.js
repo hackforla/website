@@ -11,12 +11,10 @@ let github;
 let context;
 let assignee;
 
-// const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
-const PROJECT_ID = "PVT_kwHOAEuQws4Aj8wZ";
+const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
 
 // The field containing all statuses
-// const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
-const STATUS_FIELD_ID = "PVTSSF_lAHOAEuQws4Aj8wZzgcO3ho";
+const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
 
 const Emergent_Requests = "Emergent Requests";
 const New_Issue_Approval = "New Issue Approval";
@@ -25,11 +23,9 @@ const In_Progress = "In progress (actively working)";
 
 const statusValues = new Map([
   [Emergent_Requests, "d468e876"],
-  // [New_Issue_Approval, "83187325"],
-  [New_Issue_Approval, "8c668cb7"],
+  [New_Issue_Approval, "83187325"],
   [Prioritized_Backlog, "434304a8"],
-  // [In_Progress, "9a878e9c"],
-  [In_Progress, "39562a5a"],
+  [In_Progress, "9a878e9c"],
 ]);
 
 const READY_FOR_DEV_LABEL = "ready for dev lead";
@@ -105,13 +101,6 @@ async function main({ g, c }, { shouldPost, issueNum }) {
  * @returns {Boolean} - return true if developer is member of Admin/Merge team, false otherwise
  */
 async function memberOfAdminOrMergeTeam() {
-  // Check if this is your personal testing repository 
-  // TODO: Remove this condition before merging to main repo
-  if (context.repo.owner === 'jphamtv' && context.repo.repo === 'hackforla-website') {
-    console.log('Testing environment detected. Mocking team membership.');
-    return false; // Assume the user is always a member for testing
-  }
-
   try {
     // Get all members in Admin Team
     const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
