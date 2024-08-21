@@ -37,6 +37,7 @@ leadership:
       github: 'https://github.com/bradyse'
     picture: https://avatars.githubusercontent.com/bradyse
   - name: Andrew Salvatore
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04K5R2A7L2'
