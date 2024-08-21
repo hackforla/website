@@ -823,7 +823,7 @@ git push --set-upstream origin update-give-link-2093
   <summary><strong>Click here</strong> to see pull request markdown template</summary>
 
   ```
-  <!--  Important! Add the number of the issue you worked on, for example: 'Fixes #9876'   --> 
+  <!--  Important! Add the number of the issue you worked on  --> 
   Fixes #replace_this_text_with_the_issue_number
 
   ### What changes did you make?
