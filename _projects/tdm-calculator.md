@@ -34,6 +34,7 @@ leadership:
       github: 'https://github.com/Noushie'
     picture: https://avatars.githubusercontent.com/Noushie
   - name: Jane He
+    github-handle:
     role: Lead, UX Research
     links:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
