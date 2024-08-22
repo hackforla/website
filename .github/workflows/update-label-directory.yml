@@ -27,8 +27,8 @@ jobs:
             const labelPacket = script({g: github, c: context})
             return labelPacket
 
-      # Note the the URL below matches the **current deployment URL** of the Apps Script associated
-      # with the 'Source of Truth' Label spreadsheet. (If something is broken, check this link first)
+      # Note the the URL below matches the **current deployment URL** of the Apps Script associated with the 'Source of Truth' 
+      # Label spreadsheet and maintained by `hackforla-bot@hackforla.org`. (If something is broken, check this link first)
       - name: Send POST request to Google Apps Script
         env:
           label_edits: ${{ steps.update-label-directory.outputs.result }}
