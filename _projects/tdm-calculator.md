@@ -20,6 +20,7 @@ leadership:
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
   - name: Ebi Imafidon
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
