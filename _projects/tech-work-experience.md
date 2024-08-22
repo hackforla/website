@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/doctorsandy'
     picture: https://avatars.githubusercontent.com/doctorsandy
   - name: Sara Brady
+    github-handle:
     role: UX Research Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0371AXAVUN'
