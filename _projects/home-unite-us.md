@@ -64,6 +64,7 @@ leadership:
       github: "https://github.com/brycelednar"
     picture: https://avatars.githubusercontent.com/brycelednar
   - name: Farah Khan
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U01JC8VEKMH"
