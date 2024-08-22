@@ -31,18 +31,21 @@ leadership:
       github: 'https://github.com/doctorsandy'
     picture: https://avatars.githubusercontent.com/doctorsandy
   - name: Sara Brady
+    github-handle:
     role: UX Research Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0371AXAVUN'
       github: 'https://github.com/bradyse'
     picture: https://avatars.githubusercontent.com/bradyse
   - name: Andrew Salvatore
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04K5R2A7L2'
       github: 'https://github.com/AndrewSalvatore'
     picture: https://avatars.githubusercontent.com/AndrewSalvatore
   - name: Angela Darosh
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03J4ENS09F'
