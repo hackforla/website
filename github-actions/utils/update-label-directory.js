@@ -15,38 +15,40 @@ var context;
  * @returns {Object}
  */
 async function main({ g, c }) {
-  
+
   github = g;
   context = c;
 
   var labelId = context.payload.label.id;
   var labelName = context.payload.label.name;
   var labelAction = context.payload.action;
+  let labelKey = '';
+  let actionAddOn = '';
+  let message = '';
 
-  
   // If label 'edited' but changes do not include 'name', label directory is not updated and workflow exits
-  if (context.payload.action === 'edited' && !context.payload.changes.name) {
+  if (labelAction === 'edited' && !context.payload.changes.name) {
     console.log(`${breakLine}\n`);
     console.log(`What was changed:`);
     console.log(context.payload.changes);
     console.log(`\n${breakLine}\n`);
-    console.log(`The label edits do not affect the JSON file; file will not be updated!`);
-    return {};
+    labelAction = "no update";
+    labelKey = "n/a";
+    message = `Edit to description and/or color only, no updates to JSON or SoT`;
+    console.log(message)
+    return {labelAction, labelKey, labelName, labelId, message,};
   } 
-  
 
   // Otherwise, retrieve label directory 
   var rawData = fs.readFileSync(filepath, 'utf8');
   var data = JSON.parse(rawData);
-  let labelKey = '';
-  let actionAddOn = '';
 
   // Initial information to log
   console.log(`${breakLine}\n`);
   console.log(`Label reference info:`);
   console.log(context.payload.label);
   console.log(`\n${breakLine}\n`);
-  
+
   // If label 'deleted', check for 'labelId' in label directory and if found return 'labelKey' 
   if (labelAction === 'deleted') {
     labelKey = cycleThroughDirectory(data, Number(labelId));
@@ -72,7 +74,7 @@ async function main({ g, c }) {
       }
     }
   }
- 
+
   // If 'edited' check for 'labelId' in label directory and if found return 'labelKey' 
   if (labelAction === 'edited' ) {
     let prevName = context.payload.changes.name.from;
@@ -100,7 +102,7 @@ async function main({ g, c }) {
   }
 
   // Final step is to return label data packet to workflow
-  console.log(`\nSending  Label Object  Google Apps Script / Sheets file`);
+  console.log(`\nSending  Label Object  to Google Apps Script / Sheets file`);
   labelAction += actionAddOn;
   return { labelAction, labelKey, labelName, labelId, message };
 }
@@ -144,7 +146,7 @@ function createInitiallabelKey(data, labelName) {
 function writeToJsonFile(data, labelKey, labelId, labelName) {
   try {
     data[labelKey] = [labelName, Number(labelId)];
-    console.log(`\nSuccess writing  Label Object  to JSON:\n   { "${labelKey}": [ "${labelName}", "${labelId}" ] }`);
+    console.log(`\nStaging  Label Object  to JSON:\n   { "${labelKey}": [ "${labelName}", "${labelId}" ] }`);
   } catch (error) {
     console.log(error);
   }
