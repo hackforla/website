@@ -109,9 +109,12 @@ async function getIssueNumsFromRepo() {
     }
   }
   
-  for (let { number, labels } of result) {
+  for (let { number, labels, pull_request } of result) {
     if (!number) continue;
 
+    // Exclude any pull requests that were found
+    if (pull_request != undefined) continue;
+  
     // Exclude any issues that have excluded labels
     const issueLabels = labels.map((label) => label.name);
     if (issueLabels.some((item) => labelsToExclude.includes(item))) continue;
