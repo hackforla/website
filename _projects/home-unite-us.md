@@ -7,7 +7,7 @@ alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
   - name: Tyler Thome
-    github-handle: 
+    github-handle: tylerthome
     role: HUU Tech Lead
     links:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
