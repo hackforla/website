@@ -35,8 +35,8 @@ async function main({ g, c }) {
     labelAction = "no update";
     labelKey = "n/a";
     message = `Edit to description and/or color only, no updates to JSON or SoT`;
-    console.log(message)
-    return {labelAction, labelKey, labelName, labelId, message,};
+    console.log(message);
+    return {labelAction, labelKey, labelName, labelId, message};
   } 
 
   // Otherwise, retrieve label directory 
