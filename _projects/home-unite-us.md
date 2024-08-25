@@ -92,7 +92,7 @@ leadership:
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
   - name: Samuel Kowitch
-    github: 
+    github-handle: 
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U04GYSFB98X"
