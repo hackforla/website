@@ -1,7 +1,7 @@
 version: "3"
 services:
   hfla_site:
-    image: hackforlaops/ghpages:latest
+    image: hackforlaops/ghpages:testing
     container_name: hfla_site
     command: >
       sh -c "jekyll clean &&
