@@ -462,7 +462,7 @@ Only work on this section if you needed a medium issue and one is not available 
       - [ ] add the label `ready for merge team`
       - [ ] there will likely be some back and forth with the merge team, until your issue(s)s are approved and a `ready for prioritization` label is added.  When the new issue(s) are approved, the issue making issue will be closed and you are welcome to move onto the next checkbox
 - [ ] Check this prefiltered view of the project board (status: prioritized backlog, medium issues = [dev: medium](https://github.com/orgs/hackforla/projects/86/views/4)
-   - If there still is no medium issue to work in the in progress column.
+   - If there still is no medium issue to work in the Priortized Backlog column.
      - [ ] Leave the following message as a comment one of the Medium issues you just created and when the issue is prioritized we will assign the issue to you if there are no other medium issues you have picked up.
         ```
         - I created this issue, so I could have a medium issue to work on.  Please assign to me once approved.  My Skills Issue is #
