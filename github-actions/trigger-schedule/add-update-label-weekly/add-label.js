@@ -260,7 +260,7 @@ async function addLabels(issueNum, ...labels) {
       issue_number: issueNum,
       labels: labels,
     });
-    console.log(`Issue #${issueNum}: Added these labels: '${labels}'`);
+    console.log(`  '${labels}' label has been added`);
     // If an error is found, the rest of the script does not stop.
   } catch (err) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
