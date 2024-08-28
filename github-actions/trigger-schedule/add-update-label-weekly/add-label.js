@@ -238,7 +238,7 @@ async function removeLabels(issueNum, ...labels) {
       if (err.status === 404) {
         console.log(`  '${label}' label not found, no need to remove`);
       } else {
-        console.error(`Function failed to remove labels. Please refer to the error below: \n `);
+        console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
       }
     }
   }
