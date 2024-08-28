@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/priyatalwar'
     picture: https://avatars.githubusercontent.com/priyatalwar
   - name: Joshua Fishman
+    github-handle:
     role: Product Manager - Engineering
     links:
       slack: 'https://hackforla.slack.com/team/U041G3Y141W'
@@ -85,6 +86,7 @@ leadership:
       github: 'https://github.com/Natalie-Aguilar'
     picture: https://avatars.githubusercontent.com/Natalie-Aguilar
   - name: Nino Dzotsenidze
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04MUEYTECR'

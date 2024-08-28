@@ -14,6 +14,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: John Darragh
+    github-handle:
     role: Architect
     links:
       slack: 'https://hackforla.slack.com/team/UFLDX9V19'
@@ -34,6 +35,7 @@ leadership:
       github: 'https://github.com/Noushie'
     picture: https://avatars.githubusercontent.com/Noushie
   - name: Jane He
+    github-handle:
     role: Lead, UX Research
     links:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
