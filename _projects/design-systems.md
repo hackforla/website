@@ -104,6 +104,7 @@ leadership:
       github: 'https://github.com/mklmrgn'
     picture: 'https://avatars.githubusercontent.com/mklmrgn'
   - name: Robert Schacht
+    github-handle:
     role: Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U02R5GG3T09'
