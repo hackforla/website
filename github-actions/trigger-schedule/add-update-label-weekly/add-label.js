@@ -4,7 +4,7 @@ const https = require("https");
 const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
-const minimizeIssueComment = require("../../utils/hide-issue-comment.js");
+const minimizeIssueComment = require('../../utils/hide-issue-comment');
 
 // Global variables
 var github;

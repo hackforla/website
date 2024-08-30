@@ -29,7 +29,7 @@ async function queryIssueInfo(github, context, issueNum) {
   const variables = {
     owner: context.repo.owner,
     repo: context.repo.repo,
-    issueNum
+    issueNum: issueNum
   };
 
   try { 
