@@ -1,8 +1,8 @@
 /**
  * Changes the 'Status' of an issue (with the corresponding itemId) to a newStatusValue
- * @param {String} itemId          -  GraphQL item Id for the issue 
+ * @param {String} itemId          -  GraphQL item Id for the issue
  * @param {String} newStatusValue  -  GraphQL Id value of the 'Status' field that the issue is moving to
- * 
+ *
  */
 async function mutateIssueStatus(github, context, itemId, newStatusValue) {
 
@@ -34,9 +34,9 @@ async function mutateIssueStatus(github, context, itemId, newStatusValue) {
 
   try {
     await github.graphql(mutation, variables);
-  } catch(error) {
-    throw new Error("Error in mutateItemStatus() function: " + error);
-  } 
+  } catch (error) {
+    throw new Error(`Error in mutateItemStatus() function: ${error}`);
+  }
 }
 
 module.exports = mutateIssueStatus;
