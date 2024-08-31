@@ -73,6 +73,7 @@ leadership:
       github: 'https://github.com/zeaslan'
     picture: 'https://avatars.githubusercontent.com/zeaslan'
   - name: Gala Stojnic
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03307LRD2A'
