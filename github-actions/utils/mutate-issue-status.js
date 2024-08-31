@@ -5,6 +5,7 @@
  *
  */
 async function mutateIssueStatus(github, context, itemId, newStatusValue) {
+
   // Defaults for HfLA Website Project 86
   const WEBSITE_PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
   const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
@@ -28,7 +29,7 @@ async function mutateIssueStatus(github, context, itemId, newStatusValue) {
     projectId: WEBSITE_PROJECT_ID,
     fieldId: STATUS_FIELD_ID,
     itemId: itemId,
-    value: newStatusValue,
+    value: newStatusValue
   };
 
   try {

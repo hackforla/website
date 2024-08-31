@@ -4,6 +4,7 @@
  * 
  */
 async function minimizeIssueComment(github, nodeID) {
+
   const mutation = `mutation($nodeID: ID!) {
     minimizeComment(input: {classifier: OUTDATED, subjectId: $nodeID}) {
       clientMutationId
