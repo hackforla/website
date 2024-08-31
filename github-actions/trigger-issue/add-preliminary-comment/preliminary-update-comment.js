@@ -6,16 +6,16 @@ const getTimeline = require('../../utils/get-timeline');
 const getTeamMembers = require('../../utils/get-team-members');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
-const statusFieldId = require('../../utils/_data/status-field-ids');
+const statusFieldIds = require('../../utils/_data/status-field-ids');
 
 // Global variables
 let github;
 let context;
 let assignee;
 
-const Emergent_Requests = "Emergent Requests";
-const New_Issue_Approval = "New Issue Approval";
-const READY_FOR_PRIORITIATION = "Ready for Prioritization";
+const emergentRequests = "Emergent Requests";
+const newIssueApproval = "New Issue Approval";
+const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
 
 
 
@@ -56,11 +56,11 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       console.log(' - add `multiple-issue-reminder.md` comment to issue');
 
       await unAssignDev();
-      await addLabel(READY_FOR_PRIORITIATION);
+      await addLabel(READY_FOR_PRIORITIZATION);
       console.log(' - remove developer and add `Ready for Prioritization` label');
 
       // Update item's status to "New Issue Approval"
-      let statusValue = statusFieldId(New_Issue_Approval)
+      let statusValue = statusFieldIds("New_Issue_Approval")
       const itemInfo = await queryIssueInfo(github, context, issueNum);
       await mutateIssueStatus(github, context, itemInfo.id, statusValue);
       console.log(' - change issue status to "New Issue Approval"');
@@ -99,16 +99,17 @@ async function memberOfAdminOrMergeTeam() {
  */
 async function assignedToAnotherIssue() {
   try {
+    // https://octokit.github.io/rest.js/v20/#issues-list-for-repo (default state: "open")
     const issues = (await github.rest.issues.listForRepo({
       owner: context.repo.owner,
       repo: context.repo.repo,
-      assignee: assignee,
-      state: "open", // Only fetch opened issues
+      assignee: assignee
     })).data;
 
     const otherIssues = [];
 
     for(const issue of issues) {
+      let repoIssueNum = issue.number;
       // Check is it's an "Agenda" issue
       const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
 
@@ -116,10 +117,10 @@ async function assignedToAnotherIssue() {
       const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
 
       // Check if it exists in "Emergent Request" Status
-      const inEmergentRequestStatus = (await queryIssueInfo(github, context, issueNum)).statusName === Emergent_Requests;
+      const inEmergentRequestStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === emergentRequests;
     
       // Check if it exists in "New Issue Approval" Status
-      const inNewIssueApprovalStatus = (await queryIssueInfo(github, context, issueNum)).statusName === New_Issue_Approval;
+      const inNewIssueApprovalStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === newIssueApproval;
     
       // Include the issue only if none of the conditions are met
       if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
