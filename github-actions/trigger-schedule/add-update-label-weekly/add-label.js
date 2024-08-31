@@ -1,6 +1,5 @@
 /// Import modules
 const fs = require("fs");
-const https = require("https");
 const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
@@ -91,6 +90,7 @@ async function getIssueNumsFromRepo() {
   let result = [];
 
   while (true) {
+    // https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
     const issueData = await github.request('GET /repos/{owner}/{repo}/issues', {
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -251,7 +251,7 @@ async function removeLabels(issueNum, ...labels) {
  */
 async function addLabels(issueNum, ...labels) {
   try {
-    // https://octokit.github.io/rest.js/v18#issues-add-labels
+    // https://octokit.github.io/rest.js/v20#issues-add-labels
     await github.rest.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -271,6 +271,7 @@ async function postComment(issueNum, assignees, labelString) {
   try {
     const assigneeString = createAssigneeString(assignees);
     const instructions = formatComment(assigneeString, labelString);
+    // https://octokit.github.io/rest.js/v20/#issues-create-comment
     await github.rest.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -351,7 +352,8 @@ function formatComment(assignees, labelString) {
 
 function isCommentByBot(data) {
   let botLogin = "github-actions[bot]";
-  return data.actor.login === botLogin;
+  let hflaBotLogin = "HackforLABot";
+  return data.actor.login === botLogin || data.actor.login === hflaBotLogin;
 }
 
 // asynchronously minimize all the comments that are outdated (> 1 week old)
