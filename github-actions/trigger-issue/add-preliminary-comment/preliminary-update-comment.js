@@ -6,7 +6,7 @@ const getTimeline = require('../../utils/get-timeline');
 const getTeamMembers = require('../../utils/get-team-members');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
-const statusFieldId = require('../../utils/data/status-field-ids');
+const statusFieldId = require('../../utils/_data/status-field-ids');
 
 // Global variables
 let github;
