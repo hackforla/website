@@ -13,10 +13,10 @@ async function getTeamMembers(github, context, team) {
   while (true) {
     // https://docs.github.com/en/rest/teams/members?apiVersion=2022-11-28#list-team-members
     const teamMembers = await github.request('GET /orgs/{org}/teams/{team_slug}/members', {
-        org: context.repo.owner,
-        team_slug: team,
-        per_page: 100,
-        page: pageNum,
+      org: context.repo.owner,
+      team_slug: team,
+      per_page: 100,
+      page: pageNum,
     });
     if (!teamMembers.data.length) {
       break;
