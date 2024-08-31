@@ -60,7 +60,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       console.log(' - remove developer and add `Ready for Prioritization` label');
 
       // Update item's status to "New Issue Approval"
-      let statusValue = statusFieldIds("New_Issue_Approval")
+      let statusValue = statusFieldIds("New_Issue_Approval");
       const itemInfo = await queryIssueInfo(github, context, issueNum);
       await mutateIssueStatus(github, context, itemInfo.id, statusValue);
       console.log(' - change issue status to "New Issue Approval"');
