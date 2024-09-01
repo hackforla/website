@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/priyatalwar'
     picture: https://avatars.githubusercontent.com/priyatalwar
   - name: Joshua Fishman
+    github-handle:
     role: Product Manager - Engineering
     links:
       slack: 'https://hackforla.slack.com/team/U041G3Y141W'
@@ -25,6 +26,7 @@ leadership:
       github: 'https://github.com/pandanista'
     picture: https://avatars.githubusercontent.com/pandanista
   - name: Hyun Joo Sandy Oh
+    github-handle:
     role: UX Research Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U03RZE7TTKP'

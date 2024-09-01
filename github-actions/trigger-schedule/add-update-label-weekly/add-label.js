@@ -109,9 +109,12 @@ async function getIssueNumsFromRepo() {
     }
   }
   
-  for (let { number, labels } of result) {
+  for (let { number, labels, pull_request } of result) {
     if (!number) continue;
 
+    // Exclude any pull requests that were found
+    if (pull_request != undefined) continue;
+  
     // Exclude any issues that have excluded labels
     const issueLabels = labels.map((label) => label.name);
     if (issueLabels.some((item) => labelsToExclude.includes(item))) continue;
@@ -221,32 +224,22 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
  * @param {Array} labels       - an array containing the labels to remove (captures the rest of the parameters)
  */
 async function removeLabels(issueNum, ...labels) {
-  // Check if label exists on issue before attempting to remove it
-  let currLabels = [];
-  let labelData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/labels', {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNum,
-  });
-  for (let currLabel in labelData.data) {
-    currLabels.push(currLabel.name);
-  }
-
   for (let label of labels) {
-    if (label in currLabels) {
-       try {
-        await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          issue_number: issueNum,
-          name: label,
-        });
-        console.log(`Issue #${issueNum}: removed "${label}" label`);
-      } catch (err) {
+    try {
+      // https://docs.github.com/en/rest/issues/labels?apiVersion=2022-11-28#remove-a-label-from-an-issue
+      await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: issueNum,
+        name: label,
+      });
+      console.log(`  '${label}' label has been removed`);
+    } catch (err) {
+      if (err.status === 404) {
+        console.log(`  '${label}' label not found, no need to remove`);
+      } else {
         console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
       }
-    } else {
-      console.log(`  '${label}' label not found, no need to remove`);
     }
   }
 }
@@ -267,7 +260,7 @@ async function addLabels(issueNum, ...labels) {
       issue_number: issueNum,
       labels: labels,
     });
-    console.log(`Issue #${issueNum}: Added these labels: '${labels}'`);
+    console.log(`  '${labels}' label has been added`);
     // If an error is found, the rest of the script does not stop.
   } catch (err) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
