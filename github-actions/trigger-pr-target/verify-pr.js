@@ -5,7 +5,7 @@ async function main({github,context}) {
     const prAuthor = context.payload.sender.login;
     const prNumber = context.payload.number;
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
-    if (isMember) {    
+    if (isMember || prAuthor == 'dependabot[bot]') {    
         console.log('Successfully verified!');
     }
     else {
