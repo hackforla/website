@@ -34,11 +34,10 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
     - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
     - [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on)
-      - [**2.3.a Available issues for new members (front end/back end)**](#23a-available-issues-for-new-members-front-endback-end)
-      - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
-      - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
-      - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
-      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.a Available issues for new members**](#23a-available-issues-for-new-members)
+      - [**2.3.b Available issues for returning members**](#23b-available-issues-for-returning-members)
+      - [**2.3.c Issues for Hacktoberfest contributors**](#23c-issues-for-hacktoberfest-contributors)
+      - [**2.3.d What if you see bugs/errors that are not connected to an issue?**](#23d-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -119,7 +118,7 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
   <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA website repo](https://github.com/hackforla/website)</strong></h4>
   <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg" />
   <p><strong>Next, a modal may open and request where you want to fork this website repo. Please click on your avatar or your GitHub username</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg" />
+  <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg">      
 </details><br>
 
 **Note:** It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/website`.
@@ -386,55 +385,34 @@ And the following **complexity** labels:
 
 ### **2.3 Where can I find GitHub issues to work on?**
 
-The best way to view the issues available is our [GitHub Project Board](https://github.com/hackforla/website/projects/7)
+The best way to view the issues available is our [GitHub Project Board](https://github.com/orgs/hackforla/projects/86)
 
-<details>
-  <summary><strong>Click here</strong> to see a Project Board visual</summary>
-  <h4>Our GitHub project board</h4>
-  <img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg"/>
-</details>
 
-There are only 2 columns that you will be consistently referencing:
-
-1. `Onboarding infos/links` - Some helpful card information examples:
-  * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
-  * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
-  * Filters to show the project issues by a specific complexity:
-    * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
-    * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
-  * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
-
-2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
+For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that have been approved and prioritized. 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.a Available issues for new members (front end/back end)**
+#### **2.3.a Available issues for new members**
 
-We recommend you visit the `Prioritized Backlog` column in the filtered Project Board using the following links: [`good first issues` (front end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) and [`good first issues` (back end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22good+first+issue%22+label%3A%22role%3A+back+end%2Fdevops%22#column-7198257). These links will take you to a filtered Project Board and will only show issues with the `good first issue` label for both front end and back end respectively.
+Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2) to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.b Available issues for returning members (front end)**
+#### **2.3.b Available issues for returning members**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/orgs/hackforla/projects/86/views/3)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/orgs/hackforla/projects/86/views/4)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large and XLarge** label](https://github.com/orgs/hackforla/projects/86/views/5)
 
-#### **2.3.c Available issues for returning members (back end)**
+#### **2.3.c Issues for Hacktoberfest contributors**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
-
-#### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
-
-Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
+Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/orgs/hackforla/projects/86/views/4?filterQuery=status%3A%22Prioritized+backlog%22+label%3A%22hacktoberfest%22+label%3A%22role%3A+front+end%22+)
 
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
+#### **2.3.d What if you see bugs/errors that are not connected to an issue?**
 
-If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
+If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://www.hackforla.org/projects/website) and they will help you create an issue you can resolve.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -638,7 +616,7 @@ git commit -m “insert message here”
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif" />
+  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif">
 </details>
 
 Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
@@ -845,21 +823,28 @@ git push --set-upstream origin update-give-link-2093
   <summary><strong>Click here</strong> to see pull request markdown template</summary>
 
   ```
+  <!--  Important! Add the number of the issue you worked on  --> 
   Fixes #replace_this_text_with_the_issue_number
 
   ### What changes did you make?
-    -
-    -
-    -
+  <!--  Note: add lines if needed, and remove any unused lines  -->  
+    - 
+    - 
+    - 
 
   ### Why did you make the changes (we will use this info to test)?
-    -
-    -
-    -
+  <!--  Note: add lines if needed, and remove any unused lines  -->  
+    - 
+    - 
+    - 
 
-  ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
-  <!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
-  <!-- If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag -->
+  ### Screenshots of Proposed Changes To The Website (if any, please do not include screenshots of code changes)
+  <!--  Notes: 
+    - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
+    - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
+    - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
+    - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
+  --> 
 
   <details>
     <summary>Visuals before changes are applied</summary>
@@ -929,30 +914,33 @@ In bullet point form, explain the changes you made in order to complete the acti
 
 ##### **iv. Complete pull request (4): Include images (if available)**
 
-in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
+In the dropdown example above [**Click here** to see pull request #2131 example (gif)](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so: 
 
 ```
-### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
-<!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
-<!-- If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag -->
+### Screenshots of Proposed Changes Of The Website (if any, please do not include screenshots of code changes)
+<!--  Notes: 
+  - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
+  - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
+  - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
+  - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
+ --> 
 
 <details>
-<summary>Visuals before changes are applied</summary>
+  <summary>Visuals before changes are applied</summary>
 
-![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
-
+  ![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
 
 </details>
 
 <details>
-<summary>Visuals after changes are applied</summary>
+  <summary>Visuals after changes are applied</summary>
 
-![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
+  ![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
 
 </details>
 ```
 
-**Note:** Not all pull requests will have significant changes to our website. **Please do not any screenshots of VSCode** If you do not have the ability to notate changes, please remove the `<details>/<summary` and replace it with an explanation for no images like:
+**Note:** Not all pull requests will make visual changes to our website. **Please do not include screenshots from VSCode / other IDE**.  If your pull request does not make visual changes to our website, please remove the entire`<details>/<summary` section and replace it with a brief summary stating that there are no visual changes, for example:
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)

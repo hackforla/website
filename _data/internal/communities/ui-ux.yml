@@ -9,8 +9,6 @@ location:
 image: /assets/images/communities-of-practice/uiux.jpg
 alt: 'A board full of Post-it notes is used as a communication tool'
 
-meeting-times: Wednesdays 6:00-7:00 PM PT
-
 leadership-type: Community Led
 leadership:
   - name: Aparna Gopal
@@ -46,7 +44,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C017ESHSMNG/
-  - name: Github
+  - name: GitHub
     url: https://github.com/hackforla/UI-UX
 
 recruiting-message:

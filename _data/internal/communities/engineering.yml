@@ -9,8 +9,6 @@ location:
 image: /assets/images/communities-of-practice/engineering.jpg
 alt: 'A computer screen shows a diagram used to manage code development'
 
-meeting-times: Thursdays 6:00-7:00 pm PT
-
 leadership-type: Community Led
 leadership:
   - name: Micah Elm
@@ -41,7 +39,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C01CU709SER
-  - name: Github
+  - name: GitHub
     url: https://github.com/hackforla/engineering
   
 recruiting-message: 

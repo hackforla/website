@@ -15,6 +15,7 @@ jobs:
         env:
           HACKFORLA_ADMIN_TOKEN: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
         with:
+          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}  
           script: |
             const HACKFORLA_ADMIN_TOKEN = process.env.HACKFORLA_ADMIN_TOKEN;
             const script = require('./github-actions/trigger-schedule/add-update-label-weekly/add-label.js');

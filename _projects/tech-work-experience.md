@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/priyatalwar'
     picture: https://avatars.githubusercontent.com/priyatalwar
   - name: Joshua Fishman
+    github-handle:
     role: Product Manager - Engineering
     links:
       slack: 'https://hackforla.slack.com/team/U041G3Y141W'
@@ -25,24 +26,28 @@ leadership:
       github: 'https://github.com/pandanista'
     picture: https://avatars.githubusercontent.com/pandanista
   - name: Hyun Joo Sandy Oh
+    github-handle:
     role: UX Research Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U03RZE7TTKP'
       github: 'https://github.com/doctorsandy'
     picture: https://avatars.githubusercontent.com/doctorsandy
   - name: Sara Brady
+    github-handle:
     role: UX Research Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U0371AXAVUN'
       github: 'https://github.com/bradyse'
     picture: https://avatars.githubusercontent.com/bradyse
   - name: Andrew Salvatore
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04K5R2A7L2'
       github: 'https://github.com/AndrewSalvatore'
     picture: https://avatars.githubusercontent.com/AndrewSalvatore
   - name: Angela Darosh
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03J4ENS09F'
@@ -55,18 +60,21 @@ leadership:
       github: 'https://github.com/bryannalim'
     picture: https://avatars.githubusercontent.com/bryannalim
   - name: Brian Dick
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U046AAZD309'
       github: 'https://github.com/dialectic51'
     picture: https://avatars.githubusercontent.com/dialectic51
   - name: Jessie Liu
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U045YQFSGMB'
       github: 'https://github.com/jessieliu1219'
     picture: https://avatars.githubusercontent.com/jessieliu1219
   - name: Minji Kim
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U02ST1L9WAH'
@@ -79,12 +87,14 @@ leadership:
       github: 'https://github.com/Natalie-Aguilar'
     picture: https://avatars.githubusercontent.com/Natalie-Aguilar
   - name: Nino Dzotsenidze
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04MUEYTECR'
       github: 'https://github.com/Dzotsen'
     picture: https://avatars.githubusercontent.com/Dzotsen
   - name: Eric Vennemeyer
+    github-handle:
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/U03AUUZT3E3'

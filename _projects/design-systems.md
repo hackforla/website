@@ -79,6 +79,7 @@ leadership:
       github: 'https://github.com/GalaStojnic'
     picture: 'https://avatars.githubusercontent.com/GalaStojnic'
   - name: Eli Marietta
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03P6Q87BEZ'
@@ -103,6 +104,7 @@ leadership:
       github: 'https://github.com/mklmrgn'
     picture: 'https://avatars.githubusercontent.com/mklmrgn'
   - name: Robert Schacht
+    github-handle:
     role: Content Designer
     links:
       slack: 'https://hackforla.slack.com/team/U02R5GG3T09'

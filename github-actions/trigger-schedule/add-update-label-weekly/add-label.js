@@ -1,6 +1,7 @@
 /// Import modules
 const fs = require("fs");
 const https = require("https");
+const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
 
@@ -33,7 +34,7 @@ var projectBoardToken;
  * last update was not between 7 to 14 days ago, apply the appropriate label and request an update. However, if the assignee has submitted 
  * a PR that will fix the issue regardless of when, all update-related labels should be removed.
 
- * @param {Object} g                   - github object from actions/github-script
+ * @param {Object} g                   - GitHub object from actions/github-script
  * @param {Object} c                   - context object from actions/github-script
  * @param {String} projectBoardToken   - the Personal Access Token for the action
  */
@@ -80,12 +81,13 @@ async function main({ g, c }, pbt) {
 
 
 /**
- * Function that returns issue numbers of all issues in a repo
+ * Finds issue numbers for all open & assigned issues, excluding issues labeled `Draft`, `ER`, `Epic`,
+ * or `Dependency`, and returning issue numbers only if their status === "In progess (actively working"
  *
- * @returns an Array of issue numbers
+ * @returns {Promise<Array>} issueNums     - an array of open, assigned, and statused issue numbers
  */
 async function getIssueNumsFromRepo() {
-  const labelsToExclude = ['Draft', 'ER', 'Epic'];
+  const labelsToExclude = ['Draft', 'ER', 'Epic', 'Dependency'];
   let issueNums = [];
   let pageNum = 1;
   let result = [];
@@ -94,6 +96,7 @@ async function getIssueNumsFromRepo() {
     const issueData = await github.request('GET /repos/{owner}/{repo}/issues', {
       owner: context.repo.owner,
       repo: context.repo.repo,
+      assignee: '*',
       per_page: 100,
       page: pageNum,
     });
@@ -106,17 +109,20 @@ async function getIssueNumsFromRepo() {
     }
   }
   
-  for (let issueNum of result) {
-    if (issueNum.number) {
-      let issueLabels = [];
-      for (let label of issueNum.labels) {
-        issueLabels.push(label.name);
-      }
-      if (!issueLabels.some(item => labelsToExclude.includes(item))) {
-        issueNums.push(issueNum.number);
-      } else {
-        console.log(`Excluding Issue #${issueNum.number} because of label`);
-      }
+  for (let { number, labels, pull_request } of result) {
+    if (!number) continue;
+
+    // Exclude any pull requests that were found
+    if (pull_request != undefined) continue;
+  
+    // Exclude any issues that have excluded labels
+    const issueLabels = labels.map((label) => label.name);
+    if (issueLabels.some((item) => labelsToExclude.includes(item))) continue;
+
+    // For remaining issues, check if status === "In progress (actively working)"
+    const { statusName } = await queryIssueInfo(github, context, number);
+    if (statusName === "In progress (actively working)") {
+      issueNums.push(number);
     }
   }
   return issueNums;
@@ -218,32 +224,22 @@ function isTimelineOutdated(timeline, issueNum, assignees) { // assignees is an 
  * @param {Array} labels       - an array containing the labels to remove (captures the rest of the parameters)
  */
 async function removeLabels(issueNum, ...labels) {
-  // Check if label exists on issue before attempting to remove it
-  let currLabels = [];
-  let labelData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/labels', {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: issueNum,
-  });
-  for (let currLabel in labelData.data) {
-    currLabels.push(currLabel.name);
-  }
-
   for (let label of labels) {
-    if (label in currLabels) {
-       try {
-        await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          issue_number: issueNum,
-          name: label,
-        });
-        console.log(`Issue #${issueNum}: removed "${label}" label`);
-      } catch (err) {
+    try {
+      // https://docs.github.com/en/rest/issues/labels?apiVersion=2022-11-28#remove-a-label-from-an-issue
+      await github.request('DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}', {
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: issueNum,
+        name: label,
+      });
+      console.log(`  '${label}' label has been removed`);
+    } catch (err) {
+      if (err.status === 404) {
+        console.log(`  '${label}' label not found, no need to remove`);
+      } else {
         console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
       }
-    } else {
-      console.log(`  '${label}' label not found, no need to remove`);
     }
   }
 }
@@ -264,7 +260,7 @@ async function addLabels(issueNum, ...labels) {
       issue_number: issueNum,
       labels: labels,
     });
-    console.log(`Issue #${issueNum}: Added these labels: '${labels}'`);
+    console.log(`  '${labels}' label has been added`);
     // If an error is found, the rest of the script does not stop.
   } catch (err) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
