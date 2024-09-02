@@ -68,19 +68,119 @@ function main() {
   const cleanedAndFormattedKeyValueData = JSON.stringify(sortedKeyValueData, null, 5);
   const encodedKeyValueData = Utilities.base64Encode(`${cleanedAndFormattedKeyValueData}`, Utilities.Charset.UTF_8);
 
-    // Retrieves latest sha of the _wins data file, which is needed for edits later
+    // Retrieves latest sha and content of the _wins data file, which is needed for edits later
   const keyValueFile = "_wins-data.json"
-  const keyValueSha = ghrequests.getSHA(keyValueFile);
+  const [keyValueSha, keyValueContent] = ghrequests.getWins(keyValueFile);
   if (keyValueSha === false) {
     console.log('Ending script...')
     return 1;
   }
 
-  const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
-  if (writeResponse === false) {
+  // detect any changes to Wins-form (Responses) by comparing performing a string comparison
+  if (!arrEq(sortedKeyValueData, keyValueContent)) {
+    console.log("Entry difference detected. Updating wins file...");
+    const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
+    if (writeResponse === false) {
+      console.log('Ending script...')
+      return 1;
+    }
+  }
+  else {
+    console.log("No new entry difference detected.");
     console.log('Ending script...')
     return 1;
   }
+
+  function arrEq(arr1, arr2) {
+    return JSON.stringify(arr1) === JSON.stringify(arr2);
+  }
+
+  // function arrEq(arr1, arr2) {
+  //   if (!arr2) { // if the other array is a falsy value, return
+  //     return false;
+  //   }
+
+  //   // if the second argument is the same array as the first one, we can be sure the contents are same as well
+  //   if (arr1 === arr2) {
+  //     return true;
+  //   }
+
+  //   // compare lengths - can save a lot of time 
+  //   if (arr1.length != arr2.length)
+  //       return false;
+
+  //   for (var i = 0, arr1Len = arr1.length; i < arr1Len; i++) {
+  //     // Check if we have nested arrays
+  //     console.log(typeof arr1[i] );
+  //     console.log(arr1[i] instanceof Object);
+  //     console.log(arr2[i] instanceof Object);
+  //     if (arr1[i] instanceof Array && arr2[i] instanceof Array) {
+  //       // recurse into nested arrays
+  //       if (!arrEq(arr1[i], arr2[i])) {
+  //         return false;
+  //       }
+  //     }
+  //     // Check if we have nested objects
+  //     else if (arr1[i] instanceof Object && arr2[i] instanceof Object) {
+  //       if (!objEq(arr1[i], arr2[i])) {
+  //         return false;
+  //       }
+  //     }
+
+  //     //Normal value comparison for strings and numbers
+  //     else if (arr1[i] != arr2[i]) {
+  //       return false;
+  //     }
+  //   }
+
+  //   return true;
+  // }
+
+  // function objEq(obj1, obj2) {
+  //   //For the first loop, we only check for types
+  //   for (propName in obj1) {
+  //     if (obj1.hasOwnProperty(propName) != obj2.hasOwnProperty(propName)) {
+  //       return false;
+  //     }
+
+  //     //Check instance type
+  //     else if (typeof obj1[propName] != typeof obj2[propName]) {
+  //       //Different types => not equal
+  //       return false;
+  //     }
+  //   }
+
+  //   //Now a deeper check using other obj2's property names
+  //   for (propName in obj2) {
+  //     //We must check instances anyway, there may be a property that only exists in object2
+  //     if (obj2.hasOwnProperty(propName) != obj1.hasOwnProperty(propName)) {
+  //       return false;
+  //     }
+  //     else if (typeof obj2[propName] != typeof obj1[propname]) {
+  //       return false;
+  //     }
+
+  //     //Now the detail check and recursion
+  //     if (obj1[propName] instanceof Array && obj2[propName] instanceof Array) {
+  //       if (!arrEq(obj1[propName], obj2[propName])) {
+  //         return false;
+  //       }
+  //     }
+  //     else if (obj1[propName] instanceof Object && obj2[propName] instanceof Object) {
+  //       if (!objEq(obj1[propName], obj2[propName])) {
+  //         return false;
+  //       }
+  //     }
+
+  //     //Normal value comparison for strings and numbers
+  //     else if (obj1[propName] != obj2[propName]) {
+  //       return false;
+  //     }
+  //   }
+
+  //   //If everything passed, let's say YES
+  //   return true;
+  // }
 
   /*
   ** This section deals with the array of data for wins-data.json
@@ -95,7 +195,7 @@ function main() {
 
   // Retrieves latest sha of the wins data file
   const arrayFile = "wins-data.json"
-  const arrayDataSha = ghrequests.getSHA(arrayFile);
+  const [arrayDataSha, arrayDataContent] = ghrequests.getWins(arrayFile);
   if (arrayDataSha === false) {
     console.log('Ending script...')
     return 1;
