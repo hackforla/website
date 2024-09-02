@@ -5,19 +5,19 @@ async function main({github,context}) {
     const prAuthor = context.payload.sender.login;
     const prNumber = context.payload.number;
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
-    if (isMember) {    
+    if (isMember || prAuthor =='dependabot[bot]') {    
         console.log('Successfully verified!');
     }
     else {
         try {
             await github.rest.issues.update({
-                owner : 'hackforla',
+                owner : 'ajb176',
                 repo : 'website',
                 issue_number : prNumber,
                 state : 'closed'
             });
             await github.rest.issues.createComment({
-                owner : 'hackforla',
+                owner : 'ajb176',
                 repo : 'website',
                 issue_number : prNumber,
                 body : commentContent
