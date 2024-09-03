@@ -163,7 +163,7 @@ async function createComment(fileName, issueNum) {
     const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
     const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
 
-    if(statusName === New_Issue_Approval && !isDraft && !isPrework) {
+    if(statusName === newIssueApproval && !isDraft && !isPrework) {
       if(context.payload.issue.user.login === assignee) {
         fileName = 'draft-label-reminder.md';
       } else {
