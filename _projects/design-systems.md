@@ -67,6 +67,7 @@ leadership:
       github: 'https://github.com/EvaKw'
     picture: 'https://avatars.githubusercontent.com/EvaKw'
   - name: Zeynep Aslan
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U04HDCMD90A'
