@@ -1,6 +1,9 @@
 const fs = require('fs');
 const formatComment = require('../../utils/format-comment');
+const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const postComment = require('../../utils/post-issue-comment');
+const queryIssueInfo = require('../../utils/query-issue-info');
+const statusFieldIds = require('../../utils/_data/status-field-ids');
 const { setTimeout } = require('timers/promises');
 
 /**
@@ -9,9 +12,6 @@ const { setTimeout } = require('timers/promises');
 * @param {Object} github - The GitHub API client.
 * @param {Object} context - The GitHub webhook event context.
 * @param {boolean} isAdminOrMerge - Whether the assignee is an admin or merge team member.
-* @param {string} PROJECT_ID - The ID of the GitHub Project.
-* @param {string} STATUS_FIELD_ID - The ID of the status field in the GitHub Project.
-* @param {Map<string, string>} statusValues - A map of status names to their corresponding IDs.
 * @returns {Promise<boolean>} A promise that resolves to true if the assignee
 * is eligible, false otherwise.
 */
@@ -19,10 +19,7 @@ const { setTimeout } = require('timers/promises');
 async function checkComplexityEligibility(
   github,
   context,
-  isAdminOrMerge,
-  PROJECT_ID,
-  STATUS_FIELD_ID,
-  statusValues
+  isAdminOrMerge
 ) {
   // If assignee is an admin or merge team member, skip complexity check
   if (isAdminOrMerge) {
@@ -35,10 +32,10 @@ async function checkComplexityEligibility(
   );
 
   // Fetch the current issue's project item ID and status name
-  const { projectItemId, statusName } = await fetchProjectItemInfo(
-    currentIssue.issueNum,
+  const { id: projectItemId, statusName } = await queryIssueInfo(
     github,
-    context
+    context,
+    currentIssue.issueNum
   );
 
   // If issue's status is New Issue Approval, skip complexity check
@@ -81,9 +78,9 @@ async function checkComplexityEligibility(
   }
 
   const assignedIssues = await fetchIssuesByAssignee(
-    currentIssue.assigneeUsername,
     github,
-    context
+    context,
+    currentIssue.assigneeUsername
   );
   const previousIssues = assignedIssues.filter(
     issue => issue.issueNum !== currentIssue.issueNum
@@ -99,23 +96,20 @@ async function checkComplexityEligibility(
   );
 
   if (!issueComplexityPermitted) {
-    const { projectItemId: preWorkIssueProjectItemId } =
-      await fetchProjectItemInfo(
-        preWorkIssue.issueNum,
+    const { id: preWorkIssueProjectItemId } =
+      await queryIssueInfo(
         github,
-        context
+        context,
+        preWorkIssue.issueNum
       );
     await handleIssueComplexityNotPermitted(
+      github,
+      context,
       currentIssue.issueNum,
       currentIssue.assigneeUsername,
       projectItemId,
       preWorkIssue,
-      preWorkIssueProjectItemId,
-      github,
-      context,
-      PROJECT_ID,
-      STATUS_FIELD_ID,
-      statusValues
+      preWorkIssueProjectItemId
     );
   }
 
@@ -123,75 +117,15 @@ async function checkComplexityEligibility(
 }
 
 /**
-* Fetches the project item ID and status name for a given issue number.
-* @param {number} issueNum - The issue number.
-* @param {Object} github - The GitHub API client.
-* @param {Object} context - The GitHub webhook event context.
-* @returns {Promise<Object>} A promise that resolves to an object containing
-* the project item ID and status name.
-*/
-
-async function fetchProjectItemInfo(issueNum, github, context) {
-  try {
-    const query = `
-      query ($owner: String!, $repo:String!, $issueNum: Int!) {
-        repository(owner: $owner, name: $repo) {
-          issue(number: $issueNum) {
-            id
-            projectItems(first: 100) {
-              nodes {
-                id
-                fieldValues(first: 100) {
-                  nodes {
-                    ... on ProjectV2ItemFieldSingleSelectValue {
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `;
-
-    const variables = {
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      issueNum: issueNum
-    };
-
-    const response = await github.graphql(query, variables);
-
-    // Extract the list of project items associated with the issue
-    const projectItems = response.repository.issue.projectItems.nodes;
-    
-    // Since there is always one item associated with the issue,
-    // directly get the item's ID from the first index
-    const projectItemId = projectItems[0].id;
-
-    // Iterate through the field values of the first project item
-    // and find the node that contains the 'name' property, then get its 'name' value
-    const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
-
-    return { projectItemId, statusName };
-  } catch (error) {
-    throw new Error(
-      `Error fetching project item info for issue #${issueNum}: ${error.message}`
-    );
-  }
-}
-
-/**
 * Fetches all issues assigned to a given user.
-* @param {string} username - The GitHub username of the assignee.
 * @param {Object} github - The GitHub API client.
 * @param {Object} context - The GitHub webhook event context.
+* @param {string} username - The GitHub username of the assignee.
 * @returns {Promise<Array>} A promise that resolves to an array of assigned
 * issues.
 */
 
-async function fetchIssuesByAssignee(username, github, context) {
+async function fetchIssuesByAssignee(github, context, username) {
   try {
     const { owner, repo } = context.repo;
     const response = await github.rest.issues.listForRepo({
@@ -358,7 +292,7 @@ function extractComplexityAndRolesFromLabels(issues) {
   })).filter(issue => issue.complexity);
 }
 
-// Extracts the Pre-Work issue from assigned issues.
+// Extracts the Pre-Work Checklist (Skills Issue) from assigned issues.
 function extractPreWorkIssueFromIssues(assignedIssues) {
   const preWorkIssue = assignedIssues.find(
     issue => issue.labels.includes('Complexity: Prework')
@@ -366,14 +300,14 @@ function extractPreWorkIssueFromIssues(assignedIssues) {
 
   if (!preWorkIssue) {
     throw new Error(
-      `Assignee's Pre-Work issue not found in assigned issues.`
+      `Assignee's Pre-Work Checklist (Skills Issue) not found in assigned issues.`
     );
   } 
 
   return preWorkIssue;    
 }
 
-// Extracts roles from the Pre-Work issue.
+// Extracts roles from the Pre-Work Checklist (Skills Issue).
 function extractRoleFromPreWorkIssue(preWorkIssue) {
   return preWorkIssue.labels.filter(
     label =>
@@ -384,31 +318,25 @@ function extractRoleFromPreWorkIssue(preWorkIssue) {
 /**
 * Handles actions to take when an issue is not within the complexity 
 * eligibility for an assignee.
+* @param {Object} github - The GitHub API client.
+* @param {Object} context - The GitHub webhook event context.
 * @param {number} currentIssueNum - The current issue number.
 * @param {string} assigneeUsername - The GitHub username of the assignee.
 * @param {string} currentIssueprojectItemId - The project item ID of the current
 * issue.
-* @param {Object} preWorkIssue - The Pre-Work issue object.
+* @param {Object} preWorkIssue - The Pre-Work Checklist (Skills Issue) object.
 * @param {string} preWorkIssueProjectItemId - The project item ID of the
-* Pre-Work issue.
-* @param {Object} github - The GitHub API client.
-* @param {Object} context - The GitHub webhook event context.
-* @param {string} PROJECT_ID - The ID of the GitHub Project.
-* @param {string} STATUS_FIELD_ID - The ID of the status field in the GitHub Project.
-* @param {Map<string, string>} statusValues - A map of status names to their corresponding IDs.
+* Pre-Work Checklist (Skills Issue).
 */
 
 async function handleIssueComplexityNotPermitted(
+  github,
+  context,
   currentIssueNum,
   assigneeUsername,
   projectItemId,
   preWorkIssue,
-  preWorkIssueProjectItemId,
-  github,
-  context,
-  PROJECT_ID,
-  STATUS_FIELD_ID,
-  statusValues
+  preWorkIssueProjectItemId
 ) {
   try {
     const { owner, repo } = context.repo;
@@ -430,15 +358,14 @@ async function handleIssueComplexityNotPermitted(
     });
   
     // Change issue's status to New Issue Approval 
-    await updateItemStatus(
+    await mutateIssueStatus(
       github,
+      context,
       projectItemId,
-      statusValues.get('New Issue Approval'),
-      PROJECT_ID,
-      STATUS_FIELD_ID
+      statusFieldIds('New_Issue_Approval')
     );
   
-    // If the assignee's Pre-work issue is closed, open it
+    // If the assignee's Pre-work Checklist (Skills Issue) is closed, open it
     if (preWorkIssue.state === 'closed') {
       await github.rest.issues.update({
         owner,
@@ -451,13 +378,12 @@ async function handleIssueComplexityNotPermitted(
       // before script moves it to In Progress, ensuring correct final status 
       await setTimeout(5000);
 
-      // Change Pre-work status to In Progress
-      await updateItemStatus(
+      // Change Pre-work Checklist (Skills Issue) status to In Progress
+      await mutateIssueStatus(
         github,
+        context,
         preWorkIssueProjectItemId,
-        statusValues.get('In progress (actively working)'),
-        PROJECT_ID,
-        STATUS_FIELD_ID
+        statusFieldIds('In_Progress')
       );
     }
 
@@ -465,50 +391,13 @@ async function handleIssueComplexityNotPermitted(
       currentIssueNum,
       assigneeUsername
     );  
-    await postComment(currentIssueNum, commentBody, github, context);  
-    await postComment(preWorkIssue.issueNum, commentBody, github, context);
+    await postComment(github, context, currentIssueNum, commentBody);  
+    await postComment(github, context, preWorkIssue.issueNum, commentBody);
 
   } catch (error) {
     throw new Error(
       `Failed to handle issue complexity not permitted for issue #${currentIssueNum}: ${error.message}`
     );
-  }
-}
-
-// Updates the issue's status
-async function updateItemStatus(
-  github,
-  itemId,
-  statusValueId,
-  PROJECT_ID,
-  STATUS_FIELD_ID
-) {
-  try {
-    const mutation = `
-      mutation ($projectId: ID!, $itemId: ID!, $fieldId: ID!, $valueId: String!) {
-        updateProjectV2ItemFieldValue(
-          input: {
-            projectId: $projectId
-            itemId: $itemId
-            fieldId: $fieldId
-            value: { singleSelectOptionId: $valueId }
-          }
-        ) {
-          projectV2Item {
-            id
-          }
-        }
-      }
-    `;
-
-    await github.graphql(mutation, {
-      projectId: PROJECT_ID,
-      itemId: itemId,
-      fieldId: STATUS_FIELD_ID,
-      valueId: statusValueId
-    });
-  } catch (error) {
-    throw new Error(`Error updating issue status: ${error.message}`)
   }
 }
 
