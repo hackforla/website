@@ -195,15 +195,11 @@ async function createComment(fileName) {
 
     const filePath = './github-actions/trigger-issue/add-preliminary-comment/' + fileName;
     const commentObject = {
-    replacements: [
-      {
-        replacementString: assignee,
-        placeholderString: '${issueAssignee}',
-      },
-    ],
-    filePathToFormat: filePath,
-    textToFormat: null
-  };
+      replacementString: assignee,
+      placeholderString: '${issueAssignee}',
+      filePathToFormat: filePath,
+      textToFormat: null
+    };
 
     // Return the formatted comment
     const formattedComment = formatComment(commentObject, fs);
