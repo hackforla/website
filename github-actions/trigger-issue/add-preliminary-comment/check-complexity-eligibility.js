@@ -1,5 +1,4 @@
 const fs = require('fs');
-const formatComment = require('../../utils/format-comment');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const postComment = require('../../utils/post-issue-comment');
 const queryIssueInfo = require('../../utils/query-issue-info');
