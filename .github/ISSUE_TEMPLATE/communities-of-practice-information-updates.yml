@@ -73,9 +73,8 @@ body:
         Slack Member ID:
   - type: markdown
     attributes:
-      value: "### Resources"
-  - type: markdown
-    attributes:
       value: |
-        folder where files are in the repo: https://github.com/hackforla/website/tree/gh-pages/_data/internal/communities
-        where you can see the live page: https://www.hackforla.org/communities-of-practice
+        ### Resources
+        * Folder where files are in the repo: https://github.com/hackforla/website/tree/gh-pages/_data/internal/communities
+        * Where you can see the live page: https://www.hackforla.org/communities-of-practice
+        * If you need to update your meeting times, names, dates, or frequency, please see the [VRMS User Guide](https://github.com/hackforla/VRMS/wiki/User-Guide). The HackforLA.org website gets the meeting times from the updates made to each Community of Practice's meeting data in vrms.io
