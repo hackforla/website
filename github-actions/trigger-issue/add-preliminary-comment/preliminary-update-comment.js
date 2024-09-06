@@ -64,9 +64,6 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       github,
       context,
       isAdminOrMerge,
-      PROJECT_ID,
-      STATUS_FIELD_ID,
-      statusValues
     );
     // If complexity not permitted, stop here, check-complexity-eligibility.js 
     // script will perform remaining tasks and post comment
