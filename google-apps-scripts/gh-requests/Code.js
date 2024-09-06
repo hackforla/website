@@ -15,7 +15,7 @@ const ACCEPT_HEADER = {
 // Retrieves a GitHub file's SHA and associated wins (in JSON format)
 function getWins(fileName) {
   const branch = "update-wins-data";
-  const url = `https://api.github.com/repos/iancooperman/hackforla-website/contents/_data/external/${fileName}?ref=${branch}`;
+  const url = `https://api.github.com/repos/elizabethhonest/website/contents/_data/external/${fileName}?ref=${branch}`;
   const response = getRequest_(url, ACCEPT_HEADER.Repository);
 
   if (response === false ) {
@@ -43,7 +43,7 @@ function updateWinsFile(fileName, content, sha) {
     "sha": sha,
     "branch": "update-wins-data"
   }
-  const url = `https://api.github.com/repos/iancooperman/hackforla-website/contents/_data/external/${fileName}`;
+  const url = `https://api.github.com/repos/elizabethhonest/website/contents/_data/external/${fileName}`;
   const response = putRequest_(url, ACCEPT_HEADER.Repository, payload);
 
   if (response === false ) {
@@ -63,7 +63,7 @@ function createPR() {
     "base": "gh-pages",
     "body": "PR to update the wins data. To be reviewed by the merge team.",
   };
-  const url = `https://api.github.com/repos/iancooperman/hackforla-website/pulls`;
+  const url = `https://api.github.com/repos/hackforla/website/pulls`;
   const response = postRequest_(url, ACCEPT_HEADER.Repository, payload);
 
   if (response === false ) {
@@ -82,7 +82,7 @@ function createIssue() {
     "body": "A new wins form submission has just been created. Please navigate to the link below to review it.<br><br>- [Wins Submission Google Sheet](https://docs.google.com/spreadsheets/d/1fXmYrmNtrgdzkM_odGIRbSwdaea3yS0cTLCJUzZ6Sc0/edit#gid=1706218917)",
     "labels": ["new-win-submission","P-Feature: Wins Page", "role: product", "good first issue"]
   };
-  const url = `https://api.github.com/repos/iancooperman/hackforla-website/issues`;
+  const url = `https://api.github.com/repos/hackforla/website/issues`;
   const response = postRequest_(url, ACCEPT_HEADER.Repository, payload);
 
   if (response === false ) {
