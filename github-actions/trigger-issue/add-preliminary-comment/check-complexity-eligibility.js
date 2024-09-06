@@ -390,8 +390,12 @@ async function handleIssueComplexityNotPermitted(
       currentIssueNum,
       assigneeUsername
     );  
-    await postComment(github, context, currentIssueNum, commentBody);  
-    await postComment(github, context, preWorkIssue.issueNum, commentBody);
+
+    // Post comment on the issue
+    await postComment(currentIssueNum, commentBody, github, context);  
+
+    // Post comment on the assignee's Pre-work Checklist (Skills Issue)
+    await postComment(preWorkIssue.issueNum, commentBody, github, context);
 
   } catch (error) {
     throw new Error(
@@ -400,7 +404,7 @@ async function handleIssueComplexityNotPermitted(
   }
 }
 
-// Formats the complexity reminder comment.
+// Formats the complexity reminder comment
 function formatComplexityReminderComment(issueNum, assigneeUsername) {
   const replacements = [
     {
