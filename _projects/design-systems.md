@@ -94,6 +94,7 @@ leadership:
       github: 'https://github.com/TobyShanti'
     picture: 'https://avatars.githubusercontent.com/TobyShanti'
   - name: Liz Zheng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04GYRW4DAT'
