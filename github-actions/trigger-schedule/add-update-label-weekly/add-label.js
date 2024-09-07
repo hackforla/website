@@ -408,7 +408,7 @@ async function minimizeComment(node_id) {
   });
 
   req.on('error', (error) => {
-    console.error(error);
+    console.error("An error minimizing comments occurred");
   });
 
   req.write(mutation);
