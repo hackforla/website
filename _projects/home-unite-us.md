@@ -33,6 +33,7 @@ leadership:
       github: "https://github.com/stevbark"
     picture: https://avatars.githubusercontent.com/stevbark
   - name: Erik Guntner
+    github-handle:
     role: Front End Developer
     links:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
@@ -52,6 +53,7 @@ leadership:
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
