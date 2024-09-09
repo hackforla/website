@@ -20,6 +20,7 @@ leadership:
       github: 'https://github.com/joshfishman'
     picture: https://avatars.githubusercontent.com/joshfishman
   - name: Yingjie Ou
+    github-handle:
     role: UX Research Lead
     links:
       slack: 'https://hackforla.slack.com/team/U03TP1VFALV'
