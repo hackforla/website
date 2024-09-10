@@ -101,6 +101,7 @@ leadership:
       github: 'https://github.com/liz-zheng'
     picture: 'https://avatars.githubusercontent.com/liz-zheng'
   - name: Michael Morgan
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
