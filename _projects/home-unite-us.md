@@ -102,6 +102,7 @@ leadership:
       github: "https://github.com/KowDesign"
     picture: https://avatars.githubusercontent.com/KowDesign
   - name: Muyin Zheng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U04HAEEKT29"
