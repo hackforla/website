@@ -1,12 +1,12 @@
 /**
  * Minimize issue comment as OUTDATED given the comment's node Id
- * @param {String} nodeID - node Id of comment to be marked as 'OUTDATED'
+ * @param {String} nodeId - node Id of comment to be marked as 'OUTDATED'
  * 
  */
-async function minimizeIssueComment(github, nodeID) {
+async function minimizeIssueComment(github, nodeId) {
 
-  const mutation = `mutation($nodeID: ID!) {
-    minimizeComment(input: {classifier: OUTDATED, subjectId: $nodeID}) {
+  const mutation = `mutation($nodeId: ID!) {
+    minimizeComment(input: {classifier: OUTDATED, subjectId: $nodeId}) {
       clientMutationId
       minimizedComment {
         isMinimized
@@ -16,7 +16,7 @@ async function minimizeIssueComment(github, nodeID) {
   }`;
 
   const variables = {
-    nodeId: nodeID,
+    nodeId: nodeId,
   };
 
   try {
