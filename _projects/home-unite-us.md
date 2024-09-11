@@ -13,6 +13,7 @@ leadership:
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
   - name: Jed Stewart
+    github-handle: 
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
