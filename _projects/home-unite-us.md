@@ -53,6 +53,7 @@ leadership:
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
@@ -101,6 +102,7 @@ leadership:
       github: "https://github.com/KowDesign"
     picture: https://avatars.githubusercontent.com/KowDesign
   - name: Muyin Zheng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: "https://hackforla.slack.com/team/U04HAEEKT29"

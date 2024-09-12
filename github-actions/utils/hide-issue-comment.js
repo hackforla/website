@@ -1,26 +1,29 @@
 /**
- * Hide a comment as OUTDATED on github
- * @param {Number} nodeID - the comment to be marked as 'OUTDATED'
+ * Minimize issue comment as OUTDATED given the comment's node Id
+ * @param {String} nodeId - node Id of comment to be marked as 'OUTDATED'
+ * 
  */
+async function minimizeIssueComment(github, nodeId) {
 
-async function hideComment(github, nodeID) {
-  const reason = "OUTDATED"
-  try {
-    const resp = await github.graphql(`
-      mutation {
-        minimizeComment(input: {classifier: ${reason}, subjectId: "${nodeID}"}) {
-          minimizedComment {
-            isMinimized
-          }
-        }
+  const mutation = `mutation($nodeId: ID!) {
+    minimizeComment(input: {classifier: OUTDATED, subjectId: $nodeId}) {
+      clientMutationId
+      minimizedComment {
+        isMinimized
+        minimizedReason
       }
-    `)
-    if (resp.errors) {
-      throw new Error(`${resp.errors[0].message}`)
     }
-  } catch (err) {
-    throw new Error(err)
+  }`;
+
+  const variables = {
+    nodeId: nodeId,
+  };
+
+  try {
+    await github.graphql(mutation, variables);
+  } catch (error) {
+    throw new Error(`Error in minimizeIssueComment() function: ${error}`);
   }
 }
 
-module.exports = hideComment
+module.exports = minimizeIssueComment;
