@@ -6,7 +6,8 @@ image: /assets/images/projects/tech-work-experience.png
 alt: 'Tech Work Experience'
 image-hero: /assets/images/projects/tech-work-experience-hero.png
 leadership:
-  - name: Priyanka Talwar
+  - name: Priyanka Talwar 
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U029P91EY15'
