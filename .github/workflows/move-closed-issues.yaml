@@ -3,12 +3,14 @@ on:
   issues:
     types:
       - closed
-      
+
 jobs:
   Move-Closed-Issues:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 1: Sort closed issues based on labels
       - name: Sort Closed Issues by Label
         uses: actions/github-script@v7
         id: sort-closed-issues
@@ -17,10 +19,38 @@ jobs:
             const script = require('./github-actions/move-closed-issues/sort-closed-issues.js')
             const sortIssues = script({context})
             return sortIssues
-          result-encoding: string
-          
-      # Post-migration to Projects Beta:
-      # Move-Closed-Issues to "QA" column by default; OR move to "Done" based on `sort-closed-issues.js`
-      - name: Move Closed Issues
-        run: echo "Based on its labels, issue should be sorted to 'status' of '${{ steps.sort-closed-issues.outputs.result }}'" 
-        
+          # result-encoding: string
+
+      # 2: Gather ID and current status of issue
+      - name: Query Issue Info
+        uses: actions/github-script@v7
+        id: query-issue-info
+        with:
+          script: |
+            const queryIssueInfo = require('./github-actions/utils/query-issue-info.js');
+            const issueNum = context.issue.number;
+            const issueInfo = await queryIssueInfo(github, context, issueNum);
+            return issueInfo;
+
+      # 3: Get GraphQL ID of new status
+      - name: Get New Status Field ID
+        uses: actions/github-script@v7
+        id: get-status-id
+        with:
+          script: |
+            const statusFieldId = require('./github-actions/utils/_data/status-field-ids.js');
+            const sortedStatus = context.steps['sort-closed-issues'].outputs.result;
+            const statusId = statusFieldId(sortedStatus);
+            return statusId;
+
+      # 4: Mutate the issue status using its itemId and the new status
+      - name: Mutate Issue Status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const mutateIssueStatus = require('./github-actions/utils/mutate-issue-status.js');
+            const issueInfo = context.steps['query-issue-info'].outputs.result;
+            const newStatusId = context.steps['get-status-id'].outputs.result;
+
+            // Call the function to mutate the issue status
+            await mutateIssueStatus(github, context, issueInfo.id, newStatusId);
