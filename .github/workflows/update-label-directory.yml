@@ -10,8 +10,7 @@ on:
 jobs:
   Update-Label-Directory:
     runs-on: ubuntu-latest
-    # if: github.repository == 'hackforla/website'                 << FIX BEFORE MERGING. FIX URL line 40 BELOW
-    if: github.repository == 't-will-gillis/website'
+    if: github.repository == 'hackforla/website'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,13 +26,14 @@ jobs:
             const labelPacket = script({g: github, c: context})
             return labelPacket
 
-      # Note the the URL below matches the **current deployment URL** of the Apps Script associated with the 'Source of Truth' 
-      # Label spreadsheet and maintained by `hackforla-bot@hackforla.org`. (If something is broken, check this link first)
+      # NOTE: the the URL below matches the **current deployment URL** of the Apps Script
+      # associated with the 'Source of Truth'Label spreadsheet and maintained by
+      # `hackforla-bot@hackforla.org`. (If something is broken, check this link first)
       - name: Send POST request to Google Apps Script
         env:
           label_edits: ${{ steps.update-label-directory.outputs.result }}
         run: |
-          curl -X POST "https://script.google.com/macros/s/AKfycbyiqFeNeK1ag1PNzM3oIkdk2Ki8RLVzOsMUy_bsk_6WjEKICFLt3ua9Ypz9LpXN-rm1/exec" \
+          curl -X POST "https://script.google.com/macros/s/AKfycbw_rM8kwRea_iT6NbP1k5c7nJl5qg-5IwiTPXUyd7V2Oe_TN_TbapdpcVtLPHieKdUt/exec" \
            -H "Content-Type: application/json" \
            -d "$label_edits"
 
