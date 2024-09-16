@@ -5,7 +5,6 @@
  * @returns {Object}         - An object containing the item ID and its status name
  */
 async function queryIssueInfo(github, context, issueNum) {
-
   const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
     repository(owner: $owner, name: $repo) {
       issue(number: $issueNum) {
@@ -29,15 +28,16 @@ async function queryIssueInfo(github, context, issueNum) {
   const variables = {
     owner: context.repo.owner,
     repo: context.repo.repo,
-    issueNum: issueNum
+    issueNum: issueNum,
   };
 
-  try { 
+  try {
     const response = await github.graphql(query, variables);
 
     // Extract the list of project items associated with the issue
     const projectItems = response.repository.issue.projectItems.nodes;
 
+    /*
     // Since there is always one item associated with the issue,
     // directly get the item's ID from the first index
     const id = projectItems[0].id;
@@ -45,10 +45,36 @@ async function queryIssueInfo(github, context, issueNum) {
     // Iterate through the field values of the first project item
     // and find the node that contains the 'name' property, then get its 'name' value
     const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
+    */
+
+    //! Uncomment /**/ above and remove through line 71 below after testing
+    // Check if there are any project items
+    if (!projectItems || projectItems.length === 0) {
+      throw new Error(
+        `No project items found for Issue #${issueNum}`
+      );
+    }
+
+    // Get the item's ID from the first project item
+    const id = projectItems[0].id;
+
+    // Extract field values and find the node with the 'name' property
+    const fieldValues = projectItems[0].fieldValues?.nodes || [];
+    const statusNode = fieldValues.find((item) =>
+      item.hasOwnProperty('name')
+    );
+
+    if (!statusNode) {
+      throw new Error(`No status name found for Issue #${issueNum}`);
+    }
+
+    const statusName = statusNode.name;
 
     return { id, statusName };
-  } catch(error) {
-    throw new Error(`Error finding Issue #${issueNum} id and status; error = ${error}`);
+  } catch (error) {
+    throw new Error(
+      `Error finding Issue #${issueNum} id and status; error = ${error}`
+    );
   }
 }
 
