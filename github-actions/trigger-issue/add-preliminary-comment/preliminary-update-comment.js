@@ -63,19 +63,6 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       return;
     }
 
-    // Check if developer is allowed to work on complexity level of the issue
-    const issueComplexityPermitted = await checkComplexityEligibility(
-      github,
-      context,
-      isAdminOrMerge,
-    );
-    // If complexity not permitted, stop here, check-complexity-eligibility.js 
-    // script will perform remaining tasks and post comment
-    if (issueComplexityPermitted === false) {
-      console.log("Issue of this complexity is not permitted.");
-      return;
-    }
-
     // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
     if(!isAdminOrMerge && isAssignedToAnotherIssue) {
       const comment = await createComment('multiple-issue-reminder.md', issueNum);
