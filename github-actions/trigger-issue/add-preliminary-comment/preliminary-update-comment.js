@@ -1,21 +1,22 @@
 // Import modules
-const fs = require("fs");
-const postComment = require('../../utils/post-issue-comment');
-const formatComment = require('../../utils/format-comment');
-const getTimeline = require('../../utils/get-timeline');
-const getTeamMembers = require('../../utils/get-team-members');
+const fs = require('fs');
+const checkComplexityEligibility = require('./check-complexity-eligibility');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const statusFieldIds = require('../../utils/_data/status-field-ids');
+const postComment = require('../../utils/post-issue-comment');
+const formatComment = require('../../utils/format-comment');
+const getTeamMembers = require('../../utils/get-team-members');
+const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
 let github;
 let context;
 let assignee;
 
-const emergentRequests = "Emergent Requests";
-const newIssueApproval = "New Issue Approval";
-const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
+const emergentRequests = 'Emergent Requests';
+const newIssueApproval = 'New Issue Approval';
+const READY_FOR_PRIORITIZATION = 'Ready for Prioritization';
 
 
 
@@ -49,9 +50,22 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
     const isAssignedToAnotherIssue = await assignedToAnotherIssue();
 
+    // Check if developer is allowed to work on complexity level of the issue
+    const issueComplexityPermitted = await checkComplexityEligibility(
+      github,
+      context,
+      isAdminOrMerge,
+    );
+    // If complexity not permitted, stop here, check-complexity-eligibility.js 
+    // script will perform remaining tasks and post comment
+    if (issueComplexityPermitted === false) {
+      console.log("Issue of this complexity is not permitted.");
+      return;
+    }
+
     // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
     if(!isAdminOrMerge && isAssignedToAnotherIssue) {
-      const comment = await createComment("multiple-issue-reminder.md", issueNum);
+      const comment = await createComment('multiple-issue-reminder.md', issueNum);
       await postComment(issueNum, comment, github, context);
       console.log(' - add `multiple-issue-reminder.md` comment to issue');
 
@@ -60,13 +74,13 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       console.log(' - remove developer and add `Ready for Prioritization` label');
 
       // Update item's status to "New Issue Approval"
-      let statusValue = statusFieldIds("New_Issue_Approval");
+      let statusValue = statusFieldIds('New_Issue_Approval');
       const itemInfo = await queryIssueInfo(github, context, issueNum);
       await mutateIssueStatus(github, context, itemInfo.id, statusValue);
       console.log(' - change issue status to "New Issue Approval"');
     } else {
       // Otherwise, proceed with checks 
-      const comment = await createComment("preliminary-update.md", issueNum);
+      const comment = await createComment('preliminary-update.md', issueNum);
       await postComment(issueNum, comment, github, context);
     }
   } catch(error) {
