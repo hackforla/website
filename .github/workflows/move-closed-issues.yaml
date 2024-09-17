@@ -27,9 +27,9 @@ jobs:
         id: query-issue-info
         with:
           script: |
-            const queryIssueInfo = require('./github-actions/utils/query-issue-info.js');
             const issueNum = context.issue.number;
-            const issueInfo = await queryIssueInfo(github, context, issueNum);
+            const queryIssueInfo = require('./github-actions/utils/query-issue-info.js');
+            const issueInfo = script({github, context}, issueNum);
             return issueInfo;
 
       # 3: Get GraphQL ID of new status
