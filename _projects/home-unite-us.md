@@ -14,12 +14,14 @@ leadership:
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
   - name: Jed Stewart
+    github-handle: 
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
       github: "https://github.com/jed-stewart"
     picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
+    github-handle:
     role: Developer
     links:
       slack: "https://hackforla.slack.com/team/U0411CAL13N"
@@ -33,12 +35,14 @@ leadership:
       github: "https://github.com/stevbark"
     picture: https://avatars.githubusercontent.com/stevbark
   - name: Erik Guntner
+    github-handle:
     role: Front End Developer
     links:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
   - name: Kristelle Gumaru
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U031VJ99ATU"
@@ -52,6 +56,7 @@ leadership:
       github: "https://github.com/sanya301"
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
+    github-handle:
     role: Product Manager
     links:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
