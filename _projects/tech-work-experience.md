@@ -7,6 +7,7 @@ alt: 'Tech Work Experience'
 image-hero: /assets/images/projects/tech-work-experience-hero.png
 leadership:
   - name: Priyanka Talwar
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U029P91EY15'
@@ -20,6 +21,7 @@ leadership:
       github: 'https://github.com/joshfishman'
     picture: https://avatars.githubusercontent.com/joshfishman
   - name: Yingjie Ou
+    github-handle:
     role: UX Research Lead
     links:
       slack: 'https://hackforla.slack.com/team/U03TP1VFALV'
