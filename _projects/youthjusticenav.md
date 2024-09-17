@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/doctorsandy'
     picture: 'https://avatars.githubusercontent.com/doctorsandy'
   - name: Moji Jimoh
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/D04HDM7DM18'
