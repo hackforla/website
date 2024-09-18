@@ -7,7 +7,7 @@ If you have been though onboarding, and feel this message was sent in error, ple
 async function main({github,context}) {
     const prAuthor = context.payload.sender.login;  
     const prNumber = context.payload.number;
-    const repoFullName = context.repository.full_name; //evaluates to 'hackforla/website' in the master repo or '<yourhandle>/website' in your local repo
+    const repoFullName = context.repository.full_name; //evaluates to 'hackforla/website' in the upstream repo or '<yourhandle>/website' in a fork
     const ownerRepo = repoFullName.split("/");
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
     if (isMember || prAuthor =='dependabot[bot]') {    
