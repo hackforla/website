@@ -29,7 +29,7 @@ async function main({github,context}) {
             }); 
         } catch (closeCommentError) {
             console.log(`Failed to close PR #${prNumber} created by ${prAuthor} \
-            in the ${repoFullName} repository. See logs for details`);
+            in the ${repoFullName} repository. See logs for details.`);
             throw closeCommentError;
         } 
     }    
