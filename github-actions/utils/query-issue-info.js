@@ -40,36 +40,15 @@ async function queryIssueInfo(github, context, issueNum) {
     // Extract the list of project items associated with the issue
     const projectData = response.repository.issue.projectItems.nodes;
 
-    /*
     // Since there is always one item associated with the issue,
     // directly get the item's ID from the first index
     const id = projectData[0].id;
 
     // Iterate through the field values of the first project item
     // and find the node that contains the 'name' property, then get its 'name' value
-    const statusName = projectData[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
-    */
-
-    //! Uncomment /**/ above and remove through line 71 below after testing
-    // Check if there are any project items
-    if (!projectData || projectData.length === 0) {
-      throw new Error(
-        `No project items found for Issue #${issueNum}`
-      );
-    }
-
-    // Get the item's ID from the first project item
-    const id = projectData[0].id;
-
-    // Extract field values and find the node with the 'name' property
-    const fieldValues = projectData[0].fieldValues?.nodes || [];
-    const statusNode = fieldValues.find((item) =>
+    const statusName = projectData[0].fieldValues.nodes.find((item) =>
       item.hasOwnProperty('name')
-    );
-
-    if (!statusNode) {
-      throw new Error(`No status name found for Issue #${issueNum}`);
-    }
+    ).name;
 
     const statusName = statusNode.name;
 

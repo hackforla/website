@@ -31,26 +31,3 @@ jobs:
             const results = '${{ steps.sort-closed-issues.outputs.result }}';
             const script = require('./github-actions/move-closed-issues/move-closed-issues.js');
             script({github, context}, results);
-
-      # 3: Get GraphQL ID of new status
-      # - name: Get New Status Field ID
-      #   uses: actions/github-script@v7
-      #   id: get-status-id
-      #   with:
-      #     script: |
-      #       const statusFieldId = require('./github-actions/utils/_data/status-field-ids.js');
-      #       const sortedStatus = context.steps['sort-closed-issues'].outputs.result;
-      #       const statusId = statusFieldId(sortedStatus);
-      #       return statusId;
-
-      # 4: Mutate the issue status using its itemId and the new status
-      # - name: Mutate Issue Status
-      #   uses: actions/github-script@v7
-      #   with:
-      #     script: |
-      #       const mutateIssueStatus = require('./github-actions/utils/mutate-issue-status.js');
-      #       const issueInfo = context.steps['query-issue-info'].outputs.result;
-      #       const newStatusId = context.steps['get-status-id'].outputs.result;
-
-      #       // Call the function to mutate the issue status
-      #       await mutateIssueStatus(github, context, issueInfo.id, newStatusId);
