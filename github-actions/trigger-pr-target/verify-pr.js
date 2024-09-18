@@ -10,6 +10,7 @@ async function main({github,context}) {
     const repoFullName = context.repository.full_name; //evaluates to 'hackforla/website' in the upstream repo or '<yourhandle>/website' in a fork
     const ownerRepo = repoFullName.split("/");
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
+    console.log(context); //for debugging, remove later
     if (isMember || prAuthor =='dependabot[bot]') {    
         console.log('Successfully verified!');
     }
