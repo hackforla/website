@@ -5,6 +5,9 @@
  * @returns {Object}         - An object containing the item ID and its status name
  */
 async function queryIssueInfo(github, context, issueNum) {
+  const repoOwner = context.repo.owner;
+  const repoName = context.repo.repo;
+
   const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
     repository(owner: $owner, name: $repo) {
       issue(number: $issueNum) {
@@ -26,8 +29,8 @@ async function queryIssueInfo(github, context, issueNum) {
   }`;
 
   const variables = {
-    owner: context.repo.owner,
-    repo: context.repo.repo,
+    owner: repoOwner,
+    repo: repoName,
     issueNum: issueNum,
   };
 
@@ -35,31 +38,31 @@ async function queryIssueInfo(github, context, issueNum) {
     const response = await github.graphql(query, variables);
 
     // Extract the list of project items associated with the issue
-    const projectItems = response.repository.issue.projectItems.nodes;
+    const projectData = response.repository.issue.projectItems.nodes;
 
     /*
     // Since there is always one item associated with the issue,
     // directly get the item's ID from the first index
-    const id = projectItems[0].id;
+    const id = projectData[0].id;
 
     // Iterate through the field values of the first project item
     // and find the node that contains the 'name' property, then get its 'name' value
-    const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
+    const statusName = projectData[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
     */
 
     //! Uncomment /**/ above and remove through line 71 below after testing
     // Check if there are any project items
-    if (!projectItems || projectItems.length === 0) {
+    if (!projectData || projectData.length === 0) {
       throw new Error(
         `No project items found for Issue #${issueNum}`
       );
     }
 
     // Get the item's ID from the first project item
-    const id = projectItems[0].id;
+    const id = projectData[0].id;
 
     // Extract field values and find the node with the 'name' property
-    const fieldValues = projectItems[0].fieldValues?.nodes || [];
+    const fieldValues = projectData[0].fieldValues?.nodes || [];
     const statusNode = fieldValues.find((item) =>
       item.hasOwnProperty('name')
     );
