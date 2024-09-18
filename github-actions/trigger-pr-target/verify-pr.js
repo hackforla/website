@@ -5,12 +5,12 @@ If you have been though onboarding, and feel this message was sent in error, ple
 #hfla-site team Slack channel with the link to this PR.';
 
 async function main({github,context}) {
+    console.log(context); //for debugging, remove later
     const prAuthor = context.payload.sender.login;  
     const prNumber = context.payload.number;
     const repoFullName = context.repository.full_name; //evaluates to 'hackforla/website' in the upstream repo or '<yourhandle>/website' in a fork
     const ownerRepo = repoFullName.split("/");
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
-    console.log(context); //for debugging, remove later
     if (isMember || prAuthor =='dependabot[bot]') {    
         console.log('Successfully verified!');
     }
