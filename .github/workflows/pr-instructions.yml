@@ -19,6 +19,7 @@ jobs:
         with:
           script: |
             const script = require('./github-actions/pr-instructions/create-instruction.js')
+            console.log(context)
             return script({g: github, c: context}).then((instruction) => {
               return JSON.stringify({ instruction: instruction, issueNum: context.payload.number })
             })
