@@ -26,8 +26,9 @@ jobs:
         uses: actions/github-script@v7
         id: move-closed-issue
         with:
+          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |
-            const results = ${{ steps.sort-closed-issues.outputs.result }}
+            const results = '${{ steps.sort-closed-issues.outputs.result }}';
             const script = require('./github-actions/move-closed-issues/move-closed-issues.js');
             script({github, context}, results);
 
