@@ -78,7 +78,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       await postComment(issueNum, comment, github, context);
 
       await unAssignDev(); // Unassign the developer
-      await addLabel(READY_FOR_PRIORITIZATION); // Add 'ready for dev lead' label
+      await addLabel(READY_FOR_PRIORITIZATION); 
 
       // Update item's status to "New Issue Approval"
       const itemInfo = await getItemInfo();
