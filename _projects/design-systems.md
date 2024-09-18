@@ -94,12 +94,14 @@ leadership:
       github: 'https://github.com/TobyShanti'
     picture: 'https://avatars.githubusercontent.com/TobyShanti'
   - name: Liz Zheng
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04GYRW4DAT'
       github: 'https://github.com/liz-zheng'
     picture: 'https://avatars.githubusercontent.com/liz-zheng'
   - name: Michael Morgan
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'

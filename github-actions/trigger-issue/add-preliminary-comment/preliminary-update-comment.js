@@ -3,6 +3,7 @@ const fs = require("fs");
 const postComment = require('../../utils/post-issue-comment');
 const formatComment = require('../../utils/format-comment');
 const getTimeline = require('../../utils/get-timeline');
+const checkComplexityEligibility = require('./check-complexity-eligibility');
 const getTeamMembers = require('../../utils/get-team-members');
 
 // Global variables
@@ -57,6 +58,19 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
     const isAssignedToAnotherIssues = await assignedToAnotherIssue();
+
+    // Check if developer is allowed to work on complexity level of the issue
+    const issueComplexityPermitted = await checkComplexityEligibility(
+      github,
+      context,
+      isAdminOrMerge,
+    );
+    // If complexity not permitted, stop here, check-complexity-eligibility.js 
+    // script will perform remaining tasks and post comment
+    if (issueComplexityPermitted === false) {
+      console.log("Issue of this complexity is not permitted.");
+      return;
+    }
 
     // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
     if(!isAdminOrMerge && isAssignedToAnotherIssues) {

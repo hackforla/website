@@ -1,9 +1,9 @@
 /// Import modules
 const fs = require("fs");
-const https = require("https");
 const queryIssueInfo = require("../../utils/query-issue-info");
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
+const minimizeIssueComment = require('../../utils/hide-issue-comment');
 
 // Global variables
 var github;
@@ -14,8 +14,8 @@ const toUpdateLabel = 'To Update !';
 const inactiveLabel = '2 weeks inactive';
 
 const updatedByDays = 3;                // If last update update  3 days, the issue is considered updated
-const commentByDays = 7;                // If last update between 7 and 14 days ago, the issue is outdated, assignee needs 'To Update !' it
-const inactiveUpdatedByDays = 14;       // If last update greater than 14 days ago, the issue is considered '2 weeks inactive'
+const commentByDays = 7;                // If last update between 7 and 14 days ago, issue outdated, needs 'To Update !'
+const inactiveUpdatedByDays = 14;       // If last update greater than 14 days ago, issue considered '2 weeks inactive'
 
 const threeDayCutoffTime = new Date();
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays);
@@ -24,27 +24,24 @@ sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays);
 const fourteenDayCutoffTime = new Date();
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays);
 
-var projectBoardToken;
-
 
 
 /**
- * The main function, which retrieves issues from a specific column in a specific project, before examining the timeline of each issue 
- * for outdatedness. An update to an issue is either 1.) a comment by the assignee, or 2.) assigning an assignee to the issue. If the 
- * last update was not between 7 to 14 days ago, apply the appropriate label and request an update. However, if the assignee has submitted 
- * a PR that will fix the issue regardless of when, all update-related labels should be removed.
-
+ * The main function, which retrieves issues from a specific column in a specific project, before examining
+ * the timeline of each issue for outdatedness. An update to an issue is either 1.) a comment by the assignee,
+ * or 2.) assigning an assignee to the issue. If the last update was not between 7 to 14 days ago, apply the
+ * appropriate label and request an update. However, if the assignee has submitted a PR that will fix the issue
+ * regardless of when, all update-related labels should be removed.
  * @param {Object} g                   - GitHub object from actions/github-script
  * @param {Object} c                   - context object from actions/github-script
  * @param {String} projectBoardToken   - the Personal Access Token for the action
  */
-async function main({ g, c }, pbt) {
+async function main({ g, c }) {
   github = g;
   context = c;
-  projectBoardToken = pbt;
-  
+
   // Retrieve all issue numbers from a repo
-  const issueNums = await getIssueNumsFromRepo();       // Revised for Projects Beta migration
+  const issueNums = await getIssueNumsFromRepo();
 
   for await (let issueNum of issueNums) {
     const timeline = await getTimeline(issueNum, github, context);
@@ -91,8 +88,9 @@ async function getIssueNumsFromRepo() {
   let issueNums = [];
   let pageNum = 1;
   let result = [];
-  
+
   while (true) {
+    // https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
     const issueData = await github.request('GET /repos/{owner}/{repo}/issues', {
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -253,7 +251,7 @@ async function removeLabels(issueNum, ...labels) {
  */
 async function addLabels(issueNum, ...labels) {
   try {
-    // https://octokit.github.io/rest.js/v18#issues-add-labels
+    // https://octokit.github.io/rest.js/v20#issues-add-labels
     await github.rest.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -273,6 +271,7 @@ async function postComment(issueNum, assignees, labelString) {
   try {
     const assigneeString = createAssigneeString(assignees);
     const instructions = formatComment(assigneeString, labelString);
+    // https://octokit.github.io/rest.js/v20/#issues-create-comment
     await github.rest.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
@@ -353,66 +352,16 @@ function formatComment(assignees, labelString) {
 
 function isCommentByBot(data) {
   let botLogin = "github-actions[bot]";
-  return data.actor.login === botLogin;
+  let hflaBotLogin = "HackforLABot";
+  return data.actor.login === botLogin || data.actor.login === hflaBotLogin;
 }
 
 // asynchronously minimize all the comments that are outdated (> 1 week old)
 async function minimizeComments(comment_node_ids) {
   for (const node_id of comment_node_ids) {
     await new Promise((resolve) => { setTimeout(resolve, 1000); }); // wait for 1000ms before doing the GraphQL mutation
-    await minimizeComment(node_id);
+    await minimizeIssueComment(github, node_id);
   }
-}
-
-async function minimizeComment(node_id) {
-  const mutation = JSON.stringify({
-    query: `mutation HideOutdatedComment($nodeid: ID!){ 
-        minimizeComment(input:{
-          classifier:OUTDATED,
-          subjectId: $nodeid
-        }) {
-          clientMutationId
-          minimizedComment {
-            isMinimized
-            minimizedReason
-          }
-        }
-      }`,
-    variables: {
-      nodeid: node_id
-    }
-  });
-
-  const options = {
-    hostname: 'api.github.com',
-    path: '/graphql',
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'bearer ' + projectBoardToken,
-      'user-agent': 'Add-Update-Label-to-Issues-Weekly'
-    }
-  };
-
-  // copied from https://developer.ibm.com/articles/awb-consuming-graphql-apis-from-plain-javascript/
-  const req = https.request(options, (res) => {
-    let data = '';
-    // console.log(`statusCode: ${res}`);
-  
-    res.on('data', (d) => {
-      data += d;
-    });
-    res.on('end', () => {
-      console.log(`GraphQL output: ${data}`);
-    });
-  });
-
-  req.on('error', (error) => {
-    console.error("An error minimizing comments occurred");
-  });
-
-  req.write(mutation);
-  req.end();
 }
 
 module.exports = main;
