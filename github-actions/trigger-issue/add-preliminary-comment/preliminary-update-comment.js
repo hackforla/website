@@ -16,7 +16,7 @@ let assignee;
 
 const emergentRequests = 'Emergent Requests';
 const newIssueApproval = 'New Issue Approval';
-const READY_FOR_PRIORITIZATION = 'Ready for Prioritization';
+const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
 
 
 
@@ -203,7 +203,7 @@ async function createComment(fileName, issueNum) {
 }
 
 /**
- * @description - Add 'ready for ...' label to the issue
+ * @description - Add label to the issue
  * @param {String} labelName - Name of the label to add
  */
 async function addLabel(labelName) {

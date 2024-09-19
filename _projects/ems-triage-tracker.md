@@ -68,7 +68,7 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UPNR0KG00'
     picture: /assets/images/misc/no-photo.png
 links:
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/ems-triage-tracker'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/CQ5J1DA72'

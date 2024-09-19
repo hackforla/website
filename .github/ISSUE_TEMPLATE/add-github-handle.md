@@ -2,8 +2,9 @@
 name: github-handle in project file
 about: For adding github-handle to member data in a project file
 title: Add github-handle for [INSERT NAME] in [INSERT PROJECT FILE]
-labels: 'good first issue, P-Feature: Project Info and Page, ready for dev lead, role:
-  back end/devOps, role: front end, size: 0.25pt'
+labels: 'Complexity: Small, feature: spelling, good first issue, P-Feature: Project
+  Info and Page, ready for dev lead, role: back end/devOps, role: front end, size:
+  0.5pt, size: 0.25pt'
 assignees: ''
 
 ---
