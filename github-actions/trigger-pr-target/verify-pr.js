@@ -7,8 +7,8 @@ If you have been though onboarding, and feel this message was sent in error, ple
 async function main({github,context}) {
     const prAuthor = context.payload.sender.login;  
     const prNumber = context.payload.number;
-    const repoFullName = context.payload.repository.full_name; //string: '<repo_owner>/<repo_name>'
-    const ownerRepo = repoFullName.split("/");
+    const repo = context.payload.pull_request.base.repo.name;
+    const owner = context.payload.pull_request.base.repo.owner.login;
     const isMember = await isMemberOfTeam(github, prAuthor, 'website-write');
     if (isMember || prAuthor =='dependabot[bot]') {    
         console.log('Successfully verified!');
@@ -16,19 +16,19 @@ async function main({github,context}) {
     else {
         try {
             await github.rest.issues.update({
-                owner : ownerRepo[0],
-                repo : ownerRepo[1],
+                owner : owner,
+                repo : repo,
                 issue_number : prNumber,
                 state : 'closed'
             });
             await github.rest.issues.createComment({
-                owner : ownerRepo[0],
-                repo : ownerRepo[1],
+                owner : owner,
+                repo : repo,
                 issue_number : prNumber,
                 body : commentContent
             }); 
         } catch (closeCommentError) {
-            console.log(`Failed to close PR #${prNumber} created by ${prAuthor} in the ${repoFullName} repository. See logs for details.`);
+            console.log(`Failed to close PR #${prNumber} created by ${prAuthor}. See logs for details.`);
             throw closeCommentError;
         } 
     }    
