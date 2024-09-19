@@ -116,7 +116,7 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
 <details>
   <summary><strong>Click here</strong> to see a visual example of the `fork` button within the website repo</summary>
   <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA website repo](https://github.com/hackforla/website)</strong></h4>
-  <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg" />
+  <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg">
   <p><strong>Next, a modal may open and request where you want to fork this website repo. Please click on your avatar or your GitHub username</strong></p>
   <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg">      
 </details><br>
