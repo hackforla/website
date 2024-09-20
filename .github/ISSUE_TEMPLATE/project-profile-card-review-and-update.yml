@@ -36,6 +36,7 @@ body:
         - "LA TDM Calculator"
         - "Lucky Parking"
         - "Open Community Survey"
+        - "Tech Work Experience"
         - "VRMS"
         - "Write for All"
         - "Youth Justice Nav"
@@ -93,6 +94,7 @@ body:
         - "shared-housing-project.md"
         - "spare.md"
         - "tdm-calculator.md"
+        - "tech-work-experience.md"
         - "undebate.md"
         - "vrms.md"
         - "website.md"
@@ -217,6 +219,20 @@ body:
     id: github-link
     attributes:
       label: GitHub Link
+  
+  - type: dropdown
+    id: additional-github-repos-yes-no
+    attributes:
+      label: "Do you have any additional (other than your primary) GitHub repositories that your volunteers make issues or PRs against?"
+      options:
+        - "YES"
+        - "NO"
+    validations:
+      required: true
+  - type: textarea
+    id: additional-github-repos
+    attributes:
+      label: "If yes, list the repo URLs here"
 
   - type: dropdown
     id: update-slack-link-yes-no
