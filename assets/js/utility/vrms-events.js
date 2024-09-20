@@ -4,16 +4,13 @@
 {% assign vrmsData = site.data.external.vrms_data %}
 const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
-/* vrmsDataFilter is a function that filters the vrmsData array to remove the instances of "test" from the events page.
-We need to add logic for removing any event that contain "test"(case-insensitive) from the events page.
+/* vrmsDataFilter is a function that filters the vrmsData array to remove the instances of "test" or "testing" from the events page.
+We need to add logic for removing any event that contain "test" or "testing" (case-insensitive) from the events page.
 */
-export const vrmsDataFilter = (vrmsData) => {
-  return vrmsData.filter(event => event.name.toLowerCase().indexOf("test") === -1);
-}
-
+const vrmsDataFilter = (vrmsData) => vrmsData.filter(data => data.name.match(/(?<=\W|^)(test(ing)?)(?=\W|$)/i) === null);
 const filteredVrmsData = vrmsDataFilter(vrmsData);
 
-/* vrmsDataFetch calls sortByDate function and passes vrmsData variable, current page which can either be "events" for the right-col-content.html page or 
+/* vrmsDataFetch calls sortByDate function and passes filteredVrmsData variable, current page which can either be "events" for the right-col-content.html page or 
 "project" from the project.html page, and passes the appendMeetingTimes function from projects.js that appends the sorted vrmsData 
 returned by sortByDate to project.html. AppendMeetingTimes is only called if vrmsDataFetch is being called from project.js for the project.html page 
 */
