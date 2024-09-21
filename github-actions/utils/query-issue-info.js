@@ -50,8 +50,6 @@ async function queryIssueInfo(github, context, issueNum) {
       item.hasOwnProperty('name')
     ).name;
 
-    const statusName = statusNode.name;
-
     return { id, statusName };
   } catch (error) {
     throw new Error(
