@@ -28,7 +28,7 @@ const statusValues = new Map([
   [In_Progress, "9a878e9c"],
 ]);
 
-const READY_FOR_DEV_LABEL = "ready for dev lead";
+const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
 
 /**
  * @description This function is the entry point into the JavaScript file. It formats the
@@ -78,7 +78,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       await postComment(issueNum, comment, github, context);
 
       await unAssignDev(); // Unassign the developer
-      await addLabel(READY_FOR_DEV_LABEL); // Add 'ready for dev lead' label
+      await addLabel(READY_FOR_PRIORITIZATION); 
 
       // Update item's status to "New Issue Approval"
       const itemInfo = await getItemInfo();
@@ -207,7 +207,7 @@ async function createComment(fileName) {
 }
 
 /**
- * @description - Add 'ready for dev lead' label to the issue
+ * @description - Add label to the issue 
  * @param {String} labelName - Name of the label to add
  */
 async function addLabel(labelName) {
