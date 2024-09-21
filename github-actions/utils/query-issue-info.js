@@ -46,7 +46,7 @@ async function queryIssueInfo(github, context, issueNum) {
 
     // Iterate through the field values of the first project item
     // and find the node that contains the 'name' property, then get its 'name' value
-    const statusName = projectItems[0].fieldValues.nodes.find((item) => 
+    const statusName = projectData[0].fieldValues.nodes.find((item) => 
       item.hasOwnProperty("name")).name;
 
     return { id, statusName };
