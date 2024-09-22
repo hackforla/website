@@ -59,7 +59,7 @@ function updateWinsFile(fileName, content, sha) {
 function createPR() {
   const payload = {
     "title": "Update wins-data.json via Google Apps Script",
-    "head": "iancooperman:update-wins-data",
+    "head": "elizabethhonest:update-wins-data",
     "base": "gh-pages",
     "body": "PR to update the wins data. To be reviewed by the merge team.",
   };
