@@ -1,4 +1,4 @@
-const obtainLabels = require('../utils/obtain-labels')
+const obtainLabels = require('../utils/obtain-labels');
 
 /**
  * Check the labels of an issue, and return the 'status' the issue should be sorted into when closed
@@ -6,33 +6,29 @@ const obtainLabels = require('../utils/obtain-labels')
  * @returns - returns the appropriate 'status', which is passed on to the next action
  */
 function main({ context }) {
-
   // Using Projects Beta 'status'
-  const doneStatus = "Done"
-  const QAStatus = "QA"
+  const doneStatus = 'Done';
+  const QAStatus = 'QA';
 
   const hardLabels = [
-    "Feature: Refactor CSS",
-    "Feature: Refactor HTML",
-    "Feature: Refactor JS / Liquid",
-    "Feature: Refactor GHA",
+    'Feature: Refactor CSS',
+    'Feature: Refactor HTML',
+    'Feature: Refactor JS / Liquid',
+    'Feature: Refactor GHA',
   ];
 
-  const softLabels = [
-    "role: back end/devOps",
-    "Feature: Analytics",
-  ];
+  const softLabels = ['role: back end/devOps', 'Feature: Analytics'];
 
-  const overrideSoftLabels = ["role: front end"]
+  const overrideSoftLabels = ['role: front end'];
 
   const issueLabels = obtainLabels(context);
 
   // checks if label is a hard label
-  const isHardLabel = label => hardLabels.includes(label);
+  const isHardLabel = (label) => hardLabels.includes(label);
   // checks if label is a soft label
-  const isSoftLabel = label => softLabels.includes(label);
+  const isSoftLabel = (label) => softLabels.includes(label);
   // checks if label is an override label
-  const isOverrideLabel = label => overrideSoftLabels.includes(label);
+  const isOverrideLabel = (label) => overrideSoftLabels.includes(label);
 
   /** If issue includes hard labels there should be no visual changes - move to the Done status */
   if (issueLabels.some(isHardLabel)) {

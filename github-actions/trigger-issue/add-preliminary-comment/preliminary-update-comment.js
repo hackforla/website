@@ -1,34 +1,24 @@
 // Import modules
-const fs = require("fs");
+const fs = require('fs');
+const checkComplexityEligibility = require('./check-complexity-eligibility');
+const queryIssueInfo = require('../../utils/query-issue-info');
+const mutateIssueStatus = require('../../utils/mutate-issue-status');
+const statusFieldIds = require('../../utils/_data/status-field-ids');
 const postComment = require('../../utils/post-issue-comment');
 const formatComment = require('../../utils/format-comment');
-const getTimeline = require('../../utils/get-timeline');
-const checkComplexityEligibility = require('./check-complexity-eligibility');
 const getTeamMembers = require('../../utils/get-team-members');
+const getTimeline = require('../../utils/get-timeline');
 
 // Global variables
 let github;
 let context;
 let assignee;
 
-const PROJECT_ID = "PVT_kwDOALGKNs4Ajuck";
-
-// The field containing all statuses
-const STATUS_FIELD_ID = "PVTSSF_lADOALGKNs4AjuckzgcCutQ";
-
-const Emergent_Requests = "Emergent Requests";
-const New_Issue_Approval = "New Issue Approval";
-const Prioritized_Backlog = "Prioritized backlog";
-const In_Progress = "In progress (actively working)";
-
-const statusValues = new Map([
-  [Emergent_Requests, "d468e876"],
-  [New_Issue_Approval, "83187325"],
-  [Prioritized_Backlog, "434304a8"],
-  [In_Progress, "9a878e9c"],
-]);
-
+const emergentRequests = 'Emergent Requests';
+const newIssueApproval = 'New Issue Approval';
 const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
+
+
 
 /**
  * @description This function is the entry point into the JavaScript file. It formats the
@@ -52,12 +42,13 @@ async function main({ g, c }, { shouldPost, issueNum }) {
 
     github = g;
     context = c;
+
     // Get the latest developer in case there are multiple assignees
     assignee = await getLatestAssignee();
 
     // Check if developer is allowed to work on this issue
     const isAdminOrMerge = await memberOfAdminOrMergeTeam();
-    const isAssignedToAnotherIssues = await assignedToAnotherIssue();
+    const isAssignedToAnotherIssue = await assignedToAnotherIssue();
 
     // Check if developer is allowed to work on complexity level of the issue
     const issueComplexityPermitted = await checkComplexityEligibility(
@@ -73,19 +64,23 @@ async function main({ g, c }, { shouldPost, issueNum }) {
     }
 
     // If developer is not in Admin or Merge Teams and assigned to another issue/s, do the following:
-    if(!isAdminOrMerge && isAssignedToAnotherIssues) {
-      const comment = await createComment("multiple-issue-reminder.md");
+    if(!isAdminOrMerge && isAssignedToAnotherIssue) {
+      const comment = await createComment('multiple-issue-reminder.md', issueNum);
       await postComment(issueNum, comment, github, context);
+      console.log(' - add `multiple-issue-reminder.md` comment to issue');
 
-      await unAssignDev(); // Unassign the developer
-      await addLabel(READY_FOR_PRIORITIZATION); 
+      await unAssignDev();
+      await addLabel(READY_FOR_PRIORITIZATION);
+      console.log(' - remove developer and add `Ready for Prioritization` label');
 
       // Update item's status to "New Issue Approval"
-      const itemInfo = await getItemInfo();
-      await updateItemStatus(itemInfo.id, statusValues.get(New_Issue_Approval));
+      let statusValue = statusFieldIds('New_Issue_Approval');
+      const itemInfo = await queryIssueInfo(github, context, issueNum);
+      await mutateIssueStatus(github, context, itemInfo.id, statusValue);
+      console.log(' - change issue status to "New Issue Approval"');
     } else {
-      // Otherwise, post the normal comment
-      const comment = await createComment("preliminary-update.md");
+      // Otherwise, proceed with checks 
+      const comment = await createComment('preliminary-update.md', issueNum);
       await postComment(issueNum, comment, github, context);
     }
   } catch(error) {
@@ -118,16 +113,17 @@ async function memberOfAdminOrMergeTeam() {
  */
 async function assignedToAnotherIssue() {
   try {
+    // https://octokit.github.io/rest.js/v20/#issues-list-for-repo (default state: "open")
     const issues = (await github.rest.issues.listForRepo({
       owner: context.repo.owner,
       repo: context.repo.repo,
-      assignee: assignee,
-      state: "open", // Only fetch opened issues
+      assignee: assignee
     })).data;
 
     const otherIssues = [];
 
     for(const issue of issues) {
+      let repoIssueNum = issue.number;
       // Check is it's an "Agenda" issue
       const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
 
@@ -135,10 +131,10 @@ async function assignedToAnotherIssue() {
       const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
 
       // Check if it exists in "Emergent Request" Status
-      const inEmergentRequestStatus = (await getItemInfo()).statusName === Emergent_Requests;
+      const inEmergentRequestStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === emergentRequests;
     
       // Check if it exists in "New Issue Approval" Status
-      const inNewIssueApprovalStatus = (await getItemInfo()).statusName === New_Issue_Approval;
+      const inNewIssueApprovalStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === newIssueApproval;
     
       // Include the issue only if none of the conditions are met
       if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
@@ -174,14 +170,14 @@ async function unAssignDev() {
  * @param {String} fileName - the file name of the used template
  * @returns {String} - return formatted comment
  */
-async function createComment(fileName) {
+async function createComment(fileName, issueNum) {
   try {
-    const { statusName } = await getItemInfo();
+    const { statusName } = await queryIssueInfo(github, context, issueNum);
 
     const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
     const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
 
-    if(statusName === New_Issue_Approval && !isDraft && !isPrework) {
+    if(statusName === newIssueApproval && !isDraft && !isPrework) {
       if(context.payload.issue.user.login === assignee) {
         fileName = 'draft-label-reminder.md';
       } else {
@@ -207,7 +203,7 @@ async function createComment(fileName) {
 }
 
 /**
- * @description - Add label to the issue 
+ * @description - Add label to the issue
  * @param {String} labelName - Name of the label to add
  */
 async function addLabel(labelName) {
@@ -230,7 +226,6 @@ async function addLabel(labelName) {
 async function getLatestAssignee() {
   try {
     let issueAssignee = context.payload.issue.assignee.login;
-
     const eventdescriptions = await getTimeline(context.payload.issue.number, github, context);
     
     // Find out the latest developer assigned to the issue
@@ -244,92 +239,6 @@ async function getLatestAssignee() {
     return issueAssignee;
   } catch(error) {
     throw new Error("Error getting last assignee: " + error);
-  }
-}
-
-/**
- * @description - Get item info using its issue number
- * @returns {Object} - An object containing the item ID and its status name
- */
-async function getItemInfo() {
-  try {
-    const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
-      repository(owner: $owner, name: $repo) {
-        issue(number: $issueNum) {
-          id
-          projectItems(first: 100) {
-            nodes {
-              id
-              fieldValues(first: 100) {
-                nodes {
-                  ... on ProjectV2ItemFieldSingleSelectValue {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }`;
-
-    const variables = {
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      issueNum: context.payload.issue.number
-    };
-
-    const response = await github.graphql(query, variables);
-
-    // Extract the list of project items associated with the issue
-    const projectItems = response.repository.issue.projectItems.nodes;
-    
-    // Since there is always one item associated with the issue,
-    // directly get the item's ID from the first index
-    const id = projectItems[0].id;
-
-    // Iterate through the field values of the first project item
-    // and find the node that contains the 'name' property, then get its 'name' value
-    const statusName = projectItems[0].fieldValues.nodes.find(item => item.hasOwnProperty('name')).name;
-
-    return { id, statusName };
-  } catch(error) {
-    throw new Error("Error updating item's status: " + error);
-  }
-}
-
-/**
- * @description - Update item to a new status
- * @param {String} itemId - The ID of the item to be updated
- * @param {String} newStatusValue - The new status value to be assigned to the item
- */
-async function updateItemStatus(itemId, newStatusValue) {
-  try {
-    const mutation = `mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
-      updateProjectV2ItemFieldValue(input: {
-        projectId: $projectId,
-        itemId: $itemId,
-        fieldId: $fieldId,
-        value: {
-          singleSelectOptionId: $value
-        }
-      }) {
-        projectV2Item {
-          id
-        }
-      }
-    }`;
-
-    const variables = {
-      projectId: PROJECT_ID,
-      itemId: itemId,
-      fieldId: STATUS_FIELD_ID,
-      value: newStatusValue
-    };
-
-    await github.graphql(mutation, variables);
-  } catch(error) {
-    throw new Error("Error in updateItemStatus function: " + error);
   }
 }
 
