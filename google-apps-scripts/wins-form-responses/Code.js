@@ -72,7 +72,7 @@ function main() {
   const keyValueFile = "_wins-data.json"
   const [keyValueSha, keyValueContent] = ghrequests.getWins(keyValueFile);
   if (keyValueSha === false) {
-    console.log('Ending script...')
+    console.log('Ending script due to lack of returned SHA from getWins().');
     return 1;
   }
 
