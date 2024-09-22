@@ -7,7 +7,7 @@ const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_esca
 /* vrmsDataFilter is a function that filters the vrmsData array to remove the instances of "test" or "testing" from the events page.
 We need to add logic for removing any event that contain "test" or "testing" (case-insensitive) from the events page.
 */
-const vrmsDataFilter = (vrmsData) => vrmsData.filter(data => data.name.match(/(?<=\W|^)(test(ing)?)(?=\W|$)/i) === null);
+const vrmsDataFilter = (vrmsData) => vrmsData.filter(data => data.name.match(/\btest(ing)?\b/i) === null);
 const filteredVrmsData = vrmsDataFilter(vrmsData);
 
 /* vrmsDataFetch calls sortByDate function and passes filteredVrmsData variable, current page which can either be "events" for the right-col-content.html page or 
