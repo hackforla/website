@@ -410,7 +410,6 @@
 }
 
 .leader-description {
-  padding: 0px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -422,6 +421,7 @@
     justify-content: center;
     align-content: center;
     align-items: flex-start;
+    padding: 0px 60px;
   }
 }
 
