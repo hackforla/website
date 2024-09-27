@@ -17,6 +17,7 @@ leadership:
       github: 'https://github.com/seport'
     picture: https://avatars.githubusercontent.com/seport
   - name: Brett Beekley
+    github-handle: beekley
     links:
       slack: 'https://hackforla.slack.com/team/USRRN73NE'
       github: 'https://github.com/beekley'
