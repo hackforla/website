@@ -92,14 +92,13 @@ links:
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
 looking: 
 technologies: 
-  - Django
-  - Django REST Framework
   - React
-  - Webpack
-  - Babel
-  - PostgreSQL
+  - Express
+  - Node.JS
   - Docker
-  - GitHub Actions
+  - PostgreSQL
+  - Django
+  - Figma
 tools: 
 location: 
   - Remote
