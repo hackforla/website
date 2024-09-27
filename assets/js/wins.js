@@ -331,7 +331,7 @@
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
 			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
-			cloneCardTemplate.querySelector('.github-icon').alt = `Github profile for ${card[name]}`;
+			cloneCardTemplate.querySelector('.github-icon').alt = `GitHub profile for ${card[name]}`;
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}

@@ -118,6 +118,13 @@ leadership:
       slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
       github: "https://github.com/emeldar"
     picture: https://avatars.githubusercontent.com/emeldar
+  - name: Lola Sarumi
+    github-handle: lola3736
+    role: Lead Product / Project
+    links:
+      slack: https://hackforla.slack.com/team/U06TAL88YUV
+      github: https://github.com/lola3736
+    picture: https://avatars.githubusercontent.com/lola3736    
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
