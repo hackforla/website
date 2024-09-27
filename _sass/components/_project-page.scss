@@ -400,13 +400,12 @@
   @media #{$bp-below-mobile} {
     min-width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: auto;
     justify-content: center;
     align-content: center;
     align-items: center;
     margin: auto auto 25px auto;
-    flex-direction: row;
   }
 }
 
