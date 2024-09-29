@@ -1,6 +1,6 @@
 // Import modules
 const fs = require('fs');
-const retrieveLabelNames = require('../../utils/retrieve-label-names');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const findLinkedIssue = require('../../utils/find-linked-issue');
 const getTimeline = require('../../utils/get-timeline');
@@ -10,10 +10,10 @@ const minimizeIssueComment = require('../../utils/hide-issue-comment');
 var github;
 var context;
 
-const [ statusUpdatedLabel, toUpdateLabel, inactiveLabel ] = retrieveLabelNames('statusUpdated', 'toUpdate', '2WeeksInactive');
-const statusUpdatedLabel = retrieveLabelNames('statusUpdated');
-const toUpdateLabel = retrieveLabelNames('toUpdate');
-const inactiveLabel = retrieveLabelNames('2WeeksInactive');
+// Use labelIds to retrieve current labelNames from directory
+const statusUpdatedLabel = retrieveLabelDirectory('statusUpdated');
+const toUpdateLabel = retrieveLabelDirectory('statusInactive1');
+const inactiveLabel = retrieveLabelDirectory('statusInactive2');
 
 const updatedByDays = 3;                // If last update update  3 days, the issue is considered updated
 const commentByDays = 7;                // If last update between 7 to 14 days ago, issue is outdated and needs update
@@ -58,20 +58,16 @@ async function main({ g, c }) {
     const responseObject = await isTimelineOutdated(timeline, issueNum, assignees);
 
     if (responseObject.result === true && responseObject.labels === toUpdateLabel) {   // 7-day outdated: add to be updated label, remove others
-      console.log(` Issue #${issueNum}: Needs update, going to ask for an update now`);
       await removeLabels(issueNum, statusUpdatedLabel, inactiveLabel);
       await addLabels(issueNum, responseObject.labels);
       await postComment(issueNum, assignees, toUpdateLabel);
     } else if (responseObject.result === true && responseObject.labels === inactiveLabel) {   // 14-day outdated: add inactive label, remove others
-      console.log(` Issue #${issueNum}: Inactive, going to ask for an update now`);
       await removeLabels(issueNum, toUpdateLabel, statusUpdatedLabel);
       await addLabels(issueNum, responseObject.labels);
       await postComment(issueNum, assignees, inactiveLabel);
     } else if (responseObject.result === false && responseObject.labels === statusUpdatedLabel) {   // Updated within 3 days: retain up-to-date label if there is one
-      console.log(` Issue #${issueNum}: Updated within 3 days, retain updated label`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel);
     } else if (responseObject.result === false && responseObject.labels === '') {   // Updated between 3 and 7 days, or recently assigned, or fixed by a PR by assignee, remove all three update-related labels
-      console.log(` Issue #${issueNum}: No updates needed, will remove all labels`);
       await removeLabels(issueNum, toUpdateLabel, inactiveLabel, statusUpdatedLabel);
     }
   }
@@ -233,10 +229,10 @@ async function removeLabels(issueNum, ...labels) {
         issue_number: issueNum,
         name: label,
       });
-      console.log(`  '${label}' label has been removed`);
+      console.log(` '${label}' label has been removed`);
     } catch (err) {
       if (err.status === 404) {
-        console.log(`  '${label}' label not found, no need to remove`);
+        console.log(` '${label}' label not found, no need to remove`);
       } else {
         console.error(`Function failed to remove labels. Please refer to the error below: \n `, err);
       }
@@ -260,7 +256,7 @@ async function addLabels(issueNum, ...labels) {
       issue_number: issueNum,
       labels: labels,
     });
-    console.log(`  '${labels}' label has been added`);
+    console.log(` '${labels}' label has been added`);
     // If an error is found, the rest of the script does not stop.
   } catch (err) {
     console.error(`Function failed to add labels. Please refer to the error below: \n `, err);
