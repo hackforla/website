@@ -795,7 +795,6 @@ clip < ~/.ssh/id_ed25519.pub
 
 6. Go to your GitHub account's ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
 
-
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
