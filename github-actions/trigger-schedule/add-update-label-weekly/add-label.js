@@ -10,10 +10,24 @@ const minimizeIssueComment = require('../../utils/hide-issue-comment');
 var github;
 var context;
 
-// Use labelIds to retrieve current labelNames from directory
-const statusUpdated = retrieveLabelDirectory('statusUpdated');
-const statusInactive1 = retrieveLabelDirectory('statusInactive1');
-const statusInactive2 = retrieveLabelDirectory('statusInactive2');
+// Use labelIds to map current labelNames from label directory
+const [
+  statusUpdated,
+  statusInactive1,
+  statusInactive2,
+  draft,
+  er,
+  epic,
+  dependency,
+] = [
+  "statusUpdated",
+  "statusInactive1",
+  "statusInactive2",
+  "draft",
+  "er",
+  "epic",
+  "dependency"
+].map(retrieveLabelDirectory);
 
 const updatedByDays = 3;                // If last update update  3 days, the issue is considered updated
 const commentByDays = 7;                // If last update between 7 to 14 days ago, issue is outdated and needs update
@@ -82,7 +96,7 @@ async function main({ g, c }) {
  * @returns {Promise<Array>} issueNums     - an array of open, assigned, and statused issue numbers
  */
 async function getIssueNumsFromRepo() {
-  const labelsToExclude = ['Draft', 'ER', 'Epic', 'Dependency'];
+  const labelsToExclude = [draft, er, epic, dependency];
   let issueNums = [];
   let pageNum = 1;
   let result = [];
