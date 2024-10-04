@@ -441,7 +441,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 <details>
   <summary><strong>Click here</strong> to see how to move an issue from the ‘Prioritized Backlog’ to the ‘In progress (actively working)’ & back</summary>
   <p><strong>Project Board column demo</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137693338-97fe5f6c-820d-41c9-8e93-57b70827e0cf.gif" />
+  <img src="https://user-images.githubusercontent.com/21162229/137693338-97fe5f6c-820d-41c9-8e93-57b70827e0cf.gif">
 </details>
 
 ##### **i. After you claim an issue:**
