@@ -12,40 +12,45 @@ alt: 'A dramatic closeup of a screen filled with code'
 leadership-type: Community Led
 leadership:
   - name: Chelsey Beck
+    github-handle: chelseybeck
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/U01J93AQKSS
       github: https://github.com/chelseybeck
     picture: https://avatars.githubusercontent.com/chelseybeck
-  - name: Ernie Pelayo
+  - name: Alex English
+    github-handle: ale210
     role: Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U046MDSM3PA
-      github: https://github.com/erniep278
-    picture: https://avatars.githubusercontent.com/erniep278
+      slack: U078B1S0XDM
+      github: https://github.com/ale210
+    picture: https://avatars.githubusercontent.com/ale210
+  - name: Ryan Sakuma
+    github-handle: RSkuma
+    role: Co-lead
+    links:
+      slack: U078U294XB6
+      github: https://github.com/RSkuma
+    picture: https://avatars.githubusercontent.com/RSkuma
+  - name: Sudha Raamakrishnan
+    github-handle: sudhara
+    role: Ops PM
+    links:
+      slack: https://hackforla.slack.com/team/U07FJRNN9MK
+      github: https://github.com/sudhara
+    picture: https://avatars.githubusercontent.com/sudhara
   - name: Dean Church
+    github-handle: Rankazze
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/UJR0UKBN1
       github: https://github.com/Rankazze
     picture: https://avatars.githubusercontent.com/Rankazze
-  - name: Nayan Bhatt
-    role: Co-lead
-    links:
-      slack: https://hackforla.slack.com/team/U05TZLLJAUV
-      github: https://github.com/freaky4wrld
-    picture: https://avatars.githubusercontent.com/freaky4wrld
-  - name: Zoey Zhang
-    role: Co-lead
-    links:
-      slack: https://hackforla.slack.com/team/U06DT2CA92T
-      github: https://github.com/abbyz123
-    picture: https://avatars.githubusercontent.com/abbyz123
 
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/CV7QGL66B
-  - name: Github
+  - name: GitHub
     url: https://github.com/hackforla/ops
   
 recruiting-message:

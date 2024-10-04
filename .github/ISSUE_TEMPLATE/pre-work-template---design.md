@@ -63,7 +63,7 @@ Progress through issues with increasing complexity in the following order:
 - First, you should post the question as a comment on your assigned issue, so it can be easily referred to in the next bullet points
 - Then, add the issue to the "Design Weekly Meeting Agenda" column of the Project Board so that it can be addressed in the next design meeting
 - You may also add the label "Status: Help Wanted" so other designers can see it and potentially help answer your question
-- Lastly, you can post your question in the hfla slack channel and link the issue you're working on, so other volunteers can see and respond
+- Lastly, you can post your question in the hfla Slack channel and link the issue you're working on, so other volunteers can see and respond
 
 ### Resources/Instructions
 - [GitHub Project Board - Hack for LA ](https://github.com/hackforla/website/projects/7)

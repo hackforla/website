@@ -4,12 +4,18 @@
 {% assign vrmsData = site.data.external.vrms_data %}
 const vrmsData = JSON.parse(decodeURIComponent("{{ vrmsData | jsonify | uri_escape }}"));
 
-/* vrmsDataFetch calls sortByDate function and passes vrmsData variable, current page which can either be "events" for the right-col-content.html page or 
+/* vrmsDataFilter is a function that filters the vrmsData array to remove the instances of "test" or "testing" from the events page.
+We need to add logic for removing any event that contain "test" or "testing" (case-insensitive) from the events page.
+*/
+const vrmsDataFilter = (vrmsData) => vrmsData.filter(data => data.name.match(/\btest(ing)?\b/i) === null);
+const filteredVrmsData = vrmsDataFilter(vrmsData);
+
+/* vrmsDataFetch calls sortByDate function and passes filteredVrmsData variable, current page which can either be "events" for the right-col-content.html page or 
 "project" from the project.html page, and passes the appendMeetingTimes function from projects.js that appends the sorted vrmsData 
 returned by sortByDate to project.html. AppendMeetingTimes is only called if vrmsDataFetch is being called from project.js for the project.html page 
 */
 export const vrmsDataFetch = (currentPage, appendMeetingTimes) => {
-    return sortByDate(vrmsData, currentPage, appendMeetingTimes)
+    return sortByDate(filteredVrmsData, currentPage, appendMeetingTimes)
 }
 
  // Helper function used for project.html and right-col-content.html to sort VRMS data by day of the week from "date" key and meeting time from "startTime" key
