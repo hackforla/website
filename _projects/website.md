@@ -72,6 +72,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U06MTPZ67V3'
       github: 'https://github.com/marioantonini'
     picture: https://avatars.githubusercontent.com/marioantonini
+  - name: Danielle Hanson Aras
+    github-handle: 
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
+      github: 'https://github.com/daras-cu'
+    picture: https://avatars.githubusercontent.com/daras-cu
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
