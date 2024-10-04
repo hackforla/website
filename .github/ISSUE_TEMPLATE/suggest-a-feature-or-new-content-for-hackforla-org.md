@@ -1,7 +1,7 @@
 ---
 name: Suggest a feature or new content for HackforLA.org
 about: Describe this issue template's purpose here.
-title: ''
+title: suggest a feature or new content for the hackforla.org website
 labels: 'Complexity: Missing, enhancement, Feature Missing, role missing, size: missing'
 assignees: ''
 
