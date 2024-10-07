@@ -10,7 +10,7 @@ const minimizeIssueComment = require('../../utils/hide-issue-comment');
 var github;
 var context;
 
-// Use labelIds to map current labelNames from label directory
+// Use labelKeys to map current labelNames from label directory
 const [
   statusUpdated,
   statusInactive1,
