@@ -575,11 +575,11 @@ I  have finished sections 1-16 and am ready to have my activity reviewed by the 
       I need to take some time off from the team.  I believe I will be back on [Replace with DATE YOU WILL BE BACK]
        ```
    - Apply the label `away on hold`.
-   - Move your prework to the `Questions / In Review` column.
+   - Move your Skills Issue to the `Questions / In Review` column.
 - In the [roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit?gid=0#gid=0), find the line with your information on it and fill in your info for the following columns:
    - Find Column N / "Hiatus". Put `TRUE` in that column.
    - Find column O / "If on Hiatus, return date (YY-MM-DD)". Fill in your expected return date in YY-MM-DD format. 
-- In addition, if you are assigned to an open issue (other than your prework), do the following for that issue:
+- In addition, if you are assigned to an open issue (other than your Skills Issue), do the following for that issue:
    - If you have done some work on the issue, please write thorough documentation in a comment in that issue so that the issue can be handed off to another person, who can pick up working where you left off based on your notes.
    - Apply a `ready for prioritization` label.
    - Move it to the 'New Issue Approval` column.
