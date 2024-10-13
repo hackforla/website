@@ -69,13 +69,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
       github: "https://github.com/brycelednar"
     picture: https://avatars.githubusercontent.com/brycelednar
-  - name: Farah Khan
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U01JC8VEKMH"
-      github: "https://github.com/fourmatte"
-    picture: https://avatars.githubusercontent.com/fourmatte
   - name: Eduardo De La Rosa
     github-handle:
     role: UX/UI Designer
