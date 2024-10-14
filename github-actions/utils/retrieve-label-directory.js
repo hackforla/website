@@ -5,8 +5,8 @@ var filepath = 'github-actions/utils/_data/label-directory.json';
 var labelData;
 
 /*
- * Matches label reference name(s) to the label display name(s) from JSON
- * @param {Array} labelKeys       - List of reference names to look up display names
+ * Matches label reference name to the label display name from JSON
+ * @param {Array} labelKey        - Key reference to look up display name 
  * @return {Array} labelName      - Display name for each label
  */
 function retrieveLabelName(labelKey) {
