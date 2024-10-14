@@ -1,3 +1,4 @@
+// Import modules
 const fs = require('fs');
 
 // Global variables
@@ -6,7 +7,7 @@ var labelData;
 
 /*
  * Matches label reference name to the label display name from JSON
- * @param {Array} labelKey        - Key reference to look up display name 
+ * @param {Array} labelKey        - Key reference to look up display name
  * @return {Array} labelName      - Display name for each label
  */
 function retrieveLabelName(labelKey) {
@@ -24,7 +25,7 @@ function retrieveLabelName(labelKey) {
     labelName = labelData[labelKey][0];
     console.log(`Success! Found labelKey: '${labelKey}', returning labelName: '${labelName}'`);
   } catch (err) {
-    console.error(`Failed to find labelKey: '${labelKey}'`)
+    console.error(`Failed to find labelKey: '${labelKey}'`);
   }
 
   return labelName;
