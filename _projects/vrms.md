@@ -24,6 +24,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03K7Q1FV3P'
       github: 'https://github.com/JudyLee533'
     picture: 'https://avatars.githubusercontent.com/JudyLee533'
+  - name: Jack Haeger
+    github-handle: JackHaeg
+    role: Lead Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U059005TN1L
+      github: https://github.com/JackHaeg
+    picture: https://avatars.githubusercontent.com/JackHaeg
   - name: Alex Lee
     role: Product Manager
     links:
