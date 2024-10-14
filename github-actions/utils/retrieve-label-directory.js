@@ -9,7 +9,7 @@ var labelData;
  * @param {Array} labelKeys       - List of reference names to look up display names
  * @return {Array} labelName      - Display name for each label
  */
-function labelRetrieveNames(...labelKeys) {
+function retrieveLabelName(labelKey) {
 
   // Retrieve label directory if not read already
   if (labelData === undefined) {
@@ -18,7 +18,6 @@ function labelRetrieveNames(...labelKeys) {
     labelData = JSON.parse(rawData);
   }
 
-  let labelKey = labelKeys[0];
   let labelName = '';
 
   try {
@@ -31,4 +30,4 @@ function labelRetrieveNames(...labelKeys) {
   return labelName;
 }
 
-module.exports = labelRetrieveNames;
+module.exports = retrieveLabelName;
