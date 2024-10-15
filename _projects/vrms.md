@@ -31,6 +31,7 @@ leadership:
       github: 'https://github.com/heyitsalexander'
     picture: 'https://avatars.githubusercontent.com/heyitsalexander'
   - name: Amanda Glover
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
