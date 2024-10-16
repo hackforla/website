@@ -90,6 +90,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U061GQQ56Q4
       github: https://github.com/kevin31yu
     picture: https://avatars.githubusercontent.com/kevin31yu
+  - name: Ida Valenzuela
+    github-handle: irais-valenzuela
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U062NBBNFA7
+      github: https://github.com/irais-valenzuela
+    picture: https://avatars.githubusercontent.com/irais-valenzuela
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
