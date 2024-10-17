@@ -290,7 +290,7 @@
 	const cardTemplate = document.getElementById("wins-card-template");
 	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
 	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
-	const GITHUB_ICON = '/assets/images/wins-page/icon-github-small.svg';
+	const GITHUB_ICON = '_includes/svg/icon-github.svg';
 	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
 	const winsCardContainer  = document.querySelector('#responses');
 
@@ -506,7 +506,7 @@ function changeSeeMoreBtn(x) {
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '_includes/svg/icon-github.svg', 'Github profile for ' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
