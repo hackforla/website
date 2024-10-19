@@ -83,6 +83,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
+  - name: Kevin Yu
+    github-handle: kevin31yu
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U061GQQ56Q4
+      github: https://github.com/kevin31yu
+    picture: https://avatars.githubusercontent.com/kevin31yu
   - name: Ida Valenzuela
     github-handle: irais-valenzuela
     role: Developer
