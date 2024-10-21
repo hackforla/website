@@ -83,6 +83,7 @@ leadership:
       github: 'https://github.com/meetminji'
     picture: https://avatars.githubusercontent.com/meetminji
   - name: Natalie Aguilar
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04P6N186P9'
@@ -104,7 +105,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/ericvennemeyer
   
 links: 
-  - name: Github
+  - name: GitHub
     url: 'https://github.com/hackforla/internship'
   - name: Slack
     url: 'https://hackforla.slack.com/archives/C01VAUPU788'

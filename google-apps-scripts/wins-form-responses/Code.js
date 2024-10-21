@@ -68,18 +68,31 @@ function main() {
   const cleanedAndFormattedKeyValueData = JSON.stringify(sortedKeyValueData, null, 5);
   const encodedKeyValueData = Utilities.base64Encode(`${cleanedAndFormattedKeyValueData}`, Utilities.Charset.UTF_8);
 
-    // Retrieves latest sha of the _wins data file, which is needed for edits later
+    // Retrieves latest sha and content of the _wins data file, which is needed for edits later
   const keyValueFile = "_wins-data.json"
-  const keyValueSha = ghrequests.getSHA(keyValueFile);
+  const [keyValueSha, keyValueContent] = ghrequests.getWins(keyValueFile);
   if (keyValueSha === false) {
+    console.log('Ending script due to lack of returned SHA from getWins().');
+    return 1;
+  }
+
+  // detect any changes to Wins-form (Responses) by comparing performing a string comparison
+  if (!arrEq(sortedKeyValueData, keyValueContent)) {
+    console.log("Entry difference detected. Updating wins file...");
+    const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
+    if (writeResponse === false) {
+      console.log('Ending script...')
+      return 1;
+    }
+  }
+  else {
+    console.log("No new entry difference detected.");
     console.log('Ending script...')
     return 1;
   }
 
-  const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
-  if (writeResponse === false) {
-    console.log('Ending script...')
-    return 1;
+  function arrEq(arr1, arr2) {
+    return JSON.stringify(arr1) === JSON.stringify(arr2);
   }
 
   /*
@@ -95,7 +108,7 @@ function main() {
 
   // Retrieves latest sha of the wins data file
   const arrayFile = "wins-data.json"
-  const arrayDataSha = ghrequests.getSHA(arrayFile);
+  const [arrayDataSha, arrayDataContent] = ghrequests.getWins(arrayFile);
   if (arrayDataSha === false) {
     console.log('Ending script...')
     return 1;
