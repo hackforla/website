@@ -16,7 +16,14 @@ Fixes #replace_this_text_with_the_issue_number
 <h3>CodeQL Alerts</h3>
 
 
-After the PR has been submitted and the resulting GitHub actions/checks have been completed, developers should check the PR for CodeQL alert annotations. 
+After the PR has been submitted and the resulting GitHub actions/checks have been completed, developers should check the PR for CodeQL alert annotations.
+
+
+<details><summary>Check the PR's comments. If present on your PR, the CodeQL alert looks similar as shown</summary>
+  
+![Screenshot 2024-10-15 153738](https://github.com/user-attachments/assets/90b6ef81-bff7-410a-a961-7bea51f4a4d0)
+
+</details>
 
 If your issue has a CodeQL alert and is complexity: medium or higher, please let us know that you have checked and resolved.  Please do not dismiss alerts.
 - [ ] I have checked this PR for CodeQL alerts.  If CodeQL alerts were found:
