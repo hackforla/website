@@ -29,7 +29,7 @@ async function main({ g, c }) {
   // If label 'edited' but changes do not include 'name', label directory is not updated and workflow exits
   if (labelAction === 'edited' && !context.payload.changes.name) {
     console.log(`${breakLine}\n`);
-    console.log(`What was changed:`);
+    console.log(`${labelName} label changed:`);
     console.log(context.payload.changes);
     console.log(`\n${breakLine}\n`);
     labelAction = "no update";
