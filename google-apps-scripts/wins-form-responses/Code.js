@@ -106,7 +106,7 @@ function main() {
     return JSON.stringify(arr1) === JSON.stringify(arr2);
   }
 
-  const createPrResponse = ghrequests.createPR();
+  ghrequests.createPR();
 }
 
 /************************************************** TRIGGER("On Form Submit") 2 SECTION ********************************************************************/
@@ -305,7 +305,7 @@ function compareResponsesAndReview() {
 
     //Gets the values
     for (let i = 0; i <= 10; i++) {
-      values = reviewInfoSplit[i].split(" : ");
+      const values = reviewInfoSplit[i].split(" : ");
       let value = values[1];
       if (value !== undefined) {
         value = value.trim();
