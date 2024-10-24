@@ -49,11 +49,11 @@ leadership:
       github: "https://github.com/K-Gumarama"
     picture: https://avatars.githubusercontent.com/K-Gumarama
   - name: Sanya Nijhawan
-    github-handle:
-    role: Product Manager
+    github-handle: sanya301
+    role: Advisory
     links:
-      slack: "https://hackforla.slack.com/team/U031FLYS561"
-      github: "https://github.com/sanya301"
+      slack: https://hackforla.slack.com/team/U031FLYS561
+      github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
   - name: Raji Pradheap
     github-handle:
