@@ -52,7 +52,7 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.7 Working on an issue**](#27-working-on-an-issue)
       - [**2.7.a Working on an issue (1): Verify current branch is `gh-pages`**](#27a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
       - [**2.7.b Working on an issue (2): Creating and testing your issue branch**](#27b-working-on-an-issue-2-creating-and-testing-your-issue-branch)
-        - [**i. To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000. A few notes regarding Docker:**](#i-to-test-your-issue-branch-locally-run-the-command-docker-compose-up-from-a-terminal-window-the-website-will-then-be-accessible-at-http-localhost-4000-a-few-notes-regarding-Docker)
+        - [**i. To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000. A few notes regarding Docker:**](#i-to-test-your-issue-branch-locally-run-the-command-docker-compose-up-from-a-terminal-window)
       - [**2.7.c Working on an issue(3): Prepare your changes to push to your repository**](#27c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
         - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
