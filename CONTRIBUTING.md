@@ -51,8 +51,8 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.6.b What to do if you have to stop working mid issue:**](#26b-what-to-do-if-you-have-to-stop-working-mid-issue)
     - [**2.7 Working on an issue**](#27-working-on-an-issue)
       - [**2.7.a Working on an issue (1): Verify current branch is `gh-pages`**](#27a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
-      - [**2.7.b Working on an issue (2): Create a new branch where you will work on your issue**](#27b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
-        - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
+      - [**2.7.b Working on an issue (2): Creating and testing your issue branch**](#27b-working-on-an-issue-2-creating-and-testing-your-issue-branch)
+        - [**i. To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000. A few notes regarding Docker:**](#i-to-test-your-issue-branch-locally-run-the-command-docker-compose-up-from-a-terminal-window-the-website-will-then-be-accessible-at-httplocalhost4000--a-few-notes-regarding-docker)
       - [**2.7.c Working on an issue(3): Prepare your changes to push to your repository**](#27c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
         - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
@@ -520,7 +520,7 @@ git pull upstream gh-pages
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
+#### **2.7.b Working on an issue (2): Creating and testing your issue branch**
 
 If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
@@ -546,18 +546,36 @@ We urge developers to be cautious using `git add`. In general it is not advisabl
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
-##### **i. What if you cannot see your changes locally within Docker?**
+##### **i. To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000 . A few notes regarding Docker:**
 
-If you do not see the changes you applied when you run `docker-compose up`, **do the following**:
+- the Docker Desktop application must be running, otherwise `docker-compose up` will not work
+- Docker pulls an image from Dockerhub.com which enables Docker to built the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
 
-1. Stop running your Docker application (if still running).
-2. Delete the `_site` directory in the root folder (`website`)
-3. Delete the `.jekyll-metadata` file in the root folder (`website`)
-4. Finally, restart docker (run `docker-compose up` in the terminal) and you should see your changes.
-<br><br>
+- In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `view details`.
+  <details>
+    <summary><strong>Click here</strong> to see how to view details for a Docker image</summary>
+    <img src="https://github.com/user-attachments/assets/491b9392-f2ef-4752-bc6d-d827a6635a9d">
+  </details>
 
-- If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
+- Note the `CREATED` column
+  <details>
+    <summary><strong>Click here</strong> to see how to determine when an image was last updated in Docker Desktop</summary>
+    <img src="https://github.com/user-attachments/assets/0a7e68c0-3782-441a-b536-ee6163695556">
+  </details>
+
+- View the details of the "latest" tag from [hackforlaops Dockerhub image tags](https://hub.docker.com/r/hackforlaops/ghpages/tags) and determine when an image was pushed to Docker hub
+  <details>
+    <summary><strong>Click here</strong> to see how to determine when an image was pushed to Docker hub</summary>
+    <img src="https://github.com/user-attachments/assets/217bc94c-0b47-4bf2-9087-eb46afb59740">
+  </details>
+
+- If the "latest" tagged image at Docker hub is more recent than the image in Docker Desktop, use the Docker Desktop Action menu (3 dots) to "pull" down the updated image
+  <details>
+    <summary><strong>Click here</strong> to see how to pull image from DockerHub</summary>
+    <img src="https://github.com/user-attachments/assets/75e8d21c-481b-4d82-8592-9ce9c6f09acc">
+  </details>
+
+- Note that the next `docker-compose up` will take extra time to recreate the Docker container based on the updated image.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
