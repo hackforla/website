@@ -9,6 +9,7 @@ on:
 jobs:
   Add-Update-Label-to-Issues-Weekly:
     runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/github-script@v7
