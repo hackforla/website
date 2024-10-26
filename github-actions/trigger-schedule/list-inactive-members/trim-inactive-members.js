@@ -88,7 +88,7 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
           });
         }
         removedMembers.push(username);
-        // After removal, close member's "Pre-work checklist" if open
+        // After removal, close member's "Skills Issue", if open
         if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username][1] === true){
           closePrework(username, inactiveWithOpenIssue[username][0]);
         }
