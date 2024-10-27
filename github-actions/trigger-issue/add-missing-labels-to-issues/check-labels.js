@@ -139,9 +139,6 @@ async function addLabels(labelsToAdd, currentLabels) {
 
 
 function testGetWins() {
-  const fileName = "_wins-data.json";
-  const [sha, content] = getWins(fileName);
-  console.log(content.length);
 }
 
 
