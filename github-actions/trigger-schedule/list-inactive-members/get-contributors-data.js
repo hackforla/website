@@ -105,8 +105,8 @@ async function fetchContributors(dates){
         if(contributorInfo.author){
           allContributorsSince[contributorInfo.author.login] = true;
         }
-        // Check for username in `user.login`, but skip `user.login` covered by 3rd API 
-        else if(contributorInfo.user  && api != 'GET /repos/{owner}/{repo}/issues'){
+        // Check for username in `user.login`, check only comment's `created_at` time, and  skip `user.login` covered by 3rd API 
+        else if(contributorInfo.user && contributorInfo.created_at > date && api != 'GET /repos/{owner}/{repo}/issues'){
           allContributorsSince[contributorInfo.user.login] = true;
         }
         // This check is done for `/issues` (3rd) API. Sometimes a user who created an issue is not the same as the 
