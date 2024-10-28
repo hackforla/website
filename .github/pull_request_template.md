@@ -21,17 +21,19 @@ After the PR has been submitted and the resulting GitHub actions/checks have bee
 
 <details><summary>Check the PR's comments. If present on your PR, the CodeQL alert looks similar as shown</summary>
   
-![Screenshot 2024-10-15 153738](https://github.com/user-attachments/assets/90b6ef81-bff7-410a-a961-7bea51f4a4d0)
+![Screenshot 2024-10-28 154514](https://github.com/user-attachments/assets/ea66c586-c14c-45fd-8705-1c116224e704)
+
 
 </details>
 
-If your issue has a CodeQL alert and is complexity: medium or higher, please let us know that you have checked and resolved.  Please do not dismiss alerts.
-- [ ] I have checked this PR for CodeQL alerts.  If CodeQL alerts were found:
-   - [ ] I have resolved CodeQL alerts 
-   - [ ] I believe this CodeQL alerts is a false positive (merge team will evaluate)
-   - [ ] I am stuck (after reading instructions below)
+Please let us know that you have checked for CodeQL alerts. **Please do not dismiss alerts.**
+- [ ] I have checked this PR for CodeQL alerts and none were found.
+- [ ] I found CodeQL alert(s), and (select one):
+   - [ ] I have resolved the CodeQL alert(s) as noted
+   - [ ] I believe the CodeQL alert(s) is a false positive (Merge Team will evaluate)
+   - [ ] I have followed the Instructions below, but I am still stuck (Merge Team will evaluate)
 
-<details><summary>Instructions</summary>
+<details><summary>Instructions for resolving CodeQL alerts</summary>
 
 If CodeQL alert/annotations appear, refer to [How to Resolve CodeQL alerts](https://github.com/hackforla/website/issues/6463#issuecomment-2002573270).  
 
