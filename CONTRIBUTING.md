@@ -548,15 +548,16 @@ When you've finished working on your issue, follow the steps below to prepare yo
 
 ##### **i. To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000 . A few notes regarding Docker:**
 
-- the Docker Desktop application must be running, otherwise `docker-compose up` will not work
+- The Docker Desktop application must be running, otherwise `docker-compose up` will not work
 - Docker pulls an image from Dockerhub.com which enables Docker to built the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
 
 - In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View details`.
-  - In the new Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View packages and CVEs`.
+  - In the new Docker Desktop application, select option `View packages and CVEs` instead.
+
   <details>
     <summary><strong>Click here</strong> to see how to view details for a Docker image</summary>
     <img src="https://github.com/user-attachments/assets/491b9392-f2ef-4752-bc6d-d827a6635a9d">
-    <img src="https://github.com/user-attachments/assets/d8f85c62-c1fb-4752-84e1-d0197a7bc3bf">
+    <img src="https://github.com/user-attachments/assets/1decb200-e70b-4dde-835b-fd75f454eaab">
   </details>
 
 - Note the `CREATED` column
