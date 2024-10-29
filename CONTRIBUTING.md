@@ -551,10 +551,12 @@ When you've finished working on your issue, follow the steps below to prepare yo
 - the Docker Desktop application must be running, otherwise `docker-compose up` will not work
 - Docker pulls an image from Dockerhub.com which enables Docker to built the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
 
-- In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `view details`.
+- In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View details`.
+  - In the new Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View packages and CVEs`.
   <details>
     <summary><strong>Click here</strong> to see how to view details for a Docker image</summary>
     <img src="https://github.com/user-attachments/assets/491b9392-f2ef-4752-bc6d-d827a6635a9d">
+    <img src="https://github.com/user-attachments/assets/d8f85c62-c1fb-4752-84e1-d0197a7bc3bf">
   </details>
 
 - Note the `CREATED` column
@@ -576,6 +578,10 @@ When you've finished working on your issue, follow the steps below to prepare yo
   </details>
 
 - Note that the next `docker-compose up` will take extra time to recreate the Docker container based on the updated image.
+
+- If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
+
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
