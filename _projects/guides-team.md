@@ -42,6 +42,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
       github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
+  - name: Jesus Diaz
+    github-handle: JesseTheCleric
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U0725MRMMA9
+      github: https://github.com/JesseTheCleric
+    picture: https://avatars.githubusercontent.com/JesseTheCleric  
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'
