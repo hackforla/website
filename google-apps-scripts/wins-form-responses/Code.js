@@ -272,7 +272,7 @@ function compareResponsesAndReview() {
       }
 
       if (responseValue !== reviewValues[j]) {
-        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j])
+        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j]);
         unamatched++;
       } else {
         matched++;
