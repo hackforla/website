@@ -105,7 +105,8 @@ async function fetchContributors(dates){
         if(contributorInfo.author){
           allContributorsSince[contributorInfo.author.login] = true;
         }
-        // Check for username in `user.login`, check only comment's `created_at` time, and  skip `user.login` covered by 3rd API 
+
+        // Check for usernames in `user.login`, but only include `created_at` time, and skip `user.login` b/c covered by 3rd API 
         else if(contributorInfo.user && contributorInfo.created_at > date && api != 'GET /repos/{owner}/{repo}/issues'){
           allContributorsSince[contributorInfo.user.login] = true;
         }
@@ -121,8 +122,9 @@ async function fetchContributors(dates){
           if(responseObject.result === false){
             allContributorsSince[assignee] = true;
           } 
-          // If timeline is more than two months ago, add to open issues with inactive. Then check if 
-          // issue title includes "Pre-work Checklist" or "Skills Issue" and set flag = true, else set false
+
+          // If timeline is more than two months ago, add to open issues with inactive. If issue title
+          // includes "Skills Issue" or "Pre-work Checklist", set flag to true, otherwise set to false
           else if (date === dates[1]) {
             const regex = /Pre-work checklist|Skills Issue/i;
             if (regex.test(contributorInfo.title)) {

@@ -95,32 +95,7 @@ function main() {
     return JSON.stringify(arr1) === JSON.stringify(arr2);
   }
 
-  /*
-  ** This section deals with the array of data for wins-data.json
-  ** Eventually, lines 91-107 below should be deleted (EXCLUDING createPrResponse) when the team fully migrates from using wins-data.json to _wins-data.json
-  ** The payload is formatted and prepared for an API request to GitHub
-  */
-
-  // Create an array of data for wins-data.json
-  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows);
-  // const encodedArrayData = Utilities.base64Encode(`${cleanedAndFormattedArrayData}`);
-  const encodedArrayData = Utilities.base64Encode(cleanedAndFormattedArrayData, Utilities.Charset.UTF_8); 
-
-  // Retrieves latest sha of the wins data file
-  const arrayFile = "wins-data.json"
-  const [arrayDataSha, arrayDataContent] = ghrequests.getWins(arrayFile);
-  if (arrayDataSha === false) {
-    console.log('Ending script...')
-    return 1;
-  }
-
-  const writeResponse2 = ghrequests.updateWinsFile(arrayFile, encodedArrayData, arrayDataSha);
-  if (writeResponse2 === false) {
-    console.log('Ending script...')
-    return 1;
-  }
-
-  const createPrResponse = ghrequests.createPR();
+  ghrequests.createPR();
 }
 
 /************************************************** TRIGGER("On Form Submit") 2 SECTION ********************************************************************/
@@ -267,7 +242,7 @@ function compareResponsesAndReview() {
 
     //Gets the values 
     for(let i = 0; i <= 10; i++){
-      values = reviewInfoSplit[i].split(" : ");
+      const values = reviewInfoSplit[i].split(" : ");
       let value = values[1];
       if (value !== undefined) { 
         value = value.trim();
@@ -297,7 +272,7 @@ function compareResponsesAndReview() {
       }
 
       if (responseValue !== reviewValues[j]) {
-        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j])
+        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j]);
         unamatched++;
       } else {
         matched++;

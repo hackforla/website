@@ -55,6 +55,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03SUUZMFEV
       github: https://github.com/edwinjue
     picture: https://avatars.githubusercontent.com/edwinjue
+  - name: Allison Jeon
+    github-handle: allisonjeon
+    role: UX Design Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05JP94R9B7
+      github: https://github.com/allisonjeon
+    picture: https://avatars.githubusercontent.com/allisonjeon
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
