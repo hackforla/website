@@ -107,7 +107,7 @@ async function fetchContributors(dates){
           allContributorsSince[contributorInfo.author.login] = true;
         }
         // Check for username in `user.login`, but skip `user.login` covered by 3rd API 
-        else if(contributorInfo.user  && api != 'GET /repos/{owner}/{repo}/issues'){
+        else if(contributorInfo.user && contributorInfo.created_at > date && api != 'GET /repos/{owner}/{repo}/issues'){
           allContributorsSince[contributorInfo.user.login] = true;
         }
         // This check is done for `/issues` (3rd) API. Sometimes a user who created an issue is not the same as the 
@@ -124,8 +124,9 @@ async function fetchContributors(dates){
           } 
           // If timeline is more than two months ago, add to open issues with inactive 
           // comments with flag = true if issue is "Pre-work Checklist", false otherwise
-          else if(date === dates[1]){
-            if(contributorInfo.title.includes("Pre-work Checklist")){
+          else if (date === dates[1]) {
+            const regex = /Pre-work Checklist|Skills Issue/i;
+            if (regex.test(contributorInfo.title)) {
               inactiveWithOpenIssue[assignee] = [issueNum, true];
             } else {
               inactiveWithOpenIssue[assignee] = [issueNum, false];
