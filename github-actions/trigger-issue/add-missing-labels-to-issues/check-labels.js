@@ -70,10 +70,10 @@ function extractTemplateLabels() {
   const match = templateBody.match(/<!--\s*labels:\s*'([^']*)'(?:,\s*'([^']*)')*\s*-->/);
   if (!match) return []; 
 
-  // Extract each label key, convert to label name, and return as an array
+  // Extract each labelKey, convert to labelName, and return as an array
   let labelKeys =  match[1].split(',').map(label => label.trim());
-  labels = labelKeys.map(labelKey => retrieveLabelDirectory(labelKey));
-  return labels
+  let labelNames = labelKeys.map(labelKey => retrieveLabelDirectory(labelKey));
+  return labelNames
 }
 
 /**
