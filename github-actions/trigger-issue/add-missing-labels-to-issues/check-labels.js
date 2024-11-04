@@ -28,14 +28,12 @@ async function main({ g, c }) {
   let labels = []
 
   // If the issue is a template, extract the labelKeys then convert to labels
-  if (templateTrigger === 'Template Label') {
-    let labelKeys = extractTemplateLabels();
-    labels = labelKeys.map(labelKey => retrieveLabelDirectory(labelKey));
+  if (templateTrigger === 'Template Label Placeholder') {
+    labels = extractTemplateLabels();
   } else {
     labels = obtainLabels();
   }
   
-  const labels = obtainLabels();
   const filteredLabels = filterLabels(labels);
   let labelsToAdd = checkLabels(filteredLabels);
 
@@ -72,8 +70,10 @@ function extractTemplateLabels() {
   const match = templateBody.match(/<!--\s*labels:\s*'([^']*)'(?:,\s*'([^']*)')*\s*-->/);
   if (!match) return []; 
 
-  // Extract each label and return as an array
-  return match[1].split(',').map(label => label.trim());
+  // Extract each label key, convert to label name, and return as an array
+  let labelKeys =  match[1].split(',').map(label => label.trim());
+  labels = labelKeys.map(labelKey => retrieveLabelDirectory(labelKey));
+  return labels
 }
 
 /**

@@ -2,14 +2,14 @@
 name: Review Inactive Team Members
 about: Issue template used only by `schedule-monthly.yml`
 title: "Review Inactive Team Members"
-labels: ['Feature: Administrative', 'Feature: Onboarding/Contributing.md', 'role: dev leads', 'Complexity: Small', 'size: 0.5pt']
+labels: 'Template Label Placeholder'
 milestone: 8
 assignees: ''
 ---
-
-<!--
-Note: This template is only for use by the `schedule-monthly.yml` workflow.
---> 
+<!-- labels: 'featureAdministrative, featureOnboardingContributingMd, roleDevLeads, complexity2, size05pt' -->
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- NOTE: do not edit the line above. These labels are used by the automation.  -->
+<!-- NOTE: This template is only for use by the `schedule-monthly.yml` workflow. --> 
 
 # Review of Inactive Website Team Members
 ## Inactive Members

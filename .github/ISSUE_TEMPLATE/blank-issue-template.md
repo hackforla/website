@@ -2,10 +2,13 @@
 name: Blank Issue Template
 about: 'Standard HackforLA issue template '
 title: ''
-labels: 'complexityMissing, featureMissing, roleMissing, sizeMissing'
+labels: 'Template Label Placeholder'
 assignees: ''
 
 ---
+<!-- labels: 'complexityMissing, featureMissing, roleMissing, sizeMissing' -->
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- NOTE: do not edit the line above. These labels are used by the automation.  -->
 
 ### Overview
 REPLACE THIS TEXT - Clearly state the purpose of this issue in 2 sentences or less.  We write ours a modified user story in this format: _We need to do X for Y reason._
