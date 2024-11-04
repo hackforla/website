@@ -29,23 +29,23 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
   context = c;
   
   const currentTeamMembers = await getTeamMembers(github, context, writeTeam);
-  console.log('-------------------------------------------------------');
+  console.log(`-`.repeat(60));
   console.log('Current members of ' + writeTeam + ':');
   console.log(currentTeamMembers);
 
-  const [removedContributors, cannotRemoveYet] = await removeInactiveMembers(previousContributors, inactiveWithOpenIssue);
-  console.log('-------------------------------------------------------');
+  const [removedContributors, cannotRemoveYet] = await removeInactiveMembers(previousContributors, inactiveWithOpenIssue, currentTeamMembers);
+  console.log(`-`.repeat(60));
   console.log('Removed members from ' + writeTeam + ' inactive since ' + dates[1].slice(0, 10) + ':');
   console.log(removedContributors);
 
-  console.log('-------------------------------------------------------');
+  console.log(`-`.repeat(60));
   console.log('Members inactive since ' + dates[1].slice(0, 10) + ' with open issues preventing removal:');
   console.log(cannotRemoveYet);
 
   // Repeat getTeamMembers() after removedContributors to compare with recentContributors
   const updatedTeamMembers = await getTeamMembers(github, context, writeTeam);
   const notifiedContributors = await notifyInactiveMembers(updatedTeamMembers, recentContributors);
-  console.log('-------------------------------------------------------');
+  console.log(`-`.repeat(60));
   console.log('Notified members from ' + writeTeam + ' inactive since ' + dates[0].slice(0, 10) + ':');
   console.log(notifiedContributors);
 
@@ -61,11 +61,10 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
  * @returns {Array} removedMembers        - List of members that were removed 
  * @returns {Object} cannotRemoveYet      - List of members that cannot be removed due to open issues
  */
-async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue){
+async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue, currentTeamMembers){
   const removedMembers = [];
   const cannotRemoveYet = {};
   const previouslyNotified = await readPreviousNotifyList();
-  const currentTeamMembers = await getTeamMembers(github, context, writeTeam);
   
   // Loop over team members and remove them from the team if they are not in previousContributors list
   for(const username in currentTeamMembers){
@@ -81,6 +80,7 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
         // Remove member from all teams (except baseTeam)
         const teams = [writeTeam, mergeTeam];
         for(const team of teams){
+          // https://docs.github.com/en/rest/teams/members?apiVersion=2022-11-28#remove-team-membership-for-a-user
           await github.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
             org: context.repo.owner,
             team_slug: team,
@@ -88,7 +88,7 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
           });
         }
         removedMembers.push(username);
-        // After removal, close member's "Pre-work checklist" if open
+        // After removal, close member's "Skills Issue", if open
         if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username][1] === true){
           closePrework(username, inactiveWithOpenIssue[username][0]);
         }
@@ -101,20 +101,20 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue
 
 
 /**
- * Function to close a just-removed inactive member's "Pre-work checklist", if open, and add a comment
- * @param {String} member        - name of member whose "Pre-work checklist" will be closed
- * @param {Number} issueNum      - number of member's "Pre-work checklist"
+ * Function to close a just-removed inactive member's "Skills Issue", if open, and add a comment
+ * @param {String} member        - name of member whose "Skills Issue" will be closed
+ * @param {Number} issueNum      - number of member's "Skills Issue"
  */
 async function closePrework(member, issueNum){ 
-  // Close the assignee's "Pre-work Checklist" and add comment
+  // https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#update-an-issue
   await github.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
     owner: context.repo.owner,
     repo: context.repo.repo,
     issue_number: issueNum,
     state: 'closed'
   });
-  console.log('Closing "Pre-work Checklist" issue number ' + issueNum + ' for ' + member);
-  // Add comment to issue
+  console.log(`Closing "Skills Issue" issue number ${issueNum} for ${member}`);
+  // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#create-an-issue-comment
   await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
     owner: context.repo.owner,
     repo: context.repo.repo,
@@ -211,8 +211,8 @@ function writeData(removedContributors, notifiedContributors, cannotRemoveYet){
 
   fs.writeFile(filepath, JSON.stringify(inactiveMemberLists, null, 2), (err) => {
     if (err) throw err;
-    console.log('-------------------------------------------------------');
-    console.log("File 'inactive-members.json' saved successfully!");
+    console.log(`-`.repeat(60));
+    console.log("File `inactive-members.json` saved successfully!");
    });
 }
 
