@@ -25,7 +25,7 @@ async function main({ g, c }) {
   const issueNum = context.payload.issue.number;
   const issueTitle = context.payload.issue.title;
   const templateTrigger = context.payload.issue.labels[0].name;
-  let labels = []
+  let labels = [];
 
   // If the issue is a template, extract the labelKeys then convert to labels
   if (templateTrigger === 'Template Label Placeholder') {
