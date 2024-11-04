@@ -1,4 +1,5 @@
 // Module imports
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 const statusFieldIds = require('../../utils/_data/status-field-ids');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
@@ -7,9 +8,6 @@ const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const REQUIRED_LABELS = ['Complexity', 'role', 'Feature', 'size'];
 const LABEL_MISSING = ['Complexity: Missing', 'role missing', 'Feature Missing', 'size: missing'];
 const COMPLEXITY_EXCEPTIONS = ['good first issue'];
-
-// SPECIAL_CASE is for issue created by reference with issue title "Hack for LA website bot" (from "Review Inactive Team Members")
-const SPECIAL_CASE = ['ready for dev lead','Feature: Administrative','size: 0.25pt','Complexity: Small','role: dev leads'];
 
 // Global variables
 var github;
@@ -26,14 +24,24 @@ async function main({ g, c }) {
   context = c;
   const issueNum = context.payload.issue.number;
   const issueTitle = context.payload.issue.title;
+  const templateTrigger = context.payload.issue.labels[0].name;
+  let labels = []
 
+  // If the issue is a template, extract the labelKeys then convert to labels
+  if (templateTrigger === 'Template Label') {
+    let labelKeys = extractTemplateLabels();
+    labels = labelKeys.map(labelKey => retrieveLabelDirectory(labelKey));
+  } else {
+    labels = obtainLabels();
+  }
+  
   const labels = obtainLabels();
   const filteredLabels = filterLabels(labels);
   let labelsToAdd = checkLabels(filteredLabels);
 
-  // Labels for SPECIAL_CASE noted above, change issue status to "Questions / In Review"
+  // SPECIAL_CASE: If issue has title "Hack for LA website bot" (from "Review 
+  // Inactive Team Members") then change issue status to "Questions / In Review"
   if (issueTitle.includes('Hack for LA website bot')) {
-    labelsToAdd = SPECIAL_CASE;
     // Find GraphQL issue id and change status id, then change status
     const { id: itemId } = await queryIssueInfo(github, context, issueNum);
     const newStatusValue = statusFieldIds("Questions_In_Review");
@@ -52,6 +60,20 @@ async function main({ g, c }) {
     addedLabels: labelsToAdd,
     issueNum: issueNum
   };
+}
+
+/**
+ * Only for template: extract all labels from the template body
+ * @return {Array} - returns an array of all the labels
+ */
+function extractTemplateLabels() {
+  const templateBody = context.payload.issue.body;
+  // Extract label list from a comment in the template body
+  const match = templateBody.match(/<!--\s*labels:\s*'([^']*)'(?:,\s*'([^']*)')*\s*-->/);
+  if (!match) return []; 
+
+  // Extract each label and return as an array
+  return match[1].split(',').map(label => label.trim());
 }
 
 /**
