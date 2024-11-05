@@ -66,19 +66,26 @@ leadership:
       github: 'https://github.com/gaylem'
     picture: https://avatars.githubusercontent.com/gaylem
   - name: Mario Antonini
-    github-handle: 
+    github-handle:
     role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U06MTPZ67V3'
       github: 'https://github.com/marioantonini'
     picture: https://avatars.githubusercontent.com/marioantonini
   - name: Danielle Hanson Aras
-    github-handle: 
+    github-handle:
     role: Merge Team
     links:
       slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
       github: 'https://github.com/daras-cu'
     picture: https://avatars.githubusercontent.com/daras-cu
+  - name: Samhitha Kamma
+    github-handle: Samhitha444
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07FF529MU6
+      github: https://github.com/Samhitha444
+    picture: https://avatars.githubusercontent.com/Samhitha444
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
