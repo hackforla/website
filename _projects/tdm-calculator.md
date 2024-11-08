@@ -31,7 +31,7 @@ leadership:
     github-handle: Parisajf
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U05PG72SL5
+      slack: https://hackforla.slack.com/team/U05Q5D34ARZ
       github: https://github.com/Parisajf
     picture: https://avatars.githubusercontent.com/Parisajf
   - name: Anousha Shadrach
