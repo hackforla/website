@@ -41,6 +41,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
       github: 'https://github.com/Jane4925'
     picture: https://avatars.githubusercontent.com/Jane4925
+  - name: Nilakshi Sahai
+    github-handle: NilakshiS
+    role: Lead UX Design Lead
+    links:
+      slack: https://hackforla.slack.com/team/U06SYVD69L7
+      github: https://github.com/NilakshiS
+    picture: https://avatars.githubusercontent.com/NilakshiS
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
