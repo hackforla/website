@@ -11,12 +11,12 @@
                 </div>
             {% endfor %}
         </div>
-        {% for testemonial in site.data.internal.testimonials %}
+        {% for testimonial in site.data.internal.testimonials %}
             <div class="garcetti-quote"><div class="entire-quote"><img class="quote-marks" src="/assets/images/about/quotes.png" alt=""> 
-                <p class="quote-text"> {{testemonial.quote}}</p>
+                <p class="quote-text"> {{testimonial.quote}}</p>
             </div>
-                <cite class="mayor-cite">&#8212; {{testemonial.source}}</cite>
-                <img id="quote-tmc" src="{{testemonial.img_url}}" alt="{{testemonial.source}}">
+                <cite class="mayor-cite">&#8212; {{testimonial.source}}</cite>
+                <img id="quote-tmc" src="{{testimonial.img_url}}" alt="{{testimonial.source}}">
             </div>
         {% endfor %}
 
