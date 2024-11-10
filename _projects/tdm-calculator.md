@@ -61,7 +61,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U06DSRCSXRD
       github: https://github.com/marlenamellody
-    picture: https://avatars.githubusercontent.com/marlenamellody
+    picture: https://avatars.githubusercontent.com/marlenamellody  
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
