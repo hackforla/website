@@ -55,6 +55,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U064M7X48SY
       github: https://github.com/heejung-hong
     picture: https://avatars.githubusercontent.com/heejung-hong
+  - name: Marlena Mellody Khim-Sai
+    github-handle: marlenamellody
+    role: UX Design Lead
+    links:
+      slack: https://hackforla.slack.com/team/U06DSRCSXRD
+      github: https://github.com/marlenamellody
+    picture: https://avatars.githubusercontent.com/marlenamellody
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
