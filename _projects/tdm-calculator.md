@@ -27,6 +27,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
       github: 'https://github.com/Biuwa'
     picture: https://avatars.githubusercontent.com/Biuwa
+  - name: Parisa Jannatifard
+    github-handle: Parisajf
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05Q5D34ARZ
+      github: https://github.com/Parisajf
+    picture: https://avatars.githubusercontent.com/Parisajf
   - name: Anousha Shadrach
     github-handle:
     role: UX Designer
@@ -48,6 +55,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06SYVD69L7
       github: https://github.com/NilakshiS
     picture: https://avatars.githubusercontent.com/NilakshiS
+  - name: Heejung Hong
+    github-handle: heejung-hong
+    role: Front End Development Lead
+    links:
+      slack: https://hackforla.slack.com/team/U064M7X48SY
+      github: https://github.com/heejung-hong
+    picture: https://avatars.githubusercontent.com/heejung-hong
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
