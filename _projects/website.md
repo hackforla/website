@@ -65,13 +65,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U06HC3A0DM0'
       github: 'https://github.com/gaylem'
     picture: https://avatars.githubusercontent.com/gaylem
-  - name: Mario Antonini
-    github-handle:
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U06MTPZ67V3'
-      github: 'https://github.com/marioantonini'
-    picture: https://avatars.githubusercontent.com/marioantonini
   - name: Danielle Hanson Aras
     github-handle:
     role: Merge Team
