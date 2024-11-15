@@ -50,7 +50,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/Jane4925
   - name: Nilakshi Sahai
     github-handle: NilakshiS
-    role: Lead UX Design Lead
+    role: UX Design Lead
     links:
       slack: https://hackforla.slack.com/team/U06SYVD69L7
       github: https://github.com/NilakshiS
