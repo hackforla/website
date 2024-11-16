@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06DSRCSXRD
       github: https://github.com/marlenamellody
     picture: https://avatars.githubusercontent.com/marlenamellody  
+  - name: Melissa Perry
+    github-handle: melissaperry09
+    role: UX Research Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05MCJTTPN3
+      github: https://github.com/melissaperry09
+    picture: https://avatars.githubusercontent.com/melissaperry09
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'
