@@ -20,13 +20,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UFLDX9V19'
       github: 'https://github.com/entrotech'
     picture: https://avatars.githubusercontent.com/entrotech
-  - name: Ebi Imafidon
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U031EU2E6LB'
-      github: 'https://github.com/Biuwa'
-    picture: https://avatars.githubusercontent.com/Biuwa
   - name: Parisa Jannatifard
     github-handle: Parisajf
     role: Product Manager
