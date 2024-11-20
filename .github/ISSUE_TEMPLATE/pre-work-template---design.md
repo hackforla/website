@@ -26,7 +26,7 @@ As a new designer on the HfLA website UX team, fill in the following fields as y
 - [ ] Attend weekly team meetings: 
    - [ ] UX weekly team meeting, Wednesday 2:30 pm PST
    - [ ] All team meeting (UX, Development, Product), Sunday 10am PST
- - [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Wednesdays and Sundays). In case, you are unable in any given week, you should reach out to the design lead. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the design lead know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+ - [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Wednesdays and Sundays). In case, you are unable in any given week, you should reach out to the design lead. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the design lead know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 - [ ] Review [Design_Short Term Goals, Plan, and Tasks](https://docs.google.com/document/d/1FxwgdnWBbbQ8Pi3tspnukZTWwXtqnRXfNkNhVMEloY0/edit)
 - [ ] Review the [Start Here](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=8561%3A72465) and [Design System](https://www.figma.com/file/0RRPy1Ph7HafI3qOITg0Mr/Hack-for-LA-Website?node-id=3464%3A3) pages in Figma
 - [ ] Review the [prioritized Backlog to see what Design Issues](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+design%22#column-7198257) are available (this will not be the complete list, but will give you some talking points for your conversation with your lead).
@@ -63,7 +63,7 @@ Progress through issues with increasing complexity in the following order:
 - First, you should post the question as a comment on your assigned issue, so it can be easily referred to in the next bullet points
 - Then, add the issue to the "Design Weekly Meeting Agenda" column of the Project Board so that it can be addressed in the next design meeting
 - You may also add the label "Status: Help Wanted" so other designers can see it and potentially help answer your question
-- Lastly, you can post your question in the hfla Slack channel and link the issue you're working on, so other volunteers can see and respond
+- Lastly, you can post your question in the hfla slack channel and link the issue you're working on, so other volunteers can see and respond
 
 ### Resources/Instructions
 - [GitHub Project Board - Hack for LA ](https://github.com/hackforla/website/projects/7)

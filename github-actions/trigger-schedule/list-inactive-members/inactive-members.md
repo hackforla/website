@@ -22,9 +22,8 @@ The bot is checking for the following activity:
 - If you are assigned to an issue, that you have provided an update on the issue in the past 30 days. The updates are due weekly.
 - If your issue is a `Draft` in the "New Issue Approval" column, that you have added to it within the last 30 days.
 - If you are reviewing PRs, that you have posted a review comment within the past 30 days.
-- If you are newly onboarded, that you are assigned to your "Skills Issue" and you have cloned the HfLA website repo to your personal repo.
 
-If you have been inactive in the last 30 days (using the above measurements), you can become active again by doing at least one of the above actions. If you do not do at least one of the above actions, the bot will automatically remove you from the 'website-write' team in the next 30 days.  
+If you have been inactive in the last 30 days (using the above measurements), you can become active again by doing at least one of the above actions. The bot will automatically remove you from next month's list.  
 
 ### Did we make a mistake?
 If you were active during the last 30 days (using the above measurements) and the bot made a mistake, let us know: Copy the following message into a comment below, add the pertinent issue or PR number, then select "Comment". Next, select "...", then "Reference in a new issue".  [Watch demo](https://github.com/t-will-gillis/website/assets/40799239/59d45792-6950-46f0-a310-7c1ecd0c87be)

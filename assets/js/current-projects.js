@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 if (window.location.pathname === '/projects-check/') {
                     filterTitle = filterName;                 
                 } else {
-                    filterTitle = 'languages / technologies / tools'  
+                    filterTitle = 'languages / technologies'  
                 }
                 filterValue.sort((a,b)=> {
                     a = a.toLowerCase()
@@ -40,32 +40,7 @@ document.addEventListener("DOMContentLoaded",function(){
             } else {
                 filterTitle = filterName;
             }
-            // for issue #4648, needed to add languages inside the technologies filter-item group,  might be able to optimize for future iterations
-
-            // This ensures that the /projects-check page does not change
-            if ((filterName === 'languages' || filterName === 'tools') && window.location.pathname === '/projects/') {
-              // remove the view all button
-              document.querySelector(`#technologies`).lastElementChild.remove()
-              // insert data inside at the end of the category
-              document.querySelector(`#technologies`).insertAdjacentHTML( 'beforeend', addToDropDownFilterComponents(filterName, filterValue));
-              // change filterName so that the view all button will be added back
-              filterName = 'technologies'
-              // get all li elements from #technologies
-              liValues = Array.from(document.querySelector('#technologies').querySelectorAll('li'))
-              // sort the array of li elements
-              liValues.sort((a,b) => {
-                const textA = a.querySelector('label').textContent.trim()
-                const textB = b.querySelector('label').textContent.trim()
-                return textA.localeCompare(textB)
-              })
-              // clear existing contents of #technologies
-              document.querySelector('#technologies').innerHTML = ''
-              // append sorted li
-              liValues.forEach(li => document.querySelector('#technologies').appendChild(li))
-            } else {
-              document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
-            }
-            
+            document.querySelector('.filter-list').insertAdjacentHTML( 'beforeend', dropDownFilterComponent( filterName,filterValue,filterTitle) );
             if (document.getElementById(filterName).getElementsByTagName("li").length > 8) {
                 document.getElementById(filterName).insertAdjacentHTML( 'beforeend', `<li class="view-all" tabindex="0" role="button" aria-label="View All ${filterTitle} Filters">View all</li>` );
             }
@@ -255,9 +230,7 @@ function createFilter(sortedProjectData){
             // 'looking': [ ... new Set( (sortedProjectData.map(item => item.project.looking ? item.project.looking.map(item => item.category) : '')).flat() ) ].filter(v=>v!='').sort(),
             // ^ See issue #1997 for more info on why this is commented out
             'programs': [...new Set(sortedProjectData.map(item => item.project.programAreas ? item.project.programAreas.map(programArea => programArea) : '').flat() ) ].filter(v=>v!='').sort(),
-            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies?.length > 0) ? [item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
-            'languages': [...new Set(sortedProjectData.map(item => (item.project.languages?.length > 0) ? [item.project.languages].flat() : '').flat())].filter(v => v != '').sort(),
-            'tools': [...new Set(sortedProjectData.map(item => (item.project.tools?.length > 0) ? [item.project.tools].flat() : '').flat() ) ].filter(v=>v!='').sort(),
+            'technologies': [...new Set(sortedProjectData.map(item => (item.project.technologies && item.project.languages?.length > 0) ? [item.project.languages, item.project.technologies].flat() : '').flat() ) ].filter(v=>v!='').sort(),
             'status': [... new Set(sortedProjectData.map(item => item.project.status))].sort()
         }        
     }
@@ -308,10 +281,9 @@ function viewAllEventHandler(e) {
 //event handler for keyboard users to click spans when focused
 function tabFocusedKeyDownHandler(e) {
     // if user is using tab index and keys space or enter on item that needs to be clicked, it will be clicked
-	if ((e.key === "Enter" || e.key === "Spacebar" || e.key === " ") && document.activeElement.getAttribute("aria-label")) {
+	if ((event.key === "Enter" || event.key === "Spacebar" || event.key === " ") && document.activeElement.getAttribute("aria-label")) {
         document.activeElement.click()
     }
-    
 }
 // shows filters popup on moble
 function showFiltersEventHandler(e) {
@@ -461,24 +433,13 @@ function updateFilterFrequency(){
 function updateCategoryCounter(filterParams){
         let container = []
         for(const [key,value] of Object.entries(filterParams)){
-          // for issue #4648, added this modifiedKey so that the counter for languages will be tied to technologies
-            let modifiedKey = key
-            // for issue #6196 - added tools to the counter 
-          if (key === 'languages' || key === 'tools') {
-            modifiedKey = 'technologies'
-          }
-          if (key !== 'Search') {
-            container.push([`counter_${modifiedKey}`,value.length]);
-          }
+            if (key !== 'Search') {
+                container.push([`counter_${key}`,value.length]);
+            }
         }
 
         for(const [key,value] of container){
-          // for issue #4648, added this to show the sum of selected filters for both technology and language filters
-          let totalValue = 0
-          for (const innerValue of container){
-            totalValue += innerValue[1]
-          }
-          document.querySelector(`#${key}`).innerHTML = ` (${totalValue})`;
+            document.querySelector(`#${key}`).innerHTML = ` (${value})`;
         }
     
 }
@@ -494,8 +455,8 @@ function updateProjectCardDisplayState(filterParams){
             if(key !=='Search'){            
                 projectCardObj[key] = projectCard.dataset[key].split(",");
             }
-            else {
-                const searchAreas=['technologies','description','partner','programs','title','languages', 'tools'];
+            else{
+                const searchAreas=['technologies','description','partner','programs','title'];
                 for(const area of searchAreas){
                     projectCardObj[area]=projectCard.dataset[area].split(",");
                 }
@@ -693,18 +654,12 @@ function clearAllEventHandler(){
 /**
  * Takes a single project object and returns the html string representing the project card
 */
-function projectCardComponent(project) {
-    const projectLanguages = project.languages ? [... new Set(project.languages.map(lang => lang))] : ""
-    const projectTechnologies = project.technologies ? [... new Set(project.technologies.map(t => t))] : ""
-    const projectTools = project.tools ? [... new Set(project.tools.map(t => t))] : ""
-    // the data-technologies attr will be used by UpdateFilterFrequency
-    // to generate Filter's Object
-    const dataTechnologiesArr = [...projectLanguages, ...projectTechnologies, ...projectTools]
+function projectCardComponent(project){
     return `
             <li class="project-card" id="${ project.identification }"
                 data-status="${project.status}"
                 data-looking="${project.looking ? [... new Set(project.looking.map(looking => looking.category)) ] : ''}"
-                data-technologies="${[...dataTechnologiesArr]}"
+                data-technologies="${(project.technologies && project.languages) ? [... new Set(project.technologies.map(tech => tech)), project.languages.map(lang => lang)] : project.languages.map(lang => lang) }"
                 data-languages="${project.languages ? [... new Set(project.languages.map(lang => lang))] : '' }"
                 data-tools="${project.tools ? [... new Set(project.tools.map(tool => tool))] : '' }"             
 		        data-location="${project.location? project.location.map(city => city) : '' }"
@@ -817,23 +772,6 @@ function dropDownFilterComponent(categoryName,filterArray,filterTitle){
     </ul>
     </li>
     `
-}
-
-/*
- * Adds filter components to already existing filter category
- * Helper function created for issue #4648
-*/
-function addToDropDownFilterComponents(categoryName, filterArray){
-  return `
-  ${filterArray.map(item =>
-      `
-      <li>
-          <input id='${item}' name='${categoryName}'  type='checkbox' class='filter-checkbox'>
-          <label for='${item}'>${item} <span></span></label>
-      </li>
-      `
-  ).join("")}
-  `
 }
 
 /**

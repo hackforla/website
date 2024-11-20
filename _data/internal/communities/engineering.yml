@@ -11,7 +11,9 @@ alt: 'A computer screen shows a diagram used to manage code development'
 
 icon: /assets/images/hero/communities-icons/engineering.png
 
-leadership-type: Community Led
+meeting-times: Thursdays 6:00-7:00 pm PT
+
+leadership-type: Peer Led
 leadership:
   - name: Micah Elm
     role: Co-lead
@@ -41,7 +43,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/C01CU709SER
-  - name: GitHub
+  - name: Github
     url: https://github.com/hackforla/engineering
   
 recruiting-message: 

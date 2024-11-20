@@ -3,31 +3,22 @@ on:
   issues:
     types:
       - closed
-
 jobs:
-  Move-Closed-Issues:
+  move-closed-issue:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # 1: Sort closed issues based on labels
       - name: Sort Closed Issues by Label
         uses: actions/github-script@v7
         id: sort-closed-issues
         with:
           script: |
-            const script = require('./github-actions/move-closed-issues/sort-closed-issues.js');
-            const sortIssues = script({context});
-            return sortIssues;
+            const script = require('./github-actions/move-closed-issues/sort-closed-issues.js')
+            const sortIssues = script({context})
+            return sortIssues
           result-encoding: string
-
-      # 2: Move closed issues
-      - name: Move Closed Issue
-        uses: actions/github-script@v7
-        id: move-closed-issue
+      - uses: alex-page/github-project-automation-plus@v0.9.0
         with:
-          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
-          script: |
-            const results = '${{ steps.sort-closed-issues.outputs.result }}';
-            const script = require('./github-actions/move-closed-issues/move-closed-issues.js');
-            script({github, context}, results);
+          project: Project Board
+          column: ${{ steps.sort-closed-issues.outputs.result }}
+          repo-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}

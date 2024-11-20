@@ -12,31 +12,72 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Kelly Chuang
-    github-handle: kellyc9
-    role: Product Manager
+  - name: Anjola Jaiyeola
+    role: Product Team
     links:
-      slack: https://hackforla.slack.com/team/U06REBB5K4M
-      github: https://github.com/kellyc9
-    picture: https://avatars.githubusercontent.com/kellyc9
-  - name: Will Gillis
-    role: Developer Co-Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
-      github: 'https://github.com/t-will-gillis'
-    picture: https://avatars.githubusercontent.com/t-will-gillis
+      slack: https://hackforla.slack.com/team/U052HJ1NMEZ
+      github: https://github.com/anjolaaoluwa
+    picture: https://avatars.githubusercontent.com/u/122532788?v=4
   - name: Roslyn Wythe
-    role: Developer Co-Lead
+    role: Dev Lead
     links:
       slack: 'https://hackforla.slack.com/team/U046PD8UT55'
       github: 'https://github.com/roslynwythe'
     picture: https://avatars.githubusercontent.com/roslynwythe
+  - name: Sarah Sanger
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U02M686LYET'
+      github: 'https://github.com/blulady'
+    picture: https://avatars.githubusercontent.com/blulady
+  - name: Will Gillis
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
+      github: 'https://github.com/t-will-gillis'
+    picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danny Do
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U048G8S2YAK'
+      github: 'https://github.com/Adastros'
+    picture: https://avatars.githubusercontent.com/Adastros
+  - name: Christina Or
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04J1GBA6QP'
+      github: 'https://github.com/christinaor'
+    picture: https://avatars.githubusercontent.com/christinaor
+  - name: Drake Nguyen
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04TSESVB4J
+      github: https://github.com/drakenguyen4000
+    picture: https://avatars.githubusercontent.com/drakenguyen4000
   - name: Ren Demeis-Ortiz
     role: Merge Team
     links:
       slack: https://hackforla.slack.com/team/U059K7A1VFB
       github: https://github.com/LRenDO
     picture: https://avatars.githubusercontent.com/LRenDO
+  - name: Ronald Paek
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U04RS2BCESX'
+      github: 'https://github.com/ronaldpaek'
+    picture: https://avatars.githubusercontent.com/ronaldpaek
+  - name: Richard Kwang
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U04U531MS5P
+      github: https://github.com/kwangric
+    picture: https://avatars.githubusercontent.com/kwangric
+  - name: Adrian Ang
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U0596J2AZEE'
+      github: 'https://github.com/adrianang'
+    picture: https://avatars.githubusercontent.com/adrianang
   - name: J Pham
     github-handle: jphamtv
     role: Merge Team
@@ -51,20 +92,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U04MJA414LU'
       github: 'https://github.com/Thinking-Panda'
     picture: https://avatars.githubusercontent.com/Thinking-Panda
-  - name: Danielle Hanson Aras
-    github-handle:
+  - name: Nayan Bhatt
+    github-handle: freaky4wrld
     role: Merge Team
     links:
-      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
-      github: 'https://github.com/daras-cu'
-    picture: https://avatars.githubusercontent.com/daras-cu
-  - name: Samhitha Kamma
-    github-handle: Samhitha444
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07FF529MU6
-      github: https://github.com/Samhitha444
-    picture: https://avatars.githubusercontent.com/Samhitha444
+      slack: 'https://hackforla.slack.com/team/U05TZLLJAUV'
+      github: 'https://github.com/freaky4wrld'
+    picture: https://avatars.githubusercontent.com/freaky4wrld
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

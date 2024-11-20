@@ -1,7 +1,9 @@
 name: Communities of Practice information updates
 description: CoP leads use this issue to make changes to Leadership members and contact info
-title: 'Communities of Practice information updates: [INSERT NAME OF Community of Practice]'
+title: 'Communities of Practice information updates: [INSERT NAME OF Community of
+  Practice]'
 labels: ['role: product', 'P-Feature: Communities of Practice', 'time sensitive', 'Complexity: Missing', 'size: missing']
+
 body:
   - type: markdown
     attributes:
@@ -18,24 +20,9 @@ body:
   - type: markdown
     attributes:
       value: "Change Description: NO"
-  - type: dropdown
+  - type: markdown
     attributes:
-      label: "Change Leadership Type"
-      options:
-        - "YES"
-        - "NO"
-      description: "If YES on Change Leadership Type, choose the Leadership Type; if NO, leave the field with the NA value:"
-    validations:
-      required: true
-  - type: dropdown
-    attributes:
-      label: "Leadership Type"
-      options:
-        - "N/A"
-        - "Mentor Led"
-        - "Community Led"
-      default: 0
-      description: "Select the type of leadership if applicable."
+      value: "Change Leadership Type: NO"
   - type: markdown
     attributes:
       value: "Change Slack Link: NO"
@@ -73,8 +60,9 @@ body:
         Slack Member ID:
   - type: markdown
     attributes:
+      value: "### Resources"
+  - type: markdown
+    attributes:
       value: |
-        ### Resources
-        * Folder where files are in the repo: https://github.com/hackforla/website/tree/gh-pages/_data/internal/communities
-        * Where you can see the live page: https://www.hackforla.org/communities-of-practice
-        * If you need to update your meeting times, names, dates, or frequency, please see the [VRMS User Guide](https://github.com/hackforla/VRMS/wiki/User-Guide). The HackforLA.org website gets the meeting times from the updates made to each Community of Practice's meeting data in vrms.io
+        folder where files are in the repo: https://github.com/hackforla/website/tree/gh-pages/_data/internal/communities
+        where you can see the live page: https://www.hackforla.org/communities-of-practice

@@ -24,6 +24,7 @@ As a new developer on the HfLA website team, fill in the following fields as you
 - [ ] Add yourself to the #hfla-site and #hfla-site-pr Slack channels
   - [ ] To find contact information for the merge team members and technical leads, please take a look at our [Meet the Team wiki page](https://github.com/hackforla/website/wiki/Meet-the-Team)
 - [ ] Add yourself to the [team roster](https://docs.google.com/spreadsheets/d/11u71eT-rZTKvVP8Yj_1rKxf2V45GCaFz4AXA7tS_asM/edit#gid=0)
+- [ ] After you have finished adding yourself to the roster, let a merge team member or a technical lead know you have added yourself to the roster and would like to be added to the `website-write` and `website` teams on GitHub
 - [ ] Self Assign this issue (gear in right side panel)
 - [ ] Add the "role: front end" or "role: back end" or both label(s) to this issue and remove the "role missing" label (gear in right side panel)
 - [ ] Add this issue to the Project Board under the Projects section (gear in right side panel)
@@ -33,8 +34,8 @@ As a new developer on the HfLA website team, fill in the following fields as you
   - [ ] (Optional) Office Hours, Thursdays 7-8pm PST
   - [ ] All team meeting (UX, Development, Product), Sunday 10am-12pm PST
 - [ ] Note: There are no meetings on the 1st-7th of every month.
-- [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
-- [ ] Complete steps 1.1 - 1.7 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
+- [ ] Note regarding weekly team meeting requirements: All website team members are required to attend at least 1 team meeting in a week (held on Tuesdays, Thursdays and Sundays). In case, you are unable in any given week, you should reach out to the tech leadership team. Exceptions to this requirement may be provided on a case-by-case basis. Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
+- [ ] Complete steps 1.1 - 1.6 in [Part 1: Setting up the development environment within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-1-setting-up-the-development-environment)
   - [ ] OPTIONAL: If you run into any issues, use [4.1 How do I ask for help within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#41-what-do-i-do-if-i-need-help) as a visual example to get a hold of our [HfLA website leadership team](https://github.com/hackforla/website/projects/7#card-69730135). That way we can help you resolve any set up issues immediately.
 - [ ] Read section 2.1 - 2.4 in [Part 2: How the Website team works with GitHub issues within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#part-2-how-the-website-team-works-with-github-issues)
   - [ ] Follow the steps in section [2.3 Where can I find GitHub issues to work on?](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#23-where-can-i-find-github-issues-to-work-on) to assign yourself your first issue under the Project Board's Prioritized Backlog column and use [2.7 Working on a Issue within Contributing.md](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27-working-on-an-issue) to start working on your issue
@@ -82,7 +83,7 @@ Progress through issues in the [prioritized backlog](https://github.com/hackforl
 ### What should I do if I have a question about an issue I'm working on, and I haven't gotten a response yet?
 - First, you should post the question or blocker as a comment on your assigned issue, so it can be easily referred to in the next bullet points.
 - Then, add the label "Status: Help Wanted" so other developers can see it and potentially help answer your question. In addition, you will still need to post a Slack message or bring it up in meeting so we know you need help; see below for how to do that.
-- Also, you can post your question on the hfla-site Slack channel and link the issue you're working on, so other developers can see and respond.
+- Also, you can post your question on the hfla-site slack channel and link the issue you're working on, so other developers can see and respond.
 - Lastly, you can add the issue to the "Development team meeting discussion items" column of the Project Board so that it can be addressed in the next development meeting. Please bring it during the meeting that you need help.
 
 ### Resources/Instructions

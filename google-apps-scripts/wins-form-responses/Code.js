@@ -68,34 +68,46 @@ function main() {
   const cleanedAndFormattedKeyValueData = JSON.stringify(sortedKeyValueData, null, 5);
   const encodedKeyValueData = Utilities.base64Encode(`${cleanedAndFormattedKeyValueData}`, Utilities.Charset.UTF_8);
 
-    // Retrieves latest sha and content of the _wins data file, which is needed for edits later
+    // Retrieves latest sha of the _wins data file, which is needed for edits later
   const keyValueFile = "_wins-data.json"
-  const [keyValueSha, keyValueContent] = ghrequests.getWins(keyValueFile);
+  const keyValueSha = ghrequests.getSHA(keyValueFile);
   if (keyValueSha === false) {
-    console.log('Ending script due to lack of returned SHA from getWins().');
-    return 1;
-  }
-
-  // detect any changes to Wins-form (Responses) by comparing performing a string comparison
-  if (!arrEq(sortedKeyValueData, keyValueContent)) {
-    console.log("Entry difference detected. Updating wins file...");
-    const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
-    if (writeResponse === false) {
-      console.log('Ending script...')
-      return 1;
-    }
-  }
-  else {
-    console.log("No new entry difference detected.");
     console.log('Ending script...')
     return 1;
   }
 
-  function arrEq(arr1, arr2) {
-    return JSON.stringify(arr1) === JSON.stringify(arr2);
+  const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
+  if (writeResponse === false) {
+    console.log('Ending script...')
+    return 1;
   }
 
-  ghrequests.createPR();
+  /*
+  ** This section deals with the array of data for wins-data.json
+  ** Eventually, lines 91-107 below should be deleted (EXCLUDING createPrResponse) when the team fully migrates from using wins-data.json to _wins-data.json
+  ** The payload is formatted and prepared for an API request to GitHub
+  */
+
+  // Create an array of data for wins-data.json
+  const cleanedAndFormattedArrayData = JSON.stringify(filteredRows);
+  // const encodedArrayData = Utilities.base64Encode(`${cleanedAndFormattedArrayData}`);
+  const encodedArrayData = Utilities.base64Encode(cleanedAndFormattedArrayData, Utilities.Charset.UTF_8); 
+
+  // Retrieves latest sha of the wins data file
+  const arrayFile = "wins-data.json"
+  const arrayDataSha = ghrequests.getSHA(arrayFile);
+  if (arrayDataSha === false) {
+    console.log('Ending script...')
+    return 1;
+  }
+
+  const writeResponse2 = ghrequests.updateWinsFile(arrayFile, encodedArrayData, arrayDataSha);
+  if (writeResponse2 === false) {
+    console.log('Ending script...')
+    return 1;
+  }
+
+  const createPrResponse = ghrequests.createPR();
 }
 
 /************************************************** TRIGGER("On Form Submit") 2 SECTION ********************************************************************/
@@ -242,7 +254,7 @@ function compareResponsesAndReview() {
 
     //Gets the values 
     for(let i = 0; i <= 10; i++){
-      const values = reviewInfoSplit[i].split(" : ");
+      values = reviewInfoSplit[i].split(" : ");
       let value = values[1];
       if (value !== undefined) { 
         value = value.trim();
@@ -272,7 +284,7 @@ function compareResponsesAndReview() {
       }
 
       if (responseValue !== reviewValues[j]) {
-        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j]);
+        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j])
         unamatched++;
       } else {
         matched++;

@@ -9,35 +9,30 @@ program-area:
   - Civic Tech Infrastructure
 leadership:
   - name: Bonnie Wolfe
-    github-handle:
     role: BOP Project Lead
     links:
       slack: 'https://hackforla.slack.com/archives/C01Q24YF56J'
       github: 'https://github.com/experimentsinhonesty'
     picture: https://avatars.githubusercontent.com/experimentsinhonesty
   - name: Aleiya Gafar
-    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01K7QMQ4TC'
       github: 'https://github.com/ag2463'
     picture: https://avatars.githubusercontent.com/ag2463
   - name: Evan Stalker
-    github-handle:
     role: Lead Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04M979AY3G'
       github: 'https://github.com/ejstalker'
     picture: https://avatars.githubusercontent.com/ejstalker
   - name: Liz Brown
-    github-handle:
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052DR4HVJS'
       github: 'https://github.com/ermbrown'
     picture: https://avatars.githubusercontent.com/ermbrown
-  - name: Katrina Bonoan
-    github-handle: 
+  - name: Katrina Bonoan 
     role: UX Designer
     links:
       slack: 'https://hackforla.slack.com/team/U052LER0010'

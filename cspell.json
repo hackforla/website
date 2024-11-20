@@ -8,9 +8,7 @@
       "Cleantech",
       "Inclusivity",
       "Collabathon",
-      "Undebate",
-      "hackforla",
-      "redirections"
+      "Undebate"
   ],
   "ignoreWords": [
       "Harish"
@@ -21,19 +19,6 @@
       "test/",
       "docker-compose.yml",
       "_sass/",
-      "_data/internal/credits/",
-      "_includes/design-system-page/examples/",
-      "_includes/svg/",
-      "assets/",
-      "_config.docker.yml",
-      "_site/",
-      "github-actions/",
-      "redirections/",
-      "surveys/",
-      "google-apps-scripts/"
-  ],
-  "ignoreRegExpList": [
-      "\\- name:.*$",
-      "github-handle:.*$"
+      "_data/internal/credits/"
   ]
 }

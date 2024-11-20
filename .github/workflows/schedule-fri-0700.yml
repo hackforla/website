@@ -1,20 +1,19 @@
 name: Schedule Friday 0700
 
-# This action runs at 7:00 UTC/ 0:00 PDT (midnight) every Friday, except during July and December.
 on:
   schedule:
-    - cron:  '0 7 * 1-6,8-11 5'
-  workflow_dispatch:
+    - cron:  '0 7 * * 5'
 
 jobs:
   Add-Update-Label-to-Issues-Weekly:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/github-script@v7
+        env:
+          IN_PROGRESS_COLUMN_ID: ${{ secrets.IN_PROGRESS_COLUMN_ID }}
         with:
-          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |
+            const { IN_PROGRESS_COLUMN_ID } = process.env;
             const script = require('./github-actions/trigger-schedule/add-update-label-weekly/add-label.js');
-            script({ g: github, c: context });
+            script({ g: github, c: context }, IN_PROGRESS_COLUMN_ID);

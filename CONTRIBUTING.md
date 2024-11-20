@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to the website repository,
 
 **If you need a text editor to work on code, [VS Code](https://code.visualstudio.com/download) is recommended by the team, but feel free to use a text editor of your choice.**
 
-**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel.**
+**If you have any other questions about your contributing process, feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel.**
 <br><br>
 
 ## **Table of Contents**
@@ -34,10 +34,11 @@ The following is a set of guidelines for contributing to the website repository,
     - [**2.1 Hack for LA Contributor expectations**](#21-hack-for-la-contributor-expectations)
     - [**2.2 How Hack for LA organizes issues**](#22-how-hack-for-la-organizes-issues)
     - [**2.3 Where can I find GitHub issues to work on?**](#23-where-can-i-find-github-issues-to-work-on)
-      - [**2.3.a Available issues for new members**](#23a-available-issues-for-new-members)
-      - [**2.3.b Available issues for returning members**](#23b-available-issues-for-returning-members)
-      - [**2.3.c Issues for Hacktoberfest contributors**](#23c-issues-for-hacktoberfest-contributors)
-      - [**2.3.d What if you see bugs/errors that are not connected to an issue?**](#23d-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
+      - [**2.3.a Available issues for new members (front end/back end)**](#23a-available-issues-for-new-members-front-endback-end)
+      - [**2.3.b Available issues for returning members (front end)**](#23b-available-issues-for-returning-members-front-end)
+      - [**2.3.c Available issues for returning members (back end)**](#23c-available-issues-for-returning-members-back-end)
+      - [**2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**](#23d-issues-for-hacktoberfest-contributors-front-endback-end)
+      - [**2.3.e What if you see bugs/errors that are not connected to an issue?**](#23e-what-if-you-see-bugserrors-that-are-not-connected-to-an-issue)
     - [**2.4 Claiming an Issue**](#24-claiming-an-issue)
       - [**2.4.a Assign & Unassign yourself to this issue**](#24a-assign--unassign-yourself-to-this-issue)
         - [**i. If you want to to self assign an issue:**](#i-if-you-want-to-to-self-assign-an-issue)
@@ -51,8 +52,8 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.6.b What to do if you have to stop working mid issue:**](#26b-what-to-do-if-you-have-to-stop-working-mid-issue)
     - [**2.7 Working on an issue**](#27-working-on-an-issue)
       - [**2.7.a Working on an issue (1): Verify current branch is `gh-pages`**](#27a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
-      - [**2.7.b Working on an issue (2): Creating and testing your issue branch**](#27b-working-on-an-issue-2-creating-and-testing-your-issue-branch)
-        - [**i. A few notes regarding Docker:**](#i-a-few-notes-regarding-docker)
+      - [**2.7.b Working on an issue (2): Create a new branch where you will work on your issue**](#27b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
+        - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
       - [**2.7.c Working on an issue(3): Prepare your changes to push to your repository**](#27c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
         - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
@@ -116,9 +117,9 @@ You can fork the hackforla/website repository by clicking <a href="https://githu
 <details>
   <summary><strong>Click here</strong> to see a visual example of the `fork` button within the website repo</summary>
   <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA website repo](https://github.com/hackforla/website)</strong></h4>
-  <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg">
+  <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg" />
   <p><strong>Next, a modal may open and request where you want to fork this website repo. Please click on your avatar or your GitHub username</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg">      
+  <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg" />
 </details><br>
 
 **Note:** It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/website`.
@@ -215,7 +216,7 @@ git remote add upstream https://github.com/hackforla/website.git
 
 Docker is the recommended approach to quickly getting started with local development. Docker helps create a local/offline version of the hackforla.org website on your computer so you can test out your code before submitting a pull request.
 
-The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing docker on your system</em></strong>
+The recommended installation method for your operating system can be found [here](https://docs.docker.com/install/). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing docker on your system</em></strong>
 
 More on using Docker and the concepts of containerization:
 
@@ -304,12 +305,23 @@ docker-compose up
 
 You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
 
+The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions). The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). <strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the extension in VS Code.</em></strong>
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+
+
+***
+
+### **1.7 Dev setup (7): Install local codebase spell checker**
+
+You must use VS Code as your local text editor to install the VS Code extension for spell checking your codebase, Code Spell Checker.
+
 The recommended installation method is to install Code Spell Checker directly from the VS Code text editor, and those instructions can be found [here](https://code.visualstudio.com/learn/get-started/extensions).
 The extension can also be installed via the VS Code Marketplace website [here](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker). 
 
 For developers who do not use VS Code, use the corresponding npm package, cspell, and those instructions can be found [here](https://www.npmjs.com/package/cspell).
 
-<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/archives/C4UM52W93/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
+<strong><em>Feel free to reach out in the [Hack for LA Slack channel](https://hackforla.slack.com/messages/hfla-site/) if you have trouble installing the VS Code extension or the cspell npm package on your system.</em></strong>
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -318,7 +330,7 @@ For developers who do not use VS Code, use the corresponding npm package, cspell
 
 ### **2.1 Hack for LA Contributor expectations**
 
-In order to work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
+In order to join [another project within Hack for LA](https://www.hackforla.org/projects/) or work on a `Complexity: Small`/`Complexity: Medium`/`Complexity: Large` label issue within this repo, you need to complete the following:
 
 1. `good first issue`
    * Self-assign an issue with the `good first issue` label.
@@ -343,21 +355,7 @@ All website team members are required to attend at least 1 team meeting in a wee
 
 All website team members are expected to devote a minimum of 6 hours per week while working on various assignments during their entire tenure at the website team (excluding week offs and vacations).
 
-Also, please let the tech leadership team know (through a Slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
-
-Prior to joining [another project within Hack for LA](https://www.hackforla.org/projects/), developers should gain the following experience:
-* Setting up your local environment from a CONTRIBUTING file
-* Completing the above series of issues at least up to `Complexity: Large` 
-* Resolving Merge Conflicts
-* Reviewing other people's Pull Requests
-* Create or improve documentation for other developers
-* Mentor other developers
-* Create new issues
-
-In addition, backend engineers should complete issues that provide experience with the following:
-* API requests
-* Cron Job Scripting
-* CRUD operations
+Also, please let the tech leadership team know (through a slack message in the hfla-site channel as well as an @ mention in a comment of the issue that you would be working on) if you are planning to take a week off or a longer vacation.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -385,34 +383,55 @@ And the following **complexity** labels:
 
 ### **2.3 Where can I find GitHub issues to work on?**
 
-The best way to view the issues available is our [GitHub Project Board](https://github.com/orgs/hackforla/projects/86)
+The best way to view the issues available is our [GitHub Project Board](https://github.com/hackforla/website/projects/7)
 
+<details>
+  <summary><strong>Click here</strong> to see a Project Board visual</summary>
+  <h4>Our GitHub project board</h4>
+  <img src="https://user-images.githubusercontent.com/21162229/137258967-93d1820e-7756-441a-9352-1e8a15a00e12.jpg"/>
+</details>
 
-For the purpose of finding issues to work on, developers should focus exclusively on the `Prioritized Backlog` column, which contains all the available issues that have been approved and prioritized. 
+There are only 2 columns that you will be consistently referencing:
+
+1. `Onboarding infos/links` - Some helpful card information examples:
+  * [Website team meeting times/links card](https://github.com/hackforla/website/projects/7#card-47984166)
+  * [Website team leadership contact information card](https://github.com/hackforla/website/projects/7#card-69730135)
+  * Filters to show the project issues by a specific complexity:
+    * [`role: front end` complexity filters card](https://github.com/hackforla/website/projects/7#card-63001626)
+    * [`role: back end` complexity filters card](https://github.com/hackforla/website/projects/7#card-65620159)
+  * [Figma links (ui/ux design team) card](https://github.com/hackforla/website/projects/7#card-38820969)
+
+2. `Prioritized Backlog` - This column contains all the available issues that can be worked on
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.a Available issues for new members**
+#### **2.3.a Available issues for new members (front end/back end)**
 
-Use the link [`good first issues`](https://github.com/orgs/hackforla/projects/86/views/2) to display "good first issues" (for both front end and back end roles) in the Prioritized Backlog column.  
+We recommend you visit the `Prioritized Backlog` column in the filtered Project Board using the following links: [`good first issues` (front end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22good+first+issue%22#column-7198257) and [`good first issues` (back end)](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22good+first+issue%22+label%3A%22role%3A+back+end%2Fdevops%22#column-7198257). These links will take you to a filtered Project Board and will only show issues with the `good first issue` label for both front end and back end respectively.
 
 **Note:** The column is filtered so the first (top) issue has the highest priority and should be worked on next.
 
-#### **2.3.b Available issues for returning members**
+#### **2.3.b Available issues for returning members (front end)**
 
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/orgs/hackforla/projects/86/views/3)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/orgs/hackforla/projects/86/views/4)
-* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large and XLarge** label](https://github.com/orgs/hackforla/projects/86/views/5)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22complexity%3A+small%22+label%3A%22role%3A+front+end%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3A%22complexity%3A+large%22)
 
-#### **2.3.c Issues for Hacktoberfest contributors**
+#### **2.3.c Available issues for returning members (back end)**
 
-Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/orgs/hackforla/projects/86/views/4?filterQuery=status%3A%22Prioritized+backlog%22+label%3A%22hacktoberfest%22+label%3A%22role%3A+front+end%22+)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Small** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+small%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Medium** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%22+label%3A%22complexity%3A+medium%22)
+* `Prioritized Backlog` column in the [filtered Project Board - **complexity: Large** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+back+end%2Fdevops%22+label%3A%22complexity%3A+large%22)
+
+#### **2.3.d Issues for Hacktoberfest contributors (Front-End/Back-End)**
+
+Please use the `Prioritized Backlog` column in the [filtered Project Board - **Hacktoberfest** label](https://github.com/hackforla/website/projects/7?card_filter_query=label%3A%22role%3A+front+end%22+label%3Ahacktoberfest)
 
 **Note:** You can only submit a pull request for one (1) issue with the `Hacktoberfest` label. Also leave a comment within the issue you would like to work on.
 **Note:** If you would like to continue to contribute please join our team. You can find more information on our [Hack for LA Getting Started Page](https://www.hackforla.org/getting-started).
 
-#### **2.3.d What if you see bugs/errors that are not connected to an issue?**
+#### **2.3.e What if you see bugs/errors that are not connected to an issue?**
 
-If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://www.hackforla.org/projects/website) and they will help you create an issue you can resolve.
+If you see any bugs/errors within the site and there is not an issue for it, please reach out to any of the [Website leadership/merge team](https://github.com/hackforla/website/projects/7#card-69730135) and they will help you create an issue you can resolve.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -425,7 +444,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 <details>
   <summary><strong>Click here</strong> to see how you assign & unassign yourself to an issue</summary>
   <p><strong>Assign/Unassign demo</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137636320-e96ef70d-3c85-405e-90d2-ee7b3bba071f.gif">
+  <img src="https://user-images.githubusercontent.com/21162229/137636320-e96ef70d-3c85-405e-90d2-ee7b3bba071f.gif" />
 </details>
 
 ##### **i. If you want to to self assign an issue:**
@@ -441,7 +460,7 @@ Once you find an issue you want to work on, you need to self-assign to claim it 
 <details>
   <summary><strong>Click here</strong> to see how to move an issue from the ‘Prioritized Backlog’ to the ‘In progress (actively working)’ & back</summary>
   <p><strong>Project Board column demo</strong></p>
-  <img src="https://user-images.githubusercontent.com/21162229/137693338-97fe5f6c-820d-41c9-8e93-57b70827e0cf.gif">
+  <img src="https://user-images.githubusercontent.com/21162229/137693338-97fe5f6c-820d-41c9-8e93-57b70827e0cf.gif" />
 </details>
 
 ##### **i. After you claim an issue:**
@@ -511,16 +530,16 @@ If you are not currently in the `gh-pages` branch, run the following command to 
 git checkout gh-pages
 ```
 
-Update your gh-pages branch with upstream changes:
+Update your gh-pages branch with upstream changes
 
-```bash
+```
 git pull upstream gh-pages
 ```
 
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.7.b Working on an issue (2): Creating and testing your issue branch**
+#### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
 
 If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
@@ -546,45 +565,18 @@ We urge developers to be cautious using `git add`. In general it is not advisabl
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
-##### **i. A few notes regarding Docker:**
+##### **i. What if you cannot see your changes locally within Docker?**
 
-- To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000.
+If you do not see the changes you applied when you run `docker-compose up`, **do the following**:
 
-- The Docker Desktop application must be running, otherwise `docker-compose up` will not work
-- Docker pulls an image from Dockerhub.com which enables Docker to build the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
-
-- In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View details`.
-  - In the new Docker Desktop application, select option `View packages and CVEs` instead.
-
-  <details>
-    <summary><strong>Click here</strong> to see how to view details for a Docker image</summary>
-    <img src="https://github.com/user-attachments/assets/491b9392-f2ef-4752-bc6d-d827a6635a9d">
-    <img src="https://github.com/user-attachments/assets/1decb200-e70b-4dde-835b-fd75f454eaab">
-  </details>
-
-- Note the `CREATED` column
-  <details>
-    <summary><strong>Click here</strong> to see how to determine when an image was last updated in Docker Desktop</summary>
-    <img src="https://github.com/user-attachments/assets/0a7e68c0-3782-441a-b536-ee6163695556">
-  </details>
-
-- View the details of the "latest" tag from [hackforlaops Dockerhub image tags](https://hub.docker.com/r/hackforlaops/ghpages/tags) and determine when an image was pushed to Docker hub
-  <details>
-    <summary><strong>Click here</strong> to see how to determine when an image was pushed to Docker hub</summary>
-    <img src="https://github.com/user-attachments/assets/217bc94c-0b47-4bf2-9087-eb46afb59740">
-  </details>
-
-- If the "latest" tagged image at Docker hub is more recent than the image in Docker Desktop, use the Docker Desktop Action menu (3 dots) to "pull" down the updated image
-  <details>
-    <summary><strong>Click here</strong> to see how to pull image from DockerHub</summary>
-    <img src="https://github.com/user-attachments/assets/75e8d21c-481b-4d82-8592-9ce9c6f09acc">
-  </details>
-
-- Note that the next `docker-compose up` will take extra time to recreate the Docker container based on the updated image.
+1. Stop running your Docker application (if still running).
+2. Delete the `_site` directory in the root folder (`website`)
+3. Delete the `.jekyll-metadata` file in the root folder (`website`)
+4. Finally, restart docker (run `docker-compose up` in the terminal) and you should see your changes.
+<br><br>
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
-
-- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
+- If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
@@ -639,18 +631,17 @@ git commit -m “insert message here”
 
 #### **2.7.d Working on an issue (4): Pulling from upstream before you push**
 
-**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. You can sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch":
+**IMPORTANT:** Before you push your local commits to your repository, sync your fork to the main Hack For LA website repository. `git pull upstream` will ensure that your local repository is up-to-date with the main site:
+
+```bash
+git pull upstream
+```
+You can also sync your fork directly on GitHub by clicking "Sync Fork" at the right of the screen and then clicking "Update Branch"
 
 <details>
   <summary><strong>Click here</strong> to see how to sync the fork on GitHub</summary>
-  <img src="https://raw.githubusercontent.com/wiki/hackforla/website/images/how-to-review-pull-requests/step3-sync-demo.gif">
+  <img src="https://docs.github.com/assets/cb-49937/images/help/repository/update-branch-button.png" />
 </details>
-
-Next, bring upstream changes into your topic branch. With your topic branch checked out, run: 
-
-```bash
-git pull upstream gh-pages
-```
 
 
 ##### **i. If there are no changes in the upstream repository**
@@ -739,9 +730,7 @@ git merge gh-pages
 
 #### **2.7.f Working on an issue (6): Handling SSH authorization errors**
 
-If you already have an SSH key that connects your computer with your GitHub account, you can skip this section (2.7.f).
-
-**IMPORTANT:** If you are a Windows user then you have to install Git Bash, but if you are a Mac user you only need to use your terminal. Download Git Bash for Windows here:
+**IMPORTANT:** If you are a windows user then you have to install git bash, but if you are a Mac user you only need to use your terminal. Download git bash for windows here
 [Git Bash](https://git-scm.com/downloads)
 
 ##### **i. Setting up SSH Keys for Mac**
@@ -750,10 +739,6 @@ If you already have an SSH key that connects your computer with your GitHub acco
 
 ```bash
 ls -al ~/.ssh
-```
-If the folder ~/.ssh does not exist, create it using
-```bash
-mkdir ~/.ssh
 ```
 
 2. Then enter the text below into your terminal using your github account email address.
@@ -784,7 +769,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 
 ##### **ii. Setting up SSH Keys for Windows**
 
-1. You have to set up SSH keys in order to contribute to GitHub remotely. First check if you have any keys set up already. Open Git Bash and run:
+1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already. Open Git Bash and run:
 
 ```bash
 ls -al ~/.ssh
@@ -796,7 +781,7 @@ If the folder ~/.ssh does not exist, create it using
 mkdir ~/.ssh
 ```
 
-2. Then enter the text below into your terminal using your GitHub account email address.
+2. Then enter the text below into your terminal using your github account email address.
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -814,13 +799,13 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
 
-5. Finally copy the ssh key to add it to your GitHub account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
 
 ```bash
 clip < ~/.ssh/id_ed25519.pub
 ```
 
-6. Go to your GitHub account's ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -850,28 +835,21 @@ git push --set-upstream origin update-give-link-2093
   <summary><strong>Click here</strong> to see pull request markdown template</summary>
 
   ```
-  <!--  Important! Add the number of the issue you worked on  --> 
   Fixes #replace_this_text_with_the_issue_number
 
   ### What changes did you make?
-  <!--  Note: add lines if needed, and remove any unused lines  -->  
-    - 
-    - 
-    - 
+    -
+    -
+    -
 
   ### Why did you make the changes (we will use this info to test)?
-  <!--  Note: add lines if needed, and remove any unused lines  -->  
-    - 
-    - 
-    - 
+    -
+    -
+    -
 
-  ### Screenshots of Proposed Changes To The Website (if any, please do not include screenshots of code changes)
-  <!--  Notes: 
-    - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
-    - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
-    - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
-    - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
-  --> 
+  ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
+  <!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
+  <!-- If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag -->
 
   <details>
     <summary>Visuals before changes are applied</summary>
@@ -891,7 +869,7 @@ git push --set-upstream origin update-give-link-2093
 <br>
 <details>
   <summary><strong>Click here</strong> to see pull request #2131 example (gif)</summary>
-  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif">
+  <img src="https://media.giphy.com/media/WT7SDqqKLWnjC1ppHV/giphy-downsized-large.gif" />
 </details>
 <br>
 
@@ -941,33 +919,30 @@ In bullet point form, explain the changes you made in order to complete the acti
 
 ##### **iv. Complete pull request (4): Include images (if available)**
 
-In the dropdown example above [**Click here** to see pull request #2131 example (gif)](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so: 
+in the gif example [near the top  of this part within the gif of completing pull request #2131](#31-how-to-make-a-pull-request), you will see 2 images get dragged into the text box and added within the `<details>/<summary>` tags like so:
 
 ```
-### Screenshots of Proposed Changes Of The Website (if any, please do not include screenshots of code changes)
-<!--  Notes: 
-  - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
-  - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
-  - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
-  - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
- --> 
+### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)
+<!-- Note, if your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images -->
+<!-- If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag -->
 
 <details>
-  <summary>Visuals before changes are applied</summary>
+<summary>Visuals before changes are applied</summary>
 
-  ![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
+![image](https://user-images.githubusercontent.com/77212035/130176122-aca18c1a-c883-48b3-987d-06342835017c.png)
+
 
 </details>
 
 <details>
-  <summary>Visuals after changes are applied</summary>
+<summary>Visuals after changes are applied</summary>
 
-  ![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
+![image](https://user-images.githubusercontent.com/77212035/130176069-9c1cc306-f930-43a5-9f93-1249466c81dc.png)
 
 </details>
 ```
 
-**Note:** Not all pull requests will make visual changes to our website. **Please do not include screenshots from VSCode / other IDE**.  If your pull request does not make visual changes to our website, please remove the entire`<details>/<summary` section and replace it with a brief summary stating that there are no visual changes, for example:
+**Note:** Not all pull requests will have significant changes to our website. **Please do not any screenshots of VSCode** If you do not have the ability to notate changes, please remove the `<details>/<summary` and replace it with an explanation for no images like:
 
 ```
 ### Screenshots of Proposed Changes Of The Website  (if any, please do not screen shot code changes)

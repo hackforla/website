@@ -5,14 +5,14 @@
     </div>
 
     <ul class="program-areas--cards">
-    {% assign sorted_program_areas = site.program-areas | sort %}
+    {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
     {% for program_area in sorted_program_areas %}
         <li class="program-area-card">
-            <a href="/program-areas#{{ program_area.name | slugify }}">
+            <a href="/program-areas/#{{ program_area[0] }}">
                 <div class="program-area-img">
-                    <img class="program-area-gradient" src="{{program_area.image}}" alt="{{program_area.image_alt}}"/>
+                    <img class="program-area-gradient" src="{{program_area[1].image}}" alt="{{program_area[1].image_alt}}"/>
                 </div>
-                <p>{{ program_area.name }}</p>
+                <p>{{ program_area[1].name }}</p>
             </a>
         </li>
     {% endfor %}

@@ -12,27 +12,19 @@ const ACCEPT_HEADER = {
 
 /************************************************** FUNCTIONS USING THE FETCH REQUESTS ********************************************************************/
 
-// Retrieves a GitHub file's SHA and associated wins (in JSON format)
-function getWins(fileName) {
+// Retrieves a GitHub file's SHA
+function getSHA(fileName) {
   const branch = "update-wins-data";
   const url = `https://api.github.com/repos/elizabethhonest/website/contents/_data/external/${fileName}?ref=${branch}`;
   const response = getRequest_(url, ACCEPT_HEADER.Repository);
 
   if (response === false ) {
     console.log('SHA retrieval failed.')
-    return [null, null];
+    return false;
   }
 
-  let decodedContent = JSON.parse(decode(response.body.content));
-
   console.log('SHA retrieved.')
-  return [response.body.sha, decodedContent];
-}
-
-function testGetWins() {
-  const fileName = "_wins-data.json";
-  const [sha, content] = getWins(fileName);
-  console.log(content.length);
+  return response.body.sha;
 }
 
 // Updates Github File given a payload
@@ -127,8 +119,7 @@ function setToken_() {
   }
   
   const doc = DocumentApp.openById(id);
-  documentProperties.setProperty('TOKEN', doc.getBody().getText());
-  console.log(documentProperties.getProperty(`TOKEN`))
+  documentProperties.setProperty('TOKEN', doc.getBody().getText())
 }
 
 // Uses base64 to decode an input

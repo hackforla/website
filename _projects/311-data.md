@@ -34,6 +34,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JKGV3F4N
       github: https://github.com/annaseulgi
     picture: https://avatars.githubusercontent.com/annaseulgi
+  - name: Ahmed Awadalla
+    github-handle: ahmedsalah0130
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U05Q80JEGG4
+      github: https://github.com/ahmedsalah0130
+    picture: https://avatars.githubusercontent.com/ahmedsalah0130
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
@@ -55,20 +62,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03SUUZMFEV
       github: https://github.com/edwinjue
     picture: https://avatars.githubusercontent.com/edwinjue
-  - name: Allison Jeon
-    github-handle: allisonjeon
-    role: UX Design Lead
-    links:
-      slack: https://hackforla.slack.com/team/U05JP94R9B7
-      github: https://github.com/allisonjeon
-    picture: https://avatars.githubusercontent.com/allisonjeon
-  - name: Joy Truex
-    github-handle: Joy-Truex
-    role: UX Design Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03VBPSEH52
-      github: https://github.com/Joy-Truex
-    picture: https://avatars.githubusercontent.com/Joy-Truex  
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'

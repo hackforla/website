@@ -16,50 +16,55 @@ permalink: /program-areas
 </div>
 
 <section class="content-section content--program-areas">
-  {% assign sorted_program_areas = site.program-areas | sort %}
+  {% assign sorted_program_areas = site.data.internal.program-areas | sort %}
   {% for program_areas in sorted_program_areas %}
-  <a class="anchor"  id="{{ program_areas.name | slugify }}"></a>
+  {% if program_areas[1].size > 0 %}
+  <a class="anchor"  id="{{ program_areas[0] }}"></a>
   <div class="page-card card-primary page-card-lg page-card-container">
       <div class="page-card-image-container">
-        <img class="page-card-image" src="{{ program_areas.image }}" alt="">
+        <img class="page-card-image" src="{{ program_areas[1].image }}" alt="">
       </div>
       <div class="page-card-content">
-          <h2 class="title4">{{program_areas.name}}</h2>
-          <p>{{program_areas.description}}</p>
+          <h2 class="title4">{{program_areas[1].name}}</h2>
+          <p>{{program_areas[1].description}}</p>
           <p>
               <strong>SDGs: </strong>
-              {% if program_areas.SDG %}
-                {% for sdg in program_areas.SDG %}
-                  {% if forloop.last == true %}
-                    and {{sdg}}
-                  {% else %}
-                    {{sdg}},
-                  {% endif %}
-                {% endfor %}
+              {% if program_areas[1].SDG %}
+              {% for sdg in program_areas[1].SDG %}
+              {% if forloop.last == true %}
+              and {{sdg}}
+              {% else %}
+              {{sdg}},
+              {% endif %}
+              {% endfor %}
               {% endif %}<br>
           </p>
           <ul class="project-card-mini-list-alignment">
               {% for project in site.projects %}
-                {% for project_program in project.program-area %}
-                  {% if program_areas.program-area == project_program and project.visible %}
-                    {% assign project_relative_path = project.slug | prepend: "../projects/" %}
-                    <li class="project-card-mini inline-list" id="{{project.identification}}">
-                        <img class="project-card-mini-image" src="{{project.image}}" alt="">
-                        <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
-                    </li>
-                  {% endif %}
-                {% endfor %}
+              {% for project_program in project.program-area %}
+              {% if program_areas[1].program-area == project_program and project.visible %}
+              {% assign project_relative_path = project.slug | prepend: "../projects/" %}
+              <li class="project-card-mini inline-list" id="{{project.identification}}">
+                  <img class="project-card-mini-image" src="{{project.image}}" alt="">
+                  <a class="project-card-mini-title" href="{{ project_relative_path }}">{{project.title}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
               {% endfor %}
               <!--Spacer li are used to center the project card mini on mobile-->
               <li class="project-card-mini-spacer"></li>
               <li class="project-card-mini-spacer"></li>
               <li class="project-card-mini-spacer"></li>
           </ul>
+
+
       </div>
   </div>
-  {% endfor %}
-</section>
 
+  {% endif %}
+  {% endfor %}
+
+</section>
 <section class="join-us-footer">
   <div class="join-us-footer-body">
       <img

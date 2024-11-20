@@ -7,35 +7,24 @@ alt: 'Food Oasis'
 image-hero: /assets/images/projects/food-oasis-hero.jpg
 leadership:
   - name: John Darragh
-    github-handle:
     role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/UFLDX9V19"
       github: "https://github.com/entrotech"
     picture: https://avatars.githubusercontent.com/entrotech
-  - name: Hannah Zulueta
-    github-handle:
-    role: Lead Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
-      github: "https://github.com/hanapotski"
-    picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
-    github-handle: 
     role: UX/UR Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
       github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
   - name: Gigi Patel
-    github-handle: 
     role: Lead UX Researcher
     links:
       slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
       github: "https://github.com/GigiUxR"
     picture: https://avatars.githubusercontent.com/GigiUxR
   - name: Virginia Wu
-    github-handle:
     role: Full Stack Engineer
     links:
       slack: "https://hackforla.slack.com/team/U02G7SBKSV7"
@@ -62,28 +51,12 @@ leadership:
       slack: https://hackforla.slack.com/team/U03UWG0EP7V
       github: https://github.com/junjun107
     picture: https://avatars.githubusercontent.com/junjun107
-  - name: Krista Strucke
-    github-handle: kurikurichan
-    role: Full Stack Engineer
+  - name: Hannah Zulueta
+    role: Lead Developer
     links:
-      slack: https://hackforla.slack.com/team/U04PHV2HUF6
-      github: https://github.com/kurikurichan
-    picture: https://avatars.githubusercontent.com/kurikurichan
-  - name: Qiqi Zheng
-    github-handle: qiqicodes
-    role: Full Stack Engineer
-    links:
-      slack: https://hackforla.slack.com/team/U01LM6SE70A
-      github: https://github.com/qiqicodes
-    picture: https://avatars.githubusercontent.com/qiqicodes
-  - name: Saumil Dhankar
-    github-handle: saumildhankar
-    role: Full Stack Engineer
-    links:
-      slack: https://hackforla.slack.com/team/U02AG2K2BB3
-      github: https://github.com/saumildhankar
-    picture: https://avatars.githubusercontent.com/saumildhankar
-
+      slack: "https://hackforla.slack.com/team/U9SCMTNK0"
+      github: "https://github.com/hanapotski"
+    picture: https://avatars.githubusercontent.com/hanapotski
 
 links:
   - name: GitHub

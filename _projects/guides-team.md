@@ -15,26 +15,17 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
   - name: Sarah Edwards
-    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U03KBU16APN'
       github: 'https://github.com/edwardsarah'
     picture: https://avatars.githubusercontent.com/edwardsarah
-  - name: Ayma Rahman
-    github-handle: aymarmsba
+  - name: Sarah Levine
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U06C183Q2HL
-      github: https://github.com/aymarmsba
-    picture: https://avatars.githubusercontent.com/aymarmsba
-  - name: Mary Gabrielian
-    github-handle: marygabrielian
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U06KMNL8ETY
-      github: https://github.com/marygabrielian
-    picture: https://avatars.githubusercontent.com/marygabrielian
+      slack: 'https://hackforla.slack.com/team/U05RWQJ8YKU'
+      github: 'https://github.com/levines2017'
+    picture: https://avatars.githubusercontent.com/levines2017
   - name: Rhoda Michael
     github-handle: the-techgurl
     role: UX Research Lead
@@ -42,20 +33,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
       github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
-  - name: Aditya Soni
-    github-handle: Aditya23soni
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07F766J29M
-      github: https://github.com/Aditya23soni
-    picture: https://avatars.githubusercontent.com/Aditya23soni
-  - name: Jesus Diaz
-    github-handle: JesseTheCleric
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U0725MRMMA9
-      github: https://github.com/JesseTheCleric
-    picture: https://avatars.githubusercontent.com/JesseTheCleric  
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'

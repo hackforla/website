@@ -12,9 +12,8 @@
 // Centered Components and filters up top
 section.filter-content-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
-
 .page-contain.projects-inner {
   margin: 0px 0px;
 }
@@ -32,19 +31,11 @@ a.filter-item {
 .filter-toolbar {
   padding: 8px 32px;
   box-sizing: border-box;
-  height: calc(100vh - 60px);
-  position: sticky;
-  flex-shrink: 0;
-  top: 64px;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
+  height: 100%;
 }
 
 .filtersDiv {
   min-width:330px;
-  padding-bottom: 300px;
 }
 
 //filter container
@@ -124,12 +115,10 @@ ul.filter-list li ul li {
 .dropdown.show-all li.view-all:last-child {
   display: none;
 }
-
 .dropdown.show-all {
   max-height: 360px;
   overflow-y: scroll;
 }
-
 .dropdown.show-all li:nth-child(n+9) {
   display: block;
 }
@@ -208,10 +197,9 @@ border-radius: 2.5px;
   font-size: 15px;
   text-transform: capitalize;
 
-  &::before {
+  &::after {
     content: "\00d7";
-    padding-left: 0.75em;
-    float: right;
+    padding-left: 0.5em;
   }
 
   &:hover,
@@ -255,19 +243,10 @@ a.clear-filter-tags {
   .scroll-lock {
     overflow: hidden;
   }
-
   .filter-toolbar {
     background-color: $color-pink;
-    height: 100%;
-    position: static;
     padding: 0;
   }
-
-  .filtersDiv {
-    padding-bottom: 0px;
-    padding-top: 0px;
-  }
-
   .filter-toolbar.show-filters {
     height: 100vh;
     width: 100vw;
@@ -363,4 +342,5 @@ a.clear-filter-tags {
 .show-none + .dropdown li {
   display: block;
 }
+
 }

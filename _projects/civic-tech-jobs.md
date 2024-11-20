@@ -13,90 +13,98 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
-  - name: Kanika Chotani
-    github-handle: kchotani
+  - name: Salima Yacoubi Soussane 
+    github-handle:
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U02E7ATACAV
-      github: https://github.com/kchotani
-    picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jimmy Juarez
-    github-handle: JimmyJuarez10
-    role: Developer Lead
+      slack: https://hackforla.slack.com/team/U03HUJM7YCX
+      github: https://github.com/Salimays
+    picture: https://avatars.githubusercontent.com/Salimays
+  - name: Sabrina Heasley
+    role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U062FQ7UXQE
-      github: https://github.com/JimmyJuarez10
-    picture: https://avatars.githubusercontent.com/JimmyJuarez10
+      slack: https://hackforla.slack.com/team/U05GDBDPEDR
+      github: https://github.com/sabheasley
+    picture: https://avatars.githubusercontent.com/sabheasley
+  - name: Jen Chung 
+    github-handle: 
+    role: UX/UI Design Lead
+    links:
+      slack: https://hackforla.slack.com/team/U02A6H5PVAA
+      github: https://github.com/jenchuu
+    picture: https://avatars.githubusercontent.com/jenchuu
+  - name: Melinda Sukosd
+    role: UX Research Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03T1G9F46P
+      github: https://github.com/melkosm
+    picture: https://avatars.githubusercontent.com/melkosm
+  - name: Jenn Wu
+    github-handle:
+    role: UX Researcher Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05JS3V38TV
+      github: https://github.com/jayywu
+    picture: https://avatars.githubusercontent.com/jayywu 
+  - name: Tin Wei Chung
+    github-handle:
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U03P6Q6FSQ5
+      github: https://github.com/TCUX
+    picture: https://avatars.githubusercontent.com/TCUX
   - name: Lu Feng
-    github-handle: fenglugithub
-    role: UI/UX Lead
+    github-handle:
+    role: UX/UI Designer
     links:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Brenda Njemanze
-    github-handle: brendasdesign
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06MWMRSCJW
-      github: https://github.com/brendasdesign
-    picture: https://avatars.githubusercontent.com/brendasdesign
-  - name: Armon Brown
-    github-handle: stanarmon
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06J0UCAWHE
-      github: https://github.com/stanarmon
-    picture: https://avatars.githubusercontent.com/stanarmon
-  - name: Carmen Mak
-    github-handle: CarmenMM1
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06313EMD41
-      github: https://github.com/CarmenMM1
-    picture: https://avatars.githubusercontent.com/CarmenMM1
-  - name: Leah Ellis
+  - name: Gabriel Vicencio
     github-handle:
+    role: UX/UI Designer
+    links:
+      slack: https://hackforla.slack.com/team/U03P33ZNPGW
+      github: https://github.com/geibu
+    picture: https://avatars.githubusercontent.com/geibu
+  - name: Leah Ellis
     role: UX Researcher
     links:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
       github: https://github.com/Leah0996
-    picture: https://avatars.githubusercontent.com/Leah0996
-  - name: Manju Chawla
-    github-handle: itsmanjuchawla
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U06E9T37H9A
-      github: https://github.com/itsmanjuchawla
-    picture: https://avatars.githubusercontent.com/itsmanjuchawla
-  - name: Bitian Zhang
+    picture: https://avatars.githubusercontent.com/Leah0996   
+  - name: Matt Pereira
     github-handle:
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U045XKKB5DH
+      github: https://github.com/MattPereira
+    picture: https://avatars.githubusercontent.com/MattPereira 
+  - name: Bitian Zhang
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U04H6PYK14N
       github: https://github.com/bzzz-coding
     picture: https://avatars.githubusercontent.com/bzzz-coding
   - name: Benny Van
-    github-handle:
     role: Developer
     links:
       slack: https://hackforla.slack.com/team/U05JP90EHMK
       github: https://github.com/bennyv8
     picture: https://avatars.githubusercontent.com/bennyv8
-  - name: Kevin Yu
-    github-handle: kevin31yu
+  - name: Sarah Sanger
     role: Developer
     links:
-      slack: https://hackforla.slack.com/team/U061GQQ56Q4
-      github: https://github.com/kevin31yu
-    picture: https://avatars.githubusercontent.com/kevin31yu
-  - name: Ida Valenzuela
-    github-handle: irais-valenzuela
-    role: Developer
+      slack: https://hackforla.slack.com/team/U02M686LYET
+      github: https://github.com/Blulady
+    picture: https://avatars.githubusercontent.com/Blulady
+  - name: Nga Do
+    github-handle:
+    role: UX Researcher
     links:
-      slack: https://hackforla.slack.com/team/U062NBBNFA7
-      github: https://github.com/irais-valenzuela
-    picture: https://avatars.githubusercontent.com/irais-valenzuela
+      slack: https://hackforla.slack.com/team/U05JS3BS9FD
+      github: https://github.com/ngadoq
+    picture: https://avatars.githubusercontent.com/ngadoq 
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
@@ -106,13 +114,14 @@ links:
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
 looking: 
 technologies: 
-  - React
-  - Express
-  - Node.JS
-  - Docker
-  - PostgreSQL
   - Django
-  - Figma
+  - Django REST Framework
+  - React
+  - Webpack
+  - Babel
+  - PostgreSQL
+  - Docker
+  - GitHub Actions
 tools: 
 location: 
   - Remote

@@ -11,6 +11,8 @@ alt: 'A person uses a laptop to review a data dashboard'
 
 icon: /assets/images/hero/communities-icons/data-science.png
 
+meeting-times: Mondays 7:00-8:00 pm PT
+
 leadership-type: Mentor Led
 leadership:
   - name: Sophia Alice
@@ -30,7 +32,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/CGRATJCCF
-  - name: GitHub
+  - name: Github
     url: https://github.com/hackforla/data-science/
   
 recruiting-message:

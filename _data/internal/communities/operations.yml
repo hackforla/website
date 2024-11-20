@@ -1,5 +1,5 @@
 ---
-name: Ops
+name: Operations
 description: This group covers all areas of dev-ops and has been the spot for coordination on infrastructure improvements such as AWS hosting, password vaults, multi-tenant product architecture, etc.
 visible: true
 status: Active
@@ -11,38 +11,23 @@ alt: 'A dramatic closeup of a screen filled with code'
 
 icon: /assets/images/hero/communities-icons/operations.png
 
+meeting-times: Wednesdays 6:00-7:00 pm PT
+
 leadership-type: Community Led
 leadership:
   - name: Chelsey Beck
-    github-handle: chelseybeck
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/U01J93AQKSS
       github: https://github.com/chelseybeck
     picture: https://avatars.githubusercontent.com/chelseybeck
-  - name: Alex English
-    github-handle: ale210
+  - name: Ernie Pelayo
     role: Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U078B1S0XDM
-      github: https://github.com/ale210
-    picture: https://avatars.githubusercontent.com/ale210
-  - name: Ryan Sakuma
-    github-handle: RSkuma
-    role: Co-lead
-    links:
-      slack: https://hackforla.slack.com/team/U078U294XB6
-      github: https://github.com/RSkuma
-    picture: https://avatars.githubusercontent.com/RSkuma
-  - name: Sudha Raamakrishnan
-    github-handle: sudhara
-    role: Ops PM
-    links:
-      slack: https://hackforla.slack.com/team/U07FJRNN9MK
-      github: https://github.com/sudhara
-    picture: https://avatars.githubusercontent.com/sudhara
+      slack: https://hackforla.slack.com/team/U046MDSM3PA
+      github: https://github.com/erniep278
+    picture: https://avatars.githubusercontent.com/erniep278
   - name: Dean Church
-    github-handle: Rankazze
     role: Co-lead
     links:
       slack: https://hackforla.slack.com/team/UJR0UKBN1
@@ -52,7 +37,7 @@ leadership:
 links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/CV7QGL66B
-  - name: GitHub
+  - name: Github
     url: https://github.com/hackforla/ops
   
 recruiting-message:

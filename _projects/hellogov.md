@@ -17,7 +17,6 @@ leadership:
       github: 'https://github.com/seport'
     picture: https://avatars.githubusercontent.com/seport
   - name: Brett Beekley
-    github-handle: 
     links:
       slack: 'https://hackforla.slack.com/team/USRRN73NE'
       github: 'https://github.com/beekley'
@@ -30,7 +29,7 @@ links:
   - name: Readme
     url: 'https://github.com/helloGov/webapp/blob/master/README.md'
   - name: Slack
-    url: 'https://hackforla.slack.com/archives/CDA23KHKP'
+    url: 'https://hackforla.slack.com/messages/CDA23KHKP'
 looking:
 location:
   # - Santa Monica

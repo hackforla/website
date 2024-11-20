@@ -61,11 +61,8 @@
     flex-direction: column;
     
     .filter-tag {
-        overflow-x: hidden;
+        overflow-x: auto;
         overflow-y: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 300px;
     }
     
     a {
@@ -102,17 +99,6 @@
     height: 17.5rem;    //or 14.5 rem
     width: 17.5rem;     //or 14.5 rem
     margin: 0 auto;
-}
-
-[data-article-type="development"] .resource-svg-icons svg{
-    width: 50%;
-    height: 50%;
-}
-
-[data-article-type="development"] .toolkit-flex-item-img-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .toolkit-info-container {
