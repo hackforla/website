@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06E9RQ8DRA
       github: https://github.com/sylvia-nam
     picture: https://avatars.githubusercontent.com/sylvia-nam
+  - name: Rick Peng
+    github-handle: rcpeng34
+    role: Product Manager, Development
+    links:
+      slack: https://hackforla.slack.com/team/U07QU3C45MY
+      github: https://github.com/rcpeng34
+    picture: https://avatars.githubusercontent.com/rcpeng34
 links:
     - name: Overview
       url: '../assets/pdfs/Expunge-Assist-One-Sheet.pdf'
