@@ -704,12 +704,25 @@ git checkout -b upstream-gh-pages --track upstream/gh-pages
 ```
 
 If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes:
-
+<!-- Replace Old Content With New Content-->
+1. Move to the branch you want to merge with.
 ```bash
-git checkout upstream-gh-pages # Move to the branch you want to merge with.
-git pull  # This updates your tracking branch to match the gh-pages branch in this repository
-git checkout gh-pages  # Move back to your gh-pages branch
-git merge upstream-gh-pages  # Merge to bring your gh-pages current.
+git checkout upstream-gh-pages 
+```
+
+2. Update your tracking branch with the latest changes from the `gh-pages` branch in this repository
+```bash
+git pull  
+```
+
+3. Move back to your gh-pages branch
+```bash
+git checkout gh-pages  
+```
+
+4. Merge your changes back into your `gh-pages` branch.
+```bash
+git merge upstream-gh-pages
 ```
 If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
 
