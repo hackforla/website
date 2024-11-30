@@ -704,7 +704,7 @@ git checkout -b upstream-gh-pages --track upstream/gh-pages
 ```
 
 If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes:
-<!-- Replace Old Content With New Content-->
+
 1. Move to the branch you want to merge with.
 ```bash
 git checkout upstream-gh-pages 
