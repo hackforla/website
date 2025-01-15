@@ -111,6 +111,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U062NBBNFA7
       github: https://github.com/irais-valenzuela
     picture: https://avatars.githubusercontent.com/irais-valenzuela
+  - name: Roja Pinnamraju
+    github-handle: RojaPinnamraju
+    role: Developer - Frontend
+    links:
+      slack: https://hackforla.slack.com/team/U07G0CVPFJ5
+      github: https://github.com/RojaPinnamraju
+    picture: https://avatars.githubusercontent.com/RojaPinnamraju
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
