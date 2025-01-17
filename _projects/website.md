@@ -65,6 +65,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FF529MU6
       github: https://github.com/Samhitha444
     picture: https://avatars.githubusercontent.com/Samhitha444
+  - name: Priyanka Jujjavarapu
+    github-handle: priyanka02art
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07TRV9HRFS
+      github: https://github.com/priyanka02art
+    picture: https://avatars.githubusercontent.com/priyanka02art
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
