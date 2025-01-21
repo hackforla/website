@@ -19,6 +19,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REBB5K4M
       github: https://github.com/kellyc9
     picture: https://avatars.githubusercontent.com/kellyc9
+  - name: Eleftherios Christou
+    github-handle: Eleftherios01
+    role: Product Manager - Dashboards
+    links:
+      slack: https://hackforla.slack.com/team/U078K03LP5L
+      github: https://github.com/Eleftherios01
+    picture: https://avatars.githubusercontent.com/Eleftherios01
   - name: Will Gillis
     role: Developer Co-Lead
     links:
