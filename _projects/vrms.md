@@ -45,6 +45,7 @@ leadership:
       github: 'https://github.com/AmandaGlover-PM'
     picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
   - name: Josh Bubar
+    github-handle:
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
