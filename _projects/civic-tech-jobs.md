@@ -118,6 +118,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07G0CVPFJ5
       github: https://github.com/RojaPinnamraju
     picture: https://avatars.githubusercontent.com/RojaPinnamraju
+  - name: Terence Lo
+    github-handle: LoTerence
+    role: Developer - Backend
+    links:
+      slack: https://hackforla.slack.com/team/U078NLYHHL5
+      github: https://github.com/LoTerence
+    picture: https://avatars.githubusercontent.com/LoTerence
 links: 
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
