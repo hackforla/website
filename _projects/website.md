@@ -19,6 +19,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REBB5K4M
       github: https://github.com/kellyc9
     picture: https://avatars.githubusercontent.com/kellyc9
+  - name: Sofiat Ajide
+    github-handle: sofiatajide
+    role: Product Manager - Dashboards
+    links:
+      slack: https://hackforla.slack.com/team/U07LRE68BHS
+      github: https://github.com/sofiatajide
+    picture: https://avatars.githubusercontent.com/sofiatajide    
   - name: Will Gillis
     role: Developer Co-Lead
     links:
