@@ -9,8 +9,8 @@
   const name = "Full name"
   const linkedin_url = "Linkedin URL (optional)"
   const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
-  const github_url = "Github URL (optional)"
-  const github_permission = "Could we use your Github profile picture next to your story?"
+  const github_url = "GitHub URL (optional)"
+  const github_permission = "Could we use your GitHub profile picture next to your story?"
   const team = "Select the team(s) you're on"
   const role = "Select your role(s) on the team"
   const specific_role = "What is/was your specific role? (optional)"
@@ -25,7 +25,7 @@
 		"I produced something for my portfolio": `file.svg`,
 		"I improved my LinkedIn": `linkedin.svg`,
 		"I learned how to work better on a team": `team.svg`,
-		"I increased the number of commits on my Github profile": `github.svg`,
+		"I increased the number of commits on my GitHub profile": `github.svg`,
 		"I learned a new language": `code.svg`,
 		"I set up 2FA": `twofa.svg`,
 		"I became part of a a caring community": `$community.svg`,
@@ -506,7 +506,7 @@ function changeSeeMoreBtn(x) {
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'GitHub profile for ' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');
