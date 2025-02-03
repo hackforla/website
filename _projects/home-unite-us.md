@@ -69,13 +69,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0430G2T4AC"
       github: "https://github.com/edela0015"
     picture: https://avatars.githubusercontent.com/edela0015
-  - name: Flora Osmond
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U047ZT4GP5E"
-      github: "https://github.com/itzflowa"
-    picture: https://avatars.githubusercontent.com/itzflowa
   - name: Rachel Bracker
     github-handle: 
     role: Design Lead
