@@ -72,6 +72,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
       github: 'https://github.com/daras-cu'
     picture: https://avatars.githubusercontent.com/daras-cu
+  - name: Siyun Feng
+    github-handle: siyunfeng
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U07QWL2A5BN
+      github: https://github.com/siyunfeng
+    picture: https://avatars.githubusercontent.com/siyunfeng
   - name: Samhitha Kamma
     github-handle: Samhitha444
     role: Product Manager
