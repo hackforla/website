@@ -72,6 +72,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
       github: 'https://github.com/daras-cu'
     picture: https://avatars.githubusercontent.com/daras-cu
+  - name: Amen Divine Ikamba
+    github-handle: amen-ikamba
+    role: Product Manager - Dashboards
+    links:
+      slack: https://hackforla.slack.com/team/U07T35HCHAN
+      github: https://github.com/amen-ikamba
+    picture: https://avatars.githubusercontent.com/amen-ikamba  
   - name: Samhitha Kamma
     github-handle: Samhitha444
     role: Product Manager
