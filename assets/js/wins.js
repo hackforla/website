@@ -9,8 +9,8 @@
   const name = "Full name"
   const linkedin_url = "Linkedin URL (optional)"
   const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
-  const github_url = "GitHub URL (optional)"
-  const github_permission = "Could we use your GitHub profile picture next to your story?"
+  const github_url = "Github URL (optional)"
+  const github_permission = "Could we use your Github profile picture next to your story?"
   const team = "Select the team(s) you're on"
   const role = "Select your role(s) on the team"
   const specific_role = "What is/was your specific role? (optional)"
@@ -25,7 +25,7 @@
 		"I produced something for my portfolio": `file.svg`,
 		"I improved my LinkedIn": `linkedin.svg`,
 		"I learned how to work better on a team": `team.svg`,
-		"I increased the number of commits on my GitHub profile": `github.svg`,
+		"I increased the number of commits on my Github profile": `github.svg`,
 		"I learned a new language": `code.svg`,
 		"I set up 2FA": `twofa.svg`,
 		"I became part of a a caring community": `$community.svg`,
@@ -337,15 +337,15 @@
 		}
 
 		// Avoiding using innerHTML due to security risks
-		// Creating the elements 
+		// Creating the elements
 		const teamContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-team');
 		const roleContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-role');
 		const teamSpanElement = document.createElement('span');
 		teamSpanElement.classList.add('wins-team-role-color');
 		const roleSpanElement = document.createElement('span');
 		roleSpanElement.classList.add('wins-team-role-color');
-		
-		// Preparing the text of the elements 
+
+		// Preparing the text of the elements
 		teamSpanElement.textContent = "Team(s): ";
 		const teamTextNode = document.createTextNode(card[team]);
 		roleSpanElement.textContent = "Role(s): ";
