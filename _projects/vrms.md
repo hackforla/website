@@ -57,6 +57,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U010G9864Q1'
       github: 'https://github.com/Spiteless'
     picture: 'https://avatars.githubusercontent.com/Spiteless'
+  - name: Katiuska Alecea de Leon
+    github-handle: chukalicious
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U0100R46ESC
+      github: https://github.com/chukalicious
+    picture: https://avatars.githubusercontent.com/chukalicious
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
