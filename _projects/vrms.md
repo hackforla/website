@@ -57,6 +57,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U010G9864Q1'
       github: 'https://github.com/Spiteless'
     picture: 'https://avatars.githubusercontent.com/Spiteless'
+  - name: Brad Morgan
+    github-handle: bkmorgan3
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U779QRX3Q
+      github: https://github.com/bkmorgan3
+    picture: https://avatars.githubusercontent.com/bkmorgan3  
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
