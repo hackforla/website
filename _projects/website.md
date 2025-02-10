@@ -79,6 +79,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07QWL2A5BN
       github: https://github.com/siyunfeng
     picture: https://avatars.githubusercontent.com/siyunfeng
+  - name: Amen Divine Ikamba
+    github-handle: amen-ikamba
+    role: Product Manager - Dashboards
+    links:
+      slack: https://hackforla.slack.com/team/U07T35HCHAN
+      github: https://github.com/amen-ikamba
+    picture: https://avatars.githubusercontent.com/amen-ikamba
   - name: Samhitha Kamma
     github-handle: Samhitha444
     role: Product Manager

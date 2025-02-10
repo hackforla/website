@@ -62,13 +62,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U049TSDG2SX"
       github: "https://github.com/brycelednar"
     picture: https://avatars.githubusercontent.com/brycelednar
-  - name: Eduardo De La Rosa
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U0430G2T4AC"
-      github: "https://github.com/edela0015"
-    picture: https://avatars.githubusercontent.com/edela0015
   - name: Rachel Bracker
     github-handle: 
     role: Design Lead
