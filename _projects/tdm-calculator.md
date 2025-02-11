@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05Q5D34ARZ
       github: https://github.com/Parisajf
     picture: https://avatars.githubusercontent.com/Parisajf
-  - name: Jane He
-    github-handle:
-    role: Lead, UX Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
-      github: 'https://github.com/Jane4925'
-    picture: https://avatars.githubusercontent.com/Jane4925
   - name: Nilakshi Sahai
     github-handle: NilakshiS
     role: UX Design Lead
