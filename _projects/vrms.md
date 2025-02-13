@@ -57,6 +57,20 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U010G9864Q1'
       github: 'https://github.com/Spiteless'
     picture: 'https://avatars.githubusercontent.com/Spiteless'
+  - name: Nikhil Trehan
+    github-handle: ntrehan
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U078NLYGWRK
+      github: https://github.com/ntrehan
+    picture: https://avatars.githubusercontent.com/ntrehan
+  - name: Katiuska Alecea de Leon
+    github-handle: chukalicious
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U0100R46ESC
+      github: https://github.com/chukalicious
+    picture: https://avatars.githubusercontent.com/chukalicious  
   - name: Brad Morgan
     github-handle: bkmorgan3
     role: Developer
