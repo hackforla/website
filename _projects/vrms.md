@@ -78,13 +78,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U779QRX3Q
       github: https://github.com/bkmorgan3
     picture: https://avatars.githubusercontent.com/bkmorgan3  
-  - name: Katiuska Alecea de Leon
-    github-handle: chukalicious
-    role: Developer
-    links:
-      slack: https://hackforla.slack.com/team/U0100R46ESC
-      github: https://github.com/chukalicious
-    picture: https://avatars.githubusercontent.com/chukalicious
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
