@@ -71,6 +71,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U0100R46ESC
       github: https://github.com/chukalicious
     picture: https://avatars.githubusercontent.com/chukalicious
+  - name: Evan Yang
+    github-handle: evanyang1
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U02APE3V4Q3
+      github: https://github.com/evanyang1
+    picture: https://avatars.githubusercontent.com/evanyang1
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
