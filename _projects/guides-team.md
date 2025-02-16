@@ -56,6 +56,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U0725MRMMA9
       github: https://github.com/JesseTheCleric
     picture: https://avatars.githubusercontent.com/JesseTheCleric  
+  - name: France Chan
+    github-handle: fchan218
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U0725MRMMA9
+      github: https://github.com/fchan218
+    picture: https://avatars.githubusercontent.com/fchan218
 links: 
   - name: GitHub
     url: 'https://github.com/hackforla/guides'

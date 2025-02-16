@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05Q5D34ARZ
       github: https://github.com/Parisajf
     picture: https://avatars.githubusercontent.com/Parisajf
-  - name: Jane He
-    github-handle:
-    role: Lead, UX Research
-    links:
-      slack: 'https://hackforla.slack.com/team/U01RDSRT46R'
-      github: 'https://github.com/Jane4925'
-    picture: https://avatars.githubusercontent.com/Jane4925
   - name: Nilakshi Sahai
     github-handle: NilakshiS
     role: UX Design Lead
@@ -54,7 +47,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U06DSRCSXRD
       github: https://github.com/marlenamellody
-    picture: https://avatars.githubusercontent.com/marlenamellody  
+    picture: https://avatars.githubusercontent.com/marlenamellody
   - name: Melissa Perry
     github-handle: melissaperry09
     role: UX Research Lead
@@ -62,6 +55,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MCJTTPN3
       github: https://github.com/melissaperry09
     picture: https://avatars.githubusercontent.com/melissaperry09
+  - name: Abby Rivard
+    github-handle: abbyrivard
+    role: UX Research Lead
+    links:
+      slack: https://hackforla.slack.com/team/U05N5Q9TY8Z
+      github: https://github.com/abbyrivard
+    picture: https://avatars.githubusercontent.com/abbyrivard
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/tdm-calculator'

@@ -741,7 +741,7 @@
   ],
   "statusInactive2": [
     "2 weeks inactive",
-    3278535433
+    9999999999
   ],
   "statusMissing": [
     "status: missing",
@@ -815,8 +815,20 @@
     "feature: FAQ",
     7970290985
   ],
-  "NEW-skillsTemplateStatusNeedNextSteps": [ 
-    "Skills Template status: Need Next Steps", 
+  "NEW-skillsTemplateStatusNeedNextSteps": [
+    "Skills Template status: Need Next Steps",
     7582275087
+  ],
+  "NEW-2WeeksInactive": [
+    "2 weeks inactive",
+    8048259525
+  ],
+  "NEW-roleDataScientist": [
+    "role: data scientist",
+    8056944058
+  ],
+  "NEW-statusUnassignedByBot": [
+    "Status: Unassigned by Bot",
+    8096814358
   ]
 }
