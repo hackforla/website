@@ -42,7 +42,7 @@ jobs:
         run: git pull
 
       - name: Commit changes to JSON Label Directory
-        uses: stefanzweifel/git-auto-commit-action@v5.0.1
+        uses: stefanzweifel/git-auto-commit-action@v5.1.0
         with:
           # Glob pattern of file to commit, and opt. commit message + author
           file_pattern: github-actions/utils/_data/label-directory.json
