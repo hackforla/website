@@ -55,13 +55,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
       github: "https://github.com/rpradheap"
     picture: https://avatars.githubusercontent.com/rpradheap
-  - name: Bryce Lednar
-    github-handle:
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U049TSDG2SX"
-      github: "https://github.com/brycelednar"
-    picture: https://avatars.githubusercontent.com/brycelednar
   - name: Rachel Bracker
     github-handle: 
     role: Design Lead
