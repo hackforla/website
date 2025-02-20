@@ -96,7 +96,28 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
-    picture: https://avatars.githubusercontent.com/lola3736    
+    picture: https://avatars.githubusercontent.com/lola3736
+  - name: John Wroge
+    github-handle: johnwroge
+    role: developer
+    links:
+      slack: https://hackforla.slack.com/team/U05Q7V3KGCU
+      github: https://github.com/johnwroge
+    picture: https://avatars.githubusercontent.com/johnwroge
+  - name: Gabriella Dominic
+    github-handle: gabcdominic
+    role: Product manager
+    links:
+      slack: https://hackforla.slack.com/team/U07FF4FCTUN
+      github: https://github.com/gabcdominic
+    picture: https://avatars.githubusercontent.com/gabcdominic
+  - name: Jasmine Guraya
+    github-handle:  jasika-ai
+    role: Product Manager (Lead Persona)
+    links:
+      slack: https://hackforla.slack.com/team/U07FMLJGUFM
+      github: https://github.com/ jasika-ai
+    picture: https://avatars.githubusercontent.com/ jasika-ai
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
