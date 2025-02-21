@@ -46,12 +46,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
-  - name: Roslyn Wythe
-    role: Developer Co-Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Ren Demeis-Ortiz
     role: Merge Team
     links:
