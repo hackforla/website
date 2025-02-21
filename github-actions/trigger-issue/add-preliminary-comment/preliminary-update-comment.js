@@ -77,7 +77,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
 
       await unAssignDev();
       await addLabel(STATUS_UNASSIGNED_BY_BOT);
-      console.log(' - remove developer and label for re-prioritization');
+      console.log(' - remove developer and add label for re-prioritization');
 
       // Update item's status to "New Issue Approval"
       let statusValue = statusFieldIds('New_Issue_Approval');
