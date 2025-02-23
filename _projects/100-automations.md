@@ -6,8 +6,8 @@ image: /assets/images/projects/100automations.png
 alt: '100 Automations'
 image-hero: /assets/images/projects/100automations-hero.png
 leadership:
-  - name: Niven Prasad
-    github-handle:
+  - name: Christopher Chhim
+    github-handle: Christopher-Chhim
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U015R4RTDJA'
