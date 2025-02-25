@@ -144,7 +144,7 @@ Sections
       >My estimated ETA for completing this issue: 
 
       Once you have done that on your good first issue, check this box, above, on this issue to let us know you have completed that task and understand how to do it in future.  
-          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the "Questions/ In Review" column, and add the labels `ready for dev lead` and `Status: Help Wanted`
+          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the "Questions/ In Review" column, and add the labels `ready for merge team` and `Status: Help Wanted`
 - [ ] Post the following message in a comment below on this issue and then answer it.
     ```
     ### 4 - FINDING AND ASSIGNING YOUR FIRST GITHUB ISSUE update
