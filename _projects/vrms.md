@@ -78,6 +78,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U02APE3V4Q3
       github: https://github.com/evanyang1
     picture: https://avatars.githubusercontent.com/evanyang1
+  - name: Brad Morgan
+    github-handle: bkmorgan3
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U779QRX3Q
+      github: https://github.com/bkmorgan3
+    picture: https://avatars.githubusercontent.com/bkmorgan3
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
