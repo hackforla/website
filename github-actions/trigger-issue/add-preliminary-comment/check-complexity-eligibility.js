@@ -348,12 +348,12 @@ async function handleIssueComplexityNotPermitted(
       assignees: [assigneeUsername],
     });
     
-    // Add 'Ready for Prioritization' label 
+    // Add 'Status: Unassigned by Bot' label 
     await github.rest.issues.addLabels({
       owner,
       repo,
       issue_number: currentIssueNum,
-      labels: ['Ready for Prioritization'],
+      labels: ['Status: Unassigned by Bot'],
     });
   
     // Change issue's status to New Issue Approval 

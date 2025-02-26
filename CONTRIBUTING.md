@@ -21,7 +21,7 @@ The following is a set of guidelines for contributing to the website repository,
     - [**1.4 Dev setup (4): Clone (Create) a copy on your computer**](#14-dev-setup-4-clone-create-a-copy-on-your-computer)
       - [**1.4.a Clone repo (1): Create  `hackforla` folder**](#14a-clone-repo-1-create--hackforla-folder)
       - [**1.4.b Clone repo (2): Verify `origin` remote url**](#14b-clone-repo-2-verify-origin-remote-url)
-      - [**1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**](#14c-what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
+      - [**1.4.c What if you accidentally cloned using the repository URL from the HackForLA GitHub (instead of the fork on your GitHub)?**](#14c-what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
         - [**i. Resolve remote (1): reset `origin` remote url**](#i-resolve-remote-1-reset-origin-remote-url)
         - [**ii. Resolve remote (2): Add an `upstream` remote**](#ii-resolve-remote-2-add-an-upstream-remote)
     - [**1.5 Dev setup (5): Set up Docker**](#15-dev-setup-5-set-up-docker)

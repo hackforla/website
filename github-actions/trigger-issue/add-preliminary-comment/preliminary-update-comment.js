@@ -16,7 +16,7 @@ let assignee;
 
 const emergentRequests = 'Emergent Requests';
 const newIssueApproval = 'New Issue Approval';
-const READY_FOR_PRIORITIZATION = "Ready for Prioritization";
+const STATUS_UNASSIGNED_BY_BOT = "Status: Unassigned by Bot";
 
 
 
@@ -76,8 +76,8 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       console.log(' - add `multiple-issue-reminder.md` comment to issue');
 
       await unAssignDev();
-      await addLabel(READY_FOR_PRIORITIZATION);
-      console.log(' - remove developer and add `Ready for Prioritization` label');
+      await addLabel(STATUS_UNASSIGNED_BY_BOT);
+      console.log(' - remove developer and add label for re-prioritization');
 
       // Update item's status to "New Issue Approval"
       let statusValue = statusFieldIds('New_Issue_Approval');

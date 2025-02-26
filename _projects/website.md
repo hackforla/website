@@ -32,7 +32,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U07LRE68BHS
       github: https://github.com/sofiatajide
-    picture: https://avatars.githubusercontent.com/sofiatajide    
+    picture: https://avatars.githubusercontent.com/sofiatajide
   - name: Eleftherios Christou
     github-handle: Eleftherios01
     role: Product Manager - Dashboards
@@ -46,12 +46,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
-  - name: Roslyn Wythe
-    role: Developer Co-Lead
-    links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
   - name: Ren Demeis-Ortiz
     role: Merge Team
     links:
@@ -65,13 +59,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U064FRUF893'
       github: 'https://github.com/jphamtv'
     picture: https://avatars.githubusercontent.com/jphamtv
-  - name: Nikileshwari Prasadh
-    github-handle: Thinking-Panda
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U04MJA414LU'
-      github: 'https://github.com/Thinking-Panda'
-    picture: https://avatars.githubusercontent.com/Thinking-Panda
   - name: Danielle Hanson Aras
     github-handle:
     role: Merge Team
