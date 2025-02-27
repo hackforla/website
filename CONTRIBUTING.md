@@ -688,7 +688,7 @@ From https://github.com/hackforla/website
 
 #### **2.7.e Working on an issue (5): Incorporating changes from upstream**
 
-Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the GitHub website version of your hackforla repository.)
 
 One way to keep your fork up to date with this repository is to follow these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
 
@@ -732,7 +732,7 @@ Then push the merge changes to your GitHub fork:
 git push
 ```
 
-If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
+If you go to your online GitHub repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
 
 ##### **i. Incorporating changes into your topic branch**
 
