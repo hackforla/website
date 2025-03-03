@@ -76,13 +76,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U04GYTXSP9D
       github: https://github.com/Leah0996
     picture: https://avatars.githubusercontent.com/Leah0996
-  - name: Manju Chawla
-    github-handle: itsmanjuchawla
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U06E9T37H9A
-      github: https://github.com/itsmanjuchawla
-    picture: https://avatars.githubusercontent.com/itsmanjuchawla
   - name: Bitian Zhang
     github-handle:
     role: Developer
