@@ -85,6 +85,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U779QRX3Q
       github: https://github.com/bkmorgan3
     picture: https://avatars.githubusercontent.com/bkmorgan3
+  - name: Mudassir Hussain
+    github-handle: hussainmudassir
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAGE89TJ
+      github: https://github.com/hussainmudassir
+    picture: https://avatars.githubusercontent.com/hussainmudassir
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
