@@ -85,6 +85,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U779QRX3Q
       github: https://github.com/bkmorgan3
     picture: https://avatars.githubusercontent.com/bkmorgan3
+  - name: Angela Lee
+    github-handle: awlfccamp
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U062NB2CKMZ
+      github: https://github.com/angela-lee1/awlFCCamp
+    picture: https://avatars.githubusercontent.com/u/26665132?v=4
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
