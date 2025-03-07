@@ -1,0 +1,27 @@
+---
+layout: default
+title: Join Our Slack Channel
+permalink: /join-slack-channel
+---
+
+<!-- Header banner -->
+<div class="header-container flex-container">
+    <div class="header-text ">
+        <p>
+            The link below goes to a Slack channel inside Hack for LA's Slack Workspace. 
+            If you are a member of our community already, selecting the link below will take to the channel. 
+        </p>
+        {% assign slackLink = localStorage.getItem('slackLink') %}
+        <a href="{{slackLink}}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank" title="{{community[1].name}} Slack channel" rel="noopener noreferrer">
+            {% include svg/icon-slack.svg %}
+            Join Slack Channel
+        </a>
+        <p>
+            If you are not yet a member of our community, please see our 
+            <a href="https://www.hackforla.org/getting-started" target="_blank">Getting Started</a> 
+            page to join.
+        </p>
+    </div>
+</div>
+
+<script type="module" src="assets/js/communities-of-practice.js"></script>

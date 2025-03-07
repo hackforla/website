@@ -58,3 +58,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setMeetingTimes();
 });
+
+function setSlackLink(slackLink) {
+    console.log("before:", slackLink);
+    localStorage.setItem("slackLink", slackLink);
+    console.log('after:', localStorage.getItem("slackLink"));
+}
