@@ -94,6 +94,12 @@ document.addEventListener("DOMContentLoaded",function(){
         })
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
+
+        // Event listener for search tip modal
+        openSearchTipsModal();
+
+        // Close Search Tips Modal.
+        closeSearchTipsModal();
         
         //events related to search bar
         document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
@@ -859,4 +865,38 @@ function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
     }
+}
+
+function openSearchTipsModal() {
+    document.getElementById('search-tip-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        updateSearchTipsModal();
+    });
+}
+
+function updateSearchTipsModal() {
+    // Update the modal content with data
+    document.getElementById('overlay-name').innerHTML = "Seach Tips";
+    document.getElementById('search-tip-overview').innerHTML = "Overview of search tips for effective filtering.";
+    document.getElementById('search-tip-and').innerHTML = "<strong>AND</strong>: Limit results - <em>React AND Node</em> (Search for project cards that contain both React and Node.)";
+    document.getElementById('search-tip-or').innerHTML = "<strong>OR</strong>: One term OR another - <em>Python OR Javascript</em> (Search for project cards that contains Python OR JavaScript.)";
+    document.getElementById('search-tip-not').innerHTML = "<strong>-</strong>: Exclude a term from the search - <em>React -Django</em> (Limits project card results to only those with React and not the term Django.)";
+
+    // Show the modal
+    document.getElementById('search-tip-modal').style.display = 'flex';
+}
+
+function closeSearchTipsModal() {
+    // Close the modal
+    document.querySelector('.overlay-close-icon').addEventListener('click', function() {
+        document.getElementById('search-tip-modal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        const modal = this.document.getElementById('search-tip-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
