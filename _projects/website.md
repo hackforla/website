@@ -67,6 +67,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
       github: 'https://github.com/t-will-gillis'
     picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danielle Hanson Aras
+    github-handle: daras-cu
+    role: Developer Co-Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
+      github: 'https://github.com/daras-cu'
+    picture: https://avatars.githubusercontent.com/daras-cu
   - name: Ren Demeis-Ortiz
     role: Merge Team
     links:
@@ -80,13 +87,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U064FRUF893'
       github: 'https://github.com/jphamtv'
     picture: https://avatars.githubusercontent.com/jphamtv
-  - name: Danielle Hanson Aras
-    github-handle:
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
-      github: 'https://github.com/daras-cu'
-    picture: https://avatars.githubusercontent.com/daras-cu
   - name: Siyun Feng
     github-handle: siyunfeng
     role: Merge Team
