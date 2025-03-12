@@ -92,6 +92,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U062NB2CKMZ
       github: https://github.com/angela-lee1/awlFCCamp
     picture: https://avatars.githubusercontent.com/u/26665132?v=4
+  - name: Mudassir Hussain
+    github-handle: hussainmudassir
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAGE89TJ
+      github: https://github.com/hussainmudassir
+    picture: https://avatars.githubusercontent.com/hussainmudassir
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'

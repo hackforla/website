@@ -830,5 +830,29 @@
   "statusUnassignedByBot": [
     "Status: Unassigned by Bot",
     8096814358
+  ],
+  "NEW-langGha": [
+    "Lang: GHA",
+    8273615621
+  ],
+  "NEW-skillRefactor": [
+    "Skill: refactor",
+    8273639778
+  ],
+  "NEW-skillFeasability": [
+    "Skill: feasability",
+    8273643490
+  ],
+  "NEW-langMd": [
+    "Lang: .md",
+    8273660695
+  ],
+  "NEW-skillEdit": [
+    "Skill: edit",
+    8273662609
+  ],
+  "NEW-featureMessaging": [
+    "feature: messaging",
+    8273668967
   ]
 }
