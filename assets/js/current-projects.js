@@ -878,8 +878,8 @@ function updateSearchTipsModal() {
     // Update the modal content with data
     document.getElementById('overlay-name').innerHTML = "Seach Tips";
     document.getElementById('search-tip-overview').innerHTML = "Overview of search tips for effective filtering.";
-    document.getElementById('search-tip-and').innerHTML = "<strong>AND</strong>: Limit results - <em>React AND Node</em> (Search for project cards that contain both React and Node.)";
-    document.getElementById('search-tip-or').innerHTML = "<strong>OR</strong>: One term OR another - <em>Python OR Javascript</em> (Search for project cards that contains Python OR JavaScript.)";
+    document.getElementById('search-tip-and').innerHTML = "<strong>AND</strong>: Limit results - <em>React and Node</em> (Search for project cards that contain both React and Node.)";
+    document.getElementById('search-tip-or').innerHTML = "<strong>OR</strong>: One term or another - <em>Python or Javascript</em> (Search for project cards that contains Python or JavaScript.)";
     document.getElementById('search-tip-not').innerHTML = "<strong>-</strong>: Exclude a term from the search - <em>React -Django</em> (Limits project card results to only those with React and not the term Django.)";
 
     // Show the modal

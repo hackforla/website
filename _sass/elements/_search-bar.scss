@@ -90,6 +90,40 @@ form#search-bar {
 }
 
 
+.search-tip-link {
+    text-decoration: underline;
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-top: solid 1px #cccccc;
+}
+
+
+// page
+.search-tip-card{
+    padding: 45px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: visible;
+}
+
+.search-tip-card-top{
+    display: flex;
+}
+
+.search-tip-card-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-tip-card-name{
+    font-size: 19px;
+    line-height: 22px;
+}
+
+
 //modal overlay
 .overlay {
     display: none;
@@ -97,7 +131,7 @@ form#search-bar {
     position: fixed;
     left: 0px;
     top: 0px;
-    width: 100vw;
+    width: calc(100vw + 17px);
     height: 100%;
     background-color: rgba(70, 70, 70, 0.5);
     padding: 10px;
@@ -115,7 +149,6 @@ form#search-bar {
     position: absolute;
     width: 60%;
     left: 20%;
-    bottom: 39%;
 }
 .overlay-close-icon {
     float: right;  
