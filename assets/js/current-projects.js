@@ -868,7 +868,7 @@ function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
 }
 
 function openSearchTipsModal() {
-    document.getElementById('search-tip-link').addEventListener('click', function(event) {
+    document.getElementById('search-tip-link').addEventListener('click', function (event) {
         event.preventDefault();
         updateSearchTipsModal();
     });
@@ -877,11 +877,16 @@ function openSearchTipsModal() {
 function updateSearchTipsModal() {
     // Update the modal content with data
     document.getElementById('overlay-name').innerHTML = "Search Tips";
-    document.getElementById('search-tip-overview').innerHTML = "Overview of search tips for effective filtering.";
-    document.getElementById('search-tip-and').innerHTML = "<strong>AND</strong>: Limit results - <em>React and Node</em> (Search for project cards that contain both React and Node.)";
-    document.getElementById('search-tip-or').innerHTML = "<strong>OR</strong>: One term or another - <em>Python or Javascript</em> (Search for project cards that contains Python or JavaScript.)";
-    document.getElementById('search-tip-not').innerHTML = "<strong>-</strong>: Exclude a term from the search - <em>React -Django</em> (Limits project card results to only those with React and not the term Django.)";
-
+    document.getElementById('table-operator-1').innerHTML = "<strong>AND</strong>";
+    document.getElementById('table-meaning-1').innerHTML = "Limit results";
+    document.getElementById('table-example-1').innerHTML = "<em>React and Node (Search for project cards that contain both React and Node.)</em>";
+    document.getElementById('table-operator-2').innerHTML = "<strong>OR</strong>";
+    document.getElementById('table-meaning-2').innerHTML = "One term OR another";
+    document.getElementById('table-example-2').innerHTML = "<em>Python or Javascript (Search for project cards that contains Python or JavaScript.)</em>";
+    document.getElementById('table-operator-3').innerHTML = "<strong>-</strong>";
+    document.getElementById('table-meaning-3').innerHTML = "Exclude a term from the search";
+    document.getElementById('table-example-3').innerHTML = "<em>React -Django (Limits project card results to only those with React and not the term Django.)</em>";
+    
     // Show the modal
     document.getElementById('search-tip-modal').style.display = 'flex';
 }
