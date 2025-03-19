@@ -123,7 +123,19 @@
   border-top: solid 1px #cccccc;
 }
 
-// page
+// Modal Card
+.search-tip-modal-card {
+  background: $color-white;
+  border: 0 solid rgba($color-black, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba($color-black, 0.2);
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  @media #{$bp-tablet-up} {
+    margin-bottom: 0;
+  }
+}
 .search-tip-card{
   padding: 45px;
   display: flex;
@@ -146,10 +158,10 @@
   line-height: 22px;
 }
 
-  // modal overlay
+  // Modal Overlay
  .search-tip-overlay {
   display: none;
-  z-index: 1000;
+  z-index: 120;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -171,6 +183,7 @@
   position: absolute;
   width: 60%;
   left: 20%;
+  z-index: 121;
 }
 
 .overlay-close-icon {
@@ -189,5 +202,35 @@
   .search-tip-modal-container {
       width: 90%;
       left: 5%;
+  }
+}
+
+// Search Tip Table Styling
+.search-tip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
   }
 }
