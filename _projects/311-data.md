@@ -22,11 +22,12 @@ leadership:
     picture: https://avatars.githubusercontent.com/CottonChristopher
   - name: Ryan Chase
     github-handle: ryanfchase
-    role: Project Manager, Developer
+    role: Lead Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U052L9R6ETD
-      github: https://github.com/ryanfchase
+    slack: https://hackforla.slack.com/team/U052L9R6ETD
+    github: https://github.com/ryanfchase
     picture: https://avatars.githubusercontent.com/ryanfchase
+
   - name: Anna Kim
     github-handle: annaseulgi
     role: UX Design Lead, Product Manager
