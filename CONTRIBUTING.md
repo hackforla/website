@@ -167,7 +167,7 @@ cd website
 
 #### **1.4.b Clone repo (2): Verify `origin` remote url**
 
-Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
+Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own GitHub account):
 ```bash
 git remote -v
 ```
@@ -187,11 +187,11 @@ origin  https://github.com/<your_GitHub_user_name>/website.git (push)
 upstream        https://github.com/hackforla/website.git (fetch)
 upstream        https://github.com/hackforla/website.git (push)
 ```
-#### **1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**
+#### **1.4.c What if you accidentally cloned using the repository URL from the HackForLA GitHub (instead of the fork on your GitHub)?**
 
 ##### **i. Resolve remote (1): reset `origin` remote url**
 
-Set your forked repo on your Github as an `origin` remote:
+Set your forked repo on your GitHub as an `origin` remote:
 ```bash
 git remote set-url origin https://github.com/<your_GitHub_user_name>/website.git
 ```
