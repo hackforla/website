@@ -741,7 +741,7 @@
   ],
   "statusInactive2": [
     "2 weeks inactive",
-    9999999999
+    8048259525
   ],
   "statusMissing": [
     "status: missing",
@@ -787,43 +787,39 @@
     "wontfix",
     905516652
   ],
-  "NEW-featureRoadmap": [
+  "featureRoadmap": [
     "feature: Roadmap",
     7472857782
   ],
-  "NEW-pFeatureAccomplishments": [
+  "pFeatureAccomplishments": [
     "p-feature: accomplishments",
     7505751413
   ],
-  "NEW-roleProject": [
+  "roleProject": [
     "role: project",
     7581729078
   ],
-  "NEW-driveSharedWithMe": [
+  "driveSharedWithMe": [
     "drive: shared with me",
     7657270641
   ],
-  "NEW-featureBranding": [
+  "featureBranding": [
     "feature: branding",
     7657357703
   ],
-  "NEW-milestoneMissing": [
+  "milestoneMissing": [
     "milestone: missing",
     7695414022
   ],
-  "NEW-featureFaq": [
+  "featureFaq": [
     "feature: FAQ",
     7970290985
   ],
-  "NEW-skillsTemplateStatusNeedNextSteps": [
+  "skillsTemplateStatusNeedNextSteps": [
     "Skills Template status: Need Next Steps",
     7582275087
   ],
-  "NEW-2WeeksInactive": [
-    "2 weeks inactive",
-    8048259525
-  ],
-  "NEW-roleDataScientist": [
+  "roleDataScientist": [
     "role: data scientist",
     8056944058
   ],
@@ -831,28 +827,36 @@
     "Status: Unassigned by Bot",
     8096814358
   ],
-  "NEW-langGha": [
+  "langGha": [
     "Lang: GHA",
     8273615621
   ],
-  "NEW-skillRefactor": [
+  "skillRefactor": [
     "Skill: refactor",
     8273639778
   ],
-  "NEW-skillFeasability": [
-    "Skill: feasability",
+  "skillFeasibility": [
+    "Skill: feasibility",
     8273643490
   ],
-  "NEW-langMd": [
+  "langMd": [
     "Lang: .md",
     8273660695
   ],
-  "NEW-skillEdit": [
+  "skillEdit": [
     "Skill: edit",
     8273662609
   ],
-  "NEW-featureMessaging": [
+  "featureMessaging": [
     "feature: messaging",
     8273668967
+  ],
+  "skillCreateNew": [
+    "Skill: create new",
+    8273640350
+  ],
+  "skillEnhance": [
+    "Skill: enhance",
+    8273641077
   ]
 }
