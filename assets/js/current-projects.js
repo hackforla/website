@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded",function(){
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
 
-        // Event listener for search tip modal
-        openSearchTipsModal();
+        // Add onclick event handlers to open search tips modal if it is clicked.
+        attachEventListenerOpenModal();
 
-        // Close Search Tips Modal.
-        closeSearchTipsModal();
+        // Add onclick event handlers to close search tips modal if it is open.
+        attachEventListenerCloseModal();
         
         //events related to search bar
         document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
@@ -406,7 +406,7 @@ function updateUI(){
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
     attachEventListenerToFilterTags()
-    
+
 }
 
     /**
@@ -867,7 +867,7 @@ function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     }
 }
 
-function openSearchTipsModal() {
+function attachEventListenerOpenModal() {
     document.getElementById('search-tip-link').addEventListener('click', function (event) {
         event.preventDefault();
         updateSearchTipsModal();
@@ -891,7 +891,7 @@ function updateSearchTipsModal() {
     document.getElementById('search-tip-modal').style.display = 'flex';
 }
 
-function closeSearchTipsModal() {
+function attachEventListenerCloseModal() {
     // Close the modal
     document.querySelector('.overlay-close-icon').addEventListener('click', function() {
         document.getElementById('search-tip-modal').style.display = 'none';
