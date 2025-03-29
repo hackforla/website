@@ -18,12 +18,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03AS9FBAAU'
       github: 'https://github.com/juliagab56'
     picture: 'https://avatars.githubusercontent.com/juliagab56'
-  - name: Judy Lee
-    role: UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03K7Q1FV3P'
-      github: 'https://github.com/JudyLee533'
-    picture: 'https://avatars.githubusercontent.com/JudyLee533'
   - name: Jack Haeger
     github-handle: JackHaeg
     role: Lead Product Manager
