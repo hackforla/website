@@ -13,20 +13,20 @@ const [
   epic,
   roleFrontEnd,
   roleBackEndDevOps,
+  complexity0,
   complexity1,
   complexity2,
   complexity3,
-  complexityPrework,
   statusUnassignedByBot,
 ] = [
   "er",
   "epic", 
   "roleFrontEnd",
   "roleBackEndDevOps",
+  "complexity0",
   "complexity1",
   "complexity2",
   "complexity3",
-  "complexityPrework",
   "statusUnassignedByBot",
 ].map(retrieveLabelDirectory);
 
