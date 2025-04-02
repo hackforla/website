@@ -34,9 +34,9 @@ const [
 const EXCEPTION_LABELS = [ER, epic];
 const REQUIRED_ROLE_LABELS = [roleFrontEnd, roleBackEndDevOps];
 const REQUIRED_COMPLEXITY_LABELS = [complexity1, complexity2, complexity3];
-// Statuses
-const newIssueApproval = 'New Issue Approval';
-const inProgressActivelyWorking = 'In progress (actively working)';
+// Hard-coded statuses
+const NEW_ISSUE_APPROVAL = 'New Issue Approval';
+const IN_PROGRESS = 'In progress (actively working)';
 
 
 /**
@@ -72,7 +72,7 @@ async function checkComplexityEligibility(
   );
 
   // If issue's status is New Issue Approval, skip complexity check
-  if (statusName === newIssueApproval) {
+  if (statusName === NEW_ISSUE_APPROVAL) {
     return true;
   }
 
@@ -376,12 +376,12 @@ async function handleIssueComplexityNotPermitted(
       labels: [statusUnassignedByBot],
     });
   
-    // Change issue's status to New Issue Approval 
+    // Change issue's status to NEW_ISSUE_APPROVAL
     await mutateIssueStatus(
       github,
       context,
       projectItemId,
-      statusFieldIds(newIssueApproval)
+      statusFieldIds(NEW_ISSUE_APPROVAL)
     );
   
     // If the assignee's Skills Issue (Pre-work Checklist) is closed, open it
@@ -393,16 +393,16 @@ async function handleIssueComplexityNotPermitted(
         state: 'open',
       });
 
-      // Brief delay allows Project automation to move Prework to New Issue Approval
-      // before script moves it to In Progress, ensuring correct final status 
+      // Brief delay allows Project automation to move Skills Issue to NEW_ISSUE_APPROVAL
+      // before script moves it to IN_PROGRESS, ensuring correct final status 
       await setTimeout(5000);
 
-      // Change Skills Issue (Pre-work Checklist) status to In Progress
+      // Change Skills Issue (Pre-work Checklist) status to IN_PROGRESS
       await mutateIssueStatus(
         github,
         context,
         preWorkIssueProjectItemId,
-        statusFieldIds(inProgressActivelyWorking)
+        statusFieldIds(IN_PROGRESS)
       );
     }
 
