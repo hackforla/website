@@ -1,9 +1,33 @@
+// Import modules
 const fs = require('fs');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const postComment = require('../../utils/post-issue-comment');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const statusFieldIds = require('../../utils/_data/status-field-ids');
 const { setTimeout } = require('timers/promises');
+
+// Use labelKeys to retrieve current labelNames from directory
+const [
+  ER,
+  EPIC,
+  ROLE_FRONT_END,
+  ROLE_BACKEND_DEVOPS,
+  COMPLEXITY1,
+  COMPLEXITY2,
+  COMPLEXITY3,
+  STATUS_UNASSIGNED_BY_BOT,
+] = [
+  “er”,
+  “epic”, 
+  “roleFrontEnd”,
+  “roleBackEndDevOps”,
+  "complexity1",
+  "complexity2",
+  "complexity3",
+  "statusUnassignedByBot",
+].map(retrieveLabelDirectory);
+
 
 /**
 * Checks if an assignee is eligible to be assigned an issue based on their
@@ -51,7 +75,7 @@ async function checkComplexityEligibility(
   const hasAnyLabel = (labels, referenceLabels) =>
     labels.some(label => referenceLabels.includes(label));
   
-  const exceptionLabels = [
+  const EXCEPTION_LABELS = [
     'ER',
     'epic'
   ];
@@ -66,7 +90,7 @@ async function checkComplexityEligibility(
   ];
 
   // If issue has any exception labels, skip complexity check
-  if (hasAnyLabel(currentIssue.labels, exceptionLabels)) {
+  if (hasAnyLabel(currentIssue.labels, EXCEPTION_LABELS)) {
     return true;
   }
   
