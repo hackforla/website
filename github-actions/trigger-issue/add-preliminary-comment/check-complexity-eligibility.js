@@ -312,7 +312,7 @@ function extractComplexityAndRolesFromLabels(issues) {
 // Extracts the Skills Issue (Pre-work Checklist) from assigned issues.
 function extractPreWorkIssueFromIssues(assignedIssues) {
   const preWorkIssue = assignedIssues.find(
-    issue => issue.labels.includes(complexityPrework)
+    issue => issue.labels.includes(complexity0)
   );
 
   if (!preWorkIssue) {
