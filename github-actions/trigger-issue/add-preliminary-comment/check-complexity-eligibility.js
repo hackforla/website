@@ -19,22 +19,24 @@ const [
   complexity3,
   statusUnassignedByBot,
 ] = [
-  "er",
-  "epic", 
-  "roleFrontEnd",
-  "roleBackEndDevOps",
-  "complexity0",
-  "complexity1",
-  "complexity2",
-  "complexity3",
-  "statusUnassignedByBot",
+  'er',
+  'epic', 
+  'roleFrontEnd',
+  'roleBackEndDevOps',
+  'complexity0',
+  'complexity1',
+  'complexity2',
+  'complexity3',
+  'statusUnassignedByBot',
 ].map(retrieveLabelDirectory);
 
 // Exception and required label constants
 const EXCEPTION_LABELS = [ER, epic];
 const REQUIRED_ROLE_LABELS = [roleFrontEnd, roleBackEndDevOps];
 const REQUIRED_COMPLEXITY_LABELS = [complexity1, complexity2, complexity3];
-
+// Statuses
+const newIssueApproval = 'New Issue Approval';
+const inProgressActivelyWorking = 'In progress (actively working)';
 
 
 /**
@@ -70,7 +72,7 @@ async function checkComplexityEligibility(
   );
 
   // If issue's status is New Issue Approval, skip complexity check
-  if (statusName === 'New Issue Approval') {
+  if (statusName === newIssueApproval) {
     return true;
   }
 
@@ -379,7 +381,7 @@ async function handleIssueComplexityNotPermitted(
       github,
       context,
       projectItemId,
-      statusFieldIds('New_Issue_Approval')
+      statusFieldIds(newIssueApproval)
     );
   
     // If the assignee's Skills Issue (Pre-work Checklist) is closed, open it
@@ -400,7 +402,7 @@ async function handleIssueComplexityNotPermitted(
         github,
         context,
         preWorkIssueProjectItemId,
-        statusFieldIds('In_Progress')
+        statusFieldIds(inProgressActivelyWorking)
       );
     }
 
