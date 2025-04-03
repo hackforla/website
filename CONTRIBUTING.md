@@ -229,6 +229,10 @@ If you are on Windows and get 'You are not allowed to use Docker, you must be in
 Installing WSL2 on windows
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
+<!-- Added information below -->
+
+If you are using Windows Subsystem for Linux (WSL) and finding a permission error when running `docker-compose up`, the issue might be caused by a version of docker that relies on a buggy version of Go. In your terminal, run `docker version | grep "Go"`  or `docker version` to see which version of `go` is used. Anything less than 1.20 has a problem and indicates that docker needs to be updated.
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
