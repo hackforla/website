@@ -39,7 +39,7 @@ Sections
 12 - [Pull Request Reviews - Small](#section-12)
 13 - [Issue Making - Level 1 (GFI & Small)](#section-13)
 14 - [Medium Issue](#section-14)
-14.1 [Issue Making - Level 2 (Medium)](#section-14.1)
+14.1 [Issue Making - Level 1 (Medium)](#section-14.1)
 15 - [Pull Request Reviews - Medium](#section-15)
 16 - [Issue Making - Level 2 (GFI)](#section-16)
 17 - [Merge Team Skills Review](#section-17)

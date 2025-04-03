@@ -27,13 +27,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0411CAL13N"
       github: "https://github.com/mira-kine"
     picture: https://avatars.githubusercontent.com/mira-kine
-  - name: Stephen Barkley-Yeung
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U041403GHEC"
-      github: "https://github.com/stevbark"
-    picture: https://avatars.githubusercontent.com/stevbark
   - name: Erik Guntner
     github-handle:
     role: Front End Developer
