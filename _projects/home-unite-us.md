@@ -13,13 +13,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
-  - name: Jed Stewart
-    github-handle: 
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
-      github: "https://github.com/jed-stewart"
-    picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
     github-handle:
     role: Developer
