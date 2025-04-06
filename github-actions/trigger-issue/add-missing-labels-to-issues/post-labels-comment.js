@@ -5,7 +5,7 @@ const formatComment = require('../../utils/format-comment');
 const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 
 // Label constants use labelKeys to retrieve current labelNames from directory
-const LABELS_OBJ = [
+const LABELS_ARR = [
   sizeMissing,
   featureMissing,
   complexityMissing,
@@ -16,6 +16,9 @@ const LABELS_OBJ = [
   "complexityMissing",
   "roleMissing"
 ].map(retrieveLabelDirectory);
+
+const LABELS_VAL = ['Size','Feature','Complexity','Role'];
+const LABELS_OBJ = Object.fromEntries(LABELS_ARR.map((key, i) => [key, LABELS_VAL[i]]));
 
 // Global variables
 var github;
