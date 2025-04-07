@@ -55,13 +55,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U04GYSFB98X"
       github: "https://github.com/KowDesign"
     picture: https://avatars.githubusercontent.com/KowDesign
-  - name: Muyin Zheng
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
-      github: "https://github.com/IndigoYinZ"
-    picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Emily Eldar
     github-handle:
     role: Developer
