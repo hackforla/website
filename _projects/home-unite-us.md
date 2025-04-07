@@ -34,13 +34,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Muyin Zheng
-    github-handle:
+  - name: Rachel Bracker
+    github-handle: 
+    role: Design Lead
+    links:
+      slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
+      github: "https://github.com/rpbracker"
+    picture: https://avatars.githubusercontent.com/rpbracker
+  - name: Samuel Kowitch
+    github-handle: 
     role: UX/UI Designer
     links:
-      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
-      github: "https://github.com/IndigoYinZ"
-    picture: https://avatars.githubusercontent.com/IndigoYinZ
+      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
+      github: "https://github.com/KowDesign"
+    picture: https://avatars.githubusercontent.com/KowDesign
+  - name: Emily Eldar
+    github-handle:
+    role: Developer
+    links:
+      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
+      github: "https://github.com/emeldar"
+    picture: https://avatars.githubusercontent.com/emeldar
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
