@@ -48,13 +48,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
-  - name: Samuel Kowitch
-    github-handle: 
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
-      github: "https://github.com/KowDesign"
-    picture: https://avatars.githubusercontent.com/KowDesign
   - name: Muyin Zheng
     github-handle:
     role: UX/UI Designer
