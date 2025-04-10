@@ -13,13 +13,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REA9H3FF
       github: https://github.com/mariaweissman
     picture: https://avatars.githubusercontent.com/mariaweissman
-  - name: Analicia Mejia Mesinas
-    github-handle: amejiamesinas
-    role: Product Manager, UX Research
-    links:
-      slack: https://hackforla.slack.com/team/U04J34E73CG
-      github: https://github.com/amejiamesinas
-    picture: https://avatars.githubusercontent.com/amejiamesinas
   - name: Srishti Gupta
     github-handle: srishti-gupta-me
     role: Product Manager, UX Content

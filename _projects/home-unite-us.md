@@ -62,13 +62,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U04HAEEKT29"
       github: "https://github.com/IndigoYinZ"
     picture: https://avatars.githubusercontent.com/IndigoYinZ
-  - name: Emily Eldar
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
-      github: "https://github.com/emeldar"
-    picture: https://avatars.githubusercontent.com/emeldar
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
