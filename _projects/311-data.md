@@ -6,13 +6,6 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
-  - name: Sanju Venugopal
-    github-handle: sanjumv
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U05KFTD3AKA
-      github: https://github.com/sanjumv
-    picture: https://avatars.githubusercontent.com/sanjumv
   - name: Christopher Cotton
     github-handle: CottonChristopher
     role: Product Manager
