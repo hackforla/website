@@ -40,11 +40,12 @@ leadership:
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Trillium Smith
-    role: Developer
+    github-handle: trillium
+    role: Lead Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U010G9864Q1'
-      github: 'https://github.com/Spiteless'
-    picture: 'https://avatars.githubusercontent.com/Spiteless'
+      slack: https://hackforla.slack.com/team/U010G9864Q1
+      github: https://github.com/trillium
+    picture: https://avatars.githubusercontent.com/trillium
   - name: Nikhil Trehan
     github-handle: ntrehan
     role: Developer
