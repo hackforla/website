@@ -1,0 +1,130 @@
+---
+identification: '226157870'
+title: VRMS
+description: VRMS is a browser-based software tool created by Hack for LA (HfLA) for volunteer organizations to curate participant journeys and further organizational goals of workforce development and project impact. By collecting and using relevant data, VRMS is able to automate repetitive tasks; match volunteers with projects, relevant training and job opportunities; measure engagement with projects and activities; and surface insights to improve organizational effectiveness and the volunteer experience over time.
+image: /assets/images/projects/vrms.png
+alt: 'Volunteer Relationship Management System (VRMS)'
+image-hero: /assets/images/projects/vrms-hero.png
+leadership:
+  - name: Bonnie Wolfe
+    role: Stakeholder Rep
+    links:
+      slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
+      github: 'https://github.com/ExperimentsInHonesty'
+    picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Julia Gab
+    role: Lead UX Designer
+    links:
+      slack: 'https://hackforla.slack.com/team/U03AS9FBAAU'
+      github: 'https://github.com/juliagab56'
+    picture: 'https://avatars.githubusercontent.com/juliagab56'
+  - name: Jack Haeger
+    github-handle: JackHaeg
+    role: Lead Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U059005TN1L
+      github: https://github.com/JackHaeg
+    picture: https://avatars.githubusercontent.com/JackHaeg
+  - name: Amanda Glover
+    github-handle:
+    role: Product Manager
+    links:
+      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
+      github: 'https://github.com/AmandaGlover-PM'
+    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
+  - name: Josh Bubar
+    github-handle:
+    role: Developer
+    links:
+      slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
+      github: 'https://github.com/jbubar'
+    picture: 'https://avatars.githubusercontent.com/jbubar'
+  - name: Trillium Smith
+    github-handle: trillium
+    role: Lead Developer
+    links:
+      slack: https://hackforla.slack.com/team/U010G9864Q1
+      github: https://github.com/trillium
+    picture: https://avatars.githubusercontent.com/trillium
+  - name: Nikhil Trehan
+    github-handle: ntrehan
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U078NLYGWRK
+      github: https://github.com/ntrehan
+    picture: https://avatars.githubusercontent.com/ntrehan
+  - name: Katiuska Alecea de Leon
+    github-handle: chukalicious
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U0100R46ESC
+      github: https://github.com/chukalicious
+    picture: https://avatars.githubusercontent.com/chukalicious
+  - name: Evan Yang
+    github-handle: evanyang1
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U02APE3V4Q3
+      github: https://github.com/evanyang1
+    picture: https://avatars.githubusercontent.com/evanyang1
+  - name: Brad Morgan
+    github-handle: bkmorgan3
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U779QRX3Q
+      github: https://github.com/bkmorgan3
+    picture: https://avatars.githubusercontent.com/bkmorgan3
+  - name: Mudassir Hussain
+    github-handle: hussainmudassir
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAGE89TJ
+      github: https://github.com/hussainmudassir
+    picture: https://avatars.githubusercontent.com/hussainmudassir
+  - name: Angela Lee
+    github-handle: angela-lee1
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U062NB2CKMZ
+      github: https://github.com/angela-lee1/
+    picture: https://avatars.githubusercontent.com/angela-lee1
+links:
+  - name: GitHub
+    url: 'https://github.com/hackforla/VRMS'
+  - name: Site
+    url: 'http://vrms.io'
+  - name: Readme
+    url: 'https://github.com/hackforla/VRMS/blob/development/README.md'
+  - name: Slack
+    url: 'https://hackforla.slack.com/archives/CRGH5HM0Q'
+  - name: Wiki
+    url: 'https://github.com/hackforla/VRMS/wiki'
+  - name: Overview
+    url: '../assets/pdfs/VRMS-One-Sheet.pdf'
+looking:
+  - category: Development
+    skill: Front End Devs (from mid level)
+  - category: Development
+    skill: Back End Devs (from mid level)
+  - category: UI/UX
+    skill: UI/UX Designer
+technologies:
+  - Node.js
+  - Express
+  - MongoDB
+  - Docker
+  - React
+  - Redux
+  - Jest
+  - React Testing Library
+  - MongoDB Atlas
+  - Insomnia
+  - Postman
+location:
+  - Remote
+partner: TBD
+visible: true
+program-area:
+  - Civic Tech Infrastructure
+status: Active
+---
