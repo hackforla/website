@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
-  - name: Edwin Jue
-    github-handle: edwinjue
-    role: Engineering Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03SUUZMFEV
-      github: https://github.com/edwinjue
-    picture: https://avatars.githubusercontent.com/edwinjue
   - name: Allison Jeon
     github-handle: allisonjeon
     role: UX Design Lead
