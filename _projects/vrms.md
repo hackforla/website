@@ -25,13 +25,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059005TN1L
       github: https://github.com/JackHaeg
     picture: https://avatars.githubusercontent.com/JackHaeg
-  - name: Amanda Glover
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
-      github: 'https://github.com/AmandaGlover-PM'
-    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
   - name: Josh Bubar
     github-handle:
     role: Developer
