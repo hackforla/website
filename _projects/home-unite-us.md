@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Rachel Bracker
-    github-handle: 
-    role: Design Lead
-    links:
-      slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
-      github: "https://github.com/rpbracker"
-    picture: https://avatars.githubusercontent.com/rpbracker
   - name: Muyin Zheng
     github-handle:
     role: UX/UI Designer
