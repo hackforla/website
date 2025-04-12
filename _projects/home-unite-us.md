@@ -13,13 +13,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
-  - name: Jed Stewart
-    github-handle: 
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
-      github: "https://github.com/jed-stewart"
-    picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
     github-handle:
     role: Developer
@@ -48,13 +41,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
       github: "https://github.com/rpbracker"
     picture: https://avatars.githubusercontent.com/rpbracker
-  - name: Samuel Kowitch
-    github-handle: 
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
-      github: "https://github.com/KowDesign"
-    picture: https://avatars.githubusercontent.com/KowDesign
   - name: Muyin Zheng
     github-handle:
     role: UX/UI Designer
