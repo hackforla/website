@@ -18,12 +18,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03AS9FBAAU'
       github: 'https://github.com/juliagab56'
     picture: 'https://avatars.githubusercontent.com/juliagab56'
-  - name: Judy Lee
-    role: UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03K7Q1FV3P'
-      github: 'https://github.com/JudyLee533'
-    picture: 'https://avatars.githubusercontent.com/JudyLee533'
   - name: Jack Haeger
     github-handle: JackHaeg
     role: Lead Product Manager
@@ -31,19 +25,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059005TN1L
       github: https://github.com/JackHaeg
     picture: https://avatars.githubusercontent.com/JackHaeg
-  - name: Alex Lee
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03PC4KKGAG'
-      github: 'https://github.com/heyitsalexander'
-    picture: 'https://avatars.githubusercontent.com/heyitsalexander'
-  - name: Amanda Glover
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
-      github: 'https://github.com/AmandaGlover-PM'
-    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
   - name: Josh Bubar
     github-handle:
     role: Developer
@@ -52,11 +33,12 @@ leadership:
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Trillium Smith
-    role: Developer
+    github-handle: trillium
+    role: Lead Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U010G9864Q1'
-      github: 'https://github.com/Spiteless'
-    picture: 'https://avatars.githubusercontent.com/Spiteless'
+      slack: https://hackforla.slack.com/team/U010G9864Q1
+      github: https://github.com/trillium
+    picture: https://avatars.githubusercontent.com/trillium
   - name: Nikhil Trehan
     github-handle: ntrehan
     role: Developer

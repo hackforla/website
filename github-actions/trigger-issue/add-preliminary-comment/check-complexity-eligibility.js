@@ -1,9 +1,43 @@
+// Import modules
 const fs = require('fs');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
 const postComment = require('../../utils/post-issue-comment');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const statusFieldIds = require('../../utils/_data/status-field-ids');
 const { setTimeout } = require('timers/promises');
+
+// Use labelKeys to retrieve current labelNames from directory
+const [
+  ER,
+  epic,
+  roleFrontEnd,
+  roleBackEndDevOps,
+  complexity0,
+  complexity1,
+  complexity2,
+  complexity3,
+  statusUnassignedByBot,
+] = [
+  'er',
+  'epic', 
+  'roleFrontEnd',
+  'roleBackEndDevOps',
+  'complexity0',
+  'complexity1',
+  'complexity2',
+  'complexity3',
+  'statusUnassignedByBot',
+].map(retrieveLabelDirectory);
+
+// Exception and required label constants
+const EXCEPTION_LABELS = [ER, epic];
+const REQUIRED_ROLE_LABELS = [roleFrontEnd, roleBackEndDevOps];
+const REQUIRED_COMPLEXITY_LABELS = [complexity1, complexity2, complexity3];
+// Hard-coded statuses
+const NEW_ISSUE_APPROVAL = 'New Issue Approval';
+const IN_PROGRESS = 'In progress (actively working)';
+
 
 /**
 * Checks if an assignee is eligible to be assigned an issue based on their
@@ -38,7 +72,7 @@ async function checkComplexityEligibility(
   );
 
   // If issue's status is New Issue Approval, skip complexity check
-  if (statusName === 'New Issue Approval') {
+  if (statusName === NEW_ISSUE_APPROVAL) {
     return true;
   }
 
@@ -50,29 +84,15 @@ async function checkComplexityEligibility(
   
   const hasAnyLabel = (labels, referenceLabels) =>
     labels.some(label => referenceLabels.includes(label));
-  
-  const exceptionLabels = [
-    'ER',
-    'epic'
-  ];
-  const requiredRoleLabels = [
-    'role: front end',
-    'role: back end/devOps'
-  ];
-  const requiredComplexityLabels = [
-    'good first issue',
-    'Complexity: Small',
-    'Complexity: Medium'
-  ];
 
   // If issue has any exception labels, skip complexity check
-  if (hasAnyLabel(currentIssue.labels, exceptionLabels)) {
+  if (hasAnyLabel(currentIssue.labels, EXCEPTION_LABELS)) {
     return true;
   }
-  
+
   // If issue doesn't have required labels, skip complexity check
-  if (!hasAnyLabel(currentIssue.labels, requiredRoleLabels) ||
-      !hasAnyLabel(currentIssue.labels, requiredComplexityLabels)) {
+  if (!hasAnyLabel(currentIssue.labels, REQUIRED_ROLE_LABELS) ||
+      !hasAnyLabel(currentIssue.labels, REQUIRED_COMPLEXITY_LABELS)) {
     return true;
   }
 
@@ -186,13 +206,13 @@ function isEligibleForIssue(currentIssue, previousIssues, assigneeRole) {
     previousIssues
   );
    
-  // Check good first issue eligibility
-  if (currentIssueComplexityAndRoles[0].complexity === 'good first issue') {
-    const goodFirstIssueCount = previousIssuesComplexityAndRoles.filter(
-      issue => issue.complexity === 'good first issue'
+  // Check complexity1 (good first issue) eligibility
+  if (currentIssueComplexityAndRoles[0].complexity === complexity1) {
+    const complexity1Count = previousIssuesComplexityAndRoles.filter(
+      issue => issue.complexity === complexity1
     ).length;
 
-    if (goodFirstIssueCount >= 2) {
+    if (complexity1Count >= 2) {
       return false;
     } else {
       return true;
@@ -201,11 +221,11 @@ function isEligibleForIssue(currentIssue, previousIssues, assigneeRole) {
 
   /* 
    Check if the assignee has only one role (front end or back end/devOps).
-   If so, check their eligibility for Small/Medium complexity issues
+   If so, check their eligibility for complexity2/complexity3 (Small/Medium) complexity issues
    based on the number of previous issues of the same complexity.
   */ 
-  if (assigneeRole.includes('role: front end') !==
-      assigneeRole.includes('role: back end/devOps')) {
+  if (assigneeRole.includes(roleFrontEnd) !==
+      assigneeRole.includes(roleBackEndDevOps)) {
     const complexityCount = previousIssuesComplexityAndRoles.filter(
       issue => issue.complexity === currentIssueComplexityAndRoles[0].complexity
     ).length;
@@ -215,11 +235,11 @@ function isEligibleForIssue(currentIssue, previousIssues, assigneeRole) {
     }
   }
 
-  // Check for Small/Medium complexity eligibility for assignee with both roles
+  // Check for complexity2/complexity3 (Small/Medium) complexity eligibility for assignee with both roles
   let matchingComplexityIssues = [];
 
-  if (assigneeRole.includes('role: front end') &&
-      assigneeRole.includes('role: back end/devOps')) {
+  if (assigneeRole.includes(roleFrontEnd) &&
+      assigneeRole.includes(roleBackEndDevOps)) {
     matchingComplexityIssues = previousIssuesComplexityAndRoles.filter(
       issue => issue.complexity.includes(
         currentIssueComplexityAndRoles[0].complexity
@@ -240,14 +260,14 @@ function isEligibleForIssue(currentIssue, previousIssues, assigneeRole) {
     const previousMatchingIssue = matchingComplexityIssues[0];
 
     const currentIssueHasFrontEnd =
-      currentIssueComplexityAndRoles[0].role.includes('role: front end');
+      currentIssueComplexityAndRoles[0].role.includes(roleFrontEnd);
     const currentIssueHasBackEnd =
-      currentIssueComplexityAndRoles[0].role.includes('role: back end/devOps');
+      currentIssueComplexityAndRoles[0].role.includes(roleBackEndDevOps);
     
     const previousMatchingIssueHasFrontEnd =
-      previousMatchingIssue.role.includes('role: front end');
+      previousMatchingIssue.role.includes(roleFrontEnd);
     const previousMatchingIssueHasBackEnd =
-      previousMatchingIssue.role.includes('role: back end/devOps');
+      previousMatchingIssue.role.includes(roleBackEndDevOps);
 
     // If the previous issue had both roles, 
     // the current issue must have one of the roles, but not both
@@ -280,37 +300,37 @@ function extractComplexityAndRolesFromLabels(issues) {
   return filteredIssues.map(issue => ({
     complexity: issue.labels.find(
       label =>
-        label === 'good first issue' ||
-        label === 'Complexity: Small' ||
-        label === 'Complexity: Medium'
+        label === complexity1 ||
+        label === complexity2 ||
+        label === complexity3
     ),
     role: issue.labels.filter(
       label =>
-        label === 'role: front end' || label === 'role: back end/devOps'
+        label === roleFrontEnd || label === roleBackEndDevOps
     ),
   })).filter(issue => issue.complexity);
 }
 
-// Extracts the Pre-Work Checklist (Skills Issue) from assigned issues.
+// Extracts the Skills Issue (Pre-work Checklist) from assigned issues.
 function extractPreWorkIssueFromIssues(assignedIssues) {
   const preWorkIssue = assignedIssues.find(
-    issue => issue.labels.includes('Complexity: Prework')
+    issue => issue.labels.includes(complexity0)
   );
 
   if (!preWorkIssue) {
     throw new Error(
-      `Assignee's Pre-Work Checklist (Skills Issue) not found in assigned issues.`
+      `Assignee's Skills Issue (Pre-work Checklist) not found in assigned issues.`
     );
-  } 
+  }
 
-  return preWorkIssue;    
+  return preWorkIssue;
 }
 
-// Extracts roles from the Pre-Work Checklist (Skills Issue).
+// Extracts roles from the Skills Issue (Pre-work Checklist).
 function extractRoleFromPreWorkIssue(preWorkIssue) {
   return preWorkIssue.labels.filter(
     label =>
-      label === 'role: front end' || label === 'role: back end/devOps'
+      label === roleFrontEnd || label === roleBackEndDevOps
   );
 }
 
@@ -323,9 +343,9 @@ function extractRoleFromPreWorkIssue(preWorkIssue) {
 * @param {string} assigneeUsername - The GitHub username of the assignee.
 * @param {string} currentIssueprojectItemId - The project item ID of the current
 * issue.
-* @param {Object} preWorkIssue - The Pre-Work Checklist (Skills Issue) object.
+* @param {Object} preWorkIssue - The Skills Issue (Pre-work Checklist) object.
 * @param {string} preWorkIssueProjectItemId - The project item ID of the
-* Pre-Work Checklist (Skills Issue).
+* Skills Issue (Pre-work Checklist).
 */
 
 async function handleIssueComplexityNotPermitted(
@@ -353,18 +373,18 @@ async function handleIssueComplexityNotPermitted(
       owner,
       repo,
       issue_number: currentIssueNum,
-      labels: ['Status: Unassigned by Bot'],
+      labels: [statusUnassignedByBot],
     });
   
-    // Change issue's status to New Issue Approval 
+    // Change issue's status to NEW_ISSUE_APPROVAL
     await mutateIssueStatus(
       github,
       context,
       projectItemId,
-      statusFieldIds('New_Issue_Approval')
+      statusFieldIds(NEW_ISSUE_APPROVAL)
     );
   
-    // If the assignee's Pre-work Checklist (Skills Issue) is closed, open it
+    // If the assignee's Skills Issue (Pre-work Checklist) is closed, open it
     if (preWorkIssue.state === 'closed') {
       await github.rest.issues.update({
         owner,
@@ -373,16 +393,16 @@ async function handleIssueComplexityNotPermitted(
         state: 'open',
       });
 
-      // Brief delay allows Project automation to move Prework to New Issue Approval
-      // before script moves it to In Progress, ensuring correct final status 
+      // Brief delay allows Project automation to move Skills Issue to NEW_ISSUE_APPROVAL
+      // before script moves it to IN_PROGRESS, ensuring correct final status 
       await setTimeout(5000);
 
-      // Change Pre-work Checklist (Skills Issue) status to In Progress
+      // Change Skills Issue (Pre-work Checklist) status to IN_PROGRESS
       await mutateIssueStatus(
         github,
         context,
         preWorkIssueProjectItemId,
-        statusFieldIds('In_Progress')
+        statusFieldIds(IN_PROGRESS)
       );
     }
 
@@ -394,7 +414,7 @@ async function handleIssueComplexityNotPermitted(
     // Post comment on the issue
     await postComment(currentIssueNum, commentBody, github, context);  
 
-    // Post comment on the assignee's Pre-work Checklist (Skills Issue)
+    // Post comment on the assignee's Skills Issue (Pre-work Checklist)
     await postComment(preWorkIssue.issueNum, commentBody, github, context);
 
   } catch (error) {

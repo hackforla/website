@@ -13,13 +13,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
-  - name: Jed Stewart
-    github-handle: 
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
-      github: "https://github.com/jed-stewart"
-    picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
     github-handle:
     role: Developer
@@ -27,13 +20,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0411CAL13N"
       github: "https://github.com/mira-kine"
     picture: https://avatars.githubusercontent.com/mira-kine
-  - name: Stephen Barkley-Yeung
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U041403GHEC"
-      github: "https://github.com/stevbark"
-    picture: https://avatars.githubusercontent.com/stevbark
   - name: Erik Guntner
     github-handle:
     role: Front End Developer
@@ -48,20 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Rachel Bracker
-    github-handle: 
-    role: Design Lead
-    links:
-      slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
-      github: "https://github.com/rpbracker"
-    picture: https://avatars.githubusercontent.com/rpbracker
-  - name: Samuel Kowitch
-    github-handle: 
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
-      github: "https://github.com/KowDesign"
-    picture: https://avatars.githubusercontent.com/KowDesign
   - name: Muyin Zheng
     github-handle:
     role: UX/UI Designer
@@ -69,13 +41,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U04HAEEKT29"
       github: "https://github.com/IndigoYinZ"
     picture: https://avatars.githubusercontent.com/IndigoYinZ
-  - name: Emily Eldar
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
-      github: "https://github.com/emeldar"
-    picture: https://avatars.githubusercontent.com/emeldar
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
