@@ -24,15 +24,8 @@ We need to keep project information up to date so that visitors to the website c
 ```
 - [ ] Verify the changes by viewing the following in your local environment and include before and after screenshots with your pull request:
   - [ ] [Insert name of project] page [^2]
-- [ ] Once your pull request is merged, go to the initiating ER [^3]
-  - [ ] Check off this issue under the _Dependency_ section
-  - [ ] If all the issues in the _Dependency_ section are checked off, move initiating ER [^3] to **Questions / In Review** column and uncheck the **Dependency label**.
-    - <details>
-        <summary>Click here to see how to uncheck the <b>Dependency label</b></summary>
-        <img src="https://github.com/hackforla/website/assets/31293603/6f53f4d4-7d2c-45f8-8534-9936fc9adee8" width="300px">
-      </details>
 
 ### Resources/Instructions
+- Initiating epic or ER: #[Insert epic or ER number]
 [^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
 [^2]: Project detailed info page URL: [Insert project specific page URL here]
-[^3]: initiating ER:  #[Insert ER number]
