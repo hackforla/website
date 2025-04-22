@@ -32,6 +32,5 @@ We need to keep project information up to date so that visitors to the website c
   - [ ] [Insert name of project] page [^2]
 
 ### Resources/Instructions
-- Initiating epic or ER: #[Insert epic or ER number]
 [^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
 [^2]: Project detailed info page URL: [Insert project specific page URL here]
