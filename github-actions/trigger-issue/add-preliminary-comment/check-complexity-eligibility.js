@@ -64,14 +64,14 @@ async function checkComplexityEligibility(
     context.payload.sender
   );
 
-  // Fetch the current issue's project item id, status name, and status d
-    const { id: projectItemId, statusName, statusId } = await queryIssueInfo(
+  // Fetch the current issue's project item id, status name, and status id
+  const { id: projectItemId, statusName, statusId } = await queryIssueInfo(
     github,
     context,
     currentIssue.issueNum
   );
 
-  // If issue's statusId matches the id for "New Issue Approval", skip complexity check
+  // If issue's status id matches the id for "New Issue Approval", skip complexity check
   if (statusId === NEW_ISSUE_APPROVAL_ID) {
     return true;
   }
