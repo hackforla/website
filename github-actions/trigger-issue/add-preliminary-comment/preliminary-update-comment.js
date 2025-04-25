@@ -14,7 +14,7 @@ const getTimeline = require('../../utils/get-timeline');
 // Global variables
 let github;
 let context;
-let assignee;
+let assignee
 
 // Use labelKeys to retrieve current labelNames from directory
 const [
