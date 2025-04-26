@@ -6,6 +6,13 @@ image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
+  - name: Ariel Lasry
+    github-handle: lasryariel
+    role: Product Manager (Lead Persona)
+    links:
+      slack: https://hackforla.slack.com/team/U06MG4S8D2B
+      github: https://github.com/lasryariel
+    picture: https://avatars.githubusercontent.com/lasryariel
   - name: Tyler Thome
     github-handle: 
     role: HUU Tech Lead
@@ -47,7 +54,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
-    picture: https://avatars.githubusercontent.com/lola3736    
+    picture: https://avatars.githubusercontent.com/lola3736
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
