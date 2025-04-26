@@ -1078,7 +1078,7 @@ The best way to ask for help and provide as much information to the team is to d
 * [GitHub Pages](https://pages.github.com/)
 * [Jekyll Docs](https://jekyllrb.com/docs/)
 * [Liquid Documentation](https://shopify.github.io/liquid/)
-* [Github Guides](https://guides.github.com/)
+* [GitHub Guides](https://guides.github.com/)
 * [Docker](https://docs.docker.com/get-started/)
   - [Docker Compose](https://docs.docker.com/compose/gettingstarted/)
   - [Docker Desktop](https://docs.docker.com/install/)
