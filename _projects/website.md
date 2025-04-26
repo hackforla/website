@@ -108,6 +108,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07HCNXLCKH
       github: https://github.com/k-cardon
     picture: https://avatars.githubusercontent.com/k-cardon
+  - name: Mugdh Chauhan
+    github-handle: mugdhchauhan
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U08041Y2E72'
+      github: 'https://github.com/mugdhchauhan'
+    picture: https://avatars.githubusercontent.com/mugdhchauhan
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
