@@ -31,7 +31,7 @@ const [
 
 const EMERGENT_REQUEST = 'Emergent Requests';
 const NEW_ISSUE_APPROVAL = 'New Issue Approval';
-const STATUS_UNASSIGNED_BY_BOT = "Status: Unassigned by Bot";
+
 
 /**
  * @description This function is the entry point into the JavaScript file. It formats the
@@ -123,7 +123,7 @@ async function memberOfAdminOrMergeTeam() {
     return(assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
   } catch(error) {
     throw new Error("Error getting membership status: " + error);
-  }x
+  }
 }
 
 /**
@@ -196,7 +196,7 @@ async function createComment(fileName, issueNum) {
     const isPrework = context.payload.issue.labels.some((label) => label.name === complexity0);
     const isDraft = context.payload.issue.labels.some((label) => label.name === draft);
 
-    if(statusName === newIssueApproval && !isDraft && !isPrework) {
+    if(statusName === NEW_ISSUE_APPROVAL && !isDraft && !isPrework) {
       if(context.payload.issue.user.login === assignee) {
         fileName = 'draft-label-reminder.md';
       } else {
