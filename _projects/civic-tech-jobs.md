@@ -20,7 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U02E7ATACAV
       github: https://github.com/kchotani
     picture: https://avatars.githubusercontent.com/kchotani
-  
   - name: Jimmy Juarez
     github-handle: JimmyJuarez10
     role: Developer Lead
