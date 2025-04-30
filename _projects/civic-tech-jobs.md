@@ -41,13 +41,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Brenda Njemanze
-    github-handle: brendasdesign
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06MWMRSCJW
-      github: https://github.com/brendasdesign
-    picture: https://avatars.githubusercontent.com/brendasdesign
   - name: Carmen Mak
     github-handle: CarmenMM1
     role: UX/UI Designer
