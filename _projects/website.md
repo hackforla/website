@@ -26,13 +26,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FMKW5EDR
       github: https://github.com/essencegoff
     picture: https://avatars.githubusercontent.com/essencegoff
-  - name: Kelly Chuang
-    github-handle: kellyc9
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U06REBB5K4M
-      github: https://github.com/kellyc9
-    picture: https://avatars.githubusercontent.com/kellyc9
   - name: Sofiat Ajide
     github-handle: sofiatajide
     role: Product Manager - Dashboards
