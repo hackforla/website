@@ -759,7 +759,7 @@ If you already have an SSH key that connects your computer with your GitHub acco
 
 ##### **i. Setting up SSH Keys for Mac**
 
-1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+1. You have to set up SSH keys in order to contribute to GitHub remotely. First check if you have any keys set up already.
 
 ```bash
 ls -al ~/.ssh
@@ -769,7 +769,7 @@ If the folder ~/.ssh does not exist, create it using
 mkdir ~/.ssh
 ```
 
-2. Then enter the text below into your terminal using your github account email address.
+2. Then enter the text below into your terminal using your GitHub account email address.
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -787,13 +787,13 @@ eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_ed25519
 ```
 
-5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+5. Finally copy the ssh key to add it to your GitHub account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
 
 ```bash
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+6. Go to your GitHub account's ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
 
 ##### **ii. Setting up SSH Keys for Windows**
 
