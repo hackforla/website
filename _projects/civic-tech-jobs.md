@@ -62,13 +62,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07G0CHGNSD
       github: https://github.com/rishi222k
     picture: https://avatars.githubusercontent.com/rishi222k
-  - name: Leah Ellis
-    github-handle:
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U04GYTXSP9D
-      github: https://github.com/Leah0996
-    picture: https://avatars.githubusercontent.com/Leah0996
   - name: Manju Chawla
     github-handle: itsmanjuchawla
     role: UX Researcher
