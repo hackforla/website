@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MWMRSCJW
       github: https://github.com/brendasdesign
     picture: https://avatars.githubusercontent.com/brendasdesign
-  - name: Armon Brown
-    github-handle: stanarmon
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06J0UCAWHE
-      github: https://github.com/stanarmon
-    picture: https://avatars.githubusercontent.com/stanarmon
   - name: Carmen Mak
     github-handle: CarmenMM1
     role: UX/UI Designer

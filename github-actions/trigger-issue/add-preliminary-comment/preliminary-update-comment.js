@@ -1,5 +1,7 @@
+
 // Import modules
 const fs = require('fs');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 const checkComplexityEligibility = require('./check-complexity-eligibility');
 const queryIssueInfo = require('../../utils/query-issue-info');
 const mutateIssueStatus = require('../../utils/mutate-issue-status');
@@ -14,10 +16,21 @@ let github;
 let context;
 let assignee;
 
-const emergentRequests = 'Emergent Requests';
-const newIssueApproval = 'New Issue Approval';
-const STATUS_UNASSIGNED_BY_BOT = "Status: Unassigned by Bot";
+// Use labelKeys to retrieve current labelNames from directory
+const [
+  statusUnassignedByBot,
+  featureAgenda,
+  complexity0,
+  draft
+] = [
+  "statusUnassignedByBot",
+  "featureAgenda",
+  "complexity0",
+  "draft"
+].map(retrieveLabelDirectory);
 
+const EMERGENT_REQUEST = 'Emergent Requests';
+const NEW_ISSUE_APPROVAL = 'New Issue Approval';
 
 
 /**
@@ -76,7 +89,7 @@ async function main({ g, c }, { shouldPost, issueNum }) {
       console.log(' - add `multiple-issue-reminder.md` comment to issue');
 
       await unAssignDev();
-      await addLabel(STATUS_UNASSIGNED_BY_BOT);
+      await addLabel(statusUnassignedByBot);
       console.log(' - remove developer and add label for re-prioritization');
 
       // Update item's status to "New Issue Approval"
@@ -131,16 +144,16 @@ async function assignedToAnotherIssue() {
     for(const issue of issues) {
       let repoIssueNum = issue.number;
       // Check is it's an "Agenda" issue
-      const isAgendaIssue = issue.labels.some(label => label.name === "feature: agenda");
+      const isAgendaIssue = issue.labels.some(label => label.name === featureAgenda);
 
       // Check if it's a "Prework" issue
-      const isPreWork = issue.labels.some(label => label.name === "Complexity: Prework");
+      const isPreWork = issue.labels.some(label => label.name === complexity0);
 
       // Check if it exists in "Emergent Request" Status
-      const inEmergentRequestStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === emergentRequests;
+      const inEmergentRequestStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === EMERGENT_REQUEST;
     
       // Check if it exists in "New Issue Approval" Status
-      const inNewIssueApprovalStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === newIssueApproval;
+      const inNewIssueApprovalStatus = (await queryIssueInfo(github, context, repoIssueNum)).statusName === NEW_ISSUE_APPROVAL;
     
       // Include the issue only if none of the conditions are met
       if(!(isAgendaIssue || isPreWork || inEmergentRequestStatus || inNewIssueApprovalStatus))
@@ -180,10 +193,10 @@ async function createComment(fileName, issueNum) {
   try {
     const { statusName } = await queryIssueInfo(github, context, issueNum);
 
-    const isPrework = context.payload.issue.labels.some((label) => label.name === 'Complexity: Prework');
-    const isDraft = context.payload.issue.labels.some((label) => label.name === 'Draft');
+    const isPrework = context.payload.issue.labels.some((label) => label.name === complexity0);
+    const isDraft = context.payload.issue.labels.some((label) => label.name === draft);
 
-    if(statusName === newIssueApproval && !isDraft && !isPrework) {
+    if(statusName === NEW_ISSUE_APPROVAL && !isDraft && !isPrework) {
       if(context.payload.issue.user.login === assignee) {
         fileName = 'draft-label-reminder.md';
       } else {

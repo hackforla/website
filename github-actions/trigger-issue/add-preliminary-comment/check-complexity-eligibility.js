@@ -34,9 +34,9 @@ const [
 const EXCEPTION_LABELS = [ER, epic];
 const REQUIRED_ROLE_LABELS = [roleFrontEnd, roleBackEndDevOps];
 const REQUIRED_COMPLEXITY_LABELS = [complexity1, complexity2, complexity3];
-// Hard-coded statuses
-const NEW_ISSUE_APPROVAL = 'New Issue Approval';
-const IN_PROGRESS = 'In progress (actively working)';
+// Hard-coded status field id values
+const NEW_ISSUE_APPROVAL_ID = statusFieldIds('New_Issue_Approval');
+const IN_PROGRESS_ID = statusFieldIds('In_Progress');
 
 
 /**
@@ -64,15 +64,15 @@ async function checkComplexityEligibility(
     context.payload.sender
   );
 
-  // Fetch the current issue's project item ID and status name
-  const { id: projectItemId, statusName } = await queryIssueInfo(
+  // Fetch the current issue's project item id, status name, and status id
+  const { id: projectItemId, statusName, statusId } = await queryIssueInfo(
     github,
     context,
     currentIssue.issueNum
   );
 
-  // If issue's status is New Issue Approval, skip complexity check
-  if (statusName === NEW_ISSUE_APPROVAL) {
+  // If issue's status id matches the id for "New Issue Approval", skip complexity check
+  if (statusId === NEW_ISSUE_APPROVAL_ID) {
     return true;
   }
 
@@ -381,7 +381,7 @@ async function handleIssueComplexityNotPermitted(
       github,
       context,
       projectItemId,
-      statusFieldIds(NEW_ISSUE_APPROVAL)
+      NEW_ISSUE_APPROVAL_ID
     );
   
     // If the assignee's Skills Issue (Pre-work Checklist) is closed, open it
@@ -402,7 +402,7 @@ async function handleIssueComplexityNotPermitted(
         github,
         context,
         preWorkIssueProjectItemId,
-        statusFieldIds(IN_PROGRESS)
+        IN_PROGRESS_ID
       );
     }
 

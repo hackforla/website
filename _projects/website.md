@@ -12,6 +12,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
+  - name: Gilbert Quionnez
+    github-handle: GilbertQ
+    role: Product Owner
+    links:
+      slack: https://hackforla.slack.com/team/U07T35CB9KL
+      github: https://github.com/GilbertQ
+    picture: https://avatars.githubusercontent.com/GilbertQ
   - name: Essence Goff
     github-handle: essencegoff
     role: Project Manager / Product Owner
