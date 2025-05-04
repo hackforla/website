@@ -122,6 +122,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U08041Y2E72'
       github: 'https://github.com/mugdhchauhan'
     picture: https://avatars.githubusercontent.com/mugdhchauhan
+  - name: Santiago Vidal
+    github-handle: santisecco
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U06MQ37T90E
+      github: https://github.com/santisecco
+    picture: https://avatars.githubusercontent.com/santisecco
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
