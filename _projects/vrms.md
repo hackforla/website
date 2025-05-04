@@ -25,13 +25,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059005TN1L
       github: https://github.com/JackHaeg
     picture: https://avatars.githubusercontent.com/JackHaeg
-  - name: Amanda Glover
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
-      github: 'https://github.com/AmandaGlover-PM'
-    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
   - name: Josh Bubar
     github-handle:
     role: Developer
@@ -40,11 +33,12 @@ leadership:
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Trillium Smith
-    role: Developer
+    github-handle: trillium
+    role: Lead Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U010G9864Q1'
-      github: 'https://github.com/Spiteless'
-    picture: 'https://avatars.githubusercontent.com/Spiteless'
+      slack: https://hackforla.slack.com/team/U010G9864Q1
+      github: https://github.com/trillium
+    picture: https://avatars.githubusercontent.com/trillium
   - name: Nikhil Trehan
     github-handle: ntrehan
     role: Developer
