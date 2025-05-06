@@ -81,6 +81,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U062NB2CKMZ
       github: https://github.com/angela-lee1/
     picture: https://avatars.githubusercontent.com/angela-lee1
+  - name: Nora Zajzon
+    github-handle: nora-zajzon
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U078JUC959C
+      github: https://github.com/nora-zajzon
+    picture: https://avatars.githubusercontent.com/nora-zajzon
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'
