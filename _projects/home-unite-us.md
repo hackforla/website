@@ -6,6 +6,13 @@ image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
+  - name: Jasmine Guraya
+    github-handle: jasmineg95
+    role: Product Manager (Lead Persona)
+    links:
+      slack: https://hackforla.slack.com/team/U07FMLJGUFM
+      github: https://github.com/jasmineg95
+    picture: https://avatars.githubusercontent.com/jasmineg95
   - name: Ariel Lasry
     github-handle: lasryariel
     role: Product Manager (Lead Persona)
