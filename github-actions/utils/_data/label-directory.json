@@ -629,7 +629,7 @@
   ],
   "roleMissing": [
     "role missing",
-    6143849680
+    7781839026
   ],
   "roleOrgRep": [
     "role: Org Rep",
@@ -741,7 +741,7 @@
   ],
   "statusInactive2": [
     "2 weeks inactive",
-    3278535433
+    8412950690
   ],
   "statusMissing": [
     "status: missing",
@@ -787,32 +787,76 @@
     "wontfix",
     905516652
   ],
-  "NEW-labelForTestingOnly": [
-    "Label for TESTING only!!!",
-    9999999999
-  ],
-  "NEW-labelForTestingPart2": [
-    "Label for TESTING part 2",
-    9999999999
-  ],
-  "NEW-featureRoadmap": [
+  "featureRoadmap": [
     "feature: Roadmap",
     7472857782
   ],
-  "NEW-pFeatureAccomplishments": [
+  "pFeatureAccomplishments": [
     "p-feature: accomplishments",
     7505751413
   ],
-  "NEW-roleProject": [
+  "roleProject": [
     "role: project",
     7581729078
   ],
-  "NEW-driveSharedWithMe": [
+  "driveSharedWithMe": [
     "drive: shared with me",
     7657270641
   ],
-  "NEW-featureBranding": [
+  "featureBranding": [
     "feature: branding",
     7657357703
+  ],
+  "milestoneMissing": [
+    "milestone: missing",
+    7695414022
+  ],
+  "featureFaq": [
+    "feature: FAQ",
+    7970290985
+  ],
+  "skillsTemplateStatusNeedNextSteps": [
+    "Skills Template status: Need Next Steps",
+    7582275087
+  ],
+  "roleDataScientist": [
+    "role: data scientist",
+    8056944058
+  ],
+  "statusUnassignedByBot": [
+    "Status: Unassigned by Bot",
+    8096814358
+  ],
+  "langGha": [
+    "Lang: GHA",
+    8273615621
+  ],
+  "skillRefactor": [
+    "Skill: refactor",
+    8273639778
+  ],
+  "skillFeasibility": [
+    "Skill: feasibility",
+    8273643490
+  ],
+  "langMd": [
+    "Lang: .md",
+    8273660695
+  ],
+  "skillEdit": [
+    "Skill: edit",
+    8273662609
+  ],
+  "featureMessaging": [
+    "feature: messaging",
+    8273668967
+  ],
+  "skillCreateNew": [
+    "Skill: create new",
+    8273640350
+  ],
+  "skillEnhance": [
+    "Skill: enhance",
+    8273641077
   ]
 }

@@ -21,7 +21,7 @@ The following is a set of guidelines for contributing to the website repository,
     - [**1.4 Dev setup (4): Clone (Create) a copy on your computer**](#14-dev-setup-4-clone-create-a-copy-on-your-computer)
       - [**1.4.a Clone repo (1): Create  `hackforla` folder**](#14a-clone-repo-1-create--hackforla-folder)
       - [**1.4.b Clone repo (2): Verify `origin` remote url**](#14b-clone-repo-2-verify-origin-remote-url)
-      - [**1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**](#14c-what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
+      - [**1.4.c What if you accidentally cloned using the repository URL from the HackForLA GitHub (instead of the fork on your GitHub)?**](#14c-what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
         - [**i. Resolve remote (1): reset `origin` remote url**](#i-resolve-remote-1-reset-origin-remote-url)
         - [**ii. Resolve remote (2): Add an `upstream` remote**](#ii-resolve-remote-2-add-an-upstream-remote)
     - [**1.5 Dev setup (5): Set up Docker**](#15-dev-setup-5-set-up-docker)
@@ -51,8 +51,8 @@ The following is a set of guidelines for contributing to the website repository,
       - [**2.6.b What to do if you have to stop working mid issue:**](#26b-what-to-do-if-you-have-to-stop-working-mid-issue)
     - [**2.7 Working on an issue**](#27-working-on-an-issue)
       - [**2.7.a Working on an issue (1): Verify current branch is `gh-pages`**](#27a-working-on-an-issue-1-verify-current-branch-is-gh-pages)
-      - [**2.7.b Working on an issue (2): Create a new branch where you will work on your issue**](#27b-working-on-an-issue-2-create-a-new-branch-where-you-will-work-on-your-issue)
-        - [**i. What if you cannot see your changes locally within Docker?**](#i-what-if-you-cannot-see-your-changes-locally-within-docker)
+      - [**2.7.b Working on an issue (2): Creating and testing your issue branch**](#27b-working-on-an-issue-2-creating-and-testing-your-issue-branch)
+        - [**i. A few notes regarding Docker:**](#i-a-few-notes-regarding-docker)
       - [**2.7.c Working on an issue(3): Prepare your changes to push to your repository**](#27c-working-on-an-issue3-prepare-your-changes-to-push-to-your-repository)
         - [**i. Prepare repo changes (1): Use the `git add` command to stage your changes.**](#i-prepare-repo-changes-1-use-the-git-add-command-to-stage-your-changes)
         - [**ii. Prepare repos changes (2): Use the `git status` command to see what files are staged.**](#ii-prepare-repos-changes-2-use-the-git-status-command-to-see-what-files-are-staged)
@@ -167,7 +167,7 @@ cd website
 
 #### **1.4.b Clone repo (2): Verify `origin` remote url**
 
-Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
+Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own GitHub account):
 ```bash
 git remote -v
 ```
@@ -187,11 +187,11 @@ origin  https://github.com/<your_GitHub_user_name>/website.git (push)
 upstream        https://github.com/hackforla/website.git (fetch)
 upstream        https://github.com/hackforla/website.git (push)
 ```
-#### **1.4.c What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**
+#### **1.4.c What if you accidentally cloned using the repository URL from the HackForLA GitHub (instead of the fork on your GitHub)?**
 
 ##### **i. Resolve remote (1): reset `origin` remote url**
 
-Set your forked repo on your Github as an `origin` remote:
+Set your forked repo on your GitHub as an `origin` remote:
 ```bash
 git remote set-url origin https://github.com/<your_GitHub_user_name>/website.git
 ```
@@ -520,7 +520,7 @@ git pull upstream gh-pages
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.7.b Working on an issue (2): Create a new branch where you will work on your issue**
+#### **2.7.b Working on an issue (2): Creating and testing your issue branch**
 
 If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
@@ -546,17 +546,44 @@ We urge developers to be cautious using `git add`. In general it is not advisabl
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
-##### **i. What if you cannot see your changes locally within Docker?**
+##### **i. A few notes regarding Docker:**
 
-If you do not see the changes you applied when you run `docker-compose up`, **do the following**:
+- To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000.
 
-1. Stop running your Docker application (if still running).
-2. Delete the `_site` directory in the root folder (`website`)
-3. Delete the `.jekyll-metadata` file in the root folder (`website`)
-4. Finally, restart docker (run `docker-compose up` in the terminal) and you should see your changes.
-<br><br>
+- The Docker Desktop application must be running, otherwise `docker-compose up` will not work
+- Docker pulls an image from Dockerhub.com which enables Docker to build the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
+
+- In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View details`.
+  - In the new Docker Desktop application, select option `View packages and CVEs` instead.
+
+  <details>
+    <summary><strong>Click here</strong> to see how to view details for a Docker image</summary>
+    <img src="https://github.com/user-attachments/assets/491b9392-f2ef-4752-bc6d-d827a6635a9d">
+    <img src="https://github.com/user-attachments/assets/1decb200-e70b-4dde-835b-fd75f454eaab">
+  </details>
+
+- Note the `CREATED` column
+  <details>
+    <summary><strong>Click here</strong> to see how to determine when an image was last updated in Docker Desktop</summary>
+    <img src="https://github.com/user-attachments/assets/0a7e68c0-3782-441a-b536-ee6163695556">
+  </details>
+
+- View the details of the "latest" tag from [hackforlaops Dockerhub image tags](https://hub.docker.com/r/hackforlaops/ghpages/tags) and determine when an image was pushed to Docker hub
+  <details>
+    <summary><strong>Click here</strong> to see how to determine when an image was pushed to Docker hub</summary>
+    <img src="https://github.com/user-attachments/assets/217bc94c-0b47-4bf2-9087-eb46afb59740">
+  </details>
+
+- If the "latest" tagged image at Docker hub is more recent than the image in Docker Desktop, use the Docker Desktop Action menu (3 dots) to "pull" down the updated image
+  <details>
+    <summary><strong>Click here</strong> to see how to pull image from DockerHub</summary>
+    <img src="https://github.com/user-attachments/assets/75e8d21c-481b-4d82-8592-9ce9c6f09acc">
+  </details>
+
+- Note that the next `docker-compose up` will take extra time to recreate the Docker container based on the updated image.
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
+
 - If you still do not see your changes after trying these steps, please feel free to reach out to the team in the [#hfla-site](https://hackforla.slack.com/archives/C4UM52W93) Slack channel, or bring up your issue in a dev meeting.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
@@ -661,7 +688,7 @@ From https://github.com/hackforla/website
 
 #### **2.7.e Working on an issue (5): Incorporating changes from upstream**
 
-Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the github website version of your hackforla repository.)
+Your fork of this repository on GitHub, and your local clone of that fork, will get out of sync with this (upstream) repository from time to time. (That's what has happened when you see something like "This branch is 1 commit behind hackforla:gh-pages" on the GitHub website version of your hackforla repository.)
 
 One way to keep your fork up to date with this repository is to follow these instruction: [Syncing your fork to the original repository via the browser](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
 
@@ -678,11 +705,24 @@ git checkout -b upstream-gh-pages --track upstream/gh-pages
 
 If you have already created the branch upstream-gh-pages, the following commands will incorporate upstream changes:
 
+1. Move to the branch you want to merge with.
 ```bash
-git checkout upstream-gh-pages # Move to the branch you want to merge with.
-git pull  # This updates your tracking branch to match the gh-pages branch in this repository
-git checkout gh-pages  # Move back to your gh-pages branch
-git merge upstream-gh-pages  # Merge to bring your gh-pages current.
+git checkout upstream-gh-pages 
+```
+
+2. Update your tracking branch with the latest changes from the `gh-pages` branch in this repository
+```bash
+git pull  
+```
+
+3. Move back to your gh-pages branch
+```bash
+git checkout gh-pages  
+```
+
+4. Merge your changes back into your `gh-pages` branch.
+```bash
+git merge upstream-gh-pages
 ```
 If you do all your work on topic branches (as suggested above) and keep gh-pages free of local modifications, this merge should apply cleanly.
 
@@ -692,7 +732,7 @@ Then push the merge changes to your GitHub fork:
 git push
 ```
 
-If you go to your online github repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
+If you go to your online GitHub repository this should remove the message "This branch is x commit behind hackforla:gh-pages".
 
 ##### **i. Incorporating changes into your topic branch**
 
@@ -719,7 +759,7 @@ If you already have an SSH key that connects your computer with your GitHub acco
 
 ##### **i. Setting up SSH Keys for Mac**
 
-1. You have to set up SSH keys in order to contribute to github remotely. First check if you have any keys set up already.
+1. You have to set up SSH keys in order to contribute to GitHub remotely. First check if you have any keys set up already.
 
 ```bash
 ls -al ~/.ssh
@@ -729,7 +769,7 @@ If the folder ~/.ssh does not exist, create it using
 mkdir ~/.ssh
 ```
 
-2. Then enter the text below into your terminal using your github account email address.
+2. Then enter the text below into your terminal using your GitHub account email address.
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -747,13 +787,13 @@ eval "$(ssh-agent -s)"
 ssh-add -K ~/.ssh/id_ed25519
 ```
 
-5. Finally copy the ssh key to add it to your github account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
+5. Finally copy the ssh key to add it to your GitHub account by entering the following command. This copies the contents of the id_ed25519.pub file to your clipboard __Don't copy anything else until after you finish the last step, or else you will have to repeat this step.__
 
 ```bash
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-6. Go to your github accounts ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
+6. Go to your GitHub account's ssh key settings, and click on the button that says _New SSH key_. In the "Title" field, add a descriptive label for the new key. Paste the key into the form that pops up. Click Add SSH Key
 
 ##### **ii. Setting up SSH Keys for Windows**
 
@@ -870,16 +910,16 @@ git push --set-upstream origin update-give-link-2093
 
 ##### **i. Complete pull request (1): Update pull request title**
 
-* When the pull request is opened, the title input box will be the where the cursor defaults to.
-* The default title will be your last commit message from your branch.
-  * Please change it to provide a summary of what you did.
-  * For our example (PR [Update Care Link in Credits Page - #2131](https://github.com/hackforla/website/pull/2131)), [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following title:
+* When the pull request is opened, the cursor will be located in the title input box, and the default title will be your last commit message from your branch.
+* Change the title to a short summary of what you did on the issue: 
+  * **Advice:** Provide a 4-12 word description of your resolution to the issue
+  * For our example, [@adrian-zaragoza](https://github.com/adrian-zaragoza) provided the following title:
 
-  ```
-  Update Care Link in Credits Page
-  ```
+      `Update Care Link in Credits Page`
 
-**Advice:** Provide a 4-12 word summary of your resolution to the issue you are handling.
+  * **Note:** Upon creation, the pull request number will be appended to the title automatically. To avoid confusion, please **do not include** the issue number in the title. 
+  * The final title from our example is:  
+      [Update Care Link in Credits Page #2131](https://github.com/hackforla/website/pull/2131) 
 
 ##### **ii. Complete pull request (2): Add issue number to the pull request**
 
@@ -1038,7 +1078,7 @@ The best way to ask for help and provide as much information to the team is to d
 * [GitHub Pages](https://pages.github.com/)
 * [Jekyll Docs](https://jekyllrb.com/docs/)
 * [Liquid Documentation](https://shopify.github.io/liquid/)
-* [Github Guides](https://guides.github.com/)
+* [GitHub Guides](https://guides.github.com/)
 * [Docker](https://docs.docker.com/get-started/)
   - [Docker Compose](https://docs.docker.com/compose/gettingstarted/)
   - [Docker Desktop](https://docs.docker.com/install/)

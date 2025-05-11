@@ -1,4 +1,5 @@
 const obtainLabels = require('../utils/obtain-labels');
+const retrieveLabelDirectory = require('../utils/retrieve-label-directory');
 
 /**
  * Check the labels of an issue, and return the 'status' the issue should be sorted into when closed
@@ -10,16 +11,35 @@ function main({ context }) {
   const doneStatus = 'Done';
   const QAStatus = 'QA';
 
+  // Use labelKeys to retrieve current labelNames from directory
+  const [
+    featureRefactorCss,
+    featureRefactorHtml,
+    featureRefactorJsLiquid,
+    featureRefactorGha,
+    roleBackEndDevOps,
+    featureAnalytics,
+    roleFrontEnd
+  ] = [
+    "featureRefactorCss",
+    "featureRefactorHtml", 
+    "featureRefactorJsLiquid",
+    "featureRefactorGha",
+    "roleBackEndDevOps",
+    "featureAnalytics",
+    "roleFrontEnd"
+  ].map(retrieveLabelDirectory);
+
   const hardLabels = [
-    'Feature: Refactor CSS',
-    'Feature: Refactor HTML',
-    'Feature: Refactor JS / Liquid',
-    'Feature: Refactor GHA',
+    featureRefactorCss,
+    featureRefactorHtml,
+    featureRefactorJsLiquid,
+    featureRefactorGha,
   ];
 
-  const softLabels = ['role: back end/devOps', 'Feature: Analytics'];
+  const softLabels = [roleBackEndDevOps, featureAnalytics];
 
-  const overrideSoftLabels = ['role: front end'];
+  const overrideSoftLabels = [roleFrontEnd];
 
   const issueLabels = obtainLabels(context);
 

@@ -1,6 +1,22 @@
+// Import modules
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
+
 // Global variables
 var github 
 var context
+
+// Label constants use labelKeys to retrieve current labelNames from directory
+const RELEVANT_ROLES = [
+    roleFrontEnd,
+    roleBackEndDevOps,
+    roleDesign,
+    roleUserResearch
+  ] = [
+    "roleFrontEnd",
+    "roleBackEndDevOps",
+    "roleDesign",
+    "roleUserResearch",
+  ].map(retrieveLabelDirectory);
 
 /**
  * @description - entry point of the whole javascript file, finds out whether we need to post the comment or not and returns in the boolean variable shouldpost.
@@ -42,28 +58,10 @@ function obtainLabels(){
  */
 
 function postComment(existingLabels){
-    //issue states that we are to post the comment if--> there is a role: back end/devOps tag...(continued on next comment)
-    if(existingLabels.includes("role: back end/devOps")){
-        return true
-    }
-
-    // or if there is a role: front end tag
-    else if(existingLabels.includes("role: front end")){
-        return true
-    }
-
-    //or if there is a role: design tag
-    else if(existingLabels.includes("role: design")){
-        return true
-    }
-
-    //or if there is a role: user research
-    else if(existingLabels.includes("role: user research")){
-        return true
-    }
-
-    //otherwise we return a false
-    return false
-}
+    // Compare whether a RELEVANT_ROLE is included in the existingLabels
+    const roleFound = RELEVANT_ROLES.some(label => existingLabels.includes(label));
+    console.log(roleFound ? '\nFound relevant role: Continue' : '\nMissing relevant role: Halt');
+    return roleFound
+  }
 
 module.exports = main

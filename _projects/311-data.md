@@ -6,13 +6,6 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
-  - name: Sanju Venugopal
-    github-handle: sanjumv
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U05KFTD3AKA
-      github: https://github.com/sanjumv
-    picture: https://avatars.githubusercontent.com/sanjumv
   - name: Christopher Cotton
     github-handle: CottonChristopher
     role: Product Manager
@@ -48,13 +41,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
-  - name: Edwin Jue
-    github-handle: edwinjue
-    role: Engineering Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03SUUZMFEV
-      github: https://github.com/edwinjue
-    picture: https://avatars.githubusercontent.com/edwinjue
   - name: Allison Jeon
     github-handle: allisonjeon
     role: UX Design Lead
@@ -62,6 +48,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05JP94R9B7
       github: https://github.com/allisonjeon
     picture: https://avatars.githubusercontent.com/allisonjeon
+  - name: Joy Truex
+    github-handle: Joy-Truex
+    role: UX Design Lead
+    links:
+      slack: https://hackforla.slack.com/team/U03VBPSEH52
+      github: https://github.com/Joy-Truex
+    picture: https://avatars.githubusercontent.com/Joy-Truex  
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'

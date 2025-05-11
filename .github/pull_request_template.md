@@ -1,3 +1,6 @@
+Please note: You must be a member of the HFLA website team in order to create pull requests. Please see our page on how to join us as a member at HFLA: https://www.hackforla.org/getting-started. Delete this message if you joined this team via onboarding.
+<!--  Note: Delete the message above if you joined this team via onboarding  -->
+
 <!--  Important! Add the number of the issue you worked on  --> 
 Fixes #replace_this_text_with_the_issue_number
 

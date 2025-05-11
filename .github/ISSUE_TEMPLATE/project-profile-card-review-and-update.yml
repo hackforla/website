@@ -350,8 +350,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        1. If only adding/removing person(s) from leadership, add the `ready for dev lead` label, otherwise add the `ready for org rep` label
-        ![add_label](https://user-images.githubusercontent.com/73561520/201548934-161f8abc-0918-47a5-8b3b-d3327541d700.png)
+        1. If only adding/removing person(s) from leadership, add the `ready for merge team` label, otherwise add the `ready for org rep` label
+        ![image](https://github.com/user-attachments/assets/e22dd5b2-4b4d-4c83-851f-a93854901e39)
 
 
         2. Add newly created issue to the Project Board.
