@@ -84,10 +84,6 @@ function main() {
   }
 
   // detect any changes to Wins-form (Responses) by comparing performing a string comparison
-
-  console.log("sortedKeyValueData[0]:", sortedKeyValueData[0]);
-  console.log("keyValueContent[0]:", keyValueContent[0]);
-
   if (!arrEq(sortedKeyValueData, keyValueContent)) {
     console.log("Entry difference detected. Updating wins file...");
     const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
@@ -283,7 +279,7 @@ function compareResponsesAndReview() {
       }
 
       if (responseValue !== reviewValues[j]) {
-        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j])
+        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j]);
         unamatched++;
       } else {
         matched++;
