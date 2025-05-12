@@ -20,6 +20,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MG4S8D2B
       github: https://github.com/lasryariel
     picture: https://avatars.githubusercontent.com/lasryariel
+  - name: Gabriella Dominic
+    github-handle: gabcdominic
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07FF4FCTUN
+      github: https://github.com/gabcdominic
+    picture: https://avatars.githubusercontent.com/gabcdominic
   - name: Tyler Thome
     github-handle: 
     role: HUU Tech Lead
