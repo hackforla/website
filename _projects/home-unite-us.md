@@ -6,6 +6,13 @@ image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
+  - name: Jazmyne Newman
+    github-handle: jazmynn123
+    role: User Research
+    links:
+      slack: https://hackforla.slack.com/team/U07HLLXHYS2
+      github: https://github.com/jazmynn123
+    picture: https://avatars.githubusercontent.com/jazmynn123
   - name: Jasmine Guraya
     github-handle: jasmineg95
     role: Product Manager (Lead Persona)
