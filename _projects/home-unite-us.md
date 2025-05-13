@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Muyin Zheng
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
-      github: "https://github.com/IndigoYinZ"
-    picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
