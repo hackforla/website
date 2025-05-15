@@ -20,6 +20,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MG4S8D2B
       github: https://github.com/lasryariel
     picture: https://avatars.githubusercontent.com/lasryariel
+  - name: Nicci Van
+    github-handle: nlvan
+    role: Lead Designer / User Research
+    links:
+      slack: https://hackforla.slack.com/team/U07FML1PXJP
+      github: https://github.com/nlvan
+    picture: https://avatars.githubusercontent.com/nlvan
   - name: Tyler Thome
     github-handle: 
     role: HUU Tech Lead
