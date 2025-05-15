@@ -62,6 +62,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
     picture: https://avatars.githubusercontent.com/lola3736
+  - name: John Wroge
+    github-handle: johnwroge
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05Q7V3KGCU
+      github: https://github.com/johnwroge
+    picture: https://avatars.githubusercontent.com/johnwroge
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
