@@ -62,6 +62,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
     picture: https://avatars.githubusercontent.com/lola3736
+  - name: Paul Espinosa
+    github-handle: paulespinosa
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U058S2D5C95
+      github: https://github.com/paulespinosa
+    picture: https://avatars.githubusercontent.com/paulespinosa
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
