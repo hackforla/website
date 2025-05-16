@@ -41,13 +41,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Carmen Mak
-    github-handle: CarmenMM1
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06313EMD41
-      github: https://github.com/CarmenMM1
-    picture: https://avatars.githubusercontent.com/CarmenMM1
   - name: Rishi Raghu
     github-handle: rishi222k
     role: UXR Researcher
