@@ -27,6 +27,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FF4FCTUN
       github: https://github.com/gabcdominic
     picture: https://avatars.githubusercontent.com/gabcdominic
+  - name: Nicci Van
+    github-handle: nlvan
+    role: Lead Designer / User Research
+    links:
+      slack: https://hackforla.slack.com/team/U07FML1PXJP
+      github: https://github.com/nlvan
+    picture: https://avatars.githubusercontent.com/nlvan
   - name: Tyler Thome
     github-handle: 
     role: HUU Tech Lead
@@ -55,13 +62,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Muyin Zheng
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
-      github: "https://github.com/IndigoYinZ"
-    picture: https://avatars.githubusercontent.com/IndigoYinZ
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
     picture: https://avatars.githubusercontent.com/lola3736
+  - name: John Wroge
+    github-handle: johnwroge
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05Q7V3KGCU
+      github: https://github.com/johnwroge
+    picture: https://avatars.githubusercontent.com/johnwroge
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
