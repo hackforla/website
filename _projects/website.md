@@ -26,13 +26,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FMKW5EDR
       github: https://github.com/essencegoff
     picture: https://avatars.githubusercontent.com/essencegoff
-  - name: Kelly Chuang
-    github-handle: kellyc9
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U06REBB5K4M
-      github: https://github.com/kellyc9
-    picture: https://avatars.githubusercontent.com/kellyc9
   - name: Sofiat Ajide
     github-handle: sofiatajide
     role: Product Manager - Dashboards
@@ -122,6 +115,13 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U08041Y2E72'
       github: 'https://github.com/mugdhchauhan'
     picture: https://avatars.githubusercontent.com/mugdhchauhan
+  - name: Santiago Vidal
+    github-handle: santisecco
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U06MQ37T90E
+      github: https://github.com/santisecco
+    picture: https://avatars.githubusercontent.com/santisecco
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

@@ -34,20 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Brenda Njemanze
-    github-handle: brendasdesign
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06MWMRSCJW
-      github: https://github.com/brendasdesign
-    picture: https://avatars.githubusercontent.com/brendasdesign
-  - name: Armon Brown
-    github-handle: stanarmon
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06J0UCAWHE
-      github: https://github.com/stanarmon
-    picture: https://avatars.githubusercontent.com/stanarmon
   - name: Carmen Mak
     github-handle: CarmenMM1
     role: UX/UI Designer
@@ -62,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07G0CHGNSD
       github: https://github.com/rishi222k
     picture: https://avatars.githubusercontent.com/rishi222k
-  - name: Leah Ellis
-    github-handle:
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U04GYTXSP9D
-      github: https://github.com/Leah0996
-    picture: https://avatars.githubusercontent.com/Leah0996
   - name: Manju Chawla
     github-handle: itsmanjuchawla
     role: UX Researcher

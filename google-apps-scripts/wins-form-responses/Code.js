@@ -42,8 +42,15 @@ function main() {
 
   // Get all the data from the Responses sheet
   const responseAnswers = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Responses");
+  responseAnswers.sort(1);
   const allRows = responseAnswers.getDataRange().getValues();
   const columnHeaders = Array.from(allRows[0]);
+  
+  // Add a unique ID corresponding to the spreadsheet row number for each response
+  columnHeaders.push('ID');
+  allRows.forEach((row, i) => {
+    row.push(i + 1);
+  });
 
   // Filter out only the rows where display-column(colum 13) is set to true
   const filteredRows = Array.from(allRows).filter(win => win[13] == true);
@@ -289,5 +296,4 @@ function compareResponsesAndReview() {
 }
 
   
-
 
