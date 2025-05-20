@@ -104,6 +104,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05Q7V3KGCU
       github: https://github.com/johnwroge
     picture: https://avatars.githubusercontent.com/johnwroge
+  - name: Nihan Durmaz
+    github-handle: nihandurmaz
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAJ3BLGY
+      github: https://github.com/nihandurmaz
+    picture: https://avatars.githubusercontent.com/nihandurmaz
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
