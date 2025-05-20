@@ -55,6 +55,13 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
+  - name: Amy Li
+    github-handle: amydli
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07FQ7NQUMA
+      github: https://github.com/amydli
+    picture: https://avatars.githubusercontent.com/amydli
   - name: Sanya Nijhawan
     github-handle: sanya301
     role: Advisory
