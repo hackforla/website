@@ -37,6 +37,7 @@ const threeDayCutoffTime = new Date();
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays);
 const sevenDayCutoffTime = new Date();
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays);
+sevenDayCutoffTime.setMinutes(sevenDayCutoffTime.getMinutes() + 10);     //  Set cutoff time to slightly less than 7 days ago
 const fourteenDayCutoffTime = new Date();
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays);
 
