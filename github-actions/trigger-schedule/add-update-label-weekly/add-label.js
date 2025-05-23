@@ -33,14 +33,15 @@ const updatedByDays = 3;                // If last update update  3 days, the is
 const commentByDays = 7;                // If last update between 7 to 14 days ago, issue is outdated and needs update
 const inactiveUpdatedByDays = 14;       // If last update greater than 14 days ago, the issue is considered inactive
 const upperLimitDays = 30;              // Bot-generated comments older than this are not checked by minimizeComments()
+
 const threeDayCutoffTime = new Date();
 threeDayCutoffTime.setDate(threeDayCutoffTime.getDate() - updatedByDays);
 const sevenDayCutoffTime = new Date();
 sevenDayCutoffTime.setDate(sevenDayCutoffTime.getDate() - commentByDays);
 const fourteenDayCutoffTime = new Date();
-const upperLimitCutoffTime = new Date();
-upperLimitCutoffTime.setDate(upperLimitCutoffTime.getDate() - upperLimitDays);
 fourteenDayCutoffTime.setDate(fourteenDayCutoffTime.getDate() - inactiveUpdatedByDays);
+const upperLimitCutoffTime = new Date();
+upperLimitCutoffTime.setDate(upperLimitCutoffTime.getDate() - upperLimitDays);  
 
 
 
