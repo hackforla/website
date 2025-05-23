@@ -62,6 +62,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06E9RQ8DRA
       github: https://github.com/sylvia-nam
     picture: https://avatars.githubusercontent.com/sylvia-nam
+  - name: Giselle Dizon
+    github-handle: giselledizon
+    role: UX Content, Team Co-lead
+    links:
+      slack: https://hackforla.slack.com/team/U06E78YCUUB
+      github: https://github.com/giselledizon
+    picture: https://avatars.githubusercontent.com/giselledizon
   - name: Rachel Ichniowski
     github-handle: raeraeicky
     role: Product Manager, UX Research
