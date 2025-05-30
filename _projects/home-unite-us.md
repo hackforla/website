@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FQ7NQUMA
       github: https://github.com/amydli
     picture: https://avatars.githubusercontent.com/amydli
+  - name: Nihan Durmaz
+    github-handle: nihandurmaz
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAJ3BLGY
+      github: https://github.com/nihandurmaz
+    picture: https://avatars.githubusercontent.com/nihandurmaz
   - name: Jon Ilaw
     github-handle: ilawjon
     role: UI/UX Designer (Persona Lead)
@@ -104,13 +111,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05Q7V3KGCU
       github: https://github.com/johnwroge
     picture: https://avatars.githubusercontent.com/johnwroge
-  - name: Nihan Durmaz
-    github-handle: nihandurmaz
-    role: UI/UX Designer
-    links:
-      slack: https://hackforla.slack.com/team/U07GAJ3BLGY
-      github: https://github.com/nihandurmaz
-    picture: https://avatars.githubusercontent.com/nihandurmaz
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
