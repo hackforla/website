@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U0429M52LTY
       github: https://github.com/vanessaavviles
     picture: https://avatars.githubusercontent.com/vanessaavviles 
-  - name: Rachel Ichniowski
-    github-handle: raeraeicky 
-    role: Product Manager, UX Research and Content
-    links:
-      slack: https://hackforla.slack.com/team/U07LGA7RZ0W
-      github: https://github.com/raeraeicky 
-    picture: https://avatars.githubusercontent.com/raeraeicky 
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
@@ -76,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07QU3C45MY
       github: https://github.com/rcpeng34
     picture: https://avatars.githubusercontent.com/rcpeng34
+  - name: Rachel Ichniowski
+    github-handle: raeraeicky 
+    role: Product Manager, UX Research and Content
+    links:
+      slack: https://hackforla.slack.com/team/U07LGA7RZ0W
+      github: https://github.com/raeraeicky 
+    picture: https://avatars.githubusercontent.com/raeraeicky 
 links:
     - name: Overview
       url: '../assets/pdfs/Expunge-Assist-One-Sheet.pdf'
