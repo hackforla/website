@@ -20,13 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U052L9R6ETD
       github: https://github.com/ryanfchase
     picture: https://avatars.githubusercontent.com/ryanfchase
-  - name: Anna Kim
-    github-handle: annaseulgi
-    role: UX Design Lead, Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U05JKGV3F4N
-      github: https://github.com/annaseulgi
-    picture: https://avatars.githubusercontent.com/annaseulgi
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager

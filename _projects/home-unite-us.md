@@ -43,7 +43,7 @@ leadership:
     picture: https://avatars.githubusercontent.com/nlvan
   - name: Tyler Thome
     github-handle: 
-    role: HUU Tech Lead
+    role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
       github: "https://github.com/tylerthome"
@@ -62,6 +62,27 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
+  - name: Amy Li
+    github-handle: amydli
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07FQ7NQUMA
+      github: https://github.com/amydli
+    picture: https://avatars.githubusercontent.com/amydli
+  - name: Nihan Durmaz
+    github-handle: nihandurmaz
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAJ3BLGY
+      github: https://github.com/nihandurmaz
+    picture: https://avatars.githubusercontent.com/nihandurmaz
+  - name: Jon Ilaw
+    github-handle: ilawjon
+    role: UI/UX Designer (Persona Lead)
+    links:
+      slack: https://hackforla.slack.com/team/U07G0DPTPSM
+      github: https://github.com/ilawjon
+    picture: https://avatars.githubusercontent.com/ilawjon
   - name: Sanya Nijhawan
     github-handle: sanya301
     role: Advisory
