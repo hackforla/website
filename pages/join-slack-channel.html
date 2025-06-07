@@ -1,0 +1,37 @@
+---
+layout: default
+title: Join Slack Channel
+permalink: /join-slack-channel
+---
+
+
+<div class="header-container flex-container">
+    <div class="header-text ">
+        <h1 class="title1">Join Slack Channel</h1>
+            <p>
+                The link below goes to a Slack channel inside Hack for LA's Slack Workspace. If you are already a member of our community, selecting the link below will take you to the channel.
+            </p>
+
+            <div class="align-center link-buttons"><!--I copied this <div> from lines 69-78 of communities-of-practice.html. I knew to remove the href, but I wasn't sure what else to remove.-->
+               {% assign url_links = false %}
+
+                {% if community[1].links[0].url %}
+                    {% assign url_links = true %}
+                    <a href=" " id="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default cop-btn slack-link" target="_blank" title="{{community[1].name}} Slack channel" rel="noopener noreferrer">
+                        <!--INCLUDE A BUTTON TO REDIRECT TO THE CORRESPONDING SLACK CHANNEL-->
+                        {% include svg/icon-slack.svg %}
+                        Join Slack Channel
+                    </a>
+                {% endif %}
+            </div>
+
+            <div>
+            <p>
+                If you are not yet a member of our community, please see our <a href="https://www.hackforla.org/getting-started" target="_blank"> Getting Started</a> page to join. <!--I copied the href from communities-of-practice.html-->
+            </p>
+            </div>
+
+    </div>
+</div>
+ 
+<script type="module" src="assets/js/communities-of-practice.js"></script>
