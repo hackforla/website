@@ -9,33 +9,36 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.action == 'opened' || github.event.action == 'transferred' }}
     steps:
-      - uses: actions/checkout@v4    
-      # Check if the issue has required labels
-      - name: Check Labels
-        id: check-labels
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
-          script: |
-            const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
-            const checkLabels = script({g: github, c: context})
-            return checkLabels
-            
-      # Checks if user is on the 'website-write' team
-      - uses: tspascoal/get-user-teams-membership@v3
-        id: checkUserMember
-        with:
-          username: ${{ github.actor }}
-          organization: 'hackforla'
-          team: 'website-write'
-          GITHUB_TOKEN: ${{ secrets.TEAMS }}
+    - uses: actions/checkout@v4   
+    # Checks if user is on the 'website-write' team, else halts workflow
+    - name: Check Team Membership
+      id: check-team-membership
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+        script: |
+          const username = '${{ github.actor }}'
+          const team = 'website-write'
+          const script = require('./github-actions/utils/check-team-membership.js')
+          return script(github, username, team)
           
-      # Posts comment only if user is team member (based on the previous action's result)
-      - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
-        name: Post Comment
-        uses: actions/github-script@v7
-        id: post-comment
-        with:
+    # If user is team member: checks if the issue has required labels
+    - if: ${{ steps.check-team-membership.outputs.result == 'true' }}
+      name: Check Labels
+      id: check-labels
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/check-labels.js')
+          const checkLabels = script({g: github, c: context})
+          return checkLabels
+                
+    # If user is a team member: posts comment
+    - if: ${{ steps.check-team-membership.outputs.result == 'true' }}
+      name: Post Comment
+      id: post-comment
+      uses: actions/github-script@v7
+      with:
           script: |
             const results = ${{ steps.check-labels.outputs.result }}
             const script = require('./github-actions/trigger-issue/add-missing-labels-to-issues/post-labels-comment.js')
