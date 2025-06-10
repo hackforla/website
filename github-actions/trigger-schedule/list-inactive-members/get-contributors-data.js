@@ -153,7 +153,7 @@ async function fetchContributors(dates){
       allContributorsSinceTwoMonthsAgo = allContributorsSince;
     }
   }   
-  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo, inactiveWithOpenSkills, inactiveWithOpenIssue]; 
+  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo, inactiveWithOpenSkills, inactiveWithOpenIssue];
 }
 
 
