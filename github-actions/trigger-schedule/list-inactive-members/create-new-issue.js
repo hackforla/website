@@ -102,7 +102,7 @@ const parseNonTeamOpen = (nonTeamOpens) => {
   if (Object.keys(nonTeamOpens).length === 0) {
     return '';
   } else {
-    let nonTeamOpen = '\r\n\nInactive members with open issues:\r\n';
+    let nonTeamOpen = '\r\n\nNon-team members with open issues:\r\n';
     for (const [user, issues] of Object.entries(nonTeamOpens)) {
       for (const issue of issues) {
         nonTeamOpen += ` - ${user}: #${issue}\r\n`;
@@ -111,6 +111,5 @@ const parseNonTeamOpen = (nonTeamOpens) => {
     return nonTeamOpen;
   }
 };
-
 
 module.exports = main;
