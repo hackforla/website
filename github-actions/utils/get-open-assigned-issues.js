@@ -41,7 +41,7 @@ async function getOpenAssignedIssues(github, context, currentTeam = {}, inactive
     // Else if assignee is on the inactiveMember list, find all of their open issues
     if (!(assignee in currentTeam)) {
       (nonTeamMemberOpenIssue[assignee] ??= []).push(issueNum);
-    } else if (assignee in inactiveMemberOpenIssue) {
+    } else if (assignee in inactiveMemberOpenIssue && !inactiveMemberOpenIssue[assignee].includes(issueNum)) {
       inactiveMemberOpenIssue[assignee].push(issueNum);
     }
   }
