@@ -51,7 +51,7 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
   // Final pass to get all open, assigned issues to check whether assignee either isn't a team member or is inactive 
   const currentPMTeam = await getTeamMembers(github, context, PMTeam);
   const writeAndPMTeam = { ...updatedTeamMembers, ...currentPMTeam };
-  const [nonTeamOpenIssue, inactiveOpenIssue] = await getOpenAssignedIssues(github, context, writeAndPMTeam, inactiveWithOpenIssue)
+  const [nonTeamOpenIssue, inactiveOpenIssue] = await getOpenAssignedIssues(github, context, writeAndPMTeam, inactiveWithOpenIssue);
   console.log(`-`.repeat(60));
   console.log('Members inactive since ' + dates[1].slice(0, 10) + ' with open issues preventing removal:');
   console.log(inactiveOpenIssue);
