@@ -73,10 +73,9 @@ async function removeInactiveMembers(previousContributors, inactiveWithOpenSkill
   const cannotRemoveYet = {};
   const previouslyNotified = await readPreviousNotifyList();
   
-  // Loop over team members and remove them from the team if they are 
-  // not in `previousContributors` list or not in the `inactiveWithOpenIssue` list
+  // Loop over team members and remove them from the team if they are not in `previousContributors` list 
   for (const username in currentTeamMembers) {
-    if (!(username in previousContributors) | !(username in inactiveWithOpenIssue)) {
+    if (!previousContributors[username]) {
       // Prior to deletion, confirm that member is on the baseTeam
       await addTeamMember(github, context, baseTeam, username);
       // If member was not on the previouslyNotified list, do not remove yet
