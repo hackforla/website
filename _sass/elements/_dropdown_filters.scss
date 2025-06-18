@@ -266,9 +266,9 @@ a.clear-filter-tags {
     padding: 32px 16px;
     // flex-direction: column;
   }
-  // Hide applied filter tags on mobile to conserve space
+  // Hide applied filter tags in collapsed mobile toolbar
   .filter-tag-container {
-    display: none !important;
+    display: none;
   }
   .scroll-lock {
     overflow: hidden;
@@ -319,7 +319,8 @@ a.clear-filter-tags {
     border: none;
   }
   .filter-toolbar.show-filters .filter-tag-container {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
   ul.filter-list {
     display: none;
