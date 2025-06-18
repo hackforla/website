@@ -2,21 +2,21 @@
 name: Environment
 program-area: Environment
 description: >
-  From incentivizing public transportation to promoting urban forestry, 
+  From incentivizing public transportation to promoting urban forestry,
   these projects support Hack for LA’s advocacy of environmentalism and sustainability.
 
 
-image: /assets/images/program-areas/envirnoment.png
+image: /assets/images/program-areas/environment.png
 
 image_alt: Greenland with tornado
 
-SDG: 
+SDG:
   - Zero Hunger
   - Peace
   - Justice
   - Strong Institutions
 
-projects: 
+projects:
   - id: 197452459
     name: LA TDM Calculator
     image: /assets/images/projects/tdm-calculator.jpg
@@ -31,7 +31,7 @@ projects:
     name: '#climate'
     image: /assets/images/projects/project-in-formation.png
     image_alt: placeholder
-    link: 
+    link:
   - id: 155295655
     name: Railstats LA
     image: /assets/images/projects/metro-ontime.png

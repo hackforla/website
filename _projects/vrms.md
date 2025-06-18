@@ -18,12 +18,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U03AS9FBAAU'
       github: 'https://github.com/juliagab56'
     picture: 'https://avatars.githubusercontent.com/juliagab56'
-  - name: Judy Lee
-    role: UX Designer
-    links:
-      slack: 'https://hackforla.slack.com/team/U03K7Q1FV3P'
-      github: 'https://github.com/JudyLee533'
-    picture: 'https://avatars.githubusercontent.com/JudyLee533'
   - name: Jack Haeger
     github-handle: JackHaeg
     role: Lead Product Manager
@@ -31,31 +25,69 @@ leadership:
       slack: https://hackforla.slack.com/team/U059005TN1L
       github: https://github.com/JackHaeg
     picture: https://avatars.githubusercontent.com/JackHaeg
-  - name: Alex Lee
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03PC4KKGAG'
-      github: 'https://github.com/heyitsalexander'
-    picture: 'https://avatars.githubusercontent.com/heyitsalexander'
-  - name: Amanda Glover
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U042G8B7RB3'
-      github: 'https://github.com/AmandaGlover-PM'
-    picture: 'https://avatars.githubusercontent.com/AmandaGlover-PM'
   - name: Josh Bubar
+    github-handle:
     role: Developer
     links:
       slack: 'https://hackforla.slack.com/team/UMNNMHXV2'
       github: 'https://github.com/jbubar'
     picture: 'https://avatars.githubusercontent.com/jbubar'
   - name: Trillium Smith
+    github-handle: trillium
+    role: Lead Developer
+    links:
+      slack: https://hackforla.slack.com/team/U010G9864Q1
+      github: https://github.com/trillium
+    picture: https://avatars.githubusercontent.com/trillium
+  - name: Nikhil Trehan
+    github-handle: ntrehan
     role: Developer
     links:
-      slack: 'https://hackforla.slack.com/team/U010G9864Q1'
-      github: 'https://github.com/Spiteless'
-    picture: 'https://avatars.githubusercontent.com/Spiteless'
+      slack: https://hackforla.slack.com/team/U078NLYGWRK
+      github: https://github.com/ntrehan
+    picture: https://avatars.githubusercontent.com/ntrehan
+  - name: Katiuska Alecea de Leon
+    github-handle: chukalicious
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U0100R46ESC
+      github: https://github.com/chukalicious
+    picture: https://avatars.githubusercontent.com/chukalicious
+  - name: Evan Yang
+    github-handle: evanyang1
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U02APE3V4Q3
+      github: https://github.com/evanyang1
+    picture: https://avatars.githubusercontent.com/evanyang1
+  - name: Brad Morgan
+    github-handle: bkmorgan3
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U779QRX3Q
+      github: https://github.com/bkmorgan3
+    picture: https://avatars.githubusercontent.com/bkmorgan3
+  - name: Mudassir Hussain
+    github-handle: hussainmudassir
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAGE89TJ
+      github: https://github.com/hussainmudassir
+    picture: https://avatars.githubusercontent.com/hussainmudassir
+  - name: Angela Lee
+    github-handle: angela-lee1
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U062NB2CKMZ
+      github: https://github.com/angela-lee1/
+    picture: https://avatars.githubusercontent.com/angela-lee1
+  - name: Nora Zajzon
+    github-handle: nora-zajzon
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U078JUC959C
+      github: https://github.com/nora-zajzon
+    picture: https://avatars.githubusercontent.com/nora-zajzon
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/VRMS'

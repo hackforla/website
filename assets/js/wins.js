@@ -337,15 +337,15 @@
 		}
 
 		// Avoiding using innerHTML due to security risks
-		// Creating the elements 
+		// Creating the elements
 		const teamContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-team');
 		const roleContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-role');
 		const teamSpanElement = document.createElement('span');
 		teamSpanElement.classList.add('wins-team-role-color');
 		const roleSpanElement = document.createElement('span');
 		roleSpanElement.classList.add('wins-team-role-color');
-		
-		// Preparing the text of the elements 
+
+		// Preparing the text of the elements
 		teamSpanElement.textContent = "Team(s): ";
 		const teamTextNode = document.createTextNode(card[team]);
 		roleSpanElement.textContent = "Role(s): ";
@@ -506,7 +506,7 @@ function changeSeeMoreBtn(x) {
   		if (data[i][linkedin_url].length > 0) {
   			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
   		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
+  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'GitHub profile for ' + data[i][name]);
   		}
 
   		const overlayName = document.querySelector('#overlay-name');

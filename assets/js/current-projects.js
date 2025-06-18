@@ -94,6 +94,12 @@ document.addEventListener("DOMContentLoaded",function(){
         })
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
+
+        // Add onclick event handlers to open search tips modal if it is clicked.
+        attachEventListenerOpenModal();
+
+        // Add onclick event handlers to close search tips modal if it is open.
+        attachEventListenerCloseModal();
         
         //events related to search bar
         document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
@@ -400,7 +406,7 @@ function updateUI(){
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
     attachEventListenerToFilterTags()
-    
+
 }
 
     /**
@@ -859,4 +865,43 @@ function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
     }
+}
+
+function attachEventListenerOpenModal() {
+    document.getElementById('search-tip-link').addEventListener('click', function (event) {
+        event.preventDefault();
+        updateSearchTipsModal();
+    });
+}
+
+function updateSearchTipsModal() {
+    // Update the modal content with data
+    document.getElementById('overlay-name').innerHTML = "Search Tips";
+    document.getElementById('table-operator-1').innerHTML = "<strong>AND</strong>";
+    document.getElementById('table-meaning-1').innerHTML = "Limit results";
+    document.getElementById('table-example-1').innerHTML = "<em>React and Node (Search for project cards that contain both React and Node.)</em>";
+    document.getElementById('table-operator-2').innerHTML = "<strong>OR</strong>";
+    document.getElementById('table-meaning-2').innerHTML = "One term OR another";
+    document.getElementById('table-example-2').innerHTML = "<em>Python or Javascript (Search for project cards that contains Python or JavaScript.)</em>";
+    document.getElementById('table-operator-3').innerHTML = "<strong>-</strong>";
+    document.getElementById('table-meaning-3').innerHTML = "Exclude a term from the search";
+    document.getElementById('table-example-3').innerHTML = "<em>React -Django (Limits project card results to only those with React and not the term Django.)</em>";
+    
+    // Show the modal
+    document.getElementById('search-tip-modal').style.display = 'flex';
+}
+
+function attachEventListenerCloseModal() {
+    // Close the modal
+    document.querySelector('.overlay-close-icon').addEventListener('click', function() {
+        document.getElementById('search-tip-modal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        const modal = this.document.getElementById('search-tip-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
