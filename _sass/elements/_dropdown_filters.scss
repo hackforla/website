@@ -32,7 +32,7 @@ a.filter-item {
 .filter-toolbar {
   padding: 8px 32px;
   box-sizing: border-box;
-  height: calc(100vh - 60px);
+  height: auto;
   position: sticky;
   flex-shrink: 0;
   top: 64px;
@@ -258,9 +258,10 @@ a.clear-filter-tags {
 
   .filter-toolbar {
     background-color: $color-pink;
-    height: 100%;
-    position: static;
+    position: sticky;
     padding: 0;
+    top: 64px;
+    z-index: 99;
   }
 
   .filtersDiv {
