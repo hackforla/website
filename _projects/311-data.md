@@ -101,3 +101,10 @@ sdg-image-src: /assets/images/sdg/sdg16.svg
 sdg-image-alt: '16: peace, justice and strong institutions'
 sdg-color-variable: $color-sdg16
 ---
+  - name: Audreen Fune
+    github-handle: audreenbean
+    role: UX Research Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U089EGHGHCM
+      github: https://github.com/audreenbean
+    picture: https://avatars.githubusercontent.com/audreenbean
