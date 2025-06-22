@@ -57,4 +57,33 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setMeetingTimes();
+
+// Function to handle Slack channel button clicks
+    function setupSlackChannelButtons() {
+        const slackButtons = document.querySelectorAll('.slack-link');
+        
+        slackButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Prevent the default link behavior temporarily
+                event.preventDefault();
+                
+                // Get the Slack URL from the button's id attribute
+                const slackUrl = this.id;
+                
+                // Get the community name from the title attribute or nearby heading
+                const communityCard = this.closest('.page-card');
+                const communityName = communityCard ? communityCard.querySelector('.Title4').textContent.trim() : 'Community';
+                
+                // Save to localStorage
+                localStorage.setItem('selectedSlackChannel', slackUrl);
+                localStorage.setItem('selectedCommunityName', communityName);
+                
+                // Now proceed with the original link behavior
+                window.location.href = this.href;
+            });
+        });
+    }
+    
+    // Set up the Slack channel button event listeners
+    setupSlackChannelButtons();    
 });
