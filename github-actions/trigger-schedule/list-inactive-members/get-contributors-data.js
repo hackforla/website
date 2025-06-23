@@ -27,7 +27,7 @@ let dates = [oneMonthAgo, twoMonthsAgo];
 
 /**
  * Main function
- * @param {Object} g         - github object from actions/github-script
+ * @param {Object} g         - GitHub object from actions/github-script
  * @param {Object} c         - context object from actions/github-script
  * @return {Object} results  - object to use in `trim-inactive-members.js`
  */
@@ -78,7 +78,7 @@ async function fetchContributors(dates){
       let pageNum = 1;
       let result = [];
 
-      // Since Github only allows to fetch max 100 items per request, we need to 'flip' pages
+      // Since GitHub only allows to fetch max 100 items per request, we need to 'flip' pages
       while(true){
         // Fetch 100 items per each page (`pageNum`)
         const contributors = await github.request(api, {
