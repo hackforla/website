@@ -64,13 +64,13 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
 /**
  * Remove contributors that were last active **before** the previous (twoMonthsAgo) date
  * @param {Object} previousContributors   - List of contributors active since previous date
+ * @param {Object} inactiveWithOpenSkills - Inactive members with open Skills Issue
  * @param {Object} inactiveWithOpenIssue  - Inactive members with open issues
- * @returns {Array} removedMembers        - List of members that were removed 
- * @returns {Object} cannotRemoveYet      - List of members that cannot be removed due to open issues
+ * @param {Object} currentTeamMembers     - Current team members
+ * @returns {Object} removedMembers       - List of members that were removed 
  */
 async function removeInactiveMembers(previousContributors, inactiveWithOpenSkills, inactiveWithOpenIssue, currentTeamMembers) {
   const removedMembers = [];
-  const cannotRemoveYet = {};
   const previouslyNotified = await readPreviousNotifyList();
   
   // Loop over team members and remove them from the team if they   
