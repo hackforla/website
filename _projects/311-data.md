@@ -6,6 +6,13 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
+  - name: Ryan Chase
+    github-handle: ryanfchase
+    role: Lead Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U052L9R6ETD
+      github: https://github.com/ryanfchase
+    picture: https://avatars.githubusercontent.com/ryanfchase
   - name: Christopher Cotton
     github-handle: CottonChristopher
     role: Product Manager
@@ -13,13 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
-  - name: Ryan Chase
-    github-handle: ryanfchase
-    role: Project Manager, Developer
-    links:
-      slack: https://hackforla.slack.com/team/U052L9R6ETD
-      github: https://github.com/ryanfchase
-    picture: https://avatars.githubusercontent.com/ryanfchase
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
