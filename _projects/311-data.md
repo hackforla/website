@@ -47,7 +47,14 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U03VBPSEH52
       github: https://github.com/Joy-Truex
-    picture: https://avatars.githubusercontent.com/Joy-Truex  
+    picture: https://avatars.githubusercontent.com/Joy-Truex
+  - name: Tracy Nguyen
+    github-handle: traycn
+    role: Engineering Lead
+    links:
+      slack: https://hackforla.slack.com/team/U046H7FBJGZ
+      github: https://github.com/traycn
+    picture: https://avatars.githubusercontent.com/traycn
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'
