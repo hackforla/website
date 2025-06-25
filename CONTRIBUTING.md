@@ -525,7 +525,7 @@ git pull upstream gh-pages
 
 #### **2.7.b Working on an issue (2): Creating your issue branch and testing your code changes**
 
-#### **i. Creating your issue branch
+#### **i. Creating your issue branch**
 
 If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
@@ -551,17 +551,17 @@ We urge developers to be cautious using `git add`. In general it is not advisabl
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
 
-##### **ii. Testing your code edits**
+##### **ii. Testing your code changes**
 
 1. Importance of testing
 
-- Testing is a fundamental step to ensure quality of code and that code changes are functioning as expected. We don't want debug or find solutions for features while the code is already in a production environment in real time. For some it's not the most engaging step and skip it, others simply have not done it before, and some may see it as unecessary time consuming step. The reasoning behind testing is that we'll be able to quickly identify bugs more easily and save time in the future instead of creating future time debt to debug. Fixing easily preventable bugs is the idea and testing gives us a tool to come up with new solutions and improve our code. [Testing a pull request for frontend](https://github.com/hackforla/website/wiki/How-to-review-Pull-Requests#Step3)
+- Testing is a fundamental step to ensure quality of code and that code changes are functioning as expected. We don't want to debug or find solutions for features while the code is already in a production environment in real time. For some it's not the most engaging step and skip it, others simply have not done it before, and some may see it as unecessary time consuming step. The reasoning behind testing is that we'll be able to quickly identify bugs more easily and save time in the future instead of creating future time debt to debug. Fixing easily preventable bugs is the idea and testing gives us a tool to come up with new solutions and improve our code. [Testing a pull request for frontend](https://github.com/hackforla/website/wiki/How-to-review-Pull-Requests#Step3)
 - Here are some additional links for backend/DevOps testing:<br>
-[HfLA github actions](https://github.com/hackforla/website/wiki/HfLA-GitHub-Actions)<br>
+[HfLA Github Actions](https://github.com/hackforla/website/wiki/HfLA-GitHub-Actions)<br>
 [Creating your own project board](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions#tip-6-creating-your-own-project-board)<br>
 [Using your own personal access token to test in your own project board](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions#tip-7-using-personal-access-tokens-to-test-in-your-own-project-board)
 
-- Make sure to comment on your issue if you aren't sure how to test something, and then to put it in the **Questions / In Review column** and add the **ready for dev lead label**. Paste a link to your comments in the #hfla-site Slack channel asking peers for help.
+- Make sure to comment on your issue if you aren't sure how to test something, and then to put it in the **Questions / In Review column** and add the `ready for dev lead label`. Paste a link to your comments in the #hfla-site Slack channel asking peers for help.
 
 2. A few notes regarding Docker:
 
