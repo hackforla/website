@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05QV9AKPNU
       github: https://github.com/bberhane
     picture: https://avatars.githubusercontent.com/bberhane
-  - name: Holly Worthen
-    github-handle: hworthen
-    role: UX Research Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03RPBE9DL6
-      github: https://github.com/hworthen
-    picture: https://avatars.githubusercontent.com/hworthen
   - name: Allison Jeon
     github-handle: allisonjeon
     role: UX Design Lead
