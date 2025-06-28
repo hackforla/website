@@ -101,13 +101,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U076AV5ALPP
       github: https://github.com/FamousHero
     picture: https://avatars.githubusercontent.com/FamousHero
-  - name: Kristen Cardon
-    github-handle: k-cardon
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U07HCNXLCKH
-      github: https://github.com/k-cardon
-    picture: https://avatars.githubusercontent.com/k-cardon
   - name: Mugdh Chauhan
     github-handle: mugdhchauhan
     role: Merge Team
