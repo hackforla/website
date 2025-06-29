@@ -62,7 +62,7 @@ leadership:
       github: https://github.com/priyanka02art
     picture: https://avatars.githubusercontent.com/priyanka02art
   - name: Will Gillis
-    github-handle: t-will-gillis
+    github-handle:
     role: Developer Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
