@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
-  - name: Allison Jeon
-    github-handle: allisonjeon
-    role: UX Design Lead
-    links:
-      slack: https://hackforla.slack.com/team/U05JP94R9B7
-      github: https://github.com/allisonjeon
-    picture: https://avatars.githubusercontent.com/allisonjeon
   - name: Joy Truex
     github-handle: Joy-Truex
     role: UX Design Lead
