@@ -525,7 +525,7 @@ git pull upstream gh-pages
 
 #### **2.7.b Working on an issue (2): Creating your issue branch and testing your code changes**
 
-#### **i. Creating your issue branch**
+##### **i. Creating your issue branch**
 
 If you have not already done so, run `git checkout gh-pages` to switch the working directory to the `gh-pages` branch and then update `gh-pages` with upstream changes as described above in Section 2.7.a. 
 
@@ -561,7 +561,7 @@ When you've finished working on your issue, follow the steps below to prepare yo
 [Creating your own project board](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions#tip-6-creating-your-own-project-board)<br>
 [Using your own personal access token to test in your own project board](https://github.com/hackforla/website/wiki/Hack-for-LA's-GitHub-Actions#tip-7-using-personal-access-tokens-to-test-in-your-own-project-board)
 
-- Make sure to comment on your issue if you aren't sure how to test something, and then to put it in the **Questions / In Review column** and add the `ready for dev lead label`. Paste a link to your comments in the #hfla-site Slack channel asking peers for help.
+- Make sure to comment on your issue if you aren't sure how to test something, and then to put it in the **Questions / In Review column** and add the `ready for dev lead` label. Paste a link to your comments in the #hfla-site Slack channel asking peers for help.
 
 2. A few notes regarding Docker:
 
