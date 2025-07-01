@@ -19,7 +19,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U07FF4C4YFQ
       github: https://github.com/srishti-gupta-me
-    picture: https://avatars.githubusercontent.com/srishti-gupta-me     
+    picture: https://avatars.githubusercontent.com/srishti-gupta-me
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
