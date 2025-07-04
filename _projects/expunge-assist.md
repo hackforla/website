@@ -12,14 +12,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U06REA9H3FF
       github: https://github.com/mariaweissman
-    picture: https://avatars.githubusercontent.com/mariaweissman  
-  - name: Mireya V. Aviles
-    github-handle: vanessaavviles
-    role: Product Manager, Design
-    links:
-      slack: https://hackforla.slack.com/team/U0429M52LTY
-      github: https://github.com/vanessaavviles
-    picture: https://avatars.githubusercontent.com/vanessaavviles 
+    picture: https://avatars.githubusercontent.com/mariaweissman 
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
