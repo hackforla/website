@@ -34,6 +34,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03RPBE9DL6
       github: https://github.com/hworthen
     picture: https://avatars.githubusercontent.com/hworthen
+  - name: Audreen Fune
+    github-handle: audreenbean
+    role: UX Research Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U089EGHGHCM
+      github: https://github.com/audreenbean
+    picture: https://avatars.githubusercontent.com/audreenbean
   - name: Allison Jeon
     github-handle: allisonjeon
     role: UX Design Lead
