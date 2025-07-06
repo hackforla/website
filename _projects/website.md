@@ -62,6 +62,7 @@ leadership:
       github: https://github.com/priyanka02art
     picture: https://avatars.githubusercontent.com/priyanka02art
   - name: Will Gillis
+    github-handle:
     role: Developer Co-Lead
     links:
       slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
@@ -94,13 +95,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07QWL2A5BN
       github: https://github.com/siyunfeng
     picture: https://avatars.githubusercontent.com/siyunfeng
-  - name: Daniel Franco
-    github-handle: FamousHero
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U076AV5ALPP
-      github: https://github.com/FamousHero
-    picture: https://avatars.githubusercontent.com/FamousHero
   - name: Mugdh Chauhan
     github-handle: mugdhchauhan
     role: Merge Team

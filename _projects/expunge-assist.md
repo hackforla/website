@@ -19,14 +19,7 @@ leadership:
     links:
       slack: https://hackforla.slack.com/team/U07FF4C4YFQ
       github: https://github.com/srishti-gupta-me
-    picture: https://avatars.githubusercontent.com/srishti-gupta-me    
-  - name: Mireya V. Aviles
-    github-handle: vanessaavviles
-    role: Product Manager, Design
-    links:
-      slack: https://hackforla.slack.com/team/U0429M52LTY
-      github: https://github.com/vanessaavviles
-    picture: https://avatars.githubusercontent.com/vanessaavviles 
+    picture: https://avatars.githubusercontent.com/srishti-gupta-me
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
