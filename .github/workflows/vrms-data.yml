@@ -19,7 +19,7 @@ jobs:
 
     # Use an action (`my-action`) in your repository
     - name: Save vrms_data.json
-      run: curl --retry 7 --fail -o _data/external/vrms_data.json https://www.vrms.io/api/recurringevents
+      run: curl --retry 7 --fail -o website/_data/external/vrms_data.json https://www.vrms.io/api/recurringevents
 
     - name: Filter vrms data
       run: node github-actions/trigger-schedule/vrms-data/filter-vrms-data.js
