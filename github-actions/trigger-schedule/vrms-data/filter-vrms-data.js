@@ -9,9 +9,12 @@
  * @param {Array<Object>} data - Raw JSON array of entries
  * @returns {Array<Object>} Filtered entries
  */
-console.log('Current working dir:', process.cwd());
-console.log('Does file exist?', fs.existsSync('_data/external/vrms_data.json'));
+// debug-pwd.js
 
+console.log('Current working dir:', process.cwd());
+console.log('__dirname:', __dirname);
+
+/**
 // Get the path to the JSON file
 const dataPath = path.join(__dirname, '../../../../_data/external/vrms_data.json');
 
@@ -50,3 +53,4 @@ const filteredData = rawData.map(filterJson);
 fs.writeFileSync(dataPath, JSON.stringify(filteredData, null, 2));
 
 console.log(`Filtered data written to ${dataPath}`);
+*/
