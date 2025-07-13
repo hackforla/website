@@ -13,7 +13,7 @@
 
 console.log('Current working dir:', process.cwd());
 console.log('__dirname:', __dirname);
-
+/**
 // Get the path to the JSON file
 const dataPath = path.join(__dirname, '../../../../_data/external/vrms_data.json');
 
@@ -52,4 +52,4 @@ const filteredData = rawData.map(filterJson);
 fs.writeFileSync(dataPath, JSON.stringify(filteredData, null, 2));
 
 console.log(`Filtered data written to ${dataPath}`);
-
+*/
