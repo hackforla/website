@@ -10,7 +10,7 @@ jobs:
   vrms_data:
     runs-on: ubuntu-latest
 
-    if: github.repository == 'santisecco/website'
+    if: github.repository == 'santiseccovidal/website'
 
     steps:
     - uses: actions/checkout@v4
