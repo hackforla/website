@@ -9,6 +9,8 @@
  * @param {Array<Object>} data - Raw JSON array of entries
  * @returns {Array<Object>} Filtered entries
  */
+console.log('Current working dir:', process.cwd());
+console.log('Does file exist?', fs.existsSync('_data/external/vrms_data.json'));
 
 // Get the path to the JSON file
 const dataPath = path.join(__dirname, '../../../../_data/external/vrms_data.json');
