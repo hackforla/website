@@ -1,8 +1,6 @@
 /**
- * This function is triggered by member activities, which include:
- *    the eventName (i.e. "issues", "pull_request", "pull_request_review", etc. ), 
- *    the eventAction (i.e. "opened", "assigned", "submitted", etc.), and
- *    the eventActor (user who is credited for the event).
+ * This function parses the triggered event to determine the trigger eventName and eventAction
+ * and from this information decide the eventActor (user who is credited for the event).
  * @param {Object} github    - GitHub object from function calling activity-trigger.js
  * @param {Object} context   - Context of the function calling activity-trigger.js
  * @returns {Object}         - An object containing the eventActor and a message
