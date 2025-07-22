@@ -1,5 +1,5 @@
 // Import modules
-const retrieveSkillsIssue = require('../utils/retrieve-skills-issue');
+const getSkillsIssue = require('../utils/get-skills-issue');
 const postComment = require('../utils/post-issue-comment');
 const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
@@ -8,7 +8,7 @@ const mutateIssueStatus = require('../utils/mutate-issue-status');
 
 
 /**
- * Function to retrieve Skills Issue and post message
+ * Function to get eventActor's Skills Issue and post message
  * @param {Object} github    - GitHub object 
  * @param {Object} context   - Context object
  * @param {Object} activity  - eventActor and message 
@@ -27,8 +27,8 @@ async function postToSkillsIssue({g, c}, activity) {
     const message = activity[1];
     const MARKER = '<!-- Skills Issue Activity Record -->';
 
-    // Retrieve user's Skills Issue
-    const { skillsIssueNum, skillsIssueNodeId } = await retrieveSkillsIssue(username);
+    // Get eventActor's Skills Issue
+    const { skillsIssueNum, skillsIssueNodeId } = await getSkillsIssue(username);
     // Return immediately if Skills Issue not found
     if (skillsIssueNum) {
         console.log(`Found Skills Issue for ${username}: ${skillsIssueNum}`);
@@ -37,7 +37,7 @@ async function postToSkillsIssue({g, c}, activity) {
         return;
     }
 
-    // Retrieve all comments from the Skills Issue
+    // Get all comments from the Skills Issue
     // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#list-issue-comments
     const commentData = await github.request('GET /repos/{owner}/{repo}/issues/{issueNum}/comments', {
         owner,
