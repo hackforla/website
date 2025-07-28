@@ -1,3 +1,9 @@
+// Global variables
+var github;
+var context;
+
+
+
 /**
  * This function parses the triggered event to determine the trigger eventName and eventAction
  * and from this information decide the eventActor (user who is credited for the event).
