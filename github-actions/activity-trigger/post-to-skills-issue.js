@@ -5,6 +5,10 @@ const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
 const mutateIssueStatus = require('../utils/mutate-issue-status');
 
+// Global variables
+var github;
+var context;
+
 
 
 /**
@@ -46,7 +50,7 @@ async function postToSkillsIssue({g, c}, activity) {
     });
 
     // Find the comment that includes the MARKER text and append message
-    const commentFound = commentData.data.find(comment => comment.body.includes(MARKER))
+    const commentFound = commentData.data.find(comment => comment.body.includes(MARKER));
     const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
@@ -54,7 +58,7 @@ async function postToSkillsIssue({g, c}, activity) {
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
         // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#update-an-issue-comment
-        const patchSkillsIssue = await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{commentId}', {
+        await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{commentId}', {
             owner,
             repo,
             commentId,
@@ -66,7 +70,7 @@ async function postToSkillsIssue({g, c}, activity) {
     }
 
     // Check whether eventActor is team member; if so open issue and move to "In progress"
-    const isActiveMember = await checkTeamMembership(github, username, team);
+    const isActiveMember = await checkTeamMembership(github, username, TEAM);
 
     if (isActiveMember) {
         // Make sure Skills Issue is open
