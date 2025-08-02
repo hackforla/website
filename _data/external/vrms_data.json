@@ -1688,5 +1688,25 @@
     "project.hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
     "project.googleDriveId": "10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM",
     "project.projectStatus": "Active"
+  },
+  {
+    "name": "2025 Summer Potluck Picnic",
+    "date": "2025-08-02T19:00:00.369Z",
+    "startTime": "2025-08-02T19:00:00.369Z",
+    "endTime": "2025-08-02T22:00:00.369Z",
+    "projectStatus": null,
+    "project.name": "Hack4LA",
+    "project.githubIdentifier": null,
+    "project.location": null,
+    "project.githubUrl": null,
+    "project.slackUrl": null,
+    "project.googleDriveUrl": null,
+    "createdDate": "2025-08-02T03:59:19.369Z",
+    "hflaWebsiteUrl": "https://www.hackforla.org/",
+    "description": null,
+    "project.partners": [],
+    "project.hflaWebsiteUrl": "https://www.hackforla.org/",
+    "project.googleDriveId": null,
+    "project.projectStatus": null
   }
 ]
