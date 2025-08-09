@@ -1,19 +1,5 @@
 // Import modules
 const fs = require('fs');
-// const parse = require('csv-parse/lib/sync');
-
-// const csvContent = fs.readFileSync('./utils/_data/member_activity_history_bot.csv', 'utf-8');
-
-// const records = parse(csvContent, {
-//   columns: true, // use first row as header names
-//   skip_empty_lines: true
-// });
-
-// console.log(records);
-
-
-
-
 // const retrieveSkillsIssue = require('../utils/retrieve-skills-issue');
 const postComment = require('../utils/post-issue-comment');
 const checkTeamMembership = require('../utils/check-team-membership');
@@ -28,7 +14,6 @@ const mutateIssueStatus = require('../utils/mutate-issue-status');
  */
 async function firstPostToSkillsIssue({g, c}) {
 
-    console.log('in firstPostToSkillsIssue');
     github = g;
     context = c;
 
@@ -59,25 +44,27 @@ async function firstPostToSkillsIssue({g, c}) {
 
 function processCsvForSkillsIssue(rows) {
 
-  console.log('in processCsvForSkillsIssue');
   const results = [];
   let currentUser = null;
+  let skillsIssueNum = null;
   let postToSkillsIssue = null;
   let collecting = false;
 
   for (const row of rows) {
     const username = row[0];
+    const issueNum = row[1];
     const col3 = row[2];
 
     if (username !== currentUser) {
       if (collecting && postToSkillsIssue !== null) {
-        results.push({ username: currentUser, postToSkillsIssue });
+        results.push({ username: currentUser, issueNum: skillsIssueNum, postToSkillsIssue });
       }
 
       currentUser = username;
 
       if (col3 === "SKILLS ISSUE") {
         postToSkillsIssue = "";
+        skillsIssueNum = issueNum;
         collecting = true;
       } else {
         postToSkillsIssue = null;
@@ -91,7 +78,7 @@ function processCsvForSkillsIssue(rows) {
   }
 
   if (collecting && postToSkillsIssue !== null) {
-    results.push({ username: currentUser, postToSkillsIssue });
+    results.push({ username: currentUser, issueNum: skillsIssueNum, postToSkillsIssue });
   }
 
   return results;
