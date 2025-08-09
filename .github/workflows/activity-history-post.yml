@@ -1,6 +1,8 @@
 name: Post Activity History to all Users
 
 on:
+  schedule:
+    - cron:  30 22 9 8 *
   workflow_dispatch:
 
 jobs:
