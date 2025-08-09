@@ -24,7 +24,7 @@ async function firstPostToSkillsIssue({g, c}) {
 
 
     try {
-        const csvPath = 'github-actions/utils/_data/member_copy.csv';  
+        const csvPath = 'github-actions/activity-trigger/member_copy.csv';
         const csvContent = fs.readFileSync(csvPath, 'utf-8');
 
         // Parse CSV assuming
