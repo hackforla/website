@@ -7,6 +7,10 @@ const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
 const mutateIssueStatus = require('../utils/mutate-issue-status');
 
+// Global variables
+var github;
+var context;
+
 /**
  * Function to retrieve Skills Issue and add comments
  * @param {Object} github    - GitHub object 
