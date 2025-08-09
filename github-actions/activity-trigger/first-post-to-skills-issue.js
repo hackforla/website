@@ -35,7 +35,7 @@ async function firstPostToSkillsIssue({g, c}) {
 
         const processed = processCsvForSkillsIssue(rows);
 
-        // console.log(JSON.stringify(processed, null, 2)); // For testing only
+        console.log(JSON.stringify(processed, null, 2)); // For testing only
 
         processed.forEach(async entry => {
             let username = entry.username;
