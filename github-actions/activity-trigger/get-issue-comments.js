@@ -4,7 +4,7 @@ tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);
 
 async function getIssueComments(github, context, issueNum) {
   console.log(`IssueNum: ${issueNum}`);
-  console.log(`typeof: ${type of issueNum}`);
+  console.log(`typeof: ${typeof issueNum}`);
   const owner = context.repo.owner;
   const repo = context.repo.repo;
   let issueNum = issueNum;
