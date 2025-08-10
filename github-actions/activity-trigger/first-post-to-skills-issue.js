@@ -46,7 +46,7 @@ async function firstPostToSkillsIssue({g, c}) {
 
         processed.forEach(async entry => {
             let username = entry.username;
-            let skillsIssueNum = entry.issueNum;
+            let skillsIssueNum = parseInt(entry.issueNum);
             let message = entry.postToSkillsIssue;
             const MARKER = '<!-- Skills Issue Activity Record -->'; 
 
