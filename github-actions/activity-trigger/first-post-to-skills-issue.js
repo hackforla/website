@@ -24,7 +24,8 @@ async function firstPostToSkillsIssue({g, c}) {
     github = g;
     context = c;
 
-    const owner = context.repo.owner;
+    // const owner = context.repo.owner;
+    const owner = 't-will-gillis';
     const repo = context.repo.repo;
     const team = 'website-write';
 
