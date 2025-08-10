@@ -51,7 +51,7 @@ async function firstPostToSkillsIssue({g, c}) {
 
             // Since we know this is the first run and no matching issue comments exist yet, we can post immediately
             const body = `${MARKER}\n## Activity Log: ${username}\n\n#####  ⚠ Important note: The bot updates this issue automatically - do not edit\n\n${message}`;
-            await postComment(github, context, skillsIssueNum, body);
+            await postComment(skillsIssueNum, body, github, context);
 
             // Perform cleanup of comments
             const commentIds = await getIssueComments(github, context, skillsIssueNum);
