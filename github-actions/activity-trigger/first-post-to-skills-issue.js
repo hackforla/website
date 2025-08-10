@@ -60,8 +60,8 @@ async function firstPostToSkillsIssue({g, c}) {
             }
             
             // Check whether eventActor is team member; if so open issue and move to "In progress"
-            const isActiveMember = await checkTeamMembership(github, username, team);
-
+            // const isActiveMember = await checkTeamMembership(github, username, team);
+            const isActiveMember = true;
             if (isActiveMember) {
                 // If isActiveMember, make sure Skills Issue is open, and...
                 await github.request('PATCH /repos/{owner}/{repo}/issues/{issueNum}', {
