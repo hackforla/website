@@ -57,3 +57,4 @@ async function getIssueComments(github, context, issueNum) {
   return commentIds;
 }
 
+module.exports = getIssueComments;
