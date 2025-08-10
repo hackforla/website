@@ -7,7 +7,7 @@ async function getIssueComments(github, context, issueNum) {
   console.log(`typeof: ${typeof issueNum}`);
   const owner = context.repo.owner;
   const repo = context.repo.repo;
-  let issueNum = issueNum;
+  // let issueNum = issueNum;
 
   const query = `query($owner: String!, $repo: String!, $issueNum: Int!) {
     repository(owner: $owner, name: $repo) {
