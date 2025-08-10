@@ -6,6 +6,8 @@ const postComment = require('../utils/post-issue-comment');
 const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
 const mutateIssueStatus = require('../utils/mutate-issue-status');
+const minimizeIssueComment = require('../utils/hide-issue-comment');
+const getIssueComments = require('./get-issue-comments');
 
 // Global variables
 var github;
@@ -29,6 +31,7 @@ async function firstPostToSkillsIssue({g, c}) {
 
     try {
         const csvPath = 'github-actions/activity-trigger/member_activity_history_bot_22.csv';
+
         const csvContent = fs.readFileSync(csvPath, 'utf-8');
 
         // Parse CSV assuming
@@ -43,14 +46,20 @@ async function firstPostToSkillsIssue({g, c}) {
 
         processed.forEach(async entry => {
             let username = entry.username;
-            let skillsIssueNum = entry.issueNum;
+            let skillsIssueNum = parseInt(entry.issueNum);
             let message = entry.postToSkillsIssue;
             const MARKER = '<!-- Skills Issue Activity Record -->'; 
 
             // Since we know this is the first run and no matching issue comments exist yet, we can post immediately
             const body = `${MARKER}\n## Activity Log: ${username}\n\n#####  ⚠ Important note: The bot updates this issue automatically - do not edit\n\n${message}`;
-            await postComment(github, context, skillsIssueNum, body);
+            await postComment(skillsIssueNum, body, github, context);
 
+            // Perform cleanup of comments
+            const commentIds = await getIssueComments(github, context, skillsIssueNum);
+            for (const commentId of commentIds) {
+                await minimizeIssueComment(github, commentId);
+            }
+            
             // Check whether eventActor is team member; if so open issue and move to "In progress"
             const isActiveMember = await checkTeamMembership(github, username, team);
 

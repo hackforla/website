@@ -28,7 +28,7 @@ async function retrieveSkillsId(github, context, issueNum) {
     // Extract the issue id
     const id = response.repository.issue.id;
 
-    return { id };
+    return id ;
   } catch (error) {
     throw new Error(`Error finding NodeId for issue #${issueNum}; error = ${error}`);
   }
