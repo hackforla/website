@@ -25,7 +25,8 @@ async function activityTrigger({g, c}) {
     let eventActor = context.actor;
     let activity = [];
 
-    const excludedActors = ['HackforLABot', 'elizabethhonest'];
+    // Exclude all bot actors from being recorded to prevent infinite loops
+    const excludedActors = ['HackforLABot', 'elizabethhonest', 'github-actions', 'github-advanced-security', 'github-pages', 'dependabot[bot]', 'dependabot-preview[bot]', 'dependabot', 'dependabot-preview'];
 
     if (eventName === 'issues') {
         issueNum = context.payload.issue.number;
@@ -45,6 +46,11 @@ async function activityTrigger({g, c}) {
             eventAction = reason;
         }
     } else if (eventName === 'issue_comment') {
+        // Check if the comment is on an issue or a pull request
+        let isPullRequest = context.payload.issue?.pull_request;
+        if (isPullRequest) {
+          eventName = 'pull_request_comment';
+        }
         issueNum = context.payload.issue.number;
         eventUrl = context.payload.comment.html_url;
         timeline = context.payload.comment.updated_at;
@@ -85,20 +91,23 @@ async function activityTrigger({g, c}) {
 
     // Message templates to post on Skills Issue
     const actionMap = {
-        'issues.opened': 'opened an issue',
-        'issues.completed': 'closed an issue as completed',
-        'issues.not_planned': 'closed an issue as not planned',
-        'issues.duplicate': 'closed an issue as duplicate',
-        'issues.assigned': 'been assigned to an issue',
-        'issues.unassigned': 'been unassigned from an issue',
-        'issue_comment.created': 'commented on an issue or pr',
+        'issues.opened': 'opened issue:',
+        'issues.completed': 'closed issue as completed',
+        'issues.not_planned': 'closed issue as not planned',
+        'issues.duplicate': 'closed issue as duplicate',
+        'issues.reopened': 'reopened issue',
+        'issues.assigned': 'assigned to issue',
+        'issues.unassigned': 'unassigned from issue',
+        'issue_comment.created': 'commented on issue',
+        'pull_request_review.created': 'submitted pull request review',
+        'pull_request_comment.created': 'commented on pull request',
         'pull_request.opened': 'opened a pull request',
-        'pull_request.closed': 'had a pull request closed w/o merging',
-        'pull_request.merged': 'had a pull request merged',
-        'pull_request_review.submitted': 'submitted a pull request review'
+        'pull_request.closed': 'pull request closed w/o merging',
+        'pull_request.merged': 'pull request merged',
+        'pull_request.reopened': 'reopened pull request'
     };
     const action = actionMap[`${eventName}.${eventAction}`];
-    let message = `@ ${eventActor} has ${action}: #[${issueNum}](${eventUrl}) at ${timeline}`;
+    let message = `@ ${eventActor} ${action}: #[${issueNum}](${eventUrl}) at ${timeline}`;
     console.log(message);
 
     activity = [eventActor, message];

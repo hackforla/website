@@ -65,8 +65,8 @@ async function postToSkillsIssue({g, c}, activity) {
             body: updatedBody
         });
     } else {
-        const body = `${MARKER}\n## Activity Log: ${username}\n${message}`;
-        await postComment(github, context, skillsIssueNum, body);
+        const body = `${MARKER}\n## Activity Log: ${username}\n\n#####  ⚠ Important note: The bot updates this issue automatically - do not edit\n\n${message}`;
+        await postComment(skillsIssueNum, body, github, context);
     }
 
     // Check whether eventActor is team member; if so open issue and move to "In progress"
