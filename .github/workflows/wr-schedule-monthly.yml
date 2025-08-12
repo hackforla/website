@@ -11,7 +11,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - run: echo "The 'Schedule Monthly' workflow succeeded. Continuing."
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Creates a new issue in 'hackforla/website' repo with the saved lists
       - name: Create new issue
@@ -27,7 +27,7 @@ jobs:
     needs: Create-New-Issue
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       
       - name: Get owner url
         id: get-owner-url
