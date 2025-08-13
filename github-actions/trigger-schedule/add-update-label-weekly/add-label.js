@@ -369,6 +369,12 @@ function formatComment(assignees, labelString) {
 function isCommentByBot(data) {
   let botLogin = "github-actions[bot]";
   let hflaBotLogin = "HackforLABot";
+  // If the comment includes the MARKER, return false 
+  let MARKER = '<!-- Skills Issue Activity Record -->'; 
+  if (data.body.includes(MARKER)) {
+    console.log(`Found "Skills Issue Activity Record" - do not minimize`);
+    return false; 
+  }
   return data.actor.login === botLogin || data.actor.login === hflaBotLogin;
 }
 

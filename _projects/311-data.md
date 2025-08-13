@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05QV9AKPNU
       github: https://github.com/bberhane
     picture: https://avatars.githubusercontent.com/bberhane
-  - name: Holly Worthen
-    github-handle: hworthen
-    role: UX Research Lead
-    links:
-      slack: https://hackforla.slack.com/team/U03RPBE9DL6
-      github: https://github.com/hworthen
-    picture: https://avatars.githubusercontent.com/hworthen
   - name: Audreen Fune
     github-handle: audreenbean
     role: UX Research Co-Lead
@@ -41,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U089EGHGHCM
       github: https://github.com/audreenbean
     picture: https://avatars.githubusercontent.com/audreenbean
-  - name: Allison Jeon
-    github-handle: allisonjeon
-    role: UX Design Lead
-    links:
-      slack: https://hackforla.slack.com/team/U05JP94R9B7
-      github: https://github.com/allisonjeon
-    picture: https://avatars.githubusercontent.com/allisonjeon
   - name: Joy Truex
     github-handle: Joy-Truex
     role: UX Design Lead
