@@ -106,14 +106,16 @@ async function activityTrigger({g, c}) {
         'pull_request.merged': 'pull request merged',
         'pull_request.reopened': 'reopened pull request'
     };
-    const action = actionMap[`${eventName}.${eventAction}`];
-    let message = `@ ${eventActor} ${action}: #[${issueNum}](${eventUrl}) at ${timeline}`;
+    
+    let localTime = getDateTime(timeline);
+    let action = actionMap[`${eventName}.${eventAction}`];
+    let message = `- ${eventActor} ${action}: ${eventUrl} at ${localTime}`;
     console.log(message);
 
     activity = [eventActor, message];
     return activity;
 
-  
+
 
     /**
      * Helper function to check if issueNum references a Skills Issue
@@ -131,6 +133,20 @@ async function activityTrigger({g, c}) {
 
         return isSkillsIssue;
     }
+
+
+
+    /**
+     * Helper function to get the date and time in a readable format
+     * @param {String} timeline   - the date and time string from the event
+     * @returns {String} dateTime - formatted date and time string  
+     */
+    function getDateTime(timeline) {
+        const date = new Date(timeline);
+        const options = { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short' };
+        return date.toLocaleString('en-US', options);
+    }
+
 }
 
 module.exports = activityTrigger;

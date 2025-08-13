@@ -44,7 +44,7 @@ async function queryIssueInfo(github, context, issueNum) {
     // Since there is always one item associated with the issue,
     // directly get the item's ID from the first index
     const id = projectData[0].id;
-
+/*
     // Iterate through the field values of the first project item
     // and find the node that contains the 'name' property, then get its 'name' value
     const statusName = projectData[0].fieldValues.nodes.find((item) => 
@@ -53,10 +53,28 @@ async function queryIssueInfo(github, context, issueNum) {
     // Similarly, find node with 'optionId' property, then get is 'optionId' value
     const statusId = projectData[0].fieldValues.nodes.find((item) => 
       item.hasOwnProperty("optionId")).optionId;
+*/
+    // Iterate through the field values of the first project item and find the nodes
+    // for 'name' and 'optionId' properties, then get 'statusName' and 'statusId'
+    const fieldValues = projectData[0].fieldValues?.nodes || [];
+
+    const statusNameNode = fieldValues.find((item) => item.hasOwnProperty("name"));
+    const statusIdNode = fieldValues.find((item) => item.hasOwnProperty("optionId"));
+    
+    const statusName = statusNameNode?.name || 'Unknown Status';
+    const statusId = statusIdNode?.optionId || null;
   
     return { id, statusName, statusId };
   } catch (error) {
-    throw new Error(`Error finding Issue #${issueNum} id and status; error = ${error}`);
+    // If an error occurs, log it and return an object with null values
+    console.error(`Error querying issue info for Issue #${issueNum}:`, error.message);
+    return { 
+      id: null, 
+      statusName: 'Error', 
+      statusId: null, 
+      error: error.message,
+      issueNumber: issueNum 
+    };
   }
 }
 
