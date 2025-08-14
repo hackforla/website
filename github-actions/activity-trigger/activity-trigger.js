@@ -69,19 +69,11 @@ async function activityTrigger({g, c}) {
         timeline = context.payload.review.updated_at;
     }
 
-    // Following are for confirmation, can be removed
-    console.log(`eventName = ${eventName}`);
-    console.log(`eventAction = ${eventAction}`);
-    console.log(`eventActor = ${eventActor}`);
-    console.log(`issueNum = ${issueNum}`);
-    console.log(`eventUrl = ${eventUrl}`);
-    console.log(`eventTime = ${timeline}`);
-
     // Return immediately if the issueNum is a Skills Issue- to discourage
     // infinite loop (recording comment, recording the recording of comment, etc.)
     const isSkillsIssue = await checkIfSkillsIssue(issueNum);
     if (isSkillsIssue) {
-        console.log(`issueNum: ${issueNum} identified as Skills Issue`);
+        console.log(`- issueNum: ${issueNum} identified as Skills Issue`);
         return activity;
     }
     // Return immediately if the eventActor is a bot- same reason

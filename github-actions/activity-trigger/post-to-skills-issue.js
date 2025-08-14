@@ -1,5 +1,6 @@
 // Import modules
-const getSkillsIssue = require('../utils/get-skills-issue');
+const retrieveLabelDirectory = require('../utils/retrieve-label-directory');
+const querySkillsIssue = require('../utils/query-skills-issue');
 const postComment = require('../utils/post-issue-comment');
 const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
@@ -8,6 +9,9 @@ const mutateIssueStatus = require('../utils/mutate-issue-status');
 // Global variables
 var github;
 var context;
+
+// `complexity0` refers `Complexity: Prework` label
+const SKILLS_LABEL = retrieveLabelDirectory("complexity0");
 
 
 
@@ -30,9 +34,14 @@ async function postToSkillsIssue({g, c}, activity) {
     const username = activity[0];
     const message = activity[1];
     const MARKER = '<!-- Skills Issue Activity Record -->';
+    const IN_PROGRESS_ID = statusFieldIds('In_Progress');
 
-    // Get eventActor's Skills Issue
-    const { skillsIssueNum, skillsIssueNodeId } = await getSkillsIssue(username);
+    // Get eventActor's Skills Issue number, nodeId, current status
+    const skillsInfo = await querySkillsIssue(github, context, username, SKILLS_LABEL);
+    const skillsIssueNum = skillsInfo.issueNum;
+    const skillsIssueNodeId = skillsInfo.issueId;
+    const skillsStatusId = skillsInfo.statusId;
+  
     // Return immediately if Skills Issue not found
     if (skillsIssueNum) {
         console.log(`Found Skills Issue for ${username}: ${skillsIssueNum}`);
@@ -54,6 +63,7 @@ async function postToSkillsIssue({g, c}, activity) {
     const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
+        console.log(`Found comment with MARKER: ${MARKER}`);
         const commentId = commentFoundId;
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
@@ -65,6 +75,7 @@ async function postToSkillsIssue({g, c}, activity) {
             body: updatedBody
         });
     } else {
+        console.log(`MARKER not found in comments, creating new comment with MARKER...`);
         const body = `${MARKER}\n## Activity Log: ${username}\n\n#####  ⚠ Important note: The bot updates this issue automatically - do not edit\n\n${message}`;
         await postComment(skillsIssueNum, body, github, context);
     }
@@ -80,9 +91,10 @@ async function postToSkillsIssue({g, c}, activity) {
             issueNum: skillsIssueNum,
             state: "open",
         });
-        // Update item's status to "In progress (actively working)"
-        let statusValue = statusFieldIds('In_Progress');
-        await mutateIssueStatus(github, context, skillsIssueNodeId, statusValue);
+        // Update item's status to "In progress (actively working)" if not already
+        if (skillsStatusId != IN_PROGRESS_ID) {
+            await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
+        }
     }
 }
 
