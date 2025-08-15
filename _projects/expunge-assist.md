@@ -13,13 +13,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REA9H3FF
       github: https://github.com/mariaweissman
     picture: https://avatars.githubusercontent.com/mariaweissman
-  - name: Srishti Gupta
-    github-handle: srishti-gupta-me
-    role: Product Manager, UX Content
-    links:
-      slack: https://hackforla.slack.com/team/U07FF4C4YFQ
-      github: https://github.com/srishti-gupta-me
-    picture: https://avatars.githubusercontent.com/srishti-gupta-me
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
