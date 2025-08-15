@@ -25,24 +25,26 @@ const rawData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 function filterJson(data) {
   const project = data.project || {};
   return {
-    name: data.name || null,
-    date: data.date || null,
-    startTime: data.startTime || null,
-    endTime: data.endTime || null,
-    projectStatus: project.projectStatus || null,
-    'project.name': project.name || null,
-    'project.githubIdentifier': project.githubIdentifier || null,
-    'project.location': project.location || null,
-    'project.githubUrl': project.githubUrl || null,
-    'project.slackUrl': project.slackUrl || null,
-    'project.googleDriveUrl': project.googleDriveUrl || null,
-    createdDate: data.createdDate || null,
-    hflaWebsiteUrl: data.hflaWebsiteUrl || project.hflaWebsiteUrl || null,
-    description: data.description || null,
-    'project.partners': project.partners || null,
-    'project.hflaWebsiteUrl': project.hflaWebsiteUrl || null,
-    'project.googleDriveId': project.googleDriveId || null,
-    'project.projectStatus': project.projectStatus || null
+    // minimal top-level fields the site uses
+    name: e.name ?? null,            // meeting title
+    description: e.description ?? "", 
+    date: e.date ?? null,
+    startTime: e.startTime ?? null,
+    endTime: e.endTime ?? null,
+
+    // keep ONLY the project fields the UI references
+    project: {
+      name: p.name ?? null,
+      githubUrl: p.githubUrl ?? "",
+      hflaWebsiteUrl: p.hflaWebsiteUrl ?? "",
+      githubIdentifier: p.githubIdentifier ?? null,
+      projectStatus: p.projectStatus ?? null,
+      location: p.location ?? null,
+      slackUrl: p.slackUrl ?? "",          // harmless, public workspace link
+      googleDriveUrl: p.googleDriveUrl ?? ""
+    },
+
+    // DO NOT include: videoConferenceLink, meeting passcodes, owner IDs, emails, etc.
   };
 }
 
