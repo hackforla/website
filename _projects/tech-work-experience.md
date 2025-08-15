@@ -56,6 +56,7 @@ leadership:
       github: 'https://github.com/adarosh'
     picture: https://avatars.githubusercontent.com/adarosh
   - name: Bryanna Lim
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04AL97UV7F'

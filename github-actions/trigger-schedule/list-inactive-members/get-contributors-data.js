@@ -27,7 +27,7 @@ let dates = [oneMonthAgo, twoMonthsAgo];
 
 /**
  * Main function
- * @param {Object} g         - github object from actions/github-script
+ * @param {Object} g         - GitHub object from actions/github-script
  * @param {Object} c         - context object from actions/github-script
  * @return {Object} results  - object to use in `trim-inactive-members.js`
  */
@@ -35,7 +35,7 @@ async function main({ g, c }) {
   github = g;
   context = c;
 
-  const [contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenIssue] = await fetchContributors(dates);
+  const [contributorsOneMonthAgo, contributorsTwoMonthsAgo, inactiveWithOpenSkills,inactiveWithOpenIssue] = await fetchContributors(dates);
   console.log(`-`.repeat(60));
   console.log('List of active contributors since ' + dates[0].slice(0, 10) + ':');
   console.log(contributorsOneMonthAgo);
@@ -43,8 +43,9 @@ async function main({ g, c }) {
   return {
     recentContributors: contributorsOneMonthAgo,
     previousContributors: contributorsTwoMonthsAgo,
-    inactiveWithOpenIssue: inactiveWithOpenIssue,
-    dates: dates,
+    inactiveWithOpenSkills,
+    inactiveWithOpenIssue,
+    dates,
   }; 
 };
 
@@ -58,6 +59,7 @@ async function main({ g, c }) {
 async function fetchContributors(dates){
   let allContributorsSinceOneMonthAgo = {};
   let allContributorsSinceTwoMonthsAgo = {};
+  let inactiveWithOpenSkills = {};
   let inactiveWithOpenIssue = {};
 
   // Members of 'website-maintain' team are considered permanent members
@@ -76,7 +78,7 @@ async function fetchContributors(dates){
       let pageNum = 1;
       let result = [];
 
-      // Since Github only allows to fetch max 100 items per request, we need to 'flip' pages
+      // Since GitHub only allows to fetch max 100 items per request, we need to 'flip' pages
       while(true){
         // Fetch 100 items per each page (`pageNum`)
         const contributors = await github.request(api, {
@@ -128,9 +130,9 @@ async function fetchContributors(dates){
           else if (date === dates[1]) {
             const regex = /Pre-work checklist|Skills Issue/i;
             if (regex.test(contributorInfo.title)) {
-              inactiveWithOpenIssue[assignee] = [issueNum, true];
+              inactiveWithOpenSkills[assignee] = [issueNum];
             } else {
-              inactiveWithOpenIssue[assignee] = [issueNum, false];
+              inactiveWithOpenIssue[assignee] = [issueNum];
             }
           }
         }
@@ -151,7 +153,7 @@ async function fetchContributors(dates){
       allContributorsSinceTwoMonthsAgo = allContributorsSince;
     }
   }   
-  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo, inactiveWithOpenIssue]; 
+  return [allContributorsSinceOneMonthAgo, allContributorsSinceTwoMonthsAgo, inactiveWithOpenSkills, inactiveWithOpenIssue];
 }
 
 
