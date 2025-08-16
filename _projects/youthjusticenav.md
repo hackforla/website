@@ -25,6 +25,7 @@ leadership:
       github: 'https://github.com/Rabia2219'
     picture: 'https://avatars.githubusercontent.com/Rabia2219'
   - name: Hyun Joo Sandy Oh
+    github-handle:
     role: UX Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U03RZE7TTKP'
