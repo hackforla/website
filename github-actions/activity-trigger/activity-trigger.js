@@ -91,12 +91,12 @@ async function activityTrigger({g, c}) {
         'issues.assigned': 'assigned to issue',
         'issues.unassigned': 'unassigned from issue',
         'issue_comment.created': 'commented on issue',
-        'pull_request_review.created': 'submitted pull request review',
-        'pull_request_comment.created': 'commented on pull request',
-        'pull_request.opened': 'opened a pull request',
-        'pull_request.closed': 'pull request closed w/o merging',
-        'pull_request.merged': 'pull request merged',
-        'pull_request.reopened': 'reopened pull request'
+        'pull_request_review.created': 'submitted PR review',
+        'pull_request_comment.created': 'commented on PR',
+        'pull_request.opened': 'PR opened',
+        'pull_request.closed': 'PR closed w/o merging',
+        'pull_request.merged': 'PR merged',
+        'pull_request.reopened': 'PR reopened'
     };
     
     let localTime = getDateTime(timeline);
