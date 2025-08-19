@@ -108,8 +108,8 @@ async function activityTrigger({g, c}) {
         activities.push([eventActor, message]);
     }
 
-    // Only if PRclosed or PRmerged, return PRAuthor
-    if (eventAction === 'PRclosed' || eventAction === 'PRmerged') {
+    // Only if PRclosed or PRmerged, and PRAuthor != eventActor, return PRAuthor and message
+    if ((eventAction === 'PRclosed' || eventAction === 'PRmerged') && (eventActor != eventPRAuthor)) {
         let messagePRAuthor = `- ${eventPRAuthor} PR was ${action}: ${eventUrl} at ${localTime}`;
         if (!isExcluded(eventPRAuthor)) {
             console.log(`Not a bot. Message to post:  ${messagePRAuthor}`);
