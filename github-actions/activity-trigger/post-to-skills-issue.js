@@ -19,7 +19,7 @@ const SKILLS_LABEL = retrieveLabelDirectory("complexity0");
  * Function to get eventActor's Skills Issue and post message
  * @param {Object} github    - GitHub object 
  * @param {Object} context   - Context object
- * @param {Object} activity  - eventActor and message 
+ * @param {Object} package  - eventActor and message 
  * 
  */
 async function postToSkillsIssue({g, c}, activity) {
@@ -36,12 +36,12 @@ async function postToSkillsIssue({g, c}, activity) {
     const MARKER = '<!-- Skills Issue Activity Record -->';
     const IN_PROGRESS_ID = statusFieldIds('In_Progress');
 
-    // Get eventActor's Skills Issue number, nodeId, current status
+    // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
     const skillsInfo = await querySkillsIssue(github, context, username, SKILLS_LABEL);
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
-  
+
     // Return immediately if Skills Issue not found
     if (skillsIssueNum) {
         console.log(`Found Skills Issue for ${username}: ${skillsIssueNum}`);
@@ -76,26 +76,27 @@ async function postToSkillsIssue({g, c}, activity) {
         });
     } else {
         console.log(`MARKER not found in comments, creating new comment with MARKER...`);
-        const body = `${MARKER}\n## Activity Log: ${username}\n\n#####  ⚠ Important note: The bot updates this issue automatically - do not edit\n\n${message}`;
+        const body = `${MARKER}\n## Activity Log: ${username}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
         await postComment(skillsIssueNum, body, github, context);
     }
 
-    // Check whether eventActor is team member; if so open issue and move to "In progress"
+    // If eventActor is team member, open issue and move to "In progress". Else, close issue
     const isActiveMember = await checkTeamMembership(github, username, TEAM);
+    let skillsIssueState = "closed";
 
     if (isActiveMember) {
-        // Make sure Skills Issue is open
-        await github.request('PATCH /repos/{owner}/{repo}/issues/{issueNum}', {
-            owner,
-            repo,
-            issueNum: skillsIssueNum,
-            state: "open",
-        });
+        skillsIssueState = "open";
         // Update item's status to "In progress (actively working)" if not already
         if (skillsStatusId != IN_PROGRESS_ID) {
             await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
         }
     }
+    await github.request('PATCH /repos/{owner}/{repo}/issues/{issueNum}', {
+        owner,
+        repo,
+        issueNum: skillsIssueNum,
+        state: skillsIssueState,
+    });
 }
 
 module.exports = postToSkillsIssue;

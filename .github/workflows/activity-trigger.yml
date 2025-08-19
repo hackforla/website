@@ -27,8 +27,8 @@ jobs:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
         script: |
           const script = require('./github-actions/activity-trigger/activity-trigger.js')
-          const activity = script({g: github, c: context})
-          return activity
+          const activities = script({g: github, c: context})
+          return activities
           
     - if: ${{ steps.gather-event-details.outputs.result  != '[]' }}
       name: Post to Skills Issue
@@ -37,7 +37,8 @@ jobs:
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
         script: |
-          const activity = ${{ steps.gather-event-details.outputs.result }}
-          const script = require('./github-actions/activity-trigger/post-to-skills-issue.js')
-          script({g: github, c: context}, activity)
-          
+          const activities = JSON.parse(${{ steps.gather-event-details.outputs.result }});
+          const script = require('./github-actions/activity-trigger/post-to-skills-issue.js');
+          for (const activity of activities) {
+            await script({g: github, c: context}, activity);
+          }

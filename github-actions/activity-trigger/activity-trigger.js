@@ -23,10 +23,11 @@ async function activityTrigger({g, c}) {
     let eventName = context.eventName;
     let eventAction = context.payload.action;
     let eventActor = context.actor;
-    let activity = [];
+    let eventPRAuthor = '';
+    let activities = [];
 
-    // Exclude all bot actors from being recorded to prevent infinite loops
-    const excludedActors = ['HackforLABot', 'elizabethhonest', 'github-actions', 'github-advanced-security', 'github-pages', 'dependabot[bot]', 'dependabot-preview[bot]', 'dependabot', 'dependabot-preview'];
+    // Exclude all bot actors from being recorded as a guardrail against infinite loops
+    const EXCLUDED_ACTORS = ['HackforLABot', 'elizabethhonest', 'github-actions', 'github-advanced-security', 'github-pages', 'dependabot[bot]', 'dependabot-preview[bot]', 'dependabot', 'dependabot-preview'];
 
     if (eventName === 'issues') {
         issueNum = context.payload.issue.number;
@@ -58,10 +59,11 @@ async function activityTrigger({g, c}) {
         issueNum = context.payload.pull_request.number;
         eventUrl = context.payload.pull_request.html_url;
         timeline = context.payload.pull_request.updated_at;
-        // If PR closed, check if merged and change eventActor to the original pr author
+        // If PR closed, check if 'merged' and save 'eventActor' & 'eventPRAuthor'
         if (eventAction === 'closed') {
-            eventAction = context.payload.pull_request.merged ? 'merged' : 'closed';
-            eventActor = context.payload.pull_request.user.login;
+            eventAction = context.payload.pull_request.merged ? 'PRmerged' : 'PRclosed';
+            eventActor = context.actor;
+            eventPRAuthor = context.payload.pull_request.user.login;
         }
     } else if (eventName === 'pull_request_review') {
         issueNum = context.payload.pull_request.number;
@@ -74,44 +76,54 @@ async function activityTrigger({g, c}) {
     const isSkillsIssue = await checkIfSkillsIssue(issueNum);
     if (isSkillsIssue) {
         console.log(`- issueNum: ${issueNum} identified as Skills Issue`);
-        return activity;
-    }
-    // Return immediately if the eventActor is a bot- same reason
-    if (eventActor in excludedActors) {
-        return activity;
+        // return activities; <-- confirm before uncommenting
     }
 
     // Message templates to post on Skills Issue
     const actionMap = {
-        'issues.opened': 'opened issue:',
-        'issues.completed': 'closed issue as completed',
-        'issues.not_planned': 'closed issue as not planned',
-        'issues.duplicate': 'closed issue as duplicate',
-        'issues.reopened': 'reopened issue',
-        'issues.assigned': 'assigned to issue',
-        'issues.unassigned': 'unassigned from issue',
-        'issue_comment.created': 'commented on issue',
-        'pull_request_review.created': 'submitted PR review',
-        'pull_request_comment.created': 'commented on PR',
-        'pull_request.opened': 'PR opened',
-        'pull_request.closed': 'PR closed w/o merging',
-        'pull_request.merged': 'PR merged',
-        'pull_request.reopened': 'PR reopened'
+        'issues.opened': 'opened',
+        'issues.completed': 'closed- completed',
+        'issues.not_planned': 'closed- not planned',
+        'issues.duplicate': 'closed- duplicate',
+        'issues.reopened': 'reopened',
+        'issues.assigned': 'assigned',
+        'issues.unassigned': 'unassigned',
+        'issue_comment.created': 'commented',
+        'pull_request_review.created': 'submitted review',
+        'pull_request_comment.created': 'commented',
+        'pull_request.opened': 'opened',
+        'pull_request.PRclosed': 'closed',
+        'pull_request.PRmerged': 'merged',
+        'pull_request.reopened': 'reopened'
     };
     
     let localTime = getDateTime(timeline);
     let action = actionMap[`${eventName}.${eventAction}`];
     let message = `- ${eventActor} ${action}: ${eventUrl} at ${localTime}`;
-    console.log(message);
 
-    activity = [eventActor, message];
-    return activity;
+    // Check to confirm the eventActor isn't a bot
+    const isExcluded = (eventActor) => EXCLUDED_ACTORS.includes(eventActor);
+    if (!isExcluded(eventActor)) {
+        console.log(`Not a bot. Message to post:  ${message}`);
+        activities.push([eventActor, message]);
+    }
+
+    // Only if PRclosed or PRmerged, return PRAuthor
+    if (eventAction === 'PRclosed' || eventAction === 'PRmerged') {
+        let messagePRAuthor = `- ${eventPRAuthor} PR was ${action}: ${eventUrl} at ${localTime}`;
+        if (!isExcluded(eventPRAuthor)) {
+            console.log(`Not a bot. Message to post:  ${messagePRAuthor}`);
+            activities.push([eventPRAuthor, messagePRAuthor]);
+        }
+    }
+
+    return JSON.stringify(activities);
 
 
 
     /**
-     * Helper function to check if issueNum references a Skills Issue
-     * @param {Number} issueNum   - issue number to check 
+     * Helper function to check if issueNum (that triggered the event) is a Skills Issue
+     * @param {Number} issueNum   - issueNum to check 
      * @returns {Boolean}         - true if Skills Issue, false if not
      */
     async function checkIfSkillsIssue(issueNum) {
@@ -122,7 +134,6 @@ async function activityTrigger({g, c}) {
             issue_number: issueNum
         });
         const isSkillsIssue = labelData.data.some(label => label.name === "Complexity: Prework");
-
         return isSkillsIssue;
     }
 
