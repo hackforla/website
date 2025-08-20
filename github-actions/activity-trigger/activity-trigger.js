@@ -44,7 +44,8 @@ async function activityTrigger({g, c}) {
         }
         if (eventAction === 'closed') {
             let reason = context.payload.issue.state_reason;
-            eventAction = reason;
+            eventActor = context.payload.issue.user.login;
+            eventAction = 'Closed-' + reason;
         }
     } else if (eventName === 'issue_comment') {
         // Check if the comment is on an issue or a pull request
@@ -82,9 +83,9 @@ async function activityTrigger({g, c}) {
     // Message templates to post on Skills Issue
     const actionMap = {
         'issues.opened': 'opened',
-        'issues.completed': 'closed- completed',
-        'issues.not_planned': 'closed- not planned',
-        'issues.duplicate': 'closed- duplicate',
+        'issues.Closed-completed': 'closed as completed',
+        'issues.Closed-not_planned': 'closed as not planned',
+        'issues.Closed-duplicate': 'closed as duplicate',
         'issues.reopened': 'reopened',
         'issues.assigned': 'assigned',
         'issues.unassigned': 'unassigned',
@@ -108,6 +109,11 @@ async function activityTrigger({g, c}) {
         activities.push([eventActor, message]);
     }
 
+    // Only if issue is closed, and eventActor != assignee, return assignee and message
+    if (eventAction.includes('Closed-') && (eventActor != assignee)) {
+        message = `- ${assignee} issue ${action}: ${eventUrl} at ${localTime}`;
+        activities.push([assignee, message]);
+    }
     // Only if PRclosed or PRmerged, and PRAuthor != eventActor, return PRAuthor and message
     if ((eventAction === 'PRclosed' || eventAction === 'PRmerged') && (eventActor != eventPRAuthor)) {
         let messagePRAuthor = `- ${eventPRAuthor} PR was ${action}: ${eventUrl} at ${localTime}`;
