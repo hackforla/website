@@ -6,6 +6,13 @@ image: /assets/images/projects/311_data.png
 alt: '311 Data'
 image-hero: /assets/images/projects/311data-beta.png
 leadership:
+  - name: Ryan Chase
+    github-handle: ryanfchase
+    role: Lead Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U052L9R6ETD
+      github: https://github.com/ryanfchase
+    picture: https://avatars.githubusercontent.com/ryanfchase
   - name: Christopher Cotton
     github-handle: CottonChristopher
     role: Product Manager
@@ -13,13 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U05MQ8CB2S1
       github: https://github.com/CottonChristopher
     picture: https://avatars.githubusercontent.com/CottonChristopher
-  - name: Ryan Chase
-    github-handle: ryanfchase
-    role: Project Manager, Developer
-    links:
-      slack: https://hackforla.slack.com/team/U052L9R6ETD
-      github: https://github.com/ryanfchase
-    picture: https://avatars.githubusercontent.com/ryanfchase
   - name: Bethlehem Berhane
     github-handle: bberhane
     role: Product Manager
@@ -27,27 +27,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U05QV9AKPNU
       github: https://github.com/bberhane
     picture: https://avatars.githubusercontent.com/bberhane
-  - name: Holly Worthen
-    github-handle: hworthen
-    role: UX Research Lead
+  - name: Audreen Fune
+    github-handle: audreenbean
+    role: UX Research Co-Lead
     links:
-      slack: https://hackforla.slack.com/team/U03RPBE9DL6
-      github: https://github.com/hworthen
-    picture: https://avatars.githubusercontent.com/hworthen
-  - name: Allison Jeon
-    github-handle: allisonjeon
-    role: UX Design Lead
-    links:
-      slack: https://hackforla.slack.com/team/U05JP94R9B7
-      github: https://github.com/allisonjeon
-    picture: https://avatars.githubusercontent.com/allisonjeon
+      slack: https://hackforla.slack.com/team/U089EGHGHCM
+      github: https://github.com/audreenbean
+    picture: https://avatars.githubusercontent.com/audreenbean
   - name: Joy Truex
     github-handle: Joy-Truex
     role: UX Design Lead
     links:
       slack: https://hackforla.slack.com/team/U03VBPSEH52
       github: https://github.com/Joy-Truex
-    picture: https://avatars.githubusercontent.com/Joy-Truex  
+    picture: https://avatars.githubusercontent.com/Joy-Truex
+  - name: Tracy Nguyen
+    github-handle: traycn
+    role: Engineering Lead
+    links:
+      slack: https://hackforla.slack.com/team/U046H7FBJGZ
+      github: https://github.com/traycn
+    picture: https://avatars.githubusercontent.com/traycn
 links:
   - name: GitHub
     url: 'https://github.com/hackforla/311-data'

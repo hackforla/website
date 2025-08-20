@@ -1,27 +1,6 @@
 {
   "removedContributors": [
-    "dcotelessa",
-    "ajb176",
-    "iancooperman",
-    "kadamrahul18",
-    "rafaelferreiranvr",
-    "jennisung",
-    "codyjohnsontx",
-    "coding-yost",
-    "jenjenkayi",
-    "innith",
-    "dsur427",
-    "RuchiUp",
-    "Sah11-0",
-    "RamchandraReddy07",
-    "mSharifHub",
-    "Crocodile-Lyle",
-    "aguilar-victor",
-    "mclotta"
-  ],
-  "notifiedContributors": [
     "roslynwythe",
-    "Cloid",
     "aadilahmed",
     "phunguyen1195",
     "fusionxx23",
@@ -35,7 +14,6 @@
     "Kle012",
     "HyMike",
     "mmcclanahan",
-    "jsnhn",
     "rachelcorawood",
     "Christopher-Chhim",
     "Khinememe-Kyaw",
@@ -45,9 +23,68 @@
     "priyanka02art",
     "ShivaniDesai1012"
   ],
-  "cannotRemoveYet": {
-    "roslynwythe": 5005,
-    "Cloid": 4388,
-    "jsnhn": 7642
+  "notifiedContributors": [
+    "sumerjoshi",
+    "jphamtv",
+    "gmgonzal",
+    "EShahverdian",
+    "AllMikeNoIke",
+    "Margotaro",
+    "Jeffreyp1",
+    "javierb256",
+    "githelsui",
+    "valdezg",
+    "DrAcula27",
+    "maadeshsivakumar",
+    "melissaluc",
+    "AricayaJohn",
+    "jakejjoyner",
+    "trca831",
+    "charmainemak09",
+    "rleeoriginal",
+    "Six5pAdes",
+    "NolaDodd",
+    "MitchellDoesCoding",
+    "minghsunliu"
+  ],
+  "nonTeamOpenIssue": {
+    "kelwilson": [
+      8068
+    ],
+    "ShivaniDesai1012": [
+      7977
+    ],
+    "varyad": [
+      7970
+    ],
+    "pm-daniel7": [
+      7904
+    ],
+    "sneha-kataria": [
+      7679,
+      7670
+    ],
+    "buneeIsSlo": [
+      6956
+    ],
+    "TheManTheMythTheGameDev": [
+      6946
+    ],
+    "Kle012": [
+      6341
+    ],
+    "aadilahmed": [
+      4980
+    ]
+  },
+  "inactiveOpenIssue": {
+    "essencegoff": [
+      5248,
+      7578
+    ],
+    "amen-ikamba": [
+      7505,
+      8017
+    ]
   }
 }

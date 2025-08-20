@@ -1,5 +1,5 @@
 /**
- * Posts a comment on github
+ * Posts a comment on GitHub
  * @param {Number} issueNum - the issue number where the comment should be posted
  * @param {String} comment - the comment to be posted
  */
