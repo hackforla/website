@@ -2,7 +2,7 @@
  * @param {Object} github - GitHub client
  * @param {Object} context - context object from actions/github-script
  */
-// Need read:org permission to use this
+// - Need read:org permission to use this function. Lack of permission will result in a 403 error.
 async function isMemberOfTeam(github, context, team, username) {
     try {
         await github.rest.teams.getMembershipForUserInOrg({
