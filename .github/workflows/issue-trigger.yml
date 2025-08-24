@@ -20,7 +20,7 @@ jobs:
           const username = '${{ github.actor }}'
           const team = 'website-write'
           const script = require('./github-actions/utils/check-team-membership.js')
-          return script(github, username, team)
+          return script(github, context, username, team)
           
     # If user is team member: checks if the issue has required labels
     - if: ${{ steps.check-team-membership.outputs.result == 'true' }}
