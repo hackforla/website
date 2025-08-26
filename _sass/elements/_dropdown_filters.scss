@@ -263,7 +263,7 @@ a.clear-filter-tags {
   //resize dropdown on tablet and mobile view
   section.filter-content-container {
     display: block;
-    padding: 32px 16px;
+    padding: 0 16px 32px 16px;
     // flex-direction: column;
   }
   // Hide applied filter tags in collapsed mobile toolbar
@@ -275,10 +275,10 @@ a.clear-filter-tags {
   }
 
   .filter-toolbar {
-    background-color: $color-pink;
+    background-color: #f7f5f5;
     position: sticky;
-    padding: 0;
-    top: 64px;
+    padding: 32px 0 0 0;
+    top: 40px;
     z-index: 99;
   }
 
