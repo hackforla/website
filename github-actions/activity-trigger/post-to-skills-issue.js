@@ -15,7 +15,7 @@ const SKILLS_LABEL = retrieveLabelDirectory("complexity0");
  * Function to get eventActor's Skills Issue and post message
  * @param {Object} github    - GitHub object 
  * @param {Object} context   - Context object
- * @param {Object} activity  - username and message 
+ * @param {Object} activity  - eventActor and message 
  * 
  */
 async function postToSkillsIssue({github, context}, activity) {
@@ -24,21 +24,27 @@ async function postToSkillsIssue({github, context}, activity) {
     const repo = context.repo.repo;
     const TEAM = 'website-write';
 
-    const [username, message] = activity;
+    const [eventActor, message] = activity;
     const MARKER = '<!-- Skills Issue Activity Record -->';
     const IN_PROGRESS_ID = statusFieldIds('In_Progress');
 
+    // If eventActor undefined, exit
+    if (!eventActor) {
+        console.log(`eventActor is undefined (likely a bot). Cannot post message.`);
+        return;
+    }
+    
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
-    const skillsInfo = await querySkillsIssue(github, context, username, SKILLS_LABEL);
+    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
 
     // Return immediately if Skills Issue not found
     if (skillsIssueNum) {
-        console.log(`Found Skills Issue for ${username}: #${skillsIssueNum}`);
+        console.log(`Found Skills Issue for ${eventActor}: #${skillsIssueNum}`);
     } else {
-        console.log(`Did not find Skills Issue for ${username}. Cannot post message.`);
+        console.log(`Did not find Skills Issue for ${eventActor}. Cannot post message.`);
         return;
     }
 
@@ -79,12 +85,12 @@ async function postToSkillsIssue({github, context}, activity) {
         
     } else {
         console.log(`MARKER not found in comments, creating new comment with MARKER...`);
-        const body = `${MARKER}\n## Activity Log: ${username}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
+        const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
         await postComment(skillsIssueNum, body, github, context);
     }
 
     // If eventActor is team member, open issue and move to "In progress". Else, close issue
-    const isActiveMember = await checkTeamMembership(github, context, username, TEAM);
+    const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
     let skillsIssueState = "closed";
 
     if (isActiveMember) {
