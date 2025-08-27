@@ -1,6 +1,5 @@
  // import modules
  const fs = require('fs');
- const path = require('path');
 
 /**
  * Filters JSON data from VRMS to extract only relevant fields,
@@ -15,7 +14,6 @@ console.log('Current working dir:', process.cwd());
 console.log('__dirname:', __dirname);
 
 // Get the path to the JSON file
-//const dataPath = path.join(__dirname, '../../../../_data/external/vrms_data.json');
 const dataPath = '_data/external/vrms_data.json';
 
 // Read the original data
