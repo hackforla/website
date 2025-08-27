@@ -296,8 +296,9 @@ a.clear-filter-tags {
     left: 0;
     bottom: 0;
     right: 0;
-    overflow-y: scroll;
     background: $color-white;
+    display: flex;
+    flex-direction: column;
   }
   .filters-title {
     background: $color-white;
@@ -335,17 +336,15 @@ a.clear-filter-tags {
 
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
-    padding: 0 12px 65px 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 12px 20px 12px;
   }
   .filter-toolbar.show-filters .mobile-filter-buttons {
     display: flex;
     box-sizing: border-box;
     justify-content: space-evenly;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    flex-shrink: 0;
     background: $color-white;
     padding: 8px;
     box-shadow: 0px -1px 4px 0px $color-mediumgrey;
