@@ -11,10 +11,10 @@ Lack of permission will result in a 403 error.
 docs on printing context information into the log.
 */
 
-async function isMemberOfTeam(github, githubUsername, team) {
+async function isMemberOfTeam(github, context, githubUsername, team) {
     try {
         await github.rest.teams.getMembershipForUserInOrg({
-            org: 'hackforla',
+            org: context.repo.owner,
             team_slug: team,
             username: githubUsername
         });

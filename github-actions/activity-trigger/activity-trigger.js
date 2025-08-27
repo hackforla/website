@@ -1,9 +1,3 @@
-// Global variables
-var github;
-var context;
-
-
-
 /**
  * This function parses the triggered event to determine the trigger eventName and eventAction
  * and from this information decide the eventActor (user who is credited for the event).
@@ -11,10 +5,7 @@ var context;
  * @param {Object} context   - Context of the function calling activity-trigger.js
  * @returns {Object}         - An object containing the eventActor and a message
  */
-async function activityTrigger({g, c}) {
-
-    github = g;
-    context = c;
+async function activityTrigger({github, context}) {
 
     let issueNum = '';
     let assignee = '';
@@ -110,7 +101,7 @@ async function activityTrigger({g, c}) {
     }
 
     // Only if issue is closed, and eventActor != assignee, return assignee and message
-    if (eventAction.includes('Closed-') && (eventActor != assignee)) {
+    if (eventAction.includes('Closed-') && (eventActor !== assignee)) {
         message = `- ${assignee} issue ${action}: ${eventUrl} at ${localTime}`;
         activities.push([assignee, message]);
     }
