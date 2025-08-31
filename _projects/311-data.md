@@ -27,6 +27,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U05QV9AKPNU
       github: https://github.com/bberhane
     picture: https://avatars.githubusercontent.com/bberhane
+  - name: Audreen Fune
+    github-handle: audreenbean
+    role: UX Research Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U089EGHGHCM
+      github: https://github.com/audreenbean
+    picture: https://avatars.githubusercontent.com/audreenbean
   - name: Joy Truex
     github-handle: Joy-Truex
     role: UX Design Lead
