@@ -24,3 +24,5 @@ async function isMemberOfTeam(github, context, username, team) {
     }
   }
 }
+
+module.exports = isMemberOfTeam;
