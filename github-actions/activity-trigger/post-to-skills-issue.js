@@ -55,6 +55,7 @@ async function postToSkillsIssue({github, context}, activity) {
         commentData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/comments', {
             owner,
             repo,
+            per_page: 100,
             issue_number: skillsIssueNum,
         });
     } catch (err) {
@@ -108,7 +109,7 @@ async function postToSkillsIssue({github, context}, activity) {
             state: skillsIssueState,
         });
     } catch (err) {
-        console.error(`Failed to update issue #${skillsIssueNum} state:`, err)
+        console.error(`Failed to update issue #${skillsIssueNum} state:`, err);
     }
 }
 
