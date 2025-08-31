@@ -1,6 +1,5 @@
  // import modules
  const fs = require('fs');
- const path = require('path');
 
 /**
  * Filters JSON data from VRMS to extract only relevant fields,
@@ -15,15 +14,14 @@ console.log('Current working dir:', process.cwd());
 console.log('__dirname:', __dirname);
 
 // Get the path to the JSON file
-//const dataPath = path.join(__dirname, '../../../../_data/external/vrms_data.json');
 const dataPath = '_data/external/vrms_data.json';
 
 // Read the original data
 const rawData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
 // Filter it
-function filterJson(data) {
-  const project = data.project || {};
+function filterJson(e) {
+  const p = e.project || {};
   return {
     // minimal top-level fields the site uses
     name: e.name ?? null,            // meeting title
