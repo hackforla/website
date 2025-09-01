@@ -47,7 +47,7 @@ async function activityTrigger({github, context}) {
         issueNum = context.payload.issue.number;
         eventUrl = context.payload.comment.html_url;
         timeline = context.payload.comment.updated_at;
-    } else if (eventName === 'pull_request') {
+    } else if (eventName === 'pull_request_target') {
         issueNum = context.payload.pull_request.number;
         eventUrl = context.payload.pull_request.html_url;
         timeline = context.payload.pull_request.updated_at;
