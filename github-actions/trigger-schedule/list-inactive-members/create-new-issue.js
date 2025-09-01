@@ -2,7 +2,7 @@
 const fs = require('fs');
 const issueTemplateParser = require('../../utils/issue-template-parser');
 const postComment = require('../../utils/post-issue-comment');
-
+// TEST COMMENT ONLY
 // Global variables
 var github;
 var context;
