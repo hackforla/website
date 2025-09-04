@@ -28,7 +28,7 @@ jobs:
 
     - name: Gather Event Details
       id: gather-event-details
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
         script: |
@@ -39,7 +39,7 @@ jobs:
     - if: ${{ steps.gather-event-details.outputs.result  != '[]' }}
       name: Post to Skills Issue
       id: post-to-skills-issue
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
         script: |

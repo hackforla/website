@@ -12,7 +12,7 @@ jobs:
     if: github.repository == 'hackforla/website'
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |

@@ -15,7 +15,7 @@ jobs:
 
       - name: Check for keyword and issue number
         id: check-for-keyword
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const script = require('./github-actions/trigger-pr/check-linked-issue.js')
