@@ -13,20 +13,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
-  - name: Kanika Chotani
-    github-handle: kchotani
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U02E7ATACAV
-      github: https://github.com/kchotani
-    picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jimmy Juarez
-    github-handle: JimmyJuarez10
-    role: Developer Lead
-    links:
-      slack: https://hackforla.slack.com/team/U062FQ7UXQE
-      github: https://github.com/JimmyJuarez10
-    picture: https://avatars.githubusercontent.com/JimmyJuarez10
   - name: Lu Feng
     github-handle: fenglugithub
     role: UI/UX Lead
@@ -41,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07G0CHGNSD
       github: https://github.com/rishi222k
     picture: https://avatars.githubusercontent.com/rishi222k
-  - name: Manju Chawla
-    github-handle: itsmanjuchawla
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U06E9T37H9A
-      github: https://github.com/itsmanjuchawla
-    picture: https://avatars.githubusercontent.com/itsmanjuchawla
   - name: Bitian Zhang
     github-handle:
     role: Developer

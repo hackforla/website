@@ -1,90 +1,58 @@
 {
   "removedContributors": [
-    "roslynwythe",
-    "aadilahmed",
-    "phunguyen1195",
-    "fusionxx23",
-    "jesusmendoza1940",
-    "TheManTheMythTheGameDev",
-    "mrodz",
-    "buneeIsSlo",
-    "kelwilson",
-    "varyad",
-    "siyunfeng",
-    "Kle012",
-    "HyMike",
-    "mmcclanahan",
-    "rachelcorawood",
-    "Christopher-Chhim",
-    "Khinememe-Kyaw",
-    "nchanyal",
-    "amen-ikamba",
-    "andrea264",
-    "priyanka02art",
-    "ShivaniDesai1012"
-  ],
-  "notifiedContributors": [
-    "sumerjoshi",
     "jphamtv",
-    "gmgonzal",
-    "EShahverdian",
     "AllMikeNoIke",
     "Margotaro",
-    "Jeffreyp1",
     "javierb256",
     "githelsui",
-    "valdezg",
     "DrAcula27",
-    "maadeshsivakumar",
     "melissaluc",
     "AricayaJohn",
     "jakejjoyner",
     "trca831",
     "charmainemak09",
-    "rleeoriginal",
     "Six5pAdes",
     "NolaDodd",
-    "MitchellDoesCoding",
     "minghsunliu"
   ],
-  "nonTeamOpenIssue": {
-    "kelwilson": [
-      8068
-    ],
-    "ShivaniDesai1012": [
-      7977
-    ],
-    "varyad": [
-      7970
-    ],
-    "pm-daniel7": [
-      7904
-    ],
-    "sneha-kataria": [
-      7679,
-      7670
-    ],
-    "buneeIsSlo": [
-      6956
-    ],
-    "TheManTheMythTheGameDev": [
-      6946
-    ],
-    "Kle012": [
-      6341
-    ],
-    "aadilahmed": [
-      4980
-    ]
-  },
+  "notifiedContributors": [
+    "sumerjoshi",
+    "kevinashworth",
+    "EShahverdian",
+    "aadilahmed",
+    "hziegel",
+    "eunicode",
+    "aswutmaxcy",
+    "valdezg",
+    "maadeshsivakumar",
+    "TheManTheMythTheGameDev",
+    "akarsh079",
+    "rogerioduenas",
+    "sarahgraup",
+    "varyad",
+    "Kle012",
+    "hoanhua14",
+    "ariellockett2",
+    "Sujay-Anantha",
+    "Monomer9",
+    "ihop-56",
+    "katiejnete",
+    "ejknighton",
+    "Eleftherios01",
+    "jamhpark",
+    "andyvu923",
+    "aparnar1920",
+    "sandavid11"
+  ],
+  "nonTeamOpenIssue": {},
   "inactiveOpenIssue": {
-    "essencegoff": [
-      5248,
-      7578
-    ],
     "amen-ikamba": [
       7505,
       8017
+    ],
+    "essencegoff": [
+      5248,
+      7578
     ]
   }
 }

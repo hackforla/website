@@ -1,0 +1,50 @@
+name: Member Activity Trigger
+
+on:
+  workflow_call:
+  issues:
+    types: [opened, assigned, unassigned, closed, reopened]
+  issue_comment: 
+    types: [created]
+  pull_request_target:
+    types: [opened, closed, reopened]
+  pull_request_review:
+    types: [submitted]
+  pull_request_review_comment:
+    types: [created]
+
+# Limits default token permissions
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  Gather-Activity-Event-Information:
+    runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'
+    steps:
+    - uses: actions/checkout@v5
+
+    - name: Gather Event Details
+      id: gather-event-details
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+        script: |
+          const script = require('./github-actions/activity-trigger/activity-trigger.js');
+          const activities = script({github, context});
+          return activities;
+          
+    - if: ${{ steps.gather-event-details.outputs.result  != '[]' }}
+      name: Post to Skills Issue
+      id: post-to-skills-issue
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+        script: |
+          const activities = JSON.parse(${{ steps.gather-event-details.outputs.result }});
+          const script = require('./github-actions/activity-trigger/post-to-skills-issue.js');
+          for (const activity of activities) {
+            await script({github, context}, activity);
+          }
