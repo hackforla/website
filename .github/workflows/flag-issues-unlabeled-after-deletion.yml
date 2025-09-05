@@ -24,7 +24,7 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |
-            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/scripts/get-unlabeled-issues.js')
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/get-unlabeled-issues.js')
             return script({g: github, c: context})
       
       # Create a notification issue detailing the label deleted and affected issues
@@ -36,7 +36,7 @@ jobs:
         with: 
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: | 
-            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/scripts/create-notification-issue.js')
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/create-notification-issue.js')
             const unlabeledIssues = ${{ steps.get-unlabeled-issues.outputs.result }}
             return script({
               g: github,
@@ -54,7 +54,7 @@ jobs:
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
-            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/scripts/post-to-agenda.js')
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/post-to-agenda.js')
             const unlabeledIssues = ${{ steps.get-unlabeled-issues.outputs.result }}
             const notificationIssueNum = ${{ steps.create-notification-issue.outputs.result }}
             return script({

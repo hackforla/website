@@ -1,12 +1,11 @@
 const path = require("path");
-const populateTemplate = require("../../utils/populate-template");
-const postComment = require("../../utils/post-issue-comment");
-const createTemplatedIssue = require("../../utils/create-templated-issue");
+const populateTemplate = require("../utils/populate-template");
+const postComment = require("../utils/post-issue-comment");
+const createTemplatedIssue = require("../utils/create-templated-issue");
 const formatIssueList = require("./format-issue-list");
-const getLATimestamp = require("../../utils/get-la-timestamp");
-const queryIssueInfo = require("../../utils/query-issue-info");
+const getLATimestamp = require("../utils/get-la-timestamp");
 
-const STATIC_ISSUE_NUMS = require("../../utils/_data/static-issue-nums.json");
+const STATIC_ISSUE_NUMS = require("../utils/_data/static-issue-nums.json");
 
 /**
  * Creates new GitHub issue to notify PM team about label deletion
@@ -27,7 +26,7 @@ async function postUnlabelNotificationToAgenda({
   agendaComment = populateTemplate({
     templatePath: path.resolve(
       __dirname,
-      "../templates/agenda-issue-comment.md",
+      "./templates/agenda-issue-comment.md",
     ),
     templateVars: {
       "${label-name}": context.payload.label.name,
@@ -48,7 +47,7 @@ async function postUnlabelNotificationToAgenda({
       title: `Review Needed - Issue Posting to Agenda Issue #${STATIC_ISSUE_NUMS.AGENDA}`,
       templatePath: path.resolve(
         __dirname,
-        "../templates/agenda-error-issue-body.md",
+        "./templates/agenda-error-issue-body.md",
       ),
       templateVars: {
         "${agenda-issue-num}": STATIC_ISSUE_NUMS.AGENDA,

@@ -1,9 +1,9 @@
 const path = require("path");
-const getLATimestamp = require("../../utils/get-la-timestamp");
-const retrieveLabelDirectory = require("../../utils/retrieve-label-directory");
+const getLATimestamp = require("../utils/get-la-timestamp");
+const retrieveLabelDirectory = require("../utils/retrieve-label-directory");
 const formatIssueList = require("./format-issue-list");
-const createTemplatedIssue = require("../../utils/create-templated-issue");
-const postTemplatedComment = require("../../utils/post-templated-comment");
+const createTemplatedIssue = require("../utils/create-templated-issue");
+const postTemplatedComment = require("../utils/post-templated-comment");
 
 const readyForPM = retrieveLabelDirectory("readyForPM");
 
@@ -34,7 +34,7 @@ async function createUnlabelNotificationIssue({
     title: `Review Needed - Label ${labelName} Deleted`,
     templatePath: path.resolve(
       __dirname,
-      "../templates/notification-issue-body.md",
+      "./templates/notification-issue-body.md",
     ),
     templateVars: {
       "${label-name}": labelName,
@@ -56,7 +56,7 @@ async function createUnlabelNotificationIssue({
     issueNum: notificationIssueNum,
     templatePath: path.resolve(
       __dirname,
-      "../templates/notification-issue-comment.md",
+      "./templates/notification-issue-comment.md",
     ),
     templateVars: {
       "${deleter}": labelDeleter,
