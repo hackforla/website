@@ -44,7 +44,7 @@ async function postUnlabelNotificationToAgenda({
     // Create a notification issue about this error
     const timestamp = getLATimestamp();
     const missingAgendaIssueNum = await createTemplatedIssue({
-      title: `Review Needed - Issue Posting to Agenda Issue #${STATIC_ISSUE_NUMS.AGENDA}`,
+      title: `Review Needed - Error Posting to Agenda Issue #${STATIC_ISSUE_NUMS.AGENDA} for Label ${context.payload.label.name} Deletion`,
       templatePath: path.resolve(
         __dirname,
         "./templates/agenda-error-issue-body.md",
