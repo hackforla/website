@@ -23,7 +23,7 @@ async function postUnlabelNotificationToAgenda({
 }) {
   // Get agenda comment text prior to comment. We will either
   // use it in the agenda comment or in the agenda missing issue
-  agendaComment = populateTemplate({
+  const agendaComment = populateTemplate({
     templatePath: path.resolve(
       __dirname,
       "./templates/agenda-issue-comment.md",
