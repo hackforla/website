@@ -18,25 +18,33 @@ async function activityTrigger({github, context}) {
     let activities = [];
 
     // Exclude all bot actors from being recorded as a guardrail against infinite loops
-    const EXCLUDED_ACTORS = ['HackforLABot', 'elizabethhonest', 'github-actions', 'github-advanced-security', 'github-pages', 'dependabot[bot]', 'dependabot-preview[bot]', 'dependabot', 'dependabot-preview'];
+    const EXCLUDED_ACTORS = [
+        "HackforLABot",
+        "elizabethhonest",
+        "dependabot",
+        "dependabot[bot]",
+        "github-actions",
+        "github-actions[bot]",
+        "github-advanced-security",
+        "github-advanced-security[bot]"
+    ];
 
     if (eventName === 'issues') {
         issueNum = context.payload.issue.number;
         eventUrl = context.payload.issue.html_url;
         timeline = context.payload.issue.updated_at;
-        // If issue action is not opened and an assignee exists, then change
+        // If issue action is closed and an assignee exists, then change
         // the eventActor to the issue assignee, else retain issue author
-        assignee = context.payload.assignee?.login;
-        if (eventAction != 'opened' && assignee != null ) {
-            console.log(`Issue is ${eventAction}. Change eventActor => ${assignee}`);
-            eventActor = assignee;
-        } else {
-            eventActor = context.payload.issue.user.login;
-        }
         if (eventAction === 'closed') {
+            if (context.payload.issue.assignees?.length > 0) {
+                eventActor = context.payload.issue.assignees[0].login;
+            } else {
+                eventActor = context.payload.issue.user.login;
+            }
             let reason = context.payload.issue.state_reason;
-            eventActor = context.payload.issue.user.login;
             eventAction = 'Closed-' + reason;
+        } else if (eventAction === 'assigned' || eventAction === 'unassigned') {
+            eventActor = context.payload.assignee.login;
         }
     } else if (eventName === 'issue_comment') {
         // Check if the comment is on an issue or a pull request
@@ -61,6 +69,11 @@ async function activityTrigger({github, context}) {
         issueNum = context.payload.pull_request.number;
         eventUrl = context.payload.review.html_url;
         timeline = context.payload.review.updated_at;
+        eventActor = context.payload.review.user.login;
+    } else if (eventName === 'pull_request_review_comment') {
+        issueNum = context.payload.pull_request.number;
+        eventUrl = context.payload.comment.html_url;
+        timeline = context.payload.comment.updated_at;
     }
 
     // Return immediately if the issueNum is a Skills Issue- to discourage
@@ -81,12 +94,13 @@ async function activityTrigger({github, context}) {
         'issues.assigned': 'assigned',
         'issues.unassigned': 'unassigned',
         'issue_comment.created': 'commented',
-        'pull_request_review.created': 'submitted review',
+        'pull_request_review.submitted': 'submitted review',
+        'pull_request_review_comment.created': 'commented',
         'pull_request_comment.created': 'commented',
-        'pull_request.opened': 'opened',
-        'pull_request.PRclosed': 'closed',
-        'pull_request.PRmerged': 'merged',
-        'pull_request.reopened': 'reopened'
+        'pull_request_target.opened': 'opened',
+        'pull_request_target.PRclosed': 'closed',
+        'pull_request_target.PRmerged': 'merged',
+        'pull_request_target.reopened': 'reopened'
     };
     
     let localTime = getDateTime(timeline);
