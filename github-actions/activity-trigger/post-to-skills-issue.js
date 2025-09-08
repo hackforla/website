@@ -58,7 +58,6 @@ async function postToSkillsIssue({github, context}, activity) {
             per_page: 100,
             issue_number: skillsIssueNum,
         });
-        console.log(` ⮡  Found comment with MARKER...`);
     } catch (err) {
         console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
         return;
@@ -69,6 +68,7 @@ async function postToSkillsIssue({github, context}, activity) {
     const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
+        console.log(` ⮡  Found Skills Issue comment with MARKER...`);
         const commentId = commentFoundId;
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
@@ -86,7 +86,7 @@ async function postToSkillsIssue({github, context}, activity) {
         }
         
     } else {
-        console.log(` ⮡  MARKER not found, creating new comment entry with MARKER...`);
+        console.log(` ⮡  Did not find Skills Issue comment with MARKER, creating new comment...`);
         const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
         const commentPosted = await postComment(skillsIssueNum, body, github, context);
         if (commentPosted) {
@@ -102,7 +102,10 @@ async function postToSkillsIssue({github, context}, activity) {
         skillsIssueState = "open";
         // Update item's status to "In progress (actively working)" if not already
         if (skillsIssueNodeId && skillsStatusId !== IN_PROGRESS_ID) {
-            await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
+            const statusMutated = await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
+            if (statusMutated) {
+                console.log(` ⮡  Changed issue #${skillsIssueNum} to "In progress"`)
+            }
         }
     }
     try {
@@ -112,7 +115,7 @@ async function postToSkillsIssue({github, context}, activity) {
             issue_number: skillsIssueNum,
             state: skillsIssueState,
         });
-        console.log(` ⮡  Re-opened issue #${skillsIssueNum}`)
+        console.log(` ⮡  Re-opened issue #${skillsIssueNum}`);
     } catch (err) {
         console.error(` ⮡  Failed to update issue #${skillsIssueNum} state:`, err);
     }
