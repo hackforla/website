@@ -30,21 +30,20 @@ async function postToSkillsIssue({github, context}, activity) {
 
     // If eventActor undefined, exit
     if (!eventActor) {
-        console.log(`eventActor is undefined (likely a bot). Cannot post message.`);
+        console.log(`eventActor is undefined (likely a bot). Cannot post message...`);
         return;
     }
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
+
     const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
 
     // Return immediately if Skills Issue not found
-    if (skillsIssueNum) {
-        console.log(`Found Skills Issue for ${eventActor}: #${skillsIssueNum}`);
-    } else {
-        console.log(`Did not find Skills Issue for ${eventActor}. Cannot post message.`);
+    if (!skillsIssueNum) {
+        console.log(` ⮡  Did not find Skills Issue for ${eventActor}. Cannot post message.`);
         return;
     }
 
@@ -58,8 +57,9 @@ async function postToSkillsIssue({github, context}, activity) {
             per_page: 100,
             issue_number: skillsIssueNum,
         });
+        console.log(` ⮡  Found comment with MARKER...`);
     } catch (err) {
-        console.error(`GET comments failed for issue #${skillsIssueNum}:`, err);
+        console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
         return;
     }
 
@@ -68,7 +68,6 @@ async function postToSkillsIssue({github, context}, activity) {
     const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
-        console.log(`Found comment with MARKER: ${MARKER}`);
         const commentId = commentFoundId;
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
@@ -80,14 +79,18 @@ async function postToSkillsIssue({github, context}, activity) {
                 commentId,
                 body: updatedBody
             });
+            console.log(` ✅ Success. Entry posted to Skills Issue`);
         } catch (err) {
-            console.error(`Something went wrong updating comment:`, err);
+            console.error(` ❌ Something went wrong posting entry:`, err);
         }
         
     } else {
-        console.log(`MARKER not found in comments, creating new comment with MARKER...`);
+        console.log(` ⮡  MARKER not found, creating new comment entry with MARKER...`);
         const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
-        await postComment(skillsIssueNum, body, github, context);
+        const commentPosted = await postComment(skillsIssueNum, body, github, context);
+        if (commentPosted) {
+            console.log(` ✅ Success. Entry posted to Skills Issue`);
+        }
     }
 
     // If eventActor is team member, open issue and move to "In progress". Else, close issue
@@ -108,8 +111,9 @@ async function postToSkillsIssue({github, context}, activity) {
             issue_number: skillsIssueNum,
             state: skillsIssueState,
         });
+        console.log(` ⮡  Re-opened issue #${skillsIssueNum}`)
     } catch (err) {
-        console.error(`Failed to update issue #${skillsIssueNum} state:`, err);
+        console.error(` ⮡  Failed to update issue #${skillsIssueNum} state:`, err);
     }
 }
 

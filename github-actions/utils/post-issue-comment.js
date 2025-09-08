@@ -11,6 +11,7 @@ async function postComment(issueNum, comment, github, context) {
             issue_number: issueNum,
             body: comment,
         });
+        return true;
     } catch (err) {
         throw new Error(err);
     }

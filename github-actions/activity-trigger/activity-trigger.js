@@ -110,8 +110,10 @@ async function activityTrigger({github, context}) {
     // Check to confirm the eventActor isn't a bot
     const isExcluded = (eventActor) => EXCLUDED_ACTORS.includes(eventActor);
     if (!isExcluded(eventActor)) {
-        console.log(`Not a bot. Message to post:  ${message}`);
+        console.log(`Not a bot. Message to post:  "${message}"`);
         activities.push([eventActor, message]);
+    } else {
+        console.log(`eventActor: ${eventActor} likely a bot. Do not post`);
     }
 
     // Only if issue is closed, and eventActor != assignee, return assignee and message
@@ -123,7 +125,7 @@ async function activityTrigger({github, context}) {
     if ((eventAction === 'PRclosed' || eventAction === 'PRmerged') && (eventActor != eventPRAuthor)) {
         let messagePRAuthor = `- ${eventPRAuthor} PR was ${action}: ${eventUrl} at ${localTime}`;
         if (!isExcluded(eventPRAuthor)) {
-            console.log(`Not a bot. Message to post:  ${messagePRAuthor}`);
+            console.log(`Not a bot. Message to post:  "${messagePRAuthor}"`);
             activities.push([eventPRAuthor, messagePRAuthor]);
         }
     }
