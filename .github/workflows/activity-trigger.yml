@@ -22,7 +22,7 @@ permissions:
 jobs:
   Gather-Activity-Event-Information:
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'hackforla/website' }}
+    if: github.repository == 'hackforla/website'
     steps:
     - uses: actions/checkout@v5
 
