@@ -40,7 +40,7 @@ async function mutateIssueStatus(
   };
 
   try {
-    const result = await github.graphql(mutation, variables);
+    await github.graphql(mutation, variables);
     // Return true if mutation was successful
     return true;
   } catch (err) {
