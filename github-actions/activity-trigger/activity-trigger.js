@@ -8,12 +8,13 @@
 async function activityTrigger({github, context}) {
 
     let issueNum = '';
-    let assignee = '';
     let timeline = '';
 
     let eventName = context.eventName;
     let eventAction = context.payload.action;
     let eventActor = context.actor;
+
+    let eventObserver = '';
     let eventPRAuthor = '';
     let activities = [];
 
@@ -33,16 +34,18 @@ async function activityTrigger({github, context}) {
         issueNum = context.payload.issue.number;
         eventUrl = context.payload.issue.html_url;
         timeline = context.payload.issue.updated_at;
-        // If issue action is closed and an assignee exists, then change
-        // the eventActor to the issue assignee, else retain issue author
+        // eventActor is the actor that directly causes or performs the eventAction
+        // eventObserver is the actor whose issue is being acted upon
         if (eventAction === 'closed') {
+            // eventObserver is the assignee if exists, else is the issueAuthor
             if (context.payload.issue.assignees?.length > 0) {
-                eventActor = context.payload.issue.assignees[0].login;
+                eventObserver = context.payload.issue.assignees[0].login; // aka assignee
             } else {
-                eventActor = context.payload.issue.user.login;
+                eventObserver = context.payload.issue.user.login;         // aka issueAuthor
             }
             let reason = context.payload.issue.state_reason;
             eventAction = 'Closed-' + reason;
+        // eventActor is the assignee when eventAction is assigned/unassigned  
         } else if (eventAction === 'assigned' || eventAction === 'unassigned') {
             eventActor = context.payload.assignee.login;
         }
@@ -116,10 +119,10 @@ async function activityTrigger({github, context}) {
         console.log(`eventActor: ${eventActor} likely a bot. Do not post`);
     }
 
-    // Only if issue is closed, and eventActor != assignee, return assignee and message
-    if (eventAction.includes('Closed-') && (eventActor !== assignee)) {
-        message = `- ${assignee} issue ${action}: ${eventUrl} at ${localTime}`;
-        activities.push([assignee, message]);
+    // Only if issue is closed, and eventActor !== eventObserver, return eventObserver and message
+    if (eventAction.includes('Closed-') && (eventActor !== eventObserver)) {
+        message = `- ${eventObserver} was ${action}: ${eventUrl} at ${localTime}`;
+        activities.push([eventObserver, message]);
     }
     // Only if PRclosed or PRmerged, and PRAuthor != eventActor, return PRAuthor and message
     if ((eventAction === 'PRclosed' || eventAction === 'PRmerged') && (eventActor != eventPRAuthor)) {
