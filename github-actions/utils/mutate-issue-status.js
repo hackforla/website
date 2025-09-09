@@ -42,7 +42,7 @@ async function mutateIssueStatus(
   try {
     const result = await github.graphql(mutation, variables);
     // Return true if mutation was successful
-    return Boolean(result?.updateProjectV2ItemFieldValue?.projectV2Item?.id);
+    return true;
   } catch (err) {
     if (err.message.includes('archived')) {
       console.log(` ⮡  Issue is archived- cannot change status`);
