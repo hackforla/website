@@ -41,14 +41,10 @@ async function mutateIssueStatus(
 
   try {
     await github.graphql(mutation, variables);
-    // Return true if mutation was successful
     return true;
-  } catch (err) {
-    if (err.message.includes('archived')) {
-      console.log(` ⮡  Issue is archived- cannot change status`);
-    } else 
-      throw new Error(' ⮡  Error in mutateIssueStatus() function: ' + err);
-    }
+  } catch (error) {
+    throw new Error(' ⮡ Error in mutateIssueStatus() function: ' + error);
+  }
 }
 
 module.exports = mutateIssueStatus;

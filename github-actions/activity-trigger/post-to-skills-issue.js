@@ -35,10 +35,11 @@ async function postToSkillsIssue({github, context}, activity) {
     }
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
-    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
+    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL, isArchived);
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
+    const isArchived = skillsInfo.isArchived;
 
     // Return immediately if Skills Issue not found
     if (skillsIssueNum) {
@@ -94,8 +95,8 @@ async function postToSkillsIssue({github, context}, activity) {
         }
     }
 
-    // Do not move or reopen Skills Issue if message includes the string 'closed'
-    if ((!message.includes('closed')) || (!message.includes('assigned'))) {
+    // Only proceed if Skills Issue message does not include: 'closed', 'assigned', or isArchived 
+    if (!(message.includes('closed') || message.includes('assigned') || isArchived)) {
 
         // If eventActor is team member, open issue and move to "In progress"
         const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
@@ -109,12 +110,10 @@ async function postToSkillsIssue({github, context}, activity) {
                     state: "open",
                 });
                 console.log(` ⮡  Re-opened issue #${skillsIssueNum}`);
-                // Update item's status to "In progress (actively working)" if not already
+                // After delay, update item's status to "In progress (actively working)" if not already
                 if (skillsIssueNodeId && skillsStatusId !== IN_PROGRESS_ID) {
                     const statusMutated = await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
-                    if (statusMutated) {
-                        console.log(` ⮡  Changed issue #${skillsIssueNum} to "In progress"`);
-                    }
+                    if (statusMutated) console.log(` ⮡  Changed issue #${skillsIssueNum} to "In progress"`);
                 }
             } catch (err) {
                 console.error(` ⮡  Failed to update issue #${skillsIssueNum} state:`, err);
