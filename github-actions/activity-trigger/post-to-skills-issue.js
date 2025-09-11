@@ -58,7 +58,6 @@ async function postToSkillsIssue({github, context}, activity) {
             per_page: 100,
             issue_number: skillsIssueNum,
         });
-        console.log(` ⮡  Found comment with MARKER...`);
     } catch (err) {
         console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
         return;
@@ -69,6 +68,7 @@ async function postToSkillsIssue({github, context}, activity) {
     const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
+        console.log(` ⮡  Found comment with MARKER...`);
         const commentId = commentFoundId;
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
