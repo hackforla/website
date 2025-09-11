@@ -108,29 +108,18 @@ async function activityTrigger({github, context}) {
     
     let localTime = getDateTime(timeline);
     let action = actionMap[`${eventName}.${eventAction}`];
-    let message = `- ${eventActor} ${action}: ${eventUrl} at ${localTime}`;
 
     // Check to confirm the eventActor isn't a bot
-    const isExcluded = (eventActor) => EXCLUDED_ACTORS.includes(eventActor);
-    if (!isExcluded(eventActor)) {
-        console.log(`Not a bot. Message to post:  "${message}"`);
-        activities.push([eventActor, message]);
-    } else {
-        console.log(`eventActor: ${eventActor} likely a bot. Do not post`);
-    }
-
-    // Only if issue is closed, and eventActor !== eventObserver, return eventObserver and message
-    if (eventAction.includes('Closed-') && (eventActor !== eventObserver)) {
-        message = `- ${eventObserver} was ${action}: ${eventUrl} at ${localTime}`;
-        activities.push([eventObserver, message]);
+    if (!checkIfBot(eventActor)) {
+        composeAndPushMessage(eventActor, action, eventUrl, localTime);
+    } 
+    // Only if issue is closed, eventObserver !== eventActor, and eventObserver not a bot
+    if (eventAction.includes('Closed-') && (eventActor !== eventObserver) && (!checkIfBot(eventObserver))) {
+        composeAndPushMessage(eventObserver, `issue was ${action}`, eventUrl, localTime);
     }
     // Only if PRclosed or PRmerged, and PRAuthor != eventActor, return PRAuthor and message
-    if ((eventAction === 'PRclosed' || eventAction === 'PRmerged') && (eventActor != eventPRAuthor)) {
-        let messagePRAuthor = `- ${eventPRAuthor} PR was ${action}: ${eventUrl} at ${localTime}`;
-        if (!isExcluded(eventPRAuthor)) {
-            console.log(`Not a bot. Message to post:  "${messagePRAuthor}"`);
-            activities.push([eventPRAuthor, messagePRAuthor]);
-        }
+    if (eventAction.includes('PR') && (eventActor != eventPRAuthor) && (!checkIfBot(eventPRAuthor))) {
+        composeAndPushMessage(eventPRAuthor, `PR was ${action}`, eventUrl, localTime);
     }
 
     return JSON.stringify(activities);
@@ -164,6 +153,30 @@ async function activityTrigger({github, context}) {
         const date = new Date(timeline);
         const options = { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short' };
         return date.toLocaleString('en-US', options);
+    }
+
+    /**
+     * Helper function to check if eventActor is a bot
+     * @param {String} eventActor   - the eventActor to check
+     * @returns {Boolean}           - true if bot, false if not
+     */
+    function checkIfBot(eventActor) {
+        let isBot = EXCLUDED_ACTORS.includes(eventActor);
+        if (isBot) console.log(`eventActor: ${eventActor} likely a bot. Do not post`); 
+        return isBot;
+    }
+
+    /**
+     * Helper function to create message and push to activities array
+     * @param {String} actor    - the eventActor
+     * @param {String} action   - the action performed by the eventActor
+     * @param {String} url      - the URL of the issue or PR
+     * @param {String} time     - the date and time of the event
+     */
+    function composeAndPushMessage(actor, action, url, time) {
+        let message =  `- ${actor} ${action}: ${url} at ${time}`;
+        console.log(`Message to post:  "${message}"`);
+        activities.push([actor, message]);
     }
 
 }
