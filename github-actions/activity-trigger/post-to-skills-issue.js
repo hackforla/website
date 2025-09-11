@@ -35,7 +35,7 @@ async function postToSkillsIssue({github, context}, activity) {
     }
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
-    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL, isArchived);
+    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
@@ -110,7 +110,7 @@ async function postToSkillsIssue({github, context}, activity) {
                     state: "open",
                 });
                 console.log(` ⮡  Re-opened issue #${skillsIssueNum}`);
-                // After delay, update item's status to "In progress (actively working)" if not already
+                // Update item's status to "In progress (actively working)" if not already
                 if (skillsIssueNodeId && skillsStatusId !== IN_PROGRESS_ID) {
                     const statusMutated = await mutateIssueStatus(github, context, skillsIssueNodeId, IN_PROGRESS_ID);
                     if (statusMutated) console.log(` ⮡  Changed issue #${skillsIssueNum} to "In progress"`);
