@@ -13,7 +13,7 @@ jobs:
     steps:
     # Checkout repo, and provide authorization token for `stefanzweifel/git-auto-commit-action` below
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with: 
         token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
 

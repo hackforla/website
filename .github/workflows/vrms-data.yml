@@ -13,7 +13,7 @@ jobs:
     if: github.repository == 'hackforla/website'
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
 
