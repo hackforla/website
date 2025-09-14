@@ -40,13 +40,13 @@ async function activityTrigger({github, context}) {
         if (eventAction === 'closed') {
             // eventObserver is the assignee if exists, else is the issueAuthor
             if (context.payload.issue.assignees?.length > 0) {
-                eventObserver = context.payload.issue.assignees[0].login; // aka assignee
+                eventObserver = context.payload.issue.assignees[0].login; // aka assignee (first)
             } else {
                 eventObserver = context.payload.issue.user.login;         // aka issueAuthor
             }
             let reason = context.payload.issue.state_reason;
             eventAction = 'Closed-' + reason;
-        // eventActor is the assignee when eventAction is assigned/unassigned  
+        // eventActor is the assignee when eventAction is assigned/unassigned (not context.actor) 
         } else if (eventAction === 'assigned' || eventAction === 'unassigned') {
             eventActor = context.payload.assignee.login;
         }
@@ -86,7 +86,7 @@ async function activityTrigger({github, context}) {
         const isSkillsIssue = await checkIfSkillsIssue(issueNum);
         if (isSkillsIssue) {
             console.log(`- issueNum: ${issueNum} identified as Skills Issue`);
-            // return activities; <-- confirm before uncommenting
+            // return activities; <-- do not uncomment yet; continue to capture logs
         }
     }
 
@@ -125,7 +125,7 @@ async function activityTrigger({github, context}) {
         composeAndPushMessage(eventPRAuthor, `PR was ${action}`, eventUrl, localTime);
     }
 
-    return JSON.stringify(activities);
+    return activities;
 
 
 
