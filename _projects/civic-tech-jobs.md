@@ -13,6 +13,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
+  - name: Snigdha Tiwari
+    github-handle: snigdhat1
+    role: Developer Lead
+    links:
+      slack: https://hackforla.slack.com/team/U08N4CKKJUW
+      github: https://github.com/snigdhat1
+    picture: https://avatars.githubusercontent.com/snigdhat1
   - name: Lu Feng
     github-handle: fenglugithub
     role: UI/UX Lead
