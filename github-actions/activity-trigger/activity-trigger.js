@@ -9,6 +9,7 @@ async function activityTrigger({github, context}) {
 
     let issueNum = '';
     let timeline = '';
+    let eventUrl = '';
 
     let eventName = context.eventName;
     let eventAction = context.payload.action;
@@ -81,10 +82,12 @@ async function activityTrigger({github, context}) {
 
     // Return immediately if the issueNum is a Skills Issue- to discourage
     // infinite loop (recording comment, recording the recording of comment, etc.)
-    const isSkillsIssue = await checkIfSkillsIssue(issueNum);
-    if (isSkillsIssue) {
-        console.log(`- issueNum: ${issueNum} identified as Skills Issue`);
-        // return activities; <-- confirm before uncommenting
+    if (eventName === 'issues' || eventName === 'issue_comment') {
+        const isSkillsIssue = await checkIfSkillsIssue(issueNum);
+        if (isSkillsIssue) {
+            console.log(`- issueNum: ${issueNum} identified as Skills Issue`);
+            // return activities; <-- confirm before uncommenting
+        }
     }
 
     // Message templates to post on Skills Issue

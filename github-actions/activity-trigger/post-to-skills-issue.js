@@ -42,12 +42,11 @@ async function postToSkillsIssue({github, context}, activity) {
     const isArchived = skillsInfo.isArchived;
 
     // Return immediately if Skills Issue not found
-    if (skillsIssueNum) {
-        console.log(` ⮡  Found Skills Issue for ${eventActor}: #${skillsIssueNum}`);
-    } else {
+    if (!skillsIssueNum) {
         console.log(` ⮡  Did not find Skills Issue for ${eventActor}. Cannot post message.`);
         return;
     }
+    console.log(` ⮡  Found Skills Issue for ${eventActor}: #${skillsIssueNum}`);
 
     // Get all comments from the Skills Issue
     let commentData;
@@ -66,24 +65,23 @@ async function postToSkillsIssue({github, context}, activity) {
 
     // Find the comment that includes the MARKER text and append message
     const commentFound = commentData.data.find(comment => comment.body.includes(MARKER));
-    const commentFoundId = commentFound ? commentFound.id : null;
 
     if (commentFound) {
         console.log(` ⮡  Found comment with MARKER...`);
-        const commentId = commentFoundId;
+        const comment_id = commentFound.id;
         const originalBody = commentFound.body;
         const updatedBody = `${originalBody}\n${message}`;
         try {
             // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#update-an-issue-comment
-            await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{commentId}', {
+            await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}', {
                 owner,
                 repo,
-                commentId,
+                comment_id,
                 body: updatedBody
             });
-            console.log(`Success! Entry posted to Skills Issue #${skillsIssueNum}`);
+            console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
         } catch (err) {
-            console.error(`Something went wrong posting entry:`, err);
+            console.error(` ⮡  Something went wrong posting entry to #${skillsIssueNum}:`, err);
         }
         
     } else {
@@ -91,7 +89,7 @@ async function postToSkillsIssue({github, context}, activity) {
         const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
         const commentPosted = await postComment(skillsIssueNum, body, github, context);
         if (commentPosted) {
-            console.log(`Success! Entry posted to Skills Issue #${skillsIssueNum}`);
+            console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
         }
     }
 
