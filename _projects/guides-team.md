@@ -14,13 +14,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Sarah Edwards
-    github-handle:
-    role: Product Manager
-    links:
-      slack: 'https://hackforla.slack.com/team/U03KBU16APN'
-      github: 'https://github.com/edwardsarah'
-    picture: https://avatars.githubusercontent.com/edwardsarah
   - name: Rhoda Michael
     github-handle: the-techgurl
     role: UX Research Lead
