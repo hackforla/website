@@ -37,10 +37,22 @@ async function postUnlabelNotificationToAgenda({
   });
 
   try {
+    // Check the status of the agenda issue.
+    const statusIssue =  await github.rest.issues.get({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: STATIC_ISSUE_NUMS.AGENDA});
+
+    // If not open, throw error to create a status closed notification issue
+    if (statusIssue["data"]["state"] !== "open") {
+      throw new Error("Status issue has state:" + statusIssue["data"]["state"]);
+    }
+
     // Post comment to agenda issue
     await postComment(STATIC_ISSUE_NUMS.AGENDA, agendaComment, github, context);
+
   } catch (err) {
-    // There was an issue posting to the agenda -- likely, the agenda is missing.
+    // There was an issue posting to the agenda -- either the agenda is missing or is closed.
     // Create a notification issue about this error
     const timestamp = getLATimestamp();
     const missingAgendaIssueNum = await createTemplatedIssue({

@@ -31,7 +31,7 @@ async function createUnlabelNotificationIssue({
 
   // Create the notification issue
   const notificationIssueNum = await createTemplatedIssue({
-    title: `Review Needed - Label ${labelName} Deleted`,
+    title: `Review Needed - Label \`${labelName}\` Deleted`,
     templatePath: path.resolve(
       __dirname,
       "./templates/notification-issue-body.md",
