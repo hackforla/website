@@ -44,7 +44,7 @@ jobs:
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN != '' && secrets.HACKFORLA_GRAPHQL_TOKEN || github.token }}
         script: |
-          const activities = JSON.parse(${{ steps.gather-event-details.outputs.result }});
+          const activities = ${{ steps.gather-event-details.outputs.result }};
           const script = require('./github-actions/activity-trigger/post-to-skills-issue.js');
           for (const activity of activities) {
             await script({github, context}, activity);
