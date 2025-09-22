@@ -1,6 +1,9 @@
 # This workflow checks if a deleted label was used by any issues
 #  and if so, flags the issues that were affected by the deletion
 
+# This workflow is triggered by update-label-directory.yml when
+# a label is deleted
+
 name: Flag Issues Unlabeled After Deletion
 
 on: 
@@ -15,12 +18,12 @@ jobs:
   Flag-Issues-Unlabeled-After-Deletion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Get the issues that had the label prior to the label being deleted
       - name: Get recently unlabeled issues
         id: get-unlabeled-issues
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |
@@ -32,7 +35,7 @@ jobs:
       - name: Create notification issue
         if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
         id: create-notification-issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with: 
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: | 
@@ -50,7 +53,7 @@ jobs:
       - name: Post to agenda
         if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
         id: post-to-agenda
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
