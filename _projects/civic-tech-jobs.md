@@ -62,6 +62,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U078NLYHHL5
       github: https://github.com/LoTerence
     picture: https://avatars.githubusercontent.com/LoTerence
+  - name: Brandon Hu
+    github-handle: brandonhu8
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U08NG29UQUB
+      github: https://github.com/brandonhu8
+    picture: https://avatars.githubusercontent.com/brandonhu8
 links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
