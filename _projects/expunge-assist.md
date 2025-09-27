@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03PNBDLXL1
       github: https://github.com/jyehllow
     picture: https://avatars.githubusercontent.com/jyehllow
-  - name: Samantha Hyler
-    github-handle: SamHyler
-    role:  UX Content, Team Co-lead
-    links:
-      slack: https://hackforla.slack.com/team/U025XR6MY6S
-      github: https://github.com/SamHyler
-    picture: https://avatars.githubusercontent.com/SamHyler
   - name: Sylvia Nam
     github-handle: sylvia-nam
     role: UX Research, Team Lead
