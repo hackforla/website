@@ -16,7 +16,7 @@ jobs:
       # Creates a new issue in 'hackforla/website' repo with the saved lists
       - name: Create new issue
         id: create-new-issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
@@ -31,7 +31,7 @@ jobs:
       
       - name: Get owner url
         id: get-owner-url
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const ownerURL = context.payload.repository.html_url;
@@ -41,7 +41,7 @@ jobs:
       # Then retrieve the latest issue created in the repo (i.e. by 'Schedule Monthly')
       - name: Get issue number
         id: get-issue-number
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const newIssue = await github.rest.issues.listForRepo({
