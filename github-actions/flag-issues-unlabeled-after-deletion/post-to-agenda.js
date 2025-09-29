@@ -4,8 +4,15 @@ const postComment = require("../utils/post-issue-comment");
 const createTemplatedIssue = require("../utils/create-templated-issue");
 const formatIssueList = require("./format-issue-list");
 const getLATimestamp = require("../utils/get-la-timestamp");
+const retrieveLabelDirectory = require("../utils/retrieve-label-directory");
 
 const STATIC_ISSUE_NUMS = require("../utils/_data/static-issue-nums.json");
+
+const readyForPM = retrieveLabelDirectory("readyForPM");
+const complexitySmall = retrieveLabelDirectory("complexity2");
+const size05pt = retrieveLabelDirectory("size05pt");
+const featureAdministrative = retrieveLabelDirectory("featureAdministrative");
+const roleBackEndDevOps = retrieveLabelDirectory("roleBackEndDevOps");
 
 /**
  * Creates new GitHub issue to notify PM team about label deletion
@@ -56,7 +63,7 @@ async function postUnlabelNotificationToAgenda({
     // Create a notification issue about this error
     const timestamp = getLATimestamp();
     const missingAgendaIssueNum = await createTemplatedIssue({
-      title: `Review Needed - Error Posting to Agenda Issue #${STATIC_ISSUE_NUMS.AGENDA} for Label ${context.payload.label.name} Deletion`,
+      title: `Review Needed - Error Posting to Agenda Issue #${STATIC_ISSUE_NUMS.AGENDA} for Label \`${context.payload.label.name}\` Deletion`,
       templatePath: path.resolve(
         __dirname,
         "./templates/agenda-error-issue-body.md",
@@ -67,6 +74,7 @@ async function postUnlabelNotificationToAgenda({
         "${script-name}": path.basename(__filename),
         "${agenda-comment}": agendaComment,
       },
+      labels: [complexitySmall, size05pt, featureAdministrative, roleBackEndDevOps, readyForPM],
       github: github,
       context: context,
     });

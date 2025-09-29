@@ -5,6 +5,10 @@ const formatIssueList = require("./format-issue-list");
 const createTemplatedIssue = require("../utils/create-templated-issue");
 const postTemplatedComment = require("../utils/post-templated-comment");
 
+const complexitySmall = retrieveLabelDirectory("complexity2");
+const size05pt = retrieveLabelDirectory("size05pt");
+const featureAdministrative = retrieveLabelDirectory("featureAdministrative");
+const roleBackEndDevOps = retrieveLabelDirectory("roleBackEndDevOps");
 const readyForPM = retrieveLabelDirectory("readyForPM");
 
 /**
@@ -45,7 +49,7 @@ async function createUnlabelNotificationIssue({
       "${label-id}": labelId,
       "${affected-issues}": formatIssueList(unlabeledIssues),
     },
-    labels: [readyForPM],
+    labels: [complexitySmall, size05pt, featureAdministrative, roleBackEndDevOps, readyForPM],
     github: github,
     context: context,
   });
