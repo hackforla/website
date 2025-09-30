@@ -21,13 +21,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U05JS9NLNQJ'
       github: 'https://github.com/the-techgurl'
     picture: https://avatars.githubusercontent.com/the-techgurl
-  - name: Aditya Soni
-    github-handle: Aditya23soni
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07F766J29M
-      github: https://github.com/Aditya23soni
-    picture: https://avatars.githubusercontent.com/Aditya23soni
   - name: Jesus Diaz
     github-handle: JesseTheCleric
     role: Product Manager
