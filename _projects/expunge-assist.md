@@ -55,6 +55,20 @@ leadership:
       slack: https://hackforla.slack.com/team/U06E78YCUUB
       github: https://github.com/giselledizon
     picture: https://avatars.githubusercontent.com/giselledizon
+  - name: Namitha Murali
+    github-handle: namithamurali23
+    role: UX Research, Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U091S2Q6LSY
+      github: https://github.com/namithamurali23
+    picture: https://avatars.githubusercontent.com/namithamurali23
+  - name: Prakriti Dumaru
+    github-handle: Pra-kriti
+    role: UX Research, Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U08EARZC33K
+      github: https://github.com/Pra-kriti
+    picture: https://avatars.githubusercontent.com/Pra-kriti
   - name: Rachel Ichniowski
     github-handle: raeraeicky
     role: Product Manager, UX Research and Content
