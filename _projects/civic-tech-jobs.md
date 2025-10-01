@@ -13,6 +13,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
+  - name: Brandon Hu
+    github-handle: brandonhu8
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U08NG29UQUB
+      github: https://github.com/brandonhu8
+    picture: https://avatars.githubusercontent.com/brandonhu8
   - name: Snigdha Tiwari
     github-handle: snigdhat1
     role: Developer Lead

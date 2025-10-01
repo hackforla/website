@@ -8,6 +8,15 @@ on:
     types: [edited, created, deleted]
 
 jobs:
+  # Check if the deleted label was in use. If so, flag the deletion and affected issues
+  Flag-Issues-Unlabeled-After-Deletion:
+    uses: ./.github/workflows/flag-issues-unlabeled-after-deletion.yml
+    if: ${{ github.event.action == 'deleted' }}
+    secrets: 
+      HACKFORLA_GRAPHQL_TOKEN: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+      HACKFORLA_BOT_PA_TOKEN: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+
+  # If a label was edited, created, or deleted, update label directory
   Update-Label-Directory:
     runs-on: ubuntu-latest
     if: github.repository == 'hackforla/website'
