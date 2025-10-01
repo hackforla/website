@@ -20,7 +20,7 @@ jobs:
     # Checks member activity logs for recent and previous contributors
     - name: Get Contributors
       id: get-contributors
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       with:
         github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
         script: |
@@ -31,7 +31,7 @@ jobs:
     # Trims inactive members from team and notifies idle members
     - name: Trim and Notify Members
       id: trim-and-notify-members
-      uses: actions/github-script@v7
+      uses: actions/github-script@v8
       with:
         github-token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
         script: |

@@ -45,15 +45,15 @@ function main() {
   responseAnswers.sort(1);
   const allRows = responseAnswers.getDataRange().getValues();
   const columnHeaders = Array.from(allRows[0]);
-  
+
   // Add a unique ID corresponding to the spreadsheet row number for each response
   columnHeaders.push('ID');
   allRows.forEach((row, i) => {
     row.push(i + 1);
   });
 
-  // Filter out only the rows where display-column(colum 13) is set to true
-  const filteredRows = Array.from(allRows).filter(win => win[13] == true);
+  // Filter out only the rows where display-column(colum 15) is set to true
+  const filteredRows = Array.from(allRows).filter(win => win[15] === true);
 
   // Create an array of objects (key-value pair) based on the column headers and rows of values so the data does not need to be formatted later in GitHub
   const keyValueData = filteredRows.map(row => {
@@ -76,7 +76,7 @@ function main() {
   const encodedKeyValueData = Utilities.base64Encode(`${cleanedAndFormattedKeyValueData}`, Utilities.Charset.UTF_8);
 
     // Retrieves latest sha and content of the _wins data file, which is needed for edits later
-  const keyValueFile = "_wins-data.json"
+  const keyValueFile = "_wins-data.json";
   const [keyValueSha, keyValueContent] = ghrequests.getWins(keyValueFile);
   if (keyValueSha === false) {
     console.log('Ending script due to lack of returned SHA from getWins().');
@@ -84,6 +84,10 @@ function main() {
   }
 
   // detect any changes to Wins-form (Responses) by comparing performing a string comparison
+
+  console.log("sortedKeyValueData[0]:", sortedKeyValueData[0]);
+  console.log("keyValueContent[0]:", keyValueContent[0]);
+
   if (!arrEq(sortedKeyValueData, keyValueContent)) {
     console.log("Entry difference detected. Updating wins file...");
     const writeResponse = ghrequests.updateWinsFile(keyValueFile, encodedKeyValueData, keyValueSha);
@@ -133,13 +137,38 @@ function insertLatestFormSubmitIntoReviewSheet(formSubmitEvent){
   const reviewSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Review");
   const responsesSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Responses");
 
+  /* Extract LinkedIn handle name from the URL */
+  let linkedinHandleName = "";
+  const linkedinUrl = rawFormDataObject["Linkedin URL (optional)"][0] || ""; 
+  if (linkedinUrl) {
+    // Handle both URL formats: https://www.linkedin.com/in/<handle> or https://linkedin/in/<handle>
+    const linkedinMatch = linkedinUrl.match(/\/in\/([^\/?]+)/);
+    if (linkedinMatch && linkedinMatch[1]) {
+      linkedinHandleName = linkedinMatch[1]; // e.g,, "johnDoe"
+    }
+  }
+
+  /* Extract GitHub handle name from the URL */
+  let githubHandleName = "";
+  const githubUrl = rawFormDataObject["Github URL (optional)"][0] || "";
+  if (githubUrl) {
+    // Handle both URL formats: https://www.github.com/<handle> or github.com/<handle>
+    const githubMatch = githubUrl.match(/github\.com\/([^\/?]+)/);
+    if (githubMatch && githubMatch[1]) {
+      githubHandleName = githubMatch[1]; // e.g,, "johnDoe"
+    }
+  }
 
   let processedFormDataObject = new Map();
   processedFormDataObject.set("Email", rawFormDataObject["Email Address"])
   processedFormDataObject.set("Name", rawFormDataObject["Full name"])
   processedFormDataObject.set("LinkedIn", rawFormDataObject["Linkedin URL (optional)"])
+  // Insert LinkedIn Handle Name into processedFormDataObject.
+  processedFormDataObject.set("LinkedIn Name", [linkedinHandleName]) // New field. Convert linked handle name to an array. Consistent with other fields
   processedFormDataObject.set("LinkedIn Picture Allowed ?", rawFormDataObject["Could we use your Linkedin profile picture next to your story?"])
   processedFormDataObject.set("GitHub", rawFormDataObject["Github URL (optional)"])
+  // Insert GitHub Handle Name into processedFormDataObject.
+  processedFormDataObject.set("GitHub Handle", [githubHandleName]) // New field. Convert github handle name to an array. Consistent with other fields
   processedFormDataObject.set("GitHub Picture Allowed ?", rawFormDataObject["Could we use your Github profile picture next to your story?"])
   processedFormDataObject.set("Teams", rawFormDataObject["Select the team(s) you're on"])
   processedFormDataObject.set("Roles", rawFormDataObject["Select your role(s) on the team"])
@@ -164,10 +193,16 @@ function insertLatestFormSubmitIntoReviewSheet(formSubmitEvent){
   // Insert display overview value on column 4
   reviewSheet.getRange(2,4).setValue( displayString );
 
-  // Set the column 'N'  for new row created in the 'Responses' sheet by form submission to be mapped to the new row created in the 'review' sheet
+  // Write LinkedIn Handle to column E (column 5) in Response sheet.
+  responsesSheet.getRange(formDataInsertedAt.rowStart, 5).setValue(linkedinHandleName);
+
+  // Write GitHub Handle to column H (column 8) in Responses sheet.
+  responsesSheet.getRange(formDataInsertedAt.rowStart, 8).setValue(githubHandleName);
+
+  // Set the column 'P'  for new row created in the 'Responses' sheet by form submission to be mapped to the new row created in the 'review' sheet
   responsesSheet.getRange(formDataInsertedAt.rowStart, formDataInsertedAt.columnEnd + 1).setFormula("=Review!A2");
   
-  // Set the column 'O'  for new row created in the 'Responses' sheet by form submission to be mapped to the new row created in the 'review' sheet
+  // Set the column 'Q'  for new row created in the 'Responses' sheet by form submission to be mapped to the new row created in the 'review' sheet
   responsesSheet.getRange(formDataInsertedAt.rowStart, formDataInsertedAt.columnEnd + 2).setFormula("=Review!B2");
   }
 
@@ -279,7 +314,7 @@ function compareResponsesAndReview() {
       }
 
       if (responseValue !== reviewValues[j]) {
-        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j]);
+        console.log("Mismatch found!\nResponse value: " + responseValue + "\nReview   value: " + reviewValues[j])
         unamatched++;
       } else {
         matched++;

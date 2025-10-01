@@ -1,0 +1,68 @@
+# This workflow checks if a deleted label was used by any issues
+#  and if so, flags the issues that were affected by the deletion
+
+# This workflow is triggered by update-label-directory.yml when
+# a label is deleted
+
+name: Flag Issues Unlabeled After Deletion
+
+on: 
+  workflow_call:
+    secrets: 
+      HACKFORLA_GRAPHQL_TOKEN:
+        required: true
+      HACKFORLA_BOT_PA_TOKEN:
+        required: true
+
+jobs:
+  Flag-Issues-Unlabeled-After-Deletion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Get the issues that had the label prior to the label being deleted
+      - name: Get recently unlabeled issues
+        id: get-unlabeled-issues
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+          script: |
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/get-unlabeled-issues.js')
+            return script({g: github, c: context})
+      
+      # Create a notification issue detailing the label deleted and affected issues
+      # Skip if no affected issues
+      - name: Create notification issue
+        if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
+        id: create-notification-issue
+        uses: actions/github-script@v8
+        with: 
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: | 
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/create-notification-issue.js')
+            const unlabeledIssues = ${{ steps.get-unlabeled-issues.outputs.result }}
+            return script({
+              g: github,
+              c: context,
+              unlabeledIssues: unlabeledIssues
+            })
+      
+      # Make a post on the Agenda issue about the label deletion. If there is an 
+      # issue posting to the agenda, create an issue about that.
+      # Skip if no affected issues
+      - name: Post to agenda
+        if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
+        id: post-to-agenda
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
+          script: |
+            const script = require('./github-actions/flag-issues-unlabeled-after-deletion/post-to-agenda.js')
+            const unlabeledIssues = ${{ steps.get-unlabeled-issues.outputs.result }}
+            const notificationIssueNum = ${{ steps.create-notification-issue.outputs.result }}
+            return script({
+              g: github,
+              c: context,
+              unlabeledIssues,
+              notificationIssueNum,
+            });

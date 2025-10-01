@@ -5,14 +5,28 @@ description: The CivicTechJobs.org MVP website will be a platform to help prospe
 image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
-leadership: 
+leadership:
   - name: Karen Coronel
-    github-handle: 
+    github-handle:
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
+  - name: Brandon Hu
+    github-handle: brandonhu8
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U08NG29UQUB
+      github: https://github.com/brandonhu8
+    picture: https://avatars.githubusercontent.com/brandonhu8
+  - name: Snigdha Tiwari
+    github-handle: snigdhat1
+    role: Developer Lead
+    links:
+      slack: https://hackforla.slack.com/team/U08N4CKKJUW
+      github: https://github.com/snigdhat1
+    picture: https://avatars.githubusercontent.com/snigdhat1
   - name: Lu Feng
     github-handle: fenglugithub
     role: UI/UX Lead
@@ -48,13 +62,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U061GQQ56Q4
       github: https://github.com/kevin31yu
     picture: https://avatars.githubusercontent.com/kevin31yu
-  - name: Roja Pinnamraju
-    github-handle: RojaPinnamraju
-    role: Developer - Frontend
-    links:
-      slack: https://hackforla.slack.com/team/U07G0CVPFJ5
-      github: https://github.com/RojaPinnamraju
-    picture: https://avatars.githubusercontent.com/RojaPinnamraju
   - name: Terence Lo
     github-handle: LoTerence
     role: Developer - Backend
@@ -62,15 +69,15 @@ leadership:
       slack: https://hackforla.slack.com/team/U078NLYHHL5
       github: https://github.com/LoTerence
     picture: https://avatars.githubusercontent.com/LoTerence
-links: 
+links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
     url: https://hackforla.slack.com/archives/C02509WHFQQ
   - name: Overview
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
-looking: 
-technologies: 
+looking:
+technologies:
   - React
   - Express
   - Node.JS
@@ -78,11 +85,11 @@ technologies:
   - PostgreSQL
   - Django
   - Figma
-tools: 
-location: 
+tools:
+location:
   - Remote
 visible: true
 status: Active
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 ---

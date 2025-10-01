@@ -20,6 +20,9 @@ jobs:
     # Use an action (`my-action`) in your repository
     - name: Save vrms_data.json
       run: curl --retry 7 --fail -o _data/external/vrms_data.json https://www.vrms.io/api/recurringevents
+    
+    - name: Filter vrms data
+      run: node github-actions/trigger-schedule/vrms-data/filter-vrms-data.js
 
     - uses: stefanzweifel/git-auto-commit-action@v6.0.1
       with:

@@ -230,7 +230,7 @@ If you are on Windows and get 'You are not allowed to use Docker, you must be in
 Installing WSL2 on windows
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-If you are using Windows Subsystem for Linux (WSL) and finding a permission error when running `docker-compose up`, the issue might be caused by a version of Docker that relies on a buggy version of Go. In your terminal, run `docker version` to see which `Go version:` is listed. Any version less than `go1.20.0` has a problem and indicates that your Docker needs to be updated.
+If you are using Windows Subsystem for Linux (WSL) and finding a permission error when running `docker compose up`, the issue might be caused by a version of Docker that relies on a buggy version of Go. In your terminal, run `docker version` to see which `Go version:` is listed. Any version less than `go1.20.0` has a problem and indicates that your Docker needs to be updated.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -247,7 +247,7 @@ the source files and rebuilds and refreshes the site automatically in your brows
 Navigate to within the `website` directory that you cloned earlier in your terminal then run the below command
 
 ```bash
- docker-compose up
+ docker compose up
 ```
 
 Running the above command will result in the following output in your terminal
@@ -286,19 +286,19 @@ When you see the above output, it means the site is now running and now you can 
 *(do this anytime Docker or jekyll configuration or other repository settings change)*
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 To stop the server, but not destroy it (often sufficient for day-to-day work):
 
 ```bash
-docker-compose stop
+docker compose stop
 ```
 
 Bring the same server back up later with:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
@@ -565,9 +565,9 @@ When you've finished working on your issue, follow the steps below to prepare yo
 
 2. A few notes regarding Docker:
 
-- To test your issue branch locally, run the command "docker-compose up" from a terminal window. The website will then be accessible at http://localhost:4000.
+- To test your issue branch locally, run the command "docker compose up" from a terminal window. The website will then be accessible at http://localhost:4000.
 
-- The Docker Desktop application must be running, otherwise `docker-compose up` will not work
+- The Docker Desktop application must be running, otherwise `docker compose up` will not work
 - Docker pulls an image from Dockerhub.com which enables Docker to build the website locally with the same environment used to build the site at GitHub. As the environment and dependencies change, HfLA engineers update the Dockerhub image; however, the image updated at Dockerhub is not automatically downloaded, so it is necessary to periodically check to determine if the local image is outdated, and if so, to pull the updates from Dockerhub. Use this process:
 
 - In the Docker Desktop application, from the `Images` page, click the Action menu (3 dots) for the image `hackforlaops/ghpages`, select option `View details`.
@@ -597,7 +597,7 @@ When you've finished working on your issue, follow the steps below to prepare yo
     <img src="https://github.com/user-attachments/assets/75e8d21c-481b-4d82-8592-9ce9c6f09acc">
   </details>
 
-- Note that the next `docker-compose up` will take extra time to recreate the Docker container based on the updated image.
+- Note that the next `docker compose up` will take extra time to recreate the Docker container based on the updated image.
 
 - If the above steps did not resolve your issue, run through the first three steps again, but try resetting your browser's cache before restarting docker (you can also try running http://localhost:4000 in another browser).
 
@@ -650,7 +650,7 @@ To commit your changes with a message, run:
 git commit -m “insert message here”
 ```
 
-* If you do not see the changes you applied when you run `docker-compose up`, delete `_site` directory and `.jekyll-metadata` file and restart docker. This will force docker to rebuild the whole site.
+* If you do not see the changes you applied when you run `docker compose up`, delete `_site` directory and `.jekyll-metadata` file and restart docker. This will force docker to rebuild the whole site.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
