@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07QU3C45MY
       github: https://github.com/rcpeng34
     picture: https://avatars.githubusercontent.com/rcpeng34
+  - name: Shraddha Saraf
+    github-handle: shraddhasaraf
+    role: Product Manager, Design
+    links:
+      slack: https://hackforla.slack.com/team/U08Q15W6QE9
+      github: https://github.com/shraddhasaraf
+    picture: https://avatars.githubusercontent.com/shraddhasaraf
 links:
     - name: Overview
       url: '../assets/pdfs/Expunge-Assist-One-Sheet.pdf'
