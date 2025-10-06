@@ -345,7 +345,7 @@ body:
 
   - type: markdown
     attributes:
-      value: "# Additional Instructions for Issue Author"
+      value: "# Additional Instructions"
   
   - type: markdown
     attributes:
@@ -356,14 +356,5 @@ body:
 
         2. Add newly created issue to the Project Board.
         ![project_board](https://user-images.githubusercontent.com/73561520/201549346-7371ae37-cb56-4b40-8b66-1cd548bc3684.png)
-
-  - type: markdown
-    attributes:
-      value: "# Additional Instructions for Website Team Leads After This Issue is Submitted"
-  
-  - type: markdown
-    attributes:
-      value: |
-        Here are the instructions for how to modify this request to make it ready for issues to be made out of it:  https://github.com/hackforla/website/issues/7478#issuecomment-2357066233
 
 
