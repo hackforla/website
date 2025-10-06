@@ -41,13 +41,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U025XR6MY6S
       github: https://github.com/SamHyler
     picture: https://avatars.githubusercontent.com/SamHyler
-  - name: Sylvia Nam
-    github-handle: sylvia-nam
-    role: UX Research, Team Lead
-    links:
-      slack: https://hackforla.slack.com/team/U06E9RQ8DRA
-      github: https://github.com/sylvia-nam
-    picture: https://avatars.githubusercontent.com/sylvia-nam
   - name: Melissa Ligertwood
     github-handle: TechWriterMelissa 
     role: UX Content, Team Co-lead
