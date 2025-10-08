@@ -1,90 +1,59 @@
 {
   "removedContributors": [
-    "roslynwythe",
-    "aadilahmed",
-    "phunguyen1195",
-    "fusionxx23",
-    "jesusmendoza1940",
-    "TheManTheMythTheGameDev",
-    "mrodz",
-    "buneeIsSlo",
-    "kelwilson",
-    "varyad",
-    "siyunfeng",
+    "sumerjoshi",
+    "kevinashworth",
+    "EShahverdian",
+    "hziegel",
+    "eunicode",
+    "valdezg",
+    "maadeshsivakumar",
+    "akarsh079",
+    "sarahgraup",
     "Kle012",
-    "HyMike",
-    "mmcclanahan",
-    "rachelcorawood",
-    "Christopher-Chhim",
-    "Khinememe-Kyaw",
-    "nchanyal",
-    "amen-ikamba",
-    "andrea264",
-    "priyanka02art",
-    "ShivaniDesai1012"
+    "hoanhua14",
+    "Sujay-Anantha",
+    "Monomer9",
+    "ihop-56",
+    "katiejnete",
+    "ejknighton",
+    "jamhpark",
+    "andyvu923",
+    "aparnar1920",
+    "sandavid11"
   ],
   "notifiedContributors": [
-    "sumerjoshi",
-    "jphamtv",
+    "Simmigon-flagg",
     "gmgonzal",
-    "EShahverdian",
-    "AllMikeNoIke",
-    "Margotaro",
-    "Jeffreyp1",
-    "javierb256",
-    "githelsui",
-    "valdezg",
-    "DrAcula27",
-    "maadeshsivakumar",
-    "melissaluc",
-    "AricayaJohn",
-    "jakejjoyner",
-    "trca831",
-    "charmainemak09",
+    "joshjyu",
+    "edwarddim",
+    "zvidmarb",
+    "Scienstein2497",
+    "RodgerLugo",
+    "wesley115",
+    "DakuwoN",
+    "Daanesh",
+    "lisa-shens",
     "rleeoriginal",
-    "Six5pAdes",
-    "NolaDodd",
+    "yamadaxxx09",
+    "Patdabaker",
     "MitchellDoesCoding",
-    "minghsunliu"
+    "Eleftherios01",
+    "Kphalguni",
+    "kknight-7"
   ],
-  "nonTeamOpenIssue": {
-    "kelwilson": [
-      8068
-    ],
-    "ShivaniDesai1012": [
-      7977
-    ],
-    "varyad": [
-      7970
-    ],
-    "pm-daniel7": [
-      7904
-    ],
-    "sneha-kataria": [
-      7679,
-      7670
-    ],
-    "buneeIsSlo": [
-      6956
-    ],
-    "TheManTheMythTheGameDev": [
-      6946
-    ],
-    "Kle012": [
-      6341
-    ],
-    "aadilahmed": [
-      4980
-    ]
-  },
+  "nonTeamOpenIssue": {},
   "inactiveOpenIssue": {
+    "amen-ikamba": [
+      7505,
+      8017
+    ],
     "essencegoff": [
       5248,
       7578
     ],
-    "amen-ikamba": [
-      7505,
-      8017
+    "Eleftherios01": [
+      7506,
+      7725
     ]
   }
 }

@@ -28,7 +28,7 @@
 		"I increased the number of commits on my Github profile": `github.svg`,
 		"I learned a new language": `code.svg`,
 		"I set up 2FA": `twofa.svg`,
-		"I became part of a a caring community": `$community.svg`,
+		"I became part of a caring community": `community.svg`,
 		"I worked on an enterprise project": `enterprise.svg`,
 		"I worked on a project that will help the people of Los Angeles": `giving.svg`,
 		"I worked on two or more projects": `hammers.svg`,

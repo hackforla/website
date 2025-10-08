@@ -19,6 +19,7 @@ const [
   er,
   epic,
   dependency,
+  skillsIssueCompleted,
 ] = [
   "statusUpdated",
   "statusInactive1",
@@ -26,7 +27,8 @@ const [
   "draft",
   "er",
   "epic",
-  "dependency"
+  "dependency",
+  "skillsIssueCompleted",
 ].map(retrieveLabelDirectory);
 
 const updatedByDays = 3;                // If last update update  3 days, the issue is considered updated
@@ -100,7 +102,7 @@ async function main({ g, c }) {
  * @returns {Promise<Array>} issueNums     - an array of open, assigned, and statused issue numbers
  */
 async function getIssueNumsFromRepo() {
-  const labelsToExclude = [draft, er, epic, dependency];
+  const labelsToExclude = [draft, er, epic, dependency, skillsIssueCompleted];
   let issueNums = [];
   let pageNum = 1;
   let result = [];
@@ -369,7 +371,7 @@ function formatComment(assignees, labelString) {
 function isCommentByBot(data) {
   let botLogin = "github-actions[bot]";
   let hflaBotLogin = "HackforLABot";
-  // If the comment includes the MARKER, return false 
+  // If the comment includes the MARKER, return false so it is not minimized
   let MARKER = '<!-- Skills Issue Activity Record -->'; 
   if (data.body.includes(MARKER)) {
     console.log(`Found "Skills Issue Activity Record" - do not minimize`);

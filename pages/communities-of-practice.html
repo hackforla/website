@@ -71,7 +71,7 @@ permalink: /communities-of-practice
 
                 {% if community[1].links[0].url %}
                     {% assign url_links = true %}
-                    <a href="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default cop-btn" target="_blank" title="{{community[1].name}} Slack channel" rel="noopener noreferrer">
+                    <a href="./join-slack-channel.html" id="{{ community[1].links[0].url }}" class="btn btn-primary btn-md btn--default cop-btn slack-link" target="_blank" title="{{community[1].name}} Slack channel" rel="noopener noreferrer">
                         {% include svg/icon-slack.svg %}
                         Join Slack Channel
                     </a>

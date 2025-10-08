@@ -41,8 +41,9 @@ async function mutateIssueStatus(
 
   try {
     await github.graphql(mutation, variables);
+    return true;
   } catch (error) {
-    throw new Error('Error in mutateIssueStatus() function: ' + error);
+    throw new Error(' ⮡ Error in mutateIssueStatus() function: ' + error);
   }
 }
 
