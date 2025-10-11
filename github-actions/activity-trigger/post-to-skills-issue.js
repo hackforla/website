@@ -35,11 +35,16 @@ async function postToSkillsIssue({github, context}, activity) {
     }
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
-    const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
-    const skillsIssueNum = skillsInfo.issueNum;
-    const skillsIssueNodeId = skillsInfo.issueId;
-    const skillsStatusId = skillsInfo.statusId;
-    const isArchived = skillsInfo.isArchived;
+    // const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
+       const skillsIssueNum = 17 ;  
+       const skillsIssueNodeId = null;
+       const skillsStatusId = null;
+       const isArchived = false;
+    
+    // const skillsIssueNum = skillsInfo.issueNum;
+    // const skillsIssueNodeId = skillsInfo.issueId;
+    // const skillsStatusId = skillsInfo.statusId;
+    // const isArchived = skillsInfo.isArchived;
 
     // Return immediately if Skills Issue not found
     if (!skillsIssueNum) {
