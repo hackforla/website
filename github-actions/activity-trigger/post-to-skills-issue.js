@@ -97,7 +97,8 @@ async function postToSkillsIssue({github, context}, activity) {
     if (!(message.includes('closed') || message.includes('assigned') || isArchived)) {
 
         // If eventActor is team member, open issue and move to "In progress"
-        const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
+      // const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
+        const isActiveMember = true;
 
         if (isActiveMember) {
             try {
