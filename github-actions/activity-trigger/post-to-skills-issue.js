@@ -5,6 +5,7 @@ const postComment = require('../utils/post-issue-comment');
 const checkTeamMembership = require('../utils/check-team-membership');
 const statusFieldIds = require('../utils/_data/status-field-ids');
 const mutateIssueStatus = require('../utils/mutate-issue-status');
+const { lookupSkillsDirectory, updateSkillsDirectory } = require('../utils/skills-directory'); 
 
 // `complexity0` refers `Complexity: Prework` label
 const SKILLS_LABEL = retrieveLabelDirectory("complexity0");
@@ -33,6 +34,22 @@ async function postToSkillsIssue({github, context}, activity) {
         console.log(`eventActor is undefined (likely a bot). Cannot post message...`);
         return;
     }
+
+// Step 1: Try local directory lookup first
+    let skillsInfo = lookupSkillsDirectory(eventActor);
+
+    if (!skillsInfo) {
+        console.log(`No cached Skills Issue found for ${eventActor}, querying GitHub...`);
+
+        // Step 2: Fallback to GitHub API
+        skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
+
+        // Step 3: Save result to local directory if found
+        if (skillsInfo && skillsInfo.issueNum) {
+            updateSkillsDirectory(eventActor, skillsInfo);
+        }
+    }
+
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
     // const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
