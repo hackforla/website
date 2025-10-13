@@ -24,7 +24,7 @@ jobs:
     - name: Filter vrms data
       run: node github-actions/trigger-schedule/vrms-data/filter-vrms-data.js
 
-    - uses: stefanzweifel/git-auto-commit-action@v6.0.1
+    - uses: stefanzweifel/git-auto-commit-action@v7.0.0
       with:
         # Optional glob pattern of files which should be added to the commit
         file_pattern: _data/external/vrms_data.json
