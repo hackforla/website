@@ -52,16 +52,11 @@ async function postToSkillsIssue({github, context}, activity) {
 
     
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found)
-    // const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
-       const skillsIssueNum = 17 ;  
-       const skillsIssueNodeId = null;
-       const skillsStatusId = null;
-       const isArchived = false;
-    
-    // const skillsIssueNum = skillsInfo.issueNum;
-    // const skillsIssueNodeId = skillsInfo.issueId;
-    // const skillsStatusId = skillsInfo.statusId;
-    // const isArchived = skillsInfo.isArchived;
+     const skillsInfo = await querySkillsIssue(github, context, eventActor, SKILLS_LABEL);
+     const skillsIssueNum = skillsInfo.issueNum;
+     const skillsIssueNodeId = skillsInfo.issueId;
+     const skillsStatusId = skillsInfo.statusId;
+     const isArchived = skillsInfo.isArchived;
 
     // Return immediately if Skills Issue not found
     if (!skillsIssueNum) {
@@ -119,8 +114,7 @@ async function postToSkillsIssue({github, context}, activity) {
     if (!(message.includes('closed') || message.includes('assigned') || isArchived)) {
 
         // If eventActor is team member, open issue and move to "In progress"
-      // const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
-        const isActiveMember = true;
+       const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
 
         if (isActiveMember) {
             try {
