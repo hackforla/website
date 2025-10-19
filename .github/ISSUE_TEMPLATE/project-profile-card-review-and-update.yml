@@ -357,12 +357,10 @@ body:
         2. Add newly created issue to the Project Board.
         ![project_board](https://user-images.githubusercontent.com/73561520/201549346-7371ae37-cb56-4b40-8b66-1cd548bc3684.png)
 
-  - type: markdown
+  - type: textarea
+    id: website-team-instructions
     attributes:
-      value: "# Additional Instructions for Website Team Leads After This Issue is Submitted"
-  
-  - type: markdown
-    attributes:
+      label: "# Additional Instructions for Website Team Leads After This Issue is Submitted"
       value: |
         Here are the instructions to copy and paste to the top of this issue: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233
 
