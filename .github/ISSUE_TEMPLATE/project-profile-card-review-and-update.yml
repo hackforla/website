@@ -358,10 +358,15 @@ body:
         ![project_board](https://user-images.githubusercontent.com/73561520/201549346-7371ae37-cb56-4b40-8b66-1cd548bc3684.png)
 
   - type: textarea
-    id: website-team-instructions
+    id: website-team-instructions-1
     attributes:
       label: "Additional Instructions for Website Team Leads After This Issue is Submitted (do NOT edit text below)"
       value: |
         Here are the instructions to copy and paste to the top of this issue: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233
 
-
+  - type: textarea
+    id: website-team-instructions-2
+    attributes:
+      label: <!-- Additional Instructions for Website Team Leads After This Issue is Submitted (do NOT edit text below) -->
+      value: 
+        <!-- Here are the instructions to copy and paste to the top of this issue: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233 -->
