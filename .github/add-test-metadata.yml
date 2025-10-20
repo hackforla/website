@@ -1,0 +1,26 @@
+name: Add hidden metadata to new issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  add-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add hidden metadata comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          # Detect form based on title, labels, or template naming pattern
+          # Adjust the logic below to match your form's naming or labels
+          
+          if [[ "$ISSUE_TITLE" == *"Project Profile Card Review"* ]]; then
+            gh issue comment "$ISSUE_NUMBER" \
+              --body '<!-- metadata: project-profile-card-review-and-update -->'
+          fi
