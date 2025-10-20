@@ -370,3 +370,11 @@ body:
       label: <!-- Additional Instructions for Website Team Leads After This Issue is Submitted (do NOT edit text below) -->
       value: |
         <!-- Here are the instructions to copy and paste to the top of this issue: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233 -->
+
+  body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Project Profile Update Form
+        <!-- 👇 This comment will not be visible in the rendered issue, 
+             but will appear in the issue body source when edited. -->
