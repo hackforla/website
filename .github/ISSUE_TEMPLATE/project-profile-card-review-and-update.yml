@@ -374,6 +374,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 📝 Project Profile Update Form
-        <!-- 👇 This comment will not be visible in the rendered issue, 
-             but will appear in the issue body source when edited. -->
+        <details>
+        <summary>Metadata (for maintainers only)</summary>
+
+        <!-- form-id: project-profile-card-review-and-update -->
+        <!-- version: 1.0 -->
+        </details>
+
