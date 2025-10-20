@@ -371,13 +371,3 @@ body:
       value: |
         <!-- Here are the instructions to copy and paste to the top of this issue: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233 -->
 
-  - type: markdown
-    attributes:
-      value: |
-        <details>
-        <summary>Metadata (for maintainers only)</summary>
-
-        <!-- form-id: project-profile-card-review-and-update -->
-        <!-- version: 1.0 -->
-        </details>
-
