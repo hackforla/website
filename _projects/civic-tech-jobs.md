@@ -80,7 +80,6 @@ looking:
 technologies:
   - React
   - Express
-  - Node.JS
   - Docker
   - PostgreSQL
   - Django
