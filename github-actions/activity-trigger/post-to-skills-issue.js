@@ -50,11 +50,11 @@ async function postToSkillsIssue({github, context}, activity) {
         }
     }
 
-    
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo.statusId;
+    const commentIdCached = skillsInfo.commentId;
     const isArchived = skillsInfo.isArchived;
 
     // Return immediately if Skills Issue not found
@@ -64,48 +64,97 @@ async function postToSkillsIssue({github, context}, activity) {
     }
     console.log(` ⮡  Found Skills Issue for ${eventActor}: #${skillsIssueNum}`);
 
-    // Get all comments from the Skills Issue
-    let commentData;
-    try {
-        // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#list-issue-comments
-        commentData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/comments', {
-            owner,
-            repo,
-            per_page: 100,
-            issue_number: skillsIssueNum,
-        });
-    } catch (err) {
-        console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
-        return;
+    let commentIdToUse = commentIdCached;
+    let commentFound = null;
+
+    // Try cached comment ID first
+    if (commentIdCached) {
+        console.log(` ⮡  Found cached comment ID for ${eventActor}: ${commentIdCached}`);
+        try {
+            const { data: cachedComment } = await github.request(
+                'GET /repos/{owner}/{repo}/issues/comments/{comment_id}',
+                {
+                    owner,
+                    repo,
+                    comment_id: commentIdCached,
+                }
+            );
+
+            if (cachedComment && cachedComment.body.includes(MARKER)) {
+                const updatedBody = `${cachedComment.body}\n${message}`;
+                await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}', {
+                    owner,
+                    repo,
+                    comment_id: commentIdCached,
+                    body: updatedBody,
+                });
+                console.log(` ⮡  Updated cached comment #${commentIdCached}`);
+                return; // Done
+            }
+        } catch (err) {
+            console.warn(` ⮡  Cached comment invalid or not found. Falling back to search.`, err);
+            commentIdToUse = null; // Force fallback path
+        }
     }
 
-    // Find the comment that includes the MARKER text and append message
-    const commentFound = commentData.data.find(comment => comment.body.includes(MARKER));
-
-    if (commentFound) {
-        console.log(` ⮡  Found comment with MARKER...`);
-        const comment_id = commentFound.id;
-        const originalBody = commentFound.body;
-        const updatedBody = `${originalBody}\n${message}`;
+    // Fallback — search for MARKER or create new comment
+    if (!commentIdToUse) {
+        console.log(` ⮡  Searching for activity comment marker...`);
+        let commentData;
         try {
-            // https://docs.github.com/en/rest/issues/comments?apiVersion=2022-11-28#update-an-issue-comment
-            await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}', {
-                owner,
-                repo,
-                comment_id,
-                body: updatedBody
-            });
-            console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
+            commentData = await github.request(
+                'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
+                {
+                    owner,
+                    repo,
+                    per_page: 100,
+                    issue_number: skillsIssueNum,
+                }
+            );
         } catch (err) {
-            console.error(` ⮡  Something went wrong posting entry to #${skillsIssueNum}:`, err);
+            console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
+            return;
         }
-        
-    } else {
-        console.log(` ⮡  MARKER not found, creating new comment entry with MARKER...`);
-        const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n#####  ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
-        const commentPosted = await postComment(skillsIssueNum, body, github, context);
-        if (commentPosted) {
-            console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
+
+        commentFound = commentData.data.find((comment) => comment.body.includes(MARKER));
+
+        if (commentFound) {
+            console.log(` ⮡  Found comment with MARKER...`);
+            const comment_id = commentFound.id;
+            const originalBody = commentFound.body;
+            const updatedBody = `${originalBody}\n${message}`;
+            try {
+                await github.request('PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}', {
+                    owner,
+                    repo,
+                    comment_id,
+                    body: updatedBody,
+                });
+                console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
+                // Cache this comment ID
+                updateSkillsDirectory(eventActor, { commentId: comment_id });
+            } catch (err) {
+                console.error(` ⮡  Something went wrong posting entry to #${skillsIssueNum}:`, err);
+            }
+        } else {
+            console.log(` ⮡  MARKER not found, creating new comment entry with MARKER...`);
+            const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n##### ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
+            try {
+                const { data: newComment } = await github.request(
+                    'POST /repos/{owner}/{repo}/issues/{issue_number}/comments',
+                    {
+                        owner,
+                        repo,
+                        issue_number: skillsIssueNum,
+                        body,
+                    }
+                );
+                console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
+                // Cache new comment ID
+                updateSkillsDirectory(eventActor, { commentId: newComment.id });
+            } catch (err) {
+                console.error(` ⮡  Failed to create new comment for issue #${skillsIssueNum}:`, err);
+            }
         }
     }
 
