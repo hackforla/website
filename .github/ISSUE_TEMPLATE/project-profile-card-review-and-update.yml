@@ -360,6 +360,6 @@ body:
   - type: textarea
     id: website-team-instructions
     attributes:
-      label: "# Additional Instructions for Website Team Leads After This Issue is Submitted (do NOT edit text below)"
+      label: "Additional Instructions for Website Team Leads After This Issue is Submitted (do NOT edit text below)"
       value: |
         Here are the instructions for how to process this request to make it ready for issues to be made out of it: https://github.com/hackforla/website/issues/7478#issuecomment-2357066233
