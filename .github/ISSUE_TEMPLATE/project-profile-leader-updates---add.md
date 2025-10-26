@@ -18,7 +18,7 @@ We need to keep project information up to date so that visitors to the website c
 ### Action Items
 - [ ] In your IDE, open the `_projects/[Insert filename].md` file.
 - [ ] Observe the existing syntax of the front matter block [^1] in the file.
-- [ ] Find the `leadership` variable and add the following profile. 
+- [ ] Find the `leadership` variable and add the following profile after other member(s) with the same role.[^2]   
 ```
   - name: [Insert leadership member's name]
     github-handle: [Insert GitHub handle]
@@ -28,9 +28,10 @@ We need to keep project information up to date so that visitors to the website c
       github: https://github.com/[Insert GitHub handle]
     picture: https://avatars.githubusercontent.com/[Insert GitHub handle]
 ```
-- [ ] Verify the changes by viewing the following in your local environment and include before and after screenshots with your pull request:
-  - [ ] [Insert name of project] page [^2]
+- [ ] Verify the changes by viewing the following in your local environment with Docker, and include 'before' and 'after' screenshots with your pull request:
+  - [ ] [Insert name of project] page [^3]
 
 ### Resources/Instructions
 [^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
-[^2]: Project detailed info page URL: [Insert project specific page URL here]
+[^2]: Note: The typical order of roles should be:  'role: Owner'  --> 'role: Manager' --> 'role: Lead' --> 'role: Merge Team' --> 'role: Researcher/Designer/Developer/Engineer'. If the intended order is not clear, ask the person who submitted the original request.
+[^3]: Project detailed info page URL: [Insert project specific page URL here]

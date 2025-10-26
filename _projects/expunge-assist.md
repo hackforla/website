@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U03PNBDLXL1
       github: https://github.com/jyehllow
     picture: https://avatars.githubusercontent.com/jyehllow
-  - name: Sylvia Nam
-    github-handle: sylvia-nam
-    role: UX Research, Team Lead
-    links:
-      slack: https://hackforla.slack.com/team/U06E9RQ8DRA
-      github: https://github.com/sylvia-nam
-    picture: https://avatars.githubusercontent.com/sylvia-nam
   - name: Melissa Ligertwood
     github-handle: TechWriterMelissa 
     role: UX Content, Team Co-lead
@@ -83,6 +76,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07QU3C45MY
       github: https://github.com/rcpeng34
     picture: https://avatars.githubusercontent.com/rcpeng34
+  - name: Shraddha Saraf
+    github-handle: shraddhasaraf
+    role: Product Manager, Design
+    links:
+      slack: https://hackforla.slack.com/team/U08Q15W6QE9
+      github: https://github.com/shraddhasaraf
+    picture: https://avatars.githubusercontent.com/shraddhasaraf
 links:
     - name: Overview
       url: '../assets/pdfs/Expunge-Assist-One-Sheet.pdf'

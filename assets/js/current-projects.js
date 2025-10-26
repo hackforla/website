@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(){
             // for issue #4648, needed to add languages inside the technologies filter-item group,  might be able to optimize for future iterations
 
             // This ensures that the /projects-check page does not change
-            if ((filterName === 'languages' || filterName === 'tools') && window.location.pathname === '/projects/') {
+            if ((filterName === 'languages' || filterName === 'tools') && (window.location.pathname === '/projects/' || window.location.pathname === "/")) {
               // remove the view all button
               document.querySelector(`#technologies`).lastElementChild.remove()
               // insert data inside at the end of the category
