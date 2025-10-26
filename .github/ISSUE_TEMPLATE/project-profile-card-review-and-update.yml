@@ -1,7 +1,7 @@
 name: "Project Profile Card review and update"
 description: "To track project profile card updates or add a new project profile card"
 title: "Update Project Profile: [Project Name]"
-labels: ['P-Feature: Project Info and Page', 'role: back end/devOps', 'role: front end', 'Complexity: Small', 'size: 0.25pt', 'time sensitive', 'Issue Making: Level 1', 'epic']
+labels: ['P-Feature: Project Info and Page', 'role: back end/devOps', 'role: front end', 'Complexity: Small', 'size: 0.25pt', 'time sensitive', 'Issue Making: Level 1', 'epic', 'Complexity: See issue making label']
 
 body:
   - type: markdown
