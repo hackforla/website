@@ -498,13 +498,13 @@ function updateCategoryCounter(filterParams){
         // Update the new overall filters counter in the title
         const totalCounterSpan = document.querySelector('#counter_total');
         if (totalCounterSpan){
-          totalCounterSpan.innerHTML = totalSelected>0 ? ` (${totalSelected})` : '';
+          totalCounterSpan.innerHTML = totalSelected > 0 ? ` (${totalSelected})` : '';
         }
 
         // Show/hide Clear All link
         const clearAllLink = document.getElementById('clear-all-filters');
         if(clearAllLink){
-            clearAllLink.style.display = totalSelected>0 ? 'inline' : 'none';
+            clearAllLink.style.display = totalSelected > 0 ? 'inline' : 'none';
         }
     
 }
