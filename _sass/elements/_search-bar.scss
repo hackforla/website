@@ -14,7 +14,7 @@
   margin-bottom: 10px;
 }
 
-
+/* Override _forms.scss (was #search) */
 #search-desktop,
 #search-mobile {
   padding-right: 0px;
@@ -47,13 +47,13 @@
 
 
 
-/* Mobile and below: show mobile search bar only */
+/* Mobile and below: show mobile search bar only (unchanged behaviour) */
 @media #{$bp-below-tablet} {
   .search-bar-desktop { display: none; }
   .search-bar-mobile { display: flex; position: static; }
 }
 
-/* Desktop and up: show desktop search bar */
+/* Desktop and up: show desktop search bar; sticky below header */
 @media #{$bp-desktop-up} {
   .search-bar-mobile { display: none; }
   .search-bar-desktop {
@@ -61,8 +61,5 @@
     position: sticky;
     top: 61px; 
     z-index: 90; 
-  }
-  .search-bar-mobile {
-    display: none;
   }
 }
