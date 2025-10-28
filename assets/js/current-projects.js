@@ -101,11 +101,17 @@ document.addEventListener("DOMContentLoaded",function(){
         // Add onclick event handlers to close search tips modal if it is open.
         attachEventListenerCloseModal();
         
-        //events related to search bar
-        document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
-        document.querySelector("#search").addEventListener("keydown", searchEnterKeyHandler);
-        document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
-        document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
+        // events related to search bar (adjusted selectors only)
+        const inputEl = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+        const glassEl = document.querySelector('.search-bar-desktop .search-glass') || document.querySelector('.search-bar-mobile .search-glass') || document.querySelector('.search-glass');
+        const closeEl = document.querySelector('.search-bar-desktop .search-x') || document.querySelector('.search-bar-mobile .search-x') || document.querySelector('.search-x');
+
+        if (inputEl) {
+            inputEl.addEventListener('focus', searchOnFocusEventHandler);
+            inputEl.addEventListener('keydown', searchEnterKeyHandler);
+        }
+        if (glassEl) { glassEl.addEventListener('click', searchEventHandler); }
+        if (closeEl) { closeEl.addEventListener('click', searchCloseEventHandler); }
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -338,7 +344,8 @@ function cancelMobileFiltersEventHandler(e) {
 //search bar event handler
 function searchEventHandler(e){
     e.preventDefault();
-    let searchTerm=document.querySelector("#search").value;
+    const input = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+    let searchTerm = input ? input.value : '';
     let tokenObj={};
     tokenObj['Search']=searchTerm;
      
@@ -362,12 +369,14 @@ function searchEnterKeyHandler(e){
 }
 
 function searchOnFocusEventHandler(){
-    document.querySelector(".search-x").style.display='block';
+    const xBtn = document.querySelector('.search-bar-desktop .search-x') || document.querySelector('.search-bar-mobile .search-x') || document.querySelector('.search-x');
+    if (xBtn) xBtn.style.display='block';
 }
 
 function searchCloseEventHandler(e){
     e.preventDefault();
-    document.querySelector("#search").value="";
+    const input = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+    if (input) input.value="";
 }
 
 /**
