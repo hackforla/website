@@ -1,0 +1,28 @@
+name: ATO_Test Add Update Label Weekly
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Run in DRY-RUN mode'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+        default: 'true'
+
+# Default token permissions
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  Add-Update-Label-Weekly:
+    runs-on: ubuntu-latest
+    if: github.repository == 'hackforla/website'   
+    steps:
+      - uses: actions/checkout@v5
+      - uses: t-will-gillis/automate-the-org/add-update-label-weekly@v0.1.7
+        with:
+          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}   
+          dry-run: ${{ github.event.inputs.dry-run || 'true' }}
