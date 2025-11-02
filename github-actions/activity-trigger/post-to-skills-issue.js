@@ -53,10 +53,12 @@ async function postToSkillsIssue({github, context}, activity) {
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
     const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNodeId = skillsInfo.issueId;
-    const skillsStatusId = skillsInfo.statusId;
-    const commentIdCached = skillsInfo.commentId;
-    const isArchived = skillsInfo.isArchived;
-
+    const skillsStatusId = skillsInfo?.statusId || 'unknown';
+    const isArchived = skillsInfo?.isArchived || false;
+    const commentFoundId = skillsInfo?.commentId || null;   // not used currently
+    
+ console.log(`skillsIssueNum: ${skillsIssueNum}, skillsIssueNodeId: ${skillsIssueNodeId}, skillsStatusId: ${skillsStatusId}, isArchived: ${isArchived}`);  // only for debugging 
+    
     // Return immediately if Skills Issue not found
     if (!skillsIssueNum) {
         console.log(` ⮡  Did not find Skills Issue for ${eventActor}. Cannot post message.`);
