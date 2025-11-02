@@ -1,8 +1,9 @@
 ---
-name: Project Profile leader updates - Add
-about: This template is for website team only to ADD a single volunteer
-title: 'Update Project Profile: [Project Name] Add [Name of Volunteer]'
-labels: 'good first issue, P-Feature: Project Info and Page, role: back end/devOps,
+name: Communities of Practice leader updates - Add
+about: This template is for website team only to ADD a single volunteer to a Community
+  of Practice
+title: 'Update Community of Practice: [CoP Name] Add [Name of Volunteer]'
+labels: 'good first issue, P-Feature: Communities of Practice, role: back end/devOps,
   role: front end, size: 0.25pt, time sensitive'
 assignees: ''
 
@@ -16,9 +17,9 @@ assignees: ''
 We need to keep project information up to date so that visitors to the website can find accurate information.
 
 ### Action Items
-- [ ] In your IDE, open the `_projects/[Insert filename].md` file.
+- [ ] In your IDE, open the `_data/internal/communities/[Insert filename].yml` file.
 - [ ] Observe the existing syntax of the front matter block [^1] in the file.
-- [ ] Find the `leadership` variable and add the following profile after other member(s) with the same role.[^2]   
+- [ ] Find the `leadership` variable and add the following profile after other member(s) with the same role.   
 ```
   - name: [Insert leadership member's name]
     github-handle: [Insert GitHub handle]
@@ -29,9 +30,8 @@ We need to keep project information up to date so that visitors to the website c
     picture: https://avatars.githubusercontent.com/[Insert GitHub handle]
 ```
 - [ ] Verify the changes by viewing the following in your local environment with Docker, and include 'before' and 'after' screenshots with your pull request:
-  - [ ] [Insert name of project] page [^3]
+  - [ ] Communities of Practice page [^2]
 
 ### Resources/Instructions
 [^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
-[^2]: Note: The typical order of roles should be:  'role: Owner'  --> 'role: Manager' --> 'role: Lead' --> 'role: Merge Team' --> 'role: Researcher/Designer/Developer/Engineer'. If the intended order is not clear, ask the person who submitted the original request.
-[^3]: Project detailed info page URL: [Insert project specific page URL here]
+[^2]: Communities of Practice page URL: https://www.hackforla.org/communities-of-practice

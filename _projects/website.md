@@ -7,6 +7,7 @@ alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
+    github-handle: 
     role: Agile Coach/Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'

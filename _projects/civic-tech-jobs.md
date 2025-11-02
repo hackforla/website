@@ -79,7 +79,6 @@ links:
 looking:
 technologies:
   - React
-  - Express
   - Docker
   - PostgreSQL
   - Django
