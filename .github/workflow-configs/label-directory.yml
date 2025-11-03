@@ -1,0 +1,85 @@
+# ==============================================================================
+# Label Directory
+# ==============================================================================
+#
+# If this file does not already exist in your repo, copy this example file
+# to `.github/workflow-configs/label-directory.yml`. If you have copied this 
+# file previously, continue editing your existing `label-directory.yml` file.
+# 
+# This file maps label "keys" (left) used internally by the workflow to the 
+# actual label names "values" used in your GitHub repository (right side):
+#
+#   labelKey: "Actual Label Name in GitHub"
+#
+# Do not edit the label keys. Do, however, edit the label names to match the 
+# labels you are using in your project, especially any required labels noted  
+# in the `add-update-label-config.yml` file.
+#
+# When you implement additional workflows in the future, continue editing this 
+# same file for any additional labels noted in those workflows.
+#
+# ==============================================================================
+# How to customize this file
+# ==============================================================================
+
+# 1. DO NOT CHANGE the label "keys" on the left side - these are used internally
+#    by the workflow code
+# 
+# 2. You can change the label name "values" on the right to match your project's 
+#    naming conventions. Make sure label names are an exact match to your repo's 
+#    labels (including capitalization and spacing).
+# 
+# 3. If you add new label "keys" to your config file, add them here too
+#
+# 4. Make sure label names exist in your GitHub repository before running the workflow
+#
+# 5. If you do not edit the name values, or if you do not include this label-directory,
+#    the automation will substitute default values.
+
+
+complexity0: "Complexity: Prework"                      # ⓵
+complexity1: "good first issue"
+complexity2: "Complexity: Small"
+complexity3: "Complexity: Medium"
+complexityMissing: "Complexity: Missing"
+dependency: "Dependency"                                # ⓵
+draft: "Draft"                                          # ⓵
+epic: "epic"                                            # ⓵
+er: "ER"                                                # ⓵
+featureAdministrative: "Feature: Administrative"
+featureAgenda: "feature: agenda"
+featureAnalytics: "Feature: Analytics"
+featureFeatureBranch: "Feature: Feature Branch"
+featureMissing: "Feature Missing"
+featureOnboardingContributingMd: "Feature: Onboarding/Contributing.md"
+featureRefactorCss: "Feature: Refactor CSS"
+featureRefactorGha: "Feature: Refactor GHA"
+featureRefactorHtml: "Feature: Refactor HTML"
+featureRefactorJsLiquid: "Feature: Refactor JS / Liquid"
+readyForDevLead: "ready for dev lead"
+readyForPrioritization: "Ready for Prioritization"
+roleBackEndDevOps: "role: back end/devOps"
+roleDesign: "role: design"
+roleDevLeads: "role: dev leads"
+roleFrontEnd: "role: front end"
+roleMissing: "role missing"
+roleUserResearch: "role: user research"
+size025pt: "size: 0.25pt"
+size05pt: "size: 0.5pt"
+sizeMissing: "size: missing"
+statusUpdated: "Status: Updated"                      # ⓵
+statusInactive1: "To Update !"                        # ⓵
+statusInactive2: "2 weeks inactive"                   # ⓵
+statusHelpWanted: "Status: Help Wanted"               # ⓵
+skillsIssueCompleted: "Skills Issue Completed"
+
+# ==============================================================================
+# Workflows using these labels
+# ==============================================================================
+# - ⓵ Add Update Label Weekly
+# - ⓶ Issue Trigger
+# - ⓷ PR Trigger
+# - ⓸ Move Closed Issues
+# - ⓹ Member Activity Trigger
+# - ⓺ Schedule Monthly
+# - ⓻ Update Label Directory
