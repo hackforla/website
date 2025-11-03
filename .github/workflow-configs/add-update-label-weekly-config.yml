@@ -1,0 +1,162 @@
+# Configuration for "Add Update Label Weekly" action
+# Copy this file to your project: `.github/workflow-configs/add-update-label-weekly-config.yml`
+#
+# ==============================================================================
+# IMPORTANT NOTES
+# ==============================================================================
+#
+#   1. The configuration options are given as "key: value" pairs.
+#       a. Do not edit any "keys" as this may break the automation.
+#       b. Customize the "values" below for your project's needs.
+#   2. The default values will apply if not edited.
+#   3. Text values must match the EXACT text used in your project repo.
+#
+
+
+
+# ==============================================================================
+# Time thresholds (in days)
+# ==============================================================================
+timeframes:
+
+  updatedByDays: 3     # Issues updated within this many days are considered current
+  commentByDays: 7     # Issues not updated for this many days are prompted for update
+  inactiveByDays: 14   # Issues not updated for this many days are marked as inactive
+
+  upperLimitDays: 35   # See explanation following and "Bot configuration" below
+  # To reduce issue clutter, this workflow includes a GraphQL mutation that iterates 
+  # through and minimizes previous bot comments. To avoid GitHub's rate limiting 
+  # on GraphQL mutations, bot comments older than the `upperLimitDays` are not 
+  # minimized. A low value results in no bot comments minimized, and a high value 
+  # results in all bot comments minimized.
+
+
+
+# ==============================================================================
+# Project Board status-column configuration
+# ==============================================================================
+projectBoard:
+  # The values in this section must match your EXACT Project Board status-column.
+
+  targetStatus: "In progress (actively working)"   # Status-column to include.
+  # Only issues status-column are included in the automation to check whether
+  # assignees are updating their issues. 
+
+  questionsStatus: "Questions / In Review"         # Used with the message template.
+  # The bot's message instructs issue assignees needing help to move their issue to
+  # this status-column. Issues in this status-column are NOT checked by the automation.
+
+
+
+# ==============================================================================
+# Label Directory
+# ==============================================================================
+
+# The automation reviews which labels have been applied to the included issues, to:
+#   1. Flag issues that need updates from the assignee, and
+#   2. Ignore issues that do not need to be checked.
+#
+# The workflow relies on the label "keys" to identify the purpose of each label 
+# which correspond to the actual label name "values" used by your repo.
+#
+#   NOTE: Since different workflows use many of the same label names, label name 
+#   values are mapped in your project's label directory yml file- not here.
+#   The path to your label directory is:
+
+labelDirectoryPath: ".github/workflow-configs/label-directory.yml"   # Do not change
+
+
+
+# ==============================================================================
+# Label keys used by this workflow
+# ==============================================================================
+
+# The label "keys" shown here are used internally by the workflow.
+
+labels:
+  required:
+    # Required label keys: DO NOT REMOVE, confirm "values" in the label-directory
+      # The following label "keys" must be mapped to your project's actual label names 
+      # "values" via the `label-directory.yml` file. The workflow using these labels 
+      # to flag which issues need updates.
+    - statusUpdated                # Map in the `label-directory.yml` file
+    - statusInactive1              # Map in the `label-directory.yml` file
+    - statusInactive2              # Map in the `label-directory.yml` file
+
+    # Secondary key, used by message template
+    - statusHelpWanted             # Map in the `label-directory.yml` file
+
+  ignored:
+    # Issues with these labels are ignored by the automation.
+      # You may add or remove label "keys" to this list as desired- but be sure
+      # to map the added "key: value" pair in your label-directory.yml file.
+    - draft                        # Map in the `label-directory.yml` file
+    - er                           # Map in the `label-directory.yml` file
+    - epic                         # Map in the `label-directory.yml` file
+    - dependency                   # Map in the `label-directory.yml` file
+    - complexity0                  # Map in the `label-directory.yml` file
+
+
+
+# ==============================================================================
+# Bot configuration- If needed
+# ==============================================================================
+# Relevant to "timeframes.upperLimitDays" setting above.
+# Bot usernames whose comments should be minimized when they become outdated.
+# Comments are minimized if they're between 'commentByDays' and 'upperLimitDays' old
+bots:
+  - "github-actions[bot]"
+  - "HackforLABot"
+  # Only if needed, add any additional bot usernames here
+
+
+
+# ==============================================================================
+# Bot comment template
+# ==============================================================================
+# Template for the comment posted to issues needing updates
+# Variables used by template:
+#   ${assignees}          - @-mentions of all assignees (e.g., "@user1, @user2")
+#   ${label}              - The label being applied (e.g., "Status: To Update")
+#   ${statusUpdated}      - The "updated" label name from your label directory
+#   ${statusHelpWanted}   - The "help wanted" label name from your label directory
+#   ${questionsStatus}    - The "questions" status on your Project Board (e.g., "Questions / In Review")
+#   ${teamSlackChannel}   - The name of your team's Slack Channel
+#   ${cutoffTime}         - The formatted timestamp of the issue's last update
+#
+# You can use Markdown formatting to edit the template found at:
+
+botCommentTemplatePath: ".github/workflow-configs/templates/add-update-instructions-template.md"   # Do not change
+
+# commentTemplate: |
+#   Hello ${assignees}!
+  
+#   Please add an update comment using the below template (even if you have a pull request). Afterwards, remove 
+#   the `${label}` label and add the `${statusUpdated}` label.
+
+#   1. Progress: "What is the current status of your issue? What have you completed and what is left to do?"
+#   2. Blockers: "Explain any difficulties or errors encountered."
+#   3. Availability: "How much time will you have this week to work on this issue?"
+#   4. ETA: "When do you expect this issue to be completed?"
+#   5. Pictures (optional): "Add any pictures of the visual changes made to the site so far."
+
+#   If you need help, be sure to either: 1) place your issue in the "${questionsStatus}" status column of the 
+#   Project Board and ask for help at your next meeting; 2) put a `${statusHelpWanted}` label on your issue 
+#   and pull request; or 3) put up a request for assistance on the team's <teamSlackChannel> Slack channel.
+
+#   Please note that including your questions in the issue comments- along with screenshots, if applicable- 
+#   will help us to help you. [Here](https://github.com/hackforla/website/issues/1619#issuecomment-897315561) and [here](https://github.com/hackforla/website/issues/1908#issuecomment-877908152) are examples of well-formed questions.
+
+#   <sub>You are receiving this comment because your last comment was before ${cutoffTime}.</sub>
+  
+#   Thanks for being part of HfLA!
+
+
+
+# ==============================================================================
+# Advanced options
+# ==============================================================================
+# Uncomment and configure these if needed for your project
+
+# # Custom timezone for cutoffTime display in comments (default: America/Los_Angeles)
+# timezone: "America/New_York"
