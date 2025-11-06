@@ -1,4 +1,4 @@
-import { vrmsDataFetch, localeTimeIn12Format } from "./utility/vrms-events.js"
+import { vrmsDataFetch, localeTimeIn12Format } from "./utility/vrms-events.mjs"
 /**
  * This type of function is called an IIFE function. The main function is the primarily controller that loads the recurring events on this page.
  * Refer: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
