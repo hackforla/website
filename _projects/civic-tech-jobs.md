@@ -69,6 +69,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U078NLYHHL5
       github: https://github.com/LoTerence
     picture: https://avatars.githubusercontent.com/LoTerence
+  - name: Gowthami Cherukuri
+    github-handle: GowthamiCherukuri
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U08Q1652STF
+      github: https://github.com/GowthamiCherukuri
+    picture: https://avatars.githubusercontent.com/GowthamiCherukuri
 links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
