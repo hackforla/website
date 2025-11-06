@@ -21,7 +21,7 @@ services:
       - .:/website
     working_dir: /website/tests
     command: >
-      sh -c "npm install jest jest-environment-jsdom liquidjs gray-matter magic-string --save-dev
+      sh -c "npm install jest jest-environment-jsdom liquidjs gray-matter js-yaml --save-dev
              npm test"
 
     

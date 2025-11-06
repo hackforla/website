@@ -34,7 +34,7 @@ jobs:
           node-version: '20.x'
       
       - name: Install dependencies
-        run: npm install jest jest-environment-jsdom liquidjs gray-matter magic-string --save-dev
+        run: npm install jest jest-environment-jsdom liquidjs gray-matter js-yaml --save-dev
         working-directory: ./tests
 
       - name: Run Jest Tests
