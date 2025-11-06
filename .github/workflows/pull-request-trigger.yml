@@ -20,3 +20,23 @@ jobs:
           script: |
             const script = require('./github-actions/trigger-pr/check-linked-issue.js')
             script({g: github, c: context})
+
+  Run-CI-Tests:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' || github.event.action == 'edited' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      
+      - name: Install dependencies
+        run: npm install jest jest-environment-jsdom liquidjs gray-matter magic-string --save-dev
+        working-directory: ./tests
+
+      - name: Run Jest Tests
+        run: npm test
+        working-directory: ./tests
