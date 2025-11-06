@@ -1,0 +1,13 @@
+{
+  "name": "tests",
+  "scripts": {
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --verbose --coverage --color"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "liquidjs": "^10.24.0",
+    "magic-string": "^0.30.21"
+  }
+}
