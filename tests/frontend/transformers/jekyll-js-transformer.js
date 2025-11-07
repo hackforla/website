@@ -54,14 +54,15 @@ function getSiteData() {
 function loadDirData(dir, basePath = '') {
     const dirData = {};
 
-    if (!fs.existsSync(dir)) {
-        // If we called on a non-existant dir, escape
-        return dirData;
+    let dirItems;
+    try {
+        dirItems = fs.readdirSync(dir);
+    } catch (error) {
+        return dirData; // Directory doesn't exist or isn't readable
     }
 
     // Loop over all items in the directory
-    const items = fs.readdirSync(dir);
-    for (const item of items) {
+    for (const item of dirItems) {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
 

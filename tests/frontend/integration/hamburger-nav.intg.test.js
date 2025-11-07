@@ -17,12 +17,10 @@ const defaultTestDom = `
             </ul>
         </div>
     </nav>
-`
+`;
 
 let headerNav;
 let burgerImage;
-let burgerIcon;
-let burgerXIcon;
 
 /**********************
  * Test Helpers
