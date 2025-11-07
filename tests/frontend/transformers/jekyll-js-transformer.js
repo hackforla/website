@@ -64,28 +64,33 @@ function loadDirData(dir, basePath = '') {
     // Loop over all items in the directory
     for (const item of dirItems) {
         const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const ext = path.extname(item);
+        const name = path.basename(item, ext);
 
-        if (stat.isDirectory()) {
-            // Item is a subdirectory, so recurse on this function
-            dirData[item] = loadDirData(fullPath, path.join(basePath, item));
-        } else if (stat.isFile()) {
-            // Item is a file, so process the data appropriately
-            const ext = path.extname(item);
-            const name = path.basename(item, ext);
+        try {
+            // Try to read as a file
+            const fileContent = fs.readFileSync(fullPath, 'utf-8');
 
+            if (ext === ".json") {
+                dirData[name] = JSON.parse(fileContent);
+            } else if (ext === '.yml' || ext === '.yaml') {
+                // Target YMLs might use multi-doc syntax, so we need to use loadAll
+                const ymlDocs = yaml.loadAll(fileContent);
+
+                // If only one document, return just the one. Otherwise return array
+                dirData[name] = ymlDocs.length === 1 ? ymlDocs[0] : ymlDocs;
+            }
+        } catch {
+            // Might be a directory instead
             try {
-                if (ext === ".json") {
-                    dirData[name] = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
-                } else if (ext === '.yml' || ext === '.yaml') {
-                    // Target YMLs might use multi-doc syntax, so we need to use loadAll
-                    const ymlDocs = yaml.loadAll(fs.readFileSync(fullPath, 'utf-8'));
-
-                    // If only one document, return just the one. Otherwise return array
-                    dirData[name] = ymlDocs.length === 1 ? ymlDocs[0] : ymlDocs;
+                const stat = fs.statSync(fullPath);
+                if (stat.isDirectory()) {
+                    // Item is a subdirectory, so recurse on this functoin
+                    dirData[item] = loadDirData(fullPath, path.join(basePath, item));
                 }
-            } catch (err) {
-                console.warn(`Could not load ${fullPath}: ${err.message}`);
+            } catch (error) {
+                // File or directory isn't accessible
+                console.warn(`Could not access ${fullPath}: ${error}`);
             }
         }
     }
