@@ -1026,14 +1026,14 @@
     "startTime": "2024-03-07T06:00:00.383Z",
     "endTime": "2024-03-07T07:00:00.383Z",
     "project": {
-      "name": "Testing",
-      "githubUrl": "updated_github_address.com",
-      "hflaWebsiteUrl": "updated_website.com/test34",
-      "githubIdentifier": "Spiteless",
-      "projectStatus": "Active",
-      "location": "www.test.com",
-      "slackUrl": "updated_slack_channel.com",
-      "googleDriveUrl": "updated_google_drive.com"
+      "name": null,
+      "githubUrl": "",
+      "hflaWebsiteUrl": "",
+      "githubIdentifier": null,
+      "projectStatus": null,
+      "location": null,
+      "slackUrl": "",
+      "googleDriveUrl": ""
     }
   },
   {

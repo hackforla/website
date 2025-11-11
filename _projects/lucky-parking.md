@@ -20,6 +20,7 @@ leadership:
       github: 'https://github.com/gregpawin'
     picture: 'https://avatars.githubusercontent.com/gregpawin'
   - name: Glen Paul Florendo
+    github-handle:
     role: Full-Stack Developer Lead
     links:
       slack: 'https://hackforla.slack.com/team/UFQGH8JH0'

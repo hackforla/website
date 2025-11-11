@@ -32,7 +32,7 @@ a.filter-item {
 .filter-toolbar {
   padding: 8px 32px;
   box-sizing: border-box;
-  height: calc(100vh - 60px);
+  height: auto;
   position: sticky;
   flex-shrink: 0;
   top: 64px;
@@ -239,6 +239,20 @@ a.clear-filter-tags {
   }
 }
 
+// Style for the Clear All link 
+.filters-title .number-of-checked-boxes {
+  font-size: 0.85em; // slightly smaller than heading
+  color: $color-black; // same color as the "Filters" text
+  margin-left: 2px;
+}
+
+.filters-title .clear-filter-tags {
+  margin-left: 4px; // space between counter and link
+  white-space: nowrap;
+  display: none; // shown via JS when filters selected
+  color: $color-cement;
+}
+
 .number-of-checked-boxes {
   color: $color-red;
 }
@@ -249,18 +263,23 @@ a.clear-filter-tags {
   //resize dropdown on tablet and mobile view
   section.filter-content-container {
     display: block;
-    padding: 32px 16px;
+    padding: 0 16px 32px 16px;
     // flex-direction: column;
+  }
+  // Hide applied filter tags in collapsed mobile toolbar
+  .filter-tag-container {
+    display: none;
   }
   .scroll-lock {
     overflow: hidden;
   }
 
   .filter-toolbar {
-    background-color: $color-pink;
-    height: 100%;
-    position: static;
-    padding: 0;
+    background-color: #f7f5f5;
+    position: sticky;
+    padding: 32px 0 0 0;
+    top: 40px;
+    z-index: 99;
   }
 
   .filtersDiv {
@@ -277,8 +296,9 @@ a.clear-filter-tags {
     left: 0;
     bottom: 0;
     right: 0;
-    overflow-y: scroll;
     background: $color-white;
+    display: flex;
+    flex-direction: column;
   }
   .filters-title {
     background: $color-white;
@@ -300,7 +320,8 @@ a.clear-filter-tags {
     border: none;
   }
   .filter-toolbar.show-filters .filter-tag-container {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
   ul.filter-list {
     display: none;
@@ -315,17 +336,15 @@ a.clear-filter-tags {
 
   .filter-toolbar.show-filters ul.filter-list {
     display: flex;
-    padding: 0 12px 65px 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 12px 20px 12px;
   }
   .filter-toolbar.show-filters .mobile-filter-buttons {
     display: flex;
     box-sizing: border-box;
     justify-content: space-evenly;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    flex-shrink: 0;
     background: $color-white;
     padding: 8px;
     box-shadow: 0px -1px 4px 0px $color-mediumgrey;
@@ -363,4 +382,28 @@ a.clear-filter-tags {
 .show-none + .dropdown li {
   display: block;
 }
+
+  // Align Filters label, counter, and Clear All link 
+  .filters-label-group {
+    display: flex;
+    align-items: baseline;
+  }
+  .filters-label-group .number-of-checked-boxes {
+    font-size: 0.85em;
+    color: $color-black;
+    margin-left: 4px;
+  }
+  .filters-label-group .clear-filter-tags {
+    margin-left: 8px;
+    white-space: nowrap;
+    display: none;
+    color: $color-cement;
+  }
+}
+
+@media #{$bp-tablet-up} {
+  .filters-label-group .number-of-checked-boxes,
+  .filters-label-group .clear-filter-tags {
+    display: none !important; // hide on desktop
+  }
 }
