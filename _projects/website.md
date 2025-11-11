@@ -97,6 +97,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MQ37T90E
       github: https://github.com/santisecco
     picture: https://avatars.githubusercontent.com/santisecco
+  - name: Ryan Keller
+    github-handle: ryanfkeller
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U08SCL4KK3N
+      github: https://github.com/ryanfkeller
+    picture: https://avatars.githubusercontent.com/ryanfkeller
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
