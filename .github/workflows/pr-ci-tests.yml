@@ -1,0 +1,24 @@
+name: Run Pull Request CI Tests
+on:
+  pull_request:
+    branches:
+      - 'gh-pages'
+jobs:
+  Run-Pull-Request-CI-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      
+      - name: Install dependencies
+        run: npm install jest jest-environment-jsdom liquidjs gray-matter js-yaml --save-dev
+        working-directory: ./tests
+
+      - name: Run Jest Tests
+        run: npm test
+        working-directory: ./tests
