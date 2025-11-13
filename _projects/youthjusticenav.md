@@ -7,6 +7,7 @@ image-hero: /assets/images/projects/youthjusticenav-hero.png
 alt: 'Youth Justice Nav'
 leadership:
   - name: Bonnie Wolfe
+    github-handle:  
     role: Agile Coach
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
