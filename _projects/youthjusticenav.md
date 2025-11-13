@@ -40,6 +40,7 @@ leadership:
       github: 'https://github.com/mojimoh'
     picture: 'https://avatars.githubusercontent.com/mojimoh'
   - name: Anousha Shadrach
+    github-handle:
     role: Lead, UX Design
     links:
       slack: 'https://hackforla.slack.com/team/U045EHW8NDA'
