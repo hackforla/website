@@ -13,12 +13,19 @@ function saveDirectory(data) {
 }
 
 function lookupSkillsDirectory(eventActor) {
-    const directory = loadDirectory();
-    return directory[eventActor] || null;
-}
+    const result = directory.find(entry => entry.eventActor === eventActor);
+    if (result) {
+      console.log(`result: ${JSON.stringify(result)}`);
+      console.log(`result["issueNum"]: ${result["issueNum"]}`); // just to verify
+    }
+    console.log(``);
+    console.log(`return 'result' rather than 'directory[eventActor]`);
+    console.log(``);
+    
+    return result || null;
 
 function updateSkillsDirectory(eventActor, skillsInfo) {
-    const directory = loadDirectory();
+    const result = directory.find(entry => entry.eventActor === eventActor);
     directory[eventActor] = skillsInfo;
     saveDirectory(directory);
 }
