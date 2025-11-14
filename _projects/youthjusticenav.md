@@ -20,6 +20,7 @@ leadership:
       github: 'https://github.com/ltung05'
     picture: 'https://avatars.githubusercontent.com/ltung05'
   - name: Rabia Shaikh
+    github-handle:
     role: Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01QSJ10XRA'
