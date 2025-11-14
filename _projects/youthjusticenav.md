@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/ExperimentsInHonesty'
     picture: 'https://avatars.githubusercontent.com/ExperimentsInHonesty'
   - name: Leroy Tung
+    github-handle: 
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U01G75XUYHX'
