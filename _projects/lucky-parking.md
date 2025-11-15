@@ -33,6 +33,7 @@ leadership:
       github: 'https://github.com/mklmrgn'
     picture: https://avatars.githubusercontent.com/mklmrgn
   - name: Seymour Liao
+    github-handle:
     role: Data Scientist
     links:
       slack: 'https://hackforla.slack.com/team/U018XPTSTC6'
