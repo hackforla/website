@@ -64,63 +64,66 @@ beforeEach(() => {
 /**********************
  * Tests
  **********************/
-it('should swap burger icons and headerNav visibility when burgerImage is clicked', () => {
-    let {burgerIcon, burgerXIcon} = getNavIcons();
+describe('burger button', () => {
+    it('swaps burger icons and headerNav visibility when burgerImage is clicked', () => {
+        let {burgerIcon, burgerXIcon} = getNavIcons();
 
-    // Confirm initial state (headerNav style is '', button expanded is null, icon is burger)
-    expect(headerNav.style.display).toBe("");
-    expect(burgerImage.getAttribute('aria-expanded')).toBeNull();
-    expect(burgerIcon).not.toBeNull();
-    expect(burgerXIcon).toBeNull();
-    
-    // Click burgerImage to open, re-grab our icon elements
-    burgerImage.click();
-    ({burgerIcon, burgerXIcon} = getNavIcons());
+        // Confirm initial state (headerNav style is '', button expanded is null, icon is burger)
+        expect(headerNav.style.display).toBe("");
+        expect(burgerImage.getAttribute('aria-expanded')).toBeNull();
+        expect(burgerIcon).not.toBeNull();
+        expect(burgerXIcon).toBeNull();
+        
+        // Click burgerImage to open, re-grab our icon elements
+        burgerImage.click();
+        ({burgerIcon, burgerXIcon} = getNavIcons());
 
-    // Confirm state now (headerNav style is flex, button expanded is true, icon is X)
-    expect(headerNav.style.display).toBe('flex');
-    expect(burgerImage.getAttribute('aria-expanded')).toBe('true');
-    expect(burgerIcon).toBeNull();
-    expect(burgerXIcon).not.toBeNull();
-    
-    // Click burgerImage to close, re-grab our icon elements
-    burgerImage.click();
-    ({burgerIcon, burgerXIcon} = getNavIcons());
+        // Confirm state now (headerNav style is flex, button expanded is true, icon is X)
+        expect(headerNav.style.display).toBe('flex');
+        expect(burgerImage.getAttribute('aria-expanded')).toBe('true');
+        expect(burgerIcon).toBeNull();
+        expect(burgerXIcon).not.toBeNull();
+        
+        // Click burgerImage to close, re-grab our icon elements
+        burgerImage.click();
+        ({burgerIcon, burgerXIcon} = getNavIcons());
 
-    // Confirm state now (headerNav style is none, button expanded is false, icon is burger)
-    expect(headerNav.style.display).toBe('none');
-    expect(burgerImage.getAttribute('aria-expanded')).toBe('false');
-    expect(burgerIcon).not.toBeNull();
-    expect(burgerXIcon).toBeNull();
+        // Confirm state now (headerNav style is none, button expanded is false, icon is burger)
+        expect(headerNav.style.display).toBe('none');
+        expect(burgerImage.getAttribute('aria-expanded')).toBe('false');
+        expect(burgerIcon).not.toBeNull();
+        expect(burgerXIcon).toBeNull();
+    });
 });
 
-it('should reset the navbar properties when resizing the window >767', () => {
-    let {burgerIcon, burgerXIcon} = getNavIcons();
+describe('window resizing', () => {
+    it('resets the navbar properties when resizing the window >767', () => {
+        let {burgerIcon, burgerXIcon} = getNavIcons();
 
-    // Confirm initial state (headerNav style is '', button expanded is null, icon is burger)
-    expect(headerNav.style.display).toBe("");
-    expect(burgerImage.getAttribute('aria-expanded')).toBeNull();
-    expect(burgerIcon).not.toBeNull();
-    expect(burgerXIcon).toBeNull();
+        // Confirm initial state (headerNav style is '', button expanded is null, icon is burger)
+        expect(headerNav.style.display).toBe("");
+        expect(burgerImage.getAttribute('aria-expanded')).toBeNull();
+        expect(burgerIcon).not.toBeNull();
+        expect(burgerXIcon).toBeNull();
 
-    // Click to update the style and icon
-    burgerImage.click();
-    ({burgerIcon, burgerXIcon} = getNavIcons());
+        // Click to update the style and icon
+        burgerImage.click();
+        ({burgerIcon, burgerXIcon} = getNavIcons());
 
-    // Confirm state now (headerNav style is flex, button expanded is true, icon is X)
-    expect(headerNav.style.display).toBe('flex');
-    expect(burgerImage.getAttribute('aria-expanded')).toBe('true');
-    expect(burgerIcon).toBeNull();
-    expect(burgerXIcon).not.toBeNull();
+        // Confirm state now (headerNav style is flex, button expanded is true, icon is X)
+        expect(headerNav.style.display).toBe('flex');
+        expect(burgerImage.getAttribute('aria-expanded')).toBe('true');
+        expect(burgerIcon).toBeNull();
+        expect(burgerXIcon).not.toBeNull();
 
-    // Resize the Viewport
-    setViewportWidth(DESKTOP_WIDTH);
-    ({burgerIcon, burgerXIcon} = getNavIcons());
+        // Resize the Viewport
+        setViewportWidth(DESKTOP_WIDTH);
+        ({burgerIcon, burgerXIcon} = getNavIcons());
 
-    // Confirm state now (headerNav style is null, button is expanded, icon is burger)
-    expect(headerNav.style.display).toBe('');
-    expect(burgerImage.getAttribute('aria-expanded')).toBe('true'); // doesn't get reset
-    expect(burgerIcon).not.toBeNull();
-    expect(burgerXIcon).toBeNull();
-    
+        // Confirm state now (headerNav style is null, button is expanded, icon is burger)
+        expect(headerNav.style.display).toBe('');
+        expect(burgerImage.getAttribute('aria-expanded')).toBe('true'); // doesn't get reset
+        expect(burgerIcon).not.toBeNull();
+        expect(burgerXIcon).toBeNull();
+    });
 });

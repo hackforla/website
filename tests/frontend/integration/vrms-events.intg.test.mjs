@@ -3,7 +3,7 @@ import { jest } from '@jest/globals';
 
 
 describe('vrmsDataFetch', () => {
-    it('should return sorted non-test event array and not call appendMeetingTimes for "events" view', async() => {
+    it('returns sorted non-test event array and not call appendMeetingTimes for "events" view', async() => {
         // Create a mock function to see if it is called
         const mockAppend = jest.fn();
 
@@ -26,7 +26,7 @@ describe('vrmsDataFetch', () => {
         } 
     });
 
-    it('should call appendMeetingTimes with sorted non-test events for "project" view', async() => {
+    it('calls appendMeetingTimes with sorted non-test events for "project" view', async() => {
         // Create a mock function to see if its called and what it was called with
         const mockAppend = jest.fn();
         
@@ -62,7 +62,7 @@ describe('vrmsDataFetch', () => {
 });
 
 describe('localeTimeIn12Format', () => {
-    it('should return a 12-hour formatted string', () => {
+    it('returns a 12-hour formatted string', () => {
         // Pass in a dummy timestamp checking single digit AM hour format
         let timeStr = localeTimeIn12Format("2020-05-13T02:00:00.000Z");
         expect (typeof timeStr).toBe('string');
@@ -71,22 +71,22 @@ describe('localeTimeIn12Format', () => {
         expect(timeStr).toMatch(/\b([1-9]|1[1-2])\b:\b([0-5][0-9])\b (am|pm)/); 
     })
 
-    it ('should handle single digit AM times correctly', () => {
+    it ('handles single digit AM times correctly', () => {
         const timeStr = localeTimeIn12Format("2025-10-20T01:00:00.000Z");
         expect(timeStr).toBe('1:00 am');
     })
 
-    it ('should handle multi-digit AM times correctly', () => {
+    it ('handles multi-digit AM times correctly', () => {
         const timeStr = localeTimeIn12Format("2025-10-20T10:15:00.000Z");
         expect(timeStr).toBe('10:15 am');
     })
 
-    it ('should handle single-digit PM times correctly', () => {
+    it ('handles single-digit PM times correctly', () => {
         const timeStr = localeTimeIn12Format("2025-10-20T14:31:00.000Z");
         expect(timeStr).toBe('2:31 pm');
     })
 
-    it ('should handle multi-digit PM times correctly', () => {
+    it ('handles multi-digit PM times correctly', () => {
         const timeStr = localeTimeIn12Format("2025-10-20T23:59:00.000Z");
         expect(timeStr).toBe('11:59 pm');
     })

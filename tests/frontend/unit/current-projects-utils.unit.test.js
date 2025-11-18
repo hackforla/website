@@ -60,7 +60,7 @@ const defaultProjectData = [
 
 describe('createFilter', () => {
     
-    it('should provide program, technologies, languages, tools, and status filters for non-check pages', () => {
+    it('returns program, technologies, languages, tools, and status filters for non-check pages', () => {
         const filters = createFilter(defaultProjectData);
         expect(filters['programs']).not.toBeUndefined();
         expect(filters['technologies']).not.toBeUndefined();
@@ -69,7 +69,7 @@ describe('createFilter', () => {
         expect(filters['status']).not.toBeUndefined();
     });
 
-    it('should provide technologies, languages, and tools filters only for check pages', () => {
+    it('returns technologies, languages, and tools filters only for check pages', () => {
         const filters = createFilter(defaultProjectData, true);
         expect(filters['technologies']).not.toBeUndefined();
         expect(filters['languages']).not.toBeUndefined();
@@ -79,7 +79,7 @@ describe('createFilter', () => {
         expect(filters['status']).toBeUndefined();
     });
 
-    it('should provide a program filter that provides a flat array of programs for non-check pages', () => {
+    it('returns a program filter that provides a flat array of programs for non-check pages', () => {
         const nonCheckfilters = createFilter(defaultProjectData);
         const expectedPrograms = [
             "Diversity / Equity / Inclusion",
@@ -92,7 +92,7 @@ describe('createFilter', () => {
         expect(nonCheckfilters['programs']).toHaveLength(expectedPrograms.length);
     });
 
-    it('should provide a technologies filter that provides a flat array of technologies for check and non-check pages', () => {
+    it('returns a technologies filter that provides a flat array of technologies for check and non-check pages', () => {
         const checkfilters = createFilter(defaultProjectData);
         const nonCheckfilters = createFilter(defaultProjectData);
         const expectedTechnologies = ["JavaScript", "Python", "React", "C++"].sort();
@@ -105,7 +105,7 @@ describe('createFilter', () => {
         expect(nonCheckfilters['technologies']).toHaveLength(expectedTechnologies.length);
     });
 
-    it('should provide a languages filter that provides a flat array of languages for check and non-check pages', () => {
+    it('returns a languages filter that provides a flat array of languages for check and non-check pages', () => {
         const checkfilters = createFilter(defaultProjectData);
         const nonCheckfilters = createFilter(defaultProjectData);
         const expectedLanguages = ["PHP", "Ruby", "C"].sort();
@@ -119,7 +119,7 @@ describe('createFilter', () => {
 
     });
 
-    it('should provide a tools filter that provides a flat array of tools for check and non-check pages', () => {
+    it('returns a tools filter that provides a flat array of tools for check and non-check pages', () => {
         const checkfilters = createFilter(defaultProjectData);
         const nonCheckfilters = createFilter(defaultProjectData);
         const expectedTools = ["Git", "SQL", "Docker"].sort();
@@ -133,7 +133,7 @@ describe('createFilter', () => {
 
     });
 
-    it('should provide a status filter that provides a flat array of statuses for check and non-check pages', () => {
+    it('returns a status filter that provides a flat array of statuses for check and non-check pages', () => {
         const nonCheckfilters = createFilter(defaultProjectData);
 
         // TODO: Currently, the project with "empty" status inserts undefined in this filter. 
@@ -148,7 +148,7 @@ describe('createFilter', () => {
 });
 
 describe("projectDataSorter", () => {
-    it('should sort projects alphabetically by title and status', () => {
+    it('sorts projects alphabetically by title and status', () => {
         const expectedTitleOrder = [
             "Best Project",
             "Test Project",

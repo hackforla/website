@@ -9,24 +9,27 @@ const testEvents = [
     { name: 'Late Meeting', date: '2025-10-20', startTime: '2025-10-20T23:00:00Z', endTime: '2025-10-20T23:59:00Z', project: { name: 'Project B' } }
 ];
 
-it('sortEventsByDate should return sorted events', async() => {
+describe('sortEventsByDate', () => {
+    it('returns sorted events', async() => {
 
-    // Call sortEventsByDate with testEvents
-    const sortedEvents = sortEventsByDate(testEvents);
+        // Call sortEventsByDate with testEvents
+        const sortedEvents = sortEventsByDate(testEvents);
 
-    for (let i = 1; i < sortedEvents.length; i++) {
-        expect(new Date(sortedEvents[i].date) >= new Date(sortedEvents[i-1].date)).toBe(true);
-        expect(new Date(sortedEvents[i].startTime) >= new Date(sortedEvents[i-1].startTime)).toBe(true);
-    } 
-});
+        for (let i = 1; i < sortedEvents.length; i++) {
+            expect(new Date(sortedEvents[i].date) >= new Date(sortedEvents[i-1].date)).toBe(true);
+            expect(new Date(sortedEvents[i].startTime) >= new Date(sortedEvents[i-1].startTime)).toBe(true);
+        } 
+    });
+})
 
+describe('filterTestEvents', () => {
+    it('filters out test events', async() => {
 
-it('filterTestEvents should filter out test events', async() => {
+        // Call sortEventsByDate with testEvents
+        const filteredEvents = filterTestEvents(testEvents);
 
-    // Call sortEventsByDate with testEvents
-    const filteredEvents = filterTestEvents(testEvents);
-
-    // Make sure that no event names match the /test/i regex (test doesn't appear, case insensitive)
-    expect(filteredEvents.every(event => /test/i.test(event.name) === false)).toBe(true);
-});
+        // Make sure that no event names match the /test/i regex (test doesn't appear, case insensitive)
+        expect(filteredEvents.every(event => /test/i.test(event.name) === false)).toBe(true);
+    });
+})
 
