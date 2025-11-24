@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Citizen Engagement
-permalink: /citizen-engagement
 ---
 <!-- Header banner -->
 <div class="header-container flex-container program-header-container">
@@ -48,7 +46,7 @@ permalink: /citizen-engagement
                 <div class="organizations-images">
                     {% assign partners = site.data.internal.partners %}
                     {% for partner in partners %}
-                      {% if partner.program-area contains "Citizen Engagement" %}
+                      {% if partner["program-area"] contains page["program-area"] %}
                         <img class="org-img org-img-large" src="{{ partner.image }}" alt="{{ partner.name }}">
                       {% endif %}
                     {% endfor %}

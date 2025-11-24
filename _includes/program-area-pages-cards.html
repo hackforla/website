@@ -1,6 +1,6 @@
 <!-- These are the cards found on a program area page, such as the cards on https://www.hackforla.org/citizen-engagement webpage. -->
 
-{% assign visible_projects = site.projects | where: "program-area", "Citizen Engagement" | where: "visible", "true" %}
+{% assign visible_projects = site.projects | where: "program-area", page["program-area"] | where: "visible", "true" %}
              {% for item in visible_projects %}
              {%- if
                 item.problem.size > 0 and
