@@ -56,6 +56,11 @@ defaults: # The `defaults` key holds an array of scope/values pairs that define 
       type: "guide-pages"
     values:
       layout: "guide-pages"
+  - scope:
+      path: "_program-areas"
+      type: "program-areas"
+    values:
+      layout: "program-area-pages"
 
 plugins:
   - jekyll-sitemap
