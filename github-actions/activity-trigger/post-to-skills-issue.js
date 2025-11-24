@@ -35,7 +35,7 @@ async function postToSkillsIssue({github, context}, activity) {
         return;
     }
 
-// Step 1: Try local directory lookup first
+    // Step 1: Try local directory lookup first
     let skillsInfo = lookupSkillsDirectory(eventActor);
 
     if (!skillsInfo) {
@@ -55,7 +55,7 @@ async function postToSkillsIssue({github, context}, activity) {
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo?.statusId || 'unknown';
     const isArchived = skillsInfo?.isArchived || false;
-    const commentFoundId = skillsInfo?.commentId || null;   // not used currently
+    const commentIdCached = skillsInfo?.commentId || null;   // not used currently
     
  console.log(`skillsIssueNum: ${skillsIssueNum}, skillsIssueNodeId: ${skillsIssueNodeId}, skillsStatusId: ${skillsStatusId}, isArchived: ${isArchived}`);  // only for debugging 
     
