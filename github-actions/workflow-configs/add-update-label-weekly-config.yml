@@ -124,7 +124,7 @@ bots:
 #   ${questionsStatus}    - The "questions" status on your Project Board (e.g., "Questions / In Review")
 #   ${cutoffTime}         - The formatted timestamp of the issue's last update
 
-teamSlackChannel: ""  # Only if needed, for example "#project-site"
+teamSlackChannel: "#hfla-site"  # Only if needed, for example "#project-site"
 
 # Do not change the path to the bot comment template file below.
 # If needed, edit the file using markdown syntax at the given path.
