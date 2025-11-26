@@ -48,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 projectName = "Product Management";
             } else if (communityName === "Ui/Ux") {
                 projectName = "UI/UX";
-            } else if (communityName === "Devops") {
-                projectName = "DevOps";
             } else {
                 projectName = communityName;
             }
