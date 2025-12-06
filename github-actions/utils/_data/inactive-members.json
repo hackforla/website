@@ -1,47 +1,55 @@
 {
   "removedContributors": [
-    "Simmigon-flagg",
-    "gmgonzal",
-    "joshjyu",
-    "edwarddim",
-    "zvidmarb",
-    "Scienstein2497",
-    "RodgerLugo",
-    "wesley115",
-    "Daanesh",
-    "lisa-shens",
-    "yamadaxxx09",
-    "Patdabaker",
-    "MitchellDoesCoding",
-    "Eleftherios01",
-    "kknight-7"
-  ],
-  "notifiedContributors": [
-    "shu1513",
-    "aadilahmed",
     "nubilaxl",
     "belunatic",
     "Jeffreyp1",
     "mugdhchauhan",
-    "dvernon5",
     "LRenDO",
-    "NomadCode33",
     "michaelcho8",
-    "TheManTheMythTheGameDev",
     "rogerioduenas",
     "JamesCunningham304",
     "varyad",
     "revforyou",
     "michael-4",
-    "ariellockett2",
-    "ad-vil",
-    "priyanka02art",
-    "praytoo"
+    "ariellockett2"
   ],
-  "nonTeamOpenIssue": {},
+  "notifiedContributors": [
+    "alexanderthenotsobad-git",
+    "EShahverdian",
+    "gabbyjimenez",
+    "wesley115",
+    "DakuwoN",
+    "Hiroeme",
+    "rleeoriginal",
+    "ad-vil",
+    "devxed43",
+    "priyanka02art"
+  ],
+  "nonTeamOpenIssue": {
+    "rogerioduenas": [
+      8303
+    ],
+    "michael-4": [
+      8006
+    ],
+    "ariellockett2": [
+      8005
+    ],
+    "varyad": [
+      7970
+    ],
+    "Eleftherios01": [
+      7725,
+      7506
+    ],
+    "LRenDO": [
+      4719
+    ]
+  },
   "inactiveOpenIssue": {
-    "essencegoff": [
-      5248
+    "priyanka02art": [
+      2481,
+      7952
     ]
   }
 }
