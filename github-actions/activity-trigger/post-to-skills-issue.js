@@ -51,7 +51,8 @@ async function postToSkillsIssue({github, context}, activity) {
     }
 
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
-    const skillsIssueNum = skillsInfo.issueNum;
+    //const skillsIssueNum = skillsInfo.issueNum;
+    const skillsIssueNum = _17_
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo?.statusId || 'unknown';
     const isArchived = skillsInfo?.isArchived || false;
@@ -164,8 +165,8 @@ async function postToSkillsIssue({github, context}, activity) {
     if (!(message.includes('closed') || message.includes('assigned') || isArchived)) {
 
         // If eventActor is team member, open issue and move to "In progress"
-       const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
-
+       //const isActiveMember = await checkTeamMembership(github, context, eventActor, TEAM);
+       const isActiveMember = true;
         if (isActiveMember) {
             try {
                 await github.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
