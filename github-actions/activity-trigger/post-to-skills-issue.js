@@ -52,7 +52,7 @@ async function postToSkillsIssue({github, context}, activity) {
 
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
     //const skillsIssueNum = skillsInfo.issueNum;
-    const skillsIssueNum = _17_
+    const skillsIssueNum = 17
     const skillsIssueNodeId = skillsInfo.issueId;
     const skillsStatusId = skillsInfo?.statusId || 'unknown';
     const isArchived = skillsInfo?.isArchived || false;
