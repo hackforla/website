@@ -92,7 +92,9 @@ async function postToSkillsIssue({github, context}, activity) {
                     body: updatedBody,
                 });
                 console.log(` ⮡  Updated cached comment #${commentIdCached}`);
-                return; // Done
+               
+            }else{
+                commentIdToUse = null;
             }
         } catch (err) {
             console.warn(` ⮡  Cached comment invalid or not found. Falling back to search.`, err);
