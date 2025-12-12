@@ -36,6 +36,7 @@ async function postToSkillsIssue({github, context}, activity) {
     }
 
     // Step 1: Try local directory lookup first
+    let needsUpdate = false;
     let skillsInfo = lookupSkillsDirectory(eventActor);
 
     if (!skillsInfo) {
@@ -46,9 +47,11 @@ async function postToSkillsIssue({github, context}, activity) {
 
         // Step 3: Save result to local directory if found
         if (skillsInfo && skillsInfo.issueNum) {
-            updateSkillsDirectory(eventActor, skillsInfo);
+            needsUpdate = true
+        } else {
+          console.log(` ⮡  No Skills Issue found for ${eventActor}. Cannot post message.`);
+          return;   
         }
-    }
 
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
     //const skillsIssueNum = skillsInfo.issueNum;
@@ -93,7 +96,7 @@ async function postToSkillsIssue({github, context}, activity) {
                 });
                 console.log(` ⮡  Updated cached comment #${commentIdCached}`);
                
-            }else{
+            } else {
                 commentIdToUse = null;
             }
         } catch (err) {
@@ -156,12 +159,17 @@ async function postToSkillsIssue({github, context}, activity) {
                 );
                 console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
                 // Cache new comment ID
-                updateSkillsDirectory(eventActor, { commentId: newComment.id });
+               // updateSkillsDirectory(eventActor, { commentId: newComment.id });
             } catch (err) {
                 console.error(` ⮡  Failed to create new comment for issue #${skillsIssueNum}:`, err);
             }
         }
-    }
+        
+      if (needsUpdate) {
+         console.log(` ⮡  Updating Skills Directory for ${eventActor}...`);
+         updateSkillsDirectory(eventActor, skillsIssueNum, skillsIssueNodeId, commentIdFound);
+      };
+
 
     // Only proceed if Skills Issue message does not include: 'closed', 'assigned', or isArchived 
     if (!(message.includes('closed') || message.includes('assigned') || isArchived)) {
