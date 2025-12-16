@@ -52,7 +52,7 @@ async function postToSkillsIssue({github, context}, activity) {
           console.log(` ⮡  No Skills Issue found for ${eventActor}. Cannot post message.`);
           return;   
         }
-
+    }
     // Get eventActor's Skills Issue number, nodeId, current statusId (all null if no Skills Issue found) 
     //const skillsIssueNum = skillsInfo.issueNum;
     const skillsIssueNum = 17;
