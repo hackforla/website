@@ -17,11 +17,181 @@
     }
   },
   {
+    "name": "All",
+    "description": "",
+    "date": "2024-03-07T02:00:00.750Z",
+    "startTime": "2024-03-07T02:00:00.750Z",
+    "endTime": "2024-03-07T03:00:00.750Z",
+    "project": {
+      "name": "Community of Practice: UI/UX",
+      "githubUrl": "https://github.com/hackforla/UI-UX",
+      "hflaWebsiteUrl": "https://www.hackforla.org/communities-of-practice",
+      "githubIdentifier": "327430594",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://app.slack.com/client/T04502KQX/C017ESHSMNG",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACjCHzHKLLQxUk9PVA"
+    }
+  },
+  {
+    "name": "PM/Org",
+    "description": "alternating week",
+    "date": "2024-08-21T01:00:00.881Z",
+    "startTime": "2024-08-21T01:00:00.881Z",
+    "endTime": "2024-08-21T01:30:00.881Z",
+    "project": {
+      "name": "Home Unite Us",
+      "githubUrl": "https://github.com/hackforla/homeuniteus",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
+      "githubIdentifier": "228981080",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
+    }
+  },
+  {
+    "name": "All",
+    "description": "3rd week",
+    "date": "2025-03-19T00:00:00.711Z",
+    "startTime": "2025-03-19T00:00:00.711Z",
+    "endTime": "2025-03-19T01:00:00.711Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "PM/Org",
+    "description": "3rd week",
+    "date": "2025-03-17T23:00:00.658Z",
+    "startTime": "2025-03-17T23:00:00.658Z",
+    "endTime": "2025-03-18T00:00:00.658Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "PM/Org",
+    "description": "",
+    "date": "2025-01-23T01:00:00.696Z",
+    "startTime": "2025-01-23T01:00:00.696Z",
+    "endTime": "2025-01-23T02:00:00.696Z",
+    "project": {
+      "name": "Food Oasis",
+      "githubUrl": "https://github.com/foodoasisla",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
+      "githubIdentifier": "215666884",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
+    }
+  },
+  {
+    "name": "Stakeholder",
+    "description": "Every other Tuesday",
+    "date": "2024-04-09T23:00:00.924Z",
+    "startTime": "2024-04-09T23:00:00.924Z",
+    "endTime": "2024-04-10T00:00:00.924Z",
+    "project": {
+      "name": "LA TDM Calculator",
+      "githubUrl": "https://github.com/hackforla/tdm-calculator",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
+      "githubIdentifier": "197452459",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
+    }
+  },
+  {
+    "name": "Dev Leads/PM",
+    "description": "",
+    "date": "2024-03-05T01:00:00.964Z",
+    "startTime": "2024-03-05T01:00:00.964Z",
+    "endTime": "2024-03-05T03:00:00.964Z",
+    "project": {
+      "name": "HackforLA.org",
+      "githubUrl": "https://github.com/hackforla/website",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
+      "githubIdentifier": "130000551",
+      "projectStatus": "Active",
+      "location": "Westside, DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
+    }
+  },
+  {
     "name": "PM",
     "description": "",
-    "date": "2024-10-14T23:00:00.243Z",
-    "startTime": "2024-10-14T23:00:00.243Z",
-    "endTime": "2024-10-15T00:00:00.243Z",
+    "date": "2024-09-18T00:30:00.611Z",
+    "startTime": "2024-09-18T00:30:00.611Z",
+    "endTime": "2024-09-18T01:30:00.611Z",
+    "project": {
+      "name": "Food Oasis",
+      "githubUrl": "https://github.com/foodoasisla",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
+      "githubIdentifier": "215666884",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
+    }
+  },
+  {
+    "name": "All",
+    "description": "Once a month",
+    "date": "2024-09-20T01:00:00.733Z",
+    "startTime": "2024-09-20T01:00:00.733Z",
+    "endTime": "2024-09-20T02:00:00.733Z",
+    "project": {
+      "name": "Food Oasis",
+      "githubUrl": "https://github.com/foodoasisla",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
+      "githubIdentifier": "215666884",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
+    }
+  },
+  {
+    "name": "Leads",
+    "description": "1st week",
+    "date": "2024-03-07T03:00:00.113Z",
+    "startTime": "2024-03-07T03:00:00.113Z",
+    "endTime": "2024-03-07T04:00:00.113Z",
+    "project": {
+      "name": "311 Data",
+      "githubUrl": "https://github.com/hackforla/311-data",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
+      "githubIdentifier": "190321758",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
+      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
+    }
+  },
+  {
+    "name": "All",
+    "description": "1st Thursday of the month is Leads/PMs only for planning.",
+    "date": "2025-01-17T02:00:00.294Z",
+    "startTime": "2025-01-17T02:00:00.294Z",
+    "endTime": "2025-01-17T03:00:00.294Z",
     "project": {
       "name": "Expunge Assist",
       "githubUrl": "https://github.com/hackforla/expunge-assist",
@@ -31,6 +201,91 @@
       "location": "Remote",
       "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
       "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
+    }
+  },
+  {
+    "name": "PM/Org",
+    "description": "First Friday of the month",
+    "date": "2024-10-11T20:00:00.846Z",
+    "startTime": "2024-10-11T20:00:00.846Z",
+    "endTime": "2024-10-11T21:00:00.846Z",
+    "project": {
+      "name": "Expunge Assist",
+      "githubUrl": "https://github.com/hackforla/expunge-assist",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
+      "githubIdentifier": "218391110",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
+    }
+  },
+  {
+    "name": "Design",
+    "description": "",
+    "date": "2025-02-05T17:00:00.052Z",
+    "startTime": "2025-02-05T17:00:00.052Z",
+    "endTime": "2025-02-05T18:00:00.052Z",
+    "project": {
+      "name": "Tech Work Experience",
+      "githubUrl": "https://github.com/hackforla/internship",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
+      "githubIdentifier": "376872876",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://github.com/hackforla/internship",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "2024 Winter Social",
+    "description": "",
+    "date": "2024-12-15T23:30:00.639Z",
+    "startTime": "2024-12-15T23:30:00.639Z",
+    "endTime": "2024-12-16T02:30:00.639Z",
+    "project": {
+      "name": "Hack4LA",
+      "githubUrl": "",
+      "hflaWebsiteUrl": "https://www.hackforla.org/",
+      "githubIdentifier": null,
+      "projectStatus": null,
+      "location": null,
+      "slackUrl": "",
+      "googleDriveUrl": ""
+    }
+  },
+  {
+    "name": "Leads",
+    "description": "1st week",
+    "date": "2025-01-16T18:00:00.592Z",
+    "startTime": "2025-01-16T18:00:00.592Z",
+    "endTime": "2025-01-16T19:00:00.592Z",
+    "project": {
+      "name": "Tech Work Experience",
+      "githubUrl": "https://github.com/hackforla/internship",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
+      "githubIdentifier": "376872876",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://github.com/hackforla/internship",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "2025 Summer Picnic",
+    "description": "",
+    "date": "2025-08-02T19:00:00.249Z",
+    "startTime": "2025-08-02T19:00:00.249Z",
+    "endTime": "2025-08-02T22:00:00.249Z",
+    "project": {
+      "name": "Hack4LA",
+      "githubUrl": "",
+      "hflaWebsiteUrl": "https://www.hackforla.org/",
+      "githubIdentifier": null,
+      "projectStatus": null,
+      "location": null,
+      "slackUrl": "",
+      "googleDriveUrl": ""
     }
   },
   {
@@ -138,23 +393,6 @@
   {
     "name": "All",
     "description": "",
-    "date": "2024-03-07T02:00:00.750Z",
-    "startTime": "2024-03-07T02:00:00.750Z",
-    "endTime": "2024-03-07T03:00:00.750Z",
-    "project": {
-      "name": "Community of Practice: UI/UX",
-      "githubUrl": "https://github.com/hackforla/UI-UX",
-      "hflaWebsiteUrl": "https://www.hackforla.org/communities-of-practice",
-      "githubIdentifier": "327430594",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://app.slack.com/client/T04502KQX/C017ESHSMNG",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACjCHzHKLLQxUk9PVA"
-    }
-  },
-  {
-    "name": "All",
-    "description": "",
     "date": "2024-03-08T02:00:00.225Z",
     "startTime": "2024-03-08T02:00:00.225Z",
     "endTime": "2024-03-08T03:00:00.225Z",
@@ -187,176 +425,6 @@
     }
   },
   {
-    "name": "New Prospective Members",
-    "description": "Alternating Mon/Tue. Click for schedule",
-    "date": "2024-03-27T01:00:00.592Z",
-    "startTime": "2024-03-27T01:00:00.592Z",
-    "endTime": "2024-03-27T04:00:00.592Z",
-    "project": {
-      "name": "Onboarding",
-      "githubUrl": "https://github.com/hackforla/admin",
-      "hflaWebsiteUrl": "https://www.meetup.com/hackforla/events",
-      "githubIdentifier": "380865495",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/C04S7PNCU",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0APJFu_GrzzH7Uk9PVA"
-    }
-  },
-  {
-    "name": "Dev Office Hours",
-    "description": "",
-    "date": "2024-03-08T03:00:00.151Z",
-    "startTime": "2024-03-08T03:00:00.151Z",
-    "endTime": "2024-03-08T04:00:00.151Z",
-    "project": {
-      "name": "HackforLA.org",
-      "githubUrl": "https://github.com/hackforla/website",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
-      "githubIdentifier": "130000551",
-      "projectStatus": "Active",
-      "location": "Westside, DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
-    }
-  },
-  {
-    "name": "PM",
-    "description": "",
-    "date": "2025-01-17T02:00:00.905Z",
-    "startTime": "2025-01-17T02:00:00.905Z",
-    "endTime": "2025-01-17T03:00:00.905Z",
-    "project": {
-      "name": "Home Unite Us",
-      "githubUrl": "https://github.com/hackforla/homeuniteus",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
-      "githubIdentifier": "228981080",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
-    }
-  },
-  {
-    "name": "PM/Org",
-    "description": "alternating week",
-    "date": "2024-08-21T01:00:00.881Z",
-    "startTime": "2024-08-21T01:00:00.881Z",
-    "endTime": "2024-08-21T01:30:00.881Z",
-    "project": {
-      "name": "Home Unite Us",
-      "githubUrl": "https://github.com/hackforla/homeuniteus",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
-      "githubIdentifier": "228981080",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
-    }
-  },
-  {
-    "name": "All",
-    "description": "3rd week",
-    "date": "2025-03-19T00:00:00.711Z",
-    "startTime": "2025-03-19T00:00:00.711Z",
-    "endTime": "2025-03-19T01:00:00.711Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "UXR",
-    "description": "",
-    "date": "2025-10-08T00:30:00.103Z",
-    "startTime": "2025-10-08T00:30:00.103Z",
-    "endTime": "2025-10-08T01:30:00.103Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "Dev",
-    "description": "",
-    "date": "2025-10-07T01:00:00.898Z",
-    "startTime": "2025-10-07T01:00:00.898Z",
-    "endTime": "2025-10-07T02:00:00.898Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "PM/Org",
-    "description": "3rd week",
-    "date": "2025-03-17T23:00:00.658Z",
-    "startTime": "2025-03-17T23:00:00.658Z",
-    "endTime": "2025-03-18T00:00:00.658Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "PM/Org",
-    "description": "",
-    "date": "2025-01-23T01:00:00.696Z",
-    "startTime": "2025-01-23T01:00:00.696Z",
-    "endTime": "2025-01-23T02:00:00.696Z",
-    "project": {
-      "name": "Food Oasis",
-      "githubUrl": "https://github.com/foodoasisla",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
-      "githubIdentifier": "215666884",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
-    }
-  },
-  {
-    "name": "Dev",
-    "description": "",
-    "date": "2025-01-21T03:00:00.435Z",
-    "startTime": "2025-01-21T03:00:00.435Z",
-    "endTime": "2025-01-21T04:00:00.435Z",
-    "project": {
-      "name": "Food Oasis",
-      "githubUrl": "https://github.com/foodoasisla",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
-      "githubIdentifier": "215666884",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
-    }
-  },
-  {
     "name": "PD: All",
     "description": "Meeting for all PD team members",
     "date": "2025-01-31T01:00:00.998Z",
@@ -371,57 +439,6 @@
       "location": "Remote",
       "slackUrl": "https://hackforla.slack.com/archives/C02PTACSRJQ",
       "googleDriveUrl": "https://drive.google.com/drive/folders/0AMVDRCjyzDgtUk9PVA"
-    }
-  },
-  {
-    "name": "Stakeholder",
-    "description": "Every other Tuesday",
-    "date": "2024-04-09T23:00:00.924Z",
-    "startTime": "2024-04-09T23:00:00.924Z",
-    "endTime": "2024-04-10T00:00:00.924Z",
-    "project": {
-      "name": "LA TDM Calculator",
-      "githubUrl": "https://github.com/hackforla/tdm-calculator",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
-      "githubIdentifier": "197452459",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
-    }
-  },
-  {
-    "name": "PM",
-    "description": "",
-    "date": "2024-03-04T18:00:00.394Z",
-    "startTime": "2024-03-04T18:00:00.394Z",
-    "endTime": "2024-03-04T19:00:00.394Z",
-    "project": {
-      "name": "Tech Work Experience",
-      "githubUrl": "https://github.com/hackforla/internship",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
-      "githubIdentifier": "376872876",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://github.com/hackforla/internship",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
-    }
-  },
-  {
-    "name": "PM Prep for All",
-    "description": "",
-    "date": "2024-03-07T17:30:00.911Z",
-    "startTime": "2024-03-07T17:30:00.911Z",
-    "endTime": "2024-03-07T18:00:00.911Z",
-    "project": {
-      "name": "Tech Work Experience",
-      "githubUrl": "https://github.com/hackforla/internship",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
-      "githubIdentifier": "376872876",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://github.com/hackforla/internship",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
     }
   },
   {
@@ -442,125 +459,6 @@
     }
   },
   {
-    "name": "UX Lead/PM",
-    "description": "",
-    "date": "2024-03-07T00:00:00.010Z",
-    "startTime": "2024-03-07T00:00:00.010Z",
-    "endTime": "2024-03-07T01:00:00.010Z",
-    "project": {
-      "name": "Tech Work Experience",
-      "githubUrl": "https://github.com/hackforla/internship",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
-      "githubIdentifier": "376872876",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://github.com/hackforla/internship",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
-    }
-  },
-  {
-    "name": "UX",
-    "description": "",
-    "date": "2024-03-05T23:00:00.244Z",
-    "startTime": "2024-03-05T23:00:00.244Z",
-    "endTime": "2024-03-06T00:00:00.244Z",
-    "project": {
-      "name": "Tech Work Experience",
-      "githubUrl": "https://github.com/hackforla/internship",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
-      "githubIdentifier": "376872876",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://github.com/hackforla/internship",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
-    }
-  },
-  {
-    "name": "All",
-    "description": "",
-    "date": "2024-03-26T02:00:00.443Z",
-    "startTime": "2024-03-26T02:00:00.443Z",
-    "endTime": "2024-03-26T03:00:00.443Z",
-    "project": {
-      "name": "VRMS",
-      "githubUrl": "https://github.com/hackforla/VRMS",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/vrms",
-      "githubIdentifier": "226157870",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CRGH5HM0Q",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1uxCkpcPtDjrhftBO-axU2g8hjXsxiLiS"
-    }
-  },
-  {
-    "name": "PM",
-    "description": "",
-    "date": "2024-03-10T16:00:00.838Z",
-    "startTime": "2024-03-10T16:00:00.838Z",
-    "endTime": "2024-03-10T17:00:00.838Z",
-    "project": {
-      "name": "HackforLA.org",
-      "githubUrl": "https://github.com/hackforla/website",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
-      "githubIdentifier": "130000551",
-      "projectStatus": "Active",
-      "location": "Westside, DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
-    }
-  },
-  {
-    "name": "Dev Leads/PM",
-    "description": "",
-    "date": "2024-03-05T01:00:00.964Z",
-    "startTime": "2024-03-05T01:00:00.964Z",
-    "endTime": "2024-03-05T03:00:00.964Z",
-    "project": {
-      "name": "HackforLA.org",
-      "githubUrl": "https://github.com/hackforla/website",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
-      "githubIdentifier": "130000551",
-      "projectStatus": "Active",
-      "location": "Westside, DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
-    }
-  },
-  {
-    "name": "All",
-    "description": "",
-    "date": "2025-01-20T19:30:00.825Z",
-    "startTime": "2025-01-20T19:30:00.825Z",
-    "endTime": "2025-01-20T20:30:00.825Z",
-    "project": {
-      "name": "Brigade Organizer's Playbook",
-      "githubUrl": "https://github.com/codeforamerica/brigade-playbook",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/brigade-organizers-playbook",
-      "githubIdentifier": "277577906",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://cfa.slack.com/archives/G0196272BBN",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHm1jtnPQgtkUk9PVA"
-    }
-  },
-  {
-    "name": "PM",
-    "description": "",
-    "date": "2024-03-10T15:00:00.584Z",
-    "startTime": "2024-03-10T15:00:00.584Z",
-    "endTime": "2024-03-10T16:00:00.584Z",
-    "project": {
-      "name": "Brigade Organizer's Playbook",
-      "githubUrl": "https://github.com/codeforamerica/brigade-playbook",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/brigade-organizers-playbook",
-      "githubIdentifier": "277577906",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://cfa.slack.com/archives/G0196272BBN",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHm1jtnPQgtkUk9PVA"
-    }
-  },
-  {
     "name": "All",
     "description": "",
     "date": "2024-03-08T20:00:00.396Z",
@@ -578,45 +476,11 @@
     }
   },
   {
-    "name": "PM",
-    "description": "",
-    "date": "2024-09-18T00:30:00.611Z",
-    "startTime": "2024-09-18T00:30:00.611Z",
-    "endTime": "2024-09-18T01:30:00.611Z",
-    "project": {
-      "name": "Food Oasis",
-      "githubUrl": "https://github.com/foodoasisla",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
-      "githubIdentifier": "215666884",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
-    }
-  },
-  {
     "name": "Leads/PM",
     "description": "",
     "date": "2024-09-20T01:00:00.236Z",
     "startTime": "2024-09-20T01:00:00.236Z",
     "endTime": "2024-09-20T02:00:00.236Z",
-    "project": {
-      "name": "Food Oasis",
-      "githubUrl": "https://github.com/foodoasisla",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
-      "githubIdentifier": "215666884",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
-    }
-  },
-  {
-    "name": "All",
-    "description": "Once a month",
-    "date": "2024-09-20T01:00:00.733Z",
-    "startTime": "2024-09-20T01:00:00.733Z",
-    "endTime": "2024-09-20T02:00:00.733Z",
     "project": {
       "name": "Food Oasis",
       "githubUrl": "https://github.com/foodoasisla",
@@ -646,164 +510,11 @@
     }
   },
   {
-    "name": "All",
-    "description": "",
-    "date": "2024-03-07T03:00:00.525Z",
-    "startTime": "2024-03-07T03:00:00.525Z",
-    "endTime": "2024-03-07T04:00:00.525Z",
-    "project": {
-      "name": "LA TDM Calculator",
-      "githubUrl": "https://github.com/hackforla/tdm-calculator",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
-      "githubIdentifier": "197452459",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
-    }
-  },
-  {
-    "name": "Stakeholder Prep",
-    "description": "",
-    "date": "2024-03-07T21:00:00.393Z",
-    "startTime": "2024-03-07T21:00:00.393Z",
-    "endTime": "2024-03-07T22:00:00.393Z",
-    "project": {
-      "name": "LA TDM Calculator",
-      "githubUrl": "https://github.com/hackforla/tdm-calculator",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
-      "githubIdentifier": "197452459",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
-    }
-  },
-  {
-    "name": "PM",
-    "description": "",
-    "date": "2025-06-26T23:00:00.936Z",
-    "startTime": "2025-06-26T23:00:00.936Z",
-    "endTime": "2025-06-27T00:00:00.936Z",
-    "project": {
-      "name": "VRMS",
-      "githubUrl": "https://github.com/hackforla/VRMS",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/vrms",
-      "githubIdentifier": "226157870",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CRGH5HM0Q",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1uxCkpcPtDjrhftBO-axU2g8hjXsxiLiS"
-    }
-  },
-  {
-    "name": "All",
-    "description": "",
-    "date": "2024-03-07T03:00:00.849Z",
-    "startTime": "2024-03-07T03:00:00.849Z",
-    "endTime": "2024-03-07T04:00:00.849Z",
-    "project": {
-      "name": "311 Data",
-      "githubUrl": "https://github.com/hackforla/311-data",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
-      "githubIdentifier": "190321758",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
-      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
-    }
-  },
-  {
-    "name": "Leads",
-    "description": "1st week",
-    "date": "2024-03-07T03:00:00.113Z",
-    "startTime": "2024-03-07T03:00:00.113Z",
-    "endTime": "2024-03-07T04:00:00.113Z",
-    "project": {
-      "name": "311 Data",
-      "githubUrl": "https://github.com/hackforla/311-data",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
-      "githubIdentifier": "190321758",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
-      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
-    }
-  },
-  {
-    "name": "Dev",
-    "description": "",
-    "date": "2024-09-17T03:00:00.786Z",
-    "startTime": "2024-09-17T03:00:00.786Z",
-    "endTime": "2024-09-17T03:30:00.786Z",
-    "project": {
-      "name": "Expunge Assist",
-      "githubUrl": "https://github.com/hackforla/expunge-assist",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
-      "githubIdentifier": "218391110",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
-    }
-  },
-  {
     "name": "Content",
     "description": "",
     "date": "2025-02-19T01:30:00.479Z",
     "startTime": "2025-02-19T01:30:00.479Z",
     "endTime": "2025-02-19T02:30:00.479Z",
-    "project": {
-      "name": "Expunge Assist",
-      "githubUrl": "https://github.com/hackforla/expunge-assist",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
-      "githubIdentifier": "218391110",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
-    }
-  },
-  {
-    "name": "Research",
-    "description": "",
-    "date": "2025-04-25T02:00:00.983Z",
-    "startTime": "2025-04-25T02:00:00.983Z",
-    "endTime": "2025-04-25T03:00:00.983Z",
-    "project": {
-      "name": "Expunge Assist",
-      "githubUrl": "https://github.com/hackforla/expunge-assist",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
-      "githubIdentifier": "218391110",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
-    }
-  },
-  {
-    "name": "All",
-    "description": "1st Thursday of the month is Leads/PMs only for planning.",
-    "date": "2025-01-17T02:00:00.294Z",
-    "startTime": "2025-01-17T02:00:00.294Z",
-    "endTime": "2025-01-17T03:00:00.294Z",
-    "project": {
-      "name": "Expunge Assist",
-      "githubUrl": "https://github.com/hackforla/expunge-assist",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
-      "githubIdentifier": "218391110",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
-    }
-  },
-  {
-    "name": "PM/Org",
-    "description": "First Friday of the month",
-    "date": "2024-10-11T20:00:00.846Z",
-    "startTime": "2024-10-11T20:00:00.846Z",
-    "endTime": "2024-10-11T21:00:00.846Z",
     "project": {
       "name": "Expunge Assist",
       "githubUrl": "https://github.com/hackforla/expunge-assist",
@@ -850,40 +561,6 @@
     }
   },
   {
-    "name": "PM",
-    "description": "",
-    "date": "2024-03-08T03:00:00.342Z",
-    "startTime": "2024-03-08T03:00:00.342Z",
-    "endTime": "2024-03-08T04:00:00.342Z",
-    "project": {
-      "name": "311 Data",
-      "githubUrl": "https://github.com/hackforla/311-data",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
-      "githubIdentifier": "190321758",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
-      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
-    }
-  },
-  {
-    "name": "Leads",
-    "description": "",
-    "date": "2024-03-07T02:00:00.688Z",
-    "startTime": "2024-03-07T02:00:00.688Z",
-    "endTime": "2024-03-07T03:00:00.688Z",
-    "project": {
-      "name": "Community of Practice: CoP Leads",
-      "githubUrl": "https://github.com/hackforla/communities-of-practice",
-      "hflaWebsiteUrl": "https://www.hackforla.org/communities-of-practice",
-      "githubIdentifier": "337874660",
-      "projectStatus": "Active",
-      "location": "https://us02web.zoom.us/s/4451450308?pwd=U0JobzZqN0xGSXBUUkRsNlB5YzJiQT09",
-      "slackUrl": "https://hackforla.slack.com/archives/C026UMZK89X",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHDu27vDmN91Uk9PVA"
-    }
-  },
-  {
     "name": "Leads",
     "description": "",
     "date": "2025-01-17T03:00:00.570Z",
@@ -898,40 +575,6 @@
       "location": "Remote",
       "slackUrl": "https://hackforla.slack.com/archives/C01CU709SER",
       "googleDriveUrl": "https://drive.google.com/drive/folders/0ALZlGXAx55mQUk9PVA"
-    }
-  },
-  {
-    "name": "Design",
-    "description": "",
-    "date": "2025-02-05T17:00:00.052Z",
-    "startTime": "2025-02-05T17:00:00.052Z",
-    "endTime": "2025-02-05T18:00:00.052Z",
-    "project": {
-      "name": "Tech Work Experience",
-      "githubUrl": "https://github.com/hackforla/internship",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
-      "githubIdentifier": "376872876",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://github.com/hackforla/internship",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
-    }
-  },
-  {
-    "name": "All",
-    "description": "",
-    "date": "2024-03-06T20:00:00.003Z",
-    "startTime": "2024-03-06T20:00:00.003Z",
-    "endTime": "2024-03-06T21:00:00.003Z",
-    "project": {
-      "name": "Admin Team",
-      "githubUrl": "https://github.com/hackforla/admin",
-      "hflaWebsiteUrl": "",
-      "githubIdentifier": "380865495",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://hackforla.slack.com/archives/C01Q24YF56J",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMjgqUp9AI13Uk9PVA"
     }
   },
   {
@@ -957,23 +600,6 @@
     "date": "2024-03-05T15:00:00.715Z",
     "startTime": "2024-03-05T15:00:00.715Z",
     "endTime": "2024-03-05T18:00:00.715Z",
-    "project": {
-      "name": "Admin Team",
-      "githubUrl": "https://github.com/hackforla/admin",
-      "hflaWebsiteUrl": "",
-      "githubIdentifier": "380865495",
-      "projectStatus": "Active",
-      "location": null,
-      "slackUrl": "https://hackforla.slack.com/archives/C01Q24YF56J",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMjgqUp9AI13Uk9PVA"
-    }
-  },
-  {
-    "name": "Special Projects All",
-    "description": "",
-    "date": "2024-03-06T15:00:00.544Z",
-    "startTime": "2024-03-06T15:00:00.544Z",
-    "endTime": "2024-03-06T18:00:00.544Z",
     "project": {
       "name": "Admin Team",
       "githubUrl": "https://github.com/hackforla/admin",
@@ -1017,57 +643,6 @@
       "location": null,
       "slackUrl": "https://hackforla.slack.com/archives/C01Q24YF56J",
       "googleDriveUrl": "https://drive.google.com/drive/folders/0AMjgqUp9AI13Uk9PVA"
-    }
-  },
-  {
-    "name": "Test-EventName",
-    "description": "Testing",
-    "date": "2024-03-07T06:00:00.383Z",
-    "startTime": "2024-03-07T06:00:00.383Z",
-    "endTime": "2024-03-07T07:00:00.383Z",
-    "project": {
-      "name": null,
-      "githubUrl": "",
-      "hflaWebsiteUrl": "",
-      "githubIdentifier": null,
-      "projectStatus": null,
-      "location": null,
-      "slackUrl": "",
-      "googleDriveUrl": ""
-    }
-  },
-  {
-    "name": "Leads",
-    "description": "1st week",
-    "date": "2025-03-19T00:00:00.718Z",
-    "startTime": "2025-03-19T00:00:00.718Z",
-    "endTime": "2025-03-19T01:00:00.718Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "Design ",
-    "description": "",
-    "date": "2025-01-16T01:30:00.998Z",
-    "startTime": "2025-01-16T01:30:00.998Z",
-    "endTime": "2025-01-16T02:30:00.998Z",
-    "project": {
-      "name": "Home Unite Us",
-      "githubUrl": "https://github.com/hackforla/homeuniteus",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
-      "githubIdentifier": "228981080",
-      "projectStatus": "Active",
-      "location": "DTLA",
-      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
     }
   },
   {
@@ -1156,23 +731,6 @@
     }
   },
   {
-    "name": "2024 Winter Social",
-    "description": "",
-    "date": "2024-12-15T23:30:00.639Z",
-    "startTime": "2024-12-15T23:30:00.639Z",
-    "endTime": "2024-12-16T02:30:00.639Z",
-    "project": {
-      "name": "Hack4LA",
-      "githubUrl": "",
-      "hflaWebsiteUrl": "https://www.hackforla.org/",
-      "githubIdentifier": null,
-      "projectStatus": null,
-      "location": null,
-      "slackUrl": "",
-      "googleDriveUrl": ""
-    }
-  },
-  {
     "name": "Engineer",
     "description": "Weekly Team Meeting",
     "date": "2025-01-17T01:30:00.522Z",
@@ -1190,11 +748,79 @@
     }
   },
   {
-    "name": "Leads",
-    "description": "1st week",
-    "date": "2025-01-16T18:00:00.592Z",
-    "startTime": "2025-01-16T18:00:00.592Z",
-    "endTime": "2025-01-16T19:00:00.592Z",
+    "name": "CTJ PMs",
+    "description": "",
+    "date": "2025-05-06T22:00:00.197Z",
+    "startTime": "2025-05-06T22:00:00.197Z",
+    "endTime": "2025-05-06T23:00:00.197Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "Dev",
+    "description": "Dev Leads + Devs",
+    "date": "2025-05-22T01:00:00.032Z",
+    "startTime": "2025-05-22T01:00:00.032Z",
+    "endTime": "2025-05-22T02:00:00.032Z",
+    "project": {
+      "name": "311 Data",
+      "githubUrl": "https://github.com/hackforla/311-data",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
+      "githubIdentifier": "190321758",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
+      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2025-01-17T02:00:00.905Z",
+    "startTime": "2025-01-17T02:00:00.905Z",
+    "endTime": "2025-01-17T03:00:00.905Z",
+    "project": {
+      "name": "Home Unite Us",
+      "githubUrl": "https://github.com/hackforla/homeuniteus",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
+      "githubIdentifier": "228981080",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
+    }
+  },
+  {
+    "name": "UXR",
+    "description": "",
+    "date": "2025-10-08T00:30:00.103Z",
+    "startTime": "2025-10-08T00:30:00.103Z",
+    "endTime": "2025-10-08T01:30:00.103Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "UX Lead/PM",
+    "description": "",
+    "date": "2024-03-07T00:00:00.010Z",
+    "startTime": "2024-03-07T00:00:00.010Z",
+    "endTime": "2024-03-07T01:00:00.010Z",
     "project": {
       "name": "Tech Work Experience",
       "githubUrl": "https://github.com/hackforla/internship",
@@ -1204,6 +830,142 @@
       "location": null,
       "slackUrl": "https://github.com/hackforla/internship",
       "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "UX",
+    "description": "",
+    "date": "2024-03-05T23:00:00.244Z",
+    "startTime": "2024-03-05T23:00:00.244Z",
+    "endTime": "2024-03-06T00:00:00.244Z",
+    "project": {
+      "name": "Tech Work Experience",
+      "githubUrl": "https://github.com/hackforla/internship",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
+      "githubIdentifier": "376872876",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://github.com/hackforla/internship",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "All",
+    "description": "",
+    "date": "2024-03-26T02:00:00.443Z",
+    "startTime": "2024-03-26T02:00:00.443Z",
+    "endTime": "2024-03-26T03:00:00.443Z",
+    "project": {
+      "name": "VRMS",
+      "githubUrl": "https://github.com/hackforla/VRMS",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/vrms",
+      "githubIdentifier": "226157870",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CRGH5HM0Q",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1uxCkpcPtDjrhftBO-axU2g8hjXsxiLiS"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2024-03-10T15:00:00.584Z",
+    "startTime": "2024-03-10T15:00:00.584Z",
+    "endTime": "2024-03-10T16:00:00.584Z",
+    "project": {
+      "name": "Brigade Organizer's Playbook",
+      "githubUrl": "https://github.com/codeforamerica/brigade-playbook",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/brigade-organizers-playbook",
+      "githubIdentifier": "277577906",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://cfa.slack.com/archives/G0196272BBN",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHm1jtnPQgtkUk9PVA"
+    }
+  },
+  {
+    "name": "Stakeholder Prep",
+    "description": "",
+    "date": "2024-03-07T21:00:00.393Z",
+    "startTime": "2024-03-07T21:00:00.393Z",
+    "endTime": "2024-03-07T22:00:00.393Z",
+    "project": {
+      "name": "LA TDM Calculator",
+      "githubUrl": "https://github.com/hackforla/tdm-calculator",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
+      "githubIdentifier": "197452459",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2025-06-26T23:00:00.936Z",
+    "startTime": "2025-06-26T23:00:00.936Z",
+    "endTime": "2025-06-27T00:00:00.936Z",
+    "project": {
+      "name": "VRMS",
+      "githubUrl": "https://github.com/hackforla/VRMS",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/vrms",
+      "githubIdentifier": "226157870",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CRGH5HM0Q",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1uxCkpcPtDjrhftBO-axU2g8hjXsxiLiS"
+    }
+  },
+  {
+    "name": "Research",
+    "description": "",
+    "date": "2025-04-25T02:00:00.983Z",
+    "startTime": "2025-04-25T02:00:00.983Z",
+    "endTime": "2025-04-25T03:00:00.983Z",
+    "project": {
+      "name": "Expunge Assist",
+      "githubUrl": "https://github.com/hackforla/expunge-assist",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
+      "githubIdentifier": "218391110",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
+    }
+  },
+  {
+    "name": "Test-EventName",
+    "description": "Testing",
+    "date": "2024-03-07T06:00:00.383Z",
+    "startTime": "2024-03-07T06:00:00.383Z",
+    "endTime": "2024-03-07T07:00:00.383Z",
+    "project": {
+      "name": null,
+      "githubUrl": "",
+      "hflaWebsiteUrl": "",
+      "githubIdentifier": null,
+      "projectStatus": null,
+      "location": null,
+      "slackUrl": "",
+      "googleDriveUrl": ""
+    }
+  },
+  {
+    "name": "Design ",
+    "description": "",
+    "date": "2025-01-16T01:30:00.998Z",
+    "startTime": "2025-01-16T01:30:00.998Z",
+    "endTime": "2025-01-16T02:30:00.998Z",
+    "project": {
+      "name": "Home Unite Us",
+      "githubUrl": "https://github.com/hackforla/homeuniteus",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/home-unite-us",
+      "githubIdentifier": "228981080",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CRWUG7X0C",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1ahxiD9rIsBtx0yAPlPcPaGw8zGrfHHm9"
     }
   },
   {
@@ -1258,40 +1020,6 @@
     }
   },
   {
-    "name": "Community of Practice: Product",
-    "description": "",
-    "date": "2025-03-14T19:00:00.288Z",
-    "startTime": "2025-03-14T19:00:00.288Z",
-    "endTime": "2025-03-14T20:00:00.288Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
-    "name": "CTJ PMs",
-    "description": "",
-    "date": "2025-05-06T22:00:00.197Z",
-    "startTime": "2025-05-06T22:00:00.197Z",
-    "endTime": "2025-05-06T23:00:00.197Z",
-    "project": {
-      "name": "Civic Tech Jobs",
-      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
-      "githubIdentifier": "297491982",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
-      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
-    }
-  },
-  {
     "name": "PD: Leads",
     "description": "Monthly meeting for PD Leads",
     "date": "2025-03-21T00:00:00.362Z",
@@ -1309,6 +1037,312 @@
     }
   },
   {
+    "name": "PM",
+    "description": "",
+    "date": "2024-10-14T23:00:00.243Z",
+    "startTime": "2024-10-14T23:00:00.243Z",
+    "endTime": "2024-10-15T00:00:00.243Z",
+    "project": {
+      "name": "Expunge Assist",
+      "githubUrl": "https://github.com/hackforla/expunge-assist",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
+      "githubIdentifier": "218391110",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
+    }
+  },
+  {
+    "name": "New Prospective Members",
+    "description": "Alternating Mon/Tue. Click for schedule",
+    "date": "2024-03-27T01:00:00.592Z",
+    "startTime": "2024-03-27T01:00:00.592Z",
+    "endTime": "2024-03-27T04:00:00.592Z",
+    "project": {
+      "name": "Onboarding",
+      "githubUrl": "https://github.com/hackforla/admin",
+      "hflaWebsiteUrl": "https://www.meetup.com/hackforla/events",
+      "githubIdentifier": "380865495",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/C04S7PNCU",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0APJFu_GrzzH7Uk9PVA"
+    }
+  },
+  {
+    "name": "Dev Office Hours",
+    "description": "",
+    "date": "2024-03-08T03:00:00.151Z",
+    "startTime": "2024-03-08T03:00:00.151Z",
+    "endTime": "2024-03-08T04:00:00.151Z",
+    "project": {
+      "name": "HackforLA.org",
+      "githubUrl": "https://github.com/hackforla/website",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
+      "githubIdentifier": "130000551",
+      "projectStatus": "Active",
+      "location": "Westside, DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
+    }
+  },
+  {
+    "name": "Dev",
+    "description": "",
+    "date": "2025-10-07T01:00:00.898Z",
+    "startTime": "2025-10-07T01:00:00.898Z",
+    "endTime": "2025-10-07T02:00:00.898Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "Dev",
+    "description": "",
+    "date": "2025-01-21T03:00:00.435Z",
+    "startTime": "2025-01-21T03:00:00.435Z",
+    "endTime": "2025-01-21T04:00:00.435Z",
+    "project": {
+      "name": "Food Oasis",
+      "githubUrl": "https://github.com/foodoasisla",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/food-oasis",
+      "githubIdentifier": "215666884",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C6JBH478W",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1nVn3v_kD9GJ2IO6A84DZkox9h1eqMeRO"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2024-03-04T18:00:00.394Z",
+    "startTime": "2024-03-04T18:00:00.394Z",
+    "endTime": "2024-03-04T19:00:00.394Z",
+    "project": {
+      "name": "Tech Work Experience",
+      "githubUrl": "https://github.com/hackforla/internship",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
+      "githubIdentifier": "376872876",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://github.com/hackforla/internship",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "PM Prep for All",
+    "description": "",
+    "date": "2024-03-07T17:30:00.911Z",
+    "startTime": "2024-03-07T17:30:00.911Z",
+    "endTime": "2024-03-07T18:00:00.911Z",
+    "project": {
+      "name": "Tech Work Experience",
+      "githubUrl": "https://github.com/hackforla/internship",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tech-work-experience",
+      "githubIdentifier": "376872876",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://github.com/hackforla/internship",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0ACgRrPVkhnrvUk9PVA"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2024-03-10T16:00:00.838Z",
+    "startTime": "2024-03-10T16:00:00.838Z",
+    "endTime": "2024-03-10T17:00:00.838Z",
+    "project": {
+      "name": "HackforLA.org",
+      "githubUrl": "https://github.com/hackforla/website",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/website",
+      "githubIdentifier": "130000551",
+      "projectStatus": "Active",
+      "location": "Westside, DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/C4UM52W93",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AKWbU6_2dvZuUk9PVA"
+    }
+  },
+  {
+    "name": "All",
+    "description": "",
+    "date": "2025-01-20T19:30:00.825Z",
+    "startTime": "2025-01-20T19:30:00.825Z",
+    "endTime": "2025-01-20T20:30:00.825Z",
+    "project": {
+      "name": "Brigade Organizer's Playbook",
+      "githubUrl": "https://github.com/codeforamerica/brigade-playbook",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/brigade-organizers-playbook",
+      "githubIdentifier": "277577906",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://cfa.slack.com/archives/G0196272BBN",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHm1jtnPQgtkUk9PVA"
+    }
+  },
+  {
+    "name": "All",
+    "description": "",
+    "date": "2024-03-07T03:00:00.525Z",
+    "startTime": "2024-03-07T03:00:00.525Z",
+    "endTime": "2024-03-07T04:00:00.525Z",
+    "project": {
+      "name": "LA TDM Calculator",
+      "githubUrl": "https://github.com/hackforla/tdm-calculator",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/tdm-calculator",
+      "githubIdentifier": "197452459",
+      "projectStatus": "Active",
+      "location": "DTLA",
+      "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
+    }
+  },
+  {
+    "name": "All",
+    "description": "",
+    "date": "2024-03-07T03:00:00.849Z",
+    "startTime": "2024-03-07T03:00:00.849Z",
+    "endTime": "2024-03-07T04:00:00.849Z",
+    "project": {
+      "name": "311 Data",
+      "githubUrl": "https://github.com/hackforla/311-data",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
+      "githubIdentifier": "190321758",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
+      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
+    }
+  },
+  {
+    "name": "Dev",
+    "description": "",
+    "date": "2024-09-17T03:00:00.786Z",
+    "startTime": "2024-09-17T03:00:00.786Z",
+    "endTime": "2024-09-17T03:30:00.786Z",
+    "project": {
+      "name": "Expunge Assist",
+      "githubUrl": "https://github.com/hackforla/expunge-assist",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/expunge-assist",
+      "githubIdentifier": "218391110",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CN8NXTPK5",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/1hBhOeNyjjEaHcWAKSu9eW--FF9HnKNqe"
+    }
+  },
+  {
+    "name": "PM",
+    "description": "",
+    "date": "2024-03-08T03:00:00.342Z",
+    "startTime": "2024-03-08T03:00:00.342Z",
+    "endTime": "2024-03-08T04:00:00.342Z",
+    "project": {
+      "name": "311 Data",
+      "githubUrl": "https://github.com/hackforla/311-data",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
+      "githubIdentifier": "190321758",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
+      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
+    }
+  },
+  {
+    "name": "Leads",
+    "description": "",
+    "date": "2024-03-07T02:00:00.688Z",
+    "startTime": "2024-03-07T02:00:00.688Z",
+    "endTime": "2024-03-07T03:00:00.688Z",
+    "project": {
+      "name": "Community of Practice: CoP Leads",
+      "githubUrl": "https://github.com/hackforla/communities-of-practice",
+      "hflaWebsiteUrl": "https://www.hackforla.org/communities-of-practice",
+      "githubIdentifier": "337874660",
+      "projectStatus": "Active",
+      "location": "https://us02web.zoom.us/s/4451450308?pwd=U0JobzZqN0xGSXBUUkRsNlB5YzJiQT09",
+      "slackUrl": "https://hackforla.slack.com/archives/C026UMZK89X",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AHDu27vDmN91Uk9PVA"
+    }
+  },
+  {
+    "name": "All",
+    "description": "",
+    "date": "2024-03-06T20:00:00.003Z",
+    "startTime": "2024-03-06T20:00:00.003Z",
+    "endTime": "2024-03-06T21:00:00.003Z",
+    "project": {
+      "name": "Admin Team",
+      "githubUrl": "https://github.com/hackforla/admin",
+      "hflaWebsiteUrl": "",
+      "githubIdentifier": "380865495",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://hackforla.slack.com/archives/C01Q24YF56J",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMjgqUp9AI13Uk9PVA"
+    }
+  },
+  {
+    "name": "Special Projects All",
+    "description": "",
+    "date": "2024-03-06T15:00:00.544Z",
+    "startTime": "2024-03-06T15:00:00.544Z",
+    "endTime": "2024-03-06T18:00:00.544Z",
+    "project": {
+      "name": "Admin Team",
+      "githubUrl": "https://github.com/hackforla/admin",
+      "hflaWebsiteUrl": "",
+      "githubIdentifier": "380865495",
+      "projectStatus": "Active",
+      "location": null,
+      "slackUrl": "https://hackforla.slack.com/archives/C01Q24YF56J",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMjgqUp9AI13Uk9PVA"
+    }
+  },
+  {
+    "name": "Leads",
+    "description": "1st week",
+    "date": "2025-03-19T00:00:00.718Z",
+    "startTime": "2025-03-19T00:00:00.718Z",
+    "endTime": "2025-03-19T01:00:00.718Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
+    "name": "Community of Practice: Product",
+    "description": "",
+    "date": "2025-03-14T19:00:00.288Z",
+    "startTime": "2025-03-14T19:00:00.288Z",
+    "endTime": "2025-03-14T20:00:00.288Z",
+    "project": {
+      "name": "Civic Tech Jobs",
+      "githubUrl": "https://github.com/hackforla/CivicTechJobs",
+      "hflaWebsiteUrl": "https://www.hackforla.org/projects/civic-tech-jobs",
+      "githubIdentifier": "297491982",
+      "projectStatus": "Active",
+      "location": "Remote",
+      "slackUrl": "https://hackforla.slack.com/messages/C02509WHFQQ",
+      "googleDriveUrl": "https://drive.google.com/drive/folders/0AMdnUkSXicNCUk9PVA"
+    }
+  },
+  {
     "name": "Research",
     "description": "",
     "date": "2025-05-22T01:30:00.409Z",
@@ -1323,40 +1357,6 @@
       "location": "DTLA",
       "slackUrl": "https://hackforla.slack.com/archives/CKY65G266",
       "googleDriveUrl": "https://drive.google.com/drive/folders/1XI0ZP21DoNM8uTKVJkRBiMhtP652X8KM"
-    }
-  },
-  {
-    "name": "Dev",
-    "description": "Dev Leads + Devs",
-    "date": "2025-05-22T01:00:00.032Z",
-    "startTime": "2025-05-22T01:00:00.032Z",
-    "endTime": "2025-05-22T02:00:00.032Z",
-    "project": {
-      "name": "311 Data",
-      "githubUrl": "https://github.com/hackforla/311-data",
-      "hflaWebsiteUrl": "https://www.hackforla.org/projects/311-data",
-      "githubIdentifier": "190321758",
-      "projectStatus": "Active",
-      "location": "Remote",
-      "slackUrl": "https://hackforla.slack.com/archives/CJY4R382X",
-      "googleDriveUrl": "https://drive.google.com/drive/u/0/folders/10_KYe3pbZqiq6reeLA8zDDeIlz-4PxWM"
-    }
-  },
-  {
-    "name": "2025 Summer Picnic",
-    "description": "",
-    "date": "2025-08-02T19:00:00.249Z",
-    "startTime": "2025-08-02T19:00:00.249Z",
-    "endTime": "2025-08-02T22:00:00.249Z",
-    "project": {
-      "name": "Hack4LA",
-      "githubUrl": "",
-      "hflaWebsiteUrl": "https://www.hackforla.org/",
-      "githubIdentifier": null,
-      "projectStatus": null,
-      "location": null,
-      "slackUrl": "",
-      "googleDriveUrl": ""
     }
   }
 ]
