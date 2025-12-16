@@ -164,7 +164,7 @@ async function postToSkillsIssue({github, context}, activity) {
                 console.error(` ⮡  Failed to create new comment for issue #${skillsIssueNum}:`, err);
             }
         }
-        
+    }
       if (needsUpdate) {
          console.log(` ⮡  Updating Skills Directory for ${eventActor}...`);
          updateSkillsDirectory(eventActor, skillsIssueNum, skillsIssueNodeId, commentIdFound);
