@@ -15,7 +15,6 @@ function saveDirectory(data) {
 function lookupSkillsDirectory(eventActor) {
     const directory = loadDirectory();
     const result = directory.find(entry => entry.eventActor === eventActor);
-  
     return result || null;
 }
 
@@ -39,6 +38,7 @@ function updateSkillsDirectory(eventActor, skillsInfo) {
       nodeId,
       commentId
     });
+  }
     saveDirectory(directory);
 }
 
