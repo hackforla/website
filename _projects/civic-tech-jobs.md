@@ -13,6 +13,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
+  - name: Jason Shi
+    github-handle: jaason-shi
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U08L8B7ESG3
+      github: https://github.com/jaason-shi
+    picture: https://avatars.githubusercontent.com/jaason-shi
   - name: Brandon Hu
     github-handle: brandonhu8
     role: Product Manager
