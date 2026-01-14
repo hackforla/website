@@ -62,6 +62,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07TRV9HRFS
       github: https://github.com/priyanka02art
     picture: https://avatars.githubusercontent.com/priyanka02art
+  - name: Phalguni Kambhalur
+    github-handle: kphalguni
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07USBKRTFX
+      github: https://github.com/kphalguni
+    picture: https://avatars.githubusercontent.com/kphalguni
   - name: Will Gillis
     github-handle:
     role: Developer Co-Lead
