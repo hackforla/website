@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check Issue Labels And Linked PRs
         uses: actions/github-script@v8
@@ -23,9 +23,6 @@ jobs:
               + '/check-issue-labels-and-linked-prs.js'
             );
             const isValidClose = await script({github, context});
-            console.log(
-              `Issue is ${isValidClose ? '' : 'not '}allowed to be closed.`
-            );
             core.setOutput('isValidClose', isValidClose);
 
       - name: Reopen Issue
