@@ -104,6 +104,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06MQ37T90E
       github: https://github.com/santiseccovidal
     picture: https://avatars.githubusercontent.com/santiseccovidal
+  - name: Donovan Vernon
+    github-handle: dvernon5
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U081EQ0JZJS
+      github: https://github.com/dvernon5
+    picture: https://avatars.githubusercontent.com/dvernon5
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
