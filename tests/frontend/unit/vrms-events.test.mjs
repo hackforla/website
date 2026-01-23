@@ -1,4 +1,4 @@
-import {sortEventsByDate, filterTestEvents} from "../../../assets/js/utility/vrms-events-utils.mjs";
+import {sortEventsByDate, filterTestEvents} from "../../../assets/js/utility/vrms-events.mjs";
 
 const testEvents = [
     { name: 'Regular Meeting', date: '2025-10-21', startTime: '2025-10-21T18:00:00Z', endTime: '2025-10-21T19:00:00Z', project: { name: 'Project A' } },

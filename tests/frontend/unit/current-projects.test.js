@@ -1,4 +1,4 @@
-const {createFilter, projectDataSorter} = require('../../../assets/js/current-projects-utils.js');
+const {createFilter, projectDataSorter} = require('../../../assets/js/current-projects.js');
 
 const defaultProjectData = [
         {
