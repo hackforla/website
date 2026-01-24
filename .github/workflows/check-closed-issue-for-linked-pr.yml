@@ -25,6 +25,12 @@ jobs:
             const isValidClose = await script({github, context});
             core.setOutput('isValidClose', isValidClose);
 
+      # Sleep to allow other GitHub Actions to change project status.
+      - name: Sleep
+        id: sleep
+        shell: bash
+        run: sleep 30s
+
       - name: Reopen Issue
         if: steps.check-issue-labels-and-linked-prs.outputs.isValidClose == 'false'
         uses: actions/github-script@v8
