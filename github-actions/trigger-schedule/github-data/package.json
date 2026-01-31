@@ -10,7 +10,7 @@
   "dependencies": {
     "@actions/core": "^2.0.1",
     "@actions/github": "^9.0.0",
-    "@actions/http-client": ">=3.0.0",
+    "@actions/http-client": ">=4.0.0",
     "@octokit/rest": "^22.0.0",
     "lodash": "^4.17.23",
     "true-github-contributors": "^1.0.5"
