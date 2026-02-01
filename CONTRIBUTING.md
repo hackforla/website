@@ -899,7 +899,7 @@ git push --set-upstream origin update-give-link-2093
   <!--  Notes: 
     - If there are no visual changes to the website, delete all of the script below and replace with "- No visual changes to the website"
     - If there are visual changes to the website, include the 'before' and 'after' screenshots below. 
-    - If your images are too big, use the <img src="" width="" length="" />  syntax instead of ![image](link) to format the images
+    - If your images are too big, use the <img src="" width="" length="">  syntax instead of ![image](link) to format the images
     - If images are not loading properly, you might need to double check the syntax or add a newline after the closing </summary> tag 
   --> 
 

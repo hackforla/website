@@ -10,7 +10,7 @@ jobs:
   Add-Pull-Request-Instructions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # Create the message to post
       - name: Create Instruction
@@ -30,7 +30,7 @@ jobs:
           echo ${{ steps.instruction.outputs.result }} > addingPrInstructions/artifact/artifact.txt
       
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: adding-pr-instructions-artifact
           path: addingPrInstructions/artifact/

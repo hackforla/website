@@ -18,7 +18,7 @@ jobs:
   Flag-Issues-Unlabeled-After-Deletion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # Get the issues that had the label prior to the label being deleted
       - name: Get recently unlabeled issues

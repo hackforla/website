@@ -1,5 +1,5 @@
 ---
-name: Ops
+name: DevOps
 description: This group covers all areas of dev-ops and has been the spot for coordination on infrastructure improvements such as AWS hosting, password vaults, multi-tenant product architecture, etc.
 visible: true
 status: Active
@@ -51,7 +51,7 @@ links:
   - name: Slack
     url: https://app.slack.com/client/T04502KQX/CV7QGL66B
   - name: GitHub
-    url: https://github.com/hackforla/ops
+    url: https://github.com/hackforla/devops
   
 recruiting-message:
 ---

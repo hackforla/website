@@ -32,7 +32,7 @@ collections:
   design-system:
     output: true
   program-areas:
-    output: false
+    output: true
 
 # Please refer to the documentation here[https://jekyllrb.com/docs/configuration/front-matter-defaults/] before modifying defaults
 # The settings below reads as so
@@ -56,6 +56,11 @@ defaults: # The `defaults` key holds an array of scope/values pairs that define 
       type: "guide-pages"
     values:
       layout: "guide-pages"
+  - scope:
+      path: "_program-areas"
+      type: "program-areas"
+    values:
+      layout: "program-area-pages"
 
 plugins:
   - jekyll-sitemap
