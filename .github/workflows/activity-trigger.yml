@@ -25,6 +25,8 @@ jobs:
     if: github.repository == 'xnealcarson/website'
     steps:
     - uses: actions/checkout@v6
+      with: 
+        token: ${{ secrets.HACKFORLA_ADMIN_TOKEN }}
 
     - name: Gather Event Details
       id: gather-event-details
@@ -44,8 +46,31 @@ jobs:
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN != '' && secrets.HACKFORLA_GRAPHQL_TOKEN || github.token }}
         script: |
+          let needsUpdate = false;
           const activities = ${{ steps.gather-event-details.outputs.result }};
           const script = require('./github-actions/activity-trigger/post-to-skills-issue.js');
           for (const activity of activities) {
-            await script({github, context}, activity);
+            let result = await script({github, context}, activity);
+            if (result === true) {
+              needsUpdate = true;
+            }
           }
+          return needsUpdate;
+
+      # Run `git pull` so that branch is current prior to next step
+    - if: ${{ steps.post-to-skills-issue.outputs.result == 'true' }}
+      name: Pull latest changes from gh-pages
+      run: git pull
+
+    # Commits list of inactive members to repo for using in next step, and in one month
+    - if : ${{ steps.post-to-skills-issue.outputs.result == 'true' }}
+      name: Update Inactive Members JSON
+      id: update-inactive-members-json
+      uses: stefanzweifel/git-auto-commit-action@v7.1.0
+      with:
+      # Glob pattern of file which should be added to the commit
+        file_pattern: github-actions/utils/_data/skills-directory.json
+
+        # Optional commit message and author settings
+        commit_message: Update Skills Directory JSON
+        commit_author: GitHub Actions Bot <hackforla-bot@hackforla.org> 
