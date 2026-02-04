@@ -7,7 +7,7 @@ const postComment = require('../../utils/post-issue-comment');
 var github;
 var context;
 
-const AGENDA_ISSUE_NUM = 7859;            // Issue number of the Dev/PM meeting agenda on Mondays
+const AGENDA_ISSUE_NUM = 8442;            // Issue number of the Dev/PM meeting agenda on Mondays
 
 /**
  * @description - Function to create a new issue that lists inactive and removed members and posts 
