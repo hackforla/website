@@ -111,6 +111,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U081EQ0JZJS
       github: https://github.com/dvernon5
     picture: https://avatars.githubusercontent.com/dvernon5
+  - name: Ryan Keller
+    github-handle: ryanfkeller
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U08SCL4KK3N
+      github: https://github.com/ryanfkeller
+    picture: https://avatars.githubusercontent.com/ryanfkeller
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
