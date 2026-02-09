@@ -1,141 +1,151 @@
-# Configuration for "Add Update Label Weekly" action
-# This file installed at: `github-actions/workflow-configs/add-update-label-weekly-config.yml`
-#
+# "Add Update Label Weekly" workflow configuration file
+# File installed at: `github-actions/workflow-configs/add-update-label-weekly-config.yml`
+
 # ==============================================================================
 # IMPORTANT NOTES
 # ==============================================================================
 #
 #   1. The configuration options are given as "key: value" pairs.
-#       a. Except where noted: DO NOT EDIT "keys" as this may break the automation.
-#       b. Customize the "values" below for your project's needs.
-#   2. The default values will apply if not edited.
-#   3. Text values must match the EXACT text used in your project repo.
+#     a. Customize the "values" below for your project's needs.
+#     b. DO NOT EDIT "keys" as this may break the automation.
+#     c. DO NOT CHANGE indentation, spacing, or formatting for same reason.
+#   2. Text values must match the EXACT text used in your project repo.
+#   3. The default values will apply if not edited, and the workflow will attempt
+#      to run with those defaults. It is recommended to review and edit all values.
+
+
+
+# ==============================================================================
+# Labels and label placeholders used by this workflow
+# ==============================================================================
 #
+# The `required` section is a list of label placeholder keys, identifiers 
+# used in the workflow to reference GitHub repo labels. These placeholder
+# label keys are essential for the workflow to function and must be mapped to 
+# the **actual label names** in your project repo. These include:
+#
+#   statusUpdated:      Label for issues considered current
+#   statusInactive1:    Label for issues needing updates
+#   statusInactive2:    Label for issues considered inactive
+#   statusHelpWanted:   Label for issues where assignees need help
+# 
+# The `filtering` section is a list of labels that, when present on an issue, tell 
+# the workflow to omit that issue from the update status checks. In other words, 
+# if there is any issue that you do not want included when the workflow checks for 
+# updates (for example, a draft issue), label with one of the 'filtering' labels 
+# and the workflow will skip the issue.
+#
+# As noted, the label names shown below are default values only. Each value 
+# shown **must match an existing label** in your project repo. Confirm the 
+# default value or change it as needed, then to show that you have reviewed and 
+# confirmed the values, **delete the comment**.
+
+labels:
+  required:
+    statusUpdated: "status: updated" # <-- confirm default value
+    statusInactive1: "status: to update!" # <-- confirm default value
+    statusInactive2: "status: 2 weeks inactive" # <-- confirm default value
+    statusHelpWanted: "status: help wanted" # <-- confirm default value
+
+  filtering:
+    - "draft" # <-- confirm default value
+    - "emergent request" # <-- confirm default value
+    - "epic" # <-- confirm default value
+    - "dependency" # <-- confirm default value
+    - "complexity: prework" # <-- confirm default value
+    - "" # <-- Add a value if needed. Comment out any unused values
 
 
 
 # ==============================================================================
 # Time thresholds (in days)
 # ==============================================================================
-timeframes:
-  # Customize the number of days as needed for your project 
-  # Note: the next 3 values must be sorted min to max, recentlyUpdated < needsUpdating < isInactive
-  recentlyUpdatedByDays: 3    # Issues updated within this many days are considered current
-  needsUpdatingByDays: 7      # Issues not updated for this many days are prompted for update
-  isInactiveByDays: 14        # Issues not updated for this many days are marked as inactive
+#
+# The time thresholds shown are used to classify issues based on the timestamp 
+# of the assignee's last update. Adjust these values to fit your project's needs.
+# Note that the following values must be ordered from smallest to largest:
+#
+#   recentlyUpdatedByDays: Issues updated within this many days are considered current
+#   needsUpdatingByDays:   Issues not updated for this many days are prompted for update
+#   isInactiveByDays:      Issues not updated for this many days are marked as inactive
+#
+#   upperLimitDays:        Bot comments older than this not processed for minimization
 
-  upperLimitDays: 35   # See explanation following and "Bot configuration" below
-  # To reduce issue clutter, this workflow includes a GraphQL mutation that iterates 
-  # through and minimizes previous bot comments. To avoid GitHub's rate limiting 
-  # on GraphQL mutations, bot comments older than the `upperLimitDays` are not 
-  # minimized. A low value results in no bot comments minimized, and a high value 
-  # results in all bot comments minimized.
+timeframes:
+  recentlyUpdatedByDays: 3
+  needsUpdatingByDays: 7
+  isInactiveByDays: 14
+
+  upperLimitDays: 35
+
+# To reduce issue clutter and repetition, this workflow minimizes previous bot 
+# comments via a GraphQL mutation. To limit GitHub GraphQL rate usage, only bot 
+# comments created between `isInactiveByDays` and `upperLimitDays` ago are 
+# processed. Adjust this value to include greater or fewer comments.
+#
+# Refer to "Bot configuration" below to set the bot username (if needed).
 
 
 
 # ==============================================================================
 # Project Board status-column configuration
 # ==============================================================================
+#
+# The workflow only checks issues that are in the specified `targetStatus` 
+# status-column of your Project Board. The `questionsStatus` status-column 
+# allows assignees to opt out of checks when they need help or review.
+#
+# Values must **exactly match your Project Board status-column names**.
+#
+#  targetStatus:    Required for inclusion in update checks
+#  questionsStatus: Optional; assignees may move issues here to skip checks
+
 projectBoard:
-  # The values in this section must match your EXACT Project Board status-column.
+  targetStatus: "In progress (actively working)" # <-- confirm default value
+  questionsStatus: "Questions / In Review" # <-- confirm default value
 
-  targetStatus: "In progress (actively working)"   # Status-column to include.
-  # Only issues status-column are included in the automation to check whether
-  # assignees are updating their issues. 
-
-  questionsStatus: "Questions / In Review"         # Used with the message template.
-  # The bot's message instructs issue assignees needing help to move their issue to
-  # this status-column. Issues in this status-column are NOT checked by the automation.
-
-
-
-# ==============================================================================
-# Label Directory Filepath- Do not change
-# ==============================================================================
-
-# The automation reviews which labels have been applied to the included issues, to:
-#   1. Flag issues that need updates from the assignee, and
-#   2. Ignore issues that do not need to be checked.
-#
-# The workflow relies on the label "keys" to identify the purpose of each label 
-# which correspond to the actual label name "values" used by your repo.
-#
-#   NOTE: Since different workflows use many of the same label names, label name 
-#   values are mapped in your project's label directory json file- not here.
-#   The path to your label directory is here (do not change):
-
-labelDirectoryPath: "github-actions/workflow-configs/_data/label-directory.json" 
-
-
-
-# ==============================================================================
-# Label keys used by this workflow
-# ==============================================================================
-
-# The label "keys" shown here are used internally by the workflow.
-
-labels:
-  required:
-    # Required label keys: DO NOT REMOVE, confirm "values" in  `label-directory.json`
-      # The following label "keys" must be mapped to your project's actual label name 
-      # "values" via the `label-directory.json` file. The workflow uses these labels 
-      # to flag which issues need updates.
-    - statusUpdated                # Map in the `label-directory.json` file
-    - statusInactive1              # Map in the `label-directory.json` file
-    - statusInactive2              # Map in the `label-directory.json` file
-
-    # Secondary key, used by message template
-    - statusHelpWanted             # Map in the `label-directory.json` file
-
-  ignored:
-    # Issues with these labels are ignored by the automation.
-      # EXCEPTION: you may add or remove label "keys" from this list as desired- but
-      # ensure the added "key" maps to a "value" in your label-directory.json file.
-    - draft                        # Map in the `label-directory.json` file
-    - er                           # Map in the `label-directory.json` file
-    - epic                         # Map in the `label-directory.json` file
-    - dependency                   # Map in the `label-directory.json` file
-    - complexity0                  # Map in the `label-directory.json` file
 
 
 
 # ==============================================================================
 # Bot configuration- If needed
 # ==============================================================================
-# Relevant to "timeframes.upperLimitDays" setting above: Bot usernames whose 
-# comments should be minimized when they become outdated. Comments are minimized 
-# if they're between 'needsUpdatingByDays' and 'upperLimitDays' old
+#
+# Relevant to "timeframes.upperLimitDays" setting above, repetitive comments 
+# from bots with the following usernames are processed for minimization. Only 
+# if needed, this value can be updated to ensure bot comments are minimized. 
+
 bots:
   - "github-actions[bot]"
   - "HackforLABot"
-  # Only if needed, add any additional bot usernames here
 
 
 
 # ==============================================================================
 # Bot comment template
 # ==============================================================================
-# Template for the comment posted to issues needing updates
+#
+# Template for the comment posted to issues needing updates. Ref. relevant labels,
+# project board status-column configuration, etc. above. See template tile:
+# `github-actions/workflow-configs/templates/add-update-instructions-template.md`
+#
 # Variables used by template:
 #   ${assignees}          - @-mentions of all assignees (e.g., "@user1, @user2")
 #   ${label}              - The label being applied (e.g., "Status: To Update")
-#   ${statusUpdated}      - The "updated" label name from your label directory
-#   ${statusHelpWanted}   - The "help wanted" label name from your label directory
+#   ${statusUpdated}      - The "updated" label name from your label directory 
+#   ${statusHelpWanted}   - The "help wanted" label name from your label directory 
 #   ${questionsStatus}    - The "questions" status on your Project Board (e.g., "Questions / In Review")
 #   ${cutoffTime}         - The formatted timestamp of the issue's last update
 
-teamSlackChannel: "#hfla-site"  # Only if needed, for example "#project-site"
-
-# Do not change the path to the bot comment template file below.
-# If needed, edit the file using markdown syntax at the given path.
-botCommentTemplatePath: "github-actions/workflow-configs/templates/add-update-instructions-template.md"
+teamSlackChannel: ""  # Only if needed, for example "#project-site"
 
 
 
 # ==============================================================================
 # Advanced options
 # ==============================================================================
-# Uncomment and configure these if needed for your project
-
-# Local timezone for cutoffTime displayed in comments (default: America/Los_Angeles)
-# timezone: "America/New_York"
+#
+# Local timezone for cutoffTime displayed in comments. (default: America/Los_Angeles)
+# Uncomment and configure only if a different timezone is needed. 
+#
+# timezone: "America/Los_Angeles"
