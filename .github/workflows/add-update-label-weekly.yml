@@ -1,18 +1,19 @@
 name: Add Update Label Weekly - ATO
 
+# Associated configuration files for this workflow:
+#  `github-actions/workflow-configs/add-update-label-weekly-config.yml`
+#  `github-actions/workflow-configs/templates/add-update-instructions-template.md`
 # Customization notes:
-# ⓵ CUSTOMIZE: Change cron. Currently runs Fri 0700 UTC, exc. July and December
+#   Change cron as needed- currently runs Fri 0700 UTC, exc. July and December
 #    ⮡ You can compose a schedule here: https://crontab.cronhub.io/
-# ⓶ CUSTOMIZE: Change to your project repo name
-# ⓷ Confirm that this is the most recent version
 
 on:
   schedule:
-    - cron: '0 7 * 1-6,8-11 5' # ⓵
+    - cron: '0 7 * 1-6,8-11 5'  # Every Friday at 07:00 UTC, except July and December
   workflow_dispatch:
     inputs:
       dry-run:
-        description: 'Run in dry-run mode without posting comments or updating issues'
+        description: 'Run in dry-run mode to preview changes- will not update labels or comments.'
         type: choice
         options:
           - 'true'
@@ -22,7 +23,7 @@ on:
 jobs:
   Add-Update-Label-Weekly:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website' # ⓶
+    if: github.repository == 'hackforla/<repo-name>'
     steps:
       - name: Generate token from GitHub App
         id: generate-app-token
@@ -32,10 +33,10 @@ jobs:
           private-key: ${{ secrets.HFLA_GRAPHQL_APP_PRIVATE_KEY }}
 
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Run workflow
-        uses: hackforla/automate-the-org/gha-add-update-label-weekly@v0 # ⓷ 
+        uses: hackforla/automate-the-org/gha-add-update-label-weekly@v1
         with:
           github-token: ${{ steps.generate-app-token.outputs.token }}
           dry-run: ${{ github.event.inputs.dry-run || 'true' }}
