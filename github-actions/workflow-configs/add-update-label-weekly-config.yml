@@ -19,41 +19,44 @@
 # Labels and label placeholders used by this workflow
 # ==============================================================================
 #
-# The `required` section is a list of label placeholder keys, identifiers 
-# used in the workflow to reference GitHub repo labels. These placeholder
-# label keys are essential for the workflow to function and must be mapped to 
-# the **actual label names** in your project repo. These include:
+# The `required` section is a list of label placeholder keys, identifiers used
+# in the workflow to reference GitHub repo labels. These placeholder label
+# keys are essential for the workflow to function and must be mapped to the 
+# **actual label names** that exist in your project. Do not change the label 
+# keys, however **do edit** the name values (in quotes) to match your project's 
+# labels. The `required` labels are:
 #
-#   statusUpdated:      Label for issues considered current
-#   statusInactive1:    Label for issues needing updates
-#   statusInactive2:    Label for issues considered inactive
-#   statusHelpWanted:   Label for issues where assignees need help
+#   statusUpdated: "label for issues considered current"
+#   statusInactive1: "label for issues needing updates"
+#   statusInactive2: "label for issues considered inactive"
+#   statusHelpWanted: "label for issues where assignees need help"
 # 
-# The `filtering` section is a list of labels that, when present on an issue, tell 
-# the workflow to omit that issue from the update status checks. In other words, 
-# if there is any issue that you do not want included when the workflow checks for 
-# updates (for example, a draft issue), label with one of the 'filtering' labels 
-# and the workflow will skip the issue.
+# The `filtering` section is a list of labels that, when present on an issue, 
+# tell the workflow to omit that issue from the update status checks. In other 
+# words, if there is any issue that you want to exclude from the update checks 
+# (for example, a draft issue), label it with one of the 'filtering' labels and 
+# the workflow will skip the issue.
 #
-# As noted, the label names shown below are default values only. Each value 
-# shown **must match an existing label** in your project repo. Confirm the 
-# default value or change it as needed, then to show that you have reviewed and 
-# confirmed the values, **delete the comment**.
+# The label names shown below are default values only. Each of the label names
+# shown **must exactly match an existing label** in your project repo, and must
+# be surrounded in quotes. Confirm that the default value is correct, or change 
+# it to match your repo, then to show that you have reviewed and confirmed the 
+# values, **delete the comment**.
 
 labels:
   required:
-    statusUpdated: "status: updated" # <-- confirm default value
-    statusInactive1: "status: to update!" # <-- confirm default value
-    statusInactive2: "status: 2 weeks inactive" # <-- confirm default value
-    statusHelpWanted: "status: help wanted" # <-- confirm default value
+    statusUpdated: "status: updated" # <-- confirm default label name
+    statusInactive1: "status: to update!" # <-- confirm default label name
+    statusInactive2: "status: 2 weeks inactive" # <-- confirm default label name
+    statusHelpWanted: "status: help wanted" # <-- confirm default label name
 
   filtering:
-    - "draft" # <-- confirm default value
-    - "emergent request" # <-- confirm default value
-    - "epic" # <-- confirm default value
-    - "dependency" # <-- confirm default value
-    - "complexity: prework" # <-- confirm default value
-    - "" # <-- Add a value if needed. Comment out any unused values
+    - "draft" # <-- confirm default label name
+    - "er" # <-- confirm default label name
+    - "epic" # <-- confirm default label name
+    - "dependency" # <-- confirm default label name
+    - "complexity: prework" # <-- confirm default label name
+    - "" # <-- Add label name if needed. Comment out any unused values
 
 
 
