@@ -1,15 +1,15 @@
 name: Add Update Label Weekly - ATO
 
 # Associated configuration files for this workflow:
-#  `github-actions/workflow-configs/add-update-label-weekly-config.yml`
-#  `github-actions/workflow-configs/templates/add-update-instructions-template.md`
+#   `github-actions/workflow-configs/add-update-label-weekly-config.yml`
+#   `github-actions/workflow-configs/templates/add-update-instructions-template.md`
 # Customization notes:
 #   Change cron as needed- currently runs Fri 0700 UTC, exc. July and December
 #    ⮡ You can compose a schedule here: https://crontab.cronhub.io/
 
 on:
   schedule:
-    - cron: '0 7 * 1-6,8-11 5'  # Every Friday at 07:00 UTC, except July and December
+    - cron: '0 7 * 1-6,8-11 5' 
   workflow_dispatch:
     inputs:
       dry-run:
@@ -23,7 +23,7 @@ on:
 jobs:
   Add-Update-Label-Weekly:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/<repo-name>'
+    if: github.repository == 'hackforla/website'
     steps:
       - name: Generate token from GitHub App
         id: generate-app-token
