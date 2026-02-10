@@ -45,18 +45,18 @@
 
 labels:
   required:
-    statusUpdated: "status: updated" # <-- confirm default label name
-    statusInactive1: "status: to update!" # <-- confirm default label name
-    statusInactive2: "status: 2 weeks inactive" # <-- confirm default label name
-    statusHelpWanted: "status: help wanted" # <-- confirm default label name
-
+    statusUpdated: "status: Updated"
+    statusInactive1: "status: To Update!"
+    statusInactive2: "status: 2 Weeks Inactive"
+    statusHelpWanted: "status: Help Wanted"
+    
   filtering:
-    - "draft" # <-- confirm default label name
-    - "er" # <-- confirm default label name
-    - "epic" # <-- confirm default label name
-    - "dependency" # <-- confirm default label name
-    - "complexity: prework" # <-- confirm default label name
-    - "" # <-- Add label name if needed. Comment out any unused values
+    - "Draft"
+    - "ER"
+    - "epic"
+    - "Dependency"
+    - "Complexity: Prework"
+    # - ""
 
 
 
@@ -104,8 +104,8 @@ timeframes:
 #  questionsStatus: Optional; assignees may move issues here to skip checks
 
 projectBoard:
-  targetStatus: "In progress (actively working)" # <-- confirm default value
-  questionsStatus: "Questions / In Review" # <-- confirm default value
+  targetStatus: "In progress (actively working)"
+  questionsStatus: "Questions / In Review"
 
 
 
@@ -140,7 +140,7 @@ bots:
 #   ${questionsStatus}    - The "questions" status on your Project Board (e.g., "Questions / In Review")
 #   ${cutoffTime}         - The formatted timestamp of the issue's last update
 
-teamSlackChannel: ""  # Only if needed, for example "#project-site"
+teamSlackChannel: "hfla-site"  # Only if needed, for example "#project-site"
 
 
 
