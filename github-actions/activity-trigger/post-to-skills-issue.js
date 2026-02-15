@@ -77,14 +77,11 @@ async function postToSkillsIssue({github, context}, activity) {
     if (commentIdCached) {
         console.log(` ⮡  Found cached comment ID for ${eventActor}: ${commentIdCached}`);
         try {
-            const { data: cachedComment } = await github.request(
-                'GET /repos/{owner}/{repo}/issues/comments/{comment_id}',
-                {
+            const { data: cachedComment } = await github.request('GET /repos/{owner}/{repo}/issues/comments/{comment_id}', {
                     owner,
                     repo,
                     comment_id: commentIdCached,
-                }
-            );
+                });
 
             if (cachedComment && cachedComment.body.includes(MARKER)) {
                 const updatedBody = `${cachedComment.body}\n${message}`;
@@ -110,15 +107,12 @@ async function postToSkillsIssue({github, context}, activity) {
         console.log(` ⮡  Searching for activity comment marker...`);
         let commentData;
         try {
-            commentData = await github.request(
-                'GET /repos/{owner}/{repo}/issues/{issue_number}/comments',
-                {
+            commentData = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/comments', {
                     owner,
                     repo,
                     per_page: 100,
                     issue_number: skillsIssueNum,
-                }
-            );
+                });
         } catch (err) {
             console.error(` ⮡  GET comments failed for issue #${skillsIssueNum}:`, err);
             return;
@@ -148,15 +142,12 @@ async function postToSkillsIssue({github, context}, activity) {
             console.log(` ⮡  MARKER not found, creating new comment entry with MARKER...`);
             const body = `${MARKER}\n## Activity Log: ${eventActor}\n### Repo: https://github.com/hackforla/website\n\n##### ⚠ Important note: The bot updates this comment automatically - do not edit\n\n${message}`;
             try {
-                const { data: newComment } = await github.request(
-                    'POST /repos/{owner}/{repo}/issues/{issue_number}/comments',
-                    {
+                const { data: newComment } = await github.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
                         owner,
                         repo,
                         issue_number: skillsIssueNum,
                         body,
-                    }
-                );
+                    });
                 console.log(` ⮡  Entry posted to Skills Issue #${skillsIssueNum}`);
                 // Cache new comment ID
                // updateSkillsDirectory(eventActor, { commentId: newComment.id });
