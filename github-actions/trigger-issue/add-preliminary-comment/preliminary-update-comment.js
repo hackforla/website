@@ -115,12 +115,13 @@ async function memberOfAdminOrMergeTeam() {
   try {
     // Get all members in Admin Team
     const websiteAdminsMembers = await getTeamMembers(github, context, "website-admins");
-  
+    // Get all members in PM Team
+    const websitePmMembers = await getTeamMembers(github, context, "website-pm")
     // Get all members in Merge Team
     const websiteMergeMembers = await getTeamMembers(github, context, "website-merge");
   
     // Return true if developer is a member of the Admin or Merge Teams
-    return(assignee in websiteAdminsMembers || assignee in websiteMergeMembers);
+    return(assignee in websiteAdminsMembers || assignee in websitePmMembers || assignee in websiteMergeMembers);
   } catch(error) {
     throw new Error("Error getting membership status: " + error);
   }
