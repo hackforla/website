@@ -80,11 +80,11 @@ labels:
 #   upperLimitDays:        Bot comments older than this not processed for minimization
 
 timeframes:
-  recentlyUpdatedByDays: 
-  needsUpdatingByDays: 
-  isInactiveByDays: 
-  # unassignedByDays:   # <-- FUTURE FEATURE
-  upperLimitDays: 
+  recentlyUpdatedByDays: 3
+  needsUpdatingByDays: 7
+  isInactiveByDays: 14
+  unassignedByDays: 21  # <-- FUTURE FEATURE
+  upperLimitDays: 35
 
 # To reduce issue clutter and repetition, this workflow minimizes previous bot 
 # comments via a GraphQL mutation. To limit GitHub GraphQL rate usage, only bot 
