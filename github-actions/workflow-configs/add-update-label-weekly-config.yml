@@ -83,7 +83,7 @@ timeframes:
   recentlyUpdatedByDays: 3
   needsUpdatingByDays: 7
   isInactiveByDays: 14
-  unassignedByDays: 21  # <-- FUTURE FEATURE
+  unassignedByDays: 21
   upperLimitDays: 35
 
 # To reduce issue clutter and repetition, this workflow minimizes previous bot 
