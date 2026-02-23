@@ -1,8 +1,12 @@
 const fs = require('fs');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 
 // Global variables
 var github;
 var context;
+
+// Use labelKeys to retrieve current labelNames from directory
+const readyForDevLead = retrieveLabelDirectory('readyForDevLead');
 
 /**
  * Creates new GitHub issues for each alert that doesn't have an existing issue.
@@ -36,7 +40,7 @@ const createNewIssues = async ({ g, c, alertIds }) => {
       repo: context.repo.repo,
       title,
       body,
-      labels: ['ready for dev lead']
+      labels: [readyForDevLead]
     });      
 
     // Log issue titles and links in GHA workflow

@@ -3,7 +3,7 @@ name: img Tag Refactor on Website
 about: 'For removing the ending slash in img tags on the website, so that `<img.../>`
   becomes `<img..>` '
 title: 'img Tag Refactor: [INSERT PAGE HERE] page(s)'
-labels: 'Feature: Refactor HTML, good first issue, ready for dev lead, role: back
+labels: 'Feature: Refactor HTML, good first issue, ready for merge team, role: back
   end/devOps, role: front end, size: 0.25pt'
 assignees: ''
 

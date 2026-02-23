@@ -88,6 +88,7 @@ leadership:
       github: 'https://github.com/elimarietta'
     picture: 'https://avatars.githubusercontent.com/elimarietta'
   - name: Asad Haider
+    github-handle:
     role: UX/UI Designer
     links:
       slack: 'https://hackforla.slack.com/team/U04H6Q4K5AS'

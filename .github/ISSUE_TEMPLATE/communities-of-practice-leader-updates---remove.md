@@ -1,0 +1,31 @@
+---
+name: Communities of Practice leader updates - Remove
+about: This template is for website team only to REMOVE a single volunteer from a
+  Community of Practice
+title: 'Update Community of Practice: [CoP Name] Remove [Name of Volunteer]'
+labels: 'good first issue, P-Feature: Communities of Practice, role: back end/devOps,
+  role: front end, size: 0.25pt, time sensitive'
+assignees: ''
+
+---
+
+### Prerequisites
+1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started](https://www.hackforla.org/getting-started) page and attend an onboarding session.
+2. You have already read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md).
+
+### Overview
+We need to keep project information up to date so that visitors to the website can find accurate information.
+
+### Action Items
+- [ ] In your IDE, open the `_data/internal/communities/[Insert filename].yml` file.
+- [ ] Observe the existing syntax of the front matter block [^1] in the file.
+- [ ]  Find the `leadership` variable and remove the following:
+```
+[Insert the lines of code to remove the specified leadership member]
+```
+- [ ] Verify the changes by viewing the following in your local environment with Docker, and include 'before' and 'after' screenshots with your pull request:
+  - [ ] Communities of Practice page [^2]
+
+### Resources/Instructions
+[^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
+[^2]: Communities of Practice page URL: https://www.hackforla.org/communities-of-practice

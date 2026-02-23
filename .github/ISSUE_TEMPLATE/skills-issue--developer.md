@@ -39,7 +39,7 @@ Sections
 12 - [Pull Request Reviews - Small](#section-12)
 13 - [Issue Making - Level 1 (GFI & Small)](#section-13)
 14 - [Medium Issue](#section-14)
-14.1 [Issue Making - Level 2 (Medium)](#section-14.1)
+14.1 [Issue Making - Level 1 (Medium)](#section-14.1)
 15 - [Pull Request Reviews - Medium](#section-15)
 16 - [Issue Making - Level 2 (GFI)](#section-16)
 17 - [Merge Team Skills Review](#section-17)
@@ -144,7 +144,7 @@ Sections
       >My estimated ETA for completing this issue: 
 
       Once you have done that on your good first issue, check this box, above, on this issue to let us know you have completed that task and understand how to do it in future.  
-          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the "Questions/ In Review" column, and add the labels `ready for dev lead` and `Status: Help Wanted`
+          - If you have any questions about estimating the issue you choose, please add them to the issue, put the issue in the "Questions/ In Review" column, and add the labels `ready for merge team` and `Status: Help Wanted`
 - [ ] Post the following message in a comment below on this issue and then answer it.
     ```
     ### 4 - FINDING AND ASSIGNING YOUR FIRST GITHUB ISSUE update

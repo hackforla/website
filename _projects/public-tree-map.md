@@ -8,6 +8,7 @@ image-hero: /assets/images/projects/public-tree-map-hero.jpeg
 image-hero-credit: 'Coral tree from City of Santa Monica. Photo by Dave Baiocchi www.studiobaiocchi.net'
 leadership: 
   - name: Emily F.
+    github-handle:
     role: Product Owner
     links:
       slack: 'https://hackforla.slack.com/team/U1E5ADA03'

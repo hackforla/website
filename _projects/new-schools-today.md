@@ -25,6 +25,7 @@ leadership:
       github: 'https://github.com/jacobzwang'
     picture: https://avatars.githubusercontent.com/jacobzwang
   - name: Ethan Hopkins
+    github-handle:
     role: Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/UQUBHLPC2'
@@ -49,6 +50,6 @@ location:
   - Remote
 visible: true
 status: On Hold
-program-area: 
+program-area:
   - Diversity / Equity / Inclusion
 ---

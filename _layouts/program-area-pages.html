@@ -1,12 +1,10 @@
 ---
 layout: default
-title: Citizen Engagement
-permalink: /citizen-engagement
 ---
 <!-- Header banner -->
 <div class="header-container flex-container program-header-container">
     <div class="header-text">
-        <h1 class="title1">Citizen Engagement</h1>
+        <h1 class="title1">{{page.name}}</h1>
         <p>
             We at Hack for LA are volunteers that believe in building technology
             and analyzing data to make it easier to participate effectively in your community.
@@ -48,7 +46,7 @@ permalink: /citizen-engagement
                 <div class="organizations-images">
                     {% assign partners = site.data.internal.partners %}
                     {% for partner in partners %}
-                      {% if partner.program-area contains "Citizen Engagement" %}
+                      {% if partner["program-area"] contains page["program-area"] %}
                         <img class="org-img org-img-large" src="{{ partner.image }}" alt="{{ partner.name }}">
                       {% endif %}
                     {% endfor %}

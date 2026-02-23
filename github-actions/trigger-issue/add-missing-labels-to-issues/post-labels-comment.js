@@ -1,14 +1,24 @@
-var fs = require("fs");
+// Import modules
+var fs = require('fs');
 const postComment = require('../../utils/post-issue-comment');
 const formatComment = require('../../utils/format-comment');
+const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 
-// Constant variables
-const LABELS_OBJ = {
-  'Complexity: Missing': 'Complexity',
-  'role missing': 'Role',
-  'Feature Missing': 'Feature',
-  'size: missing': 'Size'
-};
+// Label constants use labelKeys to retrieve current labelNames from directory
+const LABELS_ARR = [
+  sizeMissing,
+  featureMissing,
+  complexityMissing,
+  roleMissing
+] = [
+  "sizeMissing",
+  "featureMissing",
+  "complexityMissing",
+  "roleMissing"
+].map(retrieveLabelDirectory);
+
+const LABELS_VAL = ['Size','Feature','Complexity','Role'];
+const LABELS_OBJ = Object.fromEntries(LABELS_ARR.map((key, i) => [key, LABELS_VAL[i]]));
 
 // Global variables
 var github;
