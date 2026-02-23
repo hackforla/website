@@ -13,20 +13,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REA9H3FF
       github: https://github.com/mariaweissman
     picture: https://avatars.githubusercontent.com/mariaweissman
-  - name: Analicia Mejia Mesinas
-    github-handle: amejiamesinas
-    role: Product Manager, UX Research
-    links:
-      slack: https://hackforla.slack.com/team/U04J34E73CG
-      github: https://github.com/amejiamesinas
-    picture: https://avatars.githubusercontent.com/amejiamesinas
-  - name: Mireya V. Aviles
-    github-handle: vanessaavviles
-    role: Product Manager, Design
-    links:
-      slack: https://hackforla.slack.com/team/U0429M52LTY
-      github: https://github.com/vanessaavviles
-    picture: https://avatars.githubusercontent.com/vanessaavviles 
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
@@ -48,27 +34,55 @@ leadership:
       slack: https://hackforla.slack.com/team/U03PNBDLXL1
       github: https://github.com/jyehllow
     picture: https://avatars.githubusercontent.com/jyehllow
-  - name: Samantha Hyler
-    github-handle: SamHyler
-    role:  UX Content, Team Co-lead
+  - name: Melissa Ligertwood
+    github-handle: TechWriterMelissa 
+    role: UX Content, Team Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U025XR6MY6S
-      github: https://github.com/SamHyler
-    picture: https://avatars.githubusercontent.com/SamHyler
-  - name: Emma Thrash
-    github-handle: emmathrash
-    role:  UX Content, Team Co-lead
+      slack: https://hackforla.slack.com/team/U07QWJTHWBE
+      github: https://github.com/TechWriterMelissa 
+    picture: https://avatars.githubusercontent.com/TechWriterMelissa 
+  - name: Giselle Dizon
+    github-handle: giselledizon
+    role: UX Content, Team Co-lead
     links:
-      slack: https://hackforla.slack.com/team/U05JUM3881J
-      github: https://github.com/emmathrash
-    picture: https://avatars.githubusercontent.com/emmathrash
-  - name: Sylvia Nam
-    github-handle: sylvia-nam
-    role: UX Research, Team Lead
+      slack: https://hackforla.slack.com/team/U06E78YCUUB
+      github: https://github.com/giselledizon
+    picture: https://avatars.githubusercontent.com/giselledizon
+  - name: Namitha Murali
+    github-handle: namithamurali23
+    role: UX Research, Co-Lead
     links:
-      slack: https://hackforla.slack.com/team/U06E9RQ8DRA
-      github: https://github.com/sylvia-nam
-    picture: https://avatars.githubusercontent.com/sylvia-nam
+      slack: https://hackforla.slack.com/team/U091S2Q6LSY
+      github: https://github.com/namithamurali23
+    picture: https://avatars.githubusercontent.com/namithamurali23
+  - name: Prakriti Dumaru
+    github-handle: Pra-kriti
+    role: UX Research, Co-Lead
+    links:
+      slack: https://hackforla.slack.com/team/U08EARZC33K
+      github: https://github.com/Pra-kriti
+    picture: https://avatars.githubusercontent.com/Pra-kriti
+  - name: Rachel Ichniowski
+    github-handle: raeraeicky
+    role: Product Manager, UX Research and Content
+    links:
+      slack: https://hackforla.slack.com/team/U07LGA7RZ0W
+      github: https://github.com/raeraeicky
+    picture: https://avatars.githubusercontent.com/raeraeicky
+  - name: Rick Peng
+    github-handle: rcpeng34
+    role: Product Manager, Development
+    links:
+      slack: https://hackforla.slack.com/team/U07QU3C45MY
+      github: https://github.com/rcpeng34
+    picture: https://avatars.githubusercontent.com/rcpeng34
+  - name: Shraddha Saraf
+    github-handle: shraddhasaraf
+    role: Product Manager, Design
+    links:
+      slack: https://hackforla.slack.com/team/U08Q15W6QE9
+      github: https://github.com/shraddhasaraf
+    picture: https://avatars.githubusercontent.com/shraddhasaraf
 links:
     - name: Overview
       url: '../assets/pdfs/Expunge-Assist-One-Sheet.pdf'

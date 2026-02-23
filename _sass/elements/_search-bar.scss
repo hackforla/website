@@ -1,56 +1,65 @@
-#search-bar {    
-    height: 44px;
-    padding: 10px 16px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    display: flex;
-    flex-direction: row;
-    background: $color-white;
-    gap: 4px;
-    margin-bottom: 10px;
+
+
+/* Search bar container (was #search-bar) */
+.search-bar-desktop,
+.search-bar-mobile {
+  height: 44px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: row;
+  background: $color-white;
+  gap: 4px;
+  margin-bottom: 10px;
 }
 
-form#search-bar {
-    position: sticky;
-    padding: 10px;
-    top: 60px; 
-    z-index: 10;
+/* Override _forms.scss (was #search) */
+#search-desktop,
+#search-mobile {
+  padding-right: 0px;
+  padding-left: 0px;
+  appearance: none;
+  background: $color-white;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  color: $color-black;
+  font-size: 1rem;
+  height: 22px;
+  margin-bottom: 10px;
+  width: 100%;
 }
-// // Ensure search-bar does not pin on mobile
-@media #{$bp-below-tablet} {
-    form#search-bar {
-        position: static;
-    }
-}
-//Styles to override the styles from _forms.scss
-#search{
-    padding-right: 0px;
-    padding-left: 0px;
-    appearance: none;
-    background: $color-white;
-    border: none;
-    border-radius: 0px;
-    box-shadow: none;
-    color: $color-black;
-    font-size: 1rem;
-    height: 22px;
-    margin-bottom: 10px;
-    width: 100%;
+
+/* Buttons */
+.search-x,
+.search-glass {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 .search-x {
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    margin: 0;
-    display: none;
-    border:none;
+  display: none;
 }
 
-.search-glass {
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    margin: 0;
-    border: none;
+
+
+/* Mobile and below: show mobile search bar only (unchanged behaviour) */
+@media #{$bp-below-tablet} {
+  .search-bar-desktop { display: none; }
+  .search-bar-mobile { display: flex; position: static; }
+}
+
+/* Desktop and up: show desktop search bar; sticky below header */
+@media #{$bp-desktop-up} {
+  .search-bar-mobile { display: none; }
+  .search-bar-desktop {
+    display: flex;
+    position: sticky;
+    top: 61px; 
+    z-index: 90; 
+  }
 }

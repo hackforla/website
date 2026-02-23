@@ -18,7 +18,7 @@ We need to keep project information up to date so that visitors to the website c
 ### Action Items
 - [ ] In your IDE, open the `_projects/[Insert filename].md` file.
 - [ ] Observe the existing syntax of the front matter block [^1] in the file.
-- [ ] Find the `leadership` variable and add the following profile. 
+- [ ] Find the `leadership` variable and add the following profile after other member(s) with the same role.[^2]   
 ```
   - name: [Insert leadership member's name]
     github-handle: [Insert GitHub handle]
@@ -28,17 +28,10 @@ We need to keep project information up to date so that visitors to the website c
       github: https://github.com/[Insert GitHub handle]
     picture: https://avatars.githubusercontent.com/[Insert GitHub handle]
 ```
-- [ ] Verify the changes by viewing the following in your local environment and include before and after screenshots with your pull request:
-  - [ ] [Insert name of project] page [^2]
-- [ ] Once your pull request is merged, go to the initiating ER [^3]
-  - [ ] Check off this issue under the _Dependency_ section
-  - [ ] If all the issues in the _Dependency_ section are checked off, move initiating ER [^3] to **Questions / In Review** column and uncheck the **Dependency label**.
-    - <details>
-        <summary>Click here to see how to uncheck the <b>Dependency label</b></summary>
-        <img src="https://github.com/hackforla/website/assets/31293603/6f53f4d4-7d2c-45f8-8534-9936fc9adee8" width="300px">
-      </details>
+- [ ] Verify the changes by viewing the following in your local environment with Docker, and include 'before' and 'after' screenshots with your pull request:
+  - [ ] [Insert name of project] page [^3]
 
 ### Resources/Instructions
 [^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
-[^2]: Project detailed info page URL: [Insert project specific page URL here]
-[^3]: initiating ER:  #[Insert ER number]
+[^2]: Note: The typical order of roles should be:  'role: Owner'  --> 'role: Manager' --> 'role: Lead' --> 'role: Merge Team' --> 'role: Researcher/Designer/Developer/Engineer'. If the intended order is not clear, ask the person who submitted the original request.
+[^3]: Project detailed info page URL: [Insert project specific page URL here]

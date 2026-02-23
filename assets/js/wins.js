@@ -28,7 +28,7 @@
 		"I increased the number of commits on my Github profile": `github.svg`,
 		"I learned a new language": `code.svg`,
 		"I set up 2FA": `twofa.svg`,
-		"I became part of a a caring community": `$community.svg`,
+		"I became part of a caring community": `community.svg`,
 		"I worked on an enterprise project": `enterprise.svg`,
 		"I worked on a project that will help the people of Los Angeles": `giving.svg`,
 		"I worked on two or more projects": `hammers.svg`,
@@ -290,7 +290,6 @@
 	const cardTemplate = document.getElementById("wins-card-template");
 	const QUOTE_ICON_PATH = '/assets/images/wins-page/quote-icon.svg'
 	const AVATAR_DEFAULT_PATH = "/assets/images/wins-page/avatar-default.svg"
-	const GITHUB_ICON = '/assets/images/wins-page/icon-github-small.svg';
 	const LINKEDIN_ICON = '/assets/images/wins-page/icon-linkedin-small.svg'
 	const winsCardContainer  = document.querySelector('#responses');
 
@@ -330,22 +329,21 @@
 
 		if (card[github_url].length > 0){
 			cloneCardTemplate.querySelector('.wins-card-github-icon').href = card[github_url];
-			cloneCardTemplate.querySelector('.github-icon').src = GITHUB_ICON ;
-			cloneCardTemplate.querySelector('.github-icon').alt = `GitHub profile for ${card[name]}`;
+			cloneCardTemplate.querySelector('.github-icon').setAttribute('aria-label' ,`GitHub profile for ${card[name]}`);
 		} else {
 			cloneCardTemplate.querySelector('.wins-card-github-icon').setAttribute('hidden', 'true')
 		}
 
 		// Avoiding using innerHTML due to security risks
-		// Creating the elements 
+		// Creating the elements
 		const teamContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-team');
 		const roleContainer = cloneCardTemplate.querySelector('.project-inner.wins-card-role');
 		const teamSpanElement = document.createElement('span');
 		teamSpanElement.classList.add('wins-team-role-color');
 		const roleSpanElement = document.createElement('span');
 		roleSpanElement.classList.add('wins-team-role-color');
-		
-		// Preparing the text of the elements 
+
+		// Preparing the text of the elements
 		teamSpanElement.textContent = "Team(s): ";
 		const teamTextNode = document.createTextNode(card[team]);
 		roleSpanElement.textContent = "Role(s): ";
@@ -500,14 +498,31 @@ function changeSeeMoreBtn(x) {
 	  	const bigQuoteImg = document.querySelector('.wins-card-big-quote');
 	  	bigQuoteImg.alt = "Quote from " + data[i][name];
 
-  		const overlayIcons = document.querySelector('#overlay-icons');
-  		overlayIcons.textContent = "";
+			const overlayIcons = document.querySelector('#overlay-icons');
+      overlayIcons.querySelector('.wins-card-linkedin-icon').textContent = '';
 
-  		if (data[i][linkedin_url].length > 0) {
-  			makeIcon(data[i][linkedin_url], overlayIcons, 'linkedin-icon', '/assets/images/wins-page/icon-linkedin-small.svg', 'LinkedIn profile for ' + data[i][name]);
-  		} if (data[i][github_url].length > 0) {
-  			makeIcon(data[i][github_url], overlayIcons, 'github-icon', '/assets/images/wins-page/icon-github-small.svg', 'Github profile for ' + data[i][name]);
-  		}
+      if (data[i][linkedin_url].length > 0) {
+        makeIcon(
+          data[i][linkedin_url],
+          overlayIcons.querySelector('.wins-card-linkedin-icon'),
+          'linkedin-icon',
+          '/assets/images/wins-page/icon-linkedin-small.svg',
+          'LinkedIn profile for ' + data[i][name]
+        );
+      }
+
+			const winsCardGithubIcon = overlayIcons.querySelector('.wins-card-github-icon');
+
+      if (data[i][github_url].length > 0) {
+        winsCardGithubIcon.href = data[i][github_url];
+        winsCardGithubIcon.removeAttribute('hidden');
+        winsCardGithubIcon.querySelector('div.github-icon').setAttribute(
+          'aria-label',
+          'GitHub profile for ' + data[i][name]
+        );
+      } else {
+        winsCardGithubIcon.setAttribute('hidden', 'true');
+      }
 
   		const overlayName = document.querySelector('#overlay-name');
 		overlayName.textContent = data[i][name];

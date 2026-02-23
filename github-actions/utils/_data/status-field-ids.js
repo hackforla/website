@@ -1,7 +1,7 @@
 /**
   * The purpose of this utility is to list the (non-changing) GraphQL ids of the 'Status' fields
-  * for the Website Project so that functions will not need to run a GraphQL query when needed
-  *                   SEE BELOW for GraphQL query used to generate this list
+  * for the Website Project so that functions will not need to run a GraphQL query each time
+  *                   SEE BELOW for GraphQL query used to generate the values from this list
   *
   * @params {String} statusField  - Standardized name of status field (see lines 10-27)
   * @returns {String} statusId    - the field id of the selected status
@@ -10,6 +10,12 @@
 function statusFieldIds(statusField) {
 
   const statusValues = new Map([
+
+    // Default values for HfLA Website Project 86
+    ["PROJECT_ID", "PVT_kwDOALGKNs4Ajuck"],
+    ["FIELD_ID", "PVTSSF_lADOALGKNs4AjuckzgcCutQ"],
+
+    // Individual Status field values
     ["Agendas", "864392c1"],
     ["Ice_Box", "2b49cbab"],
     ["Emergent_Requests", "d468e876"],    
@@ -40,15 +46,13 @@ query findStatusSubfieldIds ($login: String!, $projNum: Int!, $fieldName: String
   organization(login: $login) {
     projectV2(number: $projNum) {
       id
-      field(name:$fieldName) { 
-        ... on ProjectV2SingleSelectField { 	
-        id options{ 
+      field(name: $fieldName) {
+        ... on ProjectV2SingleSelectField {
+          id 
+          options {
             id
             name
-            ... on ProjectV2SingleSelectFieldOption {
-              id
-            }
-          } 
+          }
         }
       }
     }
@@ -56,9 +60,9 @@ query findStatusSubfieldIds ($login: String!, $projNum: Int!, $fieldName: String
 }
 
 {
-  "login":"hackforla",
+  "login": "hackforla",
   "projNum": 86,
-	"fieldName": "Status"
+  "fieldName": "Status"
 }
 */
 

@@ -248,17 +248,15 @@ function applyFilters(filtersParams) {
 
 // Apply current filters to URL
 function applyFiltersToURL(filterParams) {
-    let filters = ''
-    for (let key in filterParams) {
-        if (filterParams[key].length) {
-            filters = filters + `${key}=${filterParams[key].join(',')}&`
-        }
+    const url = new URL(window.location)
+    const params = new URLSearchParams()
+
+    for (const [key, values] of Object.entries(filterParams)) {
+        values.forEach(value => params.append(key, value))
     }
-    // Remove extra &
-    if (filters) {
-        filters = filters.slice(0, filters.length - 1)
-    }
-    window.history.replaceState(null, '', `?${filters}`)
+
+    url.search = params.toString() 
+    window.history.replaceState(null, '', url)
 }
 
 // Apply URL to filters

@@ -1,0 +1,47 @@
+name: Check Closed Issue for Linked PR
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  check-for-linked-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v6
+
+      - name: Check Issue Labels And Linked PRs
+        uses: actions/github-script@v8
+        id: check-issue-labels-and-linked-prs
+        with:
+          script: |
+            const script = require(
+              './github-actions'
+              + '/check-closed-issue-for-linked-pr'
+              + '/check-for-linked-issue'
+              + '/check-issue-labels-and-linked-prs.js'
+            );
+            const isValidClose = await script({github, context});
+            core.setOutput('isValidClose', isValidClose);
+
+      # Sleep to allow other GitHub Actions to change project status.
+      - name: Sleep
+        id: sleep
+        shell: bash
+        run: sleep 30s
+
+      - name: Reopen Issue
+        if: steps.check-issue-labels-and-linked-prs.outputs.isValidClose == 'false'
+        uses: actions/github-script@v8
+        id: reopen-issue
+        with:
+          github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
+          script: |
+            const script = require(
+              './github-actions'
+              + '/check-closed-issue-for-linked-pr'
+              + '/check-for-linked-issue'
+              + '/reopen-issue.js'
+            );
+            await script({github, context});

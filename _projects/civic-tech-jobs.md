@@ -5,28 +5,35 @@ description: The CivicTechJobs.org MVP website will be a platform to help prospe
 image: /assets/images/projects/civic-tech-jobs.png
 alt: "Civic Tech Jobs"
 image-hero: /assets/images/projects/civic-tech-jobs-hero.png
-leadership: 
+leadership:
   - name: Karen Coronel
-    github-handle: 
+    github-handle:
     role: Senior Product Manager
     links:
       slack: https://hackforla.slack.com/team/U010KUGJATC
       github: https://github.com/kcoronel
     picture: https://avatars.githubusercontent.com/kcoronel
-  - name: Kanika Chotani
-    github-handle: kchotani
+  - name: Jason Shi
+    github-handle: jaason-shi
     role: Product Manager
     links:
-      slack: https://hackforla.slack.com/team/U02E7ATACAV
-      github: https://github.com/kchotani
-    picture: https://avatars.githubusercontent.com/kchotani
-  - name: Jimmy Juarez
-    github-handle: JimmyJuarez10
+      slack: https://hackforla.slack.com/team/U08L8B7ESG3
+      github: https://github.com/jaason-shi
+    picture: https://avatars.githubusercontent.com/jaason-shi
+  - name: Brandon Hu
+    github-handle: brandonhu8
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U08NG29UQUB
+      github: https://github.com/brandonhu8
+    picture: https://avatars.githubusercontent.com/brandonhu8
+  - name: Snigdha Tiwari
+    github-handle: snigdhat1
     role: Developer Lead
     links:
-      slack: https://hackforla.slack.com/team/U062FQ7UXQE
-      github: https://github.com/JimmyJuarez10
-    picture: https://avatars.githubusercontent.com/JimmyJuarez10
+      slack: https://hackforla.slack.com/team/U08N4CKKJUW
+      github: https://github.com/snigdhat1
+    picture: https://avatars.githubusercontent.com/snigdhat1
   - name: Lu Feng
     github-handle: fenglugithub
     role: UI/UX Lead
@@ -34,41 +41,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U03NV47TG4X
       github: https://github.com/fenglugithub
     picture: https://avatars.githubusercontent.com/fenglugithub
-  - name: Brenda Njemanze
-    github-handle: brendasdesign
-    role: UX/UI Designer
+  - name: Rishi Raghu
+    github-handle: rishi222k
+    role: UXR Researcher
     links:
-      slack: https://hackforla.slack.com/team/U06MWMRSCJW
-      github: https://github.com/brendasdesign
-    picture: https://avatars.githubusercontent.com/brendasdesign
-  - name: Armon Brown
-    github-handle: stanarmon
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06J0UCAWHE
-      github: https://github.com/stanarmon
-    picture: https://avatars.githubusercontent.com/stanarmon
-  - name: Carmen Mak
-    github-handle: CarmenMM1
-    role: UX/UI Designer
-    links:
-      slack: https://hackforla.slack.com/team/U06313EMD41
-      github: https://github.com/CarmenMM1
-    picture: https://avatars.githubusercontent.com/CarmenMM1
-  - name: Leah Ellis
-    github-handle:
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U04GYTXSP9D
-      github: https://github.com/Leah0996
-    picture: https://avatars.githubusercontent.com/Leah0996
-  - name: Manju Chawla
-    github-handle: itsmanjuchawla
-    role: UX Researcher
-    links:
-      slack: https://hackforla.slack.com/team/U06E9T37H9A
-      github: https://github.com/itsmanjuchawla
-    picture: https://avatars.githubusercontent.com/itsmanjuchawla
+      slack: https://hackforla.slack.com/team/U07G0CHGNSD
+      github: https://github.com/rishi222k
+    picture: https://avatars.githubusercontent.com/rishi222k
   - name: Bitian Zhang
     github-handle:
     role: Developer
@@ -90,34 +69,39 @@ leadership:
       slack: https://hackforla.slack.com/team/U061GQQ56Q4
       github: https://github.com/kevin31yu
     picture: https://avatars.githubusercontent.com/kevin31yu
-  - name: Ida Valenzuela
-    github-handle: irais-valenzuela
+  - name: Terence Lo
+    github-handle: LoTerence
+    role: Developer - Backend
+    links:
+      slack: https://hackforla.slack.com/team/U078NLYHHL5
+      github: https://github.com/LoTerence
+    picture: https://avatars.githubusercontent.com/LoTerence
+  - name: Gowthami Cherukuri
+    github-handle: GowthamiCherukuri
     role: Developer
     links:
-      slack: https://hackforla.slack.com/team/U062NBBNFA7
-      github: https://github.com/irais-valenzuela
-    picture: https://avatars.githubusercontent.com/irais-valenzuela
-links: 
+      slack: https://hackforla.slack.com/team/U08Q1652STF
+      github: https://github.com/GowthamiCherukuri
+    picture: https://avatars.githubusercontent.com/GowthamiCherukuri
+links:
   - name: GitHub
     url: https://github.com/hackforla/civictechjobs
   - name: Slack
     url: https://hackforla.slack.com/archives/C02509WHFQQ
   - name: Overview
     url: ../assets/pdfs/Civic-Tech-Jobs-One-Sheet.pdf
-looking: 
-technologies: 
+looking:
+technologies:
   - React
-  - Express
-  - Node.JS
   - Docker
   - PostgreSQL
   - Django
   - Figma
-tools: 
-location: 
+tools:
+location:
   - Remote
 visible: true
 status: Active
-program-area: 
+program-area:
   - Civic Tech Infrastructure
 ---

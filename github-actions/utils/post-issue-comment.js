@@ -1,5 +1,5 @@
 /**
- * Posts a comment on github
+ * Posts a comment on GitHub
  * @param {Number} issueNum - the issue number where the comment should be posted
  * @param {String} comment - the comment to be posted
  */
@@ -11,6 +11,7 @@ async function postComment(issueNum, comment, github, context) {
             issue_number: issueNum,
             body: comment,
         });
+        return true;
     } catch (err) {
         throw new Error(err);
     }

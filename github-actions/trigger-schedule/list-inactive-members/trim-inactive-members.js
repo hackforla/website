@@ -2,6 +2,7 @@
 const fs = require('fs');
 const getTeamMembers = require('../../utils/get-team-members');
 const addTeamMember = require('../../utils/add-team-member');
+const getOpenAssignedIssues = require('../../utils/get-open-assigned-issues');
 
 // Global variables
 var github;
@@ -10,6 +11,7 @@ var context;
 const baseTeam = 'website';
 const writeTeam = 'website-write';
 const mergeTeam = 'website-merge';
+const PMTeam =  'website-pm';
 
 
 
@@ -21,10 +23,11 @@ const mergeTeam = 'website-merge';
  * @param {Object} c                     - context object from actions/github-script
  * @param {Object} recentContributors    - recentContributors since the dates[0] = recent cutoff
  * @param {Object} previousContributors  - previousContributors since the dates[1] = previous cutoff
+ * @param {Object} inactiveWithOpenSkills- Inactive contributors that have open Skills issues
  * @param {Object} inactiveWithOpenIssue - Inactive contributors that have open issues
  * @param {Object} dates                 - [recent, previous] dates of oneMonthAgo, twoMonthsAgo
  */
-async function main({ g, c }, { recentContributors, previousContributors, inactiveWithOpenIssue, dates }) {
+async function main({ g, c }, { recentContributors, previousContributors, inactiveWithOpenSkills, inactiveWithOpenIssue, dates }) {
   github = g;
   context = c;
   
@@ -33,14 +36,10 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
   console.log('Current members of ' + writeTeam + ':');
   console.log(currentTeamMembers);
 
-  const [removedContributors, cannotRemoveYet] = await removeInactiveMembers(previousContributors, inactiveWithOpenIssue, currentTeamMembers);
+  const removedContributors = await removeInactiveMembers(previousContributors, inactiveWithOpenSkills, inactiveWithOpenIssue, currentTeamMembers);
   console.log(`-`.repeat(60));
   console.log('Removed members from ' + writeTeam + ' inactive since ' + dates[1].slice(0, 10) + ':');
   console.log(removedContributors);
-
-  console.log(`-`.repeat(60));
-  console.log('Members inactive since ' + dates[1].slice(0, 10) + ' with open issues preventing removal:');
-  console.log(cannotRemoveYet);
 
   // Repeat getTeamMembers() after removedContributors to compare with recentContributors
   const updatedTeamMembers = await getTeamMembers(github, context, writeTeam);
@@ -49,7 +48,15 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
   console.log('Notified members from ' + writeTeam + ' inactive since ' + dates[0].slice(0, 10) + ':');
   console.log(notifiedContributors);
 
-  writeData(removedContributors, notifiedContributors, cannotRemoveYet);
+  // Final pass to get all open, assigned issues to check whether assignee either isn't a team member or is inactive 
+  const currentPMTeam = await getTeamMembers(github, context, PMTeam);
+  const writeAndPMTeam = { ...updatedTeamMembers, ...currentPMTeam };
+  const [nonTeamOpenIssue, inactiveOpenIssue] = await getOpenAssignedIssues(github, context, writeAndPMTeam, inactiveWithOpenIssue);
+  console.log(`-`.repeat(60));
+  console.log('Members inactive since ' + dates[1].slice(0, 10) + ' with open issues preventing removal:');
+  console.log(inactiveOpenIssue);
+
+  writeData(removedContributors, notifiedContributors, nonTeamOpenIssue, inactiveOpenIssue);
 };
 
 
@@ -57,45 +64,43 @@ async function main({ g, c }, { recentContributors, previousContributors, inacti
 /**
  * Remove contributors that were last active **before** the previous (twoMonthsAgo) date
  * @param {Object} previousContributors   - List of contributors active since previous date
+ * @param {Object} inactiveWithOpenSkills - Inactive members with open Skills Issue
  * @param {Object} inactiveWithOpenIssue  - Inactive members with open issues
- * @returns {Array} removedMembers        - List of members that were removed 
- * @returns {Object} cannotRemoveYet      - List of members that cannot be removed due to open issues
+ * @param {Object} currentTeamMembers     - Current team members
+ * @returns {Object} removedMembers       - List of members that were removed 
  */
-async function removeInactiveMembers(previousContributors, inactiveWithOpenIssue, currentTeamMembers){
+async function removeInactiveMembers(previousContributors, inactiveWithOpenSkills, inactiveWithOpenIssue, currentTeamMembers) {
   const removedMembers = [];
-  const cannotRemoveYet = {};
   const previouslyNotified = await readPreviousNotifyList();
   
-  // Loop over team members and remove them from the team if they are not in previousContributors list
-  for(const username in currentTeamMembers){
-    if (!previousContributors[username]){
+  // Loop over team members and remove them from the team if they are not on the previousContributors
+  // list (i.e. they are inactive) and they are also not on the inactiveWithOpenIssue list 
+  for (const username in currentTeamMembers) {   
+    if ((!previousContributors[username]) && !(username in inactiveWithOpenIssue)) {
       // Prior to deletion, confirm that member is on the baseTeam
       await addTeamMember(github, context, baseTeam, username);
-      // But if member has an open issue or was not on the previouslyNotified list, do not remove yet
-      if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username][1] === false){
-        cannotRemoveYet[username] = inactiveWithOpenIssue[username][0];
-      } else if((previouslyNotified.length > 0) && !(previouslyNotified.includes(username))){
-        console.log('Member was not on last month\'s \'Inactive Members\' list, do not remove: ' + username);
+      // If member was not on the previouslyNotified list, do not remove yet
+      if ((previouslyNotified.length > 0) && !(previouslyNotified.includes(username))) {
+        console.log(`Member was not on last month's 'Inactive Members' list, do not remove: ${username}`);
       } else {
         // Remove member from all teams (except baseTeam)
-        const teams = [writeTeam, mergeTeam];
-        for(const team of teams){
+        for (const team of [writeTeam, mergeTeam]) {
           // https://docs.github.com/en/rest/teams/members?apiVersion=2022-11-28#remove-team-membership-for-a-user
           await github.request('DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}', {
             org: context.repo.owner,
             team_slug: team,
-            username: username,
+            username,
           });
         }
         removedMembers.push(username);
         // After removal, close member's "Skills Issue", if open
-        if(username in inactiveWithOpenIssue && inactiveWithOpenIssue[username][1] === true){
-          closePrework(username, inactiveWithOpenIssue[username][0]);
+        if (username in inactiveWithOpenSkills) {
+          closePrework(username, inactiveWithOpenSkills[username]);
         }
       }
     }
   }
-  return [removedMembers, cannotRemoveYet];
+  return removedMembers;
 }
 
 
@@ -200,14 +205,15 @@ async function checkMemberIsNotNew(member){
 
 /**
  * Function to save inactive members list to local repo for use in next job  
- * @param {Array} removedContributors  - List of contributors that were removed
- * @param {Array} notifiedContributors - List of contributors to be notified
- * @param {Array} cannotRemoveYet      - List of contributors that can't be removed yet
+ * @param {Array} removedContributors        - List of contributors that were removed
+ * @param {Array} notifiedContributors       - List of contributors to be notified
+ * @param {Array} nonTeamOpenIssue           - List of non-team members with open issues
+ * @param {Array} inactiveOpenIssue          - List of inactive members that can't be removed yet
  */
-function writeData(removedContributors, notifiedContributors, cannotRemoveYet){
+function writeData(removedContributors, notifiedContributors, nonTeamOpenIssue, inactiveOpenIssue) {
   
   const filepath = 'github-actions/utils/_data/inactive-members.json';
-  const inactiveMemberLists = { removedContributors, notifiedContributors, cannotRemoveYet };
+  const inactiveMemberLists = { removedContributors, notifiedContributors, nonTeamOpenIssue, inactiveOpenIssue };
 
   fs.writeFile(filepath, JSON.stringify(inactiveMemberLists, null, 2), (err) => {
     if (err) throw err;

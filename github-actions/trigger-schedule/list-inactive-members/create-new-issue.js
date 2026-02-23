@@ -7,6 +7,14 @@ const postComment = require('../../utils/post-issue-comment');
 var github;
 var context;
 
+const AGENDA_ISSUE_NUM = 8442;            // Issue number of the Dev/PM meeting agenda on Mondays
+
+/**
+ * @description - Function to create a new issue that lists inactive and removed members and posts 
+ *                a notification to the Dev/PM meeting agenda about inactive members with open issues
+ * @param {Object} g - GitHub object
+ * @param {Object} c - Context object
+*/
 async function main({ g, c }) {
   github = g;
   context = c;
@@ -15,19 +23,19 @@ async function main({ g, c }) {
   const filepath = 'github-actions/utils/_data/inactive-members.json';
   const rawData = fs.readFileSync(filepath, 'utf8');
   let inactiveLists = JSON.parse(rawData);
-  const inactiveWithOpen = parseInactiveOpen(inactiveLists['cannotRemoveYet']);
+  const inactiveWithOpen = parseInactiveOpen(inactiveLists['inactiveOpenIssue']);
+  const nonTeamWithOpen = parseNonTeamOpen(inactiveLists['nonTeamOpenIssue']);
   
   const owner = context.repo.owner;
   const repo = context.repo.repo;
-  const agendaIssueNum = 2607;            // Issue number of the Dev/PM meeting agenda on Mondays
 
   // Create a new issue in repo, return the issue id for later: creating the project card linked to this issue
   const issue = await createIssue(owner, repo, inactiveLists);
   const issueNumber = issue.number;
 
   // Add issue number used to reference the issue and comment on the `Dev/PM Agenda and Notes`
-  const commentBody = `**Review Inactive Team Members:** #` + issueNumber + inactiveWithOpen;
-  await postComment(agendaIssueNum, commentBody, github, context);
+  const commentBody = `**Review Inactive Team Members:** #` + issueNumber + inactiveWithOpen + nonTeamWithOpen;
+  await postComment(AGENDA_ISSUE_NUM, commentBody, github, context);
 }
 
 const createIssue = async (owner, repo, inactiveLists) => {
@@ -77,14 +85,30 @@ const createIssue = async (owner, repo, inactiveLists) => {
 };
 
 const parseInactiveOpen = (inactiveOpens) => {
-  if(Object.keys(inactiveOpens).length === 0){
+  if (Object.keys(inactiveOpens).length === 0) {
     return '';
   } else {
     let inactiveOpen = '\r\n\nInactive members with open issues:\r\n';
-    for(const [key, value] of Object.entries(inactiveOpens)){
-      inactiveOpen += ' - ' + key + ': #' + value + '\r\n';
+    for (const [user, issues] of Object.entries(inactiveOpens)) {
+      for (const issue of issues) {
+        inactiveOpen += ` - ${user}: #${issue}\r\n`;
+      }
     }
     return inactiveOpen;
+  }
+};
+
+const parseNonTeamOpen = (nonTeamOpens) => {
+  if (Object.keys(nonTeamOpens).length === 0) {
+    return '';
+  } else {
+    let nonTeamOpen = '\r\n\nNon-team members with open issues:\r\n';
+    for (const [user, issues] of Object.entries(nonTeamOpens)) {
+      for (const issue of issues) {
+        nonTeamOpen += ` - ${user}: #${issue}\r\n`;
+      }
+    }
+    return nonTeamOpen;
   }
 };
 
