@@ -688,7 +688,7 @@ git push --set-upstream origin update-give-link-2093
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 
-#### **2.7.e Working on an issue (5):Alternative methods for incorporating changes from upstream**
+#### **2.7.e Working on an issue (5): Alternative methods for incorporating changes from upstream**
 
 This section shows you alternative methods to sync your fork with the main Hack for LA website repository. The recommended method for syncing your fork is through the GitHub browser as detailed in section [2.7.d](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md#27d-working-on-an-issue-4-pulling-from-upstream-before-you-push)
 
