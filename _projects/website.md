@@ -7,57 +7,47 @@ alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
+    github-handle: 
     role: Agile Coach/Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
       github: 'https://github.com/ExperimentsInHonesty'
     picture: https://avatars.githubusercontent.com/ExperimentsInHonesty
-  - name: Kelly Chuang
-    github-handle: kellyc9
-    role: Product Manager
+  - name: Gilbert Quionnez
+    github-handle: GilbertQ
+    role: Product Owner
     links:
-      slack: https://hackforla.slack.com/team/U06REBB5K4M
-      github: https://github.com/kellyc9
-    picture: https://avatars.githubusercontent.com/kellyc9
-  - name: Will Gillis
-    role: Developer Co-Lead
+      slack: https://hackforla.slack.com/team/U07T35CB9KL
+      github: https://github.com/GilbertQ
+    picture: https://avatars.githubusercontent.com/GilbertQ
+  - name: Essence Goff
+    github-handle: essencegoff
+    role: Project Manager / Product Owner
     links:
-      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
-      github: 'https://github.com/t-will-gillis'
-    picture: https://avatars.githubusercontent.com/t-will-gillis
-  - name: Roslyn Wythe
-    role: Developer Co-Lead
+      slack: https://hackforla.slack.com/team/U07FMKW5EDR
+      github: https://github.com/essencegoff
+    picture: https://avatars.githubusercontent.com/essencegoff
+  - name: Sofiat Ajide
+    github-handle: sofiatajide
+    role: Product Manager - Dashboards
     links:
-      slack: 'https://hackforla.slack.com/team/U046PD8UT55'
-      github: 'https://github.com/roslynwythe'
-    picture: https://avatars.githubusercontent.com/roslynwythe
-  - name: Ren Demeis-Ortiz
-    role: Merge Team
+      slack: https://hackforla.slack.com/team/U07LRE68BHS
+      github: https://github.com/sofiatajide
+    picture: https://avatars.githubusercontent.com/sofiatajide
+  - name: Eleftherios Christou
+    github-handle: Eleftherios01
+    role: Product Manager - Dashboards
     links:
-      slack: https://hackforla.slack.com/team/U059K7A1VFB
-      github: https://github.com/LRenDO
-    picture: https://avatars.githubusercontent.com/LRenDO
-  - name: J Pham
-    github-handle: jphamtv
-    role: Merge Team
+      slack: https://hackforla.slack.com/team/U078K03LP5L
+      github: https://github.com/Eleftherios01
+    picture: https://avatars.githubusercontent.com/Eleftherios01
+  - name: Amen Divine Ikamba
+    github-handle: amen-ikamba
+    role: Product Manager - Dashboards
     links:
-      slack: 'https://hackforla.slack.com/team/U064FRUF893'
-      github: 'https://github.com/jphamtv'
-    picture: https://avatars.githubusercontent.com/jphamtv
-  - name: Nikileshwari Prasadh
-    github-handle: Thinking-Panda
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U04MJA414LU'
-      github: 'https://github.com/Thinking-Panda'
-    picture: https://avatars.githubusercontent.com/Thinking-Panda
-  - name: Danielle Hanson Aras
-    github-handle:
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
-      github: 'https://github.com/daras-cu'
-    picture: https://avatars.githubusercontent.com/daras-cu
+      slack: https://hackforla.slack.com/team/U07T35HCHAN
+      github: https://github.com/amen-ikamba
+    picture: https://avatars.githubusercontent.com/amen-ikamba
   - name: Samhitha Kamma
     github-handle: Samhitha444
     role: Product Manager
@@ -65,6 +55,69 @@ leadership:
       slack: https://hackforla.slack.com/team/U07FF529MU6
       github: https://github.com/Samhitha444
     picture: https://avatars.githubusercontent.com/Samhitha444
+  - name: Priyanka Jujjavarapu
+    github-handle: priyanka02art
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07TRV9HRFS
+      github: https://github.com/priyanka02art
+    picture: https://avatars.githubusercontent.com/priyanka02art
+  - name: Phalguni Kambhalur
+    github-handle: kphalguni
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07USBKRTFX
+      github: https://github.com/kphalguni
+    picture: https://avatars.githubusercontent.com/kphalguni
+  - name: Will Gillis
+    github-handle:
+    role: Developer Co-Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U043LGHSZFT'
+      github: 'https://github.com/t-will-gillis'
+    picture: https://avatars.githubusercontent.com/t-will-gillis
+  - name: Danielle Hanson Aras
+    github-handle: daras-cu
+    role: Developer Co-Lead
+    links:
+      slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
+      github: 'https://github.com/daras-cu'
+    picture: https://avatars.githubusercontent.com/daras-cu
+  - name: Ren Demeis-Ortiz
+    github-handle:
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U059K7A1VFB
+      github: https://github.com/LRenDO
+    picture: https://avatars.githubusercontent.com/LRenDO
+  - name: Mugdh Chauhan
+    github-handle: mugdhchauhan
+    role: Merge Team
+    links:
+      slack: 'https://hackforla.slack.com/team/U08041Y2E72'
+      github: 'https://github.com/mugdhchauhan'
+    picture: https://avatars.githubusercontent.com/mugdhchauhan
+  - name: Santiago Vidal
+    github-handle: santiseccovidal
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U06MQ37T90E
+      github: https://github.com/santiseccovidal
+    picture: https://avatars.githubusercontent.com/santiseccovidal
+  - name: Donovan Vernon
+    github-handle: dvernon5
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U081EQ0JZJS
+      github: https://github.com/dvernon5
+    picture: https://avatars.githubusercontent.com/dvernon5
+  - name: Ryan Keller
+    github-handle: ryanfkeller
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U08SCL4KK3N
+      github: https://github.com/ryanfkeller
+    picture: https://avatars.githubusercontent.com/ryanfkeller
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'

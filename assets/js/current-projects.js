@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(){
             // for issue #4648, needed to add languages inside the technologies filter-item group,  might be able to optimize for future iterations
 
             // This ensures that the /projects-check page does not change
-            if ((filterName === 'languages' || filterName === 'tools') && window.location.pathname === '/projects/') {
+            if ((filterName === 'languages' || filterName === 'tools') && (window.location.pathname === '/projects/' || window.location.pathname === "/")) {
               // remove the view all button
               document.querySelector(`#technologies`).lastElementChild.remove()
               // insert data inside at the end of the category
@@ -94,12 +94,24 @@ document.addEventListener("DOMContentLoaded",function(){
         })
         document.querySelector(".cancel-mobile-filters").addEventListener("click", cancelMobileFiltersEventHandler)
         document.addEventListener('keydown', tabFocusedKeyDownHandler);
+
+        // Add onclick event handlers to open search tips modal if it is clicked.
+        attachEventListenerOpenModal();
+
+        // Add onclick event handlers to close search tips modal if it is open.
+        attachEventListenerCloseModal();
         
-        //events related to search bar
-        document.querySelector("#search").addEventListener("focus",searchOnFocusEventHandler);
-        document.querySelector("#search").addEventListener("keydown", searchEnterKeyHandler);
-        document.querySelector(".search-glass").addEventListener("click",searchEventHandler);
-        document.querySelector(".search-x").addEventListener("click",searchCloseEventHandler);
+        // events related to search bar (adjusted selectors only)
+        const inputEl = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+        const glassEl = document.querySelector('.search-bar-desktop .search-glass') || document.querySelector('.search-bar-mobile .search-glass') || document.querySelector('.search-glass');
+        const closeEl = document.querySelector('.search-bar-desktop .search-x') || document.querySelector('.search-bar-mobile .search-x') || document.querySelector('.search-x');
+
+        if (inputEl) {
+            inputEl.addEventListener('focus', searchOnFocusEventHandler);
+            inputEl.addEventListener('keydown', searchEnterKeyHandler);
+        }
+        if (glassEl) { glassEl.addEventListener('click', searchEventHandler); }
+        if (closeEl) { closeEl.addEventListener('click', searchCloseEventHandler); }
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -332,7 +344,8 @@ function cancelMobileFiltersEventHandler(e) {
 //search bar event handler
 function searchEventHandler(e){
     e.preventDefault();
-    let searchTerm=document.querySelector("#search").value;
+    const input = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+    let searchTerm = input ? input.value : '';
     let tokenObj={};
     tokenObj['Search']=searchTerm;
      
@@ -356,12 +369,14 @@ function searchEnterKeyHandler(e){
 }
 
 function searchOnFocusEventHandler(){
-    document.querySelector(".search-x").style.display='block';
+    const xBtn = document.querySelector('.search-bar-desktop .search-x') || document.querySelector('.search-bar-mobile .search-x') || document.querySelector('.search-x');
+    if (xBtn) xBtn.style.display='block';
 }
 
 function searchCloseEventHandler(e){
     e.preventDefault();
-    document.querySelector("#search").value="";
+    const input = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
+    if (input) input.value="";
 }
 
 /**
@@ -400,7 +415,7 @@ function updateUI(){
 
     // Add onclick event handlers to filter tag buttons and a clear all button if filter-tag-button exists in the dom
     attachEventListenerToFilterTags()
-    
+
 }
 
     /**
@@ -472,13 +487,24 @@ function updateCategoryCounter(filterParams){
           }
         }
 
-        for(const [key,value] of container){
-          // for issue #4648, added this to show the sum of selected filters for both technology and language filters
-          let totalValue = 0
-          for (const innerValue of container){
-            totalValue += innerValue[1]
-          }
-          document.querySelector(`#${key}`).innerHTML = ` (${totalValue})`;
+        // Calculate total selected filters across all categories (excluding Search)
+        let totalSelected = container.reduce((sum, [,val]) => sum + val, 0);
+
+        // Update each category counter – preserve existing behaviour of showing combined totals
+        for(const [key] of container){
+          document.querySelector(`#${key}`) && (document.querySelector(`#${key}`).innerHTML = ` (${totalSelected})`);
+        }
+
+        // Update the new overall filters counter in the title
+        const totalCounterSpan = document.querySelector('#counter_total');
+        if (totalCounterSpan){
+          totalCounterSpan.innerHTML = totalSelected > 0 ? ` (${totalSelected})` : '';
+        }
+
+        // Show/hide Clear All link
+        const clearAllLink = document.getElementById('clear-all-filters');
+        if(clearAllLink){
+            clearAllLink.style.display = totalSelected > 0 ? 'inline' : 'none';
         }
     
 }
@@ -615,13 +641,14 @@ function attachEventListenerToFilterTags(){
             button.addEventListener('click',filterTagOnClickEventHandler)
         })
 
-        // If there exist a filter-tag button on the page add a clear all button after the last filter tag button
-        if(!document.querySelector('.clear-filter-tags')){
-            document.querySelector('.filter-tag:last-of-type').insertAdjacentHTML('afterend',`<a class="clear-filter-tags" tabindex="0" aria-label="Clear All Filters" style="white-space: nowrap;">Clear All</a>`);
+        // No longer inserting bottom Clear All link; top link exists.
+    }
 
-            //Attach an event handler to the clear all button
-            document.querySelector('.clear-filter-tags').addEventListener('click',clearAllEventHandler);
-        }
+    // Attach event to top Clear All link once (after DOM ready)
+    const clearAllTop = document.getElementById('clear-all-filters');
+    if(clearAllTop && !clearAllTop.dataset.listenerAdded){
+        clearAllTop.addEventListener('click', function(e){ e.preventDefault(); clearAllEventHandler(); });
+        clearAllTop.dataset.listenerAdded = 'true';
     }
 }
 
@@ -641,12 +668,16 @@ function noUrlParameterUpdate(){
 
     // Clear all number of checkbox counters
     document.querySelectorAll('.number-of-checked-boxes').forEach(checkBoxCounter => {checkBoxCounter.innerHTML = ''} );
+    const totalCounterSpan = document.querySelector('#counter_total');
+    if (totalCounterSpan) { totalCounterSpan.innerHTML = ''; }
 
-    // Clear all filter tags
-    document.querySelectorAll('.filter-tag') && document.querySelectorAll('.filter-tag').forEach(filterTag => filterTag.remove() );
+    const clearAllLink = document.getElementById('clear-all-filters');
+    if(clearAllLink){ clearAllLink.style.display='none'; }
 
-    // Remove Clear All Button
-    document.querySelector('.clear-filter-tags') && document.querySelector('.clear-filter-tags').remove();
+    // Remove any legacy bottom Clear All links if present
+    document.querySelectorAll('.clear-filter-tags').forEach(el => {
+        if(el.id !== 'clear-all-filters') el.remove();
+    });
     return;
 }
 
@@ -859,4 +890,43 @@ function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
     }
+}
+
+function attachEventListenerOpenModal() {
+    document.getElementById('search-tip-link').addEventListener('click', function (event) {
+        event.preventDefault();
+        updateSearchTipsModal();
+    });
+}
+
+function updateSearchTipsModal() {
+    // Update the modal content with data
+    document.getElementById('overlay-name').innerHTML = "Search Tips";
+    document.getElementById('table-operator-1').innerHTML = "<strong>AND</strong>";
+    document.getElementById('table-meaning-1').innerHTML = "Limit results";
+    document.getElementById('table-example-1').innerHTML = "<em>React and Node (Search for project cards that contain both React and Node.)</em>";
+    document.getElementById('table-operator-2').innerHTML = "<strong>OR</strong>";
+    document.getElementById('table-meaning-2').innerHTML = "One term OR another";
+    document.getElementById('table-example-2').innerHTML = "<em>Python or Javascript (Search for project cards that contains Python or JavaScript.)</em>";
+    document.getElementById('table-operator-3').innerHTML = "<strong>-</strong>";
+    document.getElementById('table-meaning-3').innerHTML = "Exclude a term from the search";
+    document.getElementById('table-example-3').innerHTML = "<em>React -Django (Limits project card results to only those with React and not the term Django.)</em>";
+    
+    // Show the modal
+    document.getElementById('search-tip-modal').style.display = 'flex';
+}
+
+function attachEventListenerCloseModal() {
+    // Close the modal
+    document.querySelector('.overlay-close-icon').addEventListener('click', function() {
+        document.getElementById('search-tip-modal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        const modal = this.document.getElementById('search-tip-modal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }

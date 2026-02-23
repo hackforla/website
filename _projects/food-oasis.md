@@ -135,4 +135,5 @@ status: Active
 iframe:
   available: true
   src: "https://la.foodoasis.net/widget"
+  allow: "geolocation"
 ---

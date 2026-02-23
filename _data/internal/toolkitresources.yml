@@ -10,8 +10,8 @@
   svg: svg/icon-figma.svg
   resource-url: 'https://www.figma.com/'
 
-- title: Github
-  description: We use github for our project management and to streamline development.
+- title: GitHub
+  description: We use GitHub for our project management and to streamline development.
   card-type: 
   display: true
   practice-area: Development

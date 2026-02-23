@@ -280,6 +280,17 @@
     display: flex;
 }
 
+.github-icon{
+    width: 32px;
+    height: 32px;
+    max-width: 100%;
+}
+
+.github-icon svg{
+    width: 100%;
+    height: 100%;
+}
+
 @media #{$bp-below-desktop} {
     .wins-card {
         position: relative;
@@ -431,8 +442,16 @@
 			}
 		}
 	}
-
-
+    #overlay-icons {
+        .linkedin-icon, .github-icon {
+            height: 32px;
+            width: 32px;
+        }
+        .linkedin-icon > svg, .github-icon > svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
 //mobile see more

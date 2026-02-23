@@ -25,6 +25,7 @@ leadership:
       github: 'https://github.com/ambersu123'
     picture: https://avatars.githubusercontent.com/ambersu123
   - name: Mary Kate Leibman
+    github-handle:
     role: UI/UX Designer/Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U031V93CYB0'

@@ -13,6 +13,7 @@ leadership:
       github: 'https://github.com/myastark'
     picture: https://avatars.githubusercontent.com/myastark
   - name: Jacquelin Coronilla
+    github-handle:
     role: Project Manager
     links:
       slack: 'https://hackforla.slack.com/team/UNTQA141G'

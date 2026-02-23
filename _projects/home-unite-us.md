@@ -6,20 +6,48 @@ image: /assets/images/projects/home-heart.png
 alt: 'Home Unite Us'
 image-hero: /assets/images/projects/home-unite-us-hero.png
 leadership:
+  - name: Jazmyne Newman
+    github-handle: jazmynn123
+    role: User Research
+    links:
+      slack: https://hackforla.slack.com/team/U07HLLXHYS2
+      github: https://github.com/jazmynn123
+    picture: https://avatars.githubusercontent.com/jazmynn123
+  - name: Jasmine Guraya
+    github-handle: jasmineg95
+    role: Product Manager (Lead Persona)
+    links:
+      slack: https://hackforla.slack.com/team/U07FMLJGUFM
+      github: https://github.com/jasmineg95
+    picture: https://avatars.githubusercontent.com/jasmineg95
+  - name: Ariel Lasry
+    github-handle: lasryariel
+    role: Product Manager (Lead Persona)
+    links:
+      slack: https://hackforla.slack.com/team/U06MG4S8D2B
+      github: https://github.com/lasryariel
+    picture: https://avatars.githubusercontent.com/lasryariel
+  - name: Gabriella Dominic
+    github-handle: gabcdominic
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U07FF4FCTUN
+      github: https://github.com/gabcdominic
+    picture: https://avatars.githubusercontent.com/gabcdominic
+  - name: Nicci Van
+    github-handle: nlvan
+    role: Lead Designer / User Research
+    links:
+      slack: https://hackforla.slack.com/team/U07FML1PXJP
+      github: https://github.com/nlvan
+    picture: https://avatars.githubusercontent.com/nlvan
   - name: Tyler Thome
     github-handle: 
-    role: HUU Tech Lead
+    role: Lead Developer
     links:
       slack: "https://hackforla.slack.com/team/ULN1M6UAH"
       github: "https://github.com/tylerthome"
     picture: https://avatars.githubusercontent.com/tylerthome
-  - name: Jed Stewart
-    github-handle: 
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04A3J6V0HY"
-      github: "https://github.com/jed-stewart"
-    picture: https://avatars.githubusercontent.com/jed-stewart
   - name: Mira Kinebuchi
     github-handle:
     role: Developer
@@ -27,13 +55,6 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0411CAL13N"
       github: "https://github.com/mira-kine"
     picture: https://avatars.githubusercontent.com/mira-kine
-  - name: Stephen Barkley-Yeung
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U041403GHEC"
-      github: "https://github.com/stevbark"
-    picture: https://avatars.githubusercontent.com/stevbark
   - name: Erik Guntner
     github-handle:
     role: Front End Developer
@@ -41,6 +62,27 @@ leadership:
       slack: "https://hackforla.slack.com/team/U0103MJB0AZ"
       github: "https://github.com/erikguntner"
     picture: https://avatars.githubusercontent.com/erikguntner
+  - name: Amy Li
+    github-handle: amydli
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07FQ7NQUMA
+      github: https://github.com/amydli
+    picture: https://avatars.githubusercontent.com/amydli
+  - name: Nihan Durmaz
+    github-handle: nihandurmaz
+    role: UI/UX Designer
+    links:
+      slack: https://hackforla.slack.com/team/U07GAJ3BLGY
+      github: https://github.com/nihandurmaz
+    picture: https://avatars.githubusercontent.com/nihandurmaz
+  - name: Jon Ilaw
+    github-handle: ilawjon
+    role: UI/UX Designer (Persona Lead)
+    links:
+      slack: https://hackforla.slack.com/team/U07G0DPTPSM
+      github: https://github.com/ilawjon
+    picture: https://avatars.githubusercontent.com/ilawjon
   - name: Sanya Nijhawan
     github-handle: sanya301
     role: Advisory
@@ -48,69 +90,27 @@ leadership:
       slack: https://hackforla.slack.com/team/U031FLYS561
       github: https://github.com/sanya301
     picture: https://avatars.githubusercontent.com/sanya301
-  - name: Raji Pradheap
-    github-handle:
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U02R9MKA6KH"
-      github: "https://github.com/rpradheap"
-    picture: https://avatars.githubusercontent.com/rpradheap
-  - name: Bryce Lednar
-    github-handle:
-    role: Product Manager
-    links:
-      slack: "https://hackforla.slack.com/team/U049TSDG2SX"
-      github: "https://github.com/brycelednar"
-    picture: https://avatars.githubusercontent.com/brycelednar
-  - name: Eduardo De La Rosa
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U0430G2T4AC"
-      github: "https://github.com/edela0015"
-    picture: https://avatars.githubusercontent.com/edela0015
-  - name: Flora Osmond
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U047ZT4GP5E"
-      github: "https://github.com/itzflowa"
-    picture: https://avatars.githubusercontent.com/itzflowa
-  - name: Rachel Bracker
-    github-handle: 
-    role: Design Lead
-    links:
-      slack: "https://hackforla.slack.com/team/U02JQLQ6YGY"
-      github: "https://github.com/rpbracker"
-    picture: https://avatars.githubusercontent.com/rpbracker
-  - name: Samuel Kowitch
-    github-handle: 
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04GYSFB98X"
-      github: "https://github.com/KowDesign"
-    picture: https://avatars.githubusercontent.com/KowDesign
-  - name: Muyin Zheng
-    github-handle:
-    role: UX/UI Designer
-    links:
-      slack: "https://hackforla.slack.com/team/U04HAEEKT29"
-      github: "https://github.com/IndigoYinZ"
-    picture: https://avatars.githubusercontent.com/IndigoYinZ
-  - name: Emily Eldar
-    github-handle:
-    role: Developer
-    links:
-      slack: "https://hackforla.slack.com/team/U04BEDM1B2L"
-      github: "https://github.com/emeldar"
-    picture: https://avatars.githubusercontent.com/emeldar
   - name: Lola Sarumi
     github-handle: lola3736
     role: Lead Product / Project
     links:
       slack: https://hackforla.slack.com/team/U06TAL88YUV
       github: https://github.com/lola3736
-    picture: https://avatars.githubusercontent.com/lola3736    
+    picture: https://avatars.githubusercontent.com/lola3736
+  - name: Paul Espinosa
+    github-handle: paulespinosa
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U058S2D5C95
+      github: https://github.com/paulespinosa
+    picture: https://avatars.githubusercontent.com/paulespinosa
+  - name: John Wroge
+    github-handle: johnwroge
+    role: Developer
+    links:
+      slack: https://hackforla.slack.com/team/U05Q7V3KGCU
+      github: https://github.com/johnwroge
+    picture: https://avatars.githubusercontent.com/johnwroge
 links:
   - name: GitHub
     url: "https://github.com/hackforla/homeuniteus"
