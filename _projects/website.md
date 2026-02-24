@@ -118,6 +118,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U08SCL4KK3N
       github: https://github.com/ryanfkeller
     picture: https://avatars.githubusercontent.com/ryanfkeller
+  - name: Kerstin Carson
+    github-handle: kdaca19xx
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U08G2GETURJ
+      github: https://github.com/kdaca19xx
+    picture: https://avatars.githubusercontent.com/kdaca19xx
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
