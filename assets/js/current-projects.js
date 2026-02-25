@@ -534,7 +534,7 @@ function updateProjectCardDisplayState(filterParams){
             if(key !=='Search'){
                 let inUrl = value;
                 let inCard = projectCardObj[key];
-                if( ( inCard.filter(x => inUrl.includes(x)) ).length == 0 ){
+                if(!inUrl.every(x => inCard.includes(x))){
                     cardsToHideContainer.push([key,projectCard.id]);
                 }
                 else{
@@ -603,7 +603,10 @@ function updateProjectCardDisplayState(filterParams){
                     }                        
                 }       
             }
-            cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
+            if (cardsToHideContainer.length > 0){
+                cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
+                break;
+            }
         }
     });    
 }
