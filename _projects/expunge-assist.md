@@ -13,6 +13,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U06REA9H3FF
       github: https://github.com/mariaweissman
     picture: https://avatars.githubusercontent.com/mariaweissman
+  - name: Farnaz S
+    github-handle: farnazs
+    role: Product Manager
+    links:
+      slack: https://hackforla.slack.com/team/U0924A99HQR
+      github: https://github.com/farnazs
+    picture: https://avatars.githubusercontent.com/farnazs
   - name: Sydney Walcoff
     github-handle: sydneywalcoff
     role: Development, Team Lead
