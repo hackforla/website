@@ -90,13 +90,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U059K7A1VFB
       github: https://github.com/LRenDO
     picture: https://avatars.githubusercontent.com/LRenDO
-  - name: Mugdh Chauhan
-    github-handle: mugdhchauhan
-    role: Merge Team
-    links:
-      slack: 'https://hackforla.slack.com/team/U08041Y2E72'
-      github: 'https://github.com/mugdhchauhan'
-    picture: https://avatars.githubusercontent.com/mugdhchauhan
   - name: Santiago Vidal
     github-handle: santiseccovidal
     role: Merge Team
