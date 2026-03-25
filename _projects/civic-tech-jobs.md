@@ -97,6 +97,7 @@ technologies:
   - PostgreSQL
   - Django
   - Figma
+  - MKDocs
 tools:
 location:
   - Remote
