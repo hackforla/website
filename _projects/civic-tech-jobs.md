@@ -97,6 +97,7 @@ technologies:
   - PostgreSQL
   - Django
   - Figma
+  - AWS
 tools:
 location:
   - Remote
