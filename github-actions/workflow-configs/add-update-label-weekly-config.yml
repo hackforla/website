@@ -124,6 +124,7 @@ projectBoard:
 # if needed, this value can be updated to ensure bot comments are minimized. 
 
 bots:
+  - "hfla-graphql-app[bot]"
   - "github-actions[bot]"
   - "HackforLABot"
 
