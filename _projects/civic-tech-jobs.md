@@ -98,6 +98,7 @@ technologies:
   - Django
   - Figma
   - AWS
+  - MKDocs
 tools:
 location:
   - Remote
