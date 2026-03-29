@@ -7,6 +7,10 @@ on:
   label:
     types: [edited, created, deleted]
 
+# Set default permissions
+permissions:
+    contents: read
+
 jobs:
   # Check if the deleted label was in use. If so, flag the deletion and affected issues
   Flag-Issues-Unlabeled-After-Deletion:
@@ -42,7 +46,7 @@ jobs:
         env:
           label_edits: ${{ steps.update-label-directory.outputs.result }}
         run: |
-          curl -X POST "https://script.google.com/macros/s/AKfycbw_kmDVqQW5J8wXWl1BXvJzALU6k0XYpAc5XJ7inQSyq8_opUuNg4ToBzh3Gf4M5jhw/exec" \
+          curl -X POST "${{ secrets.GOOGLE_APPS_UPDATE_LABEL_DIRECTORY_URL }}" \
           -H "Content-Type: application/json" \
           -d "$label_edits"
 
