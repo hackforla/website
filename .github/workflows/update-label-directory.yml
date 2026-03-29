@@ -7,7 +7,6 @@ on:
   label:
     types: [edited, created, deleted]
 
-# Set default permissions
 permissions:
     contents: read
 
@@ -39,9 +38,9 @@ jobs:
             const labelPacket = script({g: github, c: context})
             return labelPacket
 
-      # NOTE: the the URL below matches the **current deployment URL** of the Apps Script
-      # associated with the 'Source of Truth'Label spreadsheet and maintained by
-      # `hackforla-bot@hackforla.org`. (If something is broken, check this link first)
+      # NOTE: the secret below references the **current deployment URL** of the Google
+      # Apps Script associated with the 'Source of Truth'Label spreadsheet and maintained
+      # by `hackforla-bot@hackforla.org`. (If something is broken, check this link first)
       - name: Send POST request to Google Apps Script
         env:
           label_edits: ${{ steps.update-label-directory.outputs.result }}
