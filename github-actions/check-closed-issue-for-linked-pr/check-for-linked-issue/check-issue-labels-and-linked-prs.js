@@ -2,9 +2,15 @@ const retrieveLabelDirectory = require('../../utils/retrieve-label-directory');
 
 // Use labelKeys to retrieve current labelNames from directory
 const [
-  nonPrContribution
+  nonPrContribution,
+  complexity0,
+  er,
+  epic
 ] = [
-  'NEW-nonPrContribution'
+  'NEW-nonPrContribution',
+  'complexity0',
+  'er',
+  'epic'
 ].map(retrieveLabelDirectory);
 
 // ==================================================
@@ -15,8 +21,9 @@ const [
  *
  * @param {{github: object, context: object}} actionsGithubScriptArgs - GitHub
  *  objects from actions/github-script
- * @returns {boolean} False if the issue does not have a linked PR, a "non-PR
- *  contribution" label, or an "Ignore..." label.
+ * @returns {boolean} False if the issue does not have a linked PR, one of the following contribution labels: "non-PR
+ *  contribution", "Complexity: Prework", "ER", "epic", or an 
+ * "Ignore..." label.
  */
 async function hasLinkedPrOrExcusableLabel({ github, context }) {
   const repoOwner = context.repo.owner;
@@ -31,10 +38,12 @@ async function hasLinkedPrOrExcusableLabel({ github, context }) {
   // --------------------------------------------------
 
   // Check if the issue has the labels that will avoid re-opening it.
+  const excludedLabels = [nonPrContribution, complexity0, er, epic];
+
   if (
     labels.some(
       (label) =>
-        label === nonPrContribution || label.toLowerCase().includes('ignore')
+        excludedLabels.inlcudes(label) || label.toLowerCase().includes('ignore')
     )
   ) {
     console.info(consoleMessageAllowClose);
