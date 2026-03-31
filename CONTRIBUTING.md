@@ -88,9 +88,13 @@ The following is a set of guidelines for contributing to the website repository,
 ## **Part 1: Setting up the development environment**
 ### **1.1 Dev setup (1): Join the repository team**
 
-In the `hfla-site` Slack channel, send an introductory message with your GitHub handle/username asking to be added to the Hack for LA website GitHub repository (this repository).
+To be added to the Hack for LA website GitHub repository (this repository), you must complete the onboarding form.
 
-**NOTE:** Once you have accepted the GitHub invite (comes via email or in your GitHub notifications), **please do the following**:
+<ins>If you did not complete the onboarding form,</ins> attend the next onboarding session (about 45 minutes in) to finish the process so you can receive an invite to the repository.
+
+<ins>If you are sure you completed the onboarding form, but you still have not received an invite to the repository,</ins> go to the `hfla-site` Slack channel for help. Send an introductory message with your GitHub handle/username asking to be added.
+
+Once you have been added to this repository, please do the following:</br>
 
 1. Make your own Hack for LA GitHub organization membership public by following this [guide](https://help.github.com/en/articles/publicizing-or-hiding-organization-membership#changing-the-visibility-of-your-organization-membership).
 2. Set up two-factor authentication on your account by following this [guide](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication).
