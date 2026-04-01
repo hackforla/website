@@ -43,7 +43,7 @@ async function hasLinkedPrOrExcusableLabel({ github, context }) {
   if (
     labels.some(
       (label) =>
-        excludedLabels.inlcudes(label) || label.toLowerCase().includes('ignore')
+        excludedLabels.includes(label) || label.toLowerCase().includes('ignore')
     )
   ) {
     console.info(consoleMessageAllowClose);
