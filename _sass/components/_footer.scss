@@ -42,4 +42,25 @@
       margin: 0;
     }
   }
+
+  .footer-legal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    hr {
+      width: 100%;
+      margin: 0;
+      border: 0;
+      border-top: 1px solid rgba($color-white, 0.3);
+    }
+
+    p {
+      margin-top: 8px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
 }
