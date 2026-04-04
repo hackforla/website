@@ -5,6 +5,7 @@
   footer: true
 
 - name: X
+  aria_label: X (formerly Twitter)
   link: https://x.com/HackForLA
   icon: /svg/icon-x.svg
   header: false
