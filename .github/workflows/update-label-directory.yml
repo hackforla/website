@@ -30,7 +30,7 @@ jobs:
 
       - name: Update label directory
         id: update-label-directory
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |

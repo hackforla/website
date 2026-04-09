@@ -28,7 +28,7 @@ jobs:
 
     - name: Gather Event Details
       id: gather-event-details
-      uses: actions/github-script@v8
+      uses: actions/github-script@v9
       with:
         # github-token defaults to `github.token` for 'pull_request_review'
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN != '' && secrets.HACKFORLA_GRAPHQL_TOKEN || github.token }}
@@ -40,7 +40,7 @@ jobs:
     - if: ${{ steps.gather-event-details.outputs.result  != '[]' }}
       name: Post to Skills Issue
       id: post-to-skills-issue
-      uses: actions/github-script@v8
+      uses: actions/github-script@v9
       with:
         github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN != '' && secrets.HACKFORLA_GRAPHQL_TOKEN || github.token }}
         script: |

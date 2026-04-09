@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Check Issue Labels And Linked PRs
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         id: check-issue-labels-and-linked-prs
         with:
           script: |
@@ -33,7 +33,7 @@ jobs:
 
       - name: Reopen Issue
         if: steps.check-issue-labels-and-linked-prs.outputs.isValidClose == 'false'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         id: reopen-issue
         with:
           github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
