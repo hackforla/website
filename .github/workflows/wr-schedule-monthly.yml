@@ -5,6 +5,9 @@ on:
     workflows: ['Schedule Monthly']
     types: [completed]
 
+permissions:
+    contents: read
+
 jobs:
   Create-New-Issue:
     runs-on: ubuntu-latest
