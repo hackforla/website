@@ -5,6 +5,9 @@ on:
   schedule:
     - cron:  0 11 1 2-7,9-12 *
 
+permissions:
+  contents: read
+
 jobs:
   Trim_Contributors:
     runs-on: ubuntu-latest
