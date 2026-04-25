@@ -118,6 +118,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U08G2GETURJ
       github: https://github.com/kdaca19xx
     picture: https://avatars.githubusercontent.com/kdaca19xx
+  - name: Xavier Neal-Carson
+    github-handle: xnealcarson
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U08GNFS09SL
+      github: https://github.com/xnealcarson
+    picture: https://avatars.githubusercontent.com/xnealcarson
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
