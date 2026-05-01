@@ -48,13 +48,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07T35HCHAN
       github: https://github.com/amen-ikamba
     picture: https://avatars.githubusercontent.com/amen-ikamba
-  - name: Samhitha Kamma
-    github-handle: Samhitha444
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07FF529MU6
-      github: https://github.com/Samhitha444
-    picture: https://avatars.githubusercontent.com/Samhitha444
   - name: Priyanka Jujjavarapu
     github-handle: priyanka02art
     role: Product Manager
