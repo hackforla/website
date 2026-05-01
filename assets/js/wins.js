@@ -8,8 +8,10 @@
   const email = "Email Address"
   const name = "Full name"
   const linkedin_url = "Linkedin URL (optional)"
+  const linkedin_profile = "LinkedIn Name"
   const linkedin_permission = "Could we use your Linkedin profile picture next to your story?"
   const github_url = "Github URL (optional)"
+  const github_handle = "GitHub Handle"
   const github_permission = "Could we use your Github profile picture next to your story?"
   const team = "Select the team(s) you're on"
   const role = "Select your role(s) on the team"
@@ -42,6 +44,16 @@
     {% assign localData = site.data.external._wins-data %}
     // Escapes JSON for injections. See: #2134. If this is no longer the case, perform necessary edits, and remove this comment
     const cardData = JSON.parse(decodeURIComponent("{{ localData | jsonify | uri_escape }}"));
+	
+	  cardData.forEach(card => {
+		  if (card['Linkedin URL (optional)'].length === 0 && card['LinkedIn Name'].length > 0) {
+			  card['Linkedin URL (optional)'] = `https://www.linkedin.com/in/${card['LinkedIn Name']}`;
+		  }
+		  if (card['Github URL (optional)'].length === 0 && card['GitHub Handle'].length > 0) {
+			  card['Github URL (optional)'] = `https://github.com/${card['GitHub Handle']}`;
+		  }
+	  })
+	
     window.localStorage.setItem('data', JSON.stringify(cardData));
     makeCards(cardData);
     ifPageEmpty();

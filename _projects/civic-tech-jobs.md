@@ -69,13 +69,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U061GQQ56Q4
       github: https://github.com/kevin31yu
     picture: https://avatars.githubusercontent.com/kevin31yu
-  - name: Terence Lo
-    github-handle: LoTerence
-    role: Developer - Backend
-    links:
-      slack: https://hackforla.slack.com/team/U078NLYHHL5
-      github: https://github.com/LoTerence
-    picture: https://avatars.githubusercontent.com/LoTerence
   - name: Gowthami Cherukuri
     github-handle: GowthamiCherukuri
     role: Developer

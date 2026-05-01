@@ -26,7 +26,7 @@ jobs:
       # Get the issues that had the label prior to the label being deleted
       - name: Get recently unlabeled issues
         id: get-unlabeled-issues
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.HACKFORLA_GRAPHQL_TOKEN }}
           script: |
@@ -38,7 +38,7 @@ jobs:
       - name: Create notification issue
         if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
         id: create-notification-issue
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with: 
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: | 
@@ -56,7 +56,7 @@ jobs:
       - name: Post to agenda
         if: ${{ steps.get-unlabeled-issues.outputs.result != '[]' }}
         id: post-to-agenda
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |

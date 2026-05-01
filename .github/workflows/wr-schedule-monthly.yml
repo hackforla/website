@@ -21,7 +21,7 @@ jobs:
       # Creates a new issue in 'hackforla/website' repo with the saved lists
       - name: Create new issue
         id: create-new-issue
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.HACKFORLA_BOT_PA_TOKEN }}
           script: |
@@ -35,7 +35,33 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       
-      # Automatically close the issue that was just created
+      - name: Get owner url
+        id: get-owner-url
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const ownerURL = context.payload.repository.html_url;
+            console.log("Owner url: " + ownerURL);
+            return ownerURL;
+
+      # Then retrieve the latest issue created in the repo (i.e. by 'Schedule Monthly')
+      - name: Get issue number
+        id: get-issue-number
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const newIssue = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state:"all",
+              per_page: 1,
+              page: 1,
+            });
+            const newIssueNumber = newIssue['data'][0]['number'];
+            console.log("Latest issue number: " + newIssueNumber);
+            return newIssueNumber;
+
+      # Automatically close this last issue- that is, the issue just created by 'Schedule Monthly' 
       - name: Auto close issue
         run: gh issue close "${{ needs.Create-New-Issue.outputs.issue_url }}"
         env:
