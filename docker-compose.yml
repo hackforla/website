@@ -1,11 +1,10 @@
-version: "3"
 services:
   hfla_site:
     image: hackforlaops/ghpages:latest
     container_name: hfla_site
     command: >
       sh -c "jekyll clean &&
-             jekyll serve --force_polling --livereload --config _config.yml,_config.docker.yml -I"
+            jekyll serve --force_polling --livereload --config _config.yml,_config.docker.yml -I"
     environment:
       - JEKYLL_ENV=docker
     ports:
@@ -13,3 +12,24 @@ services:
       - 35729:35729
     volumes:
       - .:/srv/jekyll
+
+  hfla_e2e:
+    image: mcr.microsoft.com/playwright:v1.59.1-jammy
+    container_name: hfla_e2e
+    profiles:
+      - e2e
+    volumes:
+      - .:/website
+    working_dir: /website
+    depends_on:
+      - hfla_site
+    command: >
+      sh -c "echo 'Waiting for Jekyll...' &&
+             while ! curl -sf http://hfla_site:4000 > /dev/null 2>&1; do
+               sleep 3;
+             done &&
+             echo 'Jekyll ready' &&
+             npm install &&
+             npx playwright test --config=tests/e2e/playwright.config.js"
+
+      
