@@ -26,3 +26,5 @@ models.json
 
 # Ignore clasp config file
 .clasp.json
+
+tests/e2e/test-results/

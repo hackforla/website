@@ -1,0 +1,14 @@
+name: Run Pull Request CI Tests
+on:
+  pull_request:
+    branches:
+      - 'gh-pages'
+jobs:
+  Run-Pull-Request-CI-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run E2E tests
+        run: docker compose --profile e2e up --exit-code-from hfla_e2e
