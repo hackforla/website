@@ -83,13 +83,6 @@ leadership:
       slack: 'https://hackforla.slack.com/team/U076DT96PUJ'
       github: 'https://github.com/daras-cu'
     picture: https://avatars.githubusercontent.com/daras-cu
-  - name: Ren Demeis-Ortiz
-    github-handle:
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U059K7A1VFB
-      github: https://github.com/LRenDO
-    picture: https://avatars.githubusercontent.com/LRenDO
   - name: Santiago Vidal
     github-handle: santiseccovidal
     role: Merge Team
