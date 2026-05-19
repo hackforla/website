@@ -18,7 +18,7 @@ We need to keep project information up to date so that visitors to the website c
 ### Action Items
 - [ ] In your IDE, open the `_projects/[Insert filename].md` file.
 - [ ] Observe the existing syntax of the front matter block [^1] in the file.
-- [  ] Find the `description` variable and change the following:
+- [ ] Find the `description` variable and change the following:
 
 **From:**
 ```
