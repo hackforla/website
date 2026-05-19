@@ -133,7 +133,7 @@ tools:
   - Google Forms
   - Google Mail Merge
   - Google Calendar
-  - Google Data Studio
+  - Looker Studio
 program-area:
   - Workforce Development
 status: Active
