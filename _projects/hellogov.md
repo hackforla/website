@@ -12,6 +12,7 @@ leadership:
       github: 'https://github.com/kate-rose'
     picture: https://avatars.githubusercontent.com/kate-rose
   - name: Sarah Port
+    github-handle: 
     links:
       slack: 'https://hackforla.slack.com/team/U686ZV93P'
       github: 'https://github.com/seport'
