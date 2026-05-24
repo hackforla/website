@@ -116,7 +116,7 @@ tools:
   - Figma
   - Photoshop
   - Sketch
-  - whiteboard / paper & pencil
+  - whiteboard / paper and pencil
   - phone calls
   - paper prototyping
   - Google Forms
