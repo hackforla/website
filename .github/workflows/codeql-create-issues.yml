@@ -5,10 +5,10 @@ name: "CodeQL Create Issues"
 on:  
   workflow_dispatch:
 
-# permissions:
-#     contents: read
-#     security-events: read
-#     issues: read
+permissions:
+    contents: read
+    security-events: read
+    issues: read
 
 jobs:
   codql-scan-job:
