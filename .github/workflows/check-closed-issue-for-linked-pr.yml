@@ -4,6 +4,11 @@ on:
   issues:
     types: [closed]
 
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
 jobs:
   check-for-linked-issue:
     runs-on: ubuntu-latest
