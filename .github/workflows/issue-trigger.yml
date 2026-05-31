@@ -3,6 +3,10 @@ on:
   issues:
     types: [opened, transferred, assigned, labeled, unlabeled]
 
+permissions:
+    contents: read
+    issues: write 
+
 jobs:
   # Adds missing labels to newly-created or transferred issues
   Add-Missing-Labels-To-Issues:
