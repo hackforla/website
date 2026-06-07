@@ -1,32 +1,22 @@
 {
   "removedContributors": [
-    "ijoel",
-    "aadilahmed",
-    "nurbu",
-    "cadenramey",
-    "AnujaSuryawanshi",
-    "kevJ711",
-    "ciddy0",
-    "lastCoyotes",
-    "michael-4",
-    "MohamedTwahir",
-    "Nezzer3",
-    "devhaocui",
-    "izzy-me"
+    "seb-mejia",
+    "DanielTsang26"
   ],
   "notifiedContributors": [
-    "aymeviviana",
-    "seb-mejia",
-    "r-a-q",
+    "DakuwoN",
+    "handshek",
+    "aayush24rai",
+    "bragelbytes",
+    "varyad",
     "Kphalguni",
-    "DanielTsang26",
-    "ibrahimouarrach3-tech"
+    "abinetabate1"
   ],
-  "nonTeamOpenIssue": {
-    "aadilahmed": [
-      8353,
-      4980
+  "nonTeamOpenIssue": {},
+  "inactiveOpenIssue": {
+    "Kphalguni": [
+      7460,
+      7539
     ]
-  },
-  "inactiveOpenIssue": {}
+  }
 }

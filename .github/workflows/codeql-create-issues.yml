@@ -5,6 +5,12 @@ name: "CodeQL Create Issues"
 on:  
   workflow_dispatch:
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+  issues: read
+
 jobs:
   codql-scan-job:
     uses: ./.github/workflows/codeql-scan-job.yml

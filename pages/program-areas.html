@@ -23,7 +23,9 @@ permalink: /program-areas
         <img class="page-card-image" src="{{ program_areas.image }}" alt="">
       </div>
       <div class="page-card-content">
-          <h2 class="title4">{{program_areas.name}}</h2>
+          <h2 class="title4">
+            <a href="{{program_areas.slug}}">{{program_areas.name}}</a>
+          </h2>
           <p>{{program_areas.description}}</p>
           <p>
               <strong>SDGs: </strong>
