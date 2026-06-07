@@ -1,7 +1,7 @@
 ---
 identification: '376872876'
 title: Tech Work Experience
-description: The Tech Work Experience project is a structured summer internship program for college and high school students to work on open source projects in the fields of software, product development, project management, and UI/UX design at LA’s fastest growing Civic Tech non-profit organization in order to gain confidence, competence and deliverables to support their future career and personal journeys.
+description: The Tech Work Experience project is a structured summer internship program for college and high school students to work on open source projects in the fields of software, product development, project management, and UI/UX design at LA’s fastest growing Civic Tech non-profit organization in order to gain confidence, competence, and deliverables to support their future career and personal journeys.
 image: /assets/images/projects/tech-work-experience.png
 alt: 'Tech Work Experience'
 image-hero: /assets/images/projects/tech-work-experience-hero.png
