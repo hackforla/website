@@ -4,6 +4,9 @@ on:
     types:
       - closed
 
+permissions:
+  contents: read
+
 jobs:
   Move-Closed-Issues:
     runs-on: ubuntu-latest
