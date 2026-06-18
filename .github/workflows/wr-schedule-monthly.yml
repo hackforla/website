@@ -16,7 +16,7 @@ jobs:
       issue_url: ${{ steps.create-new-issue.outputs.result }}   
     steps:
       - run: echo "The 'Schedule Monthly' workflow succeeded. Continuing."
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # Creates a new issue in 'hackforla/website' repo with the saved lists
       - name: Create new issue
@@ -33,7 +33,7 @@ jobs:
     needs: Create-New-Issue
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - name: Get owner url
         id: get-owner-url

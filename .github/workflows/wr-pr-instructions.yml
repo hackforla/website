@@ -44,7 +44,7 @@ jobs:
             const artifactJSON = JSON.parse(artifact)
             return artifactJSON
       
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       # Create the message to post
       - name: Post Comment
         uses: actions/github-script@v9
