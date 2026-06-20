@@ -139,6 +139,7 @@ technologies:
   - OAuth2
   - MongoDB
   - Nginx
+  - Docker
 location:
   - Remote
 tools:
