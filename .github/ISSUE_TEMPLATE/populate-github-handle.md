@@ -17,7 +17,6 @@ We need to populate the 'github-handle' variable with the correct GitHub usernam
 
 ### Action Items
 - [ ] Open the file `_projects/[PROJECT FILE]` in the IDE [^1]
-- [ ] Locate the GitHub username for [INSERT MEMBER NAME] in their existing `github` variable URL (e.g.,`https://github.com/githubusername`)
 - [ ] Replace:
 ```
 - name: [INSERT MEMBER NAME]
