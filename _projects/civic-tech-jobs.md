@@ -89,11 +89,11 @@ technologies:
   - Docker
   - PostgreSQL
   - Django
-  - Figma
   - AWS
   - MKDocs
   - Vite
 tools:
+  - Figma
 location:
   - Remote
 visible: true
