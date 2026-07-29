@@ -5,6 +5,11 @@ on:
     workflows: ['Set PR Labels']
     types: [completed]
 
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
 jobs:
   on-failure:
     runs-on: ubuntu-latest
