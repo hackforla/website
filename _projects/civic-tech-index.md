@@ -141,6 +141,7 @@ technologies:
   - Code Climate
   - Cypress
   - AWS
+  - Docker
 location:
   # - Downtown LA
   - Remote
