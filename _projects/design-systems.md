@@ -1,7 +1,7 @@
 ---
 identification: '385751884'
 title: Design Systems
-description: 'The Design System initiative seeks  to empower volunteers with the tools, documentation and templates for creating and maintaining a design system for their HfLA projects.  As Hack for LA continues to scale it has become more essential to create consistent documentation and standards for design deliverables. 
+description: 'The Design System initiative seeks to empower volunteers with the tools, documentation, and templates for creating and maintaining a design system for their HfLA projects. As Hack for LA continues to scale it has become more essential to create consistent documentation and standards for design deliverables.
 <br /><br />
 A Design System is a single source of truth for a website’s designers and developers– a collection of reusable components, styles, and code guided by clear standards and documentation. Design systems are now an industry standard used by the website teams of most major companies.'
 # card image should be 600px wide x 400px high
