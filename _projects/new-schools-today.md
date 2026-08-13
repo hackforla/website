@@ -19,6 +19,7 @@ leadership:
       github: 'https://github.com/jbubar'
     picture: https://avatars.githubusercontent.com/jbubar
   - name: Jacob Zwang
+    github-handle: 
     role: UI/UX Lead
     links:
       slack: 'https://hackforla.slack.com/team/USM20BUFP'
