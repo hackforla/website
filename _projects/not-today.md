@@ -7,6 +7,7 @@ alt: 'Not Today - Self-Defense Against Suicidal Thoughts'
 image-hero: /assets/images/projects/not-today-hero.png
 leadership:
   - name: Mya Stark
+    github-handle:
     role: Product Owner & SME
     links:
       slack: 'https://hackforla.slack.com/team/UMC7AJLDV'
