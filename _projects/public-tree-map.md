@@ -21,6 +21,7 @@ leadership:
       github: 'https://github.com/isabelle-wagenvoord'
     picture: https://avatars.githubusercontent.com/isabelle-wagenvoord
   - name: Mark Jackson
+    github-handle:
     role: Backend Developer
     links:
       slack: 'https://hackforla.slack.com/team/UNQTRN0DC'
