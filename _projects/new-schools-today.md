@@ -7,6 +7,7 @@ alt: New Schools Today
 image-hero: /assets/images/projects/new-schools-today-hero.jpg
 leadership:
   - name: Ben Swerdlow
+    github-handle:
     role: Tech Team Lead
     links:
       slack: 'https://hackforla.slack.com/team/UKUHHS94L'
