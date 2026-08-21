@@ -39,6 +39,7 @@ leadership:
       github: 'https://github.com/LAStorm'
     picture: https://avatars.githubusercontent.com/LAStorm
   - name: Tugba Metinyurt
+    github-handle:
     role: Researcher
     links:
       slack: 'https://hackforla.slack.com/team/U02NF293BRQ'
