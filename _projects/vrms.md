@@ -1,7 +1,7 @@
 ---
 identification: '226157870'
 title: VRMS
-description: VRMS is a browser-based software tool created by Hack for LA (HfLA) for volunteer organizations to curate participant journeys and further organizational goals of workforce development and project impact. By collecting and using relevant data, VRMS is able to automate repetitive tasks; match volunteers with projects, relevant training and job opportunities; measure engagement with projects and activities; and surface insights to improve organizational effectiveness and the volunteer experience over time.
+description: VRMS is a browser-based software tool created by Hack for LA (HfLA) for volunteer organizations to curate participant journeys and further organizational goals of workforce development and project impact. By collecting and using relevant data, VRMS is able to automate repetitive tasks; match volunteers with projects, relevant training, and job opportunities; measure engagement with projects and activities; and surface insights to improve organizational effectiveness and the volunteer experience over time.
 image: /assets/images/projects/vrms.png
 alt: 'Volunteer Relationship Management System (VRMS)'
 image-hero: /assets/images/projects/vrms-hero.png
