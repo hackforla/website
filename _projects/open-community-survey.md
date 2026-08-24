@@ -20,6 +20,7 @@ leadership:
       github: 'https://github.com/kalyaniraman'
     picture: https://avatars.githubusercontent.com/kalyaniraman
   - name: Ambareen Sultana
+    github-handle:
     role: Product Manager
     links:
       slack: 'https://hackforla.slack.com/team/U03FQ1BBGP4'
