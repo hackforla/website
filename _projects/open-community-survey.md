@@ -66,7 +66,7 @@ location:
   - Remote
 partner: 'LA Department of Neighborhood Empowerment (DONE), LA Neighborhood Councils (NCs), LA Department of Transportation (LADOT), LA City Planning Department (LACP)'
 tools:
-  - ArcGIS surveys
+  - ArcGIS Survey123
   - Figma
   - Google Docs
   - Zoom
