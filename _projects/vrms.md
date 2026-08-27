@@ -118,7 +118,6 @@ technologies:
   - Redux
   - Jest
   - React Testing Library
-  - MongoDB Atlas
   - Insomnia
   - Postman
 location:
