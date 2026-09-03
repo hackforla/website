@@ -1,0 +1,49 @@
+---
+
+name: Project Profile Move Tool to Technology
+about: This template is for website team only to update a project's TOOL.
+title: 'Update Project Profile: [Insert project''s name] (Move [Insert name] from Tool to Technology )'
+labels: 'good first issue, P-Feature: Project Info and Page, P-Feature: Projects page, role: back end/devOps,
+role: front end, size: 0.25pt, time sensitive'
+assignees: ''
+---
+
+### Prerequisites
+
+1. Be a member of Hack for LA. (There are no fees to join.) If you have not joined yet, please follow the steps on our [Getting Started](https://www.hackforla.org/getting-started) page and attend an onboarding session.
+2. You have already read our [How to Contribute to Hack for LA Guide](https://github.com/hackforla/website/blob/gh-pages/CONTRIBUTING.md).
+
+### Overview
+
+We need to correctly classify tools and technologies used in projects so users/volunteers have clarity on what systems are being used.
+
+### Action Items
+
+* [ ] In your IDE, open the `_projects/[Insert filename].md` file.
+
+* [ ] Observe the existing syntax of the front matter block [^1] in the file.
+
+* [ ] Find the `tools` variable and remove the following:
+
+```text
+  - [Insert current line(s) of code in tools]
+```
+
+* [ ] Find the `technologies` variable and add the following:
+
+```text
+  - [Insert desired line(s) of code in technologies]
+```
+
+* [ ] Verify the changes by viewing the following in your local environment with Docker and include before and after screenshots with your pull request:
+
+  * [ ] [Insert name of project] page [^2]
+  * [ ] the project's card on the Projects' page [^3]
+
+### Resources/Instructions
+
+[^1]: [Info about the front matter block](https://jekyllrb.com/docs/front-matter/)
+
+[^2]: Project detailed info page URL: [Insert project-specific page URL here]
+
+[^3]: Projects page URL: https://www.hackforla.org/projects/
