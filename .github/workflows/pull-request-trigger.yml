@@ -5,6 +5,10 @@ on:
     branches:
       - 'gh-pages'
 
+permissions:
+    contents: read
+    issues: write
+
 jobs:
   Check-For-Linked-Issue:
     runs-on: ubuntu-latest

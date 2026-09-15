@@ -4,6 +4,9 @@ on:
     workflows: ["Pull Request Trigger"]
     types: [completed]
 
+permissions:
+    contents: read
+
 jobs:
   Hello-World:
     runs-on: ubuntu-latest
