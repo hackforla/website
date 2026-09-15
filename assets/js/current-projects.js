@@ -102,16 +102,18 @@ document.addEventListener("DOMContentLoaded",function(){
         attachEventListenerCloseModal();
         
         // events related to search bar (adjusted selectors only)
-        const inputEl = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
-        const glassEl = document.querySelector('.search-bar-desktop .search-glass') || document.querySelector('.search-bar-mobile .search-glass') || document.querySelector('.search-glass');
-        const closeEl = document.querySelector('.search-bar-desktop .search-x') || document.querySelector('.search-bar-mobile .search-x') || document.querySelector('.search-x');
+        const allInputEl = Array.from(document.querySelectorAll('#search-desktop, #search-mobile, #search'));
+        const allGlassEl = Array.from(document.querySelectorAll('.search-bar-desktop .search-glass, .search-bar-mobile .search-glass, .search-glass'));
+        const allCloseEl = Array.from(document.querySelectorAll('.search-bar-desktop .search-x, .search-bar-mobile .search-x, .search-x'));
 
-        if (inputEl) {
-            inputEl.addEventListener('focus', searchOnFocusEventHandler);
-            inputEl.addEventListener('keydown', searchEnterKeyHandler);
+        if (allInputEl) {
+            allInputEl.forEach(function(ele, index){
+                ele.addEventListener('focus', searchOnFocusEventHandler);
+                ele.addEventListener('keydown', searchEnterKeyHandler);
+            });
         }
-        if (glassEl) { glassEl.addEventListener('click', searchEventHandler); }
-        if (closeEl) { closeEl.addEventListener('click', searchCloseEventHandler); }
+        if (allGlassEl) { allGlassEl.forEach(function(ele, index){ele.addEventListener('click', searchEventHandler);});}
+        if (allCloseEl) { allCloseEl.forEach(function(ele, index){ele.addEventListener('click', searchCloseEventHandler);});}
 
         // Update UI on page load based on url parameters
         updateUI()
@@ -344,8 +346,7 @@ function cancelMobileFiltersEventHandler(e) {
 //search bar event handler
 function searchEventHandler(e){
     e.preventDefault();
-    const input = document.querySelector('#search-desktop') || document.querySelector('#search-mobile') || document.querySelector('#search');
-    let searchTerm = input ? input.value : '';
+    let searchTerm = e.currentTarget.value;
     let tokenObj={};
     tokenObj['Search']=searchTerm;
      
