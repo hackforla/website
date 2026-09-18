@@ -111,6 +111,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U08GNFS09SL
       github: https://github.com/xnealcarson
     picture: https://avatars.githubusercontent.com/xnealcarson
+  - name: Maleah Castillo Smith
+    github-handle: castillios
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U0AUK3E8K6Y
+      github: https://github.com/castillios
+    picture: https://avatars.githubusercontent.com/castillios
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
