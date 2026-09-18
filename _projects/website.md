@@ -20,13 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07T35CB9KL
       github: https://github.com/GilbertQ
     picture: https://avatars.githubusercontent.com/GilbertQ
-  - name: Essence Goff
-    github-handle: essencegoff
-    role: Project Manager / Product Owner
-    links:
-      slack: https://hackforla.slack.com/team/U07FMKW5EDR
-      github: https://github.com/essencegoff
-    picture: https://avatars.githubusercontent.com/essencegoff
   - name: Sofiat Ajide
     github-handle: sofiatajide
     role: Product Manager - Dashboards
