@@ -346,7 +346,12 @@ function cancelMobileFiltersEventHandler(e) {
 //search bar event handler
 function searchEventHandler(e){
     e.preventDefault();
-    let searchTerm = e.currentTarget.value;
+    let searchTerm = '';
+    if(e.target.closest(".search-bar-desktop"))
+        searchTerm = document.querySelector("#search-desktop").value;
+    else if(e.target.closest(".search-bar-mobile"))
+        searchTerm = document.querySelector("#search-mobile").value;
+
     let tokenObj={};
     tokenObj['Search']=searchTerm;
      
