@@ -1,0 +1,32 @@
+<div class="card-primary page-card-lg page-card--about">
+    <!-- Am I supposed to have an svg for locations?  I didn't see one in /assets/images/about/section-header-elements/ -->
+    <div class="about-us-section-header" data-hash="locations"><span class="sec-head-img"><img 
+        src="" 
+        alt=""></span>Our Location
+    </div>
+    <div class="about-us-section-content">
+        <!-- Is this supposed to be h2? -->
+        <h2 class="about-us-page-header title2">From In-Person Events to Remote Collaboration</h2>
+        <div class="top-paragraph">
+            <p>
+                In 2013, Hack for LA began as an in-person civic tech community, hosting events across Los Angeles—including the Westside, Downtown LA, and South LA—bringing volunteers together in shared spaces.
+            </p>
+            <p>
+                During the COVID-19 pandemic, the organization transitioned to a fully remote operating model, expanding access and enabling broader participation beyond geographic boundaries. 
+            </p>
+        </div>
+        <!-- what class to flex with? -->
+        <div class="flex-container-row">
+            <!-- Is this supposed to be h3?-->
+            <h3 class="about-us-page-image-title">Former in-person event locations across Los Angeles</h2>
+            <div class="mobile-locations-dropdown">
+                {% include about-page/our-locations-images.html %}
+            </div>
+        </div>
+        <div class="bottom-paragraph">
+            <p>
+                Today, Hack for LA continues to serve Los Angeles as a remote-first organization, supporting a distributed network of contributors.
+            </p>
+        </div>
+    </div>
+</div>
