@@ -350,7 +350,7 @@ permalink: /share-your-wins/
       .addEventListener("submit", function (e) {
         e.preventDefault();
 
-        form = JSON.parse(localStorage.getItem("form"));
+        const form = JSON.parse(localStorage.getItem("form"));
         form.name = this.fullName.value;
         form.email = this.email.value;
         localStorage.setItem("form", JSON.stringify(form));
