@@ -27,6 +27,7 @@ links:
     url: 'https://observablehq.com/@ctsexton/railstats-marey-diagram'
 technologies:
   - AWS
+  - Docker
 location:
   # - Downtown LA
   - Remote

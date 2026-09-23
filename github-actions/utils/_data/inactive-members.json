@@ -1,22 +1,32 @@
 {
   "removedContributors": [
-    "DakuwoN",
-    "handshek",
-    "bragelbytes",
-    "varyad",
-    "Kphalguni"
-  ],
-  "notifiedContributors": [
-    "aymeviviana",
-    "aadilahmed",
     "dvernon5",
     "viet456",
     "GRISONRF",
     "myronchen-git",
     "r-a-q",
-    "ibrahimouarrach3-tech",
     "kirandhamotharan"
   ],
-  "nonTeamOpenIssue": {},
+  "notifiedContributors": [
+    "aymeviviana",
+    "joshjyu",
+    "reshma-pradhan",
+    "ryanfkeller",
+    "ChaAbby",
+    "santi-jose",
+    "aayush24rai",
+    "VRAJSPATEL10",
+    "lc1715",
+    "kdaca19xx",
+    "Patdabaker",
+    "xnealcarson",
+    "abinetabate1",
+    "Mykola-Lopushenko"
+  ],
+  "nonTeamOpenIssue": {
+    "myronchen-git": [
+      8274
+    ]
+  },
   "inactiveOpenIssue": {}
 }

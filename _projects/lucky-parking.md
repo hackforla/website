@@ -27,6 +27,7 @@ leadership:
       github: 'https://github.com/ymphan'
     picture: https://avatars.githubusercontent.com/u/9373317
   - name: Michael Morgan
+    github-handle:
     role: UX/UI Design Lead
     links:
       slack: 'https://hackforla.slack.com/team/U01SPJCC26A'
@@ -66,6 +67,7 @@ technologies:
   - MongoDB
   - AWS
   - Markdown
+  - Docker
 location:
   # - Santa Monica
   - Remote

@@ -18,6 +18,8 @@ looking:
     skill: Product Management 
   - category: SEO/Marketing
     skill: Marketing
+technologies:
+  - Docker
 location: 
   # - Santa Monica
   - Remote

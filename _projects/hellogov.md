@@ -41,6 +41,7 @@ technologies:
   - MongoDB
   - Angular
   - Node.js
+  - Docker
 visible: true
 status: Completed
 program-area:

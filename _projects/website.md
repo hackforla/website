@@ -20,13 +20,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07T35CB9KL
       github: https://github.com/GilbertQ
     picture: https://avatars.githubusercontent.com/GilbertQ
-  - name: Essence Goff
-    github-handle: essencegoff
-    role: Project Manager / Product Owner
-    links:
-      slack: https://hackforla.slack.com/team/U07FMKW5EDR
-      github: https://github.com/essencegoff
-    picture: https://avatars.githubusercontent.com/essencegoff
   - name: Sofiat Ajide
     github-handle: sofiatajide
     role: Product Manager - Dashboards
@@ -83,13 +76,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U081EQ0JZJS
       github: https://github.com/dvernon5
     picture: https://avatars.githubusercontent.com/dvernon5
-  - name: Ryan Keller
-    github-handle: ryanfkeller
-    role: Merge Team
-    links:
-      slack: https://hackforla.slack.com/team/U08SCL4KK3N
-      github: https://github.com/ryanfkeller
-    picture: https://avatars.githubusercontent.com/ryanfkeller
   - name: Kerstin Carson
     github-handle: kdaca19xx
     role: Merge Team
@@ -104,6 +90,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U08GNFS09SL
       github: https://github.com/xnealcarson
     picture: https://avatars.githubusercontent.com/xnealcarson
+  - name: Maleah Castillo Smith
+    github-handle: castillios
+    role: Merge Team
+    links:
+      slack: https://hackforla.slack.com/team/U0AUK3E8K6Y
+      github: https://github.com/castillios
+    picture: https://avatars.githubusercontent.com/castillios
 links:
   - name: Wiki
     url: 'https://github.com/hackforla/website/wiki'
