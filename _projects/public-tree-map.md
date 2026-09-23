@@ -15,7 +15,6 @@ leadership:
       github: 'https://github.com/emillipede'
     picture: https://avatars.githubusercontent.com/emillipede
   - name: Isabelle Wagenvoord
-    github-handle:    
     role: Frontend Lead
     links:
       slack: 'https://hackforla.slack.com/team/ULFE20LGY'
