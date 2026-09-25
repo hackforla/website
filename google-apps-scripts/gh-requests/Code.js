@@ -7,7 +7,6 @@
 const documentProperties = PropertiesService.getDocumentProperties();
 const ACCEPT_HEADER = {
   "Repository": "application/vnd.github.v3+json",
-  "ProjectBoard": "application/vnd.github.inertia-preview+json"
 }
 
 /************************************************** FUNCTIONS USING THE FETCH REQUESTS ********************************************************************/
@@ -94,23 +93,54 @@ function createIssue() {
   return response;
 }
 
-// Adds an issue to a project board column
-function addIssueToProjectBoardColumn(issueID, columnID) {
-  const payload = {
-    "note": null,
-    "content_id": parseInt(issueID),
-    "content_type": "Issue", // new-win-submission
-  };
-  const url = `https://api.github.com/projects/columns/${columnID}/cards`;
-  const response = postRequest_(url, ACCEPT_HEADER.ProjectBoard, payload);
+// Adds an issue to a Projects v2 board and sets its Status field
+function addIssueToProjectV2(issueNodeId, projectId, statusFieldId, statusOptionId) {
+  const addItemMutation = `
+    mutation($projectId: ID!, $contentId: ID!) {
+      addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId })
+      {
+        item { id }
+      }
+    }`;
+  
+  const addItemData = graphqlRequest_(addItemMutation, {
+    projectId: projectId,
+    contentId: issueNodeId,
+  });
 
-    if (response === false ) {
-    console.log(`Adding issue to project board column failed.`)
+  if (addItemData === false) {
+    console.log("Adding issue to project board failed.");
     return false;
   }
 
-  console.log(`Adding issue to project board column succeeded. Project card ${response.body.id}`);
-  return response;
+  const itemId = addItemData.addProjectV2ItemById.item.id;
+
+  const updateStatusMutation = `
+    mutation($projectId: ID!, $fieldId: ID!, $itemId: ID!, $value: String!) {
+      updateProjectV2ItemFieldValue(input: {
+        projectId: $projectId,
+        fieldId: $fieldId,
+        itemId: $itemId,
+        value: { singleSelectOptionId: $value }
+      }) {
+        projectV2Item { id }
+      }
+    }`;
+
+  const updateStatusData = graphqlRequest_(updateStatusMutation, {
+    projectId: projectId,
+    fieldId: statusFieldId,
+    itemId: itemId,
+    value: statusOptionId,
+  });
+
+  if (updateStatusData === false) {
+    console.log("Setting project Status field failed.");
+    return false;
+  }
+
+  console.log(`Issue added to project board. Project item ${itemId}`);
+  return updateStatusData;
 }
 
 /************************************************** TOKEN RETRIEVAL ********************************************************************/
@@ -125,10 +155,9 @@ function setToken_() {
       id = file.getId();
     }
   }
-  
+ 
   const doc = DocumentApp.openById(id);
   documentProperties.setProperty('TOKEN', doc.getBody().getText());
-  console.log(documentProperties.getProperty(`TOKEN`))
 }
 
 // Uses base64 to decode an input
@@ -194,7 +223,7 @@ function putRequest_(url, acceptHeader, payload) {
     console.log(`Error Status Code ${responseObject.status}: \n${JSON.stringify(responseObject.body)}`);
     return false;
   }
-  
+ 
 }
 
 // GitHub POST request
@@ -225,4 +254,33 @@ function postRequest_(url, acceptHeader, payload) {
     console.log(`Error Status Code ${responseObject.status}: \n${JSON.stringify(responseObject.body)}`);
     return false;
   }
+}
+
+const GRAPHQL_URL = "https://api.github.com/graphql";
+
+// GitHub GraphQL request
+function graphqlRequest_(query, variables) {
+  setToken_();
+  const options = {
+    method: "POST",
+    contentType: "application/json",
+    headers: {
+      Authorization: `Bearer ${decode(documentProperties.getProperty("TOKEN"))}`,
+    },
+    payload: JSON.stringify({ query, variables }),
+    muteHttpExceptions: true,
+  };
+
+  const response = UrlFetchApp.fetch(GRAPHQL_URL, options);
+  const body = JSON.parse(response.getContentText());
+
+  if (response.getResponseCode() === 200 && !body.errors) {
+    console.log("GraphQL request succeeded.\n");
+    return body.data
+  } 
+  else {
+    console.log(`GraphQL request failed (${response.getResponseCode()}):\n${JSON.stringify(body.errors || body)}`);
+    return false;
+  }
+
 }
