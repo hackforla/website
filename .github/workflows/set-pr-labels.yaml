@@ -7,6 +7,11 @@ on:
       - 'gh-pages'
       - 'feature-homepage-launch'
 
+permissions:
+  contents: read
+  issues: read
+  pull-requests: write
+
 jobs:
   generate-labels-artifact:
     runs-on: ubuntu-latest
