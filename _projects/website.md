@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U078K03LP5L
       github: https://github.com/Eleftherios01
     picture: https://avatars.githubusercontent.com/Eleftherios01
-  - name: Amen Divine Ikamba
-    github-handle: amen-ikamba
-    role: Product Manager - Dashboards
-    links:
-      slack: https://hackforla.slack.com/team/U07T35HCHAN
-      github: https://github.com/amen-ikamba
-    picture: https://avatars.githubusercontent.com/amen-ikamba
   - name: Priyanka Jujjavarapu
     github-handle: priyanka02art
     role: Product Manager
