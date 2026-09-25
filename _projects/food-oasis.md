@@ -83,6 +83,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U02AG2K2BB3
       github: https://github.com/saumildhankar
     picture: https://avatars.githubusercontent.com/saumildhankar
+  - name: Luigi Olianas
+    github-handle: Giolii
+    role: Full Stack Engineer
+    links:
+      slack: https://hackforla.slack.com/team/U09A862GM28
+      github: https://github.com/Giolii
+    picture: https://avatars.githubusercontent.com/Giolii
 
 
 links:
