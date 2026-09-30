@@ -299,10 +299,7 @@ function applyURLtoFilters(filterParams) {
 // Computes and returns the frequency of each checkbox filter that are currently present on the displayed cards on the page
 function updateFilterFrequency() {
     const onPageFilters = []
-    const guideCards = document.querySelectorAll('.guide-card')
-    const guideCardsArray = Array.from(guideCards)
-    const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
-    document.querySelectorAll('.guide-card[style*="display: block"]').forEach(card => {
+    document.querySelectorAll('.guide-card[style*="display: block"], .toolkit-resource-card[style*="display: block"]').forEach(card => {
         for(const [key, value] of Object.entries(card.dataset)) {
             value.split(",").map(item => {
                 if (item.toLowerCase() === 'completed') {
