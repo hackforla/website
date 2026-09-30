@@ -263,7 +263,7 @@ function applyFilters(filtersParams) {
     attachEventListenerToFilterTags(filtersParams)
 
     // Displays no results message if no matches and 2nd parameter is querySelector name
-    toggleNoResultMsgIfNoMatch(filtersParams, 'guide-card')
+    toggleNoResultMsgIfNoMatch(filtersParams, ['guide-card', 'toolkit-resource-card'])
 }
 
 // Apply current filters to URL
@@ -516,10 +516,16 @@ function tabFocusedKeyDownHandler(e) {
 }
 
 //controls if no results message should display if no results match from filter selection
-function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
-    if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
-        noResultsMessageComponent(filtersParams,'white')
+function toggleNoResultMsgIfNoMatch(filtersParams, querySelector) {
+    const selectedSelectors = Array.isArray(querySelector) ? querySelector : [querySelector]
+
+    const cards = selectedSelectors.flatMap(selector =>
+        [...document.querySelectorAll(`.${selector}`)]
+    )
+
+    if (cards.length === 0 || cards.every(card => card.style.display === 'none')) {
+        noResultsMessageComponent(filtersParams, 'white')
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
-    }
-}
+    } 
+} 
