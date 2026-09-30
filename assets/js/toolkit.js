@@ -238,7 +238,8 @@ function applyFilters(filtersParams) {
                             }
                         })
                     }
-                    if (!(filterList.some(data => card.dataset[key].includes(data)))) {
+                    const cardFilterValue = card.dataset[key] ?? ''
+                    if (!(filterList.some(data => cardFilterValue.includes(data)))) {
                         card.style.display = 'none'
                     }
                 }
