@@ -34,13 +34,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07T35HCHAN
       github: https://github.com/amen-ikamba
     picture: https://avatars.githubusercontent.com/amen-ikamba
-  - name: Priyanka Jujjavarapu
-    github-handle: priyanka02art
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07TRV9HRFS
-      github: https://github.com/priyanka02art
-    picture: https://avatars.githubusercontent.com/priyanka02art
   - name: Phalguni Kambhalur
     github-handle: kphalguni
     role: Product Manager
