@@ -28,7 +28,6 @@ jobs:
           script: |
             const { checkForLinkedIssue } = require('${{ env.SCRIPT_PATH }}');
             return await checkForLinkedIssue({ github, context, core });
-      # Do not upload artifact if there is no PR comment to be posted
       - name: Save PR comment
         id: save-pr-comment
         run: |
