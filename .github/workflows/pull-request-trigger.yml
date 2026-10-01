@@ -31,7 +31,6 @@ jobs:
       # Do not upload artifact if there is no PR comment to be posted
       - name: Save PR comment
         id: save-pr-comment
-        if: fromJson(steps.check-for-keyword.outputs.result).prComment != ''
         run: |
           mkdir -p '${{ env.ARTIFACT_DIR }}'
           echo ${{ steps.check-for-keyword.outputs.result }} > '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
@@ -39,7 +38,6 @@ jobs:
       - name: Upload PR comment artifact
         id: upload-pr-comment-artifact
         uses: actions/upload-artifact@v7
-        if: fromJson(steps.check-for-keyword.outputs.result).prComment != ''
         with:
           name: pr-comment
           path: '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'

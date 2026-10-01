@@ -174,6 +174,8 @@ async function postPRComment({ github, context, cor }, filepath) {
     postIssueComment(prNumber, prComment, github, context);
     core.info(`Posted comment:`)
     core.info(JSON.stringify(prComment));
+  } else {
+    core.info(`No comment posted. Issue is properly linked.`)
   }
 }
 
