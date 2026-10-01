@@ -527,5 +527,5 @@ function toggleNoResultMsgIfNoMatch(filtersParams, querySelector) {
         noResultsMessageComponent(filtersParams, 'white')
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
-    } 
-} 
+    }
+}
