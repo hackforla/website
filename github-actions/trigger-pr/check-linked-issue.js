@@ -165,7 +165,7 @@ async function downloadPRCommentArtifact({ github, context }, artifactName) {
  * @param {string} filepath - The path of the file
  */
 
-async function postPRComment({ github, context, cor }, filepath) {
+async function postPRComment({ github, context, core }, filepath) {
   const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));
   const { prNumber, prComment } = data;
 
