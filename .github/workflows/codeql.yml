@@ -12,6 +12,11 @@ on:
     - cron: '30 5 * * 5'
   workflow_dispatch:
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 jobs:
   codeql-scan-job:
     uses: ./.github/workflows/codeql-scan-job.yml

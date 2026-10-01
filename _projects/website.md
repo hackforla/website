@@ -7,7 +7,7 @@ alt: 'Hack for LA Site'
 image-hero: /assets/images/projects/website-hero.jpg
 leadership:
   - name: Bonnie Wolfe
-    github-handle: 
+    github-handle:
     role: Agile Coach/Stakeholder Rep
     links:
       slack: 'https://hackforla.slack.com/team/UE1UG1YFP'
@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07LRE68BHS
       github: https://github.com/sofiatajide
     picture: https://avatars.githubusercontent.com/sofiatajide
-  - name: Eleftherios Christou
-    github-handle: Eleftherios01
-    role: Product Manager - Dashboards
-    links:
-      slack: https://hackforla.slack.com/team/U078K03LP5L
-      github: https://github.com/Eleftherios01
-    picture: https://avatars.githubusercontent.com/Eleftherios01
   - name: Amen Divine Ikamba
     github-handle: amen-ikamba
     role: Product Manager - Dashboards
