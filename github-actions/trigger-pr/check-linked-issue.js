@@ -144,7 +144,7 @@ async function checkForLinkedIssue({ github, context, core }) {
  * @returns {string} The file path of the downloaded artifact
  */
 async function downloadPRCommentArtifact({ github, context }, artifactName) {
-  const artifacts = _listWorkflowRunArtifacts({ github, context });
+  const artifacts = await _listWorkflowRunArtifacts({ github, context });
   const match = artifacts.data.artifacts.filter(
     ({ name }) => name === artifactName
   )[0];
