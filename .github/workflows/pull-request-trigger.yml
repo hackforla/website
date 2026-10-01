@@ -13,6 +13,10 @@ jobs:
   Check-For-Linked-Issue:
     runs-on: ubuntu-latest
     if: ${{ github.event.action == 'opened' || github.event.action == 'edited' }}
+    env:
+      ARTIFACT_DIR: './pull-request-trigger/artifacts'
+      ARTIFACT_FILE: 'pr-comment.json'
+      SCRIPT_PATH: './github-actions/trigger-pr/check-linked-issue.js'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -22,5 +26,22 @@ jobs:
         uses: actions/github-script@v9
         with:
           script: |
-            const script = require('./github-actions/trigger-pr/check-linked-issue.js')
-            script({g: github, c: context})
+            const { checkForLinkedIssue } = require('${{ env.SCRIPT_PATH }}');
+            return await checkForLinkedIssue({ github, context, core });
+      # Do not upload artifact if there is no PR comment to be posted
+      - name: Save PR comment
+        id: save-pr-comment
+        if: fromJson(steps.check-for-keyword.outputs.result).prComment != ''
+        run: |
+          mkdir -p '${{ env.ARTIFACT_DIR }}'
+          echo ${{ steps.check-for-keyword.outputs.result }} > '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
+
+      - name: Upload PR comment artifact
+        id: upload-pr-comment-artifact
+        uses: actions/upload-artifact@v7
+        if: fromJson(steps.check-for-keyword.outputs.result).prComment != ''
+        with:
+          name: pr-comment
+          path: '${{ env.ARTIFACT_DIR }}/${{ env.ARTIFACT_FILE }}'
+          retention-days: 1
+
