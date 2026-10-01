@@ -2,10 +2,6 @@
 const fs = require('fs');
 const postIssueComment = require('../utils/post-issue-comment');
 
-// Global variables
-// var github;
-// var context;
-
 /** **************************************
  ** HELPER FUNCTIONS
  *************************************** */
