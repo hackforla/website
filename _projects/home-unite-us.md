@@ -140,11 +140,11 @@ technologies:
   - MongoDB
   - Nginx
   - Docker
+  - Styled Components
 location:
   - Remote
 tools:
   - Figma
-  - Style Components
   - Zoom
   - GitHub
   - Google Drive
