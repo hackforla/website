@@ -104,12 +104,12 @@
     margin: 0 auto;
 }
 
-[data-article-type="development"] .resource-svg-icons svg{
+.toolkit-resource-card[data-project-tools="GitHub"] .resource-svg-icons svg{
     width: 50%;
     height: 50%;
 }
 
-[data-article-type="development"] .toolkit-flex-item-img-container{
+.toolkit-resource-card[data-project-tools="GitHub"] .toolkit-flex-item-img-container{
     display: flex;
     align-items: center;
     justify-content: center;

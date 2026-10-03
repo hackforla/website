@@ -66,7 +66,7 @@
                     <!-- Searching through toolkitResources collection -->
                     {%- for item in site.data.internal.toolkitresources -%}
                     {%- if item.display == true -%}
-                    <div data-article-type={{ item.practice-area | downcase | remove: ' ' }} class="toolkit-flex-item section-container">
+                    <div data-practice-Areas="{{ item.practice-area }}" data-project-Tools="{{ item.tools }}" class="toolkit-flex-item section-container toolkit-resource-card">
                         {%- if item.svg -%}
                         <div class="toolkit-flex-item-img-container resource-svg-icons">
                         {% include {{ item.svg }} %}
