@@ -552,6 +552,21 @@ a.anchor {
   margin-top: 18px;
 }
 
+.locations-section-header {
+  font-size: 1.125rem;
+  font-weight: bolder;
+}
+
+.locations-section-subheader {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.locations-section-divider {
+  border-top: 2px solid $color-pink;
+  margin: 40px 0;
+}
+
 .garcetti-mobile {
   display: block;
 }
