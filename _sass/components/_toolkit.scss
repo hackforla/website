@@ -46,6 +46,13 @@
     color: $color-white;
     margin-bottom: 0;
 }
+.toolkit-content-filter-container {
+    flex-basis: 392px;
+}
+
+.toolkit__card-list{
+    flex-basis: 1152px;
+}
 
 .toolkit-flex-container {
     display: grid;
