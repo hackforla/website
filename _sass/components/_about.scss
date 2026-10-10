@@ -552,6 +552,40 @@ a.anchor {
   margin-top: 18px;
 }
 
+.locations-section-header {
+  font-size: 1.125rem;
+  font-weight: bolder;
+}
+
+.locations-section-subheader {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.locations-section-divider {
+  border-top: 2px solid $color-pink;
+  margin: 40px 0;
+}
+
+.locations-card-container {
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.location-card {
+  flex: 1;
+}
+
+.location-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .garcetti-mobile {
   display: block;
 }
