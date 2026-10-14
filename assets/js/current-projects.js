@@ -236,7 +236,7 @@ function retrieveProjectDataFromCollection() {
 */
 function projectDataSorter(projectdata){
 
-    const statusList = ["Active","On Hold","Completed"]
+    const statusList = ["Active","On Hold","Completed","Closed"]
     const sortedProjectContainer = [];
 
     // Sort Project data by status alphabetically
