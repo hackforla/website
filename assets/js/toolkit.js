@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function retrieveFilterCategories() {
     {% assign projects = site.guide-pages | where: "display", "true" %}
     let projects = JSON.parse(decodeURIComponent("{{ projects | jsonify | uri_escape }}"))
+    {% assign resources = site.data.internal.toolkitresources | where: "display", true %}
+    const resources = JSON.parse(decodeURIComponent("{{ resources | jsonify | uri_escape }}"))
 
     const practiceAreas = []
     const projectStatus = []
@@ -108,6 +110,23 @@ function retrieveFilterCategories() {
             }
         }
     }
+
+    resources.forEach(resource => {
+    const practiceArea = resource["practice-area"]
+
+    if (practiceArea && !practiceAreas.includes(practiceArea)) {
+        practiceAreas.push(practiceArea)
+    }
+
+    if (resource["tools"]) {
+        resource["tools"].forEach(tool => {
+            if (tool && !projectTools.includes(tool)) {
+                projectTools.push(tool)
+            }
+        })
+    }
+})
+
     return {projectStatus, practiceAreas, projectTools, projectResourceType, projectTechnologies, projectSource, projectContributors}
 }
 
@@ -192,11 +211,11 @@ function initializeFilters() {
 function applyFilters(filtersParams) {
     // Show all cards if there are no active filters
     if (Object.values(filtersParams).every(x => x.length === 0)) {
-        document.querySelectorAll(".guide-card").forEach(card => {
+        document.querySelectorAll(".guide-card, .toolkit-resource-card").forEach(card => {
             card.style.display = 'block'
         })
     } else {
-        document.querySelectorAll(".guide-card").forEach(card => {
+        document.querySelectorAll(".guide-card, .toolkit-resource-card").forEach(card => {
             card.style.display = 'block'
             for (let key in filtersParams) {
                 let filterList
@@ -219,7 +238,8 @@ function applyFilters(filtersParams) {
                             }
                         })
                     }
-                    if (!(filterList.some(data => card.dataset[key].includes(data)))) {
+                    const cardFilterValue = card.dataset[key] ?? ''
+                    if (!(filterList.some(data => cardFilterValue.includes(data)))) {
                         card.style.display = 'none'
                     }
                 }
@@ -243,7 +263,7 @@ function applyFilters(filtersParams) {
     attachEventListenerToFilterTags(filtersParams)
 
     // Displays no results message if no matches and 2nd parameter is querySelector name
-    toggleNoResultMsgIfNoMatch(filtersParams, 'guide-card')
+    toggleNoResultMsgIfNoMatch(filtersParams, ['guide-card', 'toolkit-resource-card'])
 }
 
 // Apply current filters to URL
@@ -279,10 +299,7 @@ function applyURLtoFilters(filterParams) {
 // Computes and returns the frequency of each checkbox filter that are currently present on the displayed cards on the page
 function updateFilterFrequency() {
     const onPageFilters = []
-    const guideCards = document.querySelectorAll('.guide-card')
-    const guideCardsArray = Array.from(guideCards)
-    const visibleGuideCards = guideCardsArray.filter(card => card.style.display === 'block')
-    document.querySelectorAll('.guide-card[style*="display: block"]').forEach(card => {
+    document.querySelectorAll('.guide-card[style*="display: block"], .toolkit-resource-card[style*="display: block"]').forEach(card => {
         for(const [key, value] of Object.entries(card.dataset)) {
             value.split(",").map(item => {
                 if (item.toLowerCase() === 'completed') {
@@ -499,9 +516,15 @@ function tabFocusedKeyDownHandler(e) {
 }
 
 //controls if no results message should display if no results match from filter selection
-function toggleNoResultMsgIfNoMatch(filtersParams,querySelector) {
-    if ([...document.querySelectorAll(`.${querySelector}`)].every(card => card.style.display === 'none')) {
-        noResultsMessageComponent(filtersParams,'white')
+function toggleNoResultMsgIfNoMatch(filtersParams, querySelector) {
+    const selectedSelectors = Array.isArray(querySelector) ? querySelector : [querySelector]
+
+    const cards = selectedSelectors.flatMap(selector =>
+        [...document.querySelectorAll(`.${selector}`)]
+    )
+
+    if (cards.length === 0 || cards.every(card => card.style.display === 'none')) {
+        noResultsMessageComponent(filtersParams, 'white')
     } else {
         document.querySelector(".no-results-message").innerHTML = ""
     }
