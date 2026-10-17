@@ -8,12 +8,11 @@
  *    - These are "On Form Submit" triggers which calls createIssue and insertLatestFormSubmitIntoReviewSheet
  * 
  * Resources:
- *    1. Ice Box                   = https://github.com/hackforla/website/projects/7#column-7198227
- *    2. Prioritized Backlog       = https://github.com/hackforla/website/projects/7#column-7198257
- *    3. In Progress               = https://github.com/hackforla/website/projects/7#column-7198228
- *    4. Links/Questions/In Review = https://github.com/hackforla/website/projects/7#column-8178690
- *    6. Link to "Review" sheet    = https://docs.google.com/spreadsheets/d/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/edit#gid=1706218917
- *    7. Link to "Responses" sheet = https://docs.google.com/spreadsheets/d/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/edit?resourcekey#gid=1106372497
+ *    1. Project board (Project 86) = https://github.com/orgs/hackforla/projects/86
+ *    2. Target status for new wins issues i.e. "Questions / In Review", replaces column keys from old projects board
+ *       (GraphQL IDs in PROJECT_V2: github-actions/utils/_data/status-field-ids.js)
+ *    3. Link to "Review" sheet    = https://docs.google.com/spreadsheets/d/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/edit#gid=1706218917
+ *    4. Link to "Responses" sheet = https://docs.google.com/spreadsheets/d/1tj6eQlVLFgmskoXouVt87POxYVwR1yWT2vOSQEPyDtg/edit?resourcekey#gid=1106372497
  */
 
 
@@ -25,13 +24,17 @@ const ISSUE_TEMPLATE = {
   "labels": []
 }
 
-const COLUMN_KEYS = {
-  "IceBox": 7198227,
-  "NewIssueApproval": 15235217,
-  "PrioritizedBacklog": 7198257,
-  "InProgress": 7198228,
-  "InReview": 8178690
-}
+const PROJECT_V2 = {
+  PROJECT_ID: "PVT_kwDOALGKNs4Ajuck",
+  STATUS_FIELD_ID: "PVTSSF_lADOALGKNs4AjuckzgcCutQ",
+  STATUS: {
+    IceBox: "2b49cbab",
+    NewIssueApproval: "83187325",
+    PrioritizedBacklog: "434304a8",
+    InProgress: "9a878e9c",
+    InReview: "53b56f8d",
+  },
+};
 
 /************************************************** TRIGGER(Time Based) 1 SECTION ********************************************************************/
 /*
@@ -52,8 +55,13 @@ function main() {
     row.push(i + 1);
   });
 
-  // Filter out only the rows where display-column(colum 15) is set to true
-  const filteredRows = Array.from(allRows).filter(win => win[15] === true);
+  // Filter out only the rows where display-column (column 15) is set to true
+  const display = columnHeaders.indexOf("Display?");
+  if (display == -1) {
+    console.log("Ending script; Display column not found.");
+    return 1;
+  }
+  const filteredRows = Array.from(allRows).filter(win => win[display] === true);
 
   // Create an array of objects (key-value pair) based on the column headers and rows of values so the data does not need to be formatted later in GitHub
   const keyValueData = filteredRows.map(row => {
@@ -116,11 +124,21 @@ function main() {
 function createIssue(e) {
   const issueResponse = ghrequests.createIssue();
   if (issueResponse === false) {
-    console.log('Ending script...')
+    console.log('Ending script...');
     return 1;
   }
 
-  ghrequests.addIssueToProjectBoardColumn(issueResponse.body.id, COLUMN_KEYS["InReview"]);
+  const addToProjectResponse = ghrequests.addIssueToProjectV2(
+    issueResponse.body.node_id,
+    PROJECT_V2.PROJECT_ID,
+    PROJECT_V2.STATUS_FIELD_ID,
+    PROJECT_V2.STATUS.InReview
+  );
+
+  if (addToProjectResponse === false) {
+    console.log('Ending script...');
+    return 1;
+  }
 }
 
 /************************************************** TRIGGER("On Form Submit") 3 SECTION ********************************************************************/
@@ -204,7 +222,7 @@ function insertLatestFormSubmitIntoReviewSheet(formSubmitEvent){
   
   // Set the column 'Q'  for new row created in the 'Responses' sheet by form submission to be mapped to the new row created in the 'review' sheet
   responsesSheet.getRange(formDataInsertedAt.rowStart, formDataInsertedAt.columnEnd + 2).setFormula("=Review!B2");
-  }
+}
 
 /***************************************************************** DEBUGGING (run manually) *************************************************/
 /**
@@ -329,6 +347,3 @@ function compareResponsesAndReview() {
   }
 
 }
-
-  
-
