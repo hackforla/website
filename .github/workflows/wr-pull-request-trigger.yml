@@ -4,8 +4,33 @@ on:
     workflows: ["Pull Request Trigger"]
     types: [completed]
 
+permissions:
+    contents: read
+    issues: write
+    pull-requests: write
+
 jobs:
-  Hello-World:
+  post-pr-comment:
     runs-on: ubuntu-latest
+    env:
+      ARTIFACT_NAME: 'pr-comment'
+      SCRIPT_PATH: './github-actions/trigger-pr/check-linked-issue.js'
     steps:
-     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v7
+      - name: Download PR comment artifact
+        id: download-pr-comment-artifact
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { downloadPRCommentArtifact } = require('${{ env.SCRIPT_PATH }}');
+            await downloadPRCommentArtifact({ github, context }, '${{ env.ARTIFACT_NAME }}');
+      - name: Extract artifact
+        id: extract-artifact
+        run: unzip '${{ env.ARTIFACT_NAME }}.zip'
+      - name: Post comment to PR
+        id: post-comment-to-pr
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { postPRComment } = require('${{ env.SCRIPT_PATH }}');
+            await postPRComment({ github, context, core }, '${{ env.ARTIFACT_NAME }}.json');
