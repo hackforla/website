@@ -106,8 +106,12 @@
   }
   
   .status-Completed {
-    background-color: $color-salmon;
-  }
+   background-color: $color-paleblue;
+ }
+
+ .status-Closed {
+   background-color: $color-mediumlightgrey;
+ }
   
   .project-card-field-inline {
     display: inline;

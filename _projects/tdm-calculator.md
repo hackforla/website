@@ -72,7 +72,7 @@ links:
   - name: Overview
     url: ../assets/pdfs/TDM-Calculator-Product-One-Sheet.pdf
   - name: Test Site
-    url: https://tdmdev.azurewebsites.net/calculation/4
+    url: https://tdm-dev.azurewebsites.net/
   - name: Site
     url: https://tdm.ladot.lacity.org/
 looking:
