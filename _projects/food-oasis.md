@@ -21,14 +21,14 @@ leadership:
       github: "https://github.com/hanapotski"
     picture: https://avatars.githubusercontent.com/hanapotski
   - name: Bryan Wu
-    github-handle: 
+    github-handle:
     role: UX/UR Lead
     links:
       slack: "https://hackforla.slack.com/team/U01PG6RD0T1"
       github: "https://github.com/fancyham"
     picture: https://avatars.githubusercontent.com/fancyham
   - name: Gigi Patel
-    github-handle: 
+    github-handle:
     role: Lead UX Researcher
     links:
       slack: "https://hackforla.slack.com/team/U02KZ8WSHHV"
@@ -116,10 +116,11 @@ technologies:
   - Docker
   - Mapbox
   - Material-UI
+  - ATLAS.ti
 location:
   # - Downtown LA
   - Remote
-tools: 
+tools:
   - Figma
   - Photoshop
   - Sketch
@@ -132,7 +133,6 @@ tools:
   - FigJam
   - SPSS
   - Mplus
-  - AtlasTI
   - UsabilityHub
 program-area:
   - Social Safety Net
