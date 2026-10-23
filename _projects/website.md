@@ -27,20 +27,13 @@ leadership:
       slack: https://hackforla.slack.com/team/U07LRE68BHS
       github: https://github.com/sofiatajide
     picture: https://avatars.githubusercontent.com/sofiatajide
-  - name: Eleftherios Christou
-    github-handle: Eleftherios01
+  - name: Amen Divine Ikamba
+    github-handle: amen-ikamba
     role: Product Manager - Dashboards
     links:
-      slack: https://hackforla.slack.com/team/U078K03LP5L
-      github: https://github.com/Eleftherios01
-    picture: https://avatars.githubusercontent.com/Eleftherios01
-  - name: Priyanka Jujjavarapu
-    github-handle: priyanka02art
-    role: Product Manager
-    links:
-      slack: https://hackforla.slack.com/team/U07TRV9HRFS
-      github: https://github.com/priyanka02art
-    picture: https://avatars.githubusercontent.com/priyanka02art
+      slack: https://hackforla.slack.com/team/U07T35HCHAN
+      github: https://github.com/amen-ikamba
+    picture: https://avatars.githubusercontent.com/amen-ikamba
   - name: Phalguni Kambhalur
     github-handle: kphalguni
     role: Product Manager
