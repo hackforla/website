@@ -27,13 +27,6 @@ leadership:
       slack: https://hackforla.slack.com/team/U07LRE68BHS
       github: https://github.com/sofiatajide
     picture: https://avatars.githubusercontent.com/sofiatajide
-  - name: Amen Divine Ikamba
-    github-handle: amen-ikamba
-    role: Product Manager - Dashboards
-    links:
-      slack: https://hackforla.slack.com/team/U07T35HCHAN
-      github: https://github.com/amen-ikamba
-    picture: https://avatars.githubusercontent.com/amen-ikamba
   - name: Phalguni Kambhalur
     github-handle: kphalguni
     role: Product Manager
