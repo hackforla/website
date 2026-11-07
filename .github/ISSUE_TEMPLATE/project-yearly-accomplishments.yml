@@ -1,0 +1,146 @@
+name: "Project Yearly Accomplishments"
+description: "To allow project teams to add or revise an accomplishment for a specified year."
+title: "Add accomplishment: [Project Team]"
+labels: ['P-Feature: Project Info and Page', 'role: back end/devOps', 'role: front end', 'Complexity: Small', 'size: 0.25pt', 'time sensitive', 'Issue Making: Level 1', 'epic', 'Complexity: See issue making label']
+
+body:
+  - type: markdown
+    attributes:
+      value: "# Overview"
+  - type: markdown
+    attributes:
+      value: "For project teams to add or revise an accomplishment for a specified year."
+  - type: dropdown
+    id: project-team
+    attributes:
+      label: Project Team
+      options:
+        - "---New Project---"
+        - "100 Automations"
+        - "311 Data"
+        - "Access The Data"
+        - "BallotNav"
+        - "Brigade Organizers Playbook"
+        - "Civic Opportunity Project"
+        - "Civic Tech Index"
+        - "Civic Tech Jobs"
+        - "Civic Tech Structure"
+        - "Design Systems"
+        - "Engage"
+        - "Expunge Assist"
+        - "Food Oasis"
+        - "GreenEarthOS"
+        - "Guides Team"
+        - "Hackforla.org Website"
+        - "Home Unite Us"
+        - "LA TDM Calculator"
+        - "Lucky Parking"
+        - "Open Community Survey"
+        - "Tech Work Experience"
+        - "VRMS"
+        - "Write for All"
+        - "Youth Justice Nav"
+        - "EMS Triage Tracker"
+        - "Heart"
+        - "HelloGOV"
+        - "Public Tree Map"
+        - "Railstats LA"
+        - "Undebate"
+        - "Work for LA"
+        - "Jobs for Hope"
+        - "New Schools Today"
+        - "Not Today - Self-Defense Against Suicidal Thoughts"
+        - "Spare"
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: project-url
+    attributes:
+      label: Project URL on hackforla.org website
+      description: "https://www.hackforla.org/projects/"
+      options: 
+        - "---New Project---"
+        - "100-automations"
+        - "311-data"
+        - "access-the-data"
+        - "adopt-civic-art"
+        - "ballot-nav"
+        - "brigade-organizers-playbook"
+        - "civic-opportunity-project"
+        - "civic-tech-index"
+        - "civic-tech-jobs"
+        - "civic-tech-structure"
+        - "criminal-sentencing"
+        - "curbmap"
+        - "design-systems"
+        - "ems-triage-tracker"
+        - "engage"
+        - "expunge-assist"
+        - "food-oasis"
+        - "green-earth-os"
+        - "guides-team"
+        - "heart"
+        - "hellogov"
+        - "home-unite-us"
+        - "jobs-for-hope"
+        - "light-the-way"
+        - "lucky-parking"
+        - "metro-ontime"
+        - "new-schools-today"
+        - "not-today"
+        - "open-community-survey"
+        - "public-tree-map"
+        - "shared-housing-project"
+        - "spare"
+        - "tdm-calculator"
+        - "tech-work-experience"
+        - "undebate"
+        - "vrms"
+        - "website"
+        - "work-for-la"
+        - "writeforall"
+        - "youthjusticenav"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: addition-revision
+    attributes:
+      label: Is this an addition or a revision?
+      options:
+        - "addition"
+        - "revision"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: accomplishment-year
+    attributes:
+      label: Year of accomplishment
+      options:
+        - "2020"
+        - "2021"
+        - "2022"
+        - "2023"
+        - "2024"
+        - "2025"
+        - "2026"
+    validations:
+      required: true
+
+  - type: textarea
+    id: accomplishment-summary
+    attributes:
+      label: "Provide a summary of the accomplishment:"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Resources"
+  - type: markdown
+    attributes:
+      value: |
+        - This is the file that will be edited: https://github.com/hackforla/website/blob/gh-pages/_data/internal/accomplishments.yml
+
