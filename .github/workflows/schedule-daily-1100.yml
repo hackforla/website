@@ -12,7 +12,7 @@ permissions:
 jobs:
   github_data:
     runs-on: ubuntu-latest
-    if: github.repository == 'hackforla/website'
+    if: github.repository == 'emoore36/website'
     
     steps:
     - name: Checkout repository
