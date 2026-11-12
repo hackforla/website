@@ -43,8 +43,8 @@ location:
   # - Downtown LA
   - Remote
 partner: Seeking
-visible: true
-status: On Hold
+visible: false
+status: Closed
 program-area: 
   - Diversity / Equity / Inclusion
 ---
