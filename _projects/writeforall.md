@@ -1,9 +1,10 @@
 ---
 identification: '238357606'
 title: Write for All&#8482;
-description: We want to improve the language used in websites to be
-  more inclusive (of all communities) while also educating the public
-  about exclusionary language. @writeforallorg&#8482;
+description: Write for All is dedicated to making web content 
+    more inclusive by identifying exclusionary language while 
+    educating contributors and the public about more equitable 
+    language practices.
 image: /assets/images/projects/writeforall.png
 alt: 'Write for All'
 image-hero: /assets/images/projects/writeforall-hero.png
@@ -42,8 +43,8 @@ location:
   # - Downtown LA
   - Remote
 partner: Seeking
-visible: true
-status: On Hold
+visible: false
+status: Closed
 program-area: 
   - Diversity / Equity / Inclusion
 ---
