@@ -267,8 +267,14 @@ a.clear-filter-tags {
     // flex-direction: column;
   }
   // Hide applied filter tags in collapsed mobile toolbar
-  .filter-tag-container {
-    display: none;
+  .filter-tag-container { 
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px 10px;
+    
+    &:empty {
+      display: none;
+    }
   }
   .scroll-lock {
     overflow: hidden;
