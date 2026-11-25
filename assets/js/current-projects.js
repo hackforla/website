@@ -352,10 +352,9 @@ function searchEventHandler(e){
     else if(e.target.closest(".search-bar-mobile"))
         searchTerm = document.querySelector("#search-mobile").value;
 
+    const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
     let tokenObj={};
-    tokenObj['Search']=searchTerm;
-     
-   const filterParams = Object.fromEntries(new URLSearchParams(window.location.search));
+
     if (Object.keys(filterParams).length>0) {    
         for(const [key,value] of Object.entries(filterParams)){
             if (key !== 'Search'){
@@ -363,10 +362,25 @@ function searchEventHandler(e){
             }
         }  
     }
+   
+    const searches = filterParams.Search
+    ? filterParams.Search.split(',')
+    : [];
+
+    if (!searches.includes(searchTerm)) {
+        searches.push(searchTerm);
+    }
+    //include entire array of search keywords
+    if (searches.length > 0) {
+        tokenObj['Search'] = searches;
+    }
+     
     let queryString = Object.keys(tokenObj).map(key => key + '=' + tokenObj[key]).join('&').replaceAll(" ","+");
 
     window.history.replaceState(null,'',`?${queryString}`)
 }
+ 
+
 
 function searchEnterKeyHandler(e){
     if (e.key === "Enter") {
@@ -496,10 +510,24 @@ function updateCategoryCounter(filterParams){
         // Calculate total selected filters across all categories (excluding Search)
         let totalSelected = container.reduce((sum, [,val]) => sum + val, 0);
 
+        // Add count of keywords for search filter
+        const searchCount = (filterParams.Search || []).filter(term => term.trim() !== '').length;
+        totalSelected += searchCount;
+
         // Update each category counter – preserve existing behaviour of showing combined totals
-        for(const [key] of container){
-          document.querySelector(`#${key}`) && (document.querySelector(`#${key}`).innerHTML = ` (${totalSelected})`);
-        }
+        //for(const [key] of container){
+          //document.querySelector(`#${key}`) && (document.querySelector(`#${key}`).innerHTML = ` (${totalSelected})`);
+
+          document.querySelectorAll('.number-of-checked-boxes').forEach(counter => {
+            if (counter.id !== 'counter_total') {
+                counter.innerHTML = totalSelected > 0
+                    ? ` (${totalSelected})`
+                    : '';
+                }
+            }
+          );
+      
+        
 
         // Update the new overall filters counter in the title
         const totalCounterSpan = document.querySelector('#counter_total');
@@ -548,67 +576,76 @@ function updateProjectCardDisplayState(filterParams){
                 }
             }
             else if(key==="Search"){
-                let searchTerm=value[0];
-                let operators=["AND","OR","-"];
-                let tokens=[];
-                if(searchTerm.includes(" ")){tokens=searchTerm.split(" ");}
-                else{tokens[0]=searchTerm}
-                for (let i = 0; i < tokens.length; i++) {
-                    let token = tokens[i];
-                    if (operators.includes(token)) {
-                        let nextToken=tokens[i+1];
-                        if (token === "AND"){
-                            let searchRegex= new RegExp(nextToken,'gi');
+                
+                //scan each keyword for search filter
+                for (const searchTerm of value) {
+
+                    let operators=["AND","OR","-"];
+                    let tokens=[];
+                    if(searchTerm.includes(" ")){tokens=searchTerm.split(" ");}
+                    else{tokens[0]=searchTerm}
+                    for (let i = 0; i < tokens.length; i++) {
+                        let token = tokens[i];
+                        if (operators.includes(token)) {
+                            let nextToken=tokens[i+1];
+                            if (token === "AND"){
+                                let searchRegex= new RegExp(nextToken,'gi');
+                                let noMatchDataset=0;
+                                for(const [key,value] of Object.entries(projectCardObj)){
+                                    if(  value.filter(x => searchRegex.test(x) ).length == 0){
+                                        noMatchDataset++;
+                                        if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
+                                    }                                
+                                }
+                            }
+                            else if(token === "OR"){
+                                let searchRegex= new RegExp(nextToken,'gi');
+                                let noMatchDataset=0;
+                                for(const [key,value] of Object.entries(projectCardObj)){
+                                    if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                        cardsToHideContainer.pop();
+                                        projectCard.style.display = 'list-item' ;
+                                        break;
+                                    }
+                                }
+                            }
+                            
+                            i++;                        
+                        } 
+                        else if(token.includes("-")){
+                            let searchToken=token.substr(1);
+                            let searchRegex= new RegExp(searchToken,'gi');
+                            let noMatchDataset=0;
+                            for(const [key,value] of Object.entries(projectCardObj)){
+                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
+                                    
+                                    cardsToHideContainer.push([key,projectCard.id]);
+                                
+                                }
+                            }
+                        }
+                        else {
+                            let searchRegex= new RegExp(token,'gi');
                             let noMatchDataset=0;
                             for(const [key,value] of Object.entries(projectCardObj)){
                                 if(  value.filter(x => searchRegex.test(x) ).length == 0){
                                     noMatchDataset++;
                                     if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
-                                }                                
-                            }
-                        }
-                        else if(token === "OR"){
-                            let searchRegex= new RegExp(nextToken,'gi');
-                            let noMatchDataset=0;
-                            for(const [key,value] of Object.entries(projectCardObj)){
-                                if(  value.filter(x => searchRegex.test(x) ).length > 0){
-                                    cardsToHideContainer.pop();
-                                    projectCard.style.display = 'list-item' ;
+                                }
+                                else{
+                                    projectCard.style.display = 'list-item' ;                                    
                                     break;
                                 }
                             }
-                        }
-                        
-                        i++;                        
-                    } 
-                    else if(token.includes("-")){
-                        let searchToken=token.substr(1);
-                        let searchRegex= new RegExp(searchToken,'gi');
-                        let noMatchDataset=0;
-                        for(const [key,value] of Object.entries(projectCardObj)){
-                            if(  value.filter(x => searchRegex.test(x) ).length > 0){
-                                
-                                cardsToHideContainer.push([key,projectCard.id]);
-                            
-                            }
-                        }
+                        }                        
                     }
-                    else {
-                        let searchRegex= new RegExp(token,'gi');
-                        let noMatchDataset=0;
-                        for(const [key,value] of Object.entries(projectCardObj)){
-                            if(  value.filter(x => searchRegex.test(x) ).length == 0){
-                                noMatchDataset++;
-                                if(noMatchDataset==5){cardsToHideContainer.push([key,projectCard.id]);}
-                            }
-                            else{
-                                projectCard.style.display = 'list-item' ;                                    
-                                break;
-                            }
-                        }
-                    }                        
-                }       
+
+                    if (cardsToHideContainer.length > 0) {
+                        break;
+                    }
+                }
             }
+
             if (cardsToHideContainer.length > 0){
                 cardsToHideContainer.map(item => document.getElementById(`${item[1]}`).style.display = 'none');
                 break;
